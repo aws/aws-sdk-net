@@ -1143,6 +1143,38 @@ namespace Amazon.Redshift
 
         #endregion
                 
+        #region  CreateQev2IdcApplication
+
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQev2IdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationAlreadyExistsException">
+        /// The Amazon Redshift Query Editor (QEV2) IAM Identity Center application already exists.
+        /// Use a different application name or describe existing applications to find the ARN.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateQev2IdcApplication">REST API Reference for CreateQev2IdcApplication Operation</seealso>
+        Task<CreateQev2IdcApplicationResponse> CreateQev2IdcApplicationAsync(CreateQev2IdcApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateRedshiftIdcApplication
 
 
@@ -1827,6 +1859,39 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeletePartner">REST API Reference for DeletePartner Operation</seealso>
         Task<DeletePartnerResponse> DeletePartnerAsync(DeletePartnerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteQev2IdcApplication
+
+
+
+        /// <summary>
+        /// Deletes an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQev2IdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteQev2IdcApplication">REST API Reference for DeleteQev2IdcApplication Operation</seealso>
+        Task<DeleteQev2IdcApplicationResponse> DeleteQev2IdcApplicationAsync(DeleteQev2IdcApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3252,6 +3317,40 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribePartners">REST API Reference for DescribePartners Operation</seealso>
         Task<DescribePartnersResponse> DescribePartnersAsync(DescribePartnersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeQev2IdcApplications
+
+
+
+        /// <summary>
+        /// Lists the Amazon Redshift Query Editor (QEV2) IAM Identity Center applications. To
+        /// retrieve additional results, use the MaxRecords and Marker parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQev2IdcApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQev2IdcApplications service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeQev2IdcApplications">REST API Reference for DescribeQev2IdcApplications Operation</seealso>
+        Task<DescribeQev2IdcApplicationsResponse> DescribeQev2IdcApplicationsAsync(DescribeQev2IdcApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -4839,6 +4938,39 @@ namespace Amazon.Redshift
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyLakehouseConfiguration">REST API Reference for ModifyLakehouseConfiguration Operation</seealso>
         Task<ModifyLakehouseConfigurationResponse> ModifyLakehouseConfigurationAsync(ModifyLakehouseConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyQev2IdcApplication
+
+
+
+        /// <summary>
+        /// Modifies an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyQev2IdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyQev2IdcApplication">REST API Reference for ModifyQev2IdcApplication Operation</seealso>
+        Task<ModifyQev2IdcApplicationResponse> ModifyQev2IdcApplicationAsync(ModifyQev2IdcApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

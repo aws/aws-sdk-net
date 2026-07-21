@@ -2545,6 +2545,75 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateQev2IdcApplication
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQev2IdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the CreateQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationAlreadyExistsException">
+        /// The Amazon Redshift Query Editor (QEV2) IAM Identity Center application already exists.
+        /// Use a different application name or describe existing applications to find the ARN.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateQev2IdcApplication">REST API Reference for CreateQev2IdcApplication Operation</seealso>
+        public virtual CreateQev2IdcApplicationResponse CreateQev2IdcApplication(CreateQev2IdcApplicationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateQev2IdcApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQev2IdcApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateQev2IdcApplicationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateQev2IdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationAlreadyExistsException">
+        /// The Amazon Redshift Query Editor (QEV2) IAM Identity Center application already exists.
+        /// Use a different application name or describe existing applications to find the ARN.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateQev2IdcApplication">REST API Reference for CreateQev2IdcApplication Operation</seealso>
+        public virtual Task<CreateQev2IdcApplicationResponse> CreateQev2IdcApplicationAsync(CreateQev2IdcApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateQev2IdcApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateQev2IdcApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateQev2IdcApplicationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateRedshiftIdcApplication
 
 
@@ -4015,6 +4084,77 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DeletePartnerResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeletePartnerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteQev2IdcApplication
+
+
+        /// <summary>
+        /// Deletes an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQev2IdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the DeleteQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteQev2IdcApplication">REST API Reference for DeleteQev2IdcApplication Operation</seealso>
+        public virtual DeleteQev2IdcApplicationResponse DeleteQev2IdcApplication(DeleteQev2IdcApplicationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteQev2IdcApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQev2IdcApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteQev2IdcApplicationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteQev2IdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteQev2IdcApplication">REST API Reference for DeleteQev2IdcApplication Operation</seealso>
+        public virtual Task<DeleteQev2IdcApplicationResponse> DeleteQev2IdcApplicationAsync(DeleteQev2IdcApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteQev2IdcApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteQev2IdcApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteQev2IdcApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7074,6 +7214,79 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DescribePartnersResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribePartnersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeQev2IdcApplications
+
+
+        /// <summary>
+        /// Lists the Amazon Redshift Query Editor (QEV2) IAM Identity Center applications. To
+        /// retrieve additional results, use the MaxRecords and Marker parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQev2IdcApplications service method.</param>
+        /// 
+        /// <returns>The response from the DescribeQev2IdcApplications service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeQev2IdcApplications">REST API Reference for DescribeQev2IdcApplications Operation</seealso>
+        public virtual DescribeQev2IdcApplicationsResponse DescribeQev2IdcApplications(DescribeQev2IdcApplicationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeQev2IdcApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQev2IdcApplicationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeQev2IdcApplicationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the Amazon Redshift Query Editor (QEV2) IAM Identity Center applications. To
+        /// retrieve additional results, use the MaxRecords and Marker parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeQev2IdcApplications service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeQev2IdcApplications service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeQev2IdcApplications">REST API Reference for DescribeQev2IdcApplications Operation</seealso>
+        public virtual Task<DescribeQev2IdcApplicationsResponse> DescribeQev2IdcApplicationsAsync(DescribeQev2IdcApplicationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeQev2IdcApplicationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeQev2IdcApplicationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeQev2IdcApplicationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10452,6 +10665,77 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = ModifyLakehouseConfigurationResponseUnmarshaller.Instance;
             
             return InvokeAsync<ModifyLakehouseConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyQev2IdcApplication
+
+
+        /// <summary>
+        /// Modifies an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyQev2IdcApplication service method.</param>
+        /// 
+        /// <returns>The response from the ModifyQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyQev2IdcApplication">REST API Reference for ModifyQev2IdcApplication Operation</seealso>
+        public virtual ModifyQev2IdcApplicationResponse ModifyQev2IdcApplication(ModifyQev2IdcApplicationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyQev2IdcApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyQev2IdcApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyQev2IdcApplicationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies an Amazon Redshift Query Editor (QEV2) IAM Identity Center application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyQev2IdcApplication service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyQev2IdcApplication service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceAccessDeniedException">
+        /// A dependent service denied access for the integration.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.DependentServiceUnavailableException">
+        /// Your request cannot be completed because a dependent internal service is temporarily
+        /// unavailable. Wait 30 to 60 seconds and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.Qev2IdcApplicationNotExistsException">
+        /// The specified Amazon Redshift Query Editor (QEV2) IAM Identity Center application
+        /// doesn't exist. Verify that the application ARN is correct and that the application
+        /// exists in this Region.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyQev2IdcApplication">REST API Reference for ModifyQev2IdcApplication Operation</seealso>
+        public virtual Task<ModifyQev2IdcApplicationResponse> ModifyQev2IdcApplicationAsync(ModifyQev2IdcApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyQev2IdcApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyQev2IdcApplicationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyQev2IdcApplicationResponse>(request, options, cancellationToken);
         }
 
         #endregion
