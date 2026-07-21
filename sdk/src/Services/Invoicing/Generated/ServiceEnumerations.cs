@@ -620,6 +620,10 @@ namespace Amazon.Invoicing
         /// Constant TEST_INITIALIZED for ProcurementPortalPreferenceStatus
         /// </summary>
         public static readonly ProcurementPortalPreferenceStatus TEST_INITIALIZED = new ProcurementPortalPreferenceStatus("TEST_INITIALIZED");
+        /// <summary>
+        /// Constant VALIDATED for ProcurementPortalPreferenceStatus
+        /// </summary>
+        public static readonly ProcurementPortalPreferenceStatus VALIDATED = new ProcurementPortalPreferenceStatus("VALIDATED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

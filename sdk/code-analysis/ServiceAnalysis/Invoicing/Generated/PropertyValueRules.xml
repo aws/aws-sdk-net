@@ -224,6 +224,24 @@
     <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Invoicing.Model.SendProcurementPortalValidationRequest.ClientToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.SendProcurementPortalValidationRequest.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.SendProcurementPortalValidationResponse.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Invoicing.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
@@ -285,6 +303,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Invoicing.Model.UpdateProcurementPortalPreferenceStatusResponse.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest.ClientToken</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest.Code</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest.ProcurementPortalPreferenceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Invoicing.Model.VerifyProcurementPortalValidationResponse.ProcurementPortalPreferenceArn</property>
     <min>1</min>
     <max>256</max>
     <pattern>arn:aws:invoicing::[0-9]{12}:procurement-portal-preference/[-a-zA-Z0-9]+</pattern>
