@@ -224,6 +224,18 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     unmarshalledObject.ParquetMemCacheSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("pluginRepositorySecretArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PluginRepositorySecretArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("pluginRepositoryUrl", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PluginRepositoryUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("preemptiveCacheAge", targetDepth, ref reader))
                 {
                     var unmarshaller = DurationUnmarshaller.Instance;

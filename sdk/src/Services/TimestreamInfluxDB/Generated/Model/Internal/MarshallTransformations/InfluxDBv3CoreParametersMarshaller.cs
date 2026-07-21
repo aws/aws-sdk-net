@@ -281,6 +281,18 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPluginRepositorySecretArn())
+            {
+                context.Writer.WritePropertyName("pluginRepositorySecretArn");
+                context.Writer.WriteStringValue(requestObject.PluginRepositorySecretArn);
+            }
+
+            if(requestObject.IsSetPluginRepositoryUrl())
+            {
+                context.Writer.WritePropertyName("pluginRepositoryUrl");
+                context.Writer.WriteStringValue(requestObject.PluginRepositoryUrl);
+            }
+
             if(requestObject.IsSetPreemptiveCacheAge())
             {
                 context.Writer.WritePropertyName("preemptiveCacheAge");
