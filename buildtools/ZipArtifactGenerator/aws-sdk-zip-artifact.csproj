@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../../sdk'))" />
     <!--
         This project is a helper to generate the ZIP files described in https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-obtain-assemblies.html
         It references the projects that include external dependencies so that they're also included in the final artifact.
     -->
     <PropertyGroup>
-        <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+        <TargetFrameworks>$(SdkNetFrameworkTargets);$(SdkNetTargets)</TargetFrameworks>
         <OutputType>Library</OutputType>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>

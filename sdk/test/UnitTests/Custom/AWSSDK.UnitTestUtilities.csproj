@@ -1,10 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+    <TargetFrameworks>$(SdkNetFrameworkTargets);$(SdkNetTargets)</TargetFrameworks>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' != 'net472'">$(DefineConstants);NETSTANDARD;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20</DefineConstants>
-    <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
+    <DefineConstants Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">$(DefineConstants);NETSTANDARD;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+    <LangVersion>11.0</LangVersion>
 
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -84,11 +83,11 @@
     <ProjectReference Include="../../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
     <ProjectReference Include="../../Common/AWSSDK.CommonTest.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../src/Services/S3/AWSSDK.S3.NetFramework.csproj" />
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../../src/Services/S3/AWSSDK.S3.NetStandard.csproj" />
   </ItemGroup>

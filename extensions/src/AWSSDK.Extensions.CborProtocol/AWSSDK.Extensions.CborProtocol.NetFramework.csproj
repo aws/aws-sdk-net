@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+	<TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>
     <AssemblyName>AWSSDK.Extensions.CborProtocol</AssemblyName>
     <PackageId>AWSSDK.Extensions.CborProtocol</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
