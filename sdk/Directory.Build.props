@@ -41,7 +41,7 @@
    <SdkMSTestAllTestTargets>net472;netcoreapp3.1;net8.0</SdkMSTestAllTestTargets>
    
    <!--
-   In this framework list for test projects netstandard2.0 is maintain the behavior before target consolidation.
+   In this framework list for test projects netstandard2.0 is kept to maintain the behavior before target consolidation.
    Future work is rework how we test netstandard2.0 target because a test project is an executable so it doesn't
    make sense to target netstandard2.0.   
    -->

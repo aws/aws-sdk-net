@@ -18,13 +18,6 @@ namespace ServiceClientGenerator
         public const string NetFrameworkProperty = "$(SdkNetFrameworkTargets)";
         public const string NetStandardProperty = "$(SdkNetTargets)";
 
-        /// <summary>
-        /// MSTest-based unit test target frameworks. Unlike the xunit.v3 integration tests (which use
-        /// $(SdkTestTargets)), MSTest supports netcoreapp3.1. MSTestAllProperty is the full set
-        /// (net472;netcoreapp3.1;net8.0) used by the per-service and .NET Framework unit test projects;
-        /// MSTestNetProperty is the non-.NET-Framework slice (netcoreapp3.1;net8.0) used by the NetStandard
-        /// uber unit test project.
-        /// </summary>
         public const string MSTestAllProperty = "$(SdkMSTestAllTestTargets)";
         public const string MSTestNetProperty = "$(SdkMSTestNetTestTargets)";
 
