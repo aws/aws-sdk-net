@@ -112,29 +112,33 @@ namespace AWSSDK.UnitTests.Signing
             }
         }
 
-        // Load the shared fixture by its exact embedded logical name (pinned via <LogicalName> in the test
-        // csprojs). This avoids the substring/Single() manifest lookup, whose resolved resource name varies
-        // with the build environment (RootNamespace, path separators, MSBuild version) and returned null in a
-        // full recursive CI build even though it resolved locally. Throw a clear, self-diagnosing error naming
-        // what IS embedded if the fixture is ever missing, rather than an opaque ArgumentNullException.
+        // Load the shared fixture from the test assembly's embedded resources. The manifest name is the
+        // auto-generated one (namespace + folder path + file name, e.g.
+        // "AWSSDK.UnitTests.NetStandard.Custom.Runtime.Signing.reference.sigv4_test_cases.json"), which varies
+        // by assembly, so match on the file-name suffix rather than a fixed full name. The embed itself is
+        // declared in generator/ServiceModels/_manifest.json (embeddedResources), since the NetStandard uber
+        // test csproj is code-generated and a hand-added <EmbeddedResource> in the csproj is overwritten by the
+        // generator in a full build. Throw a clear, self-diagnosing error listing what IS embedded if the
+        // fixture is ever missing, rather than an opaque ArgumentNullException.
         private static string LoadFixtureJson()
         {
-            const string resourceName = "sigv4_test_cases.json";
+            const string fileName = "sigv4_test_cases.json";
             var assembly = typeof(AWSSigV4SignerParityTests).Assembly;
 
-            using (var stream = assembly.GetManifestResourceStream(resourceName))
-            {
-                if (stream == null)
-                {
-                    var available = string.Join(", ", assembly.GetManifestResourceNames());
-                    throw new InvalidOperationException(
-                        $"Embedded resource '{resourceName}' was not found in {assembly.GetName().Name}. " +
-                        $"Available resources: {available}");
-                }
+            var resourceName = assembly.GetManifestResourceNames()
+                .FirstOrDefault(n => n.EndsWith(fileName, StringComparison.OrdinalIgnoreCase));
 
-                using (var reader = new StreamReader(stream))
-                    return reader.ReadToEnd();
+            if (resourceName == null)
+            {
+                var available = string.Join(", ", assembly.GetManifestResourceNames());
+                throw new InvalidOperationException(
+                    $"Embedded resource '{fileName}' was not found in {assembly.GetName().Name}. " +
+                    $"Available resources: {available}");
             }
+
+            using (var stream = assembly.GetManifestResourceStream(resourceName))
+            using (var reader = new StreamReader(stream))
+                return reader.ReadToEnd();
         }
 
         public static IEnumerable<object[]> AllScenarios()
