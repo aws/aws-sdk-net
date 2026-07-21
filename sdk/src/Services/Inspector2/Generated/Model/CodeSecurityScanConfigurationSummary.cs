@@ -42,7 +42,6 @@ namespace Amazon.Inspector2.Model
         private List<string> _ruleSetCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _scanConfigurationArn;
         private ScopeSettings _scopeSettings;
-        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContinuousIntegrationScanSupportedEvents. 
@@ -204,29 +203,6 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetScopeSettings()
         {
             return this._scopeSettings != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// The tags associated with the scan configuration.
-        /// </para>
-        /// <para />
-        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
-        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
-        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
-        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
-        /// </summary>
-        public Dictionary<string, string> Tags
-        {
-            get { return this._tags; }
-            set { this._tags = value; }
-        }
-
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
-        {
-            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
