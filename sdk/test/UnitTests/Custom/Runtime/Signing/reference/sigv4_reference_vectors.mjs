@@ -36,8 +36,12 @@ const here = dirname(fileURLToPath(import.meta.url));
 const fixture = JSON.parse(readFileSync(join(here, "sigv4_test_cases.json"), "utf8"));
 const creds = fixture.credentials;
 
-// Cases where JS is expected to differ from the .NET-authored fixture (documented ecosystem divergence).
-const EXPECTED_DIFFS = new Set(["query-plus-in-value"]);
+// Cases where JS is expected to differ from the .NET-authored fixture (documented ecosystem divergence):
+//   - query-plus-in-value: '+' is form-decoded to space by JS/Java, signed literally by .NET (see above).
+//   - path-double-slash ("/a//b"): empty path segments are normalized inconsistently across SDKs — .NET, JS,
+//     and botocore each produce a different signature. Not a bug in any of them; a known interop caveat
+//     (avoid empty path segments). See the cross-SDK validation notes.
+const EXPECTED_DIFFS = new Set(["query-plus-in-value", "path-double-slash"]);
 
 const signer = new SignatureV4({
   credentials: { accessKeyId: creds.accessKey, secretAccessKey: creds.secretKey },

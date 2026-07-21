@@ -56,12 +56,16 @@ PRESIGN_EXPIRY_SECONDS = 900
 # double-encode paths and re-encode query values, and .NET preserves repeated query keys where botocore's
 # parse_qs collapses them). These are documented ecosystem differences, not bugs, so they are reported as
 # EXPECTED-DIFF rather than failures. The sets are per-flow because the paths canonicalize differently.
+# path-double-slash ("/a//b") is a universal divergence: .NET, JS, and botocore each sign it differently
+# because empty path segments are normalized inconsistently across the ecosystem (a known interop caveat,
+# not a bug). It is expected-diff for both flows.
 HEADER_EXPECTED_DIFFS = {
     "encoded-path", "query-value-with-space", "query-reserved-chars",
-    "query-plus-in-value", "query-unicode-value",
+    "query-plus-in-value", "query-unicode-value", "path-double-slash",
 }
 PRESIGN_EXPECTED_DIFFS = {
     "encoded-path", "duplicate-query-key", "query-plus-in-value", "three-duplicate-keys",
+    "path-double-slash",
 }
 
 

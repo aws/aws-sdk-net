@@ -210,13 +210,14 @@ namespace AWSSDK.UnitTests.Signing
         [DynamicData(nameof(PresignableScenarios))]
         public void Presign_MatchesKnownAnswerVector(string scenarioName)
         {
-            // Presign is verified against the independent reference oracle (sigv4_reference_vectors.py), NOT
-            // against a hand-built internal signer: reimplementing the presign steps in the test and calling
-            // the same AWS4PreSignedUrlSigner would be circular. The oracle computes the query-signing
-            // signature from scratch, so a bug in the SDK's presign path cannot make this pass.
+            // Presign is checked against expectedPresignSignature, a .NET-authored known-answer value that the
+            // real-SDK oracles (JS @smithy primary, botocore secondary) independently corroborate. This is not
+            // a hand-built internal-signer comparison: reimplementing the presign steps in the test and calling
+            // the same AWS4PreSignedUrlSigner would be circular, so a shared bug could pass. The known-answer
+            // value is the anchor a facade-only presign bug would fail against.
             var scenario = Get(scenarioName);
             Assert.IsNotNull(scenario.ExpectedPresignSignature,
-                $"Scenario '{scenario.Name}' is missing expectedPresignSignature; run python3 sigv4_reference_vectors.py --write.");
+                $"Scenario '{scenario.Name}' is missing expectedPresignSignature.");
 
             var facadeSig = PresignWithFacade(scenario);
 

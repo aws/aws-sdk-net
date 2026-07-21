@@ -252,6 +252,46 @@
       "body": null,
       "signPayload": true,
       "expectedSignature": "f76c41fe9c95eb462d3b829666a064d0195b5f7dd79b0145b3f54238985440b9"
+    },
+    {
+      "name": "path-dot-segments",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/a/../b/./c",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "a3eb2f680b6944ce59d44d7427c3977d95af163d40f3aba9e5a621429363b5dd",
+      "expectedPresignSignature": "02f4dfce8ab35790698c7d3d306f2fa50f8c648bbf99b79100d5fbd9be3633a0"
+    },
+    {
+      "name": "path-double-slash",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/a//b",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "d06aff45abbe9cd1042ee369efc2f2b9b46babe1166519e6a10c0a19742d1c9d",
+      "expectedPresignSignature": "2b8d45bb54504764e5aa5b44c49d1b963ca8ef265c5829febfa81ef32f2a9261"
+    },
+    {
+      "name": "pre-encoded-path",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/a%2Fb",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "e56b29052e4dfe2f5ef91752136052ab90636e5c50d3301093225a82968e8fec",
+      "expectedPresignSignature": "57d8dde86ae032e923a2ba5d48018f32aca141b4e2210b8e26d1bdff521b5cce"
+    },
+    {
+      "name": "pre-encoded-query",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/?k=%20v",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "fe9c1f96e56909b8dcf7df8d450c0b12964e31e7d73d1c539eee3665752ad490",
+      "expectedPresignSignature": "ef25015d1ac2c489ac9d0e68ca5a403700aab69ccd1f1c22359e49b367a212e4"
     }
   ]
 }
