@@ -1,3 +1,25 @@
+### 4.0.293.0 (2026-07-21 18:12 UTC)
+* EMRContainers (4.0.102.0)
+	* Added support for the DeleteSecurityConfiguration API, which allows customers to delete security configurations in Amazon EMR on EKS. Also added authenticationConfiguration in securityConfigurationdata structure.
+* EntityResolution (4.0.101.0)
+	* Add support for real time matching with AWS Entity Resolution matching workflows with advanced rule sets.
+* Inspector2 (4.0.104.0)
+	* GA date - July 21st 2026, remove Tags field from ListCodeSecurityIntegration and ListCodeSecurityScanConfiguration.
+* Invoicing (4.0.101.0)
+	* Added the SendProcurementPortalValidation and VerifyProcurementPortalValidation APIs. You can use the AWS SDKs to self-service activate your Procurement Portal Preferences created on the Billing Preferences page with a one-time-passcode (OTP) delivered to your portal.
+* Redshift (4.0.101.0)
+	* Amazon Redshift - Added support for managing Query Editor V2 IAM Identity Center applications via new CreateQev2IdcApplication, DescribeQev2IdcApplications, ModifyQev2IdcApplication, and DeleteQev2IdcApplication API operations.
+* RedshiftDataAPIService (4.0.101.0)
+	* update the workgroupArn to include EUSC partition, tests in THF Gamma and Prod no issue
+* SecurityHub (4.0.102.2)
+	* Security Hub standard and control multicloud API documentation updates
+* SimpleSystemsManagement (4.0.103.0)
+	* Added a WarningMessage field to Automation along with corresponding public documentation.
+* TimestreamInfluxDB (4.0.101.0)
+	* This release adds support for custom plugins in Amazon Timestream for InfluxDB. InfluxDB 3 Core and Enterprise DB parameter groups now accept a plugin repository URL and optional AWS Secrets Manager secret ARN, so the Processing Engine loads your Python plugins from a public or private repository.
+* Core 4.0.100.7
+	* Fixed SSO login failure in the GovCloud partition by adding the issuer domain to the SSOEndpointResolver AWS-owned allowlist. The derived issuer URL now uses the GovCloud issuer host (distinct from commercial) for GovCloud endpoints, identified by the us-gov- region.
+
 ### 4.0.292.0 (2026-07-20 18:12 UTC)
 * AWSMarketplaceMetering (4.0.100.7)
 	* For new SaaS product integrations, CustomerIdentifier is not populated in ResolveCustomer responses and is not supported in BatchMeterUsage. Use CustomerAWSAccountId and LicenseArn instead.

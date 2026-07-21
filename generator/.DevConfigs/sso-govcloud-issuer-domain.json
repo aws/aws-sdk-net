@@ -1,9 +1,0 @@
-{
-  "core": {
-    "changeLogMessages": [
-      "Fixed SSO login failure in the GovCloud partition by adding the issuer domain to the SSOEndpointResolver AWS-owned allowlist. The derived issuer URL now uses the GovCloud issuer host (distinct from commercial) for GovCloud endpoints, identified by the us-gov- region."
-    ],
-    "type": "patch",
-    "updateMinimum": false
-  }
-}
