@@ -52,9 +52,9 @@ namespace AWSSDK.UnitTests.Signing
         // -----------------------------------------------------------------------
         // Header signing — result projection
         //
-        // Signature correctness over a scenario table (known-answer + parity vs. the internal signer) lives
-        // in AWSSigV4SignerParityTests. The tests here cover behavior that suite does not: the header
-        // projection, presigning, validation/throw paths, and the escape hatch.
+        // Signature correctness over a scenario table (known-answer vectors for both header signing and
+        // presign) lives in AWSSigV4SignerParityTests. The tests here cover behavior that suite does not: the
+        // header projection, presigning, validation/throw paths, and the escape hatch.
         // -----------------------------------------------------------------------
 
         [TestMethod]

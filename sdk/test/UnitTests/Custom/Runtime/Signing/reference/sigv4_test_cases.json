@@ -1,5 +1,5 @@
 {
-  "_comment": "Shared SigV4 known-answer test cases. Single source of truth for both the .NET signer tests (AWSSigV4SignerParityTests) and the independent Python reference oracle (sigv4_reference_vectors.py). All cases use the canonical AWS SigV4 test-suite credentials and a fixed signing time. To (re)generate the expectedSignature fields from the independent Python implementation, run: python3 sigv4_reference_vectors.py --write. To verify the .NET signer matches, run the AWSSigV4SignerParityTests test class.",
+  "_comment": "Shared SigV4 known-answer test cases (expectedSignature = header signing, expectedPresignSignature = query signing). These are .NET-authored ground truth: AWSSigV4SignerParityTests asserts the facade reproduces them. All cases use the canonical AWS SigV4 test-suite credentials and a fixed signing time. The values are independently corroborated by the manual real-SDK oracles in reference/ (sigv4_reference_vectors.mjs against JS @smithy; sigv4_reference_vectors.py against botocore) and by the live-STS integration tests; those oracles are check-only and do not write this file (documented ecosystem encoding divergences are allowlisted there as EXPECTED-DIFF).",
   "credentials": {
     "accessKey": "AKIDEXAMPLE",
     "secretKey": "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY",
