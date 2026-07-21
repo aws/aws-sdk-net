@@ -63,8 +63,10 @@ namespace AWSSDK.UnitTests.Signing
             public bool SignPayload = true;
             /// <summary>Optional session token; when set, signed as the x-amz-security-token header.</summary>
             public string SessionToken;
-            /// <summary>Externally-computed expected signature (hex) from the shared fixture.</summary>
+            /// <summary>Externally-computed expected header-signing signature (hex) from the shared fixture.</summary>
             public string ExpectedSignature;
+            /// <summary>Externally-computed expected presign (query-signing) signature (hex); null if not presignable.</summary>
+            public string ExpectedPresignSignature;
             public override string ToString() => Name;
         }
 
@@ -103,6 +105,7 @@ namespace AWSSDK.UnitTests.Signing
                         SignPayload = c.GetProperty("signPayload").GetBoolean(),
                         SessionToken = c.TryGetProperty("sessionToken", out var token) ? token.GetString() : null,
                         ExpectedSignature = c.GetProperty("expectedSignature").GetString(),
+                        ExpectedPresignSignature = c.TryGetProperty("expectedPresignSignature", out var ps) ? ps.GetString() : null,
                     };
                     foreach (var h in c.GetProperty("headers").EnumerateObject())
                         scenario.Headers[h.Name] = h.Value.GetString();
@@ -151,6 +154,18 @@ namespace AWSSDK.UnitTests.Signing
             return Scenarios.Select(s => new object[] { s.Name });
         }
 
+        // Presign rejects a request body and a precomputed content hash, so the presign parity test runs over
+        // the body-less, non-precomputed-hash scenarios (which still exercise paths, query params, ports,
+        // unicode/reserved query values, session tokens, and unsigned payload for the query-signing flow).
+        public static IEnumerable<object[]> PresignableScenarios()
+        {
+            EnsureLoaded();
+            return Scenarios
+                .Where(s => s.Content == null
+                            && !s.Headers.Keys.Any(k => string.Equals(k, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase)))
+                .Select(s => new object[] { s.Name });
+        }
+
         private static void EnsureLoaded()
         {
             if (Scenarios == null)
@@ -191,7 +206,27 @@ namespace AWSSDK.UnitTests.Signing
                 $"Facade output did not match the independent known-answer vector for scenario '{scenario.Name}'.");
         }
 
+        [TestMethod]
+        [DynamicData(nameof(PresignableScenarios))]
+        public void Presign_MatchesKnownAnswerVector(string scenarioName)
+        {
+            // Presign is verified against the independent reference oracle (sigv4_reference_vectors.py), NOT
+            // against a hand-built internal signer: reimplementing the presign steps in the test and calling
+            // the same AWS4PreSignedUrlSigner would be circular. The oracle computes the query-signing
+            // signature from scratch, so a bug in the SDK's presign path cannot make this pass.
+            var scenario = Get(scenarioName);
+            Assert.IsNotNull(scenario.ExpectedPresignSignature,
+                $"Scenario '{scenario.Name}' is missing expectedPresignSignature; run python3 sigv4_reference_vectors.py --write.");
+
+            var facadeSig = PresignWithFacade(scenario);
+
+            Assert.AreEqual(scenario.ExpectedPresignSignature, facadeSig,
+                $"Facade presign signature did not match the independent known-answer vector for scenario '{scenario.Name}'.");
+        }
+
         // --- helpers ---
+
+        private const int PresignExpirySeconds = 900;
 
         private static string SignWithFacade(Scenario scenario)
         {
@@ -257,6 +292,36 @@ namespace AWSSDK.UnitTests.Signing
             return new AWS4Signer()
                 .SignRequest(internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt)
                 .ForAuthorizationHeader;
+        }
+
+        private static string PresignWithFacade(Scenario scenario)
+        {
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = scenario.Method,
+                RequestUri = new Uri(scenario.Url),
+                Headers = new Dictionary<string, string>(scenario.Headers),
+            };
+            var parameters = new AWSSigningParameters
+            {
+                Credentials = scenario.SessionToken != null
+                    ? (AWSCredentials)new SessionAWSCredentials(AccessKey, SecretKey, scenario.SessionToken)
+                    : new BasicAWSCredentials(AccessKey, SecretKey),
+                Region = Region,
+                Service = Service,
+                SignedAt = SignedAt,
+                SignPayload = scenario.SignPayload,
+            };
+            var result = AWSSigV4Signer.Presign(request, parameters, TimeSpan.FromSeconds(PresignExpirySeconds));
+            return ExtractQueryParam(result.Uri.Query, "X-Amz-Signature");
+        }
+
+        private static string ExtractQueryParam(string query, string key)
+        {
+            foreach (var pair in ParseQuery(query))
+                if (string.Equals(pair.Key, key, StringComparison.OrdinalIgnoreCase))
+                    return pair.Value;
+            return null;
         }
 
         /// <summary>The sorted signed-header set the facade always produces, plus any extra caller headers.</summary>

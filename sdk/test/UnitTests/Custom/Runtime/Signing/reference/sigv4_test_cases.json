@@ -15,7 +15,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "726c5c4879a6b4ccbbd3b24edbd6b8826d34f87450fbbf4e85546fc7ba9c1642"
+      "expectedSignature": "726c5c4879a6b4ccbbd3b24edbd6b8826d34f87450fbbf4e85546fc7ba9c1642",
+      "expectedPresignSignature": "2327d31018d5e2f11987de0bae5cdccb9f9cc4ded29e1fdebc011facb867071f"
     },
     {
       "name": "encoded-path",
@@ -24,7 +25,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "f238a85b60dd1f5ec084a0b17ab0c7492fa81d4c87a493762b0c610085a3b237"
+      "expectedSignature": "f238a85b60dd1f5ec084a0b17ab0c7492fa81d4c87a493762b0c610085a3b237",
+      "expectedPresignSignature": "7ae142583b0f180c83588e9ac78af344934e8bf23552e489c64fba69079dde19"
     },
     {
       "name": "single-query-param",
@@ -33,7 +35,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "2287c0f96af21b7ccf3ee4a2905bcbb2d6f9a94c68d0849f3d1715ef003f2a05"
+      "expectedSignature": "2287c0f96af21b7ccf3ee4a2905bcbb2d6f9a94c68d0849f3d1715ef003f2a05",
+      "expectedPresignSignature": "2c13174b8174bdfeda3d4b4f041ace240aaeb2bb9cbdeabe34404b1108e34f49"
     },
     {
       "name": "two-query-params",
@@ -42,7 +45,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "34170682e7af01d97548b14ac02777298b87ffc0370241c0d027326a2dd082b7"
+      "expectedSignature": "34170682e7af01d97548b14ac02777298b87ffc0370241c0d027326a2dd082b7",
+      "expectedPresignSignature": "29a480bf725adea89c72a5a6c72c30cdb7d5b9002730b1b897e192cd8f1971f0"
     },
     {
       "name": "duplicate-query-key",
@@ -51,7 +55,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "5c50be118c209562a76a20a14a4223c06aa5459ba3d84a33432321cfd388fa51"
+      "expectedSignature": "5c50be118c209562a76a20a14a4223c06aa5459ba3d84a33432321cfd388fa51",
+      "expectedPresignSignature": "b4132fdeefcd1e02eb721dea31aaa2fa1b00c16e2bd6cfc4ab67841c6c47cc92"
     },
     {
       "name": "valueless-query-flag",
@@ -60,7 +65,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "6615a3c3b4d979bfec21cce1fd1c97bf2b5bd8cabb4bcb2f448c2d2657823d9e"
+      "expectedSignature": "6615a3c3b4d979bfec21cce1fd1c97bf2b5bd8cabb4bcb2f448c2d2657823d9e",
+      "expectedPresignSignature": "e92bc392193d004b2900519b2c06276311e5020628bbe21296a459fe13a007d6"
     },
     {
       "name": "post-with-body",
@@ -78,7 +84,8 @@
       "headers": {},
       "body": null,
       "signPayload": false,
-      "expectedSignature": "9b02fb7b5d0076fa47a0adda28c71e74ba4588334bc0139b8cd6bb87f16afe16"
+      "expectedSignature": "9b02fb7b5d0076fa47a0adda28c71e74ba4588334bc0139b8cd6bb87f16afe16",
+      "expectedPresignSignature": "2327d31018d5e2f11987de0bae5cdccb9f9cc4ded29e1fdebc011facb867071f"
     },
     {
       "name": "extra-signed-header",
@@ -89,7 +96,8 @@
       },
       "body": null,
       "signPayload": true,
-      "expectedSignature": "39b2e37f474f20f9d00667e5a68e2cb9fd5c9af381dd983fc8a677df6f610b01"
+      "expectedSignature": "39b2e37f474f20f9d00667e5a68e2cb9fd5c9af381dd983fc8a677df6f610b01",
+      "expectedPresignSignature": "3acef50a3373ba18e5b6ee7167df4bed464c2424b12bb12e538de2cc1f6d0b2a"
     },
     {
       "name": "multi-segment-path",
@@ -98,7 +106,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "7d7decdf4faf00ea11abaf36c546c0515c6d189b641ee599a01df2df2efc5127"
+      "expectedSignature": "7d7decdf4faf00ea11abaf36c546c0515c6d189b641ee599a01df2df2efc5127",
+      "expectedPresignSignature": "d079f867f64900d772855dffe45785aada518e7097c9a87ad832ed114bd49320"
     },
     {
       "name": "query-value-with-space",
@@ -107,7 +116,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "4c3b749c356d9cf4e507c858f11e5dc9520147bcbcd4e62173712b9b7c26f1b1"
+      "expectedSignature": "4c3b749c356d9cf4e507c858f11e5dc9520147bcbcd4e62173712b9b7c26f1b1",
+      "expectedPresignSignature": "036e6e5bda7d8e02c79e4d27520a2dd2229078fe99743430e5a49fad6f19bcab"
     },
     {
       "name": "query-reserved-chars",
@@ -116,7 +126,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "cc651873071ca85732640706e037ac9a3c5ffc1e56cb32f6f95db7be605a9a00"
+      "expectedSignature": "cc651873071ca85732640706e037ac9a3c5ffc1e56cb32f6f95db7be605a9a00",
+      "expectedPresignSignature": "5a429d48569132ccc905379a39d463ec5ac43742ef4df79b39ecba5ef8a34217"
     },
     {
       "name": "query-empty-value",
@@ -125,7 +136,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "b214645cb5aba2c3a6ae4ca5b8903a14623dd4a47d4be4d77a08b8fbd5b43e0f"
+      "expectedSignature": "b214645cb5aba2c3a6ae4ca5b8903a14623dd4a47d4be4d77a08b8fbd5b43e0f",
+      "expectedPresignSignature": "9817e9e3da032ec10f9248b1befc2ba8239c8eca941f35e49e8413e7db39aa9b"
     },
     {
       "name": "query-plus-in-value",
@@ -134,7 +146,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "3b9db0dabfbc7ec10d0265f6438ffae6ffbff11c19944e1293a8bd7a2905a76d"
+      "expectedSignature": "3b9db0dabfbc7ec10d0265f6438ffae6ffbff11c19944e1293a8bd7a2905a76d",
+      "expectedPresignSignature": "38c43560db39571d584f537123f3ed29e947c8c84bf2cfdb71b09c0b874771b6"
     },
     {
       "name": "query-unicode-value",
@@ -143,7 +156,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "4195b0f9c6747b571db69b6214b1382c967d89e372c0ac09da9d57aa791f2e02"
+      "expectedSignature": "4195b0f9c6747b571db69b6214b1382c967d89e372c0ac09da9d57aa791f2e02",
+      "expectedPresignSignature": "6de921430d8f9e36893045d72e85c20768e266c2465753b843cce5c6e8678e7a"
     },
     {
       "name": "three-duplicate-keys",
@@ -152,7 +166,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "dcef8b2e9651ce96b714cffd391b0e059cf54efb52f2c2274a97a6ea79a95300"
+      "expectedSignature": "dcef8b2e9651ce96b714cffd391b0e059cf54efb52f2c2274a97a6ea79a95300",
+      "expectedPresignSignature": "6af8cddd61670d30bcb8cbffab2b242383979c4f4b8dea29d67026dc4b1cda65"
     },
     {
       "name": "put-with-body",
@@ -172,7 +187,8 @@
       },
       "body": null,
       "signPayload": true,
-      "expectedSignature": "9dbf33fbf546b9ce1e257bd1674c01f5ebcd585b3a84ebdea5c5c15699a1bd08"
+      "expectedSignature": "9dbf33fbf546b9ce1e257bd1674c01f5ebcd585b3a84ebdea5c5c15699a1bd08",
+      "expectedPresignSignature": "ed328f0808dd1a1c5752925f0c1c86b0d817f08a9d2fe43d10f91decc9fe8809"
     },
     {
       "name": "header-value-needs-trim",
@@ -183,7 +199,8 @@
       },
       "body": null,
       "signPayload": true,
-      "expectedSignature": "20c3a7b9ac1f2710e90fbceb53f0d66a91f17cba5da41e030d2f73cddede8d38"
+      "expectedSignature": "20c3a7b9ac1f2710e90fbceb53f0d66a91f17cba5da41e030d2f73cddede8d38",
+      "expectedPresignSignature": "899de09c4cc5b428edaa2d9ac013896750e5e2da6d5e6afaaa3aebe0db1b2c9d"
     },
     {
       "name": "non-default-port",
@@ -192,7 +209,8 @@
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "9cf50958f23df2c14ebcad2c9a5f313bc9202cdb0e47bc62fdde7b3a9620a9ca"
+      "expectedSignature": "9cf50958f23df2c14ebcad2c9a5f313bc9202cdb0e47bc62fdde7b3a9620a9ca",
+      "expectedPresignSignature": "6ffa9511686cc6df3c75e29120f767320855908f065470fe759e942e0fc8676a"
     },
     {
       "name": "empty-body-post-signed",
@@ -211,7 +229,8 @@
       "body": null,
       "signPayload": true,
       "sessionToken": "AQoEXAMPLEsessiontokenValue==",
-      "expectedSignature": "badf0300c8826a16a59e184f032a278cd82cdec542824cb782d8dfdc63df4bfb"
+      "expectedSignature": "badf0300c8826a16a59e184f032a278cd82cdec542824cb782d8dfdc63df4bfb",
+      "expectedPresignSignature": "6bc0b81ea305330fd01ee68b371a61b0b74d775f63ebca63f98616b031d164ae"
     },
     {
       "name": "session-token-with-body",

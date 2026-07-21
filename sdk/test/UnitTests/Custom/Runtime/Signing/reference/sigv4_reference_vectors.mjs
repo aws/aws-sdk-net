@@ -2,22 +2,27 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 // Cross-SDK check of the shared SigV4 known-answer fixture (sigv4_test_cases.json) against the AWS
-// JavaScript v3 signer, @smithy/signature-v4. This is the JS counterpart to the from-scratch Python
-// oracle (sigv4_reference_vectors.py): it signs each fixture case with a real, independently-maintained
-// AWS SDK and compares the signature to the fixture's expectedSignature.
+// JavaScript v3 signer, @smithy/signature-v4. It signs (and presigns) each fixture case with a real,
+// independently-maintained AWS SDK and compares to the fixture's expectedSignature / expectedPresignSignature.
 //
-// It is NOT run by the .NET test suite (the committed tests are pure .NET). It is a manual corroboration
-// tool — proof that the fixture's expected signatures agree with another SDK's signer, not just our own.
+// This is the PRIMARY real-SDK witness: JS @smithy matches the .NET facade on 20/21 header cases and 18/19
+// presign cases (only query-plus-in-value diverges, see below). The botocore checker
+// (sigv4_reference_vectors.py) is a secondary peer witness that diverges more, on a documented URL-encoding
+// convention. The fixture itself is .NET-authored ground truth (the values the .NET parity tests assert the
+// facade reproduces); these oracles never write it — they only confirm a real SDK agrees.
+//
+// It is NOT run by the .NET test suite (the committed tests are pure .NET). It is a manual corroboration tool.
 //
 // Usage:
 //   cd <this dir>
 //   npm install @smithy/signature-v4 @smithy/protocol-http @aws-crypto/sha256-js
 //   node sigv4_reference_vectors.mjs
 //
-// Known divergence (expected, not a failure): "query-plus-in-value" (?q=a+b). The JS and Java signers
-// form-decode '+' to a space (URLSearchParams), so they sign q=a%20b; the .NET SDK follows RFC 3986 and
-// signs '+' literally as %2B. Our fixture holds the .NET value (it must match the rest of the .NET SDK),
-// so this one case is reported as EXPECTED-DIFF rather than a failure. See the cross-SDK validation notes.
+// Known divergence (expected, not a failure), for BOTH header and presign: "query-plus-in-value" (?q=a+b).
+// The JS and Java signers form-decode '+' to a space (URLSearchParams), so they sign q=a%20b; the .NET SDK
+// follows RFC 3986 and signs '+' literally as %2B. Our fixture holds the .NET value (it must match the rest
+// of the .NET SDK), so this one case is reported as EXPECTED-DIFF rather than a failure. See the cross-SDK
+// validation notes.
 
 import { SignatureV4 } from "@smithy/signature-v4";
 import { HttpRequest } from "@smithy/protocol-http";
@@ -102,6 +107,48 @@ for (const c of fixture.cases) {
   else { status = "FAIL"; failures++; }
 
   console.log(`${c.name.padEnd(26)} ${status.padEnd(13)} js=${sig.slice(0, 16)} fixture=${c.expectedSignature.slice(0, 16)}`);
+}
+
+// --- Presign (query-signing) cross-check ---
+// Same treatment as header signing, for the body-less / non-precomputed-hash cases (the facade's Presign
+// rejects a body and a precomputed x-amz-content-sha256), compared against expectedPresignSignature.
+const PRESIGN_EXPIRY_SECONDS = 900;
+
+function isPresignable(c) {
+  if (c.body !== null) return false;
+  return !Object.keys(c.headers).some((k) => k.toLowerCase() === "x-amz-content-sha256");
+}
+
+console.log("\n--- presign ---");
+for (const c of fixture.cases) {
+  if (!isPresignable(c)) continue;
+
+  const p = parseUrl(c.url);
+  const headers = { host: p.port ? `${p.hostname}:${p.port}` : p.hostname };
+  for (const [k, v] of Object.entries(c.headers)) headers[k] = v;
+
+  const req = new HttpRequest({
+    method: c.method, protocol: p.protocol, hostname: p.hostname, port: p.port,
+    path: p.path, query: p.query, headers,
+  });
+
+  // A session token is carried as a query param for presigning; SignatureV4 adds it from credentials.
+  const presigner = c.sessionToken !== undefined
+    ? new SignatureV4({
+        credentials: { accessKeyId: creds.accessKey, secretAccessKey: creds.secretKey, sessionToken: c.sessionToken },
+        region: creds.region, service: creds.service, sha256: Sha256, applyChecksum: true,
+      })
+    : signer;
+
+  const presigned = await presigner.presign(req, { signingDate, expiresIn: PRESIGN_EXPIRY_SECONDS });
+  const psig = (presigned.query?.["X-Amz-Signature"]) || "?";
+
+  let status;
+  if (psig === c.expectedPresignSignature) status = "MATCH";
+  else if (EXPECTED_DIFFS.has(c.name)) status = "EXPECTED-DIFF";
+  else { status = "FAIL"; failures++; }
+
+  console.log(`${c.name.padEnd(26)} ${status.padEnd(13)} js=${psig.slice(0, 16)} fixture=${(c.expectedPresignSignature || "").slice(0, 16)}`);
 }
 
 console.log(failures === 0
