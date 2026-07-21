@@ -551,6 +551,21 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
             #endregion
         }
 
+        public void InvoicingSendProcurementPortalValidation()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.SendProcurementPortalValidation(new SendProcurementPortalValidationRequest 
+            {
+                ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
+            });
+
+            string procurementPortalPreferenceArn = response.ProcurementPortalPreferenceArn;
+
+            #endregion
+        }
+
         public void InvoicingTagResource()
         {
             #region example-1
@@ -640,6 +655,22 @@ namespace AWSSDKDocSamples.Amazon.Invoicing.Generated
                 ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd",
                 PurchaseOrderRetrievalPreferenceStatus = "SUSPENDED",
                 PurchaseOrderRetrievalPreferenceStatusReason = "suspended example reason"
+            });
+
+            string procurementPortalPreferenceArn = response.ProcurementPortalPreferenceArn;
+
+            #endregion
+        }
+
+        public void InvoicingVerifyProcurementPortalValidation()
+        {
+            #region example-1
+
+            var client = new AmazonInvoicingClient();
+            var response = client.VerifyProcurementPortalValidation(new VerifyProcurementPortalValidationRequest 
+            {
+                Code = "validation-code-123",
+                ProcurementPortalPreferenceArn = "arn:aws:invoicing::111111111111:procurement-portal-preference/f71dd02e-f855-4b13-b793-0fd25c0b3ecd"
             });
 
             string procurementPortalPreferenceArn = response.ProcurementPortalPreferenceArn;

@@ -610,6 +610,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeStandards(Amazon.SecurityHub.Model.DescribeStandardsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeStandards(Amazon.SecurityHub.Model.DescribeStandardsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeStandardsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.DescribeStandardsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns a list of available security standards from a specified provider.
+                </para>
+                <code
+                    title="To get available Azure security standards"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-available-azure-standards-1719014400000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.DescribeStandardsControls(Amazon.SecurityHub.Model.DescribeStandardsControlsRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.DescribeStandardsControls(Amazon.SecurityHub.Model.DescribeStandardsControlsRequest)" />
             <member name="T:Amazon.SecurityHub.Model.DescribeStandardsControlsRequest" />
@@ -1234,6 +1253,25 @@
                     title="To list security controls that apply to a standard"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-list-security-controls-that-apply-to-a-standard-1678386912894" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListSecurityControlDefinitions(Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListSecurityControlDefinitions(Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListSecurityControlDefinitionsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListSecurityControlDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists security control definitions for a specified provider.
+                </para>
+                <code
+                    title="To list Azure security control definitions"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-azure-security-control-definitions-1719014400000" />
             </example>
         </value>
     </doc>

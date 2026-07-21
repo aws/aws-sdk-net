@@ -737,6 +737,23 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubDescribeStandards()
+        {
+            #region to-get-available-azure-standards-1719014400000
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.DescribeStandards(new DescribeStandardsRequest 
+            {
+                Providers = new List<string> {
+                    "Azure"
+                }
+            });
+
+            List<Standard> standards = response.Standards;
+
+            #endregion
+        }
+
         public void SecurityHubDescribeStandardsControls()
         {
             #region to-get-a-list-of-controls-for-a-security-standard-1676308027759
@@ -1273,6 +1290,25 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
                 MaxResults = 3,
                 NextToken = "NULL",
                 StandardsArn = "arn:aws:securityhub:::standards/aws-foundational-security-best-practices/v/1.0.0"
+            });
+
+            string nextToken = response.NextToken;
+            List<SecurityControlDefinition> securityControlDefinitions = response.SecurityControlDefinitions;
+
+            #endregion
+        }
+
+        public void SecurityHubListSecurityControlDefinitions()
+        {
+            #region to-list-azure-security-control-definitions-1719014400000
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.ListSecurityControlDefinitions(new ListSecurityControlDefinitionsRequest 
+            {
+                MaxResults = 3,
+                Providers = new List<string> {
+                    "Azure"
+                }
             });
 
             string nextToken = response.NextToken;
