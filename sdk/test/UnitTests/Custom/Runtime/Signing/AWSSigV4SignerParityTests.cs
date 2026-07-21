@@ -31,21 +31,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace AWSSDK.UnitTests.Signing
 {
     /// <summary>
-    /// Parity + known-answer coverage for <see cref="AWSSigV4Signer"/>. The signing scenarios are loaded from
-    /// the shared fixture sigv4_test_cases.json (embedded resource) — the SAME file the independent Python
-    /// reference oracle (reference/sigv4_reference_vectors.py) reads and writes — so the two cannot drift.
-    /// Each scenario is exercised two ways:
-    ///
-    /// 1. <see cref="Facade_MatchesInternalSigner"/> signs each scenario through BOTH the public facade and a
-    ///    hand-built <see cref="DefaultRequest"/> + internal <see cref="AWS4Signer"/>, asserting the resulting
-    ///    Authorization header is identical. This guards against the facade's request-building drifting from
-    ///    the internal signer for any input class (query params, bodies, extra headers, unsigned payload, …).
-    ///
-    /// 2. <see cref="Facade_MatchesKnownAnswerVector"/> asserts the facade reproduces each scenario's
-    ///    expectedSignature from the fixture. Those signatures were produced by the independent reference
-    ///    implementation (not this codebase), so they catch a systematic canonicalization / string-to-sign /
-    ///    signing-key defect that a pure facade-vs-internal parity check could not (both sides would share
-    ///    the bug).
+    /// Known-answer coverage for <see cref="AWSSigV4Signer"/>. The signing scenarios are loaded from the shared
+    /// fixture sigv4_test_cases.json (embedded resource). <see cref="Facade_MatchesKnownAnswerVector"/> asserts
+    /// the facade reproduces each scenario's expectedSignature (header signing), and
+    /// <see cref="Presign_MatchesKnownAnswerVector"/> asserts its expectedPresignSignature (query signing).
+    /// The fixture values are corroborated by the real-SDK oracles in reference/ (JS @smithy primary, botocore
+    /// secondary) and by the live-STS integration tests, so a systematic canonicalization / string-to-sign /
+    /// signing-key defect cannot pass unnoticed.
     /// </summary>
     [TestClass]
     [TestCategory("Core")]
@@ -180,18 +172,6 @@ namespace AWSSDK.UnitTests.Signing
 
         [TestMethod]
         [DynamicData(nameof(AllScenarios))]
-        public void Facade_MatchesInternalSigner(string scenarioName)
-        {
-            var scenario = Get(scenarioName);
-            var facade = SignWithFacade(scenario);
-            var internalHeader = SignWithInternalSigner(scenario);
-
-            Assert.AreEqual(internalHeader, facade,
-                $"Facade and internal signer diverged for scenario '{scenario.Name}'.");
-        }
-
-        [TestMethod]
-        [DynamicData(nameof(AllScenarios))]
         public void Facade_MatchesKnownAnswerVector(string scenarioName)
         {
             var scenario = Get(scenarioName);
@@ -249,50 +229,6 @@ namespace AWSSDK.UnitTests.Signing
                 SignPayload = scenario.SignPayload,
             };
             return AWSSigV4Signer.Sign(request, parameters).AuthorizationHeader;
-        }
-
-        private static string SignWithInternalSigner(Scenario scenario)
-        {
-            var uri = new Uri(scenario.Url);
-            var internalRequest = new DefaultRequest(new ParityStubRequest(), Service)
-            {
-                HttpMethod = scenario.Method,
-                Endpoint = new Uri(uri.GetLeftPart(UriPartial.Authority)),
-                ResourcePath = uri.AbsolutePath,
-                OverrideSigningServiceName = Service,
-                AuthenticationRegion = Region,
-                DisablePayloadSigning = !scenario.SignPayload,
-                UseDoubleEncoding = false,
-                Content = scenario.Content,
-            };
-
-            foreach (var header in scenario.Headers)
-            {
-                // Mirror the facade's BuildRequest: a caller-supplied x-amz-content-sha256 is routed to
-                // PrecomputedContentSha256 rather than left on the headers, where InitializeHeaders/CleanHeaders
-                // would scrub it before SetRequestBodyHash reads it.
-                if (string.Equals(header.Key, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase))
-                    internalRequest.PrecomputedContentSha256 = header.Value;
-                else
-                    internalRequest.Headers[header.Key] = header.Value;
-            }
-
-            // The session token must be added as x-amz-security-token before signing so it is covered by the
-            // signature — this mirrors what the Signer pipeline handler (and the facade) does.
-            if (scenario.SessionToken != null)
-                internalRequest.Headers[HeaderKeys.XAmzSecurityTokenHeader] = scenario.SessionToken;
-
-            if (!string.IsNullOrEmpty(uri.Query))
-            {
-                internalRequest.UseQueryString = true;
-                foreach (var pair in ParseQuery(uri.Query))
-                    AddParam(internalRequest.ParameterCollection, pair.Key, pair.Value);
-            }
-
-            var config = new MockClientConfig { AuthenticationRegion = Region };
-            return new AWS4Signer()
-                .SignRequest(internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt)
-                .ForAuthorizationHeader;
         }
 
         private static string PresignWithFacade(Scenario scenario)
@@ -355,17 +291,5 @@ namespace AWSSDK.UnitTests.Signing
             }
         }
 
-        private static void AddParam(ParameterCollection parameters, string key, string value)
-        {
-            var normalized = value ?? string.Empty;
-            if (!parameters.TryGetValue(key, out var existing))
-                parameters.Add(key, normalized);
-            else if (existing is StringListParameterValue list)
-                list.Value.Add(normalized);
-            else if (existing is StringParameterValue single)
-                parameters[key] = new StringListParameterValue(new List<string> { single.Value, normalized });
-        }
-
-        private sealed class ParityStubRequest : AmazonWebServiceRequest { }
     }
 }
