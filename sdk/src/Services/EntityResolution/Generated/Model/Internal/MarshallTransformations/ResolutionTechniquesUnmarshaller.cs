@@ -56,6 +56,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("enableRealTimeMatching", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableRealTimeMatching = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("providerProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = ProviderPropertiesUnmarshaller.Instance;

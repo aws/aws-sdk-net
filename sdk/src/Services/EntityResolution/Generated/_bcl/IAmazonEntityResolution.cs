@@ -350,8 +350,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
-        /// incremental processing is not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>PROVIDER</c>, incremental processing
+        /// is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -391,8 +391,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
-        /// incremental processing is not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>PROVIDER</c>, incremental processing
+        /// is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -2343,8 +2343,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
-        /// incremental processing is not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>PROVIDER</c>, incremental processing
+        /// is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -2377,8 +2377,8 @@ namespace Amazon.EntityResolution
         /// 
         ///  <important> 
         /// <para>
-        /// For workflows where <c>resolutionType</c> is <c>ML_MATCHING</c> or <c>PROVIDER</c>,
-        /// incremental processing is not supported. 
+        /// For workflows where <c>resolutionType</c> is <c>PROVIDER</c>, incremental processing
+        /// is not supported. 
         /// </para>
         ///  </important>
         /// </summary>
