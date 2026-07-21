@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SecurityConfigurationData Object
+    /// Response Unmarshaller for IdentityCenterConfiguration Object
     /// </summary>  
-    public class SecurityConfigurationDataUnmarshaller : IJsonUnmarshaller<SecurityConfigurationData, JsonUnmarshallerContext>
+    public class IdentityCenterConfigurationUnmarshaller : IJsonUnmarshaller<IdentityCenterConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SecurityConfigurationData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public IdentityCenterConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SecurityConfigurationData unmarshalledObject = new SecurityConfigurationData();
+            IdentityCenterConfiguration unmarshalledObject = new IdentityCenterConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("authenticationConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("emrIdentityCenterApplicationARN", targetDepth, ref reader))
                 {
-                    var unmarshaller = AuthenticationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmrIdentityCenterApplicationARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("authorizationConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("enableIdentityCenter", targetDepth, ref reader))
                 {
-                    var unmarshaller = AuthorizationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AuthorizationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableIdentityCenter = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("identityCenterApplicationAssignmentRequired", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.IdentityCenterApplicationAssignmentRequired = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("identityCenterInstanceARN", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IdentityCenterInstanceARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         }
 
 
-        private static SecurityConfigurationDataUnmarshaller _instance = new SecurityConfigurationDataUnmarshaller();        
+        private static IdentityCenterConfigurationUnmarshaller _instance = new IdentityCenterConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SecurityConfigurationDataUnmarshaller Instance
+        public static IdentityCenterConfigurationUnmarshaller Instance
         {
             get
             {

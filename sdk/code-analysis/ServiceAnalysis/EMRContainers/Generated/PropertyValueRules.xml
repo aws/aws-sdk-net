@@ -229,6 +229,18 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.DeleteSecurityConfigurationRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.DeleteSecurityConfigurationResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.DeleteVirtualClusterRequest.Id</property>
     <min>1</min>
     <max>64</max>
@@ -620,6 +632,22 @@
     <min>1</min>
     <max>64</max>
     <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.IAMConfiguration.SystemRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.IdentityCenterConfiguration.EmrIdentityCenterApplicationARN</property>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):sso:::application/ssoins-[0-9a-zA-Z/\\-_]+/apl-[0-9a-zA-Z/\\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.IdentityCenterConfiguration.IdentityCenterInstanceARN</property>
+    <min>10</min>
+    <max>1224</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):sso:::instance/ssoins-[0-9a-zA-Z/\\-_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.JobRun.Arn</property>

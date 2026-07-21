@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SecurityConfigurationData Marshaller
+    /// IAMConfiguration Marshaller
     /// </summary>
-    public class SecurityConfigurationDataMarshaller : IRequestMarshaller<SecurityConfigurationData, JsonMarshallerContext> 
+    public class IAMConfigurationMarshaller : IRequestMarshaller<IAMConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SecurityConfigurationData requestObject, JsonMarshallerContext context)
+        public void Marshall(IAMConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuthenticationConfiguration())
+            if(requestObject.IsSetSystemRole())
             {
-                context.Writer.WritePropertyName("authenticationConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AuthenticationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetAuthorizationConfiguration())
-            {
-                context.Writer.WritePropertyName("authorizationConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AuthorizationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthorizationConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("systemRole");
+                context.Writer.WriteStringValue(requestObject.SystemRole);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SecurityConfigurationDataMarshaller Instance = new SecurityConfigurationDataMarshaller();
+        public readonly static IAMConfigurationMarshaller Instance = new IAMConfigurationMarshaller();
 
     }
 }

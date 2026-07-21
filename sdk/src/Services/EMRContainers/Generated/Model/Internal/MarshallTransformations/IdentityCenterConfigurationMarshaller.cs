@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SecurityConfigurationData Marshaller
+    /// IdentityCenterConfiguration Marshaller
     /// </summary>
-    public class SecurityConfigurationDataMarshaller : IRequestMarshaller<SecurityConfigurationData, JsonMarshallerContext> 
+    public class IdentityCenterConfigurationMarshaller : IRequestMarshaller<IdentityCenterConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,32 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SecurityConfigurationData requestObject, JsonMarshallerContext context)
+        public void Marshall(IdentityCenterConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuthenticationConfiguration())
+            if(requestObject.IsSetEmrIdentityCenterApplicationARN())
             {
-                context.Writer.WritePropertyName("authenticationConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AuthenticationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("emrIdentityCenterApplicationARN");
+                context.Writer.WriteStringValue(requestObject.EmrIdentityCenterApplicationARN);
             }
 
-            if(requestObject.IsSetAuthorizationConfiguration())
+            if(requestObject.IsSetEnableIdentityCenter())
             {
-                context.Writer.WritePropertyName("authorizationConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("enableIdentityCenter");
+                context.Writer.WriteBooleanValue(requestObject.EnableIdentityCenter.Value);
+            }
 
-                var marshaller = AuthorizationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthorizationConfiguration, context);
+            if(requestObject.IsSetIdentityCenterApplicationAssignmentRequired())
+            {
+                context.Writer.WritePropertyName("identityCenterApplicationAssignmentRequired");
+                context.Writer.WriteBooleanValue(requestObject.IdentityCenterApplicationAssignmentRequired.Value);
+            }
 
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetIdentityCenterInstanceARN())
+            {
+                context.Writer.WritePropertyName("identityCenterInstanceARN");
+                context.Writer.WriteStringValue(requestObject.IdentityCenterInstanceARN);
             }
 
         }
@@ -73,7 +75,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SecurityConfigurationDataMarshaller Instance = new SecurityConfigurationDataMarshaller();
+        public readonly static IdentityCenterConfigurationMarshaller Instance = new IdentityCenterConfigurationMarshaller();
 
     }
 }

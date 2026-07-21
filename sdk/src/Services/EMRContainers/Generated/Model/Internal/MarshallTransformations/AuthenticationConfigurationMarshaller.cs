@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SecurityConfigurationData Marshaller
+    /// AuthenticationConfiguration Marshaller
     /// </summary>
-    public class SecurityConfigurationDataMarshaller : IRequestMarshaller<SecurityConfigurationData, JsonMarshallerContext> 
+    public class AuthenticationConfigurationMarshaller : IRequestMarshaller<AuthenticationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +42,28 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SecurityConfigurationData requestObject, JsonMarshallerContext context)
+        public void Marshall(AuthenticationConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuthenticationConfiguration())
+            if(requestObject.IsSetIamConfiguration())
             {
-                context.Writer.WritePropertyName("authenticationConfiguration");
+                context.Writer.WritePropertyName("iamConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AuthenticationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
+                var marshaller = IAMConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IamConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetAuthorizationConfiguration())
+            if(requestObject.IsSetIdentityCenterConfiguration())
             {
-                context.Writer.WritePropertyName("authorizationConfiguration");
+                context.Writer.WritePropertyName("identityCenterConfiguration");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AuthorizationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthorizationConfiguration, context);
+                var marshaller = IdentityCenterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.IdentityCenterConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -73,7 +73,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SecurityConfigurationDataMarshaller Instance = new SecurityConfigurationDataMarshaller();
+        public readonly static AuthenticationConfigurationMarshaller Instance = new AuthenticationConfigurationMarshaller();
 
     }
 }
