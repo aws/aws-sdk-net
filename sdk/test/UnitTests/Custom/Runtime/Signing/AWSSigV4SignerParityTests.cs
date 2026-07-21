@@ -61,6 +61,8 @@ namespace AWSSDK.UnitTests.Signing
             public Dictionary<string, string> Headers = new Dictionary<string, string>();
             public byte[] Content;
             public bool SignPayload = true;
+            /// <summary>Optional session token; when set, signed as the x-amz-security-token header.</summary>
+            public string SessionToken;
             /// <summary>Externally-computed expected signature (hex) from the shared fixture.</summary>
             public string ExpectedSignature;
             public override string ToString() => Name;
@@ -99,6 +101,7 @@ namespace AWSSDK.UnitTests.Signing
                         Method = c.GetProperty("method").GetString(),
                         Url = c.GetProperty("url").GetString(),
                         SignPayload = c.GetProperty("signPayload").GetBoolean(),
+                        SessionToken = c.TryGetProperty("sessionToken", out var token) ? token.GetString() : null,
                         ExpectedSignature = c.GetProperty("expectedSignature").GetString(),
                     };
                     foreach (var h in c.GetProperty("headers").EnumerateObject())
@@ -201,7 +204,9 @@ namespace AWSSDK.UnitTests.Signing
             };
             var parameters = new AWSSigningParameters
             {
-                Credentials = new BasicAWSCredentials(AccessKey, SecretKey),
+                Credentials = scenario.SessionToken != null
+                    ? (AWSCredentials)new SessionAWSCredentials(AccessKey, SecretKey, scenario.SessionToken)
+                    : new BasicAWSCredentials(AccessKey, SecretKey),
                 Region = Region,
                 Service = Service,
                 SignedAt = SignedAt,
@@ -226,7 +231,20 @@ namespace AWSSDK.UnitTests.Signing
             };
 
             foreach (var header in scenario.Headers)
-                internalRequest.Headers[header.Key] = header.Value;
+            {
+                // Mirror the facade's BuildRequest: a caller-supplied x-amz-content-sha256 is routed to
+                // PrecomputedContentSha256 rather than left on the headers, where InitializeHeaders/CleanHeaders
+                // would scrub it before SetRequestBodyHash reads it.
+                if (string.Equals(header.Key, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase))
+                    internalRequest.PrecomputedContentSha256 = header.Value;
+                else
+                    internalRequest.Headers[header.Key] = header.Value;
+            }
+
+            // The session token must be added as x-amz-security-token before signing so it is covered by the
+            // signature — this mirrors what the Signer pipeline handler (and the facade) does.
+            if (scenario.SessionToken != null)
+                internalRequest.Headers[HeaderKeys.XAmzSecurityTokenHeader] = scenario.SessionToken;
 
             if (!string.IsNullOrEmpty(uri.Query))
             {
@@ -244,11 +262,14 @@ namespace AWSSDK.UnitTests.Signing
         /// <summary>The sorted signed-header set the facade always produces, plus any extra caller headers.</summary>
         private static string ExpectedSignedHeaders(Scenario scenario)
         {
-            var names = new List<string> { "host", "x-amz-content-sha256", "x-amz-date" };
+            var names = new HashSet<string>(StringComparer.Ordinal) { "host", "x-amz-content-sha256", "x-amz-date" };
+            if (scenario.SessionToken != null)
+                names.Add("x-amz-security-token");
             foreach (var key in scenario.Headers.Keys)
-                names.Add(key.ToLowerInvariant());
-            names.Sort(StringComparer.Ordinal);
-            return string.Join(";", names);
+                names.Add(key.ToLowerInvariant());  // e.g. a caller-supplied x-amz-content-sha256 dedupes with the base set
+            var sorted = names.ToList();
+            sorted.Sort(StringComparer.Ordinal);
+            return string.Join(";", sorted);
         }
 
         private static IEnumerable<KeyValuePair<string, string>> ParseQuery(string query)

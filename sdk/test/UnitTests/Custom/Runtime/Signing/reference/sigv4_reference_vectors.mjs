@@ -70,12 +70,22 @@ let failures = 0;
 for (const c of fixture.cases) {
   const p = parseUrl(c.url);
   const headers = { host: p.port ? `${p.hostname}:${p.port}` : p.hostname };
-  for (const [k, v] of Object.entries(c.headers)) headers[k] = v;
+  let precomputedHash;
+  for (const [k, v] of Object.entries(c.headers)) {
+    // A caller-supplied x-amz-content-sha256 is the precomputed-hash escape hatch: use it verbatim as the
+    // body hash rather than adding it as a separate caller header.
+    if (k.toLowerCase() === "x-amz-content-sha256") precomputedHash = v;
+    else headers[k] = v;
+  }
   const bodyBytes = c.body === null ? Buffer.from("") : Buffer.from(c.body);
   // Force the same signed-header set the .NET facade always uses.
-  headers["x-amz-content-sha256"] = c.signPayload
-    ? createHash("sha256").update(bodyBytes).digest("hex")
-    : "UNSIGNED-PAYLOAD";
+  headers["x-amz-content-sha256"] = precomputedHash !== undefined
+    ? precomputedHash
+    : c.signPayload
+      ? createHash("sha256").update(bodyBytes).digest("hex")
+      : "UNSIGNED-PAYLOAD";
+  // A session token is signed as the x-amz-security-token header (temporary credentials).
+  if (c.sessionToken !== undefined) headers["x-amz-security-token"] = c.sessionToken;
 
   const req = new HttpRequest({
     method: c.method, protocol: p.protocol, hostname: p.hostname, port: p.port,

@@ -97,12 +97,29 @@ def compute_signature(case, creds):
     c_path = canonical_path(wire_path)
     c_query = canonical_query(split.query)
 
-    if not case["signPayload"]:
+    # A caller-supplied x-amz-content-sha256 header is the precomputed-hash escape hatch: the signer uses
+    # it verbatim as the body hash instead of hashing the body. Pull it out of the caller headers (it is
+    # always a signed header via the base three below, so it must not be added twice).
+    precomputed_hash = None
+    caller_headers = {}
+    for k, v in case["headers"].items():
+        if k.lower() == "x-amz-content-sha256":
+            precomputed_hash = v
+        else:
+            caller_headers[k] = v
+
+    if precomputed_hash is not None:
+        body_hash = precomputed_hash
+    elif not case["signPayload"]:
         body_hash = "UNSIGNED-PAYLOAD"
     else:
         body = case["body"]
         body_bytes = body.encode("utf-8") if body is not None else b""
         body_hash = hashlib.sha256(body_bytes).hexdigest()
+
+    # A session token is added as the x-amz-security-token header before signing, so it is covered by the
+    # signature (this is what the facade does for temporary credentials).
+    session_token = case.get("sessionToken")
 
     def canon_header_value(v):
         # SigV4: trim leading/trailing spaces and collapse sequential spaces to one.
@@ -111,12 +128,17 @@ def compute_signature(case, creds):
     header_lines = [f"host:{host}",
                     f"x-amz-content-sha256:{body_hash}",
                     f"x-amz-date:{creds['amzDate']}"]
-    for k, v in case["headers"].items():
+    if session_token is not None:
+        header_lines.append(f"x-amz-security-token:{canon_header_value(session_token)}")
+    for k, v in caller_headers.items():
         header_lines.append(f"{k.lower()}:{canon_header_value(v)}")
     header_lines.sort()
     canonical_headers = "".join(line + "\n" for line in header_lines)
-    signed_headers = ";".join(sorted(
-        ["host", "x-amz-content-sha256", "x-amz-date"] + [k.lower() for k in case["headers"]]))
+    signed_header_names = ["host", "x-amz-content-sha256", "x-amz-date"]
+    if session_token is not None:
+        signed_header_names.append("x-amz-security-token")
+    signed_header_names += [k.lower() for k in caller_headers]
+    signed_headers = ";".join(sorted(signed_header_names))
 
     canonical_request = "\n".join([method, c_path, c_query, canonical_headers, signed_headers, body_hash])
 

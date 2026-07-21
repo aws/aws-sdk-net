@@ -202,6 +202,37 @@
       "body": "",
       "signPayload": true,
       "expectedSignature": "3ad5e249949a59b862eedd9f1bf1ece4693c3042bf860ef5e3351b8925316f98"
+    },
+    {
+      "name": "session-token",
+      "method": "GET",
+      "url": "https://example.amazonaws.com/",
+      "headers": {},
+      "body": null,
+      "signPayload": true,
+      "sessionToken": "AQoEXAMPLEsessiontokenValue==",
+      "expectedSignature": "badf0300c8826a16a59e184f032a278cd82cdec542824cb782d8dfdc63df4bfb"
+    },
+    {
+      "name": "session-token-with-body",
+      "method": "POST",
+      "url": "https://example.amazonaws.com/",
+      "headers": {},
+      "body": "hello world",
+      "signPayload": true,
+      "sessionToken": "AQoEXAMPLEsessiontokenValue==",
+      "expectedSignature": "e200baddcbc689904757630b2935c21db6aedda0ef60ecb88ebfe07669f57e9d"
+    },
+    {
+      "name": "precomputed-content-hash",
+      "method": "PUT",
+      "url": "https://example.amazonaws.com/upload",
+      "headers": {
+        "x-amz-content-sha256": "b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9"
+      },
+      "body": null,
+      "signPayload": true,
+      "expectedSignature": "f76c41fe9c95eb462d3b829666a064d0195b5f7dd79b0145b3f54238985440b9"
     }
   ]
 }
