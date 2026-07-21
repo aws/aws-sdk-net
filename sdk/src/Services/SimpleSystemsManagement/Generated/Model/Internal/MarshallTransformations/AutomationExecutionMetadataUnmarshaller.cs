@@ -242,6 +242,12 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
                     unmarshalledObject.TriggeredAlarms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("WarningMessage", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.WarningMessage = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
