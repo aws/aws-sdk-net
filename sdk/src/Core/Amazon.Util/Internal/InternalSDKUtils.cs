@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Net;
 using System.Text.RegularExpressions;
 using Amazon.Runtime.Internal.Util;
@@ -290,17 +291,43 @@ namespace Amazon.Util.Internal
         /// <summary>
         /// Tests if the filePath is rooted with the directoryPath when resolved. The filePath and
         /// directoryPath do not need to exist to call this method.
+        /// <para>
+        /// Paths are compared case-insensitively on Windows and case-sensitively on other platforms.
+        /// Callers that know the target filesystem's case-sensitivity (for example after probing it)
+        /// should use the overload that accepts a <see cref="StringComparison"/> to avoid treating
+        /// case-variant sibling directories as contained.
+        /// </para>
         /// </summary>
         /// <param name="filePath">The filePath to test against the directoryPath.</param>
         /// <param name="directoryPath">The directoryPath to use as root in the test.</param>
         /// <returns>true if directoryPath is root of filePath else false</returns>
         public static bool IsFilePathRootedWithDirectoryPath(string filePath, string directoryPath)
         {
+            return IsFilePathRootedWithDirectoryPath(filePath, directoryPath, DefaultPathComparison);
+        }
+
+        /// <summary>
+        /// Tests if the filePath is rooted with the directoryPath when resolved, using the supplied
+        /// comparison to match path components. The filePath and directoryPath do not need to exist
+        /// to call this method.
+        /// </summary>
+        /// <param name="filePath">The filePath to test against the directoryPath.</param>
+        /// <param name="directoryPath">The directoryPath to use as root in the test.</param>
+        /// <param name="pathComparison">
+        /// The comparison used to match path components. Use <see cref="StringComparison.Ordinal"/>
+        /// for case-sensitive filesystems and <see cref="StringComparison.OrdinalIgnoreCase"/> for
+        /// case-insensitive ones. Culture-sensitive comparisons must not be used here: they treat
+        /// characters such as Unicode default-ignorable code points as equal, which lets crafted
+        /// paths pass the containment check.
+        /// </param>
+        /// <returns>true if directoryPath is root of filePath else false</returns>
+        public static bool IsFilePathRootedWithDirectoryPath(string filePath, string directoryPath, StringComparison pathComparison)
+        {
             //Construct a local directory path that always ends with the directory separator char. This
             //ensures our directory starts with test doesn't allow files that start with the directory
-            //to be popped off the path to fake out the test: 
+            //to be popped off the path to fake out the test:
             //LocalDirectory = a\b\c
-            //FilePath = a\b\c\..\ctest.txt            
+            //FilePath = a\b\c\..\ctest.txt
 
             var dirTestPath = directoryPath;
             if (!dirTestPath.EndsWith(Path.DirectorySeparatorChar.ToString()))
@@ -311,8 +338,23 @@ namespace Amazon.Util.Internal
             var dirInfo = new DirectoryInfo(dirTestPath);
             var fileInfo = new FileInfo(filePath);
 
-            //Test if the target file is a child of directoryPath
-            return fileInfo.FullName.StartsWith(dirInfo.FullName);
+            // Test if the target file is a child of directoryPath.
+            return fileInfo.FullName.StartsWith(dirInfo.FullName, pathComparison);
+        }
+
+        // Windows filesystems are case-insensitive; other platforms are case-sensitive by default.
+        private static StringComparison DefaultPathComparison
+        {
+            get
+            {
+#if NETSTANDARD
+                return RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
+                    ? StringComparison.OrdinalIgnoreCase
+                    : StringComparison.Ordinal;
+#else
+                return StringComparison.OrdinalIgnoreCase;
+#endif
+            }
         }
 
         /// <summary>

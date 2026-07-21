@@ -417,6 +417,12 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Custom parameters to include in the signed request, so that they are tamper-proof.
+        /// <para>
+        /// Only covered by the signature under SigV4/SigV4a. When the request would be signed with SigV2
+        /// (<see cref="Expires"/> more than 7 days out in a region that still accepts SigV2),
+        /// <see cref="Amazon.S3.AmazonS3Client.GetPreSignedURL"/> throws <see cref="System.InvalidOperationException"/>
+        /// rather than emit a URL whose parameters are unsigned and can be tampered with.
+        /// </para>
         /// </summary>
         public ParameterCollection Parameters {
             get {

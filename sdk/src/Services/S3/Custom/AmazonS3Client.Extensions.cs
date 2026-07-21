@@ -352,6 +352,14 @@ namespace Amazon.S3
                     if (secondsUntilExpiration > AWS4PreSignedUrlSigner.MaxAWS4PreSignedUrlExpiry &&
                         _sigV2SupportedRegions.Contains(endpoint?.SystemName))
                     {
+                        // SigV2 leaves custom parameters unsigned, so fail closed rather than silently
+                        // produce a URL whose parameters can be tampered with.
+                        if (request.Parameters.Count > 0)
+                            throw new InvalidOperationException(
+                                "Custom parameters in GetPreSignedUrlRequest.Parameters are only signature-protected " +
+                                "under SigV4/SigV4a, but this request requires SigV2 because Expires is more than 7 days " +
+                                "in the future. Set Expires to 7 days or fewer, or remove the custom parameters.");
+
                         signatureVersionToUse = SignatureVersion.SigV2;
                     }
                 }

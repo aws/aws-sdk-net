@@ -37,6 +37,11 @@ namespace Amazon.S3.Transfer.Internal
 
         private readonly Logger _logger = Logger.GetLogger(typeof(DownloadDirectoryCommand));
 
+        // Case-sensitivity of the local target directory, resolved once from the actual filesystem before
+        // downloads start. Null when it hasn't been probed (the case-sensitivity check was skipped), in which
+        // case the path-containment guard uses its platform default.
+        private bool? _localDirectoryIsCaseSensitive;
+
         internal DownloadDirectoryCommand(IAmazonS3 s3Client, TransferUtilityDownloadDirectoryRequest request, TransferUtilityConfig config)
         : this(s3Client, request, config, useMultipartDownload: false)
         {
@@ -108,7 +113,10 @@ namespace Amazon.S3.Transfer.Internal
                 _logger.DebugFormat("DownloadDirectoryCommand.CheckIfKeysDifferByCase: Skipping case sensitivity check as per configuration.");
                 return;
             }
+
             var isCaseSensitive = FileSystemHelper.IsDirectoryCaseSensitive(this._request.LocalDirectory);
+            _localDirectoryIsCaseSensitive = isCaseSensitive;
+
             if (isCaseSensitive)
             {
                 _logger.DebugFormat("DownloadDirectoryCommand.CheckIfKeysDifferByCase: Target directory is case-sensitive, skipping check.");
@@ -346,7 +354,11 @@ namespace Amazon.S3.Transfer.Internal
         /// </summary>
         private Task ValidateDownloadPath(string filePath)
         {
-            if (!InternalSDKUtils.IsFilePathRootedWithDirectoryPath(filePath, _request.LocalDirectory))
+            var isContained = _localDirectoryIsCaseSensitive.HasValue
+                ? InternalSDKUtils.IsFilePathRootedWithDirectoryPath(filePath, _request.LocalDirectory, _localDirectoryIsCaseSensitive.Value ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase)
+                : InternalSDKUtils.IsFilePathRootedWithDirectoryPath(filePath, _request.LocalDirectory);
+
+            if (!isContained)
             {
                 throw new AmazonClientException(
                     $"The file {filePath} is not allowed outside of the target directory {_request.LocalDirectory}.");
