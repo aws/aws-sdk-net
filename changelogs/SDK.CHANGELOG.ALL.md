@@ -1,3 +1,29 @@
+### 4.0.294.0 (2026-07-22 18:11 UTC)
+* ARCRegionswitch (4.0.101.0)
+	* Adds support for a client token in StartPlanExecution to make plan execution requests idempotent for safe retries.
+* CloudWatch (4.0.103.0)
+	* Adds documented value constraints for CloudWatch Log Alarm scheduled query configuration fields, and makes LogGroupIdentifiers optional for log alarms.
+* ElasticLoadBalancingV2 (4.0.101.2)
+	* This adds CLI examples for the IpAddressType field on SourceIpConfig, enabling Network Load Balancer listener rules to match traffic based on whether the source IP is IPv4 or IPv6.
+* GuardDuty (4.0.103.0)
+	* Amazon GuardDuty now returns filter lifecycle metadata in GetFilter responses. The response includes createdAt and updatedAt timestamps and a version number that increments on each update, giving you visibility into when a filter was created and last modified.
+* ObservabilityAdmin (4.0.102.0)
+	* Enablement for ALB and Bedrock Knowledge Base logs via Observability Admin Telemetry Rule for account and organization level
+* PartnerCentralAccount (4.0.101.0)
+	* Adds Qualifications Association APIs that enable partners to associate a subsidiary account's qualifications with a primary account. Once associated, qualifications are shared across all connected accounts and scorecards are consolidated. Partners can start and track association and disassociation.
+* PCS (4.0.101.0)
+	* AWS PCS Node Lifecycle Actions provides a structured way to run custom scripts at defined points in a compute node's lifecycle directly through the AWS PCS compute node group API.
+* PrometheusService (4.0.101.0)
+	* Add CloudWatch dataset destinations for Amazon Managed Service for Prometheus collectors.
+* S3 (4.0.101.4)
+	* `AmazonS3Client.GetPreSignedURL` now throws `InvalidOperationException` when custom `Parameters` are set and the expiration is more than 7 days out, instead of silently falling back to SigV2. SigV2 does not sign custom parameters, so those URLs could be tampered with.
+* SimpleEmailV2 (4.0.102.0)
+	* Launching DEED and MREP in US GOV
+* Core 4.0.100.8
+	* Consolidate .NET build target configuration to a single Directory.Build.props file
+	* Fixed the directory containment check in `InternalSDKUtils.IsFilePathRootedWithDirectoryPath` to use an ordinal string comparison. The previous culture-sensitive comparison could let certain crafted paths pass as being inside the target directory, affecting `S3 TransferUtility.DownloadDirectory` and `S3DirectoryInfo.CopyToLocal/MoveToLocal`.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.293.0 (2026-07-21 18:12 UTC)
 * EMRContainers (4.0.102.0)
 	* Added support for the DeleteSecurityConfiguration API, which allows customers to delete security configurations in Amazon EMR on EKS. Also added authenticationConfiguration in securityConfigurationdata structure.
