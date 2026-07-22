@@ -1,12 +1,13 @@
 name: Build SDK V4
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
     branches:
       - development
 
 concurrency:
-  group: build-sdk-v4
-  cancel-in-progress: false
+  group: build-sdk-v4-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   # constants
@@ -18,6 +19,8 @@ env:
 
 jobs:
   build-sdk-v4:
+    # Skip draft PRs and PRs from forked repos (they don't have access)
+    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
       id-token: write
