@@ -72,6 +72,40 @@ public class ClientInterfaceWriterTests
     }
 
     [Fact]
+    public void EmitsDetermineServiceOperationEndpoint()
+    {
+        // Declared unconditionally in both C2J interface variants (_bcl and _netstandard); part of
+        // the public API surface of every service interface.
+        Assert.Contains("Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);", _output);
+    }
+
+    // IAmazonService declares static abstract factory members behind NET8_0_OR_GREATER
+    // (IAmazonService.cs); every service interface must implement them or the net8.0 build of any
+    // consumer fails with CS0535. The C2J generator emits them as explicit static interface
+    // implementations on the service interface (see the checked-in _netstandard variant); consumed
+    // by AWSSDK.Extensions.NETCore.Setup for dependency-injection client construction.
+    [Fact]
+    public void EmitsNet8StaticFactoryMembers()
+    {
+        Assert.Contains("#if NET8_0_OR_GREATER", _output);
+        Assert.Contains("static ClientConfig IAmazonService.CreateDefaultClientConfig() => new AmazonCloudTrailDataConfig();", _output);
+        Assert.Contains("static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)", _output);
+        Assert.Contains("new AmazonCloudTrailDataClient(serviceClientConfig)", _output);
+        Assert.Contains("new AmazonCloudTrailDataClient(awsCredentials, serviceClientConfig)", _output);
+    }
+
+    [Fact]
+    public void StaticFactoryMembersCarryTrimmingAndAnalyzerAnnotations()
+    {
+        // DynamicDependency keeps the config's public properties through trimming (the DI path
+        // reflects over them); the IL2026 suppression and CA1033 pragma mirror IAmazonService's own.
+        Assert.Contains("[System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof(AmazonCloudTrailDataConfig))]", _output);
+        Assert.Contains("""[System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",""", _output);
+        Assert.Contains("#pragma warning disable CA1033", _output);
+        Assert.Contains("#pragma warning restore CA1033", _output);
+    }
+
+    [Fact]
     public void GuardsSynchronousOverloadWithNetFrameworkDirective()
     {
         // The synchronous overload exists only on .NET Framework in the SDK (C2J emits it in the
