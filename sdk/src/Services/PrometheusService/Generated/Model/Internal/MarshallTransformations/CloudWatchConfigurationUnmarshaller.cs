@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Destination Object
+    /// Response Unmarshaller for CloudWatchConfiguration Object
     /// </summary>  
-    public class DestinationUnmarshaller : IJsonUnmarshaller<Destination, JsonUnmarshallerContext>
+    public class CloudWatchConfigurationUnmarshaller : IJsonUnmarshaller<CloudWatchConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Destination Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CloudWatchConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Destination unmarshalledObject = new Destination();
+            CloudWatchConfiguration unmarshalledObject = new CloudWatchConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ampConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("datasetArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = AmpConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AmpConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("cloudWatchConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = CloudWatchConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         }
 
 
-        private static DestinationUnmarshaller _instance = new DestinationUnmarshaller();        
+        private static CloudWatchConfigurationUnmarshaller _instance = new CloudWatchConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationUnmarshaller Instance
+        public static CloudWatchConfigurationUnmarshaller Instance
         {
             get
             {

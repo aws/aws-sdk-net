@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Destination Marshaller
+    /// CloudWatchConfiguration Marshaller
     /// </summary>
-    public class DestinationMarshaller : IRequestMarshaller<Destination, JsonMarshallerContext> 
+    public class CloudWatchConfigurationMarshaller : IRequestMarshaller<CloudWatchConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Destination requestObject, JsonMarshallerContext context)
+        public void Marshall(CloudWatchConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAmpConfiguration())
+            if(requestObject.IsSetDatasetArn())
             {
-                context.Writer.WritePropertyName("ampConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = AmpConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AmpConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetCloudWatchConfiguration())
-            {
-                context.Writer.WritePropertyName("cloudWatchConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CloudWatchConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.CloudWatchConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("datasetArn");
+                context.Writer.WriteStringValue(requestObject.DatasetArn);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static DestinationMarshaller Instance = new DestinationMarshaller();
+        public readonly static CloudWatchConfigurationMarshaller Instance = new CloudWatchConfigurationMarshaller();
 
     }
 }

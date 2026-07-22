@@ -35,6 +35,7 @@ namespace Amazon.PrometheusService.Model
     public partial class Destination
     {
         private AmpConfiguration _ampConfiguration;
+        private CloudWatchConfiguration _cloudWatchConfiguration;
 
         /// <summary>
         /// Gets and sets the property AmpConfiguration. 
@@ -52,6 +53,24 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetAmpConfiguration()
         {
             return this._ampConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CloudWatchConfiguration. 
+        /// <para>
+        /// The CloudWatch dataset to send metrics to.
+        /// </para>
+        /// </summary>
+        public CloudWatchConfiguration CloudWatchConfiguration
+        {
+            get { return this._cloudWatchConfiguration; }
+            set { this._cloudWatchConfiguration = value; }
+        }
+
+        // Check to see if CloudWatchConfiguration property is set
+        internal bool IsSetCloudWatchConfiguration()
+        {
+            return this._cloudWatchConfiguration != null;
         }
 
     }

@@ -90,7 +90,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The new Amazon Managed Service for Prometheus workspace to send metrics to.
+        /// The new destination where the scraper sends metrics. Valid destinations are Amazon
+        /// Managed Service for Prometheus workspaces and CloudWatch datasets.
         /// </para>
         /// </summary>
         public Destination Destination

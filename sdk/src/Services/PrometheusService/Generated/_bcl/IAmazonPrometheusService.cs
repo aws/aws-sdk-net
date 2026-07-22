@@ -433,13 +433,13 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
-        /// pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed
-        /// Service for Prometheus workspace. You can configure scrapers to collect metrics from
-        /// Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based
-        /// service discovery. Scrapers are flexible, and can be configured to control what metrics
-        /// are collected, the frequency of collection, what transformations are applied to the
-        /// metrics, and more.
+        /// Creates a scraper to collect metrics from Prometheus-compatible sources. The scraper
+        /// sends the collected metrics to Amazon Managed Service for Prometheus workspaces or
+        /// CloudWatch datasets. You can configure scrapers to collect metrics from Amazon EKS
+        /// clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based service
+        /// discovery. Scrapers are flexible. You can configure a scraper to control which metrics
+        /// to collect, the frequency of collection, which transformations to apply to the metrics,
+        /// and more.
         /// 
         ///  
         /// <para>
@@ -498,13 +498,13 @@ namespace Amazon.PrometheusService
 
 
         /// <summary>
-        /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
-        /// pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed
-        /// Service for Prometheus workspace. You can configure scrapers to collect metrics from
-        /// Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based
-        /// service discovery. Scrapers are flexible, and can be configured to control what metrics
-        /// are collected, the frequency of collection, what transformations are applied to the
-        /// metrics, and more.
+        /// Creates a scraper to collect metrics from Prometheus-compatible sources. The scraper
+        /// sends the collected metrics to Amazon Managed Service for Prometheus workspaces or
+        /// CloudWatch datasets. You can configure scrapers to collect metrics from Amazon EKS
+        /// clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based service
+        /// discovery. Scrapers are flexible. You can configure a scraper to control which metrics
+        /// to collect, the frequency of collection, which transformations to apply to the metrics,
+        /// and more.
         /// 
         ///  
         /// <para>
