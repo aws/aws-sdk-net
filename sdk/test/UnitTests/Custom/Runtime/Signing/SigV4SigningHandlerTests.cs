@@ -87,6 +87,7 @@ namespace AWSSDK.UnitTests.Signing
         public async Task Send_WithBody_SignsBufferedContent()
         {
             var handler = NewHandler(out var inner);
+            inner.CaptureBody = true;
             using (var client = NewClient(handler))
             {
                 var content = new StringContent("{\"a\":1}", Encoding.UTF8, "application/json");
@@ -98,8 +99,9 @@ namespace AWSSDK.UnitTests.Signing
                 CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(Encoding.UTF8.GetBytes("{\"a\":1}")), true);
             var actualHash = sent.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single();
             Assert.AreEqual(expectedHash, actualHash);
-            // The body must survive as re-readable content after signing.
-            Assert.AreEqual("{\"a\":1}", await sent.Content.ReadAsStringAsync());
+            // The body must survive as re-readable content through signing (captured inside the inner handler,
+            // since HttpClient disposes the request content once the send completes on net472).
+            Assert.AreEqual("{\"a\":1}", inner.LastContentBody);
         }
 
         [TestMethod]
@@ -273,15 +275,25 @@ namespace AWSSDK.UnitTests.Signing
             Assert.Fail($"Expected {typeof(TException).Name} but no exception was thrown.");
         }
 
-        // Captures the request as it reaches the transport (after signing) and returns 200.
+        // Captures the request as it reaches the transport (after signing) and returns 200. The content body
+        // is read here, while the request is still in flight — on net472 HttpClient disposes the request
+        // content once SendAsync returns, so reading LastRequest.Content after the call throws
+        // ObjectDisposedException. Capturing it inside the handler avoids that.
         private sealed class CapturingInnerHandler : HttpMessageHandler
         {
             public HttpRequestMessage LastRequest { get; private set; }
+            public string LastContentBody { get; private set; }
 
-            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            // Opt-in: only the body-signing test wants the body captured. Reading is off by default so the
+            // "body must not be read" tests (backed by a throw-on-read stream) keep that invariant.
+            public bool CaptureBody { get; set; }
+
+            protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
                 LastRequest = request;
-                return Task.FromResult(new HttpResponseMessage(HttpStatusCode.OK));
+                if (CaptureBody && request.Content != null)
+                    LastContentBody = await request.Content.ReadAsStringAsync().ConfigureAwait(false);
+                return new HttpResponseMessage(HttpStatusCode.OK);
             }
         }
 
