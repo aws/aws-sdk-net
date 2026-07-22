@@ -18,9 +18,6 @@ env:
   DOWNLOAD_FOLDER: '.build-scripts/'
   SCRIPT_LOCATION: 'workflows/start-pull-request-build/pull-request-build-v1.sh'
 
-  # custom variables
-  IAM_ROLE_ARN: 'arn:aws:iam::767397770662:role/AwsSdkNetGitHubRole'
-
 jobs:
   build-sdk-v4:
     name: build-sdk-v4
