@@ -157,6 +157,39 @@ namespace AWSSDK.UnitTests.Signing
             Assert.AreEqual(1, message.Headers.GetValues(HeaderKeys.XAmzDateHeader).Count());
         }
 
+        [TestMethod]
+        public async Task Send_ReSigningMessageWithBody_ResendsAndReHashesBody()
+        {
+            // A retry replays the same message. The handler rebuffers the content as re-readable, so the body
+            // must survive the second send (not be consumed on the first) and produce the same body hash and a
+            // single, non-duplicated set of signing headers on the resend.
+            var handler = NewHandler(out var inner);
+            inner.CaptureBody = true;
+            var invoker = new HttpMessageInvoker(handler);
+
+            const string body = "{\"a\":1}";
+            var message = new HttpRequestMessage(HttpMethod.Post, "https://example.execute-api.us-east-1.amazonaws.com/items")
+            {
+                Content = new StringContent(body, Encoding.UTF8, "application/json"),
+            };
+            var expectedHash = AWSSDKUtils.ToHex(
+                CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(Encoding.UTF8.GetBytes(body)), true);
+
+            // First attempt.
+            await invoker.SendAsync(message, CancellationToken.None);
+            Assert.AreEqual(body, inner.LastContentBody);
+            Assert.AreEqual(expectedHash, inner.LastRequest.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single());
+
+            // Retry: same message re-enters the handler. The body must still be readable and re-hashed.
+            await invoker.SendAsync(message, CancellationToken.None);
+            Assert.AreEqual(body, inner.LastContentBody);
+            Assert.AreEqual(expectedHash, inner.LastRequest.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single());
+
+            // Signing headers replaced, not accumulated, across the resign.
+            Assert.AreEqual(1, message.Headers.GetValues(HeaderKeys.AuthorizationHeader).Count());
+            Assert.AreEqual(1, message.Headers.GetValues(HeaderKeys.XAmzDateHeader).Count());
+        }
+
         // -----------------------------------------------------------------------
         // Per-request overrides via Options / Properties.
         // -----------------------------------------------------------------------
