@@ -122,6 +122,12 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("nodeLifecycleActions", targetDepth, ref reader))
+                {
+                    var unmarshaller = NodeLifecycleActionsUnmarshaller.Instance;
+                    unmarshalledObject.NodeLifecycleActions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("purchaseOption", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

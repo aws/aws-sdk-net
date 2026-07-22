@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PCS.Model
 {
     /// <summary>
-    /// The scheduler configuration for updating a cluster. Use this to specify the Slurm
-    /// version to upgrade to.
+    /// The scheduler configuration for updating a cluster. Use this to specify the scheduler
+    /// version to update to.
     /// </summary>
     public partial class UpdateSchedulerRequest
     {
@@ -40,9 +40,9 @@ namespace Amazon.PCS.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The Slurm version to upgrade the cluster to. You can only upgrade to a newer version.
-        /// For more information about supported versions and upgrade paths, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
-        /// the Slurm version on a cluster</a> in the <i>PCS User Guide</i>.
+        /// The scheduler version to update the cluster to. You can only update to a newer version.
+        /// For more information about supported versions and update paths, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_version_update.html">Updating
+        /// the scheduler version on a cluster</a> in the <i>PCS User Guide</i>.
         /// </para>
         ///  
         /// <para>

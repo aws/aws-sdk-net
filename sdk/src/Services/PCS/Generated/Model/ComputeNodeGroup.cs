@@ -45,6 +45,7 @@ namespace Amazon.PCS.Model
         private List<InstanceConfig> _instanceConfigs = AWSConfigs.InitializeCollections ? new List<InstanceConfig>() : null;
         private DateTime? _modifiedAt;
         private string _name;
+        private NodeLifecycleActions _nodeLifecycleActions;
         private PurchaseOption _purchaseOption;
         private ScalingConfiguration _scalingConfiguration;
         private ComputeNodeGroupSlurmConfiguration _slurmConfiguration;
@@ -270,6 +271,26 @@ namespace Amazon.PCS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLifecycleActions. 
+        /// <para>
+        /// The lifecycle actions to run on compute nodes in the compute node group. Use lifecycle
+        /// actions to run custom scripts at defined stages of a compute node's lifecycle, such
+        /// as when a compute node finishes bootstrapping or becomes ready to accept jobs.
+        /// </para>
+        /// </summary>
+        public NodeLifecycleActions NodeLifecycleActions
+        {
+            get { return this._nodeLifecycleActions; }
+            set { this._nodeLifecycleActions = value; }
+        }
+
+        // Check to see if NodeLifecycleActions property is set
+        internal bool IsSetNodeLifecycleActions()
+        {
+            return this._nodeLifecycleActions != null;
         }
 
         /// <summary>

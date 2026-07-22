@@ -60,9 +60,9 @@ namespace Amazon.PCS.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version of the specified scheduling software that PCS uses to manage cluster scaling
-        /// and job scheduling. You can upgrade this version using the <c>UpdateCluster</c> API
-        /// action. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
-        /// the Slurm version on a cluster</a> and <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm
+        /// and job scheduling. You can update this version using the <c>UpdateCluster</c> API
+        /// action. For more information, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_version_update.html">Updating
+        /// the scheduler version on a cluster</a> and <a href="https://docs.aws.amazon.com/pcs/latest/userguide/slurm-versions.html">Slurm
         /// versions in PCS</a> in the <i>PCS User Guide</i>.
         /// </para>
         ///  

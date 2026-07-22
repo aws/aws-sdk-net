@@ -34,9 +34,67 @@ namespace Amazon.PCS.Model
     /// </summary>
     public partial class RegisterComputeNodeGroupInstanceResponse : AmazonWebServiceResponse
     {
+        private string _clusterName;
+        private string _computeNodeGroupId;
+        private string _computeNodeGroupName;
         private List<Endpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<Endpoint>() : null;
         private string _nodeid;
+        private NodeLifecycleActions _nodeLifecycleActions;
         private string _sharedSecret;
+
+        /// <summary>
+        /// Gets and sets the property ClusterName. 
+        /// <para>
+        /// The name of the cluster that the compute node registered into.
+        /// </para>
+        /// </summary>
+        public string ClusterName
+        {
+            get { return this._clusterName; }
+            set { this._clusterName = value; }
+        }
+
+        // Check to see if ClusterName property is set
+        internal bool IsSetClusterName()
+        {
+            return this._clusterName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeNodeGroupId. 
+        /// <para>
+        /// The ID of the compute node group that the compute node registered into.
+        /// </para>
+        /// </summary>
+        public string ComputeNodeGroupId
+        {
+            get { return this._computeNodeGroupId; }
+            set { this._computeNodeGroupId = value; }
+        }
+
+        // Check to see if ComputeNodeGroupId property is set
+        internal bool IsSetComputeNodeGroupId()
+        {
+            return this._computeNodeGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComputeNodeGroupName. 
+        /// <para>
+        /// The name of the compute node group that the compute node registered into.
+        /// </para>
+        /// </summary>
+        public string ComputeNodeGroupName
+        {
+            get { return this._computeNodeGroupName; }
+            set { this._computeNodeGroupName = value; }
+        }
+
+        // Check to see if ComputeNodeGroupName property is set
+        internal bool IsSetComputeNodeGroupName()
+        {
+            return this._computeNodeGroupName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Endpoints. 
@@ -79,6 +137,25 @@ namespace Amazon.PCS.Model
         internal bool IsSetNodeID()
         {
             return this._nodeid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLifecycleActions. 
+        /// <para>
+        /// The node lifecycle actions configured for the node group, including scripts to run
+        /// when a compute node finishes bootstrapping or becomes ready to accept jobs.
+        /// </para>
+        /// </summary>
+        public NodeLifecycleActions NodeLifecycleActions
+        {
+            get { return this._nodeLifecycleActions; }
+            set { this._nodeLifecycleActions = value; }
+        }
+
+        // Check to see if NodeLifecycleActions property is set
+        internal bool IsSetNodeLifecycleActions()
+        {
+            return this._nodeLifecycleActions != null;
         }
 
         /// <summary>

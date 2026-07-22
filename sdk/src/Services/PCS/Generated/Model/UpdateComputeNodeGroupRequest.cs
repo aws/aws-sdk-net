@@ -43,6 +43,7 @@ namespace Amazon.PCS.Model
         private string _computeNodeGroupIdentifier;
         private CustomLaunchTemplate _customLaunchTemplate;
         private string _iamInstanceProfileArn;
+        private UpdateNodeLifecycleActionsRequest _nodeLifecycleActions;
         private PurchaseOption _purchaseOption;
         private ScalingConfigurationRequest _scalingConfiguration;
         private UpdateComputeNodeGroupSlurmConfigurationRequest _slurmConfiguration;
@@ -166,6 +167,26 @@ namespace Amazon.PCS.Model
         internal bool IsSetIamInstanceProfileArn()
         {
             return this._iamInstanceProfileArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NodeLifecycleActions. 
+        /// <para>
+        /// The lifecycle actions to run on compute nodes in the compute node group. Use lifecycle
+        /// actions to run custom scripts at defined stages of a compute node's lifecycle, such
+        /// as when a compute node finishes bootstrapping or becomes ready to accept jobs.
+        /// </para>
+        /// </summary>
+        public UpdateNodeLifecycleActionsRequest NodeLifecycleActions
+        {
+            get { return this._nodeLifecycleActions; }
+            set { this._nodeLifecycleActions = value; }
+        }
+
+        // Check to see if NodeLifecycleActions property is set
+        internal bool IsSetNodeLifecycleActions()
+        {
+            return this._nodeLifecycleActions != null;
         }
 
         /// <summary>

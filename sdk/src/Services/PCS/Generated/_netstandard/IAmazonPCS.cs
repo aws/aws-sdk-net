@@ -1683,10 +1683,10 @@ namespace Amazon.PCS
 
 
         /// <summary>
-        /// Updates a cluster configuration. You can upgrade the Slurm version, modify scheduler
+        /// Updates a cluster configuration. You can update the scheduler version, modify scheduler
         /// settings, and update accounting configuration for an existing cluster. For more information
-        /// about upgrading the Slurm version, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_upgrade.html">Upgrading
-        /// the Slurm version on a cluster</a> in the <i>PCS User Guide</i>. 
+        /// about updating the scheduler version, see <a href="https://docs.aws.amazon.com/pcs/latest/userguide/working-with_clusters_version_update.html">Updating
+        /// the scheduler version on a cluster</a> in the <i>PCS User Guide</i>. 
         /// 
         ///  <note> 
         /// <para>
