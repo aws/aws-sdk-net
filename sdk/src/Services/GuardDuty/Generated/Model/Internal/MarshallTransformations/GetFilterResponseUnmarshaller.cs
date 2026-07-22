@@ -58,6 +58,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     response.Action = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,18 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("updatedAt", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("version", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    response.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
