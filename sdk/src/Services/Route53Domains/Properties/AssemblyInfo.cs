@@ -7,17 +7,24 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Route53Domains")]
-#if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
-#elif NETSTANDARD20
+
+#if NET472
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+
+#elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Route 53 Domains. Amazon Route 53 is a highly available and scalable cloud Domain Name System (DNS) web service.")]
+
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
+
+
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]

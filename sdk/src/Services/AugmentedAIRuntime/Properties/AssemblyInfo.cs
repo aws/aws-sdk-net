@@ -7,17 +7,24 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AugmentedAIRuntime")]
-#if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
-#elif NETSTANDARD20
+
+#if NET472
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
+
+#elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
+
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
+
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
+
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
+
+
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]

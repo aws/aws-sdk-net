@@ -7,17 +7,24 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Rekognition")]
-#if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
-#elif NETSTANDARD20
+
+#if NET472
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
+
+#elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
+
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
+
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Rekognition. AWS Rekognition service does image processing and concept recognition, face detection and identification, face verification, similar face search and face clustering.")]
+
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
+
+
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
