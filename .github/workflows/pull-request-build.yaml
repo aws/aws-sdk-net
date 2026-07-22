@@ -6,8 +6,8 @@ on:
       - development
 
 concurrency:
-  group: build-sdk-v4-${{ github.ref }}
-  cancel-in-progress: true
+  group: build-sdk-v4
+  cancel-in-progress: false
 
 env:
   # constants
