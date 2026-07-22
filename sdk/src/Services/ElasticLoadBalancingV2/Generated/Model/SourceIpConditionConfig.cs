@@ -38,6 +38,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// to the load balancer. If a client is behind a proxy, this is the IP address of the
     /// proxy not the IP address of the client.
     /// </para>
+    ///  
+    /// <para>
+    /// For Application Load Balancers, use <c>Values</c> to specify CIDR ranges. For Network
+    /// Load Balancers, use <c>IpAddressType</c> to match on the IP address type of the source
+    /// traffic.
+    /// </para>
     /// </summary>
     public partial class SourceIpConditionConfig
     {
