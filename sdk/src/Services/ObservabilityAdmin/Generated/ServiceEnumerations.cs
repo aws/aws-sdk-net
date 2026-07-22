@@ -501,6 +501,18 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         public static readonly LogType ACCESS_LOGS = new LogType("ACCESS_LOGS");
         /// <summary>
+        /// Constant ALB_ACCESS_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ALB_ACCESS_LOGS = new LogType("ALB_ACCESS_LOGS");
+        /// <summary>
+        /// Constant ALB_CONNECTION_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ALB_CONNECTION_LOGS = new LogType("ALB_CONNECTION_LOGS");
+        /// <summary>
+        /// Constant ALB_HEALTH_CHECK_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ALB_HEALTH_CHECK_LOGS = new LogType("ALB_HEALTH_CHECK_LOGS");
+        /// <summary>
         /// Constant APPLICATION_LOGS for LogType
         /// </summary>
         public static readonly LogType APPLICATION_LOGS = new LogType("APPLICATION_LOGS");
@@ -744,6 +756,10 @@ namespace Amazon.ObservabilityAdmin
         /// Constant AWSBedrockAgentCoreWorkloadIdentity for ResourceType
         /// </summary>
         public static readonly ResourceType AWSBedrockAgentCoreWorkloadIdentity = new ResourceType("AWS::BedrockAgentCore::WorkloadIdentity");
+        /// <summary>
+        /// Constant AWSBedrockKnowledgeBase for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBedrockKnowledgeBase = new ResourceType("AWS::Bedrock::KnowledgeBase");
         /// <summary>
         /// Constant AWSCloudFrontDistribution for ResourceType
         /// </summary>
