@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>
     <DefineConstants>DEBUG;TRACE;BCL;CODE_ANALYSIS</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -17,7 +17,6 @@
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
-    <LangVersion>9.0</LangVersion>
     <NoWarn>$(NoWarn);CS1591</NoWarn>
 
     <SignAssembly>True</SignAssembly>

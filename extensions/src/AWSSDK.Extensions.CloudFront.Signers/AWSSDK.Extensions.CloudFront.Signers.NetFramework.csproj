@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+	<TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>
 	<AssemblyName>AWSSDK.Extensions.CloudFront.Signers</AssemblyName>
 	<PackageId>AWSSDK.Extensions.CloudFront.Signers</PackageId>
 	<GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>

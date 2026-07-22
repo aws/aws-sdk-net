@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
      <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
-      <TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+      <TargetFrameworks>$(SdkNetTargets)</TargetFrameworks>
       <DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
       <DebugType>portable</DebugType>
       <GenerateDocumentationFile>true</GenerateDocumentationFile>
@@ -16,7 +16,6 @@
       <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
       <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
       <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-      <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
       <SignAssembly>true</SignAssembly>
   
       <NoWarn>CS1591,CS1570,NU1701</NoWarn>

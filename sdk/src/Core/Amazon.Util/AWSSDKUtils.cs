@@ -42,6 +42,7 @@ using System.Threading.Tasks;
 #if NETSTANDARD
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using AsyncHelpers = Amazon.Runtime.Internal.Util.AsyncHelpers;
 #endif
 
 namespace Amazon.Util
@@ -2075,6 +2076,9 @@ namespace Amazon.Util
         /// returned as part of an AWS service response.</param>
         /// <param name="propertyName">The name of the property of awsServiceObject to check.</param>
         /// <returns>True if the property is set, otherwise false.</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode("This method uses reflection to invoke IsSet methods on AWS service model classes. If the IsSet methods are trimmed, this method will throw an exception.")]
+#endif
         public static bool IsPropertySet(object awsServiceObject, string propertyName)
         {
             var type = awsServiceObject.GetType();

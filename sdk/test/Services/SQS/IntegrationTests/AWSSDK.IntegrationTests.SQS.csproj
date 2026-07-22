@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net472;net8.0</TargetFrameworks>
+    <TargetFrameworks>$(SdkTestTargets)</TargetFrameworks>
     <OutputType>Exe</OutputType>
     <DefineConstants>$(DefineConstants);DEBUG;TRACE;ASYNC_AWAIT</DefineConstants>
     <DebugType>portable</DebugType>
@@ -16,7 +16,6 @@
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
     <NoWarn>CS1591</NoWarn>
   </PropertyGroup>
 
@@ -44,7 +43,7 @@
     <ProjectReference Include="../../../IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetFramework.csproj" />
     <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
     <Reference Include="System.Configuration" />
@@ -53,7 +52,7 @@
     <Reference Include="System.Web" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../../../src/Core/AWSSDK.Core.NetStandard.csproj" />
     <ProjectReference Include="../../../../src/Services/SQS/AWSSDK.SQS.NetStandard.csproj" />
   </ItemGroup>

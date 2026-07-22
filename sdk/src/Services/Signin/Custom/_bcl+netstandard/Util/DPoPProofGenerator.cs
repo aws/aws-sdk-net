@@ -1,4 +1,4 @@
-﻿#if NETSTANDARD20 || NETCOREAPP3_1 || BCL
+﻿#if NETSTANDARD2_0 || NETCOREAPP3_1 || BCL
 using Org.BouncyCastle.Asn1;
 using Org.BouncyCastle.Asn1.X9;
 using Org.BouncyCastle.Crypto;
@@ -23,7 +23,7 @@ using Amazon.Runtime.Credentials.Internal;
 
 namespace Amazon.Signin.Util
 {
-#if NETSTANDARD20 || NETCOREAPP3_1 || BCL
+#if NETSTANDARD2_0 || NETCOREAPP3_1 || BCL
     /// <summary>
     /// Utility class for generating DPoP Proof as a signed JSON Web Token (JWT).
     /// </summary>
