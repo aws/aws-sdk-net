@@ -50,7 +50,7 @@ namespace Amazon.CloudWatch.Model
         /// | sort desc</c>. Length constraints: minimum 1 character, maximum 2048 characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AggregationExpression
         {
             get { return this._aggregationExpression; }

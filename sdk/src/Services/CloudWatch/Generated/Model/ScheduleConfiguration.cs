@@ -47,6 +47,7 @@ namespace Amazon.CloudWatch.Model
         /// is 0.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2592000)]
         public long? EndTimeOffset
         {
             get { return this._endTimeOffset; }
@@ -87,6 +88,7 @@ namespace Amazon.CloudWatch.Model
         /// starts the query time range at 11:59:00.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=2592000)]
         public long? StartTimeOffset
         {
             get { return this._startTimeOffset; }

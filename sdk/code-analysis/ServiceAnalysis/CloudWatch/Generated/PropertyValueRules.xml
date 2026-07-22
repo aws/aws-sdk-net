@@ -877,14 +877,24 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduleConfiguration.EndTimeOffset</property>
+    <min>0</min>
+    <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.ScheduleConfiguration.ScheduleExpression</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduleConfiguration.StartTimeOffset</property>
+    <min>1</min>
+    <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.ScheduledQueryConfiguration.AggregationExpression</property>
     <min>1</min>
-    <max>256</max>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ScheduledQueryConfiguration.QueryARN</property>
