@@ -70,6 +70,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("filesystemConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ToolsFileSystemConfiguration, ToolsFileSystemConfigurationUnmarshaller>(ToolsFileSystemConfigurationUnmarshaller.Instance);
+                    response.FilesystemConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

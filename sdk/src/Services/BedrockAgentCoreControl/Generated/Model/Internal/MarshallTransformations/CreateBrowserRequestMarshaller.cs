@@ -139,6 +139,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
             }
 
+            if(publicRequest.IsSetFilesystemConfigurations())
+            {
+                context.Writer.WritePropertyName("filesystemConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilesystemConfigurationsListValue in publicRequest.FilesystemConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ToolsFileSystemConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilesystemConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
