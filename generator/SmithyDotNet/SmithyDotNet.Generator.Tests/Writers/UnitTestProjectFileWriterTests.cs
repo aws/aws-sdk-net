@@ -16,10 +16,13 @@ public class UnitTestProjectFileWriterTests
         _project = new UnitTestProjectFileWriter(fixture.Context).Write();
     }
 
+    // References the centralized MSBuild property rather than restating TFMs. SdkMSTestAllTestTargets
+    // is the MSTest test set (net472;netcoreapp3.1;net8.0) — it excludes netstandard2.0, on which a
+    // test executable can't run.
     [Fact]
-    public void MultiTargetsEveryShippedTfm()
+    public void MultiTargetsViaCentralizedProperty()
     {
-        Assert.Contains("<TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>", _project);
+        Assert.Contains("<TargetFrameworks>$(SdkMSTestAllTestTargets)</TargetFrameworks>", _project);
     }
 
     // The reference set from the legacy unit-test project: Core, CrtIntegration, and the service's
@@ -74,11 +77,23 @@ public class UnitTestProjectFileWriterTests
         var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata);
         var project = new UnitTestProjectFileWriter(context).Write();
 
-        Assert.Contains("<TargetFramework>net472</TargetFramework>", project);
+        Assert.Contains("<TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>", project);
         Assert.DoesNotContain("AWSSDK.Core.NetStandard.csproj", project);
         Assert.DoesNotContain("AWSSDK.CloudTrailData.NetStandard.csproj", project);
         Assert.DoesNotContain("AWS_ASYNC_ENUMERABLES_API", project);
         Assert.DoesNotContain("NETSTANDARD20", project);
+    }
+
+    // These are owned by sdk/Directory.Build.props post-PR-4465; the generated csproj must not restate
+    // them (LangVersion, the netcoreapp3.1 TFM-support suppression, binding-redirect output type).
+    [Theory]
+    [InlineData("<LangVersion>")]
+    [InlineData("<SuppressTfmSupportBuildWarnings>")]
+    [InlineData("<GenerateBindingRedirectsOutputType>")]
+    [InlineData("NETSTANDARD20")]
+    public void DoesNotRestateCentrallyOwnedProperties(string snippet)
+    {
+        Assert.DoesNotContain(snippet, _project);
     }
 
     [Fact]

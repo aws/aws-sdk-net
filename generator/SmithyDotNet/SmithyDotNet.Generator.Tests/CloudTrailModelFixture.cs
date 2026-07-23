@@ -30,6 +30,11 @@ public class CloudTrailModelFixture
 
     public CloudTrailModelFixture()
     {
+        // TargetPlatforms reads the TFM set from a Directory.Build.props; TestData carries a minimal
+        // stand-in. Writer tests share this collection fixture, so initializing here runs once before
+        // any of them touch TargetPlatforms.
+        TargetPlatforms.Initialize("TestData");
+
         Index = new ServiceIndex(Model);
         Context = new GenerationContext(Index, Manifest, Metadata);
     }

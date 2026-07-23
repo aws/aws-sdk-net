@@ -9,6 +9,7 @@ public static class Program
 {
     private static readonly string ManifestRelativePath = Path.Combine("generator", "ServiceModels", "_sdk-versions.json");
     private static readonly string DefaultConfigurationRelativePath = Path.Combine("sdk", "src", "Core", "sdk-default-configuration.json");
+    private static readonly string DirectoryBuildPropsRelativePath = Path.Combine("sdk", "Directory.Build.props");
 
     private const string MetadataFileName = "metadata.json";
 
@@ -85,6 +86,18 @@ public static class Program
             }
 
             var defaultConfigurationModes = DefaultConfigurationManifest.Load(defaultConfigurationPath);
+
+            // The shipped TFM set lives in sdk/Directory.Build.props (SdkNetFrameworkTargets +
+            // SdkNetTargets); load it once so the assembly-info and nuspec writers emit concrete TFMs.
+            var propsPath = FindRepoFile(manifestPath, DirectoryBuildPropsRelativePath);
+            if (propsPath is null)
+            {
+                Console.Error.WriteLine($"Error: could not locate '{DirectoryBuildPropsRelativePath}' relative to '{manifestPath}'.");
+                return 1;
+            }
+
+            TargetPlatforms.Initialize(Path.GetDirectoryName(propsPath) ?? ".");
+
             var modelFileName = Path.GetFileName(modelPath);
 
             var generator = new ServiceGenerator(context, modelFileName, serviceFileVersion, defaultConfigurationModes);

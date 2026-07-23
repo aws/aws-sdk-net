@@ -1,0 +1,8 @@
+<Project>
+  <!-- Minimal stand-in for sdk/Directory.Build.props: only the target-framework properties
+       TargetPlatforms reads. Values mirror the shipped set the writer tests assert against. -->
+  <PropertyGroup>
+    <SdkNetFrameworkTargets>net472</SdkNetFrameworkTargets>
+    <SdkNetTargets>netstandard2.0;netcoreapp3.1;net8.0</SdkNetTargets>
+  </PropertyGroup>
+</Project>

@@ -39,11 +39,6 @@ public sealed class UnitTestProjectFileWriter(GenerationContext context)
             w => WriteMainPropertyGroup(w, netStandardSupport),
         };
 
-        if (netStandardSupport)
-        {
-            sections.Add(WriteLangVersionOverride);
-        }
-
         sections.Add(w => WriteSigningChoose(w, $"{SdkRoot}/awssdk.dll.snk"));
         sections.Add(WriteCompileExcludes);
         sections.Add(w => WritePlatformFolderExcludes(w, netStandardSupport));
@@ -59,50 +54,30 @@ public sealed class UnitTestProjectFileWriter(GenerationContext context)
 
     private void WriteMainPropertyGroup(CodeWriter writer, bool netStandardSupport)
     {
-        var platforms = netStandardSupport ? TargetPlatforms.Platforms : TargetPlatforms.FrameworkPlatforms;
-        var tfms = platforms.Select(platform => platform.Tfm).ToList();
+        // Reference the centralized MSBuild target-framework properties from sdk/Directory.Build.props
+        // rather than restating TFMs. The MSTest test targets exclude netstandard2.0 (a test project is
+        // an executable and can't run on it), so a netstandard-supporting service uses
+        // SdkMSTestAllTestTargets; a net-framework-only service uses SdkNetFrameworkTargets.
+        var targetFrameworksProperty = netStandardSupport ? "$(SdkMSTestAllTestTargets)" : "$(SdkNetFrameworkTargets)";
 
         writer.OpenXmlBlock("PropertyGroup", () =>
         {
             writer.WriteLine("""<RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>""");
-            writer.WriteLine(tfms.Count == 1
-                ? $"<TargetFramework>{tfms[0]}</TargetFramework>"
-                : $"<TargetFrameworks>{string.Join(";", tfms)}</TargetFrameworks>");
+            writer.WriteLine($"<TargetFrameworks>{targetFrameworksProperty}</TargetFrameworks>");
             if (netStandardSupport)
             {
-                writer.WriteLine($"""<DefineConstants Condition="{IsNetStandard}">$(DefineConstants);NETSTANDARD20</DefineConstants>""");
                 writer.WriteLine($"""<DefineConstants Condition="{IsNotNetFramework}">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>""");
             }
             writer.WriteLine("<DebugType>portable</DebugType>");
             writer.WriteLine("<GenerateDocumentationFile>true</GenerateDocumentationFile>");
             writer.WriteLine($"<AssemblyName>AWSSDK.UnitTests.{context.ServiceName}</AssemblyName>");
             writer.WriteLine($"<PackageId>AWSSDK.UnitTests.{context.ServiceName}</PackageId>");
-            writer.WriteLine("<LangVersion>9.0</LangVersion>");
             writer.WriteLine();
             WriteGenerateAssemblyAttributeSuppressions(writer);
             writer.WriteLine("<SignAssembly>true</SignAssembly>");
             writer.WriteLine("<TreatWarningsAsErrors>true</TreatWarningsAsErrors>");
             writer.WriteLine();
-            if (platforms.Any(platform => platform.Tfm == "netcoreapp3.1"))
-            {
-                // netcoreapp3.1 is out of support; suppress the targeting warning so it doesn't
-                // fail the warnings-as-errors build. Keyed off the shipped TFM set so the line
-                // disappears once netcoreapp3.1 is retired.
-                writer.WriteLine("<SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>");
-            }
             writer.WriteLine("<NoWarn>CS1591,CS0612,CS0618</NoWarn>");
-            // net472 test hosts resolve dependencies through generated binding redirects.
-            writer.WriteLine("<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>");
-        });
-    }
-
-    // .NET 8 gets C# 11 for static interface members (the service interface factory method used by
-    // AWSSDK.Extensions.NETCore.Setup); everything older stays on 9.0.
-    private static void WriteLangVersionOverride(CodeWriter writer)
-    {
-        writer.WriteXmlBlock($"""<PropertyGroup Condition="{IsNet8OrGreater}">""", "PropertyGroup", () =>
-        {
-            writer.WriteLine("<LangVersion>11.0</LangVersion>");
         });
     }
 

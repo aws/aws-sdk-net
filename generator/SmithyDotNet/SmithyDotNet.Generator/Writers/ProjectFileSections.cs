@@ -10,7 +10,6 @@ internal static class ProjectFileSections
     // current or future target automatically.
     internal const string IsNetFramework = "$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'";
     internal const string IsNotNetFramework = "$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'";
-    internal const string IsNetStandard = "$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETStandard'";
     internal const string IsNet8OrGreater = "$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '8.0'))";
 
     // Runs each section, separating them with a single blank line and leaving none trailing.

@@ -21,9 +21,9 @@ public sealed record PackageRef(string Id, string Version);
 /// property, define constants, relative paths, package references, framework references, and
 /// suppressions.
 /// <para/>
-/// Today these are hardcoded to match <c>sdk/Directory.Build.props</c> and <c>_manifest.json</c>.
-/// Once <see href="https://github.com/aws/aws-sdk-net/pull/4465"/> lands, replace with a loader
-/// that reads the props file directly.
+/// The generated csproj references the target frameworks by MSBuild property
+/// (<c>$(SdkNetFrameworkTargets)</c> / <c>$(SdkNetTargets)</c>), so the concrete TFM set lives only
+/// in <c>sdk/Directory.Build.props</c> and resolves at build time.
 /// </summary>
 public sealed record ServiceProjectConfiguration
 {
@@ -69,8 +69,6 @@ public sealed record ServiceProjectConfiguration
 
 /// <summary>
 /// Provides the two standard service project configurations.
-/// <para/>
-/// TODO: Read from <c>sdk/Directory.Build.props</c> once PR 4465 merges.
 /// </summary>
 public static class ServiceProjectConfigurations
 {
