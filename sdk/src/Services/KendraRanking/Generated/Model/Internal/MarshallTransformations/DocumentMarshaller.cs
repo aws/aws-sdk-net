@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Document Marshaller
     /// </summary>
-    public class DocumentMarshaller : IRequestMarshaller<Document, JsonMarshallerContext> 
+    public class DocumentMarshaller : IRequestMarshaller<Document, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,69 +45,56 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Document requestObject, JsonMarshallerContext context)
+        public void Marshall(Document requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBody())
-            {
-                context.Writer.WritePropertyName("Body");
-                context.Writer.WriteStringValue(requestObject.Body);
-            }
 
-            if(requestObject.IsSetGroupId())
+            if (requestObject.IsSetBody())
             {
-                context.Writer.WritePropertyName("GroupId");
-                context.Writer.WriteStringValue(requestObject.GroupId);
+                context.Writer.WriteTextString("Body");
+                context.Writer.WriteTextString(requestObject.Body);
             }
-
-            if(requestObject.IsSetId())
+            if (requestObject.IsSetGroupId())
             {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.WriteStringValue(requestObject.Id);
+                context.Writer.WriteTextString("GroupId");
+                context.Writer.WriteTextString(requestObject.GroupId);
             }
-
-            if(requestObject.IsSetOriginalScore())
+            if (requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("OriginalScore");
-                if(StringUtils.IsSpecialFloatValue(requestObject.OriginalScore.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.OriginalScore.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.OriginalScore.Value);
-                }
+                context.Writer.WriteTextString("Id");
+                context.Writer.WriteTextString(requestObject.Id);
             }
-
-            if(requestObject.IsSetTitle())
+            if (requestObject.IsSetOriginalScore())
             {
-                context.Writer.WritePropertyName("Title");
-                context.Writer.WriteStringValue(requestObject.Title);
+                context.Writer.WriteTextString("OriginalScore");
+                context.Writer.WriteOptimizedNumber(requestObject.OriginalScore.Value);
             }
-
-            if(requestObject.IsSetTokenizedBody())
+            if (requestObject.IsSetTitle())
             {
-                context.Writer.WritePropertyName("TokenizedBody");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Title");
+                context.Writer.WriteTextString(requestObject.Title);
+            }
+            if (requestObject.IsSetTokenizedBody())
+            {
+                context.Writer.WriteTextString("TokenizedBody");
+                context.Writer.WriteStartArray(requestObject.TokenizedBody.Count);
                 foreach(var requestObjectTokenizedBodyListValue in requestObject.TokenizedBody)
                 {
-                        context.Writer.WriteStringValue(requestObjectTokenizedBodyListValue);
+                        context.Writer.WriteTextString(requestObjectTokenizedBodyListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetTokenizedTitle())
+            if (requestObject.IsSetTokenizedTitle())
             {
-                context.Writer.WritePropertyName("TokenizedTitle");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("TokenizedTitle");
+                context.Writer.WriteStartArray(requestObject.TokenizedTitle.Count);
                 foreach(var requestObjectTokenizedTitleListValue in requestObject.TokenizedTitle)
                 {
-                        context.Writer.WriteStringValue(requestObjectTokenizedTitleListValue);
+                        context.Writer.WriteTextString(requestObjectTokenizedTitleListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

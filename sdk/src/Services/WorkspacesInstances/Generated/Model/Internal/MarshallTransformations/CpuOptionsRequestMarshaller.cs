@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CpuOptionsRequest Marshaller
     /// </summary>
-    public class CpuOptionsRequestMarshaller : IRequestMarshaller<CpuOptionsRequest, JsonMarshallerContext> 
+    public class CpuOptionsRequestMarshaller : IRequestMarshaller<CpuOptionsRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CpuOptionsRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(CpuOptionsRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAmdSevSnp())
-            {
-                context.Writer.WritePropertyName("AmdSevSnp");
-                context.Writer.WriteStringValue(requestObject.AmdSevSnp);
-            }
 
-            if(requestObject.IsSetCoreCount())
+            if (requestObject.IsSetAmdSevSnp())
             {
-                context.Writer.WritePropertyName("CoreCount");
-                context.Writer.WriteNumberValue(requestObject.CoreCount.Value);
+                context.Writer.WriteTextString("AmdSevSnp");
+                context.Writer.WriteTextString(requestObject.AmdSevSnp);
             }
-
-            if(requestObject.IsSetThreadsPerCore())
+            if (requestObject.IsSetCoreCount())
             {
-                context.Writer.WritePropertyName("ThreadsPerCore");
-                context.Writer.WriteNumberValue(requestObject.ThreadsPerCore.Value);
+                context.Writer.WriteTextString("CoreCount");
+                context.Writer.WriteInt32(requestObject.CoreCount.Value);
             }
-
+            if (requestObject.IsSetThreadsPerCore())
+            {
+                context.Writer.WriteTextString("ThreadsPerCore");
+                context.Writer.WriteInt32(requestObject.ThreadsPerCore.Value);
+            }
         }
 
         /// <summary>

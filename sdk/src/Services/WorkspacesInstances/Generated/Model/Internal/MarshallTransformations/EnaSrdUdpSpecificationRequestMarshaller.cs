@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnaSrdUdpSpecificationRequest Marshaller
     /// </summary>
-    public class EnaSrdUdpSpecificationRequestMarshaller : IRequestMarshaller<EnaSrdUdpSpecificationRequest, JsonMarshallerContext> 
+    public class EnaSrdUdpSpecificationRequestMarshaller : IRequestMarshaller<EnaSrdUdpSpecificationRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EnaSrdUdpSpecificationRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(EnaSrdUdpSpecificationRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEnaSrdUdpEnabled())
-            {
-                context.Writer.WritePropertyName("EnaSrdUdpEnabled");
-                context.Writer.WriteBooleanValue(requestObject.EnaSrdUdpEnabled.Value);
-            }
 
+            if (requestObject.IsSetEnaSrdUdpEnabled())
+            {
+                context.Writer.WriteTextString("EnaSrdUdpEnabled");
+                context.Writer.WriteBoolean(requestObject.EnaSrdUdpEnabled.Value);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PrivateDnsNameOptionsRequest Marshaller
     /// </summary>
-    public class PrivateDnsNameOptionsRequestMarshaller : IRequestMarshaller<PrivateDnsNameOptionsRequest, JsonMarshallerContext> 
+    public class PrivateDnsNameOptionsRequestMarshaller : IRequestMarshaller<PrivateDnsNameOptionsRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PrivateDnsNameOptionsRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(PrivateDnsNameOptionsRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEnableResourceNameDnsAAAARecord())
-            {
-                context.Writer.WritePropertyName("EnableResourceNameDnsAAAARecord");
-                context.Writer.WriteBooleanValue(requestObject.EnableResourceNameDnsAAAARecord.Value);
-            }
 
-            if(requestObject.IsSetEnableResourceNameDnsARecord())
+            if (requestObject.IsSetEnableResourceNameDnsAAAARecord())
             {
-                context.Writer.WritePropertyName("EnableResourceNameDnsARecord");
-                context.Writer.WriteBooleanValue(requestObject.EnableResourceNameDnsARecord.Value);
+                context.Writer.WriteTextString("EnableResourceNameDnsAAAARecord");
+                context.Writer.WriteBoolean(requestObject.EnableResourceNameDnsAAAARecord.Value);
             }
-
-            if(requestObject.IsSetHostnameType())
+            if (requestObject.IsSetEnableResourceNameDnsARecord())
             {
-                context.Writer.WritePropertyName("HostnameType");
-                context.Writer.WriteStringValue(requestObject.HostnameType);
+                context.Writer.WriteTextString("EnableResourceNameDnsARecord");
+                context.Writer.WriteBoolean(requestObject.EnableResourceNameDnsARecord.Value);
             }
-
+            if (requestObject.IsSetHostnameType())
+            {
+                context.Writer.WriteTextString("HostnameType");
+                context.Writer.WriteTextString(requestObject.HostnameType);
+            }
         }
 
         /// <summary>

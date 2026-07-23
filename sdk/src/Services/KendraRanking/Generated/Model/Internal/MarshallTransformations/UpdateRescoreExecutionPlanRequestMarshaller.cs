@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
 {
@@ -59,59 +58,63 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateRescoreExecutionPlanRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.KendraRanking");
-            string target = "AWSKendraRerankingFrontendService.UpdateRescoreExecutionPlan";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/AWSKendraRerankingFrontendService/operation/UpdateRescoreExecutionPlan";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-10-19";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetCapacityUnits())
+                {
+                    context.Writer.WriteTextString("CapacityUnits");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = CapacityUnitsConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CapacityUnits, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetId())
+                {
+                    context.Writer.WriteTextString("Id");
+                    context.Writer.WriteTextString(publicRequest.Id);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCapacityUnits())
-            {
-                context.Writer.WritePropertyName("CapacityUnits");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CapacityUnitsConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CapacityUnits, context);
-
-                context.Writer.WriteEndObject();
             }
-
-            if(publicRequest.IsSetDescription())
+            finally
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetId())
-            {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.WriteStringValue(publicRequest.Id);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateRescoreExecutionPlanRequestMarshaller _instance = new UpdateRescoreExecutionPlanRequestMarshaller();        

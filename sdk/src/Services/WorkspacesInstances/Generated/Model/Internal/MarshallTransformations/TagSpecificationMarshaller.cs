@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TagSpecification Marshaller
     /// </summary>
-    public class TagSpecificationMarshaller : IRequestMarshaller<TagSpecification, JsonMarshallerContext> 
+    public class TagSpecificationMarshaller : IRequestMarshaller<TagSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TagSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(TagSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetResourceType())
-            {
-                context.Writer.WritePropertyName("ResourceType");
-                context.Writer.WriteStringValue(requestObject.ResourceType);
-            }
 
-            if(requestObject.IsSetTags())
+            if (requestObject.IsSetResourceType())
             {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ResourceType");
+                context.Writer.WriteTextString(requestObject.ResourceType);
+            }
+            if (requestObject.IsSetTags())
+            {
+                context.Writer.WriteTextString("Tags");
+                context.Writer.WriteStartArray(requestObject.Tags.Count);
                 foreach(var requestObjectTagsListValue in requestObject.Tags)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

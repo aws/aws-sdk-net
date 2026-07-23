@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchUpdateBillScenarioCommitmentModificationEntry Marshaller
     /// </summary>
-    public class BatchUpdateBillScenarioCommitmentModificationEntryMarshaller : IRequestMarshaller<BatchUpdateBillScenarioCommitmentModificationEntry, JsonMarshallerContext> 
+    public class BatchUpdateBillScenarioCommitmentModificationEntryMarshaller : IRequestMarshaller<BatchUpdateBillScenarioCommitmentModificationEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BatchUpdateBillScenarioCommitmentModificationEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(BatchUpdateBillScenarioCommitmentModificationEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetGroup())
-            {
-                context.Writer.WritePropertyName("group");
-                context.Writer.WriteStringValue(requestObject.Group);
-            }
 
-            if(requestObject.IsSetId())
+            if (requestObject.IsSetGroup())
             {
-                context.Writer.WritePropertyName("id");
-                context.Writer.WriteStringValue(requestObject.Id);
+                context.Writer.WriteTextString("group");
+                context.Writer.WriteTextString(requestObject.Group);
             }
-
+            if (requestObject.IsSetId())
+            {
+                context.Writer.WriteTextString("id");
+                context.Writer.WriteTextString(requestObject.Id);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceConfigurationFilter Marshaller
     /// </summary>
-    public class InstanceConfigurationFilterMarshaller : IRequestMarshaller<InstanceConfigurationFilter, JsonMarshallerContext> 
+    public class InstanceConfigurationFilterMarshaller : IRequestMarshaller<InstanceConfigurationFilter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceConfigurationFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceConfigurationFilter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBillingMode())
-            {
-                context.Writer.WritePropertyName("BillingMode");
-                context.Writer.WriteStringValue(requestObject.BillingMode);
-            }
 
-            if(requestObject.IsSetPlatformType())
+            if (requestObject.IsSetBillingMode())
             {
-                context.Writer.WritePropertyName("PlatformType");
-                context.Writer.WriteStringValue(requestObject.PlatformType);
+                context.Writer.WriteTextString("BillingMode");
+                context.Writer.WriteTextString(requestObject.BillingMode);
             }
-
-            if(requestObject.IsSetTenancy())
+            if (requestObject.IsSetPlatformType())
             {
-                context.Writer.WritePropertyName("Tenancy");
-                context.Writer.WriteStringValue(requestObject.Tenancy);
+                context.Writer.WriteTextString("PlatformType");
+                context.Writer.WriteTextString(requestObject.PlatformType);
             }
-
+            if (requestObject.IsSetTenancy())
+            {
+                context.Writer.WriteTextString("Tenancy");
+                context.Writer.WriteTextString(requestObject.Tenancy);
+            }
         }
 
         /// <summary>

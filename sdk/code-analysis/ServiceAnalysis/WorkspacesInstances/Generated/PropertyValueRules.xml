@@ -24,6 +24,7 @@
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
+    <pattern>[\x20-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateVolumeRequest.Iops</property>
@@ -54,6 +55,7 @@
     <property>Amazon.WorkspacesInstances.Model.CreateWorkspaceInstanceRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
+    <pattern>[\x20-\x7E]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.CreateWorkspaceInstanceResponse.WorkspaceInstanceId</property>
@@ -288,6 +290,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.InstanceTypeInfo.InstanceType</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>([a-z0-9-]+)\.([a-z0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -310,6 +314,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WorkspacesInstances.Model.ManagedInstanceRequest.InstanceType</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>([a-z0-9-]+)\.([a-z0-9]+)</pattern>
   </property-value-rule>
   <property-value-rule>

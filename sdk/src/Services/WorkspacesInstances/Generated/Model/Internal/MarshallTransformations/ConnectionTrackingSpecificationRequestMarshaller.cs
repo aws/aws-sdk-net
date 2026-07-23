@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ConnectionTrackingSpecificationRequest Marshaller
     /// </summary>
-    public class ConnectionTrackingSpecificationRequestMarshaller : IRequestMarshaller<ConnectionTrackingSpecificationRequest, JsonMarshallerContext> 
+    public class ConnectionTrackingSpecificationRequestMarshaller : IRequestMarshaller<ConnectionTrackingSpecificationRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ConnectionTrackingSpecificationRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ConnectionTrackingSpecificationRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetTcpEstablishedTimeout())
-            {
-                context.Writer.WritePropertyName("TcpEstablishedTimeout");
-                context.Writer.WriteNumberValue(requestObject.TcpEstablishedTimeout.Value);
-            }
 
-            if(requestObject.IsSetUdpStreamTimeout())
+            if (requestObject.IsSetTcpEstablishedTimeout())
             {
-                context.Writer.WritePropertyName("UdpStreamTimeout");
-                context.Writer.WriteNumberValue(requestObject.UdpStreamTimeout.Value);
+                context.Writer.WriteTextString("TcpEstablishedTimeout");
+                context.Writer.WriteInt32(requestObject.TcpEstablishedTimeout.Value);
             }
-
-            if(requestObject.IsSetUdpTimeout())
+            if (requestObject.IsSetUdpStreamTimeout())
             {
-                context.Writer.WritePropertyName("UdpTimeout");
-                context.Writer.WriteNumberValue(requestObject.UdpTimeout.Value);
+                context.Writer.WriteTextString("UdpStreamTimeout");
+                context.Writer.WriteInt32(requestObject.UdpStreamTimeout.Value);
             }
-
+            if (requestObject.IsSetUdpTimeout())
+            {
+                context.Writer.WriteTextString("UdpTimeout");
+                context.Writer.WriteInt32(requestObject.UdpTimeout.Value);
+            }
         }
 
         /// <summary>

@@ -29,124 +29,165 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BillEstimateLineItemSummary Object
     /// </summary>  
-    public class BillEstimateLineItemSummaryUnmarshaller : IJsonUnmarshaller<BillEstimateLineItemSummary, JsonUnmarshallerContext>
+    public class BillEstimateLineItemSummaryUnmarshaller : ICborUnmarshaller<BillEstimateLineItemSummary, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BillEstimateLineItemSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BillEstimateLineItemSummary Unmarshall(CborUnmarshallerContext context)
         {
             BillEstimateLineItemSummary unmarshalledObject = new BillEstimateLineItemSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("availabilityZone", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("estimatedCost", targetDepth, ref reader))
-                {
-                    var unmarshaller = CostAmountUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedCost = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("estimatedUsageQuantity", targetDepth, ref reader))
-                {
-                    var unmarshaller = UsageQuantityResultUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedUsageQuantity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("historicalCost", targetDepth, ref reader))
-                {
-                    var unmarshaller = CostAmountUnmarshaller.Instance;
-                    unmarshalledObject.HistoricalCost = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("historicalUsageQuantity", targetDepth, ref reader))
-                {
-                    var unmarshaller = UsageQuantityResultUnmarshaller.Instance;
-                    unmarshalledObject.HistoricalUsageQuantity = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lineItemId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lineItemType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LineItemType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("location", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("operation", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("payerAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PayerAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("savingsPlanArns", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SavingsPlanArns = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("serviceCode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("usageAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("usageType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "availabilityZone":
+                        {
+                            context.AddPathSegment("AvailabilityZone");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "estimatedCost":
+                        {
+                            context.AddPathSegment("EstimatedCost");
+                            var unmarshaller = CostAmountUnmarshaller.Instance;
+                            unmarshalledObject.EstimatedCost = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "estimatedUsageQuantity":
+                        {
+                            context.AddPathSegment("EstimatedUsageQuantity");
+                            var unmarshaller = UsageQuantityResultUnmarshaller.Instance;
+                            unmarshalledObject.EstimatedUsageQuantity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "historicalCost":
+                        {
+                            context.AddPathSegment("HistoricalCost");
+                            var unmarshaller = CostAmountUnmarshaller.Instance;
+                            unmarshalledObject.HistoricalCost = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "historicalUsageQuantity":
+                        {
+                            context.AddPathSegment("HistoricalUsageQuantity");
+                            var unmarshaller = UsageQuantityResultUnmarshaller.Instance;
+                            unmarshalledObject.HistoricalUsageQuantity = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "id":
+                        {
+                            context.AddPathSegment("Id");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lineItemId":
+                        {
+                            context.AddPathSegment("LineItemId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LineItemId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "lineItemType":
+                        {
+                            context.AddPathSegment("LineItemType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LineItemType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "location":
+                        {
+                            context.AddPathSegment("Location");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Location = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "operation":
+                        {
+                            context.AddPathSegment("Operation");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Operation = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "payerAccountId":
+                        {
+                            context.AddPathSegment("PayerAccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.PayerAccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "savingsPlanArns":
+                        {
+                            context.AddPathSegment("SavingsPlanArns");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.SavingsPlanArns = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "serviceCode":
+                        {
+                            context.AddPathSegment("ServiceCode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ServiceCode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "usageAccountId":
+                        {
+                            context.AddPathSegment("UsageAccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UsageAccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "usageType":
+                        {
+                            context.AddPathSegment("UsageType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UsageType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

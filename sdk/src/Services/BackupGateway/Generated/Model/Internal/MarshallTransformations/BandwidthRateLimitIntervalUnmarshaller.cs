@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BandwidthRateLimitInterval Object
     /// </summary>  
-    public class BandwidthRateLimitIntervalUnmarshaller : IJsonUnmarshaller<BandwidthRateLimitInterval, JsonUnmarshallerContext>
+    public class BandwidthRateLimitIntervalUnmarshaller : ICborUnmarshaller<BandwidthRateLimitInterval, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BandwidthRateLimitInterval Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public BandwidthRateLimitInterval Unmarshall(CborUnmarshallerContext context)
         {
             BandwidthRateLimitInterval unmarshalledObject = new BandwidthRateLimitInterval();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DaysOfWeek", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.DaysOfWeek = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndHourOfDay", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndHourOfDay = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EndMinuteOfHour", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndMinuteOfHour = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartHourOfDay", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StartHourOfDay = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartMinuteOfHour", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StartMinuteOfHour = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AverageUploadRateLimitInBitsPerSec":
+                        {
+                            context.AddPathSegment("AverageUploadRateLimitInBitsPerSec");
+                            var unmarshaller = CborNullableLongUnmarshaller.Instance;
+                            unmarshalledObject.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DaysOfWeek":
+                        {
+                            context.AddPathSegment("DaysOfWeek");
+                            var unmarshaller = new CborListUnmarshaller<int, CborIntUnmarshaller>(CborIntUnmarshaller.Instance);
+                            unmarshalledObject.DaysOfWeek = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EndHourOfDay":
+                        {
+                            context.AddPathSegment("EndHourOfDay");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.EndHourOfDay = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EndMinuteOfHour":
+                        {
+                            context.AddPathSegment("EndMinuteOfHour");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.EndMinuteOfHour = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StartHourOfDay":
+                        {
+                            context.AddPathSegment("StartHourOfDay");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.StartHourOfDay = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StartMinuteOfHour":
+                        {
+                            context.AddPathSegment("StartMinuteOfHour");
+                            var unmarshaller = CborNullableIntUnmarshaller.Instance;
+                            unmarshalledObject.StartMinuteOfHour = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

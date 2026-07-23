@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
@@ -59,54 +58,58 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         public IRequest Marshall(DisassociateVolumeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkspacesInstances");
-            string target = "EUCMIFrontendAPIService.DisassociateVolume";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/EUCMIFrontendAPIService/operation/DisassociateVolume";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-07-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDevice())
+                {
+                    context.Writer.WriteTextString("Device");
+                    context.Writer.WriteTextString(publicRequest.Device);
+                }
+                if (publicRequest.IsSetDisassociateMode())
+                {
+                    context.Writer.WriteTextString("DisassociateMode");
+                    context.Writer.WriteTextString(publicRequest.DisassociateMode);
+                }
+                if (publicRequest.IsSetVolumeId())
+                {
+                    context.Writer.WriteTextString("VolumeId");
+                    context.Writer.WriteTextString(publicRequest.VolumeId);
+                }
+                if (publicRequest.IsSetWorkspaceInstanceId())
+                {
+                    context.Writer.WriteTextString("WorkspaceInstanceId");
+                    context.Writer.WriteTextString(publicRequest.WorkspaceInstanceId);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDevice())
-            {
-                context.Writer.WritePropertyName("Device");
-                context.Writer.WriteStringValue(publicRequest.Device);
             }
-
-            if(publicRequest.IsSetDisassociateMode())
+            finally
             {
-                context.Writer.WritePropertyName("DisassociateMode");
-                context.Writer.WriteStringValue(publicRequest.DisassociateMode);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetVolumeId())
-            {
-                context.Writer.WritePropertyName("VolumeId");
-                context.Writer.WriteStringValue(publicRequest.VolumeId);
-            }
-
-            if(publicRequest.IsSetWorkspaceInstanceId())
-            {
-                context.Writer.WritePropertyName("WorkspaceInstanceId");
-                context.Writer.WriteStringValue(publicRequest.WorkspaceInstanceId);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static DisassociateVolumeRequestMarshaller _instance = new DisassociateVolumeRequestMarshaller();        

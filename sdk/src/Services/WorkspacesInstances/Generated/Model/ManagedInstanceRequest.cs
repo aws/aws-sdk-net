@@ -294,6 +294,7 @@ namespace Amazon.WorkspacesInstances.Model
         /// Specifies the WorkSpace Instance type.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string InstanceType
         {
             get { return this._instanceType; }

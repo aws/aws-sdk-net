@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NegateReservedInstanceAction Marshaller
     /// </summary>
-    public class NegateReservedInstanceActionMarshaller : IRequestMarshaller<NegateReservedInstanceAction, JsonMarshallerContext> 
+    public class NegateReservedInstanceActionMarshaller : IRequestMarshaller<NegateReservedInstanceAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NegateReservedInstanceAction requestObject, JsonMarshallerContext context)
+        public void Marshall(NegateReservedInstanceAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetReservedInstancesId())
-            {
-                context.Writer.WritePropertyName("reservedInstancesId");
-                context.Writer.WriteStringValue(requestObject.ReservedInstancesId);
-            }
 
+            if (requestObject.IsSetReservedInstancesId())
+            {
+                context.Writer.WriteTextString("reservedInstancesId");
+                context.Writer.WriteTextString(requestObject.ReservedInstancesId);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddSavingsPlanAction Marshaller
     /// </summary>
-    public class AddSavingsPlanActionMarshaller : IRequestMarshaller<AddSavingsPlanAction, JsonMarshallerContext> 
+    public class AddSavingsPlanActionMarshaller : IRequestMarshaller<AddSavingsPlanAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,29 +45,21 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AddSavingsPlanAction requestObject, JsonMarshallerContext context)
+        public void Marshall(AddSavingsPlanAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCommitment())
-            {
-                context.Writer.WritePropertyName("commitment");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Commitment.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Commitment.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.Commitment.Value);
-                }
-            }
 
-            if(requestObject.IsSetSavingsPlanOfferingId())
+            if (requestObject.IsSetCommitment())
             {
-                context.Writer.WritePropertyName("savingsPlanOfferingId");
-                context.Writer.WriteStringValue(requestObject.SavingsPlanOfferingId);
+                context.Writer.WriteTextString("commitment");
+                context.Writer.WriteOptimizedNumber(requestObject.Commitment.Value);
             }
-
+            if (requestObject.IsSetSavingsPlanOfferingId())
+            {
+                context.Writer.WriteTextString("savingsPlanOfferingId");
+                context.Writer.WriteTextString(requestObject.SavingsPlanOfferingId);
+            }
         }
 
         /// <summary>

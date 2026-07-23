@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
@@ -59,105 +58,103 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateVolumeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkspacesInstances");
-            string target = "EUCMIFrontendAPIService.CreateVolume";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/EUCMIFrontendAPIService/operation/CreateVolume";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-07-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAvailabilityZone())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.WriteStringValue(publicRequest.AvailabilityZone);
-            }
-
-            if(publicRequest.IsSetClientToken())
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetEncrypted())
-            {
-                context.Writer.WritePropertyName("Encrypted");
-                context.Writer.WriteBooleanValue(publicRequest.Encrypted.Value);
-            }
-
-            if(publicRequest.IsSetIops())
-            {
-                context.Writer.WritePropertyName("Iops");
-                context.Writer.WriteNumberValue(publicRequest.Iops.Value);
-            }
-
-            if(publicRequest.IsSetKmsKeyId())
-            {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
-            }
-
-            if(publicRequest.IsSetSizeInGB())
-            {
-                context.Writer.WritePropertyName("SizeInGB");
-                context.Writer.WriteNumberValue(publicRequest.SizeInGB.Value);
-            }
-
-            if(publicRequest.IsSetSnapshotId())
-            {
-                context.Writer.WritePropertyName("SnapshotId");
-                context.Writer.WriteStringValue(publicRequest.SnapshotId);
-            }
-
-            if(publicRequest.IsSetTagSpecifications())
-            {
-                context.Writer.WritePropertyName("TagSpecifications");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagSpecificationsListValue in publicRequest.TagSpecifications)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAvailabilityZone())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagSpecificationMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagSpecificationsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("AvailabilityZone");
+                    context.Writer.WriteTextString(publicRequest.AvailabilityZone);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
+                }
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetEncrypted())
+                {
+                    context.Writer.WriteTextString("Encrypted");
+                    context.Writer.WriteBoolean(publicRequest.Encrypted.Value);
+                }
+                if (publicRequest.IsSetIops())
+                {
+                    context.Writer.WriteTextString("Iops");
+                    context.Writer.WriteInt32(publicRequest.Iops.Value);
+                }
+                if (publicRequest.IsSetKmsKeyId())
+                {
+                    context.Writer.WriteTextString("KmsKeyId");
+                    context.Writer.WriteTextString(publicRequest.KmsKeyId);
+                }
+                if (publicRequest.IsSetSizeInGB())
+                {
+                    context.Writer.WriteTextString("SizeInGB");
+                    context.Writer.WriteInt32(publicRequest.SizeInGB.Value);
+                }
+                if (publicRequest.IsSetSnapshotId())
+                {
+                    context.Writer.WriteTextString("SnapshotId");
+                    context.Writer.WriteTextString(publicRequest.SnapshotId);
+                }
+                if (publicRequest.IsSetTagSpecifications())
+                {
+                    context.Writer.WriteTextString("TagSpecifications");
+                    context.Writer.WriteStartArray(publicRequest.TagSpecifications.Count);
+                    foreach(var publicRequestTagSpecificationsListValue in publicRequest.TagSpecifications)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetThroughput())
-            {
-                context.Writer.WritePropertyName("Throughput");
-                context.Writer.WriteNumberValue(publicRequest.Throughput.Value);
-            }
+                        var marshaller = TagSpecificationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagSpecificationsListValue, context);
 
-            if(publicRequest.IsSetVolumeType())
-            {
-                context.Writer.WritePropertyName("VolumeType");
-                context.Writer.WriteStringValue(publicRequest.VolumeType);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetThroughput())
+                {
+                    context.Writer.WriteTextString("Throughput");
+                    context.Writer.WriteInt32(publicRequest.Throughput.Value);
+                }
+                if (publicRequest.IsSetVolumeType())
+                {
+                    context.Writer.WriteTextString("VolumeType");
+                    context.Writer.WriteTextString(publicRequest.VolumeType);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateVolumeRequestMarshaller _instance = new CreateVolumeRequestMarshaller();        

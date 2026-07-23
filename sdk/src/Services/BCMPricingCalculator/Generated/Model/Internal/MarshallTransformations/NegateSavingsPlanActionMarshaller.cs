@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// NegateSavingsPlanAction Marshaller
     /// </summary>
-    public class NegateSavingsPlanActionMarshaller : IRequestMarshaller<NegateSavingsPlanAction, JsonMarshallerContext> 
+    public class NegateSavingsPlanActionMarshaller : IRequestMarshaller<NegateSavingsPlanAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(NegateSavingsPlanAction requestObject, JsonMarshallerContext context)
+        public void Marshall(NegateSavingsPlanAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSavingsPlanId())
-            {
-                context.Writer.WritePropertyName("savingsPlanId");
-                context.Writer.WriteStringValue(requestObject.SavingsPlanId);
-            }
 
+            if (requestObject.IsSetSavingsPlanId())
+            {
+                context.Writer.WriteTextString("savingsPlanId");
+                context.Writer.WriteTextString(requestObject.SavingsPlanId);
+            }
         }
 
         /// <summary>

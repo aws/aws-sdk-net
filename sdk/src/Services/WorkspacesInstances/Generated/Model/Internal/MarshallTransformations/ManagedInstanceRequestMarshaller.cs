@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ManagedInstanceRequest Marshaller
     /// </summary>
-    public class ManagedInstanceRequestMarshaller : IRequestMarshaller<ManagedInstanceRequest, JsonMarshallerContext> 
+    public class ManagedInstanceRequestMarshaller : IRequestMarshaller<ManagedInstanceRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,327 +45,296 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedInstanceRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(ManagedInstanceRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBlockDeviceMappings())
+
+            if (requestObject.IsSetBlockDeviceMappings())
             {
-                context.Writer.WritePropertyName("BlockDeviceMappings");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("BlockDeviceMappings");
+                context.Writer.WriteStartArray(requestObject.BlockDeviceMappings.Count);
                 foreach(var requestObjectBlockDeviceMappingsListValue in requestObject.BlockDeviceMappings)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = BlockDeviceMappingRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectBlockDeviceMappingsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetCapacityReservationSpecification())
+            if (requestObject.IsSetCapacityReservationSpecification())
             {
-                context.Writer.WritePropertyName("CapacityReservationSpecification");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CapacityReservationSpecification");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CapacityReservationSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CapacityReservationSpecification, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetCpuOptions())
+            if (requestObject.IsSetCpuOptions())
             {
-                context.Writer.WritePropertyName("CpuOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CpuOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CpuOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.CpuOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetCreditSpecification())
+            if (requestObject.IsSetCreditSpecification())
             {
-                context.Writer.WritePropertyName("CreditSpecification");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CreditSpecification");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CreditSpecificationRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreditSpecification, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDisableApiStop())
+            if (requestObject.IsSetDisableApiStop())
             {
-                context.Writer.WritePropertyName("DisableApiStop");
-                context.Writer.WriteBooleanValue(requestObject.DisableApiStop.Value);
+                context.Writer.WriteTextString("DisableApiStop");
+                context.Writer.WriteBoolean(requestObject.DisableApiStop.Value);
             }
-
-            if(requestObject.IsSetEbsOptimized())
+            if (requestObject.IsSetEbsOptimized())
             {
-                context.Writer.WritePropertyName("EbsOptimized");
-                context.Writer.WriteBooleanValue(requestObject.EbsOptimized.Value);
+                context.Writer.WriteTextString("EbsOptimized");
+                context.Writer.WriteBoolean(requestObject.EbsOptimized.Value);
             }
-
-            if(requestObject.IsSetEnablePrimaryIpv6())
+            if (requestObject.IsSetEnablePrimaryIpv6())
             {
-                context.Writer.WritePropertyName("EnablePrimaryIpv6");
-                context.Writer.WriteBooleanValue(requestObject.EnablePrimaryIpv6.Value);
+                context.Writer.WriteTextString("EnablePrimaryIpv6");
+                context.Writer.WriteBoolean(requestObject.EnablePrimaryIpv6.Value);
             }
-
-            if(requestObject.IsSetEnclaveOptions())
+            if (requestObject.IsSetEnclaveOptions())
             {
-                context.Writer.WritePropertyName("EnclaveOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EnclaveOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EnclaveOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.EnclaveOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetHibernationOptions())
+            if (requestObject.IsSetHibernationOptions())
             {
-                context.Writer.WritePropertyName("HibernationOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("HibernationOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = HibernationOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.HibernationOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetIamInstanceProfile())
+            if (requestObject.IsSetIamInstanceProfile())
             {
-                context.Writer.WritePropertyName("IamInstanceProfile");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("IamInstanceProfile");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IamInstanceProfileSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.IamInstanceProfile, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetImageId())
+            if (requestObject.IsSetImageId())
             {
-                context.Writer.WritePropertyName("ImageId");
-                context.Writer.WriteStringValue(requestObject.ImageId);
+                context.Writer.WriteTextString("ImageId");
+                context.Writer.WriteTextString(requestObject.ImageId);
             }
-
-            if(requestObject.IsSetInstanceMarketOptions())
+            if (requestObject.IsSetInstanceMarketOptions())
             {
-                context.Writer.WritePropertyName("InstanceMarketOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("InstanceMarketOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = InstanceMarketOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.InstanceMarketOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetInstanceType())
+            if (requestObject.IsSetInstanceType())
             {
-                context.Writer.WritePropertyName("InstanceType");
-                context.Writer.WriteStringValue(requestObject.InstanceType);
+                context.Writer.WriteTextString("InstanceType");
+                context.Writer.WriteTextString(requestObject.InstanceType);
             }
-
-            if(requestObject.IsSetIpv6AddressCount())
+            if (requestObject.IsSetIpv6AddressCount())
             {
-                context.Writer.WritePropertyName("Ipv6AddressCount");
-                context.Writer.WriteNumberValue(requestObject.Ipv6AddressCount.Value);
+                context.Writer.WriteTextString("Ipv6AddressCount");
+                context.Writer.WriteInt32(requestObject.Ipv6AddressCount.Value);
             }
-
-            if(requestObject.IsSetIpv6Addresses())
+            if (requestObject.IsSetIpv6Addresses())
             {
-                context.Writer.WritePropertyName("Ipv6Addresses");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Ipv6Addresses");
+                context.Writer.WriteStartArray(requestObject.Ipv6Addresses.Count);
                 foreach(var requestObjectIpv6AddressesListValue in requestObject.Ipv6Addresses)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = InstanceIpv6AddressMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv6AddressesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetKernelId())
+            if (requestObject.IsSetKernelId())
             {
-                context.Writer.WritePropertyName("KernelId");
-                context.Writer.WriteStringValue(requestObject.KernelId);
+                context.Writer.WriteTextString("KernelId");
+                context.Writer.WriteTextString(requestObject.KernelId);
             }
-
-            if(requestObject.IsSetKeyName())
+            if (requestObject.IsSetKeyName())
             {
-                context.Writer.WritePropertyName("KeyName");
-                context.Writer.WriteStringValue(requestObject.KeyName);
+                context.Writer.WriteTextString("KeyName");
+                context.Writer.WriteTextString(requestObject.KeyName);
             }
-
-            if(requestObject.IsSetLicenseSpecifications())
+            if (requestObject.IsSetLicenseSpecifications())
             {
-                context.Writer.WritePropertyName("LicenseSpecifications");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("LicenseSpecifications");
+                context.Writer.WriteStartArray(requestObject.LicenseSpecifications.Count);
                 foreach(var requestObjectLicenseSpecificationsListValue in requestObject.LicenseSpecifications)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = LicenseConfigurationRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectLicenseSpecificationsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetMaintenanceOptions())
+            if (requestObject.IsSetMaintenanceOptions())
             {
-                context.Writer.WritePropertyName("MaintenanceOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("MaintenanceOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = InstanceMaintenanceOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.MaintenanceOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetMetadataOptions())
+            if (requestObject.IsSetMetadataOptions())
             {
-                context.Writer.WritePropertyName("MetadataOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("MetadataOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = InstanceMetadataOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetadataOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetMonitoring())
+            if (requestObject.IsSetMonitoring())
             {
-                context.Writer.WritePropertyName("Monitoring");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Monitoring");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RunInstancesMonitoringEnabledMarshaller.Instance;
                 marshaller.Marshall(requestObject.Monitoring, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetNetworkInterfaces())
+            if (requestObject.IsSetNetworkInterfaces())
             {
-                context.Writer.WritePropertyName("NetworkInterfaces");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("NetworkInterfaces");
+                context.Writer.WriteStartArray(requestObject.NetworkInterfaces.Count);
                 foreach(var requestObjectNetworkInterfacesListValue in requestObject.NetworkInterfaces)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = InstanceNetworkInterfaceSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectNetworkInterfacesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetNetworkPerformanceOptions())
+            if (requestObject.IsSetNetworkPerformanceOptions())
             {
-                context.Writer.WritePropertyName("NetworkPerformanceOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NetworkPerformanceOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = InstanceNetworkPerformanceOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.NetworkPerformanceOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPlacement())
+            if (requestObject.IsSetPlacement())
             {
-                context.Writer.WritePropertyName("Placement");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Placement");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PlacementMarshaller.Instance;
                 marshaller.Marshall(requestObject.Placement, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPrivateDnsNameOptions())
+            if (requestObject.IsSetPrivateDnsNameOptions())
             {
-                context.Writer.WritePropertyName("PrivateDnsNameOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("PrivateDnsNameOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = PrivateDnsNameOptionsRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrivateDnsNameOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetPrivateIpAddress())
+            if (requestObject.IsSetPrivateIpAddress())
             {
-                context.Writer.WritePropertyName("PrivateIpAddress");
-                context.Writer.WriteStringValue(requestObject.PrivateIpAddress);
+                context.Writer.WriteTextString("PrivateIpAddress");
+                context.Writer.WriteTextString(requestObject.PrivateIpAddress);
             }
-
-            if(requestObject.IsSetRamdiskId())
+            if (requestObject.IsSetRamdiskId())
             {
-                context.Writer.WritePropertyName("RamdiskId");
-                context.Writer.WriteStringValue(requestObject.RamdiskId);
+                context.Writer.WriteTextString("RamdiskId");
+                context.Writer.WriteTextString(requestObject.RamdiskId);
             }
-
-            if(requestObject.IsSetSecurityGroupIds())
+            if (requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SecurityGroupIds");
+                context.Writer.WriteStartArray(requestObject.SecurityGroupIds.Count);
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteTextString(requestObjectSecurityGroupIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetSecurityGroups())
+            if (requestObject.IsSetSecurityGroups())
             {
-                context.Writer.WritePropertyName("SecurityGroups");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SecurityGroups");
+                context.Writer.WriteStartArray(requestObject.SecurityGroups.Count);
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteTextString(requestObjectSecurityGroupsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetSubnetId())
+            if (requestObject.IsSetSubnetId())
             {
-                context.Writer.WritePropertyName("SubnetId");
-                context.Writer.WriteStringValue(requestObject.SubnetId);
+                context.Writer.WriteTextString("SubnetId");
+                context.Writer.WriteTextString(requestObject.SubnetId);
             }
-
-            if(requestObject.IsSetTagSpecifications())
+            if (requestObject.IsSetTagSpecifications())
             {
-                context.Writer.WritePropertyName("TagSpecifications");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("TagSpecifications");
+                context.Writer.WriteStartArray(requestObject.TagSpecifications.Count);
                 foreach(var requestObjectTagSpecificationsListValue in requestObject.TagSpecifications)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = TagSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagSpecificationsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetUserData())
+            if (requestObject.IsSetUserData())
             {
-                context.Writer.WritePropertyName("UserData");
-                context.Writer.WriteStringValue(requestObject.UserData);
+                context.Writer.WriteTextString("UserData");
+                context.Writer.WriteTextString(requestObject.UserData);
             }
-
         }
 
         /// <summary>
