@@ -40,6 +40,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
+            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannel(Amazon.MediaPackageV2.Model.CreateChannelRequest)" />
+            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelRequest" />
+            <member name="T:Amazon.MediaPackageV2.Model.CreateChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Creating a CMAF Channel with non-epoch-locked output locking mode"
+                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.CreateChannelGroup(Amazon.MediaPackageV2.Model.CreateChannelGroupRequest)" />
             <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.CreateChannelGroup(Amazon.MediaPackageV2.Model.CreateChannelGroupRequest)" />
             <member name="T:Amazon.MediaPackageV2.Model.CreateChannelGroupRequest" />
@@ -244,6 +263,25 @@
                     title="Getting a Channel"
                     source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
+            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.GetChannel(Amazon.MediaPackageV2.Model.GetChannelRequest)" />
+            <member name="T:Amazon.MediaPackageV2.Model.GetChannelRequest" />
+            <member name="T:Amazon.MediaPackageV2.Model.GetChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Getting a CMAF Channel with non-epoch-locked output locking mode"
+                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
@@ -662,6 +700,25 @@
                     title="Updating a Channel"
                     source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
                     region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MediaPackageV2.IAmazonMediaPackageV2.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
+            <member name="M:Amazon.MediaPackageV2.AmazonMediaPackageV2Client.UpdateChannel(Amazon.MediaPackageV2.Model.UpdateChannelRequest)" />
+            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelRequest" />
+            <member name="T:Amazon.MediaPackageV2.Model.UpdateChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Updating a CMAF Channel with non-epoch-locked output locking mode"
+                    source=".\AWSSDKDocSamples\MediaPackageV2\MediaPackageV2.GeneratedSamples.cs"
+                    region="example-2" />
             </example>
         </value>
     </doc>
