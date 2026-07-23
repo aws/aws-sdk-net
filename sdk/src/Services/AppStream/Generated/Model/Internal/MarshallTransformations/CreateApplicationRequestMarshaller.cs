@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,119 +58,116 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.CreateApplication";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/CreateApplication";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAppBlockArn())
+                {
+                    context.Writer.WriteTextString("AppBlockArn");
+                    context.Writer.WriteTextString(publicRequest.AppBlockArn);
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WriteTextString("DisplayName");
+                    context.Writer.WriteTextString(publicRequest.DisplayName);
+                }
+                if (publicRequest.IsSetIconS3Location())
+                {
+                    context.Writer.WriteTextString("IconS3Location");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IconS3Location, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetInstanceFamilies())
+                {
+                    context.Writer.WriteTextString("InstanceFamilies");
+                    context.Writer.WriteStartArray(publicRequest.InstanceFamilies.Count);
+                    foreach(var publicRequestInstanceFamiliesListValue in publicRequest.InstanceFamilies)
+                    {
+                            context.Writer.WriteTextString(publicRequestInstanceFamiliesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetLaunchParameters())
+                {
+                    context.Writer.WriteTextString("LaunchParameters");
+                    context.Writer.WriteTextString(publicRequest.LaunchParameters);
+                }
+                if (publicRequest.IsSetLaunchPath())
+                {
+                    context.Writer.WriteTextString("LaunchPath");
+                    context.Writer.WriteTextString(publicRequest.LaunchPath);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetPlatforms())
+                {
+                    context.Writer.WriteTextString("Platforms");
+                    context.Writer.WriteStartArray(publicRequest.Platforms.Count);
+                    foreach(var publicRequestPlatformsListValue in publicRequest.Platforms)
+                    {
+                            context.Writer.WriteTextString(publicRequestPlatformsListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WriteTextString(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.WriteTextString(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetWorkingDirectory())
+                {
+                    context.Writer.WriteTextString("WorkingDirectory");
+                    context.Writer.WriteTextString(publicRequest.WorkingDirectory);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAppBlockArn())
-            {
-                context.Writer.WritePropertyName("AppBlockArn");
-                context.Writer.WriteStringValue(publicRequest.AppBlockArn);
             }
-
-            if(publicRequest.IsSetDescription())
+            finally
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetDisplayName())
-            {
-                context.Writer.WritePropertyName("DisplayName");
-                context.Writer.WriteStringValue(publicRequest.DisplayName);
-            }
-
-            if(publicRequest.IsSetIconS3Location())
-            {
-                context.Writer.WritePropertyName("IconS3Location");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.IconS3Location, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetInstanceFamilies())
-            {
-                context.Writer.WritePropertyName("InstanceFamilies");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestInstanceFamiliesListValue in publicRequest.InstanceFamilies)
-                {
-                        context.Writer.WriteStringValue(publicRequestInstanceFamiliesListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetLaunchParameters())
-            {
-                context.Writer.WritePropertyName("LaunchParameters");
-                context.Writer.WriteStringValue(publicRequest.LaunchParameters);
-            }
-
-            if(publicRequest.IsSetLaunchPath())
-            {
-                context.Writer.WritePropertyName("LaunchPath");
-                context.Writer.WriteStringValue(publicRequest.LaunchPath);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetPlatforms())
-            {
-                context.Writer.WritePropertyName("Platforms");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestPlatformsListValue in publicRequest.Platforms)
-                {
-                        context.Writer.WriteStringValue(publicRequestPlatformsListValue);
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetWorkingDirectory())
-            {
-                context.Writer.WritePropertyName("WorkingDirectory");
-                context.Writer.WriteStringValue(publicRequest.WorkingDirectory);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static CreateApplicationRequestMarshaller _instance = new CreateApplicationRequestMarshaller();        

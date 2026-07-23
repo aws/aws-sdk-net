@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ImagePermissions Marshaller
     /// </summary>
-    public class ImagePermissionsMarshaller : IRequestMarshaller<ImagePermissions, JsonMarshallerContext> 
+    public class ImagePermissionsMarshaller : IRequestMarshaller<ImagePermissions, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ImagePermissions requestObject, JsonMarshallerContext context)
+        public void Marshall(ImagePermissions requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAllowFleet())
-            {
-                context.Writer.WritePropertyName("allowFleet");
-                context.Writer.WriteBooleanValue(requestObject.AllowFleet.Value);
-            }
 
-            if(requestObject.IsSetAllowImageBuilder())
+            if (requestObject.IsSetAllowFleet())
             {
-                context.Writer.WritePropertyName("allowImageBuilder");
-                context.Writer.WriteBooleanValue(requestObject.AllowImageBuilder.Value);
+                context.Writer.WriteTextString("allowFleet");
+                context.Writer.WriteBoolean(requestObject.AllowFleet.Value);
             }
-
+            if (requestObject.IsSetAllowImageBuilder())
+            {
+                context.Writer.WriteTextString("allowImageBuilder");
+                context.Writer.WriteBoolean(requestObject.AllowImageBuilder.Value);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VpcConfig Marshaller
     /// </summary>
-    public class VpcConfigMarshaller : IRequestMarshaller<VpcConfig, JsonMarshallerContext> 
+    public class VpcConfigMarshaller : IRequestMarshaller<VpcConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,32 +45,31 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VpcConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(VpcConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetSecurityGroupIds())
+
+            if (requestObject.IsSetSecurityGroupIds())
             {
-                context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SecurityGroupIds");
+                context.Writer.WriteStartArray(requestObject.SecurityGroupIds.Count);
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteTextString(requestObjectSecurityGroupIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetSubnetIds())
+            if (requestObject.IsSetSubnetIds())
             {
-                context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("SubnetIds");
+                context.Writer.WriteStartArray(requestObject.SubnetIds.Count);
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteTextString(requestObjectSubnetIdsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AgentAccessConfig Object
     /// </summary>  
-    public class AgentAccessConfigUnmarshaller : IJsonUnmarshaller<AgentAccessConfig, JsonUnmarshallerContext>
+    public class AgentAccessConfigUnmarshaller : ICborUnmarshaller<AgentAccessConfig, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentAccessConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AgentAccessConfig Unmarshall(CborUnmarshallerContext context)
         {
             AgentAccessConfig unmarshalledObject = new AgentAccessConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("S3BucketArn", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ScreenImageFormat", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScreenImageFormat = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ScreenResolution", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScreenResolution = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ScreenshotsUploadEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ScreenshotsUploadEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Settings", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<AgentAccessSetting, AgentAccessSettingUnmarshaller>(AgentAccessSettingUnmarshaller.Instance);
-                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UserControlMode", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserControlMode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "S3BucketArn":
+                        {
+                            context.AddPathSegment("S3BucketArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ScreenImageFormat":
+                        {
+                            context.AddPathSegment("ScreenImageFormat");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ScreenImageFormat = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ScreenResolution":
+                        {
+                            context.AddPathSegment("ScreenResolution");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ScreenResolution = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ScreenshotsUploadEnabled":
+                        {
+                            context.AddPathSegment("ScreenshotsUploadEnabled");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.ScreenshotsUploadEnabled = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Settings":
+                        {
+                            context.AddPathSegment("Settings");
+                            var unmarshaller = new CborListUnmarshaller<AgentAccessSetting, AgentAccessSettingUnmarshaller>(AgentAccessSettingUnmarshaller.Instance);
+                            unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UserControlMode":
+                        {
+                            context.AddPathSegment("UserControlMode");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UserControlMode = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ContentRedirection Marshaller
     /// </summary>
-    public class ContentRedirectionMarshaller : IRequestMarshaller<ContentRedirection, JsonMarshallerContext> 
+    public class ContentRedirectionMarshaller : IRequestMarshaller<ContentRedirection, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,21 +45,21 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ContentRedirection requestObject, JsonMarshallerContext context)
+        public void Marshall(ContentRedirection requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetHostToClient())
+
+            if (requestObject.IsSetHostToClient())
             {
-                context.Writer.WritePropertyName("HostToClient");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("HostToClient");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = UrlRedirectionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HostToClient, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

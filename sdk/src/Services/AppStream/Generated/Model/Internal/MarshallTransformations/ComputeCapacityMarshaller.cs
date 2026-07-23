@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ComputeCapacity Marshaller
     /// </summary>
-    public class ComputeCapacityMarshaller : IRequestMarshaller<ComputeCapacity, JsonMarshallerContext> 
+    public class ComputeCapacityMarshaller : IRequestMarshaller<ComputeCapacity, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ComputeCapacity requestObject, JsonMarshallerContext context)
+        public void Marshall(ComputeCapacity requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDesiredInstances())
-            {
-                context.Writer.WritePropertyName("DesiredInstances");
-                context.Writer.WriteNumberValue(requestObject.DesiredInstances.Value);
-            }
 
-            if(requestObject.IsSetDesiredSessions())
+            if (requestObject.IsSetDesiredInstances())
             {
-                context.Writer.WritePropertyName("DesiredSessions");
-                context.Writer.WriteNumberValue(requestObject.DesiredSessions.Value);
+                context.Writer.WriteTextString("DesiredInstances");
+                context.Writer.WriteInt32(requestObject.DesiredInstances.Value);
             }
-
+            if (requestObject.IsSetDesiredSessions())
+            {
+                context.Writer.WriteTextString("DesiredSessions");
+                context.Writer.WriteInt32(requestObject.DesiredSessions.Value);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AgentAccessConfig Marshaller
     /// </summary>
-    public class AgentAccessConfigMarshaller : IRequestMarshaller<AgentAccessConfig, JsonMarshallerContext> 
+    public class AgentAccessConfigMarshaller : IRequestMarshaller<AgentAccessConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,56 +45,51 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AgentAccessConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AgentAccessConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetS3BucketArn())
-            {
-                context.Writer.WritePropertyName("S3BucketArn");
-                context.Writer.WriteStringValue(requestObject.S3BucketArn);
-            }
 
-            if(requestObject.IsSetScreenImageFormat())
+            if (requestObject.IsSetS3BucketArn())
             {
-                context.Writer.WritePropertyName("ScreenImageFormat");
-                context.Writer.WriteStringValue(requestObject.ScreenImageFormat);
+                context.Writer.WriteTextString("S3BucketArn");
+                context.Writer.WriteTextString(requestObject.S3BucketArn);
             }
-
-            if(requestObject.IsSetScreenResolution())
+            if (requestObject.IsSetScreenImageFormat())
             {
-                context.Writer.WritePropertyName("ScreenResolution");
-                context.Writer.WriteStringValue(requestObject.ScreenResolution);
+                context.Writer.WriteTextString("ScreenImageFormat");
+                context.Writer.WriteTextString(requestObject.ScreenImageFormat);
             }
-
-            if(requestObject.IsSetScreenshotsUploadEnabled())
+            if (requestObject.IsSetScreenResolution())
             {
-                context.Writer.WritePropertyName("ScreenshotsUploadEnabled");
-                context.Writer.WriteBooleanValue(requestObject.ScreenshotsUploadEnabled.Value);
+                context.Writer.WriteTextString("ScreenResolution");
+                context.Writer.WriteTextString(requestObject.ScreenResolution);
             }
-
-            if(requestObject.IsSetSettings())
+            if (requestObject.IsSetScreenshotsUploadEnabled())
             {
-                context.Writer.WritePropertyName("Settings");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ScreenshotsUploadEnabled");
+                context.Writer.WriteBoolean(requestObject.ScreenshotsUploadEnabled.Value);
+            }
+            if (requestObject.IsSetSettings())
+            {
+                context.Writer.WriteTextString("Settings");
+                context.Writer.WriteStartArray(requestObject.Settings.Count);
                 foreach(var requestObjectSettingsListValue in requestObject.Settings)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = AgentAccessSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectSettingsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetUserControlMode())
+            if (requestObject.IsSetUserControlMode())
             {
-                context.Writer.WritePropertyName("UserControlMode");
-                context.Writer.WriteStringValue(requestObject.UserControlMode);
+                context.Writer.WriteTextString("UserControlMode");
+                context.Writer.WriteTextString(requestObject.UserControlMode);
             }
-
         }
 
         /// <summary>

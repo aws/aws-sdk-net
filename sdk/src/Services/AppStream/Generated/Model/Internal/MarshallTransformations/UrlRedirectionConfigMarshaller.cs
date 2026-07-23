@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UrlRedirectionConfig Marshaller
     /// </summary>
-    public class UrlRedirectionConfigMarshaller : IRequestMarshaller<UrlRedirectionConfig, JsonMarshallerContext> 
+    public class UrlRedirectionConfigMarshaller : IRequestMarshaller<UrlRedirectionConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +45,36 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UrlRedirectionConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(UrlRedirectionConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAllowedUrls())
+
+            if (requestObject.IsSetAllowedUrls())
             {
-                context.Writer.WritePropertyName("AllowedUrls");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AllowedUrls");
+                context.Writer.WriteStartArray(requestObject.AllowedUrls.Count);
                 foreach(var requestObjectAllowedUrlsListValue in requestObject.AllowedUrls)
                 {
-                        context.Writer.WriteStringValue(requestObjectAllowedUrlsListValue);
+                        context.Writer.WriteTextString(requestObjectAllowedUrlsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetDeniedUrls())
+            if (requestObject.IsSetDeniedUrls())
             {
-                context.Writer.WritePropertyName("DeniedUrls");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("DeniedUrls");
+                context.Writer.WriteStartArray(requestObject.DeniedUrls.Count);
                 foreach(var requestObjectDeniedUrlsListValue in requestObject.DeniedUrls)
                 {
-                        context.Writer.WriteStringValue(requestObjectDeniedUrlsListValue);
+                        context.Writer.WriteTextString(requestObjectDeniedUrlsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetEnabled())
+            if (requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("Enabled");
-                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
+                context.Writer.WriteTextString("Enabled");
+                context.Writer.WriteBoolean(requestObject.Enabled.Value);
             }
-
         }
 
         /// <summary>

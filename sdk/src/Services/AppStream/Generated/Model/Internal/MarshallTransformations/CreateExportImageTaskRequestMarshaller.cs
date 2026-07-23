@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,68 +58,71 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateExportImageTaskRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.CreateExportImageTask";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/CreateExportImageTask";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAmiDescription())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AmiDescription");
-                context.Writer.WriteStringValue(publicRequest.AmiDescription);
-            }
-
-            if(publicRequest.IsSetAmiName())
-            {
-                context.Writer.WritePropertyName("AmiName");
-                context.Writer.WriteStringValue(publicRequest.AmiName);
-            }
-
-            if(publicRequest.IsSetIamRoleArn())
-            {
-                context.Writer.WritePropertyName("IamRoleArn");
-                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
-            }
-
-            if(publicRequest.IsSetImageName())
-            {
-                context.Writer.WritePropertyName("ImageName");
-                context.Writer.WriteStringValue(publicRequest.ImageName);
-            }
-
-            if(publicRequest.IsSetTagSpecifications())
-            {
-                context.Writer.WritePropertyName("TagSpecifications");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagSpecificationsKvp in publicRequest.TagSpecifications)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAmiDescription())
                 {
-                    context.Writer.WritePropertyName(publicRequestTagSpecificationsKvp.Key);
-                    var publicRequestTagSpecificationsValue = publicRequestTagSpecificationsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagSpecificationsValue);
+                    context.Writer.WriteTextString("AmiDescription");
+                    context.Writer.WriteTextString(publicRequest.AmiDescription);
                 }
-                context.Writer.WriteEndObject();
-            }
+                if (publicRequest.IsSetAmiName())
+                {
+                    context.Writer.WriteTextString("AmiName");
+                    context.Writer.WriteTextString(publicRequest.AmiName);
+                }
+                if (publicRequest.IsSetIamRoleArn())
+                {
+                    context.Writer.WriteTextString("IamRoleArn");
+                    context.Writer.WriteTextString(publicRequest.IamRoleArn);
+                }
+                if (publicRequest.IsSetImageName())
+                {
+                    context.Writer.WriteTextString("ImageName");
+                    context.Writer.WriteTextString(publicRequest.ImageName);
+                }
+                if (publicRequest.IsSetTagSpecifications())
+                {
+                    context.Writer.WriteTextString("TagSpecifications");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestTagSpecificationsKvp in publicRequest.TagSpecifications)
+                    {
+                        context.Writer.WriteTextString(publicRequestTagSpecificationsKvp.Key);
+                        var publicRequestTagSpecificationsValue = publicRequestTagSpecificationsKvp.Value;
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                            context.Writer.WriteTextString(publicRequestTagSpecificationsValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateExportImageTaskRequestMarshaller _instance = new CreateExportImageTaskRequestMarshaller();        

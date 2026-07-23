@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ApplicationConfig Marshaller
     /// </summary>
-    public class ApplicationConfigMarshaller : IRequestMarshaller<ApplicationConfig, JsonMarshallerContext> 
+    public class ApplicationConfigMarshaller : IRequestMarshaller<ApplicationConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,52 +45,46 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ApplicationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ApplicationConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAbsoluteAppPath())
-            {
-                context.Writer.WritePropertyName("AbsoluteAppPath");
-                context.Writer.WriteStringValue(requestObject.AbsoluteAppPath);
-            }
 
-            if(requestObject.IsSetAbsoluteIconPath())
+            if (requestObject.IsSetAbsoluteAppPath())
             {
-                context.Writer.WritePropertyName("AbsoluteIconPath");
-                context.Writer.WriteStringValue(requestObject.AbsoluteIconPath);
+                context.Writer.WriteTextString("AbsoluteAppPath");
+                context.Writer.WriteTextString(requestObject.AbsoluteAppPath);
             }
-
-            if(requestObject.IsSetAbsoluteManifestPath())
+            if (requestObject.IsSetAbsoluteIconPath())
             {
-                context.Writer.WritePropertyName("AbsoluteManifestPath");
-                context.Writer.WriteStringValue(requestObject.AbsoluteManifestPath);
+                context.Writer.WriteTextString("AbsoluteIconPath");
+                context.Writer.WriteTextString(requestObject.AbsoluteIconPath);
             }
-
-            if(requestObject.IsSetDisplayName())
+            if (requestObject.IsSetAbsoluteManifestPath())
             {
-                context.Writer.WritePropertyName("DisplayName");
-                context.Writer.WriteStringValue(requestObject.DisplayName);
+                context.Writer.WriteTextString("AbsoluteManifestPath");
+                context.Writer.WriteTextString(requestObject.AbsoluteManifestPath);
             }
-
-            if(requestObject.IsSetLaunchParameters())
+            if (requestObject.IsSetDisplayName())
             {
-                context.Writer.WritePropertyName("LaunchParameters");
-                context.Writer.WriteStringValue(requestObject.LaunchParameters);
+                context.Writer.WriteTextString("DisplayName");
+                context.Writer.WriteTextString(requestObject.DisplayName);
             }
-
-            if(requestObject.IsSetName())
+            if (requestObject.IsSetLaunchParameters())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("LaunchParameters");
+                context.Writer.WriteTextString(requestObject.LaunchParameters);
             }
-
-            if(requestObject.IsSetWorkingDirectory())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("WorkingDirectory");
-                context.Writer.WriteStringValue(requestObject.WorkingDirectory);
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
             }
-
+            if (requestObject.IsSetWorkingDirectory())
+            {
+                context.Writer.WriteTextString("WorkingDirectory");
+                context.Writer.WriteTextString(requestObject.WorkingDirectory);
+            }
         }
 
         /// <summary>

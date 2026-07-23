@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,119 +58,116 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateAppBlockBuilderRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.CreateAppBlockBuilder";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/CreateAppBlockBuilder";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAccessEndpoints())
+                {
+                    context.Writer.WriteTextString("AccessEndpoints");
+                    context.Writer.WriteStartArray(publicRequest.AccessEndpoints.Count);
+                    foreach(var publicRequestAccessEndpointsListValue in publicRequest.AccessEndpoints)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = AccessEndpointMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAccessEndpointsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetDisableIMDSV1())
+                {
+                    context.Writer.WriteTextString("DisableIMDSV1");
+                    context.Writer.WriteBoolean(publicRequest.DisableIMDSV1.Value);
+                }
+                if (publicRequest.IsSetDisplayName())
+                {
+                    context.Writer.WriteTextString("DisplayName");
+                    context.Writer.WriteTextString(publicRequest.DisplayName);
+                }
+                if (publicRequest.IsSetEnableDefaultInternetAccess())
+                {
+                    context.Writer.WriteTextString("EnableDefaultInternetAccess");
+                    context.Writer.WriteBoolean(publicRequest.EnableDefaultInternetAccess.Value);
+                }
+                if (publicRequest.IsSetIamRoleArn())
+                {
+                    context.Writer.WriteTextString("IamRoleArn");
+                    context.Writer.WriteTextString(publicRequest.IamRoleArn);
+                }
+                if (publicRequest.IsSetInstanceType())
+                {
+                    context.Writer.WriteTextString("InstanceType");
+                    context.Writer.WriteTextString(publicRequest.InstanceType);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetPlatform())
+                {
+                    context.Writer.WriteTextString("Platform");
+                    context.Writer.WriteTextString(publicRequest.Platform);
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    {
+                        context.Writer.WriteTextString(publicRequestTagsKvp.Key);
+                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                            context.Writer.WriteTextString(publicRequestTagsValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetVpcConfig())
+                {
+                    context.Writer.WriteTextString("VpcConfig");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = VpcConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAccessEndpoints())
-            {
-                context.Writer.WritePropertyName("AccessEndpoints");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestAccessEndpointsListValue in publicRequest.AccessEndpoints)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = AccessEndpointMarshaller.Instance;
-                    marshaller.Marshall(publicRequestAccessEndpointsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
             }
-
-            if(publicRequest.IsSetDescription())
+            finally
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetDisableIMDSV1())
-            {
-                context.Writer.WritePropertyName("DisableIMDSV1");
-                context.Writer.WriteBooleanValue(publicRequest.DisableIMDSV1.Value);
-            }
-
-            if(publicRequest.IsSetDisplayName())
-            {
-                context.Writer.WritePropertyName("DisplayName");
-                context.Writer.WriteStringValue(publicRequest.DisplayName);
-            }
-
-            if(publicRequest.IsSetEnableDefaultInternetAccess())
-            {
-                context.Writer.WritePropertyName("EnableDefaultInternetAccess");
-                context.Writer.WriteBooleanValue(publicRequest.EnableDefaultInternetAccess.Value);
-            }
-
-            if(publicRequest.IsSetIamRoleArn())
-            {
-                context.Writer.WritePropertyName("IamRoleArn");
-                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
-            }
-
-            if(publicRequest.IsSetInstanceType())
-            {
-                context.Writer.WritePropertyName("InstanceType");
-                context.Writer.WriteStringValue(publicRequest.InstanceType);
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetPlatform())
-            {
-                context.Writer.WritePropertyName("Platform");
-                context.Writer.WriteStringValue(publicRequest.Platform);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetVpcConfig())
-            {
-                context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VpcConfigMarshaller.Instance;
-                marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static CreateAppBlockBuilderRequestMarshaller _instance = new CreateAppBlockBuilderRequestMarshaller();        

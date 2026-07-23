@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,74 +58,76 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateUpdatedImageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.CreateUpdatedImage";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/CreateUpdatedImage";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDryRun())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("dryRun");
-                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
-            }
-
-            if(publicRequest.IsSetExistingImageName())
-            {
-                context.Writer.WritePropertyName("existingImageName");
-                context.Writer.WriteStringValue(publicRequest.ExistingImageName);
-            }
-
-            if(publicRequest.IsSetNewImageDescription())
-            {
-                context.Writer.WritePropertyName("newImageDescription");
-                context.Writer.WriteStringValue(publicRequest.NewImageDescription);
-            }
-
-            if(publicRequest.IsSetNewImageDisplayName())
-            {
-                context.Writer.WritePropertyName("newImageDisplayName");
-                context.Writer.WriteStringValue(publicRequest.NewImageDisplayName);
-            }
-
-            if(publicRequest.IsSetNewImageName())
-            {
-                context.Writer.WritePropertyName("newImageName");
-                context.Writer.WriteStringValue(publicRequest.NewImageName);
-            }
-
-            if(publicRequest.IsSetNewImageTags())
-            {
-                context.Writer.WritePropertyName("newImageTags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestNewImageTagsKvp in publicRequest.NewImageTags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDryRun())
                 {
-                    context.Writer.WritePropertyName(publicRequestNewImageTagsKvp.Key);
-                    var publicRequestNewImageTagsValue = publicRequestNewImageTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestNewImageTagsValue);
+                    context.Writer.WriteTextString("dryRun");
+                    context.Writer.WriteBoolean(publicRequest.DryRun.Value);
                 }
-                context.Writer.WriteEndObject();
-            }
+                if (publicRequest.IsSetExistingImageName())
+                {
+                    context.Writer.WriteTextString("existingImageName");
+                    context.Writer.WriteTextString(publicRequest.ExistingImageName);
+                }
+                if (publicRequest.IsSetNewImageDescription())
+                {
+                    context.Writer.WriteTextString("newImageDescription");
+                    context.Writer.WriteTextString(publicRequest.NewImageDescription);
+                }
+                if (publicRequest.IsSetNewImageDisplayName())
+                {
+                    context.Writer.WriteTextString("newImageDisplayName");
+                    context.Writer.WriteTextString(publicRequest.NewImageDisplayName);
+                }
+                if (publicRequest.IsSetNewImageName())
+                {
+                    context.Writer.WriteTextString("newImageName");
+                    context.Writer.WriteTextString(publicRequest.NewImageName);
+                }
+                if (publicRequest.IsSetNewImageTags())
+                {
+                    context.Writer.WriteTextString("newImageTags");
+                    context.Writer.WriteStartMap(null);
+                    foreach (var publicRequestNewImageTagsKvp in publicRequest.NewImageTags)
+                    {
+                        context.Writer.WriteTextString(publicRequestNewImageTagsKvp.Key);
+                        var publicRequestNewImageTagsValue = publicRequestNewImageTagsKvp.Value;
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                            context.Writer.WriteTextString(publicRequestNewImageTagsValue);
+                    }
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateUpdatedImageRequestMarshaller _instance = new CreateUpdatedImageRequestMarshaller();        

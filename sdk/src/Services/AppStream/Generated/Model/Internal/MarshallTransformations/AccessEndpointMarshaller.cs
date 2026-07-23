@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AccessEndpoint Marshaller
     /// </summary>
-    public class AccessEndpointMarshaller : IRequestMarshaller<AccessEndpoint, JsonMarshallerContext> 
+    public class AccessEndpointMarshaller : IRequestMarshaller<AccessEndpoint, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AccessEndpoint requestObject, JsonMarshallerContext context)
+        public void Marshall(AccessEndpoint requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEndpointType())
-            {
-                context.Writer.WritePropertyName("EndpointType");
-                context.Writer.WriteStringValue(requestObject.EndpointType);
-            }
 
-            if(requestObject.IsSetVpceId())
+            if (requestObject.IsSetEndpointType())
             {
-                context.Writer.WritePropertyName("VpceId");
-                context.Writer.WriteStringValue(requestObject.VpceId);
+                context.Writer.WriteTextString("EndpointType");
+                context.Writer.WriteTextString(requestObject.EndpointType);
             }
-
+            if (requestObject.IsSetVpceId())
+            {
+                context.Writer.WriteTextString("VpceId");
+                context.Writer.WriteTextString(requestObject.VpceId);
+            }
         }
 
         /// <summary>

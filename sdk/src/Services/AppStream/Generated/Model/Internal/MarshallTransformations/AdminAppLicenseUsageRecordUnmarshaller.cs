@@ -29,76 +29,101 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AdminAppLicenseUsageRecord Object
     /// </summary>  
-    public class AdminAppLicenseUsageRecordUnmarshaller : IJsonUnmarshaller<AdminAppLicenseUsageRecord, JsonUnmarshallerContext>
+    public class AdminAppLicenseUsageRecordUnmarshaller : ICborUnmarshaller<AdminAppLicenseUsageRecord, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AdminAppLicenseUsageRecord Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AdminAppLicenseUsageRecord Unmarshall(CborUnmarshallerContext context)
         {
             AdminAppLicenseUsageRecord unmarshalledObject = new AdminAppLicenseUsageRecord();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("BillingPeriod", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BillingPeriod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LicenseType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LicenseType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OwnerAWSAccountId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerAWSAccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubscriptionFirstUsedDate", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionFirstUsedDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubscriptionLastUsedDate", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionLastUsedDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UserArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UserId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "BillingPeriod":
+                        {
+                            context.AddPathSegment("BillingPeriod");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.BillingPeriod = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LicenseType":
+                        {
+                            context.AddPathSegment("LicenseType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LicenseType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OwnerAWSAccountId":
+                        {
+                            context.AddPathSegment("OwnerAWSAccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.OwnerAWSAccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubscriptionFirstUsedDate":
+                        {
+                            context.AddPathSegment("SubscriptionFirstUsedDate");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.SubscriptionFirstUsedDate = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubscriptionLastUsedDate":
+                        {
+                            context.AddPathSegment("SubscriptionLastUsedDate");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.SubscriptionLastUsedDate = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UserArn":
+                        {
+                            context.AddPathSegment("UserArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UserArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UserId":
+                        {
+                            context.AddPathSegment("UserId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,72 +58,73 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(DescribeSessionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.DescribeSessions";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/DescribeSessions";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAuthenticationType())
+                {
+                    context.Writer.WriteTextString("AuthenticationType");
+                    context.Writer.WriteTextString(publicRequest.AuthenticationType);
+                }
+                if (publicRequest.IsSetFleetName())
+                {
+                    context.Writer.WriteTextString("FleetName");
+                    context.Writer.WriteTextString(publicRequest.FleetName);
+                }
+                if (publicRequest.IsSetInstanceId())
+                {
+                    context.Writer.WriteTextString("InstanceId");
+                    context.Writer.WriteTextString(publicRequest.InstanceId);
+                }
+                if (publicRequest.IsSetLimit())
+                {
+                    context.Writer.WriteTextString("Limit");
+                    context.Writer.WriteInt32(publicRequest.Limit.Value);
+                }
+                if (publicRequest.IsSetNextToken())
+                {
+                    context.Writer.WriteTextString("NextToken");
+                    context.Writer.WriteTextString(publicRequest.NextToken);
+                }
+                if (publicRequest.IsSetStackName())
+                {
+                    context.Writer.WriteTextString("StackName");
+                    context.Writer.WriteTextString(publicRequest.StackName);
+                }
+                if (publicRequest.IsSetUserId())
+                {
+                    context.Writer.WriteTextString("UserId");
+                    context.Writer.WriteTextString(publicRequest.UserId);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAuthenticationType())
-            {
-                context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.WriteStringValue(publicRequest.AuthenticationType);
             }
-
-            if(publicRequest.IsSetFleetName())
+            finally
             {
-                context.Writer.WritePropertyName("FleetName");
-                context.Writer.WriteStringValue(publicRequest.FleetName);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetInstanceId())
-            {
-                context.Writer.WritePropertyName("InstanceId");
-                context.Writer.WriteStringValue(publicRequest.InstanceId);
-            }
-
-            if(publicRequest.IsSetLimit())
-            {
-                context.Writer.WritePropertyName("Limit");
-                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetStackName())
-            {
-                context.Writer.WritePropertyName("StackName");
-                context.Writer.WriteStringValue(publicRequest.StackName);
-            }
-
-            if(publicRequest.IsSetUserId())
-            {
-                context.Writer.WritePropertyName("UserId");
-                context.Writer.WriteStringValue(publicRequest.UserId);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static DescribeSessionsRequestMarshaller _instance = new DescribeSessionsRequestMarshaller();        
