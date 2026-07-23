@@ -130,6 +130,17 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Description);
             }
 
+            if(publicRequest.IsSetDisplayConfiguration())
+            {
+                context.Writer.WritePropertyName("DisplayConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DisplayConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DisplayConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetLocations())
             {
                 context.Writer.WritePropertyName("Locations");

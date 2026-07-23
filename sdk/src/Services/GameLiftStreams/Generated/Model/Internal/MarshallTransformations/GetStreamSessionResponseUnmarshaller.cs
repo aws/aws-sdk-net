@@ -94,6 +94,12 @@ namespace Amazon.GameLiftStreams.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DisplayConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DisplayConfigurationUnmarshaller.Instance;
+                    response.DisplayConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ExportFilesMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = ExportFilesMetadataUnmarshaller.Instance;

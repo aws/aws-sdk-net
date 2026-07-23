@@ -180,6 +180,7 @@ namespace Amazon.GameLiftStreams.Model
         private string _clientToken;
         private int? _connectionTimeoutSeconds;
         private string _description;
+        private DisplayConfiguration _displayConfiguration;
         private string _identifier;
         private List<string> _locations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PerformanceStatsConfiguration _performanceStatsConfiguration;
@@ -345,6 +346,29 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayConfiguration. 
+        /// <para>
+        /// The configuration for the stream session's virtual monitor, including the resolution
+        /// settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, Amazon GameLift Streams uses the default resolution of 1920 × 1080.
+        /// </para>
+        /// </summary>
+        public DisplayConfiguration DisplayConfiguration
+        {
+            get { return this._displayConfiguration; }
+            set { this._displayConfiguration = value; }
+        }
+
+        // Check to see if DisplayConfiguration property is set
+        internal bool IsSetDisplayConfiguration()
+        {
+            return this._displayConfiguration != null;
         }
 
         /// <summary>

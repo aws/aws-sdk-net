@@ -41,6 +41,7 @@ namespace Amazon.GameLiftStreams.Model
         private int? _connectionTimeoutSeconds;
         private DateTime? _createdAt;
         private string _description;
+        private DisplayConfiguration _displayConfiguration;
         private ExportFilesMetadata _exportFilesMetadata;
         private DateTime? _lastUpdatedAt;
         private string _location;
@@ -239,6 +240,24 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayConfiguration. 
+        /// <para>
+        /// The configuration for the stream session's virtual monitor.
+        /// </para>
+        /// </summary>
+        public DisplayConfiguration DisplayConfiguration
+        {
+            get { return this._displayConfiguration; }
+            set { this._displayConfiguration = value; }
+        }
+
+        // Check to see if DisplayConfiguration property is set
+        internal bool IsSetDisplayConfiguration()
+        {
+            return this._displayConfiguration != null;
         }
 
         /// <summary>
