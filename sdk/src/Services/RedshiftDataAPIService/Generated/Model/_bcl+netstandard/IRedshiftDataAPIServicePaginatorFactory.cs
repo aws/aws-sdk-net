@@ -78,6 +78,16 @@ namespace Amazon.RedshiftDataAPIService.Model
         IListSchemasPaginator ListSchemas(ListSchemasRequest request);
 
         /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSessionsPaginator ListSessions(ListSessionsRequest request);
+
+        /// <summary>
         /// Paginator for ListStatements operation
         ///</summary>
         [AWSPaginator(

@@ -83,6 +83,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _clusterIdentifier;
         private string _database;
         private string _dbUser;
+        private ExecutionMode _executionMode;
         private List<SqlParameter> _parameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
         private ResultFormatString _resultFormat;
         private string _secretArn;
@@ -90,6 +91,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private int? _sessionKeepAliveSeconds;
         private List<string> _sqls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _statementName;
+        private int? _waitTimeSeconds;
         private bool? _withEvent;
         private string _workgroupName;
 
@@ -172,10 +174,32 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExecutionMode. 
+        /// <para>
+        /// Determines how the SQL statements in the batch are run. If set to <c>TRANSACTION</c>
+        /// (the default), all SQL statements are run as a single transaction and they are committed
+        /// or rolled back together. If set to <c>AUTO_COMMIT</c>, each SQL statement is committed
+        /// individually, and a failure of one statement does not affect the others.
+        /// </para>
+        /// </summary>
+        public ExecutionMode ExecutionMode
+        {
+            get { return this._executionMode; }
+            set { this._executionMode = value; }
+        }
+
+        // Check to see if ExecutionMode property is set
+        internal bool IsSetExecutionMode()
+        {
+            return this._executionMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters for the SQL statements. The parameters are shared across all SQL statements
-        /// in the batch.
+        /// The parameters for the SQL statements. The parameters are available to all SQL statements
+        /// in the batch. Each statement can reference any subset of the provided parameters.
+        /// Each provided parameter must be referenced by at least one SQL statement in the batch.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -276,10 +300,11 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property Sqls. 
         /// <para>
-        /// One or more SQL statements to run. The SQL statements are run as a single transaction.
-        /// They run serially in the order of the array. Subsequent SQL statements don't start
-        /// until the previous statement in the array completes. If any SQL statement fails, then
-        /// because they are run as one transaction, all work is rolled back.
+        /// One or more SQL statements to run. The SQL statements run serially in the order of
+        /// the array. Subsequent SQL statements don't start until the previous statement in the
+        /// array completes. By default, the SQL statements are run as a single transaction. If
+        /// any SQL statement fails, all work is rolled back. To change this behavior, see the
+        /// <c>ExecutionMode</c> parameter.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -318,6 +343,27 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetStatementName()
         {
             return this._statementName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WaitTimeSeconds. 
+        /// <para>
+        /// The number of seconds to wait for all SQL statements in the batch to complete execution
+        /// before returning the response. If the SQL statements do not complete within the specified
+        /// time, the response returns the current status. The maximum value is 30 seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public int? WaitTimeSeconds
+        {
+            get { return this._waitTimeSeconds; }
+            set { this._waitTimeSeconds = value; }
+        }
+
+        // Check to see if WaitTimeSeconds property is set
+        internal bool IsSetWaitTimeSeconds()
+        {
+            return this._waitTimeSeconds.HasValue; 
         }
 
         /// <summary>

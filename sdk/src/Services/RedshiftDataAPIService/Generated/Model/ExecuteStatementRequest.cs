@@ -90,6 +90,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private int? _sessionKeepAliveSeconds;
         private string _sql;
         private string _statementName;
+        private int? _waitTimeSeconds;
         private bool? _withEvent;
         private string _workgroupName;
 
@@ -309,6 +310,27 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetStatementName()
         {
             return this._statementName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WaitTimeSeconds. 
+        /// <para>
+        /// The number of seconds to wait for the SQL statement to complete execution before returning
+        /// the response. If the SQL statement does not complete within the specified time, the
+        /// response returns the current status. The maximum value is 30 seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public int? WaitTimeSeconds
+        {
+            get { return this._waitTimeSeconds; }
+            set { this._waitTimeSeconds = value; }
+        }
+
+        // Check to see if WaitTimeSeconds property is set
+        internal bool IsSetWaitTimeSeconds()
+        {
+            return this._waitTimeSeconds.HasValue; 
         }
 
         /// <summary>

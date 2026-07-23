@@ -47,6 +47,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     {
         private string _id;
         private string _nextToken;
+        private int? _waitTimeSeconds;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -92,6 +93,26 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WaitTimeSeconds. 
+        /// <para>
+        /// The number of seconds to wait for the SQL statement to complete execution before returning
+        /// the result. The maximum value is 30 seconds.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=30)]
+        public int? WaitTimeSeconds
+        {
+            get { return this._waitTimeSeconds; }
+            set { this._waitTimeSeconds = value; }
+        }
+
+        // Check to see if WaitTimeSeconds property is set
+        internal bool IsSetWaitTimeSeconds()
+        {
+            return this._waitTimeSeconds.HasValue; 
         }
 
     }

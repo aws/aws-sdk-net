@@ -104,6 +104,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DbUser);
             }
 
+            if(publicRequest.IsSetExecutionMode())
+            {
+                context.Writer.WritePropertyName("ExecutionMode");
+                context.Writer.WriteStringValue(publicRequest.ExecutionMode);
+            }
+
             if(publicRequest.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
@@ -159,6 +165,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("StatementName");
                 context.Writer.WriteStringValue(publicRequest.StatementName);
+            }
+
+            if(publicRequest.IsSetWaitTimeSeconds())
+            {
+                context.Writer.WritePropertyName("WaitTimeSeconds");
+                context.Writer.WriteNumberValue(publicRequest.WaitTimeSeconds.Value);
             }
 
             if(publicRequest.IsSetWithEvent())

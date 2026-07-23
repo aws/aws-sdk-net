@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetStatementResult operation
+    /// Response Unmarshaller for ListSessions operation
     /// </summary>  
-    public class GetStatementResultResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListSessionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,22 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetStatementResultResponse response = new GetStatementResultResponse();
+            ListSessionsResponse response = new ListSessionsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ColumnMetadata", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ColumnMetadata, ColumnMetadataUnmarshaller>(ColumnMetadataUnmarshaller.Instance);
-                    response.ColumnMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Records", targetDepth, ref reader))
+                if (context.TestExpression("Sessions", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<List<Field>, JsonListUnmarshaller<Field,FieldUnmarshaller>>(new JsonListUnmarshaller<Field, FieldUnmarshaller>(FieldUnmarshaller.Instance));
-                    response.Records = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TotalNumRows", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.TotalNumRows = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<SessionData, SessionDataUnmarshaller>(SessionDataUnmarshaller.Instance);
+                    response.Sessions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -101,10 +89,6 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ActiveWaitingRequestsExceededException"))
-                {
-                    return ActiveWaitingRequestsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -121,9 +105,9 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             return new AmazonRedshiftDataAPIServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetStatementResultResponseUnmarshaller _instance = new GetStatementResultResponseUnmarshaller();        
+        private static ListSessionsResponseUnmarshaller _instance = new ListSessionsResponseUnmarshaller();        
 
-        internal static GetStatementResultResponseUnmarshaller GetInstance()
+        internal static ListSessionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -131,7 +115,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetStatementResultResponseUnmarshaller Instance
+        public static ListSessionsResponseUnmarshaller Instance
         {
             get
             {

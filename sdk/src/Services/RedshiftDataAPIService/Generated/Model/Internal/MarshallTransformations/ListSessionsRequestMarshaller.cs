@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetStatementResult Request Marshaller
+    /// ListSessions Request Marshaller
     /// </summary>       
-    public class GetStatementResultRequestMarshaller : IMarshaller<IRequest, GetStatementResultRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListSessionsRequestMarshaller : IMarshaller<IRequest, ListSessionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetStatementResultRequest)input);
+            return this.Marshall((ListSessionsRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetStatementResultRequest publicRequest)
+        public IRequest Marshall(ListSessionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.RedshiftDataAPIService");
-            string target = "RedshiftData.GetStatementResult";
+            string target = "RedshiftData.ListSessions";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-20";
@@ -75,10 +75,22 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetId())
+            if(publicRequest.IsSetClusterIdentifier())
             {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.WriteStringValue(publicRequest.Id);
+                context.Writer.WritePropertyName("ClusterIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ClusterIdentifier);
+            }
+
+            if(publicRequest.IsSetDatabase())
+            {
+                context.Writer.WritePropertyName("Database");
+                context.Writer.WriteStringValue(publicRequest.Database);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
 
             if(publicRequest.IsSetNextToken())
@@ -87,10 +99,28 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
-            if(publicRequest.IsSetWaitTimeSeconds())
+            if(publicRequest.IsSetRoleLevel())
             {
-                context.Writer.WritePropertyName("WaitTimeSeconds");
-                context.Writer.WriteNumberValue(publicRequest.WaitTimeSeconds.Value);
+                context.Writer.WritePropertyName("RoleLevel");
+                context.Writer.WriteBooleanValue(publicRequest.RoleLevel.Value);
+            }
+
+            if(publicRequest.IsSetSessionId())
+            {
+                context.Writer.WritePropertyName("SessionId");
+                context.Writer.WriteStringValue(publicRequest.SessionId);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetWorkgroupName())
+            {
+                context.Writer.WritePropertyName("WorkgroupName");
+                context.Writer.WriteStringValue(publicRequest.WorkgroupName);
             }
 
             writer.WriteEndObject();
@@ -103,9 +133,9 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static GetStatementResultRequestMarshaller _instance = new GetStatementResultRequestMarshaller();        
+        private static ListSessionsRequestMarshaller _instance = new ListSessionsRequestMarshaller();        
 
-        internal static GetStatementResultRequestMarshaller GetInstance()
+        internal static ListSessionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -113,7 +143,7 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetStatementResultRequestMarshaller Instance
+        public static ListSessionsRequestMarshaller Instance
         {
             get
             {

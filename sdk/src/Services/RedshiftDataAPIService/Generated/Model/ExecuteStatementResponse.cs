@@ -39,9 +39,12 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _database;
         private List<string> _dbGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbUser;
+        private bool? _hasResultSet;
         private string _id;
+        private long? _redshiftPid;
         private string _secretArn;
         private string _sessionId;
+        private StatementStatusString _status;
         private string _workgroupName;
 
         /// <summary>
@@ -142,6 +145,25 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property HasResultSet. 
+        /// <para>
+        /// A value that indicates whether the statement has a result set. The result set can
+        /// be empty. The value is true for an empty result set.
+        /// </para>
+        /// </summary>
+        public bool? HasResultSet
+        {
+            get { return this._hasResultSet; }
+            set { this._hasResultSet = value; }
+        }
+
+        // Check to see if HasResultSet property is set
+        internal bool IsSetHasResultSet()
+        {
+            return this._hasResultSet.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier of the SQL statement whose results are to be fetched. This value is
@@ -158,6 +180,24 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedshiftPid. 
+        /// <para>
+        /// The process identifier from Amazon Redshift. 
+        /// </para>
+        /// </summary>
+        public long? RedshiftPid
+        {
+            get { return this._redshiftPid; }
+            set { this._redshiftPid = value; }
+        }
+
+        // Check to see if RedshiftPid property is set
+        internal bool IsSetRedshiftPid()
+        {
+            return this._redshiftPid.HasValue; 
         }
 
         /// <summary>
@@ -194,6 +234,49 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the SQL statement. Status values are defined as follows: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// ABORTED - The query run was stopped by the user. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FAILED - The query run failed. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// FINISHED - The query has finished running. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PICKED - The query has been chosen to be run. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// STARTED - The query run has started. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SUBMITTED - The query was submitted, but not yet processed. 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StatementStatusString Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

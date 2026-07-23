@@ -156,6 +156,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.StatementName);
             }
 
+            if(publicRequest.IsSetWaitTimeSeconds())
+            {
+                context.Writer.WritePropertyName("WaitTimeSeconds");
+                context.Writer.WriteNumberValue(publicRequest.WaitTimeSeconds.Value);
+            }
+
             if(publicRequest.IsSetWithEvent())
             {
                 context.Writer.WritePropertyName("WithEvent");

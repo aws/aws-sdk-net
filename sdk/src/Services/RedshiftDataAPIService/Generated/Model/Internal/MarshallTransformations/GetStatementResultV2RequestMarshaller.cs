@@ -87,6 +87,12 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetWaitTimeSeconds())
+            {
+                context.Writer.WritePropertyName("WaitTimeSeconds");
+                context.Writer.WriteNumberValue(publicRequest.WaitTimeSeconds.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

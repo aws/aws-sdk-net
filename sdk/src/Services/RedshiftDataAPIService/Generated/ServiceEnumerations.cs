@@ -25,6 +25,56 @@ namespace Amazon.RedshiftDataAPIService
 {
 
     /// <summary>
+    /// Constants used for properties of type ExecutionMode.
+    /// </summary>
+    public class ExecutionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO_COMMIT for ExecutionMode
+        /// </summary>
+        public static readonly ExecutionMode AUTO_COMMIT = new ExecutionMode("AUTO_COMMIT");
+        /// <summary>
+        /// Constant TRANSACTION for ExecutionMode
+        /// </summary>
+        public static readonly ExecutionMode TRANSACTION = new ExecutionMode("TRANSACTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionMode FindValue(string value)
+        {
+            return FindValue<ExecutionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResultFormatString.
     /// </summary>
     public class ResultFormatString : ConstantClass
@@ -68,6 +118,60 @@ namespace Amazon.RedshiftDataAPIService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResultFormatString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SessionStatusString.
+    /// </summary>
+    public class SessionStatusString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for SessionStatusString
+        /// </summary>
+        public static readonly SessionStatusString AVAILABLE = new SessionStatusString("AVAILABLE");
+        /// <summary>
+        /// Constant BUSY for SessionStatusString
+        /// </summary>
+        public static readonly SessionStatusString BUSY = new SessionStatusString("BUSY");
+        /// <summary>
+        /// Constant CLOSED for SessionStatusString
+        /// </summary>
+        public static readonly SessionStatusString CLOSED = new SessionStatusString("CLOSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SessionStatusString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SessionStatusString FindValue(string value)
+        {
+            return FindValue<SessionStatusString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SessionStatusString(string value)
         {
             return FindValue(value);
         }

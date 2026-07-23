@@ -77,6 +77,14 @@ namespace Amazon.RedshiftDataAPIService.Model
         }
 
         /// <summary>
+        /// Paginator for ListSessions operation
+        ///</summary>
+        public IListSessionsPaginator ListSessions(ListSessionsRequest request) 
+        {
+            return new ListSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStatements operation
         ///</summary>
         public IListStatementsPaginator ListStatements(ListStatementsRequest request) 
