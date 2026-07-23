@@ -31,6 +31,7 @@
     <Import Project="$(InternalBuildTools)/references.targets" Condition="Exists('$(InternalBuildTools)/references.targets')" />
     <Import Project="$(InternalBuildTools)/CodeSign.props" Condition="Exists('$(InternalBuildTools)/CodeSign.props')" />
     <Import Project="common.targets" />
+    <Import Project="sdk.props" />
 
     <PropertyGroup>
         <RunKeyScan Condition="'$(RunKeyScan)'==''">false</RunKeyScan>
@@ -255,6 +256,45 @@
             TestResultsPath="$(TestResultsPath)" />
     </Target>
 
+    <!-- Pipeline test suites (project lists in sdk.props). The caller passes one runtime via
+         $(RunTargetFramework); Configuration/TestsRunnerProfile/TestResultsPath/ExcludeTestCategories
+         are inherited as global properties. -->
+    <Target Name="run-unit-tests">
+        <MSBuild Projects="$(MSBuildThisFileFullPath)" Targets="run-test-project"
+                 Properties="TestProject=%(UnitTestProject.Identity);Runner=%(UnitTestProject.Runner)" />
+    </Target>
+    <Target Name="run-service-unit-tests">
+        <MSBuild Projects="$(MSBuildThisFileFullPath)" Targets="run-test-project"
+                 Properties="TestProject=%(ServiceUnitTestProject.Identity);Runner=%(ServiceUnitTestProject.Runner)" />
+    </Target>
+    <Target Name="run-integration-tests">
+        <MSBuild Projects="$(MSBuildThisFileFullPath)" Targets="run-test-project"
+                 Properties="TestProject=%(IntegrationTestProject.Identity);Runner=%(IntegrationTestProject.Runner)" />
+    </Target>
+
+    <!-- Runs one $(TestProject) for $(RunTargetFramework): skips it unless the project
+         targets that framework; tests the build step's assembly when present, else builds first.
+         The wrapper always runs against the built assembly ($(_dll) from GetTargetPath), never
+         the .csproj. -->
+    <Target Name="run-test-project">
+        <PropertyGroup><TestProjectPath>$(MSBuildProjectDirectory)/../$(TestProject)</TestProjectPath></PropertyGroup>
+        <MSBuild Projects="$(TestProjectPath)" Targets="GetTargetFrameworks">
+            <Output TaskParameter="TargetOutputs" ItemName="_tfm" />
+        </MSBuild>
+        <PropertyGroup><_tfms>;%(_tfm.TargetFrameworks);</_tfms></PropertyGroup>
+        <MSBuild Condition="$(_tfms.Contains(';$(RunTargetFramework);'))"
+                 Projects="$(TestProjectPath)" Targets="GetTargetPath" Properties="TargetFramework=$(RunTargetFramework)">
+            <Output TaskParameter="TargetOutputs" PropertyName="_dll" />
+        </MSBuild>
+        <!-- Build the project (from its .csproj) only when the build step didn't already produce the assembly. -->
+        <MSBuild Condition="'$(_dll)'!='' and !Exists('$(_dll)')" Projects="$(MSBuildThisFileFullPath)" Targets="build-test-project"
+                 Properties="TestsWorkingDirectory=$([System.IO.Path]::GetDirectoryName('$(TestProjectPath)'));TestsProjectFile=$([System.IO.Path]::GetFileName('$(TestProject)'));TargetFramework=$(RunTargetFramework)" />
+        <!-- Run the wrapper against the built assembly. Deps empty: the wrapper is prebuilt by the
+             caller and the project (if needed) was built above. -->
+        <MSBuild Condition="'$(_dll)'!=''" Projects="$(MSBuildThisFileFullPath)" Targets="run-tests-$(Runner)"
+                 Properties="TestsWorkingDirectory=$([System.IO.Path]::GetDirectoryName('$(_dll)'));TestsProjectFile=$([System.IO.Path]::GetFileName('$(_dll)'));run-tests-$(Runner)-DependsOnTargets=;TargetFramework=$(RunTargetFramework)" />
+    </Target>
+
     <!-- ============================================================
          KEY SCANNING
          ============================================================ -->
@@ -374,7 +414,7 @@
         <Exec Command="dotnet test AWSSDK.UnitTests.NetFramework.csproj -c $(Configuration) --no-build" WorkingDirectory="..\sdk\test\UnitTests"/>
     </Target>
     <Target Name="local-test-all-netstandard" Condition="'$(ServiceName)'=='' And '$(SolutionFile)'!='$(NetFrameworkSolutionFile)'" DependsOnTargets="local-build-sdk-all">
-        <Exec Command="dotnet test UnitTests.NetStandard.csproj -c $(Configuration) --no-build" WorkingDirectory="..\sdk\test\NetStandard\UnitTests"/>
+        <Exec Command="dotnet test AWSSDK.UnitTests.NetStandard.csproj -c $(Configuration) --no-build" WorkingDirectory="..\sdk\test\UnitTests"/>
     </Target>
 
     <!-- ============================================================

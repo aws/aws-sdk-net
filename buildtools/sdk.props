@@ -3,6 +3,30 @@
     <PropertyGroup>
         <!-- Contains the properties specific to this version of the AWS SDK for .NET to be used by the build system -->
         <ProtocolsSupported>ec2, json, query, rest-json, rest-xml, smithy-rpc-v2-cbor</ProtocolsSupported>
-        <H2RequiredSupported>true</H2RequiredSupported>	
+        <H2RequiredSupported>true</H2RequiredSupported>
     </PropertyGroup>
+
+    <!-- Test projects the release pipeline runs. No target framework is named here:
+         whether a project runs for a given $(RunTargetFramework) is derived from its own
+         <TargetFrameworks> (see run-test-project in build.proj). Runner selects the wrapper. -->
+    <ItemGroup>
+        <UnitTestProject Include="sdk/test/UnitTests/AWSSDK.UnitTests.NetFramework.csproj" Runner="mstest" />
+        <UnitTestProject Include="sdk/test/UnitTests/AWSSDK.UnitTests.NetStandard.csproj" Runner="mstest" />
+        <UnitTestProject Include="sdk/test/ProtocolTests/AWSSDK.ProtocolTests.NetFramework.csproj" Runner="mstest" />
+        <UnitTestProject Include="sdk/test/ProtocolTests/AWSSDK.ProtocolTests.NetStandard.csproj" Runner="mstest" />
+        <UnitTestProject Include="extensions/test/BedrockMEAITests/BedrockMEAITests.csproj" Runner="xunit" />
+        <UnitTestProject Include="extensions/test/CborProtocol.Tests/CborProtocol.Tests.NetFramework.csproj" Runner="xunit" />
+        <UnitTestProject Include="extensions/test/NETCore.SetupTests/NETCore.SetupTests.csproj" Runner="xunit" />
+        <UnitTestProject Include="extensions/test/CrtIntegrationTests/CrtIntegrationTests.csproj" Runner="xunit" />
+        <UnitTestProject Include="extensions/test/CloudFront.SignersTests/CloudFront.Signers.Tests.NetStandard.csproj" Runner="xunit" />
+        <UnitTestProject Include="extensions/test/EC2.DecryptPasswordTests/EC2.DecryptPassword.NetStandard.csproj" Runner="xunit" />
+
+        <ServiceUnitTestProject Include="sdk/test/Services/$(ServiceName)/UnitTests/AWSSDK.UnitTests.$(ServiceName).csproj" Runner="mstest" />
+        <ServiceUnitTestProject Include="sdk/test/UnitTests/AWSSDK.UnitTests.Core.csproj" Runner="mstest" />
+        <ServiceUnitTestProject Include="sdk/test/ProtocolTests/AWSSDK.ProtocolTests.NetFramework.csproj" Runner="mstest" />
+        <ServiceUnitTestProject Include="sdk/test/ProtocolTests/AWSSDK.ProtocolTests.NetStandard.csproj" Runner="mstest" />
+
+        <IntegrationTestProject Include="sdk/test/IntegrationTests/AWSSDK.IntegrationTests.csproj" Runner="xunit" />
+        <IntegrationTestProject Include="sdk/test/CompatibilityTests/CompatibilityTests.csproj" Runner="xunit" />
+    </ItemGroup>
 </Project>
