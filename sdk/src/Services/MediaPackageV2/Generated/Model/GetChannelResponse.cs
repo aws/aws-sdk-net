@@ -45,6 +45,7 @@ namespace Amazon.MediaPackageV2.Model
         private InputType _inputType;
         private DateTime? _modifiedAt;
         private OutputHeaderConfiguration _outputHeaderConfiguration;
+        private OutputLockingMode _outputLockingMode;
         private DateTime? _resetAt;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -277,6 +278,39 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetOutputHeaderConfiguration()
         {
             return this._outputHeaderConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputLockingMode. 
+        /// <para>
+        /// The output locking mode configured for the channel.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>EPOCH_LOCKED</c> - The channel uses epoch-locked behavior with deterministic sequence
+        /// numbering and fixed segment boundaries aligned to epoch time.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NON_EPOCH_LOCKED</c> - The channel uses non-epoch-locked behavior with duration-based
+        /// segment combining and monotonically increasing sequence numbers starting from 0.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OutputLockingMode OutputLockingMode
+        {
+            get { return this._outputLockingMode; }
+            set { this._outputLockingMode = value; }
+        }
+
+        // Check to see if OutputLockingMode property is set
+        internal bool IsSetOutputLockingMode()
+        {
+            return this._outputLockingMode != null;
         }
 
         /// <summary>

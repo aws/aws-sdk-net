@@ -116,6 +116,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetOutputLockingMode())
+            {
+                context.Writer.WritePropertyName("OutputLockingMode");
+                context.Writer.WriteStringValue(publicRequest.OutputLockingMode);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

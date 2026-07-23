@@ -63,6 +63,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.IncludeIframeOnlyStreams.Value);
             }
 
+            if(requestObject.IsSetOutputTimestampMode())
+            {
+                context.Writer.WritePropertyName("OutputTimestampMode");
+                context.Writer.WriteStringValue(requestObject.OutputTimestampMode);
+            }
+
             if(requestObject.IsSetScte())
             {
                 context.Writer.WritePropertyName("Scte");
