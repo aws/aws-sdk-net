@@ -344,6 +344,29 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
+        /// Returns a signed URL that grants tailored access to private content based on an access
+        /// time window and an ip range, signing the policy with a caller-supplied
+        /// <see cref="ICloudFrontSigner"/> (e.g. an AWS KMS key whose private key never leaves KMS).
+        /// </summary>
+        /// <param name="url">The URL or path that uniquely identifies a resource within a distribution.</param>
+        /// <param name="signer">The signer that produces the CloudFront signature for the policy.</param>
+        /// <param name="keyPairId">Identifier of a public key already configured in a CloudFront trusted key group.</param>
+        /// <param name="expiresOn">The expiration date of the signed URL</param>
+        /// <param name="activeFrom">The beginning valid date of the signed URL</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <returns>The signed URL.</returns>
+        public static string GetCustomSignedURL(string url,
+                                                ICloudFrontSigner signer,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange)
+        {
+            string policy = BuildPolicyForSignedUrl(url, expiresOn, ipRange, activeFrom);
+            return SignUrl(url, keyPairId, signer, policy);
+        }
+
+        /// <summary>
         /// Returns a signed URL that provides tailored access to private content based on an access time window and an ip range.
         /// </summary>
         /// <param name="url">The protocol of the URL</param>
@@ -511,6 +534,32 @@ namespace Amazon.CloudFront
         {
             ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
             var (signatureBytes, usedAlgorithm) = SignData(Encoding.UTF8.GetBytes(policy), privateKey, algorithm);
+            return BuildSignedUrl(resourceUrlOrPath, keyPairId, MakeStringUrlSafe(policy), signatureBytes, usedAlgorithm);
+        }
+
+        /// <summary>
+        /// Generate a signed URL that allows access to distribution and resource path by applying
+        /// access restrictions specified in a custom policy document, signing the policy with a
+        /// caller-supplied <see cref="ICloudFrontSigner"/>.
+        /// <para>
+        /// Use this to sign with a key that is not held in the process — most notably an AWS KMS
+        /// asymmetric key (the private key never leaves KMS). The policy document and the url-safe
+        /// encoding are produced exactly as the private-key overloads do; only the signature is
+        /// delegated. See <see cref="ICloudFrontSigner"/> for a KMS example.
+        /// </para>
+        /// </summary>
+        /// <param name="resourceUrlOrPath">
+        /// The URL or path that uniquely identifies a resource within a distribution.
+        /// </param>
+        /// <param name="keyPairId">Identifier of a public key already configured in a CloudFront trusted key group.</param>
+        /// <param name="signer">The signer that produces the CloudFront signature for the policy.</param>
+        /// <param name="policy">A policy document that describes the access permissions that will be applied by the signed URL.</param>
+        /// <returns>A signed URL that will permit access to distribution and S3 objects as specified in the policy document.</returns>
+        public static string SignUrl(string resourceUrlOrPath, string keyPairId, ICloudFrontSigner signer, string policy)
+        {
+            ValidatePolicyInput(resourceUrlOrPath, "resourceUrlOrPath");
+            if (signer == null) throw new ArgumentNullException(nameof(signer));
+            var (signatureBytes, usedAlgorithm) = signer.Sign(Encoding.UTF8.GetBytes(policy));
             return BuildSignedUrl(resourceUrlOrPath, keyPairId, MakeStringUrlSafe(policy), signatureBytes, usedAlgorithm);
         }
 

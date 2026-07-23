@@ -399,6 +399,37 @@ namespace Amazon.CloudFront
         }
 
         /// <summary>
+        /// Returns signed cookies that provide tailored access to private content based on an
+        /// access time window and an ip range, signing the policy with a caller-supplied
+        /// <see cref="ICloudFrontSigner"/>.
+        /// <para>
+        /// Use this to sign with a key that is not held in the process — most notably an AWS KMS
+        /// asymmetric key (the private key never leaves KMS). The policy document and the cookie
+        /// encoding are produced exactly as the private-key overloads do; only the signature is
+        /// delegated. See <see cref="ICloudFrontSigner"/> for a KMS example.
+        /// </para>
+        /// </summary>
+        /// <param name="resourceUrlOrPath">The URL or path for resource within a distribution.</param>
+        /// <param name="signer">The signer that produces the CloudFront signature for the policy.</param>
+        /// <param name="keyPairId">Identifier of a public key already configured in a CloudFront trusted key group.</param>
+        /// <param name="expiresOn">The expiration date till which content can be accessed using the generated cookies.</param>
+        /// <param name="activeFrom">The date from which content can be accessed using the generated cookies.</param>
+        /// <param name="ipRange">The allowed IP address range of the client making the GET request, in CIDR form (e.g. 192.168.0.1/24).</param>
+        /// <returns>The signed cookies.</returns>
+        public static CookiesForCustomPolicy GetCookiesForCustomPolicy(string resourceUrlOrPath,
+                                                ICloudFrontSigner signer,
+                                                string keyPairId,
+                                                DateTime expiresOn,
+                                                DateTime activeFrom,
+                                                string ipRange)
+        {
+            if (signer == null) throw new ArgumentNullException(nameof(signer));
+            string policy = PrepareCustomPolicy(resourceUrlOrPath, expiresOn, ipRange, activeFrom, out byte[] policyBytes);
+            var (signatureBytes, usedAlgorithm) = signer.Sign(policyBytes);
+            return BuildCustomCookies(keyPairId, policy, signatureBytes, usedAlgorithm);
+        }
+
+        /// <summary>
         /// Returns signed cookies that provides tailored access to private content based on an access time window and an ip range.
         /// </summary>
         /// <param name="resourceUrlOrPath">
