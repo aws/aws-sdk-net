@@ -3386,6 +3386,14 @@ namespace Amazon.DataZone
         /// Constant ARCHIVED for NotebookStatus
         /// </summary>
         public static readonly NotebookStatus ARCHIVED = new NotebookStatus("ARCHIVED");
+        /// <summary>
+        /// Constant SYNC_FAILED for NotebookStatus
+        /// </summary>
+        public static readonly NotebookStatus SYNC_FAILED = new NotebookStatus("SYNC_FAILED");
+        /// <summary>
+        /// Constant SYNC_IN_PROGRESS for NotebookStatus
+        /// </summary>
+        public static readonly NotebookStatus SYNC_IN_PROGRESS = new NotebookStatus("SYNC_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

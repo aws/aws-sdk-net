@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateNotebook operation
+    /// Response Unmarshaller for StartNotebookSync operation
     /// </summary>  
-    public class CreateNotebookResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartNotebookSyncResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,24 +46,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateNotebookResponse response = new CreateNotebookResponse();
+            StartNotebookSyncResponse response = new StartNotebookSyncResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cellOrder", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<CellInformation, CellInformationUnmarshaller>(CellInformationUnmarshaller.Instance);
-                    response.CellOrder = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("computeId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ComputeId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -88,52 +76,10 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.DomainId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("environmentConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = EnvironmentConfigUnmarshaller.Instance;
-                    response.EnvironmentConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("error", targetDepth, ref reader))
-                {
-                    var unmarshaller = NotebookErrorUnmarshaller.Instance;
-                    response.Error = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("gitMetadata", targetDepth, ref reader))
                 {
                     var unmarshaller = GitMetadataUnmarshaller.Instance;
                     response.GitMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lockedAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LockedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lockedBy", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.LockedBy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lockExpiresAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LockExpiresAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("metadata", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Metadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth, ref reader))
@@ -142,34 +88,28 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("notebookId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NotebookId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("owningProjectId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.OwningProjectId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("parameters", targetDepth, ref reader))
+                if (context.TestExpression("sourceLocation", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Parameters = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = SourceLocationUnmarshaller.Instance;
+                    response.SourceLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("updatedAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("updatedBy", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.UpdatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -233,9 +173,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             return new AmazonDataZoneException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateNotebookResponseUnmarshaller _instance = new CreateNotebookResponseUnmarshaller();        
+        private static StartNotebookSyncResponseUnmarshaller _instance = new StartNotebookSyncResponseUnmarshaller();        
 
-        internal static CreateNotebookResponseUnmarshaller GetInstance()
+        internal static StartNotebookSyncResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -243,7 +183,7 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateNotebookResponseUnmarshaller Instance
+        public static StartNotebookSyncResponseUnmarshaller Instance
         {
             get
             {

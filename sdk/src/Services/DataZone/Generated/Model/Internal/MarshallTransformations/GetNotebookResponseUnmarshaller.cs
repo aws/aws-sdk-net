@@ -100,6 +100,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.Error = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("gitMetadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = GitMetadataUnmarshaller.Instance;
+                    response.GitMetadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

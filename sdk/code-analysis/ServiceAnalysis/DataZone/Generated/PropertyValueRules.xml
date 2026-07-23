@@ -4400,6 +4400,56 @@
     <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncRequest.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncRequest.DomainIdentifier</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncRequest.NotebookId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncRequest.OwningProjectIdentifier</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncResponse.Description</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncResponse.DomainId</property>
+    <pattern>dzd[-_][a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncResponse.NotebookId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.StartNotebookSyncResponse.OwningProjectId</property>
+    <pattern>[a-zA-Z0-9_-]{1,36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.StopNotebookRunRequest.ClientToken</property>
     <min>1</min>
     <max>128</max>
@@ -6252,6 +6302,38 @@
     <property>Amazon.DataZone.Model.FormTypeData.Revision</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitMetadata.Branch</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitMetadata.CommitHash</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitMetadata.CommitMessage</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitMetadata.ConnectionId</property>
+    <min>1</min>
+    <max>40</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitMetadata.FileName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitMetadata.Repository</property>
+    <min>1</min>
+    <max>512</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DataZone.Model.GlossaryItem.Description</property>
