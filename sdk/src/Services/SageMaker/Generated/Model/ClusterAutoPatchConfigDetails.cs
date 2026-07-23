@@ -100,6 +100,21 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The strategy used for applying patches to instances in the group.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>WhenIdle</c>: Cordons all instances and patches each instance as it becomes idle
+        /// (no running jobs). Each instance is uncordoned immediately after patching and becomes
+        /// available for new jobs. If instances do not become idle, they remain on the previous
+        /// AMI version. You can then use UpdateClusterSoftware with the desired ImageReleaseVersion
+        /// to manually update the remaining instances.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>WhenAllIdle</c>: Cordons all instances and waits for all to become idle before
+        /// patching. All instances are uncordoned after patching completes. If not all instances
+        /// become idle, no patching occurs and all instances remain on the previous AMI version.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ClusterPatchingStrategy PatchingStrategy
         {
