@@ -291,6 +291,71 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
+        public void Presign_UppercaseRegion_IsNormalizedToLowercaseInCredentialScope()
+        {
+            // The presign path passes Region to the signer as overrideSigningRegion, which the signer uses
+            // verbatim (no normalization). The header path lowercases it via DetermineSigningRegion, so an
+            // uppercase region must be normalized here too or the presigned URL's credential scope
+            // ("US-EAST-1") is one the service rejects. Assert the emitted X-Amz-Credential uses the
+            // lowercase region and that an uppercase-region presign equals a lowercase-region one.
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15"),
+                Headers = new Dictionary<string, string>(),
+            };
+
+            var upper = BaseParameters();
+            upper.Service = "sts";
+            upper.Region = "US-EAST-1";
+            var lower = BaseParameters();
+            lower.Service = "sts";
+            lower.Region = "us-east-1";
+
+            var upperResult = AWSSigV4Signer.Presign(request, upper, TimeSpan.FromSeconds(60));
+            var lowerResult = AWSSigV4Signer.Presign(request, lower, TimeSpan.FromSeconds(60));
+
+            StringAssert.Contains(Uri.UnescapeDataString(upperResult.Uri.Query), "/us-east-1/sts/aws4_request");
+            Assert.IsFalse(Uri.UnescapeDataString(upperResult.Uri.Query).Contains("/US-EAST-1/"),
+                "The credential-scope region must be normalized to lowercase.");
+            Assert.AreEqual(lowerResult.Uri.Query, upperResult.Uri.Query,
+                "An uppercase region must presign identically to its lowercase form.");
+        }
+
+        [TestMethod]
+        public void Sign_AnonymousCredentials_Throws()
+        {
+            // AnonymousAWSCredentials.GetCredentials() returns null; the facade must fail with a clear
+            // ArgumentException rather than an opaque NullReferenceException when it reads credentials.UseToken.
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://example.amazonaws.com/"),
+                Headers = new Dictionary<string, string>(),
+            };
+            var parameters = BaseParameters();
+            parameters.Credentials = new AnonymousAWSCredentials();
+
+            AssertThrows<ArgumentException>(() => AWSSigV4Signer.Sign(request, parameters));
+        }
+
+        [TestMethod]
+        public void Presign_AnonymousCredentials_Throws()
+        {
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
+                Headers = new Dictionary<string, string>(),
+            };
+            var parameters = BaseParameters();
+            parameters.Service = "sts";
+            parameters.Credentials = new AnonymousAWSCredentials();
+
+            AssertThrows<ArgumentException>(() => AWSSigV4Signer.Presign(request, parameters, TimeSpan.FromSeconds(60)));
+        }
+
+        [TestMethod]
         public void Presign_WithSessionToken_AddsSecurityTokenQueryParam()
         {
             var request = new AWSSigningRequest
@@ -584,6 +649,37 @@ namespace AWSSDK.UnitTests.Signing
 
             var result = AWSSigV4Signer.Sign(request, BaseParameters(signPayload: false));
             Assert.AreEqual(AWS4Signer.UnsignedPayload, result.Headers[HeaderKeys.XAmzContentSha256Header]);
+        }
+
+        [TestMethod]
+        public void Sign_BodyWithSignPayloadFalse_SignsUnsignedPayloadAndIgnoresBody()
+        {
+            // SignPayload = false is the outer gate (see §5.4): the internal AWS4Signer.SetRequestBodyHash
+            // returns the UNSIGNED-PAYLOAD magic string before it ever reads the body, so a supplied body is
+            // legitimately ignored rather than hashed. This is the streaming/large-upload case and matches the
+            // internal signer + sibling SDKs, so the facade allows it (unlike a *precomputed hash* +
+            // SignPayload = false, which is contradictory and throws). Assert x-amz-content-sha256 is the magic
+            // string, and that the signature is identical whether or not a body is present.
+            var withBody = new AWSSigningRequest
+            {
+                HttpMethod = "POST",
+                RequestUri = new Uri("https://example.amazonaws.com/"),
+                Headers = new Dictionary<string, string>(),
+                Content = Encoding.UTF8.GetBytes("this body is not signed"),
+            };
+            var withoutBody = new AWSSigningRequest
+            {
+                HttpMethod = "POST",
+                RequestUri = new Uri("https://example.amazonaws.com/"),
+                Headers = new Dictionary<string, string>(),
+            };
+
+            var withBodyResult = AWSSigV4Signer.Sign(withBody, BaseParameters(signPayload: false));
+            var withoutBodyResult = AWSSigV4Signer.Sign(withoutBody, BaseParameters(signPayload: false));
+
+            Assert.AreEqual(AWS4Signer.UnsignedPayload, withBodyResult.Headers[HeaderKeys.XAmzContentSha256Header]);
+            Assert.AreEqual(withoutBodyResult.AuthorizationHeader, withBodyResult.AuthorizationHeader,
+                "With SignPayload = false the body is not read, so its presence must not change the signature.");
         }
 
         [TestMethod]

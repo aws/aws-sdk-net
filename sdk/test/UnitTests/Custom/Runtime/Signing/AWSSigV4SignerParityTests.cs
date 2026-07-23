@@ -255,7 +255,10 @@ namespace AWSSDK.UnitTests.Signing
 
         private static string ExtractQueryParam(string query, string key)
         {
-            foreach (var pair in ParseQuery(query))
+            // Reuse the facade's own query parser (internal, via InternalsVisibleTo) rather than duplicating
+            // the split/decode logic here — it preserves repeated keys and the flag-vs-empty distinction the
+            // same way the signing path does.
+            foreach (var pair in AWSSigV4Signer.ParseQueryParameters(query))
                 if (string.Equals(pair.Key, key, StringComparison.OrdinalIgnoreCase))
                     return pair.Value;
             return null;
@@ -272,23 +275,6 @@ namespace AWSSDK.UnitTests.Signing
             var sorted = names.ToList();
             sorted.Sort(StringComparer.Ordinal);
             return string.Join(";", sorted);
-        }
-
-        private static IEnumerable<KeyValuePair<string, string>> ParseQuery(string query)
-        {
-            var start = query.IndexOf('?');
-            var qs = start >= 0 ? query.Substring(start + 1) : query;
-            foreach (var token in qs.Split('&'))
-            {
-                if (token.Length == 0) continue;
-                var eq = token.IndexOf('=');
-                if (eq < 0)
-                    yield return new KeyValuePair<string, string>(Uri.UnescapeDataString(token), null);
-                else
-                    yield return new KeyValuePair<string, string>(
-                        Uri.UnescapeDataString(token.Substring(0, eq)),
-                        Uri.UnescapeDataString(token.Substring(eq + 1)));
-            }
         }
 
     }

@@ -103,6 +103,7 @@ namespace Amazon.Runtime.Signing
 
         private static AWSSigningResult SignInternal(AWSSigningRequest request, AWSSigningParameters parameters, ImmutableCredentials credentials)
         {
+            EnsureCredentialsResolved(credentials);
             var internalRequest = BuildRequest(request, parameters);
 
             // The session token must be covered by the signature, so add it as a header before signing.
@@ -135,6 +136,7 @@ namespace Amazon.Runtime.Signing
 
         private static PresignResult PresignInternal(AWSSigningRequest request, AWSSigningParameters parameters, TimeSpan expiry, ImmutableCredentials credentials)
         {
+            EnsureCredentialsResolved(credentials);
             var internalRequest = BuildRequest(request, parameters);
 
             // Presigning always emits query parameters (at minimum X-Amz-Expires and the SigV4 auth
@@ -152,9 +154,14 @@ namespace Amazon.Runtime.Signing
             var signedAt = ResolveSignedAt(parameters, internalRequest);
 
             // Pass the static overload with an explicit service and region. clientConfig is null because,
-            // with overrideSigningRegion supplied, the signer never derives the region from it.
+            // with overrideSigningRegion supplied, the signer never derives the region from it. That also
+            // means the signer uses this region verbatim (no normalization), so lowercase it here to match
+            // the header path — which routes the region through AWS4Signer.DetermineSigningRegion, where
+            // AuthenticationRegion is lowercased. Without this, a caller passing "US-EAST-1" would produce a
+            // presigned URL whose credential-scope region the service rejects.
+            var region = parameters.Region.ToLowerInvariant();
             var signingResult = AWS4PreSignedUrlSigner.SignRequest(internalRequest, null, new RequestMetrics(),
-                credentials.AccessKey, credentials.SecretKey, parameters.Service, parameters.Region, signedAt);
+                credentials.AccessKey, credentials.SecretKey, parameters.Service, region, signedAt);
 
             var baseUrl = AmazonServiceClient.ComposeUrl(internalRequest);
             var presignedUrl = new Uri(baseUrl.AbsoluteUri + "&" + signingResult.ForQueryParameters);
@@ -173,6 +180,17 @@ namespace Amazon.Runtime.Signing
             var internalRequest = new DefaultRequest(new StandaloneSigningRequest(), parameters.Service)
             {
                 HttpMethod = request.HttpMethod,
+
+                // DefaultRequest keeps the origin (scheme + host + port) and the path in separate fields:
+                // ComposeUrl later rebuilds the URL as Endpoint.AbsoluteUri + ResourcePath + query, so
+                // Endpoint must be authority-only or the path would be duplicated. Split the caller's URI
+                // accordingly. GetLeftPart(UriPartial.Authority) yields exactly the origin and, importantly,
+                // omits a default port while keeping a non-default one — matching what belongs in the signed
+                // Host header. e.g. for "https://host.example.com:8443/prod/items?x=1":
+                //   Endpoint     = "https://host.example.com:8443"   (":443" would be dropped as the default)
+                //   ResourcePath = "/prod/items"                     (the query is parsed separately, below)
+                // (The SDK's own RedirectHandler does the same split via UriBuilder + an IsDefaultPort branch;
+                // GetLeftPart collapses that into one call.)
                 Endpoint = new Uri(request.RequestUri.GetLeftPart(UriPartial.Authority)),
                 ResourcePath = request.RequestUri.AbsolutePath,
                 OverrideSigningServiceName = parameters.Service,
@@ -183,8 +201,10 @@ namespace Amazon.Runtime.Signing
                 // SigV4 canonical path for non-S3 services is a single UrlEncode of the path the service
                 // receives on the wire (that same AbsolutePath). Disabling double encoding makes the signer
                 // apply exactly one encode pass, so the canonical path matches what the service computes.
-                // (The S3-family single-encoding rule is handled inside the signer and is not our concern
-                // here — S3 presigning has its own generators.)
+                // (For s3 the signer forces UseDoubleEncoding = false itself, regardless of what we set here
+                // — a backward-compat guard added for an EP2.0 regression so older S3 packages paired with a
+                // newer Core still single-encode; see AWS4Signer.SignRequest. Setting it false here keeps the
+                // non-S3 path consistent with that.)
                 UseDoubleEncoding = false,
             };
 
@@ -250,8 +270,14 @@ namespace Amazon.Runtime.Signing
         /// Splits a raw query string ("?a=1&amp;a=2&amp;flag") into decoded (key, value) pairs, preserving repeated
         /// keys and distinguishing a valueless flag (value == null) from an empty value. Order is preserved;
         /// the signer sorts for canonicalization.
+        /// <para>
+        /// Not <c>AWSSDKUtils.ParseQueryParameters</c>: that helper returns a name-keyed (last-value-wins)
+        /// dictionary, which drops repeated keys and the flag-vs-empty-value distinction this must preserve.
+        /// Exposed as <c>internal</c> (via InternalsVisibleTo) so the parity tests parse query strings the
+        /// same way rather than duplicating this logic.
+        /// </para>
         /// </summary>
-        private static IEnumerable<KeyValuePair<string, string>> ParseQueryParameters(string query)
+        internal static IEnumerable<KeyValuePair<string, string>> ParseQueryParameters(string query)
         {
             var start = query.IndexOf('?');
             var qs = start >= 0 ? query.Substring(start + 1) : query;
@@ -401,6 +427,17 @@ namespace Amazon.Runtime.Signing
                 if (hasPrecomputedHash)
                     throw new ArgumentException("Presigning does not honor a precomputed x-amz-content-sha256 header; remove it.", nameof(request));
             }
+        }
+
+        // Some AWSCredentials implementations resolve to null rather than throwing — most notably
+        // AnonymousAWSCredentials, whose GetCredentials() returns null. SigV4 requires a real access/secret
+        // key, so guard here with a clear message instead of letting credentials.UseToken throw an opaque NRE.
+        private static void EnsureCredentialsResolved(ImmutableCredentials credentials)
+        {
+            if (credentials == null)
+                throw new ArgumentException(
+                    "The supplied AWSCredentials resolved to null (e.g. AnonymousAWSCredentials). " +
+                    "SigV4 signing requires credentials with an access key and secret key.", "parameters");
         }
 
         private static void ValidateExpiry(TimeSpan expiry)
