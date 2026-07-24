@@ -1,0 +1,10 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Added AWS4aSigner class that implements SigV4a signing in managed code. AWS CRT is no longer used by the SDK for this purpose, and the related APIs were deprecated.",
+      "The AWS4aSigningResult.PresignedUri property was deprecated and will always be empty in objects returned by AWS4aSigner. Use the ForQueryParameters property instead, to get the query parameters for a presigned URL."
+    ]
+  }
+}

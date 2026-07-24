@@ -15,6 +15,7 @@
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
 using System;
+using System.Security.Cryptography;
 
 namespace Amazon.Runtime
 {
@@ -55,6 +56,15 @@ namespace Amazon.Runtime
         /// Account-based endpoints take the form https://accountid.ddb.region.amazonaws.com
         /// </summary>
         public string AccountId { get; private set; }
+
+        /// <summary>
+        /// Contains a cached AWS4a signing key for the current credentials. Do
+        /// not access this property directly; use <see cref="Internal.Auth.AWS4aSigner.GetCachedSigningKey"/> instead.
+        /// </summary>
+        /// <remarks>
+        /// The key must not be disposed, and must not be returned to the user.
+        /// </remarks>
+        internal ECDsa AWS4aSigningKey;
         #endregion
 
 
