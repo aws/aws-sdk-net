@@ -514,7 +514,8 @@ namespace Amazon.Util
 
             // The path is already the final encoded wire form: join the segments verbatim (no encode pass) so
             // the canonical path equals what is sent on the wire byte-for-byte. Used for S3 by the standalone
-            // signer, matching how botocore/@smithy/Java sign S3 (zero additional passes over the encoded path).
+            // signer, which signs the encoded path with zero additional passes (e.g. "/hello%20world" stays
+            // "/hello%20world", and an encoded slash "%2F" is preserved within its segment).
             if (pathAlreadyEncoded)
                 return JoinResourcePathSegmentsV2NoEncode(encodedSegments);
 

@@ -212,28 +212,30 @@ namespace Amazon.Runtime.Signing
                 // GetLeftPart collapses that into one call.)
                 Endpoint = new Uri(request.RequestUri.GetLeftPart(UriPartial.Authority)),
 
-                // We treat the caller's RequestUri as the authoritative, already-encoded wire request — the
-                // same contract as the JS (@smithy), Python (botocore), and Java v2 SDKs: the signer does not
-                // decode or re-interpret the caller's path. Uri.AbsolutePath is the encoded wire path, and the
-                // canonical path the service recomputes from it is one more URL-encode pass for non-S3 and zero
-                // passes (verbatim) for S3.
+                // The caller's RequestUri is treated as the authoritative, already-encoded wire request: the
+                // signer does not decode or re-interpret the path. Uri.AbsolutePath is the encoded wire path,
+                // and the canonical path the service recomputes from it is one more URL-encode pass for non-S3
+                // and zero passes (verbatim) for S3. For example, a caller signing a key "hello world" passes
+                // RequestUri ".../hello%20world" (AbsolutePath = "/hello%20world"); the non-S3 canonical path is
+                // "/hello%2520world" and the S3 canonical path is "/hello%20world".
                 //
                 // The path is supplied as a single greedy path-resource ({Path+}) rather than set directly on
                 // ResourcePath. A plain ResourcePath string is treated as Literal segments and encoded with the
-                // lenient path encoder, which leaves sub-delims like '+' '=' ',' unencoded — the SigV4 canonical
-                // form requires them strict-encoded. A path-resource value is a Label segment and gets the strict
-                // encoder, exactly as the generated S3 client encodes an object key ("/{Key+}"). The "+" suffix
-                // is greedy so real '/' separators in the value stay segment boundaries (while an encoded "%2F"
-                // stays within one segment and is preserved, never split — matching the other SDKs).
+                // lenient path encoder, which leaves sub-delims like '+' '=' ',' unencoded — but the SigV4
+                // canonical form requires them strict-encoded (e.g. "+" -> "%2B", "=" -> "%3D"). A path-resource
+                // value is a Label segment and gets the strict encoder, exactly as the generated S3 client
+                // encodes an object key ("/{Key+}"). The "+" suffix is greedy so real '/' separators in the
+                // value stay segment boundaries, while an encoded "%2F" stays within one segment and is
+                // preserved (never split into two segments).
                 ResourcePath = "/{Path+}",
                 OverrideSigningServiceName = parameters.Service,
                 AuthenticationRegion = parameters.Region.SystemName,
                 DisablePayloadSigning = !parameters.SignPayload,
 
                 // Force single-pass (non-double) encoding. The {Path+} value is the already-encoded wire path,
-                // so exactly ONE more pass produces the non-S3 canonical path (e.g. "%20" -> "%2520"), matching
-                // the ecosystem. For S3 the signer is invoked via SignRequestPreEncodedPath (see SignInternal /
-                // PresignInternal), which applies ZERO passes and signs the encoded path verbatim.
+                // so exactly ONE more pass produces the non-S3 canonical path (e.g. "%20" -> "%2520"). For S3
+                // the signer is invoked via SignRequestPreEncodedPath (see SignInternal / PresignInternal),
+                // which applies ZERO passes and signs the encoded path verbatim.
                 UseDoubleEncoding = false,
             };
 

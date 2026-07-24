@@ -233,8 +233,8 @@ namespace Amazon.Runtime.Internal.Auth
         /// Same as <see cref="SignRequest(IRequest, IClientConfig, RequestMetrics, string, string, DateTime)"/> but
         /// treats <see cref="IRequest.ResourcePath"/> as the already-encoded wire path and signs the canonical
         /// path verbatim (no additional URL-encode pass). This is used by the standalone SigV4 signer for S3,
-        /// which must sign the encoded path byte-for-byte (matching botocore/@smithy/Java). Not for general
-        /// client use: the normal SDK pipeline supplies a decoded ResourcePath and relies on the encode pass.
+        /// which must sign the encoded path byte-for-byte. Not for general client use: the normal SDK pipeline
+        /// supplies a decoded ResourcePath and relies on the encode pass.
         /// </summary>
         internal AWS4SigningResult SignRequestPreEncodedPath(IRequest request,
                                              IClientConfig clientConfig,

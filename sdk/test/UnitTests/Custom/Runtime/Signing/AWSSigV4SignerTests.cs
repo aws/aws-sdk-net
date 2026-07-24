@@ -328,8 +328,7 @@ namespace AWSSDK.UnitTests.Signing
         // -----------------------------------------------------------------------
         // Path encoding (review comment #6)
         //
-        // The facade treats RequestUri as the authoritative, already-encoded wire path (same contract as the
-        // JS/@smithy, Python/botocore, and Java v2 SDKs — see the sigv4-cross-sdk oracles). It never decodes or
+        // The facade treats RequestUri as the authoritative, already-encoded wire path: it never decodes or
         // re-interprets the path. The service recomputes the canonical path from the wire path: one extra
         // encode pass for non-S3, zero passes (verbatim) for S3. These tests pin that behavior observably.
         //
@@ -370,8 +369,8 @@ namespace AWSSDK.UnitTests.Signing
         public void Presign_S3_EncodedSlashInSegment_IsPreservedNotSplit()
         {
             // "%2F" is an encoded slash inside a single segment. It must be preserved (kept as "%2F" for S3),
-            // never decoded into a real separator — matching botocore/@smithy/Java. A signer that decoded the
-            // path would sign "/a/b" (two segments) and produce a URL the service resolves to the wrong key.
+            // never decoded into a real separator. A signer that decoded the path would sign "/a/b" (two
+            // segments) and produce a URL the service resolves to the wrong key.
             var request = GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a%2Fb");
             var result = AWSSigV4Signer.Presign(request, S3Parameters(), TimeSpan.FromSeconds(60));
 

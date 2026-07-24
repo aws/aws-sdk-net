@@ -413,9 +413,8 @@ namespace AWSSDK.UnitTests
         {
             // pathAlreadyEncoded = true is the "zero encode passes" mode used by the standalone SigV4 signer for
             // S3: the segment values are already the final encoded (wire) form, so the canonical path must equal
-            // them byte-for-byte. This matches how botocore / @smithy / Java v2 sign S3 (verified by the
-            // sigv4-cross-sdk oracles). It is mutually exclusive with the encode pass, so the `encode` argument
-            // is ignored when pathAlreadyEncoded is true.
+            // them byte-for-byte. It is mutually exclusive with the encode pass, so the `encode` argument is
+            // ignored when pathAlreadyEncoded is true.
 
             // Null/empty behave like the other overloads (return "/").
             Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3.us-east-1.amazonaws.com"), null, false, null, pathAlreadyEncoded: true));
