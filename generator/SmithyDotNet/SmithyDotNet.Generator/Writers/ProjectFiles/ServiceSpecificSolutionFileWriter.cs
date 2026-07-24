@@ -10,7 +10,8 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
 {
     // Captures the quoted value of a <ProjectReference Include="..."/> element.
     private static readonly Regex ProjectReferenceRegex = new("\"([^\"]*)\"");
-    private static string SdkRoot = Utils.PathCombineAlt("..", "..", "..");
+    private const string SdkRoot = SdkTreeLayout.SdkRootFromServiceSource;
+
     /// <summary>
     /// Writes the service's slnx. <paramref name="serviceDirectory"/> is the on-disk folder that
     /// holds the service's csproj files (and where this slnx is written); it is read to discover the
@@ -105,8 +106,8 @@ public class ServiceSpecificSolutionFileWriter(GenerationContext context)
     {
         writer.WriteXmlBlock("""<Folder Name="/Core/">""", "Folder", () =>
         {
-            writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt("..", "..", "Core", "AWSSDK.Core.NetFramework.csproj")}" />""");
-            writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt("..", "..", "Core", "AWSSDK.Core.NetStandard.csproj")}" />""");
+            writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetFramework.csproj")}" />""");
+            writer.WriteLine($"""<Project Path="{Utils.PathCombineAlt(SdkTreeLayout.SrcRootFromServiceSource, "Core", "AWSSDK.Core.NetStandard.csproj")}" />""");
         });
     }
 

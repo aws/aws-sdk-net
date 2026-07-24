@@ -41,22 +41,7 @@ public class CloudTrailModelFixture
 
     private static readonly ServiceMetadata Metadata = ServiceMetadata.Load("TestData/metadata.json");
 
-    // Mirrors the CloudTrailData entry in generator/ServiceModels/_sdk-versions.json so the context's
-    // manifest carries the same version data the generator would resolve at runtime.
-    private static readonly SdkVersionManifest Manifest = new()
-    {
-        CoreVersion = "4.0.100.3",
-        ServiceVersions = new Dictionary<string, ServiceVersion>
-        {
-            ["CloudTrailData"] = new()
-            {
-                Version = "4.0.100.3",
-                AssemblyVersionOverride = "4.0",
-                Dependencies = new Dictionary<string, string> { ["Core"] = "4.0.100.3" },
-                InPreview = false,
-            },
-        },
-    };
+    private static readonly SdkVersionManifest Manifest = TestManifests.CloudTrailData();
 
     public Shape DeserializeShape(string shapeId)
     {

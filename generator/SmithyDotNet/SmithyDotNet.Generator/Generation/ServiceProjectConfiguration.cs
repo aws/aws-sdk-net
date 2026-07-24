@@ -72,9 +72,8 @@ public sealed record ServiceProjectConfiguration
 /// </summary>
 public static class ServiceProjectConfigurations
 {
-    // Service csprojs live at sdk/src/Services/{Service}/ — 3 levels below sdk/.
-    private static string SdkRoot = Utils.PathCombineAlt("..", "..", "..");
-    private static string ServicesRoot = Utils.PathCombineAlt("..", "..");
+    private const string SdkRoot = SdkTreeLayout.SdkRootFromServiceSource;
+    private const string ServicesRoot = SdkTreeLayout.SrcRootFromServiceSource;
 
     public static ServiceProjectConfiguration NetFramework { get; } = new()
     {

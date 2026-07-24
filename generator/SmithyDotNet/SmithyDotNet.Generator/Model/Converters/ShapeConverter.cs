@@ -51,8 +51,7 @@ public class ShapeConverter : JsonConverter<Shape>
 
     private static Shape? WarnUnknown(string? type)
     {
-        // TODO: replace with proper logging once the generator has a logging abstraction
-        Console.Error.WriteLine($"Warning: skipping unknown shape type '{type}'");
+        Log.Warn($"skipping unknown shape type '{type}'");
         return null;
     }
 }

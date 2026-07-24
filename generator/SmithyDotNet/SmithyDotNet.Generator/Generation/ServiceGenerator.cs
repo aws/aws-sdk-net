@@ -28,22 +28,28 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
     /// Generates every file for the service and writes it under <paramref name="outputPath"/>.
     /// Returns the relative paths written under <paramref name="outputPath"/>, for logging and tests.
     /// <para />
+    /// The code-analysis files are written under <paramref name="codeAnalysisPath"/> — the caller
+    /// supplies the real per-service root (<c>sdk/code-analysis/ServiceAnalysis/{Service}/</c>),
+    /// which the SDK lays out outside the source tree.
+    /// <para />
     /// When <paramref name="testsOutputPath"/> is supplied, the unit-test project file is written
     /// under <c>{testsOutputPath}/UnitTests/</c>, plus the endpoint provider tests file under
     /// <c>UnitTests/Generated/Endpoints/</c> when the service carries endpoint tests
     /// (<see cref="GenerationContext.HasEndpointTests"/>) — a separate root because the SDK lays out
     /// its test tree (<c>sdk/test/Services/{Service}/</c>) as a sibling of the source tree
-    /// (<c>sdk/src/Services/{Service}/</c>), not nested under it. Those files get the same
-    /// duplicate-path guard (via <c>EmitUnder</c>) but aren't tracked in the returned list, which
-    /// stays scoped to <paramref name="outputPath"/>.
+    /// (<c>sdk/src/Services/{Service}/</c>), not nested under it. Code-analysis and test files get
+    /// the same duplicate-path guard (via <c>EmitUnder</c>) but aren't tracked in the returned list,
+    /// which stays scoped to <paramref name="outputPath"/>.
     /// </summary>
-    public IReadOnlyList<string> Generate(string outputPath, string? testsOutputPath = null, CancellationToken cancellationToken = default)
+    public IReadOnlyList<string> Generate(string outputPath, string codeAnalysisPath, string? testsOutputPath = null, CancellationToken cancellationToken = default)
     {
         var clientName = context.ClientName;
+
         // Concurrent-safe so Emit can be called from parallel writers later. TryAdd both reserves
         // the path (atomic fail-fast on duplicates) and records it as written, so there is a single
         // collection to reason about.
         var written = new ConcurrentDictionary<string, byte>();
+        var writtenCodeAnalysis = new ConcurrentDictionary<string, byte>();
         var writtenTests = new ConcurrentDictionary<string, byte>();
 
         void EmitUnder(string root, ConcurrentDictionary<string, byte> tracker, string relativePath, string contents)
@@ -61,17 +67,12 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         void Emit(string relativePath, string contents) => EmitUnder(outputPath, written, relativePath, contents);
-        
+        void EmitCodeAnalysis(string relativePath, string contents) => EmitUnder(codeAnalysisPath, writtenCodeAnalysis, relativePath, contents);
+
         var generated = "Generated";
         var model = Path.Combine(generated, "Model");
         var @internal = Path.Combine(generated, "Internal");
         var marshalling = Path.Combine(model, "Internal", "MarshallTransformations");
-        // the real codeAnalysis folder is up two levels from "generatedOutput" but for now let's just put it at the 
-        // same level as the "Generated" folder.
-        var codeAnalysis = "code-analysis";
-        var ServiceAnalysis = "ServiceAnalysis";
-        var serviceSpecificCodeAnalysis = Path.Combine(codeAnalysis, ServiceAnalysis);
-        var serviceSpecificCodeAnalysisGenerated = Path.Combine(serviceSpecificCodeAnalysis, generated);
 
         var assemblyInfoWriter = new AssemblyInfoWriter(context, serviceFileVersion);
         Emit(Path.Combine("Properties", "AssemblyInfo.cs"), assemblyInfoWriter.Write(cancellationToken));
@@ -95,25 +96,22 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         Emit(Path.Combine(@internal, $"{clientName}Metadata.g.cs"), metadataWriter.Write(cancellationToken));
 
         var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
-        Emit(Path.Combine(serviceSpecificCodeAnalysisGenerated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
+        EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
 
         var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
-        Emit(Path.Combine(serviceSpecificCodeAnalysisGenerated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
+        EmitCodeAnalysis(Path.Combine(generated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
 
         var propertyValueRulesWriter = new PropertyValueRulesWriter(context);
-        Emit(Path.Combine(serviceSpecificCodeAnalysisGenerated, "PropertyValueRules.xml"), propertyValueRulesWriter.Write(cancellationToken));
-
-        var codeAnalysisProjectFileWriter = new CodeAnalysisProjectFileWriter(context);
-        var codeAnalysisProjectFilePath = Path.Combine(serviceSpecificCodeAnalysis, $"{context.AssemblyName}.CodeAnalysis.csproj");
+        EmitCodeAnalysis(Path.Combine(generated, "PropertyValueRules.xml"), propertyValueRulesWriter.Write(cancellationToken));
 
         var codeAnalysisAssemblyInfoWriter = new CodeAnalysisAssemblyInfoWriter(context);
-        Emit(Path.Combine(serviceSpecificCodeAnalysis, "Properties","AssemblyInfo.cs"), codeAnalysisAssemblyInfoWriter.Write());
+        EmitCodeAnalysis(Path.Combine("Properties", "AssemblyInfo.cs"), codeAnalysisAssemblyInfoWriter.Write());
 
-        //file path needed here for existing GUID check
-        Emit(codeAnalysisProjectFilePath, codeAnalysisProjectFileWriter.Write(codeAnalysisProjectFilePath));
-
-        var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
-        Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));
+        // The writer probes the existing csproj to preserve its ProjectGuid, so it needs the full
+        // on-disk path, not the root-relative one used for emission.
+        var codeAnalysisProjectFileWriter = new CodeAnalysisProjectFileWriter(context);
+        var codeAnalysisProjectFileName = $"{context.AssemblyName}.CodeAnalysis.csproj";
+        EmitCodeAnalysis(codeAnalysisProjectFileName, codeAnalysisProjectFileWriter.Write(Path.Combine(codeAnalysisPath, codeAnalysisProjectFileName)));
 
         // Endpoint files are emitted only when the service carries an endpoint rule set. The
         // parameters class lives in the *.Endpoints namespace (emitted under Generated/), the
@@ -247,6 +245,13 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             var exceptionName = ExceptionWriter.ToExceptionName(shapeId.Name);
             Emit(Path.Combine(model, $"{exceptionName}.g.cs"), exceptionWriter.WriteException(errorShape, shapeId, cancellationToken));
         }
+
+        // Last on purpose: the solution writer scans outputPath for the service csprojs to build
+        // the /Services/ dependency folder, so it must run after every csproj has been emitted —
+        // otherwise a clean first run produces a .slnx missing the service dependencies that a
+        // re-run would then pick up.
+        var serviceSpecificSolutionWriter = new ServiceSpecificSolutionFileWriter(context);
+        Emit($"{context.ServiceName}.slnx", serviceSpecificSolutionWriter.Write(outputPath));
 
         return written.Keys.ToList();
     }

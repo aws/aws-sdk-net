@@ -6,11 +6,12 @@ namespace SmithyDotNet.Generator.Tests.Generation;
 [Collection(nameof(CloudTrailModelCollection))]
 public class ServiceGeneratorTests : IDisposable
 {
-    private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
+    private const string ModelFileName = SdkTreeLayout.SmithyModelFileName;
     private const string ServiceFileVersion = "4.0.2.8";
 
     private readonly CloudTrailModelFixture _fixture;
     private readonly string _outputDir;
+    private readonly string _codeAnalysisDir;
     private readonly string _testsOutputDir;
     private readonly IReadOnlyList<string> _written;
 
@@ -18,22 +19,21 @@ public class ServiceGeneratorTests : IDisposable
     {
         _fixture = fixture;
         _outputDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
+        _codeAnalysisDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
         _testsOutputDir = Path.Combine(Path.GetTempPath(), $"smithy-gen-test-{Guid.NewGuid():N}");
 
         var generator = new ServiceGenerator(fixture.Context, ModelFileName, ServiceFileVersion, fixture.DefaultConfigurationModes);
-        _written = generator.Generate(_outputDir, _testsOutputDir, TestContext.Current.CancellationToken);
+        _written = generator.Generate(_outputDir, _codeAnalysisDir, _testsOutputDir, TestContext.Current.CancellationToken);
     }
 
     public void Dispose()
     {
-        if (Directory.Exists(_outputDir))
+        foreach (var dir in new[] { _outputDir, _codeAnalysisDir, _testsOutputDir })
         {
-            Directory.Delete(_outputDir, recursive: true);
-        }
-
-        if (Directory.Exists(_testsOutputDir))
-        {
-            Directory.Delete(_testsOutputDir, recursive: true);
+            if (Directory.Exists(dir))
+            {
+                Directory.Delete(dir, recursive: true);
+            }
         }
     }
 
@@ -165,6 +165,35 @@ public class ServiceGeneratorTests : IDisposable
     public void WritesReadme()
     {
         AssertFileExists("nuget-readme.md");
+    }
+
+    [Fact]
+    public void WritesCodeAnalysisFilesUnderCodeAnalysisPath()
+    {
+        // The caller supplies the real per-service code-analysis root
+        // (sdk/code-analysis/ServiceAnalysis/{Service}/); the files land directly under it, matching
+        // the layout of the existing C2J-generated ServiceAnalysis folders.
+        string[] expected =
+        [
+            "AWSSDK.CloudTrailData.CodeAnalysis.csproj",
+            Path.Combine("Properties", "AssemblyInfo.cs"),
+            Path.Combine("Generated", "NullCollectionInitializerAnalyzer.g.cs"),
+            Path.Combine("Generated", "PropertyValueAssignmentAnalyzer.g.cs"),
+            Path.Combine("Generated", "PropertyValueRules.xml"),
+        ];
+
+        foreach (var relativePath in expected)
+        {
+            Assert.True(File.Exists(Path.Combine(_codeAnalysisDir, relativePath)), $"Expected file: {relativePath}");
+        }
+    }
+
+    [Fact]
+    public void CodeAnalysisPathsAreNotInWrittenList()
+    {
+        // They live under a different root (_codeAnalysisDir), so the outputDir-relative returned
+        // list must not contain them.
+        Assert.DoesNotContain(_written, path => path.Contains("CodeAnalysis") || path.Contains("code-analysis"));
     }
 
     [Fact]

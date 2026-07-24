@@ -61,7 +61,7 @@ public sealed class CodeAnalysisProjectFileWriter(GenerationContext context)
             writer.WriteLine();
             writer.OpenXmlBlock("ItemGroup", () =>
             {
-                writer.WriteLine($"""<ProjectReference Include="{Utils.PathCombineAlt("..", "..", "SharedAnalysisCode", "SharedAnalysisCode.csproj")}" />""");
+                writer.WriteLine($"""<ProjectReference Include="{Utils.PathCombineAlt(SdkTreeLayout.CodeAnalysisRootFromServiceAnalysis, "SharedAnalysisCode", "SharedAnalysisCode.csproj")}" />""");
             });
         });
 

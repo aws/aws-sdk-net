@@ -14,10 +14,8 @@ namespace SmithyDotNet.Generator.Writers;
 /// </summary>
 public sealed class UnitTestProjectFileWriter(GenerationContext context)
 {
-    // Unit-test csprojs live at sdk/test/Services/{Service}/UnitTests/ — three levels below
-    // sdk/test/ and four below sdk/.
-    private const string TestRoot = "../../..";
-    private const string SdkRoot = "../../../..";
+    private const string TestRoot = SdkTreeLayout.TestRootFromUnitTests;
+    private const string SdkRoot = SdkTreeLayout.SdkRootFromUnitTests;
 
     private static readonly IReadOnlyList<PackageRef> TestPackages =
     [
