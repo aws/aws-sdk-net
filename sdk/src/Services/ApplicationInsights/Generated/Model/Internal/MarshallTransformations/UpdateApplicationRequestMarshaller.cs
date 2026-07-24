@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 {
@@ -59,78 +58,78 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateApplicationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.ApplicationInsights");
-            string target = "EC2WindowsBarleyService.UpdateApplication";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/EC2WindowsBarleyService/operation/UpdateApplication";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-11-25";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAttachMissingPermission())
+                {
+                    context.Writer.WriteTextString("AttachMissingPermission");
+                    context.Writer.WriteBoolean(publicRequest.AttachMissingPermission.Value);
+                }
+                if (publicRequest.IsSetAutoConfigEnabled())
+                {
+                    context.Writer.WriteTextString("AutoConfigEnabled");
+                    context.Writer.WriteBoolean(publicRequest.AutoConfigEnabled.Value);
+                }
+                if (publicRequest.IsSetCWEMonitorEnabled())
+                {
+                    context.Writer.WriteTextString("CWEMonitorEnabled");
+                    context.Writer.WriteBoolean(publicRequest.CWEMonitorEnabled.Value);
+                }
+                if (publicRequest.IsSetOpsCenterEnabled())
+                {
+                    context.Writer.WriteTextString("OpsCenterEnabled");
+                    context.Writer.WriteBoolean(publicRequest.OpsCenterEnabled.Value);
+                }
+                if (publicRequest.IsSetOpsItemSNSTopicArn())
+                {
+                    context.Writer.WriteTextString("OpsItemSNSTopicArn");
+                    context.Writer.WriteTextString(publicRequest.OpsItemSNSTopicArn);
+                }
+                if (publicRequest.IsSetRemoveSNSTopic())
+                {
+                    context.Writer.WriteTextString("RemoveSNSTopic");
+                    context.Writer.WriteBoolean(publicRequest.RemoveSNSTopic.Value);
+                }
+                if (publicRequest.IsSetResourceGroupName())
+                {
+                    context.Writer.WriteTextString("ResourceGroupName");
+                    context.Writer.WriteTextString(publicRequest.ResourceGroupName);
+                }
+                if (publicRequest.IsSetSNSNotificationArn())
+                {
+                    context.Writer.WriteTextString("SNSNotificationArn");
+                    context.Writer.WriteTextString(publicRequest.SNSNotificationArn);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAttachMissingPermission())
-            {
-                context.Writer.WritePropertyName("AttachMissingPermission");
-                context.Writer.WriteBooleanValue(publicRequest.AttachMissingPermission.Value);
             }
-
-            if(publicRequest.IsSetAutoConfigEnabled())
+            finally
             {
-                context.Writer.WritePropertyName("AutoConfigEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.AutoConfigEnabled.Value);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetCWEMonitorEnabled())
-            {
-                context.Writer.WritePropertyName("CWEMonitorEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.CWEMonitorEnabled.Value);
-            }
-
-            if(publicRequest.IsSetOpsCenterEnabled())
-            {
-                context.Writer.WritePropertyName("OpsCenterEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.OpsCenterEnabled.Value);
-            }
-
-            if(publicRequest.IsSetOpsItemSNSTopicArn())
-            {
-                context.Writer.WritePropertyName("OpsItemSNSTopicArn");
-                context.Writer.WriteStringValue(publicRequest.OpsItemSNSTopicArn);
-            }
-
-            if(publicRequest.IsSetRemoveSNSTopic())
-            {
-                context.Writer.WritePropertyName("RemoveSNSTopic");
-                context.Writer.WriteBooleanValue(publicRequest.RemoveSNSTopic.Value);
-            }
-
-            if(publicRequest.IsSetResourceGroupName())
-            {
-                context.Writer.WritePropertyName("ResourceGroupName");
-                context.Writer.WriteStringValue(publicRequest.ResourceGroupName);
-            }
-
-            if(publicRequest.IsSetSNSNotificationArn())
-            {
-                context.Writer.WritePropertyName("SNSNotificationArn");
-                context.Writer.WriteStringValue(publicRequest.SNSNotificationArn);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static UpdateApplicationRequestMarshaller _instance = new UpdateApplicationRequestMarshaller();        
