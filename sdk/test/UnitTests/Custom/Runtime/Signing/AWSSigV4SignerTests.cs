@@ -18,6 +18,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -40,10 +41,10 @@ namespace AWSSDK.UnitTests.Signing
         private const string Service = "service";
         private static readonly DateTime SignedAt = new DateTime(2015, 8, 30, 12, 36, 0, DateTimeKind.Utc);
 
-        private static AWSSigningParameters BaseParameters(bool signPayload = true) => new AWSSigningParameters
+        private static AWSSigV4Parameters BaseParameters(bool signPayload = true) => new AWSSigV4Parameters
         {
             Credentials = new BasicAWSCredentials(AccessKey, SecretKey),
-            Region = Region,
+            Region = RegionEndpoint.GetBySystemName(Region),
             Service = Service,
             SignedAt = SignedAt,
             SignPayload = signPayload,
@@ -307,10 +308,10 @@ namespace AWSSDK.UnitTests.Signing
 
             var upper = BaseParameters();
             upper.Service = "sts";
-            upper.Region = "US-EAST-1";
+            upper.Region = RegionEndpoint.GetBySystemName("US-EAST-1");
             var lower = BaseParameters();
             lower.Service = "sts";
-            lower.Region = "us-east-1";
+            lower.Region = RegionEndpoint.GetBySystemName("us-east-1");
 
             var upperResult = AWSSigV4Signer.Presign(request, upper, TimeSpan.FromSeconds(60));
             var lowerResult = AWSSigV4Signer.Presign(request, lower, TimeSpan.FromSeconds(60));
@@ -320,6 +321,90 @@ namespace AWSSDK.UnitTests.Signing
                 "The credential-scope region must be normalized to lowercase.");
             Assert.AreEqual(lowerResult.Uri.Query, upperResult.Uri.Query,
                 "An uppercase region must presign identically to its lowercase form.");
+        }
+
+        // -----------------------------------------------------------------------
+        // Path encoding (review comment #6)
+        //
+        // The facade treats RequestUri as the authoritative, already-encoded wire path (same contract as the
+        // JS/@smithy, Python/botocore, and Java v2 SDKs — see the sigv4-cross-sdk oracles). It never decodes or
+        // re-interprets the path. The service recomputes the canonical path from the wire path: one extra
+        // encode pass for non-S3, zero passes (verbatim) for S3. These tests pin that behavior observably.
+        //
+        // Canonical-path unit coverage of the underlying primitive is in SignerTests
+        // (TestCanonicalizeResourcePathAlreadyEncoded); these assert the facade wires it correctly end to end.
+        // -----------------------------------------------------------------------
+
+        private static AWSSigV4Parameters S3Parameters()
+        {
+            var p = BaseParameters();
+            p.Service = "s3";
+            return p;
+        }
+
+        private static AWSSigningRequest GetRequest(string url) => new AWSSigningRequest
+        {
+            HttpMethod = "GET",
+            RequestUri = new Uri(url),
+            Headers = new Dictionary<string, string>(),
+        };
+
+        [TestMethod]
+        public void Presign_S3_SpecialCharPath_WireUrlPreservesCallerEncodingVerbatim()
+        {
+            // For S3 the presigned URL's path must be the caller's encoded path byte-for-byte (zero encode
+            // passes), so the service — which recomputes the canonical path verbatim — accepts the signature.
+            // Regression guard for the original bug where the facade double-encoded ("%20" -> "%2520").
+            var request = GetRequest("https://bucket.s3.us-east-1.amazonaws.com/hello%20world/a%2Bb%3Dc");
+            var result = AWSSigV4Signer.Presign(request, S3Parameters(), TimeSpan.FromSeconds(60));
+
+            var path = result.Uri.AbsolutePath;
+            Assert.AreEqual("/hello%20world/a%2Bb%3Dc", path,
+                "S3 presign must keep the caller's encoded path verbatim (no extra encode pass).");
+            Assert.IsFalse(path.Contains("%2520"), "The path must not be double-encoded.");
+        }
+
+        [TestMethod]
+        public void Presign_S3_EncodedSlashInSegment_IsPreservedNotSplit()
+        {
+            // "%2F" is an encoded slash inside a single segment. It must be preserved (kept as "%2F" for S3),
+            // never decoded into a real separator — matching botocore/@smithy/Java. A signer that decoded the
+            // path would sign "/a/b" (two segments) and produce a URL the service resolves to the wrong key.
+            var request = GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a%2Fb");
+            var result = AWSSigV4Signer.Presign(request, S3Parameters(), TimeSpan.FromSeconds(60));
+
+            Assert.AreEqual("/a%2Fb", result.Uri.AbsolutePath,
+                "An encoded slash must be preserved within the segment for S3, not re-encoded or split.");
+        }
+
+        [TestMethod]
+        public void Sign_S3_And_NonS3_SpecialCharPath_SignDifferently()
+        {
+            // Same encoded path, two services: S3 signs it verbatim (0 passes); a non-S3 service applies one
+            // more encode pass. The canonical paths differ ("/hello%20world" vs "/hello%2520world"), so the
+            // signatures must differ. This guards that the S3 zero-pass branch is actually taken.
+            var request = GetRequest("https://host.us-east-1.amazonaws.com/hello%20world");
+
+            var s3 = AWSSigV4Signer.Sign(request, S3Parameters());
+            var nonS3Params = BaseParameters();
+            nonS3Params.Service = "execute-api";
+            var nonS3 = AWSSigV4Signer.Sign(request, nonS3Params);
+
+            Assert.AreNotEqual(nonS3.AuthorizationHeader, s3.AuthorizationHeader,
+                "S3 (verbatim) and non-S3 (one extra encode pass) must produce different signatures for an encoded path.");
+        }
+
+        [TestMethod]
+        public void Sign_S3_EncodedSlash_DiffersFromRealSlash()
+        {
+            // "/a%2Fb" (one segment, encoded slash) and "/a/b" (two segments) are different resources and must
+            // sign differently. If the facade decoded the path, both would collapse to "/a/b" and sign the same
+            // — the exact interop bug this fix avoids.
+            var encodedSlash = AWSSigV4Signer.Sign(GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a%2Fb"), S3Parameters());
+            var realSlash = AWSSigV4Signer.Sign(GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a/b"), S3Parameters());
+
+            Assert.AreNotEqual(realSlash.AuthorizationHeader, encodedSlash.AuthorizationHeader,
+                "An encoded slash must not be signed the same as a real path separator.");
         }
 
         [TestMethod]

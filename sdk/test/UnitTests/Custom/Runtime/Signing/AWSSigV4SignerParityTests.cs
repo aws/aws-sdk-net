@@ -20,6 +20,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -218,12 +219,12 @@ namespace AWSSDK.UnitTests.Signing
                 Headers = new Dictionary<string, string>(scenario.Headers),
                 Content = scenario.Content,
             };
-            var parameters = new AWSSigningParameters
+            var parameters = new AWSSigV4Parameters
             {
                 Credentials = scenario.SessionToken != null
                     ? (AWSCredentials)new SessionAWSCredentials(AccessKey, SecretKey, scenario.SessionToken)
                     : new BasicAWSCredentials(AccessKey, SecretKey),
-                Region = Region,
+                Region = RegionEndpoint.GetBySystemName(Region),
                 Service = Service,
                 SignedAt = SignedAt,
                 SignPayload = scenario.SignPayload,
@@ -239,12 +240,12 @@ namespace AWSSDK.UnitTests.Signing
                 RequestUri = new Uri(scenario.Url),
                 Headers = new Dictionary<string, string>(scenario.Headers),
             };
-            var parameters = new AWSSigningParameters
+            var parameters = new AWSSigV4Parameters
             {
                 Credentials = scenario.SessionToken != null
                     ? (AWSCredentials)new SessionAWSCredentials(AccessKey, SecretKey, scenario.SessionToken)
                     : new BasicAWSCredentials(AccessKey, SecretKey),
-                Region = Region,
+                Region = RegionEndpoint.GetBySystemName(Region),
                 Service = Service,
                 SignedAt = SignedAt,
                 SignPayload = scenario.SignPayload,

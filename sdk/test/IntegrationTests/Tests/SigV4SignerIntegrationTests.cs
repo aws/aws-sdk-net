@@ -42,12 +42,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private const string StsService = "sts";
         private static readonly HttpClient HttpClient = new HttpClient();
 
-        private static string Region => FallbackRegionFactory.GetRegionEndpoint()?.SystemName ?? "us-east-1";
+        private static RegionEndpoint Region => FallbackRegionFactory.GetRegionEndpoint() ?? RegionEndpoint.USEast1;
 
         private static Uri GetCallerIdentityUri() =>
-            new Uri($"https://sts.{Region}.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15");
+            new Uri($"https://sts.{Region.SystemName}.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15");
 
-        private static AWSSigningParameters SigningParameters() => new AWSSigningParameters
+        private static AWSSigV4Parameters SigningParameters() => new AWSSigV4Parameters
         {
             Credentials = DefaultAWSCredentialsIdentityResolver.GetCredentials(),
             Region = Region,

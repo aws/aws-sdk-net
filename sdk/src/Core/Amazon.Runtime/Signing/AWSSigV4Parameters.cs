@@ -21,7 +21,7 @@ namespace Amazon.Runtime.Signing
     /// The signing configuration for <see cref="AWSSigV4Signer"/>: who is signing,
     /// for which region, and for which service.
     /// </summary>
-    public class AWSSigningParameters
+    public class AWSSigV4Parameters
     {
         /// <summary>
         /// The credentials to sign with. Any <see cref="AWSCredentials"/> is accepted; the signer
@@ -33,12 +33,16 @@ namespace Amazon.Runtime.Signing
         public AWSCredentials Credentials { get; set; }
 
         /// <summary>
-        /// The signing region, e.g. "us-east-1".
+        /// The signing region, e.g. <see cref="RegionEndpoint.USEast1"/>.
         /// </summary>
-        public string Region { get; set; }
+        public RegionEndpoint Region { get; set; }
 
         /// <summary>
         /// The signing service name, e.g. "execute-api" or "sts".
+        /// <para>
+        /// For an AWS service, this value can be looked up via the <c>AuthenticationServiceName</c>
+        /// property on the service client's config object (e.g. <c>new AmazonS3Config().AuthenticationServiceName</c>).
+        /// </para>
         /// </summary>
         public string Service { get; set; }
 

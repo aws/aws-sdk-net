@@ -28,8 +28,7 @@ namespace Amazon.Runtime.Signing
     /// <summary>
     /// Signs arbitrary HTTP requests with AWS Signature Version 4.
     /// <para>
-    /// This is a thin, supported facade over the SDK's internal SigV4 implementation. It supports
-    /// header-based signing (which produces the headers to add to an outbound request) and
+    /// Supports header-based signing (which produces the headers to add to an outbound request) and
     /// presigned-URL (query-string) signing. It does not perform any HTTP I/O.
     /// </para>
     /// </summary>
@@ -52,7 +51,7 @@ namespace Amazon.Runtime.Signing
         /// <summary>
         /// Signs the request with SigV4 and returns the headers to add to the outbound request.
         /// </summary>
-        public static AWSSigningResult Sign(AWSSigningRequest request, AWSSigningParameters parameters)
+        public static AWSSigningResult Sign(AWSSigningRequest request, AWSSigV4Parameters parameters)
         {
             ValidateArguments(request, parameters, presign: false);
             var credentials = parameters.Credentials.GetCredentials();
@@ -63,7 +62,7 @@ namespace Amazon.Runtime.Signing
         /// Signs the request with SigV4 and returns the headers to add to the outbound request.
         /// The returned task awaits credential resolution; the signing computation itself is synchronous.
         /// </summary>
-        public static async Task<AWSSigningResult> SignAsync(AWSSigningRequest request, AWSSigningParameters parameters, CancellationToken cancellationToken = default)
+        public static async Task<AWSSigningResult> SignAsync(AWSSigningRequest request, AWSSigV4Parameters parameters, CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
             ValidateArguments(request, parameters, presign: false);
@@ -75,7 +74,7 @@ namespace Amazon.Runtime.Signing
         /// <summary>
         /// Produces a presigned URL (query-string signing) for the request, valid for <paramref name="expiry"/>.
         /// </summary>
-        public static PresignResult Presign(AWSSigningRequest request, AWSSigningParameters parameters, TimeSpan expiry)
+        public static PresignResult Presign(AWSSigningRequest request, AWSSigV4Parameters parameters, TimeSpan expiry)
         {
             ValidateArguments(request, parameters, presign: true);
             ValidateExpiry(expiry);
@@ -87,7 +86,7 @@ namespace Amazon.Runtime.Signing
         /// Produces a presigned URL (query-string signing) for the request, valid for <paramref name="expiry"/>.
         /// The returned task awaits credential resolution; the signing computation itself is synchronous.
         /// </summary>
-        public static async Task<PresignResult> PresignAsync(AWSSigningRequest request, AWSSigningParameters parameters, TimeSpan expiry, CancellationToken cancellationToken = default)
+        public static async Task<PresignResult> PresignAsync(AWSSigningRequest request, AWSSigV4Parameters parameters, TimeSpan expiry, CancellationToken cancellationToken = default)
         {
             cancellationToken.ThrowIfCancellationRequested();
             ValidateArguments(request, parameters, presign: true);
@@ -101,7 +100,7 @@ namespace Amazon.Runtime.Signing
 
         #region Header signing
 
-        private static AWSSigningResult SignInternal(AWSSigningRequest request, AWSSigningParameters parameters, ImmutableCredentials credentials)
+        private static AWSSigningResult SignInternal(AWSSigningRequest request, AWSSigV4Parameters parameters, ImmutableCredentials credentials)
         {
             EnsureCredentialsResolved(credentials);
             var internalRequest = BuildRequest(request, parameters);
@@ -113,8 +112,14 @@ namespace Amazon.Runtime.Signing
             var config = SharedConfig;
             var signedAt = ResolveSignedAt(parameters, internalRequest);
 
-            var signingResult = new AWS4Signer().SignRequest(internalRequest, config, new RequestMetrics(),
-                credentials.AccessKey, credentials.SecretKey, signedAt);
+            // S3 signs the encoded path verbatim (zero encode passes); every other service applies one more
+            // pass (UseDoubleEncoding = false, set in BuildRequest). See BuildRequest for the full rationale.
+            var signer = new AWS4Signer();
+            var signingResult = IsS3(parameters.Service)
+                ? signer.SignRequestPreEncodedPath(internalRequest, config, new RequestMetrics(),
+                    credentials.AccessKey, credentials.SecretKey, signedAt)
+                : signer.SignRequest(internalRequest, config, new RequestMetrics(),
+                    credentials.AccessKey, credentials.SecretKey, signedAt);
 
             // SignRequest does not set Authorization on the request (only the Sign(...) wrapper does),
             // so read it off the result. The other signing headers were added onto the request.
@@ -134,7 +139,7 @@ namespace Amazon.Runtime.Signing
 
         #region Presigning
 
-        private static PresignResult PresignInternal(AWSSigningRequest request, AWSSigningParameters parameters, TimeSpan expiry, ImmutableCredentials credentials)
+        private static PresignResult PresignInternal(AWSSigningRequest request, AWSSigV4Parameters parameters, TimeSpan expiry, ImmutableCredentials credentials)
         {
             EnsureCredentialsResolved(credentials);
             var internalRequest = BuildRequest(request, parameters);
@@ -157,14 +162,28 @@ namespace Amazon.Runtime.Signing
             // with overrideSigningRegion supplied, the signer never derives the region from it. That also
             // means the signer uses this region verbatim (no normalization), so lowercase it here to match
             // the header path — which routes the region through AWS4Signer.DetermineSigningRegion, where
-            // AuthenticationRegion is lowercased. Without this, a caller passing "US-EAST-1" would produce a
-            // presigned URL whose credential-scope region the service rejects.
-            var region = parameters.Region.ToLowerInvariant();
-            var signingResult = AWS4PreSignedUrlSigner.SignRequest(internalRequest, null, new RequestMetrics(),
-                credentials.AccessKey, credentials.SecretKey, parameters.Service, region, signedAt);
+            // AuthenticationRegion is lowercased. Without this, a RegionEndpoint whose SystemName is
+            // mixed-case (e.g. built via GetBySystemName("US-EAST-1")) would produce a presigned URL whose
+            // credential-scope region the service rejects.
+            var region = parameters.Region.SystemName.ToLowerInvariant();
 
-            var baseUrl = AmazonServiceClient.ComposeUrl(internalRequest);
-            var presignedUrl = new Uri(baseUrl.AbsoluteUri + "&" + signingResult.ForQueryParameters);
+            // S3 signs the encoded path verbatim (zero passes); other services apply one more pass. See BuildRequest.
+            var signingResult = IsS3(parameters.Service)
+                ? AWS4PreSignedUrlSigner.SignRequestPreEncodedPath(internalRequest, null, new RequestMetrics(),
+                    credentials.AccessKey, credentials.SecretKey, parameters.Service, region, signedAt)
+                : AWS4PreSignedUrlSigner.SignRequest(internalRequest, null, new RequestMetrics(),
+                    credentials.AccessKey, credentials.SecretKey, parameters.Service, region, signedAt);
+
+            // Build the presigned URL's WIRE path from the caller's RequestUri verbatim, not from ComposeUrl.
+            // The service recomputes the canonical path from the wire path (one encode pass for non-S3, zero
+            // for S3) and compares it to the signature; that only matches if the wire path is exactly the
+            // encoded path we signed over. ComposeUrl, however, runs its own encode pass on the {Path+} value
+            // (double-encoding it), so we take only its rendered query string and pair it with the verbatim path.
+            var composed = AmazonServiceClient.ComposeUrl(internalRequest).AbsoluteUri;
+            var queryStart = composed.IndexOf('?');
+            var query = queryStart >= 0 ? composed.Substring(queryStart) : string.Empty;
+            var authority = request.RequestUri.GetLeftPart(UriPartial.Authority);
+            var presignedUrl = new Uri(authority + request.RequestUri.AbsolutePath + query + "&" + signingResult.ForQueryParameters);
 
             var signedHeaders = BuildSignedHeaders(internalRequest.Headers, signingResult.SignedHeaders);
 
@@ -175,7 +194,7 @@ namespace Amazon.Runtime.Signing
 
         #region Shared helpers
 
-        private static DefaultRequest BuildRequest(AWSSigningRequest request, AWSSigningParameters parameters)
+        private static DefaultRequest BuildRequest(AWSSigningRequest request, AWSSigV4Parameters parameters)
         {
             var internalRequest = new DefaultRequest(new StandaloneSigningRequest(), parameters.Service)
             {
@@ -192,21 +211,39 @@ namespace Amazon.Runtime.Signing
                 // (The SDK's own RedirectHandler does the same split via UriBuilder + an IsDefaultPort branch;
                 // GetLeftPart collapses that into one call.)
                 Endpoint = new Uri(request.RequestUri.GetLeftPart(UriPartial.Authority)),
-                ResourcePath = request.RequestUri.AbsolutePath,
+
+                // We treat the caller's RequestUri as the authoritative, already-encoded wire request — the
+                // same contract as the JS (@smithy), Python (botocore), and Java v2 SDKs: the signer does not
+                // decode or re-interpret the caller's path. Uri.AbsolutePath is the encoded wire path, and the
+                // canonical path the service recomputes from it is one more URL-encode pass for non-S3 and zero
+                // passes (verbatim) for S3.
+                //
+                // The path is supplied as a single greedy path-resource ({Path+}) rather than set directly on
+                // ResourcePath. A plain ResourcePath string is treated as Literal segments and encoded with the
+                // lenient path encoder, which leaves sub-delims like '+' '=' ',' unencoded — the SigV4 canonical
+                // form requires them strict-encoded. A path-resource value is a Label segment and gets the strict
+                // encoder, exactly as the generated S3 client encodes an object key ("/{Key+}"). The "+" suffix
+                // is greedy so real '/' separators in the value stay segment boundaries (while an encoded "%2F"
+                // stays within one segment and is preserved, never split — matching the other SDKs).
+                ResourcePath = "/{Path+}",
                 OverrideSigningServiceName = parameters.Service,
-                AuthenticationRegion = parameters.Region,
+                AuthenticationRegion = parameters.Region.SystemName,
                 DisablePayloadSigning = !parameters.SignPayload,
 
-                // ResourcePath is Uri.AbsolutePath, which System.Uri has already percent-encoded once. The
-                // SigV4 canonical path for non-S3 services is a single UrlEncode of the path the service
-                // receives on the wire (that same AbsolutePath). Disabling double encoding makes the signer
-                // apply exactly one encode pass, so the canonical path matches what the service computes.
-                // (For s3 the signer forces UseDoubleEncoding = false itself, regardless of what we set here
-                // — a backward-compat guard added for an EP2.0 regression so older S3 packages paired with a
-                // newer Core still single-encode; see AWS4Signer.SignRequest. Setting it false here keeps the
-                // non-S3 path consistent with that.)
+                // Force single-pass (non-double) encoding. The {Path+} value is the already-encoded wire path,
+                // so exactly ONE more pass produces the non-S3 canonical path (e.g. "%20" -> "%2520"), matching
+                // the ecosystem. For S3 the signer is invoked via SignRequestPreEncodedPath (see SignInternal /
+                // PresignInternal), which applies ZERO passes and signs the encoded path verbatim.
                 UseDoubleEncoding = false,
             };
+
+            // Bind the {Path+} placeholder to the caller's encoded wire path, verbatim. The leading '/' is
+            // stripped because ResourcePath ("/{Path+}") already supplies it; leaving it would produce a doubled
+            // "//" leading segment.
+            var encodedPath = request.RequestUri.AbsolutePath;
+            if (encodedPath.StartsWith("/", StringComparison.Ordinal))
+                encodedPath = encodedPath.Substring(1);
+            internalRequest.AddPathResource("{Path+}", encodedPath);
 
             // Copy caller headers into the request. A caller-supplied x-amz-content-sha256 is routed to
             // PrecomputedContentSha256 (below) rather than left on the header, so the signer honors it
@@ -267,6 +304,17 @@ namespace Amazon.Runtime.Signing
         }
 
         /// <summary>
+        /// Whether the signing service is S3 (or S3 Express), which signs the encoded resource path verbatim
+        /// (zero additional encode passes) rather than applying the one extra pass every other service uses.
+        /// Mirrors the S3 special-case in <see cref="AWS4Signer"/>.
+        /// </summary>
+        private static bool IsS3(string service)
+        {
+            return string.Equals(service, "s3", StringComparison.OrdinalIgnoreCase)
+                || string.Equals(service, "s3express", StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
         /// Splits a raw query string ("?a=1&amp;a=2&amp;flag") into decoded (key, value) pairs, preserving repeated
         /// keys and distinguishing a valueless flag (value == null) from an empty value. Order is preserved;
         /// the signer sorts for canonicalization.
@@ -320,7 +368,7 @@ namespace Amazon.Runtime.Signing
                 parameters[key] = new StringListParameterValue(new List<string> { single.Value, normalized });
         }
 
-        private static DateTime ResolveSignedAt(AWSSigningParameters parameters, IRequest internalRequest)
+        private static DateTime ResolveSignedAt(AWSSigV4Parameters parameters, IRequest internalRequest)
         {
             return parameters.SignedAt.HasValue
                 ? parameters.SignedAt.Value.ToUniversalTime()
@@ -382,7 +430,7 @@ namespace Amazon.Runtime.Signing
 
         #region Validation
 
-        private static void ValidateArguments(AWSSigningRequest request, AWSSigningParameters parameters, bool presign)
+        private static void ValidateArguments(AWSSigningRequest request, AWSSigV4Parameters parameters, bool presign)
         {
             if (request == null)
                 throw new ArgumentNullException(nameof(request));
@@ -394,7 +442,7 @@ namespace Amazon.Runtime.Signing
                 throw new ArgumentException("RequestUri must be set.", nameof(request));
             if (!request.RequestUri.IsAbsoluteUri)
                 throw new ArgumentException("RequestUri must be an absolute URI.", nameof(request));
-            if (string.IsNullOrEmpty(parameters.Region))
+            if (parameters.Region == null)
                 throw new ArgumentException("Region must be set.", nameof(parameters));
             if (string.IsNullOrEmpty(parameters.Service))
                 throw new ArgumentException("Service must be set.", nameof(parameters));

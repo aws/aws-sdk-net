@@ -480,9 +480,17 @@ namespace Amazon.Util
         /// <param name="resourcePath">Resource path for the request.</param>
         /// <param name="encode">If true will URL-encode path segments including "/". "S3" is currently the only service that does not expect pre URL-encoded segments.</param>
         /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements.</param>
+        /// <param name="pathAlreadyEncoded">
+        /// If true the segment values are treated as already being in their final encoded (wire) form and are
+        /// joined verbatim with no additional URL-encode pass. This is for callers (e.g. the standalone SigV4
+        /// signer signing S3) that supply the path exactly as it appears on the wire and require the canonical
+        /// path to equal it byte-for-byte. It is mutually exclusive with <paramref name="encode"/> (which adds
+        /// an extra pass); when true, <paramref name="encode"/> is ignored. Defaults to false, preserving the
+        /// existing behavior for every current caller.
+        /// </param>
         /// <remarks>If resourcePath begins or ends with slash, the resulting canonicalized path will follow suit.</remarks>
         /// <returns>Canonicalized resource path for the endpoint.</returns>
-        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources)
+        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources, bool pathAlreadyEncoded = false)
         {
             if (endpoint != null)
             {
@@ -503,6 +511,12 @@ namespace Amazon.Util
                 return Slash;
 
             IEnumerable<UriComponent> encodedSegments = AWSSDKUtils.SplitResourcePathIntoSegmentsV2(resourcePath, pathResources);
+
+            // The path is already the final encoded wire form: join the segments verbatim (no encode pass) so
+            // the canonical path equals what is sent on the wire byte-for-byte. Used for S3 by the standalone
+            // signer, matching how botocore/@smithy/Java sign S3 (zero additional passes over the encoded path).
+            if (pathAlreadyEncoded)
+                return JoinResourcePathSegmentsV2NoEncode(encodedSegments);
 
             var pathWasPreEncoded = false;
             if (encode)
@@ -646,6 +660,17 @@ namespace Amazon.Util
             }).ToArray();
             // join the encoded segments with /
             return string.Join(Slash, encodedSegments);
+        }
+
+        /// <summary>
+        /// Joins all path segments with the / character WITHOUT applying any URL-encoding, i.e. the segment
+        /// values are used verbatim. This is the no-encode counterpart of
+        /// <see cref="JoinResourcePathSegmentsV2(IEnumerable{UriComponent})"/>, used when the caller has already
+        /// produced the final encoded (wire) path and the canonical path must match it byte-for-byte.
+        /// </summary>
+        public static string JoinResourcePathSegmentsV2NoEncode(IEnumerable<UriComponent> pathSegments)
+        {
+            return string.Join(Slash, pathSegments.Select(segment => segment.Value).ToArray());
         }
 
 

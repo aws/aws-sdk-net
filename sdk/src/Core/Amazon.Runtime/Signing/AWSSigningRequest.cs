@@ -38,7 +38,7 @@ namespace Amazon.Runtime.Signing
         /// <summary>
         /// Caller-supplied headers to include in the signature. To sign a precomputed body hash
         /// without the signer reading the body, set an "x-amz-content-sha256" entry here (see the
-        /// remarks on <see cref="AWSSigningParameters.SignPayload"/>).
+        /// remarks on <see cref="AWSSigV4Parameters.SignPayload"/>).
         /// </summary>
         /// <remarks>
         /// One value per header name. If a header carries multiple values, supply them here as a
