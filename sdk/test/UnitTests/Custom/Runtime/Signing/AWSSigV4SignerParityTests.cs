@@ -229,7 +229,7 @@ namespace AWSSDK.UnitTests.Signing
                 SignedAt = SignedAt,
                 SignPayload = scenario.SignPayload,
             };
-            return AWSSigV4Signer.Sign(request, parameters).AuthorizationHeader;
+            return AWSSigV4Signer.Sign(request, parameters).Headers[HeaderKeys.AuthorizationHeader];
         }
 
         private static string PresignWithFacade(Scenario scenario)

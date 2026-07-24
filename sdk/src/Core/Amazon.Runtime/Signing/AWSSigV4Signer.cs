@@ -132,7 +132,7 @@ namespace Amazon.Runtime.Signing
             CopyHeaderIfPresent(internalRequest.Headers, headers, HeaderKeys.XAmzContentSha256Header);
             CopyHeaderIfPresent(internalRequest.Headers, headers, HeaderKeys.XAmzSecurityTokenHeader);
 
-            return new AWSSigningResult(headers, authorization);
+            return new AWSSigningResult(headers);
         }
 
         #endregion

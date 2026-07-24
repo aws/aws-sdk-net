@@ -22,6 +22,7 @@ using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials;
 using Amazon.Runtime.Signing;
+using Amazon.Util;
 using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
@@ -72,6 +73,48 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 message.Headers.TryAddWithoutValidation(header.Key, header.Value);
 
             using (var response = await HttpClient.SendAsync(message))
+            {
+                var body = await response.Content.ReadAsStringAsync();
+                Assert.True(response.StatusCode == HttpStatusCode.OK, $"STS returned {(int)response.StatusCode}: {body}");
+                Assert.Contains("<Arn>", body);
+            }
+        }
+
+        /// <summary>
+        /// Demonstrates why callers must apply every entry in <see cref="AWSSigningResult.Headers"/> and not
+        /// just the Authorization header. X-Amz-Date is part of the signed request (it is in the credential
+        /// scope and the SignedHeaders list), so a request carrying only Authorization is rejected by STS,
+        /// while the same request carrying the full set of headers succeeds. This is the failure mode that
+        /// prompted removing a standalone AuthorizationHeader property from the result.
+        /// </summary>
+        [Fact]
+        [Trait("Category", "SigV4Signer")]
+        public async Task Sign_AuthorizationHeaderAlone_IsRejected_FullHeadersSucceed()
+        {
+            var signingRequest = new AWSSigningRequest
+            {
+                HttpMethod = "GET",
+                RequestUri = GetCallerIdentityUri(),
+                Headers = new Dictionary<string, string>(),
+            };
+
+            var result = await AWSSigV4Signer.SignAsync(signingRequest, SigningParameters());
+
+            // Sending ONLY the Authorization header (the tempting-but-wrong shortcut) omits X-Amz-Date, which
+            // is covered by the signature, so STS must reject it.
+            var authOnly = new HttpRequestMessage(HttpMethod.Get, GetCallerIdentityUri());
+            authOnly.Headers.TryAddWithoutValidation(HeaderKeys.AuthorizationHeader, result.Headers[HeaderKeys.AuthorizationHeader]);
+            using (var response = await HttpClient.SendAsync(authOnly))
+            {
+                Assert.False(response.StatusCode == HttpStatusCode.OK,
+                    "STS unexpectedly accepted a request that carried only the Authorization header (missing X-Amz-Date).");
+            }
+
+            // Sending the full set of headers succeeds.
+            var full = new HttpRequestMessage(HttpMethod.Get, GetCallerIdentityUri());
+            foreach (var header in result.Headers)
+                full.Headers.TryAddWithoutValidation(header.Key, header.Value);
+            using (var response = await HttpClient.SendAsync(full))
             {
                 var body = await response.Content.ReadAsStringAsync();
                 Assert.True(response.StatusCode == HttpStatusCode.OK, $"STS returned {(int)response.StatusCode}: {body}");

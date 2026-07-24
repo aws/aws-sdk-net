@@ -89,7 +89,7 @@ namespace AWSSDK.UnitTests.Signing
             var sync = AWSSigV4Signer.Sign(request, BaseParameters());
             var async = await AWSSigV4Signer.SignAsync(request, BaseParameters());
 
-            Assert.AreEqual(sync.AuthorizationHeader, async.AuthorizationHeader);
+            Assert.AreEqual(sync.Headers[HeaderKeys.AuthorizationHeader], async.Headers[HeaderKeys.AuthorizationHeader]);
         }
 
         // -----------------------------------------------------------------------
@@ -110,8 +110,9 @@ namespace AWSSDK.UnitTests.Signing
 
             var result = AWSSigV4Signer.Sign(request, BaseParameters());
 
-            // AuthorizationHeader carries the SignedHeaders list; the custom header must be in it.
-            StringAssert.Contains(result.AuthorizationHeader, "x-custom-multi", result.AuthorizationHeader);
+            // The Authorization header carries the SignedHeaders list; the custom header must be in it.
+            var authorization = result.Headers[HeaderKeys.AuthorizationHeader];
+            StringAssert.Contains(authorization, "x-custom-multi", authorization);
         }
 
         [TestMethod]
@@ -138,7 +139,7 @@ namespace AWSSDK.UnitTests.Signing
             var trimmedResult = AWSSigV4Signer.Sign(trimmed, BaseParameters());
             var untrimmedResult = AWSSigV4Signer.Sign(untrimmed, BaseParameters());
 
-            Assert.AreNotEqual(untrimmedResult.AuthorizationHeader, trimmedResult.AuthorizationHeader,
+            Assert.AreNotEqual(untrimmedResult.Headers[HeaderKeys.AuthorizationHeader], trimmedResult.Headers[HeaderKeys.AuthorizationHeader],
                 "The interior form of a multi-valued header value is signed, so a stray space must change the signature.");
         }
 
@@ -165,7 +166,7 @@ namespace AWSSDK.UnitTests.Signing
             var tightResult = AWSSigV4Signer.Sign(tight, BaseParameters());
             var paddedResult = AWSSigV4Signer.Sign(padded, BaseParameters());
 
-            Assert.AreEqual(tightResult.AuthorizationHeader, paddedResult.AuthorizationHeader,
+            Assert.AreEqual(tightResult.Headers[HeaderKeys.AuthorizationHeader], paddedResult.Headers[HeaderKeys.AuthorizationHeader],
                 "Leading/trailing whitespace on the whole value is trimmed by the signer and must not change the signature.");
         }
 
@@ -237,7 +238,8 @@ namespace AWSSDK.UnitTests.Signing
 
             Assert.AreEqual("the-session-token", result.Headers[HeaderKeys.XAmzSecurityTokenHeader]);
             // The token header must be covered by the signature.
-            Assert.IsTrue(result.AuthorizationHeader.Contains("x-amz-security-token"), result.AuthorizationHeader);
+            var authorization = result.Headers[HeaderKeys.AuthorizationHeader];
+            Assert.IsTrue(authorization.Contains("x-amz-security-token"), authorization);
         }
 
         // -----------------------------------------------------------------------
@@ -390,7 +392,7 @@ namespace AWSSDK.UnitTests.Signing
             nonS3Params.Service = "execute-api";
             var nonS3 = AWSSigV4Signer.Sign(request, nonS3Params);
 
-            Assert.AreNotEqual(nonS3.AuthorizationHeader, s3.AuthorizationHeader,
+            Assert.AreNotEqual(nonS3.Headers[HeaderKeys.AuthorizationHeader], s3.Headers[HeaderKeys.AuthorizationHeader],
                 "S3 (verbatim) and non-S3 (one extra encode pass) must produce different signatures for an encoded path.");
         }
 
@@ -403,7 +405,7 @@ namespace AWSSDK.UnitTests.Signing
             var encodedSlash = AWSSigV4Signer.Sign(GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a%2Fb"), S3Parameters());
             var realSlash = AWSSigV4Signer.Sign(GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a/b"), S3Parameters());
 
-            Assert.AreNotEqual(realSlash.AuthorizationHeader, encodedSlash.AuthorizationHeader,
+            Assert.AreNotEqual(realSlash.Headers[HeaderKeys.AuthorizationHeader], encodedSlash.Headers[HeaderKeys.AuthorizationHeader],
                 "An encoded slash must not be signed the same as a real path separator.");
         }
 
@@ -605,7 +607,7 @@ namespace AWSSDK.UnitTests.Signing
             var expected = new AWS4Signer().SignRequest(
                 internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt);
 
-            Assert.AreEqual(expected.ForAuthorizationHeader, facade.AuthorizationHeader);
+            Assert.AreEqual(expected.ForAuthorizationHeader, facade.Headers[HeaderKeys.AuthorizationHeader]);
         }
 
         [TestMethod]
@@ -763,7 +765,7 @@ namespace AWSSDK.UnitTests.Signing
             var withoutBodyResult = AWSSigV4Signer.Sign(withoutBody, BaseParameters(signPayload: false));
 
             Assert.AreEqual(AWS4Signer.UnsignedPayload, withBodyResult.Headers[HeaderKeys.XAmzContentSha256Header]);
-            Assert.AreEqual(withoutBodyResult.AuthorizationHeader, withBodyResult.AuthorizationHeader,
+            Assert.AreEqual(withoutBodyResult.Headers[HeaderKeys.AuthorizationHeader], withBodyResult.Headers[HeaderKeys.AuthorizationHeader],
                 "With SignPayload = false the body is not read, so its presence must not change the signature.");
         }
 

@@ -23,22 +23,21 @@ namespace Amazon.Runtime.Signing
     /// </summary>
     public class AWSSigningResult
     {
-        internal AWSSigningResult(IDictionary<string, string> headers, string authorizationHeader)
+        internal AWSSigningResult(IDictionary<string, string> headers)
         {
             Headers = headers;
-            AuthorizationHeader = authorizationHeader;
         }
 
         /// <summary>
-        /// The headers the caller must add to the outbound request: <c>Authorization</c>,
-        /// <c>X-Amz-Date</c>, <c>X-Amz-Content-Sha256</c>, and <c>X-Amz-Security-Token</c>
-        /// (when signing with session credentials).
+        /// The complete set of headers the caller must add to the outbound request:
+        /// <c>Authorization</c>, <c>X-Amz-Date</c>, <c>X-Amz-Content-Sha256</c>, and
+        /// <c>X-Amz-Security-Token</c> (when signing with session credentials).
+        /// <para>
+        /// Every entry must be applied to the request. In particular, the <c>Authorization</c> header alone is
+        /// not sufficient: <c>X-Amz-Date</c> (and the security token, for temporary credentials) are covered by
+        /// the signature and the service rejects the request if they are missing.
+        /// </para>
         /// </summary>
         public IDictionary<string, string> Headers { get; }
-
-        /// <summary>
-        /// The computed <c>Authorization</c> header value. Also present in <see cref="Headers"/>.
-        /// </summary>
-        public string AuthorizationHeader { get; }
     }
 }
