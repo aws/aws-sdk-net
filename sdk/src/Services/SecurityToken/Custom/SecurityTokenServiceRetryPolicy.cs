@@ -23,10 +23,14 @@ namespace Amazon.SecurityToken
 {
     /// <summary>
     /// An implementation of the <see cref="DefaultRetryPolicy"/> that retries certain additional
-    /// STS errors when doing AssumeRoleWithWebIdentity requests.
+    /// STS errors. IDPCommunicationError is treated as a transient error and retried for all
+    /// STS operations, while InvalidIdentityToken is retried only for AssumeRoleWithWebIdentity
+    /// requests.
     /// </summary>
     public class SecurityTokenServiceRetryPolicy : DefaultRetryPolicy
     {
+        private const string IDPCommunicationErrorCode = "IDPCommunicationError";
+
         /// <summary>
         /// Constructor for SecurityTokenServiceRetryPolicy.
         /// </summary>
@@ -34,12 +38,30 @@ namespace Amazon.SecurityToken
         {
         }
 
+        internal static bool ShouldRetryException(IExecutionContext executionContext, Exception exception)
+        {
+            if (exception is IDPCommunicationErrorException ||
+                (exception is AmazonServiceException amazonServiceException &&
+                string.Equals(amazonServiceException.ErrorCode, IDPCommunicationErrorCode, StringComparison.Ordinal)))
+            {
+                return true;
+            }
+
+            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest &&
+                exception is InvalidIdentityTokenException)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         /// <summary>
         /// Returns true if the request should be retried.
         /// </summary>
         public override bool RetryForException(IExecutionContext executionContext, Exception exception)
         {
-            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            if (ShouldRetryException(executionContext, exception))
             {
                 return true;
             }
@@ -52,7 +74,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
         {
-            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            if (ShouldRetryException(executionContext, exception))
             {
                 return Task.FromResult(true);
             }
@@ -64,7 +86,9 @@ namespace Amazon.SecurityToken
 
     /// <summary>
     /// An implementation of the <see cref="StandardRetryPolicy"/> that retries certain additional
-    /// STS errors when doing AssumeRoleWithWebIdentity requests.
+    /// STS errors. IDPCommunicationError is treated as a transient error and retried for all
+    /// STS operations, while InvalidIdentityToken is retried only for AssumeRoleWithWebIdentity
+    /// requests.
     /// </summary>
     public class SecurityTokenServiceStandardRetryPolicy : StandardRetryPolicy
     {
@@ -80,7 +104,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         public override bool RetryForException(IExecutionContext executionContext, Exception exception)
         {
-            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            if (SecurityTokenServiceRetryPolicy.ShouldRetryException(executionContext, exception))
             {
                 return true;
             }
@@ -93,7 +117,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
         {
-            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            if (SecurityTokenServiceRetryPolicy.ShouldRetryException(executionContext, exception))
             {
                 return Task.FromResult(true);
             }
@@ -105,7 +129,9 @@ namespace Amazon.SecurityToken
 
     /// <summary>
     /// An implementation of the <see cref="AdaptiveRetryPolicy"/> that retries certain additional
-    /// STS errors when doing AssumeRoleWithWebIdentity requests.
+    /// STS errors. IDPCommunicationError is treated as a transient error and retried for all
+    /// STS operations, while InvalidIdentityToken is retried only for AssumeRoleWithWebIdentity
+    /// requests.
     /// </summary>
     public class SecurityTokenServiceAdaptiveRetryPolicy : AdaptiveRetryPolicy
     {
@@ -121,7 +147,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         public override bool RetryForException(IExecutionContext executionContext, Exception exception)
         {
-            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            if (SecurityTokenServiceRetryPolicy.ShouldRetryException(executionContext, exception))
             {
                 return true;
             }
@@ -134,7 +160,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         public override Task<bool> RetryForExceptionAsync(IExecutionContext executionContext, Exception exception)
         {
-            if (executionContext.RequestContext.OriginalRequest is AssumeRoleWithWebIdentityRequest && (exception is IDPCommunicationErrorException || exception is InvalidIdentityTokenException))
+            if (SecurityTokenServiceRetryPolicy.ShouldRetryException(executionContext, exception))
             {
                 return Task.FromResult(true);
             }
