@@ -45,6 +45,13 @@ namespace Amazon.Odb.Model
         /// The type of Oracle Cloud Identifier (OCID) used as the external ID when assuming the
         /// IAM role.
         /// </para>
+        ///  
+        /// <para>
+        /// The valid values depend on the operation. For the <c>CreateAutonomousDatabase</c>
+        /// operation, only <c>compartment_ocid</c> and <c>tenant_ocid</c> are allowed. For the
+        /// <c>UpdateAutonomousDatabase</c> and <c>CreateAutonomousDatabaseWallet</c> operations,
+        /// <c>database_ocid</c>, <c>compartment_ocid</c>, and <c>tenant_ocid</c> are all allowed.
+        /// </para>
         /// </summary>
         public ExternalIdType ExternalIdType
         {
