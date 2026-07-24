@@ -41,7 +41,6 @@ namespace Amazon.RTBFabric.Model
         private string _externalInboundEndpoint;
         private string _gatewayId;
         private GatewayType _gatewayType;
-        private int? _inboundLinksCount;
         private int? _linksRequestedCount;
         private ListenerConfig _listenerConfig;
         private ManagedEndpointConfiguration _managedEndpointConfiguration;
@@ -183,25 +182,6 @@ namespace Amazon.RTBFabric.Model
         internal bool IsSetGatewayType()
         {
             return this._gatewayType != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property InboundLinksCount. 
-        /// <para>
-        /// Deprecated. Use 'linksRequestedCount' instead.
-        /// </para>
-        /// </summary>
-        [Obsolete("Use linksRequestedCount instead")]
-        public int? InboundLinksCount
-        {
-            get { return this._inboundLinksCount; }
-            set { this._inboundLinksCount = value; }
-        }
-
-        // Check to see if InboundLinksCount property is set
-        internal bool IsSetInboundLinksCount()
-        {
-            return this._inboundLinksCount.HasValue; 
         }
 
         /// <summary>
