@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// This is the response object from the GetUserAuthFactors operation.
+    /// This is the response object from the AdminGetUserAuthFactors operation.
     /// </summary>
-    public partial class GetUserAuthFactorsResponse : AmazonWebServiceResponse
+    public partial class AdminGetUserAuthFactorsResponse : AmazonWebServiceResponse
     {
         private List<string> _configuredUserAuthFactors = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _preferredMfaSetting;

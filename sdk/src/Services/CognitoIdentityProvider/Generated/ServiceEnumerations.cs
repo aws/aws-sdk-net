@@ -481,6 +481,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly AuthFactorType SMS_OTP = new AuthFactorType("SMS_OTP");
         /// <summary>
+        /// Constant SOFTWARE_TOKEN for AuthFactorType
+        /// </summary>
+        public static readonly AuthFactorType SOFTWARE_TOKEN = new AuthFactorType("SOFTWARE_TOKEN");
+        /// <summary>
         /// Constant WEB_AUTHN for AuthFactorType
         /// </summary>
         public static readonly AuthFactorType WEB_AUTHN = new AuthFactorType("WEB_AUTHN");
