@@ -535,6 +535,42 @@ namespace Amazon.Artifact
 
         #endregion
                 
+        #region  PutComplianceInquiryFeedback
+
+
+
+        /// <summary>
+        /// Submits feedback on a compliance inquiry response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutComplianceInquiryFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutComplianceInquiryFeedback service method, as returned by Artifact.</returns>
+        /// <exception cref="Amazon.Artifact.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ConflictException">
+        /// Request to create/modify content would result in a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.InternalServerException">
+        /// An unknown server exception has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Artifact.Model.ValidationException">
+        /// Request fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/artifact-2018-05-10/PutComplianceInquiryFeedback">REST API Reference for PutComplianceInquiryFeedback Operation</seealso>
+        Task<PutComplianceInquiryFeedbackResponse> PutComplianceInquiryFeedbackAsync(PutComplianceInquiryFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  TagResource
 
 

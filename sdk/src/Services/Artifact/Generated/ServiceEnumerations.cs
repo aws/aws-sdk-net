@@ -183,6 +183,110 @@ namespace Amazon.Artifact
 
 
     /// <summary>
+    /// Constants used for properties of type FeedbackRating.
+    /// </summary>
+    public class FeedbackRating : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant THUMBS_DOWN for FeedbackRating
+        /// </summary>
+        public static readonly FeedbackRating THUMBS_DOWN = new FeedbackRating("THUMBS_DOWN");
+        /// <summary>
+        /// Constant THUMBS_UP for FeedbackRating
+        /// </summary>
+        public static readonly FeedbackRating THUMBS_UP = new FeedbackRating("THUMBS_UP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeedbackRating(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeedbackRating FindValue(string value)
+        {
+            return FindValue<FeedbackRating>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeedbackRating(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeedbackReasonCode.
+    /// </summary>
+    public class FeedbackReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IRRELEVANT_RESPONSE for FeedbackReasonCode
+        /// </summary>
+        public static readonly FeedbackReasonCode IRRELEVANT_RESPONSE = new FeedbackReasonCode("IRRELEVANT_RESPONSE");
+        /// <summary>
+        /// Constant OTHER for FeedbackReasonCode
+        /// </summary>
+        public static readonly FeedbackReasonCode OTHER = new FeedbackReasonCode("OTHER");
+        /// <summary>
+        /// Constant PARTIAL_RESPONSE for FeedbackReasonCode
+        /// </summary>
+        public static readonly FeedbackReasonCode PARTIAL_RESPONSE = new FeedbackReasonCode("PARTIAL_RESPONSE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeedbackReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeedbackReasonCode FindValue(string value)
+        {
+            return FindValue<FeedbackReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeedbackReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InputSource.
     /// </summary>
     public class InputSource : ConstantClass

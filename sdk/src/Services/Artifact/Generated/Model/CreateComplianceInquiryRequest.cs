@@ -85,7 +85,7 @@ namespace Amazon.Artifact.Model
         /// Title of the inquiry.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Name
         {
             get { return this._name; }
