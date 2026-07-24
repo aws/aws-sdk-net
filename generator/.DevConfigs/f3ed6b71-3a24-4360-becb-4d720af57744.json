@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Dummy dev config to validate the pull request build workflow"
+    ]
+  }
+}
