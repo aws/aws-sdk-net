@@ -109,6 +109,7 @@
     <EmbeddedResource Include="Custom\Runtime\EventStreams\test_vectors\*"/>
     <EmbeddedResource Include="Custom\Runtime\TestEndpoints\*.json"/>
     <EmbeddedResource Include="Custom\TestTools\ComparerTest.json"/>
+    <EmbeddedResource Include="Custom\Runtime\Signing\reference\sigv4_test_cases.json"/>
   </ItemGroup>
 
 </Project>

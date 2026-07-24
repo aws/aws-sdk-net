@@ -409,6 +409,53 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
+        public void TestCanonicalizeResourcePathAlreadyEncoded()
+        {
+            // pathAlreadyEncoded = true is the "zero encode passes" mode used by the standalone SigV4 signer for
+            // S3: the segment values are already the final encoded (wire) form, so the canonical path must equal
+            // them byte-for-byte. It is mutually exclusive with the encode pass, so the `encode` argument is
+            // ignored when pathAlreadyEncoded is true.
+
+            // Null/empty behave like the other overloads (return "/").
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3.us-east-1.amazonaws.com"), null, false, null, pathAlreadyEncoded: true));
+            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3.us-east-1.amazonaws.com"), string.Empty, false, null, pathAlreadyEncoded: true));
+
+            // An already-encoded value is joined verbatim: no re-encoding of the '%' (so "%20" stays "%20",
+            // not "%2520"), and an encoded slash ("%2F") is preserved inside its segment rather than re-encoded
+            // or split into two segments.
+            Assert.AreEqual(
+                "/hello%20world",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello%20world" } }, pathAlreadyEncoded: true));
+
+            Assert.AreEqual(
+                "/a%2Bb%3Dc",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Bb%3Dc" } }, pathAlreadyEncoded: true));
+
+            Assert.AreEqual(
+                "/a%2Fb",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }, pathAlreadyEncoded: true));
+
+            // A greedy value containing real '/' separators keeps them as segment boundaries but does not
+            // re-encode the already-encoded content of each segment.
+            Assert.AreEqual(
+                "/hello%20world/caf%C3%A9-%E2%98%83.txt",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello%20world/caf%C3%A9-%E2%98%83.txt" } }, pathAlreadyEncoded: true));
+
+            // pathAlreadyEncoded overrides encode: passing encode = true still produces the verbatim path.
+            Assert.AreEqual(
+                "/a%2Fb",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", true, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }, pathAlreadyEncoded: true));
+
+            // Contrast: the SAME encoded value with pathAlreadyEncoded = false (the non-S3 path) gets one more
+            // encode pass, so "%2F" becomes "%252F". This is the exact non-S3-vs-S3 divergence the facade relies on.
+            Assert.AreEqual(
+                "/a%252Fb",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://example.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }, pathAlreadyEncoded: false));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public async Task TestSignerWithBasicCredentialsAsync()
         {
             var pipeline = new RuntimePipeline(new MockHandler());            
