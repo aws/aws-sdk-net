@@ -68,6 +68,12 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Headquarters", targetDepth, ref reader))
+                {
+                    var unmarshaller = HeadquartersUnmarshaller.Instance;
+                    unmarshalledObject.Headquarters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("IndustrySegments", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

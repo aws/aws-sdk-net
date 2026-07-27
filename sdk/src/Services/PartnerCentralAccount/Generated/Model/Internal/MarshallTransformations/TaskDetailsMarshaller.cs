@@ -58,6 +58,17 @@ namespace Amazon.PartnerCentralAccount.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DisplayName);
             }
 
+            if(requestObject.IsSetHeadquarters())
+            {
+                context.Writer.WritePropertyName("Headquarters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HeadquartersMarshaller.Instance;
+                marshaller.Marshall(requestObject.Headquarters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetIndustrySegments())
             {
                 context.Writer.WritePropertyName("IndustrySegments");

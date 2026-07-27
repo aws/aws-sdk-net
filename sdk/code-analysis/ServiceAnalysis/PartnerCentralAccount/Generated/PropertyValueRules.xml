@@ -1203,6 +1203,18 @@
     <pattern>[\u0020-\u007E\u00A0-\uD7FF\uE000-\uFFFD]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.Headquarters.CountryCode</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[A-Z]{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralAccount.Model.Headquarters.SubdivisionCode</property>
+    <min>1</min>
+    <max>3</max>
+    <pattern>[A-Z0-9]{1,3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralAccount.Model.LocalizedContent.Description</property>
     <min>1</min>
     <max>600</max>
