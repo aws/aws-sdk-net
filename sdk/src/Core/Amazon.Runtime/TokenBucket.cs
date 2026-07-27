@@ -216,6 +216,13 @@ namespace Amazon.Runtime.Internal
             double fillRate;
             lock (_bucketLock)
             {
+                //New-retries (AWS_NEW_RETRIES_2026) refills the bucket each iteration so a blocked
+                //caller sees tokens replenish; the legacy path refills only once, in SetupAcquireToken.
+                if (Amazon.Runtime.RetryPolicy.UseNewRetries2026)
+                {
+                    TokenBucketRefill();
+                }
+
                 if (amount <= CurrentCapacity)
                 {
                     CurrentCapacity -= amount;
