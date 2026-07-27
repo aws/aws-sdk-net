@@ -429,6 +429,44 @@ namespace Amazon.Account
 
         #endregion
                 
+        #region  GetPrimaryEmailUpdateStatus
+
+
+
+        /// <summary>
+        /// Retrieves the status of the most recent primary email update for the specified account.
+        /// For complete details about how to update the primary email address, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-update-root-user-email.html">Update
+        /// the primary email address for your AWS account</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrimaryEmailUpdateStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPrimaryEmailUpdateStatus service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ResourceNotFoundException">
+        /// The operation failed because it specified a resource that can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetPrimaryEmailUpdateStatus">REST API Reference for GetPrimaryEmailUpdateStatus Operation</seealso>
+        Task<GetPrimaryEmailUpdateStatusResponse> GetPrimaryEmailUpdateStatusAsync(GetPrimaryEmailUpdateStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetRegionOptStatus
 
 
