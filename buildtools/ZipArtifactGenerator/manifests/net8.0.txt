@@ -18,3 +18,4 @@ extensions\NETCoreSetup\Microsoft.Extensions.Configuration.Abstractions.dll
 extensions\NETCoreSetup\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 extensions\NETCoreSetup\Microsoft.Extensions.Logging.Abstractions.dll
 extensions\NETCoreSetup\Microsoft.Extensions.Primitives.dll
+extensions\Numerics\AWSSDK.Extensions.Numerics.dll

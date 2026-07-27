@@ -3445,6 +3445,13 @@
         }
     },
     "ExtensionVersions"   : {
+        "Extensions.Numerics" : {
+            "Version" : "4.0.0.0",
+            "AssemblyVersionOverride" : "4.0",
+            "Dependencies"            : {
+            },
+            "InPreview"               : false
+        },
         "Extensions.Bedrock.MEAI" : {
             "Version" : "4.0.101.6",
             "AssemblyVersionOverride" : "4.0",

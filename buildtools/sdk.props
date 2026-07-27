@@ -20,6 +20,7 @@
         <UnitTestProject Include="extensions/test/CrtIntegrationTests/CrtIntegrationTests.csproj" Runner="xunit" />
         <UnitTestProject Include="extensions/test/CloudFront.SignersTests/CloudFront.Signers.Tests.NetStandard.csproj" Runner="xunit" />
         <UnitTestProject Include="extensions/test/EC2.DecryptPasswordTests/EC2.DecryptPassword.NetStandard.csproj" Runner="xunit" />
+        <UnitTestProject Include="extensions/test/NumericsTest/NumericsTest.csproj" Runner="xunit" />
 
         <ServiceUnitTestProject Include="sdk/test/Services/$(ServiceName)/UnitTests/AWSSDK.UnitTests.$(ServiceName).csproj" Runner="mstest" />
         <ServiceUnitTestProject Include="sdk/test/UnitTests/AWSSDK.UnitTests.Core.csproj" Runner="mstest" />
