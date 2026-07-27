@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private string _awsAccountId;
         private Capabilities _capabilities;
         private string _customPermissionsName;
+        private Governance _governance;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -95,6 +96,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCustomPermissionsName()
         {
             return this._customPermissionsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Governance. 
+        /// <para>
+        /// The governance configuration for the custom permissions profile. When governance controls
+        /// are defined for a category, any capabilities in that category not explicitly set to
+        /// <c>ALLOW</c> in <c>Capabilities</c> are denied. Even newly added capabilities in the
+        /// category are implicitly disabled when Amazon Quick releases them.
+        /// </para>
+        /// </summary>
+        public Governance Governance
+        {
+            get { return this._governance; }
+            set { this._governance = value; }
+        }
+
+        // Check to see if Governance property is set
+        internal bool IsSetGovernance()
+        {
+            return this._governance != null;
         }
 
         /// <summary>

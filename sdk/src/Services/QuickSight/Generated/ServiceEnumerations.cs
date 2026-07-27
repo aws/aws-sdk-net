@@ -2563,6 +2563,10 @@ namespace Amazon.QuickSight
     {
 
         /// <summary>
+        /// Constant ALLOW for CapabilityState
+        /// </summary>
+        public static readonly CapabilityState ALLOW = new CapabilityState("ALLOW");
+        /// <summary>
         /// Constant DENY for CapabilityState
         /// </summary>
         public static readonly CapabilityState DENY = new CapabilityState("DENY");
@@ -6028,6 +6032,52 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DefaultAggregation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DefaultCategoryEffect.
+    /// </summary>
+    public class DefaultCategoryEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENY_BY_DEFAULT for DefaultCategoryEffect
+        /// </summary>
+        public static readonly DefaultCategoryEffect DENY_BY_DEFAULT = new DefaultCategoryEffect("DENY_BY_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultCategoryEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultCategoryEffect FindValue(string value)
+        {
+            return FindValue<DefaultCategoryEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultCategoryEffect(string value)
         {
             return FindValue(value);
         }

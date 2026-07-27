@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomPermissions Object
+    /// Response Unmarshaller for Governance Object
     /// </summary>  
-    public class CustomPermissionsUnmarshaller : IJsonUnmarshaller<CustomPermissions, JsonUnmarshallerContext>
+    public class GovernanceUnmarshaller : IJsonUnmarshaller<Governance, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomPermissions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Governance Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CustomPermissions unmarshalledObject = new CustomPermissions();
+            Governance unmarshalledObject = new Governance();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,10 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth, ref reader))
+                if (context.TestExpression("DefaultCategoryEffects", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Capabilities", targetDepth, ref reader))
-                {
-                    var unmarshaller = CapabilitiesUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CustomPermissionsName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomPermissionsName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Governance", targetDepth, ref reader))
-                {
-                    var unmarshaller = GovernanceUnmarshaller.Instance;
-                    unmarshalledObject.Governance = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.DefaultCategoryEffects = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +67,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomPermissionsUnmarshaller _instance = new CustomPermissionsUnmarshaller();        
+        private static GovernanceUnmarshaller _instance = new GovernanceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomPermissionsUnmarshaller Instance
+        public static GovernanceUnmarshaller Instance
         {
             get
             {

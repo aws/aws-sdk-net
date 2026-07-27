@@ -93,6 +93,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CustomPermissionsName);
             }
 
+            if(publicRequest.IsSetGovernance())
+            {
+                context.Writer.WritePropertyName("Governance");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GovernanceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Governance, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

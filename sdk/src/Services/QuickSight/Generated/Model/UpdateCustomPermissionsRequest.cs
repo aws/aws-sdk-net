@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private string _awsAccountId;
         private Capabilities _capabilities;
         private string _customPermissionsName;
+        private Governance _governance;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -94,6 +95,27 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCustomPermissionsName()
         {
             return this._customPermissionsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Governance. 
+        /// <para>
+        /// The governance configuration for the custom permissions profile. The <c>UpdateCustomPermissions</c>
+        /// operation replaces all existing <c>Capabilities</c> and <c>Governance</c> values.
+        /// If you omit this parameter, Amazon Quick removes governance from the profile and the
+        /// existing custom permission behavior applies.
+        /// </para>
+        /// </summary>
+        public Governance Governance
+        {
+            get { return this._governance; }
+            set { this._governance = value; }
+        }
+
+        // Check to see if Governance property is set
+        internal bool IsSetGovernance()
+        {
+            return this._governance != null;
         }
 
     }

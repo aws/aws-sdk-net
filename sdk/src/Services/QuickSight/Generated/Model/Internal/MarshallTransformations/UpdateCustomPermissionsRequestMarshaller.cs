@@ -90,6 +90,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetGovernance())
+            {
+                context.Writer.WritePropertyName("Governance");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GovernanceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Governance, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK
