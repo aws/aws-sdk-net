@@ -63,7 +63,8 @@ namespace Amazon.BCMDataExports.Model
         /// <summary>
         /// Gets and sets the property S3BucketOwner. 
         /// <para>
-        /// The AWS Account ID that owns the S3 bucket used as the destination for the data export.
+        /// The Amazon Web Services account ID that owns the S3 bucket used as the destination
+        /// for the data export.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
