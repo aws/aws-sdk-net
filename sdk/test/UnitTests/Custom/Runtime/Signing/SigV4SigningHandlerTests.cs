@@ -36,7 +36,8 @@ namespace AWSSDK.UnitTests.Signing
     {
         private const string AccessKey = "AKIDEXAMPLE";
         private const string SecretKey = "wJalrXUtnFEMI/K7MDENG+bPxRfiCYEXAMPLEKEY";
-        private const string Region = "us-east-1";
+        private const string RegionName = "us-east-1";
+        private static readonly RegionEndpoint Region = RegionEndpoint.GetBySystemName(RegionName);
         private const string Service = "execute-api";
 
         private static SigV4SigningHandler NewHandler(out CapturingInnerHandler inner)
@@ -44,13 +45,13 @@ namespace AWSSDK.UnitTests.Signing
             return NewHandler(new BasicAWSCredentials(AccessKey, SecretKey), out inner);
         }
 
-        private static SigV4SigningHandler NewHandler(AWSCredentials credentials, out CapturingInnerHandler inner, string region = Region, string service = Service)
+        private static SigV4SigningHandler NewHandler(AWSCredentials credentials, out CapturingInnerHandler inner, RegionEndpoint region = null, string service = Service)
         {
             inner = new CapturingInnerHandler();
-            return new SigV4SigningHandler(new AWSSigningParameters
+            return new SigV4SigningHandler(new AWSSigV4Parameters
             {
                 Credentials = credentials,
-                Region = region,
+                Region = region ?? Region,
                 Service = service,
             })
             {
@@ -263,10 +264,10 @@ namespace AWSSDK.UnitTests.Signing
         [TestMethod]
         public void Constructor_MissingRequiredParameters_Throws()
         {
-            AssertThrows<ArgumentNullException>(() => new SigV4SigningHandler((AWSSigningParameters)null));
-            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigningParameters { Region = Region, Service = Service }));
-            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigningParameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Service = Service }));
-            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigningParameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Region = Region }));
+            AssertThrows<ArgumentNullException>(() => new SigV4SigningHandler((AWSSigV4Parameters)null));
+            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Region = Region, Service = Service }));
+            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Service = Service }));
+            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Region = Region }));
         }
 
         [TestMethod]

@@ -58,7 +58,7 @@ namespace Amazon.Runtime.Signing
     /// <para>
     /// To hash the body the handler buffers request content into memory (and rebuffers it as re-readable
     /// content so it survives a resend on retry). For a large or streaming upload where this is undesirable,
-    /// set <see cref="AWSSigningParameters.SignPayload"/> to <c>false</c> (the body is signed as
+    /// set <see cref="AWSSigV4Parameters.SignPayload"/> to <c>false</c> (the body is signed as
     /// UNSIGNED-PAYLOAD and never read; requires HTTPS) or supply a precomputed
     /// <c>x-amz-content-sha256</c> header (the body is not read).
     /// </para>
@@ -83,7 +83,7 @@ namespace Amazon.Runtime.Signing
         /// </summary>
         public const string SignPayloadOptionKey = "Amazon.Runtime.Signing.SignPayload";
 
-        private readonly AWSSigningParameters _parameters;
+        private readonly AWSSigV4Parameters _parameters;
 
         /// <summary>
         /// Creates a handler that signs each request for the given credentials, region, and service.
@@ -97,17 +97,17 @@ namespace Amazon.Runtime.Signing
         }
 
         /// <summary>
-        /// Creates a handler from a set of default signing parameters. <see cref="AWSSigningParameters.Credentials"/>
-        /// is resolved on every send. Leave <see cref="AWSSigningParameters.SignedAt"/> unset so each request is
+        /// Creates a handler from a set of default signing parameters. <see cref="AWSSigV4Parameters.Credentials"/>
+        /// is resolved on every send. Leave <see cref="AWSSigV4Parameters.SignedAt"/> unset so each request is
         /// signed with a current timestamp.
         /// </summary>
         /// <param name="parameters">The default signing parameters.</param>
-        public SigV4SigningHandler(AWSSigningParameters parameters)
+        public SigV4SigningHandler(AWSSigV4Parameters parameters)
         {
             _parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
             if (_parameters.Credentials == null)
                 throw new ArgumentException("Credentials must be set.", nameof(parameters));
-            if (string.IsNullOrEmpty(_parameters.Region))
+            if (_parameters.Region == null)
                 throw new ArgumentException("Region must be set.", nameof(parameters));
             if (string.IsNullOrEmpty(_parameters.Service))
                 throw new ArgumentException("Service must be set.", nameof(parameters));
@@ -134,24 +134,24 @@ namespace Amazon.Runtime.Signing
             return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
         }
 
-        private static AWSSigningParameters BuildParameters(AWSCredentials credentials, RegionEndpoint region, string service)
+        private static AWSSigV4Parameters BuildParameters(AWSCredentials credentials, RegionEndpoint region, string service)
         {
             if (region == null)
                 throw new ArgumentNullException(nameof(region));
 
-            return new AWSSigningParameters
+            return new AWSSigV4Parameters
             {
                 Credentials = credentials,
-                Region = region.SystemName,
+                Region = region,
                 Service = service,
             };
         }
 
         // Produce a per-request copy of the defaults, applying any per-message overrides. A copy is required
         // because the same handler instance signs concurrent requests that may carry different overrides.
-        private AWSSigningParameters ResolveParameters(HttpRequestMessage request)
+        private AWSSigV4Parameters ResolveParameters(HttpRequestMessage request)
         {
-            var parameters = new AWSSigningParameters
+            var parameters = new AWSSigV4Parameters
             {
                 Credentials = _parameters.Credentials,
                 Region = _parameters.Region,
@@ -163,14 +163,14 @@ namespace Amazon.Runtime.Signing
             if (TryGetOption(request, ServiceOptionKey, out string service) && !string.IsNullOrEmpty(service))
                 parameters.Service = service;
             if (TryGetOption(request, RegionOptionKey, out string region) && !string.IsNullOrEmpty(region))
-                parameters.Region = region;
+                parameters.Region = RegionEndpoint.GetBySystemName(region);
             if (TryGetOption(request, SignPayloadOptionKey, out bool signPayload))
                 parameters.SignPayload = signPayload;
 
             return parameters;
         }
 
-        private static async Task<AWSSigningRequest> BuildSigningRequestAsync(HttpRequestMessage request, AWSSigningParameters parameters, CancellationToken cancellationToken)
+        private static async Task<AWSSigningRequest> BuildSigningRequestAsync(HttpRequestMessage request, AWSSigV4Parameters parameters, CancellationToken cancellationToken)
         {
             // The body is only needed when the signer will hash it: payload signing is on and the caller
             // hasn't already supplied a hash. Otherwise (UNSIGNED-PAYLOAD, or a precomputed hash) the body is
@@ -196,22 +196,22 @@ namespace Amazon.Runtime.Signing
                 request.Content = buffered;
             }
 
-            return new AWSSigningRequest
+            var signingRequest = new AWSSigningRequest
             {
-                HttpMethod = request.Method.Method,
+                HttpMethod = request.Method,
                 RequestUri = request.RequestUri,
-                Headers = CollectHeaders(request),
                 Content = body,
             };
+            CollectHeaders(request, signingRequest.Headers);
+            return signingRequest;
         }
 
         // Flatten the request and content headers into the single-value-per-name shape AWSSigningRequest
-        // expects. A multi-valued header is joined with commas, each value trimmed, per the SigV4 canonical
-        // form documented on AWSSigningRequest.Headers.
-        private static IDictionary<string, string> CollectHeaders(HttpRequestMessage request)
+        // expects, adding them to its (case-insensitive, get-only) Headers collection. A multi-valued header
+        // is joined with commas, each value trimmed, per the SigV4 canonical form documented on
+        // AWSSigningRequest.Headers.
+        private static void CollectHeaders(HttpRequestMessage request, IDictionary<string, string> headers)
         {
-            var headers = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
-
             foreach (var header in request.Headers)
                 headers[header.Key] = JoinValues(header.Value);
 
@@ -220,8 +220,6 @@ namespace Amazon.Runtime.Signing
                 foreach (var header in request.Content.Headers)
                     headers[header.Key] = JoinValues(header.Value);
             }
-
-            return headers;
         }
 
         private static string JoinValues(IEnumerable<string> values)
