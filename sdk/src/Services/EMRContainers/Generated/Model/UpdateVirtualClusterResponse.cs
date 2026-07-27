@@ -30,35 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeVirtualCluster operation.
-    /// Displays detailed information about a specified virtual cluster. Virtual cluster is
-    /// a managed entity on Amazon EMR on EKS. You can create, update, describe, list and
-    /// delete virtual clusters. They do not consume any additional resource in your system.
-    /// A single virtual cluster maps to a single Kubernetes namespace. Given this relationship,
-    /// you can model virtual clusters the same way you model Kubernetes namespaces to meet
-    /// your requirements.
+    /// Contains the virtual cluster returned after a successful update request.
     /// </summary>
-    public partial class DescribeVirtualClusterRequest : AmazonEMRContainersRequest
+    public partial class UpdateVirtualClusterResponse : AmazonWebServiceResponse
     {
-        private string _id;
+        private VirtualCluster _virtualCluster;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property VirtualCluster. 
         /// <para>
-        /// The ID of the virtual cluster that will be described.
+        /// The updated virtual cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
-        public string Id
+        public VirtualCluster VirtualCluster
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._virtualCluster; }
+            set { this._virtualCluster = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if VirtualCluster property is set
+        internal bool IsSetVirtualCluster()
         {
-            return this._id != null;
+            return this._virtualCluster != null;
         }
 
     }

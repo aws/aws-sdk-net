@@ -44,6 +44,8 @@ namespace Amazon.EMRContainers.Model
         private DateTime? _createdAt;
         private string _id;
         private string _name;
+        private SchedulerConfiguration _schedulerConfiguration;
+        private SchedulerStatus _schedulerStatus;
         private string _securityConfigurationId;
         private bool? _sessionEnabled;
         private VirtualClusterState _state;
@@ -143,6 +145,43 @@ namespace Amazon.EMRContainers.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SchedulerConfiguration. 
+        /// <para>
+        /// The scheduler configuration (concurrency and queue limits) applied to the virtual
+        /// cluster. The service does not return this field when no scheduler limits are configured.
+        /// </para>
+        /// </summary>
+        public SchedulerConfiguration SchedulerConfiguration
+        {
+            get { return this._schedulerConfiguration; }
+            set { this._schedulerConfiguration = value; }
+        }
+
+        // Check to see if SchedulerConfiguration property is set
+        internal bool IsSetSchedulerConfiguration()
+        {
+            return this._schedulerConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchedulerStatus. 
+        /// <para>
+        /// The current in-queue and concurrent job-run counts for the virtual cluster.
+        /// </para>
+        /// </summary>
+        public SchedulerStatus SchedulerStatus
+        {
+            get { return this._schedulerStatus; }
+            set { this._schedulerStatus = value; }
+        }
+
+        // Check to see if SchedulerStatus property is set
+        internal bool IsSetSchedulerStatus()
+        {
+            return this._schedulerStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityConfigurationId. 
         /// <para>
         /// The ID of the security configuration.
@@ -164,7 +203,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property SessionEnabled. 
         /// <para>
-        /// Indicates whether the virtual cluster has session support enabled. 
+        /// Specifies whether the virtual cluster has session support enabled. 
         /// </para>
         /// </summary>
         public bool? SessionEnabled

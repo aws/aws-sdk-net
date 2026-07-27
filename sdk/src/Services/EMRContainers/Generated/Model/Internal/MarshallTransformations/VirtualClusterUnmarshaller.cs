@@ -86,6 +86,18 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("schedulerConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = SchedulerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.SchedulerConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("schedulerStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = SchedulerStatusUnmarshaller.Instance;
+                    unmarshalledObject.SchedulerStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("securityConfigurationId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

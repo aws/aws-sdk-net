@@ -499,6 +499,18 @@
     <pattern>^arn:(aws[a-zA-Z0-9-]*):emr-containers:.+:(\d{12}):/virtualclusters/.+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.UpdateVirtualClusterRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.UpdateVirtualClusterRequest.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.Certificate.CertificateArn</property>
     <min>44</min>
     <max>2048</max>
@@ -804,6 +816,24 @@
     <min>1</min>
     <max>10280</max>
     <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SchedulerConfiguration.MaxConcurrentJobRuns</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SchedulerConfiguration.MaxInQueueJobRuns</property>
+    <min>100</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SchedulerStatus.CurrentConcurrentJobRuns</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.SchedulerStatus.CurrentInQueueJobRuns</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.SecureNamespaceInfo.ClusterId</property>

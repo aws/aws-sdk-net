@@ -76,7 +76,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property AuthProxyUrl. 
         /// <para>
-        /// The auth proxy URL of the endpoint.
+        /// The authentication proxy URL of the endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10280)]

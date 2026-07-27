@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Identity Center related configuration for the security configuration.
+    /// Contains the IAM Identity Center settings for a security configuration, including
+    /// instance ARN, application assignment requirements, and application ARN.
     /// </summary>
     public partial class IdentityCenterConfiguration
     {
@@ -42,7 +43,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property EmrIdentityCenterApplicationARN. 
         /// <para>
-        /// The ARN of the EMR Identity Center application.
+        /// The Amazon Resource Name (ARN) of the Amazon EMR Identity Center application.
         /// </para>
         /// </summary>
         public string EmrIdentityCenterApplicationARN
@@ -60,7 +61,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property EnableIdentityCenter. 
         /// <para>
-        /// Determines whether Identity Center is enabled for the security configuration.
+        /// Specifies whether Identity Center is enabled for the security configuration.
         /// </para>
         /// </summary>
         public bool? EnableIdentityCenter
@@ -78,7 +79,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterApplicationAssignmentRequired. 
         /// <para>
-        /// Determines whether user assignment is required for the Identity Center application.
+        /// Specifies whether user assignment is required for the Identity Center application.
         /// </para>
         /// </summary>
         public bool? IdentityCenterApplicationAssignmentRequired
@@ -96,7 +97,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterInstanceARN. 
         /// <para>
-        /// The ARN of the Identity Center instance.
+        /// The Amazon Resource Name (ARN) of the Identity Center instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1224)]

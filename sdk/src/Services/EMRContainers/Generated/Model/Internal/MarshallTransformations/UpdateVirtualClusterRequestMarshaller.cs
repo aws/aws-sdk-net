@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateVirtualCluster Request Marshaller
+    /// UpdateVirtualCluster Request Marshaller
     /// </summary>       
-    public class CreateVirtualClusterRequestMarshaller : IMarshaller<IRequest, CreateVirtualClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateVirtualClusterRequestMarshaller : IMarshaller<IRequest, UpdateVirtualClusterRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateVirtualClusterRequest)input);
+            return this.Marshall((UpdateVirtualClusterRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateVirtualClusterRequest publicRequest)
+        public IRequest Marshall(UpdateVirtualClusterRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.EMRContainers");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-10-01";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PATCH";
 
-            request.ResourcePath = "/virtualclusters";
+            if (!publicRequest.IsSetId())
+                throw new AmazonEMRContainersException("Request object does not have required field Id set");
+            request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.Id));
+            request.ResourcePath = "/virtualclusters/{virtualClusterId}";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -84,23 +87,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetContainerProvider())
-            {
-                context.Writer.WritePropertyName("containerProvider");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ContainerProviderMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ContainerProvider, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
             if(publicRequest.IsSetSchedulerConfiguration())
             {
                 context.Writer.WritePropertyName("schedulerConfiguration");
@@ -109,32 +95,6 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 var marshaller = SchedulerConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
 
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetSecurityConfigurationId())
-            {
-                context.Writer.WritePropertyName("securityConfigurationId");
-                context.Writer.WriteStringValue(publicRequest.SecurityConfigurationId);
-            }
-
-            if(publicRequest.IsSetSessionEnabled())
-            {
-                context.Writer.WritePropertyName("sessionEnabled");
-                context.Writer.WriteBooleanValue(publicRequest.SessionEnabled.Value);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
-                }
                 context.Writer.WriteEndObject();
             }
 
@@ -148,9 +108,9 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateVirtualClusterRequestMarshaller _instance = new CreateVirtualClusterRequestMarshaller();        
+        private static UpdateVirtualClusterRequestMarshaller _instance = new UpdateVirtualClusterRequestMarshaller();        
 
-        internal static CreateVirtualClusterRequestMarshaller GetInstance()
+        internal static UpdateVirtualClusterRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -158,7 +118,7 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateVirtualClusterRequestMarshaller Instance
+        public static UpdateVirtualClusterRequestMarshaller Instance
         {
             get
             {

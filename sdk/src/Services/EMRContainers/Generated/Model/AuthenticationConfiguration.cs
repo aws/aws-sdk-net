@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// Authentication configuration for the security configuration.
+    /// Contains the authentication settings for a security configuration, including Identity
+    /// Center and IAM configuration options.
     /// </summary>
     public partial class AuthenticationConfiguration
     {
@@ -40,7 +41,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property IamConfiguration. 
         /// <para>
-        /// IAM configuration for authentication in the security configuration.
+        /// The IAM configuration to use for authentication.
         /// </para>
         /// </summary>
         public IAMConfiguration IamConfiguration
@@ -58,7 +59,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property IdentityCenterConfiguration. 
         /// <para>
-        /// Identity Center configuration for authentication in the security configuration.
+        /// The IAM Identity Center configuration to use for authentication.
         /// </para>
         /// </summary>
         public IdentityCenterConfiguration IdentityCenterConfiguration

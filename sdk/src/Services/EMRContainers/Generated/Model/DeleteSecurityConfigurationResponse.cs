@@ -39,7 +39,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the security configuration that was deleted.
+        /// The ID of the deleted security configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

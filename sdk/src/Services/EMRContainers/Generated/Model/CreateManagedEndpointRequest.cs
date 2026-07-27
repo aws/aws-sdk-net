@@ -166,7 +166,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property SessionIdleTimeoutInMinutes. 
         /// <para>
-        /// The idle timeout in minutes for the managed endpoint session.
+        /// The number of idle minutes before the managed endpoint session times out.
         /// </para>
         /// </summary>
         public int? SessionIdleTimeoutInMinutes

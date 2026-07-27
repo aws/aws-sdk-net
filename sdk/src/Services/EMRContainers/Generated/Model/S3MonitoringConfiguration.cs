@@ -41,7 +41,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
-        /// The Amazon resource name (ARN) of the encryption key for logs.
+        /// The Amazon Resource Name (ARN) of the encryption key for logs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=2048)]

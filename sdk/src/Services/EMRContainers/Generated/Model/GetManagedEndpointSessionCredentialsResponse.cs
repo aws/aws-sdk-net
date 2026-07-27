@@ -60,7 +60,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property EndpointCredentials. 
         /// <para>
-        /// The structure containing the session token being returned.
+        /// The session credentials that the operation returns.
         /// </para>
         /// </summary>
         public Credentials EndpointCredentials

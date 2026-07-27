@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
-    /// IAM configuration for the security configuration.
+    /// Contains the IAM settings for a security configuration, including the system role
+    /// used for authentication.
     /// </summary>
     public partial class IAMConfiguration
     {
@@ -39,7 +40,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property SystemRole. 
         /// <para>
-        /// The ARN of the system role used by the security configuration.
+        /// The Amazon Resource Name (ARN) of the system role used by the security configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
