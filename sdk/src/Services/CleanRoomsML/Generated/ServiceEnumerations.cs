@@ -2728,6 +2728,10 @@ namespace Amazon.CleanRoomsML
         /// Constant CR4X for WorkerComputeType
         /// </summary>
         public static readonly WorkerComputeType CR4X = new WorkerComputeType("CR.4X");
+        /// <summary>
+        /// Constant CR8X for WorkerComputeType
+        /// </summary>
+        public static readonly WorkerComputeType CR8X = new WorkerComputeType("CR.8X");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
