@@ -391,6 +391,63 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
+        [DataRow("s3-object-lambda")]
+        [DataRow("s3-outposts")]
+        [DataRow("s3express")]
+        public void Sign_S3FamilyService_SignsEncodedPathVerbatim(string service)
+        {
+            // Every service the internal signer treats as S3 (AWS4Signer.ServicesUsingUnsignedPayload: "s3",
+            // "s3express", "s3-object-lambda", "s3-outposts") must sign the encoded path VERBATIM — zero extra
+            // encode passes — exactly like "s3". A signer that matched only "s3"/"s3express" would route
+            // "s3-object-lambda"/"s3-outposts" down the non-S3 path, applying one extra encode pass ("%20" ->
+            // "%2520") and producing a SignatureDoesNotMatch. Regression guard for the narrowed IsS3 bug.
+            //
+            // Signatures can't be compared across service names (the service is folded into the credential scope
+            // and the signing key), so this compares the facade against an internal-signer oracle that signs the
+            // SAME service with the pre-encoded (verbatim) path — the behavior the facade must reproduce for the
+            // S3 family. Before the fix the facade takes the one-extra-pass path and this oracle diverges.
+            var url = "https://host.us-east-1.amazonaws.com/hello%20world";
+
+            var parameters = BaseParameters();
+            parameters.Service = service;
+            var facade = AWSSigV4Signer.Sign(GetRequest(url), parameters);
+
+            var expected = SignViaInternalPreEncodedPath(url, service);
+
+            Assert.AreEqual(expected, facade.Headers[HeaderKeys.AuthorizationHeader],
+                $"'{service}' is in the S3 family and must sign the encoded path verbatim (zero encode passes).");
+        }
+
+        /// <summary>
+        /// Signs a GET for <paramref name="url"/> via the internal <see cref="AWS4Signer"/> using the verbatim
+        /// (pre-encoded) path path, mirroring how <see cref="AWSSigV4Signer"/> wires an S3-family request: the
+        /// encoded wire path is bound as the greedy "{Path+}" path-resource with single-pass encoding disabled,
+        /// then signed with <c>SignRequestPreEncodedPath</c> (zero additional encode passes).
+        /// </summary>
+        private static string SignViaInternalPreEncodedPath(string url, string service)
+        {
+            var uri = new Uri(url);
+            var internalRequest = new DefaultRequest(new StubRequest(), service)
+            {
+                HttpMethod = "GET",
+                Endpoint = new Uri(uri.GetLeftPart(UriPartial.Authority)),
+                ResourcePath = "/{Path+}",
+                OverrideSigningServiceName = service,
+                AuthenticationRegion = Region,
+                UseDoubleEncoding = false,
+            };
+            var encodedPath = uri.AbsolutePath;
+            if (encodedPath.StartsWith("/", StringComparison.Ordinal))
+                encodedPath = encodedPath.Substring(1);
+            internalRequest.AddPathResource("{Path+}", encodedPath);
+
+            var config = new MockClientConfig { AuthenticationRegion = Region };
+            return new AWS4Signer()
+                .SignRequestPreEncodedPath(internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt)
+                .ForAuthorizationHeader;
+        }
+
+        [TestMethod]
         public void Sign_S3_EncodedSlash_DiffersFromRealSlash()
         {
             // "/a%2Fb" (one segment, encoded slash) and "/a/b" (two segments) are different resources and must
@@ -608,6 +665,31 @@ namespace AWSSDK.UnitTests.Signing
             var result = AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromSeconds(60));
 
             StringAssert.Contains(result.Uri.Query, "acl=");
+        }
+
+        [TestMethod]
+        public void Presign_NoOriginalQuery_ProducesWellFormedQueryString()
+        {
+            // A request URI with no query string must still presign to a valid URL: the SigV4 auth params begin
+            // with '?', not a stray '&'. Guards the query/separator assembly in PresignInternal — the auth params
+            // attach with '&' only when a query is already present, otherwise with '?'.
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = HttpMethod.Get,
+                RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
+            };
+
+            var result = AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromSeconds(60));
+
+            // Exactly one '?', immediately followed by a real parameter (no "?&" and no bare '&' opening the query).
+            var absolute = result.Uri.AbsoluteUri;
+            Assert.AreEqual(1, absolute.Split('?').Length - 1, $"Expected exactly one '?' in {absolute}");
+            Assert.IsFalse(absolute.Contains("?&"), $"Query must not start with '?&': {absolute}");
+            var query = result.Uri.Query;
+            StringAssert.StartsWith(query, "?X-Amz-", query);
+            // Sanity: the auth params are all present and parseable off the query.
+            StringAssert.Contains(query, "X-Amz-Algorithm=AWS4-HMAC-SHA256");
+            StringAssert.Contains(query, "X-Amz-Signature=");
         }
 
         // -----------------------------------------------------------------------

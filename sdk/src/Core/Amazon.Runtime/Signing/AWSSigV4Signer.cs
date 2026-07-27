@@ -181,9 +181,15 @@ namespace Amazon.Runtime.Signing
             // (double-encoding it), so we take only its rendered query string and pair it with the verbatim path.
             var composed = AmazonServiceClient.ComposeUrl(internalRequest).AbsoluteUri;
             var queryStart = composed.IndexOf('?');
+            // The rendered query (when present) includes its leading '?'. Presigning always adds X-Amz-Expires as
+            // a query parameter with UseQueryString = true, so ComposeUrl renders a query today and queryStart is
+            // always >= 0. Still, join defensively: the SigV4 auth params attach with '&' when a query is already
+            // present and with '?' when it is not, so a future change that drops the query can't emit a malformed
+            // URL ("path&X-Amz-Algorithm=..." with an '&' where the query should start).
             var query = queryStart >= 0 ? composed.Substring(queryStart) : string.Empty;
             var authority = request.RequestUri.GetLeftPart(UriPartial.Authority);
-            var presignedUrl = new Uri(authority + request.RequestUri.AbsolutePath + query + "&" + signingResult.ForQueryParameters);
+            var separator = query.Length > 0 ? "&" : "?";
+            var presignedUrl = new Uri(authority + request.RequestUri.AbsolutePath + query + separator + signingResult.ForQueryParameters);
 
             var signedHeaders = BuildSignedHeaders(internalRequest.Headers, signingResult.SignedHeaders);
 
@@ -303,14 +309,25 @@ namespace Amazon.Runtime.Signing
         }
 
         /// <summary>
-        /// Whether the signing service is S3 (or S3 Express), which signs the encoded resource path verbatim
+        /// Whether the signing service is part of the S3 family, which signs the encoded resource path verbatim
         /// (zero additional encode passes) rather than applying the one extra pass every other service uses.
-        /// Mirrors the S3 special-case in <see cref="AWS4Signer"/>.
+        /// <para>
+        /// The S3 family is exactly <see cref="AWS4PreSignedUrlSigner.ServicesUsingUnsignedPayload"/> ("s3", "s3express",
+        /// "s3-object-lambda", "s3-outposts") — the same set the internal signer special-cases — reused here as
+        /// the single source of truth so the two cannot drift. Matching only "s3"/"s3express" would send
+        /// "s3-object-lambda"/"s3-outposts" down the non-S3 path, double-encoding a special-character key and
+        /// producing a SignatureDoesNotMatch. Compared case-insensitively; AWS service names are lowercase, but
+        /// this is lenient for callers who capitalize.
+        /// </para>
         /// </summary>
         private static bool IsS3(string service)
         {
-            return string.Equals(service, "s3", StringComparison.OrdinalIgnoreCase)
-                || string.Equals(service, "s3express", StringComparison.OrdinalIgnoreCase);
+            foreach (var s3Service in AWS4PreSignedUrlSigner.ServicesUsingUnsignedPayload)
+            {
+                if (string.Equals(service, s3Service, StringComparison.OrdinalIgnoreCase))
+                    return true;
+            }
+            return false;
         }
 
         /// <summary>
