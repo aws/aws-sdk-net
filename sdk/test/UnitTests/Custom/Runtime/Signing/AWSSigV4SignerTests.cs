@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,9 +64,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var result = AWSSigV4Signer.Sign(request, BaseParameters());
@@ -81,9 +81,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var sync = AWSSigV4Signer.Sign(request, BaseParameters());
@@ -103,9 +102,9 @@ namespace AWSSDK.UnitTests.Signing
             // A caller-supplied header is included in the signed-headers set and covered by the signature.
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { ["x-custom-multi"] = "value1,value2" },
+                Headers = { ["x-custom-multi"] = "value1,value2" },
             };
 
             var result = AWSSigV4Signer.Sign(request, BaseParameters());
@@ -125,15 +124,15 @@ namespace AWSSDK.UnitTests.Signing
             // supplying the wrong interior form yields a signature the service rejects.
             var trimmed = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { ["x-custom-multi"] = "value1,value2" },
+                Headers = { ["x-custom-multi"] = "value1,value2" },
             };
             var untrimmed = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { ["x-custom-multi"] = "value1, value2" },
+                Headers = { ["x-custom-multi"] = "value1, value2" },
             };
 
             var trimmedResult = AWSSigV4Signer.Sign(trimmed, BaseParameters());
@@ -152,15 +151,15 @@ namespace AWSSDK.UnitTests.Signing
             // test) is the part they do.
             var tight = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { ["x-custom-multi"] = "value1,value2" },
+                Headers = { ["x-custom-multi"] = "value1,value2" },
             };
             var padded = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { ["x-custom-multi"] = "  value1,value2  " },
+                Headers = { ["x-custom-multi"] = "  value1,value2  " },
             };
 
             var tightResult = AWSSigV4Signer.Sign(tight, BaseParameters());
@@ -226,9 +225,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var parameters = BaseParameters();
@@ -251,9 +249,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var parameters = BaseParameters();
@@ -277,9 +274,9 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15"),
-                Headers = new Dictionary<string, string> { ["x-k8s-aws-id"] = "my-cluster" },
+                Headers = { ["x-k8s-aws-id"] = "my-cluster" },
             };
 
             var parameters = BaseParameters();
@@ -303,9 +300,8 @@ namespace AWSSDK.UnitTests.Signing
             // lowercase region and that an uppercase-region presign equals a lowercase-region one.
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var upper = BaseParameters();
@@ -345,9 +341,8 @@ namespace AWSSDK.UnitTests.Signing
 
         private static AWSSigningRequest GetRequest(string url) => new AWSSigningRequest
         {
-            HttpMethod = "GET",
+            HttpMethod = HttpMethod.Get,
             RequestUri = new Uri(url),
-            Headers = new Dictionary<string, string>(),
         };
 
         [TestMethod]
@@ -415,9 +410,8 @@ namespace AWSSDK.UnitTests.Signing
             // ArgumentException rather than an opaque NullReferenceException when it reads credentials.UseToken.
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
             var parameters = BaseParameters();
             parameters.Credentials = new AnonymousAWSCredentials();
@@ -430,9 +424,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
             var parameters = BaseParameters();
             parameters.Service = "sts";
@@ -446,9 +439,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var parameters = BaseParameters();
@@ -465,9 +457,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             AssertThrows<ArgumentOutOfRangeException>(() =>
@@ -479,9 +470,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             AssertThrows<ArgumentOutOfRangeException>(() =>
@@ -495,9 +485,8 @@ namespace AWSSDK.UnitTests.Signing
             // rejected rather than silently produce an invalid URL.
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             AssertThrows<ArgumentOutOfRangeException>(() =>
@@ -512,9 +501,8 @@ namespace AWSSDK.UnitTests.Signing
             var creds = new CountingRefreshingCredentials(credentialsLifetime: TimeSpan.FromMinutes(1));
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
             var parameters = BaseParameters();
             parameters.Credentials = creds;
@@ -530,9 +518,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
                 Content = Encoding.UTF8.GetBytes("body"),
             };
 
@@ -545,9 +532,9 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://sts.us-east-1.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { [HeaderKeys.XAmzContentSha256Header] = new string('a', 64) },
+                Headers = { [HeaderKeys.XAmzContentSha256Header] = new string('a', 64) },
             };
 
             AssertThrows<ArgumentException>(() =>
@@ -565,9 +552,8 @@ namespace AWSSDK.UnitTests.Signing
             // covered by the signature. (A name-keyed parse would silently keep only x=2.)
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/?x=1&x=2"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var result = AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromSeconds(60));
@@ -586,9 +572,8 @@ namespace AWSSDK.UnitTests.Signing
             var facade = AWSSigV4Signer.Sign(
                 new AWSSigningRequest
                 {
-                    HttpMethod = "GET",
+                    HttpMethod = HttpMethod.Get,
                     RequestUri = new Uri("https://example.amazonaws.com/?x=1&x=2"),
-                    Headers = new Dictionary<string, string>(),
                 },
                 BaseParameters());
 
@@ -616,9 +601,8 @@ namespace AWSSDK.UnitTests.Signing
             // flag into — rather than dropped from the signature.
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/?acl"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var result = AWSSigV4Signer.Presign(request, BaseParameters(), TimeSpan.FromSeconds(60));
@@ -636,9 +620,9 @@ namespace AWSSDK.UnitTests.Signing
             var precomputed = "1234567890123456789012345678901234567890123456789012345678901234";
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { [HeaderKeys.XAmzContentSha256Header] = precomputed },
+                Headers = { [HeaderKeys.XAmzContentSha256Header] = precomputed },
             };
 
             var result = AWSSigV4Signer.Sign(request, BaseParameters());
@@ -676,9 +660,9 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { [HeaderKeys.XAmzContentSha256Header] = new string('a', 64) },
+                Headers = { [HeaderKeys.XAmzContentSha256Header] = new string('a', 64) },
             };
 
             AssertThrows<ArgumentException>(() => AWSSigV4Signer.Sign(request, BaseParameters(signPayload: false)));
@@ -693,9 +677,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
                 ContentStream = new NonSeekableStream(Encoding.UTF8.GetBytes("body")),
             };
 
@@ -713,9 +696,9 @@ namespace AWSSDK.UnitTests.Signing
             // happen.
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string> { [HeaderKeys.XAmzContentSha256Header] = blankHash },
+                Headers = { [HeaderKeys.XAmzContentSha256Header] = blankHash },
                 ContentStream = new NonSeekableStream(Encoding.UTF8.GetBytes("body")),
             };
 
@@ -727,9 +710,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
                 ContentStream = new NonSeekableStream(Encoding.UTF8.GetBytes("body")),
             };
 
@@ -748,16 +730,14 @@ namespace AWSSDK.UnitTests.Signing
             // string, and that the signature is identical whether or not a body is present.
             var withBody = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
                 Content = Encoding.UTF8.GetBytes("this body is not signed"),
             };
             var withoutBody = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             var withBodyResult = AWSSigV4Signer.Sign(withBody, BaseParameters(signPayload: false));
@@ -774,9 +754,8 @@ namespace AWSSDK.UnitTests.Signing
             var body = Encoding.UTF8.GetBytes("hello world");
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
                 ContentStream = new MemoryStream(body),
             };
 
@@ -795,9 +774,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "POST",
+                HttpMethod = HttpMethod.Post,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
                 Content = new byte[] { 1 },
                 ContentStream = new MemoryStream(new byte[] { 1 }),
             };
@@ -810,9 +788,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("http://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
 
             AssertThrows<ArgumentException>(() => AWSSigV4Signer.Sign(request, BaseParameters(signPayload: false)));
@@ -823,9 +800,8 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = new Uri("https://example.amazonaws.com/"),
-                Headers = new Dictionary<string, string>(),
             };
             var parameters = BaseParameters();
             parameters.Region = null;

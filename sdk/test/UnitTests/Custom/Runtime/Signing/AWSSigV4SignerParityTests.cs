@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -214,11 +215,12 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = scenario.Method,
+                HttpMethod = new HttpMethod(scenario.Method),
                 RequestUri = new Uri(scenario.Url),
-                Headers = new Dictionary<string, string>(scenario.Headers),
                 Content = scenario.Content,
             };
+            foreach (var header in scenario.Headers)
+                request.Headers[header.Key] = header.Value;
             var parameters = new AWSSigV4Parameters
             {
                 Credentials = scenario.SessionToken != null
@@ -236,10 +238,11 @@ namespace AWSSDK.UnitTests.Signing
         {
             var request = new AWSSigningRequest
             {
-                HttpMethod = scenario.Method,
+                HttpMethod = new HttpMethod(scenario.Method),
                 RequestUri = new Uri(scenario.Url),
-                Headers = new Dictionary<string, string>(scenario.Headers),
             };
+            foreach (var header in scenario.Headers)
+                request.Headers[header.Key] = header.Value;
             var parameters = new AWSSigV4Parameters
             {
                 Credentials = scenario.SessionToken != null

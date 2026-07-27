@@ -480,6 +480,20 @@ namespace Amazon.Util
         /// <param name="resourcePath">Resource path for the request.</param>
         /// <param name="encode">If true will URL-encode path segments including "/". "S3" is currently the only service that does not expect pre URL-encoded segments.</param>
         /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements.</param>
+        /// <remarks>If resourcePath begins or ends with slash, the resulting canonicalized path will follow suit.</remarks>
+        /// <returns>Canonicalized resource path for the endpoint.</returns>
+        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources)
+        {
+            return CanonicalizeResourcePathV2(endpoint, resourcePath, encode, pathResources, pathAlreadyEncoded: false);
+        }
+
+        /// <summary>
+        /// Returns the canonicalized resource path for the service endpoint.
+        /// </summary>
+        /// <param name="endpoint">Endpoint URL for the request.</param>
+        /// <param name="resourcePath">Resource path for the request.</param>
+        /// <param name="encode">If true will URL-encode path segments including "/". "S3" is currently the only service that does not expect pre URL-encoded segments.</param>
+        /// <param name="pathResources">Dictionary of key/value parameters containing the values for the ResourcePath key replacements.</param>
         /// <param name="pathAlreadyEncoded">
         /// If true the segment values are treated as already being in their final encoded (wire) form and are
         /// joined verbatim with no additional URL-encode pass. This is for callers (e.g. the standalone SigV4
@@ -490,7 +504,7 @@ namespace Amazon.Util
         /// </param>
         /// <remarks>If resourcePath begins or ends with slash, the resulting canonicalized path will follow suit.</remarks>
         /// <returns>Canonicalized resource path for the endpoint.</returns>
-        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources, bool pathAlreadyEncoded = false)
+        public static string CanonicalizeResourcePathV2(Uri endpoint, string resourcePath, bool encode, IDictionary<string, string> pathResources, bool pathAlreadyEncoded)
         {
             if (endpoint != null)
             {

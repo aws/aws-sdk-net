@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 
 namespace Amazon.Runtime.Signing
 {
@@ -26,9 +27,9 @@ namespace Amazon.Runtime.Signing
     public class AWSSigningRequest
     {
         /// <summary>
-        /// The HTTP method, e.g. "GET" or "POST".
+        /// The HTTP method, e.g. <see cref="HttpMethod.Get"/> or <see cref="HttpMethod.Post"/>.
         /// </summary>
-        public string HttpMethod { get; set; }
+        public HttpMethod HttpMethod { get; set; }
 
         /// <summary>
         /// The full request URI, including any query string.
@@ -41,13 +42,22 @@ namespace Amazon.Runtime.Signing
         /// remarks on <see cref="AWSSigV4Parameters.SignPayload"/>).
         /// </summary>
         /// <remarks>
+        /// <para>
+        /// HTTP header names are case-insensitive, and this collection is initialized with an
+        /// ordinal-case-insensitive comparer to reflect that: "X-Amz-Date" and "x-amz-date" address the
+        /// same entry, so a header cannot be added twice under differing casing. The collection is always
+        /// present (never null) and has no setter, so callers add entries directly (e.g.
+        /// <c>request.Headers["x-amz-date"] = "..."</c>).
+        /// </para>
+        /// <para>
         /// One value per header name. If a header carries multiple values, supply them here as a
         /// single comma-delimited string with the leading and trailing whitespace of each value
         /// trimmed (for example "value1,value2"), in the same order and form they are sent on the
         /// wire. This is the value SigV4 canonicalization signs; an untrimmed or differently-joined
         /// value produces a signature the service will reject.
+        /// </para>
         /// </remarks>
-        public IDictionary<string, string> Headers { get; set; }
+        public IDictionary<string, string> Headers { get; } = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// The optional request body as a byte array. Mutually exclusive with <see cref="ContentStream"/>.

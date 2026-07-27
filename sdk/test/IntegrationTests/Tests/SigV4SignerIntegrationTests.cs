@@ -66,9 +66,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var signingRequest = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = GetCallerIdentityUri(),
-                Headers = new Dictionary<string, string>(),
             };
 
             var result = await AWSSigV4Signer.SignAsync(signingRequest, SigningParameters());
@@ -98,9 +97,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var signingRequest = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = GetCallerIdentityUri(),
-                Headers = new Dictionary<string, string>(),
             };
 
             var result = await AWSSigV4Signer.SignAsync(signingRequest, SigningParameters());
@@ -133,9 +131,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         {
             var signingRequest = new AWSSigningRequest
             {
-                HttpMethod = "GET",
+                HttpMethod = HttpMethod.Get,
                 RequestUri = GetCallerIdentityUri(),
-                Headers = new Dictionary<string, string>(),
             };
 
             var result = await AWSSigV4Signer.PresignAsync(signingRequest, SigningParameters(), TimeSpan.FromSeconds(60));
@@ -177,9 +174,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 var signingRequest = new AWSSigningRequest
                 {
-                    HttpMethod = "GET",
+                    HttpMethod = HttpMethod.Get,
                     RequestUri = uri,
-                    Headers = new Dictionary<string, string>(),
                 };
 
                 var result = await AWSSigV4Signer.SignAsync(signingRequest, S3SigningParameters());
@@ -205,9 +201,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 var signingRequest = new AWSSigningRequest
                 {
-                    HttpMethod = "GET",
+                    HttpMethod = HttpMethod.Get,
                     RequestUri = uri,
-                    Headers = new Dictionary<string, string>(),
                 };
 
                 var result = await AWSSigV4Signer.PresignAsync(signingRequest, S3SigningParameters(), TimeSpan.FromSeconds(60));
@@ -260,9 +255,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 }
                 finally
                 {
-                    try { await s3.DeleteObjectAsync(new Amazon.S3.Model.DeleteObjectRequest { BucketName = bucket, Key = key }); }
-                    catch { /* best-effort cleanup */ }
-                    try { await s3.DeleteBucketAsync(new Amazon.S3.Model.DeleteBucketRequest { BucketName = bucket }); }
+                    try { await Amazon.S3.Util.AmazonS3Util.DeleteS3BucketWithObjectsAsync(s3, bucket); }
                     catch { /* best-effort cleanup */ }
                 }
             }

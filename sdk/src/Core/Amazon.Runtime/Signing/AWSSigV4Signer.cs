@@ -198,7 +198,7 @@ namespace Amazon.Runtime.Signing
         {
             var internalRequest = new DefaultRequest(new StandaloneSigningRequest(), parameters.Service)
             {
-                HttpMethod = request.HttpMethod,
+                HttpMethod = request.HttpMethod.Method,
 
                 // DefaultRequest keeps the origin (scheme + host + port) and the path in separate fields:
                 // ComposeUrl later rebuilds the URL as Endpoint.AbsoluteUri + ResourcePath + query, so
@@ -251,15 +251,12 @@ namespace Amazon.Runtime.Signing
             // PrecomputedContentSha256 (below) rather than left on the header, so the signer honors it
             // instead of scrubbing it during InitializeHeaders/CleanHeaders.
             string precomputedHash = null;
-            if (request.Headers != null)
+            foreach (var header in request.Headers)
             {
-                foreach (var header in request.Headers)
-                {
-                    if (string.Equals(header.Key, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase))
-                        precomputedHash = header.Value;
-                    else
-                        internalRequest.Headers[header.Key] = header.Value;
-                }
+                if (string.Equals(header.Key, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase))
+                    precomputedHash = header.Value;
+                else
+                    internalRequest.Headers[header.Key] = header.Value;
             }
 
             // Parse any query string on the URI into the request's parameter collection. Query components
@@ -438,7 +435,7 @@ namespace Amazon.Runtime.Signing
                 throw new ArgumentNullException(nameof(request));
             if (parameters == null)
                 throw new ArgumentNullException(nameof(parameters));
-            if (string.IsNullOrEmpty(request.HttpMethod))
+            if (request.HttpMethod == null)
                 throw new ArgumentException("HttpMethod must be set.", nameof(request));
             if (request.RequestUri == null)
                 throw new ArgumentException("RequestUri must be set.", nameof(request));
@@ -487,7 +484,7 @@ namespace Amazon.Runtime.Signing
             if (credentials == null)
                 throw new ArgumentException(
                     "The supplied AWSCredentials resolved to null (e.g. AnonymousAWSCredentials). " +
-                    "SigV4 signing requires credentials with an access key and secret key.", "parameters");
+                    "SigV4 signing requires credentials with an access key and secret key.", nameof(credentials));
         }
 
         private static void ValidateExpiry(TimeSpan expiry)
