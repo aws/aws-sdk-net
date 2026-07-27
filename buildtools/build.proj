@@ -176,7 +176,7 @@
         <Exec Command="dotnet build -c $(Configuration) AWSSDK.Extensions.sln /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)"  WorkingDirectory="../extensions"/>
     </Target>
 
-    <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions;package-cborprotocol-extensions;package-logging-extensions" />
+    <Target Name="package-extensions" DependsOnTargets="package-netcore-extensions;package-crt-extensions;package-cloudfront-extensions;package-ec2-extensions;package-meai-extensions;package-cborprotocol-extensions;package-logging-extensions;package-numerics-extensions" />
 
     <Target Name="package-netcore-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
         <MakeDir Directories="../Deployment/nuget" />
@@ -212,6 +212,11 @@
         <MakeDir Directories="../Deployment/nuget" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Logging.ILoggerAdaptor.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Logging.ILoggerAdaptor" />
         <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Logging.Log4NetAdaptor.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Logging.Log4NetAdaptor" />
+    </Target>
+
+    <Target Name="package-numerics-extensions" DependsOnTargets="$(package-extensions-DependsOnTargets)">
+        <MakeDir Directories="../Deployment/nuget" />
+        <Exec Command="..\..\..\sdk\.nuget\NuGet.exe pack ./AWSSDK.Extensions.Numerics.nuspec -BasePath . -Symbols -SymbolPackageFormat snupkg -OutputDirectory ../../../Deployment/nuget" WorkingDirectory="../extensions/src/AWSSDK.Extensions.Numerics" />
     </Target>
 
     <!-- ============================================================
