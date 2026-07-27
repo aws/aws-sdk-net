@@ -1,3 +1,32 @@
+### 4.0.297.0 (2026-07-27 18:16 UTC)
+* Account (4.0.101.0)
+	* This release adds support for the GetPrimaryEmailUpdateStatus API operation, which allows customers to retrieve the current status of a primary email address update request for an AWS account. The operation returns status information including whether the update is pending, completed, or failed.
+* BCMDataExports (4.0.101.0)
+	* With this release, customers can configure their data exports to deliver CSV reports in ZIP compressed format.
+* CleanRooms (4.0.102.0)
+	* This release adds support for the CR.8X worker type for SQL (32 vCPU)
+* CleanRoomsML (4.0.101.0)
+	* This release adds support for the CR.8X worker type for SQL (32 vCPU)
+* EMRContainers (4.0.103.0)
+	* With this launch, you can now set concurrent job limits on a virtual cluster, giving you fine-grained control over how many job runs execute at once and how many can wait in queue.
+* Glue (4.0.101.0)
+	* Adds BatchGetDataQualityRulesetEvaluationRun API to retrieve multiple runs in one call, ObservationScope and ObservationMode parameters for anomaly detection, writing evaluation results to Data Catalog tables, and custom log group paths for recommendation runs.
+* PartnerCentralAccount (4.0.102.0)
+	* Adds optional headquarters location to StartProfileUpdateTask, letting partners record their headquarters as an ISO 3166 country and subdivision code on their profile. When headquarters is provided, both the country and subdivision codes are required.
+* QuickSight (4.0.105.0)
+	* Added new Governance fields to Custom Permissions API to support Deny By Default functionality.
+* SageMaker (4.0.104.0)
+	* This release adds LoRA adapters, training plans, and new instance types to SageMaker inference optimization. CreateAIRecommendationJob accepts optional AdapterSource and CreateOptimizationJob accepts optional TrainingPlanArns and the ml.g7e and ml.p6-b200 families.
+* SecurityAgent (4.0.101.0)
+	* AWS Security Agent adds a new task hours field that reflects the active work done for a task.
+* SecurityToken (4.0.100.7)
+	* Classify IDPCommunicationError as retryable for all STS operations.
+* Extensions.Numerics (4.0.0.1)
+	* Add new Numerics package to provide BigDecimal support similar to Java's BigDecimal type
+* Core 4.0.100.9
+	* Refill adaptive token bucket per ObtainCapacity when using NewRetries2026.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.296.0 (2026-07-24 18:12 UTC)
 * ApplicationInsights (4.0.101.0)
 	* This release adds Smithy RPC v2 CBOR as an additional protocol alongside the existing AWS JSON 1.1. The SDK will prioritize its most performant protocol.
