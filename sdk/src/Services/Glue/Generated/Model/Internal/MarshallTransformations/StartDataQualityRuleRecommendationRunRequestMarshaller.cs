@@ -75,6 +75,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalRunOptions())
+            {
+                context.Writer.WritePropertyName("AdditionalRunOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataQualityRuleRecommendationRunAdditionalRunOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdditionalRunOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");

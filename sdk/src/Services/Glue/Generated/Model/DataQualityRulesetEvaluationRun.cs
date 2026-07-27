@@ -30,33 +30,54 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The response for the Data Quality rule recommendation run.
+    /// The details of a data quality ruleset evaluation run.
     /// </summary>
-    public partial class GetDataQualityRuleRecommendationRunResponse : AmazonWebServiceResponse
+    public partial class DataQualityRulesetEvaluationRun
     {
-        private DataQualityRuleRecommendationRunAdditionalRunOptions _additionalRunOptions;
+        private Dictionary<string, DataSource> _additionalDataSources = AWSConfigs.InitializeCollections ? new Dictionary<string, DataSource>() : null;
+        private DataQualityEvaluationRunAdditionalRunOptions _additionalRunOptions;
         private DateTime? _completedOn;
-        private string _createdRulesetName;
-        private string _dataQualitySecurityConfiguration;
         private DataSource _dataSource;
         private string _errorString;
         private int? _executionTime;
         private DateTime? _lastModifiedOn;
         private int? _numberOfWorkers;
-        private string _recommendedRuleset;
+        private List<string> _resultIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _role;
+        private List<string> _rulesetNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _runId;
         private DateTime? _startedOn;
         private TaskStatusType _status;
         private int? _timeout;
 
         /// <summary>
-        /// Gets and sets the property AdditionalRunOptions. 
+        /// Gets and sets the property AdditionalDataSources. 
         /// <para>
-        /// Additional run options you can specify for a recommendation run.
+        /// A map of reference strings to additional data sources you can specify for an evaluation
+        /// run.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public DataQualityRuleRecommendationRunAdditionalRunOptions AdditionalRunOptions
+        public Dictionary<string, DataSource> AdditionalDataSources
+        {
+            get { return this._additionalDataSources; }
+            set { this._additionalDataSources = value; }
+        }
+
+        // Check to see if AdditionalDataSources property is set
+        internal bool IsSetAdditionalDataSources()
+        {
+            return this._additionalDataSources != null && (this._additionalDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdditionalRunOptions.
+        /// </summary>
+        public DataQualityEvaluationRunAdditionalRunOptions AdditionalRunOptions
         {
             get { return this._additionalRunOptions; }
             set { this._additionalRunOptions = value; }
@@ -87,48 +108,7 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedRulesetName. 
-        /// <para>
-        /// The name of the ruleset that was created by the run.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string CreatedRulesetName
-        {
-            get { return this._createdRulesetName; }
-            set { this._createdRulesetName = value; }
-        }
-
-        // Check to see if CreatedRulesetName property is set
-        internal bool IsSetCreatedRulesetName()
-        {
-            return this._createdRulesetName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataQualitySecurityConfiguration. 
-        /// <para>
-        /// The name of the security configuration created with the data quality encryption option.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string DataQualitySecurityConfiguration
-        {
-            get { return this._dataQualitySecurityConfiguration; }
-            set { this._dataQualitySecurityConfiguration = value; }
-        }
-
-        // Check to see if DataQualitySecurityConfiguration property is set
-        internal bool IsSetDataQualitySecurityConfiguration()
-        {
-            return this._dataQualitySecurityConfiguration != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataSource. 
-        /// <para>
-        /// The data source (an Glue table) associated with this run.
-        /// </para>
+        /// Gets and sets the property DataSource.
         /// </summary>
         public DataSource DataSource
         {
@@ -181,8 +161,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastModifiedOn. 
         /// <para>
-        /// A timestamp. The last point in time when this data quality rule recommendation run
-        /// was modified.
+        /// A timestamp. The last point in time when this run was modified.
         /// </para>
         /// </summary>
         public DateTime? LastModifiedOn
@@ -216,24 +195,27 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecommendedRuleset. 
+        /// Gets and sets the property ResultIds. 
         /// <para>
-        /// When a start rule recommendation run completes, it creates a recommended ruleset (a
-        /// set of rules). This member has those rules in Data Quality Definition Language (DQDL)
-        /// format.
+        /// A list of result IDs for the data quality results for the run.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=65536)]
-        public string RecommendedRuleset
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> ResultIds
         {
-            get { return this._recommendedRuleset; }
-            set { this._recommendedRuleset = value; }
+            get { return this._resultIds; }
+            set { this._resultIds = value; }
         }
 
-        // Check to see if RecommendedRuleset property is set
-        internal bool IsSetRecommendedRuleset()
+        // Check to see if ResultIds property is set
+        internal bool IsSetResultIds()
         {
-            return this._recommendedRuleset != null;
+            return this._resultIds != null && (this._resultIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,6 +234,30 @@ namespace Amazon.Glue.Model
         internal bool IsSetRole()
         {
             return this._role != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RulesetNames. 
+        /// <para>
+        /// A list of ruleset names for the run.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> RulesetNames
+        {
+            get { return this._rulesetNames; }
+            set { this._rulesetNames = value; }
+        }
+
+        // Check to see if RulesetNames property is set
+        internal bool IsSetRulesetNames()
+        {
+            return this._rulesetNames != null && (this._rulesetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

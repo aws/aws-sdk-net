@@ -738,6 +738,48 @@ namespace Amazon.Glue
         }
         #endregion
         
+        #region  BatchGetDataQualityRulesetEvaluationRun
+
+        internal virtual BatchGetDataQualityRulesetEvaluationRunResponse BatchGetDataQualityRulesetEvaluationRun(BatchGetDataQualityRulesetEvaluationRunRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetDataQualityRulesetEvaluationRunResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the details of multiple evaluation runs in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDataQualityRulesetEvaluationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityRulesetEvaluationRun">REST API Reference for BatchGetDataQualityRulesetEvaluationRun Operation</seealso>
+        public virtual Task<BatchGetDataQualityRulesetEvaluationRunResponse> BatchGetDataQualityRulesetEvaluationRunAsync(BatchGetDataQualityRulesetEvaluationRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetDataQualityRulesetEvaluationRunRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetDataQualityRulesetEvaluationRunResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetDataQualityRulesetEvaluationRunResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchGetDevEndpoints
 
         internal virtual BatchGetDevEndpointsResponse BatchGetDevEndpoints(BatchGetDevEndpointsRequest request)

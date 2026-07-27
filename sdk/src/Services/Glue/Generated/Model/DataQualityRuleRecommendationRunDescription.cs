@@ -34,10 +34,30 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DataQualityRuleRecommendationRunDescription
     {
+        private string _createdRulesetName;
         private DataSource _dataSource;
         private string _runId;
         private DateTime? _startedOn;
         private TaskStatusType _status;
+
+        /// <summary>
+        /// Gets and sets the property CreatedRulesetName. 
+        /// <para>
+        /// The name of the ruleset that was created by the recommendation run.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string CreatedRulesetName
+        {
+            get { return this._createdRulesetName; }
+            set { this._createdRulesetName = value; }
+        }
+
+        // Check to see if CreatedRulesetName property is set
+        internal bool IsSetCreatedRulesetName()
+        {
+            return this._createdRulesetName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DataSource. 

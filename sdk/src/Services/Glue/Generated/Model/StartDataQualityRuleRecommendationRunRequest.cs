@@ -43,6 +43,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class StartDataQualityRuleRecommendationRunRequest : AmazonGlueRequest
     {
+        private DataQualityRuleRecommendationRunAdditionalRunOptions _additionalRunOptions;
         private string _clientToken;
         private string _createdRulesetName;
         private string _dataQualitySecurityConfiguration;
@@ -50,6 +51,24 @@ namespace Amazon.Glue.Model
         private int? _numberOfWorkers;
         private string _role;
         private int? _timeout;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalRunOptions. 
+        /// <para>
+        /// Additional run options you can specify for a recommendation run.
+        /// </para>
+        /// </summary>
+        public DataQualityRuleRecommendationRunAdditionalRunOptions AdditionalRunOptions
+        {
+            get { return this._additionalRunOptions; }
+            set { this._additionalRunOptions = value; }
+        }
+
+        // Check to see if AdditionalRunOptions property is set
+        internal bool IsSetAdditionalRunOptions()
+        {
+            return this._additionalRunOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 

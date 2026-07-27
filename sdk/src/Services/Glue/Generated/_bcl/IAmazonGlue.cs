@@ -600,6 +600,52 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  BatchGetDataQualityRulesetEvaluationRun
+
+
+        /// <summary>
+        /// Retrieves the details of multiple evaluation runs in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDataQualityRulesetEvaluationRun service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityRulesetEvaluationRun">REST API Reference for BatchGetDataQualityRulesetEvaluationRun Operation</seealso>
+        BatchGetDataQualityRulesetEvaluationRunResponse BatchGetDataQualityRulesetEvaluationRun(BatchGetDataQualityRulesetEvaluationRunRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the details of multiple evaluation runs in a single request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetDataQualityRulesetEvaluationRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetDataQualityRulesetEvaluationRun service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.OperationTimeoutException">
+        /// The operation timed out.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchGetDataQualityRulesetEvaluationRun">REST API Reference for BatchGetDataQualityRulesetEvaluationRun Operation</seealso>
+        Task<BatchGetDataQualityRulesetEvaluationRunResponse> BatchGetDataQualityRulesetEvaluationRunAsync(BatchGetDataQualityRulesetEvaluationRunRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchGetDevEndpoints
 
 

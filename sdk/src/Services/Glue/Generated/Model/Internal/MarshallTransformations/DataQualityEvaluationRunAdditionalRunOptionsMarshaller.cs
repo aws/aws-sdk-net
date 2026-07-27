@@ -64,10 +64,66 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CustomLogGroupPrefix);
             }
 
+            if(requestObject.IsSetDataQualityRuleResults())
+            {
+                context.Writer.WritePropertyName("DataQualityRuleResults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataQualityRuleResultsOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataQualityRuleResults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetObservationMode())
+            {
+                context.Writer.WritePropertyName("ObservationMode");
+                context.Writer.WriteStringValue(requestObject.ObservationMode);
+            }
+
+            if(requestObject.IsSetObservationResults())
+            {
+                context.Writer.WritePropertyName("ObservationResults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ObservationResultsOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ObservationResults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetObservationScope())
+            {
+                context.Writer.WritePropertyName("ObservationScope");
+                context.Writer.WriteStringValue(requestObject.ObservationScope);
+            }
+
+            if(requestObject.IsSetProfilingResults())
+            {
+                context.Writer.WritePropertyName("ProfilingResults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProfilingResultsOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProfilingResults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetResultsS3Prefix())
             {
                 context.Writer.WritePropertyName("ResultsS3Prefix");
                 context.Writer.WriteStringValue(requestObject.ResultsS3Prefix);
+            }
+
+            if(requestObject.IsSetRowLevelResults())
+            {
+                context.Writer.WritePropertyName("RowLevelResults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RowLevelResultsOptionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.RowLevelResults, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }

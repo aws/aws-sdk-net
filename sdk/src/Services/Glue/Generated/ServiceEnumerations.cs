@@ -5555,6 +5555,106 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ObservationConfiguration.
+    /// </summary>
+    public class ObservationConfiguration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ObservationConfiguration
+        /// </summary>
+        public static readonly ObservationConfiguration ALL = new ObservationConfiguration("ALL");
+        /// <summary>
+        /// Constant NONE for ObservationConfiguration
+        /// </summary>
+        public static readonly ObservationConfiguration NONE = new ObservationConfiguration("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObservationConfiguration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObservationConfiguration FindValue(string value)
+        {
+            return FindValue<ObservationConfiguration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObservationConfiguration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObservationMode.
+    /// </summary>
+    public class ObservationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIXED for ObservationMode
+        /// </summary>
+        public static readonly ObservationMode FIXED = new ObservationMode("FIXED");
+        /// <summary>
+        /// Constant SCHEDULED for ObservationMode
+        /// </summary>
+        public static readonly ObservationMode SCHEDULED = new ObservationMode("SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObservationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObservationMode FindValue(string value)
+        {
+            return FindValue<ObservationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObservationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OverwriteChildResourcePermissionsWithDefaultEnum.
     /// </summary>
     public class OverwriteChildResourcePermissionsWithDefaultEnum : ConstantClass
@@ -6558,6 +6658,60 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResultTypeEnum.
+    /// </summary>
+    public class ResultTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResultTypeEnum
+        /// </summary>
+        public static readonly ResultTypeEnum ALL = new ResultTypeEnum("ALL");
+        /// <summary>
+        /// Constant FAILED_ONLY for ResultTypeEnum
+        /// </summary>
+        public static readonly ResultTypeEnum FAILED_ONLY = new ResultTypeEnum("FAILED_ONLY");
+        /// <summary>
+        /// Constant PASSED_ONLY for ResultTypeEnum
+        /// </summary>
+        public static readonly ResultTypeEnum PASSED_ONLY = new ResultTypeEnum("PASSED_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResultTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResultTypeEnum FindValue(string value)
+        {
+            return FindValue<ResultTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResultTypeEnum(string value)
         {
             return FindValue(value);
         }

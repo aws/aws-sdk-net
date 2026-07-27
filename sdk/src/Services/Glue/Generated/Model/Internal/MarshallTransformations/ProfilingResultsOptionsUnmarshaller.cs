@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataQualityRuleRecommendationRunDescription Object
+    /// Response Unmarshaller for ProfilingResultsOptions Object
     /// </summary>  
-    public class DataQualityRuleRecommendationRunDescriptionUnmarshaller : IJsonUnmarshaller<DataQualityRuleRecommendationRunDescription, JsonUnmarshallerContext>
+    public class ProfilingResultsOptionsUnmarshaller : IJsonUnmarshaller<ProfilingResultsOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataQualityRuleRecommendationRunDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ProfilingResultsOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DataQualityRuleRecommendationRunDescription unmarshalledObject = new DataQualityRuleRecommendationRunDescription();
+            ProfilingResultsOptions unmarshalledObject = new ProfilingResultsOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedRulesetName", targetDepth, ref reader))
+                if (context.TestExpression("CatalogTableConfig", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedRulesetName = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = CatalogTableConfigOptionsUnmarshaller.Instance;
+                    unmarshalledObject.CatalogTableConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSource", targetDepth, ref reader))
+                if (context.TestExpression("DistributionResults", targetDepth, ref reader))
                 {
-                    var unmarshaller = DataSourceUnmarshaller.Instance;
-                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = DistributionResultsOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DistributionResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunId", targetDepth, ref reader))
+                if (context.TestExpression("WriteProfilingResultsEnabled", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartedOn", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartedOn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.WriteProfilingResultsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +79,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataQualityRuleRecommendationRunDescriptionUnmarshaller _instance = new DataQualityRuleRecommendationRunDescriptionUnmarshaller();        
+        private static ProfilingResultsOptionsUnmarshaller _instance = new ProfilingResultsOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataQualityRuleRecommendationRunDescriptionUnmarshaller Instance
+        public static ProfilingResultsOptionsUnmarshaller Instance
         {
             get
             {

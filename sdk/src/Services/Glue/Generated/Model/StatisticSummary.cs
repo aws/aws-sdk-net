@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     public partial class StatisticSummary
     {
         private List<string> _columnsReferenced = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DistributionData _distributionValue;
         private double? _doubleValue;
         private StatisticEvaluationLevel _evaluationLevel;
         private TimestampedInclusionAnnotation _inclusionAnnotation;
@@ -67,6 +68,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetColumnsReferenced()
         {
             return this._columnsReferenced != null && (this._columnsReferenced.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DistributionValue. 
+        /// <para>
+        /// The distribution value for the statistic.
+        /// </para>
+        /// </summary>
+        public DistributionData DistributionValue
+        {
+            get { return this._distributionValue; }
+            set { this._distributionValue = value; }
+        }
+
+        // Check to see if DistributionValue property is set
+        internal bool IsSetDistributionValue()
+        {
+            return this._distributionValue != null;
         }
 
         /// <summary>

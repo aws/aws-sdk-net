@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDataQualityRuleRecommendationRuns Request Marshaller
+    /// BatchGetDataQualityRulesetEvaluationRun Request Marshaller
     /// </summary>       
-    public class ListDataQualityRuleRecommendationRunsRequestMarshaller : IMarshaller<IRequest, ListDataQualityRuleRecommendationRunsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class BatchGetDataQualityRulesetEvaluationRunRequestMarshaller : IMarshaller<IRequest, BatchGetDataQualityRulesetEvaluationRunRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDataQualityRuleRecommendationRunsRequest)input);
+            return this.Marshall((BatchGetDataQualityRulesetEvaluationRunRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDataQualityRuleRecommendationRunsRequest publicRequest)
+        public IRequest Marshall(BatchGetDataQualityRulesetEvaluationRunRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Glue");
-            string target = "AWSGlue.ListDataQualityRuleRecommendationRuns";
+            string target = "AWSGlue.BatchGetDataQualityRulesetEvaluationRun";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-03-31";
@@ -75,41 +75,15 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetFilter())
+            if(publicRequest.IsSetRunIds())
             {
-                context.Writer.WritePropertyName("Filter");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DataQualityRuleRecommendationRunFilterMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Filter, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetMaxResults())
-            {
-                context.Writer.WritePropertyName("MaxResults");
-                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
-            }
-
-            if(publicRequest.IsSetNextToken())
-            {
-                context.Writer.WritePropertyName("NextToken");
-                context.Writer.WriteStringValue(publicRequest.NextToken);
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                context.Writer.WritePropertyName("RunIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRunIdsListValue in publicRequest.RunIds)
                 {
-                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                        context.Writer.WriteStringValue(publicRequestRunIdsListValue);
                 }
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();
@@ -122,9 +96,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListDataQualityRuleRecommendationRunsRequestMarshaller _instance = new ListDataQualityRuleRecommendationRunsRequestMarshaller();        
+        private static BatchGetDataQualityRulesetEvaluationRunRequestMarshaller _instance = new BatchGetDataQualityRulesetEvaluationRunRequestMarshaller();        
 
-        internal static ListDataQualityRuleRecommendationRunsRequestMarshaller GetInstance()
+        internal static BatchGetDataQualityRulesetEvaluationRunRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -132,7 +106,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDataQualityRuleRecommendationRunsRequestMarshaller Instance
+        public static BatchGetDataQualityRulesetEvaluationRunRequestMarshaller Instance
         {
             get
             {

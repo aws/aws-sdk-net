@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataQualityRuleRecommendationRunDescription Object
+    /// Response Unmarshaller for CatalogTableConfigOptions Object
     /// </summary>  
-    public class DataQualityRuleRecommendationRunDescriptionUnmarshaller : IJsonUnmarshaller<DataQualityRuleRecommendationRunDescription, JsonUnmarshallerContext>
+    public class CatalogTableConfigOptionsUnmarshaller : IJsonUnmarshaller<CatalogTableConfigOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataQualityRuleRecommendationRunDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CatalogTableConfigOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DataQualityRuleRecommendationRunDescription unmarshalledObject = new DataQualityRuleRecommendationRunDescription();
+            CatalogTableConfigOptions unmarshalledObject = new CatalogTableConfigOptions();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,34 +56,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CreatedRulesetName", targetDepth, ref reader))
+                if (context.TestExpression("CatalogId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedRulesetName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CatalogId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("DataSource", targetDepth, ref reader))
-                {
-                    var unmarshaller = DataSourceUnmarshaller.Instance;
-                    unmarshalledObject.DataSource = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RunId", targetDepth, ref reader))
+                if (context.TestExpression("DatabaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("StartedOn", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartedOn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Status", targetDepth, ref reader))
+                if (context.TestExpression("S3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.S3Location = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TableName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -91,12 +85,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataQualityRuleRecommendationRunDescriptionUnmarshaller _instance = new DataQualityRuleRecommendationRunDescriptionUnmarshaller();        
+        private static CatalogTableConfigOptionsUnmarshaller _instance = new CatalogTableConfigOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataQualityRuleRecommendationRunDescriptionUnmarshaller Instance
+        public static CatalogTableConfigOptionsUnmarshaller Instance
         {
             get
             {

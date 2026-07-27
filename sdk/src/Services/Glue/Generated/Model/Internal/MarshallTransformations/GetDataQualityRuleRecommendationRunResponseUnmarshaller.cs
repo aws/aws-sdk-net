@@ -52,6 +52,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AdditionalRunOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = DataQualityRuleRecommendationRunAdditionalRunOptionsUnmarshaller.Instance;
+                    response.AdditionalRunOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CompletedOn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

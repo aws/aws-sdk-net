@@ -4545,6 +4545,21 @@
     <property>Amazon.Glue.Model.CatalogSource.Table</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogTableConfigOptions.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogTableConfigOptions.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.CatalogTableConfigOptions.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.CatalogTarget.DatabaseName</property>
     <min>1</min>
     <max>255</max>
@@ -5220,6 +5235,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityRuleRecommendationRunDescription.CreatedRulesetName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityRuleRecommendationRunDescription.RunId</property>
     <min>1</min>
     <max>255</max>
@@ -5243,6 +5263,15 @@
     <property>Amazon.Glue.Model.DataQualityRuleResult.Name</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityRulesetEvaluationRun.RunId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityRulesetEvaluationRun.Timeout</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityRulesetEvaluationRunDescription.RunId</property>
@@ -5388,6 +5417,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DirectSchemaChangePolicy.Table</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DistributionData.DataType</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.DoubleColumnStatisticsData.NumberOfDistinctValues</property>
