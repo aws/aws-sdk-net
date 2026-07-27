@@ -31,22 +31,20 @@ public sealed class UnitTestProjectFileWriter(GenerationContext context)
     public string Write()
     {
         var netStandardSupport = context.Metadata?.NetStandardSupport ?? true;
-
         var sections = new List<Action<CodeWriter>>
         {
             w => WriteMainPropertyGroup(w, netStandardSupport),
+            w => WriteSigningChoose(w, $"{SdkRoot}/awssdk.dll.snk"),
+            WriteCompileExcludes,
+            w => WritePlatformFolderExcludes(w, netStandardSupport),
+            WriteSharedTestProjectReferences,
+            w => WriteRuntimeProjectReferences(w, netStandardSupport),
+            WritePackageReferences,
+            w => WriteSystemConfigurationReference(w, netStandardSupport)
         };
 
-        sections.Add(w => WriteSigningChoose(w, $"{SdkRoot}/awssdk.dll.snk"));
-        sections.Add(WriteCompileExcludes);
-        sections.Add(w => WritePlatformFolderExcludes(w, netStandardSupport));
-        sections.Add(WriteSharedTestProjectReferences);
-        sections.Add(w => WriteRuntimeProjectReferences(w, netStandardSupport));
-        sections.Add(WritePackageReferences);
-        sections.Add(w => WriteSystemConfigurationReference(w, netStandardSupport));
-
         var writer = new CodeWriter();
-        writer.WriteXmlBlock("""<Project Sdk="Microsoft.NET.Sdk">""", "Project", () => WriteSections(writer, sections));
+        WriteProjectElement(writer, sections);
         return writer.ToRawString();
     }
 
@@ -64,7 +62,7 @@ public sealed class UnitTestProjectFileWriter(GenerationContext context)
             writer.WriteLine($"<TargetFrameworks>{targetFrameworksProperty}</TargetFrameworks>");
             if (netStandardSupport)
             {
-                writer.WriteLine($"""<DefineConstants Condition="{IsNotNetFramework}">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>""");
+                WriteAsyncEnumerablesDefine(writer);
             }
             writer.WriteLine("<DebugType>portable</DebugType>");
             writer.WriteLine("<GenerateDocumentationFile>true</GenerateDocumentationFile>");

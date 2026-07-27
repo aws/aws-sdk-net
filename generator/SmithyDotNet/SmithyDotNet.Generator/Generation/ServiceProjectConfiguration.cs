@@ -33,12 +33,6 @@ public sealed record ServiceProjectConfiguration
     /// <summary>Compile-time define constants.</summary>
     public required IReadOnlyList<string> DefineConstants { get; init; }
 
-    /// <summary>
-    /// Whether any target framework is trimmable (.NET 8+), so the <c>IsTrimmable</c> PropertyGroup
-    /// is emitted. False for the .NET Framework variant, whose only target never qualifies.
-    /// </summary>
-    public required bool HasTrimmableTarget { get; init; }
-
     /// <summary>Relative path from the service csproj to the Core project reference.</summary>
     public required string CoreProjectReference { get; init; }
 
@@ -79,7 +73,6 @@ public static class ServiceProjectConfigurations
     {
         TargetFrameworksProperty = "$(SdkNetFrameworkTargets)",
         DefineConstants = ["BCL", "CODE_ANALYSIS"],
-        HasTrimmableTarget = false,
         CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetFramework.csproj"),
         KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
         AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),
@@ -97,10 +90,7 @@ public static class ServiceProjectConfigurations
     public static ServiceProjectConfiguration NetStandard { get; } = new()
     {
         TargetFrameworksProperty = "$(SdkNetTargets)",
-        // AWS_ASYNC_ENUMERABLES_API is unconditional here: every NetStandard-variant target is
-        // non-.NET-Framework, so the constant always applies.
-        DefineConstants = ["NETSTANDARD", "AWS_ASYNC_ENUMERABLES_API"],
-        HasTrimmableTarget = true,
+        DefineConstants = ["NETSTANDARD"],
         CoreProjectReference = Utils.PathCombineAlt(ServicesRoot, "Core", "AWSSDK.Core.NetStandard.csproj"),
         KeyFilePath = Utils.PathCombineAlt(SdkRoot, "awssdk.dll.snk"),
         AnalyzersPath = Utils.PathCombineAlt(SdkRoot, "..", "buildtools", "CustomRoslynAnalyzers.dll"),

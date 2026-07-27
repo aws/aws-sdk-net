@@ -66,7 +66,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         }
 
         var writer = new CodeWriter();
-        writer.WriteXmlBlock("""<Project Sdk="Microsoft.NET.Sdk">""", "Project", () => WriteSections(writer, sections));
+        WriteProjectElement(writer, sections);
         return writer.ToRawString();
     }
 
@@ -85,7 +85,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             writer.WriteLine($"<TargetFrameworks>{targetFrameworks}</TargetFrameworks>");
             if (netStandardSupport)
             {
-                writer.WriteLine($"""<DefineConstants Condition="{IsNotNetFramework}">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>""");
+                WriteAsyncEnumerablesDefine(writer);
             }
             writer.WriteLine("<DebugType>portable</DebugType>");
             writer.WriteLine("<GenerateDocumentationFile>true</GenerateDocumentationFile>");
@@ -144,18 +144,13 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         var sections = new List<Action<CodeWriter>>
         {
             w => WriteMainPropertyGroup(w, config),
+            WriteIsTrimmablePropertyGroup,
+            w => WriteRuleSetProperties(w, config),
+            w => WriteSigningChoose(w, config.KeyFilePath),
+            w => WriteAnalyzerItems(w, config),
+            WriteCompileExcludes,
+            w => WriteCoreReference(w, config)
         };
-
-        if (config.HasTrimmableTarget)
-        {
-            sections.Add(WriteIsTrimmablePropertyGroup);
-        }
-
-        sections.Add(w => WriteRuleSetProperties(w, config));
-        sections.Add(w => WriteSigningChoose(w, config.KeyFilePath));
-        sections.Add(w => WriteAnalyzerItems(w, config));
-        sections.Add(WriteCompileExcludes);
-        sections.Add(w => WriteCoreReference(w, config));
 
         if (config.PackageReferences.Count > 0)
         {
@@ -168,7 +163,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         }
 
         var writer = new CodeWriter();
-        writer.WriteXmlBlock("""<Project Sdk="Microsoft.NET.Sdk">""", "Project", () => WriteSections(writer, sections));
+        WriteProjectElement(writer, sections);
         return writer.ToRawString();
     }
 
@@ -179,6 +174,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             writer.WriteLine("""<RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>""");
             writer.WriteLine($"<TargetFrameworks>{config.TargetFrameworksProperty}</TargetFrameworks>");
             writer.WriteLine($"<DefineConstants>$(DefineConstants);{string.Join(";", config.DefineConstants)}</DefineConstants>");
+            WriteAsyncEnumerablesDefine(writer);
             writer.WriteLine("<DebugType>portable</DebugType>");
             writer.WriteLine("<GenerateDocumentationFile>true</GenerateDocumentationFile>");
             writer.WriteLine($"<AssemblyName>{context.AssemblyName}</AssemblyName>");
@@ -208,14 +204,6 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
             {
                 writer.WriteLine($"""<Reference Include="{reference}"/>""");
             }
-        });
-    }
-
-    private static void WriteIsTrimmablePropertyGroup(CodeWriter writer)
-    {
-        writer.WriteXmlBlock($"""<PropertyGroup Condition="{IsNet8OrGreater}">""", "PropertyGroup", () =>
-        {
-            writer.WriteLine("<IsTrimmable>true</IsTrimmable>");
         });
     }
 

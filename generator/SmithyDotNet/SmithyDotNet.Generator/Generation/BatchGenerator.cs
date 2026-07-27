@@ -183,7 +183,18 @@ public sealed class BatchGenerator(string repoRoot)
         var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
 
         WipeStaleOutput(service.Name, sourceRoot, codeAnalysisRoot, testsRoot);
-        var written = generator.Generate(sourceRoot, codeAnalysisRoot, testsRoot, ct);
+
+        IReadOnlyList<string> written;
+        try
+        {
+            written = generator.Generate(sourceRoot, codeAnalysisRoot, testsRoot, ct);
+        }
+        catch (GeneratorException ex)
+        {
+            // Services generate in parallel, so the message has to name the one that failed.
+            throw new GeneratorException($"[{service.Name}] {ex.Message}", ex);
+        }
+
         Log.Info($"Generated {written.Count} files for {service.Name} under '{Relative(sourceRoot)}'.");
     }
 

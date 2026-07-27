@@ -1510,7 +1510,31 @@ namespace ServiceClientGenerator
             // Cleanup orphaned Service test artifacts. This is encountered when the service identifier is modified.
             RemoveOrphanedServices(testSrcFolder, codeGeneratedServiceList);
             // Cleanup orphaned Service code analysis artifacts. This is encountered when the service identifier is modified.
-            RemoveOrphanedServices(Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName), codeGeneratedServiceList);
+            var codeAnalysisFolder = Utils.PathCombineAlt(sdkRootFolder, CodeAnalysisFoldername, ServicesAnalysisSubFolderName);
+            RemoveOrphanedServices(codeAnalysisFolder, codeGeneratedServiceList);
+
+            // Cleanup Smithy artifacts left behind by a service handed back to this generator. Nothing
+            // above covers them: the analyzers are duplicate types of the ones regenerated here but sit
+            // outside the folders RemoveOrphanedShapes scans, and the slnx isn't a .cs file.
+            RemoveSmithyOutput(codeAnalysisFolder, "*.g.cs", migratedServiceNames);
+            RemoveSmithyOutput(srcFolder, "*.slnx", migratedServiceNames);
+        }
+
+        /// <summary>
+        /// Deletes files matching <paramref name="searchPattern"/> under service folders this generator
+        /// owns. The patterns are ones only the Smithy generator emits, so a match under a service it no
+        /// longer owns is stale by definition.
+        /// </summary>
+        private static void RemoveSmithyOutput(string srcFolder, string searchPattern, HashSet<string> migratedServiceNames)
+        {
+            foreach (var file in Directory.GetFiles(srcFolder, searchPattern, SearchOption.AllDirectories).OrderBy(f => f))
+            {
+                if (IsUnderMigratedService(Utils.ConvertPathAlt(Path.GetFullPath(file)), srcFolder, migratedServiceNames))
+                    continue;
+
+                Console.Error.WriteLine("**** Warning: Removing orphaned Smithy output " + Path.GetFileName(file));
+                File.Delete(file);
+            }
         }
 
         /// <summary>
