@@ -55,6 +55,7 @@ namespace Amazon.SageMaker.Model
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _trainingPlanArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OptimizationVpcConfig _vpcConfig;
 
         /// <summary>
@@ -290,6 +291,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the training plan to use for this optimization job.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you use reserved capacity from a training plan, the optimization job runs on
+        /// that reserved capacity instead of on-demand capacity. If you omit this field, the
+        /// job uses on-demand capacity. Currently, you can specify at most one training plan.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to reserve GPU capacity for your optimization jobs
+        /// using Amazon SageMaker Training Plans, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/reserve-capacity-with-training-plans.html">Reserve
+        /// capacity with training plans</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> TrainingPlanArns
+        {
+            get { return this._trainingPlanArns; }
+            set { this._trainingPlanArns = value; }
+        }
+
+        // Check to see if TrainingPlanArns property is set
+        internal bool IsSetTrainingPlanArns()
+        {
+            return this._trainingPlanArns != null && (this._trainingPlanArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

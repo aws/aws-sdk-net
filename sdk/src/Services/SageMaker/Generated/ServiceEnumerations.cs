@@ -11275,6 +11275,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlG6Xlarge = new InstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG7e12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG7e12xlarge = new InstanceType("ml.g7e.12xlarge");
+        /// <summary>
+        /// Constant MlG7e24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG7e24xlarge = new InstanceType("ml.g7e.24xlarge");
+        /// <summary>
+        /// Constant MlG7e2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG7e2xlarge = new InstanceType("ml.g7e.2xlarge");
+        /// <summary>
+        /// Constant MlG7e48xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG7e48xlarge = new InstanceType("ml.g7e.48xlarge");
+        /// <summary>
+        /// Constant MlG7e4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG7e4xlarge = new InstanceType("ml.g7e.4xlarge");
+        /// <summary>
+        /// Constant MlG7e8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlG7e8xlarge = new InstanceType("ml.g7e.8xlarge");
+        /// <summary>
         /// Constant MlInf124xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlInf124xlarge = new InstanceType("ml.inf1.24xlarge");
@@ -16133,6 +16157,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlG6Xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG7e12xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG7e12xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.12xlarge");
+        /// <summary>
+        /// Constant MlG7e24xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG7e24xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.24xlarge");
+        /// <summary>
+        /// Constant MlG7e2xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG7e2xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.2xlarge");
+        /// <summary>
+        /// Constant MlG7e48xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG7e48xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.48xlarge");
+        /// <summary>
+        /// Constant MlG7e4xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG7e4xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.4xlarge");
+        /// <summary>
+        /// Constant MlG7e8xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG7e8xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.8xlarge");
+        /// <summary>
         /// Constant MlInf224xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlInf224xlarge = new OptimizationJobDeploymentInstanceType("ml.inf2.24xlarge");
@@ -16168,6 +16216,10 @@ namespace Amazon.SageMaker
         /// Constant MlP5en48xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlP5en48xlarge = new OptimizationJobDeploymentInstanceType("ml.p5en.48xlarge");
+        /// <summary>
+        /// Constant MlP6B20048xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlP6B20048xlarge = new OptimizationJobDeploymentInstanceType("ml.p6-b200.48xlarge");
         /// <summary>
         /// Constant MlTrn12xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>

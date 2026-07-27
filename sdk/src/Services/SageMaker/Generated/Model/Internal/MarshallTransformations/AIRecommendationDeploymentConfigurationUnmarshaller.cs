@@ -86,6 +86,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MinCpuMemoryRequiredInMb", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MinCpuMemoryRequiredInMb = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("S3", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AIRecommendationDeploymentS3Channel, AIRecommendationDeploymentS3ChannelUnmarshaller>(AIRecommendationDeploymentS3ChannelUnmarshaller.Instance);

@@ -154,6 +154,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.StoppingCondition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TrainingPlanArns", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.TrainingPlanArns = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("VpcConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = OptimizationVpcConfigUnmarshaller.Instance;
