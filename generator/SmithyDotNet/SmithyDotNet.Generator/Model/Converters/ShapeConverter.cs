@@ -41,7 +41,7 @@ public class ShapeConverter : JsonConverter<Shape>
             "intEnum" => root.Deserialize<IntEnumShape>(options),
             "service" => root.Deserialize<ServiceShape>(options),
             "operation" => root.Deserialize<OperationShape>(options),
-            // "resource" => root.Deserialize<ResourceShape>(options),
+            "resource" => root.Deserialize<ResourceShape>(options),
 
             _ => WarnUnknown(type),
         };

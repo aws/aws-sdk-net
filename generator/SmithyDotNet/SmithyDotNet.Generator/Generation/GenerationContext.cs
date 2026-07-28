@@ -253,7 +253,7 @@ public class GenerationContext
             return true;
         }
 
-        if (index.Operations.Any(operation => operation.HasEndpointContextParams()))
+        if (index.Operations.Any(operation => operation.Shape.HasEndpointContextParams()))
         {
             return true;
         }
@@ -276,15 +276,10 @@ public class GenerationContext
 
     private static List<Operation> ResolveOperations(ServiceIndex index)
     {
-        var operationIds = index.Service.Operations;
-        var operations = index.Operations;
-        var resolved = new List<Operation>(operations.Count);
+        var resolved = new List<Operation>(index.Operations.Count);
 
-        for (var i = 0; i < operations.Count; i++)
+        foreach (var (operationId, operation) in index.Operations)
         {
-            var operationId = operationIds[i];
-            var operation = operations[i];
-
             var input = ResolveStructure(index, operation.Input, "input", operationId);
             var output = ResolveStructure(index, operation.Output, "output", operationId);
 
@@ -305,6 +300,13 @@ public class GenerationContext
         if (index.Shapes.TryGetValue(shapeId, out var shape) && shape is StructureShape structure)
         {
             return structure;
+        }
+
+        // smithy.api#Unit marks an operation with no input or output; treat it as an empty
+        // structure so downstream writers emit the same empty request/response classes C2J does.
+        if (shapeId == ShapeId.Unit)
+        {
+            return new StructureShape();
         }
 
         throw new GeneratorException($"Could not resolve {property} shape '{shapeId}' for operation '{operationId}'.");

@@ -8,7 +8,9 @@ namespace SmithyDotNet.Generator.Model;
 /// Combines operation discovery (similar to Java smithy-model's <c>TopDownIndex</c>) with
 /// recursive shape reachability (similar to the C2J generator's shape traversal).
 /// <para />
-/// Does not yet traverse resources. Assumes the model has been validated by <see cref="ModelValidator"/>.
+/// Resources are flattened: their lifecycle/instance/collection operations join the service
+/// operation list, and the resource shapes themselves are not emitted. Assumes the model has
+/// been validated by <see cref="ModelValidator"/>.
 /// </summary>
 /// <remarks><see href="https://smithy.io/2.0/spec/service-types.html" /></remarks>
 public class ServiceIndex
@@ -16,11 +18,16 @@ public class ServiceIndex
     /// <summary>The single service shape in the model.</summary>
     public ServiceShape Service { get; }
 
-    /// <summary>All operations reachable from the service.</summary>
-    public IReadOnlyList<OperationShape> Operations { get; }
+    /// <summary>
+    /// All operations reachable from the service, resource-attached ones included, each paired
+    /// with its shape id. Ordered alphabetically by operation name (ordinal), matching the order
+    /// C2J emits so review diffs on large services stay stable.
+    /// </summary>
+    public IReadOnlyList<(ShapeId Id, OperationShape Shape)> Operations { get; }
 
     /// <summary>
-    /// All non-prelude shapes reachable from operations (structures, lists, maps, scalars).
+    /// All non-prelude shapes reachable from the service's errors and its operations (structures,
+    /// lists, maps, scalars).
     /// Excludes service and operation shapes — those are tracked via <see cref="Service"/> and <see cref="Operations"/>.
     /// Keyed by <see cref="ShapeId"/> for direct lookup from member targets.
     /// </summary>
@@ -33,24 +40,69 @@ public class ServiceIndex
         Shapes = CollectReachableShapes(model, Service, Operations);
     }
 
-    private static List<OperationShape> CollectOperations(SmithyModel model, ServiceShape service)
+    private static List<(ShapeId Id, OperationShape Shape)> CollectOperations(SmithyModel model, ServiceShape service)
     {
-        // TODO: walk service.Resources recursively to collect lifecycle operations
-        var operations = new List<OperationShape>(service.Operations.Count);
-        foreach (var operationId in service.Operations)
+        var operations = new List<(ShapeId Id, OperationShape Shape)>(service.Operations.Count);
+        var seen = new HashSet<string>();
+
+        void AddOperation(ShapeId operationId)
         {
+            if (!seen.Add(operationId.AbsoluteName))
+            {
+                return;
+            }
+
             if (!model.Shapes.TryGetValue(operationId.AbsoluteName, out var shape) || shape is not OperationShape operation)
             {
                 throw new GeneratorException($"Service references operation '{operationId}' which is missing or not an operation shape.");
             }
 
-            operations.Add(operation);
+            operations.Add((operationId, operation));
         }
 
+        // Resources are flattened: lifecycle + instance + collection operations all become
+        // plain service operations, recursively through nested resources (Java TopDownIndex).
+        void WalkResource(ShapeId resourceId, HashSet<string> visited)
+        {
+            if (!visited.Add(resourceId.AbsoluteName))
+            {
+                return;
+            }
+
+            if (!model.Shapes.TryGetValue(resourceId.AbsoluteName, out var shape) || shape is not ResourceShape resource)
+            {
+                throw new GeneratorException($"Service references resource '{resourceId}' which is missing or not a resource shape.");
+            }
+
+            foreach (var operationId in resource.AllOperations())
+            {
+                AddOperation(operationId);
+            }
+
+            foreach (var nested in resource.Resources)
+            {
+                WalkResource(nested, visited);
+            }
+        }
+
+        foreach (var operationId in service.Operations)
+        {
+            AddOperation(operationId);
+        }
+
+        var visitedResources = new HashSet<string>();
+        foreach (var resourceId in service.Resources)
+        {
+            WalkResource(resourceId, visitedResources);
+        }
+
+        // C2J emits operations alphabetically, so review diffs on large services stay stable
+        // across generator changes.
+        operations.Sort((a, b) => StringComparer.Ordinal.Compare(a.Id.Name, b.Id.Name));
         return operations;
     }
 
-    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<OperationShape> operations)
+    private static Dictionary<ShapeId, Shape> CollectReachableShapes(SmithyModel model, ServiceShape service, IReadOnlyList<(ShapeId Id, OperationShape Shape)> operations)
     {
         var reachable = new Dictionary<ShapeId, Shape>();
         var visited = new HashSet<string>();
@@ -60,7 +112,7 @@ public class ServiceIndex
             WalkShapeId(model, errorId, reachable, visited);
         }
 
-        foreach (var operation in operations)
+        foreach (var (_, operation) in operations)
         {
             WalkShapeId(model, operation.Input, reachable, visited);
             WalkShapeId(model, operation.Output, reachable, visited);
