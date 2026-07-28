@@ -87,12 +87,20 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
+        /// The following applies only to Basic mode tasks:
+        /// </para>
+        ///  
+        /// <para>
         /// If <c>Atime</c> is set to <c>BEST_EFFORT</c>, <c>Mtime</c> must be set to <c>PRESERVE</c>.
         /// 
         /// </para>
         ///  
         /// <para>
         /// If <c>Atime</c> is set to <c>NONE</c>, <c>Mtime</c> must also be <c>NONE</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Enhanced mode tasks support configuring <c>Atime</c> independently of <c>Mtime</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -210,12 +218,20 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
+        /// The following applies only to Basic mode tasks:
+        /// </para>
+        ///  
+        /// <para>
         /// If <c>Mtime</c> is set to <c>PRESERVE</c>, <c>Atime</c> must be set to <c>BEST_EFFORT</c>.
         /// </para>
         ///  
         /// <para>
         /// If <c>Mtime</c> is set to <c>NONE</c>, <c>Atime</c> must also be set to <c>NONE</c>.
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Enhanced mode tasks don't support <c>Mtime</c> set to <c>NONE</c>.
         /// </para>
         ///  </note>
         /// </summary>

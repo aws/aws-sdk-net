@@ -34,6 +34,12 @@ namespace Amazon.DataSync
     ///
     /// DataSync 
     /// <para>
+    /// In addition to the Amazon Web Services Management Console and Amazon Web Services
+    /// Command Line Interface, you can use the DataSync API to configure and manage DataSync
+    /// with the <a href="http://aws.amazon.com/developer/tools/">Amazon Web Services SDKs</a>.
+    /// </para>
+    ///  
+    /// <para>
     /// DataSync is an online data movement service that simplifies data migration and helps
     /// you quickly, easily, and securely transfer your file or object data to, from, and
     /// between Amazon Web Services storage services.
