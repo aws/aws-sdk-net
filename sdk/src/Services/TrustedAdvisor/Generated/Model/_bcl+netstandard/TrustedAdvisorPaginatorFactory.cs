@@ -83,5 +83,13 @@ namespace Amazon.TrustedAdvisor.Model
         {
             return new ListRecommendationsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListRecommendationsForResource operation
+        ///</summary>
+        public IListRecommendationsForResourcePaginator ListRecommendationsForResource(ListRecommendationsForResourceRequest request) 
+        {
+            return new ListRecommendationsForResourcePaginator(this.client, request);
+        }
     }
 }

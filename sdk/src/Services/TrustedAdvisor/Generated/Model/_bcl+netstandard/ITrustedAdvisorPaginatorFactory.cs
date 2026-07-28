@@ -86,5 +86,15 @@ namespace Amazon.TrustedAdvisor.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListRecommendationsPaginator ListRecommendations(ListRecommendationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecommendationsForResource operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecommendationsForResourcePaginator ListRecommendationsForResource(ListRecommendationsForResourceRequest request);
     }
 }
