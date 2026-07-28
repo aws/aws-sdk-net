@@ -680,6 +680,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant CLIENT_SECRET_POST for ClientAuthenticationMethodType
         /// </summary>
         public static readonly ClientAuthenticationMethodType CLIENT_SECRET_POST = new ClientAuthenticationMethodType("CLIENT_SECRET_POST");
+        /// <summary>
+        /// Constant PRIVATE_KEY_JWT for ClientAuthenticationMethodType
+        /// </summary>
+        public static readonly ClientAuthenticationMethodType PRIVATE_KEY_JWT = new ClientAuthenticationMethodType("PRIVATE_KEY_JWT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4832,6 +4836,60 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SigningAlgorithm.
+    /// </summary>
+    public class SigningAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ES256 for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm ES256 = new SigningAlgorithm("ES256");
+        /// <summary>
+        /// Constant PS256 for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm PS256 = new SigningAlgorithm("PS256");
+        /// <summary>
+        /// Constant RS256 for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm RS256 = new SigningAlgorithm("RS256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SigningAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SigningAlgorithm FindValue(string value)
+        {
+            return FindValue<SigningAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SigningAlgorithm(string value)
         {
             return FindValue(value);
         }

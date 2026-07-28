@@ -92,6 +92,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.PrivateEndpointOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("privateKeyJwtConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = PrivateKeyJwtConfigUnmarshaller.Instance;
+                    unmarshalledObject.PrivateKeyJwtConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

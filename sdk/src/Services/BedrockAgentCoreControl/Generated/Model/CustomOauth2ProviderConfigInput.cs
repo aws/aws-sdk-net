@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private OnBehalfOfTokenExchangeConfigType _onBehalfOfTokenExchangeConfig;
         private PrivateEndpoint _privateEndpoint;
         private List<PrivateEndpointOverride> _privateEndpointOverrides = AWSConfigs.InitializeCollections ? new List<PrivateEndpointOverride>() : null;
+        private PrivateKeyJwtConfig _privateKeyJwtConfig;
 
         /// <summary>
         /// Gets and sets the property ClientAuthenticationMethod. 
@@ -219,6 +220,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPrivateEndpointOverrides()
         {
             return this._privateEndpointOverrides != null && (this._privateEndpointOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateKeyJwtConfig.
+        /// </summary>
+        public PrivateKeyJwtConfig PrivateKeyJwtConfig
+        {
+            get { return this._privateKeyJwtConfig; }
+            set { this._privateKeyJwtConfig = value; }
+        }
+
+        // Check to see if PrivateKeyJwtConfig property is set
+        internal bool IsSetPrivateKeyJwtConfig()
+        {
+            return this._privateKeyJwtConfig != null;
         }
 
     }
