@@ -24,6 +24,7 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
@@ -733,11 +734,6 @@ namespace Amazon.S3.Transfer.Internal
             // Get target part size for RANGE strategy (already set in config from request or default)
             var targetPartSize = _config.TargetPartSizeBytes;
             
-            // SEP Ranged GET Step 1: "create a new GetObject request copying all fields in the original request. 
-            // Set range value to bytes=0-{targetPartSizeBytes-1} to request the first part."
-            var firstRangeRequest = CreateGetObjectRequest();
-            firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
-            
             // Wait for both capacity types before making HTTP request (consistent with background parts)
             _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Waiting for buffer capacity");
             await _dataHandler.WaitForCapacityAsync(cancellationToken).ConfigureAwait(false);
@@ -746,16 +742,18 @@ namespace Amazon.S3.Transfer.Internal
             await _httpConcurrencySlots.WaitAsync(cancellationToken).ConfigureAwait(false);
 
             GetObjectResponse firstRangeResponse = null;
-            
+
             // NOTE: Semaphore is NOT released here - it will be released in StartDownloadsAsync
             // after Part 1 is processed. This ensures the semaphore controls both network download
             // AND disk write for Part 1, consistent with Parts 2+ (see CreateDownloadTaskAsync)
-            
+
             try
             {
-                // SEP Ranged GET Step 2: "send the request and wait for the response in a non-blocking fashion"
-                firstRangeResponse = await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
-                
+                // SEP Ranged GET Steps 1-2: build and send the first ranged GET (bytes=0-{targetPartSize-1}) and
+                // wait for the response. This helper also transparently handles the empty-object edge case where
+                // S3 rejects the ranged GET with 416 (Range Not Satisfiable); see the helper for details.
+                firstRangeResponse = await SendFirstRangeRequestWithEmptyObjectFallbackAsync(targetPartSize, cancellationToken).ConfigureAwait(false);
+
                 // Defensive null check
                 if (firstRangeResponse == null)
                     throw new InvalidOperationException("Failed to retrieve object from S3");
@@ -830,6 +828,61 @@ namespace Amazon.S3.Transfer.Internal
                 _httpConcurrencySlots.Release();
                 firstRangeResponse?.Dispose();
                 throw;
+            }
+        }
+
+        /// <summary>
+        /// Sends the first ranged GET (bytes=0-{targetPartSize-1}) for RANGE-strategy discovery, transparently
+        /// handling the empty-object edge case.
+        /// <para>
+        /// S3 rejects a ranged GET against a zero-byte object with 416 (Range Not Satisfiable) because there is
+        /// no byte 0 to satisfy. A <c>partNumber=1</c> GET, by contrast, succeeds on an empty object. So on a 416
+        /// we probe with a <c>partNumber=1</c> GET: if it confirms the object is empty (ContentLength == 0) we
+        /// return that response (which has no ContentRange, so the caller treats it as a single empty part). If
+        /// the probe instead shows a non-empty object, the object was replaced server-side between our ranged GET
+        /// and the probe; we surface that as an error so the caller can retry the whole download, consistent with
+        /// how the IfMatch (ETag) guard fails subsequent parts when an object changes mid-download.
+        /// </para>
+        /// </summary>
+        private async Task<GetObjectResponse> SendFirstRangeRequestWithEmptyObjectFallbackAsync(long targetPartSize, CancellationToken cancellationToken)
+        {
+            // SEP Ranged GET Step 1: "create a new GetObject request copying all fields in the original request.
+            // Set range value to bytes=0-{targetPartSizeBytes-1} to request the first part."
+            var firstRangeRequest = CreateGetObjectRequest();
+            firstRangeRequest.ByteRange = new ByteRange(0, targetPartSize - 1);
+
+            try
+            {
+                // SEP Ranged GET Step 2: "send the request and wait for the response in a non-blocking fashion"
+                return await _s3Client.GetObjectAsync(firstRangeRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (AmazonS3Exception ex) when (ex.StatusCode == HttpStatusCode.RequestedRangeNotSatisfiable)
+            {
+                _logger.DebugFormat("MultipartDownloadManager: [Part 1 Discovery] Received 416 Range Not Satisfiable on the ranged GET; " +
+                    "probing with a partNumber=1 GET to confirm the object is empty.");
+
+                var partProbeRequest = CreateGetObjectRequest();
+                partProbeRequest.PartNumber = 1;
+
+                var partProbeResponse = await _s3Client.GetObjectAsync(partProbeRequest, cancellationToken).ConfigureAwait(false);
+
+                if (partProbeResponse != null && partProbeResponse.ContentLength == 0)
+                {
+                    // Confirmed empty. This response has no ContentRange, so the caller's ContentRange == null
+                    // branch treats it as a single empty part and completes with a 0-byte file.
+                    return partProbeResponse;
+                }
+
+                // The object is no longer empty: it must have been replaced server-side between our ranged GET
+                // and this probe. Surface it as an error rather than silently re-discovering; the caller can
+                // retry the whole download.
+                partProbeResponse?.Dispose();
+
+                throw new InvalidOperationException(
+                    "Multipart RANGE download discovery failed because the object changed during discovery: the ranged GET returned " +
+                    "416 Range Not Satisfiable (empty object) but a subsequent partNumber=1 probe returned a non-empty object. " +
+                    "Retry the download.",
+                    ex);
             }
         }
 
