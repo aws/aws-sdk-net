@@ -269,7 +269,13 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use this API with chat, email, and task contacts. It does not support voice contacts.
+        /// Use this API with chat, email, task, and voice contacts. For voice callbacks, this
+        /// API does not support customer-first mode.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API can be used to offer a contact to an agent even if the agent is currently
+        /// at maximum concurrency for the channel.
         /// </para>
         ///  </li> <li> 
         /// <para>

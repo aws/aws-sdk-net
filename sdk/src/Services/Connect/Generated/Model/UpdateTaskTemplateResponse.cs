@@ -70,7 +70,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// Constraints that are applicable to the fields listed.
+        /// Constraints that are applicable to the fields listed. Although this parameter is marked
+        /// as optional in the API model, the service requires it when calling <c>CreateTaskTemplate</c>
+        /// or <c>UpdateTaskTemplate</c>. The <c>RequiredFields</c> array must contain at least
+        /// one element, and the field of type <c>NAME</c> must be included in <c>RequiredFields</c>.
         /// </para>
         /// </summary>
         public TaskTemplateConstraints Constraints
