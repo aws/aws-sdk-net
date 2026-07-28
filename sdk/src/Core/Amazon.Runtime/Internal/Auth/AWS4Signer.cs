@@ -845,7 +845,42 @@ namespace Amazon.Runtime.Internal.Auth
         /// will look for the hash as a header on the request.
         /// </param>
         /// <param name="doubleEncode">Encode "/" when canonicalize resource path</param>
-        /// <param name="pathAlreadyEncoded">If true, the resource path is treated as already encoded (wire form) and joined verbatim with no encode pass. Defaults to false.</param>
+        /// <returns>Canonicalised request as a string</returns>
+        protected static string CanonicalizeRequest(Uri endpoint,
+                                                    string resourcePath,
+                                                    string httpMethod,
+                                                    IDictionary<string, string> sortedHeaders,
+                                                    string canonicalQueryString,
+                                                    string precomputedBodyHash,
+                                                    IDictionary<string, string> pathResources,
+                                                    bool doubleEncode)
+        {
+            return CanonicalizeRequestHelper(endpoint,
+                resourcePath,
+                httpMethod,
+                sortedHeaders,
+                canonicalQueryString,
+                precomputedBodyHash,
+                pathResources,
+                doubleEncode,
+                out _);
+        }
+
+        /// <summary>
+        /// Computes and returns the canonical request
+        /// </summary>
+        /// <param name="endpoint">The endpoint URL</param>
+        /// <param name="resourcePath">the path of the resource being operated on</param>
+        /// <param name="httpMethod">The http method used for the request</param>
+        /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
+        /// <param name="canonicalQueryString">The query parameters for the request</param>
+        /// <param name="precomputedBodyHash">
+        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
+        /// The hash of the binary request body if present. If not supplied, the routine
+        /// will look for the hash as a header on the request.
+        /// </param>
+        /// <param name="doubleEncode">Encode "/" when canonicalize resource path</param>
+        /// <param name="pathAlreadyEncoded">If true, the resource path is treated as already encoded (wire form) and joined verbatim with no encode pass.</param>
         /// <returns>Canonicalised request as a string</returns>
         protected static string CanonicalizeRequest(Uri endpoint,
                                                     string resourcePath,
@@ -855,7 +890,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                     string precomputedBodyHash,
                                                     IDictionary<string, string> pathResources,
                                                     bool doubleEncode,
-                                                    bool pathAlreadyEncoded = false)
+                                                    bool pathAlreadyEncoded)
         {
             return CanonicalizeRequestHelper(endpoint,
                 resourcePath,
