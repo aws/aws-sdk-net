@@ -518,6 +518,7 @@ namespace AWSSDK.UnitTests
                 }
 
                 // partNumber=1 probe sees the replaced, non-empty object.
+                Assert.AreEqual(1, req.PartNumber, "Fallback probe should use partNumber=1.");
                 partProbeCount++;
                 return Task.FromResult(nonEmptyProbeResponse);
             });
