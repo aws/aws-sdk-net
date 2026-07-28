@@ -1,3 +1,17 @@
+### 4.0.298.0 (2026-07-28 18:18 UTC)
+* BedrockAgentCoreControl (4.0.105.0)
+	* AgentCore Identity now supports Private Key JWT client authentication for OAuth 2.0 credential providers. Agents can authenticate to identity provider token endpoints with a JWT client assertion signed by a customer-managed AWS KMS asymmetric key, eliminating the need for client secrets.
+* Connect (4.0.105.4)
+	* Documentation updates for SearchRules, AssociateRoutingProfileQueues, CreateRoutingProfile, AssociateContactWithUser CreateTaskTemplate, and UpdateTaskTemplate
+* DataSync (4.0.100.8)
+	* Adds Enhanced mode support for EFS and FSx Lustre locations without an agent, and for HDFS (TDE), Azure Blob, and object storage locations with an agent. HDFS Enhanced mode supports multiple NameNodes for High Availability. Enhanced mode agents can now be deployed on Microsoft Hyper-V.
+* IAMRolesAnywhere (4.0.101.0)
+	* Increases certificate string length for trust anchor source data to support new adjustable trust anchor limits.
+* TrustedAdvisor (4.0.101.0)
+	* Adds ListRecommendationsForResource API and four CheckSummary fields (resourceArnQueryable, awsResourceTypes, checkGranularity, recommendationId) to retrieve recommendations for a given resource ARN.
+* Extensions.Numerics (4.0.0.2)
+	* Publish/pack the AWSSDK.Extensions.Numerics NuGet package (BigDecimal support)
+
 ### 4.0.297.0 (2026-07-27 18:16 UTC)
 * Account (4.0.101.0)
 	* This release adds support for the GetPrimaryEmailUpdateStatus API operation, which allows customers to retrieve the current status of a primary email address update request for an AWS account. The operation returns status information including whether the update is pending, completed, or failed.
