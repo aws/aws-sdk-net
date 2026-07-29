@@ -141,13 +141,14 @@
     },
     {
       "name": "query-plus-in-value",
+      "_comment": "A literal '+' in a query value is form-decoded to a space (application/x-www-form-urlencoded), so the wire '?q=a+b' is signed with the canonical query 'q=a%20b'. This matches AWS services and the other AWS SDKs (JS/Java/botocore); a caller wanting a literal plus sends '%2B'. Verified against live STS in Sign_QueryValueWithLiteralPlus_SignatureAcceptedBySts.",
       "method": "GET",
       "url": "https://example.amazonaws.com/?q=a+b",
       "headers": {},
       "body": null,
       "signPayload": true,
-      "expectedSignature": "3b9db0dabfbc7ec10d0265f6438ffae6ffbff11c19944e1293a8bd7a2905a76d",
-      "expectedPresignSignature": "38c43560db39571d584f537123f3ed29e947c8c84bf2cfdb71b09c0b874771b6"
+      "expectedSignature": "dd37e8ffaadb6adceabbe7dbde287d858696e9d7d3d2cf909983c27dd05e010b",
+      "expectedPresignSignature": "27843c1d067acdbe14c8b9c9cfedc20847ca0b5abca472ab168c01ad70685188"
     },
     {
       "name": "query-unicode-value",

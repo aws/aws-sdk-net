@@ -146,6 +146,49 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
+        private static Uri GetCallerIdentityUriWithPlusInQuery() =>
+            new Uri($"https://sts.{Region.SystemName}.amazonaws.com/" +
+                    "?Action=GetCallerIdentity&Version=2011-06-15&q=a+b");
+
+        /// <summary>
+        /// Confirms STS accepts a signature over a query value containing a literal '+'. The facade form-decodes
+        /// the '+' to a space (application/x-www-form-urlencoded), so the wire "?q=a+b" is signed with the
+        /// canonical query "q=a%20b" — which is how STS (and the JS/Java/botocore signers) interpret it. Earlier
+        /// the facade signed "q=a%2Bb" (RFC 3986, '+' kept literal), which STS rejected with
+        /// SignatureDoesNotMatch; this test pins the corrected behavior against the live service.
+        /// <para>
+        /// SigV4 verification happens before request-parameter validation, so an unrecognized-parameter error
+        /// still proves the signature was accepted. Only a signature rejection fails this test.
+        /// </para>
+        /// </summary>
+        [Fact]
+        [Trait("Category", "SigV4Signer")]
+        public async Task Sign_QueryValueWithLiteralPlus_SignatureAcceptedBySts()
+        {
+            var uri = GetCallerIdentityUriWithPlusInQuery();
+
+            var signingRequest = new AWSSigningRequest
+            {
+                HttpMethod = HttpMethod.Get,
+                RequestUri = uri,
+            };
+
+            var result = await AWSSigV4Signer.SignAsync(signingRequest, SigningParameters());
+
+            var message = new HttpRequestMessage(HttpMethod.Get, uri);
+            foreach (var header in result.Headers)
+                message.Headers.TryAddWithoutValidation(header.Key, header.Value);
+
+            using (var response = await HttpClient.SendAsync(message))
+            {
+                var body = await response.Content.ReadAsStringAsync();
+                Assert.False(body.Contains("SignatureDoesNotMatch"),
+                    "STS rejected the signature for a query value containing a literal '+'. The facade must " +
+                    "form-decode '+' to a space (sign \"q=a%20b\") to match how STS canonicalizes the query. " +
+                    $"Response: {(int)response.StatusCode} {body}");
+            }
+        }
+
         // -----------------------------------------------------------------------
         // S3 — object keys with special characters
         //

@@ -688,6 +688,23 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
+        public void Sign_QueryLiteralPlus_IsFormDecodedToSpace()
+        {
+            // A literal '+' in a query value is form-decoded to a space (application/x-www-form-urlencoded),
+            // matching AWS services and the other AWS SDKs (JS/Java/botocore). So "?q=a+b" signs the same as an
+            // explicit space "?q=a%20b", and DIFFERENTLY from an encoded plus "?q=a%2Bb" (which stays a literal
+            // '+'). Verified end to end against live STS in the integration tests.
+            var plus = AWSSigV4Signer.Sign(GetRequest("https://example.amazonaws.com/?q=a+b"), BaseParameters());
+            var space = AWSSigV4Signer.Sign(GetRequest("https://example.amazonaws.com/?q=a%20b"), BaseParameters());
+            var encodedPlus = AWSSigV4Signer.Sign(GetRequest("https://example.amazonaws.com/?q=a%2Bb"), BaseParameters());
+
+            Assert.AreEqual(space.Headers[HeaderKeys.AuthorizationHeader], plus.Headers[HeaderKeys.AuthorizationHeader],
+                "A literal '+' in a query value must be form-decoded to a space (sign identically to %20).");
+            Assert.AreNotEqual(encodedPlus.Headers[HeaderKeys.AuthorizationHeader], plus.Headers[HeaderKeys.AuthorizationHeader],
+                "A literal '+' (space) must not sign the same as an encoded '%2B' (literal plus).");
+        }
+
+        [TestMethod]
         public void Presign_NoOriginalQuery_ProducesWellFormedQueryString()
         {
             // A request URI with no query string must still presign to a valid URL: the SigV4 auth params begin

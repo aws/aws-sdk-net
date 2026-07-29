@@ -16,6 +16,7 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime.Internal;
@@ -342,6 +343,15 @@ namespace Amazon.Runtime.Signing
         /// Exposed as <c>internal</c> (via InternalsVisibleTo) so the parity tests parse query strings the
         /// same way rather than duplicating this logic.
         /// </para>
+        /// <para>
+        /// Decoding uses <see cref="WebUtility.UrlDecode"/> (application/x-www-form-urlencoded semantics), which
+        /// treats a literal '+' in the query as a space. This matches how AWS services and the other AWS SDKs
+        /// (JS, Java, botocore) interpret the query when they recompute the canonical form: a wire query of
+        /// "?q=a+b" is signed as "q=a%20b". A caller who wants a literal plus must percent-encode it as "%2B",
+        /// which decodes back to '+' and is signed as "q=a%2Bb". Using Uri.UnescapeDataString here instead would
+        /// leave the '+' literal and sign "q=a%2Bb" for a wire "+", which the service rejects with
+        /// SignatureDoesNotMatch (verified against live STS).
+        /// </para>
         /// </summary>
         internal static IEnumerable<KeyValuePair<string, string>> ParseQueryParameters(string query)
         {
@@ -355,11 +365,11 @@ namespace Amazon.Runtime.Signing
 
                 var eq = token.IndexOf('=');
                 if (eq < 0)
-                    yield return new KeyValuePair<string, string>(Uri.UnescapeDataString(token), null);
+                    yield return new KeyValuePair<string, string>(WebUtility.UrlDecode(token), null);
                 else
                     yield return new KeyValuePair<string, string>(
-                        Uri.UnescapeDataString(token.Substring(0, eq)),
-                        Uri.UnescapeDataString(token.Substring(eq + 1)));
+                        WebUtility.UrlDecode(token.Substring(0, eq)),
+                        WebUtility.UrlDecode(token.Substring(eq + 1)));
             }
         }
 
