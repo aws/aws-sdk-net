@@ -101,10 +101,27 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetSchedulerConfiguration())
+            {
+                context.Writer.WritePropertyName("schedulerConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchedulerConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SchedulerConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSecurityConfigurationId())
             {
                 context.Writer.WritePropertyName("securityConfigurationId");
                 context.Writer.WriteStringValue(publicRequest.SecurityConfigurationId);
+            }
+
+            if(publicRequest.IsSetSessionEnabled())
+            {
+                context.Writer.WritePropertyName("sessionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.SessionEnabled.Value);
             }
 
             if(publicRequest.IsSetTags())

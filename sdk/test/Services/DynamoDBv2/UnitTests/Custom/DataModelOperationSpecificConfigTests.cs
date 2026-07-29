@@ -147,7 +147,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(5, typeof(TransactGetConfig).GetProperties().Length);
+            Assert.AreEqual(6, typeof(TransactGetConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -168,7 +168,7 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "OperationPrefix-" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", "Name");
+            transactGet.AddKey("123", rangeKey: "Name");
             await transactGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
@@ -193,7 +193,7 @@ namespace AWSSDK_DotNet.UnitTests
             var transactGetConfig = new TransactGetConfig() { TableNamePrefix = "" };
 
             var transactGet = context.CreateTransactGet<DataModel>(transactGetConfig);
-            transactGet.AddKey("123", "Name");
+            transactGet.AddKey("123",rangeKey: "Name");
             await transactGet.ExecuteAsync();
 
             // We expect the setup with the correct prefix to have been called, otherwise an exception would have been thrown
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(6, typeof(TransactWriteConfig).GetProperties().Length);
+            Assert.AreEqual(7, typeof(TransactWriteConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -551,7 +551,7 @@ namespace AWSSDK_DotNet.UnitTests
         {
             // If this fails because you've added a property, be sure to add it to
             // `ToDynamoDBOperationConfig` before updating this unit test
-            Assert.AreEqual(6, typeof(SaveConfig).GetProperties().Length);
+            Assert.AreEqual(7, typeof(SaveConfig).GetProperties().Length);
         }
 
         [TestMethod]
@@ -715,6 +715,32 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(4, typeof(GetTargetTableConfig).GetProperties().Length);
         }
 
+        [TestMethod]
+        public async Task SaveAsync_NullComplexProperty_DoesNotSendEmptyExpressionAttributeValues()
+        {
+            UpdateItemRequest capturedRequest = null;
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            mockClient.Setup(client => client.UpdateItemAsync(It.IsAny<UpdateItemRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<UpdateItemRequest, CancellationToken>((req, _) => capturedRequest = req)
+                .ReturnsAsync(new UpdateItemResponse());
+
+            var context = new DynamoDBContext(mockClient.Object, new DynamoDBContextConfig
+            {
+                DisableFetchingTableMetadata = true
+            });
+
+            await context.SaveAsync(new DataModelWithComplexProperty
+            {
+                Id = "123",
+                Inner = null
+            });
+            Assert.IsNotNull(capturedRequest);
+            Assert.IsTrue(
+                capturedRequest.ExpressionAttributeValues == null || capturedRequest.ExpressionAttributeValues.Count > 0,
+                "ExpressionAttributeValues must be either null or non-empty; DynamoDB rejects empty maps."
+            );
+        }
+
         [DynamoDBTable("TableName")]
         private class DataModel
         {
@@ -722,6 +748,22 @@ namespace AWSSDK_DotNet.UnitTests
             public string Id { get; set; }
 
             [DynamoDBRangeKey]
+            public string Name { get; set; }
+        }
+
+        [DynamoDBTable("TableName")]
+        private class DataModelWithComplexProperty
+        {
+            [DynamoDBHashKey]
+            public string Id { get; set; }
+
+            [DynamoDBProperty("inner")]
+            public InnerModel Inner { get; set; }
+        }
+
+        private class InnerModel
+        {
+            [DynamoDBProperty("name")]
             public string Name { get; set; }
         }
     }

@@ -1263,6 +1263,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly LastUpdateStatusReasonCode CapacityProviderScalingLimitExceeded = new LastUpdateStatusReasonCode("CapacityProviderScalingLimitExceeded");
         /// <summary>
+        /// Constant DependencyError for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode DependencyError = new LastUpdateStatusReasonCode("DependencyError");
+        /// <summary>
         /// Constant DisabledKMSKey for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode DisabledKMSKey = new LastUpdateStatusReasonCode("DisabledKMSKey");
@@ -1386,6 +1390,10 @@ namespace Amazon.Lambda
         /// Constant KMSKeyNotFound for LastUpdateStatusReasonCode
         /// </summary>
         public static readonly LastUpdateStatusReasonCode KMSKeyNotFound = new LastUpdateStatusReasonCode("KMSKeyNotFound");
+        /// <summary>
+        /// Constant ServiceQuotaExceededException for LastUpdateStatusReasonCode
+        /// </summary>
+        public static readonly LastUpdateStatusReasonCode ServiceQuotaExceededException = new LastUpdateStatusReasonCode("ServiceQuotaExceededException");
         /// <summary>
         /// Constant SubnetOutOfIPAddresses for LastUpdateStatusReasonCode
         /// </summary>
@@ -2029,9 +2037,17 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Java11 = new Runtime("java11");
         /// <summary>
+        /// Constant Java11Al2023 for Runtime
+        /// </summary>
+        public static readonly Runtime Java11Al2023 = new Runtime("java11.al2023");
+        /// <summary>
         /// Constant Java17 for Runtime
         /// </summary>
         public static readonly Runtime Java17 = new Runtime("java17");
+        /// <summary>
+        /// Constant Java17Al2023 for Runtime
+        /// </summary>
+        public static readonly Runtime Java17Al2023 = new Runtime("java17.al2023");
         /// <summary>
         /// Constant Java21 for Runtime
         /// </summary>
@@ -2048,6 +2064,10 @@ namespace Amazon.Lambda
         /// Constant Java8Al2 for Runtime
         /// </summary>
         public static readonly Runtime Java8Al2 = new Runtime("java8.al2");
+        /// <summary>
+        /// Constant Java8Al2023 for Runtime
+        /// </summary>
+        public static readonly Runtime Java8Al2023 = new Runtime("java8.al2023");
         /// <summary>
         /// Constant Nodejs for Runtime
         /// </summary>
@@ -2206,6 +2226,56 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Runtime(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3ObjectStorageMode.
+    /// </summary>
+    public class S3ObjectStorageMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COPY for S3ObjectStorageMode
+        /// </summary>
+        public static readonly S3ObjectStorageMode COPY = new S3ObjectStorageMode("COPY");
+        /// <summary>
+        /// Constant REFERENCE for S3ObjectStorageMode
+        /// </summary>
+        public static readonly S3ObjectStorageMode REFERENCE = new S3ObjectStorageMode("REFERENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3ObjectStorageMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3ObjectStorageMode FindValue(string value)
+        {
+            return FindValue<S3ObjectStorageMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3ObjectStorageMode(string value)
         {
             return FindValue(value);
         }
@@ -2525,6 +2595,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly StateReasonCode Creating = new StateReasonCode("Creating");
         /// <summary>
+        /// Constant DependencyError for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode DependencyError = new StateReasonCode("DependencyError");
+        /// <summary>
         /// Constant DisabledKMSKey for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode DisabledKMSKey = new StateReasonCode("DisabledKMSKey");
@@ -2660,6 +2734,10 @@ namespace Amazon.Lambda
         /// Constant Restoring for StateReasonCode
         /// </summary>
         public static readonly StateReasonCode Restoring = new StateReasonCode("Restoring");
+        /// <summary>
+        /// Constant ServiceQuotaExceededException for StateReasonCode
+        /// </summary>
+        public static readonly StateReasonCode ServiceQuotaExceededException = new StateReasonCode("ServiceQuotaExceededException");
         /// <summary>
         /// Constant SubnetOutOfIPAddresses for StateReasonCode
         /// </summary>

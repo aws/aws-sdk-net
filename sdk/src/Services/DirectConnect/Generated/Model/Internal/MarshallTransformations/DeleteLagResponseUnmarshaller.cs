@@ -47,7 +47,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteLagResponse response = new DeleteLagResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
@@ -166,6 +166,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     response.ProviderName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("rateLimiterStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = RateLimiterStatusUnmarshaller.Instance;
+                    response.RateLimiterStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("region", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -192,7 +198,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
@@ -202,7 +208,7 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DirectConnectClientException"))
                 {
                     return DirectConnectClientExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

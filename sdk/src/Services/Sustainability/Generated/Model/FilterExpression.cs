@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Sustainability.Model
 {
     /// <summary>
-    /// Filters emission values by specific dimension values.
+    /// Filters environmental impact values by specific dimension values.
     /// </summary>
     public partial class FilterExpression
     {
@@ -39,7 +39,7 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// Filters emission values by specific dimension values.
+        /// Filters environmental impact values by specific dimension values.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -69,7 +69,7 @@ namespace Amazon.AppConfig.Model
         /// The application ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -107,7 +107,7 @@ namespace Amazon.AppConfig.Model
         /// The environment ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EnvironmentId
         {
             get { return this._environmentId; }

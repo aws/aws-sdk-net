@@ -45,6 +45,8 @@ namespace Amazon.Connect.Model
         private EvaluationFormLanguageConfiguration _languageConfiguration;
         private string _lastModifiedBy;
         private DateTime? _lastModifiedTime;
+        private DateTime? _lastValidationTime;
+        private EvaluationFormValidationStatus _latestValidationStatus;
         private bool? _locked;
         private EvaluationReviewConfiguration _reviewConfiguration;
         private EvaluationFormScoringStrategy _scoringStrategy;
@@ -263,6 +265,43 @@ namespace Amazon.Connect.Model
         internal bool IsSetLastModifiedTime()
         {
             return this._lastModifiedTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastValidationTime. 
+        /// <para>
+        /// The timestamp when the most recent validation was started for this evaluation form.
+        /// </para>
+        /// </summary>
+        public DateTime? LastValidationTime
+        {
+            get { return this._lastValidationTime; }
+            set { this._lastValidationTime = value; }
+        }
+
+        // Check to see if LastValidationTime property is set
+        internal bool IsSetLastValidationTime()
+        {
+            return this._lastValidationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property LatestValidationStatus. 
+        /// <para>
+        /// The status of the most recent validation run for this evaluation form. Valid values:
+        /// <c>IN_PROGRESS</c>, <c>COMPLETED</c>, <c>FAILED</c>.
+        /// </para>
+        /// </summary>
+        public EvaluationFormValidationStatus LatestValidationStatus
+        {
+            get { return this._latestValidationStatus; }
+            set { this._latestValidationStatus = value; }
+        }
+
+        // Check to see if LatestValidationStatus property is set
+        internal bool IsSetLatestValidationStatus()
+        {
+            return this._latestValidationStatus != null;
         }
 
         /// <summary>

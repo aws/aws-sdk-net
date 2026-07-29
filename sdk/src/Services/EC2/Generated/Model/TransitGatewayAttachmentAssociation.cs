@@ -35,6 +35,7 @@ namespace Amazon.EC2.Model
     public partial class TransitGatewayAttachmentAssociation
     {
         private TransitGatewayAssociationState _state;
+        private string _transitGatewayPolicyTableId;
         private string _transitGatewayRouteTableId;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransitGatewayPolicyTableId. 
+        /// <para>
+        /// The ID of the transit gateway policy table associated with the attachment.
+        /// </para>
+        /// </summary>
+        public string TransitGatewayPolicyTableId
+        {
+            get { return this._transitGatewayPolicyTableId; }
+            set { this._transitGatewayPolicyTableId = value; }
+        }
+
+        // Check to see if TransitGatewayPolicyTableId property is set
+        internal bool IsSetTransitGatewayPolicyTableId()
+        {
+            return this._transitGatewayPolicyTableId != null;
         }
 
         /// <summary>

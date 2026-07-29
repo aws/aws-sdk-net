@@ -51,7 +51,10 @@ namespace Amazon.ECS.Model
         /// <para>
         ///  <c>ROLLBACK</c> - Rolls back the deployment to the previous service revision.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <c>ROLLBACK</c> 
+        /// </para>
         /// </summary>
         public DeploymentLifecycleHookAction Action
         {
@@ -70,6 +73,10 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The number of minutes Amazon ECS waits for the lifecycle hook to complete before taking
         /// the timeout action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: 1440 (24 hours)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20160)]

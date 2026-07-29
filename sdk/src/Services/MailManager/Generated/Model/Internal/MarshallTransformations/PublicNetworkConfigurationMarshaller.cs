@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PublicNetworkConfiguration Marshaller
     /// </summary>
-    public class PublicNetworkConfigurationMarshaller : IRequestMarshaller<PublicNetworkConfiguration, JsonMarshallerContext> 
+    public class PublicNetworkConfigurationMarshaller : IRequestMarshaller<PublicNetworkConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PublicNetworkConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(PublicNetworkConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetIpType())
-            {
-                context.Writer.WritePropertyName("IpType");
-                context.Writer.WriteStringValue(requestObject.IpType);
-            }
 
+            if (requestObject.IsSetIpType())
+            {
+                context.Writer.WriteTextString("IpType");
+                context.Writer.WriteTextString(requestObject.IpType);
+            }
         }
 
         /// <summary>

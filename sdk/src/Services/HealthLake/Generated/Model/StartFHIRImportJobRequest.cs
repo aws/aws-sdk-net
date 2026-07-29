@@ -40,9 +40,12 @@ namespace Amazon.HealthLake.Model
         private string _clientToken;
         private string _dataAccessRoleArn;
         private string _datastoreId;
+        private bool? _driftDetectionEnabled;
         private InputDataConfig _inputDataConfig;
+        private string _inputFormat;
         private string _jobName;
         private OutputDataConfig _jobOutputDataConfig;
+        private string _profileId;
         private ValidationLevel _validationLevel;
 
         /// <summary>
@@ -103,6 +106,21 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DriftDetectionEnabled.
+        /// </summary>
+        public bool? DriftDetectionEnabled
+        {
+            get { return this._driftDetectionEnabled; }
+            set { this._driftDetectionEnabled = value; }
+        }
+
+        // Check to see if DriftDetectionEnabled property is set
+        internal bool IsSetDriftDetectionEnabled()
+        {
+            return this._driftDetectionEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// The input properties for the import job request.
@@ -119,6 +137,22 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetInputDataConfig()
         {
             return this._inputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InputFormat.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
+        public string InputFormat
+        {
+            get { return this._inputFormat; }
+            set { this._inputFormat = value; }
+        }
+
+        // Check to see if InputFormat property is set
+        internal bool IsSetInputFormat()
+        {
+            return this._inputFormat != null;
         }
 
         /// <summary>
@@ -154,6 +188,22 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetJobOutputDataConfig()
         {
             return this._jobOutputDataConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileId.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
+        public string ProfileId
+        {
+            get { return this._profileId; }
+            set { this._profileId = value; }
+        }
+
+        // Check to see if ProfileId property is set
+        internal bool IsSetProfileId()
+        {
+            return this._profileId != null;
         }
 
         /// <summary>

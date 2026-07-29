@@ -29,100 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ApplicationInfo Object
     /// </summary>  
-    public class ApplicationInfoUnmarshaller : IJsonUnmarshaller<ApplicationInfo, JsonUnmarshallerContext>
+    public class ApplicationInfoUnmarshaller : ICborUnmarshaller<ApplicationInfo, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ApplicationInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ApplicationInfo Unmarshall(CborUnmarshallerContext context)
         {
             ApplicationInfo unmarshalledObject = new ApplicationInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AccountId", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AttachMissingPermission", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AttachMissingPermission = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AutoConfigEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoConfigEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CWEMonitorEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CWEMonitorEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DiscoveryType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DiscoveryType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LifeCycle", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LifeCycle = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OpsCenterEnabled", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.OpsCenterEnabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("OpsItemSNSTopicArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpsItemSNSTopicArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Remarks", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Remarks = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ResourceGroupName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SNSNotificationArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SNSNotificationArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AccountId":
+                        {
+                            context.AddPathSegment("AccountId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AttachMissingPermission":
+                        {
+                            context.AddPathSegment("AttachMissingPermission");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.AttachMissingPermission = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AutoConfigEnabled":
+                        {
+                            context.AddPathSegment("AutoConfigEnabled");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.AutoConfigEnabled = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CWEMonitorEnabled":
+                        {
+                            context.AddPathSegment("CWEMonitorEnabled");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.CWEMonitorEnabled = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DiscoveryType":
+                        {
+                            context.AddPathSegment("DiscoveryType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DiscoveryType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LifeCycle":
+                        {
+                            context.AddPathSegment("LifeCycle");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.LifeCycle = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OpsCenterEnabled":
+                        {
+                            context.AddPathSegment("OpsCenterEnabled");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.OpsCenterEnabled = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "OpsItemSNSTopicArn":
+                        {
+                            context.AddPathSegment("OpsItemSNSTopicArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.OpsItemSNSTopicArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Remarks":
+                        {
+                            context.AddPathSegment("Remarks");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Remarks = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ResourceGroupName":
+                        {
+                            context.AddPathSegment("ResourceGroupName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SNSNotificationArn":
+                        {
+                            context.AddPathSegment("SNSNotificationArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SNSNotificationArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

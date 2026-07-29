@@ -984,6 +984,15 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DependencyDiscoveryConfig.EligibleResourceCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DependencyDiscoveryConfig.Message</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.DependencySummary.DependencyId</property>
     <min>36</min>
     <max>36</max>
@@ -1340,6 +1349,28 @@
     <property>Amazon.Resiliencehubv2.Model.ServiceSystemDisassociatedMetadata.SystemArn</property>
     <min>31</min>
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ServiceTopologyEdgeSummary.DestinationAccount</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ServiceTopologyEdgeSummary.DestinationRegion</property>
+    <min>6</min>
+    <pattern>[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ServiceTopologyEdgeSummary.SourceAccount</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>\d{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ServiceTopologyEdgeSummary.SourceRegion</property>
+    <min>6</min>
+    <pattern>[a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.SloSource.PolicyName</property>

@@ -29,46 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CostDifference Object
     /// </summary>  
-    public class CostDifferenceUnmarshaller : IJsonUnmarshaller<CostDifference, JsonUnmarshallerContext>
+    public class CostDifferenceUnmarshaller : ICborUnmarshaller<CostDifference, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CostDifference Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CostDifference Unmarshall(CborUnmarshallerContext context)
         {
             CostDifference unmarshalledObject = new CostDifference();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("estimatedCost", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = CostAmountUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedCost = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("historicalCost", targetDepth, ref reader))
-                {
-                    var unmarshaller = CostAmountUnmarshaller.Instance;
-                    unmarshalledObject.HistoricalCost = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "estimatedCost":
+                        {
+                            context.AddPathSegment("EstimatedCost");
+                            var unmarshaller = CostAmountUnmarshaller.Instance;
+                            unmarshalledObject.EstimatedCost = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "historicalCost":
+                        {
+                            context.AddPathSegment("HistoricalCost");
+                            var unmarshaller = CostAmountUnmarshaller.Instance;
+                            unmarshalledObject.HistoricalCost = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

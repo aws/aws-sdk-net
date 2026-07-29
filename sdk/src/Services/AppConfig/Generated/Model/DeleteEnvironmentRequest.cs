@@ -52,7 +52,7 @@ namespace Amazon.AppConfig.Model
         /// The application ID that includes the environment that you want to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }
@@ -114,7 +114,7 @@ namespace Amazon.AppConfig.Model
         /// The ID of the environment that you want to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string EnvironmentId
         {
             get { return this._environmentId; }

@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// The requested resources was not found. The resource was either not created yet or
-    /// deleted.
+    /// The requested resource was not found. The resource was either not created yet or deleted.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

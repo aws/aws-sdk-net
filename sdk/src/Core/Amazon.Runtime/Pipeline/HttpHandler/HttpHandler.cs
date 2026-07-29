@@ -439,8 +439,14 @@ namespace Amazon.Runtime.Internal
                     // Mapping parameters to query string or body are mutually exclusive.
                     if (!request.UseQueryString)
                     {
+#if !NETFRAMEWORK
+                        // Build the form-url-encoded body straight into UTF-8 bytes, skipping the
+                        // intermediate UTF-16 string the string path allocates.
+                        content = AWSSDKUtils.GetParametersAsBytes(request.ParameterCollection);
+#else
                         string queryString = AWSSDKUtils.GetParametersAsString(request);
                         content = Encoding.UTF8.GetBytes(queryString);
+#endif
                         request.Content = content;
                         request.SetContentFromParameters = true;
                     }

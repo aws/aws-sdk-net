@@ -566,7 +566,7 @@ namespace Amazon.ElastiCache.Model
         /// Specifies the durability setting for the replication group. When set to <c>default</c>,
         /// the service determines the effective durability based on the engine version, cluster
         /// mode, and other parameters. The resolved setting is reflected in the <c>EffectiveDurability</c>
-        /// property of the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.
+        /// property of the replication group. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.
         /// </para>
         /// </summary>
         public Durability Durability

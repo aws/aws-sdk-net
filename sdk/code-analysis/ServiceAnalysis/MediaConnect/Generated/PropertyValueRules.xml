@@ -21,15 +21,33 @@
     <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.CreateRouterInputRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[!-~]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterInputRequest.Name</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.CreateRouterNetworkInterfaceRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[!-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterNetworkInterfaceRequest.Name</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.CreateRouterOutputRequest.ClientToken</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[!-~]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterOutputRequest.Name</property>
@@ -395,6 +413,11 @@
     <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MediaConnect.Model.BlackFramesConfiguration.ThresholdSeconds</property>
+    <min>10</min>
+    <max>60</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MediaConnect.Model.FailoverRouterInputConfiguration.NetworkInterfaceArn</property>
     <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
   </property-value-rule>
@@ -402,6 +425,11 @@
     <property>Amazon.MediaConnect.Model.FailoverRouterInputConfiguration.PrimarySourceIndex</property>
     <min>0</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.FrozenFramesConfiguration.ThresholdSeconds</property>
+    <min>10</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterInput.Arn</property>
@@ -515,6 +543,11 @@
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SetSourceRequest.EntitlementArn</property>
     <pattern>arn:.+:mediaconnect.+:entitlement:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MediaConnect.Model.SilentAudioConfiguration.ThresholdSeconds</property>
+    <min>10</min>
+    <max>60</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SrtCallerRouterInputConfiguration.MinimumLatencyMilliseconds</property>

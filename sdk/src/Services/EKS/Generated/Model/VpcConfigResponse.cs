@@ -35,6 +35,7 @@ namespace Amazon.EKS.Model
     public partial class VpcConfigResponse
     {
         private string _clusterSecurityGroupId;
+        private ControlPlaneEgressModeType _controlPlaneEgressMode;
         private bool? _endpointPrivateAccess;
         private bool? _endpointPublicAccess;
         private List<string> _publicAccessCidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -59,6 +60,32 @@ namespace Amazon.EKS.Model
         internal bool IsSetClusterSecurityGroupId()
         {
             return this._clusterSecurityGroupId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlaneEgressMode. 
+        /// <para>
+        /// The current control plane egress routing mode for the cluster. If the cluster is set
+        /// to <c>AWS_MANAGED</c>, Amazon EKS manages the egress path from the control plane.
+        /// If the cluster is set to <c>CUSTOMER_ROUTED</c>, you manage the egress path from the
+        /// control plane in your VPC subnets.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-egress.html">Learn
+        /// more about control plane egress routing in the <i>Amazon EKS User Guide</i>.</a> 
+        /// </para>
+        /// </summary>
+        public ControlPlaneEgressModeType ControlPlaneEgressMode
+        {
+            get { return this._controlPlaneEgressMode; }
+            set { this._controlPlaneEgressMode = value; }
+        }
+
+        // Check to see if ControlPlaneEgressMode property is set
+        internal bool IsSetControlPlaneEgressMode()
+        {
+            return this._controlPlaneEgressMode != null;
         }
 
         /// <summary>

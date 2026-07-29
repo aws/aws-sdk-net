@@ -43,6 +43,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string TargetArn
         {
             get { return this._targetArn; }

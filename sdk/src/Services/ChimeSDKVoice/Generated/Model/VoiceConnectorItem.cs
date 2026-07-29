@@ -47,7 +47,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// distributes calls among them based on their relative weight.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=99)]
+        [AWSProperty(Min=1, Max=99)]
         public int? Priority
         {
             get { return this._priority; }

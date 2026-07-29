@@ -37,12 +37,33 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DeleteAnomalyDetectorRequest : AmazonCloudWatchRequest
     {
+        private string _anomalyDetectorId;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private MetricMathAnomalyDetector _metricMathAnomalyDetector;
         private string _metricName;
         private string _awsNamespace;
         private SingleMetricAnomalyDetector _singleMetricAnomalyDetector;
         private string _stat;
+
+        /// <summary>
+        /// Gets and sets the property AnomalyDetectorId. 
+        /// <para>
+        /// Specifies the unique identifier of the anomaly detector to delete. If you specify
+        /// this parameter, you do not need to specify a metric to identify the detector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string AnomalyDetectorId
+        {
+            get { return this._anomalyDetectorId; }
+            set { this._anomalyDetectorId = value; }
+        }
+
+        // Check to see if AnomalyDetectorId property is set
+        internal bool IsSetAnomalyDetectorId()
+        {
+            return this._anomalyDetectorId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 

@@ -44,7 +44,7 @@ namespace Amazon.DirectConnect.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+    /// If you're using an <c>asn</c>, the response includes the ASN value in both the <c>asn</c>
     /// and <c>asnLong</c> fields.
     /// </para>
     ///  </li> <li> 

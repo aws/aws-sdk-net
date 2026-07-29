@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BillScenarioCommitmentModificationAction Marshaller
     /// </summary>
-    public class BillScenarioCommitmentModificationActionMarshaller : IRequestMarshaller<BillScenarioCommitmentModificationAction, JsonMarshallerContext> 
+    public class BillScenarioCommitmentModificationActionMarshaller : IRequestMarshaller<BillScenarioCommitmentModificationAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,54 +45,51 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BillScenarioCommitmentModificationAction requestObject, JsonMarshallerContext context)
+        public void Marshall(BillScenarioCommitmentModificationAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAddReservedInstanceAction())
+
+            if (requestObject.IsSetAddReservedInstanceAction())
             {
-                context.Writer.WritePropertyName("addReservedInstanceAction");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("addReservedInstanceAction");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AddReservedInstanceActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddReservedInstanceAction, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetAddSavingsPlanAction())
+            if (requestObject.IsSetAddSavingsPlanAction())
             {
-                context.Writer.WritePropertyName("addSavingsPlanAction");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("addSavingsPlanAction");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AddSavingsPlanActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddSavingsPlanAction, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetNegateReservedInstanceAction())
+            if (requestObject.IsSetNegateReservedInstanceAction())
             {
-                context.Writer.WritePropertyName("negateReservedInstanceAction");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("negateReservedInstanceAction");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NegateReservedInstanceActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NegateReservedInstanceAction, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetNegateSavingsPlanAction())
+            if (requestObject.IsSetNegateSavingsPlanAction())
             {
-                context.Writer.WritePropertyName("negateSavingsPlanAction");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("negateSavingsPlanAction");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NegateSavingsPlanActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NegateSavingsPlanAction, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

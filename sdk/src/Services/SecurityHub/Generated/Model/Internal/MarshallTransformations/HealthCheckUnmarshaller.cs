@@ -62,6 +62,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectorStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Issues", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<HealthIssue, HealthIssueUnmarshaller>(HealthIssueUnmarshaller.Instance);
+                    unmarshalledObject.Issues = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LastCheckedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

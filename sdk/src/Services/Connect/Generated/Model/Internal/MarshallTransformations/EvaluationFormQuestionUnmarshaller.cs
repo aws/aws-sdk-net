@@ -92,6 +92,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.RefId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScoringConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = EvaluationFormQuestionScoringConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ScoringConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Title", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

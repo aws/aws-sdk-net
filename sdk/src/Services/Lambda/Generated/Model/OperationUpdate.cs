@@ -194,7 +194,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// The payload for successful operations.
+        /// The payload for successful operations. The maximum payload size is 6 MB for synchronous
+        /// <c>EXECUTION</c> operations (RequestResponse invocationType), 1 MB for asynchronous
+        /// <c>EXECUTION</c> (Event invocationType) and <c>CHAINED_INVOKE</c> operations, and
+        /// 256 KB for <c>CONTEXT</c>, <c>STEP</c>, <c>WAIT</c>, and <c>CALLBACK</c> operations.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=6291456)]

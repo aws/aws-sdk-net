@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// PolicyCondition Marshaller
     /// </summary>
-    public class PolicyConditionMarshaller : IRequestMarshaller<PolicyCondition, JsonMarshallerContext> 
+    public class PolicyConditionMarshaller : IRequestMarshaller<PolicyCondition, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,65 +45,61 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PolicyCondition requestObject, JsonMarshallerContext context)
+        public void Marshall(PolicyCondition requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBooleanExpression())
+
+            if (requestObject.IsSetBooleanExpression())
             {
-                context.Writer.WritePropertyName("BooleanExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("BooleanExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IngressBooleanExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.BooleanExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetIpExpression())
+            if (requestObject.IsSetIpExpression())
             {
-                context.Writer.WritePropertyName("IpExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("IpExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IngressIpv4ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IpExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetIpv6Expression())
+            if (requestObject.IsSetIpv6Expression())
             {
-                context.Writer.WritePropertyName("Ipv6Expression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Ipv6Expression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IngressIpv6ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ipv6Expression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetStringExpression())
+            if (requestObject.IsSetStringExpression())
             {
-                context.Writer.WritePropertyName("StringExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("StringExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IngressStringExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StringExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetTlsExpression())
+            if (requestObject.IsSetTlsExpression())
             {
-                context.Writer.WritePropertyName("TlsExpression");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("TlsExpression");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = IngressTlsProtocolExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TlsExpression, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

@@ -93,6 +93,14 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for ListInvestigations operation
+        ///</summary>
+        public IListInvestigationsPaginator ListInvestigations(ListInvestigationsRequest request) 
+        {
+            return new ListInvestigationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
         public IListInvitationsPaginator ListInvitations(ListInvitationsRequest request) 

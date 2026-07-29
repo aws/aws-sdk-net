@@ -1051,6 +1051,10 @@ namespace Amazon.PaymentCryptographyData
         /// </summary>
         public static readonly SessionKeyDerivationMode MASTERCARD_SESSION_KEY = new SessionKeyDerivationMode("MASTERCARD_SESSION_KEY");
         /// <summary>
+        /// Constant UNION_PAY for SessionKeyDerivationMode
+        /// </summary>
+        public static readonly SessionKeyDerivationMode UNION_PAY = new SessionKeyDerivationMode("UNION_PAY");
+        /// <summary>
         /// Constant VISA for SessionKeyDerivationMode
         /// </summary>
         public static readonly SessionKeyDerivationMode VISA = new SessionKeyDerivationMode("VISA");

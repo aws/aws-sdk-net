@@ -1,0 +1,29 @@
+﻿using SmithyDotNet.Generator.Generation;
+
+namespace SmithyDotNet.Generator.Writers.CodeAnalysis;
+
+public class NullCollectionInitializerAnalyzerWriter(GenerationContext context, string modelFileName)
+{
+    public string Write(CancellationToken cancellationToken = default)
+    {
+        cancellationToken.ThrowIfCancellationRequested();
+
+        var writer = new CodeWriter();
+        FileHeader.WriteLicense(writer, modelFileName);
+        WriteUsings(writer);
+        writer.OpenNamespace($"{context.Namespace}.CodeAnalysis", () =>
+        {
+            writer.WriteLine("[DiagnosticAnalyzer(LanguageNames.CSharp)]");
+            writer.OpenBlock("public class NullCollectionInitializerAnalyzer : AbstractNullCollectionInitializerAnalyzer", () =>
+            {
+                writer.WriteLine($"""protected override string GetModelNamespace() => "{context.Namespace}.Model";""");
+            });
+        });
+        return writer.ToFormattedString();
+    }
+
+    private void WriteUsings(CodeWriter writer)
+    {
+        FileHeader.WriteUsings(writer, FileHeader.NullCollectionInitializerAnalyzerUsings);
+    }
+}

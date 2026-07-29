@@ -230,6 +230,12 @@ namespace Amazon.DynamoDBv2.DataModel
         public bool? RetrieveDateTimeInUtc { get; set; }
 
         /// <summary>
+        /// Controls whether DynamoDB returns capacity consumption details for each request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in Search.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
+        /// <summary>
         /// Indicates whether a query should traverse the index backwards in descending order by range key value.
         /// If the property is false (or not set), traversal shall be in ascending order.
         /// </summary>
@@ -272,9 +278,6 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Represents a filter expression that can be used to filter results in DynamoDB operations.
         /// </summary>
-        /// <remarks>
-        /// Note: Conditions must be against non-key properties.
-        /// </remarks>
         public ContextExpression Expression { get; set; }
 
         /// <summary>
@@ -450,6 +453,7 @@ namespace Amazon.DynamoDBv2.DataModel
             bool isEmptyStringValueEnabled = operationConfig.IsEmptyStringValueEnabled ?? contextConfig.IsEmptyStringValueEnabled ?? false;
             DynamoDBEntryConversion conversion = contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
             string tableNamePrefix = operationConfig.TableNamePrefix ?? contextConfig.TableNamePrefix ?? string.Empty;
+            ReturnConsumedCapacity returnConsumedCapacity = operationConfig.ReturnConsumedCapacity ?? ReturnConsumedCapacity.NONE;
 
             // These properties can only be set at the operation level
             bool disableFetchingTableMetadata = contextConfig.DisableFetchingTableMetadata ?? false;
@@ -464,6 +468,9 @@ namespace Amazon.DynamoDBv2.DataModel
             string indexName =
                 !string.IsNullOrEmpty(operationConfig.IndexName) ? operationConfig.IndexName : DefaultIndexName;
             List<ScanCondition> queryFilter = operationConfig.QueryFilter ?? new List<ScanCondition>();
+
+            ContextExpression filterExpression = operationConfig.Expression ?? new ContextExpression();
+
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
             string derivedTypeAttributeName =
                 //!string.IsNullOrEmpty(operationConfig.DerivedTypeAttributeName) ? operationConfig.DerivedTypeAttributeName :
@@ -478,12 +485,14 @@ namespace Amazon.DynamoDBv2.DataModel
             BackwardQuery = backwardQuery;
             IndexName = indexName;
             QueryFilter = queryFilter;
+            FilterExpression = filterExpression;
             ConditionalOperator = conditionalOperator;
             ContextConversion = conversion;
             OperationConversion = operationConfig.Conversion;
             MetadataCachingMode = metadataCachingMode;
             DisableFetchingTableMetadata = disableFetchingTableMetadata;
             RetrieveDateTimeInUtc = retrieveDateTimeInUtc;
+            ReturnConsumedCapacity = returnConsumedCapacity;
             DerivedTypeAttributeName = derivedTypeAttributeName;
 
             State = new OperationState();
@@ -569,6 +578,15 @@ namespace Amazon.DynamoDBv2.DataModel
         public List<ScanCondition> QueryFilter { get; set; }
 
         /// <summary>
+        /// Represents an expression used by the high-level object persistence model.
+        /// For Query/Scan operations this is used as a filter expression; for Save operations this is used as a conditional expression.
+        /// </summary>
+        /// <remarks>
+        /// When used with Query operations, conditions must be against non-key properties.
+        /// </remarks>
+        public ContextExpression FilterExpression { get; set; }
+
+        /// <summary>
         /// Specifies the conversion behavior for .NET objects (entities) mapped to DynamoDB items.
         /// 
         /// This setting controls how conversion between .NET and DynamoDB types happens
@@ -600,6 +618,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc cref="DynamoDBContextConfig.RetrieveDateTimeInUtc"/>
         public bool RetrieveDateTimeInUtc { get; set; }
+
+        /// <inheritdoc cref="ReturnConsumedCapacity"/>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 
         // Checks if the IndexName is set on the config
         internal bool IsIndexOperation => !string.IsNullOrEmpty(IndexName);

@@ -51,14 +51,14 @@ namespace Amazon.Polly.Model
             {"AudioEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new AudioEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"StreamClosedEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new StreamClosedEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -72,28 +72,28 @@ namespace Amazon.Polly.Model
                     {"ServiceFailureException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new PollyEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceFailureExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ServiceQuotaExceededException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new PollyEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceQuotaExceededExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ThrottlingException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new PollyEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ValidationException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new PollyEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

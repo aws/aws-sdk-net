@@ -108,6 +108,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetIamIdentityCenterOptions())
+            {
+                context.Writer.WritePropertyName("iamIdentityCenterOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IamIdentityCenterOptionsInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IamIdentityCenterOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

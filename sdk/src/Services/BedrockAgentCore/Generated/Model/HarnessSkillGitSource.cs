@@ -80,7 +80,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// The HTTPS URL of the git repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8)]
+        [AWSProperty(Required=true, Min=8, Max=16383)]
         public string Url
         {
             get { return this._url; }

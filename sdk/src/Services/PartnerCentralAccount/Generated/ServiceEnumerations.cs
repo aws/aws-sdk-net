@@ -155,6 +155,14 @@ namespace Amazon.PartnerCentralAccount
         /// </summary>
         public static readonly BusinessValidationCode INCOMPATIBLE_LEGAL_NAME = new BusinessValidationCode("INCOMPATIBLE_LEGAL_NAME");
         /// <summary>
+        /// Constant INCOMPATIBLE_PRIMARY_PARTNER for BusinessValidationCode
+        /// </summary>
+        public static readonly BusinessValidationCode INCOMPATIBLE_PRIMARY_PARTNER = new BusinessValidationCode("INCOMPATIBLE_PRIMARY_PARTNER");
+        /// <summary>
+        /// Constant INCOMPATIBLE_SUBSIDIARY_CONNECTION for BusinessValidationCode
+        /// </summary>
+        public static readonly BusinessValidationCode INCOMPATIBLE_SUBSIDIARY_CONNECTION = new BusinessValidationCode("INCOMPATIBLE_SUBSIDIARY_CONNECTION");
+        /// <summary>
         /// Constant INELIGIBLE_ACCOUNT_TIER for BusinessValidationCode
         /// </summary>
         public static readonly BusinessValidationCode INELIGIBLE_ACCOUNT_TIER = new BusinessValidationCode("INELIGIBLE_ACCOUNT_TIER");
@@ -166,6 +174,22 @@ namespace Amazon.PartnerCentralAccount
         /// Constant INVALID_ACCOUNT_STATE for BusinessValidationCode
         /// </summary>
         public static readonly BusinessValidationCode INVALID_ACCOUNT_STATE = new BusinessValidationCode("INVALID_ACCOUNT_STATE");
+        /// <summary>
+        /// Constant MISSING_ACTIVE_SUBSIDIARY_CONNECTION for BusinessValidationCode
+        /// </summary>
+        public static readonly BusinessValidationCode MISSING_ACTIVE_SUBSIDIARY_CONNECTION = new BusinessValidationCode("MISSING_ACTIVE_SUBSIDIARY_CONNECTION");
+        /// <summary>
+        /// Constant QUALIFICATIONS_ASSOCIATION_EXISTS for BusinessValidationCode
+        /// </summary>
+        public static readonly BusinessValidationCode QUALIFICATIONS_ASSOCIATION_EXISTS = new BusinessValidationCode("QUALIFICATIONS_ASSOCIATION_EXISTS");
+        /// <summary>
+        /// Constant QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED for BusinessValidationCode
+        /// </summary>
+        public static readonly BusinessValidationCode QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED = new BusinessValidationCode("QUALIFICATIONS_ASSOCIATION_LIMIT_EXCEEDED");
+        /// <summary>
+        /// Constant QUALIFICATIONS_ASSOCIATION_NOT_FOUND for BusinessValidationCode
+        /// </summary>
+        public static readonly BusinessValidationCode QUALIFICATIONS_ASSOCIATION_NOT_FOUND = new BusinessValidationCode("QUALIFICATIONS_ASSOCIATION_NOT_FOUND");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -252,6 +276,10 @@ namespace Amazon.PartnerCentralAccount
         /// Constant INCOMPATIBLE_PROFILE_STATE for ConflictExceptionReason
         /// </summary>
         public static readonly ConflictExceptionReason INCOMPATIBLE_PROFILE_STATE = new ConflictExceptionReason("INCOMPATIBLE_PROFILE_STATE");
+        /// <summary>
+        /// Constant INCOMPATIBLE_QUALIFICATIONS_ASSOCIATION_TASK_STATE for ConflictExceptionReason
+        /// </summary>
+        public static readonly ConflictExceptionReason INCOMPATIBLE_QUALIFICATIONS_ASSOCIATION_TASK_STATE = new ConflictExceptionReason("INCOMPATIBLE_QUALIFICATIONS_ASSOCIATION_TASK_STATE");
         /// <summary>
         /// Constant VERIFICATION_ALREADY_IN_PROGRESS for ConflictExceptionReason
         /// </summary>
@@ -1017,6 +1045,156 @@ namespace Amazon.PartnerCentralAccount
 
 
     /// <summary>
+    /// Constants used for properties of type QualificationsAssociationStatus.
+    /// </summary>
+    public class QualificationsAssociationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASSOCIATED for QualificationsAssociationStatus
+        /// </summary>
+        public static readonly QualificationsAssociationStatus ASSOCIATED = new QualificationsAssociationStatus("ASSOCIATED");
+        /// <summary>
+        /// Constant NOT_ASSOCIATED for QualificationsAssociationStatus
+        /// </summary>
+        public static readonly QualificationsAssociationStatus NOT_ASSOCIATED = new QualificationsAssociationStatus("NOT_ASSOCIATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QualificationsAssociationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QualificationsAssociationStatus FindValue(string value)
+        {
+            return FindValue<QualificationsAssociationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QualificationsAssociationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QualificationsAssociationTaskStatus.
+    /// </summary>
+    public class QualificationsAssociationTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN_PROGRESS for QualificationsAssociationTaskStatus
+        /// </summary>
+        public static readonly QualificationsAssociationTaskStatus IN_PROGRESS = new QualificationsAssociationTaskStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for QualificationsAssociationTaskStatus
+        /// </summary>
+        public static readonly QualificationsAssociationTaskStatus SUCCEEDED = new QualificationsAssociationTaskStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QualificationsAssociationTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QualificationsAssociationTaskStatus FindValue(string value)
+        {
+            return FindValue<QualificationsAssociationTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QualificationsAssociationTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type QualificationsDisassociationTaskStatus.
+    /// </summary>
+    public class QualificationsDisassociationTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IN_PROGRESS for QualificationsDisassociationTaskStatus
+        /// </summary>
+        public static readonly QualificationsDisassociationTaskStatus IN_PROGRESS = new QualificationsDisassociationTaskStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for QualificationsDisassociationTaskStatus
+        /// </summary>
+        public static readonly QualificationsDisassociationTaskStatus SUCCEEDED = new QualificationsDisassociationTaskStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public QualificationsDisassociationTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static QualificationsDisassociationTaskStatus FindValue(string value)
+        {
+            return FindValue<QualificationsDisassociationTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator QualificationsDisassociationTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResourceNotFoundExceptionReason.
     /// </summary>
     public class ResourceNotFoundExceptionReason : ConstantClass
@@ -1046,6 +1224,14 @@ namespace Amazon.PartnerCentralAccount
         /// Constant PARTNER_PROFILE_TASK_NOT_FOUND for ResourceNotFoundExceptionReason
         /// </summary>
         public static readonly ResourceNotFoundExceptionReason PARTNER_PROFILE_TASK_NOT_FOUND = new ResourceNotFoundExceptionReason("PARTNER_PROFILE_TASK_NOT_FOUND");
+        /// <summary>
+        /// Constant QUALIFICATIONS_ASSOCIATION_TASK_NOT_FOUND for ResourceNotFoundExceptionReason
+        /// </summary>
+        public static readonly ResourceNotFoundExceptionReason QUALIFICATIONS_ASSOCIATION_TASK_NOT_FOUND = new ResourceNotFoundExceptionReason("QUALIFICATIONS_ASSOCIATION_TASK_NOT_FOUND");
+        /// <summary>
+        /// Constant QUALIFICATIONS_DISASSOCIATION_TASK_NOT_FOUND for ResourceNotFoundExceptionReason
+        /// </summary>
+        public static readonly ResourceNotFoundExceptionReason QUALIFICATIONS_DISASSOCIATION_TASK_NOT_FOUND = new ResourceNotFoundExceptionReason("QUALIFICATIONS_DISASSOCIATION_TASK_NOT_FOUND");
         /// <summary>
         /// Constant RECEIVER_PROFILE_NOT_FOUND for ResourceNotFoundExceptionReason
         /// </summary>

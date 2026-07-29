@@ -71,6 +71,106 @@ namespace Amazon.S3
 
 
     /// <summary>
+    /// Constants used for properties of type AnnotationConfigurationState.
+    /// </summary>
+    public partial class AnnotationConfigurationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for AnnotationConfigurationState
+        /// </summary>
+        public static readonly AnnotationConfigurationState DISABLED = new AnnotationConfigurationState("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for AnnotationConfigurationState
+        /// </summary>
+        public static readonly AnnotationConfigurationState ENABLED = new AnnotationConfigurationState("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnnotationConfigurationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnnotationConfigurationState FindValue(string value)
+        {
+            return FindValue<AnnotationConfigurationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnnotationConfigurationState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AnnotationDirective.
+    /// </summary>
+    public partial class AnnotationDirective : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COPY for AnnotationDirective
+        /// </summary>
+        public static readonly AnnotationDirective COPY = new AnnotationDirective("COPY");
+        /// <summary>
+        /// Constant EXCLUDE for AnnotationDirective
+        /// </summary>
+        public static readonly AnnotationDirective EXCLUDE = new AnnotationDirective("EXCLUDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnnotationDirective(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnnotationDirective FindValue(string value)
+        {
+            return FindValue<AnnotationDirective>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnnotationDirective(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArchiveStatus.
     /// </summary>
     public partial class ArchiveStatus : ConstantClass
@@ -1036,6 +1136,18 @@ namespace Amazon.S3
         /// Constant S3ObjectAclPut for EventType
         /// </summary>
         public static readonly EventType S3ObjectAclPut = new EventType("s3:ObjectAcl:Put");
+        /// <summary>
+        /// Constant S3ObjectAnnotation for EventType
+        /// </summary>
+        public static readonly EventType S3ObjectAnnotation = new EventType("s3:ObjectAnnotation:*");
+        /// <summary>
+        /// Constant S3ObjectAnnotationDelete for EventType
+        /// </summary>
+        public static readonly EventType S3ObjectAnnotationDelete = new EventType("s3:ObjectAnnotation:Delete");
+        /// <summary>
+        /// Constant S3ObjectAnnotationPut for EventType
+        /// </summary>
+        public static readonly EventType S3ObjectAnnotationPut = new EventType("s3:ObjectAnnotation:Put");
         /// <summary>
         /// Constant S3ObjectRestoreDelete for EventType
         /// </summary>

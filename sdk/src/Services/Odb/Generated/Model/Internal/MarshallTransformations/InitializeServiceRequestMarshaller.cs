@@ -75,6 +75,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutonomousDatabaseOciAwsSecretsManagerIntegration())
+            {
+                context.Writer.WritePropertyName("autonomousDatabaseOciAwsSecretsManagerIntegration");
+                context.Writer.WriteStringValue(publicRequest.AutonomousDatabaseOciAwsSecretsManagerIntegration);
+            }
+
             if(publicRequest.IsSetOciIdentityDomain())
             {
                 context.Writer.WritePropertyName("ociIdentityDomain");

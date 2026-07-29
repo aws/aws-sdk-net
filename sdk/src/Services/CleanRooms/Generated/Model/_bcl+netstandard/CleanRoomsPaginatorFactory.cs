@@ -141,6 +141,22 @@ namespace Amazon.CleanRooms.Model
         }
 
         /// <summary>
+        /// Paginator for ListIntermediateTables operation
+        ///</summary>
+        public IListIntermediateTablesPaginator ListIntermediateTables(ListIntermediateTablesRequest request) 
+        {
+            return new ListIntermediateTablesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListIntermediateTableVersions operation
+        ///</summary>
+        public IListIntermediateTableVersionsPaginator ListIntermediateTableVersions(ListIntermediateTableVersionsRequest request) 
+        {
+            return new ListIntermediateTableVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         public IListMembersPaginator ListMembers(ListMembersRequest request) 

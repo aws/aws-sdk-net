@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ApplicationSettingsResponse Object
     /// </summary>  
-    public class ApplicationSettingsResponseUnmarshaller : IJsonUnmarshaller<ApplicationSettingsResponse, JsonUnmarshallerContext>
+    public class ApplicationSettingsResponseUnmarshaller : ICborUnmarshaller<ApplicationSettingsResponse, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ApplicationSettingsResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ApplicationSettingsResponse Unmarshall(CborUnmarshallerContext context)
         {
             ApplicationSettingsResponse unmarshalledObject = new ApplicationSettingsResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Enabled", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3BucketName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SettingsGroup", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SettingsGroup = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Enabled":
+                        {
+                            context.AddPathSegment("Enabled");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.Enabled = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "S3BucketName":
+                        {
+                            context.AddPathSegment("S3BucketName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SettingsGroup":
+                        {
+                            context.AddPathSegment("SettingsGroup");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SettingsGroup = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

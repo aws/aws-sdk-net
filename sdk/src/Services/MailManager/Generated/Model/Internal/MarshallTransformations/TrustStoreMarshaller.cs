@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// TrustStore Marshaller
     /// </summary>
-    public class TrustStoreMarshaller : IRequestMarshaller<TrustStore, JsonMarshallerContext> 
+    public class TrustStoreMarshaller : IRequestMarshaller<TrustStore, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TrustStore requestObject, JsonMarshallerContext context)
+        public void Marshall(TrustStore requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCAContent())
-            {
-                context.Writer.WritePropertyName("CAContent");
-                context.Writer.WriteStringValue(requestObject.CAContent);
-            }
 
-            if(requestObject.IsSetCrlContent())
+            if (requestObject.IsSetCAContent())
             {
-                context.Writer.WritePropertyName("CrlContent");
-                context.Writer.WriteStringValue(requestObject.CrlContent);
+                context.Writer.WriteTextString("CAContent");
+                context.Writer.WriteTextString(requestObject.CAContent);
             }
-
-            if(requestObject.IsSetKmsKeyArn())
+            if (requestObject.IsSetCrlContent())
             {
-                context.Writer.WritePropertyName("KmsKeyArn");
-                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
+                context.Writer.WriteTextString("CrlContent");
+                context.Writer.WriteTextString(requestObject.CrlContent);
             }
-
+            if (requestObject.IsSetKmsKeyArn())
+            {
+                context.Writer.WriteTextString("KmsKeyArn");
+                context.Writer.WriteTextString(requestObject.KmsKeyArn);
+            }
         }
 
         /// <summary>

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Ipv4PrefixSpecificationRequest Marshaller
     /// </summary>
-    public class Ipv4PrefixSpecificationRequestMarshaller : IRequestMarshaller<Ipv4PrefixSpecificationRequest, JsonMarshallerContext> 
+    public class Ipv4PrefixSpecificationRequestMarshaller : IRequestMarshaller<Ipv4PrefixSpecificationRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Ipv4PrefixSpecificationRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(Ipv4PrefixSpecificationRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetIpv4Prefix())
-            {
-                context.Writer.WritePropertyName("Ipv4Prefix");
-                context.Writer.WriteStringValue(requestObject.Ipv4Prefix);
-            }
 
+            if (requestObject.IsSetIpv4Prefix())
+            {
+                context.Writer.WriteTextString("Ipv4Prefix");
+                context.Writer.WriteTextString(requestObject.Ipv4Prefix);
+            }
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.IVS.Model
         private string _arn;
         private List<MediaTailorPlaybackConfiguration> _mediaTailorPlaybackConfigurations = AWSConfigs.InitializeCollections ? new List<MediaTailorPlaybackConfiguration>() : null;
         private string _name;
+        private PostRollConfiguration _postRollConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -102,6 +103,24 @@ namespace Amazon.IVS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostRollConfiguration. 
+        /// <para>
+        /// Configuration for the post-roll ad break to use for this ad configuration.
+        /// </para>
+        /// </summary>
+        public PostRollConfiguration PostRollConfiguration
+        {
+            get { return this._postRollConfiguration; }
+            set { this._postRollConfiguration = value; }
+        }
+
+        // Check to see if PostRollConfiguration property is set
+        internal bool IsSetPostRollConfiguration()
+        {
+            return this._postRollConfiguration != null;
         }
 
         /// <summary>

@@ -117,6 +117,35 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.TwoWayEnabled.Value);
             }
 
+            if(publicRequest.IsSetTwoWayMediaS3BucketName())
+            {
+                context.Writer.WritePropertyName("TwoWayMediaS3BucketName");
+                context.Writer.WriteStringValue(publicRequest.TwoWayMediaS3BucketName);
+            }
+
+            if(publicRequest.IsSetTwoWayMediaS3KeyPrefix())
+            {
+                context.Writer.WritePropertyName("TwoWayMediaS3KeyPrefix");
+                context.Writer.WriteStringValue(publicRequest.TwoWayMediaS3KeyPrefix);
+            }
+
+            if(publicRequest.IsSetTwoWayMediaS3Role())
+            {
+                context.Writer.WritePropertyName("TwoWayMediaS3Role");
+                context.Writer.WriteStringValue(publicRequest.TwoWayMediaS3Role);
+            }
+
+            if(publicRequest.IsSetTwoWayRcsEventsEnabled())
+            {
+                context.Writer.WritePropertyName("TwoWayRcsEventsEnabled");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTwoWayRcsEventsEnabledListValue in publicRequest.TwoWayRcsEventsEnabled)
+                {
+                        context.Writer.WriteStringValue(publicRequestTwoWayRcsEventsEnabledListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

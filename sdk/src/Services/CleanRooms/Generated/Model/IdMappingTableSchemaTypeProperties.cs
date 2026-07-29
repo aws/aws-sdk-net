@@ -34,7 +34,27 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class IdMappingTableSchemaTypeProperties
     {
+        private string _idMappingTableId;
         private List<IdMappingTableInputSource> _idMappingTableInputSource = AWSConfigs.InitializeCollections ? new List<IdMappingTableInputSource>() : null;
+
+        /// <summary>
+        /// Gets and sets the property IdMappingTableId. 
+        /// <para>
+        /// The unique identifier of the ID mapping table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string IdMappingTableId
+        {
+            get { return this._idMappingTableId; }
+            set { this._idMappingTableId = value; }
+        }
+
+        // Check to see if IdMappingTableId property is set
+        internal bool IsSetIdMappingTableId()
+        {
+            return this._idMappingTableId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IdMappingTableInputSource. 

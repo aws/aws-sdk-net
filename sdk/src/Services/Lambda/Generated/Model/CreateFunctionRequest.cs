@@ -459,6 +459,7 @@ namespace Amazon.Lambda.Model
         /// Web Services managed key</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string KMSKeyArn
         {
             get { return this._kmsKeyArn; }
@@ -597,7 +598,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of the function's execution role.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=10000)]
         public string Role
         {
             get { return this._role; }
@@ -715,7 +716,7 @@ namespace Amazon.Lambda.Model
         /// execution environment</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=5400)]
         public int? Timeout
         {
             get { return this._timeout; }

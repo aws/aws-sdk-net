@@ -87,6 +87,7 @@ namespace Amazon.GameLift.Model
         /// only fleets using a specified build. Use either the build ID or ARN value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string BuildId
         {
             get { return this._buildId; }
@@ -147,6 +148,7 @@ namespace Amazon.GameLift.Model
         /// to return only fleets using a specified script. Use either the script ID or ARN value.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=512)]
         public string ScriptId
         {
             get { return this._scriptId; }

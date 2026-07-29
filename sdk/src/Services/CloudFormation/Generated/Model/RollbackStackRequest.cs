@@ -71,6 +71,7 @@ namespace Amazon.CloudFormation.Model
     public partial class RollbackStackRequest : AmazonCloudFormationRequest
     {
         private string _clientRequestToken;
+        private DeploymentConfig _deploymentConfig;
         private bool? _retainExceptOnCreate;
         private string _roleARN;
         private string _stackName;
@@ -92,6 +93,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration for this stack operation, including the deployment mode.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
         }
 
         /// <summary>

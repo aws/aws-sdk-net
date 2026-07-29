@@ -65,6 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _targetParameterName;
         private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private List<AlarmStateInformation> _triggeredAlarms = AWSConfigs.InitializeCollections ? new List<AlarmStateInformation>() : null;
+        private string _warningMessage;
 
         /// <summary>
         /// Gets and sets the property AlarmConfiguration. 
@@ -328,7 +329,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property FailureMessage. 
         /// <para>
-        /// The list of execution outputs as defined in the Automation runbook.
+        /// A message that describes a failure that occurred during the automation execution.
         /// </para>
         /// </summary>
         public string FailureMessage
@@ -671,6 +672,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetTriggeredAlarms()
         {
             return this._triggeredAlarms != null && (this._triggeredAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarningMessage. 
+        /// <para>
+        /// A message that describes a non-critical issue that occurred during the automation
+        /// execution.
+        /// </para>
+        /// </summary>
+        public string WarningMessage
+        {
+            get { return this._warningMessage; }
+            set { this._warningMessage = value; }
+        }
+
+        // Check to see if WarningMessage property is set
+        internal bool IsSetWarningMessage()
+        {
+            return this._warningMessage != null;
         }
 
     }

@@ -49,6 +49,7 @@ namespace Amazon.BedrockAgentCore.Model
         private Branch _branch;
         private string _clientToken;
         private DateTime? _eventTimestamp;
+        private ExtractionMode _extractionMode;
         private string _memoryId;
         private Dictionary<string, MetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
         private List<PayloadType> _payload = AWSConfigs.InitializeCollections ? new List<PayloadType>() : null;
@@ -130,6 +131,26 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetEventTimestamp()
         {
             return this._eventTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtractionMode. 
+        /// <para>
+        /// Controls long-term memory extraction for this event. When set to <c>SKIP</c>, the
+        /// event is stored in short-term memory but is excluded from long-term memory extraction.
+        /// If not specified, the event is processed for extraction as usual.
+        /// </para>
+        /// </summary>
+        public ExtractionMode ExtractionMode
+        {
+            get { return this._extractionMode; }
+            set { this._extractionMode = value; }
+        }
+
+        // Check to see if ExtractionMode property is set
+        internal bool IsSetExtractionMode()
+        {
+            return this._extractionMode != null;
         }
 
         /// <summary>

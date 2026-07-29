@@ -41,6 +41,7 @@ namespace Amazon.Connect.Model
         private string _name;
         private RulePublishStatus _publishStatus;
         private string _ruleArn;
+        private List<string> _ruleCapabilityTiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ruleId;
 
         /// <summary>
@@ -179,6 +180,30 @@ namespace Amazon.Connect.Model
         internal bool IsSetRuleArn()
         {
             return this._ruleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleCapabilityTiers. 
+        /// <para>
+        /// The list of capability tiers associated with the rule. Used for categorizing rules
+        /// by capability (for example, <c>GenerativeAI</c>).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> RuleCapabilityTiers
+        {
+            get { return this._ruleCapabilityTiers; }
+            set { this._ruleCapabilityTiers = value; }
+        }
+
+        // Check to see if RuleCapabilityTiers property is set
+        internal bool IsSetRuleCapabilityTiers()
+        {
+            return this._ruleCapabilityTiers != null && (this._ruleCapabilityTiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

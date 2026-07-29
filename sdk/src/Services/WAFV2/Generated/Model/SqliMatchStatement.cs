@@ -37,6 +37,7 @@ namespace Amazon.WAFV2.Model
     public partial class SqliMatchStatement
     {
         private FieldToMatch _fieldToMatch;
+        private List<PreParseTextTransformation> _preParseTextTransformations = AWSConfigs.InitializeCollections ? new List<PreParseTextTransformation>() : null;
         private SensitivityLevel _sensitivityLevel;
         private List<TextTransformation> _textTransformations = AWSConfigs.InitializeCollections ? new List<TextTransformation>() : null;
 
@@ -57,6 +58,33 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetFieldToMatch()
         {
             return this._fieldToMatch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreParseTextTransformations. 
+        /// <para>
+        /// Pre-parse text transformations normalize the raw query string before WAF parses it
+        /// into individual query arguments. They are applied before the standard text transformations.
+        /// Pre-parse text transformations are only supported when <c>FieldToMatch</c> is <c>SingleQueryArgument</c>
+        /// or <c>AllQueryArguments</c>. You can specify up to 3 pre-parse text transformations
+        /// per rule statement.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PreParseTextTransformation> PreParseTextTransformations
+        {
+            get { return this._preParseTextTransformations; }
+            set { this._preParseTextTransformations = value; }
+        }
+
+        // Check to see if PreParseTextTransformations property is set
+        internal bool IsSetPreParseTextTransformations()
+        {
+            return this._preParseTextTransformations != null && (this._preParseTextTransformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

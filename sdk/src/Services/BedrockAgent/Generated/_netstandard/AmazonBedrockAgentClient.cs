@@ -864,9 +864,9 @@ namespace Amazon.BedrockAgent
         /// 
         ///  <note> 
         /// <para>
-        /// If you prefer to let Amazon Bedrock create and manage a vector store for you in Amazon
-        /// OpenSearch Service, use the console. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-create">Create
-        /// a knowledge base</a>.
+        /// To create a managed knowledge base, provide a <c>managedKnowledgeBaseConfiguration</c>
+        /// during creation. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-build-managed.html">Build
+        /// a managed knowledge base</a>.
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
@@ -879,13 +879,20 @@ namespace Amazon.BedrockAgent
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provide the embedding model to use in the <c>embeddingModelArn</c> field in the <c>knowledgeBaseConfiguration</c>
-        /// object.
+        /// For managed knowledge bases, set <c>embeddingModelType</c> to <c>MANAGED</c> to use
+        /// the service-managed embedding model, or <c>CUSTOM</c> with an <c>embeddingModelArn</c>
+        /// to use your own. To use your own KMS key for encryption, provide the ARN in <c>serverSideEncryptionConfiguration</c>.
+        /// No vector store configuration is required for managed knowledge bases.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Provide the configuration for your vector store in the <c>storageConfiguration</c>
-        /// object.
+        /// For self-managed knowledge bases, provide the embedding model to use in the <c>embeddingModelArn</c>
+        /// field in the <c>knowledgeBaseConfiguration</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For self-managed knowledge bases, provide the configuration for your vector store
+        /// in the <c>storageConfiguration</c> object.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1635,6 +1642,59 @@ namespace Amazon.BedrockAgent
             options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeletePromptResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteResourcePolicy
+
+        internal virtual DeleteResourcePolicyResponse DeleteResourcePolicy(DeleteResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the resource policy associated with a knowledge base. After deletion, other
+        /// AWS accounts can no longer access the knowledge base using cross-account permissions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteResourcePolicy service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/DeleteResourcePolicy">REST API Reference for DeleteResourcePolicy Operation</seealso>
+        public virtual Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(DeleteResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteResourcePolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2438,6 +2498,55 @@ namespace Amazon.BedrockAgent
             options.ResponseUnmarshaller = GetPromptResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetPromptResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetResourcePolicy
+
+        internal virtual GetResourcePolicyResponse GetResourcePolicy(GetResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the resource policy associated with a knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetResourcePolicy service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
+        public virtual Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetResourcePolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3343,6 +3452,60 @@ namespace Amazon.BedrockAgent
             options.ResponseUnmarshaller = PrepareFlowResponseUnmarshaller.Instance;
 
             return InvokeAsync<PrepareFlowResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutResourcePolicy
+
+        internal virtual PutResourcePolicyResponse PutResourcePolicy(PutResourcePolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutResourcePolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates a resource policy with a knowledge base. A resource policy allows other
+        /// AWS accounts to access the knowledge base. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-managed-cross-account.html">Cross-account
+        /// access for knowledge bases</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutResourcePolicy service method, as returned by BedrockAgent.</returns>
+        /// <exception cref="Amazon.BedrockAgent.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ConflictException">
+        /// There was a conflict performing an operation.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgent.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-2023-06-05/PutResourcePolicy">REST API Reference for PutResourcePolicy Operation</seealso>
+        public virtual Task<PutResourcePolicyResponse> PutResourcePolicyAsync(PutResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutResourcePolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutResourcePolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutResourcePolicyResponse>(request, options, cancellationToken);
         }
         #endregion
         

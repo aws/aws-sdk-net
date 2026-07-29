@@ -2063,6 +2063,60 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AuthType.
+    /// </summary>
+    public class AuthType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SERVICE_ACCOUNT for AuthType
+        /// </summary>
+        public static readonly AuthType SERVICE_ACCOUNT = new AuthType("SERVICE_ACCOUNT");
+        /// <summary>
+        /// Constant THREE_LEGGED_OAUTH for AuthType
+        /// </summary>
+        public static readonly AuthType THREE_LEGGED_OAUTH = new AuthType("THREE_LEGGED_OAUTH");
+        /// <summary>
+        /// Constant TWO_LEGGED_OAUTH for AuthType
+        /// </summary>
+        public static readonly AuthType TWO_LEGGED_OAUTH = new AuthType("TWO_LEGGED_OAUTH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthType FindValue(string value)
+        {
+            return FindValue<AuthType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutomationJobStatus.
     /// </summary>
     public class AutomationJobStatus : ConstantClass
@@ -2508,6 +2562,10 @@ namespace Amazon.QuickSight
     public class CapabilityState : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ALLOW for CapabilityState
+        /// </summary>
+        public static readonly CapabilityState ALLOW = new CapabilityState("ALLOW");
         /// <summary>
         /// Constant DENY for CapabilityState
         /// </summary>
@@ -3870,6 +3928,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ControlSortDirection(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CredentialStatus.
+    /// </summary>
+    public class CredentialStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTH_FAILED for CredentialStatus
+        /// </summary>
+        public static readonly CredentialStatus AUTH_FAILED = new CredentialStatus("AUTH_FAILED");
+        /// <summary>
+        /// Constant CONNECTED for CredentialStatus
+        /// </summary>
+        public static readonly CredentialStatus CONNECTED = new CredentialStatus("CONNECTED");
+        /// <summary>
+        /// Constant NOT_VERIFIED for CredentialStatus
+        /// </summary>
+        public static readonly CredentialStatus NOT_VERIFIED = new CredentialStatus("NOT_VERIFIED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CredentialStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CredentialStatus FindValue(string value)
+        {
+            return FindValue<CredentialStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CredentialStatus(string value)
         {
             return FindValue(value);
         }
@@ -5920,6 +6032,52 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DefaultAggregation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DefaultCategoryEffect.
+    /// </summary>
+    public class DefaultCategoryEffect : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DENY_BY_DEFAULT for DefaultCategoryEffect
+        /// </summary>
+        public static readonly DefaultCategoryEffect DENY_BY_DEFAULT = new DefaultCategoryEffect("DENY_BY_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultCategoryEffect(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultCategoryEffect FindValue(string value)
+        {
+            return FindValue<DefaultCategoryEffect>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultCategoryEffect(string value)
         {
             return FindValue(value);
         }
@@ -8794,6 +8952,10 @@ namespace Amazon.QuickSight
     public class KnowledgeBaseSearchFilterName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant DATASOURCE_ARN for KnowledgeBaseSearchFilterName
+        /// </summary>
+        public static readonly KnowledgeBaseSearchFilterName DATASOURCE_ARN = new KnowledgeBaseSearchFilterName("DATASOURCE_ARN");
         /// <summary>
         /// Constant DIRECT_QUICKSIGHT_OWNER for KnowledgeBaseSearchFilterName
         /// </summary>
@@ -13151,6 +13313,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly ServiceType ATHENA = new ServiceType("ATHENA");
         /// <summary>
+        /// Constant GLUE_DATA_CATALOG for ServiceType
+        /// </summary>
+        public static readonly ServiceType GLUE_DATA_CATALOG = new ServiceType("GLUE_DATA_CATALOG");
+        /// <summary>
         /// Constant QBUSINESS for ServiceType
         /// </summary>
         public static readonly ServiceType QBUSINESS = new ServiceType("QBUSINESS");
@@ -14169,10 +14335,6 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly SpaceQuickSightResourceType ACTION_CONNECTOR = new SpaceQuickSightResourceType("ACTION_CONNECTOR");
         /// <summary>
-        /// Constant ARTIFACT for SpaceQuickSightResourceType
-        /// </summary>
-        public static readonly SpaceQuickSightResourceType ARTIFACT = new SpaceQuickSightResourceType("ARTIFACT");
-        /// <summary>
         /// Constant DASHBOARD for SpaceQuickSightResourceType
         /// </summary>
         public static readonly SpaceQuickSightResourceType DASHBOARD = new SpaceQuickSightResourceType("DASHBOARD");
@@ -14184,10 +14346,6 @@ namespace Amazon.QuickSight
         /// Constant KNOWLEDGE_BASE for SpaceQuickSightResourceType
         /// </summary>
         public static readonly SpaceQuickSightResourceType KNOWLEDGE_BASE = new SpaceQuickSightResourceType("KNOWLEDGE_BASE");
-        /// <summary>
-        /// Constant SPACE for SpaceQuickSightResourceType
-        /// </summary>
-        public static readonly SpaceQuickSightResourceType SPACE = new SpaceQuickSightResourceType("SPACE");
         /// <summary>
         /// Constant TOPIC for SpaceQuickSightResourceType
         /// </summary>

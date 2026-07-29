@@ -90,6 +90,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetContainerImageAggregation())
+            {
+                context.Writer.WritePropertyName("containerImageAggregation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContainerImageAggregationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerImageAggregation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEc2InstanceAggregation())
             {
                 context.Writer.WritePropertyName("ec2InstanceAggregation");
@@ -167,6 +178,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetServerlessFunctionAggregation())
+            {
+                context.Writer.WritePropertyName("serverlessFunctionAggregation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServerlessFunctionAggregationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServerlessFunctionAggregation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTitleAggregation())
             {
                 context.Writer.WritePropertyName("titleAggregation");
@@ -174,6 +196,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                 var marshaller = TitleAggregationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TitleAggregation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetVmInstanceAggregation())
+            {
+                context.Writer.WritePropertyName("vmInstanceAggregation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VmInstanceAggregationMarshaller.Instance;
+                marshaller.Marshall(requestObject.VmInstanceAggregation, context);
 
                 context.Writer.WriteEndObject();
             }

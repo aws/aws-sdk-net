@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteTrigger operation.
+    /// Response structure for deleting a Trigger
     /// </summary>
     public partial class DeleteTriggerResponse : AmazonWebServiceResponse
     {

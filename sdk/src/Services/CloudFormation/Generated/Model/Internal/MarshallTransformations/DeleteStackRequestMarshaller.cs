@@ -67,6 +67,17 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DeletionMode", StringUtils.FromString(publicRequest.DeletionMode));
                 }
+                if(publicRequest.IsSetDeploymentConfig())
+                {
+                    if(publicRequest.DeploymentConfig.IsSetDisableRollback())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "DisableRollback", StringUtils.FromBool(publicRequest.DeploymentConfig.DisableRollback));
+                    }
+                    if(publicRequest.DeploymentConfig.IsSetMode())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "Mode", StringUtils.FromString(publicRequest.DeploymentConfig.Mode));
+                    }
+                }
                 if(publicRequest.IsSetRetainResources())
                 {
                     if (publicRequest.RetainResources.Count == 0)
@@ -91,7 +102,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static DeleteStackRequestMarshaller _instance = new DeleteStackRequestMarshaller();        

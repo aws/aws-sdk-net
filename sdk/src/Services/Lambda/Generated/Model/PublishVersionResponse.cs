@@ -406,6 +406,7 @@ namespace Amazon.Lambda.Model
         /// Web Services managed key</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string KMSKeyArn
         {
             get { return this._kmsKeyArn; }
@@ -425,6 +426,7 @@ namespace Amazon.Lambda.Model
         /// format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string LastModified
         {
             get { return this._lastModified; }
@@ -614,6 +616,7 @@ namespace Amazon.Lambda.Model
         /// The function's execution role.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string Role
         {
             get { return this._role; }
@@ -683,6 +686,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the signing job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningJobArn
         {
             get { return this._signingJobArn; }
@@ -701,6 +705,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the signing profile version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningProfileVersionArn
         {
             get { return this._signingProfileVersionArn; }
@@ -816,7 +821,7 @@ namespace Amazon.Lambda.Model
         /// it.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Min=1, Max=5400)]
         public int? Timeout
         {
             get { return this._timeout; }

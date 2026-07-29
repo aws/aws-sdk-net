@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserStackAssociation Marshaller
     /// </summary>
-    public class UserStackAssociationMarshaller : IRequestMarshaller<UserStackAssociation, JsonMarshallerContext> 
+    public class UserStackAssociationMarshaller : IRequestMarshaller<UserStackAssociation, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +45,31 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UserStackAssociation requestObject, JsonMarshallerContext context)
+        public void Marshall(UserStackAssociation requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAuthenticationType())
-            {
-                context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.WriteStringValue(requestObject.AuthenticationType);
-            }
 
-            if(requestObject.IsSetSendEmailNotification())
+            if (requestObject.IsSetAuthenticationType())
             {
-                context.Writer.WritePropertyName("SendEmailNotification");
-                context.Writer.WriteBooleanValue(requestObject.SendEmailNotification.Value);
+                context.Writer.WriteTextString("AuthenticationType");
+                context.Writer.WriteTextString(requestObject.AuthenticationType);
             }
-
-            if(requestObject.IsSetStackName())
+            if (requestObject.IsSetSendEmailNotification())
             {
-                context.Writer.WritePropertyName("StackName");
-                context.Writer.WriteStringValue(requestObject.StackName);
+                context.Writer.WriteTextString("SendEmailNotification");
+                context.Writer.WriteBoolean(requestObject.SendEmailNotification.Value);
             }
-
-            if(requestObject.IsSetUserName())
+            if (requestObject.IsSetStackName())
             {
-                context.Writer.WritePropertyName("UserName");
-                context.Writer.WriteStringValue(requestObject.UserName);
+                context.Writer.WriteTextString("StackName");
+                context.Writer.WriteTextString(requestObject.StackName);
             }
-
+            if (requestObject.IsSetUserName())
+            {
+                context.Writer.WriteTextString("UserName");
+                context.Writer.WriteTextString(requestObject.UserName);
+            }
         }
 
         /// <summary>

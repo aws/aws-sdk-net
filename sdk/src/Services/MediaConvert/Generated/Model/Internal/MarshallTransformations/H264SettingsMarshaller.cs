@@ -99,6 +99,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.EntropyEncoding);
             }
 
+            if(requestObject.IsSetExplicitWeightedPrediction())
+            {
+                context.Writer.WritePropertyName("explicitWeightedPrediction");
+                context.Writer.WriteStringValue(requestObject.ExplicitWeightedPrediction);
+            }
+
             if(requestObject.IsSetFieldEncoding())
             {
                 context.Writer.WritePropertyName("fieldEncoding");

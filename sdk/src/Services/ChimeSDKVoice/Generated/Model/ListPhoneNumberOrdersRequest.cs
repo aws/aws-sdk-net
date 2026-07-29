@@ -63,6 +63,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The token used to retrieve the next page of results.
         /// </para>
         /// </summary>
+        [AWSProperty(Max=65535)]
         public string NextToken
         {
             get { return this._nextToken; }

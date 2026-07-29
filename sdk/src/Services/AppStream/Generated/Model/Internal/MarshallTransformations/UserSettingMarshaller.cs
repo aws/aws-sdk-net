@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UserSetting Marshaller
     /// </summary>
-    public class UserSettingMarshaller : IRequestMarshaller<UserSetting, JsonMarshallerContext> 
+    public class UserSettingMarshaller : IRequestMarshaller<UserSetting, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UserSetting requestObject, JsonMarshallerContext context)
+        public void Marshall(UserSetting requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAction())
-            {
-                context.Writer.WritePropertyName("Action");
-                context.Writer.WriteStringValue(requestObject.Action);
-            }
 
-            if(requestObject.IsSetMaximumLength())
+            if (requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("MaximumLength");
-                context.Writer.WriteNumberValue(requestObject.MaximumLength.Value);
+                context.Writer.WriteTextString("Action");
+                context.Writer.WriteTextString(requestObject.Action);
             }
-
-            if(requestObject.IsSetPermission())
+            if (requestObject.IsSetMaximumLength())
             {
-                context.Writer.WritePropertyName("Permission");
-                context.Writer.WriteStringValue(requestObject.Permission);
+                context.Writer.WriteTextString("MaximumLength");
+                context.Writer.WriteInt32(requestObject.MaximumLength.Value);
             }
-
+            if (requestObject.IsSetPermission())
+            {
+                context.Writer.WriteTextString("Permission");
+                context.Writer.WriteTextString(requestObject.Permission);
+            }
         }
 
         /// <summary>

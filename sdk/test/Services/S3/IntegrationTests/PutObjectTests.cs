@@ -410,7 +410,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                         {
                             BucketName = testBucketName,
                             Key = "TestKey3",
-                            InputStream = UtilityMethods.CreateStreamFromString("sample text", new NonRewindableStream())
+                            InputStream = new NonSeekableStream(Encoding.UTF8.GetBytes("sample text"))
                         })
                     );
                     Assert.Equal("TemporaryRedirect", exception.ErrorCode);
@@ -1515,9 +1515,5 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
-        private class NonRewindableStream : MemoryStream
-        {
-            public override bool CanSeek => false;
-        }
     }
 }

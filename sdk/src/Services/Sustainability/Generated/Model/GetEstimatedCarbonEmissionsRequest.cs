@@ -73,7 +73,9 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property FilterBy. 
         /// <para>
-        /// The criteria for filtering estimated carbon emissions.
+        ///  The criteria for filtering estimated carbon emissions. To determine which dimensions
+        /// are available to be filtered by, you can first call <a>GetEstimatedCarbonEmissionsDimensionValues</a>
+        /// 
         /// </para>
         /// </summary>
         public FilterExpression FilterBy
@@ -91,7 +93,15 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// The time granularity for the results. If absent, uses <c>MONTHLY</c> time granularity.
+        ///  The time granularity for the results. If absent, uses <c>MONTHLY</c> time granularity.
+        /// The smallest supported granularity for carbon emissions is <c>MONTHLY</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  If requesting partial time periods, data will be returned based on the smallest supported
+        /// granularity. For example, requesting <c>2025-04-01T00:00:00Z</c> to <c>2026-04-01T00:00:00Z</c>
+        /// with <c>YEARLY_CALENDAR</c> granularity will return the last 9 months for 2025 and
+        /// the first 3 months of 2026. 
         /// </para>
         /// </summary>
         public TimeGranularity Granularity
@@ -151,7 +161,7 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Default is 40.
+        /// The maximum number of results to return in a single call. Default is 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
@@ -190,7 +200,8 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The date range for fetching estimated carbon emissions.
+        ///  The date range for fetching estimated carbon emissions. The range must include the
+        /// start date of a month for that month's data to be included in the response. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

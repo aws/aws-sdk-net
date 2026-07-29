@@ -34,7 +34,27 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class DeleteAssetResponse : AmazonWebServiceResponse
     {
+        private string _assetId;
         private AssetStatus _assetStatus;
+
+        /// <summary>
+        /// Gets and sets the property AssetId. 
+        /// <para>
+        /// The ID of the asset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string AssetId
+        {
+            get { return this._assetId; }
+            set { this._assetId = value; }
+        }
+
+        // Check to see if AssetId property is set
+        internal bool IsSetAssetId()
+        {
+            return this._assetId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AssetStatus. 

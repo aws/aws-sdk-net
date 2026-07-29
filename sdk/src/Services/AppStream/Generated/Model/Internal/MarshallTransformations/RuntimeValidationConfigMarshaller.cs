@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuntimeValidationConfig Marshaller
     /// </summary>
-    public class RuntimeValidationConfigMarshaller : IRequestMarshaller<RuntimeValidationConfig, JsonMarshallerContext> 
+    public class RuntimeValidationConfigMarshaller : IRequestMarshaller<RuntimeValidationConfig, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuntimeValidationConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RuntimeValidationConfig requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetIntendedInstanceType())
-            {
-                context.Writer.WritePropertyName("IntendedInstanceType");
-                context.Writer.WriteStringValue(requestObject.IntendedInstanceType);
-            }
 
+            if (requestObject.IsSetIntendedInstanceType())
+            {
+                context.Writer.WriteTextString("IntendedInstanceType");
+                context.Writer.WriteTextString(requestObject.IntendedInstanceType);
+            }
         }
 
         /// <summary>

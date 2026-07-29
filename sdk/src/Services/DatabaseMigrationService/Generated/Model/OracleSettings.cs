@@ -815,9 +815,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecurityDbEncryption. 
         /// <para>
         /// For an Oracle source endpoint, the transparent data encryption (TDE) password required
-        /// by AWM DMS to access Oracle redo logs encrypted by TDE using Binary Reader. It is
-        /// also the <c> <i>TDE_Password</i> </c> part of the comma-separated value you set to
-        /// the <c>Password</c> request parameter when you create the endpoint. The <c>SecurityDbEncryptian</c>
+        /// by DMS to access Oracle redo logs encrypted by TDE using Binary Reader. It is also
+        /// the <c> <i>TDE_Password</i> </c> part of the comma-separated value you set to the
+        /// <c>Password</c> request parameter when you create the endpoint. The <c>SecurityDbEncryption</c>
         /// setting is related to this <c>SecurityDbEncryptionName</c> setting. For more information,
         /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
         /// Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database

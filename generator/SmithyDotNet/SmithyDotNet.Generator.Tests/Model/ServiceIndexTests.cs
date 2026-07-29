@@ -19,7 +19,7 @@ public class ServiceIndexTests(CloudTrailModelFixture fixture)
     public void Operations_ContainsPutAuditEvents()
     {
         Assert.Single(_index.Operations);
-        Assert.Equal("operation", _index.Operations[0].Type);
+        Assert.Equal("operation", _index.Operations[0].Shape.Type);
     }
 
     [Fact]

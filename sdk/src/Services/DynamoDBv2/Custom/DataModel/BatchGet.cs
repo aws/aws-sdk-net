@@ -169,6 +169,7 @@ namespace Amazon.DynamoDBv2.DataModel
             _context = context;
             _config = config;
             _itemStorageConfig = context.StorageConfigCache.GetConfig<T>(config);
+            ConsistentRead = config.ConsistentRead.GetValueOrDefault(false);
             TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
         }

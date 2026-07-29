@@ -52,7 +52,9 @@ namespace Amazon.CloudFormation.Model
     {
         private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientRequestToken;
+        private DeploymentConfig _deploymentConfig;
         private bool? _disableRollback;
+        private bool? _disableValidation;
         private List<string> _notificationARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -252,6 +254,24 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration for this stack operation, including the deployment mode.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DisableRollback. 
         /// <para>
         /// Preserve the state of previously provisioned resources when an operation fails.
@@ -271,6 +291,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDisableRollback()
         {
             return this._disableRollback.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableValidation. 
+        /// <para>
+        ///  Set to <c>true</c> to disable pre-deployment validations in changeset or stack operations.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? DisableValidation
+        {
+            get { return this._disableValidation; }
+            set { this._disableValidation = value; }
+        }
+
+        // Check to see if DisableValidation property is set
+        internal bool IsSetDisableValidation()
+        {
+            return this._disableValidation.HasValue; 
         }
 
         /// <summary>

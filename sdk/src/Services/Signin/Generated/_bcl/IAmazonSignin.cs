@@ -270,6 +270,154 @@ namespace Amazon.Signin
 
         #endregion
         
+        #region  CreateOAuth2TokenWithIAM
+
+
+        /// <summary>
+        /// Grants permission to exchange client credentials for an OAuth 2.0 access token scoped
+        /// to a resource that can be used to access AWS services from applications
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOAuth2TokenWithIAM service method.</param>
+        /// 
+        /// <returns>The response from the CreateOAuth2TokenWithIAM service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2TokenWithIAM">REST API Reference for CreateOAuth2TokenWithIAM Operation</seealso>
+        CreateOAuth2TokenWithIAMResponse CreateOAuth2TokenWithIAM(CreateOAuth2TokenWithIAMRequest request);
+
+
+
+        /// <summary>
+        /// Grants permission to exchange client credentials for an OAuth 2.0 access token scoped
+        /// to a resource that can be used to access AWS services from applications
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateOAuth2TokenWithIAM service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateOAuth2TokenWithIAM service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/CreateOAuth2TokenWithIAM">REST API Reference for CreateOAuth2TokenWithIAM Operation</seealso>
+        Task<CreateOAuth2TokenWithIAMResponse> CreateOAuth2TokenWithIAMAsync(CreateOAuth2TokenWithIAMRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteConsoleAuthorizationConfiguration
 
 
@@ -924,6 +1072,180 @@ namespace Amazon.Signin
 
         #endregion
         
+        #region  IntrospectOAuth2TokenWithIAM
+
+
+        /// <summary>
+        /// Grants permission to inspect the metadata and state of an OAuth 2.0 access token or
+        /// refresh token
+        /// 
+        ///  
+        /// <para>
+        /// Implements RFC 7662 OAuth 2.0 Token Introspection over a SigV4-authenticated endpoint.
+        /// Inspects the metadata of an access_token or refresh_token issued by AWS Sign-In and
+        /// returns the claims associated with it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Inactive token semantics (RFC 7662 §2.2): when the supplied token is unknown, expired,
+        /// revoked, malformed, or owned by a different account, the response body is exactly
+        /// { &quot;active&quot;: false } with all other claims omitted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IntrospectOAuth2TokenWithIAM service method.</param>
+        /// 
+        /// <returns>The response from the IntrospectOAuth2TokenWithIAM service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/IntrospectOAuth2TokenWithIAM">REST API Reference for IntrospectOAuth2TokenWithIAM Operation</seealso>
+        IntrospectOAuth2TokenWithIAMResponse IntrospectOAuth2TokenWithIAM(IntrospectOAuth2TokenWithIAMRequest request);
+
+
+
+        /// <summary>
+        /// Grants permission to inspect the metadata and state of an OAuth 2.0 access token or
+        /// refresh token
+        /// 
+        ///  
+        /// <para>
+        /// Implements RFC 7662 OAuth 2.0 Token Introspection over a SigV4-authenticated endpoint.
+        /// Inspects the metadata of an access_token or refresh_token issued by AWS Sign-In and
+        /// returns the claims associated with it.
+        /// </para>
+        ///  
+        /// <para>
+        /// Inactive token semantics (RFC 7662 §2.2): when the supplied token is unknown, expired,
+        /// revoked, malformed, or owned by a different account, the response body is exactly
+        /// { &quot;active&quot;: false } with all other claims omitted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IntrospectOAuth2TokenWithIAM service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the IntrospectOAuth2TokenWithIAM service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/IntrospectOAuth2TokenWithIAM">REST API Reference for IntrospectOAuth2TokenWithIAM Operation</seealso>
+        Task<IntrospectOAuth2TokenWithIAMResponse> IntrospectOAuth2TokenWithIAMAsync(IntrospectOAuth2TokenWithIAMRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListResourcePermissionStatements
 
 
@@ -1479,6 +1801,176 @@ namespace Amazon.Signin
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/PutResourcePermissionStatement">REST API Reference for PutResourcePermissionStatement Operation</seealso>
         Task<PutResourcePermissionStatementResponse> PutResourcePermissionStatementAsync(PutResourcePermissionStatementRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  RevokeOAuth2TokenWithIAM
+
+
+        /// <summary>
+        /// Grants permission to revoke an OAuth 2.0 refresh token and its associated refresh
+        /// tokens
+        /// 
+        ///  
+        /// <para>
+        /// Revokes a refresh_token issued by AWS Sign-In, invalidating the entire token chain
+        /// so that the refresh_token can no longer be used to mint new access_tokens.
+        /// </para>
+        ///  
+        /// <para>
+        /// Idempotency: revoking an already-revoked, expired, or otherwise invalid token still
+        /// returns 200 OK with an empty body. Only the refresh_token type is accepted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeOAuth2TokenWithIAM service method.</param>
+        /// 
+        /// <returns>The response from the RevokeOAuth2TokenWithIAM service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/RevokeOAuth2TokenWithIAM">REST API Reference for RevokeOAuth2TokenWithIAM Operation</seealso>
+        RevokeOAuth2TokenWithIAMResponse RevokeOAuth2TokenWithIAM(RevokeOAuth2TokenWithIAMRequest request);
+
+
+
+        /// <summary>
+        /// Grants permission to revoke an OAuth 2.0 refresh token and its associated refresh
+        /// tokens
+        /// 
+        ///  
+        /// <para>
+        /// Revokes a refresh_token issued by AWS Sign-In, invalidating the entire token chain
+        /// so that the refresh_token can no longer be used to mint new access_tokens.
+        /// </para>
+        ///  
+        /// <para>
+        /// Idempotency: revoking an already-revoked, expired, or otherwise invalid token still
+        /// returns 200 OK with an empty body. Only the refresh_token type is accepted.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeOAuth2TokenWithIAM service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeOAuth2TokenWithIAM service method, as returned by Signin.</returns>
+        /// <exception cref="Amazon.Signin.Model.AccessDeniedException">
+        /// Error thrown for access denied scenarios with flexible HTTP status mapping
+        /// 
+        ///  
+        /// <para>
+        /// Runtime HTTP Status Code Mapping:
+        /// </para>
+        ///  <ul> <li>HTTP 401 (Unauthorized): TOKEN_EXPIRED, AUTHCODE_EXPIRED</li> <li>HTTP 403
+        /// (Forbidden): USER_CREDENTIALS_CHANGED, INSUFFICIENT_PERMISSIONS</li> </ul> 
+        /// <para>
+        /// The specific HTTP status code is determined at runtime based on the error enum value.
+        /// Consumers should use the error field to determine the specific access denial reason.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.InternalServerException">
+        /// Error thrown when an internal server error occurs
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 500 Internal Server Error
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for unexpected server-side errors that prevent request processing.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.TooManyRequestsErrorException">
+        /// Error thrown when rate limit is exceeded
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 429 Too Many Requests
+        /// </para>
+        ///  
+        /// <para>
+        /// Possible OAuth2ErrorCode values:
+        /// </para>
+        ///  <ul> <li>INVALID_REQUEST: Rate limiting, too many requests, abuse prevention</li>
+        /// </ul> 
+        /// <para>
+        /// Possible causes:
+        /// </para>
+        ///  <ul> <li>Too many token requests from the same client</li> <li>Rate limiting based
+        /// on client_id or IP address</li> <li>Abuse prevention mechanisms triggered</li> <li>Service
+        /// protection against excessive token generation</li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.Signin.Model.ValidationException">
+        /// Error thrown when request validation fails
+        /// 
+        ///  
+        /// <para>
+        /// HTTP Status Code: 400 Bad Request
+        /// </para>
+        ///  
+        /// <para>
+        /// Used for request validation errors such as malformed parameters, missing required
+        /// fields, or invalid parameter values.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/signin-2023-01-01/RevokeOAuth2TokenWithIAM">REST API Reference for RevokeOAuth2TokenWithIAM Operation</seealso>
+        Task<RevokeOAuth2TokenWithIAMResponse> RevokeOAuth2TokenWithIAMAsync(RevokeOAuth2TokenWithIAMRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

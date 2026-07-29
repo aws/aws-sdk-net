@@ -1,0 +1,96 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the quicksight-2018-04-01.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Text;
+using System.Xml.Serialization;
+
+using Amazon.QuickSight.Model;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
+namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// FileSource Marshaller
+    /// </summary>
+    public class FileSourceMarshaller : IRequestMarshaller<FileSource, JsonMarshallerContext> 
+    {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="requestObject"></param>
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public void Marshall(FileSource requestObject, JsonMarshallerContext context)
+        {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetDataSourceArn())
+            {
+                context.Writer.WritePropertyName("DataSourceArn");
+                context.Writer.WriteStringValue(requestObject.DataSourceArn);
+            }
+
+            if(requestObject.IsSetInputColumns())
+            {
+                context.Writer.WritePropertyName("InputColumns");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInputColumnsListValue in requestObject.InputColumns)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InputColumnMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInputColumnsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetSheetIndex())
+            {
+                context.Writer.WritePropertyName("SheetIndex");
+                context.Writer.WriteNumberValue(requestObject.SheetIndex.Value);
+            }
+
+            if(requestObject.IsSetUploadSettings())
+            {
+                context.Writer.WritePropertyName("UploadSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UploadSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.UploadSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+        }
+
+        /// <summary>
+        /// Singleton Marshaller.
+        /// </summary>
+        public readonly static FileSourceMarshaller Instance = new FileSourceMarshaller();
+
+    }
+}

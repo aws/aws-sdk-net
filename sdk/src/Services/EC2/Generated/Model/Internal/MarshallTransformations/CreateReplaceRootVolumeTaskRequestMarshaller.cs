@@ -125,13 +125,21 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetVolumeId())
+                {
+                    request.Parameters.Add("VolumeId", StringUtils.FromString(publicRequest.VolumeId));
+                }
                 if(publicRequest.IsSetVolumeInitializationRate())
                 {
                     request.Parameters.Add("VolumeInitializationRate", StringUtils.FromLong(publicRequest.VolumeInitializationRate));
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static CreateReplaceRootVolumeTaskRequestMarshaller _instance = new CreateReplaceRootVolumeTaskRequestMarshaller();        

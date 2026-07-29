@@ -71,6 +71,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             else            
                 request.Parameters.Add("clientToken", System.Guid.NewGuid().ToString());
                 
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/datasets/{datasetId}";
             request.UseQueryString = true;
             

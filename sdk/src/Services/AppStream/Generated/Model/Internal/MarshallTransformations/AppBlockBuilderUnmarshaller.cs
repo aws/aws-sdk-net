@@ -29,124 +29,165 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AppBlockBuilder Object
     /// </summary>  
-    public class AppBlockBuilderUnmarshaller : IJsonUnmarshaller<AppBlockBuilder, JsonUnmarshallerContext>
+    public class AppBlockBuilderUnmarshaller : ICborUnmarshaller<AppBlockBuilder, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AppBlockBuilder Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AppBlockBuilder Unmarshall(CborUnmarshallerContext context)
         {
             AppBlockBuilder unmarshalledObject = new AppBlockBuilder();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AccessEndpoints", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AccessEndpoint, AccessEndpointUnmarshaller>(AccessEndpointUnmarshaller.Instance);
-                    unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AppBlockBuilderErrors", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ResourceError, ResourceErrorUnmarshaller>(ResourceErrorUnmarshaller.Instance);
-                    unmarshalledObject.AppBlockBuilderErrors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Arn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DisableIMDSV1", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DisableIMDSV1 = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EnableDefaultInternetAccess", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableDefaultInternetAccess = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IamRoleArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Platform", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Platform = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StateChangeReason", targetDepth, ref reader))
-                {
-                    var unmarshaller = AppBlockBuilderStateChangeReasonUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VpcConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = VpcConfigUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AccessEndpoints":
+                        {
+                            context.AddPathSegment("AccessEndpoints");
+                            var unmarshaller = new CborListUnmarshaller<AccessEndpoint, AccessEndpointUnmarshaller>(AccessEndpointUnmarshaller.Instance);
+                            unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AppBlockBuilderErrors":
+                        {
+                            context.AddPathSegment("AppBlockBuilderErrors");
+                            var unmarshaller = new CborListUnmarshaller<ResourceError, ResourceErrorUnmarshaller>(ResourceErrorUnmarshaller.Instance);
+                            unmarshalledObject.AppBlockBuilderErrors = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Arn":
+                        {
+                            context.AddPathSegment("Arn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CreatedTime":
+                        {
+                            context.AddPathSegment("CreatedTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Description":
+                        {
+                            context.AddPathSegment("Description");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DisableIMDSV1":
+                        {
+                            context.AddPathSegment("DisableIMDSV1");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.DisableIMDSV1 = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DisplayName":
+                        {
+                            context.AddPathSegment("DisplayName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EnableDefaultInternetAccess":
+                        {
+                            context.AddPathSegment("EnableDefaultInternetAccess");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.EnableDefaultInternetAccess = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IamRoleArn":
+                        {
+                            context.AddPathSegment("IamRoleArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IamRoleArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InstanceType":
+                        {
+                            context.AddPathSegment("InstanceType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Name":
+                        {
+                            context.AddPathSegment("Name");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Platform":
+                        {
+                            context.AddPathSegment("Platform");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Platform = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "State":
+                        {
+                            context.AddPathSegment("State");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StateChangeReason":
+                        {
+                            context.AddPathSegment("StateChangeReason");
+                            var unmarshaller = AppBlockBuilderStateChangeReasonUnmarshaller.Instance;
+                            unmarshalledObject.StateChangeReason = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VpcConfig":
+                        {
+                            context.AddPathSegment("VpcConfig");
+                            var unmarshaller = VpcConfigUnmarshaller.Instance;
+                            unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         private CapacityProviderPermissionsConfig _permissionsConfig;
         private PropagateTags _propagateTags;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private CapacityProviderTelemetryConfig _telemetryConfig;
         private CapacityProviderVpcConfig _vpcConfig;
 
         /// <summary>
@@ -180,6 +181,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetryConfig. 
+        /// <para>
+        /// The telemetry configuration for the capacity provider. Specifies logging settings
+        /// for managed resources.
+        /// </para>
+        /// </summary>
+        public CapacityProviderTelemetryConfig TelemetryConfig
+        {
+            get { return this._telemetryConfig; }
+            set { this._telemetryConfig = value; }
+        }
+
+        // Check to see if TelemetryConfig property is set
+        internal bool IsSetTelemetryConfig()
+        {
+            return this._telemetryConfig != null;
         }
 
         /// <summary>

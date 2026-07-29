@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>AWSSDK.Extensions.Numerics</id>
+    <title>AWSSDK - Arbitrary-precision decimal support</title>
+    <version>4.0.0.2</version>
+    <authors>Amazon Web Services</authors>
+    <description>This package provides BigDecimal, an immutable arbitrary-precision signed decimal number, for losslessly carrying high-precision numeric values across AWS service requests and responses in the AWS SDK for .NET.</description>
+    <language>en-US</language>
+    <license type="expression">Apache-2.0</license>
+    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
+    <tags>AWS Amazon aws-sdk-v4</tags>
+    <icon>images\AWSLogo.png</icon>
+    <readme>README.md</readme>
+    <dependencies>
+      <group targetFramework="net472" />
+      <group targetFramework="netstandard2.0" />
+      <group targetFramework="netcoreapp3.1" />
+      <group targetFramework="net8.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="..\..\..\sdk\nuget-content\AWSLogo.png" target="images\" />
+    <file src="README.md" target="README.md" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.Numerics.dll" target="lib\net472" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.Numerics.pdb" target="lib\net472" />
+    <file src=".\bin\Release\net472\AWSSDK.Extensions.Numerics.xml" target="lib\net472" />
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.Numerics.dll" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.Numerics.pdb" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netstandard2.0\AWSSDK.Extensions.Numerics.xml" target="lib\netstandard2.0" />
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.Numerics.dll" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.Numerics.pdb" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\netcoreapp3.1\AWSSDK.Extensions.Numerics.xml" target="lib\netcoreapp3.1" />
+    <file src=".\bin\Release\net8.0\AWSSDK.Extensions.Numerics.dll" target="lib\net8.0" />
+    <file src=".\bin\Release\net8.0\AWSSDK.Extensions.Numerics.pdb" target="lib\net8.0" />
+    <file src=".\bin\Release\net8.0\AWSSDK.Extensions.Numerics.xml" target="lib\net8.0" />
+  </files>
+</package>

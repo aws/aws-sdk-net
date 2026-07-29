@@ -195,15 +195,7 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Linux 2: <c>amazonlinux-2-x86_64</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Amazon Linux 2023 (recommended): <c>amazonlinux-2023-x86_64</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Ubuntu 18.04: <c>ubuntu-18.04-x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -215,16 +207,8 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Linux 2: <c>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Amazon Linux 2023 (recommended): <c>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64</c>
         /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Ubuntu 18.04: <c>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

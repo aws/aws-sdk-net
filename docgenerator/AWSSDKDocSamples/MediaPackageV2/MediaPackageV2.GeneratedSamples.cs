@@ -59,6 +59,34 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             #endregion
         }
 
+        public void MediaPackageV2CreateChannel()
+        {
+            #region example-2
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.CreateChannel(new CreateChannelRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleCmafChannel",
+                Description = "Non-epoch-locked CMAF channel",
+                InputType = "CMAF",
+                OutputLockingMode = "NON_EPOCH_LOCKED"
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string eTag = response.ETag;
+            List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
+            string inputType = response.InputType;
+            DateTime modifiedAt = response.ModifiedAt;
+            string outputLockingMode = response.OutputLockingMode;
+
+            #endregion
+        }
+
         public void MediaPackageV2CreateChannelGroup()
         {
             #region example-1
@@ -419,6 +447,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                         }
                     },
                     IncludeIframeOnlyStreams = true,
+                    OutputTimestampMode = "REBASED_TO_CHANNEL_START",
                     Scte = new Scte { ScteFilter = new List<string> {
                         "SPLICE_INSERT",
                         "BREAK"
@@ -621,6 +650,32 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
             string inputType = response.InputType;
             DateTime modifiedAt = response.ModifiedAt;
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
+        public void MediaPackageV2GetChannel()
+        {
+            #region example-2
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.GetChannel(new GetChannelRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleCmafChannel"
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string eTag = response.ETag;
+            List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
+            string inputType = response.InputType;
+            DateTime modifiedAt = response.ModifiedAt;
+            string outputLockingMode = response.OutputLockingMode;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion
@@ -1056,6 +1111,33 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
             string inputType = response.InputType;
             DateTime modifiedAt = response.ModifiedAt;
+            Dictionary<string, string> tags = response.Tags;
+
+            #endregion
+        }
+
+        public void MediaPackageV2UpdateChannel()
+        {
+            #region example-2
+
+            var client = new AmazonMediaPackageV2Client();
+            var response = client.UpdateChannel(new UpdateChannelRequest 
+            {
+                ChannelGroupName = "exampleChannelGroup",
+                ChannelName = "exampleCmafChannel",
+                Description = "Updated non-epoch-locked CMAF channel"
+            });
+
+            string arn = response.Arn;
+            string channelGroupName = response.ChannelGroupName;
+            string channelName = response.ChannelName;
+            DateTime createdAt = response.CreatedAt;
+            string description = response.Description;
+            string eTag = response.ETag;
+            List<IngestEndpoint> ingestEndpoints = response.IngestEndpoints;
+            string inputType = response.InputType;
+            DateTime modifiedAt = response.ModifiedAt;
+            string outputLockingMode = response.OutputLockingMode;
             Dictionary<string, string> tags = response.Tags;
 
             #endregion

@@ -78,6 +78,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         request.Parameters.Add("Operator" + "." + "Principal", StringUtils.FromString(publicRequest.Operator.Principal));
                     }
                 }
+                if(publicRequest.IsSetParentGroupId())
+                {
+                    request.Parameters.Add("ParentGroupId", StringUtils.FromString(publicRequest.ParentGroupId));
+                }
                 if(publicRequest.IsSetPartitionCount())
                 {
                     request.Parameters.Add("PartitionCount", StringUtils.FromInt(publicRequest.PartitionCount));
@@ -130,7 +134,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static CreatePlacementGroupRequestMarshaller _instance = new CreatePlacementGroupRequestMarshaller();        

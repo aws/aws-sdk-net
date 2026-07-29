@@ -135,6 +135,7 @@ namespace Amazon.Omics.Model
         private string _roleArn;
         private string _runGroupId;
         private string _runId;
+        private ScratchStorageMode _scratchStorageMode;
         private int? _storageCapacity;
         private StorageType _storageType;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -457,6 +458,27 @@ namespace Amazon.Omics.Model
         internal bool IsSetRunId()
         {
             return this._runId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScratchStorageMode. 
+        /// <para>
+        /// Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If
+        /// not specified, this will default to SHARED. This configuration is applicable only
+        /// for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public ScratchStorageMode ScratchStorageMode
+        {
+            get { return this._scratchStorageMode; }
+            set { this._scratchStorageMode = value; }
+        }
+
+        // Check to see if ScratchStorageMode property is set
+        internal bool IsSetScratchStorageMode()
+        {
+            return this._scratchStorageMode != null;
         }
 
         /// <summary>

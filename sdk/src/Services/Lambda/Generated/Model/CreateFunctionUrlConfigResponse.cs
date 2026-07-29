@@ -90,7 +90,7 @@ namespace Amazon.Lambda.Model
         /// format</a> (YYYY-MM-DDThh:mm:ss.sTZD).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public string CreationTime
         {
             get { return this._creationTime; }

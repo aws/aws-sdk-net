@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CapacityReservationTarget Marshaller
     /// </summary>
-    public class CapacityReservationTargetMarshaller : IRequestMarshaller<CapacityReservationTarget, JsonMarshallerContext> 
+    public class CapacityReservationTargetMarshaller : IRequestMarshaller<CapacityReservationTarget, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CapacityReservationTarget requestObject, JsonMarshallerContext context)
+        public void Marshall(CapacityReservationTarget requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCapacityReservationId())
-            {
-                context.Writer.WritePropertyName("CapacityReservationId");
-                context.Writer.WriteStringValue(requestObject.CapacityReservationId);
-            }
 
-            if(requestObject.IsSetCapacityReservationResourceGroupArn())
+            if (requestObject.IsSetCapacityReservationId())
             {
-                context.Writer.WritePropertyName("CapacityReservationResourceGroupArn");
-                context.Writer.WriteStringValue(requestObject.CapacityReservationResourceGroupArn);
+                context.Writer.WriteTextString("CapacityReservationId");
+                context.Writer.WriteTextString(requestObject.CapacityReservationId);
             }
-
+            if (requestObject.IsSetCapacityReservationResourceGroupArn())
+            {
+                context.Writer.WriteTextString("CapacityReservationResourceGroupArn");
+                context.Writer.WriteTextString(requestObject.CapacityReservationResourceGroupArn);
+            }
         }
 
         /// <summary>

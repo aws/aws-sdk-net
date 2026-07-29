@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelayAction Marshaller
     /// </summary>
-    public class RelayActionMarshaller : IRequestMarshaller<RelayAction, JsonMarshallerContext> 
+    public class RelayActionMarshaller : IRequestMarshaller<RelayAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RelayAction requestObject, JsonMarshallerContext context)
+        public void Marshall(RelayAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetActionFailurePolicy())
-            {
-                context.Writer.WritePropertyName("ActionFailurePolicy");
-                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
-            }
 
-            if(requestObject.IsSetMailFrom())
+            if (requestObject.IsSetActionFailurePolicy())
             {
-                context.Writer.WritePropertyName("MailFrom");
-                context.Writer.WriteStringValue(requestObject.MailFrom);
+                context.Writer.WriteTextString("ActionFailurePolicy");
+                context.Writer.WriteTextString(requestObject.ActionFailurePolicy);
             }
-
-            if(requestObject.IsSetRelay())
+            if (requestObject.IsSetMailFrom())
             {
-                context.Writer.WritePropertyName("Relay");
-                context.Writer.WriteStringValue(requestObject.Relay);
+                context.Writer.WriteTextString("MailFrom");
+                context.Writer.WriteTextString(requestObject.MailFrom);
             }
-
+            if (requestObject.IsSetRelay())
+            {
+                context.Writer.WriteTextString("Relay");
+                context.Writer.WriteTextString(requestObject.Relay);
+            }
         }
 
         /// <summary>

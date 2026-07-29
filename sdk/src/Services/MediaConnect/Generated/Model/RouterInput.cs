@@ -38,6 +38,8 @@ namespace Amazon.MediaConnect.Model
         private string _arn;
         private string _availabilityZone;
         private RouterInputConfiguration _configuration;
+        private RouterContentQualityAnalysisConfiguration _contentQualityAnalysisConfiguration;
+        private RouterContentQualityAnalysisType _contentQualityAnalysisType;
         private DateTime? _createdAt;
         private string _id;
         private RouterInputType _inputType;
@@ -112,6 +114,44 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentQualityAnalysisConfiguration. 
+        /// <para>
+        /// The content quality analysis configuration for the router input.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RouterContentQualityAnalysisConfiguration ContentQualityAnalysisConfiguration
+        {
+            get { return this._contentQualityAnalysisConfiguration; }
+            set { this._contentQualityAnalysisConfiguration = value; }
+        }
+
+        // Check to see if ContentQualityAnalysisConfiguration property is set
+        internal bool IsSetContentQualityAnalysisConfiguration()
+        {
+            return this._contentQualityAnalysisConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentQualityAnalysisType. 
+        /// <para>
+        /// The type of content quality analysis applied to the router input.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RouterContentQualityAnalysisType ContentQualityAnalysisType
+        {
+            get { return this._contentQualityAnalysisType; }
+            set { this._contentQualityAnalysisType = value; }
+        }
+
+        // Check to see if ContentQualityAnalysisType property is set
+        internal bool IsSetContentQualityAnalysisType()
+        {
+            return this._contentQualityAnalysisType != null;
         }
 
         /// <summary>

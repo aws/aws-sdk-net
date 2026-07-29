@@ -47,7 +47,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await context.SaveAsync(employee);
 
             // Load item
-            T retrieved = await context.LoadAsync(employee);
+            T retrieved = await context.LoadAsync(employee, new LoadConfig { ConsistentRead = true });
             Assert.Equal(employee.Name, retrieved.Name);
             Assert.Equal(employee.Age, retrieved.Age);
             Assert.Equal(employee.CompanyName, retrieved.CompanyName);
@@ -63,7 +63,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             await context.SaveAsync(employee);
 
             // Load item
-            retrieved = await context.LoadAsync(employee);
+            retrieved = await context.LoadAsync(employee, new LoadConfig { ConsistentRead = true });
             Assert.Equal(employee.Name, retrieved.Name);
             Assert.Equal(employee.Age, retrieved.Age);
             Assert.Equal(employee.CompanyName, retrieved.CompanyName);
@@ -87,9 +87,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             employee2.Score = 101;
             await context.SaveAsync(employee2);
 
-            retrieved = await context.LoadAsync<T>(alanName, 31);
+            retrieved = await context.LoadAsync<T>(alanName, 31, new LoadConfig { ConsistentRead = true });
             Assert.Equal(retrieved.Name, alanName);
-            retrieved = await context.LoadAsync(employee);
+            retrieved = await context.LoadAsync(employee, new LoadConfig { ConsistentRead = true });
             Assert.Equal(retrieved.Name, chuckName);
             retrieved = await context.LoadAsync(employee2, new LoadConfig { ConsistentRead = true });
             Assert.Equal(retrieved.Name, dianeName);
@@ -233,11 +233,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             };
             await context.SaveAsync(product2);
 
-            var rt1 = await context.LoadAsync(product1);
+            var rt1 = await context.LoadAsync(product1, new LoadConfig { ConsistentRead = true });
             Assert.Equal(product1.Id, rt1.Id);
             Assert.Equal(product1.IdAsInt, rt1.IdAsInt);
 
-            var rt2 = await context.LoadAsync(product2);
+            var rt2 = await context.LoadAsync(product2, new LoadConfig { ConsistentRead = true });
             Assert.Equal(product2.Id, rt2.Id);
 
             await context.DeleteAsync(product1);
@@ -953,22 +953,25 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         internal static async Task TestMultiTableTransactionsHelper<T>(DynamoDBContext context)
             where T : Employee, IVersioned, new()
         {
+            // Use unique keys so concurrent runs of this helper (across conversions and the
+            // Tables/Context/PlainContext variants) operate on different items and don't collide
+            // in the transaction window, which would surface as a TransactionConflict cancellation.
             var employee1 = new T
             {
-                Name = "Alan",
+                Name = UtilityMethods.GenerateName("Alan-"),
                 Age = 31,
                 Score = 120,
                 ManagerName = "Barbara"
             };
             var employee2 = new T
             {
-                Name = "Diane",
+                Name = UtilityMethods.GenerateName("Diane-"),
                 Age = 40,
                 Score = 140
             };
             var product = new VersionedProduct
             {
-                Id = 1001,
+                Id = UtilityMethods.GenerateId(),
                 Name = "CloudSpotter",
                 Price = 1200
             };

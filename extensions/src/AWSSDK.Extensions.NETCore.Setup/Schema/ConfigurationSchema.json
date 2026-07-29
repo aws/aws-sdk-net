@@ -75,6 +75,10 @@
           "type": "boolean",
           "description": "If set to true the SDK will ignore the configured endpointUrls in the config file or in the environment variables."
         },
+        "JsonMaxDepth": {
+          "type": "integer",
+          "description": "The maximum depth allowed when reading JSON responses. The default is 256. Increase this value if you encounter AmazonUnmarshallingException due to deeply nested response structures."
+        },
         "LogMetrics": {
           "type": "boolean",
           "description": "Flag on whether to log metrics for service calls."

@@ -68,7 +68,11 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFlowVersion())
                 throw new AmazonBedrockAgentException("Request object does not have required field FlowVersion set");
             request.AddPathResource("{flowVersion}", StringUtils.FromString(publicRequest.FlowVersion));
+            
+            if (publicRequest.IsSetIncludedData())
+                request.Parameters.Add("includedData", StringUtils.FromString(publicRequest.IncludedData));
             request.ResourcePath = "/flows/{flowIdentifier}/versions/{flowVersion}/";
+            request.UseQueryString = true;
 
             return request;
         }

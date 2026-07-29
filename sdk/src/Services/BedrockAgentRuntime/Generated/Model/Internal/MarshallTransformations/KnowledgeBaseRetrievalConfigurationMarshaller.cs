@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetManagedSearchConfiguration())
+            {
+                context.Writer.WritePropertyName("managedSearchConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedSearchConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedSearchConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetVectorSearchConfiguration())
             {
                 context.Writer.WritePropertyName("vectorSearchConfiguration");

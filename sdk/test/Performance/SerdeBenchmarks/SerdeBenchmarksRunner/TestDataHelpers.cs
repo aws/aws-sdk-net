@@ -13,6 +13,8 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Runtime.Internal;
+
 namespace AWSSDK.Benchmarks.Serde;
 
 /// <summary>
@@ -22,6 +24,29 @@ namespace AWSSDK.Benchmarks.Serde;
 /// </summary>
 public static class TestDataHelpers
 {
+    /// <summary>
+    /// Returns the marshalled request body length and disposes the request, mirroring what the
+    /// production pipeline does after marshalling. Disposing matters when the request body is backed
+    /// by a pooled buffer: it returns that buffer and keeps the pool warm, so the [MemoryDiagnoser]
+    /// numbers reflect the real per-request cost instead of a fresh allocation every iteration.
+    /// Works whether or not the marshaller used a pooled buffer.
+    /// </summary>
+    public static long GetContentLengthAndDispose(IRequest request)
+    {
+        try
+        {
+            if (request.Content != null)
+                return request.Content.Length;
+            if (request.ContentStream != null && request.ContentStream.CanSeek)
+                return request.ContentStream.Length;
+            return 0;
+        }
+        finally
+        {
+            request.Dispose();
+        }
+    }
+
     /// <summary>Creates a DynamoDB item with a single string key (Baseline).</summary>
     public static Dictionary<string, T> CreateBaselineItem<T>(Func<string, T> stringAttr)
     {

@@ -31,12 +31,21 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartMetadataModelImport operation.
-    /// Loads the metadata for all the dependent database objects of the parent object.
+    /// Queues an import of metadata models (database objects such as tables, views, and procedures)
+    /// from your data provider into the metadata tree. If other requests created by <c>Start*</c>
+    /// operations are already in the migration project's queue, the import begins after they
+    /// complete.
     /// 
     ///  
     /// <para>
-    /// This operation uses your project's Amazon S3 bucket as a metadata cache to improve
-    /// performance.
+    /// To check the status of the import request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelImports.html">DescribeMetadataModelImports</a>
+    /// using the returned <c>RequestIdentifier</c> as a filter.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:StartMetadataModelImport</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
     /// </para>
     /// </summary>
     public partial class StartMetadataModelImportRequest : AmazonDatabaseMigrationServiceRequest
@@ -68,8 +77,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// Whether to load metadata to the source or target database.
+        /// Specifies the metadata tree to import into.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You cannot import from a virtual target data provider.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public OriginTypeValue Origin
@@ -87,7 +101,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Refresh. 
         /// <para>
-        /// If <c>true</c>, DMS loads metadata for the specified objects from the source database.
+        /// Specifies whether to refresh the selected metadata models from the data provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>true</c>, the import reloads the selected metadata models with current definitions
+        /// and removes their existing subtree.
+        /// </para>
+        ///  
+        /// <para>
+        /// When <c>false</c> (default), the import loads the full subtree that has not yet been
+        /// loaded into the metadata tree.
         /// </para>
         /// </summary>
         public bool? Refresh
@@ -105,8 +129,24 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SelectionRules. 
         /// <para>
-        /// A value that specifies the database objects to import.
+        /// A JSON string that identifies the metadata models to import from the data provider.
+        /// For the selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+        /// rules in DMS Schema Conversion</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Usage:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Accepts source or target selection rules depending on the <c>Origin</c> parameter.
+        /// The <c>server-name</c> in the object locator must match the corresponding data provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Supports <c>explicit</c>, <c>include</c>, and <c>exclude</c> rule actions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SelectionRules

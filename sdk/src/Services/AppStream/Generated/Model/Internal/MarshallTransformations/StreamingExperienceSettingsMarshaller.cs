@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StreamingExperienceSettings Marshaller
     /// </summary>
-    public class StreamingExperienceSettingsMarshaller : IRequestMarshaller<StreamingExperienceSettings, JsonMarshallerContext> 
+    public class StreamingExperienceSettingsMarshaller : IRequestMarshaller<StreamingExperienceSettings, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StreamingExperienceSettings requestObject, JsonMarshallerContext context)
+        public void Marshall(StreamingExperienceSettings requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetPreferredProtocol())
-            {
-                context.Writer.WritePropertyName("PreferredProtocol");
-                context.Writer.WriteStringValue(requestObject.PreferredProtocol);
-            }
 
+            if (requestObject.IsSetPreferredProtocol())
+            {
+                context.Writer.WriteTextString("PreferredProtocol");
+                context.Writer.WriteTextString(requestObject.PreferredProtocol);
+            }
         }
 
         /// <summary>

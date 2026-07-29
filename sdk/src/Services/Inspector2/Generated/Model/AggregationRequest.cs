@@ -38,6 +38,7 @@ namespace Amazon.Inspector2.Model
         private AmiAggregation _amiAggregation;
         private AwsEcrContainerAggregation _awsEcrContainerAggregation;
         private CodeRepositoryAggregation _codeRepositoryAggregation;
+        private ContainerImageAggregation _containerImageAggregation;
         private Ec2InstanceAggregation _ec2InstanceAggregation;
         private FindingTypeAggregation _findingTypeAggregation;
         private ImageLayerAggregation _imageLayerAggregation;
@@ -45,7 +46,9 @@ namespace Amazon.Inspector2.Model
         private LambdaLayerAggregation _lambdaLayerAggregation;
         private PackageAggregation _packageAggregation;
         private RepositoryAggregation _repositoryAggregation;
+        private ServerlessFunctionAggregation _serverlessFunctionAggregation;
         private TitleAggregation _titleAggregation;
+        private VmInstanceAggregation _vmInstanceAggregation;
 
         /// <summary>
         /// Gets and sets the property AccountAggregation. 
@@ -120,6 +123,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetCodeRepositoryAggregation()
         {
             return this._codeRepositoryAggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerImageAggregation. 
+        /// <para>
+        /// An object that contains details about an aggregation request based on container images.
+        /// </para>
+        /// </summary>
+        public ContainerImageAggregation ContainerImageAggregation
+        {
+            get { return this._containerImageAggregation; }
+            set { this._containerImageAggregation = value; }
+        }
+
+        // Check to see if ContainerImageAggregation property is set
+        internal bool IsSetContainerImageAggregation()
+        {
+            return this._containerImageAggregation != null;
         }
 
         /// <summary>
@@ -251,6 +272,24 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ServerlessFunctionAggregation. 
+        /// <para>
+        /// An object that contains details about an aggregation request based on serverless functions.
+        /// </para>
+        /// </summary>
+        public ServerlessFunctionAggregation ServerlessFunctionAggregation
+        {
+            get { return this._serverlessFunctionAggregation; }
+            set { this._serverlessFunctionAggregation = value; }
+        }
+
+        // Check to see if ServerlessFunctionAggregation property is set
+        internal bool IsSetServerlessFunctionAggregation()
+        {
+            return this._serverlessFunctionAggregation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TitleAggregation. 
         /// <para>
         /// An object that contains details about an aggregation request based on finding title.
@@ -266,6 +305,25 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetTitleAggregation()
         {
             return this._titleAggregation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VmInstanceAggregation. 
+        /// <para>
+        /// An object that contains details about an aggregation request based on virtual machine
+        /// (VM) instances.
+        /// </para>
+        /// </summary>
+        public VmInstanceAggregation VmInstanceAggregation
+        {
+            get { return this._vmInstanceAggregation; }
+            set { this._vmInstanceAggregation = value; }
+        }
+
+        // Check to see if VmInstanceAggregation property is set
+        internal bool IsSetVmInstanceAggregation()
+        {
+            return this._vmInstanceAggregation != null;
         }
 
     }

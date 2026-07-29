@@ -40,5 +40,10 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the CompositeAlarms
         /// </summary>
         IPaginatedEnumerable<CompositeAlarm> CompositeAlarms { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the LogAlarms
+        /// </summary>
+        IPaginatedEnumerable<LogAlarm> LogAlarms { get; }
     }
 }

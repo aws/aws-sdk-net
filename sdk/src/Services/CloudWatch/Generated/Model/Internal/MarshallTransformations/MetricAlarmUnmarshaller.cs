@@ -174,6 +174,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "EvaluationWindow":
+                        {
+                            context.AddPathSegment("EvaluationWindow");
+                            var unmarshaller = EvaluationWindowUnmarshaller.Instance;
+                            unmarshalledObject.EvaluationWindow = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "ExtendedStatistic":
                         {
                             context.AddPathSegment("ExtendedStatistic");

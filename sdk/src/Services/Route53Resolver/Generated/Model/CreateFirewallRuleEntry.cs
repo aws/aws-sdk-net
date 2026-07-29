@@ -259,7 +259,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DICT_DGA</c>: Dictionary-based domain generation algorithms detection. Dictionary
+        ///  <c>DICTIONARY_DGA</c>: Dictionary-based domain generation algorithms detection. Dictionary
         /// DGAs use wordlists to generate domains that appear more legitimate, making them harder
         /// to detect than traditional DGAs.
         /// </para>
@@ -350,8 +350,34 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallRuleType. 
         /// <para>
-        /// The rule type configuration for the firewall rule. This setting is mutually exclusive
-        /// with the top-level <c>FirewallDomainListId</c> and <c>DnsThreatProtection</c> fields.
+        /// The rule type configuration for the firewall rule. This is a tagged union — set exactly
+        /// one of its members. This setting is mutually exclusive with the top-level <c>FirewallDomainListId</c>
+        /// and <c>DnsThreatProtection</c> fields. Use one of:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedContentCategory</c> — match an AWS-managed content category (for
+        /// example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedThreatCategory</c> — match an AWS-managed advanced threat category
+        /// (for example, <c>PHISHING</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DnsThreatProtection</c> — match a built-in DNS Firewall Advanced threat detector
+        /// (<c>DGA</c>, <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartnerThreatProtection</c> — match a third-party threat feed delivered through
+        /// AWS Marketplace. The selected partner must be an active subscription on the calling
+        /// account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType

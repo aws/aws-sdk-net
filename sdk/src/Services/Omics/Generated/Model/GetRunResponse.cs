@@ -60,6 +60,7 @@ namespace Amazon.Omics.Model
         private string _runGroupId;
         private string _runId;
         private string _runOutputUri;
+        private ScratchStorageMode _scratchStorageMode;
         private string _startedBy;
         private DateTime? _startTime;
         private RunStatus _status;
@@ -566,6 +567,27 @@ namespace Amazon.Omics.Model
         internal bool IsSetRunOutputUri()
         {
             return this._runOutputUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScratchStorageMode. 
+        /// <para>
+        /// Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If
+        /// absent, this will default to SHARED. This configuration is applicable only for CPU
+        /// tasks. For tasks using GPUs, scratch storage is always LOCAL.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public ScratchStorageMode ScratchStorageMode
+        {
+            get { return this._scratchStorageMode; }
+            set { this._scratchStorageMode = value; }
+        }
+
+        // Check to see if ScratchStorageMode property is set
+        internal bool IsSetScratchStorageMode()
+        {
+            return this._scratchStorageMode != null;
         }
 
         /// <summary>

@@ -95,6 +95,7 @@ extensions\NETCoreSetup\System.Runtime.CompilerServices.Unsafe.dll
 extensions\NETCoreSetup\System.Text.Encodings.Web.dll
 extensions\NETCoreSetup\System.Text.Json.dll
 extensions\NETCoreSetup\System.Threading.Tasks.Extensions.dll
+extensions\Numerics\AWSSDK.Extensions.Numerics.dll
 Microsoft.Bcl.AsyncInterfaces.dll
 System.Buffers.dll
 System.Memory.dll

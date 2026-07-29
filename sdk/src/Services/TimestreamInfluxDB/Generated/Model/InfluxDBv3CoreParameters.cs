@@ -62,6 +62,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         private float? _parquetMemCachePrunePercentage;
         private Duration _parquetMemCacheQueryPathDuration;
         private PercentOrAbsoluteLong _parquetMemCacheSize;
+        private string _pluginRepositorySecretArn;
+        private string _pluginRepositoryUrl;
         private Duration _preemptiveCacheAge;
         private int? _queryFileLimit;
         private int? _queryLogSize;
@@ -669,6 +671,44 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetParquetMemCacheSize()
         {
             return this._parquetMemCacheSize != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PluginRepositorySecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the Secrets Manager secret that holds your repository
+        /// access token.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string PluginRepositorySecretArn
+        {
+            get { return this._pluginRepositorySecretArn; }
+            set { this._pluginRepositorySecretArn = value; }
+        }
+
+        // Check to see if PluginRepositorySecretArn property is set
+        internal bool IsSetPluginRepositorySecretArn()
+        {
+            return this._pluginRepositorySecretArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PluginRepositoryUrl. 
+        /// <para>
+        /// Specifies the URL of the repository that InfluxDB downloads plugins from.
+        /// </para>
+        /// </summary>
+        public string PluginRepositoryUrl
+        {
+            get { return this._pluginRepositoryUrl; }
+            set { this._pluginRepositoryUrl = value; }
+        }
+
+        // Check to see if PluginRepositoryUrl property is set
+        internal bool IsSetPluginRepositoryUrl()
+        {
+            return this._pluginRepositoryUrl != null;
         }
 
         /// <summary>

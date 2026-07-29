@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.CreateMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.CreateMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateMarketplaceRevenueShare"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.CreateMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.CreateMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.CreateMarketplaceRevenueShareAllocationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateMarketplaceRevenueShareAllocation"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.CreateRevenueAttribution(Amazon.PartnerCentralRevenueMeasurement.Model.CreateRevenueAttributionRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.CreateRevenueAttribution(Amazon.PartnerCentralRevenueMeasurement.Model.CreateRevenueAttributionRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.CreateRevenueAttributionRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.CreateRevenueAttributionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for CreateRevenueAttribution"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.GetMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.GetMarketplaceRevenueShare(Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for GetMarketplaceRevenueShare"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.GetMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.GetMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetMarketplaceRevenueShareAllocationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for GetMarketplaceRevenueShareAllocation"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.GetRevenueAttribution(Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.GetRevenueAttribution(Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for GetRevenueAttribution"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.GetRevenueAttributionAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.GetRevenueAttributionAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for GetRevenueAttributionAllocation"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.GetRevenueAttributionAllocationsTask(Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationsTaskRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.GetRevenueAttributionAllocationsTask(Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationsTaskRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationsTaskRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.GetRevenueAttributionAllocationsTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for GetRevenueAttributionAllocationsTask"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.ListMarketplaceRevenueShareAllocations(Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.ListMarketplaceRevenueShareAllocations(Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueShareAllocationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListMarketplaceRevenueShareAllocations"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.ListMarketplaceRevenueShares(Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueSharesRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.ListMarketplaceRevenueShares(Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueSharesRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueSharesRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListMarketplaceRevenueSharesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListMarketplaceRevenueShares"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.ListRevenueAttributionAllocations(Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionAllocationsRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.ListRevenueAttributionAllocations(Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionAllocationsRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionAllocationsRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionAllocationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListRevenueAttributionAllocations"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.ListRevenueAttributions(Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionsRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.ListRevenueAttributions(Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionsRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionsRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.ListRevenueAttributionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for ListRevenueAttributions"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.StartRevenueAttributionAllocationsTask(Amazon.PartnerCentralRevenueMeasurement.Model.StartRevenueAttributionAllocationsTaskRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.StartRevenueAttributionAllocationsTask(Amazon.PartnerCentralRevenueMeasurement.Model.StartRevenueAttributionAllocationsTaskRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.StartRevenueAttributionAllocationsTaskRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.StartRevenueAttributionAllocationsTaskResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for StartRevenueAttributionAllocationsTask"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.UpdateMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.UpdateMarketplaceRevenueShareAllocation(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateMarketplaceRevenueShareAllocationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for UpdateMarketplaceRevenueShareAllocation"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.IAmazonPartnerCentralRevenueMeasurement.UpdateRevenueAttribution(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateRevenueAttributionRequest)" />
+            <member name="M:Amazon.PartnerCentralRevenueMeasurement.AmazonPartnerCentralRevenueMeasurementClient.UpdateRevenueAttribution(Amazon.PartnerCentralRevenueMeasurement.Model.UpdateRevenueAttributionRequest)" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateRevenueAttributionRequest" />
+            <member name="T:Amazon.PartnerCentralRevenueMeasurement.Model.UpdateRevenueAttributionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Example for UpdateRevenueAttribution"
+                    source=".\AWSSDKDocSamples\PartnerCentralRevenueMeasurement\PartnerCentralRevenueMeasurement.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

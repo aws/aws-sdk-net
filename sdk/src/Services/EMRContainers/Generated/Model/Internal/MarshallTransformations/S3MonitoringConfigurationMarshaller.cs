@@ -46,6 +46,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEncryptionKeyArn())
+            {
+                context.Writer.WritePropertyName("encryptionKeyArn");
+                context.Writer.WriteStringValue(requestObject.EncryptionKeyArn);
+            }
+
             if(requestObject.IsSetLogUri())
             {
                 context.Writer.WritePropertyName("logUri");

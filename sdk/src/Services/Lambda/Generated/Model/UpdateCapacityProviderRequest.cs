@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
         private string _capacityProviderName;
         private CapacityProviderScalingConfig _capacityProviderScalingConfig;
         private PropagateTags _propagateTags;
+        private CapacityProviderTelemetryConfig _telemetryConfig;
 
         /// <summary>
         /// Gets and sets the property CapacityProviderName. 
@@ -89,6 +90,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetPropagateTags()
         {
             return this._propagateTags != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetryConfig. 
+        /// <para>
+        /// The updated telemetry configuration for the capacity provider.
+        /// </para>
+        /// </summary>
+        public CapacityProviderTelemetryConfig TelemetryConfig
+        {
+            get { return this._telemetryConfig; }
+            set { this._telemetryConfig = value; }
+        }
+
+        // Check to see if TelemetryConfig property is set
+        internal bool IsSetTelemetryConfig()
+        {
+            return this._telemetryConfig != null;
         }
 
     }

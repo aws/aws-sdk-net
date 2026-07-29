@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class DeleteHarnessRequest : AmazonBedrockAgentCoreControlRequest
     {
         private string _clientToken;
+        private bool? _deleteManagedMemory;
         private string _harnessId;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteManagedMemory. 
+        /// <para>
+        /// Whether to delete the managed memory on harness deletion. Default: true. If false,
+        /// the memory is disassociated and becomes a regular customer-owned resource.
+        /// </para>
+        /// </summary>
+        public bool? DeleteManagedMemory
+        {
+            get { return this._deleteManagedMemory; }
+            set { this._deleteManagedMemory = value; }
+        }
+
+        // Check to see if DeleteManagedMemory property is set
+        internal bool IsSetDeleteManagedMemory()
+        {
+            return this._deleteManagedMemory.HasValue; 
         }
 
         /// <summary>

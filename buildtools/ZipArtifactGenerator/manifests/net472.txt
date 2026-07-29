@@ -58,6 +58,7 @@ extensions\EC2DecryptPassword\System.Text.Encodings.Web.dll
 extensions\EC2DecryptPassword\System.Text.Json.dll
 extensions\EC2DecryptPassword\System.Threading.Tasks.Extensions.dll
 extensions\EC2DecryptPassword\System.ValueTuple.dll
+extensions\Numerics\AWSSDK.Extensions.Numerics.dll
 Microsoft.Bcl.AsyncInterfaces.dll
 System.Buffers.dll
 System.Memory.dll

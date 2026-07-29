@@ -271,6 +271,11 @@ namespace Amazon.S3.Internal
                 result.Key = request.Key;
                 return result;
             }
+            if (requestContext.RequestName == "DeleteObjectAnnotationRequest") {
+                var request = (DeleteObjectAnnotationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
             if (requestContext.RequestName == "DeleteObjectsRequest") {
                 var request = (DeleteObjectsRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
@@ -436,6 +441,12 @@ namespace Amazon.S3.Internal
                 result.Key = request.Key;
                 return result;
             }
+            if (requestContext.RequestName == "GetObjectAnnotationRequest") {
+                var request = (GetObjectAnnotationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                result.Key = request.Key;
+                return result;
+            }
             if (requestContext.RequestName == "GetObjectAttributesRequest") {
                 var request = (GetObjectAttributesRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
@@ -521,6 +532,11 @@ namespace Amazon.S3.Internal
                 var request = (ListMultipartUploadsRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 result.Prefix = request.Prefix;
+                return result;
+            }
+            if (requestContext.RequestName == "ListObjectAnnotationsRequest") {
+                var request = (ListObjectAnnotationsRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
                 return result;
             }
             if (requestContext.RequestName == "ListObjectsRequest") {
@@ -679,6 +695,12 @@ namespace Amazon.S3.Internal
                 result.Key = request.Key;
                 return result;
             }
+            if (requestContext.RequestName == "PutObjectAnnotationRequest") {
+                var request = (PutObjectAnnotationRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                result.Key = request.Key;
+                return result;
+            }
             if (requestContext.RequestName == "PutObjectLegalHoldRequest") {
                 var request = (PutObjectLegalHoldRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
@@ -718,6 +740,12 @@ namespace Amazon.S3.Internal
             }
             if (requestContext.RequestName == "SelectObjectContentRequest") {
                 var request = (SelectObjectContentRequest)requestContext.OriginalRequest;
+                result.Bucket = request.BucketName;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateBucketMetadataAnnotationTableConfigurationRequest") {
+                result.UseS3ExpressControlEndpoint = true;
+                var request = (UpdateBucketMetadataAnnotationTableConfigurationRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;
                 return result;
             }

@@ -31,7 +31,10 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFirewallRule operation.
-    /// Updates the specified firewall rule.
+    /// Updates the specified firewall rule. The rule's <c>FirewallRuleType</c>, <c>FirewallDomainListId</c>,
+    /// and top-level <c>DnsThreatProtection</c> match source cannot be changed after creation.
+    /// Rules whose <c>Status</c> is <c>CREATING</c> or <c>CREATION_FAILED</c> cannot be updated;
+    /// remove a failed rule with <a>DeleteFirewallRule</a>.
     /// </summary>
     public partial class UpdateFirewallRuleRequest : AmazonRoute53ResolverRequest
     {
@@ -218,18 +221,25 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property DnsThreatProtection. 
         /// <para>
-        ///  The type of the DNS Firewall Advanced rule. Valid values are: 
+        ///  The type of the DNS Firewall Advanced rule. This setting is mutually exclusive with
+        /// <c>FirewallDomainListId</c> and <c>FirewallRuleType</c>. Valid values are: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>DGA</c>: Domain generation algorithms detection. DGAs are used by attackers to
-        /// generate a large number of domains to to launch malware attacks.
+        /// generate a large number of domains to launch malware attacks.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>DNS_TUNNELING</c>: DNS tunneling detection. DNS tunneling is used by attackers
         /// to exfiltrate data from the client by using the DNS tunnel without making a network
         /// connection to the client.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DICTIONARY_DGA</c>: Dictionary-based domain generation algorithms detection. Dictionary
+        /// DGAs use wordlists to generate domains that appear more legitimate, making them harder
+        /// to detect than traditional DGAs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -317,8 +327,34 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallRuleType. 
         /// <para>
-        /// The rule type configuration for the firewall rule. This setting is mutually exclusive
-        /// with the top-level <c>FirewallDomainListId</c> and <c>DnsThreatProtection</c> fields.
+        /// The rule type configuration for the firewall rule. This is a tagged union — set exactly
+        /// one of its members. This setting is mutually exclusive with the top-level <c>FirewallDomainListId</c>
+        /// and <c>DnsThreatProtection</c> fields. Use one of:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedContentCategory</c> — match an AWS-managed content category (for
+        /// example, <c>VIOLENCE_AND_HATE_SPEECH</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedThreatCategory</c> — match an AWS-managed advanced threat category
+        /// (for example, <c>PHISHING</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DnsThreatProtection</c> — match a built-in DNS Firewall Advanced threat detector
+        /// (<c>DGA</c>, <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartnerThreatProtection</c> — match a third-party threat feed delivered through
+        /// AWS Marketplace. The selected partner must be an active subscription on the calling
+        /// account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType

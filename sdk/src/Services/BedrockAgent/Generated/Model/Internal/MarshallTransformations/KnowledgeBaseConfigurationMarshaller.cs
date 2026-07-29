@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetManagedKnowledgeBaseConfiguration())
+            {
+                context.Writer.WritePropertyName("managedKnowledgeBaseConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedKnowledgeBaseConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedKnowledgeBaseConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSqlKnowledgeBaseConfiguration())
             {
                 context.Writer.WritePropertyName("sqlKnowledgeBaseConfiguration");

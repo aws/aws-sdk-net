@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuleStringToEvaluate Object
     /// </summary>  
-    public class RuleStringToEvaluateUnmarshaller : IJsonUnmarshaller<RuleStringToEvaluate, JsonUnmarshallerContext>
+    public class RuleStringToEvaluateUnmarshaller : ICborUnmarshaller<RuleStringToEvaluate, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleStringToEvaluate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RuleStringToEvaluate Unmarshall(CborUnmarshallerContext context)
         {
             RuleStringToEvaluate unmarshalledObject = new RuleStringToEvaluate();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("Analysis", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = AnalysisUnmarshaller.Instance;
-                    unmarshalledObject.Analysis = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Attribute", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Attribute = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ClientCertificateAttribute", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientCertificateAttribute = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MimeHeaderAttribute", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MimeHeaderAttribute = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "Analysis":
+                        {
+                            context.AddPathSegment("Analysis");
+                            var unmarshaller = AnalysisUnmarshaller.Instance;
+                            unmarshalledObject.Analysis = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Attribute":
+                        {
+                            context.AddPathSegment("Attribute");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Attribute = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ClientCertificateAttribute":
+                        {
+                            context.AddPathSegment("ClientCertificateAttribute");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ClientCertificateAttribute = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MimeHeaderAttribute":
+                        {
+                            context.AddPathSegment("MimeHeaderAttribute");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MimeHeaderAttribute = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

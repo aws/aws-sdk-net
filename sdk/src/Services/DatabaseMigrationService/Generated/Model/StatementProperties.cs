@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The properties of the statement for metadata model creation.
+    /// The properties of the SQL statement.
     /// </summary>
     public partial class StatementProperties
     {

@@ -51,42 +51,42 @@ namespace Amazon.LexRuntimeV2.Model
             {"AudioResponseEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new AudioResponseEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"HeartbeatEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new HeartbeatEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"IntentResultEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new IntentResultEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"PlaybackInterruptionEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new PlaybackInterruptionEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"TextResponseEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new TextResponseEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"TranscriptEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new TranscriptEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -100,56 +100,56 @@ namespace Amazon.LexRuntimeV2.Model
                     {"AccessDeniedException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new AccessDeniedExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"BadGatewayException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new BadGatewayExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ConflictException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"DependencyFailedException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new DependencyFailedExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"InternalServerException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalServerExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ResourceNotFoundException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ResourceNotFoundExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ThrottlingException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ThrottlingExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ValidationException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new LexRuntimeV2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

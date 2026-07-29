@@ -232,7 +232,11 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExecutionSummaryResult.
+        /// Gets and sets the property ExecutionSummaryResult. 
+        /// <para>
+        /// The execution summary clustering results from insights, containing grouped execution
+        /// patterns across evaluated sessions.
+        /// </para>
         /// </summary>
         public ExecutionSummaryClusteringResultContent ExecutionSummaryResult
         {
@@ -247,7 +251,11 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailureAnalysisResult.
+        /// Gets and sets the property FailureAnalysisResult. 
+        /// <para>
+        /// The failure analysis results from insights, containing categorized failure clusters
+        /// with root causes and recommendations.
+        /// </para>
         /// </summary>
         public FailureAnalysisResultContent FailureAnalysisResult
         {
@@ -360,7 +368,11 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserIntentResult.
+        /// Gets and sets the property UserIntentResult. 
+        /// <para>
+        /// The user intent clustering results from insights, containing grouped user intents
+        /// across evaluated sessions.
+        /// </para>
         /// </summary>
         public UserIntentClusteringResultContent UserIntentResult
         {

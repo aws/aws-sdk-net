@@ -40,6 +40,7 @@ namespace Amazon.AppStream.Model
         private ScreenResolution _screenResolution;
         private bool? _screenshotsUploadEnabled;
         private List<AgentAccessSetting> _settings = AWSConfigs.InitializeCollections ? new List<AgentAccessSetting>() : null;
+        private UserControlMode _userControlMode;
 
         /// <summary>
         /// Gets and sets the property S3BucketArn. 
@@ -139,6 +140,25 @@ namespace Amazon.AppStream.Model
         internal bool IsSetSettings()
         {
             return this._settings != null && (this._settings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserControlMode. 
+        /// <para>
+        /// The user control mode for agent sessions. This setting determines how users can interact
+        /// with agent sessions.
+        /// </para>
+        /// </summary>
+        public UserControlMode UserControlMode
+        {
+            get { return this._userControlMode; }
+            set { this._userControlMode = value; }
+        }
+
+        // Check to see if UserControlMode property is set
+        internal bool IsSetUserControlMode()
+        {
+            return this._userControlMode != null;
         }
 
     }

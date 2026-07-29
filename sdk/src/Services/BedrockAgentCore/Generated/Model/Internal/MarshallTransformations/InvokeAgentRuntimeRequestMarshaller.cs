@@ -97,6 +97,16 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 request.Headers["Content-Type"] = publicRequest.ContentType;
             }
         
+            if (publicRequest.IsSetMcpMethod()) 
+            {
+                request.Headers["Mcp-Method"] = publicRequest.McpMethod;
+            }
+        
+            if (publicRequest.IsSetMcpName()) 
+            {
+                request.Headers["Mcp-Name"] = publicRequest.McpName;
+            }
+        
             if (publicRequest.IsSetMcpProtocolVersion()) 
             {
                 request.Headers["Mcp-Protocol-Version"] = publicRequest.McpProtocolVersion;

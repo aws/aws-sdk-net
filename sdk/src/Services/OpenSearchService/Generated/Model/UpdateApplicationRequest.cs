@@ -37,6 +37,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private List<AppConfig> _appConfigs = AWSConfigs.InitializeCollections ? new List<AppConfig>() : null;
         private List<DataSource> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSource>() : null;
+        private IamIdentityCenterOptionsInput _iamIdentityCenterOptions;
         private string _id;
 
         /// <summary>
@@ -84,6 +85,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamIdentityCenterOptions. 
+        /// <para>
+        /// Configuration settings for integrating IAM Identity Center with the OpenSearch application.
+        /// </para>
+        /// </summary>
+        public IamIdentityCenterOptionsInput IamIdentityCenterOptions
+        {
+            get { return this._iamIdentityCenterOptions; }
+            set { this._iamIdentityCenterOptions = value; }
+        }
+
+        // Check to see if IamIdentityCenterOptions property is set
+        internal bool IsSetIamIdentityCenterOptions()
+        {
+            return this._iamIdentityCenterOptions != null;
         }
 
         /// <summary>

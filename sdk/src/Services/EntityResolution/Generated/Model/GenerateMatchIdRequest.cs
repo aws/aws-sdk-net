@@ -81,6 +81,11 @@ namespace Amazon.EntityResolution.Model
         /// Provides fastest response time but should only be used for records known to be unique.
         /// 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Advanced matching workflows don't support the <c>processingType</c> field.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ProcessingType ProcessingType
         {

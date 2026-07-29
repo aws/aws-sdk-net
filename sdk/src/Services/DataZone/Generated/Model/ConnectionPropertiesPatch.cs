@@ -42,6 +42,7 @@ namespace Amazon.DataZone.Model
         private MlflowPropertiesPatch _mlflowProperties;
         private RedshiftPropertiesPatch _redshiftProperties;
         private S3PropertiesPatch _s3Properties;
+        private SnowflakePropertiesPatch _snowflakeProperties;
         private SparkEmrPropertiesPatch _sparkEmrProperties;
         private VpcPropertiesPatch _vpcProperties;
 
@@ -187,6 +188,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetS3Properties()
         {
             return this._s3Properties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnowflakeProperties. 
+        /// <para>
+        /// The Snowflake-specific connection properties to update.
+        /// </para>
+        /// </summary>
+        public SnowflakePropertiesPatch SnowflakeProperties
+        {
+            get { return this._snowflakeProperties; }
+            set { this._snowflakeProperties = value; }
+        }
+
+        // Check to see if SnowflakeProperties property is set
+        internal bool IsSetSnowflakeProperties()
+        {
+            return this._snowflakeProperties != null;
         }
 
         /// <summary>

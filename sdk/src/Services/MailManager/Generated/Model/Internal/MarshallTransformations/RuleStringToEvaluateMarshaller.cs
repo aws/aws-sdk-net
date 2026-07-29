@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleStringToEvaluate Marshaller
     /// </summary>
-    public class RuleStringToEvaluateMarshaller : IRequestMarshaller<RuleStringToEvaluate, JsonMarshallerContext> 
+    public class RuleStringToEvaluateMarshaller : IRequestMarshaller<RuleStringToEvaluate, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +45,36 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleStringToEvaluate requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleStringToEvaluate requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAnalysis())
+
+            if (requestObject.IsSetAnalysis())
             {
-                context.Writer.WritePropertyName("Analysis");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Analysis");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = AnalysisMarshaller.Instance;
                 marshaller.Marshall(requestObject.Analysis, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetAttribute())
+            if (requestObject.IsSetAttribute())
             {
-                context.Writer.WritePropertyName("Attribute");
-                context.Writer.WriteStringValue(requestObject.Attribute);
+                context.Writer.WriteTextString("Attribute");
+                context.Writer.WriteTextString(requestObject.Attribute);
             }
-
-            if(requestObject.IsSetClientCertificateAttribute())
+            if (requestObject.IsSetClientCertificateAttribute())
             {
-                context.Writer.WritePropertyName("ClientCertificateAttribute");
-                context.Writer.WriteStringValue(requestObject.ClientCertificateAttribute);
+                context.Writer.WriteTextString("ClientCertificateAttribute");
+                context.Writer.WriteTextString(requestObject.ClientCertificateAttribute);
             }
-
-            if(requestObject.IsSetMimeHeaderAttribute())
+            if (requestObject.IsSetMimeHeaderAttribute())
             {
-                context.Writer.WritePropertyName("MimeHeaderAttribute");
-                context.Writer.WriteStringValue(requestObject.MimeHeaderAttribute);
+                context.Writer.WriteTextString("MimeHeaderAttribute");
+                context.Writer.WriteTextString(requestObject.MimeHeaderAttribute);
             }
-
         }
 
         /// <summary>

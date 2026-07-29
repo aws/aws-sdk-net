@@ -1089,6 +1089,106 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type OutputLockingMode.
+    /// </summary>
+    public class OutputLockingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EPOCH_LOCKED for OutputLockingMode
+        /// </summary>
+        public static readonly OutputLockingMode EPOCH_LOCKED = new OutputLockingMode("EPOCH_LOCKED");
+        /// <summary>
+        /// Constant NON_EPOCH_LOCKED for OutputLockingMode
+        /// </summary>
+        public static readonly OutputLockingMode NON_EPOCH_LOCKED = new OutputLockingMode("NON_EPOCH_LOCKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputLockingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputLockingMode FindValue(string value)
+        {
+            return FindValue<OutputLockingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputLockingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OutputTimestampMode.
+    /// </summary>
+    public class OutputTimestampMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PASSTHROUGH for OutputTimestampMode
+        /// </summary>
+        public static readonly OutputTimestampMode PASSTHROUGH = new OutputTimestampMode("PASSTHROUGH");
+        /// <summary>
+        /// Constant REBASED_TO_CHANNEL_START for OutputTimestampMode
+        /// </summary>
+        public static readonly OutputTimestampMode REBASED_TO_CHANNEL_START = new OutputTimestampMode("REBASED_TO_CHANNEL_START");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputTimestampMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputTimestampMode FindValue(string value)
+        {
+            return FindValue<OutputTimestampMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputTimestampMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PresetSpeke20Audio.
     /// </summary>
     public class PresetSpeke20Audio : ConstantClass
@@ -1933,6 +2033,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType MISSING_CERTIFICATE_DOMAIN_NAME = new ValidationExceptionType("MISSING_CERTIFICATE_DOMAIN_NAME");
         /// <summary>
+        /// Constant NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION = new ValidationExceptionType("NON_EPOCH_LOCKED_WITH_FORCE_ENDPOINT_ERROR_CONFIGURATION");
+        /// <summary>
         /// Constant NONE_MODE_WITH_TIMING_SOURCE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType NONE_MODE_WITH_TIMING_SOURCE = new ValidationExceptionType("NONE_MODE_WITH_TIMING_SOURCE");
@@ -1957,9 +2061,21 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_MQCS_OUTPUT_CONFIGURATION");
         /// <summary>
+        /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_OUTPUT_LOCKING_MODE");
+        /// <summary>
         /// Constant ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION");
+        /// <summary>
+        /// Constant ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE = new ValidationExceptionType("ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE");
+        /// <summary>
+        /// Constant OUTPUT_TIMESTAMP_MODE_IMMUTABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType OUTPUT_TIMESTAMP_MODE_IMMUTABLE = new ValidationExceptionType("OUTPUT_TIMESTAMP_MODE_IMMUTABLE");
         /// <summary>
         /// Constant PERIOD_TRIGGERS_NONE_SPECIFIED_WITH_ADDITIONAL_VALUES for ValidationExceptionType
         /// </summary>

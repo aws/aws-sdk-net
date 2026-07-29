@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private DateTime? _createdAt;
         private string _harnessId;
         private string _harnessName;
+        private string _harnessVersion;
         private HarnessStatus _status;
         private DateTime? _updatedAt;
 
@@ -115,6 +116,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetHarnessName()
         {
             return this._harnessName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HarnessVersion. 
+        /// <para>
+        /// The latest version of the harness.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public string HarnessVersion
+        {
+            get { return this._harnessVersion; }
+            set { this._harnessVersion = value; }
+        }
+
+        // Check to see if HarnessVersion property is set
+        internal bool IsSetHarnessVersion()
+        {
+            return this._harnessVersion != null;
         }
 
         /// <summary>

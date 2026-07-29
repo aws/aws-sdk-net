@@ -1,5 +1,6 @@
 ﻿using Amazon.Runtime.Internal.Util;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -46,8 +47,8 @@ namespace Amazon.Runtime.Internal.Transform
 
         private StreamReader streamReader;
         private XmlTextReader _xmlTextReader;
-        private Stack<string> stack = new Stack<string>();
-        private string stackString = "";
+        private readonly XmlPathBuffer pathBuffer = new XmlPathBuffer();
+        private string currentAttributeName;
         private Dictionary<string, string> attributeValues;
         private List<string> attributeNames;
         private IEnumerator<string> attributeEnumerator;
@@ -158,7 +159,12 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public override string CurrentPath
         {
-            get { return this.stackString; }
+            get
+            {
+                return this.currentAttributeName == null
+                    ? this.pathBuffer.CurrentPath
+                    : this.pathBuffer.BuildAttributePath(this.currentAttributeName);
+            }
         }
 
         /// <summary>
@@ -167,7 +173,16 @@ namespace Amazon.Runtime.Internal.Transform
         /// </summary>
         public override int CurrentDepth
         {
-            get { return stack.Count; }
+            get { return pathBuffer.Count; }
+        }
+
+        /// <summary>
+        /// The local name of the element the parser is currently positioned on (the last path
+        /// segment), or an empty string at the document root.
+        /// </summary>
+        public string CurrentElementName
+        {
+            get { return this.pathBuffer.TopSegment; }
         }
 
         /// <summary>
@@ -192,6 +207,57 @@ namespace Amazon.Runtime.Internal.Transform
         public override bool IsStartOfDocument
         {
             get { return XmlReader.ReadState == ReadState.Initial; }
+        }
+
+        /// <summary>
+        /// Matches an expression against the current path suffix without materializing the path string.
+        /// Result-identical to the base string-based <see cref="UnmarshallerContext.TestExpression(string)"/>.
+        /// </summary>
+        public override bool TestExpression(string expression)
+        {
+            if (expression.Equals("."))
+                return true;
+
+            // Build the comparison span. For an attribute node the effective path is
+            // "{elementPath}/@{attr}", which we never materialize on the element buffer; fall back
+            // to the string path in that (rare) case to keep behavior identical.
+            if (currentAttributeName != null)
+                return CurrentPath.EndsWith(expression, StringComparison.OrdinalIgnoreCase);
+
+            return (pathBuffer.PathSpan.Length == 0 ? "/".AsSpan() : pathBuffer.PathSpan)
+                 .EndsWith(expression.AsSpan(), StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Matches an expression at a given starting stack depth without materializing the path string.
+        /// Result-identical to the base string-based <see cref="UnmarshallerContext.TestExpression(string, int)"/>.
+        /// </summary>
+        public override bool TestExpression(string expression, int startingStackDepth)
+        {
+            if (expression.Equals("."))
+                return true;
+
+            // Count '/' separators to derive the required depth, matching the base algorithm exactly.
+            int requiredDepth = startingStackDepth;
+            for (int i = expression.IndexOf('/'); i > -1; i = expression.IndexOf('/', i + 1))
+            {
+                // Don't consider attributes a new depth level
+                if (expression[0] != '@')
+                    requiredDepth++;
+            }
+
+            if (requiredDepth != CurrentDepth)
+                return false;
+
+            var path = pathBuffer.PathSpan;
+            if (currentAttributeName != null)
+            {
+                path = CurrentPath.AsSpan();
+            }
+
+            return path.Length > expression.Length
+                && path[path.Length - expression.Length - 1] == '/'
+                && path.EndsWith(expression.AsSpan(), StringComparison.OrdinalIgnoreCase);
         }
 
         #endregion
@@ -237,10 +303,14 @@ namespace Amazon.Runtime.Internal.Transform
             if (attributeEnumerator != null && attributeEnumerator.MoveNext())
             {
                 this.nodeType = XmlNodeType.Attribute;
-                stackString = string.Format(CultureInfo.InvariantCulture, "{0}/@{1}", StackToPath(stack), attributeEnumerator.Current);
+                // Positioned on an attribute: the element path is unchanged; CurrentPath/matching
+                // append "/@{name}" on demand via currentAttributeName.
+                this.currentAttributeName = attributeEnumerator.Current;
             }
             else
             {
+                this.currentAttributeName = null;
+
                 // Skip some nodes
                 if (nodesToSkip.Contains(XmlReader.NodeType))
                     XmlReader.Read();
@@ -248,8 +318,7 @@ namespace Amazon.Runtime.Internal.Transform
                 if (currentlyProcessingEmptyElement)
                 {
                     nodeType = XmlNodeType.EndElement;
-                    stack.Pop();
-                    stackString = StackToPath(stack);
+                    pathBuffer.Pop();
                     XmlReader.Read();
                     currentlyProcessingEmptyElement = false;
                 }
@@ -257,8 +326,7 @@ namespace Amazon.Runtime.Internal.Transform
                 {
                     //This is a shorthand form of an empty element <element /> and we want to allow it
                     nodeType = XmlNodeType.Element;
-                    stack.Push(XmlReader.LocalName);
-                    stackString = StackToPath(stack);
+                    pathBuffer.Push(XmlReader.LocalName);
                     currentlyProcessingEmptyElement = true;
                     nodeContent = String.Empty;
 
@@ -270,14 +338,12 @@ namespace Amazon.Runtime.Internal.Transform
                     {
                         case XmlNodeType.EndElement:
                             this.nodeType = XmlNodeType.EndElement;
-                            stack.Pop();
-                            stackString = StackToPath(stack);
+                            pathBuffer.Pop();
                             XmlReader.Read();
                             break;
                         case XmlNodeType.Element:
                             nodeType = XmlNodeType.Element;
-                            stack.Push(XmlReader.LocalName);
-                            stackString = StackToPath(stack);
+                            pathBuffer.Push(XmlReader.LocalName);
                             this.ReadElement();
                             break;
                         default:
@@ -289,7 +355,6 @@ namespace Amazon.Runtime.Internal.Transform
                             // after advancing the underlying XmlReader past an unhandled node type.
                             nodeType = XmlNodeType.None;
                             nodeContent = string.Empty;
-                            stackString = StackToPath(stack);
                             break;
                     }
                 }
@@ -312,16 +377,6 @@ namespace Amazon.Runtime.Internal.Transform
         #endregion
 
         #region Private Methods
-
-        private static string StackToPath(Stack<string> stack)
-        {
-            string path = null;
-            foreach (string s in stack.ToArray())
-            {
-                path = null == path ? s : string.Format(CultureInfo.InvariantCulture, "{0}/{1}", s, path);
-            }
-            return "/" + path;
-        }
 
         // Move to the next element, cache the attributes collection
         // and attempt to cache the inner text of the element if applicable.
@@ -369,10 +424,111 @@ namespace Amazon.Runtime.Internal.Transform
 #endif
                         _xmlTextReader = null;
                     }
+                    pathBuffer.Dispose();
                 }
                 disposed = true;
             }
             base.Dispose(disposing);
+        }
+
+        private sealed class XmlPathBuffer : IDisposable
+        {
+            // The current path as chars, e.g. "/Root/Child/member". Segments are appended on Push and
+            // trimmed (by moving pathLength back) on Pop. The buffer is reused for the whole document.
+            private char[] pathChars = ArrayPool<char>.Shared.Rent(256);
+            private int pathLength;
+            // Length (including the leading '/') of each pushed segment, enabling O(1) Pop.
+            private readonly Stack<int> segmentLengths = new Stack<int>();
+            private string cached;
+
+            /// <summary>Number of element segments on the path (the current depth).</summary>
+            public int Count
+            {
+                get { return segmentLengths.Count; }
+            }
+
+            /// <summary>
+            /// The full path string, e.g. "/Root/Child". An empty stack yields "/" to match the
+            /// historical StackToPath behavior. Materialized lazily and cached until the next mutation.
+            /// </summary>
+            public string CurrentPath
+            {
+                get
+                {
+                    return this.cached ??= pathLength == 0 ? "/" : new string(pathChars, 0, pathLength);
+                }
+            }
+
+            /// <summary>The path chars without the trailing string allocation, for span matching.</summary>
+            public ReadOnlySpan<char> PathSpan
+            {
+                get { return pathChars.AsSpan(0, pathLength); }
+            }
+
+            public string TopSegment
+            {
+                get
+                {
+                    if (segmentLengths.Count == 0)
+                        return string.Empty;
+
+                    int seg = segmentLengths.Peek();
+                    return new string(pathChars, pathLength - seg + 1, seg - 1);
+                }
+            }
+
+            /// <summary>
+            /// Builds the transient attribute path "{CurrentPath}/@{name}" without mutating the buffer.
+            /// </summary>
+            public string BuildAttributePath(string attributeName)
+            {
+                return string.Concat(CurrentPath, "/@", attributeName);
+            }
+
+            public void Push(string localName)
+            {
+                int seg = localName.Length + 1; // leading '/'
+                EnsureCapacity(seg);
+                pathChars[pathLength++] = '/';
+                localName.CopyTo(0, pathChars, pathLength, localName.Length);
+                pathLength += localName.Length;
+                segmentLengths.Push(seg);
+                cached = null;
+            }
+
+            public void Pop()
+            {
+                if (segmentLengths.Count == 0)
+                    return;
+
+                pathLength -= segmentLengths.Pop();
+                cached = null;
+            }
+
+            private void EnsureCapacity(int additionalChars)
+            {
+                if (pathLength + additionalChars <= pathChars.Length)
+                    return;
+
+                int newSize = Math.Max(pathChars.Length * 2, pathLength + additionalChars);
+                char[] newBuffer = ArrayPool<char>.Shared.Rent(newSize);
+                Array.Copy(pathChars, 0, newBuffer, 0, pathLength);
+                ArrayPool<char>.Shared.Return(pathChars);
+                pathChars = newBuffer;
+            }
+
+            public void Dispose()
+            {
+                if (pathChars != null)
+                {
+                    // Materialize the path string before returning the buffer so that a post-dispose
+                    // CurrentPath read (e.g. AmazonUnmarshallingException diagnostics in an error path)
+                    // returns the last known path instead of dereferencing the returned buffer.
+                    cached ??= pathLength == 0 ? "/" : new string(pathChars, 0, pathLength);
+                    ArrayPool<char>.Shared.Return(pathChars);
+                    pathChars = null;
+                }
+            }
         }
     }
 

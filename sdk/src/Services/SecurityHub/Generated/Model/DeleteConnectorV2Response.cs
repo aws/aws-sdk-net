@@ -34,6 +34,25 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class DeleteConnectorV2Response : AmazonWebServiceResponse
     {
+        private EnablementStatus _enablementStatus;
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatus. 
+        /// <para>
+        /// The enablement status of the connector after deletion.
+        /// </para>
+        /// </summary>
+        public EnablementStatus EnablementStatus
+        {
+            get { return this._enablementStatus; }
+            set { this._enablementStatus = value; }
+        }
+
+        // Check to see if EnablementStatus property is set
+        internal bool IsSetEnablementStatus()
+        {
+            return this._enablementStatus != null;
+        }
 
     }
 }

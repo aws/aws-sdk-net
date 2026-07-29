@@ -62,6 +62,12 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmpConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("cloudWatchConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = CloudWatchConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CloudWatchConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

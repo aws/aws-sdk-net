@@ -333,6 +333,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Paginator for ListCloudConnectors operation
+        ///</summary>
+        public IListCloudConnectorsPaginator ListCloudConnectors(ListCloudConnectorsRequest request) 
+        {
+            return new ListCloudConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCommandInvocations operation
         ///</summary>
         public IListCommandInvocationsPaginator ListCommandInvocations(ListCommandInvocationsRequest request) 
@@ -434,6 +442,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         public IListResourceDataSyncPaginator ListResourceDataSync(ListResourceDataSyncRequest request) 
         {
             return new ListResourceDataSyncPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ValidateCloudConnector operation
+        ///</summary>
+        public IValidateCloudConnectorPaginator ValidateCloudConnector(ValidateCloudConnectorRequest request) 
+        {
+            return new ValidateCloudConnectorPaginator(this.client, request);
         }
     }
 }

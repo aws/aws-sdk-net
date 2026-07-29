@@ -91,7 +91,7 @@ namespace ServiceClientGenerator
                     var testFiles = new HashSet<string>(generatedUnitTestFiles.Keys);
 
                     if (!options.SkipRemoveOrphanCleanup)
-                        GeneratorDriver.RemoveOrphanedShapesAndServices(files, testFiles, options.SdkRootFolder);
+                        GeneratorDriver.RemoveOrphanedShapesAndServices(files, testFiles, options.SdkRootFolder, generationManifest.MigratedServiceFolderNames);
 
                     GeneratorDriver.UpdateUnitTestProjects(generationManifest, options);
                     GeneratorDriver.UpdateSolutionFiles(generationManifest, options);

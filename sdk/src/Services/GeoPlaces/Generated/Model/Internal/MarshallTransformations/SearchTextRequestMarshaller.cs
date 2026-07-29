@@ -151,6 +151,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.QueryText);
             }
 
+            if(publicRequest.IsSetTravelMode())
+            {
+                context.Writer.WritePropertyName("TravelMode");
+                context.Writer.WriteStringValue(publicRequest.TravelMode);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

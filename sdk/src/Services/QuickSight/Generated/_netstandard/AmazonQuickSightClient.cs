@@ -1634,6 +1634,96 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  CreateKnowledgeBase
+
+        internal virtual CreateKnowledgeBaseResponse CreateKnowledgeBase(CreateKnowledgeBaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKnowledgeBaseResponseUnmarshaller.Instance;
+
+            return Invoke<CreateKnowledgeBaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a knowledge base from a specified data source. Supported data source connector
+        /// types include:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>S3_KNOWLEDGE_BASE</c> – Uses an Amazon S3 bucket as the data source.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>WEB_CRAWLER</c> – Uses web pages indexed by the built-in web crawler as the data
+        /// source.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GOOGLE_DRIVE</c> – Uses Google Drive as the data source. Supports service account
+        /// authentication only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SHAREPOINT</c> – Uses SharePoint as the data source. Supports two-legged OAuth
+        /// only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ONE_DRIVE</c> – Uses OneDrive as the data source. Supports two-legged OAuth only.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKnowledgeBase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateKnowledgeBase">REST API Reference for CreateKnowledgeBase Operation</seealso>
+        public virtual Task<CreateKnowledgeBaseResponse> CreateKnowledgeBaseAsync(CreateKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateKnowledgeBaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateKnowledgeBaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateNamespace
 
         internal virtual CreateNamespaceResponse CreateNamespace(CreateNamespaceRequest request)
@@ -15135,6 +15225,70 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateKeyRegistrationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateKeyRegistrationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateKnowledgeBase
+
+        internal virtual UpdateKnowledgeBaseResponse UpdateKnowledgeBase(UpdateKnowledgeBaseRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKnowledgeBaseResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateKnowledgeBaseResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of an existing knowledge base.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBase service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateKnowledgeBase service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateKnowledgeBase">REST API Reference for UpdateKnowledgeBase Operation</seealso>
+        public virtual Task<UpdateKnowledgeBaseResponse> UpdateKnowledgeBaseAsync(UpdateKnowledgeBaseRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateKnowledgeBaseRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateKnowledgeBaseResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateKnowledgeBaseResponse>(request, options, cancellationToken);
         }
         #endregion
         

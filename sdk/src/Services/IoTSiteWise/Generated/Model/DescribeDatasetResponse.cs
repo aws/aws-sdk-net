@@ -35,6 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeDatasetResponse : AmazonWebServiceResponse
     {
         private string _datasetArn;
+        private DatasetConfig _datasetConfig;
         private DateTime? _datasetCreationDate;
         private string _datasetDescription;
         private string _datasetId;
@@ -42,7 +43,11 @@ namespace Amazon.IoTSiteWise.Model
         private string _datasetName;
         private DatasetSource _datasetSource;
         private DatasetStatus _datasetStatus;
+        private DatasetTypeEnum _datasetType;
         private string _datasetVersion;
+        private DatasetEnrichment _enrichmentStatus;
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property DatasetArn. 
@@ -62,6 +67,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDatasetArn()
         {
             return this._datasetArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetConfig. 
+        /// <para>
+        /// The configuration for the dataset.
+        /// </para>
+        /// </summary>
+        public DatasetConfig DatasetConfig
+        {
+            get { return this._datasetConfig; }
+            set { this._datasetConfig = value; }
+        }
+
+        // Check to see if DatasetConfig property is set
+        internal bool IsSetDatasetConfig()
+        {
+            return this._datasetConfig != null;
         }
 
         /// <summary>
@@ -200,6 +223,25 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatasetType. 
+        /// <para>
+        /// The type of dataset: a session dataset, a curated dataset, or a connection to an external
+        /// datasource.
+        /// </para>
+        /// </summary>
+        public DatasetTypeEnum DatasetType
+        {
+            get { return this._datasetType; }
+            set { this._datasetType = value; }
+        }
+
+        // Check to see if DatasetType property is set
+        internal bool IsSetDatasetType()
+        {
+            return this._datasetType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DatasetVersion. 
         /// <para>
         /// The version of the dataset.
@@ -216,6 +258,66 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDatasetVersion()
         {
             return this._datasetVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnrichmentStatus. 
+        /// <para>
+        /// The enrichment status of the dataset.
+        /// </para>
+        /// </summary>
+        public DatasetEnrichment EnrichmentStatus
+        {
+            get { return this._enrichmentStatus; }
+            set { this._enrichmentStatus = value; }
+        }
+
+        // Check to see if EnrichmentStatus property is set
+        internal bool IsSetEnrichmentStatus()
+        {
+            return this._enrichmentStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The metadata for the dataset.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace that contains the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

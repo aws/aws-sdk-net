@@ -62,6 +62,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConnectorStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ProviderConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProviderDetailUnmarshaller.Instance;
+                    unmarshalledObject.ProviderConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ProviderName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -33,7 +33,8 @@ namespace Amazon.IoTSiteWise.Model
     /// Container for the parameters to the DeleteTimeSeries operation.
     /// Deletes a time series (data stream). If you delete a time series that's associated
     /// with an asset property, the asset property still exists, but the time series will
-    /// no longer be associated with this asset property.
+    /// no longer be associated with this asset property. You can't delete a time series until
+    /// all of its data segments have been deleted from session datasets.
     /// 
     ///  
     /// <para>
@@ -65,6 +66,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _assetId;
         private string _clientToken;
         private string _propertyId;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property Alias. 
@@ -147,6 +149,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetPropertyId()
         {
             return this._propertyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

@@ -71,6 +71,7 @@ namespace Amazon.GameLift.Model
         /// player sessions that are in ACTIVE or RESERVED status when the ticket is completed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=128)]
         public string PlayerSessionId
         {
             get { return this._playerSessionId; }

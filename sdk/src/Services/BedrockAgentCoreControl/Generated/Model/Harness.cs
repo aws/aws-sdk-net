@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Representation of a Harness.
+    /// Representation of a harness.
     /// </summary>
     public partial class Harness
     {
@@ -45,6 +45,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _failureReason;
         private string _harnessId;
         private string _harnessName;
+        private string _harnessVersion;
         private int? _maxIterations;
         private int? _maxTokens;
         private HarnessMemoryConfiguration _memory;
@@ -60,7 +61,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AllowedTools. 
         /// <para>
-        /// The allowed tools of the Harness. All tools are allowed by default.
+        /// The allowed tools of the harness. All tools are allowed by default.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -84,7 +85,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the Harness.
+        /// The ARN of the harness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +119,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The createdAt time of the Harness.
+        /// The createdAt time of the harness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -174,7 +175,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVariables. 
         /// <para>
-        /// Environment variables exposed in the environment in which the Harness operates.
+        /// Environment variables exposed in the environment in which the harness operates.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -198,7 +199,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// IAM role the Harness assumes when running.
+        /// IAM role the harness assumes when running.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -235,7 +236,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property HarnessId. 
         /// <para>
-        /// The ID of the Harness.
+        /// The ID of the harness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -254,7 +255,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property HarnessName. 
         /// <para>
-        /// The name of the Harness.
+        /// The name of the harness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -268,6 +269,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetHarnessName()
         {
             return this._harnessName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HarnessVersion. 
+        /// <para>
+        /// The version of the harness. Incremented on every successful UpdateHarness.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public string HarnessVersion
+        {
+            get { return this._harnessVersion; }
+            set { this._harnessVersion = value; }
+        }
+
+        // Check to see if HarnessVersion property is set
+        internal bool IsSetHarnessVersion()
+        {
+            return this._harnessVersion != null;
         }
 
         /// <summary>
@@ -347,7 +367,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Skills. 
         /// <para>
-        /// The skills of the Harness.
+        /// The skills of the harness.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -371,7 +391,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Harness.
+        /// The status of the harness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -390,7 +410,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property SystemPrompt. 
         /// <para>
-        /// The system prompt of the Harness.
+        /// The system prompt of the harness.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -432,7 +452,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Tools. 
         /// <para>
-        /// The tools of the Harness.
+        /// The tools of the harness.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -475,7 +495,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The updatedAt time of the Harness.
+        /// The updatedAt time of the harness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -317,6 +317,14 @@ namespace Amazon.ConfigService.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        public IListConnectorsPaginator ListConnectors(ListConnectorsRequest request) 
+        {
+            return new ListConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDiscoveredResources operation
         ///</summary>
         public IListDiscoveredResourcesPaginator ListDiscoveredResources(ListDiscoveredResourcesRequest request) 

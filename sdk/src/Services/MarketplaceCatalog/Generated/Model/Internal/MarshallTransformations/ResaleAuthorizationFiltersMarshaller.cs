@@ -178,6 +178,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetResellerRole())
+            {
+                context.Writer.WritePropertyName("ResellerRole");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResaleAuthorizationResellerRoleFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResellerRole, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// The configuration information to connect to Amazon S3 as your data source.
+    /// The configuration information to connect to Amazon S3 as your data source for self-managed
+    /// knowledge bases. To configure this data source for managed knowledge bases, use <a
+    /// href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ManagedKnowledgeBaseConnectorConfiguration.html">managedKnowledgeBaseConnectorConfiguration</a>.
     /// </summary>
     public partial class S3DataSourceConfiguration
     {

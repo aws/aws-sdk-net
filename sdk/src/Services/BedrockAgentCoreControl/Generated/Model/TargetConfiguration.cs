@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class TargetConfiguration
     {
         private HttpTargetConfiguration _http;
+        private InferenceTargetConfiguration _inference;
         private McpTargetConfiguration _mcp;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetHttp()
         {
             return this._http != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Inference. 
+        /// <para>
+        /// The inference configuration for the target. This configuration routes requests to
+        /// a large language model (LLM) provider.
+        /// </para>
+        /// </summary>
+        public InferenceTargetConfiguration Inference
+        {
+            get { return this._inference; }
+            set { this._inference = value; }
+        }
+
+        // Check to see if Inference property is set
+        internal bool IsSetInference()
+        {
+            return this._inference != null;
         }
 
         /// <summary>

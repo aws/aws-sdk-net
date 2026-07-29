@@ -68,6 +68,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("intermediateTableConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = IntermediateTableOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IntermediateTableConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("membershipArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -98,6 +98,16 @@ namespace Amazon.GuardDuty.Model
         IListFindingsPaginator ListFindings(ListFindingsRequest request);
 
         /// <summary>
+        /// Paginator for ListInvestigations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListInvestigationsPaginator ListInvestigations(ListInvestigationsRequest request);
+
+        /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
         [AWSPaginator(

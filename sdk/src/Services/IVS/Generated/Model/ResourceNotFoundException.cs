@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// Request references a resource which does not exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

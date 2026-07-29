@@ -163,7 +163,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ManagedBy. 
         /// <para>
-        /// The AWS service that manages the resource gateway.
+        /// The Amazon Web Services service that manages the resource gateway.
         /// </para>
         /// </summary>
         public string ManagedBy
@@ -242,7 +242,7 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property ServiceManaged. 
         /// <para>
-        /// Indicates whether the resource gateway is managed by an AWS service.
+        /// Indicates whether the resource gateway is managed by an Amazon Web Services service.
         /// </para>
         /// </summary>
         public bool? ServiceManaged

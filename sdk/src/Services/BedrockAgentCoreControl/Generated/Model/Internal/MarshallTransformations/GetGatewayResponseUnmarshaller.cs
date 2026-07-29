@@ -47,7 +47,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetGatewayResponse response = new GetGatewayResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
@@ -68,6 +68,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("customTransformConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = CustomTransformConfigurationUnmarshaller.Instance;
+                    response.CustomTransformConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth, ref reader))
@@ -160,6 +166,18 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("wafConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = WafConfigurationUnmarshaller.Instance;
+                    response.WafConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("webAclArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WebAclArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("workloadIdentityDetails", targetDepth, ref reader))
                 {
                     var unmarshaller = WorkloadIdentityDetailsUnmarshaller.Instance;
@@ -180,7 +198,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
@@ -190,7 +208,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
-                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

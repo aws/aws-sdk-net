@@ -37,17 +37,22 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _actorId;
         private List<string> _allowedTools = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _baggage;
         private string _harnessArn;
         private int? _maxIterations;
         private int? _maxTokens;
         private List<HarnessMessage> _messages = AWSConfigs.InitializeCollections ? new List<HarnessMessage>() : null;
         private HarnessModelConfiguration _model;
+        private string _qualifier;
         private string _runtimeSessionId;
         private string _runtimeUserId;
         private List<HarnessSkill> _skills = AWSConfigs.InitializeCollections ? new List<HarnessSkill>() : null;
         private List<HarnessSystemContentBlock> _systemPrompt = AWSConfigs.InitializeCollections ? new List<HarnessSystemContentBlock>() : null;
         private int? _timeoutSeconds;
         private List<HarnessTool> _tools = AWSConfigs.InitializeCollections ? new List<HarnessTool>() : null;
+        private string _traceId;
+        private string _traceParent;
+        private string _traceState;
 
         /// <summary>
         /// Gets and sets the property ActorId. 
@@ -89,6 +94,25 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetAllowedTools()
         {
             return this._allowedTools != null && (this._allowedTools.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Baggage. 
+        /// <para>
+        /// W3C Baggage header for user-defined context propagation. Format: key1=value1,key2=value2
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=8192)]
+        public string Baggage
+        {
+            get { return this._baggage; }
+            set { this._baggage = value; }
+        }
+
+        // Check to see if Baggage property is set
+        internal bool IsSetBaggage()
+        {
+            return this._baggage != null;
         }
 
         /// <summary>
@@ -189,6 +213,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetModel()
         {
             return this._model != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Qualifier. 
+        /// <para>
+        /// The endpoint name to invoke. If omitted, the DEFAULT endpoint is used.
+        /// </para>
+        /// </summary>
+        public string Qualifier
+        {
+            get { return this._qualifier; }
+            set { this._qualifier = value; }
+        }
+
+        // Check to see if Qualifier property is set
+        internal bool IsSetQualifier()
+        {
+            return this._qualifier != null;
         }
 
         /// <summary>
@@ -319,6 +361,64 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetTools()
         {
             return this._tools != null && (this._tools.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// Trace ID for maintaining observability through the operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceId
+        {
+            get { return this._traceId; }
+            set { this._traceId = value; }
+        }
+
+        // Check to see if TraceId property is set
+        internal bool IsSetTraceId()
+        {
+            return this._traceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceParent. 
+        /// <para>
+        /// W3C trace context parent header containing version, trace ID, parent span ID, and
+        /// trace flags.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string TraceParent
+        {
+            get { return this._traceParent; }
+            set { this._traceParent = value; }
+        }
+
+        // Check to see if TraceParent property is set
+        internal bool IsSetTraceParent()
+        {
+            return this._traceParent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TraceState. 
+        /// <para>
+        /// W3C trace context state header for vendor-specific trace information.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=512)]
+        public string TraceState
+        {
+            get { return this._traceState; }
+            set { this._traceState = value; }
+        }
+
+        // Check to see if TraceState property is set
+        internal bool IsSetTraceState()
+        {
+            return this._traceState != null;
         }
 
     }

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CapacityUnitsConfiguration Marshaller
     /// </summary>
-    public class CapacityUnitsConfigurationMarshaller : IRequestMarshaller<CapacityUnitsConfiguration, JsonMarshallerContext> 
+    public class CapacityUnitsConfigurationMarshaller : IRequestMarshaller<CapacityUnitsConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.KendraRanking.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CapacityUnitsConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(CapacityUnitsConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetRescoreCapacityUnits())
-            {
-                context.Writer.WritePropertyName("RescoreCapacityUnits");
-                context.Writer.WriteNumberValue(requestObject.RescoreCapacityUnits.Value);
-            }
 
+            if (requestObject.IsSetRescoreCapacityUnits())
+            {
+                context.Writer.WriteTextString("RescoreCapacityUnits");
+                context.Writer.WriteInt32(requestObject.RescoreCapacityUnits.Value);
+            }
         }
 
         /// <summary>

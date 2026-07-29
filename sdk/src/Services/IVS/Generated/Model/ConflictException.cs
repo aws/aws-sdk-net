@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// Updating or deleting a resource can cause an inconsistent state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

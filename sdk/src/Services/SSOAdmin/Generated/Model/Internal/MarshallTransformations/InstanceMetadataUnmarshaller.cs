@@ -86,6 +86,18 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PrimaryRegion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PrimaryRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Regions", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<RegionMetadata, RegionMetadataUnmarshaller>(RegionMetadataUnmarshaller.Instance);
+                    unmarshalledObject.Regions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

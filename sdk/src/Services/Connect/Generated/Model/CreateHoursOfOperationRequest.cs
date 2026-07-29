@@ -132,7 +132,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about parent hours of operations, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
+        /// For more information about parent hours of operations, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Link
         /// overrides from different hours of operation</a> in the <i> Administrator Guide</i>.
         /// </para>
         /// <para />

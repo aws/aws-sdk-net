@@ -34,7 +34,7 @@ namespace Amazon.S3Vectors.Model
     /// Performs an approximate nearest neighbor search query in a vector index using a query
     /// vector. By default, it returns the keys of approximate nearest neighbors. You can
     /// optionally include the computed distance (between the query vector and each vector
-    /// in the response), the vector data, and metadata of each vector in the response. 
+    /// in the response) and metadata of each vector in the response.
     /// 
     ///  
     /// <para>
@@ -50,16 +50,15 @@ namespace Amazon.S3Vectors.Model
     /// <para>
     /// With only <c>s3vectors:QueryVectors</c> permission, you can retrieve vector keys of
     /// approximate nearest neighbors and computed distances between these vectors. This permission
-    /// is sufficient only when you don't set any metadata filters and don't request vector
-    /// data or metadata (by keeping the <c>returnMetadata</c> parameter set to <c>false</c>
-    /// or not specified).
+    /// is sufficient only when you don't set any metadata filters and don't request metadata
+    /// (by keeping the <c>returnMetadata</c> parameter set to <c>false</c> or not specified).
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you specify a metadata filter or set <c>returnMetadata</c> to true, you must have
     /// both <c>s3vectors:QueryVectors</c> and <c>s3vectors:GetVectors</c> permissions. The
-    /// request fails with a <c>403 Forbidden error</c> if you request metadata filtering,
-    /// vector data, or metadata without the <c>s3vectors:GetVectors</c> permission.
+    /// request fails with a <c>403 Forbidden error</c> if you request metadata filtering
+    /// or metadata without the <c>s3vectors:GetVectors</c> permission.
     /// </para>
     ///  </li> </ul> </dd> </dl>
     /// </summary>
@@ -68,6 +67,7 @@ namespace Amazon.S3Vectors.Model
         private Amazon.Runtime.Documents.Document _filter;
         private string _indexArn;
         private string _indexName;
+        private string _nextToken;
         private VectorData _queryVector;
         private bool? _returnDistance;
         private bool? _returnMetadata;
@@ -129,6 +129,26 @@ namespace Amazon.S3Vectors.Model
         internal bool IsSetIndexName()
         {
             return this._indexName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination token from a previous request. The value of this field is empty for an
+        /// initial request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
         /// <summary>

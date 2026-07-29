@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "18.0.0.0")]
     public partial class AssemblyInfo : BaseGenerator
     {
@@ -25,7 +25,9 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\n");
             this.Write(@"
+
 using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
@@ -36,111 +38,129 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 [assembly: AssemblyTitle(""");
             
-            #line 12 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyTitle));
             
             #line default
             #line hidden
-            this.Write("\")]\r\n#if BCL\r\n[assembly: AssemblyDescription(\"");
+            this.Write("\")]\n");
             
-            #line 14 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "4.7.2")));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n#elif NETSTANDARD20\r\n[assembly: AssemblyDescription(\"");
-            
-            #line 16 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: "NetStandard 2.0")));
-            
-            #line default
-            #line hidden
-            this.Write("\")]\r\n#elif NETCOREAPP3_1\r\n[assembly: AssemblyDescription(\"");
-            
-            #line 18 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: ".NET Core 3.1")));
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+
+    // The target framework set is derived from the Sdk*Targets properties in sdk/Directory.Build.props,
+    // so adding or removing a target requires no edit to this template.
+    var platforms = AssemblyInfoPlatforms.Platforms;
+    for (int i = 0; i < platforms.Count; i++)
+    {
+        var platform = platforms[i];
+
             
             #line default
             #line hidden
-            this.Write("\")]\r\n#elif NET8_0\r\n[assembly: AssemblyDescription(\"");
+            this.Write("\n");
             
-            #line 20 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: ".NET 8.0")));
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(i == 0 ? "#if" : "#elif"));
             
             #line default
             #line hidden
-            this.Write("\")]\r\n#else\r\n#error Unknown platform constant - unable to set correct AssemblyDesc" +
-                    "ription\r\n#endif\r\n\r\n");
+            this.Write(" ");
             
-            #line 25 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(platform.Symbol));
+            
+            #line default
+            #line hidden
+            this.Write("\n[assembly: AssemblyDescription(\"");
+            
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.AssemblyDescription(versionIdentifier: platform.Label)));
+            
+            #line default
+            #line hidden
+            this.Write("\")]\n");
+            
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+
+    }
+
+            
+            #line default
+            #line hidden
+            this.Write("\n#else\n#error Unknown platform constant - unable to set correct AssemblyDescripti" +
+                    "on\n#endif\n\n");
+            
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  if (this.Config.AssemblyTitle=="AWSSDK.DynamoDBv2") { 
             
             #line default
             #line hidden
-            this.Write("[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.DynamoDBv2, PublicKey=00240000048" +
-                    "00000940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a62" +
-                    "63a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc8" +
-                    "11d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c36" +
-                    "22762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assem" +
+            this.Write("\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.DynamoDBv2, PublicKey=0024000004" +
+                    "800000940000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6" +
+                    "263a3cc74ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc" +
+                    "811d3c8fc55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3" +
+                    "622762977900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assem" +
                     "bly: InternalsVisibleTo(\"AWSSDK.UnitTests.Core, PublicKey=0024000004800000940000" +
                     "000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab1" +
                     "7ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc558" +
                     "59b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900" +
-                    "eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: Intern" +
-                    "alsVisibleTo(\"AWSSDK.UnitTests.NetFramework, PublicKey=0024000004800000940000000" +
-                    "602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba" +
-                    "9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b" +
-                    "0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900edd" +
-                    "bf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: Internals" +
-                    "VisibleTo(\"AWSSDK.UnitTests.NetStandard, PublicKey=00240000048000009400000006020" +
-                    "00000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9d" +
-                    "f0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09" +
-                    "d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf12" +
-                    "52ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n");
+                    "eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assembly: Interna" +
+                    "lsVisibleTo(\"AWSSDK.UnitTests.NetFramework, PublicKey=00240000048000009400000006" +
+                    "02000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9" +
+                    "a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0" +
+                    "d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddb" +
+                    "f1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assembly: InternalsVi" +
+                    "sibleTo(\"AWSSDK.UnitTests.NetStandard, PublicKey=0024000004800000940000000602000" +
+                    "000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0" +
+                    "b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3" +
+                    "bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252" +
+                    "ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n");
             
-            #line 30 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  } 
             
             #line default
             #line hidden
+            this.Write("\n");
             
-            #line 31 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  if (this.Config.AssemblyTitle=="AWSSDK.S3") { 
             
             #line default
             #line hidden
-            this.Write("[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.S3, PublicKey=0024000004800000940" +
-                    "000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74" +
-                    "ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc" +
-                    "55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977" +
-                    "900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: Int" +
+            this.Write("\n[assembly: InternalsVisibleTo(\"AWSSDK.UnitTests.S3, PublicKey=002400000480000094" +
+                    "0000000602000000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc7" +
+                    "4ab17ba9a9df0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8f" +
+                    "c55859b0d09d3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c362276297" +
+                    "7900eddbf1252ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assembly: Int" +
                     "ernalsVisibleTo(\"AWSSDK.UnitTests.Core, PublicKey=002400000480000094000000060200" +
                     "0000240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df" +
                     "0b52aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d" +
                     "3bc0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf125" +
-                    "2ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: InternalsVisib" +
-                    "leTo(\"AWSSDK.UnitTests.NetFramework, PublicKey=002400000480000094000000060200000" +
-                    "0240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b5" +
-                    "2aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc" +
-                    "0a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed" +
-                    "08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: InternalsVisibleT" +
-                    "o(\"AWSSDK.UnitTests.NetStandard, PublicKey=0024000004800000940000000602000000240" +
-                    "000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aed" +
-                    "be7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84" +
-                    "eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a2" +
-                    "413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\r\n[assembly: InternalsVisibleTo(\"D" +
-                    "ynamicProxyGenAssembly2, PublicKey=002400000480000094000000060200000024000052534" +
-                    "1310004000001000100c547cac37abd99c8db225ef2f6c8a3602f3b3606cc9891605d02baa56104f" +
-                    "4cfc0734aa39b93bf7852f7d9266654753cc297e7d2edfe0bac1cdcf9f717241550e0a7b191195b7" +
-                    "667bb4f64bcb8e2121380fd1d9d46ad2d92d2d15605093924cceaf74c4861eff62abf69b9291ed0a" +
-                    "340e113be11e6a7d3113e92484cf7045cc7\")]\r\n");
+                    "2ed08a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assembly: InternalsVisibl" +
+                    "eTo(\"AWSSDK.UnitTests.NetFramework, PublicKey=0024000004800000940000000602000000" +
+                    "240000525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52" +
+                    "aedbe7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0" +
+                    "a84eecd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed0" +
+                    "8a2413f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assembly: InternalsVisibleTo(" +
+                    "\"AWSSDK.UnitTests.NetStandard, PublicKey=002400000480000094000000060200000024000" +
+                    "0525341310004000001000100db5f59f098d27276c7833875a6263a3cc74ab17ba9a9df0b52aedbe" +
+                    "7252745db7274d5271fd79c1f08f668ecfa8eaab5626fa76adc811d3c8fc55859b0d09d3bc0a84ee" +
+                    "cd0ba891f2b8a2fc55141cdcc37c2053d53491e650a479967c3622762977900eddbf1252ed08a241" +
+                    "3f00a28f3a0752a81203f03ccb7f684db373518b4\")]\n[assembly: InternalsVisibleTo(\"Dyna" +
+                    "micProxyGenAssembly2, PublicKey=002400000480000094000000060200000024000052534131" +
+                    "0004000001000100c547cac37abd99c8db225ef2f6c8a3602f3b3606cc9891605d02baa56104f4cf" +
+                    "c0734aa39b93bf7852f7d9266654753cc297e7d2edfe0bac1cdcf9f717241550e0a7b191195b7667" +
+                    "bb4f64bcb8e2121380fd1d9d46ad2d92d2d15605093924cceaf74c4861eff62abf69b9291ed0a340" +
+                    "e113be11e6a7d3113e92484cf7045cc7\")]\n");
             
-            #line 37 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
  } 
             
             #line default
             #line hidden
-            this.Write(@"[assembly: AssemblyConfiguration("""")]
+            this.Write(@"
+[assembly: AssemblyConfiguration("""")]
 [assembly: AssemblyProduct(""Amazon Web Services SDK for .NET"")]
 [assembly: AssemblyCompany(""Amazon.com, Inc"")]
 [assembly: AssemblyCopyright(""Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved."")]
@@ -164,19 +184,19 @@ using System.Runtime.CompilerServices;
 // [assembly: AssemblyVersion(""1.0.*"")]
 [assembly: AssemblyVersion(""");
             
-            #line 60 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceVersion));
             
             #line default
             #line hidden
-            this.Write("\")]\r\n[assembly: AssemblyFileVersion(\"");
+            this.Write("\")]\n[assembly: AssemblyFileVersion(\"");
             
-            #line 61 "C:\Projects\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
+            #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\SourceFiles\AssemblyInfo.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceFileVersion));
             
             #line default
             #line hidden
-            this.Write("\")]\r\n");
+            this.Write("\")]\n");
             return this.GenerationEnvironment.ToString();
         }
     }

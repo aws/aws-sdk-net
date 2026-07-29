@@ -36,10 +36,13 @@ namespace Amazon.IoTSiteWise.Model
     public partial class UpdateDatasetRequest : AmazonIoTSiteWiseRequest
     {
         private string _clientToken;
+        private DatasetConfig _datasetConfig;
         private string _datasetDescription;
         private string _datasetId;
         private string _datasetName;
         private DatasetSource _datasetSource;
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -59,6 +62,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetConfig. 
+        /// <para>
+        /// The updated configuration for the dataset.
+        /// </para>
+        /// </summary>
+        public DatasetConfig DatasetConfig
+        {
+            get { return this._datasetConfig; }
+            set { this._datasetConfig = value; }
+        }
+
+        // Check to see if DatasetConfig property is set
+        internal bool IsSetDatasetConfig()
+        {
+            return this._datasetConfig != null;
         }
 
         /// <summary>
@@ -135,6 +156,48 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDatasetSource()
         {
             return this._datasetSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The updated metadata for the dataset.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace that contains the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

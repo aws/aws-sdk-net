@@ -28,6 +28,16 @@ namespace Amazon.Billing.Model
     {
 
         /// <summary>
+        /// Paginator for GetCreditAllocationHistory operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetCreditAllocationHistoryPaginator GetCreditAllocationHistory(GetCreditAllocationHistoryRequest request);
+
+        /// <summary>
         /// Paginator for ListBillingViews operation
         ///</summary>
         [AWSPaginator(

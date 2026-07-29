@@ -44,7 +44,10 @@ namespace Amazon.Connect.Model
         private string _contactId;
         private string _contactParticipantId;
         private ContactParticipantRole _contactParticipantRole;
+        private int? _earnedPoints;
         private string _evaluatorArn;
+        private int? _maxBasePoint;
+        private PerformanceCategoryName _performanceCategory;
         private string _reviewId;
         private string _samplingJobId;
         private bool? _scoreAutomaticFail;
@@ -237,6 +240,24 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EarnedPoints. 
+        /// <para>
+        /// The points earned for the evaluation.
+        /// </para>
+        /// </summary>
+        public int? EarnedPoints
+        {
+            get { return this._earnedPoints; }
+            set { this._earnedPoints = value; }
+        }
+
+        // Check to see if EarnedPoints property is set
+        internal bool IsSetEarnedPoints()
+        {
+            return this._earnedPoints.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property EvaluatorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the person who evaluated the contact.
@@ -253,6 +274,42 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvaluatorArn()
         {
             return this._evaluatorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBasePoint. 
+        /// <para>
+        /// The maximum base points possible for the evaluation.
+        /// </para>
+        /// </summary>
+        public int? MaxBasePoint
+        {
+            get { return this._maxBasePoint; }
+            set { this._maxBasePoint = value; }
+        }
+
+        // Check to see if MaxBasePoint property is set
+        internal bool IsSetMaxBasePoint()
+        {
+            return this._maxBasePoint.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PerformanceCategory. 
+        /// <para>
+        /// The performance category for the evaluation score.
+        /// </para>
+        /// </summary>
+        public PerformanceCategoryName PerformanceCategory
+        {
+            get { return this._performanceCategory; }
+            set { this._performanceCategory = value; }
+        }
+
+        // Check to see if PerformanceCategory property is set
+        internal bool IsSetPerformanceCategory()
+        {
+            return this._performanceCategory != null;
         }
 
         /// <summary>
@@ -336,7 +393,6 @@ namespace Amazon.Connect.Model
         /// The total evaluation score expressed as a percentage.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
         public double? ScorePercentage
         {
             get { return this._scorePercentage; }

@@ -46,6 +46,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuthenticationConfiguration())
+            {
+                context.Writer.WritePropertyName("authenticationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuthenticationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAuthorizationConfiguration())
             {
                 context.Writer.WritePropertyName("authorizationConfiguration");

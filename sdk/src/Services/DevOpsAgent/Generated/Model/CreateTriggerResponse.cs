@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// This is the response object from the CreateTrigger operation.
+    /// Response structure for creating a new Trigger
     /// </summary>
     public partial class CreateTriggerResponse : AmazonWebServiceResponse
     {

@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RelayAction Object
     /// </summary>  
-    public class RelayActionUnmarshaller : IJsonUnmarshaller<RelayAction, JsonUnmarshallerContext>
+    public class RelayActionUnmarshaller : ICborUnmarshaller<RelayAction, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RelayAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public RelayAction Unmarshall(CborUnmarshallerContext context)
         {
             RelayAction unmarshalledObject = new RelayAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ActionFailurePolicy", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionFailurePolicy = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MailFrom", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MailFrom = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Relay", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Relay = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ActionFailurePolicy":
+                        {
+                            context.AddPathSegment("ActionFailurePolicy");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ActionFailurePolicy = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MailFrom":
+                        {
+                            context.AddPathSegment("MailFrom");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MailFrom = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Relay":
+                        {
+                            context.AddPathSegment("Relay");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Relay = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

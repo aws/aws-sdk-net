@@ -46,6 +46,17 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEumsSms())
+            {
+                context.Writer.WritePropertyName("EumsSms");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EumsSmsConfigurationTypeMarshaller.Instance;
+                marshaller.Marshall(requestObject.EumsSms, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetExternalId())
             {
                 context.Writer.WritePropertyName("ExternalId");

@@ -44,6 +44,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _productName;
         private string _resellerAccountID;
         private string _resellerLegalName;
+        private ResaleAuthorizationResellerRoleString _resellerRole;
         private ResaleAuthorizationStatusString _status;
 
         /// <summary>
@@ -234,6 +235,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetResellerLegalName()
         {
             return this._resellerLegalName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResellerRole. 
+        /// <para>
+        /// The reseller role of the ResaleAuthorization.
+        /// </para>
+        /// </summary>
+        public ResaleAuthorizationResellerRoleString ResellerRole
+        {
+            get { return this._resellerRole; }
+            set { this._resellerRole = value; }
+        }
+
+        // Check to see if ResellerRole property is set
+        internal bool IsSetResellerRole()
+        {
+            return this._resellerRole != null;
         }
 
         /// <summary>

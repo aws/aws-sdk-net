@@ -100,6 +100,21 @@
         {"shape":"AccessDeniedException"}
       ]
     },
+    "CreateInvestigation":{
+      "name":"CreateInvestigation",
+      "http":{
+        "method":"POST",
+        "requestUri":"/detector/{DetectorId}/investigation",
+        "responseCode":202
+      },
+      "input":{"shape":"CreateInvestigationRequest"},
+      "output":{"shape":"CreateInvestigationResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"AccessDeniedException"}
+      ]
+    },
     "CreateMalwareProtectionPlan":{
       "name":"CreateMalwareProtectionPlan",
       "http":{
@@ -568,6 +583,22 @@
         {"shape":"InternalServerErrorException"}
       ]
     },
+    "GetInvestigation":{
+      "name":"GetInvestigation",
+      "http":{
+        "method":"GET",
+        "requestUri":"/detector/{DetectorId}/investigation/{InvestigationId}",
+        "responseCode":200
+      },
+      "input":{"shape":"GetInvestigationRequest"},
+      "output":{"shape":"GetInvestigationResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"}
+      ]
+    },
     "GetInvitationsCount":{
       "name":"GetInvitationsCount",
       "http":{
@@ -836,6 +867,21 @@
       "errors":[
         {"shape":"BadRequestException"},
         {"shape":"InternalServerErrorException"}
+      ]
+    },
+    "ListInvestigations":{
+      "name":"ListInvestigations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/detector/{DetectorId}/investigation/list",
+        "responseCode":200
+      },
+      "input":{"shape":"ListInvestigationsRequest"},
+      "output":{"shape":"ListInvestigationsResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"},
+        {"shape":"AccessDeniedException"}
       ]
     },
     "ListInvitations":{
@@ -1845,6 +1891,84 @@
       },
       "exception":true
     },
+    "BedrockGuardrail":{
+      "type":"structure",
+      "members":{
+        "Arn":{
+          "shape":"BedrockGuardrailArnString",
+          "locationName":"arn"
+        },
+        "Version":{
+          "shape":"BedrockGuardrailVersionString",
+          "locationName":"version"
+        }
+      }
+    },
+    "BedrockGuardrailArnString":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+"
+    },
+    "BedrockGuardrailDetails":{
+      "type":"structure",
+      "members":{
+        "GuardrailArn":{
+          "shape":"BedrockGuardrailDetailsGuardrailArnString",
+          "deprecated":true,
+          "deprecatedMessage":"Use guardrails list instead",
+          "deprecatedSince":"2026-07-13",
+          "locationName":"guardrailArn"
+        },
+        "GuardrailVersion":{
+          "shape":"BedrockGuardrailDetailsGuardrailVersionString",
+          "deprecated":true,
+          "deprecatedMessage":"Use guardrails list instead",
+          "deprecatedSince":"2026-07-13",
+          "locationName":"guardrailVersion"
+        },
+        "Guardrails":{
+          "shape":"BedrockGuardrails",
+          "locationName":"guardrails"
+        },
+        "GuardrailAction":{
+          "shape":"GuardrailAction",
+          "locationName":"guardrailAction"
+        },
+        "GuardrailSource":{
+          "shape":"GuardrailSource",
+          "locationName":"guardrailSource"
+        },
+        "ContentPolicyFilters":{
+          "shape":"ContentPolicyFilters",
+          "locationName":"contentPolicyFilters"
+        }
+      }
+    },
+    "BedrockGuardrailDetailsGuardrailArnString":{
+      "type":"string",
+      "max":2048,
+      "min":0,
+      "pattern":"arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+"
+    },
+    "BedrockGuardrailDetailsGuardrailVersionString":{
+      "type":"string",
+      "max":8,
+      "min":1,
+      "pattern":"(([1-9][0-9]{0,7})|(DRAFT))"
+    },
+    "BedrockGuardrailVersionString":{
+      "type":"string",
+      "max":8,
+      "min":1,
+      "pattern":"(([1-9][0-9]{0,7})|(DRAFT)|(ENFORCED))"
+    },
+    "BedrockGuardrails":{
+      "type":"list",
+      "member":{"shape":"BedrockGuardrail"},
+      "max":10,
+      "min":0
+    },
     "Behavior":{
       "type":"map",
       "key":{"shape":"String"},
@@ -1918,6 +2042,34 @@
       "type":"string",
       "max":64,
       "min":0
+    },
+    "CloudDetails":{
+      "type":"structure",
+      "required":[
+        "Provider",
+        "Region",
+        "Account"
+      ],
+      "members":{
+        "Provider":{
+          "shape":"CloudProvider",
+          "locationName":"provider"
+        },
+        "Region":{
+          "shape":"String",
+          "locationName":"region"
+        },
+        "Account":{
+          "shape":"String",
+          "locationName":"account"
+        }
+      }
+    },
+    "CloudProvider":{
+      "type":"string",
+      "enum":["AWS"],
+      "max":50,
+      "min":1
     },
     "CloudTrailConfigurationResult":{
       "type":"structure",
@@ -2016,6 +2168,26 @@
         }
       }
     },
+    "Confidence":{
+      "type":"string",
+      "enum":[
+        "Unknown",
+        "Low",
+        "Medium",
+        "High"
+      ],
+      "max":50,
+      "min":1
+    },
+    "ConfidenceLevel":{
+      "type":"string",
+      "enum":[
+        "HIGH",
+        "MEDIUM",
+        "LOW",
+        "NONE"
+      ]
+    },
     "ConflictException":{
       "type":"structure",
       "members":{
@@ -2111,6 +2283,48 @@
     "Containers":{
       "type":"list",
       "member":{"shape":"Container"}
+    },
+    "ContentPolicyFilter":{
+      "type":"structure",
+      "members":{
+        "Type":{
+          "shape":"ContentPolicyFilterType",
+          "locationName":"type"
+        },
+        "Confidence":{
+          "shape":"ConfidenceLevel",
+          "locationName":"confidence"
+        },
+        "Action":{
+          "shape":"ContentPolicyFilterAction",
+          "locationName":"action"
+        }
+      }
+    },
+    "ContentPolicyFilterAction":{
+      "type":"string",
+      "enum":[
+        "BLOCKED",
+        "NONE"
+      ]
+    },
+    "ContentPolicyFilterType":{
+      "type":"string",
+      "enum":[
+        "PROMPT_ATTACK",
+        "JAILBREAK",
+        "HATE",
+        "INSULTS",
+        "SEXUAL",
+        "VIOLENCE",
+        "MISCONDUCT"
+      ]
+    },
+    "ContentPolicyFilters":{
+      "type":"list",
+      "member":{"shape":"ContentPolicyFilter"},
+      "max":10,
+      "min":0
     },
     "ContinuousScanDetails":{
       "type":"structure",
@@ -2547,6 +2761,39 @@
         "IpSetId":{
           "shape":"String",
           "locationName":"ipSetId"
+        }
+      }
+    },
+    "CreateInvestigationRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "TriggerPrompt"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"DetectorId"
+        },
+        "TriggerPrompt":{
+          "shape":"TriggerPrompt",
+          "locationName":"triggerPrompt"
+        },
+        "ClientToken":{
+          "shape":"ClientToken",
+          "idempotencyToken":true,
+          "locationName":"clientToken"
+        }
+      }
+    },
+    "CreateInvestigationResponse":{
+      "type":"structure",
+      "required":["InvestigationId"],
+      "members":{
+        "InvestigationId":{
+          "shape":"InvestigationId",
+          "locationName":"investigationId"
         }
       }
     },
@@ -3538,7 +3785,9 @@
         "RDS_LOGIN_EVENTS",
         "LAMBDA_NETWORK_LOGS",
         "EKS_RUNTIME_MONITORING",
-        "RUNTIME_MONITORING"
+        "RUNTIME_MONITORING",
+        "AI_PROTECTION",
+        "AI_ANALYST"
       ]
     },
     "DetectorFeatureConfiguration":{
@@ -3599,7 +3848,9 @@
         "RDS_LOGIN_EVENTS",
         "LAMBDA_NETWORK_LOGS",
         "EKS_RUNTIME_MONITORING",
-        "RUNTIME_MONITORING"
+        "RUNTIME_MONITORING",
+        "AI_PROTECTION",
+        "AI_ANALYST"
       ]
     },
     "DetectorId":{
@@ -4297,6 +4548,11 @@
       "max":100,
       "min":1
     },
+    "FilterVersion":{
+      "type":"long",
+      "box":true,
+      "min":1
+    },
     "Finding":{
       "type":"structure",
       "required":[
@@ -4546,7 +4802,8 @@
         "LAMBDA_NETWORK_LOGS",
         "EKS_RUNTIME_MONITORING",
         "EC2_RUNTIME_MONITORING",
-        "FARGATE_RUNTIME_MONITORING"
+        "FARGATE_RUNTIME_MONITORING",
+        "AI_PROTECTION"
       ]
     },
     "GeoLocation":{
@@ -4718,6 +4975,18 @@
         "Tags":{
           "shape":"TagMap",
           "locationName":"tags"
+        },
+        "CreatedAt":{
+          "shape":"Timestamp",
+          "locationName":"createdAt"
+        },
+        "UpdatedAt":{
+          "shape":"Timestamp",
+          "locationName":"updatedAt"
+        },
+        "Version":{
+          "shape":"FilterVersion",
+          "locationName":"version"
         }
       }
     },
@@ -4851,6 +5120,35 @@
         "ExpectedBucketOwner":{
           "shape":"AccountId",
           "locationName":"expectedBucketOwner"
+        }
+      }
+    },
+    "GetInvestigationRequest":{
+      "type":"structure",
+      "required":[
+        "DetectorId",
+        "InvestigationId"
+      ],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"DetectorId"
+        },
+        "InvestigationId":{
+          "shape":"InvestigationId",
+          "location":"uri",
+          "locationName":"InvestigationId"
+        }
+      }
+    },
+    "GetInvestigationResponse":{
+      "type":"structure",
+      "required":["Investigation"],
+      "members":{
+        "Investigation":{
+          "shape":"Investigation",
+          "locationName":"investigation"
         }
       }
     },
@@ -5467,6 +5765,20 @@
       "type":"string",
       "pattern":"arn:[A-Za-z_.-]{1,20}:guardduty:[A-Za-z0-9_/.-]{0,63}:\\d+:detector/[A-Za-z0-9_/.-]{32,264}"
     },
+    "GuardrailAction":{
+      "type":"string",
+      "enum":[
+        "GUARDRAIL_INTERVENED",
+        "NONE"
+      ]
+    },
+    "GuardrailSource":{
+      "type":"string",
+      "enum":[
+        "INPUT",
+        "OUTPUT"
+      ]
+    },
     "HighestSeverityThreatDetails":{
       "type":"structure",
       "members":{
@@ -5691,6 +6003,182 @@
       "error":{"httpStatusCode":500},
       "exception":true,
       "fault":true
+    },
+    "Investigation":{
+      "type":"structure",
+      "required":[
+        "InvestigationId",
+        "Status",
+        "TriggerPrompt",
+        "TriggeredBy"
+      ],
+      "members":{
+        "InvestigationId":{
+          "shape":"InvestigationId",
+          "locationName":"investigationId"
+        },
+        "Status":{
+          "shape":"InvestigationStatus",
+          "locationName":"status"
+        },
+        "TriggerPrompt":{
+          "shape":"TriggerPrompt",
+          "locationName":"triggerPrompt"
+        },
+        "TriggeredBy":{
+          "shape":"TriggeredBy",
+          "locationName":"triggeredBy"
+        },
+        "Metadata":{
+          "shape":"InvestigationMetadata",
+          "locationName":"metadata"
+        },
+        "Cloud":{
+          "shape":"CloudDetails",
+          "locationName":"cloud"
+        },
+        "RiskLevel":{
+          "shape":"RiskLevel",
+          "locationName":"riskLevel"
+        },
+        "Risk":{
+          "shape":"RiskDetails",
+          "locationName":"risk"
+        },
+        "Confidence":{
+          "shape":"Confidence",
+          "locationName":"confidence"
+        },
+        "Summary":{
+          "shape":"String",
+          "locationName":"summary"
+        },
+        "StartTime":{
+          "shape":"Timestamp",
+          "locationName":"startTime"
+        },
+        "EndTime":{
+          "shape":"Timestamp",
+          "locationName":"endTime"
+        },
+        "Error":{
+          "shape":"InvestigationErrorDetails",
+          "locationName":"error"
+        }
+      }
+    },
+    "InvestigationErrorDetails":{
+      "type":"string",
+      "max":2048,
+      "min":0
+    },
+    "InvestigationId":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-fA-F0-9\\-]+"
+    },
+    "InvestigationMetadata":{
+      "type":"structure",
+      "required":[
+        "Version",
+        "Product"
+      ],
+      "members":{
+        "Version":{
+          "shape":"String",
+          "locationName":"version"
+        },
+        "Product":{
+          "shape":"Product",
+          "locationName":"product"
+        }
+      }
+    },
+    "InvestigationSortCriteria":{
+      "type":"structure",
+      "members":{
+        "AttributeName":{
+          "shape":"InvestigationSortField",
+          "locationName":"attributeName"
+        },
+        "OrderBy":{
+          "shape":"OrderBy",
+          "locationName":"orderBy"
+        }
+      }
+    },
+    "InvestigationSortField":{
+      "type":"string",
+      "enum":[
+        "START_TIME",
+        "END_TIME",
+        "STATUS",
+        "RISK_LEVEL",
+        "CONFIDENCE"
+      ]
+    },
+    "InvestigationStatus":{
+      "type":"string",
+      "enum":[
+        "RUNNING",
+        "COMPLETED",
+        "FAILED"
+      ],
+      "max":300,
+      "min":1
+    },
+    "InvestigationSummaries":{
+      "type":"list",
+      "member":{"shape":"InvestigationSummary"},
+      "max":50,
+      "min":0
+    },
+    "InvestigationSummary":{
+      "type":"structure",
+      "members":{
+        "InvestigationId":{
+          "shape":"InvestigationId",
+          "locationName":"investigationId"
+        },
+        "Status":{
+          "shape":"InvestigationStatus",
+          "locationName":"status"
+        },
+        "TriggerPrompt":{
+          "shape":"TriggerPrompt",
+          "locationName":"triggerPrompt"
+        },
+        "RiskLevel":{
+          "shape":"RiskLevel",
+          "locationName":"riskLevel"
+        },
+        "Confidence":{
+          "shape":"Confidence",
+          "locationName":"confidence"
+        },
+        "Title":{
+          "shape":"InvestigationTitle",
+          "locationName":"title"
+        },
+        "AccountId":{
+          "shape":"String",
+          "locationName":"accountId"
+        },
+        "StartTime":{
+          "shape":"Timestamp",
+          "locationName":"startTime"
+        },
+        "EndTime":{
+          "shape":"Timestamp",
+          "locationName":"endTime"
+        }
+      }
+    },
+    "InvestigationTitle":{
+      "type":"string",
+      "max":1024,
+      "min":0
     },
     "Invitation":{
       "type":"structure",
@@ -6382,6 +6870,43 @@
         },
         "NextToken":{
           "shape":"String",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListInvestigationsRequest":{
+      "type":"structure",
+      "required":["DetectorId"],
+      "members":{
+        "DetectorId":{
+          "shape":"DetectorId",
+          "location":"uri",
+          "locationName":"DetectorId"
+        },
+        "SortCriteria":{
+          "shape":"InvestigationSortCriteria",
+          "locationName":"sortCriteria"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "locationName":"nextToken"
+        }
+      }
+    },
+    "ListInvestigationsResponse":{
+      "type":"structure",
+      "required":["Investigations"],
+      "members":{
+        "Investigations":{
+          "shape":"InvestigationSummaries",
+          "locationName":"investigations"
+        },
+        "NextToken":{
+          "shape":"NextToken",
           "locationName":"nextToken"
         }
       }
@@ -7253,6 +7778,24 @@
         "DISABLED"
       ]
     },
+    "ModelDetail":{
+      "type":"structure",
+      "members":{
+        "ModelId":{
+          "shape":"ModelDetailModelIdString",
+          "locationName":"modelId"
+        }
+      }
+    },
+    "ModelDetailModelIdString":{
+      "type":"string",
+      "max":2048,
+      "min":1
+    },
+    "ModelDetails":{
+      "type":"list",
+      "member":{"shape":"ModelDetail"}
+    },
     "Name":{
       "type":"string",
       "max":300,
@@ -7432,6 +7975,12 @@
       "type":"list",
       "member":{"shape":"NetworkInterface"}
     },
+    "NextToken":{
+      "type":"string",
+      "max":2048,
+      "min":1,
+      "pattern":"[a-zA-Z0-9+/=_\\-]+"
+    },
     "NonEmptyString":{
       "type":"string",
       "max":200,
@@ -7457,6 +8006,10 @@
       "max":5,
       "min":0
     },
+    "ObservationNumbers":{
+      "type":"list",
+      "member":{"shape":"Long"}
+    },
     "ObservationTexts":{
       "type":"list",
       "member":{"shape":"String"}
@@ -7467,6 +8020,10 @@
         "Text":{
           "shape":"ObservationTexts",
           "locationName":"text"
+        },
+        "Number":{
+          "shape":"ObservationNumbers",
+          "locationName":"number"
         }
       }
     },
@@ -7486,7 +8043,8 @@
         "RDS_LOGIN_EVENTS",
         "LAMBDA_NETWORK_LOGS",
         "EKS_RUNTIME_MONITORING",
-        "RUNTIME_MONITORING"
+        "RUNTIME_MONITORING",
+        "AI_PROTECTION"
       ]
     },
     "OrgFeatureAdditionalConfiguration":{
@@ -7977,6 +8535,20 @@
       "max":1024,
       "min":0
     },
+    "Product":{
+      "type":"structure",
+      "required":["Name"],
+      "members":{
+        "Name":{
+          "shape":"String",
+          "locationName":"name"
+        },
+        "Feature":{
+          "shape":"String",
+          "locationName":"feature"
+        }
+      }
+    },
     "ProductCode":{
       "type":"structure",
       "members":{
@@ -8000,12 +8572,17 @@
         "FREQUENT",
         "INFREQUENT",
         "UNSEEN",
-        "RARE"
+        "RARE",
+        "COUNT",
+        "AVERAGE"
       ]
     },
     "ProfileType":{
       "type":"string",
-      "enum":["FREQUENCY"]
+      "enum":[
+        "FREQUENCY",
+        "VOLUME"
+      ]
     },
     "PublicAccess":{
       "type":"structure",
@@ -8198,6 +8775,10 @@
         "BackupVaultName":{
           "shape":"String",
           "locationName":"backupVaultName"
+        },
+        "ContinuousScanDetails":{
+          "shape":"ScanConfigurationContinuousScanDetails",
+          "locationName":"continuousScanDetails"
         }
       }
     },
@@ -8328,6 +8909,14 @@
         "RecoveryPointDetails":{
           "shape":"RecoveryPointDetails",
           "locationName":"recoveryPointDetails"
+        },
+        "BedrockGuardrailDetails":{
+          "shape":"BedrockGuardrailDetails",
+          "locationName":"bedrockGuardrailDetails"
+        },
+        "ModelDetails":{
+          "shape":"ModelDetails",
+          "locationName":"modelDetails"
         }
       }
     },
@@ -8524,6 +9113,23 @@
       "member":{"shape":"ResourceV2"},
       "max":400,
       "min":0
+    },
+    "RiskDetails":{
+      "type":"string",
+      "max":1024,
+      "min":0
+    },
+    "RiskLevel":{
+      "type":"string",
+      "enum":[
+        "Info",
+        "Low",
+        "Medium",
+        "High",
+        "Critical"
+      ],
+      "max":300,
+      "min":1
     },
     "RuntimeContext":{
       "type":"structure",
@@ -9924,12 +10530,22 @@
         }
       }
     },
+    "TriggerPrompt":{
+      "type":"string",
+      "max":2048,
+      "min":1
+    },
     "TriggerType":{
       "type":"string",
       "enum":[
         "BACKUP",
         "GUARDDUTY"
       ]
+    },
+    "TriggeredBy":{
+      "type":"string",
+      "max":256,
+      "min":0
     },
     "TrustedEntitySetFormat":{
       "type":"string",
@@ -10542,7 +11158,8 @@
         "EC2_RUNTIME_MONITORING",
         "FARGATE_RUNTIME_MONITORING",
         "RDS_DBI_PROTECTION_PROVISIONED",
-        "RDS_DBI_PROTECTION_SERVERLESS"
+        "RDS_DBI_PROTECTION_SERVERLESS",
+        "AI_PROTECTION"
       ]
     },
     "UsageFeatureList":{

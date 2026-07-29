@@ -37,6 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class ListSolutionsRequest : AmazonPartnerCentralSellingRequest
     {
+        private List<string> _awsMarketplaceSolutionArn = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _catalog;
         private List<string> _category = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _identifier = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -44,6 +45,30 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _nextToken;
         private SolutionSort _sort;
         private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AwsMarketplaceSolutionArn. 
+        /// <para>
+        /// Filters results by AWS Marketplace solution ARN. You can provide up to 10 ARNs.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> AwsMarketplaceSolutionArn
+        {
+            get { return this._awsMarketplaceSolutionArn; }
+            set { this._awsMarketplaceSolutionArn = value; }
+        }
+
+        // Check to see if AwsMarketplaceSolutionArn property is set
+        internal bool IsSetAwsMarketplaceSolutionArn()
+        {
+            return this._awsMarketplaceSolutionArn != null && (this._awsMarketplaceSolutionArn.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Catalog. 

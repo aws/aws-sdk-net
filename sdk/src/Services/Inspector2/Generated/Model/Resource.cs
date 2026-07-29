@@ -37,6 +37,9 @@ namespace Amazon.Inspector2.Model
         private ResourceDetails _details;
         private string _id;
         private string _partition;
+        private Provider _provider;
+        private string _providerAccountId;
+        private string _providerOrgId;
         private string _region;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ResourceType _type;
@@ -95,6 +98,62 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetPartition()
         {
             return this._partition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// The cloud provider of the resource.
+        /// </para>
+        /// </summary>
+        public Provider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderAccountId. 
+        /// <para>
+        /// The cloud provider account ID of the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=36)]
+        public string ProviderAccountId
+        {
+            get { return this._providerAccountId; }
+            set { this._providerAccountId = value; }
+        }
+
+        // Check to see if ProviderAccountId property is set
+        internal bool IsSetProviderAccountId()
+        {
+            return this._providerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderOrgId. 
+        /// <para>
+        /// The cloud provider organization ID of the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=36)]
+        public string ProviderOrgId
+        {
+            get { return this._providerOrgId; }
+            set { this._providerOrgId = value; }
+        }
+
+        // Check to see if ProviderOrgId property is set
+        internal bool IsSetProviderOrgId()
+        {
+            return this._providerOrgId != null;
         }
 
         /// <summary>

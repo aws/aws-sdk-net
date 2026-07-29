@@ -34,6 +34,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class GetRecommenderResponse : AmazonWebServiceResponse
     {
+        private string _activeRecommenderVersionName;
         private DateTime? _createdAt;
         private string _description;
         private string _failureReason;
@@ -46,6 +47,26 @@ namespace Amazon.CustomerProfiles.Model
         private RecommenderStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<TrainingMetrics> _trainingMetrics = AWSConfigs.InitializeCollections ? new List<TrainingMetrics>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ActiveRecommenderVersionName. 
+        /// <para>
+        /// The name of the recommender version currently serving recommendations. Omitted when
+        /// no active recommender version is set.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string ActiveRecommenderVersionName
+        {
+            get { return this._activeRecommenderVersionName; }
+            set { this._activeRecommenderVersionName = value; }
+        }
+
+        // Check to see if ActiveRecommenderVersionName property is set
+        internal bool IsSetActiveRecommenderVersionName()
+        {
+            return this._activeRecommenderVersionName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

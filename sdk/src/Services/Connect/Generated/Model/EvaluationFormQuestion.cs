@@ -40,6 +40,7 @@ namespace Amazon.Connect.Model
         private EvaluationFormQuestionType _questionType;
         private EvaluationFormQuestionTypeProperties _questionTypeProperties;
         private string _refId;
+        private EvaluationFormQuestionScoringConfiguration _scoringConfiguration;
         private string _title;
         private double? _weight;
 
@@ -153,6 +154,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetRefId()
         {
             return this._refId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScoringConfiguration. 
+        /// <para>
+        /// The scoring configuration of the question.
+        /// </para>
+        /// </summary>
+        public EvaluationFormQuestionScoringConfiguration ScoringConfiguration
+        {
+            get { return this._scoringConfiguration; }
+            set { this._scoringConfiguration = value; }
+        }
+
+        // Check to see if ScoringConfiguration property is set
+        internal bool IsSetScoringConfiguration()
+        {
+            return this._scoringConfiguration != null;
         }
 
         /// <summary>

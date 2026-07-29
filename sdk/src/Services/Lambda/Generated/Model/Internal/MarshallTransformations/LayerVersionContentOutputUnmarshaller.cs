@@ -74,6 +74,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.Location = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ResolvedS3Object", targetDepth, ref reader))
+                {
+                    var unmarshaller = ResolvedS3ObjectUnmarshaller.Instance;
+                    unmarshalledObject.ResolvedS3Object = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SigningJobArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -34,6 +34,14 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// Queries a knowledge base and generates responses based on the retrieved results and
     /// using the specified foundation model or <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
     /// profile</a>. The response only cites sources that are relevant to the query.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API cannot be used with managed knowledge bases. Use <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_AgenticRetrieveStream.html">AgenticRetrieveStream</a>
+    /// or <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html">Retrieve</a>
+    /// with managed knowledge bases.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class RetrieveAndGenerateRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -41,6 +49,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         private RetrieveAndGenerateConfiguration _retrieveAndGenerateConfiguration;
         private RetrieveAndGenerateSessionConfiguration _sessionConfiguration;
         private string _sessionId;
+        private UserContext _userContext;
 
         /// <summary>
         /// Gets and sets the property Input. 
@@ -120,6 +129,22 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetSessionId()
         {
             return this._sessionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserContext.
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public UserContext UserContext
+        {
+            get { return this._userContext; }
+            set { this._userContext = value; }
+        }
+
+        // Check to see if UserContext property is set
+        internal bool IsSetUserContext()
+        {
+            return this._userContext != null;
         }
 
     }

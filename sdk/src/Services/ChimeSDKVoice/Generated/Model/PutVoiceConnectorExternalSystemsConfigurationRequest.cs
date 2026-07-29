@@ -91,7 +91,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The ID of the Voice Connector for which to add the external system configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string VoiceConnectorId
         {
             get { return this._voiceConnectorId; }

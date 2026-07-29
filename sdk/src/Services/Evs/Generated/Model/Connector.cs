@@ -31,7 +31,8 @@ namespace Amazon.Evs.Model
 {
     /// <summary>
     /// An object that represents a connector for an Amazon EVS environment. A connector establishes
-    /// a vCenter connection using the credentials stored in Amazon Web Services Secrets Manager.
+    /// a connection to the given appliance type using the credentials stored in Amazon Web
+    /// Services Secrets Manager.
     /// </summary>
     public partial class Connector
     {

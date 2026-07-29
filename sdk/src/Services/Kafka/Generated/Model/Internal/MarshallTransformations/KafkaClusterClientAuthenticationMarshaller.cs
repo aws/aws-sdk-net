@@ -46,6 +46,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetMTLS())
+            {
+                context.Writer.WritePropertyName("mTLS");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KafkaClusterMTLSAuthenticationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MTLS, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSaslScram())
             {
                 context.Writer.WritePropertyName("saslScram");

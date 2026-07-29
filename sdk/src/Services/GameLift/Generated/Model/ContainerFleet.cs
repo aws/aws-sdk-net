@@ -575,6 +575,11 @@ namespace Amazon.GameLift.Model
         ///  <c>UPDATING</c> -- Updates to the container fleet is being updated. A deployment
         /// is in progress.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EXPIRED</c> -- The container fleet has been expired. The fleet is scaled down
+        /// to zero instances and cannot host new game sessions.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ContainerFleetStatus Status

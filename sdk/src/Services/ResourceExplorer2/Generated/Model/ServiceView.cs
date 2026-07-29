@@ -37,6 +37,7 @@ namespace Amazon.ResourceExplorer2.Model
         private SearchFilter _filters;
         private List<IncludedProperty> _includedProperties = AWSConfigs.InitializeCollections ? new List<IncludedProperty>() : null;
         private string _scopeType;
+        private ServiceLinkedRecorderInfo _serviceLinkedRecorder;
         private string _serviceViewArn;
         private string _serviceViewName;
         private string _streamingAccessForService;
@@ -97,6 +98,26 @@ namespace Amazon.ResourceExplorer2.Model
         internal bool IsSetScopeType()
         {
             return this._scopeType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceLinkedRecorder. 
+        /// <para>
+        /// Information about the service-linked recorder associated with this service view. When
+        /// a service view is paired with a service-linked recorder, Resource Explorer uses the
+        /// recorder's resource type list to filter search results and streaming data.
+        /// </para>
+        /// </summary>
+        public ServiceLinkedRecorderInfo ServiceLinkedRecorder
+        {
+            get { return this._serviceLinkedRecorder; }
+            set { this._serviceLinkedRecorder = value; }
+        }
+
+        // Check to see if ServiceLinkedRecorder property is set
+        internal bool IsSetServiceLinkedRecorder()
+        {
+            return this._serviceLinkedRecorder != null;
         }
 
         /// <summary>

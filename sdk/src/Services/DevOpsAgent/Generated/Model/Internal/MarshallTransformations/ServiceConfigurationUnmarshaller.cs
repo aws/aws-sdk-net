@@ -140,6 +140,18 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Pagerduty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("remoteagent", targetDepth, ref reader))
+                {
+                    var unmarshaller = RemoteAgentConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Remoteagent = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("remoteagentsigv4", targetDepth, ref reader))
+                {
+                    var unmarshaller = RemoteAgentSigV4ConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Remoteagentsigv4 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("servicenow", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceNowConfigurationUnmarshaller.Instance;

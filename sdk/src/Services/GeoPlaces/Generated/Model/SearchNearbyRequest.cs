@@ -35,7 +35,9 @@ namespace Amazon.GeoPlaces.Model
     /// coordinates, returning place results with optional filters such as categories, business
     /// chains, food types and more. The API returns details such as a place name, address,
     /// phone, category, food type, contact, opening hours. Also, the API can return phonemes,
-    /// time zones and more based on requested parameters.
+    /// time zones and more based on requested parameters. Not supported in <c>ap-southeast-1</c>
+    /// and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+    /// customers.
     /// 
     ///  
     /// <para>
@@ -68,7 +70,7 @@ namespace Amazon.GeoPlaces.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
+        [AWSProperty(Min=1, Max=5)]
         public List<string> AdditionalFeatures
         {
             get { return this._additionalFeatures; }
@@ -153,9 +155,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a> compliant
-        /// language codes for the results to be rendered in. If there is no data for the result
-        /// in the requested language, data will be returned in the default language for the entry.
+        /// A list of <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
+        /// 47</a> compliant language codes for the results to be rendered in. If there is no
+        /// data for the result in the requested language, data will be returned in the default
+        /// language for the entry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]

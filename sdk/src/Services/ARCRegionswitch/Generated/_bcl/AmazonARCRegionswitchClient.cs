@@ -1422,6 +1422,11 @@ namespace Amazon.ARCRegionswitch
         /// HTTP Status Code: 403
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ConflictException">
+        /// The client token was already used with different request parameters. A client token
+        /// must map to the same parameters for every request. To retry this operation, provide
+        /// a new client token.
+        /// </exception>
         /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
         /// The request processing has an invalid argument.
         /// </exception>
@@ -1476,6 +1481,11 @@ namespace Amazon.ARCRegionswitch
         /// <para>
         /// HTTP Status Code: 403
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.ARCRegionswitch.Model.ConflictException">
+        /// The client token was already used with different request parameters. A client token
+        /// must map to the same parameters for every request. To retry this operation, provide
+        /// a new client token.
         /// </exception>
         /// <exception cref="Amazon.ARCRegionswitch.Model.IllegalArgumentException">
         /// The request processing has an invalid argument.

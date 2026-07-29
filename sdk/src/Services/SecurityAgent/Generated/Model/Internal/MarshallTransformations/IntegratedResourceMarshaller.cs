@@ -46,6 +46,28 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBitbucketRepository())
+            {
+                context.Writer.WritePropertyName("bitbucketRepository");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BitbucketRepositoryResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.BitbucketRepository, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetConfluenceDocument())
+            {
+                context.Writer.WritePropertyName("confluenceDocument");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConfluenceDocumentResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ConfluenceDocument, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetGithubRepository())
             {
                 context.Writer.WritePropertyName("githubRepository");
@@ -53,6 +75,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 
                 var marshaller = GitHubRepositoryResourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.GithubRepository, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetGitlabRepository())
+            {
+                context.Writer.WritePropertyName("gitlabRepository");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GitLabRepositoryResourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.GitlabRepository, context);
 
                 context.Writer.WriteEndObject();
             }

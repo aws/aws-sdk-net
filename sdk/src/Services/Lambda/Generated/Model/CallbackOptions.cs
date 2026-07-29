@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// set to 0, heartbeat timeout is disabled.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=99999999)]
         public int? HeartbeatTimeoutSeconds
         {
             get { return this._heartbeatTimeoutSeconds; }
@@ -65,7 +65,7 @@ namespace Amazon.Lambda.Model
         /// callback has no timeout.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
+        [AWSProperty(Min=0, Max=99999999)]
         public int? TimeoutSeconds
         {
             get { return this._timeoutSeconds; }

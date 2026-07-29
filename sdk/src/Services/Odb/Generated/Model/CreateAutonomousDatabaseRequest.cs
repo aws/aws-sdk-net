@@ -36,6 +36,8 @@ namespace Amazon.Odb.Model
     public partial class CreateAutonomousDatabaseRequest : AmazonOdbRequest
     {
         private string _adminPassword;
+        private AdminPasswordSource _adminPasswordSource;
+        private AdminPasswordSourceConfigurationInput _adminPasswordSourceConfiguration;
         private List<string> _allowlistedIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AutonomousMaintenanceScheduleType _autonomousMaintenanceScheduleType;
         private int? _backupRetentionPeriodInDays;
@@ -92,6 +94,43 @@ namespace Amazon.Odb.Model
         internal bool IsSetAdminPassword()
         {
             return this._adminPassword != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdminPasswordSource. 
+        /// <para>
+        /// The source of the admin password for the Autonomous Database. When set to <c>CUSTOMER_MANAGED_AWS_SECRET</c>,
+        /// the admin password is retrieved from an Amazon Web Services Secrets Manager secret.
+        /// </para>
+        /// </summary>
+        public AdminPasswordSource AdminPasswordSource
+        {
+            get { return this._adminPasswordSource; }
+            set { this._adminPasswordSource = value; }
+        }
+
+        // Check to see if AdminPasswordSource property is set
+        internal bool IsSetAdminPasswordSource()
+        {
+            return this._adminPasswordSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdminPasswordSourceConfiguration. 
+        /// <para>
+        /// The configuration of the admin password source for the Autonomous Database.
+        /// </para>
+        /// </summary>
+        public AdminPasswordSourceConfigurationInput AdminPasswordSourceConfiguration
+        {
+            get { return this._adminPasswordSourceConfiguration; }
+            set { this._adminPasswordSourceConfiguration = value; }
+        }
+
+        // Check to see if AdminPasswordSourceConfiguration property is set
+        internal bool IsSetAdminPasswordSourceConfiguration()
+        {
+            return this._adminPasswordSourceConfiguration != null;
         }
 
         /// <summary>

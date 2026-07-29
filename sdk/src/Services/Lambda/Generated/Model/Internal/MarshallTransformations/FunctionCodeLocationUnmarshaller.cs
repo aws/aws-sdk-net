@@ -56,6 +56,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("Error", targetDepth, ref reader))
+                {
+                    var unmarshaller = FunctionCodeLocationErrorUnmarshaller.Instance;
+                    unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ImageUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -78,6 +84,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResolvedImageUri = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ResolvedS3Object", targetDepth, ref reader))
+                {
+                    var unmarshaller = ResolvedS3ObjectUnmarshaller.Instance;
+                    unmarshalledObject.ResolvedS3Object = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceKMSKeyArn", targetDepth, ref reader))

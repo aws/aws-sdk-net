@@ -43,8 +43,10 @@ namespace Amazon.HealthLake.Model
         private ProfileConfiguration _profileConfiguration;
 
         /// <summary>
-        /// Gets and sets the property AnalyticsConfiguration. <para>The analytics configuration
-        /// for the data store.</para>
+        /// Gets and sets the property AnalyticsConfiguration. 
+        /// <para>
+        /// The analytics configuration for the data store.
+        /// </para>
         /// </summary>
         public AnalyticsConfiguration AnalyticsConfiguration
         {
@@ -59,7 +61,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatastoreId. <para>The data store identifier.</para>
+        /// Gets and sets the property DatastoreId. 
+        /// <para>
+        /// The data store identifier.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
         public string DatastoreId
@@ -75,7 +80,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatastoreName. <para>The data store name.</para>
+        /// Gets and sets the property DatastoreName. 
+        /// <para>
+        /// The data store name.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string DatastoreName
@@ -91,8 +99,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IdentityProviderConfiguration. <para>The identity provider
-        /// configuration for the data store.</para>
+        /// Gets and sets the property IdentityProviderConfiguration. 
+        /// <para>
+        /// The identity provider configuration for the data store.
+        /// </para>
         /// </summary>
         public IdentityProviderConfiguration IdentityProviderConfiguration
         {
@@ -107,8 +117,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NlpConfiguration. <para>The NLP configuration for the data
-        /// store.</para>
+        /// Gets and sets the property NlpConfiguration. 
+        /// <para>
+        /// The natural language processing (NLP) configuration for the data store.
+        /// </para>
         /// </summary>
         public NlpConfiguration NlpConfiguration
         {
@@ -123,8 +135,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfileConfiguration. <para>The profile configuration for
-        /// the data store.</para>
+        /// Gets and sets the property ProfileConfiguration. 
+        /// <para>
+        /// The profile configuration for the data store.
+        /// </para>
         /// </summary>
         public ProfileConfiguration ProfileConfiguration
         {

@@ -75,6 +75,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArn())
+            {
+                context.Writer.WritePropertyName("Arn");
+                context.Writer.WriteStringValue(publicRequest.Arn);
+            }
+
             if(publicRequest.IsSetServicePrincipal())
             {
                 context.Writer.WritePropertyName("ServicePrincipal");

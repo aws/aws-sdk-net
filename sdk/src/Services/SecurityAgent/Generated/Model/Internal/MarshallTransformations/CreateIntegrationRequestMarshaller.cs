@@ -96,6 +96,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KmsKeyId);
             }
 
+            if(publicRequest.IsSetPrivateConnectionName())
+            {
+                context.Writer.WritePropertyName("privateConnectionName");
+                context.Writer.WriteStringValue(publicRequest.PrivateConnectionName);
+            }
+
             if(publicRequest.IsSetProvider())
             {
                 context.Writer.WritePropertyName("provider");

@@ -125,6 +125,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.PostLaunchEnabled.Value);
             }
 
+            if(publicRequest.IsSetRecoveryMode())
+            {
+                context.Writer.WritePropertyName("recoveryMode");
+                context.Writer.WriteStringValue(publicRequest.RecoveryMode);
+            }
+
             if(publicRequest.IsSetSourceServerID())
             {
                 context.Writer.WritePropertyName("sourceServerID");

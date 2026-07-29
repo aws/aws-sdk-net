@@ -228,6 +228,18 @@ namespace Amazon.SimpleEmailV2.Model
         ///  <c>AWS_SES_US_WEST_2</c> – Configure DKIM for the identity by replicating from a
         /// parent identity in US West (Oregon) region using Deterministic Easy-DKIM (DEED). 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_SES_US_GOV_EAST_1</c> – Configure DKIM for the identity by replicating from
+        /// a parent identity in AWS GovCloud (US-East) region using Deterministic Easy-DKIM (DEED).
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS_SES_US_GOV_WEST_1</c> – Configure DKIM for the identity by replicating from
+        /// a parent identity in AWS GovCloud (US-West) region using Deterministic Easy-DKIM (DEED).
+        /// 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public DkimSigningAttributesOrigin DomainSigningAttributesOrigin

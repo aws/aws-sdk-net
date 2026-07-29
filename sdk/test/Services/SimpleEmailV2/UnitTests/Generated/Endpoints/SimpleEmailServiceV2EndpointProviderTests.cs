@@ -830,5 +830,173 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with multi-region endpoints", exception.Message);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov IPv4 only: us-gov-west-1 primary, dualstack and FIPS disabled")]
+        public void Gov_IPv4_only_usgovwest1_primary_dualstack_and_FIPS_disabled_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-west-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.us-gov.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov IPv4 only: us-gov-east-1, dualstack and FIPS disabled (proves both gov regions resolve identically)")]
+        public void Gov_IPv4_only_usgoveast1_dualstack_and_FIPS_disabled_proves_both_gov_regions_resolve_identically_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.us-gov.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov dualstack: us-gov-west-1, dualstack enabled, FIPS disabled (no global. prefix; api.aws not global.api.aws)")]
+        public void Gov_dualstack_usgovwest1_dualstack_enabled_FIPS_disabled_no_global_prefix_apiaws_not_globalapiaws_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-west-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.us-gov.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov FIPS: us-gov-west-1, FIPS enabled, dualstack disabled — FIPS not supported with multi-region endpoints")]
+        public void Gov_FIPS_usgovwest1_FIPS_enabled_dualstack_disabled_FIPS_not_supported_with_multiregion_endpoints_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-west-1";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with multi-region endpoints", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov FIPS+dualstack: us-gov-west-1, both FIPS and dualstack enabled — FIPS check precedes dualstack branch selection")]
+        public void Gov_FIPSdualstack_usgovwest1_both_FIPS_and_dualstack_enabled_FIPS_check_precedes_dualstack_branch_selection_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-west-1";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with multi-region endpoints", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov custom SDK endpoint: us-gov-west-1, EndpointId set, custom Endpoint — passes through unchanged with SigV4a")]
+        public void Gov_custom_SDK_endpoint_usgovwest1_EndpointId_set_custom_Endpoint_passes_through_unchanged_with_SigV4a_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-west-1";
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("China IPv4 regression: cn-north-1, dualstack disabled — endpoint uses aws-cn dnsSuffix (amazonaws.com.cn)")]
+        public void China_IPv4_regression_cnnorth1_dualstack_disabled_endpoint_uses_awscn_dnsSuffix_amazonawscomcn_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("China dualstack regression: cn-north-1, dualstack enabled — uses global. prefix with aws-cn dualStackDnsSuffix (api.amazonwebservices.com.cn)")]
+        public void China_dualstack_regression_cnnorth1_dualstack_enabled_uses_global_prefix_with_awscn_dualStackDnsSuffix_apiamazonwebservicescomcn_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "cn-north-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.global.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov custom SDK endpoint with FIPS: FIPS guard sits above the SDK passthrough, so error wins")]
+        public void Gov_custom_SDK_endpoint_with_FIPS_FIPS_guard_sits_above_the_SDK_passthrough_so_error_wins_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Region"] = "us-gov-west-1";
+            parameters["Endpoint"] = "https://example.com";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: FIPS is not supported with multi-region endpoints", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("SimpleEmailV2")]
+        [Description("Gov dualstack OSU (us-gov-east-1) matches PDT dualstack output (us-gov.api.aws, no global. prefix)")]
+        public void Gov_dualstack_OSU_usgoveast1_matches_PDT_dualstack_output_usgovapiaws_no_global_prefix_Test()
+        {
+            var parameters = new SimpleEmailServiceV2EndpointParameters();
+            parameters["EndpointId"] = "abc123.456def";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Region"] = "us-gov-east-1";
+            var endpoint = new AmazonSimpleEmailServiceV2EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://abc123.456def.endpoints.email.us-gov.api.aws", endpoint.URL);
+        }
+
     }
 }

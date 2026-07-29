@@ -37,9 +37,11 @@ namespace Amazon.QuickSight.Model
         private List<DataSourceParameters> _alternateDataSourceParameters = AWSConfigs.InitializeCollections ? new List<DataSourceParameters>() : null;
         private string _arn;
         private DateTime? _createdTime;
+        private CredentialStatus _credentialStatus;
         private string _dataSourceId;
         private DataSourceParameters _dataSourceParameters;
         private DataSourceErrorInfo _errorInfo;
+        private DateTime? _lastCredentialVerifiedAt;
         private DateTime? _lastUpdatedTime;
         private string _name;
         private string _secretArn;
@@ -117,6 +119,37 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CredentialStatus. 
+        /// <para>
+        /// The credential verification status of the data source. Valid values include:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CONNECTED</c> – Credential validation succeeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AUTH_FAILED</c> – Credential validation failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOT_VERIFIED</c> – Credential validation has not been performed.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public CredentialStatus CredentialStatus
+        {
+            get { return this._credentialStatus; }
+            set { this._credentialStatus = value; }
+        }
+
+        // Check to see if CredentialStatus property is set
+        internal bool IsSetCredentialStatus()
+        {
+            return this._credentialStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
         /// The ID of the data source. This ID is unique per Amazon Web Services Region for each
@@ -171,6 +204,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetErrorInfo()
         {
             return this._errorInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastCredentialVerifiedAt. 
+        /// <para>
+        /// The time that the credentials were last verified.
+        /// </para>
+        /// </summary>
+        public DateTime? LastCredentialVerifiedAt
+        {
+            get { return this._lastCredentialVerifiedAt; }
+            set { this._lastCredentialVerifiedAt = value; }
+        }
+
+        // Check to see if LastCredentialVerifiedAt property is set
+        internal bool IsSetLastCredentialVerifiedAt()
+        {
+            return this._lastCredentialVerifiedAt.HasValue; 
         }
 
         /// <summary>

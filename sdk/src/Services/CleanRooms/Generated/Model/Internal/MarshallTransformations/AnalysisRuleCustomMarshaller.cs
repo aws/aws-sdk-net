@@ -52,6 +52,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AdditionalAnalyses);
             }
 
+            if(requestObject.IsSetAllowedAdditionalAnalyses())
+            {
+                context.Writer.WritePropertyName("allowedAdditionalAnalyses");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAllowedAdditionalAnalysesListValue in requestObject.AllowedAdditionalAnalyses)
+                {
+                        context.Writer.WriteStringValue(requestObjectAllowedAdditionalAnalysesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAllowedAnalyses())
             {
                 context.Writer.WritePropertyName("allowedAnalyses");
@@ -70,6 +81,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 foreach(var requestObjectAllowedAnalysisProvidersListValue in requestObject.AllowedAnalysisProviders)
                 {
                         context.Writer.WriteStringValue(requestObjectAllowedAnalysisProvidersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetAllowedResultReceivers())
+            {
+                context.Writer.WritePropertyName("allowedResultReceivers");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAllowedResultReceiversListValue in requestObject.AllowedResultReceivers)
+                {
+                        context.Writer.WriteStringValue(requestObjectAllowedResultReceiversListValue);
                 }
                 context.Writer.WriteEndArray();
             }

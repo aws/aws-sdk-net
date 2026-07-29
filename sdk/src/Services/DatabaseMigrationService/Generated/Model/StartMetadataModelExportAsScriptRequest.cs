@@ -31,8 +31,28 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartMetadataModelExportAsScript operation.
-    /// Saves your converted code to a file as a SQL script, and stores this file on your
-    /// Amazon S3 bucket.
+    /// Queues an export of metadata models (database objects such as tables, views, and procedures)
+    /// as a data definition language (DDL) script. The script is stored as a ZIP archive
+    /// in the Amazon S3 bucket associated with the migration project. If other requests created
+    /// by <c>Start*</c> operations are already in the migration project's queue, the export
+    /// begins after they complete.
+    /// 
+    ///  
+    /// <para>
+    /// When exporting from the target metadata tree, the export applies only to metadata
+    /// models created by conversion. Metadata models imported from the database are skipped.
+    /// </para>
+    ///  
+    /// <para>
+    /// To check the status of the export request, call <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_DescribeMetadataModelExportsAsScript.html">DescribeMetadataModelExportsAsScript</a>
+    /// using the returned <c>RequestIdentifier</c> as a filter.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:StartMetadataModelExportAsScripts</c>. For more
+    /// information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class StartMetadataModelExportAsScriptRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -44,7 +64,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property FileName. 
         /// <para>
-        /// The name of the model file to create in the Amazon S3 bucket.
+        /// The name for the exported file. When you omit this parameter, the service generates
+        /// a name from the data provider engine name and an export timestamp.
         /// </para>
         /// </summary>
         public string FileName
@@ -81,7 +102,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// Whether to export the metadata model from the source or the target.
+        /// Specifies the metadata tree to export from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,8 +121,24 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SelectionRules. 
         /// <para>
-        /// A value that specifies the database objects to export.
+        /// A JSON string that identifies the metadata models to export as a SQL script. For the
+        /// selection rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+        /// rules in DMS Schema Conversion</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Usage:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Accepts source or target selection rules depending on the <c>Origin</c> parameter.
+        /// The <c>server-name</c> in the object locator must match the corresponding data provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Supports <c>explicit</c>, <c>include</c>, and <c>exclude</c> rule actions.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SelectionRules

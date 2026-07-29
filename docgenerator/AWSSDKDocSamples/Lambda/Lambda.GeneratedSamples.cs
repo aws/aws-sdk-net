@@ -926,7 +926,7 @@ namespace AWSSDKDocSamples.Amazon.Lambda.Generated
                 BatchSize = 123,
                 Enabled = true,
                 FunctionName = "myFunction",
-                UUID = "1234xCy789012"
+                UUID = "a1b2c3d4-5678-90ab-cdef-11111EXAMPLE"
             });
 
             int batchSize = response.BatchSize;

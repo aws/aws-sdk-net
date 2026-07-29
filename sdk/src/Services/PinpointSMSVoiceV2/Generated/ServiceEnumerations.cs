@@ -865,6 +865,42 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly EventType MEDIA_UNREACHABLE = new EventType("MEDIA_UNREACHABLE");
         /// <summary>
+        /// Constant RCS_ALL for EventType
+        /// </summary>
+        public static readonly EventType RCS_ALL = new EventType("RCS_ALL");
+        /// <summary>
+        /// Constant RCS_DELIVERED for EventType
+        /// </summary>
+        public static readonly EventType RCS_DELIVERED = new EventType("RCS_DELIVERED");
+        /// <summary>
+        /// Constant RCS_FAILED for EventType
+        /// </summary>
+        public static readonly EventType RCS_FAILED = new EventType("RCS_FAILED");
+        /// <summary>
+        /// Constant RCS_FALLEN_BACK_TO_SMS for EventType
+        /// </summary>
+        public static readonly EventType RCS_FALLEN_BACK_TO_SMS = new EventType("RCS_FALLEN_BACK_TO_SMS");
+        /// <summary>
+        /// Constant RCS_PROTECT_BLOCKED for EventType
+        /// </summary>
+        public static readonly EventType RCS_PROTECT_BLOCKED = new EventType("RCS_PROTECT_BLOCKED");
+        /// <summary>
+        /// Constant RCS_QUEUED for EventType
+        /// </summary>
+        public static readonly EventType RCS_QUEUED = new EventType("RCS_QUEUED");
+        /// <summary>
+        /// Constant RCS_READ for EventType
+        /// </summary>
+        public static readonly EventType RCS_READ = new EventType("RCS_READ");
+        /// <summary>
+        /// Constant RCS_SENT for EventType
+        /// </summary>
+        public static readonly EventType RCS_SENT = new EventType("RCS_SENT");
+        /// <summary>
+        /// Constant RCS_TTL_EXPIRED for EventType
+        /// </summary>
+        public static readonly EventType RCS_TTL_EXPIRED = new EventType("RCS_TTL_EXPIRED");
+        /// <summary>
         /// Constant TEXT_ALL for EventType
         /// </summary>
         public static readonly EventType TEXT_ALL = new EventType("TEXT_ALL");
@@ -2753,6 +2789,56 @@ namespace Amazon.PinpointSMSVoiceV2
 
 
     /// <summary>
+    /// Constants used for properties of type RcsFallbackChannel.
+    /// </summary>
+    public class RcsFallbackChannel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MMS for RcsFallbackChannel
+        /// </summary>
+        public static readonly RcsFallbackChannel MMS = new RcsFallbackChannel("MMS");
+        /// <summary>
+        /// Constant SMS for RcsFallbackChannel
+        /// </summary>
+        public static readonly RcsFallbackChannel SMS = new RcsFallbackChannel("SMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RcsFallbackChannel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RcsFallbackChannel FindValue(string value)
+        {
+            return FindValue<RcsFallbackChannel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RcsFallbackChannel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RegistrationAssociationBehavior.
     /// </summary>
     public class RegistrationAssociationBehavior : ConstantClass
@@ -3551,6 +3637,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_NOTIFY");
         /// <summary>
+        /// Constant MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS for ServiceQuotaExceededExceptionReason
+        /// </summary>
+        public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_RCS");
+        /// <summary>
         /// Constant MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT for ServiceQuotaExceededExceptionReason
         /// </summary>
         public static readonly ServiceQuotaExceededExceptionReason MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT = new ServiceQuotaExceededExceptionReason("MONTHLY_SPEND_LIMIT_REACHED_FOR_TEXT");
@@ -3672,6 +3762,10 @@ namespace Amazon.PinpointSMSVoiceV2
         /// Constant NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT for SpendLimitName
         /// </summary>
         public static readonly SpendLimitName NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT = new SpendLimitName("NOTIFY_MESSAGE_MONTHLY_SPEND_LIMIT");
+        /// <summary>
+        /// Constant RCS_MESSAGE_MONTHLY_SPEND_LIMIT for SpendLimitName
+        /// </summary>
+        public static readonly SpendLimitName RCS_MESSAGE_MONTHLY_SPEND_LIMIT = new SpendLimitName("RCS_MESSAGE_MONTHLY_SPEND_LIMIT");
         /// <summary>
         /// Constant TEXT_MESSAGE_MONTHLY_SPEND_LIMIT for SpendLimitName
         /// </summary>

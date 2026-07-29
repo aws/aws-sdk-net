@@ -125,11 +125,11 @@ public class RestJson1Benchmarks
     };
 
     // --- CopyObject Request (serialization) ---
-    [Benchmark] public void restJson1_CopyObjectRequest_Baseline() =>
-        CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectBaseline);
+    [Benchmark] public long restJson1_CopyObjectRequest_Baseline() =>
+        TestDataHelpers.GetContentLengthAndDispose(CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectBaseline));
 
-    [Benchmark] public void restJson1_CopyObjectRequest_M() =>
-        CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectMedium);
+    [Benchmark] public long restJson1_CopyObjectRequest_M() =>
+        TestDataHelpers.GetContentLengthAndDispose(CopyObjectRequestMarshaller.Instance.Marshall(_copyObjectMedium));
 
     // --- CopyObject Response (deserialization) ---
     [Benchmark]
@@ -151,9 +151,9 @@ public class RestJson1Benchmarks
     }
 
     // --- PutObject Request (serialization) ---
-    [Benchmark] public void restJson1_PutObject_S() { _putObjectS.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectS); }
-    [Benchmark] public void restJson1_PutObject_M() { _putObjectM.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectM); }
-    [Benchmark] public void restJson1_PutObject_L() { _putObjectL.Body.Position = 0; PutObjectRequestMarshaller.Instance.Marshall(_putObjectL); }
+    [Benchmark] public long restJson1_PutObject_S() { _putObjectS.Body.Position = 0; return TestDataHelpers.GetContentLengthAndDispose(PutObjectRequestMarshaller.Instance.Marshall(_putObjectS)); }
+    [Benchmark] public long restJson1_PutObject_M() { _putObjectM.Body.Position = 0; return TestDataHelpers.GetContentLengthAndDispose(PutObjectRequestMarshaller.Instance.Marshall(_putObjectM)); }
+    [Benchmark] public long restJson1_PutObject_L() { _putObjectL.Body.Position = 0; return TestDataHelpers.GetContentLengthAndDispose(PutObjectRequestMarshaller.Instance.Marshall(_putObjectL)); }
 
     // --- GetObject Response (deserialization) ---
     [Benchmark]

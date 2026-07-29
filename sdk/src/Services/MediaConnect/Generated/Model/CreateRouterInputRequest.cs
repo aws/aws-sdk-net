@@ -38,6 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _availabilityZone;
         private string _clientToken;
         private RouterInputConfiguration _configuration;
+        private RouterContentQualityAnalysisConfiguration _contentQualityAnalysisConfiguration;
         private MaintenanceConfiguration _maintenanceConfiguration;
         private long? _maximumBitrate;
         private string _name;
@@ -73,6 +74,7 @@ namespace Amazon.MediaConnect.Model
         /// A unique identifier for the request to ensure idempotency.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -103,6 +105,24 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentQualityAnalysisConfiguration. 
+        /// <para>
+        /// The content quality analysis configuration for the router input.
+        /// </para>
+        /// </summary>
+        public RouterContentQualityAnalysisConfiguration ContentQualityAnalysisConfiguration
+        {
+            get { return this._contentQualityAnalysisConfiguration; }
+            set { this._contentQualityAnalysisConfiguration = value; }
+        }
+
+        // Check to see if ContentQualityAnalysisConfiguration property is set
+        internal bool IsSetContentQualityAnalysisConfiguration()
+        {
+            return this._contentQualityAnalysisConfiguration != null;
         }
 
         /// <summary>

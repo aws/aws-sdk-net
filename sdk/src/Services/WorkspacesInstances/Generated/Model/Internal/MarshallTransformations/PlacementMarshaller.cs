@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Placement Marshaller
     /// </summary>
-    public class PlacementMarshaller : IRequestMarshaller<Placement, JsonMarshallerContext> 
+    public class PlacementMarshaller : IRequestMarshaller<Placement, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,58 +45,51 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Placement requestObject, JsonMarshallerContext context)
+        public void Marshall(Placement requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAffinity())
-            {
-                context.Writer.WritePropertyName("Affinity");
-                context.Writer.WriteStringValue(requestObject.Affinity);
-            }
 
-            if(requestObject.IsSetAvailabilityZone())
+            if (requestObject.IsSetAffinity())
             {
-                context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
+                context.Writer.WriteTextString("Affinity");
+                context.Writer.WriteTextString(requestObject.Affinity);
             }
-
-            if(requestObject.IsSetGroupId())
+            if (requestObject.IsSetAvailabilityZone())
             {
-                context.Writer.WritePropertyName("GroupId");
-                context.Writer.WriteStringValue(requestObject.GroupId);
+                context.Writer.WriteTextString("AvailabilityZone");
+                context.Writer.WriteTextString(requestObject.AvailabilityZone);
             }
-
-            if(requestObject.IsSetGroupName())
+            if (requestObject.IsSetGroupId())
             {
-                context.Writer.WritePropertyName("GroupName");
-                context.Writer.WriteStringValue(requestObject.GroupName);
+                context.Writer.WriteTextString("GroupId");
+                context.Writer.WriteTextString(requestObject.GroupId);
             }
-
-            if(requestObject.IsSetHostId())
+            if (requestObject.IsSetGroupName())
             {
-                context.Writer.WritePropertyName("HostId");
-                context.Writer.WriteStringValue(requestObject.HostId);
+                context.Writer.WriteTextString("GroupName");
+                context.Writer.WriteTextString(requestObject.GroupName);
             }
-
-            if(requestObject.IsSetHostResourceGroupArn())
+            if (requestObject.IsSetHostId())
             {
-                context.Writer.WritePropertyName("HostResourceGroupArn");
-                context.Writer.WriteStringValue(requestObject.HostResourceGroupArn);
+                context.Writer.WriteTextString("HostId");
+                context.Writer.WriteTextString(requestObject.HostId);
             }
-
-            if(requestObject.IsSetPartitionNumber())
+            if (requestObject.IsSetHostResourceGroupArn())
             {
-                context.Writer.WritePropertyName("PartitionNumber");
-                context.Writer.WriteNumberValue(requestObject.PartitionNumber.Value);
+                context.Writer.WriteTextString("HostResourceGroupArn");
+                context.Writer.WriteTextString(requestObject.HostResourceGroupArn);
             }
-
-            if(requestObject.IsSetTenancy())
+            if (requestObject.IsSetPartitionNumber())
             {
-                context.Writer.WritePropertyName("Tenancy");
-                context.Writer.WriteStringValue(requestObject.Tenancy);
+                context.Writer.WriteTextString("PartitionNumber");
+                context.Writer.WriteInt32(requestObject.PartitionNumber.Value);
             }
-
+            if (requestObject.IsSetTenancy())
+            {
+                context.Writer.WriteTextString("Tenancy");
+                context.Writer.WriteTextString(requestObject.Tenancy);
+            }
         }
 
         /// <summary>

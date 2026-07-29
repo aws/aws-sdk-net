@@ -21,6 +21,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CancelMetadataModelConversion(Amazon.DatabaseMigrationService.Model.CancelMetadataModelConversionRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CancelMetadataModelConversion(Amazon.DatabaseMigrationService.Model.CancelMetadataModelConversionRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CancelMetadataModelConversionRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CancelMetadataModelConversionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example cancels a metadata model conversion operation.
+                </para>
+                <code
+                    title="Cancel a metadata model conversion"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="cancel-metadata-model-conversion-1689722427798" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CancelMetadataModelCreation(Amazon.DatabaseMigrationService.Model.CancelMetadataModelCreationRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CancelMetadataModelCreation(Amazon.DatabaseMigrationService.Model.CancelMetadataModelCreationRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CancelMetadataModelCreationRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.CancelMetadataModelCreationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example cancels a metadata model creation operation.
+                </para>
+                <code
+                    title="Cancel a metadata model creation"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="cancel-metadata-model-creation-1689722427798" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.CreateDataProvider(Amazon.DatabaseMigrationService.Model.CreateDataProviderRequest)" />
             <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.CreateDataProvider(Amazon.DatabaseMigrationService.Model.CreateDataProviderRequest)" />
             <member name="T:Amazon.DatabaseMigrationService.Model.CreateDataProviderRequest" />
@@ -29,10 +67,10 @@
         <value>
             <example>
                 <para>
-                    Creates the data provider with the specified parameters.
+                    The following example creates a Microsoft SQL Server data provider.
                 </para>
                 <code
-                    title="Create Data Provider"
+                    title="Create a Microsoft SQL Server data provider"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="create-data-provider-1689726511871" />
             </example>
@@ -67,10 +105,10 @@
         <value>
             <example>
                 <para>
-                    Creates the instance profile using the specified parameters.
+                    The following example creates an instance profile.
                 </para>
                 <code
-                    title="Create Instance Profile"
+                    title="Create an instance profile"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="create-instance-profile-1689716070633" />
             </example>
@@ -86,10 +124,10 @@
         <value>
             <example>
                 <para>
-                    Creates the migration project with the specified parameters.
+                    The following example creates a migration project.
                 </para>
                 <code
-                    title="Create Migration Project"
+                    title="Create a migration project"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="create-migration-project-1689716672685" />
             </example>
@@ -200,10 +238,10 @@
         <value>
             <example>
                 <para>
-                    Deletes the specified data provider.
+                    The following example deletes a data provider identified by its ARN.
                 </para>
                 <code
-                    title="Delete Data Provider"
+                    title="Delete a data provider"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="delete-data-provider-1689724476356" />
             </example>
@@ -239,10 +277,10 @@
         <value>
             <example>
                 <para>
-                    Deletes the specified instance profile.
+                    The following example deletes an instance profile identified by its ARN.
                 </para>
                 <code
-                    title="Delete Instance Profile"
+                    title="Delete an instance profile"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="delete-instance-profile-1689716924105" />
             </example>
@@ -258,10 +296,10 @@
         <value>
             <example>
                 <para>
-                    Deletes the specified migration project.
+                    The following example deletes a migration project identified by its ARN.
                 </para>
                 <code
-                    title="Delete Migration Project"
+                    title="Delete a migration project"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="delete-migration-project-1689717217454" />
             </example>
@@ -393,10 +431,10 @@
         <value>
             <example>
                 <para>
-                    Returns configuration parameters for a schema conversion project.
+                    The following example retrieves the conversion configuration for a migration project.
                 </para>
                 <code
-                    title="Describe Conversion Configuration"
+                    title="Retrieving conversion configuration for a migration project"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-conversion-configuration-1689717690907" />
             </example>
@@ -412,10 +450,10 @@
         <value>
             <example>
                 <para>
-                    
+                    The following example retrieves the details of a data provider identified by its ARN.
                 </para>
                 <code
-                    title="Describe Data Providers"
+                    title="Describe data providers with a filter"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-data-providers-1689725897156" />
             </example>
@@ -469,10 +507,10 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of extension pack associations for the specified migration project.
+                    The following example retrieves the status of operations that apply an extension pack to the target database, identified by their request IDs.
                 </para>
                 <code
-                    title="Describe Extension Pack Associations"
+                    title="Retrieve the status of extension pack associations"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-extension-pack-associations-1689718322580" />
             </example>
@@ -488,12 +526,31 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of instance profiles for your account in the current region.
+                    The following example retrieves the details of an instance profile identified by its ARN.
                 </para>
                 <code
-                    title="Describe Instance Profiles"
+                    title="Describe instance profiles with a filter"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-instance-profiles-1689718406840" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModel(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModel(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves detailed information about the ExampleTable table in the ExampleSchema schema from the source metadata tree, including its SQL definition and references to the corresponding converted metadata models in the target database.
+                </para>
+                <code
+                    title="Retrieve a source table metadata model"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-1716000000000" />
             </example>
         </value>
     </doc>
@@ -507,12 +564,31 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of metadata model assessments for your account in the current region.
+                    The following example retrieves the status of metadata model assessment operations identified by their request IDs.
                 </para>
                 <code
-                    title="Describe Metadata Model Assessments"
+                    title="Retrieve the status of metadata model assessments"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-metadata-model-assessments-1689718702303" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModelChildren(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelChildrenRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModelChildren(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelChildrenRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelChildrenRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelChildrenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the child metadata models of the ExampleSchema schema from the source metadata tree.
+                </para>
+                <code
+                    title="Retrieve children of a schema"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-children-1716000000000" />
             </example>
         </value>
     </doc>
@@ -526,12 +602,31 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of metadata model conversions for a migration project.
+                    The following example retrieves the status of metadata model conversion operations identified by their request IDs.
                 </para>
                 <code
-                    title="Describe Metadata Model Conversions"
+                    title="Retrieve the status of metadata model conversions"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-metadata-model-conversions-1689719021495" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.DescribeMetadataModelCreations(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelCreationsRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.DescribeMetadataModelCreations(Amazon.DatabaseMigrationService.Model.DescribeMetadataModelCreationsRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelCreationsRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.DescribeMetadataModelCreationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the status of metadata model creation operations identified by their request IDs.
+                </para>
+                <code
+                    title="Retrieve the status of metadata model creations"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="describe-metadata-model-creations-1689719900000" />
             </example>
         </value>
     </doc>
@@ -545,10 +640,10 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of metadata model exports.
+                    The following example retrieves the status of operations that export metadata models as data definition language (DDL) scripts, identified by their request IDs.
                 </para>
                 <code
-                    title="Describe Metadata Model Exports As Script"
+                    title="Retrieve the status of metadata model exports as script"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-metadata-model-exports-as-script-1689719253938" />
             </example>
@@ -564,10 +659,10 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of metadata model exports.
+                    The following example retrieves the status of operations that export converted metadata models to the target database, identified by their request IDs.
                 </para>
                 <code
-                    title="Describe Metadata Model Exports To Target"
+                    title="Retrieve the status of metadata model exports to target"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-metadata-model-exports-to-target-1689719484750" />
             </example>
@@ -583,10 +678,10 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of metadata model imports.
+                    The following example retrieves the status of metadata import operations identified by their request IDs.
                 </para>
                 <code
-                    title="Describe Metadata Model Imports"
+                    title="Retrieve the status of metadata model imports"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-metadata-model-imports-1689719771322" />
             </example>
@@ -602,10 +697,10 @@
         <value>
             <example>
                 <para>
-                    Returns a paginated list of migration projects for your account in the current region.
+                    The following example retrieves the details of a migration project identified by its ARN.
                 </para>
                 <code
-                    title="Describe Migration Projects"
+                    title="Describe migration projects with a filter"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="describe-migration-projects-1689719912075" />
             </example>
@@ -754,12 +849,31 @@
         <value>
             <example>
                 <para>
-                    Saves a copy of a database migration assessment report to your S3 bucket. DMS can save your assessment report as a comma-separated value (CSV) or a PDF file.
+                    The following example exports a conversion assessment report for all objects in the ExampleSchema schema.
                 </para>
                 <code
-                    title="Export Metadata Model Assessment"
+                    title="Export a conversion assessment report"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="export-metadata-model-assessment-1689720309558" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.GetTargetSelectionRules(Amazon.DatabaseMigrationService.Model.GetTargetSelectionRulesRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.GetTargetSelectionRules(Amazon.DatabaseMigrationService.Model.GetTargetSelectionRulesRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.GetTargetSelectionRulesRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.GetTargetSelectionRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example converts source selection rules that select the ExampleTable table in the ExampleSchema schema into target selection rules that reference its converted counterpart.
+                </para>
+                <code
+                    title="Convert source selection rules to target selection rules"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="get-target-selection-rules-1716000000000" />
             </example>
         </value>
     </doc>
@@ -811,10 +925,10 @@
         <value>
             <example>
                 <para>
-                    Modifies the specified schema conversion configuration using the provided parameters.
+                    The following example enables generative AI assisted conversion and updates a conversion pair setting for a migration project.
                 </para>
                 <code
-                    title="Modify Conversion Configuration"
+                    title="Modifying conversion configuration for a migration project"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="modify-conversion-configuration-1689720529855" />
             </example>
@@ -830,10 +944,10 @@
         <value>
             <example>
                 <para>
-                    Modifies the specified data provider using the provided settings.
+                    The following example updates the description and server name of a data provider.
                 </para>
                 <code
-                    title="Modify Data Provider"
+                    title="Modify a data provider"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="modify-data-provider-1689720700567" />
             </example>
@@ -868,10 +982,10 @@
         <value>
             <example>
                 <para>
-                    Modifies the specified instance profile using the provided parameters.
+                    The following example updates the description and network type of an instance profile.
                 </para>
                 <code
-                    title="Modify Instance Profile"
+                    title="Modify an instance profile"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="modify-instance-profile-1689724223329" />
             </example>
@@ -887,10 +1001,10 @@
         <value>
             <example>
                 <para>
-                    Modifies the specified migration project using the provided parameters.
+                    The following example updates the source data provider and description of a migration project.
                 </para>
                 <code
-                    title="Modify Migration Project"
+                    title="Modify a migration project"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="modify-migration-project-1689721117475" />
             </example>
@@ -982,10 +1096,10 @@
         <value>
             <example>
                 <para>
-                    Applies the extension pack to your target database.
+                    The following example queues the installation of the extension pack on the target database.
                 </para>
                 <code
-                    title="Start Extension Pack Association"
+                    title="Install the extension pack on the target database"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="start-extension-pack-association-1689721897266" />
             </example>
@@ -1001,11 +1115,10 @@
         <value>
             <example>
                 <para>
-                    Creates a database migration assessment report by assessing the migration complexity for 
-         your source database.
+                    The following example queues an assessment of the conversion complexity for all objects in the ExampleSchema schema.
                 </para>
                 <code
-                    title="Start Metadata Model Assessment"
+                    title="Assess all objects in a schema"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="start-metadata-model-assessment-1689722322596" />
             </example>
@@ -1021,12 +1134,31 @@
         <value>
             <example>
                 <para>
-                    Converts your source database objects to a format compatible with the target database. 
+                    The following example queues a conversion of all objects in the ExampleSchema schema to the target database format.
                 </para>
                 <code
-                    title="Start Metadata Model Conversion"
+                    title="Convert all objects in a schema"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="start-metadata-model-conversion-1689722427798" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.DatabaseMigrationService.IAmazonDatabaseMigrationService.StartMetadataModelCreation(Amazon.DatabaseMigrationService.Model.StartMetadataModelCreationRequest)" />
+            <member name="M:Amazon.DatabaseMigrationService.AmazonDatabaseMigrationServiceClient.StartMetadataModelCreation(Amazon.DatabaseMigrationService.Model.StartMetadataModelCreationRequest)" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelCreationRequest" />
+            <member name="T:Amazon.DatabaseMigrationService.Model.StartMetadataModelCreationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example queues the creation of a metadata model for a SQL statement. The selection rule specifies the schema where the metadata model is placed, and MetadataModelName provides a unique identifier for use in subsequent operations.
+                </para>
+                <code
+                    title="Create a metadata model for a SQL statement"
+                    source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
+                    region="start-metadata-model-creation-1689722322596" />
             </example>
         </value>
     </doc>
@@ -1040,10 +1172,10 @@
         <value>
             <example>
                 <para>
-                    Saves your converted code to a file as a SQL script, and stores this file on your S3 bucket.
+                    The following example queues an export of converted metadata models for all objects in the ExampleSchema schema as data definition language (DDL) scripts to the S3 bucket associated with the migration project.
                 </para>
                 <code
-                    title="Start Metadata Model Export As Script"
+                    title="Export converted metadata models as DDL scripts"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="start-metadata-model-export-as-script-1689722681469" />
             </example>
@@ -1059,10 +1191,10 @@
         <value>
             <example>
                 <para>
-                    Applies converted database objects to your target database.
+                    The following example queues an export of converted metadata models for all objects in the ExampleSchema schema to the target database.
                 </para>
                 <code
-                    title="Start Metadata Model Export To Target"
+                    title="Export converted metadata models to the target database"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="start-metadata-model-export-to-target-1689783666835" />
             </example>
@@ -1078,10 +1210,10 @@
         <value>
             <example>
                 <para>
-                    Loads the metadata for all the dependent database objects of the parent object.
+                    The following example queues a metadata import for all objects in the ExampleSchema schema from the source database.
                 </para>
                 <code
-                    title="Start Metadata Model Import"
+                    title="Import metadata from the source database"
                     source=".\AWSSDKDocSamples\DatabaseMigrationService\DatabaseMigrationService.GeneratedSamples.cs"
                     region="start-metadata-model-import-1689723124259" />
             </example>

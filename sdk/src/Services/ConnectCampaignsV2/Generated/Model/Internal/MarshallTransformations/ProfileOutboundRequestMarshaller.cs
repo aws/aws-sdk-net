@@ -52,6 +52,17 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ClientToken);
             }
 
+            if(requestObject.IsSetEventTriggerContext())
+            {
+                context.Writer.WritePropertyName("eventTriggerContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventTriggerContextMarshaller.Instance;
+                marshaller.Marshall(requestObject.EventTriggerContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("expirationTime");

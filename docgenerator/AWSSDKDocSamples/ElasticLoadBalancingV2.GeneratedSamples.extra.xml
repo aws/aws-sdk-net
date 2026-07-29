@@ -116,6 +116,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.CreateRule(Amazon.ElasticLoadBalancingV2.Model.CreateRuleRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.CreateRule(Amazon.ElasticLoadBalancingV2.Model.CreateRuleRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.CreateRuleRequest" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.CreateRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a rule on a dual-stack Network Load Balancer that routes IPv4 source traffic to an IPv4 target group.
+                </para>
+                <code
+                    title="To create a listener rule that routes IPv4 traffic on a Network Load Balancer"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
+                    region="elbv2-create-rule-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.CreateTargetGroup(Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupRequest)" />
             <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.CreateTargetGroup(Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupRequest)" />
             <member name="T:Amazon.ElasticLoadBalancingV2.Model.CreateTargetGroupRequest" />
@@ -339,6 +358,25 @@
                     title="To describe a rule"
                     source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
                     region="elbv2-describe-rules-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.DescribeRules(Amazon.ElasticLoadBalancingV2.Model.DescribeRulesRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.DescribeRules(Amazon.ElasticLoadBalancingV2.Model.DescribeRulesRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.DescribeRulesRequest" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.DescribeRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the rules for the specified Network Load Balancer listener, including rules that route based on source IP address type.
+                </para>
+                <code
+                    title="To describe rules for a Network Load Balancer listener"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
+                    region="elbv2-describe-rules-2" />
             </example>
         </value>
     </doc>
@@ -586,6 +624,25 @@
                     title="To modify a rule"
                     source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
                     region="elbv2-modify-rule-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ElasticLoadBalancingV2.IAmazonElasticLoadBalancingV2.ModifyRule(Amazon.ElasticLoadBalancingV2.Model.ModifyRuleRequest)" />
+            <member name="M:Amazon.ElasticLoadBalancingV2.AmazonElasticLoadBalancingV2Client.ModifyRule(Amazon.ElasticLoadBalancingV2.Model.ModifyRuleRequest)" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.ModifyRuleRequest" />
+            <member name="T:Amazon.ElasticLoadBalancingV2.Model.ModifyRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies an NLB listener rule to forward traffic to a different target group.
+                </para>
+                <code
+                    title="To modify a Network Load Balancer listener rule"
+                    source=".\AWSSDKDocSamples\ElasticLoadBalancingV2\ElasticLoadBalancingV2.GeneratedSamples.cs"
+                    region="elbv2-modify-rule-2" />
             </example>
         </value>
     </doc>

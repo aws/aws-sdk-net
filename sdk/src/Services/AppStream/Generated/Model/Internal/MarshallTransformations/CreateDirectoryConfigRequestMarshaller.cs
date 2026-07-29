@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,69 +58,73 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateDirectoryConfigRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.CreateDirectoryConfig";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/CreateDirectoryConfig";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCertificateBasedAuthProperties())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("CertificateBasedAuthProperties");
-                context.Writer.WriteStartObject();
-
-                var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetDirectoryName())
-            {
-                context.Writer.WritePropertyName("DirectoryName");
-                context.Writer.WriteStringValue(publicRequest.DirectoryName);
-            }
-
-            if(publicRequest.IsSetOrganizationalUnitDistinguishedNames())
-            {
-                context.Writer.WritePropertyName("OrganizationalUnitDistinguishedNames");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestOrganizationalUnitDistinguishedNamesListValue in publicRequest.OrganizationalUnitDistinguishedNames)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetCertificateBasedAuthProperties())
                 {
-                        context.Writer.WriteStringValue(publicRequestOrganizationalUnitDistinguishedNamesListValue);
+                    context.Writer.WriteTextString("CertificateBasedAuthProperties");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = CertificateBasedAuthPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.CertificateBasedAuthProperties, context);
+
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetDirectoryName())
+                {
+                    context.Writer.WriteTextString("DirectoryName");
+                    context.Writer.WriteTextString(publicRequest.DirectoryName);
+                }
+                if (publicRequest.IsSetOrganizationalUnitDistinguishedNames())
+                {
+                    context.Writer.WriteTextString("OrganizationalUnitDistinguishedNames");
+                    context.Writer.WriteStartArray(publicRequest.OrganizationalUnitDistinguishedNames.Count);
+                    foreach(var publicRequestOrganizationalUnitDistinguishedNamesListValue in publicRequest.OrganizationalUnitDistinguishedNames)
+                    {
+                            context.Writer.WriteTextString(publicRequestOrganizationalUnitDistinguishedNamesListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetServiceAccountCredentials())
+                {
+                    context.Writer.WriteTextString("ServiceAccountCredentials");
+                    context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetServiceAccountCredentials())
-            {
-                context.Writer.WritePropertyName("ServiceAccountCredentials");
-                context.Writer.WriteStartObject();
+                    var marshaller = ServiceAccountCredentialsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ServiceAccountCredentials, context);
 
-                var marshaller = ServiceAccountCredentialsMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ServiceAccountCredentials, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateDirectoryConfigRequestMarshaller _instance = new CreateDirectoryConfigRequestMarshaller();        

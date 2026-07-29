@@ -222,6 +222,22 @@ namespace AWSSDKDocSamples.Amazon.TrustedAdvisor.Generated
             #endregion
         }
 
+        public void TrustedAdvisorListRecommendationsForResource()
+        {
+            #region example-1
+
+            var client = new AmazonTrustedAdvisorClient();
+            var response = client.ListRecommendationsForResource(new ListRecommendationsForResourceRequest 
+            {
+                AwsResourceArn = "arn:aws:ec2:us-east-1:000000000000:instance/i-0abcd1234efgh5678"
+            });
+
+            string nextToken = response.NextToken;
+            List<RecommendationForResourceSummary> recommendationForResourceSummaries = response.RecommendationForResourceSummaries;
+
+            #endregion
+        }
+
         public void TrustedAdvisorUpdateOrganizationRecommendationLifecycle()
         {
             #region example-1

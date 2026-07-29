@@ -81,6 +81,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// The <c>CustomerIdentifier</c> is obtained through the <c>ResolveCustomer</c> operation
         /// and represents an individual buyer in your application.
         /// </para>
+        ///  <important> 
+        /// <para>
+        ///  <c>CustomerIdentifier</c> is not supported for new SaaS product integrations. Use
+        /// <c>CustomerAWSAccountId</c> to identify the buyer.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
         public string CustomerIdentifier
@@ -168,8 +174,13 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         ///  
         /// <para>
-        /// Your application can meter usage for up to six hours in the past. Make sure the <c>timestamp</c>
+        /// Your application can meter usage for up to 24 hours in the past. Make sure the <c>timestamp</c>
         /// value is not before the start of the software usage.
+        /// </para>
+        ///  
+        /// <para>
+        /// At the end of each billing cycle, you have a 6-hour grace period to submit usage records
+        /// for the previous billing month before 06:00 UTC on the first day of the next month.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

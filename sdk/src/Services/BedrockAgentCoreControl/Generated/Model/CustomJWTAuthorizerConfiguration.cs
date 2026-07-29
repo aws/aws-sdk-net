@@ -35,13 +35,45 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class CustomJWTAuthorizerConfiguration
     {
+        private Dictionary<string, string> _advertisedScopeMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _allowedAudience = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedClients = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private AllowedWorkloadConfiguration _allowedWorkloadConfiguration;
         private List<CustomClaimValidationType> _customClaims = AWSConfigs.InitializeCollections ? new List<CustomClaimValidationType>() : null;
         private string _discoveryUrl;
         private PrivateEndpoint _privateEndpoint;
         private List<PrivateEndpointOverride> _privateEndpointOverrides = AWSConfigs.InitializeCollections ? new List<PrivateEndpointOverride>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdvertisedScopeMapping. 
+        /// <para>
+        /// A map that associates each scope in <c>allowedScopes</c> with a corresponding advertised
+        /// scope value. The advertised scope appears in OAuth protected resource metadata and
+        /// <c>WWW-Authenticate</c> response headers. Use this parameter when the scope that clients
+        /// request from your identity provider differs from the scope in the validated token.
+        /// Each key is a scope from <c>allowedScopes</c> that the service uses for token validation.
+        /// Each value is the corresponding scope that the service advertises to clients. Scopes
+        /// without a mapping entry appear unchanged to clients.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> AdvertisedScopeMapping
+        {
+            get { return this._advertisedScopeMapping; }
+            set { this._advertisedScopeMapping = value; }
+        }
+
+        // Check to see if AdvertisedScopeMapping property is set
+        internal bool IsSetAdvertisedScopeMapping()
+        {
+            return this._advertisedScopeMapping != null && (this._advertisedScopeMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedAudience. 
@@ -115,6 +147,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAllowedScopes()
         {
             return this._allowedScopes != null && (this._allowedScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowedWorkloadConfiguration. 
+        /// <para>
+        /// The configuration that restricts which workloads in the request's identity chain are
+        /// allowed to invoke the target, identified by their hosting environments and workload
+        /// identities. At launch, this is supported only for AgentCore Runtime targets, and the
+        /// allowed workloads are AgentCore Gateways.
+        /// </para>
+        /// </summary>
+        public AllowedWorkloadConfiguration AllowedWorkloadConfiguration
+        {
+            get { return this._allowedWorkloadConfiguration; }
+            set { this._allowedWorkloadConfiguration = value; }
+        }
+
+        // Check to see if AllowedWorkloadConfiguration property is set
+        internal bool IsSetAllowedWorkloadConfiguration()
+        {
+            return this._allowedWorkloadConfiguration != null;
         }
 
         /// <summary>

@@ -86,10 +86,27 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Id);
             }
 
+            if(requestObject.IsSetOwner())
+            {
+                context.Writer.WritePropertyName("Owner");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceOwnerMarshaller.Instance;
+                marshaller.Marshall(requestObject.Owner, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPartition())
             {
                 context.Writer.WritePropertyName("Partition");
                 context.Writer.WriteStringValue(requestObject.Partition);
+            }
+
+            if(requestObject.IsSetProvider())
+            {
+                context.Writer.WritePropertyName("Provider");
+                context.Writer.WriteStringValue(requestObject.Provider);
             }
 
             if(requestObject.IsSetRegion())

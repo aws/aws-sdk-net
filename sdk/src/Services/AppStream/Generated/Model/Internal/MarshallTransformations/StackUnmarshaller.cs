@@ -29,130 +29,173 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Stack Object
     /// </summary>  
-    public class StackUnmarshaller : IJsonUnmarshaller<Stack, JsonUnmarshallerContext>
+    public class StackUnmarshaller : ICborUnmarshaller<Stack, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Stack Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Stack Unmarshall(CborUnmarshallerContext context)
         {
             Stack unmarshalledObject = new Stack();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AccessEndpoints", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<AccessEndpoint, AccessEndpointUnmarshaller>(AccessEndpointUnmarshaller.Instance);
-                    unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AgentAccessConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = AgentAccessConfigUnmarshaller.Instance;
-                    unmarshalledObject.AgentAccessConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ApplicationSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = ApplicationSettingsResponseUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Arn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ContentRedirection", targetDepth, ref reader))
-                {
-                    var unmarshaller = ContentRedirectionUnmarshaller.Instance;
-                    unmarshalledObject.ContentRedirection = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Description", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DisplayName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("EmbedHostDomains", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EmbedHostDomains = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FeedbackURL", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeedbackURL = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Name", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RedirectURL", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RedirectURL = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StackErrors", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StackError, StackErrorUnmarshaller>(StackErrorUnmarshaller.Instance);
-                    unmarshalledObject.StackErrors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StorageConnectors", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
-                    unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StreamingExperienceSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = StreamingExperienceSettingsUnmarshaller.Instance;
-                    unmarshalledObject.StreamingExperienceSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UserSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
-                    unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AccessEndpoints":
+                        {
+                            context.AddPathSegment("AccessEndpoints");
+                            var unmarshaller = new CborListUnmarshaller<AccessEndpoint, AccessEndpointUnmarshaller>(AccessEndpointUnmarshaller.Instance);
+                            unmarshalledObject.AccessEndpoints = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AgentAccessConfig":
+                        {
+                            context.AddPathSegment("AgentAccessConfig");
+                            var unmarshaller = AgentAccessConfigUnmarshaller.Instance;
+                            unmarshalledObject.AgentAccessConfig = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ApplicationSettings":
+                        {
+                            context.AddPathSegment("ApplicationSettings");
+                            var unmarshaller = ApplicationSettingsResponseUnmarshaller.Instance;
+                            unmarshalledObject.ApplicationSettings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Arn":
+                        {
+                            context.AddPathSegment("Arn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ContentRedirection":
+                        {
+                            context.AddPathSegment("ContentRedirection");
+                            var unmarshaller = ContentRedirectionUnmarshaller.Instance;
+                            unmarshalledObject.ContentRedirection = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CreatedTime":
+                        {
+                            context.AddPathSegment("CreatedTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Description":
+                        {
+                            context.AddPathSegment("Description");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "DisplayName":
+                        {
+                            context.AddPathSegment("DisplayName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "EmbedHostDomains":
+                        {
+                            context.AddPathSegment("EmbedHostDomains");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.EmbedHostDomains = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FeedbackURL":
+                        {
+                            context.AddPathSegment("FeedbackURL");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FeedbackURL = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Name":
+                        {
+                            context.AddPathSegment("Name");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "RedirectURL":
+                        {
+                            context.AddPathSegment("RedirectURL");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.RedirectURL = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StackErrors":
+                        {
+                            context.AddPathSegment("StackErrors");
+                            var unmarshaller = new CborListUnmarshaller<StackError, StackErrorUnmarshaller>(StackErrorUnmarshaller.Instance);
+                            unmarshalledObject.StackErrors = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StorageConnectors":
+                        {
+                            context.AddPathSegment("StorageConnectors");
+                            var unmarshaller = new CborListUnmarshaller<StorageConnector, StorageConnectorUnmarshaller>(StorageConnectorUnmarshaller.Instance);
+                            unmarshalledObject.StorageConnectors = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StreamingExperienceSettings":
+                        {
+                            context.AddPathSegment("StreamingExperienceSettings");
+                            var unmarshaller = StreamingExperienceSettingsUnmarshaller.Instance;
+                            unmarshalledObject.StreamingExperienceSettings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UserSettings":
+                        {
+                            context.AddPathSegment("UserSettings");
+                            var unmarshaller = new CborListUnmarshaller<UserSetting, UserSettingUnmarshaller>(UserSettingUnmarshaller.Instance);
+                            unmarshalledObject.UserSettings = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

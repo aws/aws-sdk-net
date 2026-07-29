@@ -1124,6 +1124,136 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region DownloadDirectoryFileRequestEvent Tests
+
+        [TestMethod]
+        public async Task ExecuteAsync_FileRequestEvent_FiresForEachFile()
+        {
+            // Arrange
+            var request = CreateDownloadDirectoryRequest();
+            request.DownloadFilesConcurrently = false;
+
+            var files = new Dictionary<string, long>
+            {
+                { "file1.txt", 512 },
+                { "file2.txt", 1024 },
+                { "file3.txt", 2048 }
+            };
+
+            var keys = new List<string>();
+            var eventLock = new object();
+            request.DownloadDirectoryFileRequestEvent += (sender, args) =>
+            {
+                lock (eventLock)
+                {
+                    keys.Add(args.DownloadRequest.Key);
+                }
+            };
+
+            SetupMultipleFilesDirectoryListing(files);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.AreEqual(files.Count, response.ObjectsDownloaded);
+            Assert.AreEqual(files.Count, keys.Count, "Event should fire once per file downloaded");
+            foreach (var file in files)
+            {
+                Assert.IsTrue(keys.Contains($"prefix/{file.Key}"),
+                    $"Event should have fired for prefix/{file.Key}");
+            }
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_FileRequestEvent_ReceivesPopulatedRequest()
+        {
+            // Arrange
+            var request = CreateDownloadDirectoryRequest();
+            DownloadDirectoryFileRequestArgs capturedArgs = null;
+            request.DownloadDirectoryFileRequestEvent += (sender, args) =>
+            {
+                capturedArgs = args;
+            };
+
+            SetupSingleFileDirectoryListing("test-file.txt", 1024);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
+
+            // Act
+            await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.IsNotNull(capturedArgs, "Event should have fired");
+            Assert.IsNotNull(capturedArgs.DownloadRequest, "DownloadRequest should be populated");
+            Assert.AreEqual("test-bucket", capturedArgs.DownloadRequest.BucketName);
+            Assert.AreEqual("prefix/test-file.txt", capturedArgs.DownloadRequest.Key);
+            Assert.AreEqual(
+                Path.Combine(_testDirectory, "test-file.txt"),
+                capturedArgs.DownloadRequest.FilePath);
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_FileRequestEvent_ModificationsPropagateToGetObjectRequest()
+        {
+            // Arrange
+            var request = CreateDownloadDirectoryRequest();
+            request.DownloadDirectoryFileRequestEvent += (sender, args) =>
+            {
+                args.DownloadRequest.RequestPayer = RequestPayer.Requester;
+            };
+
+            var capturedRequests = new List<GetObjectRequest>();
+            _mockS3Client.Setup(c => c.ListObjectsAsync(
+                It.IsAny<ListObjectsRequest>(),
+                It.IsAny<CancellationToken>()))
+                .ReturnsAsync(CreateListObjectsResponse(new Dictionary<string, long> { { "test-file.txt", 1024 } }));
+
+            _mockS3Client.Setup(c => c.GetObjectAsync(
+                It.IsAny<GetObjectRequest>(),
+                It.IsAny<CancellationToken>()))
+                .Returns((GetObjectRequest req, CancellationToken ct) =>
+                {
+                    capturedRequests.Add(req);
+                    var data = MultipartDownloadTestHelpers.GenerateTestData(1024, 0);
+                    return Task.FromResult(new GetObjectResponse
+                    {
+                        BucketName = req.BucketName,
+                        Key = req.Key,
+                        ContentLength = 1024,
+                        ResponseStream = new MemoryStream(data),
+                        ETag = "\"test-etag\""
+                    });
+                });
+
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
+
+            // Act
+            await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.AreEqual(1, capturedRequests.Count, "Should have issued one GetObject request");
+            Assert.AreEqual(RequestPayer.Requester, capturedRequests[0].RequestPayer,
+                "Modification made in the file request event handler should propagate to the GetObjectRequest");
+        }
+
+        [TestMethod]
+        public async Task ExecuteAsync_WithoutFileRequestEventSubscriber_DownloadsSuccessfully()
+        {
+            // Arrange - no subscriber attached to DownloadDirectoryFileRequestEvent
+            var request = CreateDownloadDirectoryRequest();
+            SetupSingleFileDirectoryListing("test-file.txt", 1024);
+            var command = new DownloadDirectoryCommand(_mockS3Client.Object, request, _config, useMultipartDownload: false);
+
+            // Act
+            var response = await command.ExecuteAsync(CancellationToken.None);
+
+            // Assert
+            Assert.AreEqual(1, response.ObjectsDownloaded);
+        }
+
+        #endregion
+
         #region Helper Methods
 
         private TransferUtilityDownloadDirectoryRequest CreateDownloadDirectoryRequest(

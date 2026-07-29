@@ -158,6 +158,10 @@ namespace Amazon.AppStream
         /// Constant COMPUTER_VISION for AgentAction
         /// </summary>
         public static readonly AgentAction COMPUTER_VISION = new AgentAction("COMPUTER_VISION");
+        /// <summary>
+        /// Constant FORWARD_MCP_TOOLS for AgentAction
+        /// </summary>
+        public static readonly AgentAction FORWARD_MCP_TOOLS = new AgentAction("FORWARD_MCP_TOOLS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2710,6 +2714,60 @@ namespace Amazon.AppStream
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UsageReportSchedule(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UserControlMode.
+    /// </summary>
+    public class UserControlMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for UserControlMode
+        /// </summary>
+        public static readonly UserControlMode DISABLED = new UserControlMode("DISABLED");
+        /// <summary>
+        /// Constant VIEW_ONLY for UserControlMode
+        /// </summary>
+        public static readonly UserControlMode VIEW_ONLY = new UserControlMode("VIEW_ONLY");
+        /// <summary>
+        /// Constant VIEW_STOP for UserControlMode
+        /// </summary>
+        public static readonly UserControlMode VIEW_STOP = new UserControlMode("VIEW_STOP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserControlMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserControlMode FindValue(string value)
+        {
+            return FindValue<UserControlMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserControlMode(string value)
         {
             return FindValue(value);
         }

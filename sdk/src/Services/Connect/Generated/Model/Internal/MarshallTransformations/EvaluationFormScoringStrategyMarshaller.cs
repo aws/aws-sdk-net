@@ -52,6 +52,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Mode);
             }
 
+            if(requestObject.IsSetScoreThresholds())
+            {
+                context.Writer.WritePropertyName("ScoreThresholds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectScoreThresholdsListValue in requestObject.ScoreThresholds)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EvaluationFormScoreThresholdMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScoreThresholdsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");

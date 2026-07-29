@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,70 +58,73 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateEntitlementRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.UpdateEntitlement";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/UpdateEntitlement";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAppVisibility())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("AppVisibility");
-                context.Writer.WriteStringValue(publicRequest.AppVisibility);
-            }
-
-            if(publicRequest.IsSetAttributes())
-            {
-                context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetAppVisibility())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = EntitlementAttributeMarshaller.Instance;
-                    marshaller.Marshall(publicRequestAttributesListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("AppVisibility");
+                    context.Writer.WriteTextString(publicRequest.AppVisibility);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetAttributes())
+                {
+                    context.Writer.WriteTextString("Attributes");
+                    context.Writer.WriteStartArray(publicRequest.Attributes.Count);
+                    foreach(var publicRequestAttributesListValue in publicRequest.Attributes)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
-            }
+                        var marshaller = EntitlementAttributeMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAttributesListValue, context);
 
-            if(publicRequest.IsSetName())
-            {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(publicRequest.Name);
-            }
-
-            if(publicRequest.IsSetStackName())
-            {
-                context.Writer.WritePropertyName("StackName");
-                context.Writer.WriteStringValue(publicRequest.StackName);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetDescription())
+                {
+                    context.Writer.WriteTextString("Description");
+                    context.Writer.WriteTextString(publicRequest.Description);
+                }
+                if (publicRequest.IsSetName())
+                {
+                    context.Writer.WriteTextString("Name");
+                    context.Writer.WriteTextString(publicRequest.Name);
+                }
+                if (publicRequest.IsSetStackName())
+                {
+                    context.Writer.WriteTextString("StackName");
+                    context.Writer.WriteTextString(publicRequest.StackName);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static UpdateEntitlementRequestMarshaller _instance = new UpdateEntitlementRequestMarshaller();        

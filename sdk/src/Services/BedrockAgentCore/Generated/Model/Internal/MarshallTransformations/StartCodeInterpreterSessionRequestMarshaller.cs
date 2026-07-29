@@ -103,6 +103,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetFilesystemConfigurations())
+            {
+                context.Writer.WritePropertyName("filesystemConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilesystemConfigurationsListValue in publicRequest.FilesystemConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ToolsFileSystemConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilesystemConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

@@ -31,10 +31,35 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConfiguration operation.
-    /// Retrieves setting configurations for Inspector scans.
+    /// Retrieves setting configurations for Amazon Inspector scans. If you specify an <c>accountId</c>,
+    /// this operation returns the scan configuration for that member account. You must be
+    /// the delegated administrator for the specified member account. If you do not specify
+    /// an <c>accountId</c>, this operation returns your own scan configuration.
     /// </summary>
     public partial class GetConfigurationRequest : AmazonInspector2Request
     {
+        private string _accountId;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// The 12-digit Amazon Web Services account ID of the member account whose scan configuration
+        /// you want to retrieve. When specified, you must be the delegated administrator for
+        /// this member account. If not specified, the operation returns your own configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
     }
 }

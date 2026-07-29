@@ -62,7 +62,11 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2019-12-02";
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/logging";
+            request.UseQueryString = true;
             
             request.HostPrefix = $"api.";
 

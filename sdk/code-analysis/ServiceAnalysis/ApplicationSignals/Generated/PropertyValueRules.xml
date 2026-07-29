@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationRequest.Description</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationRequest.Environment</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationRequest.Service</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationResponse.ARN</property>
+    <pattern>arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationResponse.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationResponse.LocationHash</property>
+    <min>16</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CreateInstrumentationConfigurationResponse.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CreateServiceLevelObjectiveRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -10,8 +46,53 @@
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.DeleteInstrumentationConfigurationRequest.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.DeleteInstrumentationConfigurationRequest.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.DeleteServiceLevelObjectiveRequest.Id</property>
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationRequest.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationRequest.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationStatusRequest.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationStatusRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationStatusRequest.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationStatusResponse.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.GetInstrumentationConfigurationStatusResponse.Service</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.GetServiceLevelObjectiveRequest.Id</property>
@@ -30,6 +111,37 @@
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListGroupingAttributeDefinitionsRequest.AwsAccountId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsRequest.Environment</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsRequest.Service</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsResponse.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsResponse.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ListInstrumentationConfigurationsResponse.SyncInterval</property>
+    <min>60</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ListServiceDependenciesRequest.MaxResults</property>
@@ -92,6 +204,26 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ReportInstrumentationConfigurationStatusRequest.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ReportInstrumentationConfigurationStatusRequest.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ReportInstrumentationConfigurationStatusResponse.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.ReportInstrumentationConfigurationStatusResponse.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1024</max>
@@ -120,6 +252,18 @@
     <max>10240</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.BatchDeleteScope.Environment</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.BatchDeleteScope.Service</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[A-Za-z0-9:/+=,.@_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.BatchUpdateExclusionWindowsError.SloId</property>
     <pattern>[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]$|^arn:(aws|aws-us-gov):application-signals:[^:]*:[^:]*:slo/[0-9A-Za-z][-._0-9A-Za-z ]{0,126}[0-9A-Za-z]</pattern>
   </property-value-rule>
@@ -133,8 +277,72 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxCollectionDepth</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxCollectionWidth</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxFieldsPerObject</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxHits</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxObjectDepth</property>
+    <min>1</min>
+    <max>5</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxStackFrames</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxStackTraceSize</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CaptureLimitsConfig.MaxStringLength</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.ChangeEvent.AccountId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CodeLocation.ClassName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CodeLocation.CodeUnit</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CodeLocation.FilePath</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CodeLocation.LineNumber</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.CodeLocation.MethodName</property>
+    <min>1</min>
+    <max>80</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.CompositeSliComponent.OperationName</property>
@@ -172,6 +380,54 @@
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9\s+\-=\._:/@]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfiguration.ARN</property>
+    <pattern>arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfiguration.Description</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfiguration.Environment</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfiguration.LocationHash</property>
+    <min>16</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfiguration.Service</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfigurationStatusReport.LocationHash</property>
+    <min>16</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfigurationWithoutServiceEnv.ARN</property>
+    <pattern>arn:[^:]+:application-signals:[^:]+:[0-9]{12}:instrumentationConfig/.+/[0-9a-f]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfigurationWithoutServiceEnv.Description</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.InstrumentationConfigurationWithoutServiceEnv.LocationHash</property>
+    <min>16</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.LocationIdentifier.LocationHash</property>
+    <min>16</min>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.Metric.MetricName</property>
@@ -384,6 +640,11 @@
     <property>Amazon.ApplicationSignals.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ApplicationSignals.Model.UnprocessedStatusEvent.LocationHash</property>
+    <min>16</min>
+    <max>16</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ApplicationSignals.Model.Window.Duration</property>

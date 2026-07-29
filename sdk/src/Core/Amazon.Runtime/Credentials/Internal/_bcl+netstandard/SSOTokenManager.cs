@@ -366,14 +366,20 @@ namespace Amazon.Runtime.Credentials.Internal
             {
                 ClientName = GetSsoClientName(options.ClientName),
                 ClientType = options.ClientType,
-                StartUrl = options.StartUrl,
+                StartUrl = options.ResolvedStartUrl ?? options.StartUrl,
                 SsoVerificationCallback = options.SsoVerificationCallback,
                 Scopes = options.Scopes,
                 PkceFlowOptions = options.PkceFlowOptions,
+                IsVanityUrl = options.IsVanityUrl,
             };
 
             var response = _ssooidcClient.GetSsoToken(request);
             var token = MapGetSsoTokenResponseToSsoToken(response, options.Session);
+
+            // Preserve the original (unresolved) StartUrl as the cache key. The OIDC request
+            // may have used ResolvedStartUrl for the API call, but the cached token must use
+            // the original value so lookups by vanity URL continue to find the token.
+            token.StartUrl = options.StartUrl;
 
             _ssoTokenFileCache.SaveSsoToken(token, options.CacheFolderLocation);
 
@@ -620,10 +626,11 @@ namespace Amazon.Runtime.Credentials.Internal
             {
                 ClientName = GetSsoClientName(options.ClientName),
                 ClientType = options.ClientType,
-                StartUrl = options.StartUrl,
+                StartUrl = options.ResolvedStartUrl ?? options.StartUrl,
                 SsoVerificationCallback = options.SsoVerificationCallback,
                 Scopes = options.Scopes,
                 PkceFlowOptions = options.PkceFlowOptions,
+                IsVanityUrl = options.IsVanityUrl,
             };
 
             // The SSO OIDC client used throughout this class does not propagate the cancellation token to the service operations.
@@ -644,6 +651,12 @@ namespace Amazon.Runtime.Credentials.Internal
             }
 
             var token = MapGetSsoTokenResponseToSsoToken(response, options.Session);
+
+            // Preserve the original (unresolved) StartUrl as the cache key. The OIDC request
+            // may have used ResolvedStartUrl for the API call, but the cached token must use
+            // the original value so lookups by vanity URL continue to find the token.
+            token.StartUrl = options.StartUrl;
+
             await _ssoTokenFileCache.SaveSsoTokenAsync(token, options.CacheFolderLocation, cancellationToken).ConfigureAwait(false);
 
             return token;

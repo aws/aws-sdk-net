@@ -58,6 +58,16 @@ namespace Amazon.S3.Model
         IListMultipartUploadsPaginator ListMultipartUploads(ListMultipartUploadsRequest request);
 
         /// <summary>
+        /// Paginator for ListObjectAnnotations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "ContinuationToken" },
+            LimitKey = "MaxAnnotationResults",
+            OutputToken = new[] { "NextContinuationToken" }
+        )]
+        IListObjectAnnotationsPaginator ListObjectAnnotations(ListObjectAnnotationsRequest request);
+
+        /// <summary>
         /// Paginator for ListObjectsV2 operation
         ///</summary>
         [AWSPaginator(

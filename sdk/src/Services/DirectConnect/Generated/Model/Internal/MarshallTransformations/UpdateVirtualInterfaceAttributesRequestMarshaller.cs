@@ -87,6 +87,12 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.Mtu.Value);
             }
 
+            if(publicRequest.IsSetRateLimit())
+            {
+                context.Writer.WritePropertyName("rateLimit");
+                context.Writer.WriteStringValue(publicRequest.RateLimit);
+            }
+
             if(publicRequest.IsSetVirtualInterfaceId())
             {
                 context.Writer.WritePropertyName("virtualInterfaceId");

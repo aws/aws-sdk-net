@@ -34,6 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeAIRecommendationJobResponse : AmazonWebServiceResponse
     {
+        private AIAdapterSource _adapterSource;
         private string _aiRecommendationJobArn;
         private string _aiRecommendationJobName;
         private AIRecommendationJobStatus _aiRecommendationJobStatus;
@@ -51,6 +52,25 @@ namespace Amazon.SageMaker.Model
         private string _roleArn;
         private DateTime? _startTime;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdapterSource. 
+        /// <para>
+        /// The LoRA adapter source that was specified when the recommendation job was created.
+        /// This field is absent when the job was created without LoRA adapters.
+        /// </para>
+        /// </summary>
+        public AIAdapterSource AdapterSource
+        {
+            get { return this._adapterSource; }
+            set { this._adapterSource = value; }
+        }
+
+        // Check to see if AdapterSource property is set
+        internal bool IsSetAdapterSource()
+        {
+            return this._adapterSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AIRecommendationJobArn. 

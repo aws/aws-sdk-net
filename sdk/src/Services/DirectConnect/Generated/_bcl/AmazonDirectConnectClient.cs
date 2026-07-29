@@ -518,6 +518,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -557,6 +561,10 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
@@ -610,6 +618,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -661,6 +673,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -709,6 +725,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -755,6 +775,10 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
@@ -805,6 +829,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
         public virtual AssociateConnectionWithLagResponse AssociateConnectionWithLag(AssociateConnectionWithLagRequest request)
         {
@@ -849,6 +877,10 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
         /// A server-side error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateConnectionWithLag">REST API Reference for AssociateConnectionWithLag Operation</seealso>
         public virtual Task<AssociateConnectionWithLagResponse> AssociateConnectionWithLagAsync(AssociateConnectionWithLagRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2114,6 +2146,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -2161,6 +2197,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -2203,6 +2243,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -2243,6 +2287,10 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
@@ -2298,6 +2346,10 @@ namespace Amazon.DirectConnect
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
         /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
+        /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
         /// </exception>
@@ -2350,6 +2402,10 @@ namespace Amazon.DirectConnect
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.DuplicateTagKeysException">
         /// A tag key was specified more than once.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.LimitExceededException">
+        /// The rate limiter limit has been exceeded for the connection. You cannot add more rate
+        /// limiters to virtual interfaces on this connection.
         /// </exception>
         /// <exception cref="Amazon.DirectConnect.Model.TooManyTagsException">
         /// You have reached the limit on the number of tags that can be assigned.
@@ -4246,7 +4302,7 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// If you're using an <c>asn</c>, the response includes the ASN value in both the <c>asn</c>
         /// and <c>asnLong</c> fields.
         /// </para>
         ///  </li> <li> 
@@ -4286,7 +4342,7 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// If you're using an <c>asn</c>, the response includes the ASN value in both the <c>asn</c>
         /// and <c>asnLong</c> fields.
         /// </para>
         ///  </li> <li> 
@@ -4331,7 +4387,7 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// If you're using an <c>asn</c>, the response includes the ASN value in both the <c>asn</c>
         /// and <c>asnLong</c> fields.
         /// </para>
         ///  </li> <li> 
@@ -4373,7 +4429,7 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you're using an <c>asn</c>, the response includes ASN value in both the <c>asn</c>
+        /// If you're using an <c>asn</c>, the response includes the ASN value in both the <c>asn</c>
         /// and <c>asnLong</c> fields.
         /// </para>
         ///  </li> <li> 

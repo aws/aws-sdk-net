@@ -56,6 +56,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("awsSkills", targetDepth, ref reader))
+                {
+                    var unmarshaller = HarnessSkillAwsSkillsSourceUnmarshaller.Instance;
+                    unmarshalledObject.AwsSkills = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("git", targetDepth, ref reader))
                 {
                     var unmarshaller = HarnessSkillGitSourceUnmarshaller.Instance;

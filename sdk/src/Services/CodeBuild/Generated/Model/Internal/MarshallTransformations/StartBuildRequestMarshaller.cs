@@ -194,6 +194,12 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetHostKernelOverride())
+            {
+                context.Writer.WritePropertyName("hostKernelOverride");
+                context.Writer.WriteStringValue(publicRequest.HostKernelOverride);
+            }
+
             if(publicRequest.IsSetIdempotencyToken())
             {
                 context.Writer.WritePropertyName("idempotencyToken");

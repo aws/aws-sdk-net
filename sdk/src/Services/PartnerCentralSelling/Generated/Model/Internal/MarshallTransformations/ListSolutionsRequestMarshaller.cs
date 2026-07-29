@@ -75,6 +75,17 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAwsMarketplaceSolutionArn())
+            {
+                context.Writer.WritePropertyName("AwsMarketplaceSolutionArn");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAwsMarketplaceSolutionArnListValue in publicRequest.AwsMarketplaceSolutionArn)
+                {
+                        context.Writer.WriteStringValue(publicRequestAwsMarketplaceSolutionArnListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetCatalog())
             {
                 context.Writer.WritePropertyName("Catalog");

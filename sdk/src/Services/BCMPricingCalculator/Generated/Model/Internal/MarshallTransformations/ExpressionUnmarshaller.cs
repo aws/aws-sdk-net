@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Expression Object
     /// </summary>  
-    public class ExpressionUnmarshaller : IJsonUnmarshaller<Expression, JsonUnmarshallerContext>
+    public class ExpressionUnmarshaller : ICborUnmarshaller<Expression, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Expression Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Expression Unmarshall(CborUnmarshallerContext context)
         {
             Expression unmarshalledObject = new Expression();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("and", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = new JsonListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
-                    unmarshalledObject.And = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("costCategories", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpressionFilterUnmarshaller.Instance;
-                    unmarshalledObject.CostCategories = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dimensions", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpressionFilterUnmarshaller.Instance;
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("not", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.Not = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("or", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
-                    unmarshalledObject.Or = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = ExpressionFilterUnmarshaller.Instance;
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "and":
+                        {
+                            context.AddPathSegment("And");
+                            var unmarshaller = new CborListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
+                            unmarshalledObject.And = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "costCategories":
+                        {
+                            context.AddPathSegment("CostCategories");
+                            var unmarshaller = ExpressionFilterUnmarshaller.Instance;
+                            unmarshalledObject.CostCategories = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "dimensions":
+                        {
+                            context.AddPathSegment("Dimensions");
+                            var unmarshaller = ExpressionFilterUnmarshaller.Instance;
+                            unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "not":
+                        {
+                            context.AddPathSegment("Not");
+                            var unmarshaller = ExpressionUnmarshaller.Instance;
+                            unmarshalledObject.Not = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "or":
+                        {
+                            context.AddPathSegment("Or");
+                            var unmarshaller = new CborListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
+                            unmarshalledObject.Or = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "tags":
+                        {
+                            context.AddPathSegment("Tags");
+                            var unmarshaller = ExpressionFilterUnmarshaller.Instance;
+                            unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

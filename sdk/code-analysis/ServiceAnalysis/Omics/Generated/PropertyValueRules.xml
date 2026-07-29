@@ -1359,6 +1359,11 @@
     <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.ScratchStorageMode</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.StartedBy</property>
     <min>1</min>
     <max>128</max>
@@ -1568,6 +1573,12 @@
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunTaskResponse.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetS3AccessPolicyRequest.S3AccessPointArn</property>
@@ -2669,6 +2680,11 @@
     <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.StartRunRequest.ScratchStorageMode</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.StorageCapacity</property>
     <min>0</min>
     <max>100000</max>
@@ -3276,6 +3292,11 @@
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.DefaultRunSetting.ScratchStorageMode</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DefaultRunSetting.StorageCapacity</property>
@@ -4199,6 +4220,12 @@
     <min>1</min>
     <max>18</max>
     <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.TaskListItem.Uuid</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.VariantImportItemDetail.Source</property>

@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHarnesses operation.
-    /// Operation to list Harnesses.
+    /// Operation to list harnesses.
     /// </summary>
     public partial class ListHarnessesRequest : AmazonBedrockAgentCoreControlRequest
     {

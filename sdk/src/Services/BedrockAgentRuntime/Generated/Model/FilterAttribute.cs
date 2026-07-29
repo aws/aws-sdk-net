@@ -72,7 +72,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value to whcih to compare the value of the metadata attribute.
+        /// The value to which to compare the value of the metadata attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

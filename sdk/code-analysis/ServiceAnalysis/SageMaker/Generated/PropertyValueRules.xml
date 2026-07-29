@@ -9012,6 +9012,30 @@
     <max>30</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AIAdapterModelPackageEntry.AdapterId</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AIAdapterModelPackageEntry.ModelPackageArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AIAdapterS3Entry.AdapterId</property>
+    <min>1</min>
+    <max>63</max>
+    <pattern>[a-zA-Z0-9](-*[a-zA-Z0-9])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AIAdapterS3Entry.S3Uri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AIBenchmarkEndpoint.Identifier</property>
     <min>1</min>
     <max>256</max>
@@ -9082,6 +9106,10 @@
     <min>0</min>
     <max>256</max>
     <pattern>arn:aws[a-z\-]*:sagemaker:[a-z0-9\-]*:[0-9]{12}:ai-benchmark-job/[a-zA-Z0-9](-*[a-zA-Z0-9]){0,62}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.AIRecommendationDeploymentConfiguration.MinCpuMemoryRequiredInMb</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AIRecommendationDeploymentS3Channel.ChannelName</property>
@@ -10131,10 +10159,22 @@
     <pattern>ami-[0-9a-fA-F]{8,17}|default</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.CurrentImageReleaseVersion</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[0-9]+\.[0-9]+\.[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.DesiredImageId</property>
     <min>7</min>
     <max>21</max>
     <pattern>ami-[0-9a-fA-F]{8,17}|default</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.DesiredImageReleaseVersion</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[0-9]+\.[0-9]+\.[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupDetails.ExecutionRole</property>
@@ -10190,6 +10230,12 @@
     <min>7</min>
     <max>21</max>
     <pattern>ami-[0-9a-fA-F]{8,17}|default</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.ImageReleaseVersion</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[0-9]+\.[0-9]+\.[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterInstanceGroupSpecification.InstanceCount</property>
@@ -10272,10 +10318,22 @@
     <pattern>ami-[0-9a-fA-F]{8,17}|default</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterNodeDetails.CurrentImageReleaseVersion</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[0-9]+\.[0-9]+\.[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.DesiredImageId</property>
     <min>7</min>
     <max>21</max>
     <pattern>ami-[0-9a-fA-F]{8,17}|default</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterNodeDetails.DesiredImageReleaseVersion</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[0-9]+\.[0-9]+\.[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.InstanceGroupName</property>
@@ -10301,6 +10359,12 @@
     <property>Amazon.SageMaker.Model.ClusterNodeDetails.ThreadsPerCore</property>
     <min>1</min>
     <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ClusterNodeSummary.CurrentImageReleaseVersion</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[0-9]+\.[0-9]+\.[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ClusterNodeSummary.InstanceGroupName</property>
@@ -12717,6 +12781,12 @@
     <min>1</min>
     <max>500</max>
     <pattern>.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.MetricsEndpoint.MetricsEndpointPath</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>/(?!.*\.\.)[a-zA-Z0-9/_.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MetricsSource.ContentDigest</property>
@@ -16025,6 +16095,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UnifiedStudioSettings.SingleSignOnApplicationArn</property>
     <pattern>arn:(aws|aws-us-gov|aws-cn|aws-iso|aws-iso-b):sso::[0-9]+:application\/[a-zA-Z0-9-_.]+\/apl-[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateClusterSoftwareInstanceGroupSpecification.ImageReleaseVersion</property>
+    <min>0</min>
+    <max>64</max>
+    <pattern>[0-9]+\.[0-9]+\.[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateClusterSoftwareInstanceGroupSpecification.InstanceGroupName</property>

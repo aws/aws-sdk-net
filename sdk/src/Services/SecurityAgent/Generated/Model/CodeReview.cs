@@ -44,6 +44,7 @@ namespace Amazon.SecurityAgent.Model
         private string _serviceRole;
         private string _title;
         private DateTime? _updatedAt;
+        private ValidationMode _validationMode;
 
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
@@ -209,6 +210,24 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationMode. 
+        /// <para>
+        /// The validation mode for the code review. Valid values are SIMULATED and DISABLED.
+        /// </para>
+        /// </summary>
+        public ValidationMode ValidationMode
+        {
+            get { return this._validationMode; }
+            set { this._validationMode = value; }
+        }
+
+        // Check to see if ValidationMode property is set
+        internal bool IsSetValidationMode()
+        {
+            return this._validationMode != null;
         }
 
     }

@@ -45,6 +45,46 @@ namespace Amazon.HealthLake
         IHealthLakePaginatorFactory Paginators { get; }
 #endif
                 
+        #region  CreateDataTransformationProfile
+
+
+
+        /// <summary>
+        /// Creates a data transformation profile in DRAFT state. Specify a built-in starter profile,
+        /// an existing profile version, raw profile content, or a sample data file as the source.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataTransformationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataTransformationProfile service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ConflictException">
+        /// The data store is in a transition state and the user requested action cannot be performed.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateDataTransformationProfile">REST API Reference for CreateDataTransformationProfile Operation</seealso>
+        Task<CreateDataTransformationProfileResponse> CreateDataTransformationProfileAsync(CreateDataTransformationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateFHIRDatastore
 
 
@@ -72,6 +112,40 @@ namespace Amazon.HealthLake
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/CreateFHIRDatastore">REST API Reference for CreateFHIRDatastore Operation</seealso>
         Task<CreateFHIRDatastoreResponse> CreateFHIRDatastoreAsync(CreateFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDataTransformationProfile
+
+
+
+        /// <summary>
+        /// Deletes a data transformation profile and all its versions, including the DRAFT and
+        /// all published versions.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataTransformationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataTransformationProfile service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteDataTransformationProfile">REST API Reference for DeleteDataTransformationProfile Operation</seealso>
+        Task<DeleteDataTransformationProfileResponse> DeleteDataTransformationProfileAsync(DeleteDataTransformationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -108,6 +182,40 @@ namespace Amazon.HealthLake
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DeleteFHIRDatastore">REST API Reference for DeleteFHIRDatastore Operation</seealso>
         Task<DeleteFHIRDatastoreResponse> DeleteFHIRDatastoreAsync(DeleteFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeDataTransformationJob
+
+
+
+        /// <summary>
+        /// Describes a data transformation job, including its current status, configuration,
+        /// and progress information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataTransformationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataTransformationJob service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeDataTransformationJob">REST API Reference for DescribeDataTransformationJob Operation</seealso>
+        Task<DescribeDataTransformationJobResponse> DescribeDataTransformationJobAsync(DescribeDataTransformationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -198,6 +306,142 @@ namespace Amazon.HealthLake
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DescribeFHIRImportJob">REST API Reference for DescribeFHIRImportJob Operation</seealso>
         Task<DescribeFHIRImportJobResponse> DescribeFHIRImportJobAsync(DescribeFHIRImportJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDataTransformationProfile
+
+
+
+        /// <summary>
+        /// Retrieves a data transformation profile's metadata and profile content at a specific
+        /// version. Specify version 0 to retrieve the DRAFT, a version number between 1 and 99
+        /// to retrieve a specific published version, or omit the version to retrieve the latest
+        /// published version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataTransformationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataTransformationProfile service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/GetDataTransformationProfile">REST API Reference for GetDataTransformationProfile Operation</seealso>
+        Task<GetDataTransformationProfileResponse> GetDataTransformationProfileAsync(GetDataTransformationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataTransformationJobs
+
+
+
+        /// <summary>
+        /// Lists data transformation jobs for your AWS account. Results can be filtered by status,
+        /// job name, and submit time window. Results are paginated. Use the <c>NextToken</c>
+        /// parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTransformationJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTransformationJobs service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListDataTransformationJobs">REST API Reference for ListDataTransformationJobs Operation</seealso>
+        Task<ListDataTransformationJobsResponse> ListDataTransformationJobsAsync(ListDataTransformationJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataTransformationProfiles
+
+
+
+        /// <summary>
+        /// Lists all data transformation profiles in your account, returning the latest version
+        /// summary for each. Use <c>GetDataTransformationProfile</c> to retrieve profile content.
+        /// Results are paginated. Use the <c>NextToken</c> parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTransformationProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTransformationProfiles service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListDataTransformationProfiles">REST API Reference for ListDataTransformationProfiles Operation</seealso>
+        Task<ListDataTransformationProfilesResponse> ListDataTransformationProfilesAsync(ListDataTransformationProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataTransformationProfileVersions
+
+
+
+        /// <summary>
+        /// Lists all versions of a specific data transformation profile (DRAFT and published),
+        /// in reverse chronological order (newest first). Use <c>GetDataTransformationProfile</c>
+        /// to retrieve profile content. Results are paginated. Use the <c>NextToken</c> parameter
+        /// to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataTransformationProfileVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataTransformationProfileVersions service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/ListDataTransformationProfileVersions">REST API Reference for ListDataTransformationProfileVersions Operation</seealso>
+        Task<ListDataTransformationProfileVersionsResponse> ListDataTransformationProfileVersionsAsync(ListDataTransformationProfileVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -318,6 +562,78 @@ namespace Amazon.HealthLake
 
         #endregion
                 
+        #region  PublishDataTransformationProfile
+
+
+
+        /// <summary>
+        /// Promotes the current DRAFT version of a data transformation profile to a new immutable
+        /// published version. Also supports rollback by publishing from a previously published
+        /// version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishDataTransformationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishDataTransformationProfile service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/PublishDataTransformationProfile">REST API Reference for PublishDataTransformationProfile Operation</seealso>
+        Task<PublishDataTransformationProfileResponse> PublishDataTransformationProfileAsync(PublishDataTransformationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartDataTransformationJob
+
+
+
+        /// <summary>
+        /// Starts an asynchronous data transformation job that converts source files from Amazon
+        /// Simple Storage Service (Amazon S3) and writes the output to Amazon S3 or AWS HealthLake.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDataTransformationJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDataTransformationJob service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/StartDataTransformationJob">REST API Reference for StartDataTransformationJob Operation</seealso>
+        Task<StartDataTransformationJobResponse> StartDataTransformationJobAsync(StartDataTransformationJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  StartFHIRExportJob
 
 
@@ -333,6 +649,9 @@ namespace Amazon.HealthLake
         /// <returns>The response from the StartFHIRExportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
         /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.FailedDependencyException">
+        /// A dependent service failed to fulfill the request.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
         /// An unknown internal error occurred in the service.
@@ -368,6 +687,9 @@ namespace Amazon.HealthLake
         /// <returns>The response from the StartFHIRImportJob service method, as returned by HealthLake.</returns>
         /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
         /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.FailedDependencyException">
+        /// A dependent service failed to fulfill the request.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
         /// An unknown internal error occurred in the service.
@@ -434,6 +756,40 @@ namespace Amazon.HealthLake
 
         #endregion
                 
+        #region  UpdateDataTransformationProfile
+
+
+
+        /// <summary>
+        /// Updates the DRAFT version (version 0) of a data transformation profile with new profile
+        /// content. The update replaces all existing DRAFT content.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataTransformationProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDataTransformationProfile service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateDataTransformationProfile">REST API Reference for UpdateDataTransformationProfile Operation</seealso>
+        Task<UpdateDataTransformationProfileResponse> UpdateDataTransformationProfileAsync(UpdateDataTransformationProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  UpdateFHIRDatastore
 
 
@@ -467,6 +823,61 @@ namespace Amazon.HealthLake
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateFHIRDatastore">REST API Reference for UpdateFHIRDatastore Operation</seealso>
         Task<UpdateFHIRDatastoreResponse> UpdateFHIRDatastoreAsync(UpdateFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateProfileWithAgent
+
+
+
+        /// <summary>
+        /// Updates a data transformation profile using chat-based interaction with an agent.
+        /// Supports multi-turn conversations for iteratively customizing profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfileWithAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProfileWithAgent service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.AgentMessageOutOfContextException">
+        /// The agent message does not fit within the current conversation context. Start a new
+        /// conversation or provide a message that relates to the current profile customization
+        /// session.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ConversationNotFoundException">
+        /// The specified conversation identifier does not exist. Verify the conversation ID or
+        /// omit it to start a new conversation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.NotImplementedOperationException">
+        /// The requested operation is not yet available. Check the service documentation for
+        /// a list of supported operations.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.UnauthorizedException">
+        /// You are not authorized to make this request. Verify that your AWS credentials are
+        /// valid and that you have the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.UnsupportedMIMETypeException">
+        /// The content type in your request is not supported. Use a supported content type for
+        /// this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/UpdateProfileWithAgent">REST API Reference for UpdateProfileWithAgent Operation</seealso>
+        Task<UpdateProfileWithAgentResponse> UpdateProfileWithAgentAsync(UpdateProfileWithAgentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

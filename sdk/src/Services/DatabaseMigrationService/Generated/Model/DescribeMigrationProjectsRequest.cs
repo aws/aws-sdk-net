@@ -32,6 +32,13 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeMigrationProjects operation.
     /// Returns a paginated list of migration projects for your account in the current region.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:ListMigrationProjects</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeMigrationProjectsRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -42,23 +49,31 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to the migration projects described in the form of key-value pairs.
+        /// The filters to apply to the migration projects.
         /// </para>
         ///  
         /// <para>
-        /// Valid filter names and values:
+        /// The following filter names are supported:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// instance-profile-identifier, instance profile arn or name
+        ///  <c>migration-project-identifier</c> – The migration project name or ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// data-provider-identifier, data provider arn or name
+        ///  <c>instance-profile-identifier</c> – The instance profile name or ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// migration-project-identifier, migration project arn or name
+        ///  <c>data-provider-identifier</c> – The source or target data provider name or ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>source-data-provider-identifier</c> – The source data provider name or ARN.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>target-data-provider-identifier</c> – The target data provider name or ARN.
         /// </para>
         ///  </li> </ul>
         /// <para />

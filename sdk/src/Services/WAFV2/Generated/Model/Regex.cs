@@ -40,7 +40,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RegexString. 
         /// <para>
-        /// The string representing the regular expression.
+        /// The string representing the regular expression. WAF enforces a quota on the maximum
+        /// number of characters in a regex pattern. For the current limit, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

@@ -36,6 +36,9 @@ public class GenerationContext
     /// <summary>The service class name (e.g. "CloudTrailData"). Used to derive all other names.</summary>
     public string ServiceName { get; }
 
+    /// <summary>The raw, unmodified <c>sdkId</c> from the <c>aws.api#service</c> trait (e.g. "CloudTrail Data"). Unlike <see cref="ServiceName"/>, this is not normalized; it is the verbatim ServiceId the SDK metadata exposes.</summary>
+    public string SdkId { get; }
+
     /// <summary>The client class name without "Client" suffix (e.g. "AmazonCloudTrailData").</summary>
     public string ClientName { get; }
 
@@ -45,8 +48,72 @@ public class GenerationContext
     /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data"). Used in generated doc links.</summary>
     public string EndpointPrefix { get; }
 
+    /// <summary>
+    /// The signing name used as the service config's <c>AuthenticationServiceName</c> (e.g.
+    /// "cloudtrail-data"). This is the <c>aws.auth#sigv4</c> trait's <c>name</c> when present,
+    /// falling back to <see cref="EndpointPrefix"/>, matching the legacy generator's precedence
+    /// (<c>SigningName ?? EndpointPrefix</c>).
+    /// </summary>
+    public string AuthenticationServiceName { get; }
+
+    /// <summary>
+    /// Whether the service carries a Smithy endpoint rule set (<c>smithy.rules#endpointRuleSet</c>).
+    /// The service config emits its endpoint resolver field, <c>EndpointProvider</c> wiring, and
+    /// <c>DetermineServiceOperationEndpoint</c> override only when this is true: the Smithy-AST
+    /// equivalent of the legacy template's <c>EndpointsRuleSet != null</c> branch.
+    /// </summary>
+    public bool HasEndpointRuleSet { get; }
+
+    /// <summary>
+    /// The parsed endpoint rule set, or <c>null</c> when <see cref="HasEndpointRuleSet"/> is false.
+    /// The endpoint writers compile this into the parameters class and the endpoint provider.
+    /// </summary>
+    public EndpointRuleSet? EndpointRuleSet { get; }
+
+    /// <summary>
+    /// Whether any shape carries an endpoint context-parameter trait (service <c>clientContextParams</c>,
+    /// operation <c>staticContextParams</c>, or member <c>contextParam</c>).
+    /// </summary>
+    public bool HasEndpointContextParams { get; }
+
+    /// <summary>
+    /// Whether the service carries a Smithy endpoint test suite (<c>smithy.rules#endpointTests</c>).
+    /// The endpoint provider tests file is emitted only when this is true. The constructor throws if
+    /// this is true while <see cref="HasEndpointRuleSet"/> is false: the generated tests reference the
+    /// endpoint parameters/provider types, which only exist when a rule set is also present.
+    /// </summary>
+    public bool HasEndpointTests { get; }
+
+    /// <summary>
+    /// The parsed endpoint test suite, or <c>null</c> when <see cref="HasEndpointTests"/> is false.
+    /// </summary>
+    public EndpointTestSuite? EndpointTests { get; }
+
+    /// <summary>
+    /// The service-level auth scheme shape IDs the resolver's <c>default</c> arm returns (e.g.
+    /// <c>["aws.auth#sigv4"]</c>): the service's <c>smithy.api#auth</c> trait when present, otherwise
+    /// derived from its auth traits.
+    /// </summary>
+    public IReadOnlyList<string> ServiceAuthSchemes { get; }
+
+    /// <summary>
+    /// Whether the service supports SigV4 (its auth scheme list contains <c>aws.auth#sigv4</c>). The
+    /// auth resolver emits the <c>Region</c> parameter only when this is true.
+    /// </summary>
+    public bool SupportsSigV4 { get; }
+
+    /// <summary>
+    /// The operations that model their own auth (a <c>smithy.api#auth</c> override), each paired with
+    /// its scheme list and ordered by name. These become the auth resolver's per-operation switch
+    /// arms; operations without an override fall through to <see cref="ServiceAuthSchemes"/>.
+    /// </summary>
+    public IReadOnlyList<OperationAuth> OperationsWithModeledAuth { get; }
+
     /// <summary>The service shape's <c>@documentation</c>, or null if absent. Used for the client interface/class summary.</summary>
     public string? ServiceDocumentation { get; }
+
+    /// <summary>The service's <c>smithy.api#title</c> (e.g. "AWS CloudTrail Data Service"). C2J equivalent: <c>service.FullName</c>. Used in the assembly description.</summary>
+    public string? ServiceTitle { get; }
 
     /// <summary>The wire protocol detected from the service shape's protocol trait.</summary>
     public AWSProtocol Protocol { get; }
@@ -60,28 +127,69 @@ public class GenerationContext
     /// <summary>Reachable structures that carry the <c>@error</c> trait, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
     public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
 
+    /// <summary>
+    /// The service's <c>metadata.json</c>, or <c>null</c> when no metadata file was supplied.
+    /// Carries package/naming values (synopsis, base-name, tags, ...) and other metadata that the Smithy model can't
+    /// express.
+    /// </summary>
+    public ServiceMetadata? Metadata { get; }
+
     private readonly ServiceIndex _index;
+
+    /// <summary>
+    /// The manifest for the service, read from _sdk-versions.json
+    /// </summary>
+    public SdkVersionManifest Manifest { get; }
+
+    /// <summary>
+    /// The name of the Assembly for the service, without the dll suffix i.e. AWSSDK.CloudTrailData.
+    /// </summary>
+    public string AssemblyName { get; }
 
     // TODO: Accept SmithyModel for shapes not reachable from operations (e.g. shared error shapes).
     // TODO: Add enum values to AWSProtocol as protocols are implemented.
     // TODO: Add customization layer hook in constructor (renames, shape modifiers).
-    public GenerationContext(ServiceIndex index)
+    public GenerationContext(ServiceIndex index, SdkVersionManifest manifest, ServiceMetadata? metadata = null)
     {
         _index = index;
-
+        Metadata = metadata;
+        Manifest = manifest;
         var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException("Service shape is missing the aws.api#service trait.");
-        ServiceName = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
+        SdkId = serviceTrait.SdkId;
+        //TODO: ServiceName should mirror ClassName in the generator, which takes into account metadata.json, customizations, and overrides
+        ServiceName = SdkNaming.NormalizeSdkId(SdkId);
         Namespace = $"Amazon.{ServiceName}";
         ClientName = $"Amazon{ServiceName}";
         ApiVersion = index.Service.ApiVersion;
+        AssemblyName = $"AWSSDK.{ServiceName}";
         // TODO: EndpointPrefix and ApiVersion together form the generated <seealso> doc URL
         // ("{EndpointPrefix}-{ApiVersion}"). EndpointPrefix is null-guarded below, but an empty or
         // whitespace value in either would silently produce a malformed URL. Validate both once more
         // services are onboarded.
         EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
+
+        // AuthenticationServiceName follows the legacy generator's precedence: the sigv4 signing name
+        // when the trait is present, otherwise the endpoint prefix.
+        AuthenticationServiceName = index.Service.GetSigV4()?.SigningName ?? EndpointPrefix;
+
+        EndpointRuleSet = index.Service.GetEndpointRuleSet();
+        HasEndpointRuleSet = EndpointRuleSet is not null;
+        HasEndpointContextParams = DetectEndpointContextParams(index);
+
+        EndpointTests = index.Service.GetEndpointTests();
+        HasEndpointTests = EndpointTests is not null;
+        if (HasEndpointTests && !HasEndpointRuleSet)
+        {
+            throw new GeneratorException("Service carries smithy.rules#endpointTests but no smithy.rules#endpointRuleSet.");
+        }
+
         ServiceDocumentation = index.Service.GetDocumentation();
+        ServiceTitle = index.Service.GetTitle();
         Protocol = DetectProtocol(index.Service);
         Operations = ResolveOperations(index);
+        ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
+        SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
+        OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();
@@ -136,6 +244,25 @@ public class GenerationContext
     /// </remarks>
     public string ToDotNetName(ShapeId shapeId) => shapeId.Name;
 
+    // Context params live on the service, on operations, or on structure members, so all three are
+    // scanned. Members are only reachable through the shapes index.
+    private static bool DetectEndpointContextParams(ServiceIndex index)
+    {
+        if (index.Service.HasEndpointContextParams())
+        {
+            return true;
+        }
+
+        if (index.Operations.Any(operation => operation.Shape.HasEndpointContextParams()))
+        {
+            return true;
+        }
+
+        return index.Shapes.Values
+            .OfType<StructureShape>()
+            .SelectMany(structure => structure.Members.Values)
+            .Any(member => member.HasEndpointContextParams());
+    }
 
     private static AWSProtocol DetectProtocol(ServiceShape service)
     {
@@ -149,15 +276,10 @@ public class GenerationContext
 
     private static List<Operation> ResolveOperations(ServiceIndex index)
     {
-        var operationIds = index.Service.Operations;
-        var operations = index.Operations;
-        var resolved = new List<Operation>(operations.Count);
+        var resolved = new List<Operation>(index.Operations.Count);
 
-        for (var i = 0; i < operations.Count; i++)
+        foreach (var (operationId, operation) in index.Operations)
         {
-            var operationId = operationIds[i];
-            var operation = operations[i];
-
             var input = ResolveStructure(index, operation.Input, "input", operationId);
             var output = ResolveStructure(index, operation.Output, "output", operationId);
 
@@ -178,6 +300,13 @@ public class GenerationContext
         if (index.Shapes.TryGetValue(shapeId, out var shape) && shape is StructureShape structure)
         {
             return structure;
+        }
+
+        // smithy.api#Unit marks an operation with no input or output; treat it as an empty
+        // structure so downstream writers emit the same empty request/response classes C2J does.
+        if (shapeId == ShapeId.Unit)
+        {
+            return new StructureShape();
         }
 
         throw new GeneratorException($"Could not resolve {property} shape '{shapeId}' for operation '{operationId}'.");

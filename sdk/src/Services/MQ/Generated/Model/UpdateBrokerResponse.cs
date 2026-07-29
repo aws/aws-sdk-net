@@ -47,7 +47,9 @@ namespace Amazon.MQ.Model
         private WeeklyStartTime _maintenanceWindowStartTime;
         private DataReplicationMetadataOutput _pendingDataReplicationMetadata;
         private DataReplicationMode _pendingDataReplicationMode;
+        private List<string> _resourceShareArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private int? _storageSize;
 
         /// <summary>
         /// Gets and sets the property AuthenticationStrategy. 
@@ -293,6 +295,29 @@ namespace Amazon.MQ.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceShareArns. 
+        /// <para>
+        /// The pending broker's target list of resource shares
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> ResourceShareArns
+        {
+            get { return this._resourceShareArns; }
+            set { this._resourceShareArns = value; }
+        }
+
+        // Check to see if ResourceShareArns property is set
+        internal bool IsSetResourceShareArns()
+        {
+            return this._resourceShareArns != null && (this._resourceShareArns.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
         /// The list of security groups (1 minimum, 5 maximum) that authorizes connections to
@@ -314,6 +339,24 @@ namespace Amazon.MQ.Model
         internal bool IsSetSecurityGroups()
         {
             return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageSize. 
+        /// <para>
+        /// The broker's storage size in GB.
+        /// </para>
+        /// </summary>
+        public int? StorageSize
+        {
+            get { return this._storageSize; }
+            set { this._storageSize = value; }
+        }
+
+        // Check to see if StorageSize property is set
+        internal bool IsSetStorageSize()
+        {
+            return this._storageSize.HasValue; 
         }
 
     }

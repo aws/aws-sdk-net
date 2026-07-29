@@ -31,13 +31,13 @@ namespace Amazon.PrometheusService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateScraper operation.
-    /// The <c>CreateScraper</c> operation creates a scraper to collect metrics. A scraper
-    /// pulls metrics from Prometheus-compatible sources and sends them to your Amazon Managed
-    /// Service for Prometheus workspace. You can configure scrapers to collect metrics from
-    /// Amazon EKS clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based
-    /// service discovery. Scrapers are flexible, and can be configured to control what metrics
-    /// are collected, the frequency of collection, what transformations are applied to the
-    /// metrics, and more.
+    /// Creates a scraper to collect metrics from Prometheus-compatible sources. The scraper
+    /// sends the collected metrics to Amazon Managed Service for Prometheus workspaces or
+    /// CloudWatch datasets. You can configure scrapers to collect metrics from Amazon EKS
+    /// clusters, Amazon MSK clusters, or from VPC-based sources that support DNS-based service
+    /// discovery. Scrapers are flexible. You can configure a scraper to control which metrics
+    /// to collect, the frequency of collection, which transformations to apply to the metrics,
+    /// and more.
     /// 
     ///  
     /// <para>
@@ -119,7 +119,8 @@ namespace Amazon.PrometheusService.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The Amazon Managed Service for Prometheus workspace to send metrics to.
+        /// The destination where the scraper sends the collected metrics. Valid destinations
+        /// are Amazon Managed Service for Prometheus workspaces and CloudWatch datasets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

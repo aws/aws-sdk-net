@@ -37,6 +37,38 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListAcmeAccounts operation
+        ///</summary>
+        public IListAcmeAccountsPaginator ListAcmeAccounts(ListAcmeAccountsRequest request) 
+        {
+            return new ListAcmeAccountsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAcmeDomainValidations operation
+        ///</summary>
+        public IListAcmeDomainValidationsPaginator ListAcmeDomainValidations(ListAcmeDomainValidationsRequest request) 
+        {
+            return new ListAcmeDomainValidationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAcmeEndpoints operation
+        ///</summary>
+        public IListAcmeEndpointsPaginator ListAcmeEndpoints(ListAcmeEndpointsRequest request) 
+        {
+            return new ListAcmeEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAcmeExternalAccountBindings operation
+        ///</summary>
+        public IListAcmeExternalAccountBindingsPaginator ListAcmeExternalAccountBindings(ListAcmeExternalAccountBindingsRequest request) 
+        {
+            return new ListAcmeExternalAccountBindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCertificates operation
         ///</summary>
         public IListCertificatesPaginator ListCertificates(ListCertificatesRequest request) 

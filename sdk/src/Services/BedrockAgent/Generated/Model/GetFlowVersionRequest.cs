@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgent.Model
     {
         private string _flowIdentifier;
         private string _flowVersion;
+        private IncludedData _includedData;
 
         /// <summary>
         /// Gets and sets the property FlowIdentifier. 
@@ -75,6 +76,25 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetFlowVersion()
         {
             return this._flowVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludedData. 
+        /// <para>
+        /// Controls the scope of data returned. Set to <c>METADATA_ONLY</c> to return only resource
+        /// metadata. Set to <c>ALL_DATA</c> or omit this field to return the full response.
+        /// </para>
+        /// </summary>
+        public IncludedData IncludedData
+        {
+            get { return this._includedData; }
+            set { this._includedData = value; }
+        }
+
+        // Check to see if IncludedData property is set
+        internal bool IsSetIncludedData()
+        {
+            return this._includedData != null;
         }
 
     }

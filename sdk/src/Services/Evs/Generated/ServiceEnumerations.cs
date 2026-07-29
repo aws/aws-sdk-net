@@ -85,6 +85,10 @@ namespace Amazon.Evs
     {
 
         /// <summary>
+        /// Constant CONNECTOR_HEALTH for CheckType
+        /// </summary>
+        public static readonly CheckType CONNECTOR_HEALTH = new CheckType("CONNECTOR_HEALTH");
+        /// <summary>
         /// Constant HOST_COUNT for CheckType
         /// </summary>
         public static readonly CheckType HOST_COUNT = new CheckType("HOST_COUNT");
@@ -97,9 +101,29 @@ namespace Amazon.Evs
         /// </summary>
         public static readonly CheckType KEY_REUSE = new CheckType("KEY_REUSE");
         /// <summary>
+        /// Constant OPERATIONS_MANAGER_REACHABILITY for CheckType
+        /// </summary>
+        public static readonly CheckType OPERATIONS_MANAGER_REACHABILITY = new CheckType("OPERATIONS_MANAGER_REACHABILITY");
+        /// <summary>
         /// Constant REACHABILITY for CheckType
         /// </summary>
         public static readonly CheckType REACHABILITY = new CheckType("REACHABILITY");
+        /// <summary>
+        /// Constant SDDC_MANAGER_HOST_COUNT for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_HOST_COUNT = new CheckType("SDDC_MANAGER_HOST_COUNT");
+        /// <summary>
+        /// Constant SDDC_MANAGER_KEY_COVERAGE for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_KEY_COVERAGE = new CheckType("SDDC_MANAGER_KEY_COVERAGE");
+        /// <summary>
+        /// Constant SDDC_MANAGER_KEY_REUSE for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_KEY_REUSE = new CheckType("SDDC_MANAGER_KEY_REUSE");
+        /// <summary>
+        /// Constant SDDC_MANAGER_REACHABILITY for CheckType
+        /// </summary>
+        public static readonly CheckType SDDC_MANAGER_REACHABILITY = new CheckType("SDDC_MANAGER_REACHABILITY");
         /// <summary>
         /// Constant VCENTER_REACHABILITY for CheckType
         /// </summary>
@@ -224,6 +248,14 @@ namespace Amazon.Evs
     public class ConnectorType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant OPERATIONS_MANAGER for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType OPERATIONS_MANAGER = new ConnectorType("OPERATIONS_MANAGER");
+        /// <summary>
+        /// Constant SDDC_MANAGER for ConnectorType
+        /// </summary>
+        public static readonly ConnectorType SDDC_MANAGER = new ConnectorType("SDDC_MANAGER");
         /// <summary>
         /// Constant VCENTER for ConnectorType
         /// </summary>
@@ -622,6 +654,10 @@ namespace Amazon.Evs
     public class VcfVersion : ConstantClass
     {
 
+        /// <summary>
+        /// Constant SELF_DEPLOYED for VcfVersion
+        /// </summary>
+        public static readonly VcfVersion SELF_DEPLOYED = new VcfVersion("SELF_DEPLOYED");
         /// <summary>
         /// Constant VCF521 for VcfVersion
         /// </summary>

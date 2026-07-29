@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceMarketOptionsRequest Marshaller
     /// </summary>
-    public class InstanceMarketOptionsRequestMarshaller : IRequestMarshaller<InstanceMarketOptionsRequest, JsonMarshallerContext> 
+    public class InstanceMarketOptionsRequestMarshaller : IRequestMarshaller<InstanceMarketOptionsRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceMarketOptionsRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceMarketOptionsRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetMarketType())
-            {
-                context.Writer.WritePropertyName("MarketType");
-                context.Writer.WriteStringValue(requestObject.MarketType);
-            }
 
-            if(requestObject.IsSetSpotOptions())
+            if (requestObject.IsSetMarketType())
             {
-                context.Writer.WritePropertyName("SpotOptions");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("MarketType");
+                context.Writer.WriteTextString(requestObject.MarketType);
+            }
+            if (requestObject.IsSetSpotOptions())
+            {
+                context.Writer.WriteTextString("SpotOptions");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = SpotMarketOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpotOptions, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

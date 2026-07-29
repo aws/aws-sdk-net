@@ -51,6 +51,11 @@ namespace Amazon.CertificateManager.Model
     /// information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PCADeleteCA.html">
     /// Deleting Your Private CA</a> in the <i>Private Certificate Authority User Guide</i>.
     /// </para>
+    ///  
+    /// <para>
+    /// You cannot delete a certificate with a <c>CertificateKeyPairOrigin</c> of <c>ACME</c>.
+    /// ACM automatically deletes these certificates 1 year after they expire.
+    /// </para>
     ///  </note> 
     /// <para>
     /// Deleting a certificate issued by a private certificate authority (CA) has no effect

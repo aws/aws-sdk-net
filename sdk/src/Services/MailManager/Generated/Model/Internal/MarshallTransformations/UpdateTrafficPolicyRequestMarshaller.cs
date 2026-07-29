@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -59,70 +58,73 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdateTrafficPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MailManager");
-            string target = "MailManagerSvc.UpdateTrafficPolicy";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/MailManagerSvc/operation/UpdateTrafficPolicy";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-10-17";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetDefaultAction())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("DefaultAction");
-                context.Writer.WriteStringValue(publicRequest.DefaultAction);
-            }
-
-            if(publicRequest.IsSetMaxMessageSizeBytes())
-            {
-                context.Writer.WritePropertyName("MaxMessageSizeBytes");
-                context.Writer.WriteNumberValue(publicRequest.MaxMessageSizeBytes.Value);
-            }
-
-            if(publicRequest.IsSetPolicyStatements())
-            {
-                context.Writer.WritePropertyName("PolicyStatements");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestPolicyStatementsListValue in publicRequest.PolicyStatements)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetDefaultAction())
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = PolicyStatementMarshaller.Instance;
-                    marshaller.Marshall(publicRequestPolicyStatementsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteTextString("DefaultAction");
+                    context.Writer.WriteTextString(publicRequest.DefaultAction);
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetMaxMessageSizeBytes())
+                {
+                    context.Writer.WriteTextString("MaxMessageSizeBytes");
+                    context.Writer.WriteInt32(publicRequest.MaxMessageSizeBytes.Value);
+                }
+                if (publicRequest.IsSetPolicyStatements())
+                {
+                    context.Writer.WriteTextString("PolicyStatements");
+                    context.Writer.WriteStartArray(publicRequest.PolicyStatements.Count);
+                    foreach(var publicRequestPolicyStatementsListValue in publicRequest.PolicyStatements)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetTrafficPolicyId())
-            {
-                context.Writer.WritePropertyName("TrafficPolicyId");
-                context.Writer.WriteStringValue(publicRequest.TrafficPolicyId);
-            }
+                        var marshaller = PolicyStatementMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPolicyStatementsListValue, context);
 
-            if(publicRequest.IsSetTrafficPolicyName())
-            {
-                context.Writer.WritePropertyName("TrafficPolicyName");
-                context.Writer.WriteStringValue(publicRequest.TrafficPolicyName);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTrafficPolicyId())
+                {
+                    context.Writer.WriteTextString("TrafficPolicyId");
+                    context.Writer.WriteTextString(publicRequest.TrafficPolicyId);
+                }
+                if (publicRequest.IsSetTrafficPolicyName())
+                {
+                    context.Writer.WriteTextString("TrafficPolicyName");
+                    context.Writer.WriteTextString(publicRequest.TrafficPolicyName);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static UpdateTrafficPolicyRequestMarshaller _instance = new UpdateTrafficPolicyRequestMarshaller();        

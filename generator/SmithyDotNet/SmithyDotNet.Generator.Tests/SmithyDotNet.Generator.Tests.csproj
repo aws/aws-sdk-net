@@ -7,7 +7,7 @@
     <IsPackable>false</IsPackable>
     <IsTestProject>true</IsTestProject>
     <!-- Tests use inline Regex for assertions; GeneratedRegex not needed. -->
-    <NoWarn>SYSLIB1045</NoWarn>
+    <NoWarn>$(NoWarn);SYSLIB1045</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

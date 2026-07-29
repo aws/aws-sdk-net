@@ -229,6 +229,14 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeQev2IdcApplications operation
+        ///</summary>
+        public IDescribeQev2IdcApplicationsPaginator DescribeQev2IdcApplications(DescribeQev2IdcApplicationsRequest request) 
+        {
+            return new DescribeQev2IdcApplicationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeRedshiftIdcApplications operation
         ///</summary>
         public IDescribeRedshiftIdcApplicationsPaginator DescribeRedshiftIdcApplications(DescribeRedshiftIdcApplicationsRequest request) 

@@ -36,6 +36,7 @@ namespace Amazon.AppConfig.Model
     {
         private DateTime? _completedAt;
         private string _configurationName;
+        private string _configurationProfileId;
         private string _configurationVersion;
         private int? _deploymentDurationInMinutes;
         private int? _deploymentNumber;
@@ -45,6 +46,7 @@ namespace Amazon.AppConfig.Model
         private float? _percentageComplete;
         private DateTime? _startedAt;
         private DeploymentState _state;
+        private DeploymentType _type;
         private string _versionLabel;
 
         /// <summary>
@@ -82,6 +84,24 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetConfigurationName()
         {
             return this._configurationName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationProfileId. 
+        /// <para>
+        /// The ID of the configuration profile that was deployed.
+        /// </para>
+        /// </summary>
+        public string ConfigurationProfileId
+        {
+            get { return this._configurationProfileId; }
+            set { this._configurationProfileId = value; }
+        }
+
+        // Check to see if ConfigurationProfileId property is set
+        internal bool IsSetConfigurationProfileId()
+        {
+            return this._configurationProfileId != null;
         }
 
         /// <summary>
@@ -250,6 +270,24 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of deployment.
+        /// </para>
+        /// </summary>
+        public DeploymentType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
         /// <summary>

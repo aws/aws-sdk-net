@@ -45,8 +45,46 @@
     <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Billing.Model.GetBillingPreferencesRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.GetBillingPreferencesRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.GetBillingPreferencesResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Billing.Model.GetBillingViewRequest.Arn</property>
     <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.GetCreditAllocationHistoryRequest.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.GetCreditAllocationHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.GetCreditAllocationHistoryRequest.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.GetCreditAllocationHistoryResponse.NextToken</property>
+    <min>1</min>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.GetResourcePolicyRequest.ResourceArn</property>
@@ -64,7 +102,8 @@
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBillingViewsRequest.NextToken</property>
     <min>1</min>
-    <max>2047</max>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBillingViewsRequest.OwnerAccountId</property>
@@ -77,7 +116,8 @@
   <property-value-rule>
     <property>Amazon.Billing.Model.ListBillingViewsResponse.NextToken</property>
     <min>1</min>
-    <max>2047</max>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewRequest.Arn</property>
@@ -91,16 +131,24 @@
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewRequest.NextToken</property>
     <min>1</min>
-    <max>2047</max>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListSourceViewsForBillingViewResponse.NextToken</property>
     <min>1</min>
-    <max>2047</max>
+    <max>4095</max>
+    <pattern>[-a-zA-Z0-9+=/_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ListTagsForResourceRequest.ResourceArn</property>
     <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:[a-zA-Z0-9/:_\+=\.\@-]{0,70}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.RedeemCreditsRequest.PromoCode</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*[^&lt;&gt;"&amp;\%|'  ]*.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.TagResourceRequest.ResourceArn</property>
@@ -129,6 +177,45 @@
   <property-value-rule>
     <property>Amazon.Billing.Model.UpdateBillingViewResponse.Arn</property>
     <pattern>arn:aws[a-z-]*:(billing)::[0-9]{12}:billingview/[a-zA-Z0-9/:_\+=\.\-@]{0,75}[a-zA-Z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.Amount.CurrencyAmount</property>
+    <pattern>[0-9]+(.[0-9]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.Amount.CurrencyCode</property>
+    <pattern>[A-Z]{3}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingPeriod.Month</property>
+    <min>1</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingPeriod.Year</property>
+    <min>2005</min>
+    <max>2120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingPreferenceForKey.Key</property>
+    <min>1</min>
+    <max>2148</max>
+    <pattern>[a-zA-Z0-9-\/\*: ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingPreferenceSummary.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingPreferenceSummary.AccountName</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.BillingPreferenceSummary.Key</property>
+    <min>1</min>
+    <max>2148</max>
+    <pattern>[a-zA-Z0-9-\/\*: ]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.BillingViewElement.Arn</property>
@@ -193,6 +280,31 @@
     <min>1</min>
     <max>50</max>
     <pattern>(?! )[\p{L}\p{N}\p{Z}-_]*(?&lt;! )</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreditAllocationHistoryEntry.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreditAllocationHistoryEntry.BillingMonth</property>
+    <min>1</min>
+    <max>7</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreditAllocationHistoryEntry.CreditId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreditData.AccountId</property>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Billing.Model.CreditData.CreditId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Billing.Model.ResourceNotFoundException.ResourceId</property>

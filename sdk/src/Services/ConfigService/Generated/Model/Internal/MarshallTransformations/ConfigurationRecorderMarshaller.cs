@@ -52,6 +52,12 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Arn);
             }
 
+            if(requestObject.IsSetConnectorArn())
+            {
+                context.Writer.WritePropertyName("connectorArn");
+                context.Writer.WriteStringValue(requestObject.ConnectorArn);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -90,6 +96,17 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("roleARN");
                 context.Writer.WriteStringValue(requestObject.RoleARN);
+            }
+
+            if(requestObject.IsSetScopeConfiguration())
+            {
+                context.Writer.WritePropertyName("scopeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScopeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScopeConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServicePrincipal())

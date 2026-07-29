@@ -458,6 +458,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.SendProcurementPortalValidation(Amazon.Invoicing.Model.SendProcurementPortalValidationRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.SendProcurementPortalValidation(Amazon.Invoicing.Model.SendProcurementPortalValidationRequest)" />
+            <member name="T:Amazon.Invoicing.Model.SendProcurementPortalValidationRequest" />
+            <member name="T:Amazon.Invoicing.Model.SendProcurementPortalValidationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="SendProcurementPortalValidation call"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Invoicing.IAmazonInvoicing.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
             <member name="M:Amazon.Invoicing.AmazonInvoicingClient.TagResource(Amazon.Invoicing.Model.TagResourceRequest)" />
             <member name="T:Amazon.Invoicing.Model.TagResourceRequest" />
@@ -546,6 +565,25 @@
                 </para>
                 <code
                     title="UpdateProcurementPortalPreference for EinvoiceDeliveryPreferenceStatus and PurchaseOrderRetrievalPreferenceStatus"
+                    source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Invoicing.IAmazonInvoicing.VerifyProcurementPortalValidation(Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest)" />
+            <member name="M:Amazon.Invoicing.AmazonInvoicingClient.VerifyProcurementPortalValidation(Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest)" />
+            <member name="T:Amazon.Invoicing.Model.VerifyProcurementPortalValidationRequest" />
+            <member name="T:Amazon.Invoicing.Model.VerifyProcurementPortalValidationResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="VerifyProcurementPortalValidation call"
                     source=".\AWSSDKDocSamples\Invoicing\Invoicing.GeneratedSamples.cs"
                     region="example-1" />
             </example>

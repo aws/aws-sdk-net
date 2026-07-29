@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
@@ -59,54 +58,58 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         public IRequest Marshall(TestHypervisorConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BackupGateway");
-            string target = "BackupOnPremises_v20210101.TestHypervisorConfiguration";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/BackupOnPremises_v20210101/operation/TestHypervisorConfiguration";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetGatewayArn())
+                {
+                    context.Writer.WriteTextString("GatewayArn");
+                    context.Writer.WriteTextString(publicRequest.GatewayArn);
+                }
+                if (publicRequest.IsSetHost())
+                {
+                    context.Writer.WriteTextString("Host");
+                    context.Writer.WriteTextString(publicRequest.Host);
+                }
+                if (publicRequest.IsSetPassword())
+                {
+                    context.Writer.WriteTextString("Password");
+                    context.Writer.WriteTextString(publicRequest.Password);
+                }
+                if (publicRequest.IsSetUsername())
+                {
+                    context.Writer.WriteTextString("Username");
+                    context.Writer.WriteTextString(publicRequest.Username);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetGatewayArn())
-            {
-                context.Writer.WritePropertyName("GatewayArn");
-                context.Writer.WriteStringValue(publicRequest.GatewayArn);
             }
-
-            if(publicRequest.IsSetHost())
+            finally
             {
-                context.Writer.WritePropertyName("Host");
-                context.Writer.WriteStringValue(publicRequest.Host);
+                CborWriterPool.Return(writer);
             }
-
-            if(publicRequest.IsSetPassword())
-            {
-                context.Writer.WritePropertyName("Password");
-                context.Writer.WriteStringValue(publicRequest.Password);
-            }
-
-            if(publicRequest.IsSetUsername())
-            {
-                context.Writer.WritePropertyName("Username");
-                context.Writer.WriteStringValue(publicRequest.Username);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static TestHypervisorConfigurationRequestMarshaller _instance = new TestHypervisorConfigurationRequestMarshaller();        

@@ -107,5 +107,13 @@ namespace Amazon.Route53GlobalResolver.Model
         {
             return new ListManagedFirewallDomainListsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListSharedDNSViews operation
+        ///</summary>
+        public IListSharedDNSViewsPaginator ListSharedDNSViews(ListSharedDNSViewsRequest request) 
+        {
+            return new ListSharedDNSViewsPaginator(this.client, request);
+        }
     }
 }

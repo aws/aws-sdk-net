@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/https:/docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build
+        /// For more information about how override types are applied, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/hours-of-operation-overrides.html">Build
         /// your list of overrides</a> in the <i> Administrator Guide</i>.
         /// </para>
         /// <para />

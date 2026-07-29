@@ -647,6 +647,10 @@ namespace Amazon.ComputeOptimizer
     {
 
         /// <summary>
+        /// Constant VolumeIOPSExceeded for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeIOPSExceeded = new EBSMetricName("VolumeIOPSExceeded");
+        /// <summary>
         /// Constant VolumeReadBytesPerSecond for EBSMetricName
         /// </summary>
         public static readonly EBSMetricName VolumeReadBytesPerSecond = new EBSMetricName("VolumeReadBytesPerSecond");
@@ -654,6 +658,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant VolumeReadOpsPerSecond for EBSMetricName
         /// </summary>
         public static readonly EBSMetricName VolumeReadOpsPerSecond = new EBSMetricName("VolumeReadOpsPerSecond");
+        /// <summary>
+        /// Constant VolumeThroughputExceeded for EBSMetricName
+        /// </summary>
+        public static readonly EBSMetricName VolumeThroughputExceeded = new EBSMetricName("VolumeThroughputExceeded");
         /// <summary>
         /// Constant VolumeWriteBytesPerSecond for EBSMetricName
         /// </summary>
@@ -3023,6 +3031,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableVolumeField Tags = new ExportableVolumeField("Tags");
         /// <summary>
+        /// Constant UtilizationMetricsVolumeIOPSExceededMaximum for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField UtilizationMetricsVolumeIOPSExceededMaximum = new ExportableVolumeField("UtilizationMetricsVolumeIOPSExceededMaximum");
+        /// <summary>
         /// Constant UtilizationMetricsVolumeReadBytesPerSecondMaximum for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField UtilizationMetricsVolumeReadBytesPerSecondMaximum = new ExportableVolumeField("UtilizationMetricsVolumeReadBytesPerSecondMaximum");
@@ -3030,6 +3042,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant UtilizationMetricsVolumeReadOpsPerSecondMaximum for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField UtilizationMetricsVolumeReadOpsPerSecondMaximum = new ExportableVolumeField("UtilizationMetricsVolumeReadOpsPerSecondMaximum");
+        /// <summary>
+        /// Constant UtilizationMetricsVolumeThroughputExceededMaximum for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField UtilizationMetricsVolumeThroughputExceededMaximum = new ExportableVolumeField("UtilizationMetricsVolumeThroughputExceededMaximum");
         /// <summary>
         /// Constant UtilizationMetricsVolumeWriteBytesPerSecondMaximum for ExportableVolumeField
         /// </summary>

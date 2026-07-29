@@ -145,6 +145,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSnowflakeProperties())
+            {
+                context.Writer.WritePropertyName("snowflakeProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SnowflakePropertiesInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.SnowflakeProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSparkEmrProperties())
             {
                 context.Writer.WritePropertyName("sparkEmrProperties");

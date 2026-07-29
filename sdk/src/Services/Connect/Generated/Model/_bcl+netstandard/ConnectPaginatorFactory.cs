@@ -661,6 +661,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchRules operation
+        ///</summary>
+        public ISearchRulesPaginator SearchRules(SearchRulesRequest request) 
+        {
+            return new SearchRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchSecurityProfiles operation
         ///</summary>
         public ISearchSecurityProfilesPaginator SearchSecurityProfiles(SearchSecurityProfilesRequest request) 

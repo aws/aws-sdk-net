@@ -25,6 +25,126 @@ namespace Amazon.HealthLake
 {
 
     /// <summary>
+    /// Constants used for properties of type AgentInputMessageType.
+    /// </summary>
+    public class AgentInputMessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Confirmation_response for AgentInputMessageType
+        /// </summary>
+        public static readonly AgentInputMessageType Confirmation_response = new AgentInputMessageType("confirmation_response");
+        /// <summary>
+        /// Constant Normal for AgentInputMessageType
+        /// </summary>
+        public static readonly AgentInputMessageType Normal = new AgentInputMessageType("normal");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentInputMessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentInputMessageType FindValue(string value)
+        {
+            return FindValue<AgentInputMessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentInputMessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgentOutputMessageType.
+    /// </summary>
+    public class AgentOutputMessageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Choices for AgentOutputMessageType
+        /// </summary>
+        public static readonly AgentOutputMessageType Choices = new AgentOutputMessageType("choices");
+        /// <summary>
+        /// Constant Complete for AgentOutputMessageType
+        /// </summary>
+        public static readonly AgentOutputMessageType Complete = new AgentOutputMessageType("complete");
+        /// <summary>
+        /// Constant Confirmation for AgentOutputMessageType
+        /// </summary>
+        public static readonly AgentOutputMessageType Confirmation = new AgentOutputMessageType("confirmation");
+        /// <summary>
+        /// Constant Error for AgentOutputMessageType
+        /// </summary>
+        public static readonly AgentOutputMessageType Error = new AgentOutputMessageType("error");
+        /// <summary>
+        /// Constant INITIAL_GREETING for AgentOutputMessageType
+        /// </summary>
+        public static readonly AgentOutputMessageType INITIAL_GREETING = new AgentOutputMessageType("INITIAL_GREETING");
+        /// <summary>
+        /// Constant Normal for AgentOutputMessageType
+        /// </summary>
+        public static readonly AgentOutputMessageType Normal = new AgentOutputMessageType("normal");
+        /// <summary>
+        /// Constant Options for AgentOutputMessageType
+        /// </summary>
+        public static readonly AgentOutputMessageType Options = new AgentOutputMessageType("options");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentOutputMessageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentOutputMessageType FindValue(string value)
+        {
+            return FindValue<AgentOutputMessageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentOutputMessageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnalyticsStatus.
     /// </summary>
     public class AnalyticsStatus : ConstantClass
@@ -540,6 +660,168 @@ namespace Amazon.HealthLake
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PreloadDataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceFormat.
+    /// </summary>
+    public class SourceFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CCDA for SourceFormat
+        /// </summary>
+        public static readonly SourceFormat CCDA = new SourceFormat("CCDA");
+        /// <summary>
+        /// Constant CSV for SourceFormat
+        /// </summary>
+        public static readonly SourceFormat CSV = new SourceFormat("CSV");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceFormat FindValue(string value)
+        {
+            return FindValue<SourceFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TargetFormat.
+    /// </summary>
+    public class TargetFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FHIR_R4 for TargetFormat
+        /// </summary>
+        public static readonly TargetFormat FHIR_R4 = new TargetFormat("FHIR_R4");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TargetFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TargetFormat FindValue(string value)
+        {
+            return FindValue<TargetFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TargetFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TransformationJobStatus.
+    /// </summary>
+    public class TransformationJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for TransformationJobStatus
+        /// </summary>
+        public static readonly TransformationJobStatus COMPLETED = new TransformationJobStatus("COMPLETED");
+        /// <summary>
+        /// Constant COMPLETED_WITH_ERRORS for TransformationJobStatus
+        /// </summary>
+        public static readonly TransformationJobStatus COMPLETED_WITH_ERRORS = new TransformationJobStatus("COMPLETED_WITH_ERRORS");
+        /// <summary>
+        /// Constant FAILED for TransformationJobStatus
+        /// </summary>
+        public static readonly TransformationJobStatus FAILED = new TransformationJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for TransformationJobStatus
+        /// </summary>
+        public static readonly TransformationJobStatus IN_PROGRESS = new TransformationJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED for TransformationJobStatus
+        /// </summary>
+        public static readonly TransformationJobStatus QUEUED = new TransformationJobStatus("QUEUED");
+        /// <summary>
+        /// Constant SUBMITTED for TransformationJobStatus
+        /// </summary>
+        public static readonly TransformationJobStatus SUBMITTED = new TransformationJobStatus("SUBMITTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TransformationJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TransformationJobStatus FindValue(string value)
+        {
+            return FindValue<TransformationJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TransformationJobStatus(string value)
         {
             return FindValue(value);
         }

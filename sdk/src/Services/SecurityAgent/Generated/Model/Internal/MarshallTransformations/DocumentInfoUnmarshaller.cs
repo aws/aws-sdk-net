@@ -62,6 +62,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.ArtifactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("integratedDocument", targetDepth, ref reader))
+                {
+                    var unmarshaller = IntegratedDocumentUnmarshaller.Instance;
+                    unmarshalledObject.IntegratedDocument = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("s3Location", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

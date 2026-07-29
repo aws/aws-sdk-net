@@ -3445,6 +3445,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type FilterMode.
+    /// </summary>
+    public class FilterMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILTER_STRING for FilterMode
+        /// </summary>
+        public static readonly FilterMode FILTER_STRING = new FilterMode("FILTER_STRING");
+        /// <summary>
+        /// Constant QUERY_PARAMS for FilterMode
+        /// </summary>
+        public static readonly FilterMode QUERY_PARAMS = new FilterMode("QUERY_PARAMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterMode FindValue(string value)
+        {
+            return FindValue<FilterMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterOperation.
     /// </summary>
     public class FilterOperation : ConstantClass
@@ -5555,6 +5605,106 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ObservationConfiguration.
+    /// </summary>
+    public class ObservationConfiguration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ObservationConfiguration
+        /// </summary>
+        public static readonly ObservationConfiguration ALL = new ObservationConfiguration("ALL");
+        /// <summary>
+        /// Constant NONE for ObservationConfiguration
+        /// </summary>
+        public static readonly ObservationConfiguration NONE = new ObservationConfiguration("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObservationConfiguration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObservationConfiguration FindValue(string value)
+        {
+            return FindValue<ObservationConfiguration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObservationConfiguration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ObservationMode.
+    /// </summary>
+    public class ObservationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FIXED for ObservationMode
+        /// </summary>
+        public static readonly ObservationMode FIXED = new ObservationMode("FIXED");
+        /// <summary>
+        /// Constant SCHEDULED for ObservationMode
+        /// </summary>
+        public static readonly ObservationMode SCHEDULED = new ObservationMode("SCHEDULED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ObservationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ObservationMode FindValue(string value)
+        {
+            return FindValue<ObservationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ObservationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OverwriteChildResourcePermissionsWithDefaultEnum.
     /// </summary>
     public class OverwriteChildResourcePermissionsWithDefaultEnum : ConstantClass
@@ -6565,6 +6715,60 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ResultTypeEnum.
+    /// </summary>
+    public class ResultTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for ResultTypeEnum
+        /// </summary>
+        public static readonly ResultTypeEnum ALL = new ResultTypeEnum("ALL");
+        /// <summary>
+        /// Constant FAILED_ONLY for ResultTypeEnum
+        /// </summary>
+        public static readonly ResultTypeEnum FAILED_ONLY = new ResultTypeEnum("FAILED_ONLY");
+        /// <summary>
+        /// Constant PASSED_ONLY for ResultTypeEnum
+        /// </summary>
+        public static readonly ResultTypeEnum PASSED_ONLY = new ResultTypeEnum("PASSED_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResultTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResultTypeEnum FindValue(string value)
+        {
+            return FindValue<ResultTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResultTypeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3EncryptionMode.
     /// </summary>
     public class S3EncryptionMode : ConstantClass
@@ -6874,6 +7078,122 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SchemaVersionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchFilterOperator.
+    /// </summary>
+    public class SearchFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Equals for SearchFilterOperator
+        /// </summary>
+        public new static readonly SearchFilterOperator Equals = new SearchFilterOperator("equals");
+        /// <summary>
+        /// Constant GreaterThan for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator GreaterThan = new SearchFilterOperator("greaterThan");
+        /// <summary>
+        /// Constant GreaterThanOrEquals for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator GreaterThanOrEquals = new SearchFilterOperator("greaterThanOrEquals");
+        /// <summary>
+        /// Constant LessThan for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator LessThan = new SearchFilterOperator("lessThan");
+        /// <summary>
+        /// Constant LessThanOrEquals for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator LessThanOrEquals = new SearchFilterOperator("lessThanOrEquals");
+        /// <summary>
+        /// Constant NotExists for SearchFilterOperator
+        /// </summary>
+        public static readonly SearchFilterOperator NotExists = new SearchFilterOperator("notExists");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchFilterOperator FindValue(string value)
+        {
+            return FindValue<SearchFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchSortOrder.
+    /// </summary>
+    public class SearchSortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASCENDING for SearchSortOrder
+        /// </summary>
+        public static readonly SearchSortOrder ASCENDING = new SearchSortOrder("ASCENDING");
+        /// <summary>
+        /// Constant DESCENDING for SearchSortOrder
+        /// </summary>
+        public static readonly SearchSortOrder DESCENDING = new SearchSortOrder("DESCENDING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchSortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchSortOrder FindValue(string value)
+        {
+            return FindValue<SearchSortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchSortOrder(string value)
         {
             return FindValue(value);
         }

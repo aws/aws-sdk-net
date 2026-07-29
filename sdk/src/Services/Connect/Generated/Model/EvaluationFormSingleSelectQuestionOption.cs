@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
     {
         private bool? _automaticFail;
         private AutomaticFailConfiguration _automaticFailConfiguration;
+        private QuestionOptionPointsConfiguration _pointsConfiguration;
         private string _refId;
         private int? _score;
         private string _text;
@@ -75,6 +76,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetAutomaticFailConfiguration()
         {
             return this._automaticFailConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PointsConfiguration. 
+        /// <para>
+        /// The points configuration for point-based scoring.
+        /// </para>
+        /// </summary>
+        public QuestionOptionPointsConfiguration PointsConfiguration
+        {
+            get { return this._pointsConfiguration; }
+            set { this._pointsConfiguration = value; }
+        }
+
+        // Check to see if PointsConfiguration property is set
+        internal bool IsSetPointsConfiguration()
+        {
+            return this._pointsConfiguration != null;
         }
 
         /// <summary>

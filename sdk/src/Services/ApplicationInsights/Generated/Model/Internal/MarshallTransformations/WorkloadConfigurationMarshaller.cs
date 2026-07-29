@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// WorkloadConfiguration Marshaller
     /// </summary>
-    public class WorkloadConfigurationMarshaller : IRequestMarshaller<WorkloadConfiguration, JsonMarshallerContext> 
+    public class WorkloadConfigurationMarshaller : IRequestMarshaller<WorkloadConfiguration, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +45,26 @@ namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(WorkloadConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(WorkloadConfiguration requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetConfiguration())
-            {
-                context.Writer.WritePropertyName("Configuration");
-                context.Writer.WriteStringValue(requestObject.Configuration);
-            }
 
-            if(requestObject.IsSetTier())
+            if (requestObject.IsSetConfiguration())
             {
-                context.Writer.WritePropertyName("Tier");
-                context.Writer.WriteStringValue(requestObject.Tier);
+                context.Writer.WriteTextString("Configuration");
+                context.Writer.WriteTextString(requestObject.Configuration);
             }
-
-            if(requestObject.IsSetWorkloadName())
+            if (requestObject.IsSetTier())
             {
-                context.Writer.WritePropertyName("WorkloadName");
-                context.Writer.WriteStringValue(requestObject.WorkloadName);
+                context.Writer.WriteTextString("Tier");
+                context.Writer.WriteTextString(requestObject.Tier);
             }
-
+            if (requestObject.IsSetWorkloadName())
+            {
+                context.Writer.WriteTextString("WorkloadName");
+                context.Writer.WriteTextString(requestObject.WorkloadName);
+            }
         }
 
         /// <summary>

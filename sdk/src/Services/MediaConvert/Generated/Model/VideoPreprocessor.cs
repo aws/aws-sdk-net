@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private ColorCorrector _colorCorrector;
         private Deinterlacer _deinterlacer;
         private DolbyVision _dolbyVision;
+        private DurationControl _durationControl;
         private Hdr10Plus _hdr10Plus;
         private ImageInserter _imageInserter;
         private NoiseReducer _noiseReducer;
@@ -91,6 +92,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetDolbyVision()
         {
             return this._dolbyVision != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DurationControl. Enable integer-second duration normalization.
+        /// When enabled, the output duration is adjusted to land on an exact integer-second boundary.
+        /// The adjustment method (trim, compress, or pad) is chosen automatically based on how
+        /// far the input duration is from the nearest integer second.
+        /// </summary>
+        public DurationControl DurationControl
+        {
+            get { return this._durationControl; }
+            set { this._durationControl = value; }
+        }
+
+        // Check to see if DurationControl property is set
+        internal bool IsSetDurationControl()
+        {
+            return this._durationControl != null;
         }
 
         /// <summary>

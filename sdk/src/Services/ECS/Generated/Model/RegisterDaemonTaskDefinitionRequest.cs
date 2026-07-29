@@ -150,10 +150,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property IpcMode. 
         /// <para>
-        /// The IPC namespace mode for the daemon. When set to <c>shared</c>, the daemon shares
-        /// the IPC namespace with co-located tasks on the same container instance, allowing communication
-        /// through POSIX shared memory, semaphores, and message queues. When set to <c>none</c>,
-        /// the daemon gets its own isolated IPC namespace. The default is <c>none</c>.
+        /// The IPC namespace mode for the daemon. The valid values are <c>none</c> and <c>shared</c>.
+        /// The default is <c>none</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>none</c> is specified or no value is provided, the daemon runs with its own
+        /// IPC namespace, isolated from other tasks. If <c>shared</c> is specified, the daemon
+        /// joins the host IPC namespace, making it accessible to non-daemon tasks that use <c>ipcMode:
+        /// "host"</c> or other daemons that use <c>ipcMode: "shared"</c>.
         /// </para>
         /// </summary>
         public DaemonIpcMode IpcMode
@@ -190,10 +195,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PidMode. 
         /// <para>
-        /// The process namespace mode for the daemon. When set to <c>shared</c>, the daemon shares
-        /// the PID namespace with co-located tasks on the same container instance, giving the
-        /// daemon visibility into application processes. When set to <c>none</c>, the daemon
-        /// gets its own isolated PID namespace. The default is <c>none</c>.
+        /// The PID namespace mode for the daemon. The valid values are <c>none</c> and <c>shared</c>.
+        /// The default is <c>none</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>none</c> is specified or no value is provided, the daemon runs with its own
+        /// PID namespace, isolated from other tasks. If <c>shared</c> is specified, the daemon
+        /// joins the host PID namespace, making it accessible to non-daemon tasks that use <c>pidMode:
+        /// "host"</c> or other daemons that use <c>pidMode: "shared"</c>.
         /// </para>
         /// </summary>
         public DaemonPidMode PidMode

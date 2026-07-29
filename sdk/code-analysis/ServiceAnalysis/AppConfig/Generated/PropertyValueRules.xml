@@ -26,7 +26,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.Description</property>
@@ -56,7 +57,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileRequest.Type</property>
-    <pattern>^[a-zA-Z\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.ApplicationId</property>
@@ -100,7 +101,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateConfigurationProfileResponse.Type</property>
-    <pattern>^[a-zA-Z\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
@@ -158,7 +159,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateEnvironmentRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateEnvironmentRequest.Description</property>
@@ -185,6 +187,99 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateEnvironmentResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.AudienceDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.AudienceRule</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.ConfigurationProfileIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.EnvironmentIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.FlagKey</property>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.Hypothesis</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.LaunchCriteria</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionRequest.Name</property>
+    <pattern>^(?!AWS\.).{1,64}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.AudienceDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.AudienceRule</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.FlagKey</property>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.Hypothesis</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.Id</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.LaunchCriteria</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateExperimentDefinitionResponse.Name</property>
     <min>1</min>
     <max>64</max>
   </property-value-rule>
@@ -252,11 +347,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.ContentType</property>
@@ -306,15 +403,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteApplicationRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteConfigurationProfileRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteConfigurationProfileRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteDeploymentStrategyRequest.DeploymentStrategyId</property>
@@ -322,11 +422,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteEnvironmentRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteEnvironmentRequest.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeleteExperimentDefinitionRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeleteExperimentDefinitionRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteExtensionRequest.ExtensionIdentifier</property>
@@ -339,15 +451,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteHostedConfigurationVersionRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetApplicationRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetApplicationResponse.Description</property>
@@ -395,11 +510,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.ApplicationId</property>
@@ -443,15 +560,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetConfigurationProfileResponse.Type</property>
-    <pattern>^[a-zA-Z\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentRequest.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetDeploymentResponse.ApplicationId</property>
@@ -561,11 +680,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetEnvironmentRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetEnvironmentRequest.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetEnvironmentResponse.ApplicationId</property>
@@ -584,6 +705,98 @@
     <property>Amazon.AppConfig.Model.GetEnvironmentResponse.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.AudienceDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.AudienceRule</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.FlagKey</property>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.Hypothesis</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.Id</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.LaunchCriteria</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentDefinitionResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentRunRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentRunRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentRunRequest.Run</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentRunResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentRunResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentRunResponse.ExperimentDefinitionId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetExperimentRunResponse.ExposurePercentage</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetExtensionRequest.ExtensionIdentifier</property>
@@ -639,11 +852,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.ApplicationId</property>
@@ -692,7 +907,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesRequest.MaxResults</property>
@@ -706,7 +922,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesRequest.Type</property>
-    <pattern>^[a-zA-Z\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListConfigurationProfilesResponse.NextToken</property>
@@ -715,11 +931,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListDeploymentsRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListDeploymentsRequest.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListDeploymentsRequest.MaxResults</property>
@@ -753,7 +971,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListEnvironmentsRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListEnvironmentsRequest.MaxResults</property>
@@ -767,6 +986,90 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListEnvironmentsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentDefinitionsRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentDefinitionsRequest.ConfigurationProfileIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentDefinitionsRequest.EnvironmentIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentDefinitionsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentDefinitionsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunEventsRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunEventsRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunEventsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunEventsRequest.Run</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunEventsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunsRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunsRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListExperimentRunsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
   </property-value-rule>
@@ -818,11 +1121,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.MaxResults</property>
@@ -852,11 +1157,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.ConfigurationVersion</property>
@@ -874,7 +1181,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StartDeploymentRequest.KmsKeyIdentifier</property>
@@ -955,12 +1263,52 @@
     <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AppConfig.Model.StopDeploymentRequest.ApplicationId</property>
+    <property>Amazon.AppConfig.Model.StartExperimentRunRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartExperimentRunRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartExperimentRunRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartExperimentRunRequest.ExposurePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartExperimentRunResponse.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.AppConfig.Model.StopDeploymentRequest.EnvironmentId</property>
+    <property>Amazon.AppConfig.Model.StartExperimentRunResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartExperimentRunResponse.ExperimentDefinitionId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StartExperimentRunResponse.ExposurePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopDeploymentRequest.ApplicationId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopDeploymentRequest.EnvironmentId</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.StopDeploymentResponse.ApplicationId</property>
@@ -1036,6 +1384,38 @@
     <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopExperimentRunRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopExperimentRunRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopExperimentRunRequest.Run</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopExperimentRunResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopExperimentRunResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopExperimentRunResponse.ExperimentDefinitionId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.StopExperimentRunResponse.ExposurePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.TagResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
@@ -1049,7 +1429,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateApplicationRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateApplicationRequest.Description</property>
@@ -1077,11 +1458,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileRequest.Description</property>
@@ -1146,7 +1529,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateConfigurationProfileResponse.Type</property>
-    <pattern>^[a-zA-Z\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateDeploymentStrategyRequest.DeploymentDurationInMinutes</property>
@@ -1203,7 +1586,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentRequest.Description</property>
@@ -1212,7 +1596,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentRequest.EnvironmentId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateEnvironmentRequest.Name</property>
@@ -1236,6 +1621,128 @@
     <property>Amazon.AppConfig.Model.UpdateEnvironmentResponse.Name</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest.AudienceDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest.AudienceRule</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest.Hypothesis</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest.LaunchCriteria</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.AudienceDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.AudienceRule</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.FlagKey</property>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.Hypothesis</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.Id</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.KmsKeyIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.LaunchCriteria</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunRequest.ApplicationIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunRequest.ExperimentDefinitionIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunRequest.ExposurePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunRequest.Run</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.ExperimentDefinitionId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.UpdateExperimentRunResponse.ExposurePercentage</property>
+    <min>0</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.UpdateExtensionRequest.Description</property>
@@ -1296,11 +1803,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ValidateConfigurationRequest.ApplicationId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ValidateConfigurationRequest.ConfigurationProfileId</property>
-    <pattern>[a-z0-9]{4,7}</pattern>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ValidateConfigurationRequest.ConfigurationVersion</property>
@@ -1362,6 +1871,11 @@
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.AttributeValue.StringValue</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
@@ -1381,7 +1895,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ConfigurationProfileSummary.Type</property>
-    <pattern>^[a-zA-Z\.]+</pattern>
+    <pattern>^[a-zA-Z0-9\.\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeletionProtectionSettings.ProtectionPeriodInMinutes</property>
@@ -1397,6 +1911,10 @@
     <property>Amazon.AppConfig.Model.DeploymentSummary.ConfigurationName</property>
     <min>1</min>
     <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.DeploymentSummary.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeploymentSummary.ConfigurationVersion</property>
@@ -1428,6 +1946,121 @@
     <min>1</min>
     <max>64</max>
     <pattern>.*[^0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.AudienceDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.AudienceRule</property>
+    <min>1</min>
+    <max>16384</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.FlagKey</property>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.Hypothesis</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.Id</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.LaunchCriteria</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSnapshot.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.ApplicationId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.ConfigurationProfileId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.EnvironmentId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.FlagKey</property>
+    <pattern>^[a-z][a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.Hypothesis</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.Id</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentDefinitionSummary.Name</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunEvent.AssociatedDeployment</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(aws[a-zA-Z-]*)?:[a-z]+:((eusc-)?[a-z]{2}((-gov)|(-iso([a-z]?)))?-[a-z]+-\d{1})?:(\d{12})?:[a-zA-Z0-9-_/:.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunEvent.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunEvent.ExposurePercentage</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunResult.ExecutiveSummary</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunResult.ReasonsNotToLaunch</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunResult.ReasonsToLaunch</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ExperimentRunSummary.ExperimentDefinitionId</property>
+    <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ExtensionAssociationSummary.ExtensionArn</property>
@@ -1511,6 +2144,28 @@
     <property>Amazon.AppConfig.Model.Parameter.Description</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.Treatment.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.Treatment.Key</property>
+    <pattern>^[a-zA-Z0-9]{1,8}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.Treatment.Weight</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.TreatmentInput.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.TreatmentInput.Weight</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Validator.Content</property>

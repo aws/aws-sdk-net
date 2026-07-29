@@ -34,8 +34,27 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class MetadataConfiguration
     {
+        private AnnotationTableConfiguration _annotationTableConfiguration;
         private InventoryTableConfiguration _inventoryTableConfiguration;
         private JournalTableConfiguration _journalTableConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AnnotationTableConfiguration. 
+        /// <para>
+        /// Optional annotation table configuration to include with the metadata configuration.
+        /// </para>
+        /// </summary>
+        public AnnotationTableConfiguration AnnotationTableConfiguration
+        {
+            get { return this._annotationTableConfiguration; }
+            set { this._annotationTableConfiguration = value; }
+        }
+
+        // Check to see if AnnotationTableConfiguration property is set
+        internal bool IsSetAnnotationTableConfiguration()
+        {
+            return this._annotationTableConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InventoryTableConfiguration. 

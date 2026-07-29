@@ -66,5 +66,15 @@ namespace Amazon.GameLiftStreams.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListStreamSessionsByAccountPaginator ListStreamSessionsByAccount(ListStreamSessionsByAccountRequest request);
+
+        /// <summary>
+        /// Paginator for ListStreamUrls operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListStreamUrlsPaginator ListStreamUrls(ListStreamUrlsRequest request);
     }
 }

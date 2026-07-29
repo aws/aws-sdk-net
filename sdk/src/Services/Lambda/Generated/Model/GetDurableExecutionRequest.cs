@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
     public partial class GetDurableExecutionRequest : AmazonLambdaRequest
     {
         private string _durableExecutionArn;
+        private bool? _includeExecutionData;
 
         /// <summary>
         /// Gets and sets the property DurableExecutionArn. 
@@ -56,6 +57,26 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDurableExecutionArn()
         {
             return this._durableExecutionArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeExecutionData. 
+        /// <para>
+        /// Specifies whether to include execution data such as input payload, result, and error
+        /// information in the response. Set to <c>false</c> for a more compact response that
+        /// includes only execution metadata. The default value is set to <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? IncludeExecutionData
+        {
+            get { return this._includeExecutionData; }
+            set { this._includeExecutionData = value; }
+        }
+
+        // Check to see if IncludeExecutionData property is set
+        internal bool IsSetIncludeExecutionData()
+        {
+            return this._includeExecutionData.HasValue; 
         }
 
     }

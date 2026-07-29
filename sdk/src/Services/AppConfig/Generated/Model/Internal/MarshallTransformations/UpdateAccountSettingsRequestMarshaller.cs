@@ -84,6 +84,17 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetVendedMetrics())
+            {
+                context.Writer.WritePropertyName("VendedMetrics");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VendedMetricsSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VendedMetrics, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

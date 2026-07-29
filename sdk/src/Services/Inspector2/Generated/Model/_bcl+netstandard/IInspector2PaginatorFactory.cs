@@ -98,6 +98,26 @@ namespace Amazon.Inspector2.Model
         IListCisScansPaginator ListCisScans(ListCisScansRequest request);
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConnectorsPaginator ListConnectors(ListConnectorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListConnectorScanConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListConnectorScanConfigurationsPaginator ListConnectorScanConfigurations(ListConnectorScanConfigurationsRequest request);
+
+        /// <summary>
         /// Paginator for ListCoverage operation
         ///</summary>
         [AWSPaginator(

@@ -34,12 +34,33 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AIRecommendation
     {
+        private AIRecommendationAdapterDetails _adapterDetails;
         private string _aiBenchmarkJobArn;
         private AIRecommendationDeploymentConfiguration _deploymentConfiguration;
         private List<AIRecommendationPerformanceMetric> _expectedPerformance = AWSConfigs.InitializeCollections ? new List<AIRecommendationPerformanceMetric>() : null;
         private AIRecommendationModelDetails _modelDetails;
         private List<AIRecommendationOptimizationDetail> _optimizationDetails = AWSConfigs.InitializeCollections ? new List<AIRecommendationOptimizationDetail>() : null;
         private string _recommendationDescription;
+
+        /// <summary>
+        /// Gets and sets the property AdapterDetails. 
+        /// <para>
+        /// The LoRA adapter details for this recommendation. This field contains both the model
+        /// package ARNs and Amazon S3 URIs for each adapter, regardless of which form was originally
+        /// supplied. This field is absent when the job was created without LoRA adapters.
+        /// </para>
+        /// </summary>
+        public AIRecommendationAdapterDetails AdapterDetails
+        {
+            get { return this._adapterDetails; }
+            set { this._adapterDetails = value; }
+        }
+
+        // Check to see if AdapterDetails property is set
+        internal bool IsSetAdapterDetails()
+        {
+            return this._adapterDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AIBenchmarkJobArn. 

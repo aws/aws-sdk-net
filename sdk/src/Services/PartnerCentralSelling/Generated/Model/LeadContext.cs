@@ -37,6 +37,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class LeadContext
     {
         private LeadCustomer _customer;
+        private LeadInsights _insights;
         private List<LeadInteraction> _interactions = AWSConfigs.InitializeCollections ? new List<LeadInteraction>() : null;
         private string _qualificationStatus;
 
@@ -58,6 +59,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCustomer()
         {
             return this._customer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Insights. 
+        /// <para>
+        /// Insights that AI generates and associates with the lead. These insights provide automated
+        /// analysis such as lead readiness scoring to help partners assess the lead quality.
+        /// </para>
+        /// </summary>
+        public LeadInsights Insights
+        {
+            get { return this._insights; }
+            set { this._insights = value; }
+        }
+
+        // Check to see if Insights property is set
+        internal bool IsSetInsights()
+        {
+            return this._insights != null;
         }
 
         /// <summary>

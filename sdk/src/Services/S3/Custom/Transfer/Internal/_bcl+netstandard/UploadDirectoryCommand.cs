@@ -215,6 +215,9 @@ namespace Amazon.S3.Transfer.Internal
 
             var uploadRequest = ConstructRequest(basePath, filepath, prefix);
 
+            // Raise event to allow subscribers to modify request
+            _request.RaiseUploadDirectoryFileRequestEvent(uploadRequest);
+
             // Create failure callback
             Action<Exception> onFailure = (ex) =>
             {

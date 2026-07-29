@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchCreateWorkloadEstimateUsageEntry Marshaller
     /// </summary>
-    public class BatchCreateWorkloadEstimateUsageEntryMarshaller : IRequestMarshaller<BatchCreateWorkloadEstimateUsageEntry, JsonMarshallerContext> 
+    public class BatchCreateWorkloadEstimateUsageEntryMarshaller : IRequestMarshaller<BatchCreateWorkloadEstimateUsageEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,70 +45,56 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BatchCreateWorkloadEstimateUsageEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(BatchCreateWorkloadEstimateUsageEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAmount())
-            {
-                context.Writer.WritePropertyName("amount");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.Amount.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.Amount.Value);
-                }
-            }
 
-            if(requestObject.IsSetGroup())
+            if (requestObject.IsSetAmount())
             {
-                context.Writer.WritePropertyName("group");
-                context.Writer.WriteStringValue(requestObject.Group);
+                context.Writer.WriteTextString("amount");
+                context.Writer.WriteOptimizedNumber(requestObject.Amount.Value);
             }
-
-            if(requestObject.IsSetHistoricalUsage())
+            if (requestObject.IsSetGroup())
             {
-                context.Writer.WritePropertyName("historicalUsage");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("group");
+                context.Writer.WriteTextString(requestObject.Group);
+            }
+            if (requestObject.IsSetHistoricalUsage())
+            {
+                context.Writer.WriteTextString("historicalUsage");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = HistoricalUsageEntityMarshaller.Instance;
                 marshaller.Marshall(requestObject.HistoricalUsage, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetKey())
+            if (requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("key");
-                context.Writer.WriteStringValue(requestObject.Key);
+                context.Writer.WriteTextString("key");
+                context.Writer.WriteTextString(requestObject.Key);
             }
-
-            if(requestObject.IsSetOperation())
+            if (requestObject.IsSetOperation())
             {
-                context.Writer.WritePropertyName("operation");
-                context.Writer.WriteStringValue(requestObject.Operation);
+                context.Writer.WriteTextString("operation");
+                context.Writer.WriteTextString(requestObject.Operation);
             }
-
-            if(requestObject.IsSetServiceCode())
+            if (requestObject.IsSetServiceCode())
             {
-                context.Writer.WritePropertyName("serviceCode");
-                context.Writer.WriteStringValue(requestObject.ServiceCode);
+                context.Writer.WriteTextString("serviceCode");
+                context.Writer.WriteTextString(requestObject.ServiceCode);
             }
-
-            if(requestObject.IsSetUsageAccountId())
+            if (requestObject.IsSetUsageAccountId())
             {
-                context.Writer.WritePropertyName("usageAccountId");
-                context.Writer.WriteStringValue(requestObject.UsageAccountId);
+                context.Writer.WriteTextString("usageAccountId");
+                context.Writer.WriteTextString(requestObject.UsageAccountId);
             }
-
-            if(requestObject.IsSetUsageType())
+            if (requestObject.IsSetUsageType())
             {
-                context.Writer.WritePropertyName("usageType");
-                context.Writer.WriteStringValue(requestObject.UsageType);
+                context.Writer.WriteTextString("usageType");
+                context.Writer.WriteTextString(requestObject.UsageType);
             }
-
         }
 
         /// <summary>

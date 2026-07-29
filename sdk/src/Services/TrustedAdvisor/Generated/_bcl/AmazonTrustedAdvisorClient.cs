@@ -937,6 +937,73 @@ namespace Amazon.TrustedAdvisor
 
         #endregion
         
+        #region  ListRecommendationsForResource
+
+
+        /// <summary>
+        /// List all Trusted Advisor recommendations for a given AWS resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendationsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListRecommendationsForResource service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationsForResource">REST API Reference for ListRecommendationsForResource Operation</seealso>
+        public virtual ListRecommendationsForResourceResponse ListRecommendationsForResource(ListRecommendationsForResourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendationsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendationsForResourceResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecommendationsForResourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// List all Trusted Advisor recommendations for a given AWS resource ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecommendationsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecommendationsForResource service method, as returned by TrustedAdvisor.</returns>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.AccessDeniedException">
+        /// Exception that access has been denied due to insufficient access
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.InternalServerException">
+        /// Exception to notify that an unexpected internal error occurred during processing of
+        /// the request
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ThrottlingException">
+        /// Exception to notify that requests are being throttled
+        /// </exception>
+        /// <exception cref="Amazon.TrustedAdvisor.Model.ValidationException">
+        /// Exception that the request failed to satisfy service constraints
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/trustedadvisor-2022-09-15/ListRecommendationsForResource">REST API Reference for ListRecommendationsForResource Operation</seealso>
+        public virtual Task<ListRecommendationsForResourceResponse> ListRecommendationsForResourceAsync(ListRecommendationsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecommendationsForResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecommendationsForResourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRecommendationsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateOrganizationRecommendationLifecycle
 
 

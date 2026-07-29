@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class InferenceComponentContainerSpecificationSummary
     {
         private string _artifactUrl;
+        private ContainerMetricsConfig _containerMetricsConfig;
         private DeployedImage _deployedImage;
         private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -55,6 +56,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetArtifactUrl()
         {
             return this._artifactUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerMetricsConfig. 
+        /// <para>
+        /// The container metrics scraping configuration for this inference component, including
+        /// the metrics endpoint path and publishing frequency.
+        /// </para>
+        /// </summary>
+        public ContainerMetricsConfig ContainerMetricsConfig
+        {
+            get { return this._containerMetricsConfig; }
+            set { this._containerMetricsConfig = value; }
+        }
+
+        // Check to see if ContainerMetricsConfig property is set
+        internal bool IsSetContainerMetricsConfig()
+        {
+            return this._containerMetricsConfig != null;
         }
 
         /// <summary>

@@ -46,6 +46,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetDefaultSessionParameters())
+            {
+                context.Writer.WritePropertyName("DefaultSessionParameters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DefaultSessionParametersMulticastMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultSessionParameters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDlClass())
             {
                 context.Writer.WritePropertyName("DlClass");

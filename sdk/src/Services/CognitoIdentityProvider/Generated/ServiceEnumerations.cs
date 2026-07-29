@@ -481,6 +481,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly AuthFactorType SMS_OTP = new AuthFactorType("SMS_OTP");
         /// <summary>
+        /// Constant SOFTWARE_TOKEN for AuthFactorType
+        /// </summary>
+        public static readonly AuthFactorType SOFTWARE_TOKEN = new AuthFactorType("SOFTWARE_TOKEN");
+        /// <summary>
         /// Constant WEB_AUTHN for AuthFactorType
         /// </summary>
         public static readonly AuthFactorType WEB_AUTHN = new AuthFactorType("WEB_AUTHN");
@@ -1919,6 +1923,52 @@ namespace Amazon.CognitoIdentityProvider
 
 
     /// <summary>
+    /// Constants used for properties of type LimitClass.
+    /// </summary>
+    public class LimitClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant API_CATEGORY for LimitClass
+        /// </summary>
+        public static readonly LimitClass API_CATEGORY = new LimitClass("API_CATEGORY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LimitClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LimitClass FindValue(string value)
+        {
+            return FindValue<LimitClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LimitClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogLevel.
     /// </summary>
     public class LogLevel : ConstantClass
@@ -2066,6 +2116,64 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OAuthFlowType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PasswordHashingAlgorithmType.
+    /// </summary>
+    public class PasswordHashingAlgorithmType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ARGON2ID for PasswordHashingAlgorithmType
+        /// </summary>
+        public static readonly PasswordHashingAlgorithmType ARGON2ID = new PasswordHashingAlgorithmType("ARGON2ID");
+        /// <summary>
+        /// Constant BCRYPT for PasswordHashingAlgorithmType
+        /// </summary>
+        public static readonly PasswordHashingAlgorithmType BCRYPT = new PasswordHashingAlgorithmType("BCRYPT");
+        /// <summary>
+        /// Constant PBKDF2_SHA256 for PasswordHashingAlgorithmType
+        /// </summary>
+        public static readonly PasswordHashingAlgorithmType PBKDF2_SHA256 = new PasswordHashingAlgorithmType("PBKDF2_SHA256");
+        /// <summary>
+        /// Constant SCRYPT for PasswordHashingAlgorithmType
+        /// </summary>
+        public static readonly PasswordHashingAlgorithmType SCRYPT = new PasswordHashingAlgorithmType("SCRYPT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PasswordHashingAlgorithmType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PasswordHashingAlgorithmType FindValue(string value)
+        {
+            return FindValue<PasswordHashingAlgorithmType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PasswordHashingAlgorithmType(string value)
         {
             return FindValue(value);
         }
@@ -2440,6 +2548,60 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RiskLevelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SecurityPolicyType.
+    /// </summary>
+    public class SecurityPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TLS_V1 for SecurityPolicyType
+        /// </summary>
+        public static readonly SecurityPolicyType TLS_V1 = new SecurityPolicyType("TLS_V1");
+        /// <summary>
+        /// Constant TLS_V1_2_2021 for SecurityPolicyType
+        /// </summary>
+        public static readonly SecurityPolicyType TLS_V1_2_2021 = new SecurityPolicyType("TLS_V1_2_2021");
+        /// <summary>
+        /// Constant TLS_V1_3_2025 for SecurityPolicyType
+        /// </summary>
+        public static readonly SecurityPolicyType TLS_V1_3_2025 = new SecurityPolicyType("TLS_V1_3_2025");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SecurityPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SecurityPolicyType FindValue(string value)
+        {
+            return FindValue<SecurityPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SecurityPolicyType(string value)
         {
             return FindValue(value);
         }

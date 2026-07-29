@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// VmwareToAwsTagMapping Marshaller
     /// </summary>
-    public class VmwareToAwsTagMappingMarshaller : IRequestMarshaller<VmwareToAwsTagMapping, JsonMarshallerContext> 
+    public class VmwareToAwsTagMappingMarshaller : IRequestMarshaller<VmwareToAwsTagMapping, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,34 +45,31 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(VmwareToAwsTagMapping requestObject, JsonMarshallerContext context)
+        public void Marshall(VmwareToAwsTagMapping requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAwsTagKey())
-            {
-                context.Writer.WritePropertyName("AwsTagKey");
-                context.Writer.WriteStringValue(requestObject.AwsTagKey);
-            }
 
-            if(requestObject.IsSetAwsTagValue())
+            if (requestObject.IsSetAwsTagKey())
             {
-                context.Writer.WritePropertyName("AwsTagValue");
-                context.Writer.WriteStringValue(requestObject.AwsTagValue);
+                context.Writer.WriteTextString("AwsTagKey");
+                context.Writer.WriteTextString(requestObject.AwsTagKey);
             }
-
-            if(requestObject.IsSetVmwareCategory())
+            if (requestObject.IsSetAwsTagValue())
             {
-                context.Writer.WritePropertyName("VmwareCategory");
-                context.Writer.WriteStringValue(requestObject.VmwareCategory);
+                context.Writer.WriteTextString("AwsTagValue");
+                context.Writer.WriteTextString(requestObject.AwsTagValue);
             }
-
-            if(requestObject.IsSetVmwareTagName())
+            if (requestObject.IsSetVmwareCategory())
             {
-                context.Writer.WritePropertyName("VmwareTagName");
-                context.Writer.WriteStringValue(requestObject.VmwareTagName);
+                context.Writer.WriteTextString("VmwareCategory");
+                context.Writer.WriteTextString(requestObject.VmwareCategory);
             }
-
+            if (requestObject.IsSetVmwareTagName())
+            {
+                context.Writer.WriteTextString("VmwareTagName");
+                context.Writer.WriteTextString(requestObject.VmwareTagName);
+            }
         }
 
         /// <summary>

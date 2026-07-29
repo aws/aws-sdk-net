@@ -68,6 +68,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.PositionalConstraint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PreParseTextTransformations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PreParseTextTransformation, PreParseTextTransformationUnmarshaller>(PreParseTextTransformationUnmarshaller.Instance);
+                    unmarshalledObject.PreParseTextTransformations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SearchString", targetDepth, ref reader))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;

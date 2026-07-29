@@ -157,6 +157,40 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateContainerAssociationRequest.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateContainerAssociationRequest.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateContainerAssociationResponse.ContainerAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateContainerAssociationResponse.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateContainerAssociationResponse.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateContainerAssociationResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CreateFirewallRequest.Description</property>
     <max>512</max>
     <pattern>^.*$</pattern>
@@ -339,6 +373,30 @@
     <pattern>^vpc-[0-9a-f]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteContainerAssociationRequest.ContainerAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteContainerAssociationRequest.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteContainerAssociationResponse.ContainerAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteContainerAssociationResponse.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DeleteFirewallRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -501,6 +559,46 @@
     <min>1</min>
     <max>256</max>
     <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeContainerAssociationRequest.ContainerAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeContainerAssociationRequest.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeContainerAssociationResponse.ContainerAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeContainerAssociationResponse.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeContainerAssociationResponse.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeContainerAssociationResponse.ResolvedCidrCount</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeContainerAssociationResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DescribeFirewallRequest.FirewallArn</property>
@@ -982,6 +1080,23 @@
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContainerAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContainerAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListContainerAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListFirewallPoliciesRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1398,6 +1513,52 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.UpdateAvailabilityZoneChangeProtectionResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationRequest.ContainerAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationRequest.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationRequest.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationRequest.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationResponse.ContainerAssociationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationResponse.ContainerAssociationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationResponse.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateContainerAssociationResponse.UpdateToken</property>
     <min>1</min>
     <max>1024</max>
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
@@ -1924,6 +2085,36 @@
     <property>Amazon.NetworkFirewall.Model.CIDRSummary.UtilizedCIDRCount</property>
     <min>0</min>
     <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ContainerAssociationSummary.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ContainerAssociationSummary.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ContainerAttribute.Key</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ContainerAttribute.Value</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ContainerMonitoringConfiguration.ClusterArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.CreateProxyRule.Description</property>

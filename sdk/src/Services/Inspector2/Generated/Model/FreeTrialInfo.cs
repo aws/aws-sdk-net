@@ -34,10 +34,29 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class FreeTrialInfo
     {
+        private CloudProvider _cloudProvider;
         private DateTime? _end;
         private DateTime? _start;
         private FreeTrialStatus _status;
         private FreeTrialType _type;
+
+        /// <summary>
+        /// Gets and sets the property CloudProvider. 
+        /// <para>
+        /// The cloud provider associated with the free trial information.
+        /// </para>
+        /// </summary>
+        public CloudProvider CloudProvider
+        {
+            get { return this._cloudProvider; }
+            set { this._cloudProvider = value; }
+        }
+
+        // Check to see if CloudProvider property is set
+        internal bool IsSetCloudProvider()
+        {
+            return this._cloudProvider != null;
+        }
 
         /// <summary>
         /// Gets and sets the property End. 

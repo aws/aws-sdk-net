@@ -46,6 +46,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetFilterConfiguration())
+            {
+                context.Writer.WritePropertyName("FilterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPaginationConfiguration())
             {
                 context.Writer.WritePropertyName("PaginationConfiguration");

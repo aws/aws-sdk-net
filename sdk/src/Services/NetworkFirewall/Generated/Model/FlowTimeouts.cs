@@ -32,8 +32,8 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// Describes the amount of time that can pass without any traffic sent through the firewall
     /// before the firewall determines that the connection is idle and Network Firewall removes
-    /// the flow entry from its flow table. Existing connections and flows are not impacted
-    /// when you update this value. Only new connections after you update this value are impacted.
+    /// the flow entry from its flow table. When you update this value, existing connections
+    /// will be treated according to your stream exception policy configuration.
     /// </summary>
     public partial class FlowTimeouts
     {

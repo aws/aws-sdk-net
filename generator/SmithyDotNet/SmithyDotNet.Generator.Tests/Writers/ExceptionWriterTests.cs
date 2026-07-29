@@ -1,7 +1,6 @@
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
-using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
 

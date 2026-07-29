@@ -67,7 +67,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Requests. 
         /// <para>
-        /// A paginated list of metadata model exports.
+        /// A paginated list of metadata model export requests.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

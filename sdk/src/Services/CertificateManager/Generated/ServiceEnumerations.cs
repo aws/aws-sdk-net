@@ -25,6 +25,350 @@ namespace Amazon.CertificateManager
 {
 
     /// <summary>
+    /// Constants used for properties of type AcmeAccountStatus.
+    /// </summary>
+    public class AcmeAccountStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEACTIVATED for AcmeAccountStatus
+        /// </summary>
+        public static readonly AcmeAccountStatus DEACTIVATED = new AcmeAccountStatus("DEACTIVATED");
+        /// <summary>
+        /// Constant REVOKED for AcmeAccountStatus
+        /// </summary>
+        public static readonly AcmeAccountStatus REVOKED = new AcmeAccountStatus("REVOKED");
+        /// <summary>
+        /// Constant VALID for AcmeAccountStatus
+        /// </summary>
+        public static readonly AcmeAccountStatus VALID = new AcmeAccountStatus("VALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcmeAccountStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcmeAccountStatus FindValue(string value)
+        {
+            return FindValue<AcmeAccountStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcmeAccountStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AcmeAuthorizationBehavior.
+    /// </summary>
+    public class AcmeAuthorizationBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRE_APPROVED for AcmeAuthorizationBehavior
+        /// </summary>
+        public static readonly AcmeAuthorizationBehavior PRE_APPROVED = new AcmeAuthorizationBehavior("PRE_APPROVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcmeAuthorizationBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcmeAuthorizationBehavior FindValue(string value)
+        {
+            return FindValue<AcmeAuthorizationBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcmeAuthorizationBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AcmeContact.
+    /// </summary>
+    public class AcmeContact : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOT_REQUIRED for AcmeContact
+        /// </summary>
+        public static readonly AcmeContact NOT_REQUIRED = new AcmeContact("NOT_REQUIRED");
+        /// <summary>
+        /// Constant REQUIRED for AcmeContact
+        /// </summary>
+        public static readonly AcmeContact REQUIRED = new AcmeContact("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcmeContact(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcmeContact FindValue(string value)
+        {
+            return FindValue<AcmeContact>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcmeContact(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AcmeDomainValidationFailureReason.
+    /// </summary>
+    public class AcmeDomainValidationFailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCESS_DENIED for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason ACCESS_DENIED = new AcmeDomainValidationFailureReason("ACCESS_DENIED");
+        /// <summary>
+        /// Constant DOMAIN_MISMATCH for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason DOMAIN_MISMATCH = new AcmeDomainValidationFailureReason("DOMAIN_MISMATCH");
+        /// <summary>
+        /// Constant DOMAIN_NOT_ALLOWED for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason DOMAIN_NOT_ALLOWED = new AcmeDomainValidationFailureReason("DOMAIN_NOT_ALLOWED");
+        /// <summary>
+        /// Constant ENDPOINT_NOT_ACTIVE for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason ENDPOINT_NOT_ACTIVE = new AcmeDomainValidationFailureReason("ENDPOINT_NOT_ACTIVE");
+        /// <summary>
+        /// Constant HOSTED_ZONE_NOT_FOUND for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason HOSTED_ZONE_NOT_FOUND = new AcmeDomainValidationFailureReason("HOSTED_ZONE_NOT_FOUND");
+        /// <summary>
+        /// Constant INTERNAL_FAILURE for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason INTERNAL_FAILURE = new AcmeDomainValidationFailureReason("INTERNAL_FAILURE");
+        /// <summary>
+        /// Constant INVALID_CHANGE_BATCH for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason INVALID_CHANGE_BATCH = new AcmeDomainValidationFailureReason("INVALID_CHANGE_BATCH");
+        /// <summary>
+        /// Constant INVALID_PUBLIC_DOMAIN for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason INVALID_PUBLIC_DOMAIN = new AcmeDomainValidationFailureReason("INVALID_PUBLIC_DOMAIN");
+        /// <summary>
+        /// Constant TIMED_OUT for AcmeDomainValidationFailureReason
+        /// </summary>
+        public static readonly AcmeDomainValidationFailureReason TIMED_OUT = new AcmeDomainValidationFailureReason("TIMED_OUT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcmeDomainValidationFailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcmeDomainValidationFailureReason FindValue(string value)
+        {
+            return FindValue<AcmeDomainValidationFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcmeDomainValidationFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AcmeDomainValidationStatus.
+    /// </summary>
+    public class AcmeDomainValidationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for AcmeDomainValidationStatus
+        /// </summary>
+        public static readonly AcmeDomainValidationStatus DELETING = new AcmeDomainValidationStatus("DELETING");
+        /// <summary>
+        /// Constant INVALID for AcmeDomainValidationStatus
+        /// </summary>
+        public static readonly AcmeDomainValidationStatus INVALID = new AcmeDomainValidationStatus("INVALID");
+        /// <summary>
+        /// Constant VALID for AcmeDomainValidationStatus
+        /// </summary>
+        public static readonly AcmeDomainValidationStatus VALID = new AcmeDomainValidationStatus("VALID");
+        /// <summary>
+        /// Constant VALIDATING for AcmeDomainValidationStatus
+        /// </summary>
+        public static readonly AcmeDomainValidationStatus VALIDATING = new AcmeDomainValidationStatus("VALIDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcmeDomainValidationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcmeDomainValidationStatus FindValue(string value)
+        {
+            return FindValue<AcmeDomainValidationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcmeDomainValidationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AcmeEndpointStatus.
+    /// </summary>
+    public class AcmeEndpointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AcmeEndpointStatus
+        /// </summary>
+        public static readonly AcmeEndpointStatus ACTIVE = new AcmeEndpointStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for AcmeEndpointStatus
+        /// </summary>
+        public static readonly AcmeEndpointStatus CREATING = new AcmeEndpointStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for AcmeEndpointStatus
+        /// </summary>
+        public static readonly AcmeEndpointStatus DELETING = new AcmeEndpointStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for AcmeEndpointStatus
+        /// </summary>
+        public static readonly AcmeEndpointStatus FAILED = new AcmeEndpointStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AcmeEndpointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AcmeEndpointStatus FindValue(string value)
+        {
+            return FindValue<AcmeEndpointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AcmeEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CertificateExport.
     /// </summary>
     public class CertificateExport : ConstantClass
@@ -68,6 +412,60 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CertificateExport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CertificateKeyPairOrigin.
+    /// </summary>
+    public class CertificateKeyPairOrigin : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACME for CertificateKeyPairOrigin
+        /// </summary>
+        public static readonly CertificateKeyPairOrigin ACME = new CertificateKeyPairOrigin("ACME");
+        /// <summary>
+        /// Constant AWS_MANAGED for CertificateKeyPairOrigin
+        /// </summary>
+        public static readonly CertificateKeyPairOrigin AWS_MANAGED = new CertificateKeyPairOrigin("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_PROVIDED for CertificateKeyPairOrigin
+        /// </summary>
+        public static readonly CertificateKeyPairOrigin CUSTOMER_PROVIDED = new CertificateKeyPairOrigin("CUSTOMER_PROVIDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateKeyPairOrigin(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateKeyPairOrigin FindValue(string value)
+        {
+            return FindValue<CertificateKeyPairOrigin>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateKeyPairOrigin(string value)
         {
             return FindValue(value);
         }
@@ -338,6 +736,56 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ComparisonOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DomainScopeOption.
+    /// </summary>
+    public class DomainScopeOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for DomainScopeOption
+        /// </summary>
+        public static readonly DomainScopeOption DISABLED = new DomainScopeOption("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DomainScopeOption
+        /// </summary>
+        public static readonly DomainScopeOption ENABLED = new DomainScopeOption("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainScopeOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainScopeOption FindValue(string value)
+        {
+            return FindValue<DomainScopeOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainScopeOption(string value)
         {
             return FindValue(value);
         }
@@ -755,6 +1203,106 @@ namespace Amazon.CertificateManager
 
 
     /// <summary>
+    /// Constants used for properties of type PrevalidationType.
+    /// </summary>
+    public class PrevalidationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DNS_PREVALIDATION for PrevalidationType
+        /// </summary>
+        public static readonly PrevalidationType DNS_PREVALIDATION = new PrevalidationType("DNS_PREVALIDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrevalidationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrevalidationType FindValue(string value)
+        {
+            return FindValue<PrevalidationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrevalidationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PublicKeyAlgorithm.
+    /// </summary>
+    public class PublicKeyAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EC_prime256v1 for PublicKeyAlgorithm
+        /// </summary>
+        public static readonly PublicKeyAlgorithm EC_prime256v1 = new PublicKeyAlgorithm("EC_prime256v1");
+        /// <summary>
+        /// Constant EC_secp384r1 for PublicKeyAlgorithm
+        /// </summary>
+        public static readonly PublicKeyAlgorithm EC_secp384r1 = new PublicKeyAlgorithm("EC_secp384r1");
+        /// <summary>
+        /// Constant RSA_2048 for PublicKeyAlgorithm
+        /// </summary>
+        public static readonly PublicKeyAlgorithm RSA_2048 = new PublicKeyAlgorithm("RSA_2048");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PublicKeyAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PublicKeyAlgorithm FindValue(string value)
+        {
+            return FindValue<PublicKeyAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PublicKeyAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecordType.
     /// </summary>
     public class RecordType : ConstantClass
@@ -1001,9 +1549,21 @@ namespace Amazon.CertificateManager
     {
 
         /// <summary>
+        /// Constant ACME_ACCOUNT_ID for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy ACME_ACCOUNT_ID = new SearchCertificatesSortBy("ACME_ACCOUNT_ID");
+        /// <summary>
+        /// Constant ACME_ENDPOINT_ARN for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy ACME_ENDPOINT_ARN = new SearchCertificatesSortBy("ACME_ENDPOINT_ARN");
+        /// <summary>
         /// Constant CERTIFICATE_ARN for SearchCertificatesSortBy
         /// </summary>
         public static readonly SearchCertificatesSortBy CERTIFICATE_ARN = new SearchCertificatesSortBy("CERTIFICATE_ARN");
+        /// <summary>
+        /// Constant CERTIFICATE_KEY_PAIR_ORIGIN for SearchCertificatesSortBy
+        /// </summary>
+        public static readonly SearchCertificatesSortBy CERTIFICATE_KEY_PAIR_ORIGIN = new SearchCertificatesSortBy("CERTIFICATE_KEY_PAIR_ORIGIN");
         /// <summary>
         /// Constant COMMON_NAME for SearchCertificatesSortBy
         /// </summary>
@@ -1248,6 +1808,60 @@ namespace Amazon.CertificateManager
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TimeType.
+    /// </summary>
+    public class TimeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for TimeType
+        /// </summary>
+        public static readonly TimeType DAYS = new TimeType("DAYS");
+        /// <summary>
+        /// Constant HOURS for TimeType
+        /// </summary>
+        public static readonly TimeType HOURS = new TimeType("HOURS");
+        /// <summary>
+        /// Constant MINUTES for TimeType
+        /// </summary>
+        public static readonly TimeType MINUTES = new TimeType("MINUTES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TimeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TimeType FindValue(string value)
+        {
+            return FindValue<TimeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TimeType(string value)
         {
             return FindValue(value);
         }

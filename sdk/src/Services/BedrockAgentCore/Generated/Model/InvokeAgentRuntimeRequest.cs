@@ -75,6 +75,8 @@ namespace Amazon.BedrockAgentCore.Model
         private string _agentRuntimeArn;
         private string _baggage;
         private string _contentType;
+        private string _mcpMethod;
+        private string _mcpName;
         private string _mcpProtocolVersion;
         private string _mcpSessionId;
         private MemoryStream _payload;
@@ -184,6 +186,59 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetContentType()
         {
             return this._contentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property McpMethod. 
+        /// <para>
+        /// The MCP method being invoked. For example, <c>tools/call</c>, <c>resources/read</c>,
+        /// or <c>prompts/get</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string McpMethod
+        {
+            get { return this._mcpMethod; }
+            set { this._mcpMethod = value; }
+        }
+
+        // Check to see if McpMethod property is set
+        internal bool IsSetMcpMethod()
+        {
+            return this._mcpMethod != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property McpName. 
+        /// <para>
+        /// The name of the MCP resource, tool, or prompt being accessed. The value depends on
+        /// the method:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>tools/call</c> – The tool name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>resources/read</c> – The resource URI.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>prompts/get</c> – The prompt name.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string McpName
+        {
+            get { return this._mcpName; }
+            set { this._mcpName = value; }
+        }
+
+        // Check to see if McpName property is set
+        internal bool IsSetMcpName()
+        {
+            return this._mcpName != null;
         }
 
         /// <summary>

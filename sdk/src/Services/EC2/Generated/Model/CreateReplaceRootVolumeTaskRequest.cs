@@ -33,8 +33,9 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateReplaceRootVolumeTask operation.
     /// Replaces the EBS-backed root volume for a <c>running</c> instance with a new volume
     /// that is restored to the original root volume's launch state, that is restored to a
-    /// specific snapshot taken from the original root volume, or that is restored from an
-    /// AMI that has the same key characteristics as that of the instance.
+    /// specific snapshot taken from the original root volume, that is restored from an AMI
+    /// that has the same key characteristics as that of the instance, or that is replaced
+    /// by a specified volume.
     /// 
     ///  
     /// <para>
@@ -51,6 +52,7 @@ namespace Amazon.EC2.Model
         private string _instanceId;
         private string _snapshotId;
         private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
+        private string _volumeId;
         private long? _volumeInitializationRate;
 
         /// <summary>
@@ -124,8 +126,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want to restore the replacement volume from a specific snapshot, or if you
-        /// want to restore it to its launch state, omit this parameter.
+        /// If you want to restore the replacement volume from a specific snapshot, if you want
+        /// to restore it to its launch state, or if you want to replace the root volume with
+        /// a specified volume, omit this parameter.
         /// </para>
         /// </summary>
         public string ImageId
@@ -167,8 +170,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you want to restore the replacement root volume to the initial launch state, or
-        /// if you want to restore the replacement root volume from an AMI, omit this parameter.
+        /// If you want to restore the replacement root volume to the initial launch state, if
+        /// you want to restore the replacement root volume from an AMI, or if you want to replace
+        /// the root volume with a specified volume, omit this parameter.
         /// </para>
         /// </summary>
         public string SnapshotId
@@ -204,6 +208,32 @@ namespace Amazon.EC2.Model
         internal bool IsSetTagSpecifications()
         {
             return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeId. 
+        /// <para>
+        /// The ID of the volume to use as the replacement root volume. The specified volume must
+        /// be in the same Availability Zone as the instance, must be in the <c>available</c>
+        /// state, and must not be attached to an instance. If the original root volume is encrypted,
+        /// the specified volume must also be encrypted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to restore the replacement root volume from a specific snapshot, an AMI,
+        /// or to its launch state, omit this parameter.
+        /// </para>
+        /// </summary>
+        public string VolumeId
+        {
+            get { return this._volumeId; }
+            set { this._volumeId = value; }
+        }
+
+        // Check to see if VolumeId property is set
+        internal bool IsSetVolumeId()
+        {
+            return this._volumeId != null;
         }
 
         /// <summary>

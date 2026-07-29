@@ -348,6 +348,95 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  BatchCreateSecurityRequirements
+
+
+        /// <summary>
+        /// Batch creates security requirements in a customer managed pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateSecurityRequirements service method.</param>
+        /// 
+        /// <returns>The response from the BatchCreateSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchCreateSecurityRequirements">REST API Reference for BatchCreateSecurityRequirements Operation</seealso>
+        public virtual BatchCreateSecurityRequirementsResponse BatchCreateSecurityRequirements(BatchCreateSecurityRequirementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateSecurityRequirementsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchCreateSecurityRequirementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Batch creates security requirements in a customer managed pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchCreateSecurityRequirements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchCreateSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchCreateSecurityRequirements">REST API Reference for BatchCreateSecurityRequirements Operation</seealso>
+        public virtual Task<BatchCreateSecurityRequirementsResponse> BatchCreateSecurityRequirementsAsync(BatchCreateSecurityRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchCreateSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchCreateSecurityRequirementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchCreateSecurityRequirementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchDeleteCodeReviews
 
 
@@ -426,6 +515,128 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = BatchDeletePentestsResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchDeletePentestsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteSecurityRequirements
+
+
+        /// <summary>
+        /// Batch deletes security requirements from a customer managed pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteSecurityRequirements service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteSecurityRequirements">REST API Reference for BatchDeleteSecurityRequirements Operation</seealso>
+        public virtual BatchDeleteSecurityRequirementsResponse BatchDeleteSecurityRequirements(BatchDeleteSecurityRequirementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteSecurityRequirementsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteSecurityRequirementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Batch deletes security requirements from a customer managed pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteSecurityRequirements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteSecurityRequirements">REST API Reference for BatchDeleteSecurityRequirements Operation</seealso>
+        public virtual Task<BatchDeleteSecurityRequirementsResponse> BatchDeleteSecurityRequirementsAsync(BatchDeleteSecurityRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteSecurityRequirementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteSecurityRequirementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteThreatModels
+
+
+        /// <summary>
+        /// Deletes one or more threat models from an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteThreatModels service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteThreatModels service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteThreatModels">REST API Reference for BatchDeleteThreatModels Operation</seealso>
+        public virtual BatchDeleteThreatModelsResponse BatchDeleteThreatModels(BatchDeleteThreatModelsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteThreatModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteThreatModelsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteThreatModelsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes one or more threat models from an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteThreatModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteThreatModels service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchDeleteThreatModels">REST API Reference for BatchDeleteThreatModels Operation</seealso>
+        public virtual Task<BatchDeleteThreatModelsResponse> BatchDeleteThreatModelsAsync(BatchDeleteThreatModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDeleteThreatModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteThreatModelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchDeleteThreatModelsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -831,6 +1042,79 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  BatchGetSecurityRequirements
+
+
+        /// <summary>
+        /// Batch retrieves security requirements from a pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecurityRequirements service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetSecurityRequirements">REST API Reference for BatchGetSecurityRequirements Operation</seealso>
+        public virtual BatchGetSecurityRequirementsResponse BatchGetSecurityRequirements(BatchGetSecurityRequirementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSecurityRequirementsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetSecurityRequirementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Batch retrieves security requirements from a pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetSecurityRequirements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetSecurityRequirements">REST API Reference for BatchGetSecurityRequirements Operation</seealso>
+        public virtual Task<BatchGetSecurityRequirementsResponse> BatchGetSecurityRequirementsAsync(BatchGetSecurityRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetSecurityRequirementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetSecurityRequirementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetTargetDomains
 
 
@@ -868,6 +1152,251 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = BatchGetTargetDomainsResponseUnmarshaller.Instance;
             
             return InvokeAsync<BatchGetTargetDomainsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetThreatModelJobs
+
+
+        /// <summary>
+        /// Retrieves information about one or more threat model jobs in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreatModelJobs service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetThreatModelJobs service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModelJobs">REST API Reference for BatchGetThreatModelJobs Operation</seealso>
+        public virtual BatchGetThreatModelJobsResponse BatchGetThreatModelJobs(BatchGetThreatModelJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatModelJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatModelJobsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetThreatModelJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about one or more threat model jobs in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreatModelJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetThreatModelJobs service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModelJobs">REST API Reference for BatchGetThreatModelJobs Operation</seealso>
+        public virtual Task<BatchGetThreatModelJobsResponse> BatchGetThreatModelJobsAsync(BatchGetThreatModelJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatModelJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatModelJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetThreatModelJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetThreatModelJobTasks
+
+
+        /// <summary>
+        /// Retrieves information about one or more tasks within a threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreatModelJobTasks service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetThreatModelJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModelJobTasks">REST API Reference for BatchGetThreatModelJobTasks Operation</seealso>
+        public virtual BatchGetThreatModelJobTasksResponse BatchGetThreatModelJobTasks(BatchGetThreatModelJobTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatModelJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatModelJobTasksResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetThreatModelJobTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about one or more tasks within a threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreatModelJobTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetThreatModelJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModelJobTasks">REST API Reference for BatchGetThreatModelJobTasks Operation</seealso>
+        public virtual Task<BatchGetThreatModelJobTasksResponse> BatchGetThreatModelJobTasksAsync(BatchGetThreatModelJobTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatModelJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatModelJobTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetThreatModelJobTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetThreatModels
+
+
+        /// <summary>
+        /// Retrieves information about one or more threat models in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreatModels service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetThreatModels service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModels">REST API Reference for BatchGetThreatModels Operation</seealso>
+        public virtual BatchGetThreatModelsResponse BatchGetThreatModels(BatchGetThreatModelsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatModelsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetThreatModelsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about one or more threat models in an agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreatModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetThreatModels service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreatModels">REST API Reference for BatchGetThreatModels Operation</seealso>
+        public virtual Task<BatchGetThreatModelsResponse> BatchGetThreatModelsAsync(BatchGetThreatModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatModelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetThreatModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchGetThreats
+
+
+        /// <summary>
+        /// Retrieves information about one or more threats.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreats service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetThreats service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreats">REST API Reference for BatchGetThreats Operation</seealso>
+        public virtual BatchGetThreatsResponse BatchGetThreats(BatchGetThreatsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetThreatsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about one or more threats.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetThreats service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetThreats service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchGetThreats">REST API Reference for BatchGetThreats Operation</seealso>
+        public virtual Task<BatchGetThreatsResponse> BatchGetThreatsAsync(BatchGetThreatsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchGetThreatsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetThreatsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchGetThreatsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateSecurityRequirements
+
+
+        /// <summary>
+        /// Batch updates security requirements within a customer managed pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateSecurityRequirements service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchUpdateSecurityRequirements">REST API Reference for BatchUpdateSecurityRequirements Operation</seealso>
+        public virtual BatchUpdateSecurityRequirementsResponse BatchUpdateSecurityRequirements(BatchUpdateSecurityRequirementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateSecurityRequirementsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateSecurityRequirementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Batch updates security requirements within a customer managed pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateSecurityRequirements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/BatchUpdateSecurityRequirements">REST API Reference for BatchUpdateSecurityRequirements Operation</seealso>
+        public virtual Task<BatchUpdateSecurityRequirementsResponse> BatchUpdateSecurityRequirementsAsync(BatchUpdateSecurityRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchUpdateSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateSecurityRequirementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<BatchUpdateSecurityRequirementsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1168,6 +1697,170 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  CreatePrivateConnection
+
+
+        /// <summary>
+        /// Creates a private connection for reaching a self-hosted provider instance over private
+        /// networking using Amazon VPC Lattice.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrivateConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreatePrivateConnection service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreatePrivateConnection">REST API Reference for CreatePrivateConnection Operation</seealso>
+        public virtual CreatePrivateConnectionResponse CreatePrivateConnection(CreatePrivateConnectionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePrivateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrivateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePrivateConnectionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a private connection for reaching a self-hosted provider instance over private
+        /// networking using Amazon VPC Lattice.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrivateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePrivateConnection service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreatePrivateConnection">REST API Reference for CreatePrivateConnection Operation</seealso>
+        public virtual Task<CreatePrivateConnectionResponse> CreatePrivateConnectionAsync(CreatePrivateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreatePrivateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePrivateConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePrivateConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateSecurityRequirementPack
+
+
+        /// <summary>
+        /// Creates a customer managed security requirement pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityRequirementPack service method.</param>
+        /// 
+        /// <returns>The response from the CreateSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateSecurityRequirementPack">REST API Reference for CreateSecurityRequirementPack Operation</seealso>
+        public virtual CreateSecurityRequirementPackResponse CreateSecurityRequirementPack(CreateSecurityRequirementPackRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecurityRequirementPackResponseUnmarshaller.Instance;
+
+            return Invoke<CreateSecurityRequirementPackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a customer managed security requirement pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSecurityRequirementPack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateSecurityRequirementPack">REST API Reference for CreateSecurityRequirementPack Operation</seealso>
+        public virtual Task<CreateSecurityRequirementPackResponse> CreateSecurityRequirementPackAsync(CreateSecurityRequirementPackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSecurityRequirementPackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateSecurityRequirementPackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTargetDomain
 
 
@@ -1207,6 +1900,90 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = CreateTargetDomainResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateTargetDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateThreat
+
+
+        /// <summary>
+        /// Creates a new threat under a threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreat service method.</param>
+        /// 
+        /// <returns>The response from the CreateThreat service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateThreat">REST API Reference for CreateThreat Operation</seealso>
+        public virtual CreateThreatResponse CreateThreat(CreateThreatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateThreatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThreatResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new threat under a threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreat service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateThreat service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateThreat">REST API Reference for CreateThreat Operation</seealso>
+        public virtual Task<CreateThreatResponse> CreateThreatAsync(CreateThreatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateThreatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateThreatResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateThreatModel
+
+
+        /// <summary>
+        /// Creates a new threat model configuration in an agent space. A threat model defines
+        /// the parameters for automated threat analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreatModel service method.</param>
+        /// 
+        /// <returns>The response from the CreateThreatModel service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateThreatModel">REST API Reference for CreateThreatModel Operation</seealso>
+        public virtual CreateThreatModelResponse CreateThreatModel(CreateThreatModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateThreatModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatModelResponseUnmarshaller.Instance;
+
+            return Invoke<CreateThreatModelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new threat model configuration in an agent space. A threat model defines
+        /// the parameters for automated threat analysis.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateThreatModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateThreatModel service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/CreateThreatModel">REST API Reference for CreateThreatModel Operation</seealso>
+        public virtual Task<CreateThreatModelResponse> CreateThreatModelAsync(CreateThreatModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateThreatModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateThreatModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateThreatModelResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1492,6 +2269,170 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  DeletePrivateConnection
+
+
+        /// <summary>
+        /// Deletes a private connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrivateConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeletePrivateConnection service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeletePrivateConnection">REST API Reference for DeletePrivateConnection Operation</seealso>
+        public virtual DeletePrivateConnectionResponse DeletePrivateConnection(DeletePrivateConnectionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePrivateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePrivateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePrivateConnectionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a private connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrivateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePrivateConnection service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeletePrivateConnection">REST API Reference for DeletePrivateConnection Operation</seealso>
+        public virtual Task<DeletePrivateConnectionResponse> DeletePrivateConnectionAsync(DeletePrivateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeletePrivateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePrivateConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePrivateConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteSecurityRequirementPack
+
+
+        /// <summary>
+        /// Deletes a customer managed security requirement pack and all its associated security
+        /// requirements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityRequirementPack service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeleteSecurityRequirementPack">REST API Reference for DeleteSecurityRequirementPack Operation</seealso>
+        public virtual DeleteSecurityRequirementPackResponse DeleteSecurityRequirementPack(DeleteSecurityRequirementPackRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityRequirementPackResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityRequirementPackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a customer managed security requirement pack and all its associated security
+        /// requirements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityRequirementPack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DeleteSecurityRequirementPack">REST API Reference for DeleteSecurityRequirementPack Operation</seealso>
+        public virtual Task<DeleteSecurityRequirementPackResponse> DeleteSecurityRequirementPackAsync(DeleteSecurityRequirementPackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityRequirementPackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteSecurityRequirementPackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteTargetDomain
 
 
@@ -1531,6 +2472,79 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = DeleteTargetDomainResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteTargetDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePrivateConnection
+
+
+        /// <summary>
+        /// Retrieves the details of a private connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrivateConnection service method.</param>
+        /// 
+        /// <returns>The response from the DescribePrivateConnection service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DescribePrivateConnection">REST API Reference for DescribePrivateConnection Operation</seealso>
+        public virtual DescribePrivateConnectionResponse DescribePrivateConnection(DescribePrivateConnectionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribePrivateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePrivateConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePrivateConnectionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the details of a private connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrivateConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePrivateConnection service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/DescribePrivateConnection">REST API Reference for DescribePrivateConnection Operation</seealso>
+        public virtual Task<DescribePrivateConnectionResponse> DescribePrivateConnectionAsync(DescribePrivateConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribePrivateConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePrivateConnectionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePrivateConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1718,6 +2732,172 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = GetIntegrationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetIntegrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetSecurityRequirementPack
+
+
+        /// <summary>
+        /// Retrieves information about a security requirement pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityRequirementPack service method.</param>
+        /// 
+        /// <returns>The response from the GetSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/GetSecurityRequirementPack">REST API Reference for GetSecurityRequirementPack Operation</seealso>
+        public virtual GetSecurityRequirementPackResponse GetSecurityRequirementPack(GetSecurityRequirementPackRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityRequirementPackResponseUnmarshaller.Instance;
+
+            return Invoke<GetSecurityRequirementPackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a security requirement pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSecurityRequirementPack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/GetSecurityRequirementPack">REST API Reference for GetSecurityRequirementPack Operation</seealso>
+        public virtual Task<GetSecurityRequirementPackResponse> GetSecurityRequirementPackAsync(GetSecurityRequirementPackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSecurityRequirementPackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSecurityRequirementPackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ImportSecurityRequirements
+
+
+        /// <summary>
+        /// Imports security requirements from uploaded documents into a customer managed security
+        /// requirement pack. The import process asynchronously extracts and generates structured
+        /// security requirements from the provided source files.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSecurityRequirements service method.</param>
+        /// 
+        /// <returns>The response from the ImportSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ImportSecurityRequirements">REST API Reference for ImportSecurityRequirements Operation</seealso>
+        public virtual ImportSecurityRequirementsResponse ImportSecurityRequirements(ImportSecurityRequirementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportSecurityRequirementsResponseUnmarshaller.Instance;
+
+            return Invoke<ImportSecurityRequirementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Imports security requirements from uploaded documents into a customer managed security
+        /// requirement pack. The import process asynchronously extracts and generates structured
+        /// security requirements from the provided source files.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ImportSecurityRequirements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ImportSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota. Review your current usage and request a quota
+        /// increase if needed.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ImportSecurityRequirements">REST API Reference for ImportSecurityRequirements Operation</seealso>
+        public virtual Task<ImportSecurityRequirementsResponse> ImportSecurityRequirementsAsync(ImportSecurityRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ImportSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ImportSecurityRequirementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ImportSecurityRequirementsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2487,6 +3667,209 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  ListPrivateConnections
+
+
+        /// <summary>
+        /// Lists the private connections in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrivateConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListPrivateConnections service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListPrivateConnections">REST API Reference for ListPrivateConnections Operation</seealso>
+        public virtual ListPrivateConnectionsResponse ListPrivateConnections(ListPrivateConnectionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPrivateConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrivateConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPrivateConnectionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the private connections in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPrivateConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPrivateConnections service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListPrivateConnections">REST API Reference for ListPrivateConnections Operation</seealso>
+        public virtual Task<ListPrivateConnectionsResponse> ListPrivateConnectionsAsync(ListPrivateConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListPrivateConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPrivateConnectionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListPrivateConnectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSecurityRequirementPacks
+
+
+        /// <summary>
+        /// Lists all security requirement packs in the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityRequirementPacks service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityRequirementPacks service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListSecurityRequirementPacks">REST API Reference for ListSecurityRequirementPacks Operation</seealso>
+        public virtual ListSecurityRequirementPacksResponse ListSecurityRequirementPacks(ListSecurityRequirementPacksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityRequirementPacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityRequirementPacksResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityRequirementPacksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all security requirement packs in the caller's account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityRequirementPacks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSecurityRequirementPacks service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListSecurityRequirementPacks">REST API Reference for ListSecurityRequirementPacks Operation</seealso>
+        public virtual Task<ListSecurityRequirementPacksResponse> ListSecurityRequirementPacksAsync(ListSecurityRequirementPacksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityRequirementPacksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityRequirementPacksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSecurityRequirementPacksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSecurityRequirements
+
+
+        /// <summary>
+        /// Lists security requirements within a pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityRequirements service method.</param>
+        /// 
+        /// <returns>The response from the ListSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListSecurityRequirements">REST API Reference for ListSecurityRequirements Operation</seealso>
+        public virtual ListSecurityRequirementsResponse ListSecurityRequirements(ListSecurityRequirementsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityRequirementsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSecurityRequirementsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists security requirements within a pack.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSecurityRequirements service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSecurityRequirements service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListSecurityRequirements">REST API Reference for ListSecurityRequirements Operation</seealso>
+        public virtual Task<ListSecurityRequirementsResponse> ListSecurityRequirementsAsync(ListSecurityRequirementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSecurityRequirementsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSecurityRequirementsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSecurityRequirementsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -2565,6 +3948,170 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = ListTargetDomainsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListTargetDomainsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThreatModelJobs
+
+
+        /// <summary>
+        /// Returns a paginated list of threat model job summaries for the specified threat model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatModelJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListThreatModelJobs service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModelJobs">REST API Reference for ListThreatModelJobs Operation</seealso>
+        public virtual ListThreatModelJobsResponse ListThreatModelJobs(ListThreatModelJobsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatModelJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatModelJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThreatModelJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of threat model job summaries for the specified threat model.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatModelJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThreatModelJobs service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModelJobs">REST API Reference for ListThreatModelJobs Operation</seealso>
+        public virtual Task<ListThreatModelJobsResponse> ListThreatModelJobsAsync(ListThreatModelJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatModelJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatModelJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThreatModelJobsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThreatModelJobTasks
+
+
+        /// <summary>
+        /// Returns a paginated list of task summaries for the specified threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatModelJobTasks service method.</param>
+        /// 
+        /// <returns>The response from the ListThreatModelJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModelJobTasks">REST API Reference for ListThreatModelJobTasks Operation</seealso>
+        public virtual ListThreatModelJobTasksResponse ListThreatModelJobTasks(ListThreatModelJobTasksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatModelJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatModelJobTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListThreatModelJobTasksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of task summaries for the specified threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatModelJobTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThreatModelJobTasks service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModelJobTasks">REST API Reference for ListThreatModelJobTasks Operation</seealso>
+        public virtual Task<ListThreatModelJobTasksResponse> ListThreatModelJobTasksAsync(ListThreatModelJobTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatModelJobTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatModelJobTasksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThreatModelJobTasksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThreatModels
+
+
+        /// <summary>
+        /// Returns a paginated list of threat model summaries for the specified agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatModels service method.</param>
+        /// 
+        /// <returns>The response from the ListThreatModels service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModels">REST API Reference for ListThreatModels Operation</seealso>
+        public virtual ListThreatModelsResponse ListThreatModels(ListThreatModelsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatModelsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThreatModelsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of threat model summaries for the specified agent space.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreatModels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThreatModels service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreatModels">REST API Reference for ListThreatModels Operation</seealso>
+        public virtual Task<ListThreatModelsResponse> ListThreatModelsAsync(ListThreatModelsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatModelsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatModelsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThreatModelsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListThreats
+
+
+        /// <summary>
+        /// Returns a paginated list of threats for a threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreats service method.</param>
+        /// 
+        /// <returns>The response from the ListThreats service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreats">REST API Reference for ListThreats Operation</seealso>
+        public virtual ListThreatsResponse ListThreats(ListThreatsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatsResponseUnmarshaller.Instance;
+
+            return Invoke<ListThreatsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of threats for a threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListThreats service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListThreats service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/ListThreats">REST API Reference for ListThreats Operation</seealso>
+        public virtual Task<ListThreatsResponse> ListThreatsAsync(ListThreatsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListThreatsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListThreatsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListThreatsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2698,6 +4245,47 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  StartThreatModelJob
+
+
+        /// <summary>
+        /// Starts a new threat model job for a threat model configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartThreatModelJob service method.</param>
+        /// 
+        /// <returns>The response from the StartThreatModelJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartThreatModelJob">REST API Reference for StartThreatModelJob Operation</seealso>
+        public virtual StartThreatModelJobResponse StartThreatModelJob(StartThreatModelJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartThreatModelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartThreatModelJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartThreatModelJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a new threat model job for a threat model configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartThreatModelJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartThreatModelJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StartThreatModelJob">REST API Reference for StartThreatModelJob Operation</seealso>
+        public virtual Task<StartThreatModelJobResponse> StartThreatModelJobAsync(StartThreatModelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartThreatModelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartThreatModelJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartThreatModelJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopCodeReviewJob
 
 
@@ -2780,6 +4368,47 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = StopPentestJobResponseUnmarshaller.Instance;
             
             return InvokeAsync<StopPentestJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StopThreatModelJob
+
+
+        /// <summary>
+        /// Stops a running threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopThreatModelJob service method.</param>
+        /// 
+        /// <returns>The response from the StopThreatModelJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopThreatModelJob">REST API Reference for StopThreatModelJob Operation</seealso>
+        public virtual StopThreatModelJobResponse StopThreatModelJob(StopThreatModelJobRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopThreatModelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopThreatModelJobResponseUnmarshaller.Instance;
+
+            return Invoke<StopThreatModelJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops a running threat model job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopThreatModelJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopThreatModelJob service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/StopThreatModelJob">REST API Reference for StopThreatModelJob Operation</seealso>
+        public virtual Task<StopThreatModelJobResponse> StopThreatModelJobAsync(StopThreatModelJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StopThreatModelJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopThreatModelJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopThreatModelJobResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3156,6 +4785,172 @@ namespace Amazon.SecurityAgent
 
         #endregion
         
+        #region  UpdatePrivateConnectionCertificate
+
+
+        /// <summary>
+        /// Updates the certificate associated with a private connection. Certificates can be
+        /// added or replaced but not removed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrivateConnectionCertificate service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePrivateConnectionCertificate service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdatePrivateConnectionCertificate">REST API Reference for UpdatePrivateConnectionCertificate Operation</seealso>
+        public virtual UpdatePrivateConnectionCertificateResponse UpdatePrivateConnectionCertificate(UpdatePrivateConnectionCertificateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePrivateConnectionCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePrivateConnectionCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePrivateConnectionCertificateResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the certificate associated with a private connection. Certificates can be
+        /// added or replaced but not removed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrivateConnectionCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePrivateConnectionCertificate service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdatePrivateConnectionCertificate">REST API Reference for UpdatePrivateConnectionCertificate Operation</seealso>
+        public virtual Task<UpdatePrivateConnectionCertificateResponse> UpdatePrivateConnectionCertificateAsync(UpdatePrivateConnectionCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdatePrivateConnectionCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePrivateConnectionCertificateResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePrivateConnectionCertificateResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSecurityRequirementPack
+
+
+        /// <summary>
+        /// Updates a security requirement pack. For customer managed packs, both metadata and
+        /// status can be updated. For AWS managed packs, only status can be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityRequirementPack service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateSecurityRequirementPack">REST API Reference for UpdateSecurityRequirementPack Operation</seealso>
+        public virtual UpdateSecurityRequirementPackResponse UpdateSecurityRequirementPack(UpdateSecurityRequirementPackRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityRequirementPackResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSecurityRequirementPackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a security requirement pack. For customer managed packs, both metadata and
+        /// status can be updated. For AWS managed packs, only status can be updated.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSecurityRequirementPack service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSecurityRequirementPack service method, as returned by SecurityAgent.</returns>
+        /// <exception cref="Amazon.SecurityAgent.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.InternalServerException">
+        /// An unexpected error occurred during the processing of your request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ResourceNotFoundException">
+        /// The specified resource was not found. Verify that the resource identifier is correct
+        /// and that the resource exists in the specified agent space or account.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateSecurityRequirementPack">REST API Reference for UpdateSecurityRequirementPack Operation</seealso>
+        public virtual Task<UpdateSecurityRequirementPackResponse> UpdateSecurityRequirementPackAsync(UpdateSecurityRequirementPackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateSecurityRequirementPackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSecurityRequirementPackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSecurityRequirementPackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateTargetDomain
 
 
@@ -3193,6 +4988,88 @@ namespace Amazon.SecurityAgent
             options.ResponseUnmarshaller = UpdateTargetDomainResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateTargetDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThreat
+
+
+        /// <summary>
+        /// Updates a threat.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreat service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThreat service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateThreat">REST API Reference for UpdateThreat Operation</seealso>
+        public virtual UpdateThreatResponse UpdateThreat(UpdateThreatRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateThreatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThreatResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a threat.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreat service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThreat service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateThreat">REST API Reference for UpdateThreat Operation</seealso>
+        public virtual Task<UpdateThreatResponse> UpdateThreatAsync(UpdateThreatRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateThreatRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThreatResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateThreatModel
+
+
+        /// <summary>
+        /// Updates an existing threat model configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreatModel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateThreatModel service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateThreatModel">REST API Reference for UpdateThreatModel Operation</seealso>
+        public virtual UpdateThreatModelResponse UpdateThreatModel(UpdateThreatModelRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateThreatModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatModelResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateThreatModelResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an existing threat model configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateThreatModel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateThreatModel service method, as returned by SecurityAgent.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityagent-2025-09-06/UpdateThreatModel">REST API Reference for UpdateThreatModel Operation</seealso>
+        public virtual Task<UpdateThreatModelResponse> UpdateThreatModelAsync(UpdateThreatModelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateThreatModelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateThreatModelResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateThreatModelResponse>(request, options, cancellationToken);
         }
 
         #endregion

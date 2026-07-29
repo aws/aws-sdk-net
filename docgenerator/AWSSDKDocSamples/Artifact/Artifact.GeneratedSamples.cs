@@ -11,6 +11,44 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 {
     class ArtifactSamples : ISample
     {
+        public void ArtifactCreateComplianceInquiry()
+        {
+            #region example-1
+
+            var client = new AmazonArtifactClient();
+            var response = client.CreateComplianceInquiry(new CreateComplianceInquiryRequest 
+            {
+                Name = "My Compliance Inquiry",
+                ClientToken = "unique-client-token-1234",
+                InquiryContent = new InquiryContent { Query = "Is my workload compliant with SOC 2?" },
+                SupportMode = "AI_ONLY"
+            });
+
+            InquirySummary complianceInquirySummary = response.ComplianceInquirySummary;
+
+            #endregion
+        }
+
+        public void ArtifactExportComplianceInquiry()
+        {
+            #region example-1
+
+            var client = new AmazonArtifactClient();
+            var response = client.ExportComplianceInquiry(new ExportComplianceInquiryRequest 
+            {
+                ComplianceInquiryId = "compliance-inquiry-abcdef0123456789",
+                IncludeCitations = true,
+                QueryIdentifiers = new List<int> {
+                    1,
+                    2
+                }
+            });
+
+            string documentPresignedUrl = response.DocumentPresignedUrl;
+
+            #endregion
+        }
+
         public void ArtifactGetAccountSettings()
         {
             #region example-1
@@ -21,6 +59,21 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
             });
 
             AccountSettings accountSettings = response.AccountSettings;
+
+            #endregion
+        }
+
+        public void ArtifactGetComplianceInquiryMetadata()
+        {
+            #region example-1
+
+            var client = new AmazonArtifactClient();
+            var response = client.GetComplianceInquiryMetadata(new GetComplianceInquiryMetadataRequest 
+            {
+                ComplianceInquiryId = "compliance-inquiry-abcdef0123456789"
+            });
+
+            InquiryDetail complianceInquiryDetail = response.ComplianceInquiryDetail;
 
             #endregion
         }
@@ -68,6 +121,37 @@ namespace AWSSDKDocSamples.Amazon.Artifact.Generated
 
             string documentPresignedUrl = response.DocumentPresignedUrl;
             string termToken = response.TermToken;
+
+            #endregion
+        }
+
+        public void ArtifactListComplianceInquiries()
+        {
+            #region example-1
+
+            var client = new AmazonArtifactClient();
+            var response = client.ListComplianceInquiries(new ListComplianceInquiriesRequest 
+            {
+                MaxResults = 10
+            });
+
+            List<InquirySummary> complianceInquiries = response.ComplianceInquiries;
+
+            #endregion
+        }
+
+        public void ArtifactListComplianceInquiryQueries()
+        {
+            #region example-1
+
+            var client = new AmazonArtifactClient();
+            var response = client.ListComplianceInquiryQueries(new ListComplianceInquiryQueriesRequest 
+            {
+                ComplianceInquiryId = "compliance-inquiry-abcdef0123456789",
+                MaxResults = 10
+            });
+
+            List<QuerySummary> queries = response.Queries;
 
             #endregion
         }

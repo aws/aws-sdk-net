@@ -56,6 +56,12 @@ namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("EumsSms", targetDepth, ref reader))
+                {
+                    var unmarshaller = EumsSmsConfigurationTypeUnmarshaller.Instance;
+                    unmarshalledObject.EumsSms = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ExternalId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

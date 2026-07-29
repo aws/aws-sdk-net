@@ -52,6 +52,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ArtifactId);
             }
 
+            if(requestObject.IsSetIntegratedDocument())
+            {
+                context.Writer.WritePropertyName("integratedDocument");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IntegratedDocumentMarshaller.Instance;
+                marshaller.Marshall(requestObject.IntegratedDocument, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetS3Location())
             {
                 context.Writer.WritePropertyName("s3Location");

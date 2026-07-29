@@ -38,6 +38,10 @@ namespace Amazon.BCMDataExports
         /// Constant PARQUET for CompressionOption
         /// </summary>
         public static readonly CompressionOption PARQUET = new CompressionOption("PARQUET");
+        /// <summary>
+        /// Constant ZIP for CompressionOption
+        /// </summary>
+        public static readonly CompressionOption ZIP = new CompressionOption("ZIP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -154,6 +158,10 @@ namespace Amazon.BCMDataExports
         /// Constant BILL_OWNER_CHANGED for ExecutionStatusReason
         /// </summary>
         public static readonly ExecutionStatusReason BILL_OWNER_CHANGED = new ExecutionStatusReason("BILL_OWNER_CHANGED");
+        /// <summary>
+        /// Constant DEPRECATED for ExecutionStatusReason
+        /// </summary>
+        public static readonly ExecutionStatusReason DEPRECATED = new ExecutionStatusReason("DEPRECATED");
         /// <summary>
         /// Constant INSUFFICIENT_PERMISSION for ExecutionStatusReason
         /// </summary>

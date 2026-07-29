@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ThemeFooterLink Marshaller
     /// </summary>
-    public class ThemeFooterLinkMarshaller : IRequestMarshaller<ThemeFooterLink, JsonMarshallerContext> 
+    public class ThemeFooterLinkMarshaller : IRequestMarshaller<ThemeFooterLink, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ThemeFooterLink requestObject, JsonMarshallerContext context)
+        public void Marshall(ThemeFooterLink requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDisplayName())
-            {
-                context.Writer.WritePropertyName("DisplayName");
-                context.Writer.WriteStringValue(requestObject.DisplayName);
-            }
 
-            if(requestObject.IsSetFooterLinkURL())
+            if (requestObject.IsSetDisplayName())
             {
-                context.Writer.WritePropertyName("FooterLinkURL");
-                context.Writer.WriteStringValue(requestObject.FooterLinkURL);
+                context.Writer.WriteTextString("DisplayName");
+                context.Writer.WriteTextString(requestObject.DisplayName);
             }
-
+            if (requestObject.IsSetFooterLinkURL())
+            {
+                context.Writer.WriteTextString("FooterLinkURL");
+                context.Writer.WriteTextString(requestObject.FooterLinkURL);
+            }
         }
 
         /// <summary>

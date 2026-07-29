@@ -53,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         /// PySpark jobs support a minimum value of 4 and a maximum value of 128.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=400)]
+        [AWSProperty(Min=2, Max=1024)]
         public int? Number
         {
             get { return this._number; }

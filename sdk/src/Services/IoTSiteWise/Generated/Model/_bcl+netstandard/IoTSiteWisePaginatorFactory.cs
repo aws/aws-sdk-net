@@ -61,6 +61,14 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for DescribePipelineExecution operation
+        ///</summary>
+        public IDescribePipelineExecutionPaginator DescribePipelineExecution(DescribePipelineExecutionRequest request) 
+        {
+            return new DescribePipelineExecutionPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ExecuteQuery operation
         ///</summary>
         public IExecuteQueryPaginator ExecuteQuery(ExecuteQueryRequest request) 
@@ -93,6 +101,22 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for GetQueryResults operation
+        ///</summary>
+        public IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request) 
+        {
+            return new GetQueryResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for GetSearchResults operation
+        ///</summary>
+        public IGetSearchResultsPaginator GetSearchResults(GetSearchResultsRequest request) 
+        {
+            return new GetSearchResultsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAccessPolicies operation
         ///</summary>
         public IListAccessPoliciesPaginator ListAccessPolicies(ListAccessPoliciesRequest request) 
@@ -106,6 +130,14 @@ namespace Amazon.IoTSiteWise.Model
         public IListActionsPaginator ListActions(ListActionsRequest request) 
         {
             return new ListActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        public IListApplicationsPaginator ListApplications(ListApplicationsRequest request) 
+        {
+            return new ListApplicationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -213,11 +245,43 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasetDataSegmentRelationships operation
+        ///</summary>
+        public IListDatasetDataSegmentRelationshipsPaginator ListDatasetDataSegmentRelationships(ListDatasetDataSegmentRelationshipsRequest request) 
+        {
+            return new ListDatasetDataSegmentRelationshipsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetDataSegments operation
+        ///</summary>
+        public IListDatasetDataSegmentsPaginator ListDatasetDataSegments(ListDatasetDataSegmentsRequest request) 
+        {
+            return new ListDatasetDataSegmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDatasetExportJobs operation
+        ///</summary>
+        public IListDatasetExportJobsPaginator ListDatasetExportJobs(ListDatasetExportJobsRequest request) 
+        {
+            return new ListDatasetExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDatasets operation
         ///</summary>
         public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request) 
         {
             return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEnrichmentJobs operation
+        ///</summary>
+        public IListEnrichmentJobsPaginator ListEnrichmentJobs(ListEnrichmentJobsRequest request) 
+        {
+            return new ListEnrichmentJobsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -245,6 +309,22 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListPipelineExecutions operation
+        ///</summary>
+        public IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request) 
+        {
+            return new ListPipelineExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPipelines operation
+        ///</summary>
+        public IListPipelinesPaginator ListPipelines(ListPipelinesRequest request) 
+        {
+            return new ListPipelinesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPortals operation
         ///</summary>
         public IListPortalsPaginator ListPortals(ListPortalsRequest request) 
@@ -269,11 +349,43 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Paginator for ListQueries operation
+        ///</summary>
+        public IListQueriesPaginator ListQueries(ListQueriesRequest request) 
+        {
+            return new ListQueriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSearches operation
+        ///</summary>
+        public IListSearchesPaginator ListSearches(ListSearchesRequest request) 
+        {
+            return new ListSearchesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTasks operation
+        ///</summary>
+        public IListTasksPaginator ListTasks(ListTasksRequest request) 
+        {
+            return new ListTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTimeSeries operation
         ///</summary>
         public IListTimeSeriesPaginator ListTimeSeries(ListTimeSeriesRequest request) 
         {
             return new ListTimeSeriesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWorkspaces operation
+        ///</summary>
+        public IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request) 
+        {
+            return new ListWorkspacesPaginator(this.client, request);
         }
     }
 }

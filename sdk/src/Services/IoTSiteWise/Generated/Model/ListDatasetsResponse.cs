@@ -36,6 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private List<DatasetSummary> _datasetSummaries = AWSConfigs.InitializeCollections ? new List<DatasetSummary>() : null;
         private string _nextToken;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property DatasetSummaries. 
@@ -78,6 +79,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

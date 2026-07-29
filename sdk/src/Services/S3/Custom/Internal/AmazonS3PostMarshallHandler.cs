@@ -183,8 +183,22 @@ namespace Amazon.S3.Internal
             {
                 // Wrap the stream in a stream that has a length
                 var streamWithLength = GetStreamWithLength(putObjectRequest.InputStream, putObjectRequest.Headers.ContentLength);
-                if (streamWithLength.Length > 0 && !(putObjectRequest.DisablePayloadSigning ?? false))
-                    request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
+
+                // Non-seekable streams require trailing checksums since the header-based path requires seeking.
+                // When payload signing is enabled, chunk encoding is the mechanism that enables trailing headers.
+                // When payload signing is disabled, trailing headers are used regardless of chunk encoding (#4432).
+                if (!(putObjectRequest.DisablePayloadSigning ?? false))
+                {
+                    if (!streamWithLength.CanSeek)
+                    {
+                        request.UseChunkEncoding = true;
+                    }
+                    else if (streamWithLength.Length > 0)
+                    {
+                        request.UseChunkEncoding = putObjectRequest.UseChunkEncoding;
+                    }
+                }
+
                 var length = streamWithLength.Length - streamWithLength.Position;
                 if (!request.Headers.ContainsKey(HeaderKeys.ContentLengthHeader))
                     request.Headers.Add(HeaderKeys.ContentLengthHeader, length.ToString(CultureInfo.InvariantCulture));

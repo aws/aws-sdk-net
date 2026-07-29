@@ -1045,6 +1045,52 @@ namespace Amazon.SimpleSystemsManagement
         }
         #endregion
         
+        #region  CreateCloudConnector
+
+        internal virtual CreateCloudConnectorResponse CreateCloudConnector(CreateCloudConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCloudConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a cloud connector that establishes a connection between Systems Manager and
+        /// a third-party cloud environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota. Service quotas, also referred to as limits,
+        /// are the maximum number of service resources or operations for your Amazon Web Services
+        /// account.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateCloudConnector">REST API Reference for CreateCloudConnector Operation</seealso>
+        public virtual Task<CreateCloudConnectorResponse> CreateCloudConnectorAsync(CreateCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCloudConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCloudConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateDocument
 
         internal virtual CreateDocumentResponse CreateDocument(CreateDocumentRequest request)
@@ -1660,6 +1706,49 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = DeleteAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteCloudConnector
+
+        internal virtual DeleteCloudConnectorResponse DeleteCloudConnector(DeleteCloudConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCloudConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteCloudConnector">REST API Reference for DeleteCloudConnector Operation</seealso>
+        public virtual Task<DeleteCloudConnectorResponse> DeleteCloudConnectorAsync(DeleteCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCloudConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCloudConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4470,6 +4559,45 @@ namespace Amazon.SimpleSystemsManagement
         }
         #endregion
         
+        #region  GetCloudConnector
+
+        internal virtual GetCloudConnectorResponse GetCloudConnector(GetCloudConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<GetCloudConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns detailed information about a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetCloudConnector">REST API Reference for GetCloudConnector Operation</seealso>
+        public virtual Task<GetCloudConnectorResponse> GetCloudConnectorAsync(GetCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCloudConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCloudConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCommandInvocation
 
         internal virtual GetCommandInvocationResponse GetCommandInvocation(GetCommandInvocationRequest request)
@@ -5334,6 +5462,25 @@ namespace Amazon.SimpleSystemsManagement
         /// To get information about more than one parameter at a time, use the <a>GetParameters</a>
         /// operation.
         /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameter service method.</param>
@@ -5468,6 +5615,26 @@ namespace Amazon.SimpleSystemsManagement
         /// the beginning or end of a parameter name. If the specified name for a parameter contains
         /// spaces between characters, the request fails with a <c>ValidationException</c> error.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetParameters service method.</param>
         /// <param name="cancellationToken">
@@ -5942,6 +6109,43 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = ListAssociationVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAssociationVersionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCloudConnectors
+
+        internal virtual ListCloudConnectorsResponse ListCloudConnectors(ListCloudConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCloudConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCloudConnectorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of cloud connectors in the current Amazon Web Services account and
+        /// Amazon Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCloudConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCloudConnectors service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCloudConnectors">REST API Reference for ListCloudConnectors Operation</seealso>
+        public virtual Task<ListCloudConnectorsResponse> ListCloudConnectorsAsync(ListCloudConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCloudConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCloudConnectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCloudConnectorsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -7341,6 +7545,27 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Create or update a parameter in Parameter Store.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Parameter Store throughput defines the number of API transactions per second (TPS)
+        /// that Systems Manager can process. This applies to <c>GetParameter</c>, <c>GetParameters</c>,
+        /// and <c>PutParameter</c> API calls for your Amazon Web Services account and Amazon
+        /// Web Services Region. By default, Parameter Store is configured with a standard throughput
+        /// quota suitable for low- to moderate-volume workloads. Applications that retrieve configuration
+        /// data infrequently or operate at smaller scale can use this default setting without
+        /// additional cost.
+        /// </para>
+        ///  
+        /// <para>
+        /// For higher-volume workloads, you can enable higher throughput. This increases the
+        /// maximum number of supported transactions per second for your account and Region. Increased
+        /// throughput supports applications and workloads that need concurrent access to multiple
+        /// parameters. If you experience <c>ThrottlingException: Rate exceeded</c> errors, enable
+        /// higher throughput. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-throughput.html">Changing
+        /// Parameter Store throughput</a>.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutParameter service method.</param>
         /// <param name="cancellationToken">
@@ -8833,6 +9058,49 @@ namespace Amazon.SimpleSystemsManagement
         }
         #endregion
         
+        #region  UpdateCloudConnector
+
+        internal virtual UpdateCloudConnectorResponse UpdateCloudConnector(UpdateCloudConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCloudConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing cloud connector with new configuration details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ConflictException">
+        /// An error occurred because of a conflict with a concurrent request or the current state
+        /// of the resource. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateCloudConnector">REST API Reference for UpdateCloudConnector Operation</seealso>
+        public virtual Task<UpdateCloudConnectorResponse> UpdateCloudConnectorAsync(UpdateCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCloudConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCloudConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateDocument
 
         internal virtual UpdateDocumentResponse UpdateDocument(UpdateDocumentRequest request)
@@ -9601,6 +9869,45 @@ namespace Amazon.SimpleSystemsManagement
             options.ResponseUnmarshaller = UpdateServiceSettingResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServiceSettingResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ValidateCloudConnector
+
+        internal virtual ValidateCloudConnectorResponse ValidateCloudConnector(ValidateCloudConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidateCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateCloudConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<ValidateCloudConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Validates the configuration and connectivity of a cloud connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ValidateCloudConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ValidateCloudConnector service method, as returned by SimpleSystemsManagement.</returns>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleSystemsManagement.Model.ResourceNotFoundException">
+        /// The specified parameter to be shared could not be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ValidateCloudConnector">REST API Reference for ValidateCloudConnector Operation</seealso>
+        public virtual Task<ValidateCloudConnectorResponse> ValidateCloudConnectorAsync(ValidateCloudConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ValidateCloudConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ValidateCloudConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ValidateCloudConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         

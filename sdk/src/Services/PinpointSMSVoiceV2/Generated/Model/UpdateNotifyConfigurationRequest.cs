@@ -46,8 +46,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property DefaultTemplateId. 
         /// <para>
-        /// The template ID to set as the default, or the special value UNSET_DEFAULT_TEMPLATE
-        /// to clear the current default template.
+        /// The default template identifier to associate with the notify configuration. If specified,
+        /// this template is used when sending messages without an explicit template identifier.
+        /// Pass the special value <c>UNSET_DEFAULT_TEMPLATE</c> to clear the current default
+        /// template from the notify configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -154,8 +156,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property PoolId. 
         /// <para>
-        /// The pool ID or ARN to associate, or the special value UNSET_DEFAULT_POOL_FOR_NOTIFY
-        /// to clear the current default pool.
+        /// The pool identifier or Amazon Resource Name (ARN) to associate with the notify configuration.
+        /// Pass the special value <c>UNSET_DEFAULT_POOL_FOR_NOTIFY</c> to clear the current default
+        /// pool from the notify configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

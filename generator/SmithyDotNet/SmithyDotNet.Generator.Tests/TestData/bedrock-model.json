@@ -1,0 +1,59 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.bedrock#Service": {
+      "type": "service",
+      "version": "2023-04-20",
+      "operations": [
+        {
+          "target": "com.amazonaws.bedrock#GetFoundationModel"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Bedrock",
+          "endpointPrefix": "bedrock"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Amazon Bedrock",
+        "aws.auth#sigv4": {
+          "name": "bedrock"
+        },
+        "smithy.api#httpBearerAuth": {},
+        "smithy.api#auth": [
+          "aws.auth#sigv4",
+          "smithy.api#httpBearerAuth"
+        ]
+      }
+    },
+    "com.amazonaws.bedrock#GetFoundationModel": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.bedrock#GetFoundationModelRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.bedrock#GetFoundationModelResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/foundation-models/{modelIdentifier}",
+          "method": "GET"
+        }
+      }
+    },
+    "com.amazonaws.bedrock#GetFoundationModelRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.bedrock#GetFoundationModelResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}

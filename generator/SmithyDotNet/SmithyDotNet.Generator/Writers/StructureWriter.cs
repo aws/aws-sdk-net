@@ -15,7 +15,6 @@ namespace SmithyDotNet.Generator.Writers;
 /// </summary>
 public sealed class StructureWriter(GenerationContext context, string modelFileName)
 {
-
     /// <summary>
     /// Emits the complete formatted source file for one structure. The <paramref name="shapeId"/>
     /// supplies the class name (via <see cref="GenerationContext.ToDotNetName"/>) because a

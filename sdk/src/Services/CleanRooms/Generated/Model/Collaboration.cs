@@ -227,7 +227,7 @@ namespace Amazon.CleanRooms.Model
         /// A description of the collaboration provided by the collaboration owner.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Min=0, Max=255)]
         public string Description
         {
             get { return this._description; }

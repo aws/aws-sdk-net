@@ -49,6 +49,8 @@ namespace Amazon.DevOpsAgent.Model
         private MCPServerSigV4Configuration _mcpserversigv4;
         private MCPServerSplunkConfiguration _mcpserversplunk;
         private PagerDutyConfiguration _pagerduty;
+        private RemoteAgentConfiguration _remoteagent;
+        private RemoteAgentSigV4Configuration _remoteagentsigv4;
         private ServiceNowConfiguration _servicenow;
         private SlackConfiguration _slack;
         private SourceAwsConfiguration _sourceAws;
@@ -303,6 +305,42 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetPagerduty()
         {
             return this._pagerduty != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Remoteagent. 
+        /// <para>
+        /// Remote A2A agent integration configuration (token-based auth).
+        /// </para>
+        /// </summary>
+        public RemoteAgentConfiguration Remoteagent
+        {
+            get { return this._remoteagent; }
+            set { this._remoteagent = value; }
+        }
+
+        // Check to see if Remoteagent property is set
+        internal bool IsSetRemoteagent()
+        {
+            return this._remoteagent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Remoteagentsigv4. 
+        /// <para>
+        /// Remote A2A agent integration configuration (SigV4 auth).
+        /// </para>
+        /// </summary>
+        public RemoteAgentSigV4Configuration Remoteagentsigv4
+        {
+            get { return this._remoteagentsigv4; }
+            set { this._remoteagentsigv4 = value; }
+        }
+
+        // Check to see if Remoteagentsigv4 property is set
+        internal bool IsSetRemoteagentsigv4()
+        {
+            return this._remoteagentsigv4 != null;
         }
 
         /// <summary>

@@ -1,10 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../../sdk'))" />
     <!--
         This project is a helper to generate the ZIP files described in https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-obtain-assemblies.html
         It references the projects that include external dependencies so that they're also included in the final artifact.
     -->
     <PropertyGroup>
-        <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+        <TargetFrameworks>$(SdkNetFrameworkTargets);$(SdkNetTargets)</TargetFrameworks>
         <OutputType>Library</OutputType>
         <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
         <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
@@ -18,12 +19,13 @@
         <SystemTextJsonVersion>8.0.6</SystemTextJsonVersion>
     </PropertyGroup>
 
-    <Target Name="VerifyKnownExtensions" BeforeTargets="Build" Condition="'$(BuildType)' == 'RELEASE' and '$(TargetFramework)' == 'net8.0'">
+    <Target Name="VerifyKnownExtensions" BeforeTargets="Publish" Condition="'$(BuildType)' != 'PREVIEW' and '$(TargetFramework)' == 'net8.0'">
         <!--
             Ensures every extension folder that contains a .nuspec file is referenced somewhere in this project.
             XmlPeek reads all ExtensionProjectReference attributes directly from the XML, bypassing condition evaluation and ignoring XML comments.
 
-            Note: Checking for TargetFramework is arbitrary here so that the target only runs once.
+            Hooked to Publish because the pipeline publishes with "no-build".
+            The net8.0 check is arbitrary so that the target only runs once.
         -->
         <XmlPeek XmlInputPath="$(MSBuildProjectFullPath)" Query="//ExtensionProjectReference/@Include">
             <Output TaskParameter="Result" ItemName="_ExtRefInclude" />
@@ -214,6 +216,12 @@
     <ItemGroup Condition="'$(TargetFramework)' != 'net472' and '$(BuildType)' != 'PREVIEW'">
         <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.NETCore.Setup\AWSSDK.Extensions.NETCore.Setup.csproj">
             <SubFolder>NETCoreSetup</SubFolder>
+        </ExtensionProjectReference>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(BuildType)' != 'PREVIEW'">
+        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.Numerics\AWSSDK.Extensions.Numerics.csproj">
+            <SubFolder>Numerics</SubFolder>
         </ExtensionProjectReference>
     </ItemGroup>
 

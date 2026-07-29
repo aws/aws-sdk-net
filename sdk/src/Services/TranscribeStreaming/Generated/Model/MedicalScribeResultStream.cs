@@ -52,7 +52,7 @@ namespace Amazon.TranscribeStreaming.Model
             {"TranscriptEvent", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new MedicalScribeTranscriptEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -66,35 +66,35 @@ namespace Amazon.TranscribeStreaming.Model
                     {"BadRequestException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new BadRequestExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ConflictException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ConflictExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"InternalFailureException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalFailureExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"LimitExceededException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new LimitExceededExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ServiceUnavailableException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new TranscribeStreamingEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ServiceUnavailableExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

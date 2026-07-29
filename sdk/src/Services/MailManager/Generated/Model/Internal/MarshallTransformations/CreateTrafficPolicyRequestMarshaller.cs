@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -59,91 +58,93 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateTrafficPolicyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MailManager");
-            string target = "MailManagerSvc.CreateTrafficPolicy";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/MailManagerSvc/operation/CreateTrafficPolicy";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-10-17";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
+                }
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetDefaultAction())
+                {
+                    context.Writer.WriteTextString("DefaultAction");
+                    context.Writer.WriteTextString(publicRequest.DefaultAction);
+                }
+                if (publicRequest.IsSetMaxMessageSizeBytes())
+                {
+                    context.Writer.WriteTextString("MaxMessageSizeBytes");
+                    context.Writer.WriteInt32(publicRequest.MaxMessageSizeBytes.Value);
+                }
+                if (publicRequest.IsSetPolicyStatements())
+                {
+                    context.Writer.WriteTextString("PolicyStatements");
+                    context.Writer.WriteStartArray(publicRequest.PolicyStatements.Count);
+                    foreach(var publicRequestPolicyStatementsListValue in publicRequest.PolicyStatements)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = PolicyStatementMarshaller.Instance;
+                        marshaller.Marshall(publicRequestPolicyStatementsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetTrafficPolicyName())
+                {
+                    context.Writer.WriteTextString("TrafficPolicyName");
+                    context.Writer.WriteTextString(publicRequest.TrafficPolicyName);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetClientToken())
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
-
-            else if(!(publicRequest.IsSetClientToken()))
+            finally
             {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+                CborWriterPool.Return(writer);
             }
-            if(publicRequest.IsSetDefaultAction())
-            {
-                context.Writer.WritePropertyName("DefaultAction");
-                context.Writer.WriteStringValue(publicRequest.DefaultAction);
-            }
-
-            if(publicRequest.IsSetMaxMessageSizeBytes())
-            {
-                context.Writer.WritePropertyName("MaxMessageSizeBytes");
-                context.Writer.WriteNumberValue(publicRequest.MaxMessageSizeBytes.Value);
-            }
-
-            if(publicRequest.IsSetPolicyStatements())
-            {
-                context.Writer.WritePropertyName("PolicyStatements");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestPolicyStatementsListValue in publicRequest.PolicyStatements)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = PolicyStatementMarshaller.Instance;
-                    marshaller.Marshall(publicRequestPolicyStatementsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
-            }
-
-            if(publicRequest.IsSetTrafficPolicyName())
-            {
-                context.Writer.WritePropertyName("TrafficPolicyName");
-                context.Writer.WriteStringValue(publicRequest.TrafficPolicyName);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static CreateTrafficPolicyRequestMarshaller _instance = new CreateTrafficPolicyRequestMarshaller();        

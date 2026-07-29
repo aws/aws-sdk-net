@@ -35,12 +35,22 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         public bool? IgnoreNullValues { get; set; }
 
+        /// <summary>
+        /// Represents a conditional expression applied to the underlying Save (UpdateItem) request.
+        /// </summary>
+        /// <remarks>
+        /// Conditional expressions may target key properties and non-key properties.
+        /// When used with versioned entities, <see cref="SkipVersionCheck"/> must be enabled.
+        /// </remarks>
+        public ContextExpression ConditionalExpression { get; set; }
+
         /// <inheritdoc/>
         internal override DynamoDBOperationConfig ToDynamoDBOperationConfig()
         {
             var config = base.ToDynamoDBOperationConfig();
             config.SkipVersionCheck = SkipVersionCheck;
             config.IgnoreNullValues = IgnoreNullValues;
+            config.Expression = ConditionalExpression;
 
             return config;
         }

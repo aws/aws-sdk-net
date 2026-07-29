@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZoneId;
         private AvailableCapacity _availableCapacity;
         private string _clientToken;
+        private HostCpuOptions _cpuOptions;
         private string _hostId;
         private HostMaintenance _hostMaintenance;
         private HostProperties _hostProperties;
@@ -202,6 +203,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CpuOptions. 
+        /// <para>
+        /// The CPU options for the Dedicated Host, including AMD Secure Encrypted Virtualization-Secure
+        /// Nested Paging (AMD SEV-SNP) settings.
+        /// </para>
+        /// </summary>
+        public HostCpuOptions CpuOptions
+        {
+            get { return this._cpuOptions; }
+            set { this._cpuOptions = value; }
+        }
+
+        // Check to see if CpuOptions property is set
+        internal bool IsSetCpuOptions()
+        {
+            return this._cpuOptions != null;
         }
 
         /// <summary>

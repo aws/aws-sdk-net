@@ -85,6 +85,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("parentGroupId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ParentGroupId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("partitionCount", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

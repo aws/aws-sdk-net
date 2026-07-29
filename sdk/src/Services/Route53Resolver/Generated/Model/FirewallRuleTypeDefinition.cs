@@ -38,6 +38,7 @@ namespace Amazon.Route53Resolver.Model
         private string _description;
         private string _displayName;
         private string _ruleType;
+        private SubscriptionInfo _subscriptionInfo;
         private string _value;
 
         /// <summary>
@@ -96,6 +97,27 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetRuleType()
         {
             return this._ruleType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriptionInfo. 
+        /// <para>
+        /// For rule types that require an external subscription (today, only the <c>PartnerThreatProtection</c>
+        /// variant), describes the AWS Marketplace product that backs the rule type. Absent for
+        /// rule types that are managed by AWS and do not require a separate subscription. See
+        /// <a>SubscriptionInfo</a>.
+        /// </para>
+        /// </summary>
+        public SubscriptionInfo SubscriptionInfo
+        {
+            get { return this._subscriptionInfo; }
+            set { this._subscriptionInfo = value; }
+        }
+
+        // Check to see if SubscriptionInfo property is set
+        internal bool IsSetSubscriptionInfo()
+        {
+            return this._subscriptionInfo != null;
         }
 
         /// <summary>

@@ -110,6 +110,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3Properties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("snowflakeProperties", targetDepth, ref reader))
+                {
+                    var unmarshaller = SnowflakePropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.SnowflakeProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sparkEmrProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = SparkEmrPropertiesOutputUnmarshaller.Instance;

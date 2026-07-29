@@ -18,6 +18,10 @@ current SDK. Reads the Smithy AST directly - no C2J concepts internally.
 - **When told to simplify, apply it directly** - don't re-ask, offer a trade-off menu, or
   reach for a fancier construct.
 - **Be concise.** Code, comments, docs, and commit messages alike. No fluff.
+- **Comments explain *why*, not *what*.** A comment that paraphrases the code earns nothing —
+  assume the reader can read the body. Say why the code exists or what isn't obvious from it, in
+  plain language that lands on first read. If something is provisional (a simplification, a
+  one-case-only path), make it a visible `TODO` rather than burying it in prose.
 - CRLF on disk (run `unix2dos`).
 - No null-forgiving `!` - use `?? throw` or pattern matching.
 - Braces on all `if`/`return`.
@@ -38,3 +42,6 @@ Read them before writing a writer; update them when behavior changes.
 - Don't tell verifiers to ignore "cosmetic" diffs wholesale - real doc/whitespace bugs hide there.
 - Skip the multi-angle design panel when the target output is already pinned; use it only when
   the solution space is genuinely open.
+
+## Testing
+To ensure the code you output is correct always run `dotnet test SmithyDotNet.Generator.slnx`

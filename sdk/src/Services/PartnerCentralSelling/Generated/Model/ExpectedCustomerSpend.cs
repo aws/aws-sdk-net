@@ -105,9 +105,10 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// Indicates how frequently the customer is expected to spend the projected amount. Only
-        /// the value <c>Monthly</c> is allowed for the <c>Frequency</c> field, representing recurring
-        /// monthly spend.
+        /// Indicates how frequently the customer is expected to spend the projected amount. Use
+        /// <c>Monthly</c> for recurring monthly spend (required for <c>TargetCompany: "AWS"</c>
+        /// entries). Use <c>None</c> for one-time deal value entries (required for <c>TargetCompany:
+        /// "Self"</c> entries when providing Total Contract Value).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,10 +127,12 @@ namespace Amazon.PartnerCentralSelling.Model
         /// <summary>
         /// Gets and sets the property TargetCompany. 
         /// <para>
-        /// Specifies the name of the partner company that is expected to generate revenue from
-        /// the opportunity. This field helps track the partner’s involvement in the opportunity.
-        /// This field only accepts the value <c>AWS</c>. If any other value is provided, the
-        /// system will automatically set it to <c>AWS</c>.
+        /// Specifies the entity associated with this spend entry. Use <c>AWS</c> for the system’s
+        /// AWS Monthly Recurring Revenue (MRR) estimate. Use <c>Self</c> for the partner’s own
+        /// deal value entry when providing Total Contract Value (TCV) for automatic MRR conversion.
+        /// When <c>ExpectedContractDuration</c> is present on the Project, only <c>AWS</c> and
+        /// <c>Self</c> are accepted. When <c>ExpectedContractDuration</c> is not present, only
+        /// <c>AWS</c> is accepted and any other value will be automatically set to <c>AWS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

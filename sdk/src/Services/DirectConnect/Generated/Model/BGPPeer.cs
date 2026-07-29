@@ -89,21 +89,27 @@ namespace Amazon.DirectConnect.Model
         /// Gateway Protocol (BGP) configuration. If you provide a number greater than the maximum,
         /// an error is returned. Use <c>asnLong</c> instead.
         /// </para>
-        ///  <note> 
+        ///  <ul> <li> 
         /// <para>
         /// You can use <c>asnLong</c> or <c>asn</c>, but not both. We recommend using <c>asnLong</c>
         /// as it supports a greater pool of numbers. 
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The <c>asnLong</c> attribute accepts both ASN and long ASN ranges.
-        /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you provide a value in the same API call for both <c>asn</c> and <c>asnLong</c>,
-        /// the API will only accept the value for <c>asnLong</c>.
+        /// the API will only accept the value for <c>asnLong</c>. 
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> <li> 
+        /// <para>
+        /// If you enter a 4-byte ASN for the <c>asn</c> parameter, the API returns an error.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using a 2-byte ASN, the API response will include the 2-byte value for
+        /// both the <c>asn</c> and <c>asnLong</c> fields.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int? Asn
         {
@@ -123,21 +129,37 @@ namespace Amazon.DirectConnect.Model
         /// The long ASN for the BGP peer. The valid range is from 1 to 4294967294 for BGP configuration.
         /// 
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Note the following limitations when using <c>asnLong</c>:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// You can use <c>asnLong</c> or <c>asn</c>, but not both. We recommend using <c>asnLong</c>
         /// as it supports a greater pool of numbers. 
         /// </para>
-        ///  <ul> <li> 
+        ///  </li> <li> 
         /// <para>
-        /// The <c>asnLong</c> attribute accepts both ASN and long ASN ranges.
+        ///  <c>asnLong</c> accepts any valid ASN value, regardless if it's 2-byte or 4-byte.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When using a 4-byte <c>asnLong</c>, the API response returns <c>0</c> for the legacy
+        /// <c>asn</c> attribute since 4-byte ASN values exceed the maximum supported value of
+        /// 2,147,483,647.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are using a 2-byte ASN, the API response will include the 2-byte value for
+        /// both the <c>asn</c> and <c>asnLong</c> fields.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you provide a value in the same API call for both <c>asn</c> and <c>asnLong</c>,
         /// the API will only accept the value for <c>asnLong</c>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul>
         /// </summary>
         public long? AsnLong
         {

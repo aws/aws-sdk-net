@@ -93,11 +93,20 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>s3tables:PutTableBucketPolicy</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>s3tables:PutTableEncryption</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <c>kms:DescribeKey</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>iam:PassRole</c> - required if you include an <c>AnnotationTableConfiguration</c>
+    /// with an IAM role.
     /// </para>
     ///  </li> </ul> </dd> </dl> 
     /// <para>
@@ -123,7 +132,20 @@ namespace Amazon.S3.Model
     ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataJournalTableConfiguration.html">UpdateBucketMetadataJournalTableConfiguration</a>
     /// 
     /// </para>
-    ///  </li> </ul> <important> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UpdateBucketMetadataAnnotationTableConfiguration.html">UpdateBucketMetadataAnnotationTableConfiguration</a>
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// If you include an <c>AnnotationTableConfiguration</c> with an IAM role, the role must
+    /// have a trust policy that allows the Amazon S3 metadata service to assume it, and a
+    /// permissions policy that grants the actions needed to read annotations from your bucket.
+    /// The following examples show a trust policy and a permissions policy that you can adapt
+    /// for your bucket and account.
+    /// </para>
+    ///  <important> 
     /// <para>
     /// You must URL encode any signed header values that contain spaces. For example, if
     /// your header value is <c>my file.txt</c>, containing two spaces after <c>my</c>, you

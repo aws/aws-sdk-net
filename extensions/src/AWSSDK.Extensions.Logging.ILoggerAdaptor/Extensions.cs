@@ -18,6 +18,8 @@
  *  AWS SDK for .NET
  *
  */
+
+using System;
 using Amazon.Extensions.Logging.ILoggerAdaptor;
 
 namespace Microsoft.Extensions.Logging
@@ -34,6 +36,11 @@ namespace Microsoft.Extensions.Logging
         /// <returns></returns>
         public static void ConfigureAWSSDKLogging(this ILoggerFactory loggerFactory)
         {
+            if (loggerFactory is null)
+            {
+                throw new ArgumentNullException(nameof(loggerFactory));
+            }
+
             var adaptorFactory = new AdaptorLoggerFactoryImpl(loggerFactory);
             Amazon.Runtime.Logging.AdaptorLoggerFactoryRegistry.RegisterAdaptorLoggerFactory(adaptorFactory);
         }

@@ -44,6 +44,11 @@
     <pattern>[a-zA-Z][-a-zA-Z0-9]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteConnectorRequest.Arn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteDeliveryChannelRequest.DeliveryChannelName</property>
     <min>1</min>
     <max>256</max>
@@ -101,6 +106,11 @@
     <min>1</min>
     <max>256</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.DeleteServiceLinkedConfigurationRecorderRequest.Arn</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.DeleteServiceLinkedConfigurationRecorderRequest.ServicePrincipal</property>
@@ -421,6 +431,11 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.GetConnectorRequest.Arn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.GetCustomRulePolicyRequest.ConfigRuleName</property>
     <min>1</min>
     <max>128</max>
@@ -517,6 +532,11 @@
     <max>20</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.ListConnectorsRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.ListDiscoveredResourcesRequest.Limit</property>
     <min>0</min>
     <max>100</max>
@@ -587,6 +607,11 @@
     <property>Amazon.ConfigService.Model.PutConformancePackResponse.ConformancePackArn</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutConnectorResponse.Arn</property>
+    <min>1</min>
+    <max>1000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.PutExternalEvaluationRequest.ConfigRuleName</property>
@@ -690,6 +715,27 @@
     <min>1</min>
     <max>500</max>
     <pattern>^arn:aws[a-z\-]*:config:[a-z\-\d]+:\d+:stored-query/[a-zA-Z0-9-_]+/query-[a-zA-Z\d-_/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutThirdPartyServiceLinkedConfigurationRecorderRequest.ConnectorArn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutThirdPartyServiceLinkedConfigurationRecorderRequest.ServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutThirdPartyServiceLinkedConfigurationRecorderResponse.Arn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.PutThirdPartyServiceLinkedConfigurationRecorderResponse.Name</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.SelectAggregateResourceConfigRequest.ConfigurationAggregatorName</property>
@@ -870,6 +916,16 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConfigService.Model.AzureConnectorConfiguration.ClientIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.AzureConnectorConfiguration.TenantIdentifier</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConfigService.Model.BaseConfigurationItem.AccountId</property>
     <pattern>\d{12}</pattern>
   </property-value-rule>
@@ -995,6 +1051,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.ConfigurationRecorder.Arn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConfigurationRecorder.ConnectorArn</property>
     <min>1</min>
     <max>1000</max>
   </property-value-rule>
@@ -1130,6 +1191,31 @@
     <property>Amazon.ConfigService.Model.ConformancePackStatusDetail.StackArn</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.Connector.Arn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.Connector.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConnectorSummary.Arn</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConnectorSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ConnectorSummary.TenantIdentifier</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.CustomPolicyDetails.PolicyRuntime</property>
@@ -1573,6 +1659,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ConfigService.Model.Scope.TagValue</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConfigService.Model.ScopeConfiguration.ScopeType</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

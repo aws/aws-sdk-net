@@ -58,6 +58,7 @@ namespace Amazon.CodeBuild.Model
         private ProjectFleet _fleetOverride;
         private int? _gitCloneDepthOverride;
         private GitSubmodulesConfig _gitSubmodulesConfigOverride;
+        private HostKernel _hostKernelOverride;
         private string _idempotencyToken;
         private string _imageOverride;
         private ImagePullCredentialsType _imagePullCredentialsTypeOverride;
@@ -383,6 +384,25 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetGitSubmodulesConfigOverride()
         {
             return this._gitSubmodulesConfigOverride != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostKernelOverride. 
+        /// <para>
+        /// The host operating system kernel for this build that overrides the one specified in
+        /// the build project.
+        /// </para>
+        /// </summary>
+        public HostKernel HostKernelOverride
+        {
+            get { return this._hostKernelOverride; }
+            set { this._hostKernelOverride = value; }
+        }
+
+        // Check to see if HostKernelOverride property is set
+        internal bool IsSetHostKernelOverride()
+        {
+            return this._hostKernelOverride != null;
         }
 
         /// <summary>

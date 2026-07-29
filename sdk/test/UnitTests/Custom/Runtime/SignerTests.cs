@@ -1,5 +1,9 @@
 ﻿using Amazon;
 using Amazon.S3;
+using Amazon.SecurityToken;
+using Amazon.SecurityToken.Internal;
+using Amazon.SecurityToken.Model;
+using Amazon.SecurityToken.Model.Internal.MarshallTransformations;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
@@ -30,6 +34,204 @@ namespace AWSSDK.UnitTests
 
             Assert.IsTrue(context.RequestContext.IsSigned);
             Assert.AreEqual(1, signer.SignCount);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestSignerWithRegionAndCustomServiceURLSetViaEnvVariables()
+        {
+            var savedEndpoint = Environment.GetEnvironmentVariable("AWS_ENDPOINT_URL");
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", "https://non-aws-endpoint.com");
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-2");
+                FallbackRegionFactory.Reset();
+
+                var config = new AmazonSecurityTokenServiceConfig();
+
+                var getCallerIdentityRequest = new GetCallerIdentityRequest();
+                var marshaller = new GetCallerIdentityRequestMarshaller();
+                var marshalledRequest = marshaller.Marshall(getCallerIdentityRequest);
+
+                var signer = new AWS4Signer();
+                var requestContext = new RequestContext(true, signer)
+                {
+                    ClientConfig = config,
+                    OriginalRequest = getCallerIdentityRequest,
+                    Request = marshalledRequest,
+                    Identity = new BasicAWSCredentials("accessKey", "secretKey")
+                };
+
+                var executionContext = new ExecutionContext(requestContext, new ResponseContext());
+
+                var pipeline = new RuntimePipeline(new MockHandler());
+                pipeline.AddHandler(new Signer());
+                pipeline.AddHandler(new AmazonSecurityTokenServiceEndpointResolver());
+
+                pipeline.InvokeSync(executionContext);
+
+                var authHeader = executionContext.RequestContext.Request.Headers[HeaderKeys.AuthorizationHeader];
+                // When both region and serviceURL are set via env variables, the region env variable should be respected.
+                Assert.IsTrue(authHeader.Contains("us-east-2/sts/aws4_request"),
+                    $"Expected Authorization header to contain 'us-east-2/sts/aws4_request' but got: {authHeader}");
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", savedEndpoint);
+                FallbackRegionFactory.Reset();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestSignerWithRegionAndAWSServiceURLSetViaEnvVariables()
+        {
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            var savedEndpoint = Environment.GetEnvironmentVariable("AWS_ENDPOINT_URL");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-2");
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", "http://s3.amazonaws.com");
+                FallbackRegionFactory.Reset();
+
+                var config = new AmazonSecurityTokenServiceConfig();
+
+                var getCallerIdentityRequest = new GetCallerIdentityRequest();
+                var marshaller = new GetCallerIdentityRequestMarshaller();
+                var marshalledRequest = marshaller.Marshall(getCallerIdentityRequest);
+
+                var signer = new AWS4Signer();
+                var requestContext = new RequestContext(true, signer)
+                {
+                    ClientConfig = config,
+                    OriginalRequest = getCallerIdentityRequest,
+                    Request = marshalledRequest,
+                    Identity = new BasicAWSCredentials("accessKey", "secretKey")
+                };
+
+                var executionContext = new ExecutionContext(requestContext, new ResponseContext());
+
+                var pipeline = new RuntimePipeline(new MockHandler());
+                pipeline.AddHandler(new Signer());
+                pipeline.AddHandler(new AmazonSecurityTokenServiceEndpointResolver());
+
+                pipeline.InvokeSync(executionContext);
+
+                var authHeader = executionContext.RequestContext.Request.Headers[HeaderKeys.AuthorizationHeader];
+                // for aws endpoints, the global region is used as a default, even if one is provided via AWS_REGION 
+                // to preserve backwards compatibility.
+                Assert.IsTrue(authHeader.Contains("us-east-1/sts/aws4_request"),
+                    $"Expected Authorization header to contain 'us-east-1/sts/aws4_request' but got: {authHeader}");
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", savedEndpoint);
+                FallbackRegionFactory.Reset();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestAuthenticationRegionOverridesRegionSetViaEnvVariable()
+        {
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            var savedEndpoint = Environment.GetEnvironmentVariable("AWS_ENDPOINT_URL");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", "us-east-1");
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", "http://testEndpoint.com/443");
+                FallbackRegionFactory.Reset();
+
+                var config = new AmazonSecurityTokenServiceConfig();
+                config.AuthenticationRegion = "us-east-2";
+
+                var getCallerIdentityRequest = new GetCallerIdentityRequest();
+                var marshaller = new GetCallerIdentityRequestMarshaller();
+                var marshalledRequest = marshaller.Marshall(getCallerIdentityRequest);
+
+                var signer = new AWS4Signer();
+                var requestContext = new RequestContext(true, signer)
+                {
+                    ClientConfig = config,
+                    OriginalRequest = getCallerIdentityRequest,
+                    Request = marshalledRequest,
+                    Identity = new BasicAWSCredentials("accessKey", "secretKey")
+                };
+
+                var executionContext = new ExecutionContext(requestContext, new ResponseContext());
+
+                var pipeline = new RuntimePipeline(new MockHandler());
+                pipeline.AddHandler(new Signer());
+                pipeline.AddHandler(new AmazonSecurityTokenServiceEndpointResolver());
+
+                pipeline.InvokeSync(executionContext);
+
+                var authHeader = executionContext.RequestContext.Request.Headers[HeaderKeys.AuthorizationHeader];
+                Assert.IsTrue(authHeader.Contains($"us-east-2/sts/aws4_request"),
+                    $"Expected Authorization header to contain 'us-east-2/sts/aws4_request' but got: {authHeader}");
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", savedEndpoint);
+                FallbackRegionFactory.Reset();
+            }
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void TestSignerWithNoServiceURLAndNoRegionEnvVariableRespectsClientConfig()
+        {
+            var savedRegion = Environment.GetEnvironmentVariable("AWS_REGION");
+            var savedEndpoint = Environment.GetEnvironmentVariable("AWS_ENDPOINT_URL");
+            try
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", null);
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", null);
+                FallbackRegionFactory.Reset();
+
+                var config = new AmazonSecurityTokenServiceConfig();
+                config.RegionEndpoint = RegionEndpoint.USWest2;
+
+                var getCallerIdentityRequest = new GetCallerIdentityRequest();
+                var marshaller = new GetCallerIdentityRequestMarshaller();
+                var marshalledRequest = marshaller.Marshall(getCallerIdentityRequest);
+
+                var signer = new AWS4Signer();
+                var requestContext = new RequestContext(true, signer)
+                {
+                    ClientConfig = config,
+                    OriginalRequest = getCallerIdentityRequest,
+                    Request = marshalledRequest,
+                    Identity = new BasicAWSCredentials("accessKey", "secretKey")
+                };
+
+                var executionContext = new ExecutionContext(requestContext, new ResponseContext());
+
+                var pipeline = new RuntimePipeline(new MockHandler());
+                pipeline.AddHandler(new Signer());
+                pipeline.AddHandler(new AmazonSecurityTokenServiceEndpointResolver());
+
+                pipeline.InvokeSync(executionContext);
+              
+                var authHeader = executionContext.RequestContext.Request.Headers[HeaderKeys.AuthorizationHeader];
+                // When no region is explicitly set via env var, the SDK falls back to profile/default region
+                Assert.IsTrue(authHeader.Contains($"us-west-2"),
+                    $"Expected Authorization header to contain 'us-west-2/sts/aws4_request' but got: {authHeader}");
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable("AWS_REGION", savedRegion);
+                Environment.SetEnvironmentVariable("AWS_ENDPOINT_URL", savedEndpoint);
+                FallbackRegionFactory.Reset();
+            }
         }
 
         [TestMethod][TestCategory("UnitTest")]

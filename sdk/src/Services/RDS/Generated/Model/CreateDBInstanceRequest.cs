@@ -1600,7 +1600,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineLifecycleSupport. 
         /// <para>
-        /// The life cycle type for this DB instance.
+        /// The lifecycle type for this DB instance.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1613,7 +1613,7 @@ namespace Amazon.RDS.Model
         ///  </note> 
         /// <para>
         /// This setting applies only to RDS for MySQL and RDS for PostgreSQL. For Amazon Aurora
-        /// DB instances, the life cycle type is managed by the DB cluster.
+        /// DB instances, the engine lifecycle support is managed by the DB cluster.
         /// </para>
         ///  
         /// <para>

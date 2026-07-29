@@ -121,11 +121,6 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Indicates whether to include child organizational units (OUs) that are children of
         /// the targeted OUs. The default is <c>false</c>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// This parameter is not supported by State Manager.
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool? IncludeChildOrganizationUnits
         {
@@ -237,7 +232,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=1)]
         public List<Target> Targets
         {
             get { return this._targets; }

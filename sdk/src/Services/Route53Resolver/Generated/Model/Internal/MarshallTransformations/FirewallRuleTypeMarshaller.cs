@@ -79,6 +79,17 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPartnerThreatProtection())
+            {
+                context.Writer.WritePropertyName("PartnerThreatProtection");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PartnerThreatProtectionConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PartnerThreatProtection, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

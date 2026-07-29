@@ -297,6 +297,56 @@ namespace Amazon.PCS
 
 
     /// <summary>
+    /// Constants used for properties of type ExecutionPolicy.
+    /// </summary>
+    public class ExecutionPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EVERY_BOOT for ExecutionPolicy
+        /// </summary>
+        public static readonly ExecutionPolicy EVERY_BOOT = new ExecutionPolicy("EVERY_BOOT");
+        /// <summary>
+        /// Constant FIRST_BOOT_ONLY for ExecutionPolicy
+        /// </summary>
+        public static readonly ExecutionPolicy FIRST_BOOT_ONLY = new ExecutionPolicy("FIRST_BOOT_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExecutionPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExecutionPolicy FindValue(string value)
+        {
+            return FindValue<ExecutionPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExecutionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkType.
     /// </summary>
     public class NetworkType : ConstantClass
@@ -340,6 +390,60 @@ namespace Amazon.PCS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NetworkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OnError.
+    /// </summary>
+    public class OnError : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUE for OnError
+        /// </summary>
+        public static readonly OnError CONTINUE = new OnError("CONTINUE");
+        /// <summary>
+        /// Constant STOP_SEQUENCE for OnError
+        /// </summary>
+        public static readonly OnError STOP_SEQUENCE = new OnError("STOP_SEQUENCE");
+        /// <summary>
+        /// Constant TERMINATE for OnError
+        /// </summary>
+        public static readonly OnError TERMINATE = new OnError("TERMINATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OnError(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OnError FindValue(string value)
+        {
+            return FindValue<OnError>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OnError(string value)
         {
             return FindValue(value);
         }
@@ -526,6 +630,56 @@ namespace Amazon.PCS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SchedulerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScriptCachingPolicy.
+    /// </summary>
+    public class ScriptCachingPolicy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CACHE_ONCE for ScriptCachingPolicy
+        /// </summary>
+        public static readonly ScriptCachingPolicy CACHE_ONCE = new ScriptCachingPolicy("CACHE_ONCE");
+        /// <summary>
+        /// Constant REFRESH_ON_REBOOT for ScriptCachingPolicy
+        /// </summary>
+        public static readonly ScriptCachingPolicy REFRESH_ON_REBOOT = new ScriptCachingPolicy("REFRESH_ON_REBOOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScriptCachingPolicy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScriptCachingPolicy FindValue(string value)
+        {
+            return FindValue<ScriptCachingPolicy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScriptCachingPolicy(string value)
         {
             return FindValue(value);
         }

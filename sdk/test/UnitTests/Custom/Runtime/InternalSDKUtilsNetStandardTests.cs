@@ -54,6 +54,37 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(expectedResult, result);
         }
 
+        /// <summary>
+        /// A file whose directory differs from directoryPath only by a Unicode default-ignorable code
+        /// point lands in a sibling directory, not a child, so it must be rejected.
+        /// </summary>
+        [TestMethod]
+        [DataRow("c:\\poc\\deps\u00AD\\poison.txt", "c:\\poc\\deps")] // U+00AD SOFT HYPHEN
+        [DataRow("c:\\poc\\deps\u200B\\poison.txt", "c:\\poc\\deps")] // U+200B ZERO WIDTH SPACE
+        [DataRow("c:\\poc\\deps\u200C\\poison.txt", "c:\\poc\\deps")] // U+200C ZERO WIDTH NON-JOINER
+        [DataRow("c:\\poc\\deps\uFEFF\\poison.txt", "c:\\poc\\deps")] // U+FEFF BYTE ORDER MARK
+        [DataRow("/home/poc/deps\u00AD/poison.txt", "/home/poc/deps")] // U+00AD SOFT HYPHEN
+        [DataRow("/home/poc/deps\u200B/poison.txt", "/home/poc/deps")] // U+200B ZERO WIDTH SPACE
+        [DataRow("/home/poc/deps\u200C/poison.txt", "/home/poc/deps")] // U+200C ZERO WIDTH NON-JOINER
+        [DataRow("/home/poc/deps\uFEFF/poison.txt", "/home/poc/deps")] // U+FEFF BYTE ORDER MARK
+        public void IsFilePathRootedWithDirectoryPath_RejectsDefaultIgnorableSiblingEscape(string filePath, string directoryPath)
+        {
+            Assert.IsFalse(InternalSDKUtils.IsFilePathRootedWithDirectoryPath(filePath, directoryPath));
+        }
+
+        /// <summary>
+        /// With an ordinal (case-sensitive) comparison, a file in a directory that differs from directoryPath
+        /// only by case is a sibling and must be rejected; with OrdinalIgnoreCase it is treated as contained.
+        /// </summary>
+        [TestMethod]
+        [DataRow(StringComparison.Ordinal, false)]
+        [DataRow(StringComparison.OrdinalIgnoreCase, true)]
+        public void IsFilePathRootedWithDirectoryPath_HonorsCaseSensitivityOfComparison(StringComparison comparison, bool expectedContained)
+        {
+            var result = InternalSDKUtils.IsFilePathRootedWithDirectoryPath("/home/a/b/C/file.txt", "/home/a/b/c", comparison);
+            Assert.AreEqual(expectedContained, result);
+        }
+
         [TestMethod]
         public void DetermineFrameworkHandlesNonconventionalVersions()
         {

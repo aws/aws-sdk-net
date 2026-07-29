@@ -25,6 +25,60 @@ namespace Amazon.ApplicationSignals
 {
 
     /// <summary>
+    /// Constants used for properties of type BatchDeleteErrorCode.
+    /// </summary>
+    public class BatchDeleteErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AccessDeniedException for BatchDeleteErrorCode
+        /// </summary>
+        public static readonly BatchDeleteErrorCode AccessDeniedException = new BatchDeleteErrorCode("AccessDeniedException");
+        /// <summary>
+        /// Constant InternalServiceException for BatchDeleteErrorCode
+        /// </summary>
+        public static readonly BatchDeleteErrorCode InternalServiceException = new BatchDeleteErrorCode("InternalServiceException");
+        /// <summary>
+        /// Constant ResourceNotFoundException for BatchDeleteErrorCode
+        /// </summary>
+        public static readonly BatchDeleteErrorCode ResourceNotFoundException = new BatchDeleteErrorCode("ResourceNotFoundException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BatchDeleteErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BatchDeleteErrorCode FindValue(string value)
+        {
+            return FindValue<BatchDeleteErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BatchDeleteErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeEventType.
     /// </summary>
     public class ChangeEventType : ConstantClass
@@ -233,6 +287,98 @@ namespace Amazon.ApplicationSignals
 
 
     /// <summary>
+    /// Constants used for properties of type DynamicInstrumentationDeletionStatus.
+    /// </summary>
+    public class DynamicInstrumentationDeletionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETED for DynamicInstrumentationDeletionStatus
+        /// </summary>
+        public static readonly DynamicInstrumentationDeletionStatus DELETED = new DynamicInstrumentationDeletionStatus("DELETED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DynamicInstrumentationDeletionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DynamicInstrumentationDeletionStatus FindValue(string value)
+        {
+            return FindValue<DynamicInstrumentationDeletionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DynamicInstrumentationDeletionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DynamicInstrumentationSignalType.
+    /// </summary>
+    public class DynamicInstrumentationSignalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SNAPSHOT for DynamicInstrumentationSignalType
+        /// </summary>
+        public static readonly DynamicInstrumentationSignalType SNAPSHOT = new DynamicInstrumentationSignalType("SNAPSHOT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DynamicInstrumentationSignalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DynamicInstrumentationSignalType FindValue(string value)
+        {
+            return FindValue<DynamicInstrumentationSignalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DynamicInstrumentationSignalType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EvaluationType.
     /// </summary>
     public class EvaluationType : ConstantClass
@@ -276,6 +422,180 @@ namespace Amazon.ApplicationSignals
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EvaluationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstrumentationConfigurationStatus.
+    /// </summary>
+    public class InstrumentationConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for InstrumentationConfigurationStatus
+        /// </summary>
+        public static readonly InstrumentationConfigurationStatus ACTIVE = new InstrumentationConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant DISABLED for InstrumentationConfigurationStatus
+        /// </summary>
+        public static readonly InstrumentationConfigurationStatus DISABLED = new InstrumentationConfigurationStatus("DISABLED");
+        /// <summary>
+        /// Constant ERROR for InstrumentationConfigurationStatus
+        /// </summary>
+        public static readonly InstrumentationConfigurationStatus ERROR = new InstrumentationConfigurationStatus("ERROR");
+        /// <summary>
+        /// Constant READY for InstrumentationConfigurationStatus
+        /// </summary>
+        public static readonly InstrumentationConfigurationStatus READY = new InstrumentationConfigurationStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstrumentationConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstrumentationConfigurationStatus FindValue(string value)
+        {
+            return FindValue<InstrumentationConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstrumentationConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstrumentationErrorCause.
+    /// </summary>
+    public class InstrumentationErrorCause : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE_NOT_FOUND for InstrumentationErrorCause
+        /// </summary>
+        public static readonly InstrumentationErrorCause FILE_NOT_FOUND = new InstrumentationErrorCause("FILE_NOT_FOUND");
+        /// <summary>
+        /// Constant LANGUAGE_MISMATCH for InstrumentationErrorCause
+        /// </summary>
+        public static readonly InstrumentationErrorCause LANGUAGE_MISMATCH = new InstrumentationErrorCause("LANGUAGE_MISMATCH");
+        /// <summary>
+        /// Constant LINE_NOT_EXECUTABLE for InstrumentationErrorCause
+        /// </summary>
+        public static readonly InstrumentationErrorCause LINE_NOT_EXECUTABLE = new InstrumentationErrorCause("LINE_NOT_EXECUTABLE");
+        /// <summary>
+        /// Constant METHOD_NOT_FOUND for InstrumentationErrorCause
+        /// </summary>
+        public static readonly InstrumentationErrorCause METHOD_NOT_FOUND = new InstrumentationErrorCause("METHOD_NOT_FOUND");
+        /// <summary>
+        /// Constant OVERLOADED_METHODS for InstrumentationErrorCause
+        /// </summary>
+        public static readonly InstrumentationErrorCause OVERLOADED_METHODS = new InstrumentationErrorCause("OVERLOADED_METHODS");
+        /// <summary>
+        /// Constant RUNTIME_ERROR for InstrumentationErrorCause
+        /// </summary>
+        public static readonly InstrumentationErrorCause RUNTIME_ERROR = new InstrumentationErrorCause("RUNTIME_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstrumentationErrorCause(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstrumentationErrorCause FindValue(string value)
+        {
+            return FindValue<InstrumentationErrorCause>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstrumentationErrorCause(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstrumentationType.
+    /// </summary>
+    public class InstrumentationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BREAKPOINT for InstrumentationType
+        /// </summary>
+        public static readonly InstrumentationType BREAKPOINT = new InstrumentationType("BREAKPOINT");
+        /// <summary>
+        /// Constant PROBE for InstrumentationType
+        /// </summary>
+        public static readonly InstrumentationType PROBE = new InstrumentationType("PROBE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstrumentationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstrumentationType FindValue(string value)
+        {
+            return FindValue<InstrumentationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstrumentationType(string value)
         {
             return FindValue(value);
         }
@@ -342,6 +662,60 @@ namespace Amazon.ApplicationSignals
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MetricSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProgrammingLanguage.
+    /// </summary>
+    public class ProgrammingLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Java for ProgrammingLanguage
+        /// </summary>
+        public static readonly ProgrammingLanguage Java = new ProgrammingLanguage("Java");
+        /// <summary>
+        /// Constant Javascript for ProgrammingLanguage
+        /// </summary>
+        public static readonly ProgrammingLanguage Javascript = new ProgrammingLanguage("Javascript");
+        /// <summary>
+        /// Constant Python for ProgrammingLanguage
+        /// </summary>
+        public static readonly ProgrammingLanguage Python = new ProgrammingLanguage("Python");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProgrammingLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProgrammingLanguage FindValue(string value)
+        {
+            return FindValue<ProgrammingLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProgrammingLanguage(string value)
         {
             return FindValue(value);
         }
@@ -774,6 +1148,60 @@ namespace Amazon.ApplicationSignals
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StandardUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UnprocessedStatusEventFailureReason.
+    /// </summary>
+    public class UnprocessedStatusEventFailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_ERROR for UnprocessedStatusEventFailureReason
+        /// </summary>
+        public static readonly UnprocessedStatusEventFailureReason INTERNAL_ERROR = new UnprocessedStatusEventFailureReason("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant THROTTLED for UnprocessedStatusEventFailureReason
+        /// </summary>
+        public static readonly UnprocessedStatusEventFailureReason THROTTLED = new UnprocessedStatusEventFailureReason("THROTTLED");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for UnprocessedStatusEventFailureReason
+        /// </summary>
+        public static readonly UnprocessedStatusEventFailureReason VALIDATION_ERROR = new UnprocessedStatusEventFailureReason("VALIDATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UnprocessedStatusEventFailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UnprocessedStatusEventFailureReason FindValue(string value)
+        {
+            return FindValue<UnprocessedStatusEventFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UnprocessedStatusEventFailureReason(string value)
         {
             return FindValue(value);
         }

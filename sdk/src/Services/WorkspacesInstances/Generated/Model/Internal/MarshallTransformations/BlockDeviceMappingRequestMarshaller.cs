@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BlockDeviceMappingRequest Marshaller
     /// </summary>
-    public class BlockDeviceMappingRequestMarshaller : IRequestMarshaller<BlockDeviceMappingRequest, JsonMarshallerContext> 
+    public class BlockDeviceMappingRequestMarshaller : IRequestMarshaller<BlockDeviceMappingRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +45,36 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BlockDeviceMappingRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(BlockDeviceMappingRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetDeviceName())
-            {
-                context.Writer.WritePropertyName("DeviceName");
-                context.Writer.WriteStringValue(requestObject.DeviceName);
-            }
 
-            if(requestObject.IsSetEbs())
+            if (requestObject.IsSetDeviceName())
             {
-                context.Writer.WritePropertyName("Ebs");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("DeviceName");
+                context.Writer.WriteTextString(requestObject.DeviceName);
+            }
+            if (requestObject.IsSetEbs())
+            {
+                context.Writer.WriteTextString("Ebs");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EbsBlockDeviceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ebs, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetNoDevice())
+            if (requestObject.IsSetNoDevice())
             {
-                context.Writer.WritePropertyName("NoDevice");
-                context.Writer.WriteStringValue(requestObject.NoDevice);
+                context.Writer.WriteTextString("NoDevice");
+                context.Writer.WriteTextString(requestObject.NoDevice);
             }
-
-            if(requestObject.IsSetVirtualName())
+            if (requestObject.IsSetVirtualName())
             {
-                context.Writer.WritePropertyName("VirtualName");
-                context.Writer.WriteStringValue(requestObject.VirtualName);
+                context.Writer.WriteTextString("VirtualName");
+                context.Writer.WriteTextString(requestObject.VirtualName);
             }
-
         }
 
         /// <summary>

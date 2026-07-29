@@ -89,6 +89,14 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "FleetArn":
+                        {
+                            context.AddPathSegment("FleetArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            response.FleetArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "FleetId":
                         {
                             context.AddPathSegment("FleetId");

@@ -165,11 +165,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListHarnessEndpoints operation
+        ///</summary>
+        public IListHarnessEndpointsPaginator ListHarnessEndpoints(ListHarnessEndpointsRequest request) 
+        {
+            return new ListHarnessEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListHarnesses operation
         ///</summary>
         public IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request) 
         {
             return new ListHarnessesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListHarnessVersions operation
+        ///</summary>
+        public IListHarnessVersionsPaginator ListHarnessVersions(ListHarnessVersionsRequest request) 
+        {
+            return new ListHarnessVersionsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -37,11 +37,27 @@ namespace Amazon.ApplicationSignals.Model
         }
 
         /// <summary>
+        /// Paginator for GetInstrumentationConfigurationStatus operation
+        ///</summary>
+        public IGetInstrumentationConfigurationStatusPaginator GetInstrumentationConfigurationStatus(GetInstrumentationConfigurationStatusRequest request) 
+        {
+            return new GetInstrumentationConfigurationStatusPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEntityEvents operation
         ///</summary>
         public IListEntityEventsPaginator ListEntityEvents(ListEntityEventsRequest request) 
         {
             return new ListEntityEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListInstrumentationConfigurations operation
+        ///</summary>
+        public IListInstrumentationConfigurationsPaginator ListInstrumentationConfigurations(ListInstrumentationConfigurationsRequest request) 
+        {
+            return new ListInstrumentationConfigurationsPaginator(this.client, request);
         }
 
         /// <summary>

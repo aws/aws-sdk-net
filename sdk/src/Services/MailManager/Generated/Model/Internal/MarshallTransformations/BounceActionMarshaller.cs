@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BounceAction Marshaller
     /// </summary>
-    public class BounceActionMarshaller : IRequestMarshaller<BounceAction, JsonMarshallerContext> 
+    public class BounceActionMarshaller : IRequestMarshaller<BounceAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,52 +45,46 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BounceAction requestObject, JsonMarshallerContext context)
+        public void Marshall(BounceAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetActionFailurePolicy())
-            {
-                context.Writer.WritePropertyName("ActionFailurePolicy");
-                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
-            }
 
-            if(requestObject.IsSetDiagnosticMessage())
+            if (requestObject.IsSetActionFailurePolicy())
             {
-                context.Writer.WritePropertyName("DiagnosticMessage");
-                context.Writer.WriteStringValue(requestObject.DiagnosticMessage);
+                context.Writer.WriteTextString("ActionFailurePolicy");
+                context.Writer.WriteTextString(requestObject.ActionFailurePolicy);
             }
-
-            if(requestObject.IsSetMessage())
+            if (requestObject.IsSetDiagnosticMessage())
             {
-                context.Writer.WritePropertyName("Message");
-                context.Writer.WriteStringValue(requestObject.Message);
+                context.Writer.WriteTextString("DiagnosticMessage");
+                context.Writer.WriteTextString(requestObject.DiagnosticMessage);
             }
-
-            if(requestObject.IsSetRoleArn())
+            if (requestObject.IsSetMessage())
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
+                context.Writer.WriteTextString("Message");
+                context.Writer.WriteTextString(requestObject.Message);
             }
-
-            if(requestObject.IsSetSender())
+            if (requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("Sender");
-                context.Writer.WriteStringValue(requestObject.Sender);
+                context.Writer.WriteTextString("RoleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
             }
-
-            if(requestObject.IsSetSmtpReplyCode())
+            if (requestObject.IsSetSender())
             {
-                context.Writer.WritePropertyName("SmtpReplyCode");
-                context.Writer.WriteStringValue(requestObject.SmtpReplyCode);
+                context.Writer.WriteTextString("Sender");
+                context.Writer.WriteTextString(requestObject.Sender);
             }
-
-            if(requestObject.IsSetStatusCode())
+            if (requestObject.IsSetSmtpReplyCode())
             {
-                context.Writer.WritePropertyName("StatusCode");
-                context.Writer.WriteStringValue(requestObject.StatusCode);
+                context.Writer.WriteTextString("SmtpReplyCode");
+                context.Writer.WriteTextString(requestObject.SmtpReplyCode);
             }
-
+            if (requestObject.IsSetStatusCode())
+            {
+                context.Writer.WriteTextString("StatusCode");
+                context.Writer.WriteTextString(requestObject.StatusCode);
+            }
         }
 
         /// <summary>

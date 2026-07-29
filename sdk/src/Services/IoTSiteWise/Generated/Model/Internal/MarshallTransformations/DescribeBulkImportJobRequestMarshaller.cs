@@ -65,7 +65,11 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetJobId())
                 throw new AmazonIoTSiteWiseException("Request object does not have required field JobId set");
             request.AddPathResource("{jobId}", StringUtils.FromString(publicRequest.JobId));
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/jobs/{jobId}";
+            request.UseQueryString = true;
             
             request.HostPrefix = $"data.";
 

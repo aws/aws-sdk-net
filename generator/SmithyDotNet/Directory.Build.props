@@ -1,0 +1,14 @@
+<Project>
+  <!-- Runs the .editorconfig code-style rules at build time and treats them as errors, so style
+       nits fail the build the same way the SDK's warnings-as-errors does. -->
+  <PropertyGroup>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <!-- IDE0005 (unused usings) is only reported at build time when a documentation file is
+         produced. This is generator/tooling code, not a published API surface, so CS1591
+         (missing doc on a public member) is turned off — the doc file is on purely to enable
+         IDE0005, not to require a summary on every member. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+  </PropertyGroup>
+</Project>

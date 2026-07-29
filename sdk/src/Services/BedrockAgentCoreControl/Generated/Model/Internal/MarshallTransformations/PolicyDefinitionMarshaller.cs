@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPolicy())
+            {
+                context.Writer.WritePropertyName("policy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PolicyStatementMarshaller.Instance;
+                marshaller.Marshall(requestObject.Policy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPolicyGeneration())
             {
                 context.Writer.WritePropertyName("policyGeneration");

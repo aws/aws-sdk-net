@@ -330,7 +330,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Specifies the durability setting for the replication group. Use this parameter to
         /// change the durability mode of an existing replication group, for example from <c>sync</c>
-        /// to <c>async</c> or vice versa. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.
+        /// to <c>async</c> or vice versa. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.
         /// </para>
         /// </summary>
         public Durability Durability

@@ -42,6 +42,7 @@ namespace Amazon.DataZone.Model
         private string _domainId;
         private EnvironmentConfig _environmentConfiguration;
         private NotebookError _error;
+        private GitMetadata _gitMetadata;
         private string _id;
         private DateTime? _lockedAt;
         private string _lockedBy;
@@ -205,6 +206,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetError()
         {
             return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitMetadata. 
+        /// <para>
+        /// The Git metadata associated with the notebook.
+        /// </para>
+        /// </summary>
+        public GitMetadata GitMetadata
+        {
+            get { return this._gitMetadata; }
+            set { this._gitMetadata = value; }
+        }
+
+        // Check to see if GitMetadata property is set
+        internal bool IsSetGitMetadata()
+        {
+            return this._gitMetadata != null;
         }
 
         /// <summary>

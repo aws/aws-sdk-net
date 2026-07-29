@@ -39,6 +39,11 @@ namespace Amazon.Evs.Model
     /// VMware VCF requires the deployment of two NSX Edge nodes, and three NSX Manager virtual
     /// machines.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// Not supported when <c>vcfVersion</c> is <c>SELF_DEPLOYED</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class VcfHostnames
     {
@@ -74,7 +79,7 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property Nsx. 
         /// <para>
-        /// The VMware NSX hostname.
+        /// The VMware NSX Virtual IP (VIP) hostname.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

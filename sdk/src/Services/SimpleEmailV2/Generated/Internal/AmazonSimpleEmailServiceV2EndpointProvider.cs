@@ -63,7 +63,19 @@ namespace Amazon.SimpleEmailV2.Internal
                         {
                             return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
                         }
-                        if (Equals(refs["UseDualStack"], true))
+                        if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseDualStack"], true))
+                        {
+                            if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                            {
+                                return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.us-gov.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                            }
+                            throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                        }
+                        if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+                        {
+                            return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.us-gov.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                        }
+                        if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseDualStack"], true))
                         {
                             if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
                             {
@@ -71,7 +83,10 @@ namespace Amazon.SimpleEmailV2.Internal
                             }
                             throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
                         }
-                        return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                        if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov"))
+                        {
+                            return new Endpoint(Interpolate(@"https://{EndpointId}.endpoints.email.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4a"",""signingName"":""ses"",""signingRegionSet"":[""*""]}]}", refs), InterpolateJson(@"", refs));
+                        }
                     }
                     throw new AmazonClientException("Invalid Configuration: FIPS is not supported with multi-region endpoints");
                 }

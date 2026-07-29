@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class GetPolicySummaryResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdAt;
+        private EnforcementMode _enforcementMode;
         private string _name;
         private string _policyArn;
         private string _policyEngineId;
@@ -59,6 +60,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnforcementMode. 
+        /// <para>
+        /// The current enforcement mode of the policy.
+        /// </para>
+        /// </summary>
+        public EnforcementMode EnforcementMode
+        {
+            get { return this._enforcementMode; }
+            set { this._enforcementMode = value; }
+        }
+
+        // Check to see if EnforcementMode property is set
+        internal bool IsSetEnforcementMode()
+        {
+            return this._enforcementMode != null;
         }
 
         /// <summary>

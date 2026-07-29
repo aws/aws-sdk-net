@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IngressAnalysis Marshaller
     /// </summary>
-    public class IngressAnalysisMarshaller : IRequestMarshaller<IngressAnalysis, JsonMarshallerContext> 
+    public class IngressAnalysisMarshaller : IRequestMarshaller<IngressAnalysis, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IngressAnalysis requestObject, JsonMarshallerContext context)
+        public void Marshall(IngressAnalysis requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAnalyzer())
-            {
-                context.Writer.WritePropertyName("Analyzer");
-                context.Writer.WriteStringValue(requestObject.Analyzer);
-            }
 
-            if(requestObject.IsSetResultField())
+            if (requestObject.IsSetAnalyzer())
             {
-                context.Writer.WritePropertyName("ResultField");
-                context.Writer.WriteStringValue(requestObject.ResultField);
+                context.Writer.WriteTextString("Analyzer");
+                context.Writer.WriteTextString(requestObject.Analyzer);
             }
-
+            if (requestObject.IsSetResultField())
+            {
+                context.Writer.WriteTextString("ResultField");
+                context.Writer.WriteTextString(requestObject.ResultField);
+            }
         }
 
         /// <summary>

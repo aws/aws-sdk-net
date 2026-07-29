@@ -177,6 +177,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetMonitoring())
+            {
+                context.Writer.WritePropertyName("monitoring");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Monitoring, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetNetworkConfiguration())
             {
                 context.Writer.WritePropertyName("networkConfiguration");

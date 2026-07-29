@@ -57,6 +57,17 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetCloudWatchConfiguration())
+            {
+                context.Writer.WritePropertyName("cloudWatchConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CloudWatchConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudWatchConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

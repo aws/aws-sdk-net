@@ -62,6 +62,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                     unmarshalledObject.ActualUsedDataStorageSizeInTBs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("adminPasswordSourceSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = AdminPasswordSourceSummaryUnmarshaller.Instance;
+                    unmarshalledObject.AdminPasswordSourceSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("allocatedStorageSizeInTBs", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;

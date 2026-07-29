@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net472</TargetFramework>
+	<TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>
     <AssemblyName>AWSSDK.Extensions.Bedrock.MEAI</AssemblyName>
     <PackageId>AWSSDK.Extensions.Bedrock.MEAI</PackageId>
 

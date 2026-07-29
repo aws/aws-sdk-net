@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// This is the response object from the UpdateTrigger operation.
+    /// Response structure for updating a Trigger
     /// </summary>
     public partial class UpdateTriggerResponse : AmazonWebServiceResponse
     {

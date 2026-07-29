@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// -- Function Configuration DataStructure
+    /// The configuration for an <c>HTTP_REQUEST</c> function. Specifies the HTTP method,
+    /// URL, headers, body, timeout, and output expressions for the request. For more information,
+    /// see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/monetization-functions-types-http-request.html">HTTP_REQUEST</a>
+    /// in the <i>MediaTailor User Guide</i>.
     /// </summary>
     public partial class HttpRequestConfiguration
     {

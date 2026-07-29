@@ -55,6 +55,7 @@ namespace Amazon.Elasticsearch.Model
         private EncryptionAtRestOptions _encryptionAtRestOptions;
         private string _endpoint;
         private Dictionary<string, string> _endpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private DomainEngineMode _engineMode;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
         private List<ModifyingProperties> _modifyingProperties = AWSConfigs.InitializeCollections ? new List<ModifyingProperties>() : null;
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
@@ -62,6 +63,7 @@ namespace Amazon.Elasticsearch.Model
         private ServiceSoftwareOptions _serviceSoftwareOptions;
         private SnapshotOptions _snapshotOptions;
         private bool? _upgradeProcessing;
+        private DomainUseCase _useCase;
         private VPCDerivedInfo _vpcOptions;
 
         /// <summary>
@@ -465,6 +467,24 @@ namespace Amazon.Elasticsearch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode for the domain.
+        /// </para>
+        /// </summary>
+        public DomainEngineMode EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
         /// Log publishing options for the given domain.
@@ -601,6 +621,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetUpgradeProcessing()
         {
             return this._upgradeProcessing.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The primary use case for the domain.
+        /// </para>
+        /// </summary>
+        public DomainUseCase UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
         /// <summary>

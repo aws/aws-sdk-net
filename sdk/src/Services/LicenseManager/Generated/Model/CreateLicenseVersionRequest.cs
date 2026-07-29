@@ -44,6 +44,7 @@ namespace Amazon.LicenseManager.Model
         private List<Metadata> _licenseMetadata = AWSConfigs.InitializeCollections ? new List<Metadata>() : null;
         private string _licenseName;
         private string _productName;
+        private bool? _resetUsage;
         private string _sourceVersion;
         private LicenseStatus _status;
         private DatetimeRange _validity;
@@ -229,6 +230,25 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetProductName()
         {
             return this._productName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResetUsage. 
+        /// <para>
+        /// Specifies whether to reset the license usage for the new license version. If you don't
+        /// specify a value, the license usage is not reset.
+        /// </para>
+        /// </summary>
+        public bool? ResetUsage
+        {
+            get { return this._resetUsage; }
+            set { this._resetUsage = value; }
+        }
+
+        // Check to see if ResetUsage property is set
+        internal bool IsSetResetUsage()
+        {
+            return this._resetUsage.HasValue; 
         }
 
         /// <summary>

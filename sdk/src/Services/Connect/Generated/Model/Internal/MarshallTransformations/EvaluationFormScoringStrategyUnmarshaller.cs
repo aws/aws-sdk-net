@@ -62,6 +62,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Mode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ScoreThresholds", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<EvaluationFormScoreThreshold, EvaluationFormScoreThresholdUnmarshaller>(EvaluationFormScoreThresholdUnmarshaller.Instance);
+                    unmarshalledObject.ScoreThresholds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

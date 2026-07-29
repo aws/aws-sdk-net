@@ -74,6 +74,35 @@ namespace Amazon.ApplicationSignals
         IApplicationSignalsPaginatorFactory Paginators { get; }
 #endif
                 
+        #region  BatchDeleteInstrumentationConfigurations
+
+
+
+        /// <summary>
+        /// Deletes multiple instrumentation configurations in a single request. Supports two
+        /// mutually exclusive selection methods:
+        /// 
+        ///  <ul> <li>By scope: Delete all configurations matching a Service + Environment + InstrumentationType</li>
+        /// <li>By ARN list: Delete specific configurations by providing a list of resource ARNs</li>
+        /// </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteInstrumentationConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteInstrumentationConfigurations service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchDeleteInstrumentationConfigurations">REST API Reference for BatchDeleteInstrumentationConfigurations Operation</seealso>
+        Task<BatchDeleteInstrumentationConfigurationsResponse> BatchDeleteInstrumentationConfigurationsAsync(BatchDeleteInstrumentationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  BatchGetServiceLevelObjectiveBudgetReport
 
 
@@ -141,6 +170,51 @@ namespace Amazon.ApplicationSignals
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/BatchUpdateExclusionWindows">REST API Reference for BatchUpdateExclusionWindows Operation</seealso>
         Task<BatchUpdateExclusionWindowsResponse> BatchUpdateExclusionWindowsAsync(BatchUpdateExclusionWindowsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateInstrumentationConfiguration
+
+
+
+        /// <summary>
+        /// Creates a dynamic instrumentation configuration for a specific code or endpoint location
+        /// within a service and environment. Configurations are immutable after creation.
+        /// 
+        ///  
+        /// <para>
+        /// For <c>BREAKPOINT</c> type configurations, they expire after 24 hours unless a shorter
+        /// expiration is provided. For <c>PROBE</c> type configurations, they persist until explicitly
+        /// deleted; an expiration cannot be set for <c>PROBE</c> configurations.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a configuration already exists for the same service, environment, signal type,
+        /// and location, this operation returns a conflict instead of overwriting it. Use attribute
+        /// filters and capture settings to control where the instrumentation runs and which data
+        /// is collected.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInstrumentationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInstrumentationConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ConflictException">
+        /// This operation attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ServiceQuotaExceededException">
+        /// This request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/CreateInstrumentationConfiguration">REST API Reference for CreateInstrumentationConfiguration Operation</seealso>
+        Task<CreateInstrumentationConfigurationResponse> CreateInstrumentationConfigurationAsync(CreateInstrumentationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -322,6 +396,34 @@ namespace Amazon.ApplicationSignals
 
         #endregion
                 
+        #region  DeleteInstrumentationConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the specified instrumentation configuration. SDKs remove the instrumentation
+        /// during their next sync after the configuration is deleted or expires.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteInstrumentationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteInstrumentationConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteInstrumentationConfiguration">REST API Reference for DeleteInstrumentationConfiguration Operation</seealso>
+        Task<DeleteInstrumentationConfigurationResponse> DeleteInstrumentationConfigurationAsync(DeleteInstrumentationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteServiceLevelObjective
 
 
@@ -346,6 +448,70 @@ namespace Amazon.ApplicationSignals
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/DeleteServiceLevelObjective">REST API Reference for DeleteServiceLevelObjective Operation</seealso>
         Task<DeleteServiceLevelObjectiveResponse> DeleteServiceLevelObjectiveAsync(DeleteServiceLevelObjectiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetInstrumentationConfiguration
+
+
+
+        /// <summary>
+        /// Returns the details of a single instrumentation configuration identified by service,
+        /// environment, signal type, and location. Use this to audit or display configuration
+        /// details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstrumentationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstrumentationConfiguration service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetInstrumentationConfiguration">REST API Reference for GetInstrumentationConfiguration Operation</seealso>
+        Task<GetInstrumentationConfigurationResponse> GetInstrumentationConfigurationAsync(GetInstrumentationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetInstrumentationConfigurationStatus
+
+
+
+        /// <summary>
+        /// Retrieves the status history for a single instrumentation configuration during a specified
+        /// time range. The response lists when the configuration was ACTIVE, READY, ERROR, or
+        /// DISABLED.
+        /// 
+        ///  
+        /// <para>
+        /// If no status or time window is provided, the operation defaults to ACTIVE events from
+        /// the last hour.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInstrumentationConfigurationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInstrumentationConfigurationStatus service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/GetInstrumentationConfigurationStatus">REST API Reference for GetInstrumentationConfigurationStatus Operation</seealso>
+        Task<GetInstrumentationConfigurationStatusResponse> GetInstrumentationConfigurationStatusAsync(GetInstrumentationConfigurationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -481,6 +647,41 @@ namespace Amazon.ApplicationSignals
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListGroupingAttributeDefinitions">REST API Reference for ListGroupingAttributeDefinitions Operation</seealso>
         Task<ListGroupingAttributeDefinitionsResponse> ListGroupingAttributeDefinitionsAsync(ListGroupingAttributeDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListInstrumentationConfigurations
+
+
+
+        /// <summary>
+        /// Returns all active instrumentation configurations for a service and environment. SDKs
+        /// use this operation to sync configurations and apply client-side filters locally.
+        /// 
+        ///  
+        /// <para>
+        /// Include the previous <c>SyncedAt</c> value to perform incremental syncs. When no changes
+        /// are detected, the response sets <c>Changed</c> to <c>false</c> and omits configuration
+        /// details.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInstrumentationConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInstrumentationConfigurations service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ListInstrumentationConfigurations">REST API Reference for ListInstrumentationConfigurations Operation</seealso>
+        Task<ListInstrumentationConfigurationsResponse> ListInstrumentationConfigurationsAsync(ListInstrumentationConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -719,6 +920,38 @@ namespace Amazon.ApplicationSignals
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/PutGroupingConfiguration">REST API Reference for PutGroupingConfiguration Operation</seealso>
         Task<PutGroupingConfigurationResponse> PutGroupingConfigurationAsync(PutGroupingConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ReportInstrumentationConfigurationStatus
+
+
+
+        /// <summary>
+        /// Reports the status of one or more instrumentation configurations from SDK instances.
+        /// Use this to record when configurations become ready, hit errors, become active, or
+        /// are disabled by limits.
+        /// 
+        ///  
+        /// <para>
+        /// Report <c>READY</c>, <c>ERROR</c>, and <c>DISABLED</c> when the status changes. Report
+        /// <c>ACTIVE</c> periodically (for example, every minute) while instrumentation is running.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReportInstrumentationConfigurationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReportInstrumentationConfigurationStatus service method, as returned by ApplicationSignals.</returns>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ThrottlingException">
+        /// The request was throttled because of quota limits.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationSignals.Model.ValidationException">
+        /// The resource is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-signals-2024-04-15/ReportInstrumentationConfigurationStatus">REST API Reference for ReportInstrumentationConfigurationStatus Operation</seealso>
+        Task<ReportInstrumentationConfigurationStatusResponse> ReportInstrumentationConfigurationStatusAsync(ReportInstrumentationConfigurationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -1066,6 +1066,67 @@ namespace Amazon.Inspector2
         }
         #endregion
         
+        #region  CreateConnector
+
+        internal virtual CreateConnectorResponse CreateConnector(CreateConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a connector that links an external cloud provider to Amazon Inspector for
+        /// vulnerability scanning.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConnector service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ServiceQuotaExceededException">
+        /// You have exceeded your service quota. To perform the requested action, remove some
+        /// of the relevant resources, or use Service Quotas to request a service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateConnector">REST API Reference for CreateConnector Operation</seealso>
+        public virtual Task<CreateConnectorResponse> CreateConnectorAsync(CreateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateFilter
 
         internal virtual CreateFilterResponse CreateFilter(CreateFilterRequest request)
@@ -1405,6 +1466,66 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = DeleteCodeSecurityScanConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteCodeSecurityScanConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteConnector
+
+        internal virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a connector from your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnector service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2147,7 +2268,10 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Retrieves setting configurations for Inspector scans.
+        /// Retrieves setting configurations for Amazon Inspector scans. If you specify an <c>accountId</c>,
+        /// this operation returns the scan configuration for that member account. You must be
+        /// the delegated administrator for the specified member account. If you do not specify
+        /// an <c>accountId</c>, this operation returns your own scan configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -2155,6 +2279,15 @@ namespace Amazon.Inspector2
         /// </param>
         /// 
         /// <returns>The response from the GetConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
         /// The request has failed due to an internal failure of the Amazon Inspector service.
         /// </exception>
@@ -2164,6 +2297,10 @@ namespace Amazon.Inspector2
         /// </exception>
         /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetConfiguration">REST API Reference for GetConfiguration Operation</seealso>
         public virtual Task<GetConfigurationResponse> GetConfigurationAsync(GetConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2934,6 +3071,112 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = ListCodeSecurityScanConfigurationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListCodeSecurityScanConfigurationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListConnectors
+
+        internal virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists connectors in your account. Results are paginated. Use the <c>nextToken</c>
+        /// parameter to retrieve the next page of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListConnectorScanConfigurations
+
+        internal virtual ListConnectorScanConfigurationsResponse ListConnectorScanConfigurations(ListConnectorScanConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorScanConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorScanConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorScanConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists scan configurations for Amazon Web Services Config connectors. Results are paginated.
+        /// Use the <c>nextToken</c> parameter to retrieve the next page of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectorScanConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectorScanConfigurations service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/ListConnectorScanConfigurations">REST API Reference for ListConnectorScanConfigurations Operation</seealso>
+        public virtual Task<ListConnectorScanConfigurationsResponse> ListConnectorScanConfigurationsAsync(ListConnectorScanConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorScanConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorScanConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectorScanConfigurationsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4060,9 +4303,12 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Updates setting configurations for your Amazon Inspector account. When you use this
-        /// API as an Amazon Inspector delegated administrator this updates the setting for all
-        /// accounts you manage. Member accounts in an organization cannot update this setting.
+        /// Updates the scan configuration for your Amazon Inspector account. If you don't specify
+        /// an <c>accountId</c>, this operation updates the delegated administrator's configuration
+        /// and propagates it to member accounts that have not been individually configured. If
+        /// you specify an <c>accountId</c>, this operation updates that member account's configuration.
+        /// Only the delegated administrator can specify an <c>accountId</c>; member accounts
+        /// cannot call this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4097,6 +4343,128 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = UpdateConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateConnector
+
+        internal virtual UpdateConnectorResponse UpdateConnector(UpdateConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the description or provider-specific configuration details of an existing
+        /// connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnector service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConnector">REST API Reference for UpdateConnector Operation</seealso>
+        public virtual Task<UpdateConnectorResponse> UpdateConnectorAsync(UpdateConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateConnectorScanConfiguration
+
+        internal virtual UpdateConnectorScanConfigurationResponse UpdateConnectorScanConfiguration(UpdateConnectorScanConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorScanConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConnectorScanConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates scan configuration settings for resources associated with an Amazon Web Services
+        /// Config connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConnectorScanConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConnectorScanConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// 
+        ///  
+        /// <para>
+        ///  For <c>Enable</c>, you receive this error if you attempt to use a feature in an unsupported
+        /// Amazon Web Services Region. 
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ConflictException">
+        /// A conflict occurred. This exception occurs when the same resource is being modified
+        /// by concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateConnectorScanConfiguration">REST API Reference for UpdateConnectorScanConfiguration Operation</seealso>
+        public virtual Task<UpdateConnectorScanConfigurationResponse> UpdateConnectorScanConfigurationAsync(UpdateConnectorScanConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConnectorScanConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConnectorScanConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConnectorScanConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         

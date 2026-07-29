@@ -39,8 +39,10 @@ namespace Amazon.GeoPlaces.Model
         private bool? _addressNumberCorrected;
         private List<Category> _categories = AWSConfigs.InitializeCollections ? new List<Category>() : null;
         private long? _distance;
+        private bool? _estimatedPointAddress;
         private List<FoodType> _foodTypes = AWSConfigs.InitializeCollections ? new List<FoodType>() : null;
         private List<Intersection> _intersections = AWSConfigs.InitializeCollections ? new List<Intersection>() : null;
+        private RelatedPlace _mainAddress;
         private List<double> _mapView = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private string _placeId;
         private PlaceType _placeType;
@@ -160,6 +162,26 @@ namespace Amazon.GeoPlaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EstimatedPointAddress. 
+        /// <para>
+        /// If <c>true</c>, indicates that the coordinates of the position and access points of
+        /// the point address are estimated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public bool? EstimatedPointAddress
+        {
+            get { return this._estimatedPointAddress; }
+            set { this._estimatedPointAddress = value; }
+        }
+
+        // Check to see if EstimatedPointAddress property is set
+        internal bool IsSetEstimatedPointAddress()
+        {
+            return this._estimatedPointAddress.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property FoodTypes. 
         /// <para>
         ///  List of food types offered by this result. Not available in <c>ap-southeast-1</c>
@@ -209,6 +231,24 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetIntersections()
         {
             return this._intersections != null && (this._intersections.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MainAddress. 
+        /// <para>
+        /// The main address corresponding to a place of type Secondary Address.
+        /// </para>
+        /// </summary>
+        public RelatedPlace MainAddress
+        {
+            get { return this._mainAddress; }
+            set { this._mainAddress = value; }
+        }
+
+        // Check to see if MainAddress property is set
+        internal bool IsSetMainAddress()
+        {
+            return this._mainAddress != null;
         }
 
         /// <summary>

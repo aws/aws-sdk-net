@@ -39,6 +39,7 @@ namespace Amazon.CloudFormation.Model
         private string _changeSetId;
         private string _changeSetName;
         private DateTime? _creationTime;
+        private DeploymentConfig _deploymentConfig;
         private DeploymentMode _deploymentMode;
         private string _description;
         private ExecutionStatus _executionStatus;
@@ -160,6 +161,24 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration specified when the change set was created.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
         }
 
         /// <summary>

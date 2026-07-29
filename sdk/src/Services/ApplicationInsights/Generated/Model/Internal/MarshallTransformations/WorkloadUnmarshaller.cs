@@ -29,70 +29,93 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationInsights.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Workload Object
     /// </summary>  
-    public class WorkloadUnmarshaller : IJsonUnmarshaller<Workload, JsonUnmarshallerContext>
+    public class WorkloadUnmarshaller : ICborUnmarshaller<Workload, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Workload Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Workload Unmarshall(CborUnmarshallerContext context)
         {
             Workload unmarshalledObject = new Workload();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ComponentName", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MissingWorkloadConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MissingWorkloadConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Tier", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Tier = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WorkloadId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkloadId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WorkloadName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkloadName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WorkloadRemarks", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkloadRemarks = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ComponentName":
+                        {
+                            context.AddPathSegment("ComponentName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MissingWorkloadConfig":
+                        {
+                            context.AddPathSegment("MissingWorkloadConfig");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.MissingWorkloadConfig = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Tier":
+                        {
+                            context.AddPathSegment("Tier");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Tier = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "WorkloadId":
+                        {
+                            context.AddPathSegment("WorkloadId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.WorkloadId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "WorkloadName":
+                        {
+                            context.AddPathSegment("WorkloadName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.WorkloadName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "WorkloadRemarks":
+                        {
+                            context.AddPathSegment("WorkloadRemarks");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.WorkloadRemarks = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

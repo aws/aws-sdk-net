@@ -518,9 +518,9 @@
           "RequestedProvisionedConcurrentExecutions": 100,
           "Status": "READY"
         },
-        "description": "The following example displays details for the provisioned concurrency configuration for the BLUE alias of the specified function.",
+        "description": "The following example returns details for the provisioned concurrency configuration for the BLUE alias of the specified function.",
         "id": "example-1",
-        "title": "To view a provisioned concurrency configuration"
+        "title": "To get a provisioned concurrency configuration"
       },
       {
         "input": {
@@ -534,9 +534,9 @@
           "RequestedProvisionedConcurrentExecutions": 100,
           "Status": "READY"
         },
-        "description": "The following example returns details for the provisioned concurrency configuration for the BLUE alias of the specified function.",
+        "description": "The following example displays details for the provisioned concurrency configuration for the BLUE alias of the specified function.",
         "id": "example-2",
-        "title": "To get a provisioned concurrency configuration"
+        "title": "To view a provisioned concurrency configuration"
       }
     ],
     "Invoke": [
@@ -1119,7 +1119,7 @@
           "BatchSize": 123,
           "Enabled": true,
           "FunctionName": "myFunction",
-          "UUID": "1234xCy789012"
+          "UUID": "a1b2c3d4-5678-90ab-cdef-11111EXAMPLE"
         },
         "output": {
           "BatchSize": 123,
@@ -1129,7 +1129,7 @@
           "LastProcessingResult": "",
           "State": "",
           "StateTransitionReason": "",
-          "UUID": "1234xCy789012"
+          "UUID": "a1b2c3d4-5678-90ab-cdef-11111EXAMPLE"
         },
         "description": "This operation updates a Lambda function event source mapping",
         "id": "example-1",

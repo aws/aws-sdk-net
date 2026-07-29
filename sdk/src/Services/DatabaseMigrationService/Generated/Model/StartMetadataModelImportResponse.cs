@@ -39,7 +39,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property RequestIdentifier. 
         /// <para>
-        /// The identifier for the import operation.
+        /// The identifier for the import request.
         /// </para>
         /// </summary>
         public string RequestIdentifier

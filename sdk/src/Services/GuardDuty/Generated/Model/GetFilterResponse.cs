@@ -35,11 +35,14 @@ namespace Amazon.GuardDuty.Model
     public partial class GetFilterResponse : AmazonWebServiceResponse
     {
         private FilterAction _action;
+        private DateTime? _createdAt;
         private string _description;
         private FindingCriteria _findingCriteria;
         private string _name;
         private int? _rank;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private DateTime? _updatedAt;
+        private long? _version;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -58,6 +61,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp when the filter was created. This field is not available for filters
+        /// that were created before the lifecycle metadata feature was enabled (legacy filters).
+        /// </para>
+        /// </summary>
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
         }
 
         /// <summary>
@@ -159,6 +181,47 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp when the filter was last updated. For legacy filters, this field is
+        /// present only after the filter has been updated at least once since the lifecycle metadata
+        /// feature was enabled.
+        /// </para>
+        /// </summary>
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Version. 
+        /// <para>
+        /// The version of the filter. Every time the filter is updated, the version increments
+        /// by 1. This field is not available for legacy filters that were created before the
+        /// lifecycle metadata feature was enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public long? Version
+        {
+            get { return this._version; }
+            set { this._version = value; }
+        }
+
+        // Check to see if Version property is set
+        internal bool IsSetVersion()
+        {
+            return this._version.HasValue; 
         }
 
     }

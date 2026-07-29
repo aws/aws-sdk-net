@@ -34,10 +34,31 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class ResolutionTechniques
     {
+        private bool? _enableRealTimeMatching;
         private ProviderProperties _providerProperties;
         private ResolutionType _resolutionType;
         private RuleBasedProperties _ruleBasedProperties;
         private RuleConditionProperties _ruleConditionProperties;
+
+        /// <summary>
+        /// Gets and sets the property EnableRealTimeMatching. 
+        /// <para>
+        /// Specifies whether real-time matching is enabled for the rule-based matching workflow.
+        /// When you enable real-time matching, you can use the <c>GenerateMatchId</c> operation
+        /// with the workflow.
+        /// </para>
+        /// </summary>
+        public bool? EnableRealTimeMatching
+        {
+            get { return this._enableRealTimeMatching; }
+            set { this._enableRealTimeMatching = value; }
+        }
+
+        // Check to see if EnableRealTimeMatching property is set
+        internal bool IsSetEnableRealTimeMatching()
+        {
+            return this._enableRealTimeMatching.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ProviderProperties. 

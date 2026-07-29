@@ -291,6 +291,56 @@ namespace Amazon.GameLiftStreams
 
 
     /// <summary>
+    /// Constants used for properties of type RevocationMode.
+    /// </summary>
+    public class RevocationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant REVOKE_AND_TERMINATE_SESSIONS for RevocationMode
+        /// </summary>
+        public static readonly RevocationMode REVOKE_AND_TERMINATE_SESSIONS = new RevocationMode("REVOKE_AND_TERMINATE_SESSIONS");
+        /// <summary>
+        /// Constant REVOKE_URL for RevocationMode
+        /// </summary>
+        public static readonly RevocationMode REVOKE_URL = new RevocationMode("REVOKE_URL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RevocationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RevocationMode FindValue(string value)
+        {
+            return FindValue<RevocationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RevocationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RuntimeEnvironmentType.
     /// </summary>
     public class RuntimeEnvironmentType : ConstantClass
@@ -338,6 +388,68 @@ namespace Amazon.GameLiftStreams
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuntimeEnvironmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShaderCacheStatus.
+    /// </summary>
+    public class ShaderCacheStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DELETING for ShaderCacheStatus
+        /// </summary>
+        public static readonly ShaderCacheStatus DELETING = new ShaderCacheStatus("DELETING");
+        /// <summary>
+        /// Constant ERROR for ShaderCacheStatus
+        /// </summary>
+        public static readonly ShaderCacheStatus ERROR = new ShaderCacheStatus("ERROR");
+        /// <summary>
+        /// Constant INITIALIZED for ShaderCacheStatus
+        /// </summary>
+        public static readonly ShaderCacheStatus INITIALIZED = new ShaderCacheStatus("INITIALIZED");
+        /// <summary>
+        /// Constant PROCESSING for ShaderCacheStatus
+        /// </summary>
+        public static readonly ShaderCacheStatus PROCESSING = new ShaderCacheStatus("PROCESSING");
+        /// <summary>
+        /// Constant READY for ShaderCacheStatus
+        /// </summary>
+        public static readonly ShaderCacheStatus READY = new ShaderCacheStatus("READY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShaderCacheStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShaderCacheStatus FindValue(string value)
+        {
+            return FindValue<ShaderCacheStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShaderCacheStatus(string value)
         {
             return FindValue(value);
         }
@@ -725,6 +837,10 @@ namespace Amazon.GameLiftStreams
         /// </summary>
         public static readonly StreamSessionStatusReason ApplicationLogS3DestinationError = new StreamSessionStatusReason("applicationLogS3DestinationError");
         /// <summary>
+        /// Constant AssumeRoleFailed for StreamSessionStatusReason
+        /// </summary>
+        public static readonly StreamSessionStatusReason AssumeRoleFailed = new StreamSessionStatusReason("assumeRoleFailed");
+        /// <summary>
         /// Constant ConnectionTimeout for StreamSessionStatusReason
         /// </summary>
         public static readonly StreamSessionStatusReason ConnectionTimeout = new StreamSessionStatusReason("connectionTimeout");
@@ -782,6 +898,126 @@ namespace Amazon.GameLiftStreams
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamSessionStatusReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamUrlStatus.
+    /// </summary>
+    public class StreamUrlStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for StreamUrlStatus
+        /// </summary>
+        public static readonly StreamUrlStatus ACTIVE = new StreamUrlStatus("ACTIVE");
+        /// <summary>
+        /// Constant EXPIRED for StreamUrlStatus
+        /// </summary>
+        public static readonly StreamUrlStatus EXPIRED = new StreamUrlStatus("EXPIRED");
+        /// <summary>
+        /// Constant LIMIT_REACHED for StreamUrlStatus
+        /// </summary>
+        public static readonly StreamUrlStatus LIMIT_REACHED = new StreamUrlStatus("LIMIT_REACHED");
+        /// <summary>
+        /// Constant REVOKED for StreamUrlStatus
+        /// </summary>
+        public static readonly StreamUrlStatus REVOKED = new StreamUrlStatus("REVOKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamUrlStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamUrlStatus FindValue(string value)
+        {
+            return FindValue<StreamUrlStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamUrlStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StreamUrlStatusReason.
+    /// </summary>
+    public class StreamUrlStatusReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ApplicationDeleted for StreamUrlStatusReason
+        /// </summary>
+        public static readonly StreamUrlStatusReason ApplicationDeleted = new StreamUrlStatusReason("applicationDeleted");
+        /// <summary>
+        /// Constant RevokedAndSessionsTerminated for StreamUrlStatusReason
+        /// </summary>
+        public static readonly StreamUrlStatusReason RevokedAndSessionsTerminated = new StreamUrlStatusReason("revokedAndSessionsTerminated");
+        /// <summary>
+        /// Constant RevokedAndTerminatingSessions for StreamUrlStatusReason
+        /// </summary>
+        public static readonly StreamUrlStatusReason RevokedAndTerminatingSessions = new StreamUrlStatusReason("revokedAndTerminatingSessions");
+        /// <summary>
+        /// Constant StreamGroupDeleted for StreamUrlStatusReason
+        /// </summary>
+        public static readonly StreamUrlStatusReason StreamGroupDeleted = new StreamUrlStatusReason("streamGroupDeleted");
+        /// <summary>
+        /// Constant UserRevoked for StreamUrlStatusReason
+        /// </summary>
+        public static readonly StreamUrlStatusReason UserRevoked = new StreamUrlStatusReason("userRevoked");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamUrlStatusReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamUrlStatusReason FindValue(string value)
+        {
+            return FindValue<StreamUrlStatusReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamUrlStatusReason(string value)
         {
             return FindValue(value);
         }

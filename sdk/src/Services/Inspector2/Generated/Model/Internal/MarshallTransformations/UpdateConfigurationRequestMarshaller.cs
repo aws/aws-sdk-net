@@ -73,6 +73,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountId())
+            {
+                context.Writer.WritePropertyName("accountId");
+                context.Writer.WriteStringValue(publicRequest.AccountId);
+            }
+
             if(publicRequest.IsSetEc2Configuration())
             {
                 context.Writer.WritePropertyName("ec2Configuration");
@@ -91,6 +97,17 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 
                 var marshaller = EcrConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.EcrConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUpdateConfigurationInheritance())
+            {
+                context.Writer.WritePropertyName("updateConfigurationInheritance");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateConfigurationInheritanceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.UpdateConfigurationInheritance, context);
 
                 context.Writer.WriteEndObject();
             }

@@ -52,6 +52,12 @@ namespace Amazon.AutoScaling.Model
         ///  <c>balanced-best-effort</c> - If launches fail in an Availability Zone, Auto Scaling
         /// will attempt to launch in another healthy Availability Zone instead.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>reservations-then-balanced</c> - Auto Scaling will first attempt to launch into
+        /// your Capacity Reservations, and then balance any remaining capacity across the healthy
+        /// Availability Zones.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public CapacityDistributionStrategy CapacityDistributionStrategy

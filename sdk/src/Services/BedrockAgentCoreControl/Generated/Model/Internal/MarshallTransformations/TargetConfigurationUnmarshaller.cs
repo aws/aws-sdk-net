@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Http = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("inference", targetDepth, ref reader))
+                {
+                    var unmarshaller = InferenceTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Inference = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("mcp", targetDepth, ref reader))
                 {
                     var unmarshaller = McpTargetConfigurationUnmarshaller.Instance;

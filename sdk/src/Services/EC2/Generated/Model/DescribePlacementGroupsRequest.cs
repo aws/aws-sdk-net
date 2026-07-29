@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>strategy</c> - The strategy of the placement group (<c>cluster</c> | <c>spread</c>
-        /// | <c>partition</c>).
+        /// | <c>partition</c> | <c>precision-time</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -338,7 +338,7 @@ namespace Amazon.GameLift.Model
         /// Port range: 4192 to a number calculated based on your fleet configuration. Amazon
         /// GameLift Servers uses the following formula: <c>4192 + [# of game server container
         /// groups per fleet instance] * [# of container ports in the game server container group
-        /// definition] + [# of container ports in the game server container group definition]</c>
+        /// definition] + [# of container ports in the per instance container group definition]</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -392,7 +392,7 @@ namespace Amazon.GameLift.Model
         /// Port range: 4192 to a number calculated based on your fleet configuration. Amazon
         /// GameLift Servers uses the following formula: <c>4192 + [# of game server container
         /// groups per fleet instance] * [# of container ports in the game server container group
-        /// definition] + [# of container ports in the game server container group definition]</c>
+        /// definition] + [# of container ports in the per instance container group definition]</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -440,9 +440,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, Amazon GameLift Servers selects an instance type that fits the needs of
-        /// your container groups and is available in all selected fleet locations. You can also
-        /// choose to manually set this parameter. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        /// By default, Amazon GameLift Servers uses the <c>c5.large</c> instance type. If this
+        /// instance type does not have sufficient resources for your container groups, you can
+        /// choose a different instance type that better fits your needs. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
         /// Elastic Compute Cloud Instance Types</a> for detailed descriptions of Amazon EC2 instance
         /// types.
         /// </para>

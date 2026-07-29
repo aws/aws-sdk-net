@@ -43,6 +43,7 @@ namespace Amazon.ARCRegionswitch.Model
     public partial class StartPlanExecutionRequest : AmazonARCRegionswitchRequest
     {
         private ExecutionAction _action;
+        private string _clientToken;
         private string _comment;
         private string _latestVersion;
         private ExecutionMode _mode;
@@ -68,6 +69,30 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the operation completes no more
+        /// than one time. If this token matches a previous request, the service ignores the request
+        /// and returns the result of the original successful request. If you don't provide a
+        /// client token, the service automatically generates one. For more information about
+        /// idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
         }
 
         /// <summary>

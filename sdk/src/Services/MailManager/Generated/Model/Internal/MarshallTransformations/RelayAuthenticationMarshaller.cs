@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RelayAuthentication Marshaller
     /// </summary>
-    public class RelayAuthenticationMarshaller : IRequestMarshaller<RelayAuthentication, JsonMarshallerContext> 
+    public class RelayAuthenticationMarshaller : IRequestMarshaller<RelayAuthentication, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RelayAuthentication requestObject, JsonMarshallerContext context)
+        public void Marshall(RelayAuthentication requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetNoAuthentication())
+
+            if (requestObject.IsSetNoAuthentication())
             {
-                context.Writer.WritePropertyName("NoAuthentication");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("NoAuthentication");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = NoAuthenticationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NoAuthentication, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetSecretArn())
+            if (requestObject.IsSetSecretArn())
             {
-                context.Writer.WritePropertyName("SecretArn");
-                context.Writer.WriteStringValue(requestObject.SecretArn);
+                context.Writer.WriteTextString("SecretArn");
+                context.Writer.WriteTextString(requestObject.SecretArn);
             }
-
         }
 
         /// <summary>

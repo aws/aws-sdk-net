@@ -45,6 +45,7 @@ namespace Amazon.SecurityAgent.Model
         private string _pentestJobId;
         private RiskType _riskType;
         private Endpoint _targetEndpoint;
+        private double? _taskHours;
         private string _taskId;
         private string _title;
         private DateTime? _updatedAt;
@@ -232,6 +233,24 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetTargetEndpoint()
         {
             return this._targetEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TaskHours. 
+        /// <para>
+        /// The number of active work hours consumed by the task during execution.
+        /// </para>
+        /// </summary>
+        public double? TaskHours
+        {
+            get { return this._taskHours; }
+            set { this._taskHours = value; }
+        }
+
+        // Check to see if TaskHours property is set
+        internal bool IsSetTaskHours()
+        {
+            return this._taskHours.HasValue; 
         }
 
         /// <summary>

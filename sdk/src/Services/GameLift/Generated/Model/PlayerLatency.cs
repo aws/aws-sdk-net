@@ -32,9 +32,10 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Regional latency information for a player, used when requesting a new game session.
     /// This value indicates the amount of time lag that exists when the player is connected
-    /// to a fleet in the specified Region. The relative difference between a player's latency
-    /// values for multiple Regions are used to determine which fleets are best suited to
-    /// place a new game session for the player.
+    /// to a fleet in the specified location (an Amazon Web Services Region or a custom location
+    /// for Amazon GameLift Servers Anywhere fleets). The relative difference between a player's
+    /// latency values for multiple locations are used to determine which fleets are best
+    /// suited to place a new game session for the player.
     /// </summary>
     public partial class PlayerLatency
     {
@@ -83,7 +84,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property RegionIdentifier. 
         /// <para>
-        /// Name of the Region that is associated with the latency value.
+        /// Name of the Region or custom location that is associated with the latency value. For
+        /// Amazon GameLift Servers Anywhere fleets, use the custom location name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

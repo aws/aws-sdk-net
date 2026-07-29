@@ -1317,6 +1317,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetTransitGatewayPolicyTableEntries operation
+        ///</summary>
+        public IGetTransitGatewayPolicyTableEntriesPaginator GetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request) 
+        {
+            return new GetTransitGatewayPolicyTableEntriesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetTransitGatewayPrefixListReferences operation
         ///</summary>
         public IGetTransitGatewayPrefixListReferencesPaginator GetTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request) 

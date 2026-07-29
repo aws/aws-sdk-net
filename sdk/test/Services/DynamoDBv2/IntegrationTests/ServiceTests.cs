@@ -187,61 +187,72 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.Equal(2, items.Count);
 
             // Query global index
-            items = (await _fixture.Client.QueryAsync(new QueryRequest
+            // GSI reads are eventually consistent (ConsistentRead is not supported on a GSI),
+            // so poll until the just-written item is indexed before asserting.
+            await UtilityMethods.WaitUntilAsync(async () =>
             {
-                TableName = hashTableName,
-                IndexName = "GlobalIndex",
-                KeyConditions = new Dictionary<string, Condition>
+                items = (await _fixture.Client.QueryAsync(new QueryRequest
                 {
-                    // First Query condition must be HashKey EQ [Value]
+                    TableName = hashTableName,
+                    IndexName = "GlobalIndex",
+                    KeyConditions = new Dictionary<string, Condition>
                     {
-                        "Company",
-                        new Condition
+                        // First Query condition must be HashKey EQ [Value]
                         {
-                            ComparisonOperator = ComparisonOperator.EQ,
-                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
-                        }
-                    },
-                    // Second Query condition must be RangeKey [Conditon] [Value]
-                    {
-                        "Price",
-                        new Condition
+                            "Company",
+                            new Condition
+                            {
+                                ComparisonOperator = ComparisonOperator.EQ,
+                                AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
+                            }
+                        },
+                        // Second Query condition must be RangeKey [Conditon] [Value]
                         {
-                            ComparisonOperator = ComparisonOperator.GT,
-                            AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
+                            "Price",
+                            new Condition
+                            {
+                                ComparisonOperator = ComparisonOperator.GT,
+                                AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
+                            }
                         }
                     }
-                }
-            })).Items;
+                })).Items;
+                return items.Count == 1;
+            }, sleepSeconds: 1, maxWaitSeconds: 30);
             Assert.Equal(1, items.Count);
 
             // Scan global index
-            items = (await _fixture.Client.ScanAsync(new ScanRequest
+            // Also eventually consistent on the GSI; poll as above.
+            await UtilityMethods.WaitUntilAsync(async () =>
             {
-                TableName = hashTableName,
-                IndexName = "GlobalIndex",
-                ScanFilter = new Dictionary<string, Condition>
+                items = (await _fixture.Client.ScanAsync(new ScanRequest
                 {
-                    // First condition will be HashKey EQ [Value]
+                    TableName = hashTableName,
+                    IndexName = "GlobalIndex",
+                    ScanFilter = new Dictionary<string, Condition>
                     {
-                        "Company",
-                        new Condition
+                        // First condition will be HashKey EQ [Value]
                         {
-                            ComparisonOperator = ComparisonOperator.EQ,
-                            AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
-                        }
-                    },
-                    // Second condition will be RangeKey [Conditon] [Value]
-                    {
-                        "Price",
-                        new Condition
+                            "Company",
+                            new Condition
+                            {
+                                ComparisonOperator = ComparisonOperator.EQ,
+                                AttributeValueList = new List<AttributeValue> { new AttributeValue { S = "CloudsAreGrate" } }
+                            }
+                        },
+                        // Second condition will be RangeKey [Conditon] [Value]
                         {
-                            ComparisonOperator = ComparisonOperator.GT,
-                            AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
+                            "Price",
+                            new Condition
+                            {
+                                ComparisonOperator = ComparisonOperator.GT,
+                                AttributeValueList = new List<AttributeValue> { new AttributeValue { N = "50" } }
+                            }
                         }
                     }
-                }
-            })).Items;
+                })).Items;
+                return items.Count == 1;
+            }, sleepSeconds: 1, maxWaitSeconds: 30);
             Assert.Equal(1, items.Count);
 
             return (itemId, itemId2);

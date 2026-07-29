@@ -48,9 +48,13 @@ namespace ServiceClientGenerator
         public string NugetPackagesLocation { get; set; }
 
         /// <summary>
-        /// Used to generate the TargetFramework or TargetFrameworks element of the project file
+        /// The MSBuild expression (e.g. "$(SdkNetFrameworkTargets)") emitted verbatim as the value of
+        /// the TargetFrameworks element. This centralizes the target framework set in
+        /// Directory.Build.props. It is required: every generated project maps to one via
+        /// <see cref="TargetFrameworkProperties.ForProjectType"/>, and the project file template throws
+        /// if it is null or empty.
         /// </summary>
-        public IEnumerable<string> TargetFrameworks { get; set; }
+        public string TargetFrameworksProperty { get; set; }
 
         /// <summary>
         /// Used to generate the DefineConstants element of the project file

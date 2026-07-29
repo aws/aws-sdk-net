@@ -84,6 +84,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("clientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetDatasetConfig())
+            {
+                context.Writer.WritePropertyName("datasetConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DatasetConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DatasetConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDatasetDescription())
             {
                 context.Writer.WritePropertyName("datasetDescription");
@@ -113,6 +124,26 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetDatasetType())
+            {
+                context.Writer.WritePropertyName("datasetType");
+                context.Writer.WriteStringValue(publicRequest.DatasetType);
+            }
+
+            if(publicRequest.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestMetadataKvp in publicRequest.Metadata)
+                {
+                    context.Writer.WritePropertyName(publicRequestMetadataKvp.Key);
+                    var publicRequestMetadataValue = publicRequestMetadataKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestMetadataValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
@@ -125,6 +156,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(publicRequestTagsValue);
                 }
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetWorkspaceName())
+            {
+                context.Writer.WritePropertyName("workspaceName");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceName);
             }
 
             writer.WriteEndObject();

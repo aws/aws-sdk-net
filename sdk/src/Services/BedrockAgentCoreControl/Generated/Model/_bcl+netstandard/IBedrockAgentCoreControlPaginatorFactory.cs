@@ -188,6 +188,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListGatewayTargetsPaginator ListGatewayTargets(ListGatewayTargetsRequest request);
 
         /// <summary>
+        /// Paginator for ListHarnessEndpoints operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListHarnessEndpointsPaginator ListHarnessEndpoints(ListHarnessEndpointsRequest request);
+
+        /// <summary>
         /// Paginator for ListHarnesses operation
         ///</summary>
         [AWSPaginator(
@@ -196,6 +206,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListHarnessesPaginator ListHarnesses(ListHarnessesRequest request);
+
+        /// <summary>
+        /// Paginator for ListHarnessVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListHarnessVersionsPaginator ListHarnessVersions(ListHarnessVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListMemories operation

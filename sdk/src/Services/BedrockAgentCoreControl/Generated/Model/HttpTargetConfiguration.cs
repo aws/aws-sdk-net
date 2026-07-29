@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class HttpTargetConfiguration
     {
         private RuntimeTargetConfiguration _agentcoreRuntime;
+        private PassthroughTargetConfiguration _passthrough;
 
         /// <summary>
         /// Gets and sets the property AgentcoreRuntime. 
@@ -54,6 +55,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAgentcoreRuntime()
         {
             return this._agentcoreRuntime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Passthrough. 
+        /// <para>
+        /// The passthrough configuration for the HTTP target. A passthrough target forwards requests
+        /// directly to an external HTTP endpoint.
+        /// </para>
+        /// </summary>
+        public PassthroughTargetConfiguration Passthrough
+        {
+            get { return this._passthrough; }
+            set { this._passthrough = value; }
+        }
+
+        // Check to see if Passthrough property is set
+        internal bool IsSetPassthrough()
+        {
+            return this._passthrough != null;
         }
 
     }

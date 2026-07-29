@@ -149,11 +149,67 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Paginator for ListPrivateConnections operation
+        ///</summary>
+        public IListPrivateConnectionsPaginator ListPrivateConnections(ListPrivateConnectionsRequest request) 
+        {
+            return new ListPrivateConnectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSecurityRequirementPacks operation
+        ///</summary>
+        public IListSecurityRequirementPacksPaginator ListSecurityRequirementPacks(ListSecurityRequirementPacksRequest request) 
+        {
+            return new ListSecurityRequirementPacksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSecurityRequirements operation
+        ///</summary>
+        public IListSecurityRequirementsPaginator ListSecurityRequirements(ListSecurityRequirementsRequest request) 
+        {
+            return new ListSecurityRequirementsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListTargetDomains operation
         ///</summary>
         public IListTargetDomainsPaginator ListTargetDomains(ListTargetDomainsRequest request) 
         {
             return new ListTargetDomainsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThreatModelJobs operation
+        ///</summary>
+        public IListThreatModelJobsPaginator ListThreatModelJobs(ListThreatModelJobsRequest request) 
+        {
+            return new ListThreatModelJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThreatModelJobTasks operation
+        ///</summary>
+        public IListThreatModelJobTasksPaginator ListThreatModelJobTasks(ListThreatModelJobTasksRequest request) 
+        {
+            return new ListThreatModelJobTasksPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThreatModels operation
+        ///</summary>
+        public IListThreatModelsPaginator ListThreatModels(ListThreatModelsRequest request) 
+        {
+            return new ListThreatModelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListThreats operation
+        ///</summary>
+        public IListThreatsPaginator ListThreats(ListThreatsRequest request) 
+        {
+            return new ListThreatsPaginator(this.client, request);
         }
     }
 }

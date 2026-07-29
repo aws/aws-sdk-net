@@ -39,6 +39,8 @@ namespace Amazon.SSOAdmin.Model
         private string _instanceArn;
         private string _name;
         private string _ownerAccountId;
+        private string _primaryRegion;
+        private List<RegionMetadata> _regions = AWSConfigs.InitializeCollections ? new List<RegionMetadata>() : null;
         private InstanceStatus _status;
         private string _statusReason;
 
@@ -137,6 +139,50 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrimaryRegion. 
+        /// <para>
+        /// The primary Region where the IAM Identity Center instance was originally enabled.
+        /// The primary Region cannot be removed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string PrimaryRegion
+        {
+            get { return this._primaryRegion; }
+            set { this._primaryRegion = value; }
+        }
+
+        // Check to see if PrimaryRegion property is set
+        internal bool IsSetPrimaryRegion()
+        {
+            return this._primaryRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// The list of Regions enabled in the IAM Identity Center instance, including Regions
+        /// with ACTIVE, ADDING, or REMOVING status.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<RegionMetadata> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

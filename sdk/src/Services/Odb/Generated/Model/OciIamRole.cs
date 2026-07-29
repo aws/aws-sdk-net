@@ -37,6 +37,8 @@ namespace Amazon.Odb.Model
     {
         private OciAwsIntegration _awsIntegration;
         private string _iamRoleArn;
+        private OciIamRoleStatus _status;
+        private string _statusReason;
 
         /// <summary>
         /// Gets and sets the property AwsIntegration. 
@@ -75,6 +77,42 @@ namespace Amazon.Odb.Model
         internal bool IsSetIamRoleArn()
         {
             return this._iamRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current lifecycle status of the IAM service role.
+        /// </para>
+        /// </summary>
+        public OciIamRoleStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusReason. 
+        /// <para>
+        /// Additional information about the current status of the IAM service role, if applicable.
+        /// </para>
+        /// </summary>
+        public string StatusReason
+        {
+            get { return this._statusReason; }
+            set { this._statusReason = value; }
+        }
+
+        // Check to see if StatusReason property is set
+        internal bool IsSetStatusReason()
+        {
+            return this._statusReason != null;
         }
 
     }

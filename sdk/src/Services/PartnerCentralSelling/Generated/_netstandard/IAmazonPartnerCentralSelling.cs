@@ -1368,6 +1368,75 @@ namespace Amazon.PartnerCentralSelling
 
         #endregion
                 
+        #region  GetProspectingFromEngagementTask
+
+
+
+        /// <summary>
+        /// Retrieves the details and current status of a prospecting task previously started
+        /// with <c>StartProspectingFromEngagementTask</c> to enable polling for completion and
+        /// access to per-engagement processing results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProspectingFromEngagementTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetProspectingFromEngagementTask service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/GetProspectingFromEngagementTask">REST API Reference for GetProspectingFromEngagementTask Operation</seealso>
+        Task<GetProspectingFromEngagementTaskResponse> GetProspectingFromEngagementTaskAsync(GetProspectingFromEngagementTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetResourceSnapshot
 
 
@@ -2147,6 +2216,66 @@ namespace Amazon.PartnerCentralSelling
 
         #endregion
                 
+        #region  ListProspectingFromEngagementTasks
+
+
+
+        /// <summary>
+        /// Lists all prospecting tasks initiated by the caller's account. Supports optional filters
+        /// by task identifier, task name, or start time range. Results can be sorted using configurable
+        /// options. The response is paginated. Use the <c>NextToken</c> value from each response
+        /// to retrieve subsequent pages.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProspectingFromEngagementTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListProspectingFromEngagementTasks service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/ListProspectingFromEngagementTasks">REST API Reference for ListProspectingFromEngagementTasks Operation</seealso>
+        Task<ListProspectingFromEngagementTasksResponse> ListProspectingFromEngagementTasksAsync(ListProspectingFromEngagementTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListResourceSnapshotJobs
 
 
@@ -2862,6 +2991,85 @@ namespace Amazon.PartnerCentralSelling
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartOpportunityFromEngagementTask">REST API Reference for StartOpportunityFromEngagementTask Operation</seealso>
         Task<StartOpportunityFromEngagementTaskResponse> StartOpportunityFromEngagementTaskAsync(StartOpportunityFromEngagementTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartProspectingFromEngagementTask
+
+
+
+        /// <summary>
+        /// Starts a task to convert one or more engagement contexts into new prospecting leads.
+        /// The task runs asynchronously. To poll for status, use <c>GetProspectingFromEngagementTask</c>,
+        /// or use <c>ListProspectingFromEngagementTasks</c> to monitor multiple tasks.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartProspectingFromEngagementTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartProspectingFromEngagementTask service method, as returned by PartnerCentralSelling.</returns>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.AccessDeniedException">
+        /// This error occurs when you don't have permission to perform the requested action.
+        /// 
+        ///  
+        /// <para>
+        /// You don’t have access to this action or resource. Review IAM policies or contact your
+        /// AWS administrator for assistance.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ConflictException">
+        /// This error occurs when the request can’t be processed due to a conflict with the target
+        /// resource's current state, which could result from updating or deleting the resource.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Fetch the latest state of the resource, verify the state, and retry
+        /// the request.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.InternalServerException">
+        /// This error occurs when the specified resource can’t be found or doesn't exist. Resource
+        /// ID and type might be incorrect.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: This is usually a transient error. Retry after the provided retry
+        /// delay or a short interval. If the problem persists, contact AWS support.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ResourceNotFoundException">
+        /// This error occurs when the specified resource can't be found. The resource might not
+        /// exist, or isn't visible with the current credentials.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Verify that the resource ID is correct and the resource is in the
+        /// expected AWS region. Check IAM permissions for accessing the resource.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ThrottlingException">
+        /// This error occurs when there are too many requests sent. Review the provided quotas
+        /// and adapt your usage to avoid throttling.
+        /// 
+        ///  
+        /// <para>
+        /// This error occurs when there are too many requests sent. Review the provided <a href="https://docs.aws.amazon.com/partner-central/latest/selling-api/quotas.html">Quotas</a>
+        /// and retry after the provided delay.
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralSelling.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service or business validation
+        /// rules.
+        /// 
+        ///  
+        /// <para>
+        /// Suggested action: Review the error message, including the failed fields and reasons,
+        /// to correct the request payload.
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-selling-2022-07-26/StartProspectingFromEngagementTask">REST API Reference for StartProspectingFromEngagementTask Operation</seealso>
+        Task<StartProspectingFromEngagementTaskResponse> StartProspectingFromEngagementTaskAsync(StartProspectingFromEngagementTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

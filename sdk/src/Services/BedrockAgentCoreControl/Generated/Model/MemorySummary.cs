@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _arn;
         private DateTime? _createdAt;
         private string _id;
+        private string _managedByResourceArn;
         private MemoryStatus _status;
         private DateTime? _updatedAt;
 
@@ -94,6 +95,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedByResourceArn. 
+        /// <para>
+        /// ARN of the resource managing this memory (e.g. a harness). Null if not managed.
+        /// </para>
+        /// </summary>
+        public string ManagedByResourceArn
+        {
+            get { return this._managedByResourceArn; }
+            set { this._managedByResourceArn = value; }
+        }
+
+        // Check to see if ManagedByResourceArn property is set
+        internal bool IsSetManagedByResourceArn()
+        {
+            return this._managedByResourceArn != null;
         }
 
         /// <summary>

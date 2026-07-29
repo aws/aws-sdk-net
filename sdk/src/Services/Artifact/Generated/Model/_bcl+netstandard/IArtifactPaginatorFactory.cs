@@ -28,6 +28,26 @@ namespace Amazon.Artifact.Model
     {
 
         /// <summary>
+        /// Paginator for ListComplianceInquiries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListComplianceInquiriesPaginator ListComplianceInquiries(ListComplianceInquiriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListComplianceInquiryQueries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListComplianceInquiryQueriesPaginator ListComplianceInquiryQueries(ListComplianceInquiryQueriesRequest request);
+
+        /// <summary>
         /// Paginator for ListCustomerAgreements operation
         ///</summary>
         [AWSPaginator(

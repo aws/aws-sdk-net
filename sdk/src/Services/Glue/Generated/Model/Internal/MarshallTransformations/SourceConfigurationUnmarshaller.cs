@@ -56,6 +56,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("FilterConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FilterConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PaginationConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = PaginationConfigurationUnmarshaller.Instance;

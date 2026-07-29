@@ -78,6 +78,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                         unmarshalledObject.ErrorAttribute = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
+                    if (context.TestExpression("resourceShareErrors", targetDepth, ref reader))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<ResourceShareError, ResourceShareErrorUnmarshaller>(ResourceShareErrorUnmarshaller.Instance);
+                        unmarshalledObject.ResourceShareErrors = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

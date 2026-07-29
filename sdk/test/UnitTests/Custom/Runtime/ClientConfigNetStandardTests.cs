@@ -75,6 +75,7 @@ namespace AWSSDK.UnitTests
             "DefaultAWSCredentials",
             "AuthSchemePreference",
             "SigV4aSigningRegionSet",
+            "JsonMaxDepth",
         };
 
         [TestMethod]

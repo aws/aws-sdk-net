@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HibernationOptionsRequest Marshaller
     /// </summary>
-    public class HibernationOptionsRequestMarshaller : IRequestMarshaller<HibernationOptionsRequest, JsonMarshallerContext> 
+    public class HibernationOptionsRequestMarshaller : IRequestMarshaller<HibernationOptionsRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HibernationOptionsRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(HibernationOptionsRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetConfigured())
-            {
-                context.Writer.WritePropertyName("Configured");
-                context.Writer.WriteBooleanValue(requestObject.Configured.Value);
-            }
 
+            if (requestObject.IsSetConfigured())
+            {
+                context.Writer.WriteTextString("Configured");
+                context.Writer.WriteBoolean(requestObject.Configured.Value);
+            }
         }
 
         /// <summary>

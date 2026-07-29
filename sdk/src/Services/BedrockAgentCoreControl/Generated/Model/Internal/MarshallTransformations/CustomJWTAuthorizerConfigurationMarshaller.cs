@@ -46,6 +46,20 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdvertisedScopeMapping())
+            {
+                context.Writer.WritePropertyName("advertisedScopeMapping");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectAdvertisedScopeMappingKvp in requestObject.AdvertisedScopeMapping)
+                {
+                    context.Writer.WritePropertyName(requestObjectAdvertisedScopeMappingKvp.Key);
+                    var requestObjectAdvertisedScopeMappingValue = requestObjectAdvertisedScopeMappingKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectAdvertisedScopeMappingValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAllowedAudience())
             {
                 context.Writer.WritePropertyName("allowedAudience");
@@ -77,6 +91,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectAllowedScopesListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetAllowedWorkloadConfiguration())
+            {
+                context.Writer.WritePropertyName("allowedWorkloadConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AllowedWorkloadConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AllowedWorkloadConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomClaims())

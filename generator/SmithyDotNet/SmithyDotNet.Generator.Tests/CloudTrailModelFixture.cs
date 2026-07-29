@@ -25,11 +25,23 @@ public class CloudTrailModelFixture
 
     public GenerationContext Context { get; }
 
+    public IReadOnlyList<ResolvedDefaultConfigurationMode> DefaultConfigurationModes { get; } =
+        DefaultConfigurationManifest.Load("TestData/sdk-default-configuration.json");
+
     public CloudTrailModelFixture()
     {
+        // TargetPlatforms reads the TFM set from a Directory.Build.props; TestData carries a minimal
+        // stand-in. Writer tests share this collection fixture, so initializing here runs once before
+        // any of them touch TargetPlatforms.
+        TargetPlatforms.Initialize("TestData");
+
         Index = new ServiceIndex(Model);
-        Context = new GenerationContext(Index);
+        Context = new GenerationContext(Index, Manifest, Metadata);
     }
+
+    private static readonly ServiceMetadata Metadata = ServiceMetadata.Load("TestData/metadata.json");
+
+    private static readonly SdkVersionManifest Manifest = TestManifests.CloudTrailData();
 
     public Shape DeserializeShape(string shapeId)
     {

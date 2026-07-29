@@ -1628,6 +1628,16 @@ namespace Amazon.EC2.Model
         IGetTransitGatewayPolicyTableAssociationsPaginator GetTransitGatewayPolicyTableAssociations(GetTransitGatewayPolicyTableAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for GetTransitGatewayPolicyTableEntries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetTransitGatewayPolicyTableEntriesPaginator GetTransitGatewayPolicyTableEntries(GetTransitGatewayPolicyTableEntriesRequest request);
+
+        /// <summary>
         /// Paginator for GetTransitGatewayPrefixListReferences operation
         ///</summary>
         [AWSPaginator(

@@ -186,6 +186,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("EnablePerformanceInsights", StringUtils.FromBool(publicRequest.EnablePerformanceInsights));
                 }
+                if(publicRequest.IsSetEngineLifecycleSupport())
+                {
+                    request.Parameters.Add("EngineLifecycleSupport", StringUtils.FromString(publicRequest.EngineLifecycleSupport));
+                }
                 if(publicRequest.IsSetEngineMode())
                 {
                     request.Parameters.Add("EngineMode", StringUtils.FromString(publicRequest.EngineMode));
@@ -320,7 +324,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static ModifyDBClusterRequestMarshaller _instance = new ModifyDBClusterRequestMarshaller();        

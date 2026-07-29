@@ -1,65 +1,66 @@
+using System.Diagnostics;
 using System.Text.Json;
-using SmithyDotNet.Generator.Model;
-using SmithyDotNet.Generator.Model.Converters;
+using SmithyDotNet.Generator.Generation;
 
 namespace SmithyDotNet.Generator;
 
 public static class Program
 {
-    private static readonly JsonSerializerOptions Options = new()
-    {
-        Converters = { new ShapeConverter() },
-    };
-
     public static int Main(string[] args)
     {
-        if (args.Length == 0)
+        // The only accepted invocations: no arguments, or "--repo-root <path>". The path is
+        // normalized to a full path so logged output paths are readable rather than ..-relative.
+        string? repoRoot = null;
+        if (args.Length == 2 && args[0] == "--repo-root")
         {
-            Console.Error.WriteLine("Error: expected a path to a Smithy model.json as the first argument.");
-            Console.Error.WriteLine("Usage: dotnet run --project SmithyDotNet.Generator/SmithyDotNet.Generator.csproj -- <path-to-model.json>");
+            repoRoot = Path.GetFullPath(args[1]);
+        }
+        else if (args.Length != 0)
+        {
+            Log.Error($"Unexpected arguments: {string.Join(' ', args)}");
+            Log.Error("Usage is dotnet run --project SmithyDotNet.Generator/SmithyDotNet.Generator.csproj -- [--repo-root <path>]");
             return 1;
         }
 
-        var modelPath = args[0];
-        if (!File.Exists(modelPath))
+        repoRoot ??= FindRepoRoot();
+        if (repoRoot is null || !File.Exists(SdkTreeLayout.VersionManifestPath(repoRoot)))
         {
-            Console.Error.WriteLine($"Error: model file not found: {modelPath}");
-            return 1;
-        }
-
-        SmithyModel? model;
-        try
-        {
-            using var stream = File.OpenRead(modelPath);
-            model = JsonSerializer.Deserialize<SmithyModel>(stream, Options);
-        }
-        catch (JsonException ex)
-        {
-            Console.Error.WriteLine($"Error: failed to parse Smithy model JSON: {ex.Message}");
-            return 1;
-        }
-
-        if (model is null)
-        {
-            Console.Error.WriteLine("Error: Smithy model deserialized to null.");
+            Log.Error("Could not locate the repo root (a directory containing 'generator/ServiceModels/_sdk-versions.json'). Pass it with --repo-root.");
             return 1;
         }
 
         try
         {
-            ModelValidator.Validate(model);
+            var stopwatch = Stopwatch.StartNew();
+            var generated = new BatchGenerator(repoRoot).Run();
+            Log.Info($"Generated {generated.Count} service(s) in {stopwatch.Elapsed}.");
+            return 0;
         }
-        catch (GeneratorException ex)
+        catch (Exception ex) when (ex is GeneratorException or IOException or UnauthorizedAccessException or JsonException)
         {
-            Console.Error.WriteLine($"Error: {ex.Message}");
+            // GeneratorException: validation/lookup/config failures (including wrapped XML errors).
+            // IO/UnauthorizedAccess: reading models/manifests or writing output. JsonException: a
+            // malformed model or manifest.
+            Log.Error(ex.Message);
             return 1;
         }
+    }
 
-        var index = new ServiceIndex(model);
-        Console.WriteLine($"Smithy version: {model.Version}");
-        Console.WriteLine($"Service API version: {index.Service.ApiVersion}");
-        Console.WriteLine($"Operations: {index.Operations.Count}");
-        Console.WriteLine($"Reachable shapes: {index.Shapes.Count}");
-        return 0;
+    // Walks up from the current directory looking for the version manifest; the directory containing
+    // its relative path is the repo root. Returns null when not inside the repo.
+    private static string? FindRepoRoot()
+    {
+        var directory = new DirectoryInfo(Directory.GetCurrentDirectory());
+        while (directory is not null)
+        {
+            if (File.Exists(SdkTreeLayout.VersionManifestPath(directory.FullName)))
+            {
+                return directory.FullName;
+            }
+
+            directory = directory.Parent;
+        }
+
+        return null;
     }
 }

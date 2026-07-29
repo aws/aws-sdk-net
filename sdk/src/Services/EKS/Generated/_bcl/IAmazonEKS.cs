@@ -320,6 +320,120 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  CancelUpdate
+
+
+        /// <summary>
+        /// Cancels an in-progress update to an Amazon EKS cluster on a best-effort basis. Cancellation
+        /// is only performed if the update can be cancelled. Currently, this is supported for
+        /// <c>VersionRollback</c> update types on EKS Auto Mode clusters when nodes are rolling
+        /// back.
+        /// 
+        ///  
+        /// <para>
+        /// A successful cancellation stops the node rollback. After cancellation, nodes converge
+        /// to the current cluster version honoring configured disruption controls. If the control
+        /// plane rollback has already begun, the cancellation request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelUpdate service method.</param>
+        /// 
+        /// <returns>The response from the CancelUpdate service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidStateException">
+        /// Amazon EKS detected upgrade readiness issues. Call the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListInsights.html">
+        /// <c>ListInsights</c> </a> API to view detected upgrade blocking issues. Pass the <a
+        /// href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html#API_UpdateClusterVersion_RequestBody">
+        /// <c>force</c> </a> flag when updating to override upgrade readiness errors.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CancelUpdate">REST API Reference for CancelUpdate Operation</seealso>
+        CancelUpdateResponse CancelUpdate(CancelUpdateRequest request);
+
+
+
+        /// <summary>
+        /// Cancels an in-progress update to an Amazon EKS cluster on a best-effort basis. Cancellation
+        /// is only performed if the update can be cancelled. Currently, this is supported for
+        /// <c>VersionRollback</c> update types on EKS Auto Mode clusters when nodes are rolling
+        /// back.
+        /// 
+        ///  
+        /// <para>
+        /// A successful cancellation stops the node rollback. After cancellation, nodes converge
+        /// to the current cluster version honoring configured disruption controls. If the control
+        /// plane rollback has already begun, the cancellation request fails.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelUpdate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelUpdate service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ClientException">
+        /// These errors are usually caused by a client action. Actions can include using an action
+        /// or resource on behalf of an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html">IAM
+        /// principal</a> that doesn't have permissions to use the action or resource or specifying
+        /// an identifier that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidRequestException">
+        /// The request is invalid given the state of the cluster. Check the state of the cluster
+        /// and the associated operations.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.InvalidStateException">
+        /// Amazon EKS detected upgrade readiness issues. Call the <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListInsights.html">
+        /// <c>ListInsights</c> </a> API to view detected upgrade blocking issues. Pass the <a
+        /// href="https://docs.aws.amazon.com/eks/latest/APIReference/API_UpdateClusterVersion.html#API_UpdateClusterVersion_RequestBody">
+        /// <c>force</c> </a> flag when updating to override upgrade readiness errors.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CancelUpdate">REST API Reference for CancelUpdate Operation</seealso>
+        Task<CancelUpdateResponse> CancelUpdateAsync(CancelUpdateRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAccessEntry
 
 

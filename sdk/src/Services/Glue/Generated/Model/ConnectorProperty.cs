@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     {
         private List<string> _allowedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _defaultValue;
+        private string _format;
         private string _keyOverride;
         private string _name;
         private PropertyLocation _propertyLocation;
@@ -82,6 +83,26 @@ namespace Amazon.Glue.Model
         internal bool IsSetDefaultValue()
         {
             return this._defaultValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Format. 
+        /// <para>
+        /// A format template for the property value that defines how the value should be formatted
+        /// before sending it in API requests. Use <c>{value}</c> as a placeholder for the actual
+        /// property value (for example, <c>SSWS {value}</c>).
+        /// </para>
+        /// </summary>
+        public string Format
+        {
+            get { return this._format; }
+            set { this._format = value; }
+        }
+
+        // Check to see if Format property is set
+        internal bool IsSetFormat()
+        {
+            return this._format != null;
         }
 
         /// <summary>

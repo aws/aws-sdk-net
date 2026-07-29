@@ -40,6 +40,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _dbUser;
         private long? _duration;
         private string _error;
+        private ExecutionMode _executionMode;
         private bool? _hasResultSet;
         private string _id;
         private List<SqlParameter> _queryParameters = AWSConfigs.InitializeCollections ? new List<SqlParameter>() : null;
@@ -163,6 +164,26 @@ namespace Amazon.RedshiftDataAPIService.Model
         internal bool IsSetError()
         {
             return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionMode. 
+        /// <para>
+        /// The execution mode of the batch request. <c>TRANSACTION</c> indicates all SQL statements
+        /// are run as a single transaction. <c>AUTO_COMMIT</c> indicates each SQL statement is
+        /// committed individually.
+        /// </para>
+        /// </summary>
+        public ExecutionMode ExecutionMode
+        {
+            get { return this._executionMode; }
+            set { this._executionMode = value; }
+        }
+
+        // Check to see if ExecutionMode property is set
+        internal bool IsSetExecutionMode()
+        {
+            return this._executionMode != null;
         }
 
         /// <summary>

@@ -87,6 +87,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetContentQualityAnalysisConfiguration())
+            {
+                context.Writer.WritePropertyName("contentQualityAnalysisConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RouterContentQualityAnalysisConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ContentQualityAnalysisConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaintenanceConfiguration())
             {
                 context.Writer.WritePropertyName("maintenanceConfiguration");

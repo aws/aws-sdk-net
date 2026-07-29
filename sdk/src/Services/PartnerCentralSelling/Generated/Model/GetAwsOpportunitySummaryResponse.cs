@@ -35,6 +35,7 @@ namespace Amazon.PartnerCentralSelling.Model
     public partial class GetAwsOpportunitySummaryResponse : AmazonWebServiceResponse
     {
         private string _catalog;
+        private string _cosellMotion;
         private AwsOpportunityCustomer _customer;
         private AwsOpportunityInsights _insights;
         private SalesInvolvementType _involvementType;
@@ -65,6 +66,25 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetCatalog()
         {
             return this._catalog != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CosellMotion. 
+        /// <para>
+        /// Engagement classification for this opportunity. Read-only. Null before scoring. Known
+        /// values: <c>AWS Field-engaged</c>, <c>Agent-engaged</c>, <c>Partner-led</c>.
+        /// </para>
+        /// </summary>
+        public string CosellMotion
+        {
+            get { return this._cosellMotion; }
+            set { this._cosellMotion = value; }
+        }
+
+        // Check to see if CosellMotion property is set
+        internal bool IsSetCosellMotion()
+        {
+            return this._cosellMotion != null;
         }
 
         /// <summary>

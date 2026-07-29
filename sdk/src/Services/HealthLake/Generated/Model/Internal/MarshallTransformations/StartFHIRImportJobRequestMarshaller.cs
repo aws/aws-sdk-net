@@ -98,6 +98,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DatastoreId);
             }
 
+            if(publicRequest.IsSetDriftDetectionEnabled())
+            {
+                context.Writer.WritePropertyName("DriftDetectionEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.DriftDetectionEnabled.Value);
+            }
+
             if(publicRequest.IsSetInputDataConfig())
             {
                 context.Writer.WritePropertyName("InputDataConfig");
@@ -107,6 +113,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.InputDataConfig, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInputFormat())
+            {
+                context.Writer.WritePropertyName("InputFormat");
+                context.Writer.WriteStringValue(publicRequest.InputFormat);
             }
 
             if(publicRequest.IsSetJobName())
@@ -124,6 +136,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.JobOutputDataConfig, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProfileId())
+            {
+                context.Writer.WritePropertyName("ProfileId");
+                context.Writer.WriteStringValue(publicRequest.ProfileId);
             }
 
             if(publicRequest.IsSetValidationLevel())

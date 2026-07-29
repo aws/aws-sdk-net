@@ -69,7 +69,7 @@ namespace AWSSDK.UnitTests
             foreach(var header in expectedHeaders)
             {
                 Assert.IsTrue(requestHeaders.ContainsKey(header.Key));
-                Assert.AreEqual(requestHeaders[header.Key], header.Value);
+                Assert.AreEqual(header.Value, requestHeaders[header.Key]);
             }
         }
 

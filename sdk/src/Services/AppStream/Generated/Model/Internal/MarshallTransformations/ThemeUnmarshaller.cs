@@ -29,82 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Theme Object
     /// </summary>  
-    public class ThemeUnmarshaller : IJsonUnmarshaller<Theme, JsonUnmarshallerContext>
+    public class ThemeUnmarshaller : ICborUnmarshaller<Theme, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Theme Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Theme Unmarshall(CborUnmarshallerContext context)
         {
             Theme unmarshalledObject = new Theme();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("CreatedTime", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StackName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StackName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ThemeFaviconURL", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThemeFaviconURL = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ThemeFooterLinks", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ThemeFooterLink, ThemeFooterLinkUnmarshaller>(ThemeFooterLinkUnmarshaller.Instance);
-                    unmarshalledObject.ThemeFooterLinks = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ThemeOrganizationLogoURL", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThemeOrganizationLogoURL = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ThemeStyling", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThemeStyling = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ThemeTitleText", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ThemeTitleText = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "CreatedTime":
+                        {
+                            context.AddPathSegment("CreatedTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StackName":
+                        {
+                            context.AddPathSegment("StackName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StackName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "State":
+                        {
+                            context.AddPathSegment("State");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ThemeFaviconURL":
+                        {
+                            context.AddPathSegment("ThemeFaviconURL");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ThemeFaviconURL = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ThemeFooterLinks":
+                        {
+                            context.AddPathSegment("ThemeFooterLinks");
+                            var unmarshaller = new CborListUnmarshaller<ThemeFooterLink, ThemeFooterLinkUnmarshaller>(ThemeFooterLinkUnmarshaller.Instance);
+                            unmarshalledObject.ThemeFooterLinks = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ThemeOrganizationLogoURL":
+                        {
+                            context.AddPathSegment("ThemeOrganizationLogoURL");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ThemeOrganizationLogoURL = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ThemeStyling":
+                        {
+                            context.AddPathSegment("ThemeStyling");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ThemeStyling = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ThemeTitleText":
+                        {
+                            context.AddPathSegment("ThemeTitleText");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ThemeTitleText = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

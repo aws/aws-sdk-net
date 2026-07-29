@@ -62,6 +62,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.DashPlaylistSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DualStackPlaybackUrl", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DualStackPlaybackUrl = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("HlsPlaylistSettings", targetDepth, ref reader))
                 {
                     var unmarshaller = HlsPlaylistSettingsUnmarshaller.Instance;

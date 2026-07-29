@@ -41,8 +41,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Specifies the unique pagination token that makes it possible to display the next page
-        /// of metadata model creation requests. If Marker is returned, there are more metadata
-        /// model creation requests available.
+        /// of results. If this parameter is specified, the response includes only records beyond
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If <c>Marker</c> is returned by a previous response, there are more results available.
+        /// The value of <c>Marker</c> is a unique pagination token for each page. To retrieve
+        /// the next page, make the call again using the returned token and keeping all other
+        /// arguments unchanged.
         /// </para>
         /// </summary>
         public string Marker
@@ -60,9 +67,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Requests. 
         /// <para>
-        /// A list of metadata model creation requests. The ExportSqlDetails field will never
-        /// be populated for the DescribeMetadataModelCreations operation.
+        /// A paginated list of metadata model creation requests.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// DMS never populates the <c>ExportSqlDetails</c> field for this operation.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

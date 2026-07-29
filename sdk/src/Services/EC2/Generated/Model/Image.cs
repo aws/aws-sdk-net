@@ -59,6 +59,7 @@ namespace Amazon.EC2.Model
         private string _platformDetails;
         private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
         private bool? _public;
+        private string _publicSsmParameterName;
         private string _ramdiskId;
         private string _rootDeviceName;
         private DeviceType _rootDeviceType;
@@ -575,6 +576,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetPublic()
         {
             return this._public.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicSsmParameterName. 
+        /// <para>
+        /// The name of the public Systems Manager parameter that resolves to this AMI, under
+        /// the <c>aws/service/</c> namespace.
+        /// </para>
+        /// </summary>
+        public string PublicSsmParameterName
+        {
+            get { return this._publicSsmParameterName; }
+            set { this._publicSsmParameterName = value; }
+        }
+
+        // Check to see if PublicSsmParameterName property is set
+        internal bool IsSetPublicSsmParameterName()
+        {
+            return this._publicSsmParameterName != null;
         }
 
         /// <summary>

@@ -75,6 +75,17 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCertificateKeyPairOrigins())
+            {
+                context.Writer.WritePropertyName("CertificateKeyPairOrigins");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCertificateKeyPairOriginsListValue in publicRequest.CertificateKeyPairOrigins)
+                {
+                        context.Writer.WriteStringValue(publicRequestCertificateKeyPairOriginsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetCertificateStatuses())
             {
                 context.Writer.WritePropertyName("CertificateStatuses");

@@ -35,6 +35,7 @@ namespace Amazon.CertificateManager.Model
     public partial class CertificateSummary
     {
         private string _certificateArn;
+        private CertificateKeyPairOrigin _certificateKeyPairOrigin;
         private DateTime? _createdAt;
         private string _domainName;
         private bool? _exported;
@@ -85,6 +86,24 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CertificateKeyPairOrigin. 
+        /// <para>
+        /// The origin of the certificate's key pair.
+        /// </para>
+        /// </summary>
+        public CertificateKeyPairOrigin CertificateKeyPairOrigin
+        {
+            get { return this._certificateKeyPairOrigin; }
+            set { this._certificateKeyPairOrigin = value; }
+        }
+
+        // Check to see if CertificateKeyPairOrigin property is set
+        internal bool IsSetCertificateKeyPairOrigin()
+        {
+            return this._certificateKeyPairOrigin != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The time at which the certificate was requested.
@@ -125,8 +144,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Exported. 
         /// <para>
-        /// Indicates whether the certificate has been exported. This value exists only when the
-        /// certificate type is <c>PRIVATE</c>.
+        /// Indicates whether the certificate has been exported.
         /// </para>
         /// </summary>
         public bool? Exported

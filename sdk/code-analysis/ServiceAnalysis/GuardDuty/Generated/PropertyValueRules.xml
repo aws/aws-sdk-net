@@ -61,6 +61,27 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateInvestigationRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateInvestigationRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateInvestigationRequest.TriggerPrompt</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateInvestigationResponse.InvestigationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-fA-F0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CreateIPSetRequest.ClientToken</property>
     <min>0</min>
     <max>64</max>
@@ -348,6 +369,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetFilterResponse.Version</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetFindingsRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -361,6 +386,17 @@
     <property>Amazon.GuardDuty.Model.GetFindingsStatisticsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetInvestigationRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetInvestigationRequest.InvestigationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-fA-F0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetIPSetRequest.DetectorId</property>
@@ -590,6 +626,28 @@
     <property>Amazon.GuardDuty.Model.ListFindingsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListInvestigationsRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListInvestigationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListInvestigationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9+/=_\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListInvestigationsResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9+/=_\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.ListInvitationsRequest.MaxResults</property>
@@ -890,6 +948,35 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrail.Arn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrail.Version</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT)|(ENFORCED))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrailDetails.GuardrailArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:bedrock:[a-z0-9-]{1,20}:[0-9]{12}:guardrail/[a-z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.BedrockGuardrailDetails.GuardrailVersion</property>
+    <min>1</min>
+    <max>8</max>
+    <pattern>(([1-9][0-9]{0,7})|(DRAFT))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CloudDetails.Provider</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CloudTrailConfigurationResult.Status</property>
     <min>1</min>
     <max>300</max>
@@ -994,6 +1081,78 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.Confidence</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.Error</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.InvestigationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-fA-F0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.Risk</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.RiskLevel</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.TriggeredBy</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.Investigation.TriggerPrompt</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.InvestigationSummary.Confidence</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.InvestigationSummary.InvestigationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-fA-F0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.InvestigationSummary.RiskLevel</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.InvestigationSummary.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.InvestigationSummary.Title</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.InvestigationSummary.TriggerPrompt</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.Invitation.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1047,6 +1206,11 @@
     <property>Amazon.GuardDuty.Model.MemberDataSourceConfiguration.AccountId</property>
     <min>12</min>
     <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ModelDetail.ModelId</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.ResourceDetails.InstanceArn</property>

@@ -61,6 +61,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class UpdateCanaryRequest : AmazonSyntheticsRequest
     {
+        private List<AddReplicaLocationInput> _addReplicaLocations = AWSConfigs.InitializeCollections ? new List<AddReplicaLocationInput>() : null;
         private ArtifactConfigInput _artifactConfig;
         private string _artifactS3Location;
         private List<BrowserConfig> _browserConfigs = AWSConfigs.InitializeCollections ? new List<BrowserConfig>() : null;
@@ -68,8 +69,10 @@ namespace Amazon.Synthetics.Model
         private string _dryRunId;
         private string _executionRoleArn;
         private int? _failureRetentionPeriodInDays;
+        private string _kmsKeyArn;
         private string _name;
         private ProvisionedResourceCleanupSetting _provisionedResourceCleanup;
+        private List<string> _removeReplicaLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CanaryRunConfigInput _runConfig;
         private string _runtimeVersion;
         private CanaryScheduleInput _schedule;
@@ -77,6 +80,32 @@ namespace Amazon.Synthetics.Model
         private VisualReferenceInput _visualReference;
         private List<VisualReferenceInput> _visualReferences = AWSConfigs.InitializeCollections ? new List<VisualReferenceInput>() : null;
         private VpcConfigInput _vpcConfig;
+
+        /// <summary>
+        /// Gets and sets the property AddReplicaLocations. 
+        /// <para>
+        /// A list of locations (Amazon Web Services Regions) to add as replicas for the canary.
+        /// Each location specifies a Region and optional VPC configuration for the replica. You
+        /// can add up to 50 replica locations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<AddReplicaLocationInput> AddReplicaLocations
+        {
+            get { return this._addReplicaLocations; }
+            set { this._addReplicaLocations = value; }
+        }
+
+        // Check to see if AddReplicaLocations property is set
+        internal bool IsSetAddReplicaLocations()
+        {
+            return this._addReplicaLocations != null && (this._addReplicaLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property ArtifactConfig. 
@@ -268,6 +297,29 @@ namespace Amazon.Synthetics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer-managed AWS Key Management Service
+        /// (AWS KMS) key used to encrypt the canary's AWS Lambda function environment variables
+        /// at rest. If you don't specify a value, the service uses an AWS-managed key. If you
+        /// omit this parameter, the service retains the existing value. To revert to the AWS-managed
+        /// key, set this parameter to an empty string.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the canary that you want to update. To find the names of your canaries,
@@ -314,6 +366,32 @@ namespace Amazon.Synthetics.Model
         internal bool IsSetProvisionedResourceCleanup()
         {
             return this._provisionedResourceCleanup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RemoveReplicaLocations. 
+        /// <para>
+        /// A list of locations (Amazon Web Services Regions) to remove as replicas for the canary.
+        /// You must specify at least one location to remove. All replicas can be removed in a
+        /// single API call and you cannot remove the primary location.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<string> RemoveReplicaLocations
+        {
+            get { return this._removeReplicaLocations; }
+            set { this._removeReplicaLocations = value; }
+        }
+
+        // Check to see if RemoveReplicaLocations property is set
+        internal bool IsSetRemoveReplicaLocations()
+        {
+            return this._removeReplicaLocations != null && (this._removeReplicaLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

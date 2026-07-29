@@ -3688,8 +3688,10 @@ namespace Amazon.Route53GlobalResolver
 
 
         /// <summary>
-        /// Lists all hosted zone associations for a Route 53 Global Resolver resource with pagination
-        /// support.
+        /// Lists hosted zone associations with pagination support. Specify a DNS view through
+        /// the <c>resourceArn</c> parameter to list the hosted zone associations for that DNS
+        /// view, or omit it to list all hosted zone associations in your Amazon Web Services
+        /// account.
         /// 
         ///  <important> 
         /// <para>
@@ -3731,8 +3733,10 @@ namespace Amazon.Route53GlobalResolver
 
 
         /// <summary>
-        /// Lists all hosted zone associations for a Route 53 Global Resolver resource with pagination
-        /// support.
+        /// Lists hosted zone associations with pagination support. Specify a DNS view through
+        /// the <c>resourceArn</c> parameter to list the hosted zone associations for that DNS
+        /// view, or omit it to list all hosted zone associations in your Amazon Web Services
+        /// account.
         /// 
         ///  <important> 
         /// <para>
@@ -3860,6 +3864,95 @@ namespace Amazon.Route53GlobalResolver
             options.ResponseUnmarshaller = ListManagedFirewallDomainListsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListManagedFirewallDomainListsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListSharedDNSViews
+
+
+        /// <summary>
+        /// Lists the DNS views that have been shared with your Amazon Web Services account through
+        /// Amazon Web Services Resource Access Manager (Amazon Web Services RAM), with pagination
+        /// support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedDNSViews service method.</param>
+        /// 
+        /// <returns>The response from the ListSharedDNSViews service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListSharedDNSViews">REST API Reference for ListSharedDNSViews Operation</seealso>
+        public virtual ListSharedDNSViewsResponse ListSharedDNSViews(ListSharedDNSViewsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSharedDNSViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedDNSViewsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSharedDNSViewsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the DNS views that have been shared with your Amazon Web Services account through
+        /// Amazon Web Services Resource Access Manager (Amazon Web Services RAM), with pagination
+        /// support.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Route 53 Global Resolver is a global service that supports resolvers in multiple Amazon
+        /// Web Services Regions but you must specify the US East (Ohio) Region to create, update,
+        /// or otherwise work with Route 53 Global Resolver resources. That is, for example, specify
+        /// <c>--region us-east-2</c> on Amazon Web Services CLI commands.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSharedDNSViews service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSharedDNSViews service method, as returned by Route53GlobalResolver.</returns>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.AccessDeniedException">
+        /// You don't have permission to perform this operation. Check your IAM permissions and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.InternalServerException">
+        /// An internal server error occurred. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Wait a moment and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Route53GlobalResolver.Model.ValidationException">
+        /// The input parameters are invalid. Check the parameter values and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53globalresolver-2022-09-27/ListSharedDNSViews">REST API Reference for ListSharedDNSViews Operation</seealso>
+        public virtual Task<ListSharedDNSViewsResponse> ListSharedDNSViewsAsync(ListSharedDNSViewsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSharedDNSViewsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSharedDNSViewsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSharedDNSViewsResponse>(request, options, cancellationToken);
         }
 
         #endregion

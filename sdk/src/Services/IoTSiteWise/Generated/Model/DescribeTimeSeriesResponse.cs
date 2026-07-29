@@ -43,6 +43,7 @@ namespace Amazon.IoTSiteWise.Model
         private DateTime? _timeSeriesCreationDate;
         private string _timeSeriesId;
         private DateTime? _timeSeriesLastUpdateDate;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property Alias. 
@@ -231,6 +232,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetTimeSeriesLastUpdateDate()
         {
             return this._timeSeriesLastUpdateDate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

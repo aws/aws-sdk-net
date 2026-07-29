@@ -45,9 +45,10 @@ namespace Amazon.Sustainability
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// The AWS Sustainability service provides programmatic access to estimated carbon emissions
-    /// data for your Amazon Web Services usage. Use the AWS Sustainability service to retrieve,
-    /// analyze, and track the carbon footprint of your cloud infrastructure over time. 
+    /// The AWS Sustainability service provides programmatic access to estimated environmental
+    /// impact data for your Amazon Web Services usage. Use the AWS Sustainability service
+    /// to retrieve, analyze, and track the environmental impact of your cloud infrastructure
+    /// over time. 
     /// 
     ///  
     /// <para>
@@ -55,37 +56,31 @@ namespace Amazon.Sustainability
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Retrieve estimated carbon emissions for your Amazon Web Services usage across different
-    /// time periods 
+    /// Retrieve estimated carbon emissions and water allocation for your Amazon Web Services
+    /// usage across different time periods 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Group emissions data by dimensions such as account, region, and service
+    /// Group environmental impact data by dimensions such as account, region, and service
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Filter emissions data to focus on specific accounts, regions, or services
+    /// Filter environmental impact data to focus on specific accounts, regions, or services
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Access multiple emissions calculation methodologies including Location-based Method
-    /// (LBM) and Market-based Method (MBM) 
+    /// Access multiple carbon emissions calculation methodologies including Location-based
+    /// Method (LBM) and Market-based Method (MBM) 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Aggregate emissions data at various time granularities including monthly, quarterly,
-    /// and yearly periods 
+    /// Aggregate environmental impact data at various time granularities including monthly,
+    /// quarterly, and yearly periods 
     /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  The API supports pagination for efficient data retrieval and provides dimension values
     /// to help you understand the available grouping and filtering options for your account.
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    ///  All emissions values are calculated using methodologies aligned with the Greenhouse
-    /// Gas (GHG) Protocol and are provided in metric tons of carbon dioxide-equivalent (MTCO2e).
     /// 
     /// </para>
     /// </summary>
@@ -400,6 +395,99 @@ namespace Amazon.Sustainability
             options.ResponseUnmarshaller = GetEstimatedCarbonEmissionsDimensionValuesResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetEstimatedCarbonEmissionsDimensionValuesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetEstimatedWaterAllocation
+
+        internal virtual GetEstimatedWaterAllocationResponse GetEstimatedWaterAllocation(GetEstimatedWaterAllocationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEstimatedWaterAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEstimatedWaterAllocationResponseUnmarshaller.Instance;
+
+            return Invoke<GetEstimatedWaterAllocationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns estimated water allocation values based on customer grouping and filtering
+        /// parameters. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEstimatedWaterAllocation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEstimatedWaterAllocation service method, as returned by Sustainability.</returns>
+        /// <exception cref="Amazon.Sustainability.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Sustainability.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Sustainability.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Sustainability.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sustainability-2018-05-10/GetEstimatedWaterAllocation">REST API Reference for GetEstimatedWaterAllocation Operation</seealso>
+        public virtual Task<GetEstimatedWaterAllocationResponse> GetEstimatedWaterAllocationAsync(GetEstimatedWaterAllocationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEstimatedWaterAllocationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEstimatedWaterAllocationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEstimatedWaterAllocationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetEstimatedWaterAllocationDimensionValues
+
+        internal virtual GetEstimatedWaterAllocationDimensionValuesResponse GetEstimatedWaterAllocationDimensionValues(GetEstimatedWaterAllocationDimensionValuesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEstimatedWaterAllocationDimensionValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEstimatedWaterAllocationDimensionValuesResponseUnmarshaller.Instance;
+
+            return Invoke<GetEstimatedWaterAllocationDimensionValuesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the possible dimension values available for a customer's account. We recommend
+        /// using pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEstimatedWaterAllocationDimensionValues service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEstimatedWaterAllocationDimensionValues service method, as returned by Sustainability.</returns>
+        /// <exception cref="Amazon.Sustainability.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Sustainability.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Sustainability.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Sustainability.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sustainability-2018-05-10/GetEstimatedWaterAllocationDimensionValues">REST API Reference for GetEstimatedWaterAllocationDimensionValues Operation</seealso>
+        public virtual Task<GetEstimatedWaterAllocationDimensionValuesResponse> GetEstimatedWaterAllocationDimensionValuesAsync(GetEstimatedWaterAllocationDimensionValuesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEstimatedWaterAllocationDimensionValuesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEstimatedWaterAllocationDimensionValuesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEstimatedWaterAllocationDimensionValuesResponse>(request, options, cancellationToken);
         }
         #endregion
         

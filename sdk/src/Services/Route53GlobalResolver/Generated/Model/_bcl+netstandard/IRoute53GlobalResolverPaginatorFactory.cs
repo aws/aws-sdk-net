@@ -116,5 +116,15 @@ namespace Amazon.Route53GlobalResolver.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListManagedFirewallDomainListsPaginator ListManagedFirewallDomainLists(ListManagedFirewallDomainListsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSharedDNSViews operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSharedDNSViewsPaginator ListSharedDNSViews(ListSharedDNSViewsRequest request);
     }
 }

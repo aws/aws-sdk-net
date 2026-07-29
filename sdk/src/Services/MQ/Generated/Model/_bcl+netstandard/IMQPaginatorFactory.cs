@@ -28,6 +28,16 @@ namespace Amazon.MQ.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeSharedResources operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeSharedResourcesPaginator DescribeSharedResources(DescribeSharedResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListBrokers operation
         ///</summary>
         [AWSPaginator(

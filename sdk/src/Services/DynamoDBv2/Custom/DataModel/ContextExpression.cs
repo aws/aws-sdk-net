@@ -150,7 +150,10 @@ namespace Amazon.DynamoDBv2.DataModel
 
                 case UnaryExpression u when u.NodeType == ExpressionType.Convert:
                     var operand = EvaluateExpression(u.Operand);
-                    return Convert.ChangeType(operand, u.Type);
+                    // Convert.ChangeType does not support Nullable<T>; use the underlying type
+                    // to correctly handle expressions such as p => p.Version == (int?)3.
+                    var type = Nullable.GetUnderlyingType(u.Type) ?? u.Type;
+                    return Convert.ChangeType(operand, type);
 
                 case NewExpression n:
                     var args = n.Arguments.Select(EvaluateExpression).ToArray();

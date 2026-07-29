@@ -40,12 +40,39 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAnomalyDetectorsRequest : AmazonCloudWatchRequest
     {
+        private List<string> _anomalyDetectorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _anomalyDetectorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private int? _maxResults;
         private string _metricName;
         private string _awsNamespace;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property AnomalyDetectorIds. 
+        /// <para>
+        /// Specifies the unique identifiers of the anomaly detectors to describe. You can specify
+        /// up to 50 identifiers. If you specify this parameter, you cannot also specify the <c>Namespace</c>,
+        /// <c>MetricName</c>, <c>Dimensions</c>, or <c>AnomalyDetectorTypes</c> metric filters.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<string> AnomalyDetectorIds
+        {
+            get { return this._anomalyDetectorIds; }
+            set { this._anomalyDetectorIds = value; }
+        }
+
+        // Check to see if AnomalyDetectorIds property is set
+        internal bool IsSetAnomalyDetectorIds()
+        {
+            return this._anomalyDetectorIds != null && (this._anomalyDetectorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AnomalyDetectorTypes. 

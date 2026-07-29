@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchUpdateBillScenarioUsageModificationEntry Marshaller
     /// </summary>
-    public class BatchUpdateBillScenarioUsageModificationEntryMarshaller : IRequestMarshaller<BatchUpdateBillScenarioUsageModificationEntry, JsonMarshallerContext> 
+    public class BatchUpdateBillScenarioUsageModificationEntryMarshaller : IRequestMarshaller<BatchUpdateBillScenarioUsageModificationEntry, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +45,36 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BatchUpdateBillScenarioUsageModificationEntry requestObject, JsonMarshallerContext context)
+        public void Marshall(BatchUpdateBillScenarioUsageModificationEntry requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAmounts())
+
+            if (requestObject.IsSetAmounts())
             {
-                context.Writer.WritePropertyName("amounts");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("amounts");
+                context.Writer.WriteStartArray(requestObject.Amounts.Count);
                 foreach(var requestObjectAmountsListValue in requestObject.Amounts)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = UsageAmountMarshaller.Instance;
                     marshaller.Marshall(requestObjectAmountsListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetGroup())
+            if (requestObject.IsSetGroup())
             {
-                context.Writer.WritePropertyName("group");
-                context.Writer.WriteStringValue(requestObject.Group);
+                context.Writer.WriteTextString("group");
+                context.Writer.WriteTextString(requestObject.Group);
             }
-
-            if(requestObject.IsSetId())
+            if (requestObject.IsSetId())
             {
-                context.Writer.WritePropertyName("id");
-                context.Writer.WriteStringValue(requestObject.Id);
+                context.Writer.WriteTextString("id");
+                context.Writer.WriteTextString(requestObject.Id);
             }
-
         }
 
         /// <summary>

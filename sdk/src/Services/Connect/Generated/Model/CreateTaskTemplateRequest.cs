@@ -71,7 +71,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// Constraints that are applicable to the fields listed.
+        /// Constraints that are applicable to the fields listed. Although this parameter is marked
+        /// as optional in the API model, the service requires it when calling <c>CreateTaskTemplate</c>
+        /// or <c>UpdateTaskTemplate</c>. The <c>RequiredFields</c> array must contain at least
+        /// one element, and the field of type <c>NAME</c> must be included in <c>RequiredFields</c>.
         /// </para>
         /// </summary>
         public TaskTemplateConstraints Constraints
@@ -91,6 +94,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The identifier of the flow that runs by default when a task is created by referencing
         /// this template.
+        /// </para>
+        ///  
+        /// <para>
+        /// Although this parameter is marked as optional, the request must contain either a <c>ContactFlowId</c>
+        /// or a field of type <c>QUICK_CONNECT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -147,6 +155,11 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property Fields. 
         /// <para>
         /// Fields that are part of the template.
+        /// </para>
+        ///  
+        /// <para>
+        /// The request must contain exactly one field of type <c>NAME</c>. This field must also
+        /// be listed in the <c>RequiredFields</c> array within the <c>Constraints</c> parameter.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

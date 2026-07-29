@@ -39,6 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _architecture;
         private InstanceAggregatedAssociationOverview _associationOverview;
         private string _associationStatus;
+        private string _availabilityZone;
         private string _computerName;
         private string _iamRole;
         private string _instanceId;
@@ -59,6 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _registrationDate;
         private string _resourceType;
         private string _sourceId;
+        private string _sourceLocation;
         private SourceType _sourceType;
 
         /// <summary>
@@ -148,6 +150,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAssociationStatus()
         {
             return this._associationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone where the managed node is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=120)]
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
         }
 
         /// <summary>
@@ -527,9 +548,29 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceLocation. 
+        /// <para>
+        /// The location of the source resource in the third-party cloud environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SourceLocation
+        {
+            get { return this._sourceLocation; }
+            set { this._sourceLocation = value; }
+        }
+
+        // Check to see if SourceLocation property is set
+        internal bool IsSetSourceLocation()
+        {
+            return this._sourceLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The type of the source resource.
+        /// The type of the source resource. Valid values: <c>AWS::EC2::Instance</c> | <c>AWS::SSM::ManagedInstance</c>
+        /// | <c>AWS::IoT::Thing</c> | <c>Microsoft.Compute/virtualMachines</c>.
         /// </para>
         /// </summary>
         public SourceType SourceType

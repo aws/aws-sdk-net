@@ -43,11 +43,11 @@ namespace Amazon.RDSDataService
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Aurora PostgreSQL - Serverless v2, provisioned, and Serverless v1
+    /// Aurora PostgreSQL - Serverless and provisioned
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Aurora MySQL - Serverless v2, provisioned, and Serverless v1
+    /// Aurora MySQL - Serverless and provisioned
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -104,8 +104,7 @@ namespace Amazon.RDSDataService
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
-        /// There is an error in the call or in a SQL statement. (This error only appears in calls
-        /// from Aurora Serverless v1 databases.)
+        /// There is an error in the call or in a SQL statement. This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseErrorException">
         /// There was an error in processing the SQL statement.
@@ -114,7 +113,7 @@ namespace Amazon.RDSDataService
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
-        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// A request was cancelled because the Aurora Serverless DB instance was paused. The
         /// Data API request automatically resumes the DB instance. Wait a few seconds and try
         /// again.
         /// </exception>
@@ -203,8 +202,7 @@ namespace Amazon.RDSDataService
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
-        /// There is an error in the call or in a SQL statement. (This error only appears in calls
-        /// from Aurora Serverless v1 databases.)
+        /// There is an error in the call or in a SQL statement. This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseErrorException">
         /// There was an error in processing the SQL statement.
@@ -213,7 +211,7 @@ namespace Amazon.RDSDataService
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
-        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// A request was cancelled because the Aurora Serverless DB instance was paused. The
         /// Data API request automatically resumes the DB instance. Wait a few seconds and try
         /// again.
         /// </exception>
@@ -285,8 +283,7 @@ namespace Amazon.RDSDataService
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
-        /// There is an error in the call or in a SQL statement. (This error only appears in calls
-        /// from Aurora Serverless v1 databases.)
+        /// There is an error in the call or in a SQL statement. This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseErrorException">
         /// There was an error in processing the SQL statement.
@@ -356,9 +353,8 @@ namespace Amazon.RDSDataService
         /// 
         ///  <note> 
         /// <para>
-        /// This operation isn't supported for Aurora Serverless v2 and provisioned DB clusters.
-        /// For Aurora Serverless v1 DB clusters, the operation is deprecated. Use the <c>BatchExecuteStatement</c>
-        /// or <c>ExecuteStatement</c> operation.
+        /// This operation is deprecated. Please use the <c>BatchExecuteStatement</c> or <c>ExecuteStatement</c>
+        /// operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -372,8 +368,7 @@ namespace Amazon.RDSDataService
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
-        /// There is an error in the call or in a SQL statement. (This error only appears in calls
-        /// from Aurora Serverless v1 databases.)
+        /// There is an error in the call or in a SQL statement. This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ForbiddenException">
         /// There are insufficient privileges to make the call.
@@ -418,8 +413,7 @@ namespace Amazon.RDSDataService
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
-        /// There is an error in the call or in a SQL statement. (This error only appears in calls
-        /// from Aurora Serverless v1 databases.)
+        /// There is an error in the call or in a SQL statement. This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseErrorException">
         /// There was an error in processing the SQL statement.
@@ -428,7 +422,7 @@ namespace Amazon.RDSDataService
         /// The DB cluster doesn't have a DB instance.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseResumingException">
-        /// A request was cancelled because the Aurora Serverless v2 DB instance was paused. The
+        /// A request was cancelled because the Aurora Serverless DB instance was paused. The
         /// Data API request automatically resumes the DB instance. Wait a few seconds and try
         /// again.
         /// </exception>
@@ -516,8 +510,7 @@ namespace Amazon.RDSDataService
         /// You don't have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.BadRequestException">
-        /// There is an error in the call or in a SQL statement. (This error only appears in calls
-        /// from Aurora Serverless v1 databases.)
+        /// There is an error in the call or in a SQL statement. This exception is deprecated.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.DatabaseErrorException">
         /// There was an error in processing the SQL statement.

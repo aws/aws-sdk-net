@@ -91,7 +91,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString(publicRequest.ScriptId);
                 }
                 writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
                 request.Content = writer.Encode();
+#endif
             }
             finally
             {

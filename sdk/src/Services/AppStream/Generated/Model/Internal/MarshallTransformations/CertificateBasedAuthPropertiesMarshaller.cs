@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CertificateBasedAuthProperties Marshaller
     /// </summary>
-    public class CertificateBasedAuthPropertiesMarshaller : IRequestMarshaller<CertificateBasedAuthProperties, JsonMarshallerContext> 
+    public class CertificateBasedAuthPropertiesMarshaller : IRequestMarshaller<CertificateBasedAuthProperties, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CertificateBasedAuthProperties requestObject, JsonMarshallerContext context)
+        public void Marshall(CertificateBasedAuthProperties requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCertificateAuthorityArn())
-            {
-                context.Writer.WritePropertyName("CertificateAuthorityArn");
-                context.Writer.WriteStringValue(requestObject.CertificateAuthorityArn);
-            }
 
-            if(requestObject.IsSetStatus())
+            if (requestObject.IsSetCertificateAuthorityArn())
             {
-                context.Writer.WritePropertyName("Status");
-                context.Writer.WriteStringValue(requestObject.Status);
+                context.Writer.WriteTextString("CertificateAuthorityArn");
+                context.Writer.WriteTextString(requestObject.CertificateAuthorityArn);
             }
-
+            if (requestObject.IsSetStatus())
+            {
+                context.Writer.WriteTextString("Status");
+                context.Writer.WriteTextString(requestObject.Status);
+            }
         }
 
         /// <summary>

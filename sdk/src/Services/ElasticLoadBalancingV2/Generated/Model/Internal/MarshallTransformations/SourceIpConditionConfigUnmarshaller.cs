@@ -55,6 +55,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("IpAddressType", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.IpAddressType = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Values/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

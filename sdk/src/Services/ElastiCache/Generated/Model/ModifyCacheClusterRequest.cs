@@ -89,7 +89,11 @@ namespace Amazon.ElastiCache.Model
         ///  <important> 
         /// <para>
         /// If you perform a <c>ModifyCacheCluster</c> before a pending modification is applied,
-        /// the pending modification is replaced by the newer modification.
+        /// the pending modification is replaced by the newer modification. However, a pending
+        /// node-count increase on Memcached clusters cannot be superseded by a request to add
+        /// fewer nodes. To change a pending node addition, first cancel it by setting <c>NumCacheNodes</c>
+        /// equal to the current number of nodes in the cluster, then submit the new request.
+        /// See the <c>NumCacheNodes</c> parameter for details on node scaling behavior.
         /// </para>
         ///  </important> 
         /// <para>

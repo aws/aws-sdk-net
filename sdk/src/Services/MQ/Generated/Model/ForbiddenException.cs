@@ -38,6 +38,7 @@ namespace Amazon.MQ.Model
     public partial class ForbiddenException : AmazonMQException
     {
         private string _errorAttribute;
+        private List<ResourceShareError> _resourceShareErrors = AWSConfigs.InitializeCollections ? new List<ResourceShareError>() : null;
 
         /// <summary>
         /// Default constructor for ForbiddenException
@@ -107,6 +108,7 @@ namespace Amazon.MQ.Model
             : base(info, context)
         {
             this.ErrorAttribute = (string)info.GetValue("ErrorAttribute", typeof(string));
+            this.ResourceShareErrors = (List<ResourceShareError>)info.GetValue("ResourceShareErrors", typeof(List<ResourceShareError>));
         }
 
         /// <summary>
@@ -123,6 +125,7 @@ namespace Amazon.MQ.Model
         {
             base.GetObjectData(info, context);
             info.AddValue("ErrorAttribute", this.ErrorAttribute);
+            info.AddValue("ResourceShareErrors", this.ResourceShareErrors);
         }
 #endif
 
@@ -142,6 +145,29 @@ namespace Amazon.MQ.Model
         internal bool IsSetErrorAttribute()
         {
             return this._errorAttribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareErrors. 
+        /// <para>
+        /// The list of resource share errors.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ResourceShareError> ResourceShareErrors
+        {
+            get { return this._resourceShareErrors; }
+            set { this._resourceShareErrors = value; }
+        }
+
+        // Check to see if ResourceShareErrors property is set
+        internal bool IsSetResourceShareErrors()
+        {
+            return this._resourceShareErrors != null && (this._resourceShareErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

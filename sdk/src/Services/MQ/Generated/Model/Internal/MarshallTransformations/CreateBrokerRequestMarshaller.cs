@@ -210,6 +210,12 @@ namespace Amazon.MQ.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetStorageSize())
+            {
+                context.Writer.WritePropertyName("storageSize");
+                context.Writer.WriteNumberValue(publicRequest.StorageSize.Value);
+            }
+
             if(publicRequest.IsSetStorageType())
             {
                 context.Writer.WritePropertyName("storageType");

@@ -57,7 +57,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        [Fact]
+        [Fact (Skip = "AL2 is deprecated")]
         public async Task CrudCalls()
         {
             var originalBuilds = (await GetAllBuilds()).ToList();

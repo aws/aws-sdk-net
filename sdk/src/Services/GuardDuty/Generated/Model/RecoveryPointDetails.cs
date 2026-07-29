@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     public partial class RecoveryPointDetails
     {
         private string _backupVaultName;
+        private ScanConfigurationContinuousScanDetails _continuousScanDetails;
         private string _recoveryPointArn;
 
         /// <summary>
@@ -53,6 +54,21 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetBackupVaultName()
         {
             return this._backupVaultName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContinuousScanDetails.
+        /// </summary>
+        public ScanConfigurationContinuousScanDetails ContinuousScanDetails
+        {
+            get { return this._continuousScanDetails; }
+            set { this._continuousScanDetails = value; }
+        }
+
+        // Check to see if ContinuousScanDetails property is set
+        internal bool IsSetContinuousScanDetails()
+        {
+            return this._continuousScanDetails != null;
         }
 
         /// <summary>

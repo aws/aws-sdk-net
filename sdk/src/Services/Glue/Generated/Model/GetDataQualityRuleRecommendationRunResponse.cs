@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetDataQualityRuleRecommendationRunResponse : AmazonWebServiceResponse
     {
+        private DataQualityRuleRecommendationRunAdditionalRunOptions _additionalRunOptions;
         private DateTime? _completedOn;
         private string _createdRulesetName;
         private string _dataQualitySecurityConfiguration;
@@ -48,6 +49,24 @@ namespace Amazon.Glue.Model
         private DateTime? _startedOn;
         private TaskStatusType _status;
         private int? _timeout;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalRunOptions. 
+        /// <para>
+        /// Additional run options you can specify for a recommendation run.
+        /// </para>
+        /// </summary>
+        public DataQualityRuleRecommendationRunAdditionalRunOptions AdditionalRunOptions
+        {
+            get { return this._additionalRunOptions; }
+            set { this._additionalRunOptions = value; }
+        }
+
+        // Check to see if AdditionalRunOptions property is set
+        internal bool IsSetAdditionalRunOptions()
+        {
+            return this._additionalRunOptions != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CompletedOn. 

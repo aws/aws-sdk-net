@@ -25,6 +25,184 @@ namespace Amazon.GeoPlaces
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessPointType.
+    /// </summary>
+    public class AccessPointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Delivery for AccessPointType
+        /// </summary>
+        public static readonly AccessPointType Delivery = new AccessPointType("Delivery");
+        /// <summary>
+        /// Constant Emergency for AccessPointType
+        /// </summary>
+        public static readonly AccessPointType Emergency = new AccessPointType("Emergency");
+        /// <summary>
+        /// Constant Entrance for AccessPointType
+        /// </summary>
+        public static readonly AccessPointType Entrance = new AccessPointType("Entrance");
+        /// <summary>
+        /// Constant Loading for AccessPointType
+        /// </summary>
+        public static readonly AccessPointType Loading = new AccessPointType("Loading");
+        /// <summary>
+        /// Constant Other for AccessPointType
+        /// </summary>
+        public static readonly AccessPointType Other = new AccessPointType("Other");
+        /// <summary>
+        /// Constant Parking for AccessPointType
+        /// </summary>
+        public static readonly AccessPointType Parking = new AccessPointType("Parking");
+        /// <summary>
+        /// Constant Taxi for AccessPointType
+        /// </summary>
+        public static readonly AccessPointType Taxi = new AccessPointType("Taxi");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessPointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessPointType FindValue(string value)
+        {
+            return FindValue<AccessPointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessPointType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AddressTranslationComponent.
+    /// </summary>
+    public class AddressTranslationComponent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant District for AddressTranslationComponent
+        /// </summary>
+        public static readonly AddressTranslationComponent District = new AddressTranslationComponent("District");
+        /// <summary>
+        /// Constant Locality for AddressTranslationComponent
+        /// </summary>
+        public static readonly AddressTranslationComponent Locality = new AddressTranslationComponent("Locality");
+        /// <summary>
+        /// Constant Region for AddressTranslationComponent
+        /// </summary>
+        public static readonly AddressTranslationComponent Region = new AddressTranslationComponent("Region");
+        /// <summary>
+        /// Constant SubRegion for AddressTranslationComponent
+        /// </summary>
+        public static readonly AddressTranslationComponent SubRegion = new AddressTranslationComponent("SubRegion");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AddressTranslationComponent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AddressTranslationComponent FindValue(string value)
+        {
+            return FindValue<AddressTranslationComponent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AddressTranslationComponent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AdminNamesPreference.
+    /// </summary>
+    public class AdminNamesPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Alternative for AdminNamesPreference
+        /// </summary>
+        public static readonly AdminNamesPreference Alternative = new AdminNamesPreference("Alternative");
+        /// <summary>
+        /// Constant Primary for AdminNamesPreference
+        /// </summary>
+        public static readonly AdminNamesPreference Primary = new AdminNamesPreference("Primary");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdminNamesPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdminNamesPreference FindValue(string value)
+        {
+            return FindValue<AdminNamesPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdminNamesPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutocompleteAdditionalFeature.
     /// </summary>
     public class AutocompleteAdditionalFeature : ConstantClass
@@ -77,13 +255,37 @@ namespace Amazon.GeoPlaces
     {
 
         /// <summary>
+        /// Constant Country for AutocompleteFilterPlaceType
+        /// </summary>
+        public static readonly AutocompleteFilterPlaceType Country = new AutocompleteFilterPlaceType("Country");
+        /// <summary>
+        /// Constant InterpolatedAddress for AutocompleteFilterPlaceType
+        /// </summary>
+        public static readonly AutocompleteFilterPlaceType InterpolatedAddress = new AutocompleteFilterPlaceType("InterpolatedAddress");
+        /// <summary>
+        /// Constant Intersection for AutocompleteFilterPlaceType
+        /// </summary>
+        public static readonly AutocompleteFilterPlaceType Intersection = new AutocompleteFilterPlaceType("Intersection");
+        /// <summary>
         /// Constant Locality for AutocompleteFilterPlaceType
         /// </summary>
         public static readonly AutocompleteFilterPlaceType Locality = new AutocompleteFilterPlaceType("Locality");
         /// <summary>
+        /// Constant PointAddress for AutocompleteFilterPlaceType
+        /// </summary>
+        public static readonly AutocompleteFilterPlaceType PointAddress = new AutocompleteFilterPlaceType("PointAddress");
+        /// <summary>
         /// Constant PostalCode for AutocompleteFilterPlaceType
         /// </summary>
         public static readonly AutocompleteFilterPlaceType PostalCode = new AutocompleteFilterPlaceType("PostalCode");
+        /// <summary>
+        /// Constant Region for AutocompleteFilterPlaceType
+        /// </summary>
+        public static readonly AutocompleteFilterPlaceType Region = new AutocompleteFilterPlaceType("Region");
+        /// <summary>
+        /// Constant Street for AutocompleteFilterPlaceType
+        /// </summary>
+        public static readonly AutocompleteFilterPlaceType Street = new AutocompleteFilterPlaceType("Street");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -225,11 +427,65 @@ namespace Amazon.GeoPlaces
 
 
     /// <summary>
+    /// Constants used for properties of type GeocodeAddressNamesMode.
+    /// </summary>
+    public class GeocodeAddressNamesMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Administrative for GeocodeAddressNamesMode
+        /// </summary>
+        public static readonly GeocodeAddressNamesMode Administrative = new GeocodeAddressNamesMode("Administrative");
+        /// <summary>
+        /// Constant Matched for GeocodeAddressNamesMode
+        /// </summary>
+        public static readonly GeocodeAddressNamesMode Matched = new GeocodeAddressNamesMode("Matched");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GeocodeAddressNamesMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GeocodeAddressNamesMode FindValue(string value)
+        {
+            return FindValue<GeocodeAddressNamesMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GeocodeAddressNamesMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GeocodeFilterPlaceType.
     /// </summary>
     public class GeocodeFilterPlaceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Country for GeocodeFilterPlaceType
+        /// </summary>
+        public static readonly GeocodeFilterPlaceType Country = new GeocodeFilterPlaceType("Country");
         /// <summary>
         /// Constant InterpolatedAddress for GeocodeFilterPlaceType
         /// </summary>
@@ -247,9 +503,21 @@ namespace Amazon.GeoPlaces
         /// </summary>
         public static readonly GeocodeFilterPlaceType PointAddress = new GeocodeFilterPlaceType("PointAddress");
         /// <summary>
+        /// Constant PointOfInterest for GeocodeFilterPlaceType
+        /// </summary>
+        public static readonly GeocodeFilterPlaceType PointOfInterest = new GeocodeFilterPlaceType("PointOfInterest");
+        /// <summary>
         /// Constant PostalCode for GeocodeFilterPlaceType
         /// </summary>
         public static readonly GeocodeFilterPlaceType PostalCode = new GeocodeFilterPlaceType("PostalCode");
+        /// <summary>
+        /// Constant Region for GeocodeFilterPlaceType
+        /// </summary>
+        public static readonly GeocodeFilterPlaceType Region = new GeocodeFilterPlaceType("Region");
+        /// <summary>
+        /// Constant SecondaryAddress for GeocodeFilterPlaceType
+        /// </summary>
+        public static readonly GeocodeFilterPlaceType SecondaryAddress = new GeocodeFilterPlaceType("SecondaryAddress");
         /// <summary>
         /// Constant Street for GeocodeFilterPlaceType
         /// </summary>
@@ -355,6 +623,10 @@ namespace Amazon.GeoPlaces
         /// </summary>
         public static readonly GetPlaceAdditionalFeature Contact = new GetPlaceAdditionalFeature("Contact");
         /// <summary>
+        /// Constant CrossReferences for GetPlaceAdditionalFeature
+        /// </summary>
+        public static readonly GetPlaceAdditionalFeature CrossReferences = new GetPlaceAdditionalFeature("CrossReferences");
+        /// <summary>
         /// Constant Phonemes for GetPlaceAdditionalFeature
         /// </summary>
         public static readonly GetPlaceAdditionalFeature Phonemes = new GetPlaceAdditionalFeature("Phonemes");
@@ -396,6 +668,52 @@ namespace Amazon.GeoPlaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GetPlaceAdditionalFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GetPlaceAddressNamesMode.
+    /// </summary>
+    public class GetPlaceAddressNamesMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Administrative for GetPlaceAddressNamesMode
+        /// </summary>
+        public static readonly GetPlaceAddressNamesMode Administrative = new GetPlaceAddressNamesMode("Administrative");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GetPlaceAddressNamesMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GetPlaceAddressNamesMode FindValue(string value)
+        {
+            return FindValue<GetPlaceAddressNamesMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GetPlaceAddressNamesMode(string value)
         {
             return FindValue(value);
         }
@@ -446,6 +764,52 @@ namespace Amazon.GeoPlaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GetPlaceIntendedUse(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PlaceAttribute.
+    /// </summary>
+    public class PlaceAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DriveThrough for PlaceAttribute
+        /// </summary>
+        public static readonly PlaceAttribute DriveThrough = new PlaceAttribute("DriveThrough");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PlaceAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PlaceAttribute FindValue(string value)
+        {
+            return FindValue<PlaceAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PlaceAttribute(string value)
         {
             return FindValue(value);
         }
@@ -610,6 +974,10 @@ namespace Amazon.GeoPlaces
     public class PostalCodeMode : ConstantClass
     {
 
+        /// <summary>
+        /// Constant EnumerateSpannedDistricts for PostalCodeMode
+        /// </summary>
+        public static readonly PostalCodeMode EnumerateSpannedDistricts = new PostalCodeMode("EnumerateSpannedDistricts");
         /// <summary>
         /// Constant EnumerateSpannedLocalities for PostalCodeMode
         /// </summary>
@@ -875,6 +1243,52 @@ namespace Amazon.GeoPlaces
 
 
     /// <summary>
+    /// Constants used for properties of type ReverseGeocodeAddressNamesMode.
+    /// </summary>
+    public class ReverseGeocodeAddressNamesMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Administrative for ReverseGeocodeAddressNamesMode
+        /// </summary>
+        public static readonly ReverseGeocodeAddressNamesMode Administrative = new ReverseGeocodeAddressNamesMode("Administrative");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReverseGeocodeAddressNamesMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReverseGeocodeAddressNamesMode FindValue(string value)
+        {
+            return FindValue<ReverseGeocodeAddressNamesMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReverseGeocodeAddressNamesMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReverseGeocodeFilterPlaceType.
     /// </summary>
     public class ReverseGeocodeFilterPlaceType : ConstantClass
@@ -896,6 +1310,14 @@ namespace Amazon.GeoPlaces
         /// Constant PointAddress for ReverseGeocodeFilterPlaceType
         /// </summary>
         public static readonly ReverseGeocodeFilterPlaceType PointAddress = new ReverseGeocodeFilterPlaceType("PointAddress");
+        /// <summary>
+        /// Constant PointOfInterest for ReverseGeocodeFilterPlaceType
+        /// </summary>
+        public static readonly ReverseGeocodeFilterPlaceType PointOfInterest = new ReverseGeocodeFilterPlaceType("PointOfInterest");
+        /// <summary>
+        /// Constant SecondaryAddress for ReverseGeocodeFilterPlaceType
+        /// </summary>
+        public static readonly ReverseGeocodeFilterPlaceType SecondaryAddress = new ReverseGeocodeFilterPlaceType("SecondaryAddress");
         /// <summary>
         /// Constant Street for ReverseGeocodeFilterPlaceType
         /// </summary>
@@ -1000,6 +1422,10 @@ namespace Amazon.GeoPlaces
         /// Constant Contact for SearchNearbyAdditionalFeature
         /// </summary>
         public static readonly SearchNearbyAdditionalFeature Contact = new SearchNearbyAdditionalFeature("Contact");
+        /// <summary>
+        /// Constant CrossReferences for SearchNearbyAdditionalFeature
+        /// </summary>
+        public static readonly SearchNearbyAdditionalFeature CrossReferences = new SearchNearbyAdditionalFeature("CrossReferences");
         /// <summary>
         /// Constant Phonemes for SearchNearbyAdditionalFeature
         /// </summary>
@@ -1109,6 +1535,10 @@ namespace Amazon.GeoPlaces
         /// </summary>
         public static readonly SearchTextAdditionalFeature Contact = new SearchTextAdditionalFeature("Contact");
         /// <summary>
+        /// Constant CrossReferences for SearchTextAdditionalFeature
+        /// </summary>
+        public static readonly SearchTextAdditionalFeature CrossReferences = new SearchTextAdditionalFeature("CrossReferences");
+        /// <summary>
         /// Constant Phonemes for SearchTextAdditionalFeature
         /// </summary>
         public static readonly SearchTextAdditionalFeature Phonemes = new SearchTextAdditionalFeature("Phonemes");
@@ -1203,6 +1633,60 @@ namespace Amazon.GeoPlaces
 
 
     /// <summary>
+    /// Constants used for properties of type SearchTextTravelMode.
+    /// </summary>
+    public class SearchTextTravelMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Car for SearchTextTravelMode
+        /// </summary>
+        public static readonly SearchTextTravelMode Car = new SearchTextTravelMode("Car");
+        /// <summary>
+        /// Constant Scooter for SearchTextTravelMode
+        /// </summary>
+        public static readonly SearchTextTravelMode Scooter = new SearchTextTravelMode("Scooter");
+        /// <summary>
+        /// Constant Truck for SearchTextTravelMode
+        /// </summary>
+        public static readonly SearchTextTravelMode Truck = new SearchTextTravelMode("Truck");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchTextTravelMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchTextTravelMode FindValue(string value)
+        {
+            return FindValue<SearchTextTravelMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchTextTravelMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SuggestAdditionalFeature.
     /// </summary>
     public class SuggestAdditionalFeature : ConstantClass
@@ -1216,6 +1700,10 @@ namespace Amazon.GeoPlaces
         /// Constant Core for SuggestAdditionalFeature
         /// </summary>
         public static readonly SuggestAdditionalFeature Core = new SuggestAdditionalFeature("Core");
+        /// <summary>
+        /// Constant CrossReferences for SuggestAdditionalFeature
+        /// </summary>
+        public static readonly SuggestAdditionalFeature CrossReferences = new SuggestAdditionalFeature("CrossReferences");
         /// <summary>
         /// Constant Phonemes for SuggestAdditionalFeature
         /// </summary>
@@ -1350,6 +1838,126 @@ namespace Amazon.GeoPlaces
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SuggestResultItemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuggestTravelMode.
+    /// </summary>
+    public class SuggestTravelMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Car for SuggestTravelMode
+        /// </summary>
+        public static readonly SuggestTravelMode Car = new SuggestTravelMode("Car");
+        /// <summary>
+        /// Constant Scooter for SuggestTravelMode
+        /// </summary>
+        public static readonly SuggestTravelMode Scooter = new SuggestTravelMode("Scooter");
+        /// <summary>
+        /// Constant Truck for SuggestTravelMode
+        /// </summary>
+        public static readonly SuggestTravelMode Truck = new SuggestTravelMode("Truck");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuggestTravelMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuggestTravelMode FindValue(string value)
+        {
+            return FindValue<SuggestTravelMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuggestTravelMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TranslationNameType.
+    /// </summary>
+    public class TranslationNameType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Abbreviation for TranslationNameType
+        /// </summary>
+        public static readonly TranslationNameType Abbreviation = new TranslationNameType("Abbreviation");
+        /// <summary>
+        /// Constant AreaCode for TranslationNameType
+        /// </summary>
+        public static readonly TranslationNameType AreaCode = new TranslationNameType("AreaCode");
+        /// <summary>
+        /// Constant BaseName for TranslationNameType
+        /// </summary>
+        public static readonly TranslationNameType BaseName = new TranslationNameType("BaseName");
+        /// <summary>
+        /// Constant Exonym for TranslationNameType
+        /// </summary>
+        public static readonly TranslationNameType Exonym = new TranslationNameType("Exonym");
+        /// <summary>
+        /// Constant Shortened for TranslationNameType
+        /// </summary>
+        public static readonly TranslationNameType Shortened = new TranslationNameType("Shortened");
+        /// <summary>
+        /// Constant Synonym for TranslationNameType
+        /// </summary>
+        public static readonly TranslationNameType Synonym = new TranslationNameType("Synonym");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranslationNameType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranslationNameType FindValue(string value)
+        {
+            return FindValue<TranslationNameType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranslationNameType(string value)
         {
             return FindValue(value);
         }

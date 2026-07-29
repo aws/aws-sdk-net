@@ -67,5 +67,13 @@ namespace Amazon.GameLiftStreams.Model
         {
             return new ListStreamSessionsByAccountPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListStreamUrls operation
+        ///</summary>
+        public IListStreamUrlsPaginator ListStreamUrls(ListStreamUrlsRequest request) 
+        {
+            return new ListStreamUrlsPaginator(this.client, request);
+        }
     }
 }

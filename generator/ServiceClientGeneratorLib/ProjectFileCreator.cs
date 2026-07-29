@@ -69,7 +69,6 @@ namespace ServiceClientGenerator
                     projectProperties.NugetPackagesLocation = Utils.PathCombineAlt("..", "..", "packages");
                     projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "AWSDotNetSDK.ruleset");
                     projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "AWSDotNetSDKForBuild.ruleset");
-                    projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
                     projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
                     projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
                     projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
@@ -188,7 +187,6 @@ namespace ServiceClientGenerator
                 projectProperties.NugetPackagesLocation = Utils.PathCombineAlt("..", "..", "..", "packages");
                 projectProperties.FxcopAnalyzerRuleSetFilePath = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDK.ruleset");
                 projectProperties.FxcopAnalyzerRuleSetFilePathForBuild = Utils.PathCombineAlt("..", "..", "..", "AWSDotNetSDKForBuild.ruleset");
-                projectProperties.TargetFrameworks = projectFileConfiguration.TargetFrameworkVersions;
                 projectProperties.DefineConstants = projectFileConfiguration.CompilationConstants;
                 projectProperties.BinSubfolder = projectFileConfiguration.BinSubFolder;
                 projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
@@ -283,7 +281,7 @@ namespace ServiceClientGenerator
 
             projectProperties.AssemblyName          = assemblyName;
             projectProperties.ProjectReferences     = projectFileReferences;
-            projectProperties.TargetFrameworks      = projectFileConfiguration.TargetFrameworkVersions;
+            projectProperties.TargetFrameworksProperty = TargetFrameworkProperties.ForProjectType(projectType);
             projectProperties.DefineConstants       = projectFileConfiguration.CompilationConstants;
             projectProperties.CompileRemoveList     = projectFileConfiguration.PlatformExcludeFolders.ToList();
             if (serviceConfiguration.IsTestService)

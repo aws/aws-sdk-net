@@ -42,6 +42,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private string _clientToken;
+        private HostCpuOptionsRequest _cpuOptions;
         private HostMaintenance _hostMaintenance;
         private HostRecovery _hostRecovery;
         private string _instanceFamily;
@@ -166,6 +167,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CpuOptions. 
+        /// <para>
+        /// The CPU configuration options to apply to the Dedicated Host.
+        /// </para>
+        /// </summary>
+        public HostCpuOptionsRequest CpuOptions
+        {
+            get { return this._cpuOptions; }
+            set { this._cpuOptions = value; }
+        }
+
+        // Check to see if CpuOptions property is set
+        internal bool IsSetCpuOptions()
+        {
+            return this._cpuOptions != null;
         }
 
         /// <summary>

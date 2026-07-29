@@ -79,6 +79,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDurationControl())
+            {
+                context.Writer.WritePropertyName("durationControl");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DurationControlMarshaller.Instance;
+                marshaller.Marshall(requestObject.DurationControl, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetHdr10Plus())
             {
                 context.Writer.WritePropertyName("hdr10Plus");

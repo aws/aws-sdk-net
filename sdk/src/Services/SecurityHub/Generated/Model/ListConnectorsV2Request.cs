@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
     public partial class ListConnectorsV2Request : AmazonSecurityHubRequest
     {
         private ConnectorStatus _connectorStatus;
+        private EnablementStatus _enablementStatus;
         private int? _maxResults;
         private string _nextToken;
         private ConnectorProviderName _providerName;
@@ -57,6 +58,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetConnectorStatus()
         {
             return this._connectorStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatus. 
+        /// <para>
+        /// The enablement status to filter connectors by.
+        /// </para>
+        /// </summary>
+        public EnablementStatus EnablementStatus
+        {
+            get { return this._enablementStatus; }
+            set { this._enablementStatus = value; }
+        }
+
+        // Check to see if EnablementStatus property is set
+        internal bool IsSetEnablementStatus()
+        {
+            return this._enablementStatus != null;
         }
 
         /// <summary>

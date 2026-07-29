@@ -325,6 +325,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly AssociationFilterKey AssociationStatusName = new AssociationFilterKey("AssociationStatusName");
         /// <summary>
+        /// Constant CloudConnectorId for AssociationFilterKey
+        /// </summary>
+        public static readonly AssociationFilterKey CloudConnectorId = new AssociationFilterKey("CloudConnectorId");
+        /// <summary>
         /// Constant InstanceId for AssociationFilterKey
         /// </summary>
         public static readonly AssociationFilterKey InstanceId = new AssociationFilterKey("InstanceId");
@@ -990,6 +994,56 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CalendarState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CloudConnectorFilterKey.
+    /// </summary>
+    public class CloudConnectorFilterKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SubscriptionId for CloudConnectorFilterKey
+        /// </summary>
+        public static readonly CloudConnectorFilterKey SubscriptionId = new CloudConnectorFilterKey("SubscriptionId");
+        /// <summary>
+        /// Constant TenantId for CloudConnectorFilterKey
+        /// </summary>
+        public static readonly CloudConnectorFilterKey TenantId = new CloudConnectorFilterKey("TenantId");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CloudConnectorFilterKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CloudConnectorFilterKey FindValue(string value)
+        {
+            return FindValue<CloudConnectorFilterKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CloudConnectorFilterKey(string value)
         {
             return FindValue(value);
         }
@@ -3331,6 +3385,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly NodeAttributeName AgentVersion = new NodeAttributeName("AgentVersion");
         /// <summary>
+        /// Constant AvailabilityZone for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName AvailabilityZone = new NodeAttributeName("AvailabilityZone");
+        /// <summary>
         /// Constant PlatformName for NodeAttributeName
         /// </summary>
         public static readonly NodeAttributeName PlatformName = new NodeAttributeName("PlatformName");
@@ -3350,6 +3408,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant ResourceType for NodeAttributeName
         /// </summary>
         public static readonly NodeAttributeName ResourceType = new NodeAttributeName("ResourceType");
+        /// <summary>
+        /// Constant SourceType for NodeAttributeName
+        /// </summary>
+        public static readonly NodeAttributeName SourceType = new NodeAttributeName("SourceType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3405,6 +3467,14 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly NodeFilterKey AgentVersion = new NodeFilterKey("AgentVersion");
         /// <summary>
+        /// Constant AvailabilityZone for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey AvailabilityZone = new NodeFilterKey("AvailabilityZone");
+        /// <summary>
+        /// Constant AvailabilityZoneId for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey AvailabilityZoneId = new NodeFilterKey("AvailabilityZoneId");
+        /// <summary>
         /// Constant ComputerName for NodeFilterKey
         /// </summary>
         public static readonly NodeFilterKey ComputerName = new NodeFilterKey("ComputerName");
@@ -3452,6 +3522,18 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant ResourceType for NodeFilterKey
         /// </summary>
         public static readonly NodeFilterKey ResourceType = new NodeFilterKey("ResourceType");
+        /// <summary>
+        /// Constant SourceId for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey SourceId = new NodeFilterKey("SourceId");
+        /// <summary>
+        /// Constant SourceLocation for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey SourceLocation = new NodeFilterKey("SourceLocation");
+        /// <summary>
+        /// Constant SourceType for NodeFilterKey
+        /// </summary>
+        public static readonly NodeFilterKey SourceType = new NodeFilterKey("SourceType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5497,6 +5579,10 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         public static readonly ResourceTypeForTagging Automation = new ResourceTypeForTagging("Automation");
         /// <summary>
+        /// Constant CloudConnector for ResourceTypeForTagging
+        /// </summary>
+        public static readonly ResourceTypeForTagging CloudConnector = new ResourceTypeForTagging("CloudConnector");
+        /// <summary>
         /// Constant Document for ResourceTypeForTagging
         /// </summary>
         public static readonly ResourceTypeForTagging Document = new ResourceTypeForTagging("Document");
@@ -5888,6 +5974,10 @@ namespace Amazon.SimpleSystemsManagement
         /// Constant AWSSSMManagedInstance for SourceType
         /// </summary>
         public static readonly SourceType AWSSSMManagedInstance = new SourceType("AWS::SSM::ManagedInstance");
+        /// <summary>
+        /// Constant MicrosoftComputeVirtualMachines for SourceType
+        /// </summary>
+        public static readonly SourceType MicrosoftComputeVirtualMachines = new SourceType("Microsoft.Compute/virtualMachines");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6046,6 +6136,188 @@ namespace Amazon.SimpleSystemsManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StopType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationFindingCode.
+    /// </summary>
+    public class ValidationFindingCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsRoleAssumptionFailed for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode AwsRoleAssumptionFailed = new ValidationFindingCode("AwsRoleAssumptionFailed");
+        /// <summary>
+        /// Constant OutboundWebIdentityFederationDisabled for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode OutboundWebIdentityFederationDisabled = new ValidationFindingCode("OutboundWebIdentityFederationDisabled");
+        /// <summary>
+        /// Constant ProviderCredentialCreationFailed for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode ProviderCredentialCreationFailed = new ValidationFindingCode("ProviderCredentialCreationFailed");
+        /// <summary>
+        /// Constant SubscriptionAccessible for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode SubscriptionAccessible = new ValidationFindingCode("SubscriptionAccessible");
+        /// <summary>
+        /// Constant TargetInaccessible for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode TargetInaccessible = new ValidationFindingCode("TargetInaccessible");
+        /// <summary>
+        /// Constant TargetStateWarning for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode TargetStateWarning = new ValidationFindingCode("TargetStateWarning");
+        /// <summary>
+        /// Constant TargetUnusable for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode TargetUnusable = new ValidationFindingCode("TargetUnusable");
+        /// <summary>
+        /// Constant TenantSummary for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode TenantSummary = new ValidationFindingCode("TenantSummary");
+        /// <summary>
+        /// Constant WebIdentityTokenFailed for ValidationFindingCode
+        /// </summary>
+        public static readonly ValidationFindingCode WebIdentityTokenFailed = new ValidationFindingCode("WebIdentityTokenFailed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationFindingCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationFindingCode FindValue(string value)
+        {
+            return FindValue<ValidationFindingCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationFindingCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationFindingScopeType.
+    /// </summary>
+    public class ValidationFindingScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AzureSubscription for ValidationFindingScopeType
+        /// </summary>
+        public static readonly ValidationFindingScopeType AzureSubscription = new ValidationFindingScopeType("azure:subscription");
+        /// <summary>
+        /// Constant AzureTenant for ValidationFindingScopeType
+        /// </summary>
+        public static readonly ValidationFindingScopeType AzureTenant = new ValidationFindingScopeType("azure:tenant");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationFindingScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationFindingScopeType FindValue(string value)
+        {
+            return FindValue<ValidationFindingScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationFindingScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationFindingType.
+    /// </summary>
+    public class ValidationFindingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for ValidationFindingType
+        /// </summary>
+        public static readonly ValidationFindingType ERROR = new ValidationFindingType("ERROR");
+        /// <summary>
+        /// Constant INFO for ValidationFindingType
+        /// </summary>
+        public static readonly ValidationFindingType INFO = new ValidationFindingType("INFO");
+        /// <summary>
+        /// Constant WARN for ValidationFindingType
+        /// </summary>
+        public static readonly ValidationFindingType WARN = new ValidationFindingType("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationFindingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationFindingType FindValue(string value)
+        {
+            return FindValue<ValidationFindingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationFindingType(string value)
         {
             return FindValue(value);
         }

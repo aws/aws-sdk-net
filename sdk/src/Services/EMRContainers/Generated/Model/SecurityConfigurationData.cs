@@ -34,7 +34,26 @@ namespace Amazon.EMRContainers.Model
     /// </summary>
     public partial class SecurityConfigurationData
     {
+        private AuthenticationConfiguration _authenticationConfiguration;
         private AuthorizationConfiguration _authorizationConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property AuthenticationConfiguration. 
+        /// <para>
+        /// Authentication-related configuration input for the security configuration.
+        /// </para>
+        /// </summary>
+        public AuthenticationConfiguration AuthenticationConfiguration
+        {
+            get { return this._authenticationConfiguration; }
+            set { this._authenticationConfiguration = value; }
+        }
+
+        // Check to see if AuthenticationConfiguration property is set
+        internal bool IsSetAuthenticationConfiguration()
+        {
+            return this._authenticationConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AuthorizationConfiguration. 

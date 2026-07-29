@@ -34,8 +34,33 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class DescribeSecurityHubV2Response : AmazonWebServiceResponse
     {
+        private Dictionary<string, FeatureDetail> _features = AWSConfigs.InitializeCollections ? new Dictionary<string, FeatureDetail>() : null;
         private string _hubV2Arn;
         private string _subscribedAt;
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// A map of opt-in features and their current status and metadata for the account in
+        /// the current Region.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, FeatureDetail> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property HubV2Arn. 

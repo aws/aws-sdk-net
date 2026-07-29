@@ -237,6 +237,52 @@ namespace Amazon.Resiliencehubv2
 
 
     /// <summary>
+    /// Constants used for properties of type AssessmentSortField.
+    /// </summary>
+    public class AssessmentSortField : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STARTED_AT for AssessmentSortField
+        /// </summary>
+        public static readonly AssessmentSortField STARTED_AT = new AssessmentSortField("STARTED_AT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssessmentSortField(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssessmentSortField FindValue(string value)
+        {
+            return FindValue<AssessmentSortField>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssessmentSortField(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssessmentStatus.
     /// </summary>
     public class AssessmentStatus : ConstantClass
@@ -305,6 +351,26 @@ namespace Amazon.Resiliencehubv2
     {
 
         /// <summary>
+        /// Constant DESIGN_ANALYSIS for AssessmentStep
+        /// </summary>
+        public static readonly AssessmentStep DESIGN_ANALYSIS = new AssessmentStep("DESIGN_ANALYSIS");
+        /// <summary>
+        /// Constant FAILURE_MODE_FINDINGS_CONSOLIDATION for AssessmentStep
+        /// </summary>
+        public static readonly AssessmentStep FAILURE_MODE_FINDINGS_CONSOLIDATION = new AssessmentStep("FAILURE_MODE_FINDINGS_CONSOLIDATION");
+        /// <summary>
+        /// Constant FAILURE_MODE_FINDINGS_ENRICHMENT for AssessmentStep
+        /// </summary>
+        public static readonly AssessmentStep FAILURE_MODE_FINDINGS_ENRICHMENT = new AssessmentStep("FAILURE_MODE_FINDINGS_ENRICHMENT");
+        /// <summary>
+        /// Constant INPUT_VALIDATION for AssessmentStep
+        /// </summary>
+        public static readonly AssessmentStep INPUT_VALIDATION = new AssessmentStep("INPUT_VALIDATION");
+        /// <summary>
+        /// Constant POLICY_VALIDATION for AssessmentStep
+        /// </summary>
+        public static readonly AssessmentStep POLICY_VALIDATION = new AssessmentStep("POLICY_VALIDATION");
+        /// <summary>
         /// Constant RESILIENCE_ASSESSMENT for AssessmentStep
         /// </summary>
         public static readonly AssessmentStep RESILIENCE_ASSESSMENT = new AssessmentStep("RESILIENCE_ASSESSMENT");
@@ -316,6 +382,10 @@ namespace Amazon.Resiliencehubv2
         /// Constant TOPOLOGY_ENHANCEMENT for AssessmentStep
         /// </summary>
         public static readonly AssessmentStep TOPOLOGY_ENHANCEMENT = new AssessmentStep("TOPOLOGY_ENHANCEMENT");
+        /// <summary>
+        /// Constant TOPOLOGY_GENERATION for AssessmentStep
+        /// </summary>
+        public static readonly AssessmentStep TOPOLOGY_GENERATION = new AssessmentStep("TOPOLOGY_GENERATION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1572,6 +1642,56 @@ namespace Amazon.Resiliencehubv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ServiceFunctionSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASC = new SortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESC = new SortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

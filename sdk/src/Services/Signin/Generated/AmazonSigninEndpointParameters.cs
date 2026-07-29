@@ -84,5 +84,14 @@ namespace Amazon.Signin.Endpoints
             get { return (bool?)this["IsControlPlane"]; }
             set { this["IsControlPlane"] = value; } 
         }
+
+        /// <summary>
+        /// IsOAuthEndpoint parameter
+        /// </summary>
+        public bool? IsOAuthEndpoint 
+        { 
+            get { return (bool?)this["IsOAuthEndpoint"]; }
+            set { this["IsOAuthEndpoint"] = value; } 
+        }
     }
 }

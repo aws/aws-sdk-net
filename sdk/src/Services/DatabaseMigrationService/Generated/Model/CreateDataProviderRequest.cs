@@ -32,7 +32,14 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the CreateDataProvider operation.
     /// Creates a data provider using the provided settings. A data provider stores a data
-    /// store type and location information about your database.
+    /// store type and location information about your database. 
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:CreateDataProvider</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class CreateDataProviderRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -82,11 +89,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The type of database engine for the data provider. Valid values include <c>"aurora"</c>,
-        /// <c>"aurora-postgresql"</c>, <c>"mysql"</c>, <c>"oracle"</c>, <c>"postgres"</c>, <c>"sqlserver"</c>,
-        /// <c>redshift</c>, <c>mariadb</c>, <c>mongodb</c>, <c>db2</c>, <c>db2-zos</c>, <c>docdb</c>,
-        /// and <c>sybase</c>. A value of <c>"aurora"</c> represents Amazon Aurora MySQL-Compatible
-        /// Edition.
+        /// The type of database engine for the data provider.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>aurora</c>, <c>aurora-postgresql</c>, <c>db2</c>, <c>db2-zos</c>,
+        /// <c>docdb</c>, <c>mariadb</c>, <c>mongodb</c>, <c>mysql</c>, <c>oracle</c>, <c>postgres</c>,
+        /// <c>redshift</c>, <c>sqlserver</c>, and <c>sybase</c>. A value of <c>aurora</c> represents
+        /// Amazon Aurora MySQL-Compatible Edition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

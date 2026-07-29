@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleVerdictExpression Marshaller
     /// </summary>
-    public class RuleVerdictExpressionMarshaller : IRequestMarshaller<RuleVerdictExpression, JsonMarshallerContext> 
+    public class RuleVerdictExpressionMarshaller : IRequestMarshaller<RuleVerdictExpression, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,38 +45,36 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleVerdictExpression requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleVerdictExpression requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEvaluate())
+
+            if (requestObject.IsSetEvaluate())
             {
-                context.Writer.WritePropertyName("Evaluate");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("Evaluate");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = RuleVerdictToEvaluateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Evaluate, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetOperator())
+            if (requestObject.IsSetOperator())
             {
-                context.Writer.WritePropertyName("Operator");
-                context.Writer.WriteStringValue(requestObject.Operator);
+                context.Writer.WriteTextString("Operator");
+                context.Writer.WriteTextString(requestObject.Operator);
             }
-
-            if(requestObject.IsSetValues())
+            if (requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("Values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.WriteStringValue(requestObjectValuesListValue);
+                        context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

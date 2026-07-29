@@ -34,11 +34,32 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class RecommenderConfig
     {
+        private DiversityConfig _diversityConfig;
         private EventsConfig _eventsConfig;
         private Dictionary<string, List<string>> _excludedColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private Dictionary<string, List<string>> _includedColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private InferenceConfig _inferenceConfig;
         private int? _trainingFrequency;
+
+        /// <summary>
+        /// Gets and sets the property DiversityConfig. 
+        /// <para>
+        /// Configuration for diversity-aware recommendations. When set, the recommender applies
+        /// diversity constraints defined per item column to reduce over-concentration of similar
+        /// items in the results.
+        /// </para>
+        /// </summary>
+        public DiversityConfig DiversityConfig
+        {
+            get { return this._diversityConfig; }
+            set { this._diversityConfig = value; }
+        }
+
+        // Check to see if DiversityConfig property is set
+        internal bool IsSetDiversityConfig()
+        {
+            return this._diversityConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EventsConfig. 

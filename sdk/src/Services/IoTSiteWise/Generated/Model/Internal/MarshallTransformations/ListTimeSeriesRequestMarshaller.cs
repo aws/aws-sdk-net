@@ -77,6 +77,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTimeSeriesType())
                 request.Parameters.Add("timeSeriesType", StringUtils.FromString(publicRequest.TimeSeriesType));
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/timeseries/";
             request.UseQueryString = true;
             

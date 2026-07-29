@@ -35,9 +35,34 @@ namespace Amazon.RedshiftServerless.Model
     /// </summary>
     public partial class RestoreFromRecoveryPointRequest : AmazonRedshiftServerlessRequest
     {
+        private bool? _maintainIntegration;
         private string _namespaceName;
         private string _recoveryPointId;
         private string _workgroupName;
+
+        /// <summary>
+        /// Gets and sets the property MaintainIntegration. 
+        /// <para>
+        /// If <c>true</c>, maintain existing data sharing, zero-ETL and S3 event integrations
+        /// when restoring. Otherwise, integrations will not be maintained after the restore operation.
+        /// Integrations are only maintained when restored to the same serverless namespace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: true
+        /// </para>
+        /// </summary>
+        public bool? MaintainIntegration
+        {
+            get { return this._maintainIntegration; }
+            set { this._maintainIntegration = value; }
+        }
+
+        // Check to see if MaintainIntegration property is set
+        internal bool IsSetMaintainIntegration()
+        {
+            return this._maintainIntegration.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property NamespaceName. 

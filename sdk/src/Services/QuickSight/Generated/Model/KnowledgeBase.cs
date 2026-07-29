@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class KnowledgeBase
     {
+        private AccessControlConfiguration _accessControlConfiguration;
         private DateTime? _createdAt;
         private string _dataSourceArn;
         private string _description;
@@ -54,6 +55,24 @@ namespace Amazon.QuickSight.Model
         private DataSetStatus _status;
         private string _type;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AccessControlConfiguration. 
+        /// <para>
+        /// The access control configuration for the knowledge base.
+        /// </para>
+        /// </summary>
+        public AccessControlConfiguration AccessControlConfiguration
+        {
+            get { return this._accessControlConfiguration; }
+            set { this._accessControlConfiguration = value; }
+        }
+
+        // Check to see if AccessControlConfiguration property is set
+        internal bool IsSetAccessControlConfiguration()
+        {
+            return this._accessControlConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -168,7 +187,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IsEmailNotificationOptedForIngestionFailures. 
         /// <para>
-        /// Indicates whether email notifications are enabled for ingestion failures.
+        /// Specifies whether email notifications are enabled for ingestion failures.
         /// </para>
         /// </summary>
         public bool? IsEmailNotificationOptedForIngestionFailures

@@ -75,6 +75,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdapterSource())
+            {
+                context.Writer.WritePropertyName("AdapterSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AIAdapterSourceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdapterSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetAIRecommendationJobName())
             {
                 context.Writer.WritePropertyName("AIRecommendationJobName");

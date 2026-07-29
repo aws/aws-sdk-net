@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Unified customer-facing clustering result written to S3.
+    /// The failure analysis clustering result containing categorized failure clusters with
+    /// root causes and remediation recommendations.
     /// </summary>
     public partial class FailureAnalysisResultContent
     {

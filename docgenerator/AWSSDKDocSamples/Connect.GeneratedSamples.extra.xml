@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Connect.IAmazonConnect.SearchRules(Amazon.Connect.Model.SearchRulesRequest)" />
+            <member name="M:Amazon.Connect.AmazonConnectClient.SearchRules(Amazon.Connect.Model.SearchRulesRequest)" />
+            <member name="T:Amazon.Connect.Model.SearchRulesRequest" />
+            <member name="T:Amazon.Connect.Model.SearchRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    Searches for published rules in an Amazon Connect instance.
+                </para>
+                <code
+                    title="SearchRules"
+                    source=".\AWSSDKDocSamples\Connect\Connect.GeneratedSamples.cs"
+                    region="searchrules-1719100000000" />
+            </example>
+        </value>
+    </doc>
+</docs>

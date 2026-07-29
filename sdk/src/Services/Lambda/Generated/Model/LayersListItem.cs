@@ -63,7 +63,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of the function layer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=140)]
+        [AWSProperty(Min=1, Max=2048)]
         public string LayerArn
         {
             get { return this._layerArn; }

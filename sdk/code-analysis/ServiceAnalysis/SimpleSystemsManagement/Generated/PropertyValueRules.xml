@@ -111,6 +111,36 @@
     <pattern>arn:aws(-[^:]+)?:iam::[0-9]{12}:role/.+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateCloudConnectorRequest.ConfigConnectorArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws(-cn|-us-gov)?:config:([^:]+):\d{12}:connector/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateCloudConnectorRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateCloudConnectorRequest.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateCloudConnectorRequest.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z0-9-]*:iam::\d{12}:role\/[\w-\/.@+=,]{1,1017}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CreateCloudConnectorResponse.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CreateDocumentRequest.Content</property>
     <min>1</min>
   </property-value-rule>
@@ -278,6 +308,18 @@
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteAssociationRequest.Name</property>
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteCloudConnectorRequest.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.DeleteCloudConnectorResponse.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.DeleteDocumentRequest.DocumentVersion</property>
@@ -728,6 +770,42 @@
     <property>Amazon.SimpleSystemsManagement.Model.GetAutomationExecutionRequest.AutomationExecutionId</property>
     <min>36</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCloudConnectorRequest.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCloudConnectorResponse.CloudConnectorArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws(-cn|-us-gov)?:ssm:([^:]+):\d{12}:cloud-connector/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCloudConnectorResponse.ConfigConnectorArn</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>^arn:aws(-cn|-us-gov)?:config:([^:]+):\d{12}:connector/.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCloudConnectorResponse.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCloudConnectorResponse.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.GetCloudConnectorResponse.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z0-9-]*:iam::\d{12}:role\/[\w-\/.@+=,]{1,1017}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.GetCommandInvocationRequest.CommandId</property>
@@ -1240,6 +1318,11 @@
     <property>Amazon.SimpleSystemsManagement.Model.ListAssociationVersionsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ListCloudConnectorsRequest.MaxResults</property>
+    <min>0</min>
+    <max>10</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.ListCommandInvocationsRequest.CommandId</property>
@@ -1868,6 +1951,30 @@
     <pattern>^[a-zA-Z0-9_\-.:/]{3,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateCloudConnectorRequest.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateCloudConnectorRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateCloudConnectorRequest.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.UpdateCloudConnectorResponse.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.UpdateDocumentRequest.Content</property>
     <min>1</min>
   </property-value-rule>
@@ -2243,6 +2350,17 @@
     <max>4096</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ValidateCloudConnectorRequest.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.ValidateCloudConnectorRequest.MaxResults</property>
+    <min>0</min>
+    <max>75</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.AccountSharingInfo.AccountId</property>
     <pattern>(?i)all|[0-9]{12}</pattern>
   </property-value-rule>
@@ -2613,6 +2731,66 @@
     <property>Amazon.SimpleSystemsManagement.Model.AutomationExecutionMetadata.TargetParameterName</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AzureConfiguration.ApplicationDisplayName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AzureConfiguration.ApplicationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AzureConfiguration.TenantDisplayName</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AzureConfiguration.TenantId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AzureSubscription.DisplayName</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.AzureSubscription.Id</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CloudConnectorSummary.CloudConnectorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CloudConnectorSummary.Description</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CloudConnectorSummary.DisplayName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}\p{P}\p{M}]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.CloudConnectorSummary.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:aws[a-z0-9-]*:iam::\d{12}:role\/[\w-\/.@+=,]{1,1017}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.CloudWatchOutputConfig.CloudWatchLogGroupName</property>
@@ -3034,6 +3212,14 @@
     <pattern>^[0-9]{1,6}(\.[0-9]{1,6}){2,3}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.AvailabilityZone</property>
+    <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.AvailabilityZoneId</property>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.ComputerName</property>
     <min>1</min>
     <max>255</max>
@@ -3049,12 +3235,30 @@
     <max>46</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.Name</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.PlatformName</property>
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.PlatformVersion</property>
     <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.SourceId</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9:_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInfo.SourceLocation</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^.{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.ActivationId</property>
@@ -3087,6 +3291,12 @@
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9:_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceInformation.SourceLocation</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^.{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceInformationStringFilter.Key</property>
@@ -3143,6 +3353,10 @@
     <max>120</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceProperty.AvailabilityZone</property>
+    <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstanceProperty.ComputerName</property>
     <min>1</min>
     <max>255</max>
@@ -3193,6 +3407,12 @@
     <min>0</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9:_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleSystemsManagement.Model.InstanceProperty.SourceLocation</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^.{1,128}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleSystemsManagement.Model.InstancePropertyStringFilter.Key</property>

@@ -235,7 +235,7 @@ namespace Amazon.Inspector2.Model
         /// The CIS scan result details' target resource ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=10, Max=341)]
+        [AWSProperty(Min=10, Max=1024)]
         public string TargetResourceId
         {
             get { return this._targetResourceId; }

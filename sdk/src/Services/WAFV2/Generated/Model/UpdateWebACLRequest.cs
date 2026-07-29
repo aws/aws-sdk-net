@@ -65,8 +65,8 @@ namespace Amazon.WAFV2.Model
     /// and managed rule group. You can associate a web ACL with one or more Amazon Web Services
     /// resources to protect. The resource types include Amazon CloudFront distribution, Amazon
     /// API Gateway REST API, Application Load Balancer, AppSync GraphQL API, Amazon Cognito
-    /// user pool, App Runner service, Amplify application, and Amazon Web Services Verified
-    /// Access instance. 
+    /// user pool, App Runner service, Amplify application, Amazon Web Services Verified Access
+    /// instance, and Amazon Bedrock AgentCore Gateway. 
     /// </para>
     ///  
     /// <para>

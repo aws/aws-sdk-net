@@ -54,16 +54,40 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DeleteServiceLinkedConfigurationRecorderRequest : AmazonConfigServiceRequest
     {
+        private string _arn;
         private string _servicePrincipal;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the service-linked configuration recorder that you
+        /// want to delete. For third-party service-linked configuration recorders, you must use
+        /// <c>Arn</c>. You must specify exactly one of <c>Arn</c> or <c>ServicePrincipal</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ServicePrincipal. 
         /// <para>
         /// The service principal of the Amazon Web Services service for the service-linked configuration
-        /// recorder that you want to delete.
+        /// recorder that you want to delete. This field is only supported for Amazon Web Services
+        /// service principals. For third-party service-linked configuration recorders, use <c>Arn</c>
+        /// instead.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string ServicePrincipal
         {
             get { return this._servicePrincipal; }

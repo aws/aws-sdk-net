@@ -65,11 +65,11 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation returns the fleet ID, location, container group definition ARN, container
-    /// group type, compute name (for game server container groups), instance ID, and a list
-    /// of <c>ContainerGroupPortMapping</c> objects. Each object contains the container name,
-    /// runtime ID, and a list of port mappings that show how container ports map to connection
-    /// ports on the instance.
+    /// This operation returns the fleet ID, fleet ARN, location, container group definition
+    /// ARN, container group type, compute name (for game server container groups), instance
+    /// ID, and a list of <c>ContainerGroupPortMapping</c> objects. Each object contains the
+    /// container name, runtime ID, and a list of port mappings that show how container ports
+    /// map to connection ports on the instance.
     /// </para>
     ///  
     /// <para>
@@ -215,6 +215,7 @@ namespace Amazon.GameLift.Model
         /// compute. If the instance ID doesn't match, the request fails with an <c>InvalidRequestException</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceId
         {
             get { return this._instanceId; }

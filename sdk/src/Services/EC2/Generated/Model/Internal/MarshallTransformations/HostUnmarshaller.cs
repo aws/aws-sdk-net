@@ -103,6 +103,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("cpuOptions", targetDepth))
+                    {
+                        var unmarshaller = HostCpuOptionsUnmarshaller.Instance;
+                        unmarshalledObject.CpuOptions = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("hostId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

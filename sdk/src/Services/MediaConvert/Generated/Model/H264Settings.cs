@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private H264DynamicSubGop _dynamicSubGop;
         private H264EndOfStreamMarkers _endOfStreamMarkers;
         private H264EntropyEncoding _entropyEncoding;
+        private H264ExplicitWeightedPrediction _explicitWeightedPrediction;
         private H264FieldEncoding _fieldEncoding;
         private H264FlickerAdaptiveQuantization _flickerAdaptiveQuantization;
         private H264FramerateControl _framerateControl;
@@ -230,6 +231,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetEntropyEncoding()
         {
             return this._entropyEncoding != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExplicitWeightedPrediction. Enable or disable explicit
+        /// weighted prediction for the H.264 encoder. Weighted prediction improves compression
+        /// efficiency for content with fading or brightness changes between frames.
+        /// </summary>
+        public H264ExplicitWeightedPrediction ExplicitWeightedPrediction
+        {
+            get { return this._explicitWeightedPrediction; }
+            set { this._explicitWeightedPrediction = value; }
+        }
+
+        // Check to see if ExplicitWeightedPrediction property is set
+        internal bool IsSetExplicitWeightedPrediction()
+        {
+            return this._explicitWeightedPrediction != null;
         }
 
         /// <summary>

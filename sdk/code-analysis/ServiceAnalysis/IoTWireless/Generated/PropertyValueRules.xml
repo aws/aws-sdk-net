@@ -1330,6 +1330,16 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTWireless.Model.DefaultSessionParametersMulticast.DlDr</property>
+    <min>0</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTWireless.Model.DefaultSessionParametersMulticast.DlFreq</property>
+    <min>100000000</min>
+    <max>1000000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTWireless.Model.Destinations.Description</property>
     <max>2048</max>
   </property-value-rule>

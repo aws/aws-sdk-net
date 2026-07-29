@@ -46,6 +46,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetImageReleaseVersion())
+            {
+                context.Writer.WritePropertyName("ImageReleaseVersion");
+                context.Writer.WriteStringValue(requestObject.ImageReleaseVersion);
+            }
+
             if(requestObject.IsSetInstanceGroupName())
             {
                 context.Writer.WritePropertyName("InstanceGroupName");

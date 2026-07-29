@@ -35,7 +35,40 @@ namespace Amazon.SecurityAgent.Model
     /// </summary>
     public partial class IntegratedResourceMetadata
     {
+        private BitbucketRepositoryMetadata _bitbucketRepository;
+        private ConfluenceDocumentMetadata _confluenceDocument;
         private GitHubRepositoryMetadata _githubRepository;
+        private GitLabRepositoryMetadata _gitlabRepository;
+
+        /// <summary>
+        /// Gets and sets the property BitbucketRepository.
+        /// </summary>
+        public BitbucketRepositoryMetadata BitbucketRepository
+        {
+            get { return this._bitbucketRepository; }
+            set { this._bitbucketRepository = value; }
+        }
+
+        // Check to see if BitbucketRepository property is set
+        internal bool IsSetBitbucketRepository()
+        {
+            return this._bitbucketRepository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfluenceDocument.
+        /// </summary>
+        public ConfluenceDocumentMetadata ConfluenceDocument
+        {
+            get { return this._confluenceDocument; }
+            set { this._confluenceDocument = value; }
+        }
+
+        // Check to see if ConfluenceDocument property is set
+        internal bool IsSetConfluenceDocument()
+        {
+            return this._confluenceDocument != null;
+        }
 
         /// <summary>
         /// Gets and sets the property GithubRepository. 
@@ -53,6 +86,21 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetGithubRepository()
         {
             return this._githubRepository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitlabRepository.
+        /// </summary>
+        public GitLabRepositoryMetadata GitlabRepository
+        {
+            get { return this._gitlabRepository; }
+            set { this._gitlabRepository = value; }
+        }
+
+        // Check to see if GitlabRepository property is set
+        internal bool IsSetGitlabRepository()
+        {
+            return this._gitlabRepository != null;
         }
 
     }

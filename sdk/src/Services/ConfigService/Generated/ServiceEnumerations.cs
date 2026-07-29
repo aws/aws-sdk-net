@@ -665,6 +665,52 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectorFilterName.
+    /// </summary>
+    public class ConnectorFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Provider for ConnectorFilterName
+        /// </summary>
+        public static readonly ConnectorFilterName Provider = new ConnectorFilterName("provider");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectorFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectorFilterName FindValue(string value)
+        {
+            return FindValue<ConnectorFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectorFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeliveryStatus.
     /// </summary>
     public class DeliveryStatus : ConstantClass
@@ -1398,6 +1444,52 @@ namespace Amazon.ConfigService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Owner(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Provider.
+    /// </summary>
+    public class Provider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AZURE for Provider
+        /// </summary>
+        public static readonly Provider AZURE = new Provider("AZURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Provider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Provider FindValue(string value)
+        {
+            return FindValue<Provider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Provider(string value)
         {
             return FindValue(value);
         }

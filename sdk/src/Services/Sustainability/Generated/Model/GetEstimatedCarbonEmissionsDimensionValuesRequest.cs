@@ -68,7 +68,7 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Default is 40.
+        /// The maximum number of results to return in a single call. Default is 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
@@ -107,7 +107,8 @@ namespace Amazon.Sustainability.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The date range for fetching the dimension values.
+        ///  The date range for fetching the dimension values. The range must include the start
+        /// date of a month for that month's dimensions to be included in the response. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

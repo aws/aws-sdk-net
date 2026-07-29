@@ -35,10 +35,15 @@ namespace Amazon.Inspector2.Model
     public partial class ResourceScanMetadata
     {
         private CodeRepositoryMetadata _codeRepository;
+        private ContainerImageMetadata _containerImage;
+        private ContainerRegistryMetadata _containerRegistry;
+        private ContainerRepositoryMetadata _containerRepository;
         private Ec2Metadata _ec2;
         private EcrContainerImageMetadata _ecrImage;
         private EcrRepositoryMetadata _ecrRepository;
         private LambdaFunctionMetadata _lambdaFunction;
+        private ServerlessFunctionMetadata _serverlessFunction;
+        private VmInstanceMetadata _vmInstance;
 
         /// <summary>
         /// Gets and sets the property CodeRepository. 
@@ -56,6 +61,60 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetCodeRepository()
         {
             return this._codeRepository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerImage. 
+        /// <para>
+        /// The container image metadata associated with a covered resource.
+        /// </para>
+        /// </summary>
+        public ContainerImageMetadata ContainerImage
+        {
+            get { return this._containerImage; }
+            set { this._containerImage = value; }
+        }
+
+        // Check to see if ContainerImage property is set
+        internal bool IsSetContainerImage()
+        {
+            return this._containerImage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRegistry. 
+        /// <para>
+        /// The container registry metadata associated with a covered resource.
+        /// </para>
+        /// </summary>
+        public ContainerRegistryMetadata ContainerRegistry
+        {
+            get { return this._containerRegistry; }
+            set { this._containerRegistry = value; }
+        }
+
+        // Check to see if ContainerRegistry property is set
+        internal bool IsSetContainerRegistry()
+        {
+            return this._containerRegistry != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContainerRepository. 
+        /// <para>
+        /// The container repository metadata associated with a covered resource.
+        /// </para>
+        /// </summary>
+        public ContainerRepositoryMetadata ContainerRepository
+        {
+            get { return this._containerRepository; }
+            set { this._containerRepository = value; }
+        }
+
+        // Check to see if ContainerRepository property is set
+        internal bool IsSetContainerRepository()
+        {
+            return this._containerRepository != null;
         }
 
         /// <summary>
@@ -128,6 +187,42 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetLambdaFunction()
         {
             return this._lambdaFunction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessFunction. 
+        /// <para>
+        /// The serverless function metadata associated with a covered resource.
+        /// </para>
+        /// </summary>
+        public ServerlessFunctionMetadata ServerlessFunction
+        {
+            get { return this._serverlessFunction; }
+            set { this._serverlessFunction = value; }
+        }
+
+        // Check to see if ServerlessFunction property is set
+        internal bool IsSetServerlessFunction()
+        {
+            return this._serverlessFunction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VmInstance. 
+        /// <para>
+        /// The VM instance metadata associated with a covered resource.
+        /// </para>
+        /// </summary>
+        public VmInstanceMetadata VmInstance
+        {
+            get { return this._vmInstance; }
+            set { this._vmInstance = value; }
+        }
+
+        // Check to see if VmInstance property is set
+        internal bool IsSetVmInstance()
+        {
+            return this._vmInstance != null;
         }
 
     }

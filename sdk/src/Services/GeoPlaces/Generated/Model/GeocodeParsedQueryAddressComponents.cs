@@ -40,6 +40,7 @@ namespace Amazon.GeoPlaces.Model
         private List<ParsedQueryComponent> _country = AWSConfigs.InitializeCollections ? new List<ParsedQueryComponent>() : null;
         private List<ParsedQueryComponent> _district = AWSConfigs.InitializeCollections ? new List<ParsedQueryComponent>() : null;
         private List<ParsedQueryComponent> _locality = AWSConfigs.InitializeCollections ? new List<ParsedQueryComponent>() : null;
+        private List<ParsedQueryComponent> _otherComponents = AWSConfigs.InitializeCollections ? new List<ParsedQueryComponent>() : null;
         private List<ParsedQueryComponent> _postalCode = AWSConfigs.InitializeCollections ? new List<ParsedQueryComponent>() : null;
         private List<ParsedQueryComponent> _region = AWSConfigs.InitializeCollections ? new List<ParsedQueryComponent>() : null;
         private List<ParsedQuerySecondaryAddressComponent> _secondaryAddressComponents = AWSConfigs.InitializeCollections ? new List<ParsedQuerySecondaryAddressComponent>() : null;
@@ -199,6 +200,31 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetLocality()
         {
             return this._locality != null && (this._locality.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OtherComponents. 
+        /// <para>
+        /// Additional information extracted from the query that does not correspond to standard
+        /// address components.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public List<ParsedQueryComponent> OtherComponents
+        {
+            get { return this._otherComponents; }
+            set { this._otherComponents = value; }
+        }
+
+        // Check to see if OtherComponents property is set
+        internal bool IsSetOtherComponents()
+        {
+            return this._otherComponents != null && (this._otherComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

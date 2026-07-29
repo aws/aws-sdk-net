@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class McpTargetConfiguration
     {
         private ApiGatewayTargetConfiguration _apiGateway;
+        private ConnectorTargetConfiguration _connector;
         private McpLambdaTargetConfiguration _lambda;
         private McpServerTargetConfiguration _mcpServer;
         private ApiSchemaConfiguration _openApiSchema;
@@ -57,6 +58,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetApiGateway()
         {
             return this._apiGateway != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Connector. 
+        /// <para>
+        /// The connector integration configuration for the Model Context Protocol target. This
+        /// configuration defines how the gateway uses a pre-built connector to communicate with
+        /// the target.
+        /// </para>
+        /// </summary>
+        public ConnectorTargetConfiguration Connector
+        {
+            get { return this._connector; }
+            set { this._connector = value; }
+        }
+
+        // Check to see if Connector property is set
+        internal bool IsSetConnector()
+        {
+            return this._connector != null;
         }
 
         /// <summary>

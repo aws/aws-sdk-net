@@ -268,6 +268,16 @@ namespace Amazon.Redshift.Model
         IDescribeOrderableClusterOptionsPaginator DescribeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeQev2IdcApplications operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "Marker" },
+            LimitKey = "MaxRecords",
+            OutputToken = new[] { "Marker" }
+        )]
+        IDescribeQev2IdcApplicationsPaginator DescribeQev2IdcApplications(DescribeQev2IdcApplicationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeRedshiftIdcApplications operation
         ///</summary>
         [AWSPaginator(

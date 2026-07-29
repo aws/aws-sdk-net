@@ -90,6 +90,24 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 if (publicRequest.IsSetMetadataConfiguration())
                 {
                     xmlWriter.WriteStartElement("MetadataConfiguration", "http://s3.amazonaws.com/doc/2006-03-01/");
+                    if (publicRequest.MetadataConfiguration.IsSetAnnotationTableConfiguration())
+                    {
+                        xmlWriter.WriteStartElement("AnnotationTableConfiguration");
+                        if(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.IsSetConfigurationState())
+                            xmlWriter.WriteElementString("ConfigurationState", StringUtils.FromString(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.ConfigurationState));
+                        if (publicRequest.MetadataConfiguration.AnnotationTableConfiguration.IsSetEncryptionConfiguration())
+                        {
+                            xmlWriter.WriteStartElement("EncryptionConfiguration");
+                            if(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.EncryptionConfiguration.IsSetKmsKeyArn())
+                                xmlWriter.WriteElementString("KmsKeyArn", StringUtils.FromString(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.EncryptionConfiguration.KmsKeyArn));
+                            if(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.EncryptionConfiguration.IsSetSseAlgorithm())
+                                xmlWriter.WriteElementString("SseAlgorithm", StringUtils.FromString(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.EncryptionConfiguration.SseAlgorithm));
+                            xmlWriter.WriteEndElement();
+                        }
+                        if(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.IsSetRole())
+                            xmlWriter.WriteElementString("Role", StringUtils.FromString(publicRequest.MetadataConfiguration.AnnotationTableConfiguration.Role));
+                        xmlWriter.WriteEndElement();
+                    }
                     if (publicRequest.MetadataConfiguration.IsSetInventoryTableConfiguration())
                     {
                         xmlWriter.WriteStartElement("InventoryTableConfiguration");

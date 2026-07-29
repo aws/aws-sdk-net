@@ -101,6 +101,28 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AdDecisionServerUrl);
             }
 
+            if(publicRequest.IsSetAdsPersonalizationConcurrency())
+            {
+                context.Writer.WritePropertyName("AdsPersonalizationConcurrency");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AdsPersonalizationConcurrencyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdsPersonalizationConcurrency, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAdsPersonalizationTimeouts())
+            {
+                context.Writer.WritePropertyName("AdsPersonalizationTimeouts");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AdsPersonalizationTimeoutsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdsPersonalizationTimeouts, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetAvailSuppression())
             {
                 context.Writer.WritePropertyName("AvailSuppression");

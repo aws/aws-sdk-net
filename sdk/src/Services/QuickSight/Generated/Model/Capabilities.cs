@@ -125,6 +125,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _googleCalendarAction;
         private CapabilityState _hubspotAction;
         private CapabilityState _huggingFaceAction;
+        private CapabilityState _inboundEmailTrigger;
         private CapabilityState _includeContentInScheduledReportsEmail;
         private CapabilityState _intercomAction;
         private CapabilityState _invokeAppsAIInference;
@@ -144,6 +145,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _performFlowUiTask;
         private CapabilityState _printReports;
         private CapabilityState _publishWithoutApproval;
+        private CapabilityState _quickEventTrigger;
         private CapabilityState _renameSharedFolders;
         private CapabilityState _research;
         private CapabilityState _salesforceAction;
@@ -155,6 +157,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _sapPhysicalInventoryAction;
         private CapabilityState _sapProductMasterDataAction;
         private CapabilityState _scenario;
+        private CapabilityState _scheduleTrigger;
         private CapabilityState _selfUpgradeUserRole;
         private CapabilityState _serviceNowAction;
         private CapabilityState _shareAmazonBedrockARSAction;
@@ -215,6 +218,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _subscribeDashboardEmailReports;
         private CapabilityState _textractAction;
         private CapabilityState _topic;
+        private CapabilityState _trigger;
         private CapabilityState _useAgentWebSearch;
         private CapabilityState _useAmazonBedrockARSAction;
         private CapabilityState _useAmazonBedrockFSAction;
@@ -224,10 +228,12 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useBambooHRAction;
         private CapabilityState _useBedrockModels;
         private CapabilityState _useBoxAgentAction;
+        private CapabilityState _useBrowserExtension;
         private CapabilityState _useCanvaAgentAction;
         private CapabilityState _useComprehendAction;
         private CapabilityState _useComprehendMedicalAction;
         private CapabilityState _useConfluenceAction;
+        private CapabilityState _useExcelAddInExtension;
         private CapabilityState _useFactSetAction;
         private CapabilityState _useGenericHTTPAction;
         private CapabilityState _useGithubAction;
@@ -245,7 +251,9 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useNotionAction;
         private CapabilityState _useOneDriveAction;
         private CapabilityState _useOpenAPIAction;
+        private CapabilityState _useOutlookAddInExtension;
         private CapabilityState _usePagerDutyAction;
+        private CapabilityState _usePowerpointAddInExtension;
         private CapabilityState _useSalesforceAction;
         private CapabilityState _useSandPGlobalEnergyAction;
         private CapabilityState _useSandPGMIAction;
@@ -259,6 +267,7 @@ namespace Amazon.QuickSight.Model
         private CapabilityState _useSlackAction;
         private CapabilityState _useSmartsheetAction;
         private CapabilityState _useTextractAction;
+        private CapabilityState _useWordAddInExtension;
         private CapabilityState _useZendeskAction;
         private CapabilityState _viewAccountSPICECapacity;
         private CapabilityState _zendeskAction;
@@ -1903,6 +1912,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InboundEmailTrigger. 
+        /// <para>
+        /// The ability to create, view, edit, delete, and run inbound email triggers for flows
+        /// and automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState InboundEmailTrigger
+        {
+            get { return this._inboundEmailTrigger; }
+            set { this._inboundEmailTrigger = value; }
+        }
+
+        // Check to see if InboundEmailTrigger property is set
+        internal bool IsSetInboundEmailTrigger()
+        {
+            return this._inboundEmailTrigger != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeContentInScheduledReportsEmail. 
         /// <para>
         /// The ability to include content in scheduled email reports.
@@ -2252,6 +2280,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QuickEventTrigger. 
+        /// <para>
+        /// The ability to create, view, edit, delete, and run Quick event triggers for flows
+        /// and automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState QuickEventTrigger
+        {
+            get { return this._quickEventTrigger; }
+            set { this._quickEventTrigger = value; }
+        }
+
+        // Check to see if QuickEventTrigger property is set
+        internal bool IsSetQuickEventTrigger()
+        {
+            return this._quickEventTrigger != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RenameSharedFolders. 
         /// <para>
         /// The ability to rename shared folders.
@@ -2447,6 +2494,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetScenario()
         {
             return this._scenario != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleTrigger. 
+        /// <para>
+        /// The ability to create, view, edit, delete, and run schedule triggers for flows and
+        /// automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState ScheduleTrigger
+        {
+            get { return this._scheduleTrigger; }
+            set { this._scheduleTrigger = value; }
+        }
+
+        // Check to see if ScheduleTrigger property is set
+        internal bool IsSetScheduleTrigger()
+        {
+            return this._scheduleTrigger != null;
         }
 
         /// <summary>
@@ -3530,6 +3596,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Trigger. 
+        /// <para>
+        /// The ability to manage trigger-related settings for flows and automations.
+        /// </para>
+        /// </summary>
+        public CapabilityState Trigger
+        {
+            get { return this._trigger; }
+            set { this._trigger = value; }
+        }
+
+        // Check to see if Trigger property is set
+        internal bool IsSetTrigger()
+        {
+            return this._trigger != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseAgentWebSearch. 
         /// <para>
         /// The ability to use internet to enhance results in Chat Agents, Flows, and Quick Research.
@@ -3693,6 +3777,25 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseBrowserExtension. 
+        /// <para>
+        /// The ability to use Amazon Quick through the browser extension for Chrome, Firefox,
+        /// and Edge.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseBrowserExtension
+        {
+            get { return this._useBrowserExtension; }
+            set { this._useBrowserExtension = value; }
+        }
+
+        // Check to see if UseBrowserExtension property is set
+        internal bool IsSetUseBrowserExtension()
+        {
+            return this._useBrowserExtension != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UseCanvaAgentAction. 
         /// <para>
         /// The ability to use Canva Agent actions.
@@ -3762,6 +3865,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseConfluenceAction()
         {
             return this._useConfluenceAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseExcelAddInExtension. 
+        /// <para>
+        /// The ability to use Amazon Quick through the Microsoft Excel add-in.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseExcelAddInExtension
+        {
+            get { return this._useExcelAddInExtension; }
+            set { this._useExcelAddInExtension = value; }
+        }
+
+        // Check to see if UseExcelAddInExtension property is set
+        internal bool IsSetUseExcelAddInExtension()
+        {
+            return this._useExcelAddInExtension != null;
         }
 
         /// <summary>
@@ -4071,6 +4192,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property UseOutlookAddInExtension. 
+        /// <para>
+        /// The ability to use Amazon Quick through the Microsoft Outlook add-in.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseOutlookAddInExtension
+        {
+            get { return this._useOutlookAddInExtension; }
+            set { this._useOutlookAddInExtension = value; }
+        }
+
+        // Check to see if UseOutlookAddInExtension property is set
+        internal bool IsSetUseOutlookAddInExtension()
+        {
+            return this._useOutlookAddInExtension != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UsePagerDutyAction. 
         /// <para>
         /// The ability to use PagerDuty Advance actions.
@@ -4086,6 +4225,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUsePagerDutyAction()
         {
             return this._usePagerDutyAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UsePowerpointAddInExtension. 
+        /// <para>
+        /// The ability to use Amazon Quick through the Microsoft PowerPoint add-in.
+        /// </para>
+        /// </summary>
+        public CapabilityState UsePowerpointAddInExtension
+        {
+            get { return this._usePowerpointAddInExtension; }
+            set { this._usePowerpointAddInExtension = value; }
+        }
+
+        // Check to see if UsePowerpointAddInExtension property is set
+        internal bool IsSetUsePowerpointAddInExtension()
+        {
+            return this._usePowerpointAddInExtension != null;
         }
 
         /// <summary>
@@ -4320,6 +4477,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetUseTextractAction()
         {
             return this._useTextractAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseWordAddInExtension. 
+        /// <para>
+        /// The ability to use Amazon Quick through the Microsoft Word add-in.
+        /// </para>
+        /// </summary>
+        public CapabilityState UseWordAddInExtension
+        {
+            get { return this._useWordAddInExtension; }
+            set { this._useWordAddInExtension = value; }
+        }
+
+        // Check to see if UseWordAddInExtension property is set
+        internal bool IsSetUseWordAddInExtension()
+        {
+            return this._useWordAddInExtension != null;
         }
 
         /// <summary>

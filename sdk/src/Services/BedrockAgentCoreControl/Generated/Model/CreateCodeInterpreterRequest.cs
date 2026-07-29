@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _clientToken;
         private string _description;
         private string _executionRoleArn;
+        private List<ToolsFileSystemConfiguration> _filesystemConfigurations = AWSConfigs.InitializeCollections ? new List<ToolsFileSystemConfiguration>() : null;
         private string _name;
         private CodeInterpreterNetworkConfiguration _networkConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -125,6 +126,33 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilesystemConfigurations. 
+        /// <para>
+        /// The file system configurations to mount into the code interpreter. Use these configurations
+        /// to mount your own Amazon Simple Storage Service (Amazon S3) Files or Amazon Elastic
+        /// File System (Amazon EFS) access points. Your sessions can then access your data. If
+        /// you don't specify this field, no file systems are mounted.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<ToolsFileSystemConfiguration> FilesystemConfigurations
+        {
+            get { return this._filesystemConfigurations; }
+            set { this._filesystemConfigurations = value; }
+        }
+
+        // Check to see if FilesystemConfigurations property is set
+        internal bool IsSetFilesystemConfigurations()
+        {
+            return this._filesystemConfigurations != null && (this._filesystemConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

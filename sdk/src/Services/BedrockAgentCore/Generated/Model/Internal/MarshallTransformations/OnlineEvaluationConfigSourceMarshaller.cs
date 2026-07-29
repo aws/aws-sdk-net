@@ -52,13 +52,13 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.OnlineEvaluationConfigArn);
             }
 
-            if(requestObject.IsSetSessionFilterConfig())
+            if(requestObject.IsSetTimeRange())
             {
-                context.Writer.WritePropertyName("sessionFilterConfig");
+                context.Writer.WritePropertyName("timeRange");
                 context.Writer.WriteStartObject();
 
                 var marshaller = SessionFilterConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.SessionFilterConfig, context);
+                marshaller.Marshall(requestObject.TimeRange, context);
 
                 context.Writer.WriteEndObject();
             }

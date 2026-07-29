@@ -46,6 +46,22 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void HasEndpointContextParams_IsFalseForCloudTrailData()
+    {
+        // CloudTrailData uses no context params. If detection over-fires, the resolver writer throws
+        // and no real service can be generated, so guard the common case explicitly.
+        Assert.False(_context.HasEndpointContextParams);
+    }
+
+    [Fact]
+    public void HasEndpointTests_IsTrueForCloudTrailData()
+    {
+        Assert.True(_context.HasEndpointTests);
+        Assert.NotNull(_context.EndpointTests);
+        Assert.Equal(21, _context.EndpointTests.TestCases.Count);
+    }
+
+    [Fact]
     public void ServiceDocumentation_IsPopulatedFromServiceShape()
     {
         Assert.NotNull(_context.ServiceDocumentation);

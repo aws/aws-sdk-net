@@ -34,7 +34,29 @@ namespace Amazon.GeoPlaces.Model
     /// </summary>
     public partial class AccessPoint
     {
+        private string _label;
         private List<double> _position = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private bool? _primary;
+        private AccessPointType _type;
+
+        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// A short textual description of the access point, such as <c>"North Entrance"</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Position. 
@@ -58,6 +80,45 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetPosition()
         {
             return this._position != null && (this._position.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Primary. 
+        /// <para>
+        /// Set to <c>true</c> for the primary access position when the place has more than one
+        /// access point.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public bool? Primary
+        {
+            get { return this._primary; }
+            set { this._primary = value; }
+        }
+
+        // Check to see if Primary property is set
+        internal bool IsSetPrimary()
+        {
+            return this._primary.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of access point, indicating its intended use. Only applies to results of
+        /// type place.
+        /// </para>
+        /// </summary>
+        public AccessPointType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

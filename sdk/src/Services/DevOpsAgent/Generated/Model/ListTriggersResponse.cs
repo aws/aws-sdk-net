@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// This is the response object from the ListTriggers operation.
+    /// Response structure for listing Triggers
     /// </summary>
     public partial class ListTriggersResponse : AmazonWebServiceResponse
     {
@@ -62,7 +62,10 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Pagination token to retrieve the next page of results
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

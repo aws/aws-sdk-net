@@ -782,6 +782,84 @@ namespace Amazon.NetworkFirewall
         }
         #endregion
         
+        #region  CreateContainerAssociation
+
+        internal virtual CreateContainerAssociationResponse CreateContainerAssociation(CreateContainerAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContainerAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateContainerAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a container association for Network Firewall. A container association links
+        /// container clusters (ECS or EKS) to Network Firewall, enabling dynamic IP resolution
+        /// for firewall rules based on container attributes.
+        /// 
+        ///  
+        /// <para>
+        /// To manage a container association's tags, use the standard Amazon Web Services resource
+        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To retrieve information about container associations, use <a>ListContainerAssociations</a>
+        /// and <a>DescribeContainerAssociation</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateContainerAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateContainerAssociation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InsufficientCapacityException">
+        /// Amazon Web Services doesn't currently have enough available capacity to fulfill your
+        /// request. Try your request later.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.LimitExceededException">
+        /// Unable to perform the operation because doing so would violate a limit setting.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateContainerAssociation">REST API Reference for CreateContainerAssociation Operation</seealso>
+        public virtual Task<CreateContainerAssociationResponse> CreateContainerAssociationAsync(CreateContainerAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateContainerAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateContainerAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateFirewall
 
         internal virtual CreateFirewallResponse CreateFirewall(CreateFirewallRequest request)
@@ -1505,6 +1583,73 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = CreateVpcEndpointAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateVpcEndpointAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteContainerAssociation
+
+        internal virtual DeleteContainerAssociationResponse DeleteContainerAssociation(DeleteContainerAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContainerAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteContainerAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified container association. When you delete a container association,
+        /// Network Firewall stops monitoring the associated container clusters and removes the
+        /// resolved IP addresses from firewall rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContainerAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteContainerAssociation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidOperationException">
+        /// The operation failed because it's not valid. For example, you might have tried to
+        /// delete a rule group or firewall policy that's in use.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteContainerAssociation">REST API Reference for DeleteContainerAssociation Operation</seealso>
+        public virtual Task<DeleteContainerAssociationResponse> DeleteContainerAssociationAsync(DeleteContainerAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteContainerAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteContainerAssociationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2256,6 +2401,67 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = DeleteVpcEndpointAssociationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteVpcEndpointAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeContainerAssociation
+
+        internal virtual DescribeContainerAssociationResponse DescribeContainerAssociation(DescribeContainerAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContainerAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeContainerAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the properties of a container association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContainerAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeContainerAssociation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeContainerAssociation">REST API Reference for DescribeContainerAssociation Operation</seealso>
+        public virtual Task<DescribeContainerAssociationResponse> DescribeContainerAssociationAsync(DescribeContainerAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeContainerAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeContainerAssociationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3534,6 +3740,65 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = ListAnalysisReportsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAnalysisReportsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListContainerAssociations
+
+        internal virtual ListContainerAssociationsResponse ListContainerAssociations(ListContainerAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContainerAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContainerAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListContainerAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the metadata for the container associations that you have defined. You can
+        /// optionally page through results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContainerAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListContainerAssociations service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListContainerAssociations">REST API Reference for ListContainerAssociations Operation</seealso>
+        public virtual Task<ListContainerAssociationsResponse> ListContainerAssociationsAsync(ListContainerAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListContainerAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListContainerAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListContainerAssociationsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -4864,6 +5129,71 @@ namespace Amazon.NetworkFirewall
             options.ResponseUnmarshaller = UpdateAvailabilityZoneChangeProtectionResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAvailabilityZoneChangeProtectionResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateContainerAssociation
+
+        internal virtual UpdateContainerAssociationResponse UpdateContainerAssociation(UpdateContainerAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContainerAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateContainerAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of an existing container association. Use this to modify the
+        /// container monitoring configurations or description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContainerAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContainerAssociation service method, as returned by NetworkFirewall.</returns>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InternalServerErrorException">
+        /// Your request is valid, but Network Firewall couldn't perform the operation because
+        /// of a system problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidRequestException">
+        /// The operation failed because of a problem with your request. Examples include: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified an unsupported parameter name or value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a property with a value that isn't among the available types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource that
+        /// isn't valid in the context of the request.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.InvalidTokenException">
+        /// The token you provided is stale or isn't valid for the operation.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ResourceNotFoundException">
+        /// Unable to locate a resource using the parameters that you provided.
+        /// </exception>
+        /// <exception cref="Amazon.NetworkFirewall.Model.ThrottlingException">
+        /// Unable to process the request due to throttling limitations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateContainerAssociation">REST API Reference for UpdateContainerAssociation Operation</seealso>
+        public virtual Task<UpdateContainerAssociationResponse> UpdateContainerAssociationAsync(UpdateContainerAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateContainerAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateContainerAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateContainerAssociationResponse>(request, options, cancellationToken);
         }
         #endregion
         

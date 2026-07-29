@@ -37,6 +37,7 @@ namespace Amazon.MediaPackageV2.Model
     {
         private Encryption _encryption;
         private bool? _includeIframeOnlyStreams;
+        private OutputTimestampMode _outputTimestampMode;
         private Scte _scte;
         private int? _segmentDurationSeconds;
         private string _segmentName;
@@ -79,6 +80,42 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetIncludeIframeOnlyStreams()
         {
             return this._includeIframeOnlyStreams.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputTimestampMode. 
+        /// <para>
+        /// The output timestamp mode for the origin endpoint's segments. This setting is only
+        /// configurable on channels with <c>OutputLockingMode</c> set to <c>NON_EPOCH_LOCKED</c>.
+        /// This value is immutable after endpoint creation. If you don't specify a value, the
+        /// default is <c>PASSTHROUGH</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The allowed values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>PASSTHROUGH</c> - Output PTS (Presentation Timestamp) values pass through unchanged
+        /// from the input.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REBASED_TO_CHANNEL_START</c> - Output PTS is rebased relative to the channel start
+        /// time.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public OutputTimestampMode OutputTimestampMode
+        {
+            get { return this._outputTimestampMode; }
+            set { this._outputTimestampMode = value; }
+        }
+
+        // Check to see if OutputTimestampMode property is set
+        internal bool IsSetOutputTimestampMode()
+        {
+            return this._outputTimestampMode != null;
         }
 
         /// <summary>

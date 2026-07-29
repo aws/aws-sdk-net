@@ -592,6 +592,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.HuggingFaceAction);
             }
 
+            if(requestObject.IsSetInboundEmailTrigger())
+            {
+                context.Writer.WritePropertyName("InboundEmailTrigger");
+                context.Writer.WriteStringValue(requestObject.InboundEmailTrigger);
+            }
+
             if(requestObject.IsSetIncludeContentInScheduledReportsEmail())
             {
                 context.Writer.WritePropertyName("IncludeContentInScheduledReportsEmail");
@@ -706,6 +712,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.PublishWithoutApproval);
             }
 
+            if(requestObject.IsSetQuickEventTrigger())
+            {
+                context.Writer.WritePropertyName("QuickEventTrigger");
+                context.Writer.WriteStringValue(requestObject.QuickEventTrigger);
+            }
+
             if(requestObject.IsSetRenameSharedFolders())
             {
                 context.Writer.WritePropertyName("RenameSharedFolders");
@@ -770,6 +782,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("Scenario");
                 context.Writer.WriteStringValue(requestObject.Scenario);
+            }
+
+            if(requestObject.IsSetScheduleTrigger())
+            {
+                context.Writer.WritePropertyName("ScheduleTrigger");
+                context.Writer.WriteStringValue(requestObject.ScheduleTrigger);
             }
 
             if(requestObject.IsSetSelfUpgradeUserRole())
@@ -1132,6 +1150,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Topic);
             }
 
+            if(requestObject.IsSetTrigger())
+            {
+                context.Writer.WritePropertyName("Trigger");
+                context.Writer.WriteStringValue(requestObject.Trigger);
+            }
+
             if(requestObject.IsSetUseAgentWebSearch())
             {
                 context.Writer.WritePropertyName("UseAgentWebSearch");
@@ -1186,6 +1210,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseBoxAgentAction);
             }
 
+            if(requestObject.IsSetUseBrowserExtension())
+            {
+                context.Writer.WritePropertyName("UseBrowserExtension");
+                context.Writer.WriteStringValue(requestObject.UseBrowserExtension);
+            }
+
             if(requestObject.IsSetUseCanvaAgentAction())
             {
                 context.Writer.WritePropertyName("UseCanvaAgentAction");
@@ -1208,6 +1238,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UseConfluenceAction");
                 context.Writer.WriteStringValue(requestObject.UseConfluenceAction);
+            }
+
+            if(requestObject.IsSetUseExcelAddInExtension())
+            {
+                context.Writer.WritePropertyName("UseExcelAddInExtension");
+                context.Writer.WriteStringValue(requestObject.UseExcelAddInExtension);
             }
 
             if(requestObject.IsSetUseFactSetAction())
@@ -1312,10 +1348,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.UseOpenAPIAction);
             }
 
+            if(requestObject.IsSetUseOutlookAddInExtension())
+            {
+                context.Writer.WritePropertyName("UseOutlookAddInExtension");
+                context.Writer.WriteStringValue(requestObject.UseOutlookAddInExtension);
+            }
+
             if(requestObject.IsSetUsePagerDutyAction())
             {
                 context.Writer.WritePropertyName("UsePagerDutyAction");
                 context.Writer.WriteStringValue(requestObject.UsePagerDutyAction);
+            }
+
+            if(requestObject.IsSetUsePowerpointAddInExtension())
+            {
+                context.Writer.WritePropertyName("UsePowerpointAddInExtension");
+                context.Writer.WriteStringValue(requestObject.UsePowerpointAddInExtension);
             }
 
             if(requestObject.IsSetUseSalesforceAction())
@@ -1394,6 +1442,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("UseTextractAction");
                 context.Writer.WriteStringValue(requestObject.UseTextractAction);
+            }
+
+            if(requestObject.IsSetUseWordAddInExtension())
+            {
+                context.Writer.WritePropertyName("UseWordAddInExtension");
+                context.Writer.WriteStringValue(requestObject.UseWordAddInExtension);
             }
 
             if(requestObject.IsSetUseZendeskAction())

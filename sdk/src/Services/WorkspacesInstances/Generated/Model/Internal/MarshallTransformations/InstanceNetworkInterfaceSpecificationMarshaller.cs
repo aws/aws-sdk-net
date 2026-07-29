@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InstanceNetworkInterfaceSpecification Marshaller
     /// </summary>
-    public class InstanceNetworkInterfaceSpecificationMarshaller : IRequestMarshaller<InstanceNetworkInterfaceSpecification, JsonMarshallerContext> 
+    public class InstanceNetworkInterfaceSpecificationMarshaller : IRequestMarshaller<InstanceNetworkInterfaceSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,191 +45,171 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InstanceNetworkInterfaceSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(InstanceNetworkInterfaceSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAssociateCarrierIpAddress())
-            {
-                context.Writer.WritePropertyName("AssociateCarrierIpAddress");
-                context.Writer.WriteBooleanValue(requestObject.AssociateCarrierIpAddress.Value);
-            }
 
-            if(requestObject.IsSetAssociatePublicIpAddress())
+            if (requestObject.IsSetAssociateCarrierIpAddress())
             {
-                context.Writer.WritePropertyName("AssociatePublicIpAddress");
-                context.Writer.WriteBooleanValue(requestObject.AssociatePublicIpAddress.Value);
+                context.Writer.WriteTextString("AssociateCarrierIpAddress");
+                context.Writer.WriteBoolean(requestObject.AssociateCarrierIpAddress.Value);
             }
-
-            if(requestObject.IsSetConnectionTrackingSpecification())
+            if (requestObject.IsSetAssociatePublicIpAddress())
             {
-                context.Writer.WritePropertyName("ConnectionTrackingSpecification");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("AssociatePublicIpAddress");
+                context.Writer.WriteBoolean(requestObject.AssociatePublicIpAddress.Value);
+            }
+            if (requestObject.IsSetConnectionTrackingSpecification())
+            {
+                context.Writer.WriteTextString("ConnectionTrackingSpecification");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = ConnectionTrackingSpecificationRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectionTrackingSpecification, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetDescription())
+            if (requestObject.IsSetDescription())
             {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(requestObject.Description);
+                context.Writer.WriteTextString("Description");
+                context.Writer.WriteTextString(requestObject.Description);
             }
-
-            if(requestObject.IsSetDeviceIndex())
+            if (requestObject.IsSetDeviceIndex())
             {
-                context.Writer.WritePropertyName("DeviceIndex");
-                context.Writer.WriteNumberValue(requestObject.DeviceIndex.Value);
+                context.Writer.WriteTextString("DeviceIndex");
+                context.Writer.WriteInt32(requestObject.DeviceIndex.Value);
             }
-
-            if(requestObject.IsSetEnaSrdSpecification())
+            if (requestObject.IsSetEnaSrdSpecification())
             {
-                context.Writer.WritePropertyName("EnaSrdSpecification");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EnaSrdSpecification");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EnaSrdSpecificationRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.EnaSrdSpecification, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetGroups())
+            if (requestObject.IsSetGroups())
             {
-                context.Writer.WritePropertyName("Groups");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Groups");
+                context.Writer.WriteStartArray(requestObject.Groups.Count);
                 foreach(var requestObjectGroupsListValue in requestObject.Groups)
                 {
-                        context.Writer.WriteStringValue(requestObjectGroupsListValue);
+                        context.Writer.WriteTextString(requestObjectGroupsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetInterfaceType())
+            if (requestObject.IsSetInterfaceType())
             {
-                context.Writer.WritePropertyName("InterfaceType");
-                context.Writer.WriteStringValue(requestObject.InterfaceType);
+                context.Writer.WriteTextString("InterfaceType");
+                context.Writer.WriteTextString(requestObject.InterfaceType);
             }
-
-            if(requestObject.IsSetIpv4PrefixCount())
+            if (requestObject.IsSetIpv4PrefixCount())
             {
-                context.Writer.WritePropertyName("Ipv4PrefixCount");
-                context.Writer.WriteNumberValue(requestObject.Ipv4PrefixCount.Value);
+                context.Writer.WriteTextString("Ipv4PrefixCount");
+                context.Writer.WriteInt32(requestObject.Ipv4PrefixCount.Value);
             }
-
-            if(requestObject.IsSetIpv4Prefixes())
+            if (requestObject.IsSetIpv4Prefixes())
             {
-                context.Writer.WritePropertyName("Ipv4Prefixes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Ipv4Prefixes");
+                context.Writer.WriteStartArray(requestObject.Ipv4Prefixes.Count);
                 foreach(var requestObjectIpv4PrefixesListValue in requestObject.Ipv4Prefixes)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = Ipv4PrefixSpecificationRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv4PrefixesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetIpv6AddressCount())
+            if (requestObject.IsSetIpv6AddressCount())
             {
-                context.Writer.WritePropertyName("Ipv6AddressCount");
-                context.Writer.WriteNumberValue(requestObject.Ipv6AddressCount.Value);
+                context.Writer.WriteTextString("Ipv6AddressCount");
+                context.Writer.WriteInt32(requestObject.Ipv6AddressCount.Value);
             }
-
-            if(requestObject.IsSetIpv6Addresses())
+            if (requestObject.IsSetIpv6Addresses())
             {
-                context.Writer.WritePropertyName("Ipv6Addresses");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Ipv6Addresses");
+                context.Writer.WriteStartArray(requestObject.Ipv6Addresses.Count);
                 foreach(var requestObjectIpv6AddressesListValue in requestObject.Ipv6Addresses)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = InstanceIpv6AddressMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv6AddressesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetIpv6PrefixCount())
+            if (requestObject.IsSetIpv6PrefixCount())
             {
-                context.Writer.WritePropertyName("Ipv6PrefixCount");
-                context.Writer.WriteNumberValue(requestObject.Ipv6PrefixCount.Value);
+                context.Writer.WriteTextString("Ipv6PrefixCount");
+                context.Writer.WriteInt32(requestObject.Ipv6PrefixCount.Value);
             }
-
-            if(requestObject.IsSetIpv6Prefixes())
+            if (requestObject.IsSetIpv6Prefixes())
             {
-                context.Writer.WritePropertyName("Ipv6Prefixes");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("Ipv6Prefixes");
+                context.Writer.WriteStartArray(requestObject.Ipv6Prefixes.Count);
                 foreach(var requestObjectIpv6PrefixesListValue in requestObject.Ipv6Prefixes)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = Ipv6PrefixSpecificationRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv6PrefixesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetNetworkCardIndex())
+            if (requestObject.IsSetNetworkCardIndex())
             {
-                context.Writer.WritePropertyName("NetworkCardIndex");
-                context.Writer.WriteNumberValue(requestObject.NetworkCardIndex.Value);
+                context.Writer.WriteTextString("NetworkCardIndex");
+                context.Writer.WriteInt32(requestObject.NetworkCardIndex.Value);
             }
-
-            if(requestObject.IsSetNetworkInterfaceId())
+            if (requestObject.IsSetNetworkInterfaceId())
             {
-                context.Writer.WritePropertyName("NetworkInterfaceId");
-                context.Writer.WriteStringValue(requestObject.NetworkInterfaceId);
+                context.Writer.WriteTextString("NetworkInterfaceId");
+                context.Writer.WriteTextString(requestObject.NetworkInterfaceId);
             }
-
-            if(requestObject.IsSetPrimaryIpv6())
+            if (requestObject.IsSetPrimaryIpv6())
             {
-                context.Writer.WritePropertyName("PrimaryIpv6");
-                context.Writer.WriteBooleanValue(requestObject.PrimaryIpv6.Value);
+                context.Writer.WriteTextString("PrimaryIpv6");
+                context.Writer.WriteBoolean(requestObject.PrimaryIpv6.Value);
             }
-
-            if(requestObject.IsSetPrivateIpAddress())
+            if (requestObject.IsSetPrivateIpAddress())
             {
-                context.Writer.WritePropertyName("PrivateIpAddress");
-                context.Writer.WriteStringValue(requestObject.PrivateIpAddress);
+                context.Writer.WriteTextString("PrivateIpAddress");
+                context.Writer.WriteTextString(requestObject.PrivateIpAddress);
             }
-
-            if(requestObject.IsSetPrivateIpAddresses())
+            if (requestObject.IsSetPrivateIpAddresses())
             {
-                context.Writer.WritePropertyName("PrivateIpAddresses");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("PrivateIpAddresses");
+                context.Writer.WriteStartArray(requestObject.PrivateIpAddresses.Count);
                 foreach(var requestObjectPrivateIpAddressesListValue in requestObject.PrivateIpAddresses)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteStartMap(null);
 
                     var marshaller = PrivateIpAddressSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectPrivateIpAddressesListValue, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetSecondaryPrivateIpAddressCount())
+            if (requestObject.IsSetSecondaryPrivateIpAddressCount())
             {
-                context.Writer.WritePropertyName("SecondaryPrivateIpAddressCount");
-                context.Writer.WriteNumberValue(requestObject.SecondaryPrivateIpAddressCount.Value);
+                context.Writer.WriteTextString("SecondaryPrivateIpAddressCount");
+                context.Writer.WriteInt32(requestObject.SecondaryPrivateIpAddressCount.Value);
             }
-
-            if(requestObject.IsSetSubnetId())
+            if (requestObject.IsSetSubnetId())
             {
-                context.Writer.WritePropertyName("SubnetId");
-                context.Writer.WriteStringValue(requestObject.SubnetId);
+                context.Writer.WriteTextString("SubnetId");
+                context.Writer.WriteTextString(requestObject.SubnetId);
             }
-
         }
 
         /// <summary>

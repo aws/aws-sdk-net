@@ -62,6 +62,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                     unmarshalledObject.Distribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("intermediateTable", targetDepth, ref reader))
+                {
+                    var unmarshaller = IntermediateTableOutputConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IntermediateTable = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("member", targetDepth, ref reader))
                 {
                     var unmarshaller = ProtectedQueryMemberOutputConfigurationUnmarshaller.Instance;

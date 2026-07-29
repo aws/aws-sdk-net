@@ -137,6 +137,17 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetNodeLifecycleActions())
+            {
+                context.Writer.WritePropertyName("nodeLifecycleActions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NodeLifecycleActionsRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NodeLifecycleActions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPurchaseOption())
             {
                 context.Writer.WritePropertyName("purchaseOption");

@@ -66,6 +66,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 throw new AmazonBedrockAgentException("Request object does not have required field PromptIdentifier set");
             request.AddPathResource("{promptIdentifier}", StringUtils.FromString(publicRequest.PromptIdentifier));
             
+            if (publicRequest.IsSetIncludedData())
+                request.Parameters.Add("includedData", StringUtils.FromString(publicRequest.IncludedData));
+            
             if (publicRequest.IsSetPromptVersion())
                 request.Parameters.Add("promptVersion", StringUtils.FromString(publicRequest.PromptVersion));
             request.ResourcePath = "/prompts/{promptIdentifier}/";

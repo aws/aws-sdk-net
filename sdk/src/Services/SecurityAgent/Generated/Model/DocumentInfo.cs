@@ -35,6 +35,7 @@ namespace Amazon.SecurityAgent.Model
     public partial class DocumentInfo
     {
         private string _artifactId;
+        private IntegratedDocument _integratedDocument;
         private string _s3Location;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetArtifactId()
         {
             return this._artifactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntegratedDocument. 
+        /// <para>
+        /// A reference to a document in an integrated third-party provider.
+        /// </para>
+        /// </summary>
+        public IntegratedDocument IntegratedDocument
+        {
+            get { return this._integratedDocument; }
+            set { this._integratedDocument = value; }
+        }
+
+        // Check to see if IntegratedDocument property is set
+        internal bool IsSetIntegratedDocument()
+        {
+            return this._integratedDocument != null;
         }
 
         /// <summary>

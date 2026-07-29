@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private AuthorizerConfiguration _authorizerConfiguration;
         private AuthorizerType _authorizerType;
+        private CustomTransformConfiguration _customTransformConfiguration;
         private string _description;
         private ExceptionLevel _exceptionLevel;
         private string _gatewayIdentifier;
@@ -47,6 +48,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private GatewayProtocolConfiguration _protocolConfiguration;
         private GatewayProtocolType _protocolType;
         private string _roleArn;
+        private WafConfiguration _wafConfiguration;
 
         /// <summary>
         /// Gets and sets the property AuthorizerConfiguration. 
@@ -83,6 +85,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAuthorizerType()
         {
             return this._authorizerType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomTransformConfiguration. 
+        /// <para>
+        /// The updated custom transformation configuration for the gateway. This configuration
+        /// defines how the gateway transforms requests and responses.
+        /// </para>
+        /// </summary>
+        public CustomTransformConfiguration CustomTransformConfiguration
+        {
+            get { return this._customTransformConfiguration; }
+            set { this._customTransformConfiguration = value; }
+        }
+
+        // Check to see if CustomTransformConfiguration property is set
+        internal bool IsSetCustomTransformConfiguration()
+        {
+            return this._customTransformConfiguration != null;
         }
 
         /// <summary>
@@ -201,7 +222,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -285,6 +306,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetRoleArn()
         {
             return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WafConfiguration. 
+        /// <para>
+        /// The updated Amazon Web Services WAF configuration for the gateway.
+        /// </para>
+        /// </summary>
+        public WafConfiguration WafConfiguration
+        {
+            get { return this._wafConfiguration; }
+            set { this._wafConfiguration = value; }
+        }
+
+        // Check to see if WafConfiguration property is set
+        internal bool IsSetWafConfiguration()
+        {
+            return this._wafConfiguration != null;
         }
 
     }

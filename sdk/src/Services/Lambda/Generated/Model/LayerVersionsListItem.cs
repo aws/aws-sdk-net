@@ -108,6 +108,7 @@ namespace Amazon.Lambda.Model
         /// The date that the version was created, in ISO 8601 format. For example, <c>2018-11-27T15:10:45.123+0000</c>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string CreatedDate
         {
             get { return this._createdDate; }
@@ -145,7 +146,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the layer version.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=140)]
+        [AWSProperty(Min=1, Max=2048)]
         public string LayerVersionArn
         {
             get { return this._layerVersionArn; }

@@ -42,6 +42,7 @@ namespace Amazon.SecurityAgent.Model
         private CloudWatchLog _logConfig;
         private string _serviceRole;
         private string _title;
+        private ValidationMode _validationMode;
 
         /// <summary>
         /// Gets and sets the property AgentSpaceId. 
@@ -169,6 +170,24 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationMode. 
+        /// <para>
+        /// The updated validation mode for the code review. Valid values are SIMULATED and DISABLED.
+        /// </para>
+        /// </summary>
+        public ValidationMode ValidationMode
+        {
+            get { return this._validationMode; }
+            set { this._validationMode = value; }
+        }
+
+        // Check to see if ValidationMode property is set
+        internal bool IsSetValidationMode()
+        {
+            return this._validationMode != null;
         }
 
     }

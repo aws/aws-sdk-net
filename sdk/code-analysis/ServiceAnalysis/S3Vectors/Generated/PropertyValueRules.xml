@@ -250,6 +250,11 @@
     <max>63</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.S3Vectors.Model.QueryVectorsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.S3Vectors.Model.QueryVectorsRequest.TopK</property>
     <min>1</min>
   </property-value-rule>
@@ -257,6 +262,11 @@
     <property>Amazon.S3Vectors.Model.QueryVectorsRequest.VectorBucketName</property>
     <min>3</min>
     <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.S3Vectors.Model.QueryVectorsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.S3Vectors.Model.TagResourceRequest.ResourceArn</property>

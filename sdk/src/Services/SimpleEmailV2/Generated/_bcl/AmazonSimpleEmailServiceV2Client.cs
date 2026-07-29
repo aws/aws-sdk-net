@@ -1488,8 +1488,8 @@ namespace Amazon.SimpleEmailV2
         /// The primary region is going to be the AWS-Region where the operation is executed.
         /// The secondary region has to be provided in request's parameters. From the data flow
         /// standpoint there is no difference between primary and secondary regions - sending
-        /// traffic will be split equally between the two. The primary region is the region where
-        /// the resource has been created and where it can be managed. 
+        /// traffic is divided between the two. The primary region is the region where the resource
+        /// has been created and where it can be managed. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionEndpoint service method.</param>
@@ -1526,8 +1526,8 @@ namespace Amazon.SimpleEmailV2
         /// The primary region is going to be the AWS-Region where the operation is executed.
         /// The secondary region has to be provided in request's parameters. From the data flow
         /// standpoint there is no difference between primary and secondary regions - sending
-        /// traffic will be split equally between the two. The primary region is the region where
-        /// the resource has been created and where it can be managed. 
+        /// traffic is divided between the two. The primary region is the region where the resource
+        /// has been created and where it can be managed. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMultiRegionEndpoint service method.</param>
@@ -5699,6 +5699,67 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = PutAccountDetailsResponseUnmarshaller.Instance;
             
             return InvokeAsync<PutAccountDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAccountPricingAttributes
+
+
+        /// <summary>
+        /// Set the pricing plan for your Amazon SES account. Use this operation to choose a billing
+        /// plan that packages multiple Amazon SES features at a single rate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountPricingAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountPricingAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConflictException">
+        /// If there is already an ongoing account details update under review.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountPricingAttributes">REST API Reference for PutAccountPricingAttributes Operation</seealso>
+        public virtual PutAccountPricingAttributesResponse PutAccountPricingAttributes(PutAccountPricingAttributesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAccountPricingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountPricingAttributesResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountPricingAttributesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Set the pricing plan for your Amazon SES account. Use this operation to choose a billing
+        /// plan that packages multiple Amazon SES features at a single rate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountPricingAttributes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountPricingAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConflictException">
+        /// If there is already an ongoing account details update under review.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountPricingAttributes">REST API Reference for PutAccountPricingAttributes Operation</seealso>
+        public virtual Task<PutAccountPricingAttributesResponse> PutAccountPricingAttributesAsync(PutAccountPricingAttributesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAccountPricingAttributesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountPricingAttributesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAccountPricingAttributesResponse>(request, options, cancellationToken);
         }
 
         #endregion

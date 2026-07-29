@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _arn;
         private Capabilities _capabilities;
         private string _customPermissionsName;
+        private Governance _governance;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -91,6 +92,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCustomPermissionsName()
         {
             return this._customPermissionsName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Governance. 
+        /// <para>
+        /// The governance configuration for the custom permissions profile. When you enable governance
+        /// for a category, Amazon Quick denies access to any current or new capability in that
+        /// category unless you explicitly set that capability to <c>ALLOW</c> in <c>Capabilities</c>.
+        /// </para>
+        /// </summary>
+        public Governance Governance
+        {
+            get { return this._governance; }
+            set { this._governance = value; }
+        }
+
+        // Check to see if Governance property is set
+        internal bool IsSetGovernance()
+        {
+            return this._governance != null;
         }
 
     }

@@ -62,6 +62,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 string propertyName = reader.ReadTextString();
                 switch (propertyName)
                 {
+                    case "AnomalyDetectorId":
+                        {
+                            context.AddPathSegment("AnomalyDetectorId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AnomalyDetectorId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     case "Configuration":
                         {
                             context.AddPathSegment("Configuration");

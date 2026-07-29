@@ -100,6 +100,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetSignalType())
+            {
+                context.Writer.WritePropertyName("SignalType");
+                context.Writer.WriteStringValue(publicRequest.SignalType);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

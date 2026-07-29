@@ -69,6 +69,22 @@ namespace Amazon.Runtime.Credentials.Internal
         public bool SupportsGettingNewToken { get; set; } = true;
 
         /// <summary>
+        /// The resolved AWS-owned start URL to use for SSO-OIDC API calls (StartDeviceAuthorization, CreateToken).
+        /// When set, this URL is used for OIDC API calls instead of <see cref="StartUrl"/>.
+        /// <see cref="StartUrl"/> continues to be used as the cache key.
+        /// This supports vanity URL scenarios where the cache key is the stable vanity URL
+        /// but OIDC operations require the resolved AWS-owned endpoint.
+        /// </summary>
+        public string ResolvedStartUrl { get; set; }
+
+        /// <summary>
+        /// Indicates the <see cref="StartUrl"/> was a customer vanity URL that was resolved
+        /// to an AWS-owned endpoint. When true, the SSO_LOGIN_VANITY_URL feature ID should be
+        /// set on SSO-OIDC requests made during the login flow.
+        /// </summary>
+        public bool IsVanityUrl { get; set; }
+
+        /// <summary>
         /// The proxy settings to use when calling SSOOIDC and SSO Services.
         /// </summary>
 #if BCL

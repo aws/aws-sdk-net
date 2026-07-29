@@ -36,14 +36,20 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _agentType;
         private string _agentVersion;
+        private string _availabilityZone;
+        private string _availabilityZoneId;
         private string _computerName;
         private string _instanceStatus;
         private string _ipAddress;
         private ManagedStatus _managedStatus;
+        private string _name;
         private string _platformName;
         private PlatformType _platformType;
         private string _platformVersion;
         private ResourceType _resourceType;
+        private string _sourceId;
+        private string _sourceLocation;
+        private SourceType _sourceType;
 
         /// <summary>
         /// Gets and sets the property AgentType. 
@@ -80,6 +86,44 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetAgentVersion()
         {
             return this._agentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The Availability Zone where the managed node is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=120)]
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The Availability Zone ID where the managed node is located.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
         }
 
         /// <summary>
@@ -158,6 +202,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name assigned to the managed node.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PlatformName. 
         /// <para>
         /// The name of the operating system platform running on your managed node.
@@ -230,6 +293,64 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceId. 
+        /// <para>
+        /// The ID of the source resource. For IoT Greengrass devices, <c>SourceId</c> is the
+        /// Thing name.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=128)]
+        public string SourceId
+        {
+            get { return this._sourceId; }
+            set { this._sourceId = value; }
+        }
+
+        // Check to see if SourceId property is set
+        internal bool IsSetSourceId()
+        {
+            return this._sourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceLocation. 
+        /// <para>
+        /// The location of the source resource in the third-party cloud environment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string SourceLocation
+        {
+            get { return this._sourceLocation; }
+            set { this._sourceLocation = value; }
+        }
+
+        // Check to see if SourceLocation property is set
+        internal bool IsSetSourceLocation()
+        {
+            return this._sourceLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of the source resource. For IoT Greengrass devices, <c>SourceType</c> is
+        /// <c>AWS::IoT::Thing</c>.
+        /// </para>
+        /// </summary>
+        public SourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
     }

@@ -146,6 +146,16 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("EvaluationPeriods");
                     context.Writer.WriteInt32(publicRequest.EvaluationPeriods.Value);
                 }
+                if (publicRequest.IsSetEvaluationWindow())
+                {
+                    context.Writer.WriteTextString("EvaluationWindow");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = EvaluationWindowMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EvaluationWindow, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 if (publicRequest.IsSetExtendedStatistic())
                 {
                     context.Writer.WriteTextString("ExtendedStatistic");
@@ -242,7 +252,19 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString(publicRequest.Unit);
                 }
                 writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
                 request.Content = writer.Encode();
+#endif
             }
             finally
             {

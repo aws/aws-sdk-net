@@ -36,6 +36,7 @@ namespace Amazon.EC2.Model
     {
         private TransitGatewayPolicyRule _policyRule;
         private string _policyRuleNumber;
+        private TransitGatewayPolicyTableEntryState _state;
         private string _targetRouteTableId;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetPolicyRuleNumber()
         {
             return this._policyRuleNumber != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the transit gateway policy table entry.
+        /// </para>
+        /// </summary>
+        public TransitGatewayPolicyTableEntryState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>

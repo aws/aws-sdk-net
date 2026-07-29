@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Customer-facing execution summary clustering result written to S3.
+    /// The execution summary clustering result containing grouped execution patterns identified
+    /// across evaluated sessions.
     /// </summary>
     public partial class ExecutionSummaryClusteringResultContent
     {

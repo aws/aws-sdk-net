@@ -888,6 +888,58 @@ namespace Amazon.MQ
 
         #endregion
         
+        #region  DescribeSharedResources
+
+
+        /// <summary>
+        /// Returns the resources shared to a broker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSharedResources service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSharedResources service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeSharedResources">REST API Reference for DescribeSharedResources Operation</seealso>
+        DescribeSharedResourcesResponse DescribeSharedResources(DescribeSharedResourcesRequest request);
+
+
+
+        /// <summary>
+        /// Returns the resources shared to a broker.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSharedResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeSharedResources service method, as returned by MQ.</returns>
+        /// <exception cref="Amazon.MQ.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.MQ.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeSharedResources">REST API Reference for DescribeSharedResources Operation</seealso>
+        Task<DescribeSharedResourcesResponse> DescribeSharedResourcesAsync(DescribeSharedResourcesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeUser
 
 

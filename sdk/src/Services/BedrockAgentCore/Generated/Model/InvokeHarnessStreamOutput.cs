@@ -51,42 +51,42 @@ namespace Amazon.BedrockAgentCore.Model
             {"ContentBlockDelta", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new HarnessContentBlockDeltaEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"ContentBlockStart", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new HarnessContentBlockStartEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"ContentBlockStop", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new HarnessContentBlockStopEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"MessageStart", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new HarnessMessageStartEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"MessageStop", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new HarnessMessageStopEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"Metadata", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new HarnessMetadataEventUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -100,21 +100,21 @@ namespace Amazon.BedrockAgentCore.Model
                     {"InternalServerException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new BedrockAgentCoreEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalServerExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"RuntimeClientError", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new BedrockAgentCoreEventStreamException(Encoding.UTF8.GetString(payload.Payload), new RuntimeClientErrorExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ValidationException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new BedrockAgentCoreEventStreamException(Encoding.UTF8.GetString(payload.Payload), new ValidationExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

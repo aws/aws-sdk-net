@@ -68,6 +68,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Distance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EstimatedPointAddress", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.EstimatedPointAddress = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Highlights", targetDepth, ref reader))
                 {
                     var unmarshaller = AutocompleteHighlightsUnmarshaller.Instance;

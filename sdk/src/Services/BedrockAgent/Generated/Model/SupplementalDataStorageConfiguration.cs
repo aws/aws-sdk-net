@@ -30,9 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Specifies configurations for the storage location of the images extracted from multimodal
-    /// documents in your data source. These images can be retrieved and returned to the end
-    /// user.
+    /// Specifies configurations for the storage location of multimedia content (images, audio,
+    /// and video) extracted from multimodal documents in your data source. This content can
+    /// be retrieved and returned to the end user with timestamp references for audio and
+    /// video segments.
     /// </summary>
     public partial class SupplementalDataStorageConfiguration
     {
@@ -41,8 +42,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property StorageLocations. 
         /// <para>
-        /// A list of objects specifying storage locations for images extracted from multimodal
-        /// documents in your data source.
+        /// A list of objects specifying storage locations for multimedia content (images, audio,
+        /// and video) extracted from multimodal documents in your data source.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

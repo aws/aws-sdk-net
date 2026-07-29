@@ -29,94 +29,125 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GatewayDetails Object
     /// </summary>  
-    public class GatewayDetailsUnmarshaller : IJsonUnmarshaller<GatewayDetails, JsonUnmarshallerContext>
+    public class GatewayDetailsUnmarshaller : ICborUnmarshaller<GatewayDetails, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GatewayDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public GatewayDetails Unmarshall(CborUnmarshallerContext context)
         {
             GatewayDetails unmarshalledObject = new GatewayDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("DeprecationDate", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeprecationDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GatewayArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GatewayDisplayName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayDisplayName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("GatewayType", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("HypervisorId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LastSeenTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSeenTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MaintenanceStartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = MaintenanceStartTimeUnmarshaller.Instance;
-                    unmarshalledObject.MaintenanceStartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("NextUpdateAvailabilityTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.NextUpdateAvailabilityTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SoftwareVersion", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SoftwareVersion = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VpcEndpoint", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "DeprecationDate":
+                        {
+                            context.AddPathSegment("DeprecationDate");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.DeprecationDate = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GatewayArn":
+                        {
+                            context.AddPathSegment("GatewayArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GatewayArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GatewayDisplayName":
+                        {
+                            context.AddPathSegment("GatewayDisplayName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GatewayDisplayName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "GatewayType":
+                        {
+                            context.AddPathSegment("GatewayType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.GatewayType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "HypervisorId":
+                        {
+                            context.AddPathSegment("HypervisorId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "LastSeenTime":
+                        {
+                            context.AddPathSegment("LastSeenTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastSeenTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MaintenanceStartTime":
+                        {
+                            context.AddPathSegment("MaintenanceStartTime");
+                            var unmarshaller = MaintenanceStartTimeUnmarshaller.Instance;
+                            unmarshalledObject.MaintenanceStartTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "NextUpdateAvailabilityTime":
+                        {
+                            context.AddPathSegment("NextUpdateAvailabilityTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.NextUpdateAvailabilityTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SoftwareVersion":
+                        {
+                            context.AddPathSegment("SoftwareVersion");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SoftwareVersion = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "VpcEndpoint":
+                        {
+                            context.AddPathSegment("VpcEndpoint");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

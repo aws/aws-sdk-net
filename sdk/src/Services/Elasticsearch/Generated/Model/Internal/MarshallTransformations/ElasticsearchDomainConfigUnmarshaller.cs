@@ -134,6 +134,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EngineMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = EngineModeStatusUnmarshaller.Instance;
+                    unmarshalledObject.EngineMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LogPublishingOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = LogPublishingOptionsStatusUnmarshaller.Instance;
@@ -156,6 +162,12 @@ namespace Amazon.Elasticsearch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SnapshotOptionsStatusUnmarshaller.Instance;
                     unmarshalledObject.SnapshotOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UseCase", targetDepth, ref reader))
+                {
+                    var unmarshaller = UseCaseStatusUnmarshaller.Instance;
+                    unmarshalledObject.UseCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VPCOptions", targetDepth, ref reader))

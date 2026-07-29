@@ -17,7 +17,7 @@
     <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CancelExportTaskResponse.RoleArn</property>
@@ -57,7 +57,7 @@
     <property>Amazon.NeptuneGraph.Model.CreateGraphRequest.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphRequest.ProvisionedMemory</property>
@@ -77,7 +77,7 @@
     <property>Amazon.NeptuneGraph.Model.CreateGraphResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphResponse.Name</property>
@@ -117,7 +117,7 @@
     <property>Amazon.NeptuneGraph.Model.CreateGraphSnapshotResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphSnapshotResponse.Name</property>
@@ -139,7 +139,7 @@
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskRequest.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.CreateGraphUsingImportTaskRequest.MaxProvisionedMemory</property>
@@ -200,7 +200,7 @@
     <property>Amazon.NeptuneGraph.Model.DeleteGraphResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.DeleteGraphResponse.Name</property>
@@ -234,7 +234,7 @@
     <property>Amazon.NeptuneGraph.Model.DeleteGraphSnapshotResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.DeleteGraphSnapshotResponse.Name</property>
@@ -283,7 +283,7 @@
     <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetExportTaskResponse.RoleArn</property>
@@ -305,7 +305,7 @@
     <property>Amazon.NeptuneGraph.Model.GetGraphResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetGraphResponse.Name</property>
@@ -339,7 +339,7 @@
     <property>Amazon.NeptuneGraph.Model.GetGraphSnapshotResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GetGraphSnapshotResponse.Name</property>
@@ -500,7 +500,7 @@
     <property>Amazon.NeptuneGraph.Model.ResetGraphResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ResetGraphResponse.Name</property>
@@ -550,7 +550,7 @@
     <property>Amazon.NeptuneGraph.Model.RestoreGraphFromSnapshotResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.RestoreGraphFromSnapshotResponse.Name</property>
@@ -585,7 +585,7 @@
     <property>Amazon.NeptuneGraph.Model.StartExportTaskRequest.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartExportTaskRequest.RoleArn</property>
@@ -604,7 +604,7 @@
     <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartExportTaskResponse.RoleArn</property>
@@ -626,7 +626,7 @@
     <property>Amazon.NeptuneGraph.Model.StartGraphResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StartGraphResponse.Name</property>
@@ -680,7 +680,7 @@
     <property>Amazon.NeptuneGraph.Model.StopGraphResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.StopGraphResponse.Name</property>
@@ -731,7 +731,7 @@
     <property>Amazon.NeptuneGraph.Model.UpdateGraphResponse.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.UpdateGraphResponse.Name</property>
@@ -775,7 +775,7 @@
     <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.ExportTaskSummary.RoleArn</property>
@@ -793,7 +793,7 @@
     <property>Amazon.NeptuneGraph.Model.GraphSnapshotSummary.KmsKeyIdentifier</property>
     <min>1</min>
     <max>1024</max>
-    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+    <pattern>arn:aws[^:]*:kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NeptuneGraph.Model.GraphSnapshotSummary.Name</property>

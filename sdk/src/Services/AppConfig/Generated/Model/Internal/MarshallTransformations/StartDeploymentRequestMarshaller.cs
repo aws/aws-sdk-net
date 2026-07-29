@@ -123,6 +123,12 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KmsKeyIdentifier);
             }
 
+            if(publicRequest.IsSetLatestDeploymentNumber())
+            {
+                context.Writer.WritePropertyName("LatestDeploymentNumber");
+                context.Writer.WriteNumberValue(publicRequest.LatestDeploymentNumber.Value);
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("Tags");

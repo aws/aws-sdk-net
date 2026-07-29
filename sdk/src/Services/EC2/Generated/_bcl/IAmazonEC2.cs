@@ -2009,8 +2009,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
         /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
-        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>.
         /// 
         ///  
         /// <para>
@@ -2028,8 +2027,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Attaches a watermark to a non-public AMI. The watermark is a structured identifier
         /// that automatically propagates to all derivative images created through <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>,
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>,
-        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateRestoreImageTask.html">CreateRestoreImageTask</a>.
+        /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CopyImage.html">CopyImage</a>.
         /// 
         ///  
         /// <para>
@@ -2614,7 +2612,10 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>scheduled</c> 
+        ///  <c>scheduled</c> — requires a cancellation quote. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote, then pass the quote ID with <c>ApplyCancellationCharges</c> set
+        /// to <c>commitment-wind-down</c>. The cancellation charge depends on how close the reservation
+        /// is to its start date.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2623,10 +2624,14 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
-        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
-        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
-        /// charges are applied.
+        ///  <c>active</c> during the commitment duration — requires a cancellation quote. Use
+        /// <c>CreateCapacityReservationCancellationQuote</c> to generate a quote, then pass the
+        /// quote ID with <c>ApplyCancellationCharges</c> set to <c>commitment-wind-down</c>.
+        /// The Capacity Reservation transitions to <c>cancelling</c> while charges are applied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>delayed</c> — the commitment duration is waived, so no cancellation charge applies.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -2634,11 +2639,6 @@ namespace Amazon.EC2
         /// Blocks for ML</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
-        /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
-        /// </para>
-        ///  
         /// <para>
         /// Instances running in the reserved capacity continue running until you stop them. Stopped
         /// instances that target the Capacity Reservation can no longer launch. Modify these
@@ -2669,7 +2669,10 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>scheduled</c> 
+        ///  <c>scheduled</c> — requires a cancellation quote. Use <c>CreateCapacityReservationCancellationQuote</c>
+        /// to generate a quote, then pass the quote ID with <c>ApplyCancellationCharges</c> set
+        /// to <c>commitment-wind-down</c>. The cancellation charge depends on how close the reservation
+        /// is to its start date.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2678,10 +2681,14 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>active</c> during the commitment duration, if you provide a cancellation quote
-        /// ID and accept the cancellation charges. Use <c>CreateCapacityReservationCancellationQuote</c>
-        /// to generate a quote. The Capacity Reservation transitions to <c>cancelling</c> while
-        /// charges are applied.
+        ///  <c>active</c> during the commitment duration — requires a cancellation quote. Use
+        /// <c>CreateCapacityReservationCancellationQuote</c> to generate a quote, then pass the
+        /// quote ID with <c>ApplyCancellationCharges</c> set to <c>commitment-wind-down</c>.
+        /// The Capacity Reservation transitions to <c>cancelling</c> while charges are applied.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>delayed</c> — the commitment duration is waived, so no cancellation charge applies.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -2689,11 +2696,6 @@ namespace Amazon.EC2
         /// Blocks for ML</a>.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// If a future-dated Capacity Reservation enters the <c>delayed</c> state, the commitment
-        /// duration is waived, and you can cancel it as soon as it enters the <c>active</c> state.
-        /// </para>
-        ///  
         /// <para>
         /// Instances running in the reserved capacity continue running until you stop them. Stopped
         /// instances that target the Capacity Reservation can no longer launch. Modify these
@@ -6290,6 +6292,8 @@ namespace Amazon.EC2
         /// A <c>spread</c> placement group places instances on distinct hardware. A <c>partition</c>
         /// placement group places groups of instances in different partitions, where instances
         /// in one partition do not share the same hardware with instances in another partition.
+        /// A <c>precision-time</c> placement group places instances on supported hardware with
+        /// direct access to high-precision time sources in Amazon Web Services infrastructure.
         /// </para>
         ///  
         /// <para>
@@ -6316,6 +6320,8 @@ namespace Amazon.EC2
         /// A <c>spread</c> placement group places instances on distinct hardware. A <c>partition</c>
         /// placement group places groups of instances in different partitions, where instances
         /// in one partition do not share the same hardware with instances in another partition.
+        /// A <c>precision-time</c> placement group places instances on supported hardware with
+        /// direct access to high-precision time sources in Amazon Web Services infrastructure.
         /// </para>
         ///  
         /// <para>
@@ -6374,8 +6380,9 @@ namespace Amazon.EC2
         /// <summary>
         /// Replaces the EBS-backed root volume for a <c>running</c> instance with a new volume
         /// that is restored to the original root volume's launch state, that is restored to a
-        /// specific snapshot taken from the original root volume, or that is restored from an
-        /// AMI that has the same key characteristics as that of the instance.
+        /// specific snapshot taken from the original root volume, that is restored from an AMI
+        /// that has the same key characteristics as that of the instance, or that is replaced
+        /// by a specified volume.
         /// 
         ///  
         /// <para>
@@ -6394,8 +6401,9 @@ namespace Amazon.EC2
         /// <summary>
         /// Replaces the EBS-backed root volume for a <c>running</c> instance with a new volume
         /// that is restored to the original root volume's launch state, that is restored to a
-        /// specific snapshot taken from the original root volume, or that is restored from an
-        /// AMI that has the same key characteristics as that of the instance.
+        /// specific snapshot taken from the original root volume, that is restored from an AMI
+        /// that has the same key characteristics as that of the instance, or that is replaced
+        /// by a specified volume.
         /// 
         ///  
         /// <para>
@@ -8159,6 +8167,36 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateTransitGatewayPolicyTable service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTable">REST API Reference for CreateTransitGatewayPolicyTable Operation</seealso>
         Task<CreateTransitGatewayPolicyTableResponse> CreateTransitGatewayPolicyTableAsync(CreateTransitGatewayPolicyTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateTransitGatewayPolicyTableEntry
+
+
+        /// <summary>
+        /// Creates an entry in a transit gateway policy table to route matching traffic to a
+        /// specified route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPolicyTableEntry service method.</param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPolicyTableEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTableEntry">REST API Reference for CreateTransitGatewayPolicyTableEntry Operation</seealso>
+        CreateTransitGatewayPolicyTableEntryResponse CreateTransitGatewayPolicyTableEntry(CreateTransitGatewayPolicyTableEntryRequest request);
+
+
+
+        /// <summary>
+        /// Creates an entry in a transit gateway policy table to route matching traffic to a
+        /// specified route table.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTransitGatewayPolicyTableEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTransitGatewayPolicyTableEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateTransitGatewayPolicyTableEntry">REST API Reference for CreateTransitGatewayPolicyTableEntry Operation</seealso>
+        Task<CreateTransitGatewayPolicyTableEntryResponse> CreateTransitGatewayPolicyTableEntryAsync(CreateTransitGatewayPolicyTableEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10687,7 +10725,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
-        /// group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// group before you can delete the placement group. You cannot delete a placement group
+        /// that is a parent of a cluster placement group. Delete the cluster placement groups
+        /// first. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
@@ -10700,7 +10740,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes the specified placement group. You must terminate all instances in the placement
-        /// group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
+        /// group before you can delete the placement group. You cannot delete a placement group
+        /// that is a parent of a cluster placement group. Delete the cluster placement groups
+        /// first. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement
         /// groups</a> in the <i>Amazon EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlacementGroup service method.</param>
@@ -11748,6 +11790,34 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteTransitGatewayPolicyTable service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTable">REST API Reference for DeleteTransitGatewayPolicyTable Operation</seealso>
         Task<DeleteTransitGatewayPolicyTableResponse> DeleteTransitGatewayPolicyTableAsync(DeleteTransitGatewayPolicyTableRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteTransitGatewayPolicyTableEntry
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway policy table entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPolicyTableEntry service method.</param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPolicyTableEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTableEntry">REST API Reference for DeleteTransitGatewayPolicyTableEntry Operation</seealso>
+        DeleteTransitGatewayPolicyTableEntryResponse DeleteTransitGatewayPolicyTableEntry(DeleteTransitGatewayPolicyTableEntryRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified transit gateway policy table entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTransitGatewayPolicyTableEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTransitGatewayPolicyTableEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteTransitGatewayPolicyTableEntry">REST API Reference for DeleteTransitGatewayPolicyTableEntry Operation</seealso>
+        Task<DeleteTransitGatewayPolicyTableEntryResponse> DeleteTransitGatewayPolicyTableEntryAsync(DeleteTransitGatewayPolicyTableEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -13039,6 +13109,50 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributes">REST API Reference for DescribeAccountAttributes Operation</seealso>
         Task<DescribeAccountAttributesResponse> DescribeAccountAttributesAsync(DescribeAccountAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeAccountVpcEncryptionControl
+
+
+        /// <summary>
+        /// Describes the account-level VPC Encryption Control configuration for your account.
+        /// VPC Encryption Control enables you to enforce encryption for all data in transit within
+        /// and between VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountVpcEncryptionControl">REST API Reference for DescribeAccountVpcEncryptionControl Operation</seealso>
+        DescribeAccountVpcEncryptionControlResponse DescribeAccountVpcEncryptionControl(DescribeAccountVpcEncryptionControlRequest request);
+
+
+
+        /// <summary>
+        /// Describes the account-level VPC Encryption Control configuration for your account.
+        /// VPC Encryption Control enables you to enforce encryption for all data in transit within
+        /// and between VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountVpcEncryptionControl">REST API Reference for DescribeAccountVpcEncryptionControl Operation</seealso>
+        Task<DescribeAccountVpcEncryptionControlResponse> DescribeAccountVpcEncryptionControlAsync(DescribeAccountVpcEncryptionControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -29262,6 +29376,52 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyAccountVpcEncryptionControl
+
+
+        /// <summary>
+        /// Modifies the account-level VPC Encryption Control configuration. This sets the encryption
+        /// control mode and resource exclusions that apply to the VPCs in your account. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccountVpcEncryptionControl service method.</param>
+        /// 
+        /// <returns>The response from the ModifyAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAccountVpcEncryptionControl">REST API Reference for ModifyAccountVpcEncryptionControl Operation</seealso>
+        ModifyAccountVpcEncryptionControlResponse ModifyAccountVpcEncryptionControl(ModifyAccountVpcEncryptionControlRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the account-level VPC Encryption Control configuration. This sets the encryption
+        /// control mode and resource exclusions that apply to the VPCs in your account. VPC Encryption
+        /// Control enables you to enforce encryption for all data in transit within and between
+        /// VPCs to meet compliance requirements.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-encryption-controls.html">Enforce
+        /// VPC encryption in transit</a> in the <i>Amazon VPC User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyAccountVpcEncryptionControl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyAccountVpcEncryptionControl service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyAccountVpcEncryptionControl">REST API Reference for ModifyAccountVpcEncryptionControl Operation</seealso>
+        Task<ModifyAccountVpcEncryptionControlResponse> ModifyAccountVpcEncryptionControlAsync(ModifyAccountVpcEncryptionControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyAddressAttribute
 
 
@@ -31854,6 +32014,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyTransitGatewayPolicyTableEntry
+
+
+        /// <summary>
+        /// Modifies the specified transit gateway policy table entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPolicyTableEntry service method.</param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayPolicyTableEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPolicyTableEntry">REST API Reference for ModifyTransitGatewayPolicyTableEntry Operation</seealso>
+        ModifyTransitGatewayPolicyTableEntryResponse ModifyTransitGatewayPolicyTableEntry(ModifyTransitGatewayPolicyTableEntryRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the specified transit gateway policy table entry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyTransitGatewayPolicyTableEntry service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyTransitGatewayPolicyTableEntry service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyTransitGatewayPolicyTableEntry">REST API Reference for ModifyTransitGatewayPolicyTableEntry Operation</seealso>
+        Task<ModifyTransitGatewayPolicyTableEntryResponse> ModifyTransitGatewayPolicyTableEntryAsync(ModifyTransitGatewayPolicyTableEntryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ModifyTransitGatewayPrefixListReference
 
 
@@ -32461,6 +32649,34 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyVpcEndpointConnectionNotification service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointConnectionNotification">REST API Reference for ModifyVpcEndpointConnectionNotification Operation</seealso>
         Task<ModifyVpcEndpointConnectionNotificationResponse> ModifyVpcEndpointConnectionNotificationAsync(ModifyVpcEndpointConnectionNotificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyVpcEndpointPayerResponsibility
+
+
+        /// <summary>
+        /// Modifies the billing account for VPC endpoint usage/charges.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointPayerResponsibility service method.</param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointPayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointPayerResponsibility">REST API Reference for ModifyVpcEndpointPayerResponsibility Operation</seealso>
+        ModifyVpcEndpointPayerResponsibilityResponse ModifyVpcEndpointPayerResponsibility(ModifyVpcEndpointPayerResponsibilityRequest request);
+
+
+
+        /// <summary>
+        /// Modifies the billing account for VPC endpoint usage/charges.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyVpcEndpointPayerResponsibility service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyVpcEndpointPayerResponsibility service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpcEndpointPayerResponsibility">REST API Reference for ModifyVpcEndpointPayerResponsibility Operation</seealso>
+        Task<ModifyVpcEndpointPayerResponsibilityResponse> ModifyVpcEndpointPayerResponsibilityAsync(ModifyVpcEndpointPayerResponsibilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -34406,7 +34622,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Sets or replaces the criteria for Allowed AMIs.
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// The <c>ImageCriteria</c> can include up to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 10 <c>ImageCriterion</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
         /// of the criteria you set, the AMIs created by your account will always be discoverable
@@ -34430,7 +34654,15 @@ namespace Amazon.EC2
         /// <summary>
         /// Sets or replaces the criteria for Allowed AMIs.
         /// 
-        ///  <note> 
+        ///  
+        /// <para>
+        /// The <c>ImageCriteria</c> can include up to:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// 10 <c>ImageCriterion</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
         /// <para>
         /// The Allowed AMIs feature does not restrict the AMIs owned by your account. Regardless
         /// of the criteria you set, the AMIs created by your account will always be discoverable

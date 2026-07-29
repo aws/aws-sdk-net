@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ServiceAccountCredentials Marshaller
     /// </summary>
-    public class ServiceAccountCredentialsMarshaller : IRequestMarshaller<ServiceAccountCredentials, JsonMarshallerContext> 
+    public class ServiceAccountCredentialsMarshaller : IRequestMarshaller<ServiceAccountCredentials, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ServiceAccountCredentials requestObject, JsonMarshallerContext context)
+        public void Marshall(ServiceAccountCredentials requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAccountName())
-            {
-                context.Writer.WritePropertyName("AccountName");
-                context.Writer.WriteStringValue(requestObject.AccountName);
-            }
 
-            if(requestObject.IsSetAccountPassword())
+            if (requestObject.IsSetAccountName())
             {
-                context.Writer.WritePropertyName("AccountPassword");
-                context.Writer.WriteStringValue(requestObject.AccountPassword);
+                context.Writer.WriteTextString("AccountName");
+                context.Writer.WriteTextString(requestObject.AccountName);
             }
-
+            if (requestObject.IsSetAccountPassword())
+            {
+                context.Writer.WriteTextString("AccountPassword");
+                context.Writer.WriteTextString(requestObject.AccountPassword);
+            }
         }
 
         /// <summary>

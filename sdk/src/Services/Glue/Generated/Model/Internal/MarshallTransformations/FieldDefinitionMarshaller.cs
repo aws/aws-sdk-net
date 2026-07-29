@@ -52,10 +52,51 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.FieldDataType);
             }
 
+            if(requestObject.IsSetFilterOverrides())
+            {
+                context.Writer.WritePropertyName("FilterOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterOverridesMarshaller.Instance;
+                marshaller.Marshall(requestObject.FilterOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetIsNullable())
+            {
+                context.Writer.WritePropertyName("IsNullable");
+                context.Writer.WriteBooleanValue(requestObject.IsNullable.Value);
+            }
+
+            if(requestObject.IsSetIsOrderable())
+            {
+                context.Writer.WritePropertyName("IsOrderable");
+                context.Writer.WriteBooleanValue(requestObject.IsOrderable.Value);
+            }
+
+            if(requestObject.IsSetIsPartitionable())
+            {
+                context.Writer.WritePropertyName("IsPartitionable");
+                context.Writer.WriteBooleanValue(requestObject.IsPartitionable.Value);
+            }
+
+            if(requestObject.IsSetIsQueryable())
+            {
+                context.Writer.WritePropertyName("IsQueryable");
+                context.Writer.WriteBooleanValue(requestObject.IsQueryable.Value);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
                 context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetResponseDateFormat())
+            {
+                context.Writer.WritePropertyName("ResponseDateFormat");
+                context.Writer.WriteStringValue(requestObject.ResponseDateFormat);
             }
 
         }

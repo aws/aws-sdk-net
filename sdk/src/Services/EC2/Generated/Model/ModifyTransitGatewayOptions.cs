@@ -98,6 +98,14 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Connect
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VPN Concentrator
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Client VPN
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// You must first delete all transit gateway attachments configured prior to modifying

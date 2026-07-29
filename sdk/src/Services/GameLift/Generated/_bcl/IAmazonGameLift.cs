@@ -182,8 +182,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -264,8 +263,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -353,8 +351,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.OutOfCapacityException">
         /// The specified game server group has no available game servers to fulfill a <c>ClaimGameServer</c>
@@ -446,8 +443,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.OutOfCapacityException">
         /// The specified game server group has no available game servers to fulfill a <c>ClaimGameServer</c>
@@ -1190,15 +1186,15 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OperatingSystem</c> (omit to use default value)
+        ///  <c>OperatingSystem</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+        ///  <c>TotalMemoryLimitMebibytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalVcpuLimit </c>(omit to use default value)
+        ///  <c>TotalVcpuLimit</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1218,7 +1214,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ServerSdkVersion</c> (omit to use default value)
+        ///  <c>ServerSdkVersion</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
@@ -1235,15 +1231,15 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OperatingSystem</c> (omit to use default value)
+        ///  <c>OperatingSystem</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+        ///  <c>TotalMemoryLimitMebibytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalVcpuLimit </c>(omit to use default value)
+        ///  <c>TotalVcpuLimit</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1391,15 +1387,15 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OperatingSystem</c> (omit to use default value)
+        ///  <c>OperatingSystem</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+        ///  <c>TotalMemoryLimitMebibytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalVcpuLimit </c>(omit to use default value)
+        ///  <c>TotalVcpuLimit</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1419,7 +1415,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ServerSdkVersion</c> (omit to use default value)
+        ///  <c>ServerSdkVersion</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
@@ -1436,15 +1432,15 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>OperatingSystem</c> (omit to use default value)
+        ///  <c>OperatingSystem</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalMemoryLimitMebibytes</c> (omit to use default value)
+        ///  <c>TotalMemoryLimitMebibytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>TotalVcpuLimit </c>(omit to use default value)
+        ///  <c>TotalVcpuLimit</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1659,8 +1655,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -1835,8 +1830,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -1933,8 +1927,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -2027,8 +2020,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -2333,8 +2325,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -2459,8 +2450,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -2622,8 +2612,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -2780,8 +2769,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -2832,6 +2820,9 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateLocation">REST API Reference for CreateLocation Operation</seealso>
         CreateLocationResponse CreateLocation(CreateLocationRequest request);
 
@@ -2873,6 +2864,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateLocation">REST API Reference for CreateLocation Operation</seealso>
         Task<CreateLocationResponse> CreateLocationAsync(CreateLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2941,8 +2935,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -3018,8 +3011,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -3218,7 +3210,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add a player to. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add a player to. The value is always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="playerId">A unique identifier for a player. Player IDs are developer-defined.</param>
         /// 
         /// <returns>The response from the CreatePlayerSession service method, as returned by GameLift.</returns>
@@ -3240,8 +3232,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -3314,8 +3305,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -3368,7 +3358,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add a player to. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add a player to. The value is always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="playerId">A unique identifier for a player. Player IDs are developer-defined.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3393,8 +3383,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -3471,8 +3460,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -3529,7 +3517,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add players to. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add players to. The value is always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
         /// 
         /// <returns>The response from the CreatePlayerSessions service method, as returned by GameLift.</returns>
@@ -3551,8 +3539,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -3625,8 +3612,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -3679,7 +3665,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add players to. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to add players to. The value is always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="playerIds">List of unique identifiers for the players to be added.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3704,8 +3690,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -3782,8 +3767,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -4024,7 +4008,37 @@ namespace Amazon.GameLift
         /// The authorization remains valid for 24 hours unless it is canceled. You must create
         /// or delete the peering connection while the authorization is valid. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon GameLift Servers uses the caller's credentials to update peer-VPC resources.
+        /// The IAM user that calls this operation must have the following Amazon EC2 permissions
+        /// enabled:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ec2:AcceptVpcPeeringConnection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupEgress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupIngress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:CreateRoute</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeRouteTables</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeSecurityGroups</c> 
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         ///  <b>Related actions</b> 
         /// </para>
@@ -4046,8 +4060,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -4099,7 +4112,37 @@ namespace Amazon.GameLift
         /// The authorization remains valid for 24 hours unless it is canceled. You must create
         /// or delete the peering connection while the authorization is valid. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon GameLift Servers uses the caller's credentials to update peer-VPC resources.
+        /// The IAM user that calls this operation must have the following Amazon EC2 permissions
+        /// enabled:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ec2:AcceptVpcPeeringConnection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupEgress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupIngress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:CreateRoute</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeRouteTables</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeSecurityGroups</c> 
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         ///  <b>Related actions</b> 
         /// </para>
@@ -4124,8 +4167,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -4173,7 +4215,37 @@ namespace Amazon.GameLift
         /// , or by monitoring fleet events for success or failure using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>
         /// . 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon GameLift Servers uses the caller's credentials to update peer-VPC resources.
+        /// The IAM user that calls this operation must have the following Amazon EC2 permissions
+        /// enabled:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ec2:AcceptVpcPeeringConnection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupEgress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupIngress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:CreateRoute</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeRouteTables</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeSecurityGroups</c> 
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         ///  <b>Related actions</b> 
         /// </para>
@@ -4195,8 +4267,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -4241,7 +4312,37 @@ namespace Amazon.GameLift
         /// , or by monitoring fleet events for success or failure using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>
         /// . 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Amazon GameLift Servers uses the caller's credentials to update peer-VPC resources.
+        /// The IAM user that calls this operation must have the following Amazon EC2 permissions
+        /// enabled:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ec2:AcceptVpcPeeringConnection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupEgress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:AuthorizeSecurityGroupIngress</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:CreateRoute</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeRouteTables</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ec2:DescribeSecurityGroups</c> 
+        /// </para>
+        ///  </li> </ul> </note> 
         /// <para>
         ///  <b>Related actions</b> 
         /// </para>
@@ -4266,8 +4367,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -4311,8 +4411,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4355,8 +4454,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4403,8 +4501,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4451,8 +4548,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4509,8 +4605,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4562,8 +4657,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4619,8 +4713,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4676,8 +4769,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4730,8 +4822,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4787,8 +4878,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4881,8 +4971,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -4975,8 +5064,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5042,8 +5130,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5101,8 +5188,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5164,8 +5250,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5227,8 +5312,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5287,8 +5371,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -5346,8 +5429,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -5426,8 +5508,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -5503,8 +5584,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -5540,8 +5620,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5581,8 +5660,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5624,11 +5702,13 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         DeleteLocationResponse DeleteLocation(DeleteLocationRequest request);
@@ -5663,11 +5743,13 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteLocation">REST API Reference for DeleteLocation Operation</seealso>
         Task<DeleteLocationResponse> DeleteLocationAsync(DeleteLocationRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5699,8 +5781,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5739,8 +5820,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5789,8 +5869,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5839,8 +5918,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -5884,8 +5962,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -5928,8 +6005,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -5992,8 +6068,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -6057,8 +6132,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -6105,8 +6179,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6149,8 +6222,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6200,8 +6272,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6251,8 +6322,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6293,11 +6363,13 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterCompute">REST API Reference for DeregisterCompute Operation</seealso>
         DeregisterComputeResponse DeregisterCompute(DeregisterComputeRequest request);
@@ -6335,11 +6407,13 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeregisterCompute">REST API Reference for DeregisterCompute Operation</seealso>
         Task<DeregisterComputeResponse> DeregisterComputeAsync(DeregisterComputeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6386,8 +6460,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6437,8 +6510,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6486,8 +6558,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6530,8 +6601,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6578,8 +6648,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6626,8 +6695,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6675,8 +6743,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6719,8 +6786,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6767,8 +6833,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6815,8 +6880,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6895,8 +6959,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -6978,8 +7041,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7042,8 +7104,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7106,8 +7167,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7177,8 +7237,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7248,8 +7307,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7300,11 +7358,11 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// This operation returns the fleet ID, location, container group definition ARN, container
-        /// group type, compute name (for game server container groups), instance ID, and a list
-        /// of <c>ContainerGroupPortMapping</c> objects. Each object contains the container name,
-        /// runtime ID, and a list of port mappings that show how container ports map to connection
-        /// ports on the instance.
+        /// This operation returns the fleet ID, fleet ARN, location, container group definition
+        /// ARN, container group type, compute name (for game server container groups), instance
+        /// ID, and a list of <c>ContainerGroupPortMapping</c> objects. Each object contains the
+        /// container name, runtime ID, and a list of port mappings that show how container ports
+        /// map to connection ports on the instance.
         /// </para>
         ///  
         /// <para>
@@ -7337,8 +7395,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7386,11 +7443,11 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// This operation returns the fleet ID, location, container group definition ARN, container
-        /// group type, compute name (for game server container groups), instance ID, and a list
-        /// of <c>ContainerGroupPortMapping</c> objects. Each object contains the container name,
-        /// runtime ID, and a list of port mappings that show how container ports map to connection
-        /// ports on the instance.
+        /// This operation returns the fleet ID, fleet ARN, location, container group definition
+        /// ARN, container group type, compute name (for game server container groups), instance
+        /// ID, and a list of <c>ContainerGroupPortMapping</c> objects. Each object contains the
+        /// container name, runtime ID, and a list of port mappings that show how container ports
+        /// map to connection ports on the instance.
         /// </para>
         ///  
         /// <para>
@@ -7426,8 +7483,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7899,8 +7955,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -7972,8 +8027,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8057,8 +8111,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8145,8 +8198,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8204,8 +8256,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8263,8 +8314,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8321,8 +8371,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8379,8 +8428,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8426,9 +8474,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, a <c>LocationAttributes</c> object is returned for each requested location.
-        /// If the fleet does not have a requested location, no information is returned. This
-        /// operation does not return the home Region. To get information on a fleet's home Region,
-        /// call <c>DescribeFleetAttributes</c>.
+        /// If the fleet does not have a requested location, no information is returned. 
         /// </para>
         ///  
         /// <para>
@@ -8457,8 +8503,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8501,9 +8546,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, a <c>LocationAttributes</c> object is returned for each requested location.
-        /// If the fleet does not have a requested location, no information is returned. This
-        /// operation does not return the home Region. To get information on a fleet's home Region,
-        /// call <c>DescribeFleetAttributes</c>.
+        /// If the fleet does not have a requested location, no information is returned. 
         /// </para>
         ///  
         /// <para>
@@ -8535,8 +8578,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8608,8 +8650,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8681,8 +8722,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8749,8 +8789,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8817,8 +8856,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8887,8 +8925,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8952,8 +8989,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9021,8 +9057,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9090,8 +9125,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9176,8 +9210,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9259,8 +9292,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9308,8 +9340,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9357,8 +9388,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9408,8 +9438,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9459,8 +9488,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9519,8 +9547,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9579,8 +9606,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9660,8 +9686,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -9750,8 +9775,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -9808,8 +9832,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9857,8 +9880,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9903,8 +9925,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -9949,8 +9970,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -10041,8 +10061,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -10142,8 +10161,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -10241,8 +10259,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -10334,8 +10351,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -10602,8 +10618,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -10649,8 +10664,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -10721,8 +10735,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -10793,8 +10806,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -10853,8 +10865,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -10913,8 +10924,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -10959,8 +10969,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11008,8 +11017,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11068,8 +11076,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11125,8 +11132,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11259,8 +11265,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11311,8 +11316,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11384,8 +11388,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11460,8 +11463,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11539,8 +11541,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11618,8 +11619,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11657,7 +11657,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to get logs for. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to get logs for. The value is always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.</param>
         /// 
         /// <returns>The response from the GetGameSessionLogUrl service method, as returned by GameLift.</returns>
         /// <exception cref="Amazon.GameLift.Model.InternalServiceException">
@@ -11669,8 +11669,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11712,8 +11711,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11744,7 +11742,7 @@ namespace Amazon.GameLift
         /// APIs by task</a> 
         /// </para>
         /// </summary>
-        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to get logs for. The value is always a full ARN in the following format: <c>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>.</param>
+        /// <param name="gameSessionId">An identifier for the game session that is unique across all regions to get logs for. The value is always a full ARN in the following format: For Home Region game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID string&gt;</c>. For Remote Location game session - <c>arn:aws:gamelift:&lt;home_region&gt;::gamesession/&lt;fleet ID&gt;/&lt;location&gt;/&lt;ID string&gt;</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -11759,8 +11757,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11806,8 +11803,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11890,8 +11886,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -11974,8 +11969,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12044,8 +12038,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12117,8 +12110,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12788,8 +12780,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12859,8 +12850,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12924,8 +12914,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12989,8 +12978,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -13061,8 +13049,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -13130,8 +13117,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -13519,8 +13505,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -13588,8 +13573,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -13719,8 +13703,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -13849,8 +13832,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -13948,6 +13930,9 @@ namespace Amazon.GameLift
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
         /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterCompute">REST API Reference for RegisterCompute Operation</seealso>
         RegisterComputeResponse RegisterCompute(RegisterComputeRequest request);
 
@@ -14037,6 +14022,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
+        /// </exception>
+        /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
+        /// The requested operation is not supported in the Region specified.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RegisterCompute">REST API Reference for RegisterCompute Operation</seealso>
         Task<RegisterComputeResponse> RegisterComputeAsync(RegisterComputeRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -14218,8 +14206,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -14269,8 +14256,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -14324,8 +14310,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -14379,8 +14364,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -14428,8 +14412,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -14478,8 +14461,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -14532,8 +14514,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -14586,8 +14567,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -14646,8 +14626,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -14700,8 +14679,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -14853,8 +14831,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -15015,8 +14992,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
@@ -15089,8 +15065,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -15157,8 +15132,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -15305,8 +15279,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -15453,8 +15426,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -15544,8 +15516,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -15632,8 +15603,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -15706,8 +15676,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -15780,8 +15749,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -15852,8 +15820,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -15927,8 +15894,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -15980,8 +15946,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -16030,8 +15995,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -16087,8 +16051,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -16144,8 +16107,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -16205,8 +16167,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -16266,8 +16227,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -16334,8 +16294,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -16406,8 +16365,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -16510,8 +16468,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -16616,8 +16573,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -16689,8 +16645,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -16760,8 +16715,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TaggingFailedException">
         /// The requested tagging operation did not succeed. This may be due to invalid tag format
@@ -16813,8 +16767,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -16862,8 +16815,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -16912,8 +16864,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -16962,8 +16913,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17076,8 +17026,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -17199,8 +17148,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -17255,7 +17203,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Change a game server container definition. Provide the updated container definition.
+        /// Change a game server container definition. Provide a complete set of container definitions,
+        /// including the updated definition.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17300,8 +17249,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17347,7 +17295,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Change a game server container definition. Provide the updated container definition.
+        /// Change a game server container definition. Provide a complete set of container definitions,
+        /// including the updated definition.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17395,8 +17344,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17469,8 +17417,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17540,8 +17487,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17653,8 +17599,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17769,8 +17714,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17803,9 +17747,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
-        /// locations, port setting updates can take time to propagate across all locations. You
-        /// can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
+        /// If successful, the fleet identifiers for the updated fleet are returned. For fleets
+        /// with remote locations, port setting updates can take time to propagate across all
+        /// locations. You can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
         /// with a location name.
         /// </para>
         ///  
@@ -17842,8 +17786,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17870,9 +17813,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
-        /// locations, port setting updates can take time to propagate across all locations. You
-        /// can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
+        /// If successful, the fleet identifiers for the updated fleet are returned. For fleets
+        /// with remote locations, port setting updates can take time to propagate across all
+        /// locations. You can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
         /// with a location name.
         /// </para>
         ///  
@@ -17912,8 +17855,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -17987,8 +17929,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18062,8 +18003,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18093,7 +18033,14 @@ namespace Amazon.GameLift
         /// that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity.
         /// If successful, a <c>GameServerGroup</c> object is returned.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Target tracking Auto Scaling policies on the Auto Scaling group cannot be updated
+        /// through the Amazon Web Services Management Console. Instead, use the Amazon Elastic
+        /// Compute Cloud Auto Scaling <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html">
+        /// <c>PutScalingPolicy</c> </a> API action to update these policies.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Learn more</b> 
         /// </para>
@@ -18115,8 +18062,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18143,7 +18089,14 @@ namespace Amazon.GameLift
         /// that Amazon GameLift Servers FleetIQ can continue to perform instance balancing activity.
         /// If successful, a <c>GameServerGroup</c> object is returned.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Target tracking Auto Scaling policies on the Auto Scaling group cannot be updated
+        /// through the Amazon Web Services Management Console. Instead, use the Amazon Elastic
+        /// Compute Cloud Auto Scaling <a href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PutScalingPolicy.html">
+        /// <c>PutScalingPolicy</c> </a> API action to update these policies.
+        /// </para>
+        ///  </note> 
         /// <para>
         ///  <b>Learn more</b> 
         /// </para>
@@ -18168,8 +18121,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18225,8 +18177,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -18288,8 +18239,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotReadyException">
         /// The operation failed because Amazon GameLift Servers has not yet finished validating
@@ -18340,8 +18290,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18386,8 +18335,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18431,8 +18379,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -18476,8 +18423,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnsupportedRegionException">
         /// The requested operation is not supported in the Region specified.
@@ -18543,8 +18489,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18610,8 +18555,7 @@ namespace Amazon.GameLift
         /// Resolve the issue before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18681,8 +18625,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -18752,8 +18695,7 @@ namespace Amazon.GameLift
         /// values before retrying.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.NotFoundException">
-        /// The requested resources was not found. The resource was either not created yet or
-        /// deleted.
+        /// The requested resource was not found. The resource was either not created yet or deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.

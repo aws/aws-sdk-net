@@ -44,6 +44,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _e164PhoneNumber;
         private string _name;
         private string _orderId;
+        private string _phoneNumberArn;
         private string _phoneNumberId;
         private PhoneNumberProductType _productType;
         private PhoneNumberStatus _status;
@@ -236,6 +237,21 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetOrderId()
         {
             return this._orderId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PhoneNumberArn.
+        /// </summary>
+        public string PhoneNumberArn
+        {
+            get { return this._phoneNumberArn; }
+            set { this._phoneNumberArn = value; }
+        }
+
+        // Check to see if PhoneNumberArn property is set
+        internal bool IsSetPhoneNumberArn()
+        {
+            return this._phoneNumberArn != null;
         }
 
         /// <summary>

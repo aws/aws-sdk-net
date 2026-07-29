@@ -68,12 +68,6 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CertificateAuthority", targetDepth, ref reader))
-                {
-                    var unmarshaller = CertificateAuthorityUnmarshaller.Instance;
-                    unmarshalledObject.CertificateAuthority = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("ClusterId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

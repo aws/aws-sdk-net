@@ -86,7 +86,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static AddListenerCertificatesRequestMarshaller _instance = new AddListenerCertificatesRequestMarshaller();        

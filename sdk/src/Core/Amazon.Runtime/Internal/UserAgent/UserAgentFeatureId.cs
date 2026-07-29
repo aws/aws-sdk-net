@@ -316,6 +316,12 @@ namespace Amazon.Runtime.Internal.UserAgent
         /// </summary>
         public static readonly UserAgentFeatureId OBSERVABILITY_OTEL_METRICS = new UserAgentFeatureId("7");
 
+        /// <summary>
+        /// Calling an SSO-OIDC operation as part of the SSO login flow, where the sso_start_url
+        /// was resolved from a customer vanity URL to an AWS-owned endpoint.
+        /// </summary>
+        public static readonly UserAgentFeatureId SSO_LOGIN_VANITY_URL = new UserAgentFeatureId("AM");
+
         public UserAgentFeatureId(string value) : base(value) { }
 
         public static UserAgentFeatureId FindValue(string value)

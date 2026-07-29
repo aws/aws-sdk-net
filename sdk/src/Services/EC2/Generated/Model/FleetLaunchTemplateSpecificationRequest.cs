@@ -44,6 +44,7 @@ namespace Amazon.EC2.Model
     {
         private string _launchTemplateId;
         private string _launchTemplateName;
+        private string _launchTemplateSpecificationUserData;
         private string _version;
 
         /// <summary>
@@ -91,6 +92,30 @@ namespace Amazon.EC2.Model
         internal bool IsSetLaunchTemplateName()
         {
             return this._launchTemplateName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LaunchTemplateSpecificationUserData. 
+        /// <para>
+        /// The base64-encoded user data for instances launched by the fleet. User data is limited
+        /// to 16 KB, in raw form, before it is base64-encoded.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string LaunchTemplateSpecificationUserData
+        {
+            get { return this._launchTemplateSpecificationUserData; }
+            set { this._launchTemplateSpecificationUserData = value; }
+        }
+
+        // Check to see if LaunchTemplateSpecificationUserData property is set
+        internal bool IsSetLaunchTemplateSpecificationUserData()
+        {
+            return this._launchTemplateSpecificationUserData != null;
         }
 
         /// <summary>

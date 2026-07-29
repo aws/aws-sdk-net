@@ -72,7 +72,7 @@ namespace Amazon.GameLift.Model
         /// either the script ID or ARN value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string ScriptId
         {
             get { return this._scriptId; }

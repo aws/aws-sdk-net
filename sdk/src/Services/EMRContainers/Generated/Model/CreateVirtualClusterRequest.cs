@@ -32,17 +32,19 @@ namespace Amazon.EMRContainers.Model
     /// <summary>
     /// Container for the parameters to the CreateVirtualCluster operation.
     /// Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS.
-    /// You can create, describe, list and delete virtual clusters. They do not consume any
-    /// additional resource in your system. A single virtual cluster maps to a single Kubernetes
-    /// namespace. Given this relationship, you can model virtual clusters the same way you
-    /// model Kubernetes namespaces to meet your requirements.
+    /// You can create, update, describe, list and delete virtual clusters. They do not consume
+    /// any additional resource in your system. A single virtual cluster maps to a single
+    /// Kubernetes namespace. Given this relationship, you can model virtual clusters the
+    /// same way you model Kubernetes namespaces to meet your requirements.
     /// </summary>
     public partial class CreateVirtualClusterRequest : AmazonEMRContainersRequest
     {
         private string _clientToken;
         private ContainerProvider _containerProvider;
         private string _name;
+        private SchedulerConfiguration _schedulerConfiguration;
         private string _securityConfigurationId;
+        private bool? _sessionEnabled;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
@@ -103,6 +105,25 @@ namespace Amazon.EMRContainers.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SchedulerConfiguration. 
+        /// <para>
+        /// The scheduler configuration (concurrency and queue limits) to apply to the virtual
+        /// cluster at creation time. When omitted, no limits are applied.
+        /// </para>
+        /// </summary>
+        public SchedulerConfiguration SchedulerConfiguration
+        {
+            get { return this._schedulerConfiguration; }
+            set { this._schedulerConfiguration = value; }
+        }
+
+        // Check to see if SchedulerConfiguration property is set
+        internal bool IsSetSchedulerConfiguration()
+        {
+            return this._schedulerConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityConfigurationId. 
         /// <para>
         /// The ID of the security configuration.
@@ -119,6 +140,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetSecurityConfigurationId()
         {
             return this._securityConfigurationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SessionEnabled. 
+        /// <para>
+        /// Indicates whether the virtual cluster has session support enabled.
+        /// </para>
+        /// </summary>
+        public bool? SessionEnabled
+        {
+            get { return this._sessionEnabled; }
+            set { this._sessionEnabled = value; }
+        }
+
+        // Check to see if SessionEnabled property is set
+        internal bool IsSetSessionEnabled()
+        {
+            return this._sessionEnabled.HasValue; 
         }
 
         /// <summary>

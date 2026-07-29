@@ -238,6 +238,24 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ISageMakerFeatureStoreRuntimePaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ISageMakerFeatureStoreRuntimePaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new SageMakerFeatureStoreRuntimePaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 
@@ -324,6 +342,63 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         }
         #endregion
         
+        #region  BatchWriteRecord
+
+        internal virtual BatchWriteRecordResponse BatchWriteRecord(BatchWriteRecordRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchWriteRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchWriteRecordResponseUnmarshaller.Instance;
+
+            return Invoke<BatchWriteRecordResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Writes a batch of <c>Records</c> to one or more <c>FeatureGroup</c>s. Use this API
+        /// for bulk ingestion of records into the <c>OnlineStore</c> and <c>OfflineStore</c>.
+        /// 
+        ///  
+        /// <para>
+        /// You can set the ingested records to expire at a given time to live (TTL) duration
+        /// after the record's event time by specifying the <c>TtlDuration</c> parameter. A request
+        /// level <c>TtlDuration</c> applies to all entries that do not specify their own <c>TtlDuration</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchWriteRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchWriteRecord service method, as returned by SageMakerFeatureStoreRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.AccessForbiddenException">
+        /// You do not have permission to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// Amazon Web Services customer support.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ResourceNotFoundException">
+        /// A resource that is required to perform an action was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ValidationErrorException">
+        /// There was an error validating your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/BatchWriteRecord">REST API Reference for BatchWriteRecord Operation</seealso>
+        public virtual Task<BatchWriteRecordResponse> BatchWriteRecordAsync(BatchWriteRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchWriteRecordRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchWriteRecordResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchWriteRecordResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteRecord
 
         internal virtual DeleteRecordResponse DeleteRecord(DeleteRecordRequest request)
@@ -370,7 +445,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// appended to the <c>OfflineStore</c>. If you have the Iceberg table format enabled
         /// for your <c>OfflineStore</c>, you can remove all history of a record from the <c>OfflineStore</c>
         /// using Amazon Athena or Apache Spark. For information on how to hard delete a record
-        /// from the <c>OfflineStore</c> with the Iceberg table format enabled, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-delete-records-offline-store.html#feature-store-delete-records-offline-store">Delete
+        /// from the <c>OfflineStore</c> with the Iceberg table format enabled, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-delete-records.html#feature-store-delete-records-offline-store">Delete
         /// records from the offline store</a>.
         /// </para>
         /// </summary>
@@ -452,6 +527,57 @@ namespace Amazon.SageMakerFeatureStoreRuntime
             options.ResponseUnmarshaller = GetRecordResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetRecordResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListRecords
+
+        internal virtual ListRecordsResponse ListRecords(ListRecordsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecordsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRecordsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the <c>RecordIdentifier</c> values of all records stored in a <c>FeatureGroup</c>'s
+        /// <c>OnlineStore</c>. This enables you to discover which records exist without retrieving
+        /// the full record data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecords service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecords service method, as returned by SageMakerFeatureStoreRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.AccessForbiddenException">
+        /// You do not have permission to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// Amazon Web Services customer support.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ResourceNotFoundException">
+        /// A resource that is required to perform an action was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ValidationErrorException">
+        /// There was an error validating your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/ListRecords">REST API Reference for ListRecords Operation</seealso>
+        public virtual Task<ListRecordsResponse> ListRecordsAsync(ListRecordsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListRecordsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRecordsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRecordsResponse>(request, options, cancellationToken);
         }
         #endregion
         

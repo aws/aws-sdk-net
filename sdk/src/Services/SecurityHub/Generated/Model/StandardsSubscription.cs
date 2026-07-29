@@ -34,12 +34,32 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class StandardsSubscription
     {
+        private StandardsProvider _provider;
         private string _standardsArn;
         private StandardsControlsUpdatable _standardsControlsUpdatable;
         private Dictionary<string, string> _standardsInput = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private StandardsStatus _standardsStatus;
         private StandardsStatusReason _standardsStatusReason;
         private string _standardsSubscriptionArn;
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// The cloud provider whose resources the standard evaluates. For example, <c>AWS</c>
+        /// or <c>Azure</c>.
+        /// </para>
+        /// </summary>
+        public StandardsProvider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StandardsArn. 

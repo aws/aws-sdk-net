@@ -96,7 +96,12 @@ namespace Amazon.BedrockAgent.Model
         /// upon deletion of a knowledge base or data source resource. Note that the <b>vector
         /// store itself is not deleted</b> if you delete a knowledge base or data source resource.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// For managed knowledge bases, the only supported option is <c>DELETE</c>, which is
+        /// also the default.
+        /// </para>
+        ///  </note>
         /// </summary>
         public DataDeletionPolicy DataDeletionPolicy
         {

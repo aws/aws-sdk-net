@@ -58,7 +58,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts
-    /// that you can create in one day.
+    /// that can be in progress at a time.
     /// </para>
     ///  </li> <li> 
     /// <para>

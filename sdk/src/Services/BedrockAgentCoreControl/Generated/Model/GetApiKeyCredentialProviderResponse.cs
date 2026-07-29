@@ -45,7 +45,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ApiKeySecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the API key secret in AWS Secrets Manager.
+        /// The Amazon Resource Name (ARN) of the API key secret in Amazon Web Services Secrets
+        /// Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +65,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ApiKeySecretJsonKey. 
         /// <para>
-        /// The JSON key used to extract the API key value from the AWS Secrets Manager secret.
+        /// The JSON key used to extract the API key value from the Amazon Web Services Secrets
+        /// Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -84,7 +86,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property ApiKeySecretSource. 
         /// <para>
         /// The source type of the API key secret. Either <c>MANAGED</c> if the secret is managed
-        /// by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets Manager.
+        /// by the service, or <c>EXTERNAL</c> if managed by the user in Amazon Web Services Secrets
+        /// Manager.
         /// </para>
         /// </summary>
         public SecretSourceType ApiKeySecretSource

@@ -273,6 +273,13 @@ namespace Amazon.ChimeSDKVoice
         /// <summary>
         /// Creates a proxy session for the specified Amazon Chime SDK Voice Connector for the
         /// specified participant phone numbers.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProxySession service method.</param>
         /// <param name="cancellationToken">
@@ -302,6 +309,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateProxySession">REST API Reference for CreateProxySession Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_CreateProxySession.html")]
         Task<CreateProxySessionResponse> CreateProxySessionAsync(CreateProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -518,6 +526,9 @@ namespace Amazon.ChimeSDKVoice
         /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.ResourceLimitExceededException">
         /// The request exceeds the resource limit.
         /// </exception>
@@ -716,6 +727,13 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Deletes the specified proxy session from the specified Amazon Chime SDK Voice Connector.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProxySession service method.</param>
         /// <param name="cancellationToken">
@@ -745,6 +763,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteProxySession">REST API Reference for DeleteProxySession Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteProxySession.html")]
         Task<DeleteProxySessionResponse> DeleteProxySessionAsync(DeleteProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1050,6 +1069,13 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Deletes the proxy configuration from the specified Amazon Chime SDK Voice Connector.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorProxy service method.</param>
         /// <param name="cancellationToken">
@@ -1079,6 +1105,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorProxy">REST API Reference for DeleteVoiceConnectorProxy Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_DeleteVoiceConnectorProxy.html")]
         Task<DeleteVoiceConnectorProxyResponse> DeleteVoiceConnectorProxyAsync(DeleteVoiceConnectorProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1540,6 +1567,13 @@ namespace Amazon.ChimeSDKVoice
         /// <summary>
         /// Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice
         /// Connector.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProxySession service method.</param>
         /// <param name="cancellationToken">
@@ -1569,6 +1603,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetProxySession">REST API Reference for GetProxySession Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetProxySession.html")]
         Task<GetProxySessionResponse> GetProxySessionAsync(GetProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -1639,6 +1674,10 @@ namespace Amazon.ChimeSDKVoice
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.GoneException">
+        /// Access to the target resource is no longer available at the origin server. This condition
+        /// is likely to be permanent.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
         /// The requested resource couldn't be found.
@@ -2029,6 +2068,13 @@ namespace Amazon.ChimeSDKVoice
         /// <summary>
         /// Retrieves the proxy configuration details for the specified Amazon Chime SDK Voice
         /// Connector.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorProxy service method.</param>
         /// <param name="cancellationToken">
@@ -2058,6 +2104,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorProxy">REST API Reference for GetVoiceConnectorProxy Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_GetVoiceConnectorProxy.html")]
         Task<GetVoiceConnectorProxyResponse> GetVoiceConnectorProxyAsync(GetVoiceConnectorProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2430,6 +2477,13 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Lists the proxy sessions for the specified Amazon Chime SDK Voice Connector.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProxySessions service method.</param>
         /// <param name="cancellationToken">
@@ -2459,6 +2513,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListProxySessions">REST API Reference for ListProxySessions Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_ListProxySessions.html")]
         Task<ListProxySessionsResponse> ListProxySessionsAsync(ListProxySessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -2517,6 +2572,9 @@ namespace Amazon.ChimeSDKVoice
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
+        /// The requested resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.ServiceFailureException">
         /// The service encountered an unexpected error.
@@ -2826,6 +2884,10 @@ namespace Amazon.ChimeSDKVoice
         /// <exception cref="Amazon.ChimeSDKVoice.Model.ForbiddenException">
         /// The client is permanently forbidden from making the request.
         /// </exception>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.GoneException">
+        /// Access to the target resource is no longer available at the origin server. This condition
+        /// is likely to be permanent.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.NotFoundException">
         /// The requested resource couldn't be found.
         /// </exception>
@@ -3019,6 +3081,9 @@ namespace Amazon.ChimeSDKVoice
         /// </param>
         /// 
         /// <returns>The response from the PutVoiceConnectorOrigination service method, as returned by ChimeSDKVoice.</returns>
+        /// <exception cref="Amazon.ChimeSDKVoice.Model.AccessDeniedException">
+        /// You don't have the permissions needed to run this action.
+        /// </exception>
         /// <exception cref="Amazon.ChimeSDKVoice.Model.BadRequestException">
         /// The input parameters don't match the service's restrictions.
         /// </exception>
@@ -3051,6 +3116,13 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Puts the specified proxy configuration to the specified Amazon Chime SDK Voice Connector.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutVoiceConnectorProxy service method.</param>
         /// <param name="cancellationToken">
@@ -3083,6 +3155,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorProxy">REST API Reference for PutVoiceConnectorProxy Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_PutVoiceConnectorProxy.html")]
         Task<PutVoiceConnectorProxyResponse> PutVoiceConnectorProxyAsync(PutVoiceConnectorProxyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
@@ -3725,6 +3798,13 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Updates the specified proxy session details, such as voice or SMS capabilities.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+        /// proxy sessions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProxySession service method.</param>
         /// <param name="cancellationToken">
@@ -3754,6 +3834,7 @@ namespace Amazon.ChimeSDKVoice
         /// The client isn't authorized to request a resource.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateProxySession">REST API Reference for UpdateProxySession Operation</seealso>
+        [Obsolete("End of support notice: On April 7, 2026, AWS ended support for Amazon Chime SDK proxy sessions. For more information, refer to https://docs.aws.amazon.com/chime-sdk/latest/APIReference/API_voice-chime_UpdateProxySession.html")]
         Task<UpdateProxySessionResponse> UpdateProxySessionAsync(UpdateProxySessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion

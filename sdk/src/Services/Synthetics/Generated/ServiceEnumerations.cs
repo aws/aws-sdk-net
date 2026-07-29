@@ -497,6 +497,56 @@ namespace Amazon.Synthetics
 
 
     /// <summary>
+    /// Constants used for properties of type LocationType.
+    /// </summary>
+    public class LocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Primary for LocationType
+        /// </summary>
+        public static readonly LocationType Primary = new LocationType("Primary");
+        /// <summary>
+        /// Constant Replica for LocationType
+        /// </summary>
+        public static readonly LocationType Replica = new LocationType("Replica");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LocationType FindValue(string value)
+        {
+            return FindValue<LocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ProvisionedResourceCleanupSetting.
     /// </summary>
     public class ProvisionedResourceCleanupSetting : ConstantClass
@@ -540,6 +590,60 @@ namespace Amazon.Synthetics
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ProvisionedResourceCleanupSetting(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReplicationState.
+    /// </summary>
+    public class ReplicationState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Inconsistent for ReplicationState
+        /// </summary>
+        public static readonly ReplicationState Inconsistent = new ReplicationState("Inconsistent");
+        /// <summary>
+        /// Constant InProgress for ReplicationState
+        /// </summary>
+        public static readonly ReplicationState InProgress = new ReplicationState("InProgress");
+        /// <summary>
+        /// Constant InSync for ReplicationState
+        /// </summary>
+        public static readonly ReplicationState InSync = new ReplicationState("InSync");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReplicationState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReplicationState FindValue(string value)
+        {
+            return FindValue<ReplicationState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReplicationState(string value)
         {
             return FindValue(value);
         }

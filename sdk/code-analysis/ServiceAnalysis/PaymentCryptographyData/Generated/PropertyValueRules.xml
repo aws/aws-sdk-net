@@ -1118,6 +1118,24 @@
     <pattern>[0-9a-fA-F]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.SessionKeyUnionPay.ApplicationTransactionCounter</property>
+    <min>4</min>
+    <max>4</max>
+    <pattern>[0-9a-fA-F]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.SessionKeyUnionPay.PanSequenceNumber</property>
+    <min>2</min>
+    <max>2</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PaymentCryptographyData.Model.SessionKeyUnionPay.PrimaryAccountNumber</property>
+    <min>12</min>
+    <max>19</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PaymentCryptographyData.Model.SessionKeyVisa.PanSequenceNumber</property>
     <min>2</min>
     <max>2</max>

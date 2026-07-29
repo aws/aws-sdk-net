@@ -34,26 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class KnowledgeBaseConfiguration
     {
-        private bool? _eventEnabled;
         private KbTemplateConfiguration _templateConfiguration;
-
-        /// <summary>
-        /// Gets and sets the property EventEnabled. 
-        /// <para>
-        /// Indicates whether event notifications are enabled for the knowledge base.
-        /// </para>
-        /// </summary>
-        public bool? EventEnabled
-        {
-            get { return this._eventEnabled; }
-            set { this._eventEnabled = value; }
-        }
-
-        // Check to see if EventEnabled property is set
-        internal bool IsSetEventEnabled()
-        {
-            return this._eventEnabled.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property TemplateConfiguration. 

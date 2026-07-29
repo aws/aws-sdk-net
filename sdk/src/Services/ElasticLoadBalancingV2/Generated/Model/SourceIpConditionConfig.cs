@@ -38,10 +38,48 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// to the load balancer. If a client is behind a proxy, this is the IP address of the
     /// proxy not the IP address of the client.
     /// </para>
+    ///  
+    /// <para>
+    /// For Application Load Balancers, use <c>Values</c> to specify CIDR ranges. For Network
+    /// Load Balancers, use <c>IpAddressType</c> to match on the IP address type of the source
+    /// traffic.
+    /// </para>
     /// </summary>
     public partial class SourceIpConditionConfig
     {
+        private SourceIpAddressTypeEnum _ipAddressType;
         private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property IpAddressType. 
+        /// <para>
+        /// The IP address type for Network Load Balancers.
+        /// </para>
+        ///  
+        /// <para>
+        /// The valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ipv4</c> – IPv4 addresses only.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ipv6</c> – IPv6 addresses only.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SourceIpAddressTypeEnum IpAddressType
+        {
+            get { return this._ipAddressType; }
+            set { this._ipAddressType = value; }
+        }
+
+        // Check to see if IpAddressType property is set
+        internal bool IsSetIpAddressType()
+        {
+            return this._ipAddressType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Values. 

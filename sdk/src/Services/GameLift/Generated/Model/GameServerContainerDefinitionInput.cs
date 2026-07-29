@@ -50,6 +50,7 @@ namespace Amazon.GameLift.Model
         private List<ContainerDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<ContainerDependency>() : null;
         private List<ContainerEnvironment> _environmentOverride = AWSConfigs.InitializeCollections ? new List<ContainerEnvironment>() : null;
         private string _imageUri;
+        private LinuxCapabilities _linuxCapabilities;
         private List<ContainerMountPoint> _mountPoints = AWSConfigs.InitializeCollections ? new List<ContainerMountPoint>() : null;
         private ContainerPortConfiguration _portConfiguration;
         private string _serverSdkVersion;
@@ -171,6 +172,25 @@ namespace Amazon.GameLift.Model
         internal bool IsSetImageUri()
         {
             return this._imageUri != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinuxCapabilities. 
+        /// <para>
+        /// Linux-specific modifications that are applied to the default Docker container configuration,
+        /// such as Linux capabilities. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_LinuxCapabilities.html">LinuxCapabilities</a>.
+        /// </para>
+        /// </summary>
+        public LinuxCapabilities LinuxCapabilities
+        {
+            get { return this._linuxCapabilities; }
+            set { this._linuxCapabilities = value; }
+        }
+
+        // Check to see if LinuxCapabilities property is set
+        internal bool IsSetLinuxCapabilities()
+        {
+            return this._linuxCapabilities != null;
         }
 
         /// <summary>

@@ -7,17 +7,24 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.CloudFormation")]
-#if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS CloudFormation. AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.")]
-#elif NETSTANDARD20
+
+#if NET472
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS CloudFormation. AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.")]
+
+#elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS CloudFormation. AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.")]
+
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS CloudFormation. AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.")]
+
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS CloudFormation. AWS CloudFormation gives developers and systems administrators an easy way to create and manage a collection of related AWS resources, provisioning and updating them in an orderly and predictable fashion.")]
+
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
+
+
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
@@ -42,4 +49,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.9.5")]
+[assembly: AssemblyFileVersion("4.0.101.7")]

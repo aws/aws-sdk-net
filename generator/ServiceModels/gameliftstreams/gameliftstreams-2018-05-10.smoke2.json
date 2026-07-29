@@ -19,10 +19,70 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListStreamSessions",
-    "operationName" : "ListStreamSessions",
+    "id" : "ListTagsForResource",
+    "operationName" : "ListTagsForResource",
     "input" : {
-      "Identifier" : "abcdefghi"
+      "ResourceArn" : "arn:aws:gameliftstreams:us-west-2:012345678901:abcdefghi"
+    },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "ValidationException"
+      }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "GetApplication",
+    "operationName" : "GetApplication",
+    "input" : {
+      "Identifier" : "aBcDeFgHi"
+    },
+    "expectation" : {
+      "failure" : {
+        "errorId" : "ResourceNotFoundException"
+      }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListApplications",
+    "operationName" : "ListApplications",
+    "input" : { },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListStreamGroups",
+    "operationName" : "ListStreamGroups",
+    "input" : { },
+    "expectation" : {
+      "success" : { }
+    },
+    "config" : {
+      "region" : "us-west-2",
+      "useFips" : false,
+      "useDualstack" : false,
+      "useAccountIdRouting" : true
+    }
+  }, {
+    "id" : "ListApplicationShaderCaches",
+    "operationName" : "ListApplicationShaderCaches",
+    "input" : {
+      "Identifier" : "aBcDeFgHi"
     },
     "expectation" : {
       "failure" : {
@@ -49,10 +109,10 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "GetApplication",
-    "operationName" : "GetApplication",
+    "id" : "ListStreamSessions",
+    "operationName" : "ListStreamSessions",
     "input" : {
-      "Identifier" : "aBcDeFgHi"
+      "Identifier" : "abcdefghi"
     },
     "expectation" : {
       "failure" : {
@@ -66,8 +126,8 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListStreamGroups",
-    "operationName" : "ListStreamGroups",
+    "id" : "ListStreamUrls",
+    "operationName" : "ListStreamUrls",
     "input" : { },
     "expectation" : {
       "success" : { }
@@ -79,11 +139,16 @@
       "useAccountIdRouting" : true
     }
   }, {
-    "id" : "ListApplications",
-    "operationName" : "ListApplications",
-    "input" : { },
+    "id" : "GetStreamUrl",
+    "operationName" : "GetStreamUrl",
+    "input" : {
+      "Identifier" : "abcdefghi",
+      "StreamUrlIdentifier" : "su-jklmnopqr"
+    },
     "expectation" : {
-      "success" : { }
+      "failure" : {
+        "errorId" : "ResourceNotFoundException"
+      }
     },
     "config" : {
       "region" : "us-west-2",
@@ -100,23 +165,6 @@
     "expectation" : {
       "failure" : {
         "errorId" : "ResourceNotFoundException"
-      }
-    },
-    "config" : {
-      "region" : "us-west-2",
-      "useFips" : false,
-      "useDualstack" : false,
-      "useAccountIdRouting" : true
-    }
-  }, {
-    "id" : "ListTagsForResource",
-    "operationName" : "ListTagsForResource",
-    "input" : {
-      "ResourceArn" : "arn:aws:gameliftstreams:us-west-2:012345678901:abcdefghi"
-    },
-    "expectation" : {
-      "failure" : {
-        "errorId" : "ValidationException"
       }
     },
     "config" : {

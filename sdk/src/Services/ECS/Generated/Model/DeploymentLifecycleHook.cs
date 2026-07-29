@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// A deployment lifecycle hook runs custom logic at specific stages of the deployment
-    /// process. Currently, you can use Lambda functions as hook targets.
+    /// A deployment lifecycle hook runs custom logic or pauses the deployment at specific
+    /// stages of the deployment process. You can use Lambda functions or pause hooks as hook
+    /// targets.
     /// 
     ///  
     /// <para>
@@ -52,8 +53,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HookDetails. 
         /// <para>
-        /// Use this field to specify custom parameters that Amazon ECS will pass to your hook
-        /// target invocations (such as a Lambda function).
+        /// Use this field to specify custom parameters that Amazon ECS passes to your Lambda
+        /// function on each invocation. This field is not used for <c>PAUSE</c> hooks.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document HookDetails
@@ -71,12 +72,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HookTargetArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the hook target. Currently, only Lambda function
-        /// ARNs are supported.
+        /// The Amazon Resource Name (ARN) of the hook target. For <c>AWS_LAMBDA</c> hooks, this
+        /// is the Lambda function ARN. This field is not applicable for <c>PAUSE</c> hooks.
         /// </para>
         ///  
         /// <para>
-        /// You must provide this parameter when configuring a deployment lifecycle hook.
+        /// You must provide this parameter when configuring an <c>AWS_LAMBDA</c> lifecycle hook.
         /// </para>
         /// </summary>
         public string HookTargetArn
@@ -164,12 +165,26 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// PRE_PRODUCTION_TRAFFIC_SHIFT
+        /// </para>
+        ///  
+        /// <para>
+        /// Occurs before production traffic shift. For linear and canary deployments, this stage
+        /// is invoked before every traffic shift step.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use a lifecycle hook for this stage.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// PRODUCTION_TRAFFIC_SHIFT
         /// </para>
         ///  
         /// <para>
         /// Production traffic is shifting to the green service revision. The green service revision
-        /// is migrating from 0% to 100% of production traffic.
+        /// is migrating from 0% to 100% of production traffic. For linear and canary deployments,
+        /// this stage is invoked at every traffic shift step.
         /// </para>
         ///  
         /// <para>
@@ -187,7 +202,12 @@ namespace Amazon.ECS.Model
         /// <para>
         /// You can use a lifecycle hook for this stage.
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <note> 
+        /// <para>
+        ///  <c>PAUSE</c> hooks cannot be configured at <c>TEST_TRAFFIC_SHIFT</c> or <c>PRODUCTION_TRAFFIC_SHIFT</c>
+        /// stages. These stages are only valid for <c>AWS_LAMBDA</c> hooks.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You must provide this parameter when configuring a deployment lifecycle hook.
         /// </para>

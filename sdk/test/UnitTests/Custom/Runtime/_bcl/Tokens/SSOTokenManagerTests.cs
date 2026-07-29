@@ -314,6 +314,198 @@ namespace AWSSDK.UnitTests.Runtime
             // After logout with options is executed, expected file count should be 1
             Assert.AreEqual(mockFileSystem.Files.Count, 1);
         }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public void GenerateNewToken_WithResolvedStartUrl_UsesResolvedUrlForOidcCall()
+        {
+            var mockSSOOIDCClient = new Mock<ICoreAmazonSSOOIDC>();
+            var mockFileSystem = new MockFileSystem();
+
+            GetSsoTokenRequest capturedRequest = null;
+            mockSSOOIDCClient
+                .Setup(c => c.GetSsoToken(It.IsAny<GetSsoTokenRequest>()))
+                .Callback<GetSsoTokenRequest>(req => capturedRequest = req)
+                .Returns(new GetSsoTokenResponse
+                {
+                    AccessToken = "new-token",
+                    ExpiresAt = DateTime.UtcNow.AddHours(8),
+                    Region = "us-west-2",
+                    ClientId = "client-id",
+                    ClientSecret = "client-secret",
+                    RegistrationExpiresAt = DateTime.UtcNow.AddDays(90).ToString("o"),
+                    StartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws"
+                });
+
+            var ssoTokenManager = new SSOTokenManager(
+                mockSSOOIDCClient.Object,
+                new SSOTokenFileCache(
+                    CryptoUtilFactory.CryptoInstance,
+                    mockFileSystem,
+                    mockFileSystem));
+
+            var options = new SSOTokenManagerGetTokenOptions
+            {
+                ClientName = "TestClient",
+                StartUrl = "https://aws.mycompany.com",
+                ResolvedStartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws",
+                IsVanityUrl = true,
+                Region = "us-west-2",
+                SupportsGettingNewToken = true,
+                SsoVerificationCallback = args => { },
+                CacheFolderLocation = "test"
+            };
+
+            var token = ssoTokenManager.GetToken(options);
+
+            // OIDC call should use the resolved URL, not the vanity URL
+            Assert.IsNotNull(capturedRequest);
+            Assert.AreEqual("https://ssoins-testinstanceid.portal.us-west-2.app.aws", capturedRequest.StartUrl);
+            Assert.IsTrue(capturedRequest.IsVanityUrl);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public void GenerateNewToken_WithResolvedStartUrl_CachedTokenPreservesOriginalStartUrl()
+        {
+            var mockSSOOIDCClient = new Mock<ICoreAmazonSSOOIDC>();
+            var mockFileSystem = new MockFileSystem();
+
+            mockSSOOIDCClient
+                .Setup(c => c.GetSsoToken(It.IsAny<GetSsoTokenRequest>()))
+                .Returns(new GetSsoTokenResponse
+                {
+                    AccessToken = "new-token",
+                    ExpiresAt = DateTime.UtcNow.AddHours(8),
+                    Region = "us-west-2",
+                    ClientId = "client-id",
+                    ClientSecret = "client-secret",
+                    RegistrationExpiresAt = DateTime.UtcNow.AddDays(90).ToString("o"),
+                    StartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws"
+                });
+
+            var ssoTokenManager = new SSOTokenManager(
+                mockSSOOIDCClient.Object,
+                new SSOTokenFileCache(
+                    CryptoUtilFactory.CryptoInstance,
+                    mockFileSystem,
+                    mockFileSystem));
+
+            var options = new SSOTokenManagerGetTokenOptions
+            {
+                ClientName = "TestClient",
+                StartUrl = "https://aws.mycompany.com",
+                ResolvedStartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws",
+                IsVanityUrl = true,
+                Region = "us-west-2",
+                SupportsGettingNewToken = true,
+                SsoVerificationCallback = args => { },
+                CacheFolderLocation = "test"
+            };
+
+            var token = ssoTokenManager.GetToken(options);
+
+            // Cached token must use the original vanity URL as StartUrl (cache key stability)
+            Assert.AreEqual("https://aws.mycompany.com", token.StartUrl);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public void GenerateNewToken_WithResolvedStartUrl_CachedTokenPreservesOriginalStartUrl_Sync()
+        {
+            var mockSSOOIDCClient = new Mock<ICoreAmazonSSOOIDC>();
+            var mockFileSystem = new MockFileSystem();
+
+            mockSSOOIDCClient
+                .Setup(c => c.GetSsoToken(It.IsAny<GetSsoTokenRequest>()))
+                .Returns(new GetSsoTokenResponse
+                {
+                    AccessToken = "new-token",
+                    ExpiresAt = DateTime.UtcNow.AddHours(8),
+                    Region = "us-west-2",
+                    ClientId = "client-id",
+                    ClientSecret = "client-secret",
+                    RegistrationExpiresAt = DateTime.UtcNow.AddDays(90).ToString("o"),
+                    StartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws"
+                });
+
+            var ssoTokenManager = new SSOTokenManager(
+                mockSSOOIDCClient.Object,
+                new SSOTokenFileCache(
+                    CryptoUtilFactory.CryptoInstance,
+                    mockFileSystem,
+                    mockFileSystem));
+
+            var options = new SSOTokenManagerGetTokenOptions
+            {
+                ClientName = "TestClient",
+                StartUrl = "https://aws.mycompany.com",
+                ResolvedStartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws",
+                IsVanityUrl = true,
+                Region = "us-west-2",
+                SupportsGettingNewToken = true,
+                SsoVerificationCallback = args => { },
+                CacheFolderLocation = "test"
+            };
+
+            var token = ssoTokenManager.GetToken(options);
+
+            // Cached token must use the original vanity URL as StartUrl (cache key stability)
+            Assert.AreEqual("https://aws.mycompany.com", token.StartUrl);
+        }
+
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        [TestMethod]
+        public void GenerateNewToken_WithoutResolvedStartUrl_UsesStartUrlDirectly()
+        {
+            var mockSSOOIDCClient = new Mock<ICoreAmazonSSOOIDC>();
+            var mockFileSystem = new MockFileSystem();
+
+            GetSsoTokenRequest capturedRequest = null;
+            mockSSOOIDCClient
+                .Setup(c => c.GetSsoToken(It.IsAny<GetSsoTokenRequest>()))
+                .Callback<GetSsoTokenRequest>(req => capturedRequest = req)
+                .Returns(new GetSsoTokenResponse
+                {
+                    AccessToken = "new-token",
+                    ExpiresAt = DateTime.UtcNow.AddHours(8),
+                    Region = "us-west-2",
+                    ClientId = "client-id",
+                    ClientSecret = "client-secret",
+                    RegistrationExpiresAt = DateTime.UtcNow.AddDays(90).ToString("o"),
+                    StartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws"
+                });
+
+            var ssoTokenManager = new SSOTokenManager(
+                mockSSOOIDCClient.Object,
+                new SSOTokenFileCache(
+                    CryptoUtilFactory.CryptoInstance,
+                    mockFileSystem,
+                    mockFileSystem));
+
+            var options = new SSOTokenManagerGetTokenOptions
+            {
+                ClientName = "TestClient",
+                StartUrl = "https://ssoins-testinstanceid.portal.us-west-2.app.aws",
+                ResolvedStartUrl = null,
+                IsVanityUrl = false,
+                Region = "us-west-2",
+                SupportsGettingNewToken = true,
+                SsoVerificationCallback = args => { },
+                CacheFolderLocation = "test"
+            };
+
+            var token = ssoTokenManager.GetToken(options);
+
+            // Without ResolvedStartUrl, OIDC call uses StartUrl directly
+            Assert.IsNotNull(capturedRequest);
+            Assert.AreEqual("https://ssoins-testinstanceid.portal.us-west-2.app.aws", capturedRequest.StartUrl);
+            Assert.IsFalse(capturedRequest.IsVanityUrl);
+        }
     }
 
     public class MoqSSOTokenManager : SSOTokenManager

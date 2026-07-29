@@ -36,7 +36,9 @@ namespace Amazon.GeoPlaces.Model
     /// It supports flexible queries, including free-form text or structured queries with
     /// components like street names, postal codes, and regions. The Geocode API can also
     /// provide additional features such as time zone information and the inclusion of political
-    /// views.
+    /// views. Not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for
+    /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+    /// customers.
     /// 
     ///  
     /// <para>
@@ -47,6 +49,8 @@ namespace Amazon.GeoPlaces.Model
     public partial class GeocodeRequest : AmazonGeoPlacesRequest
     {
         private List<string> _additionalFeatures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private GeocodeAddressNamesMode _addressNamesMode;
+        private List<string> _addressTranslations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<double> _biasPosition = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private GeocodeFilter _filter;
         private GeocodeIntendedUse _intendedUse;
@@ -54,6 +58,7 @@ namespace Amazon.GeoPlaces.Model
         private string _language;
         private int? _maxResults;
         private string _politicalView;
+        private PostalCodeMode _postalCodeMode;
         private GeocodeQueryComponents _queryComponents;
         private string _queryText;
 
@@ -80,6 +85,54 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetAdditionalFeatures()
         {
             return this._additionalFeatures != null && (this._additionalFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddressNamesMode. 
+        /// <para>
+        /// Specifies how address names are returned. If not set, the service returns normalized
+        /// (official) names by default. When set to <c>Matched</c>, address names in the response
+        /// are based on the input query rather than official names. When set to <c>Administrative</c>,
+        /// the service returns the official administrative names for address components. <c>Administrative</c>
+        /// currently applies only to addresses in the United States.
+        /// </para>
+        /// </summary>
+        public GeocodeAddressNamesMode AddressNamesMode
+        {
+            get { return this._addressNamesMode; }
+            set { this._addressNamesMode = value; }
+        }
+
+        // Check to see if AddressNamesMode property is set
+        internal bool IsSetAddressNamesMode()
+        {
+            return this._addressNamesMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddressTranslations. 
+        /// <para>
+        /// Specifies which address components to include translations for. Translations include
+        /// all name variants and alternative names for the requested fields in all available
+        /// languages. Valid values are <c>District</c>, <c>Locality</c>, <c>Region</c>, and <c>SubRegion</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<string> AddressTranslations
+        {
+            get { return this._addressTranslations; }
+            set { this._addressTranslations = value; }
+        }
+
+        // Check to see if AddressTranslations property is set
+        internal bool IsSetAddressTranslations()
+        {
+            return this._addressTranslations != null && (this._addressTranslations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,9 +233,10 @@ namespace Amazon.GeoPlaces.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// A list of <a href="https://en.wikipedia.org/wiki/IETF_language_tag">BCP 47</a> compliant
-        /// language codes for the results to be rendered in. If there is no data for the result
-        /// in the requested language, data will be returned in the default language for the entry.
+        /// A list of <a href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry">BCP
+        /// 47</a> compliant language codes for the results to be rendered in. If there is no
+        /// data for the result in the requested language, data will be returned in the default
+        /// language for the entry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]
@@ -240,6 +294,29 @@ namespace Amazon.GeoPlaces.Model
         internal bool IsSetPoliticalView()
         {
             return this._politicalView != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PostalCodeMode. 
+        /// <para>
+        /// The <c>PostalCodeMode</c> affects how postal code results are returned. If a postal
+        /// code spans multiple localities and this value is empty, partial district or locality
+        /// information may be returned under a single postal code result entry. If it's populated
+        /// with the value <c>EnumerateSpannedLocalities</c>, all cities in that postal code are
+        /// returned. If it's populated with the value <c>EnumerateSpannedDistricts</c>, all combinations
+        /// of the postal code with the corresponding district and city names are returned.
+        /// </para>
+        /// </summary>
+        public PostalCodeMode PostalCodeMode
+        {
+            get { return this._postalCodeMode; }
+            set { this._postalCodeMode = value; }
+        }
+
+        // Check to see if PostalCodeMode property is set
+        internal bool IsSetPostalCodeMode()
+        {
+            return this._postalCodeMode != null;
         }
 
         /// <summary>

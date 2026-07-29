@@ -67,6 +67,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.PolicyRuleNumber = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("state", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("targetRouteTableId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

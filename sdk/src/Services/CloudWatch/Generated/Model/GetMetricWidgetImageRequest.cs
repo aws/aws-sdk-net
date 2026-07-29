@@ -72,7 +72,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about the syntax of <c>MetricWidget</c> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage:
+        /// For more information about the syntax of <c>MetricWidget</c> see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Metric-Widget-Structure.html">GetMetricWidgetImage:
         /// Metric Widget Structure and Syntax</a>.
         /// </para>
         ///  

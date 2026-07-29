@@ -255,4 +255,96 @@ namespace Amazon.Sustainability
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type WaterAllocationType.
+    /// </summary>
+    public class WaterAllocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TOTAL_WATER_WITHDRAWALS for WaterAllocationType
+        /// </summary>
+        public static readonly WaterAllocationType TOTAL_WATER_WITHDRAWALS = new WaterAllocationType("TOTAL_WATER_WITHDRAWALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WaterAllocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WaterAllocationType FindValue(string value)
+        {
+            return FindValue<WaterAllocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WaterAllocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type WaterAllocationUnit.
+    /// </summary>
+    public class WaterAllocationUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant M3 for WaterAllocationUnit
+        /// </summary>
+        public static readonly WaterAllocationUnit M3 = new WaterAllocationUnit("m3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public WaterAllocationUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static WaterAllocationUnit FindValue(string value)
+        {
+            return FindValue<WaterAllocationUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator WaterAllocationUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

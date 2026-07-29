@@ -69,8 +69,10 @@ namespace Amazon.CloudFormation.Model
         private string _changeSetName;
         private ChangeSetType _changeSetType;
         private string _clientToken;
+        private DeploymentConfig _deploymentConfig;
         private DeploymentMode _deploymentMode;
         private string _description;
+        private bool? _disableValidation;
         private bool? _importExistingResources;
         private bool? _includeNestedStacks;
         private List<string> _notificationARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -306,6 +308,24 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeploymentConfig. 
+        /// <para>
+        /// The deployment configuration for this stack operation, including the deployment mode.
+        /// </para>
+        /// </summary>
+        public DeploymentConfig DeploymentConfig
+        {
+            get { return this._deploymentConfig; }
+            set { this._deploymentConfig = value; }
+        }
+
+        // Check to see if DeploymentConfig property is set
+        internal bool IsSetDeploymentConfig()
+        {
+            return this._deploymentConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DeploymentMode. 
         /// <para>
         /// Determines how CloudFormation handles configuration drift during deployment.
@@ -351,6 +371,29 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisableValidation. 
+        /// <para>
+        ///  Set to <c>true</c> to disable pre-deployment validations in changeset or stack operations.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  Default: <c>false</c> 
+        /// </para>
+        /// </summary>
+        public bool? DisableValidation
+        {
+            get { return this._disableValidation; }
+            set { this._disableValidation = value; }
+        }
+
+        // Check to see if DisableValidation property is set
+        internal bool IsSetDisableValidation()
+        {
+            return this._disableValidation.HasValue; 
         }
 
         /// <summary>

@@ -63,6 +63,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAssessmentStatuses())
+                request.ParameterCollection.Add("assessmentStatuses", publicRequest.AssessmentStatuses);
+            
+            if (publicRequest.IsSetEndedBefore())
+                request.Parameters.Add("endedBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndedBefore));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -73,6 +79,15 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetServiceArn())
                 request.Parameters.Add("serviceArn", StringUtils.FromString(publicRequest.ServiceArn));
+            
+            if (publicRequest.IsSetSortBy())
+                request.Parameters.Add("sortBy", StringUtils.FromString(publicRequest.SortBy));
+            
+            if (publicRequest.IsSetSortOrder())
+                request.Parameters.Add("sortOrder", StringUtils.FromString(publicRequest.SortOrder));
+            
+            if (publicRequest.IsSetStartedAfter())
+                request.Parameters.Add("startedAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartedAfter));
             request.ResourcePath = "/v2/list-failure-mode-assessments";
             request.UseQueryString = true;
 

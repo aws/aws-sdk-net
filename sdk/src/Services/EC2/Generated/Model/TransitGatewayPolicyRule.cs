@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationPortRange. 
         /// <para>
-        /// The port range for the transit gateway policy rule. Currently this is set to * (all).
+        /// The destination port or port range for the transit gateway policy rule.
         /// </para>
         /// </summary>
         public string DestinationPortRange
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourcePortRange. 
         /// <para>
-        /// The port range for the transit gateway policy rule. Currently this is set to * (all).
+        /// The source port or port range for the transit gateway policy rule.
         /// </para>
         /// </summary>
         public string SourcePortRange

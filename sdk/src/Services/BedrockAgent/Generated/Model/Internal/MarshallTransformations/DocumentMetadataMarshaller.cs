@@ -46,6 +46,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAccessControlList())
+            {
+                context.Writer.WritePropertyName("accessControlList");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAccessControlListListValue in requestObject.AccessControlList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DocumentAccessControlEntryMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAccessControlListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetInlineAttributes())
             {
                 context.Writer.WritePropertyName("inlineAttributes");

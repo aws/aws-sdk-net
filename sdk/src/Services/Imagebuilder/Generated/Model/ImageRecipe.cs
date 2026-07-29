@@ -36,6 +36,7 @@ namespace Amazon.Imagebuilder.Model
     {
         private AdditionalInstanceConfiguration _additionalInstanceConfiguration;
         private Dictionary<string, string> _amiTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _amiWatermarks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
         private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private List<ComponentConfiguration> _components = AWSConfigs.InitializeCollections ? new List<ComponentConfiguration>() : null;
@@ -94,6 +95,32 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetAmiTags()
         {
             return this._amiTags != null && (this._amiTags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmiWatermarks. 
+        /// <para>
+        /// The AMI watermark names attached to the output AMI from this recipe. AMI watermarks
+        /// are lineage markers that automatically propagate to derivative AMIs when the source
+        /// AMI is copied or distributed.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> AmiWatermarks
+        {
+            get { return this._amiWatermarks; }
+            set { this._amiWatermarks = value; }
+        }
+
+        // Check to see if AmiWatermarks property is set
+        internal bool IsSetAmiWatermarks()
+        {
+            return this._amiWatermarks != null && (this._amiWatermarks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -1,0 +1,56 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example.emptyauth#Service": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        {
+          "target": "com.example.emptyauth#GetItem"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Empty Auth",
+          "endpointPrefix": "empty-auth"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Empty Auth (synthetic test service)",
+        "aws.auth#sigv4": {
+          "name": "empty-auth"
+        },
+        "smithy.api#auth": []
+      }
+    },
+    "com.example.emptyauth#GetItem": {
+      "type": "operation",
+      "input": {
+        "target": "com.example.emptyauth#GetItemRequest"
+      },
+      "output": {
+        "target": "com.example.emptyauth#GetItemResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/{Id}",
+          "method": "GET"
+        },
+        "smithy.api#auth": []
+      }
+    },
+    "com.example.emptyauth#GetItemRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.example.emptyauth#GetItemResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}

@@ -34,8 +34,27 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ProviderDetail
     {
+        private AzureDetail _azure;
         private JiraCloudDetail _jiraCloud;
         private ServiceNowDetail _serviceNow;
+
+        /// <summary>
+        /// Gets and sets the property Azure. 
+        /// <para>
+        /// Details about a Microsoft Azure CSPM integration.
+        /// </para>
+        /// </summary>
+        public AzureDetail Azure
+        {
+            get { return this._azure; }
+            set { this._azure = value; }
+        }
+
+        // Check to see if Azure property is set
+        internal bool IsSetAzure()
+        {
+            return this._azure != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JiraCloud. 

@@ -84,9 +84,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AppSecretConfig. 
         /// <para>
-        /// A reference to the AWS Secrets Manager secret that stores the app secret. This includes
-        /// the secret ID and the JSON key used to extract the app secret value from the secret.
-        /// Required when <c>appSecretSource</c> is set to <c>EXTERNAL</c>.
+        /// A reference to the Amazon Web Services Secrets Manager secret that stores the app
+        /// secret. This includes the secret ID and the JSON key used to extract the app secret
+        /// value from the secret. Required when <c>appSecretSource</c> is set to <c>EXTERNAL</c>.
         /// </para>
         /// </summary>
         public SecretReference AppSecretConfig
@@ -105,7 +105,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property AppSecretSource. 
         /// <para>
         /// The source type of the app secret. Use <c>MANAGED</c> if the secret is managed by
-        /// the service, or <c>EXTERNAL</c> if you manage the secret yourself in AWS Secrets Manager.
+        /// the service, or <c>EXTERNAL</c> if you manage the secret yourself in Amazon Web Services
+        /// Secrets Manager.
         /// </para>
         /// </summary>
         public SecretSourceType AppSecretSource
@@ -161,8 +162,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property AuthorizationPrivateKeyConfig. 
         /// <para>
-        /// A reference to the AWS Secrets Manager secret that stores the authorization private
-        /// key. This includes the secret ID and the JSON key used to extract the authorization
+        /// A reference to the Amazon Web Services Secrets Manager secret that stores the authorization
+        /// private key. This includes the secret ID and the JSON key used to extract the authorization
         /// private key value from the secret. Required when <c>authorizationPrivateKeySource</c>
         /// is set to <c>EXTERNAL</c>.
         /// </para>
@@ -184,7 +185,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// The source type of the authorization private key. Use <c>MANAGED</c> if the secret
         /// is managed by the service, or <c>EXTERNAL</c> if you manage the secret yourself in
-        /// AWS Secrets Manager.
+        /// Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
         public SecretSourceType AuthorizationPrivateKeySource

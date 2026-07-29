@@ -58,6 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private long? _timeoutSeconds;
         private List<AlarmStateInformation> _triggeredAlarms = AWSConfigs.InitializeCollections ? new List<AlarmStateInformation>() : null;
         private List<string> _validNextSteps = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _warningMessage;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -531,6 +532,25 @@ namespace Amazon.SimpleSystemsManagement.Model
         internal bool IsSetValidNextSteps()
         {
             return this._validNextSteps != null && (this._validNextSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarningMessage. 
+        /// <para>
+        /// A message that describes a non-critical issue that occurred during the step execution.
+        /// Present only if the step status includes a warning.
+        /// </para>
+        /// </summary>
+        public string WarningMessage
+        {
+            get { return this._warningMessage; }
+            set { this._warningMessage = value; }
+        }
+
+        // Check to see if WarningMessage property is set
+        internal bool IsSetWarningMessage()
+        {
+            return this._warningMessage != null;
         }
 
     }

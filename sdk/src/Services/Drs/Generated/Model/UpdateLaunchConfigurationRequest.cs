@@ -42,6 +42,7 @@ namespace Amazon.Drs.Model
         private Licensing _licensing;
         private string _name;
         private bool? _postLaunchEnabled;
+        private RecoveryMode _recoveryMode;
         private string _sourceServerID;
         private TargetInstanceTypeRightSizingMethod _targetInstanceTypeRightSizingMethod;
 
@@ -171,6 +172,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetPostLaunchEnabled()
         {
             return this._postLaunchEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecoveryMode. 
+        /// <para>
+        /// Recovery mode.
+        /// </para>
+        /// </summary>
+        public RecoveryMode RecoveryMode
+        {
+            get { return this._recoveryMode; }
+            set { this._recoveryMode = value; }
+        }
+
+        // Check to see if RecoveryMode property is set
+        internal bool IsSetRecoveryMode()
+        {
+            return this._recoveryMode != null;
         }
 
         /// <summary>

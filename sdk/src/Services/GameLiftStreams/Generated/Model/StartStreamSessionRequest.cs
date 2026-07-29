@@ -180,10 +180,12 @@ namespace Amazon.GameLiftStreams.Model
         private string _clientToken;
         private int? _connectionTimeoutSeconds;
         private string _description;
+        private DisplayConfiguration _displayConfiguration;
         private string _identifier;
         private List<string> _locations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PerformanceStatsConfiguration _performanceStatsConfiguration;
         private Protocol _protocol;
+        private string _roleArn;
         private int? _sessionLengthSeconds;
         private string _signalRequest;
         private string _userId;
@@ -347,6 +349,29 @@ namespace Amazon.GameLiftStreams.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DisplayConfiguration. 
+        /// <para>
+        /// The configuration for the stream session's virtual monitor, including the resolution
+        /// settings.
+        /// </para>
+        ///  
+        /// <para>
+        /// If not specified, Amazon GameLift Streams uses the default resolution of 1920 × 1080.
+        /// </para>
+        /// </summary>
+        public DisplayConfiguration DisplayConfiguration
+        {
+            get { return this._displayConfiguration; }
+            set { this._displayConfiguration = value; }
+        }
+
+        // Check to see if DisplayConfiguration property is set
+        internal bool IsSetDisplayConfiguration()
+        {
+            return this._displayConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The stream group to run this stream session with.
@@ -443,6 +468,29 @@ namespace Amazon.GameLiftStreams.Model
         internal bool IsSetProtocol()
         {
             return this._protocol != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RoleArn. 
+        /// <para>
+        /// The ARN of an AWS Identity and Access Management (IAM) role that Amazon GameLift Streams
+        /// assumes on your behalf during the stream session. The role grants Amazon GameLift
+        /// Streams permission to obtain temporary credentials for your application. The role's
+        /// trust policy must allow the <c>gameliftstreams.amazonaws.com</c> service principal
+        /// to assume it. The role name must start with <c>GameLiftStreams-</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
         }
 
         /// <summary>

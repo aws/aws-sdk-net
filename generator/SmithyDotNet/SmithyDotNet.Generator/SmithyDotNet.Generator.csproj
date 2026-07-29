@@ -9,6 +9,12 @@
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <!-- The default output dir for `dotnet run` / the launch profile. Its generated .cs files would
+       otherwise be globbed into this project's own compilation. -->
+  <ItemGroup>
+    <Compile Remove="generated-output/**/*.cs" />
+  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.3.0" />
   </ItemGroup>

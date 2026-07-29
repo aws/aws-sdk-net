@@ -134,6 +134,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.EncryptionAtRestOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EngineMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = EngineModeStatusUnmarshaller.Instance;
+                    unmarshalledObject.EngineMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("EngineVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = VersionStatusUnmarshaller.Instance;
@@ -186,6 +192,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = SoftwareUpdateOptionsStatusUnmarshaller.Instance;
                     unmarshalledObject.SoftwareUpdateOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("UseCase", targetDepth, ref reader))
+                {
+                    var unmarshaller = UseCaseStatusUnmarshaller.Instance;
+                    unmarshalledObject.UseCase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VPCOptions", targetDepth, ref reader))

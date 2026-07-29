@@ -35,9 +35,28 @@ namespace Amazon.Evs.Model
     /// </summary>
     public partial class Check
     {
+        private string _id;
         private DateTime? _impairedSince;
         private CheckResult _result;
         private CheckType _type;
+
+        /// <summary>
+        /// Gets and sets the property Id. 
+        /// <para>
+        /// A unique ID for the check.
+        /// </para>
+        /// </summary>
+        public string Id
+        {
+            get { return this._id; }
+            set { this._id = value; }
+        }
+
+        // Check to see if Id property is set
+        internal bool IsSetId()
+        {
+            return this._id != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ImpairedSince. 
@@ -78,33 +97,70 @@ namespace Amazon.Evs.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The check type. Amazon EVS performs the following checks.
+        /// The check type. Amazon EVS performs the following checks:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>KEY_REUSE</c>: checks that the VCF license key is not used by another Amazon EVS
-        /// environment. This check fails if a used license is added to the environment.
+        ///  <c>KEY_REUSE</c>: Verifies that the VCF license key is not used by another Amazon
+        /// EVS environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>KEY_COVERAGE</c>: checks that your VCF license key allocates sufficient vCPU cores
-        /// for all deployed hosts. The check fails when any assigned hosts in the EVS environment
-        /// are not covered by license keys, or when any unassigned hosts cannot be covered by
-        /// available vCPU cores in keys.
+        ///  <c>KEY_COVERAGE</c>: Verifies that the VCF license key allocates sufficient vCPU
+        /// cores for all deployed hosts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>REACHABILITY</c>: checks that the Amazon EVS control plane has a persistent connection
-        /// to SDDC Manager. If Amazon EVS cannot reach the environment, this check fails.
+        ///  <c>REACHABILITY</c>: Verifies that the Amazon EVS control plane has a persistent
+        /// connection to SDDC Manager.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>HOST_COUNT</c>: Checks that your environment has a minimum of 4 hosts.
+        ///  <c>HOST_COUNT</c>: Verifies that the environment meets the minimum host count.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// If this check fails, you will need to add hosts so that your environment meets this
-        /// minimum requirement. Amazon EVS only supports environments with 4-32 hosts.
+        ///  <c>VCENTER_REACHABILITY</c>: Verifies vCenter Server reachability through the vCenter
+        /// connector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VCENTER_VM_SYNC</c>: Verifies that the vCenter connector can synchronize VM inventory
+        /// from vCenter Server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VCENTER_VM_EVENT</c>: Verifies that the vCenter connector can receive VM lifecycle
+        /// events from vCenter Server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OPERATIONS_MANAGER_REACHABILITY</c>: Verifies Operations Manager reachability
+        /// through the Operations Manager connector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SDDC_MANAGER_REACHABILITY</c>: Verifies SDDC Manager reachability through the
+        /// SDDC Manager connector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SDDC_MANAGER_HOST_COUNT</c>: Verifies that the host count reported by SDDC Manager
+        /// meets Amazon EVS minimum requirements.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SDDC_MANAGER_KEY_COVERAGE</c>: Verifies that the VCF license key configured in
+        /// SDDC Manager covers all deployed hosts.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SDDC_MANAGER_KEY_REUSE</c>: Verifies that the VCF license key configured in SDDC
+        /// Manager is not used by another Amazon EVS environment.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CONNECTOR_HEALTH</c>: Aggregate health across all connectors in the environment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

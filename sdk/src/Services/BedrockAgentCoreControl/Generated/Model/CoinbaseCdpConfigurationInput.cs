@@ -83,9 +83,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ApiKeySecretConfig. 
         /// <para>
-        /// A reference to the AWS Secrets Manager secret that stores the API key secret. This
-        /// includes the secret ID and the JSON key used to extract the API key secret value from
-        /// the secret. Required when <c>apiKeySecretSource</c> is set to <c>EXTERNAL</c>.
+        /// A reference to the Amazon Web Services Secrets Manager secret that stores the API
+        /// key secret. This includes the secret ID and the JSON key used to extract the API key
+        /// secret value from the secret. Required when <c>apiKeySecretSource</c> is set to <c>EXTERNAL</c>.
         /// </para>
         /// </summary>
         public SecretReference ApiKeySecretConfig
@@ -105,7 +105,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// The source type of the API key secret for the Coinbase Developer Platform. Use <c>MANAGED</c>
         /// if the secret is managed by the service, or <c>EXTERNAL</c> if you manage the secret
-        /// yourself in AWS Secrets Manager.
+        /// yourself in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
         public SecretSourceType ApiKeySecretSource
@@ -142,9 +142,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property WalletSecretConfig. 
         /// <para>
-        /// A reference to the AWS Secrets Manager secret that stores the wallet secret. This
-        /// includes the secret ID and the JSON key used to extract the wallet secret value from
-        /// the secret. Required when <c>walletSecretSource</c> is set to <c>EXTERNAL</c>.
+        /// A reference to the Amazon Web Services Secrets Manager secret that stores the wallet
+        /// secret. This includes the secret ID and the JSON key used to extract the wallet secret
+        /// value from the secret. Required when <c>walletSecretSource</c> is set to <c>EXTERNAL</c>.
         /// </para>
         /// </summary>
         public SecretReference WalletSecretConfig
@@ -164,7 +164,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// The source type of the wallet secret for the Coinbase Developer Platform. Use <c>MANAGED</c>
         /// if the secret is managed by the service, or <c>EXTERNAL</c> if you manage the secret
-        /// yourself in AWS Secrets Manager.
+        /// yourself in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
         public SecretSourceType WalletSecretSource

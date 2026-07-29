@@ -33,6 +33,13 @@ namespace Amazon.ChimeSDKVoice.Model
     /// Container for the parameters to the GetProxySession operation.
     /// Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice
     /// Connector.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+    /// proxy sessions.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class GetProxySessionRequest : AmazonChimeSDKVoiceRequest
     {
@@ -64,7 +71,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The Voice Connector ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string VoiceConnectorId
         {
             get { return this._voiceConnectorId; }

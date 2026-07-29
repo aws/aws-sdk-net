@@ -49,7 +49,7 @@ namespace Amazon.Lambda.Model
         /// value allowed is 1.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2000)]
+        [AWSProperty(Min=1, Max=10000)]
         public int? MaximumPollers
         {
             get { return this._maximumPollers; }

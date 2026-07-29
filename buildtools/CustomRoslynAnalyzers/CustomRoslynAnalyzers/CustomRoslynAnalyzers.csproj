@@ -1,5 +1,4 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <IncludeBuildOutput>false</IncludeBuildOutput>
@@ -34,7 +33,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if $(ConfigurationName) == Debug (xcopy &quot;$(ProjectDir)bin\Debug\netstandard2.0\$(TargetFileName)&quot; &quot;$(ProjectDir)..\..\&quot; /Y) else (xcopy &quot;$(ProjectDir)bin\Release\netstandard2.0\$(TargetFileName)&quot; &quot;$(ProjectDir)..\..\&quot; /Y)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ProjectDir)..\..\" />
   </Target>
-
 </Project>

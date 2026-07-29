@@ -48,6 +48,16 @@ namespace Amazon.NetworkFirewall.Model
         IListAnalysisReportsPaginator ListAnalysisReports(ListAnalysisReportsRequest request);
 
         /// <summary>
+        /// Paginator for ListContainerAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListContainerAssociationsPaginator ListContainerAssociations(ListContainerAssociationsRequest request);
+
+        /// <summary>
         /// Paginator for ListFirewallPolicies operation
         ///</summary>
         [AWSPaginator(

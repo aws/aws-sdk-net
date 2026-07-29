@@ -420,21 +420,24 @@ namespace Amazon.Evs
         /// Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX
         /// Manager, and vCenter Server.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// During environment creation, Amazon EVS performs validations on DNS settings, provisions
-        /// VLAN subnets and hosts, and deploys the supplied version of VCF.
+        /// When you specify <c>SELF_DEPLOYED</c> for <c>vcfVersion</c>, Amazon EVS provisions
+        /// only the VLAN subnets; no hosts are added and no VCF installation is performed. After
+        /// the environment is created, you can add hosts with <c>CreateEnvironmentHost</c> and
+        /// install VCF yourself. The <c>licenseInfo</c>, <c>hosts</c>, <c>vcfHostnames</c>, <c>siteId</c>,
+        /// and <c>connectivityInfo</c> parameters are not supported in this mode.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
-        /// It can take several hours to create an environment. After the deployment completes,
-        /// you can configure VCF in the vSphere user interface according to your needs.
+        /// When you specify any other VCF version, Amazon EVS installs and configures VCF for
+        /// you. For more information, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/getting-started-self-deployed.html">Self-deployed
+        /// mode</a> in the <i>Amazon EVS User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// When creating a new environment, the default ESX version for the selected VCF version
-        /// will be used, you cannot choose a specific ESX version in <c>CreateEnvironment</c>
-        /// action. When a host has been added with a specific ESX version, it can only be upgraded
+        /// When Amazon EVS installs VCF, the default ESX version for the selected VCF version
+        /// will be used. After a host is added with a specific ESX version, it can only be upgraded
         /// using vCenter Lifecycle Manager.
         /// </para>
         ///  </important> <note> 
@@ -468,21 +471,24 @@ namespace Amazon.Evs
         /// Creates an Amazon EVS environment that runs VCF software, such as SDDC Manager, NSX
         /// Manager, and vCenter Server.
         /// 
-        ///  
+        ///  <note> 
         /// <para>
-        /// During environment creation, Amazon EVS performs validations on DNS settings, provisions
-        /// VLAN subnets and hosts, and deploys the supplied version of VCF.
+        /// When you specify <c>SELF_DEPLOYED</c> for <c>vcfVersion</c>, Amazon EVS provisions
+        /// only the VLAN subnets; no hosts are added and no VCF installation is performed. After
+        /// the environment is created, you can add hosts with <c>CreateEnvironmentHost</c> and
+        /// install VCF yourself. The <c>licenseInfo</c>, <c>hosts</c>, <c>vcfHostnames</c>, <c>siteId</c>,
+        /// and <c>connectivityInfo</c> parameters are not supported in this mode.
         /// </para>
-        ///  
+        ///  </note> 
         /// <para>
-        /// It can take several hours to create an environment. After the deployment completes,
-        /// you can configure VCF in the vSphere user interface according to your needs.
+        /// When you specify any other VCF version, Amazon EVS installs and configures VCF for
+        /// you. For more information, see <a href="https://docs.aws.amazon.com/evs/latest/userguide/getting-started-self-deployed.html">Self-deployed
+        /// mode</a> in the <i>Amazon EVS User Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// When creating a new environment, the default ESX version for the selected VCF version
-        /// will be used, you cannot choose a specific ESX version in <c>CreateEnvironment</c>
-        /// action. When a host has been added with a specific ESX version, it can only be upgraded
+        /// When Amazon EVS installs VCF, the default ESX version for the selected VCF version
+        /// will be used. After a host is added with a specific ESX version, it can only be upgraded
         /// using vCenter Lifecycle Manager.
         /// </para>
         ///  </important> <note> 
@@ -520,9 +526,20 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// Creates a connector for an Amazon EVS environment. A connector establishes a connection
-        /// to a VCF appliance, such as vCenter, using a fully qualified domain name and an Amazon
-        /// Web Services Secrets Manager secret that stores the appliance credentials.
+        /// Creates a connector for an Amazon EVS environment. A connector allows the Amazon EVS
+        /// control plane to interface with VCF appliances using a fully qualified domain name.
+        /// 
+        ///  
+        /// <para>
+        /// You can create only one connector of each type per environment. For environments where
+        /// Amazon EVS installs VCF, the <c>SDDC_MANAGER</c> connector is created automatically.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon EVS requires an active connector to SDDC Manager or VCF Operations Manager
+        /// to monitor environment health and license compliance.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentConnector service method.</param>
         /// 
@@ -552,9 +569,20 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// Creates a connector for an Amazon EVS environment. A connector establishes a connection
-        /// to a VCF appliance, such as vCenter, using a fully qualified domain name and an Amazon
-        /// Web Services Secrets Manager secret that stores the appliance credentials.
+        /// Creates a connector for an Amazon EVS environment. A connector allows the Amazon EVS
+        /// control plane to interface with VCF appliances using a fully qualified domain name.
+        /// 
+        ///  
+        /// <para>
+        /// You can create only one connector of each type per environment. For environments where
+        /// Amazon EVS installs VCF, the <c>SDDC_MANAGER</c> connector is created automatically.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon EVS requires an active connector to SDDC Manager or VCF Operations Manager
+        /// to monitor environment health and license compliance.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironmentConnector service method.</param>
         /// <param name="cancellationToken">
@@ -591,8 +619,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
-        /// 4-32 hosts per environment.
+        /// Creates an ESX host and adds it to an Amazon EVS environment.
         /// 
         ///  
         /// <para>
@@ -611,11 +638,11 @@ namespace Amazon.Evs
         ///  <note> 
         /// <para>
         /// If you don't specify an ESX version when adding hosts using <c>CreateEnvironmentHost</c>
-        /// action, Amazon EVS automatically uses the default ESX version associated with your
-        /// environment's VCF version. To find the default ESX version for a particular VCF version,
-        /// use the <c>GetVersions</c> action.
+        /// action, Amazon EVS automatically uses the default ESX version for your environment's
+        /// VCF version. To find the available ESX versions for a particular VCF version, use
+        /// the <c>GetVersions</c> action.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
         /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
         /// in the same <c>CreateEnvironmentHost</c> action. This results in a <c>ValidationException</c>
@@ -647,8 +674,7 @@ namespace Amazon.Evs
 
 
         /// <summary>
-        /// Creates an ESX host and adds it to an Amazon EVS environment. Amazon EVS supports
-        /// 4-32 hosts per environment.
+        /// Creates an ESX host and adds it to an Amazon EVS environment.
         /// 
         ///  
         /// <para>
@@ -667,11 +693,11 @@ namespace Amazon.Evs
         ///  <note> 
         /// <para>
         /// If you don't specify an ESX version when adding hosts using <c>CreateEnvironmentHost</c>
-        /// action, Amazon EVS automatically uses the default ESX version associated with your
-        /// environment's VCF version. To find the default ESX version for a particular VCF version,
-        /// use the <c>GetVersions</c> action.
+        /// action, Amazon EVS automatically uses the default ESX version for your environment's
+        /// VCF version. To find the available ESX versions for a particular VCF version, use
+        /// the <c>GetVersions</c> action.
         /// </para>
-        ///  </note> <note> 
+        ///  
         /// <para>
         /// You cannot use the <c>dedicatedHostId</c> and <c>placementGroupId</c> parameters together
         /// in the same <c>CreateEnvironmentHost</c> action. This results in a <c>ValidationException</c>

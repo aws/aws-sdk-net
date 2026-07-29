@@ -50,10 +50,12 @@ namespace Amazon.Elasticsearch.Model
         private ElasticsearchClusterConfig _elasticsearchClusterConfig;
         private string _elasticsearchVersion;
         private EncryptionAtRestOptions _encryptionAtRestOptions;
+        private DomainEngineMode _engineMode;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
         private SnapshotOptions _snapshotOptions;
         private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private DomainUseCase _useCase;
         private VPCOptions _vpcOptions;
 
         /// <summary>
@@ -319,6 +321,24 @@ namespace Amazon.Elasticsearch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The engine mode for the domain. For valid values and requirements, see <c>DomainEngineMode</c>.
+        /// </para>
+        /// </summary>
+        public DomainEngineMode EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
         /// Map of <c>LogType</c> and <c>LogPublishingOption</c>, each containing options to publish
@@ -400,6 +420,24 @@ namespace Amazon.Elasticsearch.Model
         internal bool IsSetTagList()
         {
             return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseCase. 
+        /// <para>
+        /// The primary use case for the domain. For valid values, see <c>DomainUseCase</c>.
+        /// </para>
+        /// </summary>
+        public DomainUseCase UseCase
+        {
+            get { return this._useCase; }
+            set { this._useCase = value; }
+        }
+
+        // Check to see if UseCase property is set
+        internal bool IsSetUseCase()
+        {
+            return this._useCase != null;
         }
 
         /// <summary>

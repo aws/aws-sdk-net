@@ -62,7 +62,10 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentSpaceId.
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The unique identifier for the agent space where the Trigger will be created
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentSpaceId

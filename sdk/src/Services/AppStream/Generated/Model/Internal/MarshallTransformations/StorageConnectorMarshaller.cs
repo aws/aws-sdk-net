@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// StorageConnector Marshaller
     /// </summary>
-    public class StorageConnectorMarshaller : IRequestMarshaller<StorageConnector, JsonMarshallerContext> 
+    public class StorageConnectorMarshaller : IRequestMarshaller<StorageConnector, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,44 +45,41 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(StorageConnector requestObject, JsonMarshallerContext context)
+        public void Marshall(StorageConnector requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetConnectorType())
-            {
-                context.Writer.WritePropertyName("ConnectorType");
-                context.Writer.WriteStringValue(requestObject.ConnectorType);
-            }
 
-            if(requestObject.IsSetDomains())
+            if (requestObject.IsSetConnectorType())
             {
-                context.Writer.WritePropertyName("Domains");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("ConnectorType");
+                context.Writer.WriteTextString(requestObject.ConnectorType);
+            }
+            if (requestObject.IsSetDomains())
+            {
+                context.Writer.WriteTextString("Domains");
+                context.Writer.WriteStartArray(requestObject.Domains.Count);
                 foreach(var requestObjectDomainsListValue in requestObject.Domains)
                 {
-                        context.Writer.WriteStringValue(requestObjectDomainsListValue);
+                        context.Writer.WriteTextString(requestObjectDomainsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetDomainsRequireAdminConsent())
+            if (requestObject.IsSetDomainsRequireAdminConsent())
             {
-                context.Writer.WritePropertyName("DomainsRequireAdminConsent");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("DomainsRequireAdminConsent");
+                context.Writer.WriteStartArray(requestObject.DomainsRequireAdminConsent.Count);
                 foreach(var requestObjectDomainsRequireAdminConsentListValue in requestObject.DomainsRequireAdminConsent)
                 {
-                        context.Writer.WriteStringValue(requestObjectDomainsRequireAdminConsentListValue);
+                        context.Writer.WriteTextString(requestObjectDomainsRequireAdminConsentListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetResourceIdentifier())
+            if (requestObject.IsSetResourceIdentifier())
             {
-                context.Writer.WritePropertyName("ResourceIdentifier");
-                context.Writer.WriteStringValue(requestObject.ResourceIdentifier);
+                context.Writer.WriteTextString("ResourceIdentifier");
+                context.Writer.WriteTextString(requestObject.ResourceIdentifier);
             }
-
         }
 
         /// <summary>

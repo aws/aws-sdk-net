@@ -195,6 +195,264 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type AgenticRetrieveRerankingConfigurationType.
+    /// </summary>
+    public class AgenticRetrieveRerankingConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEDROCK_RERANKING_MODEL for AgenticRetrieveRerankingConfigurationType
+        /// </summary>
+        public static readonly AgenticRetrieveRerankingConfigurationType BEDROCK_RERANKING_MODEL = new AgenticRetrieveRerankingConfigurationType("BEDROCK_RERANKING_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgenticRetrieveRerankingConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgenticRetrieveRerankingConfigurationType FindValue(string value)
+        {
+            return FindValue<AgenticRetrieveRerankingConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgenticRetrieveRerankingConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgenticRetrieveRerankingModelType.
+    /// </summary>
+    public class AgenticRetrieveRerankingModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for AgenticRetrieveRerankingModelType
+        /// </summary>
+        public static readonly AgenticRetrieveRerankingModelType CUSTOM = new AgenticRetrieveRerankingModelType("CUSTOM");
+        /// <summary>
+        /// Constant MANAGED for AgenticRetrieveRerankingModelType
+        /// </summary>
+        public static readonly AgenticRetrieveRerankingModelType MANAGED = new AgenticRetrieveRerankingModelType("MANAGED");
+        /// <summary>
+        /// Constant NONE for AgenticRetrieveRerankingModelType
+        /// </summary>
+        public static readonly AgenticRetrieveRerankingModelType NONE = new AgenticRetrieveRerankingModelType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgenticRetrieveRerankingModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgenticRetrieveRerankingModelType FindValue(string value)
+        {
+            return FindValue<AgenticRetrieveRerankingModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgenticRetrieveRerankingModelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgenticRetrieveStatus.
+    /// </summary>
+    public class AgenticRetrieveStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AgenticRetrieveStatus
+        /// </summary>
+        public static readonly AgenticRetrieveStatus FAILED = new AgenticRetrieveStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for AgenticRetrieveStatus
+        /// </summary>
+        public static readonly AgenticRetrieveStatus IN_PROGRESS = new AgenticRetrieveStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for AgenticRetrieveStatus
+        /// </summary>
+        public static readonly AgenticRetrieveStatus SUCCEEDED = new AgenticRetrieveStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgenticRetrieveStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgenticRetrieveStatus FindValue(string value)
+        {
+            return FindValue<AgenticRetrieveStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgenticRetrieveStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgenticRetrieveStep.
+    /// </summary>
+    public class AgenticRetrieveStep : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FullDocumentExpansion for AgenticRetrieveStep
+        /// </summary>
+        public static readonly AgenticRetrieveStep FullDocumentExpansion = new AgenticRetrieveStep("FullDocumentExpansion");
+        /// <summary>
+        /// Constant Planning for AgenticRetrieveStep
+        /// </summary>
+        public static readonly AgenticRetrieveStep Planning = new AgenticRetrieveStep("Planning");
+        /// <summary>
+        /// Constant Retrieval for AgenticRetrieveStep
+        /// </summary>
+        public static readonly AgenticRetrieveStep Retrieval = new AgenticRetrieveStep("Retrieval");
+        /// <summary>
+        /// Constant SpeculativeRetrieval for AgenticRetrieveStep
+        /// </summary>
+        public static readonly AgenticRetrieveStep SpeculativeRetrieval = new AgenticRetrieveStep("SpeculativeRetrieval");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgenticRetrieveStep(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgenticRetrieveStep FindValue(string value)
+        {
+            return FindValue<AgenticRetrieveStep>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgenticRetrieveStep(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgenticRetrieveType.
+    /// </summary>
+    public class AgenticRetrieveType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BedrockKnowledgeBase for AgenticRetrieveType
+        /// </summary>
+        public static readonly AgenticRetrieveType BedrockKnowledgeBase = new AgenticRetrieveType("BedrockKnowledgeBase");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgenticRetrieveType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgenticRetrieveType FindValue(string value)
+        {
+            return FindValue<AgenticRetrieveType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgenticRetrieveType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AttributeType.
     /// </summary>
     public class AttributeType : ConstantClass
@@ -442,6 +700,56 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CustomControlMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentOutputFormat.
+    /// </summary>
+    public class DocumentOutputFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXTRACTED for DocumentOutputFormat
+        /// </summary>
+        public static readonly DocumentOutputFormat EXTRACTED = new DocumentOutputFormat("EXTRACTED");
+        /// <summary>
+        /// Constant RAW for DocumentOutputFormat
+        /// </summary>
+        public static readonly DocumentOutputFormat RAW = new DocumentOutputFormat("RAW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentOutputFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentOutputFormat FindValue(string value)
+        {
+            return FindValue<DocumentOutputFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentOutputFormat(string value)
         {
             return FindValue(value);
         }
@@ -1070,6 +1378,102 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FlowNodeIODataType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FoundationModelConfigurationType.
+    /// </summary>
+    public class FoundationModelConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEDROCK_FOUNDATION_MODEL for FoundationModelConfigurationType
+        /// </summary>
+        public static readonly FoundationModelConfigurationType BEDROCK_FOUNDATION_MODEL = new FoundationModelConfigurationType("BEDROCK_FOUNDATION_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FoundationModelConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FoundationModelConfigurationType FindValue(string value)
+        {
+            return FindValue<FoundationModelConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FoundationModelConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FoundationModelType.
+    /// </summary>
+    public class FoundationModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for FoundationModelType
+        /// </summary>
+        public static readonly FoundationModelType CUSTOM = new FoundationModelType("CUSTOM");
+        /// <summary>
+        /// Constant MANAGED for FoundationModelType
+        /// </summary>
+        public static readonly FoundationModelType MANAGED = new FoundationModelType("MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FoundationModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FoundationModelType FindValue(string value)
+        {
+            return FindValue<FoundationModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FoundationModelType(string value)
         {
             return FindValue(value);
         }
@@ -2125,6 +2529,52 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ManagedSearchRerankingConfigurationType.
+    /// </summary>
+    public class ManagedSearchRerankingConfigurationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BEDROCK_RERANKING_MODEL for ManagedSearchRerankingConfigurationType
+        /// </summary>
+        public static readonly ManagedSearchRerankingConfigurationType BEDROCK_RERANKING_MODEL = new ManagedSearchRerankingConfigurationType("BEDROCK_RERANKING_MODEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedSearchRerankingConfigurationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedSearchRerankingConfigurationType FindValue(string value)
+        {
+            return FindValue<ManagedSearchRerankingConfigurationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedSearchRerankingConfigurationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MemoryType.
     /// </summary>
     public class MemoryType : ConstantClass
@@ -2961,6 +3411,60 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type RerankingModelType.
+    /// </summary>
+    public class RerankingModelType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM for RerankingModelType
+        /// </summary>
+        public static readonly RerankingModelType CUSTOM = new RerankingModelType("CUSTOM");
+        /// <summary>
+        /// Constant MANAGED for RerankingModelType
+        /// </summary>
+        public static readonly RerankingModelType MANAGED = new RerankingModelType("MANAGED");
+        /// <summary>
+        /// Constant NONE for RerankingModelType
+        /// </summary>
+        public static readonly RerankingModelType NONE = new RerankingModelType("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RerankingModelType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RerankingModelType FindValue(string value)
+        {
+            return FindValue<RerankingModelType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RerankingModelType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RerankQueryContentType.
     /// </summary>
     public class RerankQueryContentType : ConstantClass
@@ -3245,9 +3749,17 @@ namespace Amazon.BedrockAgentRuntime
         /// </summary>
         public static readonly RetrievalResultLocationType CUSTOM = new RetrievalResultLocationType("CUSTOM");
         /// <summary>
+        /// Constant GOOGLEDRIVE for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType GOOGLEDRIVE = new RetrievalResultLocationType("GOOGLEDRIVE");
+        /// <summary>
         /// Constant KENDRA for RetrievalResultLocationType
         /// </summary>
         public static readonly RetrievalResultLocationType KENDRA = new RetrievalResultLocationType("KENDRA");
+        /// <summary>
+        /// Constant ONEDRIVE for RetrievalResultLocationType
+        /// </summary>
+        public static readonly RetrievalResultLocationType ONEDRIVE = new RetrievalResultLocationType("ONEDRIVE");
         /// <summary>
         /// Constant S3 for RetrievalResultLocationType
         /// </summary>

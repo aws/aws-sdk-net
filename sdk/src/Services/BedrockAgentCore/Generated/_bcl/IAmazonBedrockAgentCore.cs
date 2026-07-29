@@ -3781,6 +3781,11 @@ namespace Amazon.BedrockAgentCore
         /// due to network issues, invalid configuration, or other client-side problems. Check
         /// the error message for specific details about the error.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
         /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
@@ -3824,6 +3829,11 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when there is an error in the runtime client. This can happen
         /// due to network issues, invalid configuration, or other client-side problems. Check
         /// the error message for specific details about the error.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This

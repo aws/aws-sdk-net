@@ -62,6 +62,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.ColumnsReferenced = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DistributionValue", targetDepth, ref reader))
+                {
+                    var unmarshaller = DistributionDataUnmarshaller.Instance;
+                    unmarshalledObject.DistributionValue = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DoubleValue", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;

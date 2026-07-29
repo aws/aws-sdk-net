@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -59,86 +58,88 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateThemeForStackRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppStream");
-            string target = "PhotonAdminProxyService.CreateThemeForStack";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.1";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/PhotonAdminProxyService/operation/CreateThemeForStack";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-12-01";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetFaviconS3Location())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("FaviconS3Location");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.FaviconS3Location, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetFooterLinks())
-            {
-                context.Writer.WritePropertyName("FooterLinks");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestFooterLinksListValue in publicRequest.FooterLinks)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetFaviconS3Location())
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteTextString("FaviconS3Location");
+                    context.Writer.WriteStartMap(null);
 
-                    var marshaller = ThemeFooterLinkMarshaller.Instance;
-                    marshaller.Marshall(publicRequestFooterLinksListValue, context);
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FaviconS3Location, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetFooterLinks())
+                {
+                    context.Writer.WriteTextString("FooterLinks");
+                    context.Writer.WriteStartArray(publicRequest.FooterLinks.Count);
+                    foreach(var publicRequestFooterLinksListValue in publicRequest.FooterLinks)
+                    {
+                        context.Writer.WriteStartMap(null);
 
-            if(publicRequest.IsSetOrganizationLogoS3Location())
-            {
-                context.Writer.WritePropertyName("OrganizationLogoS3Location");
-                context.Writer.WriteStartObject();
+                        var marshaller = ThemeFooterLinkMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFooterLinksListValue, context);
 
-                var marshaller = S3LocationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.OrganizationLogoS3Location, context);
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                if (publicRequest.IsSetOrganizationLogoS3Location())
+                {
+                    context.Writer.WriteTextString("OrganizationLogoS3Location");
+                    context.Writer.WriteStartMap(null);
 
-                context.Writer.WriteEndObject();
-            }
+                    var marshaller = S3LocationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrganizationLogoS3Location, context);
 
-            if(publicRequest.IsSetStackName())
-            {
-                context.Writer.WritePropertyName("StackName");
-                context.Writer.WriteStringValue(publicRequest.StackName);
-            }
-
-            if(publicRequest.IsSetThemeStyling())
-            {
-                context.Writer.WritePropertyName("ThemeStyling");
-                context.Writer.WriteStringValue(publicRequest.ThemeStyling);
-            }
-
-            if(publicRequest.IsSetTitleText())
-            {
-                context.Writer.WritePropertyName("TitleText");
-                context.Writer.WriteStringValue(publicRequest.TitleText);
-            }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetStackName())
+                {
+                    context.Writer.WriteTextString("StackName");
+                    context.Writer.WriteTextString(publicRequest.StackName);
+                }
+                if (publicRequest.IsSetThemeStyling())
+                {
+                    context.Writer.WriteTextString("ThemeStyling");
+                    context.Writer.WriteTextString(publicRequest.ThemeStyling);
+                }
+                if (publicRequest.IsSetTitleText())
+                {
+                    context.Writer.WriteTextString("TitleText");
+                    context.Writer.WriteTextString(publicRequest.TitleText);
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateThemeForStackRequestMarshaller _instance = new CreateThemeForStackRequestMarshaller();        

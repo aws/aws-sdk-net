@@ -1,9 +1,9 @@
 {
   "profiles": {
-    "SmithyDotNet.Generator (CloudTrail Data)": {
+    "SmithyDotNet.Generator (batch)": {
       "commandName": "Project",
       "workingDirectory": "$(MSBuildProjectDirectory)",
-      "commandLineArgs": "..\\SmithyDotNet.Generator.Tests\\TestData\\cloudtrail-data-model.json"
+      "commandLineArgs": "--repo-root ..\\..\\.."
     }
   }
 }

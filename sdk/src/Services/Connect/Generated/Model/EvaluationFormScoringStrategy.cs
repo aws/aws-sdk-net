@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class EvaluationFormScoringStrategy
     {
         private EvaluationFormScoringMode _mode;
+        private List<EvaluationFormScoreThreshold> _scoreThresholds = AWSConfigs.InitializeCollections ? new List<EvaluationFormScoreThreshold>() : null;
         private EvaluationFormScoringStatus _status;
 
         /// <summary>
@@ -54,6 +55,29 @@ namespace Amazon.Connect.Model
         internal bool IsSetMode()
         {
             return this._mode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScoreThresholds. 
+        /// <para>
+        /// The score thresholds for performance categories.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<EvaluationFormScoreThreshold> ScoreThresholds
+        {
+            get { return this._scoreThresholds; }
+            set { this._scoreThresholds = value; }
+        }
+
+        // Check to see if ScoreThresholds property is set
+        internal bool IsSetScoreThresholds()
+        {
+            return this._scoreThresholds != null && (this._scoreThresholds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -1019,6 +1019,56 @@ namespace Amazon.MarketplaceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type ResaleAuthorizationResellerRoleString.
+    /// </summary>
+    public class ResaleAuthorizationResellerRoleString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ChannelPartner for ResaleAuthorizationResellerRoleString
+        /// </summary>
+        public static readonly ResaleAuthorizationResellerRoleString ChannelPartner = new ResaleAuthorizationResellerRoleString("ChannelPartner");
+        /// <summary>
+        /// Constant Distributor for ResaleAuthorizationResellerRoleString
+        /// </summary>
+        public static readonly ResaleAuthorizationResellerRoleString Distributor = new ResaleAuthorizationResellerRoleString("Distributor");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResaleAuthorizationResellerRoleString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResaleAuthorizationResellerRoleString FindValue(string value)
+        {
+            return FindValue<ResaleAuthorizationResellerRoleString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResaleAuthorizationResellerRoleString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResaleAuthorizationSortBy.
     /// </summary>
     public class ResaleAuthorizationSortBy : ConstantClass

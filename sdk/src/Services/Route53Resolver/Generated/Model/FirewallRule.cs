@@ -52,6 +52,8 @@ namespace Amazon.Route53Resolver.Model
         private string _name;
         private int? _priority;
         private string _qtype;
+        private string _status;
+        private string _statusMessage;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -265,13 +267,19 @@ namespace Amazon.Route53Resolver.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>DGA</c>: Domain generation algorithms detection. DGAs are used by attackers to
-        /// generate a large number of domains to to launch malware attacks.
+        /// generate a large number of domains to launch malware attacks.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>DNS_TUNNELING</c>: DNS tunneling detection. DNS tunneling is used by attackers
         /// to exfiltrate data from the client by using the DNS tunnel without making a network
         /// connection to the client.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DICTIONARY_DGA</c>: Dictionary-based domain generation algorithms detection. Dictionary
+        /// DGAs use wordlists to generate domains that appear more legitimate, making them harder
+        /// to detect than traditional DGAs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -359,8 +367,32 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FirewallRuleType. 
         /// <para>
-        /// The rule type configuration for the firewall rule. Exactly one member of this union
-        /// should be set.
+        /// The rule type configuration for the firewall rule. This is a tagged union — exactly
+        /// one of its members will be populated. Possible members are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedContentCategory</c> — an AWS-managed content category (for example,
+        /// <c>VIOLENCE_AND_HATE_SPEECH</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FirewallAdvancedThreatCategory</c> — an AWS-managed advanced threat category (for
+        /// example, <c>PHISHING</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DnsThreatProtection</c> — a built-in DNS Firewall Advanced threat detector (<c>DGA</c>,
+        /// <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartnerThreatProtection</c> — a third-party threat feed delivered through AWS
+        /// Marketplace.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To enumerate the values supported in your account, call <a>ListFirewallRuleTypes</a>.
         /// </para>
         /// </summary>
         public FirewallRuleType FirewallRuleType
@@ -530,6 +562,65 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetQtype()
         {
             return this._qtype != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The lifecycle state of the firewall rule. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CREATING</c> — DNS Firewall is provisioning the rule. Rules created with the <c>PartnerThreatProtection</c>
+        /// rule type begin in this state while DNS Firewall verifies the calling account's AWS
+        /// Marketplace entitlement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>COMPLETE</c> — The rule is provisioned and enforcing matches.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CREATION_FAILED</c> — Provisioning failed. <c>StatusMessage</c> contains a human-readable
+        /// reason. A rule in this state is immutable: <a>UpdateFirewallRule</a> rejects the request,
+        /// and the rule must be removed with <a>DeleteFirewallRule</a>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For rules that do not require asynchronous provisioning, this field may be absent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=32)]
+        public string Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// An additional message about the rule's lifecycle state. Populated when <c>Status</c>
+        /// is <c>CREATION_FAILED</c> to describe why provisioning failed.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
     }

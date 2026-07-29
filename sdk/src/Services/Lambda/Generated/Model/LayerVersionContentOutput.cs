@@ -38,6 +38,7 @@ namespace Amazon.Lambda.Model
         private string _codeSha256;
         private long? _codeSize;
         private string _location;
+        private ResolvedS3Object _resolvedS3Object;
         private string _signingJobArn;
         private string _signingProfileVersionArn;
 
@@ -83,6 +84,7 @@ namespace Amazon.Lambda.Model
         /// A link to the layer archive in Amazon S3 that is valid for 10 minutes.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string Location
         {
             get { return this._location; }
@@ -96,11 +98,27 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResolvedS3Object.
+        /// </summary>
+        public ResolvedS3Object ResolvedS3Object
+        {
+            get { return this._resolvedS3Object; }
+            set { this._resolvedS3Object = value; }
+        }
+
+        // Check to see if ResolvedS3Object property is set
+        internal bool IsSetResolvedS3Object()
+        {
+            return this._resolvedS3Object != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SigningJobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of a signing job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningJobArn
         {
             get { return this._signingJobArn; }
@@ -119,6 +137,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) for a signing profile version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningProfileVersionArn
         {
             get { return this._signingProfileVersionArn; }

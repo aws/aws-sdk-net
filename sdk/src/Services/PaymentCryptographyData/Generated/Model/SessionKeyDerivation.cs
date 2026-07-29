@@ -38,6 +38,7 @@ namespace Amazon.PaymentCryptographyData.Model
         private SessionKeyEmv2000 _emv2000;
         private SessionKeyEmvCommon _emvCommon;
         private SessionKeyMastercard _mastercard;
+        private SessionKeyUnionPay _unionPay;
         private SessionKeyVisa _visa;
 
         /// <summary>
@@ -110,6 +111,25 @@ namespace Amazon.PaymentCryptographyData.Model
         internal bool IsSetMastercard()
         {
             return this._mastercard != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UnionPay. 
+        /// <para>
+        /// Parameters to derive session key for a UnionPay payment card for Authorization Request
+        /// Cryptogram (ARQC) generation and verification.
+        /// </para>
+        /// </summary>
+        public SessionKeyUnionPay UnionPay
+        {
+            get { return this._unionPay; }
+            set { this._unionPay = value; }
+        }
+
+        // Check to see if UnionPay property is set
+        internal bool IsSetUnionPay()
+        {
+            return this._unionPay != null;
         }
 
         /// <summary>

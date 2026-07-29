@@ -59,6 +59,27 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAssociatedRoles())
+                {
+                    if (publicRequest.AssociatedRoles.Count == 0)
+                        request.Parameters.Add("AssociatedRoles", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.AssociatedRoles)
+                         {
+                            if(publicRequestlistValue.IsSetFeatureName())
+                            {
+                                request.Parameters.Add("AssociatedRoles" + "." + "DBClusterAssociatedRole" + "." + publicRequestlistValueIndex + "." + "FeatureName", StringUtils.FromString(publicRequestlistValue.FeatureName));
+                            }
+                            if(publicRequestlistValue.IsSetRoleArn())
+                            {
+                                request.Parameters.Add("AssociatedRoles" + "." + "DBClusterAssociatedRole" + "." + publicRequestlistValueIndex + "." + "RoleArn", StringUtils.FromString(publicRequestlistValue.RoleArn));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetBacktrackWindow())
                 {
                     request.Parameters.Add("BacktrackWindow", StringUtils.FromLong(publicRequest.BacktrackWindow));
@@ -337,7 +358,11 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static RestoreDBClusterToPointInTimeRequestMarshaller _instance = new RestoreDBClusterToPointInTimeRequestMarshaller();        

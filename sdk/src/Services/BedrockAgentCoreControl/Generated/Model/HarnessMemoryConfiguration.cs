@@ -35,6 +35,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class HarnessMemoryConfiguration
     {
         private HarnessAgentCoreMemoryConfiguration _agentCoreMemoryConfiguration;
+        private HarnessDisabledMemoryConfiguration _disabled;
+        private HarnessManagedMemoryConfiguration _managedMemoryConfiguration;
 
         /// <summary>
         /// Gets and sets the property AgentCoreMemoryConfiguration. 
@@ -52,6 +54,42 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAgentCoreMemoryConfiguration()
         {
             return this._agentCoreMemoryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// Explicitly opt out of memory.
+        /// </para>
+        /// </summary>
+        public HarnessDisabledMemoryConfiguration Disabled
+        {
+            get { return this._disabled; }
+            set { this._disabled = value; }
+        }
+
+        // Check to see if Disabled property is set
+        internal bool IsSetDisabled()
+        {
+            return this._disabled != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManagedMemoryConfiguration. 
+        /// <para>
+        /// Harness creates and manages a memory resource in the customer's account.
+        /// </para>
+        /// </summary>
+        public HarnessManagedMemoryConfiguration ManagedMemoryConfiguration
+        {
+            get { return this._managedMemoryConfiguration; }
+            set { this._managedMemoryConfiguration = value; }
+        }
+
+        // Check to see if ManagedMemoryConfiguration property is set
+        internal bool IsSetManagedMemoryConfiguration()
+        {
+            return this._managedMemoryConfiguration != null;
         }
 
     }

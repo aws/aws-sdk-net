@@ -46,7 +46,9 @@ namespace Amazon.RedshiftServerless.Model
         /// metrics that let you define performance boundaries. You can either specify individual
         /// query monitoring metrics (such as <c>max_scan_row_count</c>, <c>max_query_execution_time</c>)
         /// or use <c>wlm_json_configuration</c> to define query queues with rules, but not both.
-        /// For more information about query monitoring rules and available metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query
+        /// If you're using <c>wlm_json_configuration</c>, the maximum size of <c>parameterValue</c>
+        /// is 8000 characters. For more information about query monitoring rules and available
+        /// metrics, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/cm-c-wlm-query-monitoring-rules.html#cm-c-wlm-query-monitoring-metrics-serverless">Query
         /// monitoring metrics for Amazon Redshift Serverless</a>.
         /// </para>
         /// </summary>

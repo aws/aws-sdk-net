@@ -130,6 +130,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetPrivateKeyJwtConfig())
+            {
+                context.Writer.WritePropertyName("privateKeyJwtConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrivateKeyJwtConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrivateKeyJwtConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

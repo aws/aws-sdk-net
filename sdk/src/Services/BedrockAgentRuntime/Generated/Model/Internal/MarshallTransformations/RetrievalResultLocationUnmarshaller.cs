@@ -68,10 +68,22 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomDocumentLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("googleDriveLocation", targetDepth, ref reader))
+                {
+                    var unmarshaller = RetrievalResultGoogleDriveLocationUnmarshaller.Instance;
+                    unmarshalledObject.GoogleDriveLocation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("kendraDocumentLocation", targetDepth, ref reader))
                 {
                     var unmarshaller = RetrievalResultKendraDocumentLocationUnmarshaller.Instance;
                     unmarshalledObject.KendraDocumentLocation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("oneDriveLocation", targetDepth, ref reader))
+                {
+                    var unmarshaller = RetrievalResultOneDriveLocationUnmarshaller.Instance;
+                    unmarshalledObject.OneDriveLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Location", targetDepth, ref reader))

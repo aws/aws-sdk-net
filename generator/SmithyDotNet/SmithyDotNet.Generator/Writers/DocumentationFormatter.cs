@@ -1,5 +1,8 @@
+using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -70,6 +73,10 @@ public static partial class DocumentationFormatter
             documentation = firstParaContent + documentation[(closePos + "</para>".Length)..];
         }
 
+        // Adjacent paragraphs with no whitespace between them ("</p><p>") leave a triple newline
+        // after the first-para strip, which would render as two blank comment lines.
+        documentation = NewlineRunRegex().Replace(documentation, "\n\n");
+
         // Insert line breaks around 80 character line length.
         var sb = new StringBuilder();
         var currentLineLength = 0;
@@ -96,6 +103,72 @@ public static partial class DocumentationFormatter
     }
 
     /// <summary>
+    /// Converts a Smithy <c>@documentation</c> HTML string into Markdown for the NuGet package README.
+    /// Handles the tags present across the service models (<c>p</c>, <c>br</c>, <c>a</c>, <c>code</c>,
+    /// <c>b</c>/<c>strong</c>, <c>i</c>/<c>em</c>, <c>ul</c>/<c>ol</c>/<c>li</c>, <c>pre</c>); any
+    /// other tag is kept as literal text. Returns <see cref="string.Empty"/> for null/empty input.
+    /// </summary>
+    public static string ToMarkdown(string? documentation)
+    {
+        if (string.IsNullOrEmpty(documentation))
+        {
+            return string.Empty;
+        }
+
+        // Stash <pre> blocks before the whitespace collapse below flattens their line structure;
+        // they re-enter as fenced code blocks at the very end, past every pass that could rewrite
+        // their content. The placeholders use private-use-area characters no service doc contains.
+        var preBlocks = new List<string>();
+        var text = PreBlockRegex().Replace(documentation, match =>
+        {
+            preBlocks.Add(WebUtility.HtmlDecode(match.Groups[1].Value).Trim());
+            return $"\uE000{preBlocks.Count - 1}\uE001";
+        });
+
+        text = WhitespaceRegex().Replace(text, " ");
+
+        text = InlineTagRegex("code").Replace(text, m => $"`{m.Groups[1].Value.Trim()}`");
+        text = InlineTagRegex("b").Replace(text, m => $"**{m.Groups[1].Value.Trim()}**");
+        text = InlineTagRegex("strong").Replace(text, m => $"**{m.Groups[1].Value.Trim()}**");
+        text = InlineTagRegex("i").Replace(text, m => $"*{m.Groups[1].Value.Trim()}*");
+        text = InlineTagRegex("em").Replace(text, m => $"*{m.Groups[1].Value.Trim()}*");
+        text = AnchorRegex().Replace(text, m => $"[{m.Groups[2].Value.Trim()}]({m.Groups[1].Value})");
+
+        // Collapse an item's inner tags to one line before it becomes a bullet: if the later
+        // paragraph pass saw a nested <p>, it would split the "- " marker from its text. An item that
+        // reduces to nothing (e.g. <li><p/></li>) is dropped rather than left as a bare "- ".
+        text = ListItemRegex().Replace(text, m =>
+        {
+            var item = ParagraphRegex().Replace(m.Groups[1].Value, " ");
+            item = BrTagRegex().Replace(item, " ");
+            item = ResidualTagRegex().Replace(item, "");
+            item = WhitespaceRegex().Replace(item, " ").Trim();
+            return item.Length == 0 ? "" : $"\n- {item}";
+        });
+
+        // A <br> outside a list item becomes a paragraph break: deleting it outright runs the
+        // surrounding sentences together (e.g. MediaLive's InputTimecodeSource docs).
+        text = BrTagRegex().Replace(text, "\n\n");
+        text = ParagraphRegex().Replace(text, "\n\n");
+        text = ResidualTagRegex().Replace(text, "");
+
+        // Decode after stripping tags, so decoded '<'/'>' in the text aren't re-read as markup.
+        text = WebUtility.HtmlDecode(text);
+
+        // Set each stashed <pre> placeholder off in its own paragraph so its fence starts at a line
+        // boundary, then substitute the fenced blocks in after the newline normalization (their
+        // inner line runs must survive verbatim).
+        text = PrePlaceholderRegex().Replace(text, "\n\n$1\n\n");
+        text = NewlineRunRegex().Replace(text, "\n\n");
+        for (var i = 0; i < preBlocks.Count; i++)
+        {
+            text = text.Replace($"\uE000{i}\uE001", $"```\n{preBlocks[i]}\n```");
+        }
+
+        return text.Trim();
+    }
+
+    /// <summary>
     /// Writes each line of a cleaned documentation block as a <c>/// {line}</c> comment.
     /// Indentation is supplied by the writer's current block depth.
     /// </summary>
@@ -105,6 +178,59 @@ public static partial class DocumentationFormatter
         {
             writer.WriteLine($"/// {line}");
         }
+    }
+
+    /// <summary>
+    /// Writes the XML doc comment for an operation method — summary, the <c>request</c> (and, for the
+    /// async overload, <c>cancellationToken</c>) <c>&lt;param&gt;</c> tags, the <c>&lt;returns&gt;</c>
+    /// tag, an <c>&lt;exception&gt;</c> tag per modeled error, and the REST-API-reference
+    /// <c>&lt;seealso&gt;</c>. Shared by the client and interface writers so the two cannot drift.
+    /// </summary>
+    public static void WriteOperationDocumentation(CodeWriter writer, GenerationContext context, Operation operation, bool isAsync)
+    {
+        var cleaned = Cleanup(operation.Shape.GetDocumentation());
+        writer.WriteLine("/// <summary>");
+        if (cleaned.Length > 0)
+        {
+            WriteCommentBlock(writer, cleaned);
+        }
+
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"/// <param name=\"request\">Container for the necessary parameters to execute the {operation.Name} service method.</param>");
+
+        if (isAsync)
+        {
+            writer.WriteLine("/// <param name=\"cancellationToken\">");
+            writer.WriteLine("///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.");
+            writer.WriteLine("/// </param>");
+        }
+
+        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.ServiceName}.</returns>");
+
+        foreach (var error in operation.Errors)
+        {
+            WriteExceptionTag(writer, context, error);
+        }
+
+        writer.WriteLine($"/// <seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/{context.EndpointPrefix}-{context.ApiVersion}/{operation.Name}\">REST API Reference for {operation.Name} Operation</seealso>");
+    }
+
+    /// <summary>
+    /// Writes an <c>&lt;exception cref="..."&gt;</c> doc tag for a single modeled operation error,
+    /// with the error shape's cleaned documentation as the tag body.
+    /// </summary>
+    public static void WriteExceptionTag(CodeWriter writer, GenerationContext context, OperationError error)
+    {
+        var exceptionName = ExceptionWriter.ToExceptionName(error.Id.Name);
+        writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
+
+        var cleaned = Cleanup(error.Shape.GetDocumentation());
+        if (cleaned.Length > 0)
+        {
+            WriteCommentBlock(writer, cleaned);
+        }
+
+        writer.WriteLine("/// </exception>");
     }
 
     private static string RemoveSnippets(string documentation, string startToken, string endToken)
@@ -124,6 +250,9 @@ public static partial class DocumentationFormatter
     [GeneratedRegex(@"\s+")]
     private static partial Regex WhitespaceRegex();
 
+    [GeneratedRegex("\n{3,}")]
+    private static partial Regex NewlineRunRegex();
+
     // "<p [^>]*>" matches a <p> tag carrying extra attributes (e.g. <p class='title'>).
     [GeneratedRegex("<p [^>]*>")]
     private static partial Regex PTagRegex();
@@ -131,4 +260,38 @@ public static partial class DocumentationFormatter
     // Strips <fullname>, <function>, and <br> tags that carry attributes (the .Replace calls above only match the bare forms).
     [GeneratedRegex("<fullname [^>]*>|<function [^>]*>|<br [^>]*>")]
     private static partial Regex TagsRegex();
+
+    // Builds a regex matching <tag ...>content</tag> (attributes tolerated, content captured in
+    // group 1). Non-greedy so adjacent same-tag runs each match individually.
+    private static Regex InlineTagRegex(string tag) => new($"<{tag}(?:\\s[^>]*)?>(.*?)</{tag}>", RegexOptions.IgnoreCase);
+
+    // <a ...href="url"...>text</a>: group 1 = href, group 2 = link text.
+    [GeneratedRegex("""<a\s+[^>]*?href\s*=\s*["']([^"']*)["'][^>]*>(.*?)</a>""", RegexOptions.IgnoreCase)]
+    private static partial Regex AnchorRegex();
+
+    // <li ...>text</li> (the closing tag is optional; some docs omit it before the next <li>).
+    [GeneratedRegex("<li(?:\\s[^>]*)?>(.*?)(?:</li>|(?=<li)|(?=</[uo]l>))", RegexOptions.IgnoreCase)]
+    private static partial Regex ListItemRegex();
+
+    // Paragraph boundaries: opening or closing <p> (attributes tolerated).
+    [GeneratedRegex("</?p(?:\\s[^>]*)?>", RegexOptions.IgnoreCase)]
+    private static partial Regex ParagraphRegex();
+
+    // <br> in its authored forms (<br>, <br/>, <br />, attributed).
+    [GeneratedRegex("<br(?:\\s[^>]*)?/?>", RegexOptions.IgnoreCase)]
+    private static partial Regex BrTagRegex();
+
+    // <pre>...</pre> (optionally wrapping <code>), captured with its internal newlines intact.
+    [GeneratedRegex("<pre(?:\\s[^>]*)?>\\s*(?:<code[^>]*>)?(.*?)(?:</code>)?\\s*</pre>", RegexOptions.IgnoreCase | RegexOptions.Singleline)]
+    private static partial Regex PreBlockRegex();
+
+    // The private-use-area placeholders holding stashed <pre> blocks, plus any surrounding spaces.
+    [GeneratedRegex(" *(\uE000[0-9]+\uE001) *")]
+    private static partial Regex PrePlaceholderRegex();
+
+    // Unwraps the known structural/container tags, leaving inner text. Allowlisted rather than
+    // "any tag" so an unanticipated tag survives as literal text (nuget.org escapes raw HTML, so a
+    // stray <foo> displays as-is) instead of being silently deleted along with its content.
+    [GeneratedRegex("</?(?:ul|ol|li|dl|dt|dd|pre|fullname|note|important|a|p|br)(?:\\s[^>]*)?/?>", RegexOptions.IgnoreCase)]
+    private static partial Regex ResidualTagRegex();
 }

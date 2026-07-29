@@ -93,6 +93,22 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Paginator for ListConnectors operation
+        ///</summary>
+        public IListConnectorsPaginator ListConnectors(ListConnectorsRequest request) 
+        {
+            return new ListConnectorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListConnectorScanConfigurations operation
+        ///</summary>
+        public IListConnectorScanConfigurationsPaginator ListConnectorScanConfigurations(ListConnectorScanConfigurationsRequest request) 
+        {
+            return new ListConnectorScanConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCoverage operation
         ///</summary>
         public IListCoveragePaginator ListCoverage(ListCoverageRequest request) 

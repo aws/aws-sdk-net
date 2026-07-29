@@ -10,14 +10,19 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("<#=this.Config.AssemblyTitle#>")]
-#if BCL
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "4.7.2") #>")]
-#elif NETSTANDARD20
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: "NetStandard 2.0") #>")]
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: ".NET Core 3.1") #>")]
-#elif NET8_0
-[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: ".NET 8.0") #>")]
+<#
+    // The target framework set is derived from the Sdk*Targets properties in sdk/Directory.Build.props,
+    // so adding or removing a target requires no edit to this template.
+    var platforms = AssemblyInfoPlatforms.Platforms;
+    for (int i = 0; i < platforms.Count; i++)
+    {
+        var platform = platforms[i];
+#>
+<#=i == 0 ? "#if" : "#elif"#> <#=platform.Symbol#>
+[assembly: AssemblyDescription("<#=this.Config.AssemblyDescription(versionIdentifier: platform.Label) #>")]
+<#
+    }
+#>
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif

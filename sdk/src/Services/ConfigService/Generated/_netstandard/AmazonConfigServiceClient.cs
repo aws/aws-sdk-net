@@ -327,9 +327,39 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because the specified service principal
+        /// does not support multiple configuration recorders and one already exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector or service
+        /// principal. Please try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// you cannot create a connector because a connector already exists for the specified
+        /// connector configuration.
+        /// </para>
+        ///  
+        /// <para>
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
         /// you cannot delete the service-linked recorder because it is currently in use by the
         /// linked Amazon Web Services service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector. Please
+        /// try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html">DeleteConnector</a>,
+        /// another in-progress operation is currently referencing the connector. Please try again
+        /// later.
         /// </para>
         ///  
         /// <para>
@@ -415,6 +445,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -523,6 +568,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -634,6 +694,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1014,6 +1089,116 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = DeleteConformancePackResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConformancePackResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteConnector
+
+        internal virtual DeleteConnectorResponse DeleteConnector(DeleteConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConnector service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested operation is not valid. You will see this exception if there are missing
+        /// required fields or if the input value fails the validation.
+        /// 
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There are missing required fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The input value fails the validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are trying to create more than 300 queries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have specified more than one configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your configuraiton recorder has a recording strategy that does not allow the association
+        /// or disassociation of resource types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// One or more of the specified resource types are already associated or disassociated
+        /// with the configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, the configuration recorder does not record
+        /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteConnector">REST API Reference for DeleteConnector Operation</seealso>
+        public virtual Task<DeleteConnectorResponse> DeleteConnectorAsync(DeleteConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1584,6 +1769,12 @@ namespace Amazon.ConfigService
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -1736,6 +1927,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteResourceConfig">REST API Reference for DeleteResourceConfig Operation</seealso>
@@ -1837,9 +2043,39 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because the specified service principal
+        /// does not support multiple configuration recorders and one already exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector or service
+        /// principal. Please try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// you cannot create a connector because a connector already exists for the specified
+        /// connector configuration.
+        /// </para>
+        ///  
+        /// <para>
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
         /// you cannot delete the service-linked recorder because it is currently in use by the
         /// linked Amazon Web Services service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector. Please
+        /// try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html">DeleteConnector</a>,
+        /// another in-progress operation is currently referencing the connector. Please try again
+        /// later.
         /// </para>
         ///  
         /// <para>
@@ -1925,6 +2161,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2021,6 +2272,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2238,6 +2504,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConfigRules">REST API Reference for DescribeAggregateComplianceByConfigRules Operation</seealso>
@@ -2350,6 +2631,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -2848,6 +3144,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">REST API Reference for DescribeConfigurationRecorders Operation</seealso>
@@ -2937,6 +3248,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3052,6 +3378,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">REST API Reference for DescribeConfigurationRecorderStatus Operation</seealso>
@@ -3147,6 +3488,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4141,9 +4497,39 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because the specified service principal
+        /// does not support multiple configuration recorders and one already exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector or service
+        /// principal. Please try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// you cannot create a connector because a connector already exists for the specified
+        /// connector configuration.
+        /// </para>
+        ///  
+        /// <para>
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
         /// you cannot delete the service-linked recorder because it is currently in use by the
         /// linked Amazon Web Services service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector. Please
+        /// try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html">DeleteConnector</a>,
+        /// another in-progress operation is currently referencing the connector. Please try again
+        /// later.
         /// </para>
         ///  
         /// <para>
@@ -4229,6 +4615,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4342,6 +4743,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateComplianceDetailsByConfigRule">REST API Reference for GetAggregateComplianceDetailsByConfigRule Operation</seealso>
@@ -4451,6 +4867,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -4563,6 +4994,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary">REST API Reference for GetAggregateConformancePackComplianceSummary Operation</seealso>
@@ -4674,6 +5120,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateDiscoveredResourceCounts">REST API Reference for GetAggregateDiscoveredResourceCounts Operation</seealso>
@@ -4781,6 +5242,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5050,6 +5526,116 @@ namespace Amazon.ConfigService
         }
         #endregion
         
+        #region  GetConnector
+
+        internal virtual GetConnectorResponse GetConnector(GetConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<GetConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the details of the specified connector.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConnector service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ResourceNotFoundException">
+        /// You have specified a resource that does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested operation is not valid. You will see this exception if there are missing
+        /// required fields or if the input value fails the validation.
+        /// 
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There are missing required fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The input value fails the validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are trying to create more than 300 queries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have specified more than one configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your configuraiton recorder has a recording strategy that does not allow the association
+        /// or disassociation of resource types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// One or more of the specified resource types are already associated or disassociated
+        /// with the configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, the configuration recorder does not record
+        /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetConnector">REST API Reference for GetConnector Operation</seealso>
+        public virtual Task<GetConnectorResponse> GetConnectorAsync(GetConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConnectorResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetCustomRulePolicy
 
         internal virtual GetCustomRulePolicyResponse GetCustomRulePolicy(GetCustomRulePolicyRequest request)
@@ -5232,6 +5818,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -5623,6 +6224,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetResourceConfigHistory">REST API Reference for GetResourceConfigHistory Operation</seealso>
@@ -5767,6 +6383,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery">REST API Reference for GetStoredQuery Operation</seealso>
@@ -5880,6 +6511,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListAggregateDiscoveredResources">REST API Reference for ListAggregateDiscoveredResources Operation</seealso>
@@ -5972,6 +6618,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConfigurationRecorders">REST API Reference for ListConfigurationRecorders Operation</seealso>
@@ -6037,6 +6698,113 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = ListConformancePackComplianceScoresResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConformancePackComplianceScoresResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListConnectors
+
+        internal virtual ListConnectorsResponse ListConnectors(ListConnectorsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConnectorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of connectors depending on the filters you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConnectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConnectors service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested operation is not valid. You will see this exception if there are missing
+        /// required fields or if the input value fails the validation.
+        /// 
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There are missing required fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The input value fails the validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are trying to create more than 300 queries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have specified more than one configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your configuraiton recorder has a recording strategy that does not allow the association
+        /// or disassociation of resource types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// One or more of the specified resource types are already associated or disassociated
+        /// with the configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, the configuration recorder does not record
+        /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListConnectors">REST API Reference for ListConnectors Operation</seealso>
+        public virtual Task<ListConnectorsResponse> ListConnectorsAsync(ListConnectorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConnectorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConnectorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConnectorsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -6186,6 +6954,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListDiscoveredResources">REST API Reference for ListDiscoveredResources Operation</seealso>
@@ -6328,6 +7111,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries">REST API Reference for ListStoredQueries Operation</seealso>
@@ -6429,6 +7227,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -6635,6 +7448,12 @@ namespace Amazon.ConfigService
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7054,6 +7873,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
@@ -7182,6 +8016,12 @@ namespace Amazon.ConfigService
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -7241,6 +8081,267 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = PutConformancePackResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutConformancePackResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutConnector
+
+        internal virtual PutConnectorResponse PutConnector(PutConnectorRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConnectorResponseUnmarshaller.Instance;
+
+            return Invoke<PutConnectorResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a connector that specifies the connection between a third-party cloud service
+        /// provider and Config.
+        /// 
+        ///  
+        /// <para>
+        /// A connector is required to create a service-linked configuration recorder for a third-party
+        /// cloud service provider using the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>
+        /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API creates a service-linked role <c>AWSServiceRoleForConfigThirdParty</c> in
+        /// your account. The service-linked role is created only when the role does not exist
+        /// in your account.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>Connectors cannot be updated</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// To update the connector configuration, you must delete all associated configuration
+        /// recorders, delete the connector, and recreate it with the updated configuration.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <b>Tags are added at creation and cannot be updated with this operation</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+        /// to update tags after creation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutConnector service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutConnector service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ConflictException">
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because a service-linked recorder already
+        /// exists for the specified service.
+        /// 
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because the specified service principal
+        /// does not support multiple configuration recorders and one already exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector or service
+        /// principal. Please try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// you cannot create a connector because a connector already exists for the specified
+        /// connector configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// you cannot delete the service-linked recorder because it is currently in use by the
+        /// linked Amazon Web Services service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector. Please
+        /// try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html">DeleteConnector</a>,
+        /// another in-progress operation is currently referencing the connector. Please try again
+        /// later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html">DeleteDeliveryChannel</a>,
+        /// you cannot delete the specified delivery channel because the customer managed configuration
+        /// recorder is running. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html">StopConfigurationRecorder</a>
+        /// operation to stop the customer managed configuration recorder.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, the configuration recorder is not in use
+        /// by the service. No association or dissociation of resource types is permitted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, your requested change to the configuration
+        /// recorder has been denied by its linked Amazon Web Services service.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>,
+        /// the rule cannot be created because the IAM role assigned to Config lacks permissions
+        /// to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>,
+        /// the Lambda function cannot be invoked. Check the function ARN, and check the function's
+        /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html">PutOrganizationConfigRule</a>,
+        /// organization Config rule cannot be created because you do not have permissions to
+        /// call IAM <c>GetRole</c> action or create a service-linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html">PutOrganizationConformancePack</a>,
+        /// a conformance pack cannot be created because you do not have the following permissions:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You do not have permission to call IAM <c>GetRole</c> action or create a service-linked
+        /// role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
+        /// a service-linked configuration recorder cannot be created because you do not have
+        /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConnectorsExceededException">
+        /// You have reached the limit of the number of connectors in your account.
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested operation is not valid. You will see this exception if there are missing
+        /// required fields or if the input value fails the validation.
+        /// 
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There are missing required fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The input value fails the validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are trying to create more than 300 queries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have specified more than one configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your configuraiton recorder has a recording strategy that does not allow the association
+        /// or disassociation of resource types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// One or more of the specified resource types are already associated or disassociated
+        /// with the configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, the configuration recorder does not record
+        /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConnector">REST API Reference for PutConnector Operation</seealso>
+        public virtual Task<PutConnectorResponse> PutConnectorAsync(PutConnectorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutConnectorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutConnectorResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutConnectorResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -7548,6 +8649,12 @@ namespace Amazon.ConfigService
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -7697,6 +8804,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConfigRule">REST API Reference for PutOrganizationConfigRule Operation</seealso>
@@ -7826,6 +8948,12 @@ namespace Amazon.ConfigService
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -7975,6 +9103,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutOrganizationConformancePack">REST API Reference for PutOrganizationConformancePack Operation</seealso>
@@ -8108,6 +9251,12 @@ namespace Amazon.ConfigService
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -8259,6 +9408,12 @@ namespace Amazon.ConfigService
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -8362,6 +9517,12 @@ namespace Amazon.ConfigService
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxActiveResourcesExceededException">
@@ -8428,6 +9589,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -8561,9 +9737,39 @@ namespace Amazon.ConfigService
         /// 
         ///  
         /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because the specified service principal
+        /// does not support multiple configuration recorders and one already exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector or service
+        /// principal. Please try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// you cannot create a connector because a connector already exists for the specified
+        /// connector configuration.
+        /// </para>
+        ///  
+        /// <para>
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
         /// you cannot delete the service-linked recorder because it is currently in use by the
         /// linked Amazon Web Services service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector. Please
+        /// try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html">DeleteConnector</a>,
+        /// another in-progress operation is currently referencing the connector. Please try again
+        /// later.
         /// </para>
         ///  
         /// <para>
@@ -8632,6 +9838,12 @@ namespace Amazon.ConfigService
         /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -8707,6 +9919,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -8825,6 +10052,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery">REST API Reference for PutStoredQuery Operation</seealso>
@@ -8835,6 +10077,264 @@ namespace Amazon.ConfigService
             options.ResponseUnmarshaller = PutStoredQueryResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutStoredQueryResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  PutThirdPartyServiceLinkedConfigurationRecorder
+
+        internal virtual PutThirdPartyServiceLinkedConfigurationRecorderResponse PutThirdPartyServiceLinkedConfigurationRecorder(PutThirdPartyServiceLinkedConfigurationRecorderRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutThirdPartyServiceLinkedConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutThirdPartyServiceLinkedConfigurationRecorderResponseUnmarshaller.Instance;
+
+            return Invoke<PutThirdPartyServiceLinkedConfigurationRecorderResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates a service-linked configuration recorder that is linked to a third-party
+        /// cloud service provider based on the <c>ConnectorArn</c> you specify.
+        /// 
+        ///  
+        /// <para>
+        /// The configuration recorder's <c>name</c>, <c>recordingGroup</c>, <c>recordingMode</c>,
+        /// and <c>recordingScope</c> is set by the service that is linked to the configuration
+        /// recorder.
+        /// </para>
+        ///  
+        /// <para>
+        /// If a service-linked configuration recorder already exists for the specified service
+        /// principal and connector, calling this operation again updates the <c>ScopeConfiguration</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <b>This operation can only be called by the Amazon Web Services service linked to
+        /// the configuration recorder</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Customers cannot call this operation directly. Only the linked Amazon Web Services
+        /// service can create or update the service-linked configuration recorder.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        ///  <b>Tags are added at creation and cannot be updated with this operation</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_UntagResource.html">UntagResource</a>
+        /// to update tags after creation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutThirdPartyServiceLinkedConfigurationRecorder service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutThirdPartyServiceLinkedConfigurationRecorder service method, as returned by ConfigService.</returns>
+        /// <exception cref="Amazon.ConfigService.Model.ConflictException">
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because a service-linked recorder already
+        /// exists for the specified service.
+        /// 
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// you cannot create a service-linked recorder because the specified service principal
+        /// does not support multiple configuration recorders and one already exists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutThirdPartyServiceLinkedConfigurationRecorder.html">PutThirdPartyServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector or service
+        /// principal. Please try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// you cannot create a connector because a connector already exists for the specified
+        /// connector configuration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// you cannot delete the service-linked recorder because it is currently in use by the
+        /// linked Amazon Web Services service.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// another in-progress operation is currently referencing the same connector. Please
+        /// try again later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteConnector.html">DeleteConnector</a>,
+        /// another in-progress operation is currently referencing the connector. Please try again
+        /// later.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteDeliveryChannel.html">DeleteDeliveryChannel</a>,
+        /// you cannot delete the specified delivery channel because the customer managed configuration
+        /// recorder is running. Use the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_StopConfigurationRecorder.html">StopConfigurationRecorder</a>
+        /// operation to stop the customer managed configuration recorder.
+        /// </para>
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, the configuration recorder is not in use
+        /// by the service. No association or dissociation of resource types is permitted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, your requested change to the configuration
+        /// recorder has been denied by its linked Amazon Web Services service.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.InsufficientPermissionsException">
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>,
+        /// the rule cannot be created because the IAM role assigned to Config lacks permissions
+        /// to perform the config:Put* action.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConfigRule.html">PutConfigRule</a>,
+        /// the Lambda function cannot be invoked. Check the function ARN, and check the function's
+        /// permissions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConfigRule.html">PutOrganizationConfigRule</a>,
+        /// organization Config rule cannot be created because you do not have permissions to
+        /// call IAM <c>GetRole</c> action or create a service-linked role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutOrganizationConformancePack.html">PutOrganizationConformancePack</a>,
+        /// a conformance pack cannot be created because you do not have the following permissions:
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You do not have permission to call IAM <c>GetRole</c> action or create a service-linked
+        /// role.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You do not have permission to read Amazon S3 bucket or call SSM:GetDocument.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutServiceLinkedConfigurationRecorder.html">PutServiceLinkedConfigurationRecorder</a>,
+        /// a service-linked configuration recorder cannot be created because you do not have
+        /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.ConfigService.Model.ValidationException">
+        /// The requested operation is not valid. You will see this exception if there are missing
+        /// required fields or if the input value fails the validation.
+        /// 
+        ///  
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutStoredQuery.html">PutStoredQuery</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// There are missing required fields.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The input value fails the validation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You are trying to create more than 300 queries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorders.html">DescribeConfigurationRecorders</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DescribeConfigurationRecorderStatus.html">DescribeConfigurationRecorderStatus</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have specified more than one configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_AssociateResourceTypes.html">AssociateResourceTypes</a>
+        /// and <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DisassociateResourceTypes.html">DisassociateResourceTypes</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Your configuraiton recorder has a recording strategy that does not allow the association
+        /// or disassociation of resource types.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// One or more of the specified resource types are already associated or disassociated
+        /// with the configuration recorder.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For service-linked configuration recorders, the configuration recorder does not record
+        /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutThirdPartyServiceLinkedConfigurationRecorder">REST API Reference for PutThirdPartyServiceLinkedConfigurationRecorder Operation</seealso>
+        public virtual Task<PutThirdPartyServiceLinkedConfigurationRecorderResponse> PutThirdPartyServiceLinkedConfigurationRecorderAsync(PutThirdPartyServiceLinkedConfigurationRecorderRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutThirdPartyServiceLinkedConfigurationRecorderRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutThirdPartyServiceLinkedConfigurationRecorderResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutThirdPartyServiceLinkedConfigurationRecorderResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -9313,6 +10813,12 @@ namespace Amazon.ConfigService
         /// a service-linked configuration recorder cannot be created because you do not have
         /// the following permissions: IAM <c>CreateServiceLinkedRole</c>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConnector.html">PutConnector</a>,
+        /// a connector cannot be created because you do not have the following permissions: IAM
+        /// <c>CreateServiceLinkedRole</c>.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidParameterValueException">
@@ -9607,6 +11113,21 @@ namespace Amazon.ConfigService
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
         /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
+        /// </para>
         ///  </li> </ul>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/TagResource">REST API Reference for TagResource Operation</seealso>
@@ -9701,6 +11222,21 @@ namespace Amazon.ConfigService
         /// <para>
         /// For service-linked configuration recorders, the configuration recorder does not record
         /// one or more of the specified resource types.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+        /// one of the following errors:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+        /// or <c>ServicePrincipal</c> can be specified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided a service principal for service-linked configuration recorder that
+        /// is not valid.
         /// </para>
         ///  </li> </ul>
         /// </exception>

@@ -35,9 +35,25 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class UpdateVoiceConnectorGroupRequest : AmazonChimeSDKVoiceRequest
     {
+        private CallDistributionType _callDistributionType;
         private string _name;
         private string _voiceConnectorGroupId;
         private List<VoiceConnectorItem> _voiceConnectorItems = AWSConfigs.InitializeCollections ? new List<VoiceConnectorItem>() : null;
+
+        /// <summary>
+        /// Gets and sets the property CallDistributionType.
+        /// </summary>
+        public CallDistributionType CallDistributionType
+        {
+            get { return this._callDistributionType; }
+            set { this._callDistributionType = value; }
+        }
+
+        // Check to see if CallDistributionType property is set
+        internal bool IsSetCallDistributionType()
+        {
+            return this._callDistributionType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

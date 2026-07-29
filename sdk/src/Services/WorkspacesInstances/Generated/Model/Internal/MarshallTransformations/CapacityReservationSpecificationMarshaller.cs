@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// CapacityReservationSpecification Marshaller
     /// </summary>
-    public class CapacityReservationSpecificationMarshaller : IRequestMarshaller<CapacityReservationSpecification, JsonMarshallerContext> 
+    public class CapacityReservationSpecificationMarshaller : IRequestMarshaller<CapacityReservationSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CapacityReservationSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(CapacityReservationSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetCapacityReservationPreference())
-            {
-                context.Writer.WritePropertyName("CapacityReservationPreference");
-                context.Writer.WriteStringValue(requestObject.CapacityReservationPreference);
-            }
 
-            if(requestObject.IsSetCapacityReservationTarget())
+            if (requestObject.IsSetCapacityReservationPreference())
             {
-                context.Writer.WritePropertyName("CapacityReservationTarget");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("CapacityReservationPreference");
+                context.Writer.WriteTextString(requestObject.CapacityReservationPreference);
+            }
+            if (requestObject.IsSetCapacityReservationTarget())
+            {
+                context.Writer.WriteTextString("CapacityReservationTarget");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = CapacityReservationTargetMarshaller.Instance;
                 marshaller.Marshall(requestObject.CapacityReservationTarget, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

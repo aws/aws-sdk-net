@@ -69,7 +69,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientSecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the client secret in AWS Secrets Manager.
+        /// The Amazon Resource Name (ARN) of the client secret in Amazon Web Services Secrets
+        /// Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,8 +89,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientSecretJsonKey. 
         /// <para>
-        /// The JSON key used to extract the client secret value from the AWS Secrets Manager
-        /// secret.
+        /// The JSON key used to extract the client secret value from the Amazon Web Services
+        /// Secrets Manager secret.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -109,7 +110,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property ClientSecretSource. 
         /// <para>
         /// The source type of the client secret. Either <c>MANAGED</c> if the secret is managed
-        /// by the service, or <c>EXTERNAL</c> if managed by the user in AWS Secrets Manager.
+        /// by the service, or <c>EXTERNAL</c> if managed by the user in Amazon Web Services Secrets
+        /// Manager.
         /// </para>
         /// </summary>
         public SecretSourceType ClientSecretSource

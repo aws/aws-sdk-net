@@ -35,11 +35,31 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class SourceConfiguration
     {
+        private FilterConfiguration _filterConfiguration;
         private PaginationConfiguration _paginationConfiguration;
         private HTTPMethod _requestMethod;
         private List<ConnectorProperty> _requestParameters = AWSConfigs.InitializeCollections ? new List<ConnectorProperty>() : null;
         private string _requestPath;
         private ResponseConfiguration _responseConfiguration;
+
+        /// <summary>
+        /// Gets and sets the property FilterConfiguration. 
+        /// <para>
+        /// Configuration for applying filter pushdown to REST API requests, defining how filter
+        /// predicates are translated into query parameters or filter strings.
+        /// </para>
+        /// </summary>
+        public FilterConfiguration FilterConfiguration
+        {
+            get { return this._filterConfiguration; }
+            set { this._filterConfiguration = value; }
+        }
+
+        // Check to see if FilterConfiguration property is set
+        internal bool IsSetFilterConfiguration()
+        {
+            return this._filterConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property PaginationConfiguration. 

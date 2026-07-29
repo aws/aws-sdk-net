@@ -45,6 +45,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The authentication types that are available to the user with <c>USER_AUTH</c> sign-in,
         /// for example <c>["PASSWORD", "WEB_AUTHN"]</c>.
         /// </para>
+        ///  
+        /// <para>
+        ///  <c>PASSWORD</c> can only be used as a first authentication factor. <c>SOFTWARE_TOKEN</c>
+        /// can only be used as an MFA factor. <c>EMAIL_OTP</c>, <c>SMS_OTP</c>, and <c>WEB_AUTHN</c>
+        /// can be used as either a first authentication factor or an MFA factor. <c>WEB_AUTHN</c>
+        /// is available as an MFA factor only when passkey MFA is enabled at the user pool level.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

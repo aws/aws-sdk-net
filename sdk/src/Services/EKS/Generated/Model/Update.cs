@@ -34,12 +34,32 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class Update
     {
+        private Cancellation _cancellation;
         private DateTime? _createdAt;
         private List<ErrorDetail> _errors = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
         private string _id;
         private List<UpdateParam> _params = AWSConfigs.InitializeCollections ? new List<UpdateParam>() : null;
         private UpdateStatus _status;
         private UpdateType _type;
+
+        /// <summary>
+        /// Gets and sets the property Cancellation. 
+        /// <para>
+        /// The latest cancellation information for the update. This field is present only if
+        /// any cancellation is attempted for the update.
+        /// </para>
+        /// </summary>
+        public Cancellation Cancellation
+        {
+            get { return this._cancellation; }
+            set { this._cancellation = value; }
+        }
+
+        // Check to see if Cancellation property is set
+        internal bool IsSetCancellation()
+        {
+            return this._cancellation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

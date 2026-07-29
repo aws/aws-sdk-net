@@ -30,11 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Content for an asset, either a single file or a zip bundle
+    /// Content for an asset: a single file, a zip bundle, or a source URL to import from
     /// </summary>
     public partial class AssetContent
     {
         private AssetFileContent _file;
+        private AssetSourceUrlContent _sourceUrl;
         private AssetZipContent _zip;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetFile()
         {
             return this._file != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceUrl. 
+        /// <para>
+        /// A source URL to import asset content from
+        /// </para>
+        /// </summary>
+        public AssetSourceUrlContent SourceUrl
+        {
+            get { return this._sourceUrl; }
+            set { this._sourceUrl = value; }
+        }
+
+        // Check to see if SourceUrl property is set
+        internal bool IsSetSourceUrl()
+        {
+            return this._sourceUrl != null;
         }
 
         /// <summary>

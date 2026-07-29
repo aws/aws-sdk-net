@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// IamInstanceProfileSpecification Marshaller
     /// </summary>
-    public class IamInstanceProfileSpecificationMarshaller : IRequestMarshaller<IamInstanceProfileSpecification, JsonMarshallerContext> 
+    public class IamInstanceProfileSpecificationMarshaller : IRequestMarshaller<IamInstanceProfileSpecification, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(IamInstanceProfileSpecification requestObject, JsonMarshallerContext context)
+        public void Marshall(IamInstanceProfileSpecification requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetArn())
-            {
-                context.Writer.WritePropertyName("Arn");
-                context.Writer.WriteStringValue(requestObject.Arn);
-            }
 
-            if(requestObject.IsSetName())
+            if (requestObject.IsSetArn())
             {
-                context.Writer.WritePropertyName("Name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("Arn");
+                context.Writer.WriteTextString(requestObject.Arn);
             }
-
+            if (requestObject.IsSetName())
+            {
+                context.Writer.WriteTextString("Name");
+                context.Writer.WriteTextString(requestObject.Name);
+            }
         }
 
         /// <summary>

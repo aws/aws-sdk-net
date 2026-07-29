@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// The stream is temporarily unavailable.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

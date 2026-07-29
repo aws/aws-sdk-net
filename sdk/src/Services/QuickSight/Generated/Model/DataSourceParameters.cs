@@ -47,10 +47,13 @@ namespace Amazon.QuickSight.Model
         private CustomConnectionParameters _customConnectionParameters;
         private DatabricksParameters _databricksParameters;
         private ExasolParameters _exasolParameters;
+        private FMKBParameters _fmkbParameters;
+        private GoogleDriveParameters _googleDriveParameters;
         private ImpalaParameters _impalaParameters;
         private JiraParameters _jiraParameters;
         private MariaDbParameters _mariaDbParameters;
         private MySqlParameters _mySqlParameters;
+        private OneDriveParameters _oneDriveParameters;
         private OracleParameters _oracleParameters;
         private PostgreSqlParameters _postgreSqlParameters;
         private PrestoParameters _prestoParameters;
@@ -61,6 +64,7 @@ namespace Amazon.QuickSight.Model
         private S3Parameters _s3Parameters;
         private S3TablesParameters _s3TablesParameters;
         private ServiceNowParameters _serviceNowParameters;
+        private SharePointParameters _sharePointParameters;
         private SnowflakeParameters _snowflakeParameters;
         private SparkParameters _sparkParameters;
         private SqlServerParameters _sqlServerParameters;
@@ -269,6 +273,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FMKBParameters. 
+        /// <para>
+        /// The parameters for a fully managed knowledge base data source.
+        /// </para>
+        /// </summary>
+        public FMKBParameters FMKBParameters
+        {
+            get { return this._fmkbParameters; }
+            set { this._fmkbParameters = value; }
+        }
+
+        // Check to see if FMKBParameters property is set
+        internal bool IsSetFMKBParameters()
+        {
+            return this._fmkbParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GoogleDriveParameters. 
+        /// <para>
+        /// The parameters for a Google Drive data source.
+        /// </para>
+        /// </summary>
+        public GoogleDriveParameters GoogleDriveParameters
+        {
+            get { return this._googleDriveParameters; }
+            set { this._googleDriveParameters = value; }
+        }
+
+        // Check to see if GoogleDriveParameters property is set
+        internal bool IsSetGoogleDriveParameters()
+        {
+            return this._googleDriveParameters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImpalaParameters. 
         /// <para>
         /// The parameters for Impala.
@@ -338,6 +378,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetMySqlParameters()
         {
             return this._mySqlParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OneDriveParameters. 
+        /// <para>
+        /// The parameters for an OneDrive data source.
+        /// </para>
+        /// </summary>
+        public OneDriveParameters OneDriveParameters
+        {
+            get { return this._oneDriveParameters; }
+            set { this._oneDriveParameters = value; }
+        }
+
+        // Check to see if OneDriveParameters property is set
+        internal bool IsSetOneDriveParameters()
+        {
+            return this._oneDriveParameters != null;
         }
 
         /// <summary>
@@ -518,6 +576,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetServiceNowParameters()
         {
             return this._serviceNowParameters != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SharePointParameters. 
+        /// <para>
+        /// The parameters for a SharePoint data source.
+        /// </para>
+        /// </summary>
+        public SharePointParameters SharePointParameters
+        {
+            get { return this._sharePointParameters; }
+            set { this._sharePointParameters = value; }
+        }
+
+        // Check to see if SharePointParameters property is set
+        internal bool IsSetSharePointParameters()
+        {
+            return this._sharePointParameters != null;
         }
 
         /// <summary>

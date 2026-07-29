@@ -29,106 +29,141 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Session Object
     /// </summary>  
-    public class SessionUnmarshaller : IJsonUnmarshaller<Session, JsonUnmarshallerContext>
+    public class SessionUnmarshaller : ICborUnmarshaller<Session, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Session Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Session Unmarshall(CborUnmarshallerContext context)
         {
             Session unmarshalledObject = new Session();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ConnectionState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("FleetName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FleetName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceDrainStatus", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceDrainStatus = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InstanceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MaxExpirationTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.MaxExpirationTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("NetworkAccessConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = NetworkAccessConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NetworkAccessConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StackName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StackName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StartTime", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("State", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UserId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AuthenticationType":
+                        {
+                            context.AddPathSegment("AuthenticationType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ConnectionState":
+                        {
+                            context.AddPathSegment("ConnectionState");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ConnectionState = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "FleetName":
+                        {
+                            context.AddPathSegment("FleetName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.FleetName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Id":
+                        {
+                            context.AddPathSegment("Id");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InstanceDrainStatus":
+                        {
+                            context.AddPathSegment("InstanceDrainStatus");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InstanceDrainStatus = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InstanceId":
+                        {
+                            context.AddPathSegment("InstanceId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InstanceId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MaxExpirationTime":
+                        {
+                            context.AddPathSegment("MaxExpirationTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.MaxExpirationTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "NetworkAccessConfiguration":
+                        {
+                            context.AddPathSegment("NetworkAccessConfiguration");
+                            var unmarshaller = NetworkAccessConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.NetworkAccessConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StackName":
+                        {
+                            context.AddPathSegment("StackName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StackName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StartTime":
+                        {
+                            context.AddPathSegment("StartTime");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "State":
+                        {
+                            context.AddPathSegment("State");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UserId":
+                        {
+                            context.AddPathSegment("UserId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UserId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

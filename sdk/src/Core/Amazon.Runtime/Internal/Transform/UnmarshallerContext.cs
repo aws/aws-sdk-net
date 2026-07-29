@@ -169,7 +169,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>
         ///     True if the expression matches the current position in the document, 
         ///     false otherwise.</returns>
-        public bool TestExpression(string expression)
+        public virtual bool TestExpression(string expression)
         {
             return TestExpression(expression, CurrentPath);
         }
@@ -186,7 +186,7 @@ namespace Amazon.Runtime.Internal.Transform
         /// <returns>
         ///     True if the specified expression matches the current position in
         ///     the XML document, starting from the specified depth. </returns>
-        public bool TestExpression(string expression, int startingStackDepth)
+        public virtual bool TestExpression(string expression, int startingStackDepth)
         {
             return TestExpression(expression, startingStackDepth, CurrentPath, CurrentDepth);
         }

@@ -148,8 +148,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ReverseOrder. 
         /// <para>
-        /// Set to true to return results in reverse chronological order (newest first). Default
-        /// is false.
+        /// Set to true to return results in chronological order (oldest first). Default is false.
         /// </para>
         /// </summary>
         public bool? ReverseOrder

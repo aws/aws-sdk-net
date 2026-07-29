@@ -85,6 +85,7 @@ namespace Amazon.GameLift.Model
         /// A unique identifier for the instance to be accessed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=256)]
         public string InstanceId
         {
             get { return this._instanceId; }

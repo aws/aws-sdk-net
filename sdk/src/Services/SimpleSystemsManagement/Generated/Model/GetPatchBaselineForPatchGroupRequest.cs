@@ -42,6 +42,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property OperatingSystem. 
         /// <para>
         /// Returns the operating system rule specified for patch groups using the patch baseline.
+        /// The default value is <c>WINDOWS</c>. 
         /// </para>
         /// </summary>
         public OperatingSystem OperatingSystem

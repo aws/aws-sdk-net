@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// SpotMarketOptions Marshaller
     /// </summary>
-    public class SpotMarketOptionsMarshaller : IRequestMarshaller<SpotMarketOptions, JsonMarshallerContext> 
+    public class SpotMarketOptionsMarshaller : IRequestMarshaller<SpotMarketOptions, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,40 +45,36 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SpotMarketOptions requestObject, JsonMarshallerContext context)
+        public void Marshall(SpotMarketOptions requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetBlockDurationMinutes())
-            {
-                context.Writer.WritePropertyName("BlockDurationMinutes");
-                context.Writer.WriteNumberValue(requestObject.BlockDurationMinutes.Value);
-            }
 
-            if(requestObject.IsSetInstanceInterruptionBehavior())
+            if (requestObject.IsSetBlockDurationMinutes())
             {
-                context.Writer.WritePropertyName("InstanceInterruptionBehavior");
-                context.Writer.WriteStringValue(requestObject.InstanceInterruptionBehavior);
+                context.Writer.WriteTextString("BlockDurationMinutes");
+                context.Writer.WriteInt32(requestObject.BlockDurationMinutes.Value);
             }
-
-            if(requestObject.IsSetMaxPrice())
+            if (requestObject.IsSetInstanceInterruptionBehavior())
             {
-                context.Writer.WritePropertyName("MaxPrice");
-                context.Writer.WriteStringValue(requestObject.MaxPrice);
+                context.Writer.WriteTextString("InstanceInterruptionBehavior");
+                context.Writer.WriteTextString(requestObject.InstanceInterruptionBehavior);
             }
-
-            if(requestObject.IsSetSpotInstanceType())
+            if (requestObject.IsSetMaxPrice())
             {
-                context.Writer.WritePropertyName("SpotInstanceType");
-                context.Writer.WriteStringValue(requestObject.SpotInstanceType);
+                context.Writer.WriteTextString("MaxPrice");
+                context.Writer.WriteTextString(requestObject.MaxPrice);
             }
-
-            if(requestObject.IsSetValidUntilUtc())
+            if (requestObject.IsSetSpotInstanceType())
             {
-                context.Writer.WritePropertyName("ValidUntilUtc");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ValidUntilUtc.Value)));
+                context.Writer.WriteTextString("SpotInstanceType");
+                context.Writer.WriteTextString(requestObject.SpotInstanceType);
             }
-
+            if (requestObject.IsSetValidUntilUtc())
+            {
+                context.Writer.WriteTextString("ValidUntilUtc");
+                context.Writer.WriteDateTime(requestObject.ValidUntilUtc.Value);
+            }
         }
 
         /// <summary>

@@ -46,6 +46,28 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBitbucket())
+            {
+                context.Writer.WritePropertyName("bitbucket");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BitbucketIntegrationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.Bitbucket, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetConfluence())
+            {
+                context.Writer.WritePropertyName("confluence");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConfluenceIntegrationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.Confluence, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetGithub())
             {
                 context.Writer.WritePropertyName("github");
@@ -53,6 +75,17 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
 
                 var marshaller = GitHubIntegrationInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.Github, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetGitlab())
+            {
+                context.Writer.WritePropertyName("gitlab");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GitLabIntegrationInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.Gitlab, context);
 
                 context.Writer.WriteEndObject();
             }

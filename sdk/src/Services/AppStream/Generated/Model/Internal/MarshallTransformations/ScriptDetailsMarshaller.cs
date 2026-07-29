@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ScriptDetails Marshaller
     /// </summary>
-    public class ScriptDetailsMarshaller : IRequestMarshaller<ScriptDetails, JsonMarshallerContext> 
+    public class ScriptDetailsMarshaller : IRequestMarshaller<ScriptDetails, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,39 +45,36 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ScriptDetails requestObject, JsonMarshallerContext context)
+        public void Marshall(ScriptDetails requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetExecutableParameters())
-            {
-                context.Writer.WritePropertyName("ExecutableParameters");
-                context.Writer.WriteStringValue(requestObject.ExecutableParameters);
-            }
 
-            if(requestObject.IsSetExecutablePath())
+            if (requestObject.IsSetExecutableParameters())
             {
-                context.Writer.WritePropertyName("ExecutablePath");
-                context.Writer.WriteStringValue(requestObject.ExecutablePath);
+                context.Writer.WriteTextString("ExecutableParameters");
+                context.Writer.WriteTextString(requestObject.ExecutableParameters);
             }
-
-            if(requestObject.IsSetScriptS3Location())
+            if (requestObject.IsSetExecutablePath())
             {
-                context.Writer.WritePropertyName("ScriptS3Location");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("ExecutablePath");
+                context.Writer.WriteTextString(requestObject.ExecutablePath);
+            }
+            if (requestObject.IsSetScriptS3Location())
+            {
+                context.Writer.WriteTextString("ScriptS3Location");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScriptS3Location, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
-            if(requestObject.IsSetTimeoutInSeconds())
+            if (requestObject.IsSetTimeoutInSeconds())
             {
-                context.Writer.WritePropertyName("TimeoutInSeconds");
-                context.Writer.WriteNumberValue(requestObject.TimeoutInSeconds.Value);
+                context.Writer.WriteTextString("TimeoutInSeconds");
+                context.Writer.WriteInt32(requestObject.TimeoutInSeconds.Value);
             }
-
         }
 
         /// <summary>

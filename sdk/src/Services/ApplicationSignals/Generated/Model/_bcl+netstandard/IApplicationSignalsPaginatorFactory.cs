@@ -28,6 +28,16 @@ namespace Amazon.ApplicationSignals.Model
     {
 
         /// <summary>
+        /// Paginator for GetInstrumentationConfigurationStatus operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetInstrumentationConfigurationStatusPaginator GetInstrumentationConfigurationStatus(GetInstrumentationConfigurationStatusRequest request);
+
+        /// <summary>
         /// Paginator for ListEntityEvents operation
         ///</summary>
         [AWSPaginator(
@@ -36,6 +46,16 @@ namespace Amazon.ApplicationSignals.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListEntityEventsPaginator ListEntityEvents(ListEntityEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListInstrumentationConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListInstrumentationConfigurationsPaginator ListInstrumentationConfigurations(ListInstrumentationConfigurationsRequest request);
 
         /// <summary>
         /// Paginator for ListServiceDependencies operation

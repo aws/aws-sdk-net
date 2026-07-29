@@ -101,7 +101,8 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content for the asset. Provide a single file or a zip bundle.
+        /// The content for the asset. Provide a single file, a zip bundle, or a sourceUrl to
+        /// import from an external source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -54,6 +54,12 @@ namespace Amazon.CloudWatch.Model
         public IPaginatedEnumerable<CompositeAlarm> CompositeAlarms => 
             new PaginatedResultKeyResponse<DescribeAlarmsResponse, CompositeAlarm>(this, (i) => i.CompositeAlarms ?? new List<CompositeAlarm>());
 
+        /// <summary>
+        /// Enumerable containing all of the LogAlarms
+        /// </summary>
+        public IPaginatedEnumerable<LogAlarm> LogAlarms => 
+            new PaginatedResultKeyResponse<DescribeAlarmsResponse, LogAlarm>(this, (i) => i.LogAlarms ?? new List<LogAlarm>());
+
         internal DescribeAlarmsPaginator(IAmazonCloudWatch client, DescribeAlarmsRequest request)
         {
             this._client = client;

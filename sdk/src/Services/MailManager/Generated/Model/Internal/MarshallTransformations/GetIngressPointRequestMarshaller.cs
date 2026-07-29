@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
@@ -59,42 +58,48 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetIngressPointRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.MailManager");
-            string target = "MailManagerSvc.GetIngressPoint";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/MailManagerSvc/operation/GetIngressPoint";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2023-10-17";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
+            var writer = CborWriterPool.Rent();
+            try
+            {
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetIncludeTrustStoreContents())
+                {
+                    context.Writer.WriteTextString("IncludeTrustStoreContents");
+                    context.Writer.WriteTextString(publicRequest.IncludeTrustStoreContents);
+                }
+                if (publicRequest.IsSetIngressPointId())
+                {
+                    context.Writer.WriteTextString("IngressPointId");
+                    context.Writer.WriteTextString(publicRequest.IngressPointId);
+                }
+                writer.WriteEndMap();
 #if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
 #else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+                request.Content = writer.Encode();
 #endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetIncludeTrustStoreContents())
-            {
-                context.Writer.WritePropertyName("IncludeTrustStoreContents");
-                context.Writer.WriteStringValue(publicRequest.IncludeTrustStoreContents);
             }
-
-            if(publicRequest.IsSetIngressPointId())
+            finally
             {
-                context.Writer.WritePropertyName("IngressPointId");
-                context.Writer.WriteStringValue(publicRequest.IngressPointId);
+                CborWriterPool.Return(writer);
             }
-
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
             
-
-
             return request;
         }
         private static GetIngressPointRequestMarshaller _instance = new GetIngressPointRequestMarshaller();        

@@ -16,11 +16,15 @@ using Amazon.Runtime.Endpoints;
 using Amazon.Util;
 using System;
 using System.Collections;
+#if NET8_0_OR_GREATER
+using System.Collections.Frozen;
+#endif
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using ThirdParty.RuntimeBackports;
 
 namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
 {
@@ -53,49 +57,83 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static object GetAttr(object value, string path)
         {
-            if (string.IsNullOrEmpty(path)) throw new ArgumentNullException("path");
+#if NET8_0_OR_GREATER
+            ArgumentNullException.ThrowIfNull(path);
+#else
+            if (path is null) throw new ArgumentNullException(nameof(path));
+#endif
 
-            var parts = path.Split('.');
+            return GetAttr(value, path.AsSpan());
+        }
+
+        private static object GetAttr(object value, ReadOnlySpan<char> path)
+        {
+            if (path.Length == 0) throw new ArgumentNullException(nameof(path));
+
             var propertyValue = value;
-            
-            for (int i = 0; i < parts.Length; i++)
+
+            bool isLastSegment = false;
+            var remainder = path;
+            while (!isLastSegment)
             {
-                var part = parts[i];
-
-                // indexer is always at the end of path e.g. "Part1.Part2[3]"
-                if (i == parts.Length - 1)
+                var dotPos = remainder.IndexOf('.');
+                isLastSegment = dotPos == -1;
+                ReadOnlySpan<char> segment;
+                if (isLastSegment)
                 {
-                    var indexerStart = part.LastIndexOf('[');
-                    var indexerEnd = part.Length - 1;
+                    segment = remainder;
+                }
+                else
+                {
+                    segment = remainder.Slice(0, dotPos);
+                    remainder = remainder.Slice(dotPos + 1);
+                }
 
-                    // indexer detected
-                    if (indexerStart >= 0)
+
+                // indexer is always at the end of path e.g. "Part1.Part2[3]" or "[0]"
+                // multiple indexers only consume the last segment e.g. "Part1[1][2]" consumes [2]
+                if (isLastSegment)
+                {
+                    var bracketPos = segment.LastIndexOf('[');
+                    if (bracketPos >= 0)
                     {
-                        var propertyPath = part.Substring(0, indexerStart);
-                        var index = int.Parse(part.Substring(indexerStart + 1, indexerEnd - indexerStart - 1));
+                        var indexSegment = segment.Slice(bracketPos + 1, segment.Length - bracketPos - 2);
 
-                        // indexer can be passed directly as a path e.g. "[1]"
-                        if (indexerStart > 0)
+#if NETCOREAPP3_1_OR_GREATER
+                        var index = int.Parse(indexSegment);
+#else
+                        var index = int.Parse(indexSegment.ToString());
+#endif
+
+                        // property segment before the bracket e.g. "Part2[3]"
+                        if (bracketPos > 0)
                         {
-                            propertyValue = ((IPropertyBag)propertyValue)[propertyPath];
+                            if (propertyValue is not IPropertyBag propBag)
+                                throw new InvalidCastException("Object addressing by pathing segment must be IPropertyBag");
+                            propertyValue = propBag[segment.Slice(0, bracketPos).ToString()];
                         }
 
-                        if (!(propertyValue is IEnumerable)) throw new ArgumentException("Object addressing by pathing segment '{part}' with indexer must be IEnumerable");
+                        if (propertyValue is not IEnumerable enumerable)
+                            throw new ArgumentException("Object addressing by pathing segment with indexer must be IEnumerable");
 
-                        var enumerable = (IEnumerable)propertyValue;
-                        var list = enumerable.Cast<object>().ToList();
-                        if (index < 0 || index > list.Count - 1) 
+                        // avoid Cast<object>().ToList() – use IList direct access when possible
+                        if (enumerable is IList directList)
+                            return index >= 0 && index < directList.Count ? directList[index] : null;
+
+                        // fallback for non-IList enumerables: walk without allocating a list
+                        int pos = 0;
+                        foreach (var item in enumerable)
                         {
-                            return null;
+                            if (pos++ == index) return item;
                         }
-                        return list[index];
+                        return null;
                     }
                 }
 
-                if (!(propertyValue is IPropertyBag)) throw new ArgumentException("Object addressing by pathing segment '{part}' must be IPropertyBag");
-                propertyValue = ((IPropertyBag)propertyValue)[part];
+                if (propertyValue is not IPropertyBag bag)
+                    throw new ArgumentException($"Object addressing by pathing segment must be IPropertyBag");
+                propertyValue = bag[segment.ToString()];
             }
-
             return propertyValue;
         }
 
@@ -158,7 +196,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             {
                 return false;
             }
-            if (!char.IsLetterOrDigit(name[0]) || !char.IsLetterOrDigit(name.Last()))
+            if (!char.IsLetterOrDigit(name[0]) || !char.IsLetterOrDigit(name[name.Length - 1]))
             {
                 return false;
             }
@@ -212,7 +250,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             {
                 return false;
             }
-            if (char.IsUpper(name[0]) || !char.IsLetterOrDigit(name[0]) || !char.IsLetterOrDigit(name.Last()))
+            if (char.IsUpper(name[0]) || !char.IsLetterOrDigit(name[0]) || !char.IsLetterOrDigit(name[name.Length-1]))
             {
                 return false;
             }
@@ -255,7 +293,13 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             return AWSSDKUtils.UrlEncode(value, false);
         }
 
-        private static string[] SupportedSchemas = new string[] { "http", "https", "wss" };
+#if NET8_0_OR_GREATER
+        private static readonly FrozenSet<string> SupportedSchemas = new HashSet<string> { "http", "https", "wss" }
+            .ToFrozenSet(StringComparer.Ordinal);
+#else
+        private static readonly HashSet<string> SupportedSchemas = new HashSet<string>(StringComparer.Ordinal) { "http", "https", "wss" };
+#endif
+
         /// <summary>
         /// Parses url string into URL object.
         /// Given a string the function will attempt to parse the string into it’s URL components.
@@ -307,57 +351,63 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         {
             const char OpenBracket = '{';
             const char CloseBracket = '}';
-            var result = new StringBuilder();
-            for (int i = 0; i < template.Length; i++)
+            const char Hash = '#';
+            using var result = new ValueStringBuilder(template.Length); // preallocate to template length, will grow if needed
+            var remainder = template.AsSpan();
+            while (remainder.Length > 0)
             {
-                var currentChar = template[i];
-                char nextChar = (i < template.Length - 1) ? template[i + 1] : default(char);
-                // translate {{ -> { and }} -> }
-                if (currentChar == OpenBracket && nextChar == OpenBracket)
+                var specialPos = remainder.IndexOfAny(OpenBracket, CloseBracket);
+                if (specialPos < 0)
                 {
-                    result.Append(OpenBracket);
-                    i++;
+                    result.Append(remainder);
+                    break;
+                }
+
+                // copy the literal segment before the special character
+                if (specialPos > 0)
+                {
+                    result.Append(remainder.Slice(0, specialPos));
+                    remainder = remainder.Slice(specialPos);
+                }
+
+                var currentChar = remainder[0];
+                var nextChar = remainder.Length > 1 ? remainder[1] : default(char);
+
+                // {{ -> { and }} -> } escape sequences
+                if (currentChar == nextChar)
+                {
+                    result.Append(currentChar);
+                    remainder = remainder.Slice(2);
                     continue;
                 }
-                if (currentChar == CloseBracket && nextChar == CloseBracket)
-                {
-                    result.Append(CloseBracket);
-                    i++;
-                    continue;
-                }
-                // translate {object#path} -> value
-                if (currentChar == OpenBracket)
-                {
-                    var placeholder = new StringBuilder();
-                    while (i < template.Length - 1 && template[i + 1] != CloseBracket)
-                    {
-                        i++;
-                        placeholder.Append(template[i]);
-                    }
-                    if (i == template.Length - 1)
-                    {
-                        throw new ArgumentException("template is missing closing }");
-                    }
-                    i++;
-                    var refParts = placeholder.ToString().Split('#');
-                    var refName = refParts[0];
-                    if (refParts.Length > 1) // has path after #
-                    {
-                        result.Append(GetAttr(refs[refName], refParts[1]).ToString());
-                    }
-                    else
-                    {
-                        result.Append(refs[refName].ToString());
-                    }
-                }
-                else if (currentChar == CloseBracket)
-                {
+
+                if (currentChar == CloseBracket)
                     throw new ArgumentException("template has non-matching closing bracket, use }} to output }");
+
+                // currentChar == OpenBracket: resolve {ref} or {ref#path}
+                var closingBracket = remainder.IndexOf(CloseBracket);
+                if (closingBracket < 0)
+                    throw new ArgumentException("template is missing closing }");
+
+                var segment = remainder.Slice(1, closingBracket - 1);
+                var hashPos = segment.IndexOf(Hash);
+                if (hashPos >= 0)
+                {
+                    var refName = segment.Slice(0, hashPos).ToString();
+                    segment = segment.Slice(hashPos + 1);
+
+                    // If there is a secondary hash, we only want the path up to that point
+                    var secondaryHashPos = segment.IndexOf(Hash);
+                    if (secondaryHashPos >= 0)
+                        segment = segment.Slice(0, secondaryHashPos);
+
+                    result.Append(GetAttr(refs[refName], segment).ToString());
                 }
                 else
                 {
-                    result.Append(currentChar);
+                    result.Append(refs[segment.ToString()].ToString());
                 }
+                remainder = remainder.Slice(closingBracket + 1);
             }
 
             return result.ToString();
@@ -374,13 +424,24 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             {
                 using JsonDocument doc = JsonDocument.Parse(json);
                 var element = doc.RootElement;
-                using var stream = new MemoryStream();
-                using var writer = new Utf8JsonWriter(stream);
+#if !NETFRAMEWORK
+                // We assume new json will be at least similar size to the original json, so we can use the original json length as the initial buffer size.
+                using var baseWriter = new ArrayPoolBufferWriter<byte>(json.Length);
+                using var utf8Writer = new Utf8JsonWriter(baseWriter);
 
-                InterpolateJson(element, refs, writer);
-                writer.Flush();
+                InterpolateJson(element, refs, utf8Writer);
+                utf8Writer.Flush();
+
+                return Encoding.UTF8.GetString(baseWriter.WrittenSpan);
+#else
+                using var stream = new MemoryStream();
+                using var utfWriter = new Utf8JsonWriter(stream);
+
+                InterpolateJson(element, refs, utfWriter);
+                utfWriter.Flush();
 
                 return Encoding.UTF8.GetString(stream.ToArray());
+#endif
             }
             catch (JsonException)
             {

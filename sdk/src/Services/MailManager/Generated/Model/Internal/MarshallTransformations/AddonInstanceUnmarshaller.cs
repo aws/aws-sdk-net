@@ -29,64 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AddonInstance Object
     /// </summary>  
-    public class AddonInstanceUnmarshaller : IJsonUnmarshaller<AddonInstance, JsonUnmarshallerContext>
+    public class AddonInstanceUnmarshaller : ICborUnmarshaller<AddonInstance, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AddonInstance Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AddonInstance Unmarshall(CborUnmarshallerContext context)
         {
             AddonInstance unmarshalledObject = new AddonInstance();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AddonInstanceArn", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonInstanceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AddonInstanceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonInstanceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AddonName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AddonSubscriptionId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonSubscriptionId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("CreatedTimestamp", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AddonInstanceArn":
+                        {
+                            context.AddPathSegment("AddonInstanceArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AddonInstanceArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AddonInstanceId":
+                        {
+                            context.AddPathSegment("AddonInstanceId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AddonInstanceId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AddonName":
+                        {
+                            context.AddPathSegment("AddonName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AddonName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "AddonSubscriptionId":
+                        {
+                            context.AddPathSegment("AddonSubscriptionId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AddonSubscriptionId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "CreatedTimestamp":
+                        {
+                            context.AddPathSegment("CreatedTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

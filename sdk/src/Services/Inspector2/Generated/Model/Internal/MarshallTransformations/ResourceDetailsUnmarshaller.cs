@@ -80,6 +80,24 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeRepository = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("image", targetDepth, ref reader))
+                {
+                    var unmarshaller = ImageUnmarshaller.Instance;
+                    unmarshalledObject.Image = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("serverlessFunction", targetDepth, ref reader))
+                {
+                    var unmarshaller = ServerlessFunctionUnmarshaller.Instance;
+                    unmarshalledObject.ServerlessFunction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vm", targetDepth, ref reader))
+                {
+                    var unmarshaller = VmUnmarshaller.Instance;
+                    unmarshalledObject.Vm = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

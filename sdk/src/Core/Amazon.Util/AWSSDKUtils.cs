@@ -42,6 +42,7 @@ using System.Threading.Tasks;
 #if NETSTANDARD
 using System.Net.Http;
 using System.Runtime.InteropServices;
+using AsyncHelpers = Amazon.Runtime.Internal.Util.AsyncHelpers;
 #endif
 
 namespace Amazon.Util
@@ -110,13 +111,12 @@ namespace Amazon.Util
         /// <summary>
         /// The set of accepted and valid Url path characters per RFC3986.
         /// </summary>
-        private static string ValidPathCharacters = DetermineValidPathCharacters();
+        private static readonly string ValidPathCharacters = DetermineValidPathCharacters();
 
         /// <summary>
         /// The set of characters which are not to be encoded as part of the X-Amzn-Trace-Id header values
         /// </summary>
         public const string ValidTraceIdHeaderValueCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-=;:+&[]{}\"',";
-
 
         // Valid path characters per RFC 3986 https://datatracker.ietf.org/doc/html/rfc3986#section-3.3
         // segment-nz-nc = 1*( unreserved / pct-encoded / sub-delims / "@" ) ; non-zero-length segment without any colon ":"
@@ -311,32 +311,33 @@ namespace Amazon.Util
         internal static string CalculateStringToSignV2(ParameterCollection parameterCollection, string serviceUrl)
         {
             StringBuilder data = new StringBuilder("POST\n", 512);
-            var sortedParameters = parameterCollection.GetSortedParametersList();
+            var sortedParameters = parameterCollection.GetParametersEnumerable();
             Uri endpoint = new Uri(serviceUrl);
 
             data.Append(endpoint.Host);
-            data.Append("\n");
+            data.Append('\n');
             string uri = endpoint.AbsolutePath;
-            if (uri == null || uri.Length == 0)
+            if (string.IsNullOrEmpty(uri))
             {
                 uri = "/";
             }
 
             data.Append(AWSSDKUtils.UrlEncode(uri, true));
-            data.Append("\n");
+            data.Append('\n');
+
             foreach (KeyValuePair<string, string> pair in sortedParameters)
             {
                 if (pair.Value != null)
                 {
                     data.Append(AWSSDKUtils.UrlEncode(pair.Key, false));
-                    data.Append("=");
+                    data.Append('=');
                     data.Append(AWSSDKUtils.UrlEncode(pair.Value, false));
-                    data.Append("&");
+                    data.Append('&');
                 }
             }
 
-            string result = data.ToString();
-            return result.Remove(result.Length - 1);
+            data.Remove(data.Length - 1, 1); // Remove the trailing '\n' or '&' character
+            return data.ToString();
         }
 
         /**
@@ -351,25 +352,25 @@ namespace Amazon.Util
         /// Returns the request parameters in the form of a query string.
         /// </summary>
         /// <param name="request">The request instance</param>
-        /// <param name="usesQueryString">Optional parameter: if true, we will return an empty string</param>
+        /// <param name="usesQueryString">Optional parameter: if true, we will return an empty byte array</param>
         /// <returns>Request parameters in query string byte array format</returns>
         public static byte[] GetRequestPayloadBytes(IRequest request, bool? usesQueryString = null)
         {
             if (request.Content != null)
                 return request.Content;
 
-            string content;
-
-            if(usesQueryString.HasValue && usesQueryString.Value)
+            if (usesQueryString.HasValue && usesQueryString.Value)
             {
-                content = string.Empty;
-            }
-            else
-            {
-                content = GetParametersAsString(request);
+                return ArrayEx.Empty<byte>();
             }
 
-            return Encoding.UTF8.GetBytes(content);
+#if !NETFRAMEWORK
+            // Build the form-url-encoded body straight into UTF-8 bytes, skipping the intermediate
+            // UTF-16 string (and per-value encode strings) that the string path allocates.
+            return GetParametersAsBytes(request.ParameterCollection);
+#else
+            return Encoding.UTF8.GetBytes(GetParametersAsString(request));
+#endif
         }
 
         /**
@@ -392,6 +393,86 @@ namespace Amazon.Util
             var length = parameterBuilder.Length;
             return length == 0 ? string.Empty : parameterBuilder.ToString(0, length - 1);
         }
+
+#if !NETFRAMEWORK
+        /// <summary>
+        /// Builds the form-url-encoded body ("key=value&amp;key=value") from the parameter collection
+        /// straight into UTF-8 bytes, byte-for-byte identical to
+        /// <c>Encoding.UTF8.GetBytes(GetParametersAsString(parameterCollection))</c> but without the
+        /// intermediate UTF-16 string or per-value encode strings.
+        /// </summary>
+        internal static byte[] GetParametersAsBytes(ParameterCollection parameterCollection)
+        {
+            using var writer = new ArrayPoolBufferWriter<byte>();
+            WriteParameters(writer, parameterCollection);
+
+            var written = writer.WrittenSpan;
+            return written.Length == 0 ? ArrayEx.Empty<byte>() : written.ToArray();
+        }
+
+        /// <summary>
+        /// Writes the form-url-encoded body of <paramref name="request"/>'s parameters into a
+        /// <see cref="PooledContentStream"/>, avoiding the per-request byte[] that
+        /// <see cref="GetRequestPayloadBytes"/> allocates.
+        /// </summary>
+        public static PooledContentStream WriteParametersToPooledStream(IRequest request)
+        {
+            var stream = new PooledContentStream();
+            try
+            {
+                WriteParameters(stream.BufferWriter, request.ParameterCollection);
+            }
+            catch
+            {
+                stream.Dispose();
+                throw;
+            }
+            return stream;
+        }
+
+        /// <summary>
+        /// Emits "key=urlencoded(value)" pairs joined by '&amp;' (no trailing '&amp;'),
+        /// skipping parameters with a null value, exactly as
+        /// <see cref="GetParametersAsString(ParameterCollection)"/> does.
+        /// </summary>
+        private static void WriteParameters(IBufferWriter<byte> buffer, ParameterCollection parameterCollection)
+        {
+            var first = true;
+            foreach (var kvp in parameterCollection.GetParametersEnumerable())
+            {
+                var value = kvp.Value;
+                if (value == null)
+                    continue;
+
+                // Prefix '&' before every pair except the first, which yields no trailing '&' — matching
+                // GetParametersAsString's append-then-drop-last-'&' behavior.
+                if (!first)
+                    WriteByte(buffer, (byte)'&');
+                first = false;
+
+                WriteUtf8(buffer, kvp.Key);
+                WriteByte(buffer, (byte)'=');
+                UrlEncodeToBuffer(3986, buffer, value, false);
+            }
+        }
+
+        private static void WriteByte(IBufferWriter<byte> buffer, byte value)
+        {
+            var span = buffer.GetSpan(1);
+            span[0] = value;
+            buffer.Advance(1);
+        }
+
+        private static void WriteUtf8(IBufferWriter<byte> buffer, string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return;
+
+            var span = buffer.GetSpan(Encoding.UTF8.GetMaxByteCount(value.Length));
+            var written = Encoding.UTF8.GetBytes(value.AsSpan(), span);
+            buffer.Advance(written);
+        }
+#endif
 
         /// <summary>
         /// Returns the canonicalized resource path for the service endpoint.
@@ -536,7 +617,7 @@ namespace Amazon.Util
 
             return uriComponentSegments;
         }
-        
+
         /// <summary>
         /// Joins all path segments with the / character and encodes each segment before joining
         /// </summary>
@@ -557,13 +638,13 @@ namespace Amazon.Util
         /// <returns></returns>
         public static string JoinResourcePathSegmentsV2(IEnumerable<UriComponent> pathSegments)
         {
-            List<string> encodedSegments = pathSegments.Select(segment =>
+            string[] encodedSegments = pathSegments.Select(segment =>
             {
                 if (segment.SegmentType == SegmentType.Label)
                     return UrlEncode(segment.Value, false);
                 else
                     return UrlEncode(segment.Value, true);
-            }).ToList();
+            }).ToArray();
             // join the encoded segments with /
             return string.Join(Slash, encodedSegments);
         }
@@ -858,7 +939,7 @@ namespace Amazon.Util
             return (a.Equals(b));
         }
 
-        internal static bool DictionariesAreEqual<K,V>(Dictionary<K, V> a, Dictionary<K, V> b)
+        internal static bool DictionariesAreEqual<TKey,TValue>(Dictionary<TKey, TValue> a, Dictionary<TKey, TValue> b)
         {
             if (a == null || b == null)
                 return (a == b);
@@ -866,7 +947,7 @@ namespace Amazon.Util
             if (object.ReferenceEquals(a, b))
                 return true;
 
-            return a.Count == b.Count && !a.Except(b).Any();
+            return a.Count == b.Count && a.All(aKV => b.TryGetValue(aKV.Key, out var bVal) && EqualityComparer<TValue>.Default.Equals(aKV.Value, bVal));
         }
 
         /// <summary>
@@ -1118,8 +1199,6 @@ namespace Amazon.Util
             if (string.IsNullOrEmpty(data))
                 return string.Empty;
 
-            var unreservedChars = GetUrlEncodeLookup(rfcNumber, path);
-
             byte[] sharedDataBuffer = null;
             const int MaxStackLimit = 256;
             try
@@ -1139,66 +1218,128 @@ namespace Amazon.Util
                     ? stackalloc byte[MaxStackLimit]
                     : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
 
-                // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
-                // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer
-                // for the encoded representation.
-                var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
-                var bytesWritten = encoding.GetBytes(dataAsSpan, encodingBuffer);
-                var encodingBytes = encodingBuffer.Slice(0, bytesWritten);
-
-                var index = 0;
-                var startIndex = 0;
-
-#if NET8_0_OR_GREATER
-                // Vectorized scan to the first byte that needs encoding. When there is none, the output equals
-                // the input, so return the original string - the common case for already-safe values.
-                var firstEncoded = ((ReadOnlySpan<byte>)encodingBytes).IndexOfAnyExcept(GetUrlEncodeSearchValues(rfcNumber, path));
-                if (firstEncoded == -1)
-                    return data;
-
-                // Bulk-copy the safe prefix, then let the per-byte loop handle the remainder.
-                if (firstEncoded > 0)
-                {
-                    encodingBytes.Slice(0, firstEncoded).CopyTo(dataBuffer);
-                    index = firstEncoded;
-                    startIndex = firstEncoded;
-                }
-#endif
-
-                var encoded = false;
-                for (var i = startIndex; i < encodingBytes.Length; i++)
-                {
-                    var symbol = encodingBytes[i];
-                    if (symbol < 128 && unreservedChars[symbol])
-                    {
-                        dataBuffer[index++] = symbol;
-                    }
-                    else
-                    {
-                        encoded = true;
-                        dataBuffer[index++] = (byte)'%';
-
-                        // Break apart the byte into two four-bit components and
-                        // then convert each into their hexadecimal equivalent.
-                        var hiNibble = symbol >> 4;
-                        var loNibble = symbol & 0xF;
-                        dataBuffer[index++] = (byte)ToUpperHex(hiNibble);
-                        dataBuffer[index++] = (byte)ToUpperHex(loNibble);
-                    }
-                }
+                var output = UrlEncodeToSpan(rfcNumber, dataAsSpan, path, dataBuffer, out var encoded);
 
                 // Nothing was encoded, so the output equals the input; return the original string and skip the
-                // allocation. (On net8+ this case is already handled by the vectorized fast path above.)
+                // allocation.
                 if (!encoded)
                     return data;
 
-                return encoding.GetString(dataBuffer.Slice(0, index));
+                return encoding.GetString(output);
             }
             finally
             {
                 if (sharedDataBuffer != null) ArrayPool<byte>.Shared.Return(sharedDataBuffer);
             }
         }
+
+        /// <summary>
+        /// Core of <see cref="UrlEncode(int, string, bool)"/>: UTF-8 encodes <paramref name="data"/> and
+        /// percent-encodes it per the given RFC into <paramref name="dataBuffer"/>, which must be at least
+        /// 3x the UTF-8 max byte count of <paramref name="data"/>. Returns the slice of bytes that form the
+        /// output (this aliases into <paramref name="dataBuffer"/>) and sets <paramref name="encoded"/> to
+        /// false when no character needed escaping (the returned slice is then the raw UTF-8 bytes).
+        /// </summary>
+        private static ReadOnlySpan<byte> UrlEncodeToSpan(int rfcNumber, ReadOnlySpan<char> data, bool path, Span<byte> dataBuffer, out bool encoded)
+        {
+            var unreservedChars = GetUrlEncodeLookup(rfcNumber, path);
+            var encoding = Encoding.UTF8;
+
+            var dataByteLength = encoding.GetMaxByteCount(data.Length);
+
+            // Instead of stack allocating or renting two buffers we use one buffer with at least twice the capacity of the
+            // max encoding length. Then store the character data as bytes in the second half reserving the first half of the buffer
+            // for the encoded representation.
+            var encodingBuffer = dataBuffer.Slice(dataBuffer.Length - dataByteLength);
+            var bytesWritten = encoding.GetBytes(data, encodingBuffer);
+            var encodingBytes = encodingBuffer.Slice(0, bytesWritten);
+
+            var index = 0;
+            var startIndex = 0;
+
+#if NET8_0_OR_GREATER
+            // Vectorized scan to the first byte that needs encoding. When there is none, the output equals
+            // the raw utf8 bytes; return the encodingBytes unchanged - the common case for already-safe values.
+            var firstEncoded = ((ReadOnlySpan<byte>)encodingBytes).IndexOfAnyExcept(GetUrlEncodeSearchValues(rfcNumber, path));
+            if (firstEncoded == -1)
+            {
+                encoded = false;
+                return encodingBytes;
+            }
+
+            // Bulk-copy the safe prefix, then let the per-byte loop handle the remainder.
+            if (firstEncoded > 0)
+            {
+                encodingBytes.Slice(0, firstEncoded).CopyTo(dataBuffer);
+                index = firstEncoded;
+                startIndex = firstEncoded;
+            }
+#endif
+
+            encoded = false;
+            for (var i = startIndex; i < encodingBytes.Length; i++)
+            {
+                var symbol = encodingBytes[i];
+                if (symbol < 128 && unreservedChars[symbol])
+                {
+                    dataBuffer[index++] = symbol;
+                }
+                else
+                {
+                    encoded = true;
+                    dataBuffer[index++] = (byte)'%';
+
+                    // Break apart the byte into two four-bit components and
+                    // then convert each into their hexadecimal equivalent.
+                    var hiNibble = symbol >> 4;
+                    var loNibble = symbol & 0xF;
+                    dataBuffer[index++] = (byte)upperHex[hiNibble];
+                    dataBuffer[index++] = (byte)upperHex[loNibble];
+                }
+            }
+
+            return dataBuffer.Slice(0, index);
+        }
+
+#if !NETFRAMEWORK
+        /// <summary>
+        /// Percent-encodes <paramref name="data"/> per the given RFC and writes the resulting UTF-8 bytes
+        /// directly into <paramref name="buffer"/>, avoiding the intermediate string that
+        /// <see cref="UrlEncode(int, string, bool)"/> allocates. Used by the Query-protocol body builders to
+        /// write straight into a pooled buffer. Produces byte-for-byte the same output as
+        /// <c>Encoding.UTF8.GetBytes(UrlEncode(rfcNumber, data, path))</c>.
+        /// </summary>
+        [SkipLocalsInit]
+        internal static void UrlEncodeToBuffer(int rfcNumber, IBufferWriter<byte> buffer, string data, bool path)
+        {
+            if (string.IsNullOrEmpty(data))
+                return;
+
+            byte[] sharedDataBuffer = null;
+            const int MaxStackLimit = 256;
+            try
+            {
+                var dataAsSpan = data.AsSpan();
+                var encodedByteLength = 3 * Encoding.UTF8.GetMaxByteCount(dataAsSpan.Length);
+                var dataBuffer = encodedByteLength <= MaxStackLimit
+                    ? stackalloc byte[MaxStackLimit]
+                    : sharedDataBuffer = ArrayPool<byte>.Shared.Rent(encodedByteLength);
+
+                // Unlike the string overload, the no-encode case must still WRITE the raw utf8 bytes (the
+                // string overload returns the original string instead). UrlEncodeToSpan returns the output
+                // slice for both the encoded and the raw-passthrough case, so we always copy what it returns.
+                var output = UrlEncodeToSpan(rfcNumber, dataAsSpan, path, dataBuffer, out _);
+
+                var dest = buffer.GetSpan(output.Length);
+                output.CopyTo(dest);
+                buffer.Advance(output.Length);
+            }
+            finally
+            {
+                if (sharedDataBuffer != null) ArrayPool<byte>.Shared.Return(sharedDataBuffer);
+            }
+        }
+#endif
         
         internal static bool TryGetRFCEncodingSchemes(int rfcNumber, out string encodingScheme)
         {
@@ -1218,10 +1359,12 @@ namespace Amazon.Util
             return false;
         }
 
-        private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
-        {
-            Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
+        private static readonly char[] lowerHex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
+        private static readonly char[] upperHex = new char[] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
 
+        private static void ToHexString(ReadOnlySpan<byte> source, Span<char> destination, bool lowercase)
+        {
+            var converter = lowercase ? lowerHex : upperHex;
             for (int i = source.Length - 1; i >= 0; i--)
             {
                 // Break apart the byte into two four-bit components and
@@ -1229,32 +1372,9 @@ namespace Amazon.Util
                 byte b = source[i];
                 int hiNibble = b >> 4;
                 int loNibble = b & 0xF;
-
-                destination[i * 2] = converter(hiNibble);
-                destination[i * 2 + 1] = converter(loNibble);
+                destination[i * 2] = converter[hiNibble];
+                destination[i * 2 + 1] = converter[loNibble];
             }
-        }
-
-        private static char ToUpperHex(int value)
-        {
-            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
-            if (value <= 9)
-            {
-                return (char)(value + '0');
-            }
-            // Maps 10-15 to the Unicode range of 'A' - 'F' (0x41 - 0x46).
-            return (char)(value - 10 + 'A');
-        }
-
-        private static char ToLowerHex(int value)
-        {
-            // Maps 0-9 to the Unicode range of '0' - '9' (0x30 - 0x39).
-            if (value <= 9)
-            {
-                return (char)(value + '0');
-            }
-            // Maps 10-15 to the Unicode range of 'a' - 'f' (0x61 - 0x66).
-            return (char)(value - 10 + 'a');
         }
 
         internal static string UrlEncodeSlash(string data)
@@ -1267,6 +1387,19 @@ namespace Amazon.Util
             return data.Replace("/", EncodedSlash);
         }
 
+
+        private static readonly bool[] ValidTraceIdHeaderValueCharactersLookup = BuildTraceIdHeaderValueLookup(ValidTraceIdHeaderValueCharacters);
+
+        private static bool[] BuildTraceIdHeaderValueLookup(string validTraceIdHeaderValueCharacters)
+        {
+            var lookup = new bool[128];
+            foreach (var c in validTraceIdHeaderValueCharacters)
+            {
+                if (c < 128) lookup[c] = true;
+            }
+            return lookup;
+        }
+
         /// <summary>
         /// Percent encodes the X-Amzn-Trace-Id header value skipping any characters within the
         /// ValidTraceIdHeaderValueCharacters character set.
@@ -1275,22 +1408,35 @@ namespace Amazon.Util
         /// <returns>An encoded X-Amzn-Trace-Id header value.</returns>
         internal static string EncodeTraceIdHeaderValue(string value)
         {
-            var encoded = new StringBuilder(value.Length * 2);
-            foreach (char symbol in System.Text.Encoding.UTF8.GetBytes(value))
+            using var encoded = new ValueStringBuilder(value.Length * 2);
+            var utf8Bytes = ArrayPool<byte>.Shared.Rent(Encoding.UTF8.GetMaxByteCount(value.Length));
+            try
             {
-                if (ValidTraceIdHeaderValueCharacters.IndexOf(symbol) != -1)
+#if NETCOREAPP3_1_OR_GREATER
+                var length = Encoding.UTF8.GetBytes(value, utf8Bytes);
+#else
+                var length = Encoding.UTF8.GetBytes(value, 0, value.Length, utf8Bytes, 0);
+#endif
+                foreach (var b in utf8Bytes.AsSpan(0, length))
                 {
-                    encoded.Append(symbol);
-                }
-                else
-                {
-                    encoded.Append("%").Append(string.Format(CultureInfo.InvariantCulture, "{0:X2}", (int)symbol));
+                    if (b < 128 && ValidTraceIdHeaderValueCharactersLookup[b])
+                    {
+                        encoded.Append((char)b);
+                    }
+                    else
+                    {
+                        encoded.Append('%');
+                        encoded.Append(upperHex[b >> 4]);
+                        encoded.Append(upperHex[b & 0xF]);
+                    }
                 }
             }
-
-            return encoded.ToString();
+            finally
+            {
+                ArrayPool<byte>.Shared.Return(utf8Bytes);
+            }
+            return encoded.AsSpan().ToString();
         }
-
 
         /// <summary>
         /// Generates an MD5 Digest for the stream specified
@@ -1365,7 +1511,11 @@ namespace Amazon.Util
             }
             else
             {
+#if NET8_0_OR_GREATER
+                return Convert.ToHexString(hashed);
+#else
                 return BitConverter.ToString(hashed).Replace("-", String.Empty);
+#endif
             }
         }
 
@@ -1382,20 +1532,30 @@ namespace Amazon.Util
         public static byte[] HexStringToBytes(string hex)
         {
             if (string.IsNullOrEmpty(hex) || hex.Length % 2 == 1)
-                throw new ArgumentOutOfRangeException("hex");
-
-            int count = 0;
-            byte[] buffer = new byte[hex.Length / 2];
-            for (int i = 0; i < hex.Length; i += 2)
             {
-                string sub = hex.Substring(i, 2);
-                byte b = Convert.ToByte(sub, 16);
-                buffer[count] = b;
-                count++;
+                throw new ArgumentOutOfRangeException(nameof(hex));
             }
+#if NET8_0_OR_GREATER
+            return Convert.FromHexString(hex);
+#else
+            byte[] buffer = new byte[hex.Length / 2];
+            for (int i = 0, j = 0; i < hex.Length; i += 2, j++)
+                buffer[j] = (byte)((HexCharToNibble(hex[i]) << 4) | HexCharToNibble(hex[i + 1]));
 
             return buffer;
+#endif
         }
+
+#if !NET8_0_OR_GREATER
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        private static int HexCharToNibble(char c)
+        {
+            if ((uint)(c - '0') <= 9) return c - '0';
+            if ((uint)(c - 'A') <= 5) return c - 'A' + 10;
+            if ((uint)(c - 'a') <= 5) return c - 'a' + 10;
+            throw new FormatException("Invalid hex character: " + c);
+        }
+#endif
 
         /// <summary>
         /// Returns DateTime.UtcNow + ManualClockCorrection when
@@ -1413,6 +1573,22 @@ namespace Amazon.Util
             }
         }
 
+        private static readonly char[] _bidiControlChars =
+        {
+            '\u200E', // LRM
+            '\u200F', // RLM
+            '\u202A', // LRE
+            '\u202B', // RLE
+            '\u202C', // PDF
+            '\u202D', // LRO
+            '\u202E'  // RLO
+        };
+
+#if NET8_0_OR_GREATER
+        private static readonly SearchValues<char> _bidiControlCharSearchValues =
+            SearchValues.Create(_bidiControlChars);
+#endif
+
         /// <summary>
         /// Returns true if the string has any bidirectional control characters.
         /// </summary>
@@ -1422,30 +1598,11 @@ namespace Amazon.Util
         {
             if (string.IsNullOrEmpty(input))
                 return false;
-
-            foreach (var c in input)
-            {
-                if (IsBidiControlChar(c))
-                    return true;
-            }
-            return false;
-        }
-        private static bool IsBidiControlChar(char c)
-        {
-            // check general range
-            if (c < '\u200E' || c > '\u202E')
-                return false;
-
-            // check specific characters
-            return (
-                c == '\u200E' || // LRM
-                c == '\u200F' || // RLM
-                c == '\u202A' || // LRE
-                c == '\u202B' || // RLE
-                c == '\u202C' || // PDF
-                c == '\u202D' || // LRO
-                c == '\u202E'    // RLO
-            );
+#if NET8_0_OR_GREATER
+            return input.AsSpan().IndexOfAny(_bidiControlCharSearchValues) >= 0;
+#else
+            return input.AsSpan().IndexOfAny(_bidiControlChars) >= 0;
+#endif
         }
 
         public static string DownloadStringContent(Uri uri)
@@ -1716,10 +1873,23 @@ namespace Amazon.Util
         /// <summary>
         /// Utility method that accepts a string and replaces white spaces with a space.
         /// </summary>
-        /// <param name="data"></param>
-        /// <returns></returns>
+        /// <param name="data">The input string to process.</param>
+        /// <returns>The processed string with compressed spaces.</returns>
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static string CompressSpaces(string data)
         {
+            return CompressSpaces(data, false);
+        }
+
+        /// <summary>
+        /// Utility method that accepts a string and replaces white spaces with a space.
+        /// </summary>
+        /// <param name="data">The input string to process.</param>
+        /// <param name="trim">When <see langword="true"/>, leading and trailing whitespace is also removed.</param>
+        /// <returns>The processed string with compressed spaces.</returns>
+        public static string CompressSpaces(string data, bool trim)
+        {
+            const char SPACE = ' ';
             if (data == null)
             {
                 return null;
@@ -1731,18 +1901,84 @@ namespace Amazon.Util
                 return string.Empty;
             }
 
-            var stringBuilder = new ValueStringBuilder(dataLength);
-            int index = 0;
-            var isWhiteSpace = false;
-            foreach (var character in data)
+            // Fast path: scan for the first run of consecutive whitespace or a non-space whitespace character.
+            // If none is found the string is already compact.
+            bool prevWasWhiteSpace = false;
+            int firstRunIndex = -1;
+            int firstNonWhiteSpace = -1;
+            for (int i = 0; i < dataLength; i++)
             {
-                if (!isWhiteSpace | !(isWhiteSpace = char.IsWhiteSpace(character)))
+                char c = data[i];
+                bool isWS = char.IsWhiteSpace(c);
+                if (!isWS)
                 {
-                    stringBuilder.Append(isWhiteSpace ? ' ' : character);
-                    index++;
+                    if (firstNonWhiteSpace < 0)
+                    {
+                        firstNonWhiteSpace = i;
+                    }
+                }
+
+                if (isWS && (prevWasWhiteSpace || c != SPACE))
+                {
+                    firstRunIndex = i - 1;
+                    break;
+                }
+                prevWasWhiteSpace = isWS;
+            }
+
+            if (firstRunIndex < 0)
+            {
+                // No inner compression needed.
+                return trim ? data.Trim() : data;
+            }
+
+            // Trim once at the top as a free span pointer adjustment — no allocation.
+            // All subsequent logic operates uniformly on this span.
+            var trimCorrection = trim && firstNonWhiteSpace > 0 ? firstRunIndex - firstNonWhiteSpace: firstRunIndex;
+
+            var span = data.AsSpan();
+            if (trim)
+            {
+                span = span.Trim();
+            }
+
+            var spanLength = span.Length;
+            if (spanLength == 0)
+            {
+                return string.Empty;
+            }
+
+            return CompressSpacesSlow(span, trimCorrection);
+        }
+
+        private static string CompressSpacesSlow(ReadOnlySpan<char> span, int firstRunIndex)
+        {
+            const char SPACE = ' ';
+            int spanLength = span.Length;
+            // Use a stack-allocated buffer for typical inputs; fall back to ArrayPool for large ones.
+            // Needs to be in separate method from fast path to allow fast path inlining.
+            const int StackAllocThreshold = 256;
+            var sb = spanLength <= StackAllocThreshold
+                ? new ValueStringBuilder(stackalloc char[spanLength])
+                : new ValueStringBuilder(spanLength);
+            sb.Append(span.Slice(0, firstRunIndex));
+
+            int pos = firstRunIndex;
+            while (pos < spanLength)
+            {
+                if (char.IsWhiteSpace(span[pos]))
+                {
+                    sb.Append(SPACE);
+                    do { pos++; } while (pos < spanLength && char.IsWhiteSpace(span[pos]));
+                }
+                else
+                {
+                    int segStart = pos;
+                    do { pos++; } while (pos < spanLength && !char.IsWhiteSpace(span[pos]));
+                    sb.Append(span.Slice(segStart, pos - segStart));
                 }
             }
-            return stringBuilder.ToString(0, index);
+            return sb.ToString();
         }
 
         /// <summary>
@@ -1840,6 +2076,9 @@ namespace Amazon.Util
         /// returned as part of an AWS service response.</param>
         /// <param name="propertyName">The name of the property of awsServiceObject to check.</param>
         /// <returns>True if the property is set, otherwise false.</returns>
+#if NET8_0_OR_GREATER
+        [RequiresUnreferencedCode("This method uses reflection to invoke IsSet methods on AWS service model classes. If the IsSet methods are trimmed, this method will throw an exception.")]
+#endif
         public static bool IsPropertySet(object awsServiceObject, string propertyName)
         {
             var type = awsServiceObject.GetType();
@@ -1880,7 +2119,7 @@ namespace Amazon.Util
 
 #region Private Methods, Static Fields and Classes
 
-        private static LruCache<IsSetMethodsCacheKey, MethodInfo> IsSetMethodsCache = new LruCache<IsSetMethodsCacheKey, MethodInfo>(MaxIsSetMethodsCacheSize);
+        private static readonly LruCache<IsSetMethodsCacheKey, MethodInfo> IsSetMethodsCache = new LruCache<IsSetMethodsCacheKey, MethodInfo>(MaxIsSetMethodsCacheSize);
 
         private class IsSetMethodsCacheKey
         {
@@ -1916,10 +2155,10 @@ namespace Amazon.Util
 
     public class JitteredDelay
     {
-        private TimeSpan _maxDelay;
-        private TimeSpan _variance;
-        private TimeSpan _baseIncrement;
-        private Random _rand = null;
+        private readonly TimeSpan _maxDelay;
+        private readonly TimeSpan _variance;
+        private readonly TimeSpan _baseIncrement;
+        private readonly Random _rand = null;
         private int _count = 0;
 
         public JitteredDelay(TimeSpan baseIncrement, TimeSpan variance)

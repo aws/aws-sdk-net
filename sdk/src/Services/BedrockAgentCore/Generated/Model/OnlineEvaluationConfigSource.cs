@@ -36,7 +36,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class OnlineEvaluationConfigSource
     {
         private string _onlineEvaluationConfigArn;
-        private SessionFilterConfig _sessionFilterConfig;
+        private SessionFilterConfig _timeRange;
 
         /// <summary>
         /// Gets and sets the property OnlineEvaluationConfigArn. 
@@ -59,22 +59,22 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionFilterConfig. 
+        /// Gets and sets the property TimeRange. 
         /// <para>
         /// Optional session filter configuration to narrow down which sessions from the online
         /// evaluation configuration to include.
         /// </para>
         /// </summary>
-        public SessionFilterConfig SessionFilterConfig
+        public SessionFilterConfig TimeRange
         {
-            get { return this._sessionFilterConfig; }
-            set { this._sessionFilterConfig = value; }
+            get { return this._timeRange; }
+            set { this._timeRange = value; }
         }
 
-        // Check to see if SessionFilterConfig property is set
-        internal bool IsSetSessionFilterConfig()
+        // Check to see if TimeRange property is set
+        internal bool IsSetTimeRange()
         {
-            return this._sessionFilterConfig != null;
+            return this._timeRange != null;
         }
 
     }

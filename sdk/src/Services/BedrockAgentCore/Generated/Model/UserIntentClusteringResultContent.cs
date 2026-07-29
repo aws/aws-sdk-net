@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCore.Model
 {
     /// <summary>
-    /// Customer-facing user intent clustering result written to S3.
+    /// The user intent clustering result containing grouped user intents identified across
+    /// evaluated sessions.
     /// </summary>
     public partial class UserIntentClusteringResultContent
     {

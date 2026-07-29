@@ -38,6 +38,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         List<Document> ConditionCheckFailedItems { get; }
 
         /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get; }
+
+        /// <summary>
         /// Add a single item to delete, identified by its hash primary key, using the specified config.
         /// </summary>
         /// <param name="hashKey">Hash key element of the item to delete.</param>
@@ -209,6 +215,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         internal Table TargetTable { get; private set; }
         internal List<ITransactWriteRequestItem> Items { get; private set; }
+        internal ReturnConsumedCapacity ReturnConsumedCapacity { get; private set; }
         internal TracerProvider TracerProvider { get; private set; }
 
         #endregion
@@ -218,6 +225,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<Document> ConditionCheckFailedItems { get; internal set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
 
         #endregion
 
@@ -231,6 +241,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
             Items = new List<ITransactWriteRequestItem>();
             TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
+        }
+
+        /// <inheritdoc/>
+        public DocumentTransactWrite(Table targetTable, ReturnConsumedCapacity returnConsumedCapacity)
+        {
+            TargetTable = targetTable;
+            Items = new List<ITransactWriteRequestItem>();
+            TracerProvider = targetTable?.DDBClient?.Config?.TelemetryProvider?.TracerProvider
+                ?? AWSConfigs.TelemetryProvider.TracerProvider;
+            ReturnConsumedCapacity = returnConsumedCapacity;
         }
 
         #endregion
@@ -393,10 +413,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             try
             {
                 GetMultiTransactWrite().WriteItems();
+                if (Items != null && Items.Any())
+                    ConsumedCapacity = Items[0].TransactionPart.ConsumedCapacity;
             }
             finally
             {
                 if (ConditionCheckFailedItems == null) ConditionCheckFailedItems = new List<Document>();
+                if (ConsumedCapacity == null) ConsumedCapacity = new List<ConsumedCapacity>();
             }
         }
 
@@ -405,10 +428,13 @@ namespace Amazon.DynamoDBv2.DocumentModel
             try
             {
                 await GetMultiTransactWrite().WriteItemsAsync(cancellationToken).ConfigureAwait(false);
+                if (Items != null && Items.Any())
+                    ConsumedCapacity = Items[0].TransactionPart.ConsumedCapacity;
             }
             finally
             {
                 if (ConditionCheckFailedItems == null) ConditionCheckFailedItems = new List<Document>();
+                if (ConsumedCapacity == null) ConsumedCapacity = new List<ConsumedCapacity>();
             }
         }
 
@@ -416,7 +442,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         {
             return new MultiTransactWrite
             {
-                Items = Items.ToList()
+                Items = Items.ToList(),
+                ReturnConsumedCapacity = ReturnConsumedCapacity
             };
         }
 
@@ -567,6 +594,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
         List<IDocumentTransactWrite> TransactionParts { get; }
 
         /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get; }
+
+        /// <summary>
         /// Add a DocumentTransactWrite object to the multi-table transaction request.
         /// </summary>
         /// <param name="transactionPart">DocumentTransactWrite to add.</param>
@@ -585,6 +618,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         /// <inheritdoc/>
         public List<IDocumentTransactWrite> TransactionParts { get; private set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; private set; }
 
         #endregion
 
@@ -629,6 +665,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 GetMultiTransactWrite().WriteItems();
                 var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
                 docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
+
+                if (docTransactionParts != null && docTransactionParts.Any())
+                    ConsumedCapacity = docTransactionParts[0].ConsumedCapacity;
             }
             finally
             {
@@ -637,6 +676,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     if (transactionPart.ConditionCheckFailedItems == null)
                         transactionPart.ConditionCheckFailedItems = new List<Document>();
                 }
+                if (ConsumedCapacity == null)
+                    ConsumedCapacity = new List<ConsumedCapacity>();
             }
         }
 
@@ -648,6 +689,9 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 await GetMultiTransactWrite().WriteItemsAsync(cancellationToken).ConfigureAwait(false);
                 var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
                 docTransactionParts = TransactionParts.Select(x => x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)).ToList();
+
+                if (docTransactionParts != null && docTransactionParts.Any())
+                    ConsumedCapacity = docTransactionParts[0].ConsumedCapacity;
             }
             finally
             {
@@ -655,20 +699,29 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 {
                     if (transactionPart.ConditionCheckFailedItems == null)
                         transactionPart.ConditionCheckFailedItems = new List<Document>();
+                    if (transactionPart.ConsumedCapacity == null)
+                        transactionPart.ConsumedCapacity = new List<ConsumedCapacity>();
                 }
+                if (ConsumedCapacity == null)
+                    ConsumedCapacity = new List<ConsumedCapacity>();
             }
         }
 
         private MultiTransactWrite GetMultiTransactWrite()
         {
             var errMsg = $"All transaction parts must be of type {nameof(DocumentTransactWrite)}";
+
+            var docTransactWrite = TransactionParts.Select(x =>
+                x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg)
+            ).ToList();
+            var returnConsumedCapacity = docTransactWrite.Select(x => x.ReturnConsumedCapacity);
             return new MultiTransactWrite
             {
-                Items = TransactionParts.SelectMany(x =>
-                {
-                    var docTransactWrite = x as DocumentTransactWrite ?? throw new InvalidOperationException(errMsg);
-                    return docTransactWrite.Items;
-                }).ToList()
+                Items = docTransactWrite.SelectMany(x => x.Items).ToList(),
+                ReturnConsumedCapacity =
+                returnConsumedCapacity.Any(x => x == ReturnConsumedCapacity.INDEXES) ? ReturnConsumedCapacity.INDEXES :
+                returnConsumedCapacity.Any(x => x == ReturnConsumedCapacity.TOTAL) ? ReturnConsumedCapacity.TOTAL :
+                ReturnConsumedCapacity.NONE
             };
         }
 
@@ -693,6 +746,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Properties
 
         public List<ITransactWriteRequestItem> Items { get; set; }
+
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
 
         #endregion
 
@@ -719,7 +774,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (Items == null || !Items.Any()) return;
 
             var request = ConstructRequest(isAsync: false);
-
+            List<ConsumedCapacity> consumedCapacity;
             try
             {
 #if NETSTANDARD
@@ -734,7 +789,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 var internalClient = Items[0].TransactionPart.TargetTable.DDBClient;
 #endif
 
-                internalClient.TransactWriteItems(request);
+                var result = internalClient.TransactWriteItems(request);
+                consumedCapacity = result?.ConsumedCapacity;
             }
             catch (TransactionCanceledException ex)
             {
@@ -746,6 +802,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 item.CommitChanges();
             }
+            Items[0].TransactionPart.ConsumedCapacity = consumedCapacity;
         }
 
         private async Task WriteItemsHelperAsync(CancellationToken cancellationToken)
@@ -753,11 +810,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
             if (Items == null || !Items.Any()) return;
 
             var request = ConstructRequest(isAsync: true);
-
+            List<ConsumedCapacity> consumedCapacity;
             try
             {
                 var dynamoDbClient = Items[0].TransactionPart.TargetTable.DDBClient;
-                await dynamoDbClient.TransactWriteItemsAsync(request, cancellationToken).ConfigureAwait(false);
+                var result = await dynamoDbClient.TransactWriteItemsAsync(request, cancellationToken).ConfigureAwait(false);
+                consumedCapacity = result?.ConsumedCapacity;
             }
             catch (TransactionCanceledException ex)
             {
@@ -769,12 +827,18 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 item.CommitChanges();
             }
+            Items[0].TransactionPart.ConsumedCapacity = consumedCapacity;
         }
 
         private TransactWriteItemsRequest ConstructRequest(bool isAsync)
         {
             var transactItems = Items.Select(item => item.GetRequest()).ToList();
-            var request = new TransactWriteItemsRequest { TransactItems = transactItems };
+            
+            var request = new TransactWriteItemsRequest
+            {
+                TransactItems = transactItems,
+                ReturnConsumedCapacity = ReturnConsumedCapacity
+            };
             Items[0].TransactionPart.TargetTable.UpdateRequestUserAgentDetails(request, isAsync);
             return request;
         }

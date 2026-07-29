@@ -37,7 +37,13 @@ namespace Amazon.Glue.Model
         private bool? _cloudWatchMetricsEnabled;
         private DQCompositeRuleEvaluationMethod _compositeRuleEvaluationMethod;
         private string _customLogGroupPrefix;
+        private DataQualityRuleResultsOptions _dataQualityRuleResults;
+        private ObservationMode _observationMode;
+        private ObservationResultsOptions _observationResults;
+        private ObservationConfiguration _observationScope;
+        private ProfilingResultsOptions _profilingResults;
         private string _resultsS3Prefix;
+        private RowLevelResultsOptions _rowLevelResults;
 
         /// <summary>
         /// Gets and sets the property CloudWatchMetricsEnabled. 
@@ -97,6 +103,98 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataQualityRuleResults. 
+        /// <para>
+        /// The configuration for writing rule results to a Glue Data Catalog table.
+        /// </para>
+        /// </summary>
+        public DataQualityRuleResultsOptions DataQualityRuleResults
+        {
+            get { return this._dataQualityRuleResults; }
+            set { this._dataQualityRuleResults = value; }
+        }
+
+        // Check to see if DataQualityRuleResults property is set
+        internal bool IsSetDataQualityRuleResults()
+        {
+            return this._dataQualityRuleResults != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObservationMode. 
+        /// <para>
+        /// The observation mode for the evaluation run. Specifies how anomaly detection bounds
+        /// are calculated.
+        /// </para>
+        /// </summary>
+        public ObservationMode ObservationMode
+        {
+            get { return this._observationMode; }
+            set { this._observationMode = value; }
+        }
+
+        // Check to see if ObservationMode property is set
+        internal bool IsSetObservationMode()
+        {
+            return this._observationMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObservationResults. 
+        /// <para>
+        /// The configuration for writing observation results to a Glue Data Catalog table.
+        /// </para>
+        /// </summary>
+        public ObservationResultsOptions ObservationResults
+        {
+            get { return this._observationResults; }
+            set { this._observationResults = value; }
+        }
+
+        // Check to see if ObservationResults property is set
+        internal bool IsSetObservationResults()
+        {
+            return this._observationResults != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ObservationScope. 
+        /// <para>
+        /// The scope of the observation for the evaluation run. Specifies whether anomaly detection
+        /// is enabled or disabled.
+        /// </para>
+        /// </summary>
+        public ObservationConfiguration ObservationScope
+        {
+            get { return this._observationScope; }
+            set { this._observationScope = value; }
+        }
+
+        // Check to see if ObservationScope property is set
+        internal bool IsSetObservationScope()
+        {
+            return this._observationScope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfilingResults. 
+        /// <para>
+        /// The configuration for writing profiling results to a Glue Data Catalog table.
+        /// </para>
+        /// </summary>
+        public ProfilingResultsOptions ProfilingResults
+        {
+            get { return this._profilingResults; }
+            set { this._profilingResults = value; }
+        }
+
+        // Check to see if ProfilingResults property is set
+        internal bool IsSetProfilingResults()
+        {
+            return this._profilingResults != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResultsS3Prefix. 
         /// <para>
         /// Prefix for Amazon S3 to store results.
@@ -112,6 +210,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetResultsS3Prefix()
         {
             return this._resultsS3Prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RowLevelResults. 
+        /// <para>
+        /// The configuration for writing row-level evaluation results to a Glue Data Catalog
+        /// table.
+        /// </para>
+        /// </summary>
+        public RowLevelResultsOptions RowLevelResults
+        {
+            get { return this._rowLevelResults; }
+            set { this._rowLevelResults = value; }
+        }
+
+        // Check to see if RowLevelResults property is set
+        internal bool IsSetRowLevelResults()
+        {
+            return this._rowLevelResults != null;
         }
 
     }

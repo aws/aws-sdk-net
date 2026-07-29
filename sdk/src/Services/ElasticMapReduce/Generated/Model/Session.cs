@@ -36,7 +36,6 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _accountId;
         private string _arn;
-        private CertificateAuthority _certificateAuthority;
         private string _clusterId;
         private DateTime? _createdAt;
         private DateTime? _endedAt;
@@ -91,25 +90,6 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property CertificateAuthority. 
-        /// <para>
-        /// The certificate authority used to establish an mTLS connection to the Spark Connect
-        /// server when connecting directly over VPC peering.
-        /// </para>
-        /// </summary>
-        public CertificateAuthority CertificateAuthority
-        {
-            get { return this._certificateAuthority; }
-            set { this._certificateAuthority = value; }
-        }
-
-        // Check to see if CertificateAuthority property is set
-        internal bool IsSetCertificateAuthority()
-        {
-            return this._certificateAuthority != null;
         }
 
         /// <summary>

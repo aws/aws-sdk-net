@@ -93,6 +93,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.Force.Value);
             }
 
+            if(publicRequest.IsSetRollbackConfig())
+            {
+                context.Writer.WritePropertyName("rollbackConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RollbackConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RollbackConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");

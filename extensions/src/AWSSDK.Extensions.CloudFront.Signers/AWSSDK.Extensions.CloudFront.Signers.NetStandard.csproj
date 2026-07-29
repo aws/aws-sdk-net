@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-	<TargetFrameworks>netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+	<TargetFrameworks>$(SdkNetTargets)</TargetFrameworks>
 	<AssemblyName>AWSSDK.Extensions.CloudFront.Signers</AssemblyName>
 	<PackageId>AWSSDK.Extensions.CloudFront.Signers</PackageId>
 	<DefineConstants>$(DefineConstants);NETSTANDARD</DefineConstants>
@@ -15,7 +15,7 @@
 	<GenerateDocumentationFile>true</GenerateDocumentationFile>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>	
   </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
+  <PropertyGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETCoreApp' And $([MSBuild]::VersionGreaterThanOrEquals($([MSBuild]::GetTargetFrameworkVersion('$(TargetFramework)')), '8.0'))">
     <IsTrimmable>true</IsTrimmable>
   </PropertyGroup>
   <ItemGroup>

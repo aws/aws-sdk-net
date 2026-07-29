@@ -35,12 +35,16 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class CheckSummary
     {
         private string _arn;
+        private List<string> _awsResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _awsServices = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _checkGranularity;
         private string _description;
         private string _id;
         private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private List<string> _pillars = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _recommendationId;
+        private bool? _resourceArnQueryable;
         private RecommendationSource _source;
 
         /// <summary>
@@ -60,6 +64,29 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsResourceTypes. 
+        /// <para>
+        /// The AWS resource types that this check evaluates (for example, AWS::EC2::Instance).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> AwsResourceTypes
+        {
+            get { return this._awsResourceTypes; }
+            set { this._awsResourceTypes = value; }
+        }
+
+        // Check to see if AwsResourceTypes property is set
+        internal bool IsSetAwsResourceTypes()
+        {
+            return this._awsResourceTypes != null && (this._awsResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,6 +111,24 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetAwsServices()
         {
             return this._awsServices != null && (this._awsServices.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CheckGranularity. 
+        /// <para>
+        /// The granularity level at which the check operates: resource, account, or account_region.
+        /// </para>
+        /// </summary>
+        public string CheckGranularity
+        {
+            get { return this._checkGranularity; }
+            set { this._checkGranularity = value; }
+        }
+
+        // Check to see if CheckGranularity property is set
+        internal bool IsSetCheckGranularity()
+        {
+            return this._checkGranularity != null;
         }
 
         /// <summary>
@@ -189,6 +234,42 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetPillars()
         {
             return this._pillars != null && (this._pillars.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommendationId. 
+        /// <para>
+        /// The recommendation identifier associated with the check.
+        /// </para>
+        /// </summary>
+        public string RecommendationId
+        {
+            get { return this._recommendationId; }
+            set { this._recommendationId = value; }
+        }
+
+        // Check to see if RecommendationId property is set
+        internal bool IsSetRecommendationId()
+        {
+            return this._recommendationId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArnQueryable. 
+        /// <para>
+        /// Indicates whether this check is supported by the ListRecommendationsForResource API.
+        /// </para>
+        /// </summary>
+        public bool? ResourceArnQueryable
+        {
+            get { return this._resourceArnQueryable; }
+            set { this._resourceArnQueryable = value; }
+        }
+
+        // Check to see if ResourceArnQueryable property is set
+        internal bool IsSetResourceArnQueryable()
+        {
+            return this._resourceArnQueryable.HasValue; 
         }
 
         /// <summary>

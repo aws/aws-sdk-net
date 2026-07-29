@@ -34,6 +34,9 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class AcmCertificateMetadata
     {
+        private string _acmeAccountId;
+        private string _acmeEndpointArn;
+        private CertificateKeyPairOrigin _certificateKeyPairOrigin;
         private DateTime? _createdAt;
         private bool? _exported;
         private CertificateExport _exportOption;
@@ -47,6 +50,62 @@ namespace Amazon.CertificateManager.Model
         private CertificateStatus _status;
         private CertificateType _type;
         private ValidationMethod _validationMethod;
+
+        /// <summary>
+        /// Gets and sets the property AcmeAccountId. 
+        /// <para>
+        /// The ACME account identifier associated with the certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string AcmeAccountId
+        {
+            get { return this._acmeAccountId; }
+            set { this._acmeAccountId = value; }
+        }
+
+        // Check to see if AcmeAccountId property is set
+        internal bool IsSetAcmeAccountId()
+        {
+            return this._acmeAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AcmeEndpointArn. 
+        /// <para>
+        /// The ARN of the ACME endpoint used to issue the certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string AcmeEndpointArn
+        {
+            get { return this._acmeEndpointArn; }
+            set { this._acmeEndpointArn = value; }
+        }
+
+        // Check to see if AcmeEndpointArn property is set
+        internal bool IsSetAcmeEndpointArn()
+        {
+            return this._acmeEndpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateKeyPairOrigin. 
+        /// <para>
+        /// The origin of the certificate's key pair.
+        /// </para>
+        /// </summary>
+        public CertificateKeyPairOrigin CertificateKeyPairOrigin
+        {
+            get { return this._certificateKeyPairOrigin; }
+            set { this._certificateKeyPairOrigin = value; }
+        }
+
+        // Check to see if CertificateKeyPairOrigin property is set
+        internal bool IsSetCertificateKeyPairOrigin()
+        {
+            return this._certificateKeyPairOrigin != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

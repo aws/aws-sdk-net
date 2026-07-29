@@ -34,11 +34,59 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CreateFleetInstance
     {
+        private string _availabilityZone;
+        private string _availabilityZoneId;
         private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InstanceType _instanceType;
         private LaunchTemplateAndOverridesResponse _launchTemplateAndOverrides;
         private InstanceLifecycle _lifecycle;
         private PlatformValues _platform;
+        private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZone. 
+        /// <para>
+        /// The name of the Availability Zone in which the instance was launched. For example,
+        /// <c>us-east-2a</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZone
+        {
+            get { return this._availabilityZone; }
+            set { this._availabilityZone = value; }
+        }
+
+        // Check to see if AvailabilityZone property is set
+        internal bool IsSetAvailabilityZone()
+        {
+            return this._availabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZoneId. 
+        /// <para>
+        /// The ID of the Availability Zone in which the instance was launched. For example, <c>use2-az1</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        /// </summary>
+        public string AvailabilityZoneId
+        {
+            get { return this._availabilityZoneId; }
+            set { this._availabilityZoneId = value; }
+        }
+
+        // Check to see if AvailabilityZoneId property is set
+        internal bool IsSetAvailabilityZoneId()
+        {
+            return this._availabilityZoneId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceIds. 
@@ -136,6 +184,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubnetId. 
+        /// <para>
+        /// The ID of the subnet in which the instance was launched.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <c>instant</c>.
+        /// </para>
+        /// </summary>
+        public string SubnetId
+        {
+            get { return this._subnetId; }
+            set { this._subnetId = value; }
+        }
+
+        // Check to see if SubnetId property is set
+        internal bool IsSetSubnetId()
+        {
+            return this._subnetId != null;
         }
 
     }

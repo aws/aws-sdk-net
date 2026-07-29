@@ -92,6 +92,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.RefId);
             }
 
+            if(requestObject.IsSetScoringConfiguration())
+            {
+                context.Writer.WritePropertyName("ScoringConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationFormQuestionScoringConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ScoringConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");

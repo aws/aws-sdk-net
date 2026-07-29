@@ -56,5 +56,15 @@ namespace Amazon.S3Vectors.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListVectorsPaginator ListVectors(ListVectorsRequest request);
+
+        /// <summary>
+        /// Paginator for QueryVectors operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            
+            OutputToken = new[] { "NextToken" }
+        )]
+        IQueryVectorsPaginator QueryVectors(QueryVectorsRequest request);
     }
 }

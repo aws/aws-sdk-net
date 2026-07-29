@@ -57,7 +57,17 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExportSqlDetails.
+        /// Gets and sets the property ExportSqlDetails. 
+        /// <para>
+        /// The Amazon S3 location of the ZIP archive that contains the exported data definition
+        /// language (DDL) scripts.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// DMS populates this field only for the <c>DescribeMetadataModelExportsAsScript</c>
+        /// operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ExportSqlDetails ExportSqlDetails
         {
@@ -125,8 +135,34 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The schema conversion action status.
+        /// The schema conversion operation status. Possible values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RECEIVED</c> – The operation is received but not yet queued for processing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IN_PROGRESS</c> – The operation is queued or actively running.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SUCCESS</c> – The operation completed successfully.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAILED</c> – The operation did not complete.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CANCELING</c> – The operation is being canceled. The operation might still succeed
+        /// or fail before cancellation takes effect.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CANCELED</c> – The operation was canceled before completion.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string Status
         {

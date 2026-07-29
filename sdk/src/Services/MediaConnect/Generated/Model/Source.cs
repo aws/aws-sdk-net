@@ -322,7 +322,8 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SenderControlPort. 
         /// <para>
-        ///  The IP address that the flow communicates with to initiate connection with the sender.
+        ///  The port that the flow uses to send outbound requests to initiate connection with
+        /// the sender.
         /// </para>
         /// </summary>
         public int? SenderControlPort
@@ -340,8 +341,7 @@ namespace Amazon.MediaConnect.Model
         /// <summary>
         /// Gets and sets the property SenderIpAddress. 
         /// <para>
-        ///  The port that the flow uses to send outbound requests to initiate connection with
-        /// the sender.
+        ///  The IP address that the flow communicates with to initiate connection with the sender.
         /// </para>
         /// </summary>
         public string SenderIpAddress

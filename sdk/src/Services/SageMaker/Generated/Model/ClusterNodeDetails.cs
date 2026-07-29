@@ -37,7 +37,9 @@ namespace Amazon.SageMaker.Model
     {
         private ClusterCapacityType _capacityType;
         private string _currentImageId;
+        private string _currentImageReleaseVersion;
         private string _desiredImageId;
+        private string _desiredImageReleaseVersion;
         private ClusterImageVersionStatus _imageVersionStatus;
         private string _instanceGroupName;
         private string _instanceId;
@@ -98,6 +100,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CurrentImageReleaseVersion. 
+        /// <para>
+        /// The version of the HyperPod-managed AMI currently running on the node.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string CurrentImageReleaseVersion
+        {
+            get { return this._currentImageReleaseVersion; }
+            set { this._currentImageReleaseVersion = value; }
+        }
+
+        // Check to see if CurrentImageReleaseVersion property is set
+        internal bool IsSetCurrentImageReleaseVersion()
+        {
+            return this._currentImageReleaseVersion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DesiredImageId. 
         /// <para>
         /// The ID of the Amazon Machine Image (AMI) desired for the node.
@@ -114,6 +135,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDesiredImageId()
         {
             return this._desiredImageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DesiredImageReleaseVersion. 
+        /// <para>
+        /// The desired version of the HyperPod-managed AMI for the node. This may differ from
+        /// the current version when an update is pending.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string DesiredImageReleaseVersion
+        {
+            get { return this._desiredImageReleaseVersion; }
+            set { this._desiredImageReleaseVersion = value; }
+        }
+
+        // Check to see if DesiredImageReleaseVersion property is set
+        internal bool IsSetDesiredImageReleaseVersion()
+        {
+            return this._desiredImageReleaseVersion != null;
         }
 
         /// <summary>

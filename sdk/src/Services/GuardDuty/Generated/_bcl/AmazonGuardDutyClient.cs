@@ -639,6 +639,131 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  CreateInvestigation
+
+
+        /// <summary>
+        /// This API is currently available as a preview. During the preview, you can initiate
+        /// up to 10 investigations per account per day, with a total limit of 100 investigations
+        /// per account. This feature is available in the following Amazon Web Services Regions:
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), Europe
+        /// (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm),
+        /// and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
+        /// Initiates a GuardDuty investigation that automatically analyzes security findings,
+        /// correlates related activity, performs account-level analysis, and produces a structured
+        /// investigation summary with recommended next steps.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the administrator account can create an investigation. Member accounts don't
+        /// have permission to create investigations from their accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, the <c>AI_ANALYST</c> feature must be enabled on your detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature uses Amazon Bedrock models that leverage Cross-Region Inference (CRIS),
+        /// which automatically selects the optimal Amazon Web Services Region within your geography
+        /// to process the investigation analysis and generate the investigation report. This
+        /// maximizes available compute resources, model availability, and delivers the best customer
+        /// experience. Your data remains stored only in the Region where the investigation request
+        /// originates, however, investigation data and summary results may be processed outside
+        /// that Region. All data is transmitted encrypted across Amazon's secure network. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-investigation.html">GuardDuty
+        /// Investigation</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvestigation service method.</param>
+        /// 
+        /// <returns>The response from the CreateInvestigation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateInvestigation">REST API Reference for CreateInvestigation Operation</seealso>
+        public virtual CreateInvestigationResponse CreateInvestigation(CreateInvestigationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInvestigationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateInvestigationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is currently available as a preview. During the preview, you can initiate
+        /// up to 10 investigations per account per day, with a total limit of 100 investigations
+        /// per account. This feature is available in the following Amazon Web Services Regions:
+        /// US East (N. Virginia), US East (Ohio), US West (Oregon), Canada (Central), Europe
+        /// (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris), Europe (Stockholm),
+        /// and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
+        /// Initiates a GuardDuty investigation that automatically analyzes security findings,
+        /// correlates related activity, performs account-level analysis, and produces a structured
+        /// investigation summary with recommended next steps.
+        /// </para>
+        ///  
+        /// <para>
+        /// Only the administrator account can create an investigation. Member accounts don't
+        /// have permission to create investigations from their accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this operation, the <c>AI_ANALYST</c> feature must be enabled on your detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// This feature uses Amazon Bedrock models that leverage Cross-Region Inference (CRIS),
+        /// which automatically selects the optimal Amazon Web Services Region within your geography
+        /// to process the investigation analysis and generate the investigation report. This
+        /// maximizes available compute resources, model availability, and delivers the best customer
+        /// experience. Your data remains stored only in the Region where the investigation request
+        /// originates, however, investigation data and summary results may be processed outside
+        /// that Region. All data is transmitted encrypted across Amazon's secure network. For
+        /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty-investigation.html">GuardDuty
+        /// Investigation</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateInvestigation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateInvestigation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateInvestigation">REST API Reference for CreateInvestigation Operation</seealso>
+        public virtual Task<CreateInvestigationResponse> CreateInvestigationAsync(CreateInvestigationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateInvestigationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateInvestigationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIPSet
 
 
@@ -2838,6 +2963,97 @@ namespace Amazon.GuardDuty
 
         #endregion
         
+        #region  GetInvestigation
+
+
+        /// <summary>
+        /// This API is currently available as a preview. This feature is available in the following
+        /// Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris),
+        /// Europe (Stockholm), and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
+        /// Retrieves the results and status of a specific GuardDuty investigation.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account can retrieve any investigation within the organization. Member
+        /// accounts can only retrieve investigations that belong to them.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvestigation service method.</param>
+        /// 
+        /// <returns>The response from the GetInvestigation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvestigation">REST API Reference for GetInvestigation Operation</seealso>
+        public virtual GetInvestigationResponse GetInvestigation(GetInvestigationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvestigationResponseUnmarshaller.Instance;
+
+            return Invoke<GetInvestigationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is currently available as a preview. This feature is available in the following
+        /// Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris),
+        /// Europe (Stockholm), and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
+        /// Retrieves the results and status of a specific GuardDuty investigation.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account can retrieve any investigation within the organization. Member
+        /// accounts can only retrieve investigations that belong to them.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInvestigation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInvestigation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetInvestigation">REST API Reference for GetInvestigation Operation</seealso>
+        public virtual Task<GetInvestigationResponse> GetInvestigationAsync(GetInvestigationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetInvestigationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetInvestigationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetInvestigationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetInvitationsCount
 
 
@@ -4059,6 +4275,91 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = ListFindingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListFindingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListInvestigations
+
+
+        /// <summary>
+        /// This API is currently available as a preview. This feature is available in the following
+        /// Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris),
+        /// Europe (Stockholm), and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
+        /// Returns a list of investigations associated with the specified GuardDuty detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account sees all investigations across the organization. Member accounts
+        /// see only the investigations that belong to them.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
+        /// 
+        /// <returns>The response from the ListInvestigations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual ListInvestigationsResponse ListInvestigations(ListInvestigationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListInvestigationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// This API is currently available as a preview. This feature is available in the following
+        /// Amazon Web Services Regions: US East (N. Virginia), US East (Ohio), US West (Oregon),
+        /// Canada (Central), Europe (Frankfurt), Europe (Ireland), Europe (London), Europe (Paris),
+        /// Europe (Stockholm), and Asia Pacific (Tokyo).
+        /// 
+        ///  
+        /// <para>
+        /// Returns a list of investigations associated with the specified GuardDuty detector.
+        /// </para>
+        ///  
+        /// <para>
+        /// An administrator account sees all investigations across the organization. Member accounts
+        /// see only the investigations that belong to them.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInvestigations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInvestigations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListInvestigations">REST API Reference for ListInvestigations Operation</seealso>
+        public virtual Task<ListInvestigationsResponse> ListInvestigationsAsync(ListInvestigationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListInvestigationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListInvestigationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListInvestigationsResponse>(request, options, cancellationToken);
         }
 
         #endregion

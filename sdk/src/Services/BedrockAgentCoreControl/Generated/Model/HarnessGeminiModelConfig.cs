@@ -35,12 +35,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class HarnessGeminiModelConfig
     {
+        private Amazon.Runtime.Documents.Document _additionalParams;
         private string _apiKeyArn;
         private int? _maxTokens;
         private string _modelId;
         private float? _temperature;
         private int? _topk;
         private float? _topp;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalParams. 
+        /// <para>
+        /// Provider-specific parameters passed through to the Gemini model provider unchanged.
+        /// </para>
+        /// </summary>
+        public Amazon.Runtime.Documents.Document AdditionalParams
+        {
+            get { return this._additionalParams; }
+            set { this._additionalParams = value; }
+        }
+
+        // Check to see if AdditionalParams property is set
+        internal bool IsSetAdditionalParams()
+        {
+            return !this._additionalParams.IsNull();
+        }
 
         /// <summary>
         /// Gets and sets the property ApiKeyArn. 

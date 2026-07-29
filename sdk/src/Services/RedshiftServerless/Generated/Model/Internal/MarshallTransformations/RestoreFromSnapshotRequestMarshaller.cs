@@ -81,6 +81,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AdminPasswordSecretKmsKeyId);
             }
 
+            if(publicRequest.IsSetMaintainIntegration())
+            {
+                context.Writer.WritePropertyName("maintainIntegration");
+                context.Writer.WriteBooleanValue(publicRequest.MaintainIntegration.Value);
+            }
+
             if(publicRequest.IsSetManageAdminPassword())
             {
                 context.Writer.WritePropertyName("manageAdminPassword");

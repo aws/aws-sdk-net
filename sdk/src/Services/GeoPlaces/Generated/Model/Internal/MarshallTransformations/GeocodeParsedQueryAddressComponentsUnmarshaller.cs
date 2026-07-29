@@ -92,6 +92,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                     unmarshalledObject.Locality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("OtherComponents", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ParsedQueryComponent, ParsedQueryComponentUnmarshaller>(ParsedQueryComponentUnmarshaller.Instance);
+                    unmarshalledObject.OtherComponents = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PostalCode", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ParsedQueryComponent, ParsedQueryComponentUnmarshaller>(ParsedQueryComponentUnmarshaller.Instance);

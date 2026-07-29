@@ -37,6 +37,7 @@ namespace Amazon.VPCLattice.Model
     {
         private AuthType _authType;
         private string _certificateArn;
+        private int? _idleTimeoutSeconds;
         private string _serviceIdentifier;
 
         /// <summary>
@@ -84,6 +85,28 @@ namespace Amazon.VPCLattice.Model
         internal bool IsSetCertificateArn()
         {
             return this._certificateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdleTimeoutSeconds. 
+        /// <para>
+        /// The amount of time, in seconds, that a connection can remain idle (no data sent) before
+        /// VPC Lattice closes it. The valid range is 60 to 600 seconds. If you don't specify
+        /// a value, the default is 60 seconds. This setting does not change the maximum connection
+        /// duration of 10 minutes; connections are still closed when they reach that limit.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=60, Max=600)]
+        public int? IdleTimeoutSeconds
+        {
+            get { return this._idleTimeoutSeconds; }
+            set { this._idleTimeoutSeconds = value; }
+        }
+
+        // Check to see if IdleTimeoutSeconds property is set
+        internal bool IsSetIdleTimeoutSeconds()
+        {
+            return this._idleTimeoutSeconds.HasValue; 
         }
 
         /// <summary>

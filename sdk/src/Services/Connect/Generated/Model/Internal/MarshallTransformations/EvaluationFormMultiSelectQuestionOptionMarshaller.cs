@@ -46,10 +46,44 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAutomaticFail())
+            {
+                context.Writer.WritePropertyName("AutomaticFail");
+                context.Writer.WriteBooleanValue(requestObject.AutomaticFail.Value);
+            }
+
+            if(requestObject.IsSetAutomaticFailConfiguration())
+            {
+                context.Writer.WritePropertyName("AutomaticFailConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutomaticFailConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutomaticFailConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPointsConfiguration())
+            {
+                context.Writer.WritePropertyName("PointsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = QuestionOptionPointsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.PointsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRefId())
             {
                 context.Writer.WritePropertyName("RefId");
                 context.Writer.WriteStringValue(requestObject.RefId);
+            }
+
+            if(requestObject.IsSetScore())
+            {
+                context.Writer.WritePropertyName("Score");
+                context.Writer.WriteNumberValue(requestObject.Score.Value);
             }
 
             if(requestObject.IsSetText())

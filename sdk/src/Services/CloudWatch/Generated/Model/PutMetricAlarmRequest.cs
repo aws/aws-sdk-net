@@ -121,6 +121,7 @@ namespace Amazon.CloudWatch.Model
         private EvaluationCriteria _evaluationCriteria;
         private int? _evaluationInterval;
         private int? _evaluationPeriods;
+        private EvaluationWindow _evaluationWindow;
         private string _extendedStatistic;
         private List<string> _insufficientDataActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _metricName;
@@ -498,6 +499,42 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetEvaluationPeriods()
         {
             return this._evaluationPeriods.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluationWindow. 
+        /// <para>
+        /// The evaluation window that the alarm uses to select the range of metric data that
+        /// it evaluates. Specify either a sliding window or a wall clock window. If you omit
+        /// this parameter, the alarm uses a sliding window.
+        /// </para>
+        ///  
+        /// <para>
+        /// A sliding window advances each time the alarm is evaluated, forming a rolling time
+        /// window. A wall clock window aligns the evaluated range to fixed clock boundaries,
+        /// such as the top of the hour or the start of the day.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use <c>EvaluationWindow</c> with any type of metric alarm except alarms that
+        /// are based on a PromQL query.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-evaluation-window.html">Alarm
+        /// evaluation windows</a> in the <i>CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public EvaluationWindow EvaluationWindow
+        {
+            get { return this._evaluationWindow; }
+            set { this._evaluationWindow = value; }
+        }
+
+        // Check to see if EvaluationWindow property is set
+        internal bool IsSetEvaluationWindow()
+        {
+            return this._evaluationWindow != null;
         }
 
         /// <summary>

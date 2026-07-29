@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// Request was denied due to request throttling.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

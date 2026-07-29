@@ -74,6 +74,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomPermissionsName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("Governance", targetDepth, ref reader))
+                {
+                    var unmarshaller = GovernanceUnmarshaller.Instance;
+                    unmarshalledObject.Governance = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

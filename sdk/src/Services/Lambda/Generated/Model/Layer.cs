@@ -46,7 +46,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of the function layer.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=140)]
+        [AWSProperty(Min=1, Max=2048)]
         public string Arn
         {
             get { return this._arn; }
@@ -83,6 +83,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) of a signing job.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningJobArn
         {
             get { return this._signingJobArn; }
@@ -101,6 +102,7 @@ namespace Amazon.Lambda.Model
         /// The Amazon Resource Name (ARN) for a signing profile version.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string SigningProfileVersionArn
         {
             get { return this._signingProfileVersionArn; }

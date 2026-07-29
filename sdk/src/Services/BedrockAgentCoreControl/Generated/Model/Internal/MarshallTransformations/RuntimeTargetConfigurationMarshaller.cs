@@ -58,6 +58,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Qualifier);
             }
 
+            if(requestObject.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("schema");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HttpApiSchemaConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Schema, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

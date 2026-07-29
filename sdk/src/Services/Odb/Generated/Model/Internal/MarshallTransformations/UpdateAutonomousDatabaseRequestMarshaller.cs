@@ -81,6 +81,23 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AdminPassword);
             }
 
+            if(publicRequest.IsSetAdminPasswordSource())
+            {
+                context.Writer.WritePropertyName("adminPasswordSource");
+                context.Writer.WriteStringValue(publicRequest.AdminPasswordSource);
+            }
+
+            if(publicRequest.IsSetAdminPasswordSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("adminPasswordSourceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AdminPasswordSourceConfigurationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AdminPasswordSourceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetAllowlistedIps())
             {
                 context.Writer.WritePropertyName("allowlistedIps");

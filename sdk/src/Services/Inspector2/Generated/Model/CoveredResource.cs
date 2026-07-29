@@ -36,6 +36,11 @@ namespace Amazon.Inspector2.Model
     {
         private string _accountId;
         private DateTime? _lastScannedAt;
+        private Provider _provider;
+        private string _providerAccountId;
+        private string _providerOrgId;
+        private string _providerPartition;
+        private string _providerRegion;
         private string _resourceId;
         private ResourceScanMetadata _resourceMetadata;
         private CoverageResourceType _resourceType;
@@ -81,12 +86,106 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// The cloud provider of the covered resource.
+        /// </para>
+        /// </summary>
+        public Provider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderAccountId. 
+        /// <para>
+        /// The cloud provider account ID of the covered resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=36)]
+        public string ProviderAccountId
+        {
+            get { return this._providerAccountId; }
+            set { this._providerAccountId = value; }
+        }
+
+        // Check to see if ProviderAccountId property is set
+        internal bool IsSetProviderAccountId()
+        {
+            return this._providerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderOrgId. 
+        /// <para>
+        /// The cloud provider organization ID of the covered resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=36)]
+        public string ProviderOrgId
+        {
+            get { return this._providerOrgId; }
+            set { this._providerOrgId = value; }
+        }
+
+        // Check to see if ProviderOrgId property is set
+        internal bool IsSetProviderOrgId()
+        {
+            return this._providerOrgId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderPartition. 
+        /// <para>
+        /// The cloud provider partition of the covered resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ProviderPartition
+        {
+            get { return this._providerPartition; }
+            set { this._providerPartition = value; }
+        }
+
+        // Check to see if ProviderPartition property is set
+        internal bool IsSetProviderPartition()
+        {
+            return this._providerPartition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProviderRegion. 
+        /// <para>
+        /// The cloud provider region of the covered resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string ProviderRegion
+        {
+            get { return this._providerRegion; }
+            set { this._providerRegion = value; }
+        }
+
+        // Check to see if ProviderRegion property is set
+        internal bool IsSetProviderRegion()
+        {
+            return this._providerRegion != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// The ID of the covered resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=10, Max=341)]
+        [AWSProperty(Required=true, Min=10, Max=1024)]
         public string ResourceId
         {
             get { return this._resourceId; }

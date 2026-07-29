@@ -36,7 +36,13 @@ namespace Amazon.Glue.Model
     public partial class FieldDefinition
     {
         private FieldDataType _fieldDataType;
+        private FilterOverrides _filterOverrides;
+        private bool? _isNullable;
+        private bool? _isOrderable;
+        private bool? _isPartitionable;
+        private bool? _isQueryable;
         private string _name;
+        private string _responseDateFormat;
 
         /// <summary>
         /// Gets and sets the property FieldDataType. 
@@ -58,6 +64,97 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FilterOverrides. 
+        /// <para>
+        /// Per-field overrides for filter behavior, allowing customization of how filters are
+        /// applied to this specific field.
+        /// </para>
+        /// </summary>
+        public FilterOverrides FilterOverrides
+        {
+            get { return this._filterOverrides; }
+            set { this._filterOverrides = value; }
+        }
+
+        // Check to see if FilterOverrides property is set
+        internal bool IsSetFilterOverrides()
+        {
+            return this._filterOverrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsNullable. 
+        /// <para>
+        /// Indicates whether this field can contain null values.
+        /// </para>
+        /// </summary>
+        public bool? IsNullable
+        {
+            get { return this._isNullable; }
+            set { this._isNullable = value; }
+        }
+
+        // Check to see if IsNullable property is set
+        internal bool IsSetIsNullable()
+        {
+            return this._isNullable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsOrderable. 
+        /// <para>
+        /// Indicates whether this field can be used for ordering results.
+        /// </para>
+        /// </summary>
+        public bool? IsOrderable
+        {
+            get { return this._isOrderable; }
+            set { this._isOrderable = value; }
+        }
+
+        // Check to see if IsOrderable property is set
+        internal bool IsSetIsOrderable()
+        {
+            return this._isOrderable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsPartitionable. 
+        /// <para>
+        /// Indicates whether this field can be used for partitioning queries to the data source.
+        /// </para>
+        /// </summary>
+        public bool? IsPartitionable
+        {
+            get { return this._isPartitionable; }
+            set { this._isPartitionable = value; }
+        }
+
+        // Check to see if IsPartitionable property is set
+        internal bool IsSetIsPartitionable()
+        {
+            return this._isPartitionable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IsQueryable. 
+        /// <para>
+        /// Indicates whether this field can be used in filter predicates when querying data.
+        /// </para>
+        /// </summary>
+        public bool? IsQueryable
+        {
+            get { return this._isQueryable; }
+            set { this._isQueryable = value; }
+        }
+
+        // Check to see if IsQueryable property is set
+        internal bool IsSetIsQueryable()
+        {
+            return this._isQueryable.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the field in the entity schema.
@@ -74,6 +171,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseDateFormat. 
+        /// <para>
+        /// The format pattern for parsing date values from API responses. Required when the API
+        /// uses a non-ISO-8601 format. Accepts Java <c>DateTimeFormatter</c> patterns (for example,
+        /// <c>EEE, d MMM yyyy HH:mm:ss Z</c>), <c>EPOCH_SECONDS</c> for Unix epoch seconds, or
+        /// <c>EPOCH_MILLIS</c> for Unix epoch milliseconds.
+        /// </para>
+        /// </summary>
+        public string ResponseDateFormat
+        {
+            get { return this._responseDateFormat; }
+            set { this._responseDateFormat = value; }
+        }
+
+        // Check to see if ResponseDateFormat property is set
+        internal bool IsSetResponseDateFormat()
+        {
+            return this._responseDateFormat != null;
         }
 
     }

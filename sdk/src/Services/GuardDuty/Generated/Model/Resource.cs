@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
     public partial class Resource
     {
         private AccessKeyDetails _accessKeyDetails;
+        private BedrockGuardrailDetails _bedrockGuardrailDetails;
         private Container _containerDetails;
         private EbsSnapshotDetails _ebsSnapshotDetails;
         private EbsVolumeDetails _ebsVolumeDetails;
@@ -45,6 +46,7 @@ namespace Amazon.GuardDuty.Model
         private InstanceDetails _instanceDetails;
         private KubernetesDetails _kubernetesDetails;
         private LambdaDetails _lambdaDetails;
+        private List<ModelDetail> _modelDetails = AWSConfigs.InitializeCollections ? new List<ModelDetail>() : null;
         private RdsDbInstanceDetails _rdsDbInstanceDetails;
         private RdsDbUserDetails _rdsDbUserDetails;
         private RdsLimitlessDbDetails _rdsLimitlessDbDetails;
@@ -69,6 +71,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAccessKeyDetails()
         {
             return this._accessKeyDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BedrockGuardrailDetails. 
+        /// <para>
+        /// Contains information about the Bedrock guardrail that was involved in a finding.
+        /// </para>
+        /// </summary>
+        public BedrockGuardrailDetails BedrockGuardrailDetails
+        {
+            get { return this._bedrockGuardrailDetails; }
+            set { this._bedrockGuardrailDetails = value; }
+        }
+
+        // Check to see if BedrockGuardrailDetails property is set
+        internal bool IsSetBedrockGuardrailDetails()
+        {
+            return this._bedrockGuardrailDetails != null;
         }
 
         /// <summary>
@@ -229,6 +249,29 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetLambdaDetails()
         {
             return this._lambdaDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDetails. 
+        /// <para>
+        /// Contains information about the AI models involved in a finding.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ModelDetail> ModelDetails
+        {
+            get { return this._modelDetails; }
+            set { this._modelDetails = value; }
+        }
+
+        // Check to see if ModelDetails property is set
+        internal bool IsSetModelDetails()
+        {
+            return this._modelDetails != null && (this._modelDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

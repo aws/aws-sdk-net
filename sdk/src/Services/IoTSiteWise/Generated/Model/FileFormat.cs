@@ -34,8 +34,28 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class FileFormat
     {
+        private Annotation _annotation;
         private Csv _csv;
+        private Mp4 _mp4;
         private Parquet _parquet;
+
+        /// <summary>
+        /// Gets and sets the property Annotation. 
+        /// <para>
+        /// The annotation format configuration.
+        /// </para>
+        /// </summary>
+        public Annotation Annotation
+        {
+            get { return this._annotation; }
+            set { this._annotation = value; }
+        }
+
+        // Check to see if Annotation property is set
+        internal bool IsSetAnnotation()
+        {
+            return this._annotation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Csv. 
@@ -53,6 +73,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetCsv()
         {
             return this._csv != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mp4. 
+        /// <para>
+        /// The MP4 format configuration.
+        /// </para>
+        /// </summary>
+        public Mp4 Mp4
+        {
+            get { return this._mp4; }
+            set { this._mp4 = value; }
+        }
+
+        // Check to see if Mp4 property is set
+        internal bool IsSetMp4()
+        {
+            return this._mp4 != null;
         }
 
         /// <summary>

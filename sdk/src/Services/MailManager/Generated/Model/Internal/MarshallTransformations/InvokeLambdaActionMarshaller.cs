@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// InvokeLambdaAction Marshaller
     /// </summary>
-    public class InvokeLambdaActionMarshaller : IRequestMarshaller<InvokeLambdaAction, JsonMarshallerContext> 
+    public class InvokeLambdaActionMarshaller : IRequestMarshaller<InvokeLambdaAction, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,40 +45,36 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(InvokeLambdaAction requestObject, JsonMarshallerContext context)
+        public void Marshall(InvokeLambdaAction requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetActionFailurePolicy())
-            {
-                context.Writer.WritePropertyName("ActionFailurePolicy");
-                context.Writer.WriteStringValue(requestObject.ActionFailurePolicy);
-            }
 
-            if(requestObject.IsSetFunctionArn())
+            if (requestObject.IsSetActionFailurePolicy())
             {
-                context.Writer.WritePropertyName("FunctionArn");
-                context.Writer.WriteStringValue(requestObject.FunctionArn);
+                context.Writer.WriteTextString("ActionFailurePolicy");
+                context.Writer.WriteTextString(requestObject.ActionFailurePolicy);
             }
-
-            if(requestObject.IsSetInvocationType())
+            if (requestObject.IsSetFunctionArn())
             {
-                context.Writer.WritePropertyName("InvocationType");
-                context.Writer.WriteStringValue(requestObject.InvocationType);
+                context.Writer.WriteTextString("FunctionArn");
+                context.Writer.WriteTextString(requestObject.FunctionArn);
             }
-
-            if(requestObject.IsSetRetryTimeMinutes())
+            if (requestObject.IsSetInvocationType())
             {
-                context.Writer.WritePropertyName("RetryTimeMinutes");
-                context.Writer.WriteNumberValue(requestObject.RetryTimeMinutes.Value);
+                context.Writer.WriteTextString("InvocationType");
+                context.Writer.WriteTextString(requestObject.InvocationType);
             }
-
-            if(requestObject.IsSetRoleArn())
+            if (requestObject.IsSetRetryTimeMinutes())
             {
-                context.Writer.WritePropertyName("RoleArn");
-                context.Writer.WriteStringValue(requestObject.RoleArn);
+                context.Writer.WriteTextString("RetryTimeMinutes");
+                context.Writer.WriteInt32(requestObject.RetryTimeMinutes.Value);
             }
-
+            if (requestObject.IsSetRoleArn())
+            {
+                context.Writer.WriteTextString("RoleArn");
+                context.Writer.WriteTextString(requestObject.RoleArn);
+            }
         }
 
         /// <summary>

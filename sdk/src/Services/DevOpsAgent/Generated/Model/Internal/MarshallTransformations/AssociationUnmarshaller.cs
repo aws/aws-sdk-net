@@ -68,6 +68,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("capabilities", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, CapabilityConfiguration, StringUnmarshaller, CapabilityConfigurationUnmarshaller>(StringUnmarshaller.Instance, CapabilityConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("configuration", targetDepth, ref reader))
                 {
                     var unmarshaller = ServiceConfigurationUnmarshaller.Instance;

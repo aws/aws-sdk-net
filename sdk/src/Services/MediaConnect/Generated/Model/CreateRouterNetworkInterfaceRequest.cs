@@ -47,6 +47,7 @@ namespace Amazon.MediaConnect.Model
         /// A unique identifier for the request to ensure idempotency.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=256)]
         public string ClientToken
         {
             get { return this._clientToken; }

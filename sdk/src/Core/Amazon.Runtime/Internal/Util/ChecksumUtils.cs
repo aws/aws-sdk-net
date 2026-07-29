@@ -102,9 +102,10 @@ namespace Amazon.Runtime.Internal.Util
             }
 
             // If a pre-calculated value was specified, we won't attempt to calculate it again.
-            if (request.Headers.Any(h => h.Key.StartsWith(_checksumHeaderPrefix, StringComparison.OrdinalIgnoreCase)))
+            foreach (var headerKey in request.Headers.Keys)
             {
-                return;
+                if (headerKey.StartsWith(_checksumHeaderPrefix, StringComparison.OrdinalIgnoreCase))
+                    return;
             }
 
             var coreChecksumAlgoritm = ConvertToCoreChecksumAlgorithm(request.ChecksumData.SelectedChecksum);
@@ -236,6 +237,19 @@ namespace Amazon.Runtime.Internal.Util
                 }
                 else
                 {
+                    // Empty streams don't need seeking — the checksum is a known constant.
+                    // S3 handles this via trailing headers, but other services may not support
+                    // chunk encoding and will fall through to here.
+                    long length;
+                    try { length = request.ContentStream.Length; }
+                    catch (NotSupportedException) { length = -1; }
+
+                    if (length == 0)
+                    {
+                        var checksumBytes = algorithm.ComputeHash(Array.Empty<byte>());
+                        return Convert.ToBase64String(checksumBytes);
+                    }
+
                     throw new ArgumentException("Request must have a seekable content stream to calculate checksum");
                 }
             }

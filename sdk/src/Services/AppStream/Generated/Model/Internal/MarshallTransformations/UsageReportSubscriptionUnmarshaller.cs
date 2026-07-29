@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UsageReportSubscription Object
     /// </summary>  
-    public class UsageReportSubscriptionUnmarshaller : IJsonUnmarshaller<UsageReportSubscription, JsonUnmarshallerContext>
+    public class UsageReportSubscriptionUnmarshaller : ICborUnmarshaller<UsageReportSubscription, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UsageReportSubscription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public UsageReportSubscription Unmarshall(CborUnmarshallerContext context)
         {
             UsageReportSubscription unmarshalledObject = new UsageReportSubscription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("LastGeneratedReportDate", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastGeneratedReportDate = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3BucketName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Schedule", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Schedule = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SubscriptionErrors", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<LastReportGenerationExecutionError, LastReportGenerationExecutionErrorUnmarshaller>(LastReportGenerationExecutionErrorUnmarshaller.Instance);
-                    unmarshalledObject.SubscriptionErrors = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "LastGeneratedReportDate":
+                        {
+                            context.AddPathSegment("LastGeneratedReportDate");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.LastGeneratedReportDate = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "S3BucketName":
+                        {
+                            context.AddPathSegment("S3BucketName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Schedule":
+                        {
+                            context.AddPathSegment("Schedule");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Schedule = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SubscriptionErrors":
+                        {
+                            context.AddPathSegment("SubscriptionErrors");
+                            var unmarshaller = new CborListUnmarshaller<LastReportGenerationExecutionError, LastReportGenerationExecutionErrorUnmarshaller>(LastReportGenerationExecutionErrorUnmarshaller.Instance);
+                            unmarshalledObject.SubscriptionErrors = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

@@ -7,17 +7,24 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.IoTWireless")]
-#if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - AWS IoT Wireless. AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.")]
-#elif NETSTANDARD20
+
+#if NET472
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS IoT Wireless. AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.")]
+
+#elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS IoT Wireless. AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.")]
+
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS IoT Wireless. AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.")]
+
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS IoT Wireless. AWS IoT for LoRaWAN enables customers to setup a private LoRaWAN network by connecting their LoRaWAN devices and gateways to the AWS cloud without managing a LoRaWAN Network Server.")]
+
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
+
+
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
@@ -42,4 +49,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.7.7")]
+[assembly: AssemblyFileVersion("4.0.101.4")]

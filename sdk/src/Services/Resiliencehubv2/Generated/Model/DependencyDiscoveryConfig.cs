@@ -34,8 +34,48 @@ namespace Amazon.Resiliencehubv2.Model
     /// </summary>
     public partial class DependencyDiscoveryConfig
     {
+        private int? _eligibleResourceCount;
+        private string _message;
         private DependencyDiscoveryStatus _status;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property EligibleResourceCount. 
+        /// <para>
+        /// The count of resources eligible for dependency attribution.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? EligibleResourceCount
+        {
+            get { return this._eligibleResourceCount; }
+            set { this._eligibleResourceCount = value; }
+        }
+
+        // Check to see if EligibleResourceCount property is set
+        internal bool IsSetEligibleResourceCount()
+        {
+            return this._eligibleResourceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// A status message for dependency discovery, displayed during the initialization state.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Status. 

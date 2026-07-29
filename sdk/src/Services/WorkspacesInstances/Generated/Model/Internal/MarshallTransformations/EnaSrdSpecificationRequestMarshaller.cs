@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EnaSrdSpecificationRequest Marshaller
     /// </summary>
-    public class EnaSrdSpecificationRequestMarshaller : IRequestMarshaller<EnaSrdSpecificationRequest, JsonMarshallerContext> 
+    public class EnaSrdSpecificationRequestMarshaller : IRequestMarshaller<EnaSrdSpecificationRequest, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EnaSrdSpecificationRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(EnaSrdSpecificationRequest requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEnaSrdEnabled())
-            {
-                context.Writer.WritePropertyName("EnaSrdEnabled");
-                context.Writer.WriteBooleanValue(requestObject.EnaSrdEnabled.Value);
-            }
 
-            if(requestObject.IsSetEnaSrdUdpSpecification())
+            if (requestObject.IsSetEnaSrdEnabled())
             {
-                context.Writer.WritePropertyName("EnaSrdUdpSpecification");
-                context.Writer.WriteStartObject();
+                context.Writer.WriteTextString("EnaSrdEnabled");
+                context.Writer.WriteBoolean(requestObject.EnaSrdEnabled.Value);
+            }
+            if (requestObject.IsSetEnaSrdUdpSpecification())
+            {
+                context.Writer.WriteTextString("EnaSrdUdpSpecification");
+                context.Writer.WriteStartMap(null);
 
                 var marshaller = EnaSrdUdpSpecificationRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.EnaSrdUdpSpecification, context);
 
-                context.Writer.WriteEndObject();
+                context.Writer.WriteEndMap();
             }
-
         }
 
         /// <summary>

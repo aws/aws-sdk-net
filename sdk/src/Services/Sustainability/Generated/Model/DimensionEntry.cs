@@ -64,7 +64,7 @@ namespace Amazon.Sustainability.Model
         /// <c>SERVICE</c> dimension). 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

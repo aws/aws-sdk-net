@@ -38,6 +38,8 @@ namespace Amazon.SecurityHub.Model
         private string _connectorId;
         private DateTime? _createdAt;
         private string _description;
+        private EnablementStatus _enablementStatus;
+        private string _enablementStatusReason;
         private HealthCheck _health;
         private string _kmsKeyArn;
         private DateTime? _lastUpdatedAt;
@@ -116,6 +118,43 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatus. 
+        /// <para>
+        /// The enablement status of the connector.
+        /// </para>
+        /// </summary>
+        public EnablementStatus EnablementStatus
+        {
+            get { return this._enablementStatus; }
+            set { this._enablementStatus = value; }
+        }
+
+        // Check to see if EnablementStatus property is set
+        internal bool IsSetEnablementStatus()
+        {
+            return this._enablementStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatusReason. 
+        /// <para>
+        /// The reason for the current enablement status. Provides additional context when the
+        /// connector is in a failed state.
+        /// </para>
+        /// </summary>
+        public string EnablementStatusReason
+        {
+            get { return this._enablementStatusReason; }
+            set { this._enablementStatusReason = value; }
+        }
+
+        // Check to see if EnablementStatusReason property is set
+        internal bool IsSetEnablementStatusReason()
+        {
+            return this._enablementStatusReason != null;
         }
 
         /// <summary>

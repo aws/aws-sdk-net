@@ -76,6 +76,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.RepoName);
             }
 
+            if(requestObject.IsSetRuntimeRoleArn())
+            {
+                context.Writer.WritePropertyName("runtimeRoleArn");
+                context.Writer.WriteStringValue(requestObject.RuntimeRoleArn);
+            }
+
         }
 
         /// <summary>

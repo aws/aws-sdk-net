@@ -401,7 +401,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The durability setting of the cluster when the snapshot was taken. When restoring
         /// from this snapshot, the cluster uses this durability setting unless overridden in
-        /// the restore request. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/dg/Durability.html">Durability</a>.
+        /// the restore request. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/dg/durability.html">Durability</a>.
         /// </para>
         /// </summary>
         public Durability Durability

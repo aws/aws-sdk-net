@@ -56,6 +56,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
+                    if (context.TestExpression("nextToken", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.NextToken = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("transitGatewayPolicyTableEntries/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayPolicyTableEntryUnmarshaller.Instance;

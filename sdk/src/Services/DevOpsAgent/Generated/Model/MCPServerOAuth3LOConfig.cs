@@ -108,7 +108,7 @@ namespace Amazon.DevOpsAgent.Model
         /// clients or when PKCE is not supported. Optional for public clients using PKCE.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=512)]
+        [AWSProperty(Sensitive=true, Min=0, Max=512)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

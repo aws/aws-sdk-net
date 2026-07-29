@@ -65,7 +65,11 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDurableExecutionArn())
                 throw new AmazonLambdaException("Request object does not have required field DurableExecutionArn set");
             request.AddPathResource("{DurableExecutionArn}", StringUtils.FromString(publicRequest.DurableExecutionArn));
+            
+            if (publicRequest.IsSetIncludeExecutionData())
+                request.Parameters.Add("IncludeExecutionData", StringUtils.FromBool(publicRequest.IncludeExecutionData));
             request.ResourcePath = "/2025-12-01/durable-executions/{DurableExecutionArn}";
+            request.UseQueryString = true;
 
             return request;
         }

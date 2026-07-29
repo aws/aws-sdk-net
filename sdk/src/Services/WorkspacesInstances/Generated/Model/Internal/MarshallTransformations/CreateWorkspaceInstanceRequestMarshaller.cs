@@ -28,11 +28,10 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
-using System.Buffers;
-#if !NETFRAMEWORK
-using ThirdParty.RuntimeBackports;
-#endif
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
@@ -59,79 +58,83 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateWorkspaceInstanceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.WorkspacesInstances");
-            string target = "EUCMIFrontendAPIService.CreateWorkspaceInstance";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
+            request.ResourcePath = "service/EUCMIFrontendAPIService/operation/CreateWorkspaceInstance";
+            request.Headers["Content-Type"] = "application/cbor";
+            request.Headers["Accept"] = "application/cbor";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2022-07-26";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/";
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-            writer.WriteStartObject();
-            var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetBillingConfiguration())
+            var writer = CborWriterPool.Rent();
+            try
             {
-                context.Writer.WritePropertyName("BillingConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = BillingConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.BillingConfiguration, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetClientToken())
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(publicRequest.ClientToken);
-            }
-
-            else if(!(publicRequest.IsSetClientToken()))
-            {
-                context.Writer.WritePropertyName("ClientToken");
-                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
-            }
-            if(publicRequest.IsSetManagedInstance())
-            {
-                context.Writer.WritePropertyName("ManagedInstance");
-                context.Writer.WriteStartObject();
-
-                var marshaller = ManagedInstanceRequestMarshaller.Instance;
-                marshaller.Marshall(publicRequest.ManagedInstance, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(publicRequest.IsSetTags())
-            {
-                context.Writer.WritePropertyName("Tags");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                writer.WriteStartMap(null);
+                var context = new CborMarshallerContext(request, writer);
+                if (publicRequest.IsSetBillingConfiguration())
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WriteTextString("BillingConfiguration");
+                    context.Writer.WriteStartMap(null);
 
-                    var marshaller = TagMarshaller.Instance;
-                    marshaller.Marshall(publicRequestTagsListValue, context);
+                    var marshaller = BillingConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.BillingConfiguration, context);
 
-                    context.Writer.WriteEndObject();
+                    context.Writer.WriteEndMap();
                 }
-                context.Writer.WriteEndArray();
-            }
+                if (publicRequest.IsSetClientToken())
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(publicRequest.ClientToken);
+                }
+                else if (!(publicRequest.IsSetClientToken()))
+                {
+                    context.Writer.WriteTextString("ClientToken");
+                    context.Writer.WriteTextString(Guid.NewGuid().ToString());
+                }
+                if (publicRequest.IsSetManagedInstance())
+                {
+                    context.Writer.WriteTextString("ManagedInstance");
+                    context.Writer.WriteStartMap(null);
 
-            writer.WriteEndObject();
-            writer.Flush();
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
+                    var marshaller = ManagedInstanceRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ManagedInstance, context);
+
+                    context.Writer.WriteEndMap();
+                }
+                if (publicRequest.IsSetTags())
+                {
+                    context.Writer.WriteTextString("Tags");
+                    context.Writer.WriteStartArray(publicRequest.Tags.Count);
+                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                    {
+                        context.Writer.WriteStartMap(null);
+
+                        var marshaller = TagMarshaller.Instance;
+                        marshaller.Marshall(publicRequestTagsListValue, context);
+
+                        context.Writer.WriteEndMap();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                writer.WriteEndMap();
+#if !NETFRAMEWORK
+                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
+                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
+                // avoiding the default-size rent followed by a resize+return.
+                var encodedLength = writer.BytesWritten;
+                request.ContentStream = new PooledContentStream(encodedLength);
+                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
+                var span = bufferWriter.GetSpan(encodedLength);
+                var bytesWritten = writer.Encode(span);
+                bufferWriter.Advance(bytesWritten);
+#else
+                request.Content = writer.Encode();
 #endif
+            }
+            finally
+            {
+                CborWriterPool.Return(writer);
+            }
             
-
-
             return request;
         }
         private static CreateWorkspaceInstanceRequestMarshaller _instance = new CreateWorkspaceInstanceRequestMarshaller();        

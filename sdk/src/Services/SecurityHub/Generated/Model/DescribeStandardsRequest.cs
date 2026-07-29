@@ -43,6 +43,7 @@ namespace Amazon.SecurityHub.Model
     {
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _providers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -85,6 +86,30 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Providers. 
+        /// <para>
+        /// A list of cloud providers to filter the standards by. For example, specify <c>Azure</c>
+        /// to return only standards that evaluate Azure resources.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> Providers
+        {
+            get { return this._providers; }
+            set { this._providers = value; }
+        }
+
+        // Check to see if Providers property is set
+        internal bool IsSetProviders()
+        {
+            return this._providers != null && (this._providers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

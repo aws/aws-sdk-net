@@ -29,52 +29,69 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WorkspaceInstance Object
     /// </summary>  
-    public class WorkspaceInstanceUnmarshaller : IJsonUnmarshaller<WorkspaceInstance, JsonUnmarshallerContext>
+    public class WorkspaceInstanceUnmarshaller : ICborUnmarshaller<WorkspaceInstance, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkspaceInstance Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public WorkspaceInstance Unmarshall(CborUnmarshallerContext context)
         {
             WorkspaceInstance unmarshalledObject = new WorkspaceInstance();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("EC2ManagedInstance", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = EC2ManagedInstanceUnmarshaller.Instance;
-                    unmarshalledObject.EC2ManagedInstance = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ProvisionState", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionState = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WorkspaceInstanceId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkspaceInstanceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "EC2ManagedInstance":
+                        {
+                            context.AddPathSegment("EC2ManagedInstance");
+                            var unmarshaller = EC2ManagedInstanceUnmarshaller.Instance;
+                            unmarshalledObject.EC2ManagedInstance = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ProvisionState":
+                        {
+                            context.AddPathSegment("ProvisionState");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ProvisionState = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "WorkspaceInstanceId":
+                        {
+                            context.AddPathSegment("WorkspaceInstanceId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.WorkspaceInstanceId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

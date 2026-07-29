@@ -156,7 +156,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The name of the gateway target. The name must be unique within the gateway.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Sensitive=true)]
         public string Name
         {
             get { return this._name; }

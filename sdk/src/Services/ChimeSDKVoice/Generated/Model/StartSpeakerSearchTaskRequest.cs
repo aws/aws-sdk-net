@@ -112,7 +112,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The Voice Connector ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string VoiceConnectorId
         {
             get { return this._voiceConnectorId; }

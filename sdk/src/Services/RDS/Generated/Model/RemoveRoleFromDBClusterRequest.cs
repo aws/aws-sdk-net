@@ -96,7 +96,7 @@ namespace Amazon.RDS.Model
         /// cluster, for example <c>arn:aws:iam::123456789012:role/AuroraAccessRole</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string RoleArn
         {
             get { return this._roleArn; }

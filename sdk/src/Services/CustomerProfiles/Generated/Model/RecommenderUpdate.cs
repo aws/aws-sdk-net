@@ -38,6 +38,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _failureReason;
         private DateTime? _lastUpdatedAt;
         private RecommenderConfig _recommenderConfig;
+        private string _recommenderVersionName;
         private RecommenderStatus _status;
 
         /// <summary>
@@ -110,6 +111,25 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetRecommenderConfig()
         {
             return this._recommenderConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecommenderVersionName. 
+        /// <para>
+        /// The name of the recommender version associated with this update operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string RecommenderVersionName
+        {
+            get { return this._recommenderVersionName; }
+            set { this._recommenderVersionName = value; }
+        }
+
+        // Check to see if RecommenderVersionName property is set
+        internal bool IsSetRecommenderVersionName()
+        {
+            return this._recommenderVersionName != null;
         }
 
         /// <summary>

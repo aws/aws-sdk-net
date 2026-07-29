@@ -659,6 +659,125 @@ namespace Amazon.PartnerCentralAccount
 
         #endregion
                 
+        #region  GetQualificationsAssociationDetails
+
+
+
+        /// <summary>
+        /// Returns your current qualifications association status, the primary partner, and the
+        /// full list of partners associated under the primary partner.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQualificationsAssociationDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQualificationsAssociationDetails service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetQualificationsAssociationDetails">REST API Reference for GetQualificationsAssociationDetails Operation</seealso>
+        Task<GetQualificationsAssociationDetailsResponse> GetQualificationsAssociationDetailsAsync(GetQualificationsAssociationDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetQualificationsAssociationTask
+
+
+
+        /// <summary>
+        /// Retrieves the status and details of the most recent qualifications association task
+        /// for your partner account. Use this operation to poll the progress of an association
+        /// task initiated by <c>StartQualificationsAssociationTask</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQualificationsAssociationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQualificationsAssociationTask service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetQualificationsAssociationTask">REST API Reference for GetQualificationsAssociationTask Operation</seealso>
+        Task<GetQualificationsAssociationTaskResponse> GetQualificationsAssociationTaskAsync(GetQualificationsAssociationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetQualificationsDisassociationTask
+
+
+
+        /// <summary>
+        /// Retrieves the status and details of the most recent qualifications disassociation
+        /// task for your partner account. Use this operation to poll the progress of a disassociation
+        /// task initiated by <c>StartQualificationsDisassociationTask</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetQualificationsDisassociationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetQualificationsDisassociationTask service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/GetQualificationsDisassociationTask">REST API Reference for GetQualificationsDisassociationTask Operation</seealso>
+        Task<GetQualificationsDisassociationTaskResponse> GetQualificationsDisassociationTaskAsync(GetQualificationsDisassociationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetVerification
 
 
@@ -1048,6 +1167,97 @@ namespace Amazon.PartnerCentralAccount
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartProfileUpdateTask">REST API Reference for StartProfileUpdateTask Operation</seealso>
         Task<StartProfileUpdateTaskResponse> StartProfileUpdateTaskAsync(StartProfileUpdateTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartQualificationsAssociationTask
+
+
+
+        /// <summary>
+        /// Initiates an asynchronous task to associate your partner qualifications with a primary
+        /// account. You must be a subsidiary of the primary account with an active subsidiary
+        /// connection. Use <c>GetQualificationsAssociationTask</c> to monitor task progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartQualificationsAssociationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartQualificationsAssociationTask service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This typically occurs when trying to create a resource that already exists
+        /// or modify a resource that has been changed by another process.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartQualificationsAssociationTask">REST API Reference for StartQualificationsAssociationTask Operation</seealso>
+        Task<StartQualificationsAssociationTaskResponse> StartQualificationsAssociationTaskAsync(StartQualificationsAssociationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartQualificationsDisassociationTask
+
+
+
+        /// <summary>
+        /// Initiates an asynchronous task to disassociate your partner qualifications from a
+        /// primary account. You must currently be associated and cannot disassociate if you are
+        /// the primary partner. Use <c>GetQualificationsDisassociationTask</c> to monitor task
+        /// progress.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartQualificationsDisassociationTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartQualificationsDisassociationTask service method, as returned by PartnerCentralAccount.</returns>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.AccessDeniedException">
+        /// The request was denied due to insufficient permissions. The caller does not have the
+        /// required permissions to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource. This typically occurs when trying to create a resource that already exists
+        /// or modify a resource that has been changed by another process.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.InternalServerException">
+        /// An internal server error occurred while processing the request. This is typically
+        /// a temporary condition and the request may be retried.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. This may occur when referencing a resource
+        /// that does not exist or has been deleted.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ThrottlingException">
+        /// The request was throttled due to too many requests being sent in a short period of
+        /// time. The client should implement exponential backoff and retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.PartnerCentralAccount.Model.ValidationException">
+        /// The request failed validation. One or more input parameters are invalid, missing,
+        /// or do not meet the required format or constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/partnercentral-account-2025-04-04/StartQualificationsDisassociationTask">REST API Reference for StartQualificationsDisassociationTask Operation</seealso>
+        Task<StartQualificationsDisassociationTaskResponse> StartQualificationsDisassociationTaskAsync(StartQualificationsDisassociationTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

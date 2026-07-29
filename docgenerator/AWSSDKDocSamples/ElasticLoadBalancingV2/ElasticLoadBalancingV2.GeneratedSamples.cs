@@ -159,6 +159,34 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
             #endregion
         }
 
+        public void ElasticLoadBalancingV2CreateRule()
+        {
+            #region elbv2-create-rule-2
+
+            var client = new AmazonElasticLoadBalancingV2Client();
+            var response = client.CreateRule(new CreateRuleRequest 
+            {
+                Actions = new List<Action> {
+                    new Action {
+                        TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-ipv4-targets/1234567890abcdef",
+                        Type = "forward"
+                    }
+                },
+                Conditions = new List<RuleCondition> {
+                    new RuleCondition {
+                        Field = "source-ip",
+                        SourceIpConfig = new SourceIpConditionConfig { IpAddressType = "ipv4" }
+                    }
+                },
+                ListenerArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener/net/my-nlb/1234567890abcdef/1234567890abcdef",
+                Priority = 10
+            });
+
+            List<Rule> rules = response.Rules;
+
+            #endregion
+        }
+
         public void ElasticLoadBalancingV2CreateTargetGroup()
         {
             #region elbv2-create-target-group-1
@@ -338,6 +366,21 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
                 RuleArns = new List<string> {
                     "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener-rule/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2/9683b2d02a6cabee"
                 }
+            });
+
+            List<Rule> rules = response.Rules;
+
+            #endregion
+        }
+
+        public void ElasticLoadBalancingV2DescribeRules()
+        {
+            #region elbv2-describe-rules-2
+
+            var client = new AmazonElasticLoadBalancingV2Client();
+            var response = client.DescribeRules(new DescribeRulesRequest 
+            {
+                ListenerArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener/net/my-nlb/1234567890abcdef/1234567890abcdef"
             });
 
             List<Rule> rules = response.Rules;
@@ -587,6 +630,27 @@ namespace AWSSDKDocSamples.Amazon.ElasticLoadBalancingV2.Generated
                     }
                 },
                 RuleArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener-rule/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2/9683b2d02a6cabee"
+            });
+
+            List<Rule> rules = response.Rules;
+
+            #endregion
+        }
+
+        public void ElasticLoadBalancingV2ModifyRule()
+        {
+            #region elbv2-modify-rule-2
+
+            var client = new AmazonElasticLoadBalancingV2Client();
+            var response = client.ModifyRule(new ModifyRuleRequest 
+            {
+                Actions = new List<Action> {
+                    new Action {
+                        TargetGroupArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-new-ipv4-targets/1234567890abcdef",
+                        Type = "forward"
+                    }
+                },
+                RuleArn = "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener-rule/net/my-nlb/1234567890abcdef/1234567890abcdef/1234567890abcdef"
             });
 
             List<Rule> rules = response.Rules;

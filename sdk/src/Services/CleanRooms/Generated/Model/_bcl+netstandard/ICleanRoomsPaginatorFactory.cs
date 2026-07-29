@@ -158,6 +158,26 @@ namespace Amazon.CleanRooms.Model
         IListIdNamespaceAssociationsPaginator ListIdNamespaceAssociations(ListIdNamespaceAssociationsRequest request);
 
         /// <summary>
+        /// Paginator for ListIntermediateTables operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListIntermediateTablesPaginator ListIntermediateTables(ListIntermediateTablesRequest request);
+
+        /// <summary>
+        /// Paginator for ListIntermediateTableVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListIntermediateTableVersionsPaginator ListIntermediateTableVersions(ListIntermediateTableVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListMembers operation
         ///</summary>
         [AWSPaginator(

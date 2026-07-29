@@ -74,6 +74,18 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.AdDecisionServerUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("AdsPersonalizationConcurrency", targetDepth, ref reader))
+                {
+                    var unmarshaller = AdsPersonalizationConcurrencyUnmarshaller.Instance;
+                    unmarshalledObject.AdsPersonalizationConcurrency = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("AdsPersonalizationTimeouts", targetDepth, ref reader))
+                {
+                    var unmarshaller = AdsPersonalizationTimeoutsUnmarshaller.Instance;
+                    unmarshalledObject.AdsPersonalizationTimeouts = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AvailSuppression", targetDepth, ref reader))
                 {
                     var unmarshaller = AvailSuppressionUnmarshaller.Instance;
@@ -102,6 +114,18 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DashConfigurationUnmarshaller.Instance;
                     unmarshalledObject.DashConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("DualStackPlaybackEndpointPrefix", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DualStackPlaybackEndpointPrefix = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("DualStackSessionInitializationEndpointPrefix", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DualStackSessionInitializationEndpointPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FunctionMapping", targetDepth, ref reader))

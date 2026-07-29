@@ -744,6 +744,101 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  AttachDataSource
+
+
+        /// <summary>
+        /// Attaches a data source to an OpenSearch application. The data source can be an Amazon
+        /// OpenSearch Service domain or an Amazon OpenSearch Serverless collection. If both the
+        /// application and data source are in the <c>ACTIVE</c> state, the attachment completes
+        /// immediately and returns a status of <c>ATTACHED</c>. If either resource is not yet
+        /// active, the operation stores the request and returns a status of <c>PENDING</c>. A
+        /// background process then completes the attachment when both resources become active.
+        /// Pending attachments that are not completed within 24 hours are marked as <c>FAILED</c>.
+        /// This operation is idempotent. If a data source is already attached or pending for
+        /// the same application, the existing attachment is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachDataSource service method.</param>
+        /// 
+        /// <returns>The response from the AttachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AttachDataSource">REST API Reference for AttachDataSource Operation</seealso>
+        public virtual AttachDataSourceResponse AttachDataSource(AttachDataSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachDataSourceResponseUnmarshaller.Instance;
+
+            return Invoke<AttachDataSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Attaches a data source to an OpenSearch application. The data source can be an Amazon
+        /// OpenSearch Service domain or an Amazon OpenSearch Serverless collection. If both the
+        /// application and data source are in the <c>ACTIVE</c> state, the attachment completes
+        /// immediately and returns a status of <c>ATTACHED</c>. If either resource is not yet
+        /// active, the operation stores the request and returns a status of <c>PENDING</c>. A
+        /// background process then completes the attachment when both resources become active.
+        /// Pending attachments that are not completed within 24 hours are marked as <c>FAILED</c>.
+        /// This operation is idempotent. If a data source is already attached or pending for
+        /// the same application, the existing attachment is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AttachDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AttachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AttachDataSource">REST API Reference for AttachDataSource Operation</seealso>
+        public virtual Task<AttachDataSourceResponse> AttachDataSourceAsync(AttachDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AttachDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AttachDataSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AttachDataSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AuthorizeVpcEndpointAccess
 
 
@@ -2211,6 +2306,81 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeDataSourceAttachment
+
+
+        /// <summary>
+        /// Returns the current status and details of a specific data source attachment for an
+        /// OpenSearch application. Throws a <c>ResourceNotFoundException</c> if no attachment
+        /// record exists for the specified application and data source combination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataSourceAttachment service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataSourceAttachment service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDataSourceAttachment">REST API Reference for DescribeDataSourceAttachment Operation</seealso>
+        public virtual DescribeDataSourceAttachmentResponse DescribeDataSourceAttachment(DescribeDataSourceAttachmentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataSourceAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataSourceAttachmentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataSourceAttachmentResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns the current status and details of a specific data source attachment for an
+        /// OpenSearch application. Throws a <c>ResourceNotFoundException</c> if no attachment
+        /// record exists for the specified application and data source combination.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataSourceAttachment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataSourceAttachment service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDataSourceAttachment">REST API Reference for DescribeDataSourceAttachment Operation</seealso>
+        public virtual Task<DescribeDataSourceAttachmentResponse> DescribeDataSourceAttachmentAsync(DescribeDataSourceAttachmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDataSourceAttachmentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataSourceAttachmentResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDataSourceAttachmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDomain
 
 
@@ -3325,6 +3495,93 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DetachDataSource
+
+
+        /// <summary>
+        /// Removes a data source from an OpenSearch application. The application must be in the
+        /// <c>ACTIVE</c> state. This operation removes the data source saved object from the
+        /// application and deletes the attachment record. Throws a <c>ConflictException</c> if
+        /// the specified data source has a <c>PENDING</c> attachment, and a <c>ResourceNotFoundException</c>
+        /// if the data source is not currently attached to the application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachDataSource service method.</param>
+        /// 
+        /// <returns>The response from the DetachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DetachDataSource">REST API Reference for DetachDataSource Operation</seealso>
+        public virtual DetachDataSourceResponse DetachDataSource(DetachDataSourceRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachDataSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DetachDataSourceResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Removes a data source from an OpenSearch application. The application must be in the
+        /// <c>ACTIVE</c> state. This operation removes the data source saved object from the
+        /// application and deletes the attachment record. Throws a <c>ConflictException</c> if
+        /// the specified data source has a <c>PENDING</c> attachment, and a <c>ResourceNotFoundException</c>
+        /// if the data source is not currently attached to the application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DetachDataSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DetachDataSource service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DetachDataSource">REST API Reference for DetachDataSource Operation</seealso>
+        public virtual Task<DetachDataSourceResponse> DetachDataSourceAsync(DetachDataSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DetachDataSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DetachDataSourceResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DetachDataSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DissociatePackage
 
 
@@ -4105,6 +4362,79 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  GetMigration
+
+
+        /// <summary>
+        /// Retrieves the current status and progress of a migration job, including the number
+        /// of exported and imported objects and error details if the migration failed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigration service method.</param>
+        /// 
+        /// <returns>The response from the GetMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual GetMigrationResponse GetMigration(GetMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<GetMigrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the current status and progress of a migration job, including the number
+        /// of exported and imported objects and error details if the migration failed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetMigration">REST API Reference for GetMigration Operation</seealso>
+        public virtual Task<GetMigrationResponse> GetMigrationAsync(GetMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetMigrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetMigrationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetPackageVersionHistory
 
 
@@ -4328,6 +4658,87 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  InsightFeedback
+
+
+        /// <summary>
+        /// Submits feedback for an existing insight in an Amazon OpenSearch Service domain. Allows
+        /// users to provide a thumbs up or thumbs down rating and optional text feedback for
+        /// a specific insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InsightFeedback service method.</param>
+        /// 
+        /// <returns>The response from the InsightFeedback service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InsightFeedback">REST API Reference for InsightFeedback Operation</seealso>
+        public virtual InsightFeedbackResponse InsightFeedback(InsightFeedbackRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InsightFeedbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InsightFeedbackResponseUnmarshaller.Instance;
+
+            return Invoke<InsightFeedbackResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Submits feedback for an existing insight in an Amazon OpenSearch Service domain. Allows
+        /// users to provide a thumbs up or thumbs down rating and optional text feedback for
+        /// a specific insight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the InsightFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the InsightFeedback service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
+        /// An exception for trying to create more than the allowed number of resources or sub-resources.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/InsightFeedback">REST API Reference for InsightFeedback Operation</seealso>
+        public virtual Task<InsightFeedbackResponse> InsightFeedbackAsync(InsightFeedbackRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = InsightFeedbackRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = InsightFeedbackResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<InsightFeedbackResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListApplications
 
 
@@ -4401,6 +4812,79 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDataSourceAttachments
+
+
+        /// <summary>
+        /// Returns a paginated list of all data source attachments for an OpenSearch application,
+        /// including attachments in all states (<c>PENDING</c>, <c>ATTACHED</c>, and <c>FAILED</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSourceAttachments service method.</param>
+        /// 
+        /// <returns>The response from the ListDataSourceAttachments service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSourceAttachments">REST API Reference for ListDataSourceAttachments Operation</seealso>
+        public virtual ListDataSourceAttachmentsResponse ListDataSourceAttachments(ListDataSourceAttachmentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataSourceAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourceAttachmentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataSourceAttachmentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a paginated list of all data source attachments for an OpenSearch application,
+        /// including attachments in all states (<c>PENDING</c>, <c>ATTACHED</c>, and <c>FAILED</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataSourceAttachments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataSourceAttachments service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListDataSourceAttachments">REST API Reference for ListDataSourceAttachments Operation</seealso>
+        public virtual Task<ListDataSourceAttachmentsResponse> ListDataSourceAttachmentsAsync(ListDataSourceAttachmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDataSourceAttachmentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataSourceAttachmentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDataSourceAttachmentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4906,6 +5390,75 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = ListInstanceTypeDetailsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListInstanceTypeDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListMigrations
+
+
+        /// <summary>
+        /// Lists migration jobs for an Amazon OpenSearch Service application. You can filter
+        /// results by migration status. Use pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMigrations service method.</param>
+        /// 
+        /// <returns>The response from the ListMigrations service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListMigrations">REST API Reference for ListMigrations Operation</seealso>
+        public virtual ListMigrationsResponse ListMigrations(ListMigrationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMigrationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMigrationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists migration jobs for an Amazon OpenSearch Service application. You can filter
+        /// results by migration status. Use pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMigrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMigrations service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListMigrations">REST API Reference for ListMigrations Operation</seealso>
+        public virtual Task<ListMigrationsResponse> ListMigrationsAsync(ListMigrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMigrationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMigrationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListMigrationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5981,6 +6534,93 @@ namespace Amazon.OpenSearchService
             options.ResponseUnmarshaller = StartDomainMaintenanceResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartDomainMaintenanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartMigration
+
+
+        /// <summary>
+        /// Initiates a migration job to migrate saved objects from a data source to an Amazon
+        /// OpenSearch Service application workspace. Saved objects include dashboards, visualizations,
+        /// index patterns, and searches. You can specify export filters to control the scope
+        /// of the migration and a conflict resolution strategy for handling existing objects
+        /// in the target workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual StartMigrationResponse StartMigration(StartMigrationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+
+            return Invoke<StartMigrationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a migration job to migrate saved objects from a data source to an Amazon
+        /// OpenSearch Service application workspace. Saved objects include dashboards, visualizations,
+        /// index patterns, and searches. You can specify export filters to control the scope
+        /// of the migration and a conflict resolution strategy for handling existing objects
+        /// in the target workspace.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMigration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartMigration service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.AccessDeniedException">
+        /// An error occurred because you don't have permissions to access the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ConflictException">
+        /// An error occurred because the client attempts to remove a resource that is currently
+        /// in use.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/StartMigration">REST API Reference for StartMigration Operation</seealso>
+        public virtual Task<StartMigrationResponse> StartMigrationAsync(StartMigrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartMigrationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartMigrationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartMigrationResponse>(request, options, cancellationToken);
         }
 
         #endregion

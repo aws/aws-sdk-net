@@ -3306,7 +3306,8 @@
         "workflowVersionName":{"shape":"WorkflowVersionName"},
         "networkingMode":{"shape":"NetworkingMode"},
         "configurationName":{"shape":"ConfigurationName"},
-        "engineSettings":{"shape":"EngineSettings"}
+        "engineSettings":{"shape":"EngineSettings"},
+        "scratchStorageMode":{"shape":"ScratchStorageMode"}
       }
     },
     "DefaultRunSettingPriorityInteger":{
@@ -4512,6 +4513,7 @@
         "workflowVersionName":{"shape":"WorkflowVersionName"},
         "workflowUuid":{"shape":"WorkflowUuid"},
         "networkingMode":{"shape":"NetworkingMode"},
+        "scratchStorageMode":{"shape":"ScratchStorageMode"},
         "configuration":{"shape":"ConfigurationDetails"},
         "vpcConfig":{"shape":"VpcConfigResponse"},
         "engineSettings":{"shape":"EngineSettings"}
@@ -4566,7 +4568,8 @@
         "gpus":{"shape":"GetRunTaskResponseGpusInteger"},
         "instanceType":{"shape":"TaskInstanceType"},
         "failureReason":{"shape":"TaskFailureReason"},
-        "imageDetails":{"shape":"ImageDetails"}
+        "imageDetails":{"shape":"ImageDetails"},
+        "uuid":{"shape":"TaskUuid"}
       }
     },
     "GetRunTaskResponseCpusInteger":{
@@ -7123,6 +7126,15 @@
         "BOOLEAN"
       ]
     },
+    "ScratchStorageMode":{
+      "type":"string",
+      "enum":[
+        "LOCAL",
+        "SHARED"
+      ],
+      "max":64,
+      "min":1
+    },
     "SecurityGroupId":{
       "type":"string",
       "max":128,
@@ -7614,6 +7626,7 @@
         "workflowOwnerId":{"shape":"WorkflowOwnerId"},
         "workflowVersionName":{"shape":"WorkflowVersionName"},
         "networkingMode":{"shape":"NetworkingMode"},
+        "scratchStorageMode":{"shape":"ScratchStorageMode"},
         "configurationName":{"shape":"ConfigurationName"},
         "engineSettings":{"shape":"EngineSettings"}
       }
@@ -7878,7 +7891,8 @@
         "startTime":{"shape":"TaskTimestamp"},
         "stopTime":{"shape":"TaskTimestamp"},
         "gpus":{"shape":"TaskListItemGpusInteger"},
-        "instanceType":{"shape":"TaskInstanceType"}
+        "instanceType":{"shape":"TaskInstanceType"},
+        "uuid":{"shape":"TaskUuid"}
       }
     },
     "TaskListItemCpusInteger":{
@@ -7932,6 +7946,12 @@
     "TaskTimestamp":{
       "type":"timestamp",
       "timestampFormat":"iso8601"
+    },
+    "TaskUuid":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[\\p{L}||\\p{M}||\\p{Z}||\\p{S}||\\p{N}||\\p{P}]+"
     },
     "ThrottlingException":{
       "type":"structure",

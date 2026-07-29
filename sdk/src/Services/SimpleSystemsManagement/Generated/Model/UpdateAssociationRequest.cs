@@ -617,7 +617,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>IncludeChildOrganizationUnits</c> parameter is not supported by State Manager.
+        /// The <c>TargetLocationAlarmConfiguration</c> parameter is not supported by State Manager.
         /// </para>
         ///  </note>
         /// <para />

@@ -87,6 +87,23 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetAddressNamesMode())
+            {
+                context.Writer.WritePropertyName("AddressNamesMode");
+                context.Writer.WriteStringValue(publicRequest.AddressNamesMode);
+            }
+
+            if(publicRequest.IsSetAddressTranslations())
+            {
+                context.Writer.WritePropertyName("AddressTranslations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddressTranslationsListValue in publicRequest.AddressTranslations)
+                {
+                        context.Writer.WriteStringValue(publicRequestAddressTranslationsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetBiasPosition())
             {
                 context.Writer.WritePropertyName("BiasPosition");
@@ -131,6 +148,12 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PoliticalView");
                 context.Writer.WriteStringValue(publicRequest.PoliticalView);
+            }
+
+            if(publicRequest.IsSetPostalCodeMode())
+            {
+                context.Writer.WritePropertyName("PostalCodeMode");
+                context.Writer.WriteStringValue(publicRequest.PostalCodeMode);
             }
 
             if(publicRequest.IsSetQueryComponents())

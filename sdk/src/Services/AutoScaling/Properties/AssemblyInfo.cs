@@ -7,17 +7,24 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.AutoScaling")]
-#if BCL
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (4.7.2) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
-#elif NETSTANDARD20
+
+#if NET472
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+
+#elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+
 #elif NETCOREAPP3_1
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Auto Scaling. Auto Scaling helps you maintain application availability and allows you to scale your capacity up or down automatically according to conditions you define.")]
+
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
+
+
 
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
@@ -42,4 +49,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.11.6")]
+[assembly: AssemblyFileVersion("4.0.101.7")]

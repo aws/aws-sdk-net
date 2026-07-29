@@ -92,6 +92,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.RiskType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("taskHours", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.TaskHours = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("taskId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.KendraKnowledgeBaseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("managedKnowledgeBaseConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = ManagedKnowledgeBaseConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ManagedKnowledgeBaseConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("sqlKnowledgeBaseConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = SqlKnowledgeBaseConfigurationUnmarshaller.Instance;

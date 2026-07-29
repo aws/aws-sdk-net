@@ -35,10 +35,12 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class GetDurableExecutionResponse : AmazonWebServiceResponse
     {
+        private DurableConfig _durableConfig;
         private string _durableExecutionArn;
         private string _durableExecutionName;
         private DateTime? _endTimestamp;
         private ErrorObject _error;
+        private bool? _executionDataIncluded;
         private string _functionArn;
         private string _inputPayload;
         private string _result;
@@ -46,6 +48,27 @@ namespace Amazon.Lambda.Model
         private ExecutionStatus _status;
         private TraceHeader _traceHeader;
         private string _version;
+
+        /// <summary>
+        /// Gets and sets the property DurableConfig. 
+        /// <para>
+        /// Configuration settings for the durable execution, including execution timeout, retention
+        /// period for execution history, and an optional ARN of the Key Management Service (KMS)
+        /// customer managed key that is used to encrypt your durable execution's payload data,
+        /// including input, output, and error payloads.
+        /// </para>
+        /// </summary>
+        public DurableConfig DurableConfig
+        {
+            get { return this._durableConfig; }
+            set { this._durableConfig = value; }
+        }
+
+        // Check to see if DurableConfig property is set
+        internal bool IsSetDurableConfig()
+        {
+            return this._durableConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DurableExecutionArn. 
@@ -124,6 +147,25 @@ namespace Amazon.Lambda.Model
         internal bool IsSetError()
         {
             return this._error != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionDataIncluded. 
+        /// <para>
+        /// Indicates whether execution data is included in this response. Returns <c>false</c>
+        /// when <c>IncludeExecutionData</c> is set to <c>false</c> in the request.
+        /// </para>
+        /// </summary>
+        public bool? ExecutionDataIncluded
+        {
+            get { return this._executionDataIncluded; }
+            set { this._executionDataIncluded = value; }
+        }
+
+        // Check to see if ExecutionDataIncluded property is set
+        internal bool IsSetExecutionDataIncluded()
+        {
+            return this._executionDataIncluded.HasValue; 
         }
 
         /// <summary>

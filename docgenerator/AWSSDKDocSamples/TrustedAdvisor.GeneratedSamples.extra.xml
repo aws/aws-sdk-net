@@ -249,6 +249,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.ListRecommendationsForResource(Amazon.TrustedAdvisor.Model.ListRecommendationsForResourceRequest)" />
+            <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.ListRecommendationsForResource(Amazon.TrustedAdvisor.Model.ListRecommendationsForResourceRequest)" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsForResourceRequest" />
+            <member name="T:Amazon.TrustedAdvisor.Model.ListRecommendationsForResourceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all Trusted Advisor Recommendations for an AWS Resource"
+                    source=".\AWSSDKDocSamples\TrustedAdvisor\TrustedAdvisor.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.TrustedAdvisor.IAmazonTrustedAdvisor.UpdateOrganizationRecommendationLifecycle(Amazon.TrustedAdvisor.Model.UpdateOrganizationRecommendationLifecycleRequest)" />
             <member name="M:Amazon.TrustedAdvisor.AmazonTrustedAdvisorClient.UpdateOrganizationRecommendationLifecycle(Amazon.TrustedAdvisor.Model.UpdateOrganizationRecommendationLifecycleRequest)" />
             <member name="T:Amazon.TrustedAdvisor.Model.UpdateOrganizationRecommendationLifecycleRequest" />

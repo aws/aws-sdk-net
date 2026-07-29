@@ -180,7 +180,11 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static SimulatePrincipalPolicyRequestMarshaller _instance = new SimulatePrincipalPolicyRequestMarshaller();        

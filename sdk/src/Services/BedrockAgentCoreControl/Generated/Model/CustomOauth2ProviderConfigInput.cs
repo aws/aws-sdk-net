@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private OnBehalfOfTokenExchangeConfigType _onBehalfOfTokenExchangeConfig;
         private PrivateEndpoint _privateEndpoint;
         private List<PrivateEndpointOverride> _privateEndpointOverrides = AWSConfigs.InitializeCollections ? new List<PrivateEndpointOverride>() : null;
+        private PrivateKeyJwtConfig _privateKeyJwtConfig;
 
         /// <summary>
         /// Gets and sets the property ClientAuthenticationMethod. 
@@ -103,9 +104,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property ClientSecretConfig. 
         /// <para>
-        /// A reference to the AWS Secrets Manager secret that stores the client secret. This
-        /// includes the secret ID and the JSON key used to extract the client secret value from
-        /// the secret. Required when <c>clientSecretSource</c> is set to <c>EXTERNAL</c>.
+        /// A reference to the Amazon Web Services Secrets Manager secret that stores the client
+        /// secret. This includes the secret ID and the JSON key used to extract the client secret
+        /// value from the secret. Required when <c>clientSecretSource</c> is set to <c>EXTERNAL</c>.
         /// </para>
         /// </summary>
         public SecretReference ClientSecretConfig
@@ -124,8 +125,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property ClientSecretSource. 
         /// <para>
         /// The source type of the client secret. Use <c>MANAGED</c> if the secret is managed
-        /// by the service, or <c>EXTERNAL</c> if you manage the secret yourself in AWS Secrets
-        /// Manager.
+        /// by the service, or <c>EXTERNAL</c> if you manage the secret yourself in Amazon Web
+        /// Services Secrets Manager.
         /// </para>
         /// </summary>
         public SecretSourceType ClientSecretSource
@@ -219,6 +220,21 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPrivateEndpointOverrides()
         {
             return this._privateEndpointOverrides != null && (this._privateEndpointOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateKeyJwtConfig.
+        /// </summary>
+        public PrivateKeyJwtConfig PrivateKeyJwtConfig
+        {
+            get { return this._privateKeyJwtConfig; }
+            set { this._privateKeyJwtConfig = value; }
+        }
+
+        // Check to see if PrivateKeyJwtConfig property is set
+        internal bool IsSetPrivateKeyJwtConfig()
+        {
+            return this._privateKeyJwtConfig != null;
         }
 
     }

@@ -41,7 +41,10 @@ namespace Amazon.DevOpsAgent.Model
         private string _status;
 
         /// <summary>
-        /// Gets and sets the property AgentSpaceId.
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The unique identifier for the agent space whose Triggers should be listed
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentSpaceId

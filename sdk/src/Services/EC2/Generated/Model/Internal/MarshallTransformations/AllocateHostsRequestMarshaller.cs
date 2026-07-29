@@ -89,6 +89,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetCpuOptions())
+                {
+                    if(publicRequest.CpuOptions.IsSetAmdSevSnp())
+                    {
+                        request.Parameters.Add("CpuOptions" + "." + "AmdSevSnp", StringUtils.FromString(publicRequest.CpuOptions.AmdSevSnp));
+                    }
+                }
                 if(publicRequest.IsSetHostMaintenance())
                 {
                     request.Parameters.Add("HostMaintenance", StringUtils.FromString(publicRequest.HostMaintenance));
@@ -153,7 +160,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static AllocateHostsRequestMarshaller _instance = new AllocateHostsRequestMarshaller();        

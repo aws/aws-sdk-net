@@ -35,15 +35,50 @@ namespace Amazon.CertificateManager.Model
     /// that match a specific status be listed. You can also filter by specific attributes
     /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
     /// more information, see <a>Filters</a>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// By default, this action does not return certificates with a <c>CertificateKeyPairOrigin</c>
+    /// of <c>ACME</c>. To include ACME certificates, specify <c>ACME</c> in the <c>CertificateKeyPairOrigins</c>
+    /// filter.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
+        private List<string> _certificateKeyPairOrigins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _certificateStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Filters _includes;
         private int? _maxItems;
         private string _nextToken;
         private SortBy _sortBy;
         private SortOrder _sortOrder;
+
+        /// <summary>
+        /// Gets and sets the property CertificateKeyPairOrigins. 
+        /// <para>
+        /// Filter the certificate list by certificate key pair origin. Specify one or more <c>CertificateKeyPairOrigin</c>
+        /// values. Default filtering returns only certificates with key pair origin of <c>AWS_MANAGED</c>
+        /// and <c>CUSTOMER_PROVIDED</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public List<string> CertificateKeyPairOrigins
+        {
+            get { return this._certificateKeyPairOrigins; }
+            set { this._certificateKeyPairOrigins = value; }
+        }
+
+        // Check to see if CertificateKeyPairOrigins property is set
+        internal bool IsSetCertificateKeyPairOrigins()
+        {
+            return this._certificateKeyPairOrigins != null && (this._certificateKeyPairOrigins.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateStatuses. 

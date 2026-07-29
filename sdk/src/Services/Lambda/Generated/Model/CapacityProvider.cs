@@ -42,6 +42,7 @@ namespace Amazon.Lambda.Model
         private CapacityProviderPermissionsConfig _permissionsConfig;
         private PropagateTags _propagateTags;
         private CapacityProviderState _state;
+        private CapacityProviderTelemetryConfig _telemetryConfig;
         private CapacityProviderVpcConfig _vpcConfig;
 
         /// <summary>
@@ -105,6 +106,7 @@ namespace Amazon.Lambda.Model
         /// The ARN of the KMS key used to encrypt the capacity provider's resources.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=10000)]
         public string KmsKeyArn
         {
             get { return this._kmsKeyArn; }
@@ -123,6 +125,7 @@ namespace Amazon.Lambda.Model
         /// The date and time when the capacity provider was last modified.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=100)]
         public string LastModified
         {
             get { return this._lastModified; }
@@ -186,6 +189,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TelemetryConfig. 
+        /// <para>
+        /// The telemetry configuration for the capacity provider, including logging settings.
+        /// </para>
+        /// </summary>
+        public CapacityProviderTelemetryConfig TelemetryConfig
+        {
+            get { return this._telemetryConfig; }
+            set { this._telemetryConfig = value; }
+        }
+
+        // Check to see if TelemetryConfig property is set
+        internal bool IsSetTelemetryConfig()
+        {
+            return this._telemetryConfig != null;
         }
 
         /// <summary>

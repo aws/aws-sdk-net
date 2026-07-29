@@ -77,9 +77,24 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientRequestToken", StringUtils.FromString(publicRequest.ClientRequestToken));
                 }
+                if(publicRequest.IsSetDeploymentConfig())
+                {
+                    if(publicRequest.DeploymentConfig.IsSetDisableRollback())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "DisableRollback", StringUtils.FromBool(publicRequest.DeploymentConfig.DisableRollback));
+                    }
+                    if(publicRequest.DeploymentConfig.IsSetMode())
+                    {
+                        request.Parameters.Add("DeploymentConfig" + "." + "Mode", StringUtils.FromString(publicRequest.DeploymentConfig.Mode));
+                    }
+                }
                 if(publicRequest.IsSetDisableRollback())
                 {
                     request.Parameters.Add("DisableRollback", StringUtils.FromBool(publicRequest.DisableRollback));
+                }
+                if(publicRequest.IsSetDisableValidation())
+                {
+                    request.Parameters.Add("DisableValidation", StringUtils.FromBool(publicRequest.DisableValidation));
                 }
                 if(publicRequest.IsSetNotificationARNs())
                 {
@@ -229,7 +244,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static UpdateStackRequestMarshaller _instance = new UpdateStackRequestMarshaller();        

@@ -78,6 +78,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.CreateExperimentDefinition(Amazon.AppConfig.Model.CreateExperimentDefinitionRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.CreateExperimentDefinition(Amazon.AppConfig.Model.CreateExperimentDefinitionRequest)" />
+            <member name="T:Amazon.AppConfig.Model.CreateExperimentDefinitionRequest" />
+            <member name="T:Amazon.AppConfig.Model.CreateExperimentDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following CreateExperimentDefinition example creates an experiment definition that tests a feature flag with a 50/50 traffic split.
+                </para>
+                <code
+                    title="To create an experiment definition"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-create-an-experiment-definition-1632264511615" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AppConfig.IAmazonAppConfig.CreateHostedConfigurationVersion(Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest)" />
             <member name="M:Amazon.AppConfig.AmazonAppConfigClient.CreateHostedConfigurationVersion(Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest)" />
             <member name="T:Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest" />
@@ -169,6 +188,25 @@
                     title="To delete an environment"
                     source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
                     region="to-delete-an-environment-1632265641044" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.DeleteExperimentDefinition(Amazon.AppConfig.Model.DeleteExperimentDefinitionRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.DeleteExperimentDefinition(Amazon.AppConfig.Model.DeleteExperimentDefinitionRequest)" />
+            <member name="T:Amazon.AppConfig.Model.DeleteExperimentDefinitionRequest" />
+            <member name="T:Amazon.AppConfig.Model.DeleteExperimentDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following DeleteExperimentDefinition example archives (soft-deletes) the specified experiment definition.
+                </para>
+                <code
+                    title="To delete an experiment definition"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-delete-an-experiment-definition-1632264511619" />
             </example>
         </value>
     </doc>
@@ -307,6 +345,44 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetExperimentDefinition(Amazon.AppConfig.Model.GetExperimentDefinitionRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetExperimentDefinition(Amazon.AppConfig.Model.GetExperimentDefinitionRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetExperimentDefinitionRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetExperimentDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following GetExperimentDefinition example retrieves the details of an experiment definition.
+                </para>
+                <code
+                    title="To get an experiment definition"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-get-an-experiment-definition-1632264511616" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetExperimentRun(Amazon.AppConfig.Model.GetExperimentRunRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetExperimentRun(Amazon.AppConfig.Model.GetExperimentRunRequest)" />
+            <member name="T:Amazon.AppConfig.Model.GetExperimentRunRequest" />
+            <member name="T:Amazon.AppConfig.Model.GetExperimentRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following GetExperimentRun example retrieves the details of an experiment run.
+                </para>
+                <code
+                    title="To get an experiment run"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-get-an-experiment-run-1632264511621" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AppConfig.IAmazonAppConfig.GetHostedConfigurationVersion(Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest)" />
             <member name="M:Amazon.AppConfig.AmazonAppConfigClient.GetHostedConfigurationVersion(Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest)" />
             <member name="T:Amazon.AppConfig.Model.GetHostedConfigurationVersionRequest" />
@@ -421,6 +497,63 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListExperimentDefinitions(Amazon.AppConfig.Model.ListExperimentDefinitionsRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListExperimentDefinitions(Amazon.AppConfig.Model.ListExperimentDefinitionsRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListExperimentDefinitionsRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListExperimentDefinitionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following ListExperimentDefinitions example lists the experiment definitions for an application.
+                </para>
+                <code
+                    title="To list experiment definitions"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-experiment-definitions-1632264511617" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListExperimentRunEvents(Amazon.AppConfig.Model.ListExperimentRunEventsRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListExperimentRunEvents(Amazon.AppConfig.Model.ListExperimentRunEventsRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListExperimentRunEventsRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListExperimentRunEventsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following ListExperimentRunEvents example lists the events for an experiment run.
+                </para>
+                <code
+                    title="To list experiment run events"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-experiment-run-events-1632264511625" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListExperimentRuns(Amazon.AppConfig.Model.ListExperimentRunsRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListExperimentRuns(Amazon.AppConfig.Model.ListExperimentRunsRequest)" />
+            <member name="T:Amazon.AppConfig.Model.ListExperimentRunsRequest" />
+            <member name="T:Amazon.AppConfig.Model.ListExperimentRunsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following ListExperimentRuns example lists the experiment runs for an experiment definition.
+                </para>
+                <code
+                    title="To list experiment runs"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-list-experiment-runs-1632264511622" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AppConfig.IAmazonAppConfig.ListHostedConfigurationVersions(Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest)" />
             <member name="M:Amazon.AppConfig.AmazonAppConfigClient.ListHostedConfigurationVersions(Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest)" />
             <member name="T:Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest" />
@@ -478,6 +611,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.StartExperimentRun(Amazon.AppConfig.Model.StartExperimentRunRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.StartExperimentRun(Amazon.AppConfig.Model.StartExperimentRunRequest)" />
+            <member name="T:Amazon.AppConfig.Model.StartExperimentRunRequest" />
+            <member name="T:Amazon.AppConfig.Model.StartExperimentRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following StartExperimentRun example starts an experiment run with 50% audience exposure.
+                </para>
+                <code
+                    title="To start an experiment run"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-start-an-experiment-run-1632264511620" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AppConfig.IAmazonAppConfig.StopDeployment(Amazon.AppConfig.Model.StopDeploymentRequest)" />
             <member name="M:Amazon.AppConfig.AmazonAppConfigClient.StopDeployment(Amazon.AppConfig.Model.StopDeploymentRequest)" />
             <member name="T:Amazon.AppConfig.Model.StopDeploymentRequest" />
@@ -492,6 +644,25 @@
                     title="To stop configuration deployment"
                     source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
                     region="to-stop-configuration-deployment-1632329139126" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.StopExperimentRun(Amazon.AppConfig.Model.StopExperimentRunRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.StopExperimentRun(Amazon.AppConfig.Model.StopExperimentRunRequest)" />
+            <member name="T:Amazon.AppConfig.Model.StopExperimentRunRequest" />
+            <member name="T:Amazon.AppConfig.Model.StopExperimentRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following StopExperimentRun example stops a running experiment and records the result.
+                </para>
+                <code
+                    title="To stop an experiment run"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-stop-an-experiment-run-1632264511624" />
             </example>
         </value>
     </doc>
@@ -607,6 +778,44 @@
                     title="To update an environment"
                     source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
                     region="to-update-an-environment-1632331382428" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.UpdateExperimentDefinition(Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.UpdateExperimentDefinition(Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest)" />
+            <member name="T:Amazon.AppConfig.Model.UpdateExperimentDefinitionRequest" />
+            <member name="T:Amazon.AppConfig.Model.UpdateExperimentDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following UpdateExperimentDefinition example updates the hypothesis and audience rule of an experiment definition.
+                </para>
+                <code
+                    title="To update an experiment definition"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-update-an-experiment-definition-1632264511618" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.AppConfig.IAmazonAppConfig.UpdateExperimentRun(Amazon.AppConfig.Model.UpdateExperimentRunRequest)" />
+            <member name="M:Amazon.AppConfig.AmazonAppConfigClient.UpdateExperimentRun(Amazon.AppConfig.Model.UpdateExperimentRunRequest)" />
+            <member name="T:Amazon.AppConfig.Model.UpdateExperimentRunRequest" />
+            <member name="T:Amazon.AppConfig.Model.UpdateExperimentRunResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following UpdateExperimentRun example increases the exposure percentage of a running experiment.
+                </para>
+                <code
+                    title="To update an experiment run"
+                    source=".\AWSSDKDocSamples\AppConfig\AppConfig.GeneratedSamples.cs"
+                    region="to-update-an-experiment-run-1632264511623" />
             </example>
         </value>
     </doc>

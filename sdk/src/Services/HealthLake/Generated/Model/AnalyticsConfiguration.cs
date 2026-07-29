@@ -37,7 +37,10 @@ namespace Amazon.HealthLake.Model
         private AnalyticsStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Status. <para>The status of the analytics configuration.</para>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the analytics configuration.
+        /// </para>
         /// </summary>
         public AnalyticsStatus Status
         {

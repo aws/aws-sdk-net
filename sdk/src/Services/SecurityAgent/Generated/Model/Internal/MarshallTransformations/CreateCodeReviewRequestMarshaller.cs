@@ -119,6 +119,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Title);
             }
 
+            if(publicRequest.IsSetValidationMode())
+            {
+                context.Writer.WritePropertyName("validationMode");
+                context.Writer.WriteStringValue(publicRequest.ValidationMode);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

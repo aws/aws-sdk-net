@@ -41,6 +41,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </para>
     ///  
     /// <para>
+    /// For Network Load Balancer listener rules, the only supported condition is <c>source-ip</c>.
+    /// Use <c>SourceIpConfig</c> with <c>IpAddressType</c> to match on the IP address type
+    /// of the source traffic (<c>ipv4</c> or <c>ipv6</c>).
+    /// </para>
+    ///  
+    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-limits.html">Quotas
     /// for your Application Load Balancers</a>.
     /// </para>
@@ -60,31 +66,33 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Field. 
         /// <para>
-        /// The field in the HTTP request. The following are the possible values:
+        /// The name of the field. The possible values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>http-header</c> 
+        ///  <c>http-header</c> – [ALB] Matches on an HTTP header field.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>http-request-method</c> 
+        ///  <c>http-request-method</c> – [ALB] Matches on the HTTP request method.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>host-header</c> 
+        ///  <c>host-header</c> – [ALB] Matches on the host header.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>path-pattern</c> 
+        ///  <c>path-pattern</c> – [ALB] Matches on the URL path of the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>query-string</c> 
+        ///  <c>query-string</c> – [ALB] Matches on a query string parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>source-ip</c> 
+        ///  <c>source-ip</c> – [ALB, NLB] Matches on the source IP address. For ALB, use <c>SourceIpConfig</c>
+        /// with <c>Values</c> to specify CIDR ranges. For NLB, use <c>SourceIpConfig</c> with
+        /// <c>IpAddressType</c> to match the IP address type (<c>ipv4</c> or <c>ipv6</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

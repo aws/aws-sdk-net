@@ -35,9 +35,57 @@ namespace Amazon.Resiliencehubv2.Model
     /// </summary>
     public partial class ListFailureModeAssessmentsRequest : AmazonResiliencehubv2Request
     {
+        private List<string> _assessmentStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private DateTime? _endedBefore;
         private int? _maxResults;
         private string _nextToken;
         private string _serviceArn;
+        private AssessmentSortField _sortBy;
+        private SortOrder _sortOrder;
+        private DateTime? _startedAfter;
+
+        /// <summary>
+        /// Gets and sets the property AssessmentStatuses. 
+        /// <para>
+        /// Specifies the assessment statuses to include in the results.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<string> AssessmentStatuses
+        {
+            get { return this._assessmentStatuses; }
+            set { this._assessmentStatuses = value; }
+        }
+
+        // Check to see if AssessmentStatuses property is set
+        internal bool IsSetAssessmentStatuses()
+        {
+            return this._assessmentStatuses != null && (this._assessmentStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndedBefore. 
+        /// <para>
+        /// Specifies that only assessments that ended at or before this timestamp appear in the
+        /// results.
+        /// </para>
+        /// </summary>
+        public DateTime? EndedBefore
+        {
+            get { return this._endedBefore; }
+            set { this._endedBefore = value; }
+        }
+
+        // Check to see if EndedBefore property is set
+        internal bool IsSetEndedBefore()
+        {
+            return this._endedBefore.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -85,6 +133,61 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetServiceArn()
         {
             return this._serviceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortBy. 
+        /// <para>
+        /// The field to use for sorting failure mode assessments.
+        /// </para>
+        /// </summary>
+        public AssessmentSortField SortBy
+        {
+            get { return this._sortBy; }
+            set { this._sortBy = value; }
+        }
+
+        // Check to see if SortBy property is set
+        internal bool IsSetSortBy()
+        {
+            return this._sortBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SortOrder. 
+        /// <para>
+        /// The sort order for results.
+        /// </para>
+        /// </summary>
+        public SortOrder SortOrder
+        {
+            get { return this._sortOrder; }
+            set { this._sortOrder = value; }
+        }
+
+        // Check to see if SortOrder property is set
+        internal bool IsSetSortOrder()
+        {
+            return this._sortOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartedAfter. 
+        /// <para>
+        /// Specifies that only assessments that started at or after this timestamp appear in
+        /// the results.
+        /// </para>
+        /// </summary>
+        public DateTime? StartedAfter
+        {
+            get { return this._startedAfter; }
+            set { this._startedAfter = value; }
+        }
+
+        // Check to see if StartedAfter property is set
+        internal bool IsSetStartedAfter()
+        {
+            return this._startedAfter.HasValue; 
         }
 
     }

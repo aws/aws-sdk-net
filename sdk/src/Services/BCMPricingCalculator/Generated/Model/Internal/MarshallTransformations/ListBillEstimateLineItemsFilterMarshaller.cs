@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ListBillEstimateLineItemsFilter Marshaller
     /// </summary>
-    public class ListBillEstimateLineItemsFilterMarshaller : IRequestMarshaller<ListBillEstimateLineItemsFilter, JsonMarshallerContext> 
+    public class ListBillEstimateLineItemsFilterMarshaller : IRequestMarshaller<ListBillEstimateLineItemsFilter, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,33 +45,31 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ListBillEstimateLineItemsFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(ListBillEstimateLineItemsFilter requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetMatchOption())
-            {
-                context.Writer.WritePropertyName("matchOption");
-                context.Writer.WriteStringValue(requestObject.MatchOption);
-            }
 
-            if(requestObject.IsSetName())
+            if (requestObject.IsSetMatchOption())
             {
-                context.Writer.WritePropertyName("name");
-                context.Writer.WriteStringValue(requestObject.Name);
+                context.Writer.WriteTextString("matchOption");
+                context.Writer.WriteTextString(requestObject.MatchOption);
             }
-
-            if(requestObject.IsSetValues())
+            if (requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("values");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("name");
+                context.Writer.WriteTextString(requestObject.Name);
+            }
+            if (requestObject.IsSetValues())
+            {
+                context.Writer.WriteTextString("values");
+                context.Writer.WriteStartArray(requestObject.Values.Count);
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.WriteStringValue(requestObjectValuesListValue);
+                        context.Writer.WriteTextString(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
         }
 
         /// <summary>

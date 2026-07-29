@@ -5,7 +5,7 @@ namespace SmithyDotNet.Generator.Model.Converters;
 
 /// <summary>
 /// Converts a plain JSON string (e.g. <c>"com.foo#Bar"</c>) to a <see cref="ShapeId"/>.
-/// Used for <see cref="MemberShape.Target"/> where the value is a direct string.
+/// Used for <see cref="SmithyDotNet.Generator.Model.Shapes.MemberShape.Target"/> where the value is a direct string.
 /// </summary>
 public class ShapeIdConverter : JsonConverter<ShapeId>
 {

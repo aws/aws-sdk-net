@@ -417,6 +417,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.CrossReference.Source</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.CrossReference.SourcePlaceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GeoPlaces.Model.FilterCircle.Radius</property>
     <min>1</min>
     <max>21000000</max>
@@ -810,5 +820,15 @@
   <property-value-rule>
     <property>Amazon.GeoPlaces.Model.TimeZone.OffsetSeconds</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.TranslationName.Language</property>
+    <min>2</min>
+    <max>35</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GeoPlaces.Model.TranslationName.Value</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
 </property-value-rules>

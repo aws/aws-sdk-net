@@ -318,6 +318,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.IgnoreConfiguredEndpointUrls = defaultConfig.IgnoreConfiguredEndpointUrls.Value;
             }
+            if (defaultConfig.JsonMaxDepth.HasValue)
+            {
+                config.JsonMaxDepth = defaultConfig.JsonMaxDepth.Value;
+            }
             if (defaultConfig.LogMetrics.HasValue)
             {
                 config.LogMetrics = defaultConfig.LogMetrics.Value;

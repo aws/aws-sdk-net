@@ -67,8 +67,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the cluster to filter daemons by. If not specified,
-        /// daemons from all clusters are returned.
+        /// The Amazon Resource Name (ARN) of the cluster to filter daemons by. If you do not
+        /// specify a cluster, the default cluster is assumed.
         /// </para>
         /// </summary>
         public string ClusterArn

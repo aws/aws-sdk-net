@@ -46,6 +46,12 @@ namespace Amazon.EntityResolution.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEnableRealTimeMatching())
+            {
+                context.Writer.WritePropertyName("enableRealTimeMatching");
+                context.Writer.WriteBooleanValue(requestObject.EnableRealTimeMatching.Value);
+            }
+
             if(requestObject.IsSetProviderProperties())
             {
                 context.Writer.WritePropertyName("providerProperties");

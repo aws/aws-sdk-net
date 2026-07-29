@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateAIRecommendationJobRequest : AmazonSageMakerRequest
     {
+        private AIAdapterSource _adapterSource;
         private string _aiRecommendationJobName;
         private string _aiWorkloadConfigIdentifier;
         private AIRecommendationComputeSpec _computeSpec;
@@ -48,6 +49,26 @@ namespace Amazon.SageMaker.Model
         private AIRecommendationPerformanceTarget _performanceTarget;
         private string _roleArn;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AdapterSource. 
+        /// <para>
+        /// The LoRA adapter source for the recommendation job. Specify either a list of model
+        /// package ARNs or Amazon S3 URIs for your LoRA adapters. When this parameter is absent,
+        /// the recommendation job runs without LoRA adapter support.
+        /// </para>
+        /// </summary>
+        public AIAdapterSource AdapterSource
+        {
+            get { return this._adapterSource; }
+            set { this._adapterSource = value; }
+        }
+
+        // Check to see if AdapterSource property is set
+        internal bool IsSetAdapterSource()
+        {
+            return this._adapterSource != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AIRecommendationJobName. 

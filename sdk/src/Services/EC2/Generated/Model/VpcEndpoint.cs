@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private LastError _lastError;
         private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerId;
+        private List<PayerResponsibilityEntry> _payerResponsibilities = AWSConfigs.InitializeCollections ? new List<PayerResponsibilityEntry>() : null;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private bool? _requesterManaged;
@@ -282,6 +283,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetOwnerId()
         {
             return this._ownerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PayerResponsibilities. 
+        /// <para>
+        /// The payer responsibility settings for the endpoint.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<PayerResponsibilityEntry> PayerResponsibilities
+        {
+            get { return this._payerResponsibilities; }
+            set { this._payerResponsibilities = value; }
+        }
+
+        // Check to see if PayerResponsibilities property is set
+        internal bool IsSetPayerResponsibilities()
+        {
+            return this._payerResponsibilities != null && (this._payerResponsibilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

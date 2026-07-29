@@ -46,5 +46,25 @@ namespace Amazon.Sustainability.Model
             OutputToken = new[] { "NextToken" }
         )]
         IGetEstimatedCarbonEmissionsDimensionValuesPaginator GetEstimatedCarbonEmissionsDimensionValues(GetEstimatedCarbonEmissionsDimensionValuesRequest request);
+
+        /// <summary>
+        /// Paginator for GetEstimatedWaterAllocation operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetEstimatedWaterAllocationPaginator GetEstimatedWaterAllocation(GetEstimatedWaterAllocationRequest request);
+
+        /// <summary>
+        /// Paginator for GetEstimatedWaterAllocationDimensionValues operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetEstimatedWaterAllocationDimensionValuesPaginator GetEstimatedWaterAllocationDimensionValues(GetEstimatedWaterAllocationDimensionValuesRequest request);
     }
 }

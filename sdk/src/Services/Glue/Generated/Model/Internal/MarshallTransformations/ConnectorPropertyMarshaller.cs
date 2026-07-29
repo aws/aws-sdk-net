@@ -63,6 +63,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.DefaultValue);
             }
 
+            if(requestObject.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("Format");
+                context.Writer.WriteStringValue(requestObject.Format);
+            }
+
             if(requestObject.IsSetKeyOverride())
             {
                 context.Writer.WritePropertyName("KeyOverride");

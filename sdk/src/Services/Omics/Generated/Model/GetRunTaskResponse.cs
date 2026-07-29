@@ -50,6 +50,7 @@ namespace Amazon.Omics.Model
         private string _statusMessage;
         private DateTime? _stopTime;
         private string _taskId;
+        private string _uuid;
 
         /// <summary>
         /// Gets and sets the property CacheHit. 
@@ -345,6 +346,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetTaskId()
         {
             return this._taskId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Uuid. 
+        /// <para>
+        /// The universally unique identifier (UUID) for the workflow task.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string Uuid
+        {
+            get { return this._uuid; }
+            set { this._uuid = value; }
+        }
+
+        // Check to see if Uuid property is set
+        internal bool IsSetUuid()
+        {
+            return this._uuid != null;
         }
 
     }

@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// RuleIsInAddressList Marshaller
     /// </summary>
-    public class RuleIsInAddressListMarshaller : IRequestMarshaller<RuleIsInAddressList, JsonMarshallerContext> 
+    public class RuleIsInAddressListMarshaller : IRequestMarshaller<RuleIsInAddressList, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,27 +45,26 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RuleIsInAddressList requestObject, JsonMarshallerContext context)
+        public void Marshall(RuleIsInAddressList requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAddressLists())
+
+            if (requestObject.IsSetAddressLists())
             {
-                context.Writer.WritePropertyName("AddressLists");
-                context.Writer.WriteStartArray();
+                context.Writer.WriteTextString("AddressLists");
+                context.Writer.WriteStartArray(requestObject.AddressLists.Count);
                 foreach(var requestObjectAddressListsListValue in requestObject.AddressLists)
                 {
-                        context.Writer.WriteStringValue(requestObjectAddressListsListValue);
+                        context.Writer.WriteTextString(requestObjectAddressListsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-
-            if(requestObject.IsSetAttribute())
+            if (requestObject.IsSetAttribute())
             {
-                context.Writer.WritePropertyName("Attribute");
-                context.Writer.WriteStringValue(requestObject.Attribute);
+                context.Writer.WriteTextString("Attribute");
+                context.Writer.WriteTextString(requestObject.Attribute);
             }
-
         }
 
         /// <summary>

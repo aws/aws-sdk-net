@@ -21,6 +21,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MQ.Model.DescribeSharedResourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MQ.Model.ListBrokersRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>

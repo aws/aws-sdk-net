@@ -37,7 +37,14 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>,
     /// <c>ProductCode</c>, and <c>LicenseArn</c>.
     /// 
-    ///  <note> 
+    ///  <important> 
+    /// <para>
+    /// For new SaaS product integrations, the <c>CustomerIdentifier</c> field is not populated
+    /// in the <c>ResolveCustomer</c> API response. New integrations must use <c>CustomerAWSAccountId</c>
+    /// and <c>LicenseArn</c> to identify customers. Existing integrations continue to work
+    /// unchanged.
+    /// </para>
+    ///  </important> <note> 
     /// <para>
     /// To successfully resolve the token, the API must be called from the account that was
     /// used to publish the SaaS application. For an example of using <c>ResolveCustomer</c>,
@@ -71,6 +78,12 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>, <c>ProductCode</c>,
         /// and <c>LicenseArn</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For new SaaS product integrations, the <c>CustomerIdentifier</c> field is not populated.
+        /// Use <c>CustomerAWSAccountId</c> and <c>LicenseArn</c> for customer identification.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public string RegistrationToken

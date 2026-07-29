@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// EbsBlockDevice Marshaller
     /// </summary>
-    public class EbsBlockDeviceMarshaller : IRequestMarshaller<EbsBlockDevice, JsonMarshallerContext> 
+    public class EbsBlockDeviceMarshaller : IRequestMarshaller<EbsBlockDevice, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,46 +45,41 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EbsBlockDevice requestObject, JsonMarshallerContext context)
+        public void Marshall(EbsBlockDevice requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetEncrypted())
-            {
-                context.Writer.WritePropertyName("Encrypted");
-                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
-            }
 
-            if(requestObject.IsSetIops())
+            if (requestObject.IsSetEncrypted())
             {
-                context.Writer.WritePropertyName("Iops");
-                context.Writer.WriteNumberValue(requestObject.Iops.Value);
+                context.Writer.WriteTextString("Encrypted");
+                context.Writer.WriteBoolean(requestObject.Encrypted.Value);
             }
-
-            if(requestObject.IsSetKmsKeyId())
+            if (requestObject.IsSetIops())
             {
-                context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.WriteStringValue(requestObject.KmsKeyId);
+                context.Writer.WriteTextString("Iops");
+                context.Writer.WriteInt32(requestObject.Iops.Value);
             }
-
-            if(requestObject.IsSetThroughput())
+            if (requestObject.IsSetKmsKeyId())
             {
-                context.Writer.WritePropertyName("Throughput");
-                context.Writer.WriteNumberValue(requestObject.Throughput.Value);
+                context.Writer.WriteTextString("KmsKeyId");
+                context.Writer.WriteTextString(requestObject.KmsKeyId);
             }
-
-            if(requestObject.IsSetVolumeSize())
+            if (requestObject.IsSetThroughput())
             {
-                context.Writer.WritePropertyName("VolumeSize");
-                context.Writer.WriteNumberValue(requestObject.VolumeSize.Value);
+                context.Writer.WriteTextString("Throughput");
+                context.Writer.WriteInt32(requestObject.Throughput.Value);
             }
-
-            if(requestObject.IsSetVolumeType())
+            if (requestObject.IsSetVolumeSize())
             {
-                context.Writer.WritePropertyName("VolumeType");
-                context.Writer.WriteStringValue(requestObject.VolumeType);
+                context.Writer.WriteTextString("VolumeSize");
+                context.Writer.WriteInt32(requestObject.VolumeSize.Value);
             }
-
+            if (requestObject.IsSetVolumeType())
+            {
+                context.Writer.WriteTextString("VolumeType");
+                context.Writer.WriteTextString(requestObject.VolumeType);
+            }
         }
 
         /// <summary>

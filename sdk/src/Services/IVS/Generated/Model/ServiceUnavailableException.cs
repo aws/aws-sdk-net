@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// The service is temporarily unavailable.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

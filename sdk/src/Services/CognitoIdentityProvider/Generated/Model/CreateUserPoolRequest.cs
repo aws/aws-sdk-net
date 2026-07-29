@@ -396,6 +396,26 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// prompt users to set up MFA. Amazon Cognito generates MFA prompts in API responses
         /// and in managed login for users who have chosen and configured a preferred MFA factor.
         /// </para>
+        ///  
+        /// <para>
+        /// The <c>CreateUserPool</c> operation supports only SMS MFA configuration. If you set
+        /// <c>MfaConfiguration</c> to either of these values, include an <c>SmsConfiguration</c>
+        /// in the same request:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ON</c> – Requires MFA for all users
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OPTIONAL</c> – Makes MFA optional for each user
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you omit <c>SmsConfiguration</c>, the operation returns an <c>InvalidParameterException</c>.
+        /// To configure TOTP or email MFA, use the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserPoolMfaConfig.html">SetUserPoolMfaConfig</a>
+        /// operation. You can also use <c>SetUserPoolMfaConfig</c> to add MFA factors later.
+        /// </para>
         /// </summary>
         public UserPoolMfaType MfaConfiguration
         {

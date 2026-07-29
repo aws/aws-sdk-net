@@ -57,6 +57,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetContactEvaluationAttributeFilter())
+            {
+                context.Writer.WritePropertyName("ContactEvaluationAttributeFilter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ContactEvaluationAttributeFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContactEvaluationAttributeFilter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

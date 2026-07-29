@@ -41,7 +41,7 @@ public class ShapeConverter : JsonConverter<Shape>
             "intEnum" => root.Deserialize<IntEnumShape>(options),
             "service" => root.Deserialize<ServiceShape>(options),
             "operation" => root.Deserialize<OperationShape>(options),
-            // "resource" => root.Deserialize<ResourceShape>(options),
+            "resource" => root.Deserialize<ResourceShape>(options),
 
             _ => WarnUnknown(type),
         };
@@ -51,8 +51,7 @@ public class ShapeConverter : JsonConverter<Shape>
 
     private static Shape? WarnUnknown(string? type)
     {
-        // TODO: replace with proper logging once the generator has a logging abstraction
-        Console.Error.WriteLine($"Warning: skipping unknown shape type '{type}'");
+        Log.Warn($"skipping unknown shape type '{type}'");
         return null;
     }
 }

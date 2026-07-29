@@ -52,14 +52,14 @@ namespace Amazon.CloudWatchLogs.Model
             {"SessionStart", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new LiveTailSessionStartUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
             {"SessionUpdate", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new LiveTailSessionUpdateUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -73,14 +73,14 @@ namespace Amazon.CloudWatchLogs.Model
                     {"SessionStreamingException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionStreamingExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"SessionTimeoutException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new SessionTimeoutExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

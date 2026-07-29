@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private string _clusterName;
         private ClusterStatus _clusterStatus;
         private DateTime? _creationTime;
+        private ClusterImageVersionStatus _imageVersionStatus;
         private List<string> _trainingPlanArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -114,6 +115,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageVersionStatus. 
+        /// <para>
+        /// The aggregate status of the image version across the cluster's instance groups.
+        /// </para>
+        /// </summary>
+        public ClusterImageVersionStatus ImageVersionStatus
+        {
+            get { return this._imageVersionStatus; }
+            set { this._imageVersionStatus = value; }
+        }
+
+        // Check to see if ImageVersionStatus property is set
+        internal bool IsSetImageVersionStatus()
+        {
+            return this._imageVersionStatus != null;
         }
 
         /// <summary>

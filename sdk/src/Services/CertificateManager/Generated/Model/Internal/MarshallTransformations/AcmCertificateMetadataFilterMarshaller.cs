@@ -46,6 +46,24 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAcmeAccountId())
+            {
+                context.Writer.WritePropertyName("AcmeAccountId");
+                context.Writer.WriteStringValue(requestObject.AcmeAccountId);
+            }
+
+            if(requestObject.IsSetAcmeEndpointArn())
+            {
+                context.Writer.WritePropertyName("AcmeEndpointArn");
+                context.Writer.WriteStringValue(requestObject.AcmeEndpointArn);
+            }
+
+            if(requestObject.IsSetCertificateKeyPairOrigin())
+            {
+                context.Writer.WritePropertyName("CertificateKeyPairOrigin");
+                context.Writer.WriteStringValue(requestObject.CertificateKeyPairOrigin);
+            }
+
             if(requestObject.IsSetExported())
             {
                 context.Writer.WritePropertyName("Exported");

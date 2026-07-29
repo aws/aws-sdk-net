@@ -33,6 +33,13 @@ namespace Amazon.DatabaseMigrationService.Model
     /// Container for the parameters to the DescribeMetadataModel operation.
     /// Gets detailed information about the specified metadata model, including its definition
     /// and corresponding converted objects in the target database if applicable.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:DescribeMetadataModel</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeMetadataModelRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -82,11 +89,28 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SelectionRules. 
         /// <para>
-        /// The JSON string that specifies which metadata model to retrieve. Only one selection
-        /// rule with "rule-action": "explicit" can be provided. For more information, see <a
-        /// href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.SelectionTransformation.Selections.html">Selection
-        /// Rules</a> in the DMS User Guide.
+        /// A JSON string that identifies the metadata model to retrieve. For the selection rule
+        /// format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+        /// rules in DMS Schema Conversion</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Usage:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Accepts source or target selection rules depending on the <c>Origin</c> parameter.
+        /// The <c>server-name</c> in the object locator must match the corresponding data provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Supports only <c>explicit</c> rule actions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Exactly one rule is allowed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SelectionRules

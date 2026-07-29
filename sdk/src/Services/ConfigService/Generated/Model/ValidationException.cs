@@ -86,6 +86,21 @@ namespace Amazon.ConfigService.Model
     /// For service-linked configuration recorders, the configuration recorder does not record
     /// one or more of the specified resource types.
     /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_DeleteServiceLinkedConfigurationRecorder.html">DeleteServiceLinkedConfigurationRecorder</a>,
+    /// one of the following errors:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// You have provided both <c>Arn</c> and <c>ServicePrincipal</c>. Only one of <c>Arn</c>
+    /// or <c>ServicePrincipal</c> can be specified.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You have provided a service principal for service-linked configuration recorder that
+    /// is not valid.
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD

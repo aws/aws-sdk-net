@@ -51,6 +51,7 @@ namespace Amazon.SageMaker.Model
         private OptimizationJobOutputConfig _outputConfig;
         private string _roleArn;
         private StoppingCondition _stoppingCondition;
+        private List<string> _trainingPlanArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OptimizationVpcConfig _vpcConfig;
 
         /// <summary>
@@ -380,6 +381,32 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetStoppingCondition()
         {
             return this._stoppingCondition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingPlanArns. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the training plan associated with this optimization
+        /// job. This field appears only when you specified a training plan when you created the
+        /// job. Optimization jobs that use on-demand capacity don't return this field.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> TrainingPlanArns
+        {
+            get { return this._trainingPlanArns; }
+            set { this._trainingPlanArns = value; }
+        }
+
+        // Check to see if TrainingPlanArns property is set
+        internal bool IsSetTrainingPlanArns()
+        {
+            return this._trainingPlanArns != null && (this._trainingPlanArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

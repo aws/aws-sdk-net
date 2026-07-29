@@ -86,7 +86,62 @@ namespace AWSSDK.UnitTests
             }
 
             //AWS ACCESS is a SigV2 component and it must not exist in the authorization header for SigV4 signatures.
-            Assert.IsFalse(iRequest.Headers[HeaderKeys.AuthorizationHeader].Contains("AWS ACCESS"));            
+            Assert.IsFalse(iRequest.Headers[HeaderKeys.AuthorizationHeader].Contains("AWS ACCESS"));
+        }
+
+        // Expires > 7 days in a SigV2 region + custom parameters would produce a URL with unsigned parameters, so throw.
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetPreSignedURL_ThrowsWhenSigV2DowngradeWouldLeaveCustomParametersUnsigned()
+        {
+            var client = new AmazonS3Client(new BasicAWSCredentials("ACCESS", "SECRET"), RegionEndpoint.USEast1);
+            var request = new GetPreSignedUrlRequest
+            {
+                BucketName = "bucket",
+                Key = "key",
+                Verb = HttpVerb.GET,
+                Expires = AWSSDKUtils.CorrectedUtcNow.AddDays(30)
+            };
+            request.Parameters.Add("tenant_id", "alice");
+
+            Assert.ThrowsExactly<System.InvalidOperationException>(() => client.GetPreSignedURL(request));
+        }
+
+        // Same long expiry without custom parameters still downgrades to SigV2 (legacy behavior preserved).
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetPreSignedURL_AllowsSigV2DowngradeWithoutCustomParameters()
+        {
+            var client = new AmazonS3Client(new BasicAWSCredentials("ACCESS", "SECRET"), RegionEndpoint.USEast1);
+            var url = client.GetPreSignedURL(new GetPreSignedUrlRequest
+            {
+                BucketName = "bucket",
+                Key = "key",
+                Verb = HttpVerb.GET,
+                Expires = AWSSDKUtils.CorrectedUtcNow.AddDays(30)
+            });
+
+            Assert.IsTrue(url.Contains("AWSAccessKeyId="), "Expected a SigV2 presigned URL.");
+        }
+
+        // Expires <= 7 days signs with SigV4, which covers custom parameters, so no throw.
+        [TestMethod]
+        [TestCategory("S3")]
+        public void GetPreSignedURL_AllowsCustomParametersUnderSigV4()
+        {
+            var client = new AmazonS3Client(new BasicAWSCredentials("ACCESS", "SECRET"), RegionEndpoint.USEast1);
+            var request = new GetPreSignedUrlRequest
+            {
+                BucketName = "bucket",
+                Key = "key",
+                Verb = HttpVerb.GET,
+                Expires = AWSSDKUtils.CorrectedUtcNow.AddHours(1)
+            };
+            request.Parameters.Add("tenant_id", "alice");
+
+            var url = client.GetPreSignedURL(request);
+
+            Assert.IsTrue(url.Contains("X-Amz-Algorithm=AWS4-HMAC-SHA256"), "Expected a SigV4 presigned URL.");
         }
     }
 }

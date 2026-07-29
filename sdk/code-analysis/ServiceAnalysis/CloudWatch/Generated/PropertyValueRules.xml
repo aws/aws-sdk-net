@@ -18,6 +18,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9_./:%()+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.DeleteAnomalyDetectorRequest.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -302,6 +308,12 @@
     <pattern>(SampleCount|Average|Sum|Minimum|Maximum|IQM|(p|tc|tm|ts|wm)(\d{1,2}(\.\d{0,10})?|100)|[ou]\d+(\.\d*)?)(_E|_L|_H)?|(TM|TC|TS|WM)\(((((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?:((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%|((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%:(((\d{1,2})(\.\d{0,10})?|100(\.0{0,10})?)%)?)\)|(TM|TC|TS|WM|PR)\(((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)):((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?|((\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))?:(\d+(\.\d{0,10})?|(\d+(\.\d{0,10})?[Ee][+-]?\d+)))\)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutAnomalyDetectorResponse.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9_./:%()+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutCompositeAlarmRequest.ActionsSuppressor</property>
     <min>1</min>
     <max>1600</max>
@@ -338,6 +350,29 @@
     <min>1</min>
     <max>32</max>
     <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutLogAlarmRequest.AlarmDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutLogAlarmRequest.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutLogAlarmRequest.QueryResultsToAlarm</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutLogAlarmRequest.QueryResultsToEvaluate</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.PutLogAlarmRequest.TreatMissingData</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.PutMetricAlarmRequest.AlarmDescription</property>
@@ -499,6 +534,12 @@
     <max>86400</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.AnomalyDetector.AnomalyDetectorId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9_./:%()+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.AnomalyDetector.MetricName</property>
     <min>1</min>
     <max>255</max>
@@ -596,6 +637,44 @@
     <min>1</min>
     <max>32</max>
     <pattern>[\x20-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.AlarmArn</property>
+    <min>1</min>
+    <max>1600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.AlarmDescription</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.AlarmName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.QueryResultsToAlarm</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.QueryResultsToEvaluate</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.StateReason</property>
+    <min>0</min>
+    <max>1023</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.StateReasonData</property>
+    <min>0</min>
+    <max>4000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.LogAlarm.TreatMissingData</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudWatch.Model.ManagedRule.ResourceARN</property>
@@ -798,6 +877,41 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduleConfiguration.EndTimeOffset</property>
+    <min>0</min>
+    <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduleConfiguration.ScheduleExpression</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduleConfiguration.StartTimeOffset</property>
+    <min>1</min>
+    <max>2592000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduledQueryConfiguration.AggregationExpression</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduledQueryConfiguration.QueryARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduledQueryConfiguration.QueryString</property>
+    <min>0</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.ScheduledQueryConfiguration.ScheduledQueryRoleARN</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatch.Model.SingleMetricAnomalyDetector.AccountId</property>
     <min>1</min>
     <max>255</max>
@@ -827,5 +941,10 @@
     <property>Amazon.CloudWatch.Model.Tag.Value</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.WallClockWindow.Timezone</property>
+    <min>1</min>
+    <max>50</max>
   </property-value-rule>
 </property-value-rules>

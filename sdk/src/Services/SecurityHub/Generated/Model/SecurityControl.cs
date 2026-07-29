@@ -38,6 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _description;
         private string _lastUpdateReason;
         private Dictionary<string, ParameterConfiguration> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, ParameterConfiguration>() : null;
+        private SecurityControlsProvider _provider;
         private string _remediationUrl;
         private string _securityControlArn;
         private string _securityControlId;
@@ -111,6 +112,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetParameters()
         {
             return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// The cloud provider whose resources the security control evaluates. For example, <c>AWS</c>
+        /// or <c>Azure</c>.
+        /// </para>
+        /// </summary>
+        public SecurityControlsProvider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
         }
 
         /// <summary>

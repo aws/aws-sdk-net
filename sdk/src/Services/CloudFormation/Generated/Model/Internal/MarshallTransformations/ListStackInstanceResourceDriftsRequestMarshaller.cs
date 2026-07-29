@@ -103,7 +103,11 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static ListStackInstanceResourceDriftsRequestMarshaller _instance = new ListStackInstanceResourceDriftsRequestMarshaller();        

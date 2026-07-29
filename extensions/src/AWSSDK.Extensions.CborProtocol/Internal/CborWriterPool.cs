@@ -47,7 +47,7 @@ namespace Amazon.Extensions.CborProtocol.Internal
                 return writer;
             }
             // Create a new CborWriter if the pool is empty
-            return new CborWriter(CborConformanceMode.Canonical, true);
+            return new CborWriter(CborConformanceMode.Lax, true);
         }
 
         /// <summary>

@@ -94,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetIncludeManagedResources())
+                {
+                    request.Parameters.Add("IncludeManagedResources", StringUtils.FromBool(publicRequest.IncludeManagedResources));
+                }
                 if(publicRequest.IsSetMaxResults())
                 {
                     request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -118,7 +122,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
             }
 
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
             return request;
         }
                     private static DescribeVolumesModificationsRequestMarshaller _instance = new DescribeVolumesModificationsRequestMarshaller();        

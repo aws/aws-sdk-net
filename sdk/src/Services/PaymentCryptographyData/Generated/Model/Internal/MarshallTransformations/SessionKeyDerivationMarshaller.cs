@@ -90,6 +90,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetUnionPay())
+            {
+                context.Writer.WritePropertyName("UnionPay");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SessionKeyUnionPayMarshaller.Instance;
+                marshaller.Marshall(requestObject.UnionPay, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetVisa())
             {
                 context.Writer.WritePropertyName("Visa");

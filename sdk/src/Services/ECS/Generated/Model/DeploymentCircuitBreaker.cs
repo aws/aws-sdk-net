@@ -55,7 +55,9 @@ namespace Amazon.ECS.Model
     public partial class DeploymentCircuitBreaker
     {
         private bool? _enable;
+        private bool? _resetOnHealthyTask;
         private bool? _rollback;
+        private ThresholdConfiguration _thresholdConfiguration;
 
         /// <summary>
         /// Gets and sets the property Enable. 
@@ -77,6 +79,27 @@ namespace Amazon.ECS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResetOnHealthyTask. 
+        /// <para>
+        /// Specifies whether the deployment circuit breaker resets its failure count when a task
+        /// reaches a healthy state. When set to <c>true</c>, a task that reaches a healthy state
+        /// resets the failure count to <c>0</c>. When set to <c>false</c>, Amazon ECS does not
+        /// reset the failure count. The default is <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? ResetOnHealthyTask
+        {
+            get { return this._resetOnHealthyTask; }
+            set { this._resetOnHealthyTask = value; }
+        }
+
+        // Check to see if ResetOnHealthyTask property is set
+        internal bool IsSetResetOnHealthyTask()
+        {
+            return this._resetOnHealthyTask.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Rollback. 
         /// <para>
         /// Determines whether to configure Amazon ECS to roll back the service if a service deployment
@@ -95,6 +118,26 @@ namespace Amazon.ECS.Model
         internal bool IsSetRollback()
         {
             return this._rollback.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ThresholdConfiguration. 
+        /// <para>
+        /// The threshold configuration that controls when the deployment circuit breaker triggers.
+        /// The <c>type</c> and <c>value</c> together determine how many task failures are tolerated
+        /// before the circuit breaker activates.
+        /// </para>
+        /// </summary>
+        public ThresholdConfiguration ThresholdConfiguration
+        {
+            get { return this._thresholdConfiguration; }
+            set { this._thresholdConfiguration = value; }
+        }
+
+        // Check to see if ThresholdConfiguration property is set
+        internal bool IsSetThresholdConfiguration()
+        {
+            return this._thresholdConfiguration != null;
         }
 
     }

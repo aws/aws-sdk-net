@@ -143,6 +143,10 @@ namespace Amazon.CloudWatch
         /// </summary>
         public static readonly AlarmType CompositeAlarm = new AlarmType("CompositeAlarm");
         /// <summary>
+        /// Constant LogAlarm for AlarmType
+        /// </summary>
+        public static readonly AlarmType LogAlarm = new AlarmType("LogAlarm");
+        /// <summary>
         /// Constant MetricAlarm for AlarmType
         /// </summary>
         public static readonly AlarmType MetricAlarm = new AlarmType("MetricAlarm");

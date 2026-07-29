@@ -51,7 +51,7 @@ namespace Amazon.SageMakerRuntimeHTTP2.Model
             {"PayloadPart", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new ResponsePayloadPartUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -65,14 +65,14 @@ namespace Amazon.SageMakerRuntimeHTTP2.Model
                     {"InternalStreamFailure", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new SageMakerRuntimeHTTP2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalStreamFailureExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },
                     {"ModelStreamError", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new SageMakerRuntimeHTTP2EventStreamException(Encoding.UTF8.GetString(payload.Payload), new ModelStreamErrorExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

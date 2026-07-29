@@ -29,148 +29,197 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Row Object
     /// </summary>  
-    public class RowUnmarshaller : IJsonUnmarshaller<Row, JsonUnmarshallerContext>
+    public class RowUnmarshaller : ICborUnmarshaller<Row, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Row Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public Row Unmarshall(CborUnmarshallerContext context)
         {
             Row unmarshalledObject = new Row();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("ArchivedMessageId", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArchivedMessageId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Cc", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Cc = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Date", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Date = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Envelope", targetDepth, ref reader))
-                {
-                    var unmarshaller = EnvelopeUnmarshaller.Instance;
-                    unmarshalledObject.Envelope = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("From", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.From = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("HasAttachments", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.HasAttachments = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("IngressPointId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IngressPointId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("InReplyTo", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InReplyTo = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MessageId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MessageId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReceivedHeaders", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ReceivedHeaders = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReceivedTimestamp", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ReceivedTimestamp = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SenderHostname", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SenderHostname = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SenderIpAddress", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SourceArn", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Subject", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Subject = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("To", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.To = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("XMailer", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XMailer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("XOriginalMailer", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XOriginalMailer = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("XPriority", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XPriority = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "ArchivedMessageId":
+                        {
+                            context.AddPathSegment("ArchivedMessageId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.ArchivedMessageId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Cc":
+                        {
+                            context.AddPathSegment("Cc");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Cc = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Date":
+                        {
+                            context.AddPathSegment("Date");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Date = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Envelope":
+                        {
+                            context.AddPathSegment("Envelope");
+                            var unmarshaller = EnvelopeUnmarshaller.Instance;
+                            unmarshalledObject.Envelope = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "From":
+                        {
+                            context.AddPathSegment("From");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.From = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "HasAttachments":
+                        {
+                            context.AddPathSegment("HasAttachments");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.HasAttachments = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "IngressPointId":
+                        {
+                            context.AddPathSegment("IngressPointId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.IngressPointId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "InReplyTo":
+                        {
+                            context.AddPathSegment("InReplyTo");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.InReplyTo = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "MessageId":
+                        {
+                            context.AddPathSegment("MessageId");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.MessageId = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ReceivedHeaders":
+                        {
+                            context.AddPathSegment("ReceivedHeaders");
+                            var unmarshaller = new CborListUnmarshaller<string, CborStringUnmarshaller>(CborStringUnmarshaller.Instance);
+                            unmarshalledObject.ReceivedHeaders = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "ReceivedTimestamp":
+                        {
+                            context.AddPathSegment("ReceivedTimestamp");
+                            var unmarshaller = CborNullableDateTimeUnmarshaller.Instance;
+                            unmarshalledObject.ReceivedTimestamp = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SenderHostname":
+                        {
+                            context.AddPathSegment("SenderHostname");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SenderHostname = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SenderIpAddress":
+                        {
+                            context.AddPathSegment("SenderIpAddress");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SenderIpAddress = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SourceArn":
+                        {
+                            context.AddPathSegment("SourceArn");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.SourceArn = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "Subject":
+                        {
+                            context.AddPathSegment("Subject");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.Subject = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "To":
+                        {
+                            context.AddPathSegment("To");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.To = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "XMailer":
+                        {
+                            context.AddPathSegment("XMailer");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.XMailer = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "XOriginalMailer":
+                        {
+                            context.AddPathSegment("XOriginalMailer");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.XOriginalMailer = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "XPriority":
+                        {
+                            context.AddPathSegment("XPriority");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.XPriority = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

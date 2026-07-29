@@ -35,6 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ProtectedQueryOutputConfiguration
     {
         private ProtectedQueryDistributeOutputConfiguration _distribute;
+        private IntermediateTableOutputConfiguration _intermediateTable;
         private ProtectedQueryMemberOutputConfiguration _member;
         private ProtectedQueryS3OutputConfiguration _s3;
 
@@ -54,6 +55,25 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetDistribute()
         {
             return this._distribute != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IntermediateTable. 
+        /// <para>
+        /// The intermediate table output configuration, present when the protected query was
+        /// triggered by a populate operation.
+        /// </para>
+        /// </summary>
+        public IntermediateTableOutputConfiguration IntermediateTable
+        {
+            get { return this._intermediateTable; }
+            set { this._intermediateTable = value; }
+        }
+
+        // Check to see if IntermediateTable property is set
+        internal bool IsSetIntermediateTable()
+        {
+            return this._intermediateTable != null;
         }
 
         /// <summary>

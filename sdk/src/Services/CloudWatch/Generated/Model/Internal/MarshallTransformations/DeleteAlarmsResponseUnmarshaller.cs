@@ -92,6 +92,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                         }
                     }
                 }
+                if (errorTypeName != null && errorTypeName.Equals("ResourceConflict"))
+                {
+                    return ResourceConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorTypeName != null && errorTypeName.Equals("ResourceNotFound"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

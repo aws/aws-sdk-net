@@ -52,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
             {"Fields", payload => 
                 {
                     var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                    var reader = new StreamingUtf8JsonReader(context.Stream);
+                    var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     return new FieldsDataUnmarshaller().Unmarshall(context, ref reader);
                 }
             },
@@ -66,7 +66,7 @@ namespace Amazon.CloudWatchLogs.Model
                     {"InternalStreamingException", payload => 
                         {
                             var context = EventStreamUtils.ConvertMessageToJsonContext(payload);
-                            var reader = new StreamingUtf8JsonReader(context.Stream);
+                            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                             return new CloudWatchLogsEventStreamException(Encoding.UTF8.GetString(payload.Payload), new InternalStreamingExceptionUnmarshaller().Unmarshall(context, ref reader));
                         }
                     },

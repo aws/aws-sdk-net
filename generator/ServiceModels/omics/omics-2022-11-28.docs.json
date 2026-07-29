@@ -3235,6 +3235,14 @@
         "SchemaItem$value": null
       }
     },
+    "ScratchStorageMode": {
+      "base": null,
+      "refs": {
+        "DefaultRunSetting$scratchStorageMode": "<p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>",
+        "GetRunResponse$scratchStorageMode": "<p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If absent, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>",
+        "StartRunRequest$scratchStorageMode": "<p>Optional configuration for enabling scratch ephemeral storage mounted at /tmp. If not specified, this will default to SHARED. This configuration is applicable only for CPU tasks. For tasks using GPUs, scratch storage is always LOCAL.</p>"
+      }
+    },
     "SecurityGroupId": {
       "base": null,
       "refs": {
@@ -4072,6 +4080,13 @@
         "TaskListItem$creationTime": "<p>When the task was created.</p>",
         "TaskListItem$startTime": "<p>When the task started.</p>",
         "TaskListItem$stopTime": "<p>When the task stopped.</p>"
+      }
+    },
+    "TaskUuid": {
+      "base": null,
+      "refs": {
+        "GetRunTaskResponse$uuid": "<p>The universally unique identifier (UUID) for the workflow task.</p>",
+        "TaskListItem$uuid": "<p>The universally unique identifier (UUID) for the workflow task.</p>"
       }
     },
     "ThrottlingException": {

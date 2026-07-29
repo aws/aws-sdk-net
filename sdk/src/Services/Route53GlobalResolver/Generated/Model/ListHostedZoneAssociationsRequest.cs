@@ -31,8 +31,10 @@ namespace Amazon.Route53GlobalResolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHostedZoneAssociations operation.
-    /// Lists all hosted zone associations for a Route 53 Global Resolver resource with pagination
-    /// support.
+    /// Lists hosted zone associations with pagination support. Specify a DNS view through
+    /// the <c>resourceArn</c> parameter to list the hosted zone associations for that DNS
+    /// view, or omit it to list all hosted zone associations in your Amazon Web Services
+    /// account.
     /// 
     ///  <important> 
     /// <para>
@@ -89,10 +91,12 @@ namespace Amazon.Route53GlobalResolver.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Amazon Resource Name (ARN) of the DNS view.
+        /// The Amazon Resource Name (ARN) of the DNS view to list hosted zone associations for.
+        /// This parameter is optional; if you omit it, all hosted zone associations in your Amazon
+        /// Web Services account are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=2048)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

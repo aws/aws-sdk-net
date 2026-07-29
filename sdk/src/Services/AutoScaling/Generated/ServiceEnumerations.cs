@@ -328,6 +328,10 @@ namespace Amazon.AutoScaling
         /// Constant BalancedOnly for CapacityDistributionStrategy
         /// </summary>
         public static readonly CapacityDistributionStrategy BalancedOnly = new CapacityDistributionStrategy("balanced-only");
+        /// <summary>
+        /// Constant ReservationsThenBalanced for CapacityDistributionStrategy
+        /// </summary>
+        public static readonly CapacityDistributionStrategy ReservationsThenBalanced = new CapacityDistributionStrategy("reservations-then-balanced");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

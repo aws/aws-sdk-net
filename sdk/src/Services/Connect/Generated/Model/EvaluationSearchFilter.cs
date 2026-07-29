@@ -35,9 +35,13 @@ namespace Amazon.Connect.Model
     public partial class EvaluationSearchFilter
     {
         private ControlPlaneAttributeFilter _attributeFilter;
+        private ContactEvaluationAttributeFilter _contactEvaluationAttributeFilter;
 
         /// <summary>
-        /// Gets and sets the property AttributeFilter.
+        /// Gets and sets the property AttributeFilter. 
+        /// <para>
+        /// An object that can be used to specify tag conditions.
+        /// </para>
         /// </summary>
         public ControlPlaneAttributeFilter AttributeFilter
         {
@@ -49,6 +53,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetAttributeFilter()
         {
             return this._attributeFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContactEvaluationAttributeFilter. 
+        /// <para>
+        /// An object that can be used to specify tag conditions and attribute conditions for
+        /// contact evaluations.
+        /// </para>
+        /// </summary>
+        public ContactEvaluationAttributeFilter ContactEvaluationAttributeFilter
+        {
+            get { return this._contactEvaluationAttributeFilter; }
+            set { this._contactEvaluationAttributeFilter = value; }
+        }
+
+        // Check to see if ContactEvaluationAttributeFilter property is set
+        internal bool IsSetContactEvaluationAttributeFilter()
+        {
+            return this._contactEvaluationAttributeFilter != null;
         }
 
     }

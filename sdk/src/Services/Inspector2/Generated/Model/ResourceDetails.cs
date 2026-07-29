@@ -38,6 +38,9 @@ namespace Amazon.Inspector2.Model
         private AwsEcrContainerImageDetails _awsEcrContainerImage;
         private AwsLambdaFunctionDetails _awsLambdaFunction;
         private CodeRepositoryDetails _codeRepository;
+        private Image _image;
+        private ServerlessFunction _serverlessFunction;
+        private Vm _vm;
 
         /// <summary>
         /// Gets and sets the property AwsEc2Instance. 
@@ -111,6 +114,60 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetCodeRepository()
         {
             return this._codeRepository != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Image. 
+        /// <para>
+        /// An object that contains details about a container image involved in the finding.
+        /// </para>
+        /// </summary>
+        public Image Image
+        {
+            get { return this._image; }
+            set { this._image = value; }
+        }
+
+        // Check to see if Image property is set
+        internal bool IsSetImage()
+        {
+            return this._image != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessFunction. 
+        /// <para>
+        /// An object that contains details about a serverless function involved in the finding.
+        /// </para>
+        /// </summary>
+        public ServerlessFunction ServerlessFunction
+        {
+            get { return this._serverlessFunction; }
+            set { this._serverlessFunction = value; }
+        }
+
+        // Check to see if ServerlessFunction property is set
+        internal bool IsSetServerlessFunction()
+        {
+            return this._serverlessFunction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Vm. 
+        /// <para>
+        /// An object that contains details about a VM instance involved in the finding.
+        /// </para>
+        /// </summary>
+        public Vm Vm
+        {
+            get { return this._vm; }
+            set { this._vm = value; }
+        }
+
+        // Check to see if Vm property is set
+        internal bool IsSetVm()
+        {
+            return this._vm != null;
         }
 
     }

@@ -145,7 +145,7 @@ namespace Amazon.Lambda.Model
         /// format (YYYY-MM-DDThh:mm:ss.sTZD). 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=100)]
         public string LastModified
         {
             get { return this._lastModified; }

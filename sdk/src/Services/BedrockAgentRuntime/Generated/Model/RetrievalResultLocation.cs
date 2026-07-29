@@ -57,7 +57,9 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private RetrievalResultConfluenceLocation _confluenceLocation;
         private RetrievalResultCustomDocumentLocation _customDocumentLocation;
+        private RetrievalResultGoogleDriveLocation _googleDriveLocation;
         private RetrievalResultKendraDocumentLocation _kendraDocumentLocation;
+        private RetrievalResultOneDriveLocation _oneDriveLocation;
         private RetrievalResultS3Location _s3Location;
         private RetrievalResultSalesforceLocation _salesforceLocation;
         private RetrievalResultSharePointLocation _sharePointLocation;
@@ -102,6 +104,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GoogleDriveLocation. 
+        /// <para>
+        /// The Google Drive data source location.
+        /// </para>
+        /// </summary>
+        public RetrievalResultGoogleDriveLocation GoogleDriveLocation
+        {
+            get { return this._googleDriveLocation; }
+            set { this._googleDriveLocation = value; }
+        }
+
+        // Check to see if GoogleDriveLocation property is set
+        internal bool IsSetGoogleDriveLocation()
+        {
+            return this._googleDriveLocation != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KendraDocumentLocation. 
         /// <para>
         /// The location of a document in Amazon Kendra.
@@ -117,6 +137,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetKendraDocumentLocation()
         {
             return this._kendraDocumentLocation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OneDriveLocation. 
+        /// <para>
+        /// The Microsoft OneDrive data source location.
+        /// </para>
+        /// </summary>
+        public RetrievalResultOneDriveLocation OneDriveLocation
+        {
+            get { return this._oneDriveLocation; }
+            set { this._oneDriveLocation = value; }
+        }
+
+        // Check to see if OneDriveLocation property is set
+        internal bool IsSetOneDriveLocation()
+        {
+            return this._oneDriveLocation != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     {
         private string _arn;
         private string _qualifier;
+        private HttpApiSchemaConfiguration _schema;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -74,6 +75,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetQualifier()
         {
             return this._qualifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Schema. 
+        /// <para>
+        /// The API schema configuration that defines the structure of the runtime target's API.
+        /// </para>
+        /// </summary>
+        public HttpApiSchemaConfiguration Schema
+        {
+            get { return this._schema; }
+            set { this._schema = value; }
+        }
+
+        // Check to see if Schema property is set
+        internal bool IsSetSchema()
+        {
+            return this._schema != null;
         }
 
     }

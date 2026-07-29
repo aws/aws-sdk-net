@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// FilterTimestamp Marshaller
     /// </summary>
-    public class FilterTimestampMarshaller : IRequestMarshaller<FilterTimestamp, JsonMarshallerContext> 
+    public class FilterTimestampMarshaller : IRequestMarshaller<FilterTimestamp, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +45,21 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FilterTimestamp requestObject, JsonMarshallerContext context)
+        public void Marshall(FilterTimestamp requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetAfterTimestamp())
-            {
-                context.Writer.WritePropertyName("afterTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.AfterTimestamp.Value)));
-            }
 
-            if(requestObject.IsSetBeforeTimestamp())
+            if (requestObject.IsSetAfterTimestamp())
             {
-                context.Writer.WritePropertyName("beforeTimestamp");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.BeforeTimestamp.Value)));
+                context.Writer.WriteTextString("afterTimestamp");
+                context.Writer.WriteDateTime(requestObject.AfterTimestamp.Value);
             }
-
+            if (requestObject.IsSetBeforeTimestamp())
+            {
+                context.Writer.WriteTextString("beforeTimestamp");
+                context.Writer.WriteDateTime(requestObject.BeforeTimestamp.Value);
+            }
         }
 
         /// <summary>

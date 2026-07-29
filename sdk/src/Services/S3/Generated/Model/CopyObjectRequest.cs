@@ -256,6 +256,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class CopyObjectRequest : PutWithACLRequest
     {
+        private AnnotationDirective _annotationDirective;
         private bool? _bucketKeyEnabled;
         private string _cacheControl;
         private S3CannedACL _cannedACL;
@@ -301,6 +302,59 @@ namespace Amazon.S3.Model
         private List<Tag> _tagSet = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DateTime? _unmodifiedSinceDate;
         private string _websiteRedirectLocation;
+
+        /// <summary>
+        /// Gets and sets the property AnnotationDirective. 
+        /// <para>
+        /// Specifies whether you want to copy annotations from the source object or exclude them.
+        /// If this header isn't specified, <c>COPY</c> is the default behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: <c>COPY | EXCLUDE</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify this directive as either an HTTP header (<c>x-amz-object-annotation-directive</c>)
+        /// or as a query string parameter. Use the query string form when generating presigned
+        /// URLs that need to control annotation copy behavior.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set to <c>COPY</c>, you must have <c>s3:GetObjectAnnotation</c> permission on
+        /// the source object and <c>s3:PutObjectAnnotation</c> permission on the destination.
+        /// Each annotation copied is billed as a separate PUT request. If annotations on the
+        /// source are modified during the copy, Amazon S3 returns a retryable error.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// For directory buckets, annotations are not supported. Use <c>EXCLUDE</c> to copy objects
+        /// to directory buckets without errors. If you specify <c>COPY</c> for a directory bucket,
+        /// the request returns HTTP 501 (Not Implemented).
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
+        /// When you copy objects using multipart upload (for example, when the Amazon Web Services
+        /// CLI or Amazon Web Services SDKs use Transfer Manager for objects larger than approximately
+        /// 8 MB), annotations are not copied by default. To include annotations, specify <c>--copy-props
+        /// default</c> in the Amazon Web Services CLI or the equivalent SDK configuration. With
+        /// this opt-in, the SDK reads source annotations, completes the multipart upload, and
+        /// then writes each annotation to the destination. Between the upload completion and
+        /// the last annotation write, the destination object exists without all its annotations.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public AnnotationDirective AnnotationDirective
+        {
+            get { return this._annotationDirective; }
+            set { this._annotationDirective = value; }
+        }
+
+        // Check to see if AnnotationDirective property is set
+        internal bool IsSetAnnotationDirective()
+        {
+            return this._annotationDirective != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BucketKeyEnabled. 

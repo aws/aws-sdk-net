@@ -95,6 +95,13 @@ namespace Amazon.Route53Resolver
         /// <summary>
         /// Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the
         /// VPC.
+        /// 
+        ///  
+        /// <para>
+        /// If the rule group contains any rule configured with the <c>PartnerThreatProtection</c>
+        /// rule type, the calling account must hold an active AWS Marketplace subscription to
+        /// the named partner. If the subscription is missing, the association request is rejected.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFirewallRuleGroup service method.</param>
         /// 
@@ -138,6 +145,13 @@ namespace Amazon.Route53Resolver
         /// <summary>
         /// Associates a <a>FirewallRuleGroup</a> with a VPC, to provide DNS filtering for the
         /// VPC.
+        /// 
+        ///  
+        /// <para>
+        /// If the rule group contains any rule configured with the <c>PartnerThreatProtection</c>
+        /// rule type, the calling account must hold an active AWS Marketplace subscription to
+        /// the named partner. If the subscription is missing, the association request is rejected.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateFirewallRuleGroup service method.</param>
         /// <param name="cancellationToken">
@@ -771,8 +785,35 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Creates a single DNS Firewall rule in the specified rule group, using the specified
-        /// domain list.
+        /// Creates a single DNS Firewall rule in the specified rule group. The rule can use any
+        /// one of the following match sources, and the chosen source must be supplied through
+        /// the matching request field — they are mutually exclusive:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FirewallDomainListId</c> — match a customer-managed or AWS-managed domain list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DnsThreatProtection</c> — match a built-in DNS Firewall Advanced threat detector
+        /// (<c>DGA</c>, <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FirewallRuleType</c> — match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
+        /// <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>,
+        /// or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c> variant requires
+        /// an active AWS Marketplace subscription to the named partner product.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For rules that require asynchronous provisioning (today, the <c>PartnerThreatProtection</c>
+        /// rule type), the rule's <c>Status</c> begins at <c>CREATING</c> and transitions to
+        /// <c>COMPLETE</c> once the rule is provisioned and the marketplace entitlement is verified.
+        /// If provisioning fails, <c>Status</c> becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c>
+        /// contains a human-readable reason; the rule is then immutable and must be removed with
+        /// <a>DeleteFirewallRule</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
         /// 
@@ -809,8 +850,35 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Creates a single DNS Firewall rule in the specified rule group, using the specified
-        /// domain list.
+        /// Creates a single DNS Firewall rule in the specified rule group. The rule can use any
+        /// one of the following match sources, and the chosen source must be supplied through
+        /// the matching request field — they are mutually exclusive:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FirewallDomainListId</c> — match a customer-managed or AWS-managed domain list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DnsThreatProtection</c> — match a built-in DNS Firewall Advanced threat detector
+        /// (<c>DGA</c>, <c>DNS_TUNNELING</c>, or <c>DICTIONARY_DGA</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FirewallRuleType</c> — match one of the rule-type variants returned by <a>ListFirewallRuleTypes</a>:
+        /// <c>FirewallAdvancedContentCategory</c>, <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>,
+        /// or <c>PartnerThreatProtection</c>. The <c>PartnerThreatProtection</c> variant requires
+        /// an active AWS Marketplace subscription to the named partner product.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For rules that require asynchronous provisioning (today, the <c>PartnerThreatProtection</c>
+        /// rule type), the rule's <c>Status</c> begins at <c>CREATING</c> and transitions to
+        /// <c>COMPLETE</c> once the rule is provisioned and the marketplace entitlement is verified.
+        /// If provisioning fails, <c>Status</c> becomes <c>CREATION_FAILED</c> and <c>StatusMessage</c>
+        /// contains a human-readable reason; the rule is then immutable and must be removed with
+        /// <a>DeleteFirewallRule</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFirewallRule service method.</param>
         /// <param name="cancellationToken">
@@ -1423,7 +1491,15 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Deletes the specified firewall rule.
+        /// Deletes the specified firewall rule. Identify the rule using either <c>FirewallDomainListId</c>
+        /// (for domain-list and DNS Firewall Advanced rules) or <c>FirewallThreatProtectionId</c>
+        /// (for partner-managed and DNS Firewall Advanced rules) — together with <c>FirewallRuleGroupId</c>.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>DeleteFirewallRule</c> is the only operation that succeeds against a rule whose
+        /// <c>Status</c> is <c>CREATION_FAILED</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRule service method.</param>
         /// 
@@ -1457,7 +1533,15 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Deletes the specified firewall rule.
+        /// Deletes the specified firewall rule. Identify the rule using either <c>FirewallDomainListId</c>
+        /// (for domain-list and DNS Firewall Advanced rules) or <c>FirewallThreatProtectionId</c>
+        /// (for partner-managed and DNS Firewall Advanced rules) — together with <c>FirewallRuleGroupId</c>.
+        /// 
+        ///  
+        /// <para>
+        ///  <c>DeleteFirewallRule</c> is the only operation that succeeds against a rule whose
+        /// <c>Status</c> is <c>CREATION_FAILED</c>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFirewallRule service method.</param>
         /// <param name="cancellationToken">
@@ -3899,12 +3983,17 @@ namespace Amazon.Route53Resolver
         /// <summary>
         /// Retrieves the firewall rules that you have defined for the specified firewall rule
         /// group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for
-        /// a VPC. 
+        /// a VPC.
         /// 
         ///  
         /// <para>
         /// A single call might return only a partial list of the rules. For information, see
-        /// <c>MaxResults</c>. 
+        /// <c>MaxResults</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For rules that require asynchronous provisioning, the response includes <c>Status</c>
+        /// (see <a>FirewallRuleStatus</a>) and, on failure, <c>StatusMessage</c> with the reason.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
@@ -3941,12 +4030,17 @@ namespace Amazon.Route53Resolver
         /// <summary>
         /// Retrieves the firewall rules that you have defined for the specified firewall rule
         /// group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for
-        /// a VPC. 
+        /// a VPC.
         /// 
         ///  
         /// <para>
         /// A single call might return only a partial list of the rules. For information, see
-        /// <c>MaxResults</c>. 
+        /// <c>MaxResults</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For rules that require asynchronous provisioning, the response includes <c>Status</c>
+        /// (see <a>FirewallRuleStatus</a>) and, on failure, <c>StatusMessage</c> with the reason.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRules service method.</param>
@@ -3987,7 +4081,21 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Retrieves the available rule types that can be used in DNS Firewall rules.
+        /// Retrieves the rule-type variants that can be used in the <c>FirewallRuleType</c> field
+        /// of <a>CreateFirewallRule</a> and <a>UpdateFirewallRule</a>. Each returned <a>FirewallRuleTypeDefinition</a>
+        /// identifies one variant + value combination — for example, <c>FirewallAdvancedContentCategory</c>
+        /// + <c>VIOLENCE_AND_HATE_SPEECH</c>, or <c>PartnerThreatProtection</c> + a partner-managed
+        /// feed.
+        /// 
+        ///  
+        /// <para>
+        /// The supported <c>RuleType</c> filter values are <c>FirewallAdvancedContentCategory</c>,
+        /// <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>, and <c>PartnerThreatProtection</c>.
+        /// When a returned definition's variant requires an external subscription (currently
+        /// only <c>PartnerThreatProtection</c>), the response also includes a <a>SubscriptionInfo</a>
+        /// identifying the AWS Marketplace product that backs it; absence of <c>SubscriptionInfo</c>
+        /// means the variant is fully managed by AWS and requires no separate subscription.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleTypes service method.</param>
         /// 
@@ -4018,7 +4126,21 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Retrieves the available rule types that can be used in DNS Firewall rules.
+        /// Retrieves the rule-type variants that can be used in the <c>FirewallRuleType</c> field
+        /// of <a>CreateFirewallRule</a> and <a>UpdateFirewallRule</a>. Each returned <a>FirewallRuleTypeDefinition</a>
+        /// identifies one variant + value combination — for example, <c>FirewallAdvancedContentCategory</c>
+        /// + <c>VIOLENCE_AND_HATE_SPEECH</c>, or <c>PartnerThreatProtection</c> + a partner-managed
+        /// feed.
+        /// 
+        ///  
+        /// <para>
+        /// The supported <c>RuleType</c> filter values are <c>FirewallAdvancedContentCategory</c>,
+        /// <c>FirewallAdvancedThreatCategory</c>, <c>DnsThreatProtection</c>, and <c>PartnerThreatProtection</c>.
+        /// When a returned definition's variant requires an external subscription (currently
+        /// only <c>PartnerThreatProtection</c>), the response also includes a <a>SubscriptionInfo</a>
+        /// identifying the AWS Marketplace product that backs it; absence of <c>SubscriptionInfo</c>
+        /// means the variant is fully managed by AWS and requires no separate subscription.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFirewallRuleTypes service method.</param>
         /// <param name="cancellationToken">
@@ -5289,7 +5411,10 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Updates the specified firewall rule.
+        /// Updates the specified firewall rule. The rule's <c>FirewallRuleType</c>, <c>FirewallDomainListId</c>,
+        /// and top-level <c>DnsThreatProtection</c> match source cannot be changed after creation.
+        /// Rules whose <c>Status</c> is <c>CREATING</c> or <c>CREATION_FAILED</c> cannot be updated;
+        /// remove a failed rule with <a>DeleteFirewallRule</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRule service method.</param>
         /// 
@@ -5328,7 +5453,10 @@ namespace Amazon.Route53Resolver
 
 
         /// <summary>
-        /// Updates the specified firewall rule.
+        /// Updates the specified firewall rule. The rule's <c>FirewallRuleType</c>, <c>FirewallDomainListId</c>,
+        /// and top-level <c>DnsThreatProtection</c> match source cannot be changed after creation.
+        /// Rules whose <c>Status</c> is <c>CREATING</c> or <c>CREATION_FAILED</c> cannot be updated;
+        /// remove a failed rule with <a>DeleteFirewallRule</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFirewallRule service method.</param>
         /// <param name="cancellationToken">

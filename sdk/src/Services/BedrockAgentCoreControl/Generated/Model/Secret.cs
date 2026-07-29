@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Contains information about a secret in AWS Secrets Manager.
+    /// Contains information about a secret in Amazon Web Services Secrets Manager.
     /// </summary>
     public partial class Secret
     {
@@ -39,7 +39,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the secret in AWS Secrets Manager.
+        /// The Amazon Resource Name (ARN) of the secret in Amazon Web Services Secrets Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

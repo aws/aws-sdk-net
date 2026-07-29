@@ -28,13 +28,16 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Extensions.CborProtocol;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
+
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ArchiveRetention Marshaller
     /// </summary>
-    public class ArchiveRetentionMarshaller : IRequestMarshaller<ArchiveRetention, JsonMarshallerContext> 
+    public class ArchiveRetentionMarshaller : IRequestMarshaller<ArchiveRetention, CborMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,16 +45,16 @@ namespace Amazon.MailManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ArchiveRetention requestObject, JsonMarshallerContext context)
+        public void Marshall(ArchiveRetention requestObject, CborMarshallerContext context)
         {
-            if(requestObject == null)
+            if (requestObject == null)
                 return;
-            if(requestObject.IsSetRetentionPeriod())
-            {
-                context.Writer.WritePropertyName("RetentionPeriod");
-                context.Writer.WriteStringValue(requestObject.RetentionPeriod);
-            }
 
+            if (requestObject.IsSetRetentionPeriod())
+            {
+                context.Writer.WriteTextString("RetentionPeriod");
+                context.Writer.WriteTextString(requestObject.RetentionPeriod);
+            }
         }
 
         /// <summary>

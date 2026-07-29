@@ -3014,7 +3014,7 @@ namespace Amazon.Resiliencehubv2
 
 
         /// <summary>
-        /// Start a failure mode assessment.
+        /// Starts a failure mode assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFailureModeAssessment service method.</param>
         /// 
@@ -3049,7 +3049,7 @@ namespace Amazon.Resiliencehubv2
 
 
         /// <summary>
-        /// Start a failure mode assessment.
+        /// Starts a failure mode assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartFailureModeAssessment service method.</param>
         /// <param name="cancellationToken">

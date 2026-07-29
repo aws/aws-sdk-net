@@ -29,58 +29,77 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Text.Json;
+using System.Formats.Cbor;
+using Amazon.Extensions.CborProtocol.Internal.Transform;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UserStackAssociation Object
     /// </summary>  
-    public class UserStackAssociationUnmarshaller : IJsonUnmarshaller<UserStackAssociation, JsonUnmarshallerContext>
+    public class UserStackAssociationUnmarshaller : ICborUnmarshaller<UserStackAssociation, CborUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UserStackAssociation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public UserStackAssociation Unmarshall(CborUnmarshallerContext context)
         {
             UserStackAssociation unmarshalledObject = new UserStackAssociation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
-
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+            var reader = context.Reader;
+            if (reader.PeekState() == CborReaderState.Null)
             {
-                if (context.TestExpression("AuthenticationType", targetDepth, ref reader))
+                reader.ReadNull();
+                return null;
+            }
+
+            reader.ReadStartMap();
+            while (reader.PeekState() != CborReaderState.EndMap)
+            {
+                string propertyName = reader.ReadTextString();
+                switch (propertyName)
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SendEmailNotification", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SendEmailNotification = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("StackName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StackName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("UserName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
+                    case "AuthenticationType":
+                        {
+                            context.AddPathSegment("AuthenticationType");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "SendEmailNotification":
+                        {
+                            context.AddPathSegment("SendEmailNotification");
+                            var unmarshaller = CborNullableBoolUnmarshaller.Instance;
+                            unmarshalledObject.SendEmailNotification = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "StackName":
+                        {
+                            context.AddPathSegment("StackName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.StackName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    case "UserName":
+                        {
+                            context.AddPathSegment("UserName");
+                            var unmarshaller = CborStringUnmarshaller.Instance;
+                            unmarshalledObject.UserName = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
+                    default:
+                        reader.SkipValue();
+                        break;
                 }
             }
+            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

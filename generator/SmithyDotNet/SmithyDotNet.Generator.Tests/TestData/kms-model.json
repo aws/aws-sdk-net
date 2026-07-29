@@ -1,0 +1,86 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.kms#Service": {
+      "type": "service",
+      "version": "2014-11-01",
+      "operations": [
+        {
+          "target": "com.amazonaws.kms#Encrypt"
+        },
+        {
+          "target": "com.amazonaws.kms#Decrypt"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Key Management Service",
+          "endpointPrefix": "kms"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Key Management Service",
+        "aws.auth#sigv4": {
+          "name": "kms"
+        }
+      }
+    },
+    "com.amazonaws.kms#Encrypt": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.kms#EncryptRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.kms#EncryptResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/Encrypt",
+          "method": "POST"
+        }
+      }
+    },
+    "com.amazonaws.kms#EncryptRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.kms#EncryptResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.kms#Decrypt": {
+      "type": "operation",
+      "input": {
+        "target": "com.amazonaws.kms#DecryptRequest"
+      },
+      "output": {
+        "target": "com.amazonaws.kms#DecryptResponse"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/Decrypt",
+          "method": "POST"
+        }
+      }
+    },
+    "com.amazonaws.kms#DecryptRequest": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.kms#DecryptResponse": {
+      "type": "structure",
+      "members": {},
+      "traits": {
+        "smithy.api#output": {}
+      }
+    }
+  }
+}

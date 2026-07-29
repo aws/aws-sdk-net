@@ -32,6 +32,13 @@ namespace Amazon.ChimeSDKVoice.Model
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnectorProxy operation.
     /// Deletes the proxy configuration from the specified Amazon Chime SDK Voice Connector.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// End of support notice: On April 7, 2026, AWS will end support for Amazon Chime SDK
+    /// proxy sessions.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteVoiceConnectorProxyRequest : AmazonChimeSDKVoiceRequest
     {
@@ -43,7 +50,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// The Voice Connector ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true)]
         public string VoiceConnectorId
         {
             get { return this._voiceConnectorId; }

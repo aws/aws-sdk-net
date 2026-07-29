@@ -789,9 +789,9 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>dc2.large</c> | <c>dc2.8xlarge</c>| <c>rg.xlarge</c> | <c>rg.4xlarge</c>
-        /// | <c>ra3.large</c> | <c>ra3.xlplus</c> | <c>ra3.4xlarge</c> | <c>ra3.16xlarge</c>
-        /// 
+        /// Valid Values: <c>dc2.large</c> | <c>dc2.8xlarge</c> | <c>rg.large</c> | <c>rg.xlarge</c>
+        /// | <c>rg.4xlarge</c> | <c>rg.12xlarge</c> | <c>ra3.large</c> | <c>ra3.xlplus</c> |
+        /// <c>ra3.4xlarge</c> | <c>ra3.16xlarge</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

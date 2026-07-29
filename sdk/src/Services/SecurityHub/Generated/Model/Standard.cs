@@ -37,6 +37,7 @@ namespace Amazon.SecurityHub.Model
         private string _description;
         private bool? _enabledByDefault;
         private string _name;
+        private StandardsProvider _provider;
         private string _standardsArn;
         private StandardsManagedBy _standardsManagedBy;
 
@@ -100,6 +101,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        /// The cloud provider whose resources the standard evaluates. For example, <c>AWS</c>
+        /// or <c>Azure</c>.
+        /// </para>
+        /// </summary>
+        public StandardsProvider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
         }
 
         /// <summary>

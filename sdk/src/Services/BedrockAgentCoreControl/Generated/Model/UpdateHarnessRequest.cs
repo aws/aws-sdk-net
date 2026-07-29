@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateHarness operation.
-    /// Operation to update a Harness.
+    /// Operation to update a harness.
     /// </summary>
     public partial class UpdateHarnessRequest : AmazonBedrockAgentCoreControlRequest
     {

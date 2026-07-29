@@ -32,6 +32,14 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the ModifyConversionConfiguration operation.
     /// Modifies the specified schema conversion configuration using the provided parameters.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:UpdateConversionConfiguration</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class ModifyConversionConfigurationRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -41,8 +49,20 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ConversionConfiguration. 
         /// <para>
-        /// The new conversion configuration.
+        /// A JSON string that contains the schema conversion settings to update. For the format
+        /// and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying
+        /// schema conversion settings for migration projects</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Usage:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Include only the sections and keys to change. The operation merges supplied values
+        /// with the existing configuration.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ConversionConfiguration

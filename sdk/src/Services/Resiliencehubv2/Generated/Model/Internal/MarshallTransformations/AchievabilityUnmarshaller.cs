@@ -62,6 +62,12 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AvailabilitySlo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("dataRecoveryTimeBetweenBackups", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataRecoveryTimeBetweenBackups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("multiAzRtoRpo", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

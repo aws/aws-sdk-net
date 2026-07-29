@@ -59,10 +59,33 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetConfigurationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Inspector2");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-06-08";
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/configuration/get";
+#if !NETFRAMEWORK
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountId())
+            {
+                context.Writer.WritePropertyName("accountId");
+                context.Writer.WriteStringValue(publicRequest.AccountId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
+            
+
 
             return request;
         }

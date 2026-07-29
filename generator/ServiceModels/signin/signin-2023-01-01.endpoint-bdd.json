@@ -31,6 +31,11 @@
             "required": false,
             "documentation": "Indicates if the operation targets the control plane endpoint",
             "type": "boolean"
+        },
+        "IsOAuthEndpoint": {
+            "required": false,
+            "documentation": "Indicates if the operation targets the OAuth token endpoint",
+            "type": "boolean"
         }
     },
     "conditions": [
@@ -84,6 +89,36 @@
             ]
         },
         {
+            "fn": "stringEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "name"
+                    ]
+                },
+                "aws"
+            ]
+        },
+        {
+            "fn": "booleanEquals",
+            "argv": [
+                {
+                    "fn": "coalesce",
+                    "argv": [
+                        {
+                            "ref": "IsOAuthEndpoint"
+                        },
+                        false
+                    ]
+                },
+                true
+            ]
+        },
+        {
             "fn": "booleanEquals",
             "argv": [
                 {
@@ -104,37 +139,7 @@
                         "name"
                     ]
                 },
-                "aws"
-            ]
-        },
-        {
-            "fn": "stringEquals",
-            "argv": [
-                {
-                    "fn": "getAttr",
-                    "argv": [
-                        {
-                            "ref": "PartitionResult"
-                        },
-                        "name"
-                    ]
-                },
                 "aws-cn"
-            ]
-        },
-        {
-            "fn": "booleanEquals",
-            "argv": [
-                {
-                    "fn": "getAttr",
-                    "argv": [
-                        {
-                            "ref": "PartitionResult"
-                        },
-                        "supportsDualStack"
-                    ]
-                },
-                true
             ]
         },
         {
@@ -250,6 +255,21 @@
                 },
                 "aws-eusc"
             ]
+        },
+        {
+            "fn": "booleanEquals",
+            "argv": [
+                {
+                    "fn": "getAttr",
+                    "argv": [
+                        {
+                            "ref": "PartitionResult"
+                        },
+                        "supportsDualStack"
+                    ]
+                },
+                true
+            ]
         }
     ],
     "results": [
@@ -291,6 +311,28 @@
             "conditions": [],
             "endpoint": {
                 "url": "https://signin.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                "properties": {
+                    "authSchemes": [
+                        {
+                            "name": "sigv4",
+                            "signingName": "signin",
+                            "signingRegion": "{Region}"
+                        }
+                    ]
+                },
+                "headers": {}
+            },
+            "type": "endpoint"
+        },
+        {
+            "conditions": [],
+            "error": "FIPS endpoints are not supported for OAuth operations. Disable FIPS or use a non-OAuth operation.",
+            "type": "error"
+        },
+        {
+            "conditions": [],
+            "endpoint": {
+                "url": "https://{Region}.oauth.signin.aws",
                 "properties": {
                     "authSchemes": [
                         {
@@ -482,6 +524,6 @@
         }
     ],
     "root": 2,
-    "nodeCount": 33,
-    "nodes": "/////wAAAAH/////AAAAAAAAAAQAAAADAAAAAgAAAB4F9eEZAAAAAQAAABgAAAAFAAAAAgAAAB4AAAAGAAAAAwAAAAcAAAAaAAAABAAAABIAAAAIAAAABQAAABEAAAAJAAAABgX14QQAAAAKAAAABwX14QUAAAALAAAACgX14QYAAAAMAAAADAX14QcAAAANAAAADQX14QgAAAAOAAAADgX14QkAAAAPAAAADwX14QoAAAAQAAAAEAX14QsF9eEOAAAACAX14RYF9eEXAAAABQAAABYAAAATAAAACQX14QwAAAAUAAAACgX14Q0AAAAVAAAACwX14RQF9eEVAAAACAAAABcF9eETAAAACwX14RIF9eETAAAAAgAAAB0AAAAZAAAAAwAAACAAAAAaAAAABAAAABsF9eEZAAAABQX14RkAAAAcAAAACQX14QwF9eEZAAAAAwAAACAAAAAeAAAABAX14Q8AAAAfAAAABQX14RAF9eERAAAABgX14QEAAAAhAAAABwX14QIF9eED"
+    "nodeCount": 40,
+    "nodes": "/////wAAAAH/////AAAAAAAAAAYAAAADAAAAAgAAACQAAAAEAAAABAAAAAUF9eEbAAAABgX14QQF9eEbAAAAAQAAAB0AAAAHAAAAAgAAACQAAAAIAAAAAwAAAAkAAAAfAAAABAAAABYAAAAKAAAABQAAABMAAAALAAAABwAAABUAAAAMAAAACAX14QcAAAANAAAACgX14QgAAAAOAAAADAX14QkAAAAPAAAADQX14QoAAAAQAAAADgX14QsAAAARAAAADwX14QwAAAASAAAAEAX14Q0F9eEQAAAABgX14QUAAAAUAAAABwAAABUF9eEGAAAAEQX14RgF9eEZAAAABgX14QQAAAAXAAAABwAAABsAAAAYAAAACQX14Q4AAAAZAAAACgX14Q8AAAAaAAAACwX14RYF9eEXAAAACwAAABwF9eEVAAAAEQX14RQF9eEVAAAAAgAAACMAAAAeAAAAAwAAACcAAAAfAAAABAAAACAF9eEbAAAABgX14QQAAAAhAAAABwX14RsAAAAiAAAACQX14Q4F9eEbAAAAAwAAACcAAAAkAAAABAAAACYAAAAlAAAABwX14RIF9eETAAAABgX14QQF9eERAAAABQX14QEAAAAoAAAACAX14QIF9eED"
 }

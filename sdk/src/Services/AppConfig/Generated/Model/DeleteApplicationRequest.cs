@@ -43,7 +43,7 @@ namespace Amazon.AppConfig.Model
         /// The ID of the application to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ApplicationId
         {
             get { return this._applicationId; }

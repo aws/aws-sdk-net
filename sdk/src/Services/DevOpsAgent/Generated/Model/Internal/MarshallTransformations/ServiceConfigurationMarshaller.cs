@@ -200,6 +200,28 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRemoteagent())
+            {
+                context.Writer.WritePropertyName("remoteagent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RemoteAgentConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Remoteagent, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetRemoteagentsigv4())
+            {
+                context.Writer.WritePropertyName("remoteagentsigv4");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RemoteAgentSigV4ConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Remoteagentsigv4, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetServicenow())
             {
                 context.Writer.WritePropertyName("servicenow");

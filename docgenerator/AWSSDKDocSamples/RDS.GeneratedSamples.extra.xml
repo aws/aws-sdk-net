@@ -325,6 +325,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBCluster(Amazon.RDS.Model.CreateDBClusterRequest)" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterRequest" />
+            <member name="T:Amazon.RDS.Model.CreateDBClusterResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an Aurora PostgreSQL-compatible DB cluster and associates an IAM role for Amazon S3 import in a single call.
+                </para>
+                <code
+                    title="To create an Aurora DB cluster with an associated IAM role for Amazon S3 import"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-4" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.RDS.IAmazonRDS.CreateDBClusterEndpoint(Amazon.RDS.Model.CreateDBClusterEndpointRequest)" />
             <member name="M:Amazon.RDS.AmazonRDSClient.CreateDBClusterEndpoint(Amazon.RDS.Model.CreateDBClusterEndpointRequest)" />
             <member name="T:Amazon.RDS.Model.CreateDBClusterEndpointRequest" />
@@ -2239,6 +2258,25 @@
                     title="To restore a DB cluster from a snapshot without VPC networking"
                     source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
                     region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.RDS.IAmazonRDS.RestoreDBClusterFromSnapshot(Amazon.RDS.Model.RestoreDBClusterFromSnapshotRequest)" />
+            <member name="M:Amazon.RDS.AmazonRDSClient.RestoreDBClusterFromSnapshot(Amazon.RDS.Model.RestoreDBClusterFromSnapshotRequest)" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterFromSnapshotRequest" />
+            <member name="T:Amazon.RDS.Model.RestoreDBClusterFromSnapshotResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example restores an Aurora PostgreSQL DB cluster from a snapshot and associates an IAM role for Amazon S3 import in a single call.
+                </para>
+                <code
+                    title="To restore a DB cluster from a snapshot with an associated IAM role"
+                    source=".\AWSSDKDocSamples\RDS\RDS.GeneratedSamples.cs"
+                    region="example-3" />
             </example>
         </value>
     </doc>

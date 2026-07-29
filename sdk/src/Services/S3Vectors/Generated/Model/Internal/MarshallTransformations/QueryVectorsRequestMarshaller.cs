@@ -91,6 +91,12 @@ namespace Amazon.S3Vectors.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.IndexName);
             }
 
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
             if(publicRequest.IsSetQueryVector())
             {
                 context.Writer.WritePropertyName("queryVector");

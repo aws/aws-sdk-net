@@ -656,6 +656,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// EXPIRED -- The fleet has been expired. The fleet is scaled down to zero instances
+        /// and cannot host new game sessions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// DELETING -- Hosts are responding to a delete fleet request.
         /// </para>
         ///  </li> <li> 

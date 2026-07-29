@@ -289,6 +289,24 @@
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRcsAgentResponse.TwoWayMediaS3BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRcsAgentResponse.TwoWayMediaS3KeyPrefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.CreateRcsAgentResponse.TwoWayMediaS3Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -672,6 +690,11 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRcsMessageSpendLimitOverrideResponse.MonthlyLimit</property>
+    <min>0</min>
+    <max>1000000000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.DeleteRegistrationRequest.RegistrationId</property>
@@ -1917,6 +1940,46 @@
     <pattern>([A-Za-z0-9_-]*|UNSET_DEFAULT_TEMPLATE)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendRcsMessageRequest.ConfigurationSetName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendRcsMessageRequest.DestinationPhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendRcsMessageRequest.MaxPrice</property>
+    <min>2</min>
+    <max>8</max>
+    <pattern>[0-9]{0,2}\.[0-9]{1,5}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendRcsMessageRequest.MessageTrafficType</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendRcsMessageRequest.OriginationIdentity</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/\+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendRcsMessageRequest.ProtectConfigurationId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SendRcsMessageRequest.TimeToLive</property>
+    <min>1</min>
+    <max>172800</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SendTextMessageRequest.ConfigurationSetName</property>
     <min>1</min>
     <max>256</max>
@@ -2087,6 +2150,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.SetNotifyMessageSpendLimitOverrideResponse.MonthlyLimit</property>
+    <min>0</min>
+    <max>1000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SetRcsMessageSpendLimitOverrideRequest.MonthlyLimit</property>
+    <min>0</min>
+    <max>1000000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.SetRcsMessageSpendLimitOverrideResponse.MonthlyLimit</property>
     <min>0</min>
     <max>1000000000</max>
   </property-value-rule>
@@ -2350,6 +2423,24 @@
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentRequest.TwoWayMediaS3BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>([a-z0-9][a-z0-9.-]*[a-z0-9]|UNSET_RCS_MEDIA_CONFIGURATION)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentRequest.TwoWayMediaS3KeyPrefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentRequest.TwoWayMediaS3Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>(arn:\S+|UNSET_RCS_MEDIA_CONFIGURATION)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentResponse.OptOutListName</property>
     <min>1</min>
     <max>64</max>
@@ -2363,6 +2454,24 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentResponse.TwoWayChannelRole</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentResponse.TwoWayMediaS3BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentResponse.TwoWayMediaS3KeyPrefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.UpdateRcsAgentResponse.TwoWayMediaS3Role</property>
     <min>20</min>
     <max>2048</max>
     <pattern>arn:\S+</pattern>
@@ -2639,6 +2748,237 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsAgentInformation.TwoWayMediaS3BucketName</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>[a-z0-9][a-z0-9.-]*[a-z0-9]</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsAgentInformation.TwoWayMediaS3KeyPrefix</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsAgentInformation.TwoWayMediaS3Role</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCardContent.Description</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCardContent.Title</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCardMedia.FileUrl</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>(https://|s3://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCardMedia.Height</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCardMedia.ThumbnailUrl</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>(https://|s3://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCarousel.CardWidth</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCarouselCardContent.Description</property>
+    <min>1</min>
+    <max>2000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCarouselCardContent.Title</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCarouselCardMedia.FileUrl</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>(https://|s3://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCarouselCardMedia.Height</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCarouselCardMedia.ThumbnailUrl</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>(https://|s3://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCreateCalendarEventAction.Description</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCreateCalendarEventAction.PostbackData</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCreateCalendarEventAction.Text</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsCreateCalendarEventAction.Title</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsDialPhoneAction.PhoneNumber</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>\+?[1-9][0-9]{1,18}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsDialPhoneAction.PostbackData</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsDialPhoneAction.Text</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsFallbackConfiguration.MessageBody</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>(?!\s*$)[\s\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsFallbackConfiguration.OriginationIdentity</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[A-Za-z0-9_:/\+-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsFileMessage.FileUrl</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>(https://|s3://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsFileMessage.ThumbnailUrl</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>(https://|s3://).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsOpenUrlAction.Application</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsOpenUrlAction.PostbackData</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsOpenUrlAction.Text</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsOpenUrlAction.Url</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>https://\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsOpenUrlAction.WebviewViewMode</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsReplyAction.PostbackData</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsReplyAction.Text</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsRequestLocationAction.PostbackData</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsRequestLocationAction.Text</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsShowLocationAction.Label</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsShowLocationAction.Latitude</property>
+    <min>-90</min>
+    <max>90</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsShowLocationAction.Longitude</property>
+    <min>-180</min>
+    <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsShowLocationAction.PostbackData</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsShowLocationAction.Text</property>
+    <min>1</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsStandaloneCard.CardOrientation</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsStandaloneCard.ThumbnailImageAlignment</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>[A-Z_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.RcsTextMessage.Body</property>
+    <min>1</min>
+    <max>3072</max>
+    <pattern>(?!\s*$)[\s\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.RegistrationAssociationMetadata.IsoCountryCode</property>

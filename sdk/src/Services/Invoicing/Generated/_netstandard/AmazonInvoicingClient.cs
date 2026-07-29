@@ -1051,6 +1051,64 @@ namespace Amazon.Invoicing
         }
         #endregion
         
+        #region  SendProcurementPortalValidation
+
+        internal virtual SendProcurementPortalValidationResponse SendProcurementPortalValidation(SendProcurementPortalValidationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendProcurementPortalValidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendProcurementPortalValidationResponseUnmarshaller.Instance;
+
+            return Invoke<SendProcurementPortalValidationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// Sends a validation request for a procurement portal preference. This operation initiates
+        /// the validation process by issuing a validation code that confirms ownership and connectivity
+        /// of the configured procurement portal endpoint. Use <c>VerifyProcurementPortalValidation</c>
+        /// to submit the received code and complete validation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendProcurementPortalValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendProcurementPortalValidation service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/SendProcurementPortalValidation">REST API Reference for SendProcurementPortalValidation Operation</seealso>
+        public virtual Task<SendProcurementPortalValidationResponse> SendProcurementPortalValidationAsync(SendProcurementPortalValidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendProcurementPortalValidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendProcurementPortalValidationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendProcurementPortalValidationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1262,6 +1320,63 @@ namespace Amazon.Invoicing
             options.ResponseUnmarshaller = UpdateProcurementPortalPreferenceStatusResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateProcurementPortalPreferenceStatusResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  VerifyProcurementPortalValidation
+
+        internal virtual VerifyProcurementPortalValidationResponse VerifyProcurementPortalValidation(VerifyProcurementPortalValidationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = VerifyProcurementPortalValidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyProcurementPortalValidationResponseUnmarshaller.Instance;
+
+            return Invoke<VerifyProcurementPortalValidationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// <i> <b>This feature API is subject to changing at any time. For more information,
+        /// see the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service
+        /// Terms</a> (Betas and Previews).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// Submits a validation code to complete the validation of a procurement portal preference.
+        /// Use this operation after calling <c>SendProcurementPortalValidation</c> to confirm
+        /// ownership and connectivity of the configured procurement portal endpoint.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the VerifyProcurementPortalValidation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the VerifyProcurementPortalValidation service method, as returned by Invoicing.</returns>
+        /// <exception cref="Amazon.Invoicing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.InternalServerException">
+        /// The processing request failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Invoicing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/VerifyProcurementPortalValidation">REST API Reference for VerifyProcurementPortalValidation Operation</seealso>
+        public virtual Task<VerifyProcurementPortalValidationResponse> VerifyProcurementPortalValidationAsync(VerifyProcurementPortalValidationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = VerifyProcurementPortalValidationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = VerifyProcurementPortalValidationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<VerifyProcurementPortalValidationResponse>(request, options, cancellationToken);
         }
         #endregion
         

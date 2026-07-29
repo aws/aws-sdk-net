@@ -130,16 +130,16 @@ public class RpcV2CborBenchmarks
     [Benchmark] public void rpcv2Cbor_GetItemOutputBinary_L() => UnmarshallCbor(_getItemBinaryLBytes);
 
     // --- PutItem Request ---
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_Baseline() => PutItemRequestMarshaller.Instance.Marshall(_putItemBaseline);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_BinaryData_S() => PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryS);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_BinaryData_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryM);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_BinaryData_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryL);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_MixedItem_S() => PutItemRequestMarshaller.Instance.Marshall(_putItemMixedS);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_MixedItem_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemMixedM);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_MixedItem_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemMixedL);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_Nested_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemNestedM);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_Nested_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemNestedL);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_ShallowMap_S() => PutItemRequestMarshaller.Instance.Marshall(_putItemShallowS);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_ShallowMap_M() => PutItemRequestMarshaller.Instance.Marshall(_putItemShallowM);
-    [Benchmark] public void rpcv2Cbor_PutItemRequest_ShallowMap_L() => PutItemRequestMarshaller.Instance.Marshall(_putItemShallowL);
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_Baseline() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBaseline));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_BinaryData_S() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryS));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_BinaryData_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryM));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_BinaryData_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemBinaryL));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_MixedItem_S() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemMixedS));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_MixedItem_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemMixedM));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_MixedItem_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemMixedL));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_Nested_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemNestedM));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_Nested_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemNestedL));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_ShallowMap_S() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemShallowS));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_ShallowMap_M() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemShallowM));
+    [Benchmark] public long rpcv2Cbor_PutItemRequest_ShallowMap_L() => TestDataHelpers.GetContentLengthAndDispose(PutItemRequestMarshaller.Instance.Marshall(_putItemShallowL));
 }

@@ -40,6 +40,7 @@ namespace Amazon.CodeBuild.Model
         private DockerServer _dockerServer;
         private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private ProjectFleet _fleet;
+        private HostKernel _hostKernel;
         private string _image;
         private ImagePullCredentialsType _imagePullCredentialsType;
         private bool? _privilegedMode;
@@ -264,6 +265,44 @@ namespace Amazon.CodeBuild.Model
         internal bool IsSetFleet()
         {
             return this._fleet != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostKernel. 
+        /// <para>
+        /// The host operating system kernel used for on-demand builds in the build project. The
+        /// host kernel does not affect the build environment operating system, which is determined
+        /// by the image you specify. Valid values are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>LINUX_KERNEL_4</c>: Runs on an Amazon Linux 2 host (kernel 4.x).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LINUX_KERNEL_6</c>: Runs on an Amazon Linux 2023 host (kernel 6.x).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LINUX_KERNEL_LATEST</c>: Runs on the latest supported host kernel.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This setting applies to the <c>LINUX_CONTAINER</c>, <c>ARM_CONTAINER</c>, <c>LINUX_EC2</c>,
+        /// and <c>ARM_EC2</c> environment types. It is not applicable to Windows, Lambda, or
+        /// Mac environment types.
+        /// </para>
+        /// </summary>
+        public HostKernel HostKernel
+        {
+            get { return this._hostKernel; }
+            set { this._hostKernel = value; }
+        }
+
+        // Check to see if HostKernel property is set
+        internal bool IsSetHostKernel()
+        {
+            return this._hostKernel != null;
         }
 
         /// <summary>

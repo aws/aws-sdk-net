@@ -52,6 +52,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Code);
             }
 
+            if(requestObject.IsSetInstallationId())
+            {
+                context.Writer.WritePropertyName("installationId");
+                context.Writer.WriteStringValue(requestObject.InstallationId);
+            }
+
             if(requestObject.IsSetOrganizationName())
             {
                 context.Writer.WritePropertyName("organizationName");
@@ -62,6 +68,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("state");
                 context.Writer.WriteStringValue(requestObject.State);
+            }
+
+            if(requestObject.IsSetTargetUrl())
+            {
+                context.Writer.WritePropertyName("targetUrl");
+                context.Writer.WriteStringValue(requestObject.TargetUrl);
             }
 
         }

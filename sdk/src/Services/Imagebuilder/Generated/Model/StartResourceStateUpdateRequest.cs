@@ -107,7 +107,12 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property IncludeResources. 
         /// <para>
-        /// A list of image resources to update state for.
+        /// Specifies which image resources to include in the state update. When specified, the
+        /// lifecycle action applies to underlying resources. These resources include AMIs, snapshots,
+        /// and containers in addition to the Image Builder image resource. Requires <c>executionRole</c>
+        /// to also be specified. To delete an image and its underlying resources, you must specify
+        /// <c>includeResources</c>. To delete only the Image Builder image record without affecting
+        /// underlying resources, use the <c>DeleteImage</c> API instead.
         /// </para>
         /// </summary>
         public ResourceStateUpdateIncludeResources IncludeResources
@@ -125,8 +130,10 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Image Builder resource that is updated. The
-        /// state update might also impact associated resources.
+        /// The Amazon Resource Name (ARN) of the image build version to update. The image must
+        /// be in one of these terminal states: <c>AVAILABLE</c>, <c>DEPRECATED</c>, <c>DISABLED</c>,
+        /// <c>FAILED</c>, or <c>CANCELLED</c>. Images with <c>FAILED</c> or <c>CANCELLED</c>
+        /// status can transition only to <c>DELETED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,7 +152,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Indicates the lifecycle action to take for this request.
+        /// Specifies the lifecycle action to take for this request. For AMI-based images, valid
+        /// values are <c>AVAILABLE</c>, <c>DEPRECATED</c>, <c>DISABLED</c>, and <c>DELETED</c>.
+        /// For container-based images, only <c>DELETED</c> is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,7 +173,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property UpdateAt. 
         /// <para>
-        /// The timestamp that indicates when resources are updated by a lifecycle action.
+        /// Specifies the timestamp when the state transition takes effect. Use this parameter
+        /// only when the target status is <c>DEPRECATED</c>. The value must be a future time.
         /// </para>
         /// </summary>
         public DateTime? UpdateAt

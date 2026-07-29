@@ -93,6 +93,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AuthorizerType);
             }
 
+            if(publicRequest.IsSetCustomTransformConfiguration())
+            {
+                context.Writer.WritePropertyName("customTransformConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomTransformConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomTransformConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -165,6 +176,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("roleArn");
                 context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetWafConfiguration())
+            {
+                context.Writer.WritePropertyName("wafConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WafConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WafConfiguration, context);
+
+                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();

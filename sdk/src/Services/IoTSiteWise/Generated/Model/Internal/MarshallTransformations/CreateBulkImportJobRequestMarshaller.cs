@@ -79,6 +79,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.AdaptiveIngestion.Value);
             }
 
+            if(publicRequest.IsSetDatasetId())
+            {
+                context.Writer.WritePropertyName("datasetId");
+                context.Writer.WriteStringValue(publicRequest.DatasetId);
+            }
+
             if(publicRequest.IsSetDeleteFilesAfterImport())
             {
                 context.Writer.WritePropertyName("deleteFilesAfterImport");
@@ -133,6 +139,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("jobRoleArn");
                 context.Writer.WriteStringValue(publicRequest.JobRoleArn);
+            }
+
+            if(publicRequest.IsSetWorkspaceName())
+            {
+                context.Writer.WritePropertyName("workspaceName");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceName);
             }
 
             writer.WriteEndObject();

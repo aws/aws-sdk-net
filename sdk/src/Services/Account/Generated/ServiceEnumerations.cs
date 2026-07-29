@@ -205,6 +205,14 @@ namespace Amazon.Account
         /// </summary>
         public static readonly PrimaryEmailUpdateStatus ACCEPTED = new PrimaryEmailUpdateStatus("ACCEPTED");
         /// <summary>
+        /// Constant COMPLETED for PrimaryEmailUpdateStatus
+        /// </summary>
+        public static readonly PrimaryEmailUpdateStatus COMPLETED = new PrimaryEmailUpdateStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for PrimaryEmailUpdateStatus
+        /// </summary>
+        public static readonly PrimaryEmailUpdateStatus FAILED = new PrimaryEmailUpdateStatus("FAILED");
+        /// <summary>
         /// Constant PENDING for PrimaryEmailUpdateStatus
         /// </summary>
         public static readonly PrimaryEmailUpdateStatus PENDING = new PrimaryEmailUpdateStatus("PENDING");

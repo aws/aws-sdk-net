@@ -178,6 +178,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetTrainingPlanArns())
+            {
+                context.Writer.WritePropertyName("TrainingPlanArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTrainingPlanArnsListValue in publicRequest.TrainingPlanArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestTrainingPlanArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("VpcConfig");

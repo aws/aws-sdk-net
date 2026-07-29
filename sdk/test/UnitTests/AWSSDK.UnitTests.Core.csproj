@@ -8,11 +8,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
    <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
-    <TargetFrameworks>net472;netstandard2.0;netcoreapp3.1;net8.0</TargetFrameworks>
+    <TargetFrameworks>$(SdkMSTestAllTestTargets)</TargetFrameworks>
     <DefineConstants>$(DefineConstants);</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netstandard2.0'">$(DefineConstants);NETSTANDARD20;AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
-    <DefineConstants Condition="'$(TargetFramework)' == 'net8.0'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
+    <!-- AWS_ASYNC_ENUMERABLES_API gates the async-enumerable/paginator APIs, which are unavailable on
+         .NET Framework. The identifier-based condition covers every non-.NETFramework target without
+         hardcoding TFM names. On .NET Framework the condition is false so the constant is not defined. -->
+    <DefineConstants Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">$(DefineConstants);AWS_ASYNC_ENUMERABLES_API</DefineConstants>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>AWSSDK.UnitTests.Core</AssemblyName>
@@ -29,17 +30,12 @@
     <SignAssembly>true</SignAssembly>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 
-    <SuppressTfmSupportBuildWarnings>true</SuppressTfmSupportBuildWarnings>
+    <!-- SuppressTfmSupportBuildWarnings and GenerateBindingRedirectsOutputType are inherited from
+         sdk/Directory.Build.props (the latter conditioned on the .NETFramework target identifier). -->
     <NoWarn>CS1591,CS0612,CS0618</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <LangVersion>11.0</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(TargetFramework)' != 'net8.0'">
-    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <Choose>
     <When Condition=" '$(AWSKeyFile)' == '' ">
@@ -59,10 +55,10 @@
     <None Remove="**/obj/**" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <Compile Remove="**/_netstandard/**"/>
   </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <Compile Remove="**/_bcl/**"/>
   </ItemGroup>
 
@@ -71,7 +67,7 @@
     <ProjectReference Include="../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj"/>
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) != '.NETFramework'">
     <ProjectReference Include="../../src/Core/AWSSDK.Core.NetStandard.csproj"/>
     <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetStandard.csproj"/>
     <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj"/>
@@ -81,7 +77,7 @@
     <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj"/>
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <ProjectReference Include="../../src/Core/AWSSDK.Core.NetFramework.csproj"/>
     <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetFramework.csproj"/>
     <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj"/>
@@ -100,7 +96,7 @@
     <PackageReference Include="AutoFixture.AutoMoq" Version="4.18.1"/>
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'net472'">
+  <ItemGroup Condition="$([MSBuild]::GetTargetFrameworkIdentifier('$(TargetFramework)')) == '.NETFramework'">
     <Reference Include="System.Configuration"/>
   </ItemGroup>
 

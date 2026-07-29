@@ -1,18 +1,11 @@
 using SmithyDotNet.Generator.Generation;
-using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
 /// Emits the C# source for the public service interface (e.g. <c>IAmazonCloudTrailData</c>),
-/// matching the public API surface of the existing AWS SDK for .NET.
-/// <para />
-/// Phase 1 scope: a synchronous and asynchronous method pair per operation, with doc comments.
-/// Protocol marshalling and the <c>DetermineServiceOperationEndpoint</c> member are deferred, as
-/// are the <c>NET8_0_OR_GREATER</c> static-factory members (<c>CreateDefaultClientConfig</c> /
-/// <c>CreateDefaultServiceClient</c>) that the base <see cref="Amazon.Runtime.IAmazonService"/>
-/// declares as <c>static abstract</c> — these construct the concrete client/config and land with
-/// the client writer.
+/// matching the public API surface of the existing AWS SDK for .NET. The interface declares a
+/// synchronous and asynchronous method pair per operation, with doc comments.
 /// </summary>
 public sealed class ClientInterfaceWriter(GenerationContext context, string modelFileName)
 {
@@ -42,14 +35,73 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
             WriteInterfaceDocumentation(writer);
             writer.OpenBlock($"public partial interface I{context.ClientName} : IAmazonService, IDisposable", () =>
             {
-                foreach (var operation in context.Operations)
+                for (var i = 0; i < context.Operations.Count; i++)
                 {
-                    WriteOperation(writer, operation);
+                    if (i > 0)
+                    {
+                        writer.WriteLine();
+                    }
+
+                    WriteOperation(writer, context.Operations[i]);
                 }
+
+                writer.WriteLine();
+                WriteDetermineServiceOperationEndpoint(writer);
+                writer.WriteLine();
+                WriteStaticFactoryMethods(writer);
             });
         });
 
         return writer.ToFormattedString(cancellationToken);
+    }
+
+    private static void WriteDetermineServiceOperationEndpoint(CodeWriter writer)
+    {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Returns the endpoint that will be used for a particular request.");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine("""/// <param name="request">Request for the desired service operation.</param>""");
+        writer.WriteLine("/// <returns>The resolved endpoint for the given request.</returns>");
+        writer.WriteLine("Amazon.Runtime.Endpoints.Endpoint DetermineServiceOperationEndpoint(AmazonWebServiceRequest request);");
+    }
+
+    // IAmazonService declares these as static abstract behind NET8_0_OR_GREATER, so every service
+    // interface must implement them or any net8.0 consumer fails with CS0535. They are consumed by
+    // AWSSDK.Extensions.NETCore.Setup to construct clients registered in the dependency-injection
+    // container.
+    private void WriteStaticFactoryMethods(CodeWriter writer)
+    {
+        var configType = $"{context.ClientName}Config";
+        var clientType = $"{context.ClientName}Client";
+
+        writer.WriteLine("#if NET8_0_OR_GREATER");
+        writer.WriteLine("// Warning CA1033 is issued when the child types can not call the method defined in parent types.");
+        writer.WriteLine("// In this use case the intended caller is only meant to be the interface as a factory");
+        writer.WriteLine("// method to create the child types. Given the SDK use case the warning can be ignored.");
+        writer.WriteLine("#pragma warning disable CA1033");
+        writer.WriteLine("/// <inheritdoc/>");
+        // DynamicDependency keeps the config's public properties through trimming; the DI setup
+        // path binds them via reflection.
+        writer.WriteLine($"[System.Diagnostics.CodeAnalysis.DynamicDependency(System.Diagnostics.CodeAnalysis.DynamicallyAccessedMemberTypes.PublicProperties, typeof({configType}))]");
+        writer.WriteLine($"static ClientConfig IAmazonService.CreateDefaultClientConfig() => new {configType}();");
+        writer.WriteLine();
+        writer.WriteLine("/// <inheritdoc/>");
+        writer.WriteLine("""[System.Diagnostics.CodeAnalysis.UnconditionalSuppressMessage("AssemblyLoadTrimming", "IL2026:RequiresUnreferencedCode",""");
+        writer.WriteLine("""    Justification = "This suppression is here to ignore the warnings caused by CognitoSync. See justification in IAmazonService.")]""");
+        writer.OpenBlock("static IAmazonService IAmazonService.CreateDefaultServiceClient(AWSCredentials awsCredentials, ClientConfig clientConfig)", () =>
+        {
+            writer.WriteLine($"var serviceClientConfig = clientConfig as {configType};");
+            writer.OpenBlock("if (serviceClientConfig == null)", () =>
+            {
+                writer.WriteLine($"""throw new AmazonClientException("ClientConfig is not of type {configType} to create {clientType}");""");
+            });
+            writer.WriteLine();
+            writer.WriteLine("return awsCredentials == null ?");
+            writer.WriteLine($"        new {clientType}(serviceClientConfig) :");
+            writer.WriteLine($"        new {clientType}(awsCredentials, serviceClientConfig);");
+        });
+        writer.WriteLine("#pragma warning restore CA1033");
+        writer.WriteLine("#endif");
     }
 
     private void WriteInterfaceDocumentation(CodeWriter writer)
@@ -76,57 +128,14 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
         // generator emits it in the _bcl file, which is excluded from the netstandard/net builds), so
         // guard it with #if NETFRAMEWORK in this single-file output.
         writer.WriteLine("#if NETFRAMEWORK");
-        WriteOperationDocumentation(writer, operation, isAsync: false);
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: false);
         writer.WriteLine($"{responseType} {operation.Name}({requestType} request);");
         writer.WriteLine("#endif");
         writer.WriteLine();
 
         // Asynchronous overload.
-        WriteOperationDocumentation(writer, operation, isAsync: true);
+        DocumentationFormatter.WriteOperationDocumentation(writer, context, operation, isAsync: true);
         writer.WriteLine($"Task<{responseType}> {operation.Name}Async({requestType} request, CancellationToken cancellationToken = default(CancellationToken));");
-        writer.WriteLine();
     }
 
-    private void WriteOperationDocumentation(CodeWriter writer, Operation operation, bool isAsync)
-    {
-        var cleaned = DocumentationFormatter.Cleanup(operation.Shape.GetDocumentation());
-        writer.WriteLine("/// <summary>");
-        if (cleaned.Length > 0)
-        {
-            DocumentationFormatter.WriteCommentBlock(writer, cleaned);
-        }
-
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"/// <param name=\"request\">Container for the necessary parameters to execute the {operation.Name} service method.</param>");
-
-        if (isAsync)
-        {
-            writer.WriteLine("/// <param name=\"cancellationToken\">");
-            writer.WriteLine("///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.");
-            writer.WriteLine("/// </param>");
-        }
-
-        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.ServiceName}.</returns>");
-
-        foreach (var error in operation.Errors)
-        {
-            WriteExceptionTag(writer, error);
-        }
-
-        writer.WriteLine($"/// <seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/{context.EndpointPrefix}-{context.ApiVersion}/{operation.Name}\">REST API Reference for {operation.Name} Operation</seealso>");
-    }
-
-    private void WriteExceptionTag(CodeWriter writer, OperationError error)
-    {
-        var exceptionName = ExceptionWriter.ToExceptionName(error.Id.Name);
-        writer.WriteLine($"/// <exception cref=\"{context.Namespace}.Model.{exceptionName}\">");
-
-        var cleaned = DocumentationFormatter.Cleanup(error.Shape.GetDocumentation());
-        if (cleaned.Length > 0)
-        {
-            DocumentationFormatter.WriteCommentBlock(writer, cleaned);
-        }
-
-        writer.WriteLine("/// </exception>");
-    }
 }

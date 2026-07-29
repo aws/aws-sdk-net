@@ -101,8 +101,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmTypes. 
         /// <para>
-        /// Use this parameter to specify whether you want the operation to return metric alarms
-        /// or composite alarms. If you omit this parameter, only metric alarms are returned.
+        /// Use this parameter to specify whether you want the operation to return metric alarms,
+        /// composite alarms, or log alarms. If you omit this parameter, only metric alarms are
+        /// returned.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

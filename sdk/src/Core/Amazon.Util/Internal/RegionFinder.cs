@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
 namespace Amazon.Util.Internal
@@ -95,10 +96,13 @@ namespace Amazon.Util.Internal
                 return fuzzyRegion;
             }
 
-            _logger.InfoFormat($"Unable to find fuzzy matched region in endpoint {endpoint}");
+            _logger.InfoFormat($"Unable to find fuzzy matched region in endpoint {endpoint}, falling back to FallbackRegionFactory logic.");
 
-            // Return the default region
-            return _root.RegionEndpoint;
+            // if no region can be found in the url and it is an aws endpoint, then it is a global endpoint
+            if (endpoint.EndsWith("amazonaws.com") || endpoint.EndsWith("amazon.com"))
+                return _root.RegionEndpoint;
+
+            return FallbackRegionFactory.GetRegionEndpoint(false) ?? _root.RegionEndpoint;
         }
 
         /// <summary>

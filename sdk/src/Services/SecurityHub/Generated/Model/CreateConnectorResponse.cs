@@ -1,0 +1,117 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the securityhub-2018-10-26.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.SecurityHub.Model
+{
+    /// <summary>
+    /// This is the response object from the CreateConnector operation.
+    /// </summary>
+    public partial class CreateConnectorResponse : AmazonWebServiceResponse
+    {
+        private string _connectorArn;
+        private string _connectorId;
+        private CspmConnectorStatus _connectorStatus;
+        private CspmEnablementStatus _enablementStatus;
+
+        /// <summary>
+        /// Gets and sets the property ConnectorArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ConnectorArn
+        {
+            get { return this._connectorArn; }
+            set { this._connectorArn = value; }
+        }
+
+        // Check to see if ConnectorArn property is set
+        internal bool IsSetConnectorArn()
+        {
+            return this._connectorArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorId. 
+        /// <para>
+        /// The unique identifier of the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ConnectorId
+        {
+            get { return this._connectorId; }
+            set { this._connectorId = value; }
+        }
+
+        // Check to see if ConnectorId property is set
+        internal bool IsSetConnectorId()
+        {
+            return this._connectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectorStatus. 
+        /// <para>
+        /// The connectivity status of the connector.
+        /// </para>
+        /// </summary>
+        public CspmConnectorStatus ConnectorStatus
+        {
+            get { return this._connectorStatus; }
+            set { this._connectorStatus = value; }
+        }
+
+        // Check to see if ConnectorStatus property is set
+        internal bool IsSetConnectorStatus()
+        {
+            return this._connectorStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnablementStatus. 
+        /// <para>
+        /// The enablement status of the connector.
+        /// </para>
+        /// </summary>
+        public CspmEnablementStatus EnablementStatus
+        {
+            get { return this._enablementStatus; }
+            set { this._enablementStatus = value; }
+        }
+
+        // Check to see if EnablementStatus property is set
+        internal bool IsSetEnablementStatus()
+        {
+            return this._enablementStatus != null;
+        }
+
+    }
+}

@@ -473,6 +473,60 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type CancellationStatus.
+    /// </summary>
+    public class CancellationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for CancellationStatus
+        /// </summary>
+        public static readonly CancellationStatus Failed = new CancellationStatus("Failed");
+        /// <summary>
+        /// Constant InProgress for CancellationStatus
+        /// </summary>
+        public static readonly CancellationStatus InProgress = new CancellationStatus("InProgress");
+        /// <summary>
+        /// Constant Successful for CancellationStatus
+        /// </summary>
+        public static readonly CancellationStatus Successful = new CancellationStatus("Successful");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CancellationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CancellationStatus FindValue(string value)
+        {
+            return FindValue<CancellationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CancellationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CapabilityDeletePropagationPolicy.
     /// </summary>
     public class CapabilityDeletePropagationPolicy : ConstantClass
@@ -756,6 +810,10 @@ namespace Amazon.EKS
         /// Constant MISCONFIGURATION for Category
         /// </summary>
         public static readonly Category MISCONFIGURATION = new Category("MISCONFIGURATION");
+        /// <summary>
+        /// Constant ROLLBACK_READINESS for Category
+        /// </summary>
+        public static readonly Category ROLLBACK_READINESS = new Category("ROLLBACK_READINESS");
         /// <summary>
         /// Constant UPGRADE_READINESS for Category
         /// </summary>
@@ -1160,6 +1218,60 @@ namespace Amazon.EKS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ConnectorConfigProvider(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ControlPlaneEgressModeType.
+    /// </summary>
+    public class ControlPlaneEgressModeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for ControlPlaneEgressModeType
+        /// </summary>
+        public static readonly ControlPlaneEgressModeType AWS_MANAGED = new ControlPlaneEgressModeType("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_ISOLATED for ControlPlaneEgressModeType
+        /// </summary>
+        public static readonly ControlPlaneEgressModeType CUSTOMER_ISOLATED = new ControlPlaneEgressModeType("CUSTOMER_ISOLATED");
+        /// <summary>
+        /// Constant CUSTOMER_ROUTED for ControlPlaneEgressModeType
+        /// </summary>
+        public static readonly ControlPlaneEgressModeType CUSTOMER_ROUTED = new ControlPlaneEgressModeType("CUSTOMER_ROUTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlPlaneEgressModeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlPlaneEgressModeType FindValue(string value)
+        {
+            return FindValue<ControlPlaneEgressModeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlPlaneEgressModeType(string value)
         {
             return FindValue(value);
         }
@@ -2485,6 +2597,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ConfigurationValues = new UpdateParamType("ConfigurationValues");
         /// <summary>
+        /// Constant ControlPlaneEgressMode for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ControlPlaneEgressMode = new UpdateParamType("ControlPlaneEgressMode");
+        /// <summary>
         /// Constant DeletionProtection for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType DeletionProtection = new UpdateParamType("DeletionProtection");
@@ -2793,6 +2909,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
         /// <summary>
+        /// Constant ControlPlaneEgressUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ControlPlaneEgressUpdate = new UpdateType("ControlPlaneEgressUpdate");
+        /// <summary>
         /// Constant ControlPlaneScalingConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType ControlPlaneScalingConfigUpdate = new UpdateType("ControlPlaneScalingConfigUpdate");
@@ -2824,6 +2944,10 @@ namespace Amazon.EKS
         /// Constant VendedLogsUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType VendedLogsUpdate = new UpdateType("VendedLogsUpdate");
+        /// <summary>
+        /// Constant VersionRollback for UpdateType
+        /// </summary>
+        public static readonly UpdateType VersionRollback = new UpdateType("VersionRollback");
         /// <summary>
         /// Constant VersionUpdate for UpdateType
         /// </summary>

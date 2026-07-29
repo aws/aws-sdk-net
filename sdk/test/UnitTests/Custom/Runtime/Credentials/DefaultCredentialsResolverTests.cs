@@ -343,6 +343,235 @@ namespace AWSSDK.UnitTests
 
         #endregion
 
+        #region Default Chain (no clientConfig.Profile) File Rotation Tests
+
+        // These tests exercise the OTHER path: the default credential chain (clientConfig == null), 
+        // where credentials are resolved via the generator chain and cached in _cachedCredentials. 
+
+        /// <summary>
+        /// Clears every environment variable the default credential chain inspects before it reaches
+        /// the profile generator, so these tests deterministically resolve from the file.
+        /// </summary>
+        private void ClearChainEnvironmentVariables()
+        {
+            Environment.SetEnvironmentVariable(AWS_PROFILE_ENVIRONMENT_VARIABLE, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.LEGACY_ENVIRONMENT_VARIABLE_SECRETKEY, null);
+            Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SESSION_TOKEN, null);
+
+            // Web-identity credentials are resolved by the chain ahead of the profile generator.
+            Environment.SetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.WebIdentityTokenFileEnvVariable, null);
+            Environment.SetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.RoleArnEnvVariable, null);
+            Environment.SetEnvironmentVariable(AssumeRoleWithWebIdentityCredentials.RoleSessionNameEnvVariable, null);
+        }
+
+        /// <summary>
+        /// Points the default credential chain at the fixture's shared credentials file by setting
+        /// <see cref="AWSConfigs.AWSProfilesLocation"/>.
+        /// The returned value is the previous setting, to be restored by the caller.
+        /// </summary>
+        private string RedirectDefaultChainToFixture(SharedCredentialsFileTestFixture fixture)
+        {
+            var previous = AWSConfigs.AWSProfilesLocation;
+            AWSConfigs.AWSProfilesLocation = fixture.CredentialsFilePath;
+            return previous;
+        }
+
+        /// <summary>
+        /// The core regression test. With no profile on the client config, the default chain resolves
+        /// the "default" profile from the shared credentials file and caches it. After the file is
+        /// rotated externally, the next resolution must return the new credentials rather than the
+        /// stale cached ones.
+        /// </summary>
+        [TestMethod]
+        public void DefaultChain_CredentialsFileRotated_ReturnsNewCredentials()
+        {
+            ClearChainEnvironmentVariables();
+
+            using (var fixture = new SharedCredentialsFileTestFixture(BasicProfileText("default", "AKID_V1", "SECRET_V1")))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                var previousLocation = RedirectDefaultChainToFixture(fixture);
+                try
+                {
+                    var original = resolver.ResolveIdentity(clientConfig: null);
+                    Assert.AreEqual<string>("AKID_V1", original.GetCredentials().AccessKey);
+
+                    fixture.UpdateCredentialsFile(BasicProfileText("default", "AKID_V2", "SECRET_V2"));
+
+                    var updated = resolver.ResolveIdentity(clientConfig: null);
+                    Assert.AreEqual<string>("AKID_V2", updated.GetCredentials().AccessKey,
+                        "Default chain should pick up the rotated credentials file mid-process.");
+                    Assert.AreNotSame(original, updated, "A new credentials object should be resolved after rotation.");
+                }
+                finally
+                {
+                    AWSConfigs.AWSProfilesLocation = previousLocation;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Same as the sync test but exercises the async resolution path.
+        /// </summary>
+        [TestMethod]
+        public async Task DefaultChain_CredentialsFileRotatedAsync_ReturnsNewCredentials()
+        {
+            ClearChainEnvironmentVariables();
+
+            using (var fixture = new SharedCredentialsFileTestFixture(BasicProfileText("default", "AKID_V1", "SECRET_V1")))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                var previousLocation = RedirectDefaultChainToFixture(fixture);
+                try
+                {
+                    var original = await resolver.ResolveIdentityAsync(clientConfig: null).ConfigureAwait(false);
+                    Assert.AreEqual<string>("AKID_V1", original.GetCredentials().AccessKey);
+
+                    fixture.UpdateCredentialsFile(BasicProfileText("default", "AKID_V2", "SECRET_V2"));
+
+                    var updated = await resolver.ResolveIdentityAsync(clientConfig: null).ConfigureAwait(false);
+                    Assert.AreEqual<string>("AKID_V2", updated.GetCredentials().AccessKey,
+                        "Default chain (async) should pick up the rotated credentials file mid-process.");
+                    Assert.AreNotSame(original, updated, "A new credentials object should be resolved after rotation.");
+                }
+                finally
+                {
+                    AWSConfigs.AWSProfilesLocation = previousLocation;
+                }
+            }
+        }
+
+        /// <summary>
+        /// When the file is NOT changed, the default chain must keep returning the same cached object.
+        /// This guards against the file-change check causing cache churn (re-resolution) on every call.
+        /// </summary>
+        [TestMethod]
+        public void DefaultChain_NoFileChange_ReturnsCachedInstance()
+        {
+            ClearChainEnvironmentVariables();
+
+            using (var fixture = new SharedCredentialsFileTestFixture(BasicProfileText("default", "AKID_STABLE", "SECRET_STABLE")))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                var previousLocation = RedirectDefaultChainToFixture(fixture);
+                try
+                {
+                    var first = resolver.ResolveIdentity(clientConfig: null);
+                    for (int i = 0; i < 50; i++)
+                    {
+                        var subsequent = resolver.ResolveIdentity(clientConfig: null);
+                        Assert.AreSame(first, subsequent,
+                            $"Iteration {i}: expected the same cached instance when the file has not changed.");
+                    }
+                }
+                finally
+                {
+                    AWSConfigs.AWSProfilesLocation = previousLocation;
+                }
+            }
+        }
+
+        /// <summary>
+        /// After a rotation triggers re-resolution, subsequent calls with no further file change must
+        /// return the newly cached object (i.e. tracking state is refreshed on re-resolution, so we
+        /// don't re-resolve forever).
+        /// </summary>
+        [TestMethod]
+        public void DefaultChain_FileRotatedThenStable_CachesAfterRefresh()
+        {
+            ClearChainEnvironmentVariables();
+
+            using (var fixture = new SharedCredentialsFileTestFixture(BasicProfileText("default", "AKID_V1", "SECRET_V1")))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                var previousLocation = RedirectDefaultChainToFixture(fixture);
+                try
+                {
+                    var v1 = resolver.ResolveIdentity(clientConfig: null);
+
+                    fixture.UpdateCredentialsFile(BasicProfileText("default", "AKID_V2", "SECRET_V2"));
+                    var v2 = resolver.ResolveIdentity(clientConfig: null);
+                    Assert.AreNotSame(v1, v2, "Should have re-resolved after the file changed.");
+                    Assert.AreEqual<string>("AKID_V2", v2.GetCredentials().AccessKey);
+
+                    var v2Again = resolver.ResolveIdentity(clientConfig: null);
+                    Assert.AreSame(v2, v2Again, "Should cache again after re-resolution when the file is stable.");
+                }
+                finally
+                {
+                    AWSConfigs.AWSProfilesLocation = previousLocation;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Multiple sequential rotations must each be detected on the next resolution.
+        /// </summary>
+        [TestMethod]
+        public void DefaultChain_MultipleSequentialRotations_AllDetected()
+        {
+            ClearChainEnvironmentVariables();
+
+            using (var fixture = new SharedCredentialsFileTestFixture(BasicProfileText("default", "AKID_V1", "SECRET_V1")))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                var previousLocation = RedirectDefaultChainToFixture(fixture);
+                try
+                {
+                    Assert.AreEqual<string>("AKID_V1", resolver.ResolveIdentity(clientConfig: null).GetCredentials().AccessKey);
+
+                    fixture.UpdateCredentialsFile(BasicProfileText("default", "AKID_V2", "SECRET_V2"));
+                    Assert.AreEqual<string>("AKID_V2", resolver.ResolveIdentity(clientConfig: null).GetCredentials().AccessKey);
+
+                    fixture.UpdateCredentialsFile(BasicProfileText("default", "AKID_V3", "SECRET_V3"));
+                    Assert.AreEqual<string>("AKID_V3", resolver.ResolveIdentity(clientConfig: null).GetCredentials().AccessKey);
+                }
+                finally
+                {
+                    AWSConfigs.AWSProfilesLocation = previousLocation;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Resolution ordering must be preserved: environment-variable credentials take precedence over
+        /// the file profile. Setting the access/secret env vars AFTER the file profile was cached must
+        /// cause the env credentials to be used (this is the existing env-change invalidation, which the
+        /// file-change tracking must not interfere with).
+        /// </summary>
+        [TestMethod]
+        public void DefaultChain_EnvironmentVariablesStillTakePrecedenceOverFile()
+        {
+            ClearChainEnvironmentVariables();
+
+            using (var fixture = new SharedCredentialsFileTestFixture(BasicProfileText("default", "AKID_FILE", "SECRET_FILE")))
+            using (var resolver = new DefaultAWSCredentialsIdentityResolver())
+            {
+                var previousLocation = RedirectDefaultChainToFixture(fixture);
+                try
+                {
+                    var fromFile = resolver.ResolveIdentity(clientConfig: null);
+                    Assert.IsFalse(fromFile is EnvironmentVariablesAWSCredentials);
+                    Assert.AreEqual<string>("AKID_FILE", fromFile.GetCredentials().AccessKey);
+
+                    Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_ACCESSKEY, "AKID_ENV");
+                    Environment.SetEnvironmentVariable(EnvironmentVariablesAWSCredentials.ENVIRONMENT_VARIABLE_SECRETKEY, "SECRET_ENV");
+
+                    var afterEnv = resolver.ResolveIdentity(clientConfig: null);
+                    Assert.IsTrue(afterEnv is EnvironmentVariablesAWSCredentials,
+                        "Environment variables set after caching should take precedence (env-change invalidation).");
+                }
+                finally
+                {
+                    AWSConfigs.AWSProfilesLocation = previousLocation;
+                }
+            }
+        }
+
+        #endregion
+
         #region Threading / Concurrency Tests for Profile Credential Cache
 
         /// <summary>

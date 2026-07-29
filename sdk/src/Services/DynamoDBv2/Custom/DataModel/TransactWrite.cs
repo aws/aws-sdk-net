@@ -21,6 +21,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 using ThirdParty.RuntimeBackports;
 
@@ -33,6 +34,11 @@ namespace Amazon.DynamoDBv2.DataModel
     /// </summary>
     public partial interface ITransactWrite
     {
+        /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        public List<ConsumedCapacity> ConsumedCapacity { get;}
     }
 
     /// <summary>
@@ -170,6 +176,9 @@ namespace Amazon.DynamoDBv2.DataModel
         internal TracerProvider TracerProvider { get; set; }
 
         internal abstract void PopulateObjects();
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
     }
 
     /// <summary>
@@ -192,7 +201,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // table.CreateTransactWrite() return the IDocumentTransactWrite interface.
             // But since we rely on the internal behavior of DocumentTransactWrite, we instatiate it via the constructor.
-            DocumentTransaction = new DocumentTransactWrite(table);
+            DocumentTransaction = new DocumentTransactWrite(table, _config.ReturnConsumedCapacity);
 
             TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
@@ -249,7 +258,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ? new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = conditionExpression,
-                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
                 }
                 : null;
 
@@ -279,7 +288,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentTransaction.AddItemToDelete(storage.Document, new TransactWriteItemOperationConfig
             {
                 ConditionalExpression = conditionExpression,
-                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
             });
         }
 
@@ -308,7 +317,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 ? new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = conditionExpression,
-                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
                 }
                 : null;
 
@@ -329,7 +338,7 @@ namespace Amazon.DynamoDBv2.DataModel
             DocumentTransaction.AddItemToConditionCheck(storage.Document, new TransactWriteItemOperationConfig
             {
                 ConditionalExpression = conditionExpression,
-                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
             });
         }
 
@@ -374,7 +383,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 new TransactWriteItemOperationConfig
                 {
                     ConditionalExpression = conditionExpression,
-                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                    ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
                 });
         }
 
@@ -396,6 +405,7 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 objectItem.PopulateObject(_context, _config);
             }
+            ConsumedCapacity = DocumentTransaction.ConsumedCapacity;
         }
 
         private bool ShouldUseVersioning()
@@ -449,7 +459,7 @@ namespace Amazon.DynamoDBv2.DataModel
             var operationConfig = new TransactWriteItemOperationConfig
             {
                 ConditionalExpression = conditionExpression,
-                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None
+                ReturnValuesOnConditionCheckFailure = DocumentModel.ReturnValuesOnConditionCheckFailure.None,
             };
 
             // If there are no attributes left, we need to use PutItem
@@ -484,6 +494,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="transactionPart">TransactWrite to add.</param>
         void AddTransactionPart(ITransactWrite transactionPart);
+
+        /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        public List<ConsumedCapacity> ConsumedCapacity { get; }
     }
 
     /// <summary>
@@ -495,6 +511,9 @@ namespace Amazon.DynamoDBv2.DataModel
         private readonly List<ITransactWrite> allTransactionParts;
 
         internal TracerProvider TracerProvider { get; set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
 
         /// <summary>
         /// Constructs a MultiTableTransactWrite object from a number of
@@ -531,6 +550,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 transaction.AddTransactionPart(abstractTransactWrite.DocumentTransaction);
             }
             transaction.ExecuteHelper();
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);
@@ -548,6 +568,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 transaction.AddTransactionPart(abstractTransactWrite.DocumentTransaction);
             }
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactWrite = transactionPart as TransactWrite ?? throw new InvalidOperationException(errMsg);

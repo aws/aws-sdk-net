@@ -46,6 +46,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEnableDetailedObservability())
+            {
+                context.Writer.WritePropertyName("EnableDetailedObservability");
+                context.Writer.WriteBooleanValue(requestObject.EnableDetailedObservability.Value);
+            }
+
             if(requestObject.IsSetEnableEnhancedMetrics())
             {
                 context.Writer.WritePropertyName("EnableEnhancedMetrics");

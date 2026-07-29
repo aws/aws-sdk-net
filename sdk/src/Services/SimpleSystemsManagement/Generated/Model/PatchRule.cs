@@ -50,9 +50,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// Patch Manager evaluates patch release dates using Coordinated Universal Time (UTC).
-        /// If the day represented by <c>7</c> is <c>2025-11-16</c>, patches released between
-        /// <c>2025-11-16T00:00:00Z</c> and <c>2025-11-16T23:59:59Z</c> will be included in the
-        /// approval.
+        /// If a patch is released at <c>2025-11-09T18:00:00Z</c> and <c>ApproveAfterDays</c>
+        /// is set to <c>7</c>, the patch will be approved after <c>2025-11-16T18:00:00Z</c>.
         /// </para>
         ///  
         /// <para>

@@ -48,9 +48,30 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property PredefinedMetricType. 
         /// <para>
-        /// The metric type. The <c>ALBRequestCountPerTarget</c> metric type applies only to Spot
-        /// Fleets and ECS services.
+        /// The metric type. The following are notes about specific metric types:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ALBRequestCountPerTarget</c> - This metric type applies only to Spot Fleets and
+        /// ECS services.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ECSServiceAverageCPUUtilizationHighResolution</c> - The high-resolution version
+        /// of <c>ECSServiceAverageCPUUtilization</c> that uses 20-second CloudWatch metrics.
+        /// Use this metric for target tracking scaling policies that evaluate metrics every 20
+        /// seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling
+        /// policy with this metric type.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ECSServiceAverageMemoryUtilizationHighResolution</c> - The high-resolution version
+        /// of <c>ECSServiceAverageMemoryUtilization</c> that uses 20-second CloudWatch metrics.
+        /// Use this metric for target tracking scaling policies that evaluate metrics every 20
+        /// seconds. You must enable high-resolution metrics in Amazon ECS before creating a scaling
+        /// policy with this metric type.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public MetricType PredefinedMetricType

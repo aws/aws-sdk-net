@@ -122,7 +122,10 @@ namespace Amazon.RDS.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = credentials.GetCredentials();
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? refreshing.GetCredentials(FifteenMinutes)
+                : credentials.GetCredentials();
             return GenerateAuthToken(immutableCredentials, region, hostname, port, dbUser);
         }
 
@@ -196,7 +199,10 @@ namespace Amazon.RDS.Util
             if (credentials == null)
                 throw new ArgumentNullException("credentials");
 
-            var immutableCredentials = await credentials.GetCredentialsAsync().ConfigureAwait(false);
+            // Force a refresh if the credentials would expire before the token does, so the token stays valid for its full lifetime.
+            var immutableCredentials = credentials is RefreshingAWSCredentials refreshing
+                ? await refreshing.GetCredentialsAsync(FifteenMinutes).ConfigureAwait(false)
+                : await credentials.GetCredentialsAsync().ConfigureAwait(false);
             return GenerateAuthToken(immutableCredentials, region, hostname, port, dbUser);
         }
 

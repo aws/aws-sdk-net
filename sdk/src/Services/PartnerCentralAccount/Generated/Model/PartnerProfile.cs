@@ -36,6 +36,7 @@ namespace Amazon.PartnerCentralAccount.Model
     {
         private string _description;
         private string _displayName;
+        private Headquarters _headquarters;
         private List<string> _industrySegments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<LocalizedContent> _localizedContents = AWSConfigs.InitializeCollections ? new List<LocalizedContent>() : null;
         private string _logoUrl;
@@ -80,6 +81,25 @@ namespace Amazon.PartnerCentralAccount.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Headquarters. 
+        /// <para>
+        /// The ISO 3166 country and subdivision codes for the partner's headquarters location.
+        /// If no headquarters location is set, this field is not included in the response.
+        /// </para>
+        /// </summary>
+        public Headquarters Headquarters
+        {
+            get { return this._headquarters; }
+            set { this._headquarters = value; }
+        }
+
+        // Check to see if Headquarters property is set
+        internal bool IsSetHeadquarters()
+        {
+            return this._headquarters != null;
         }
 
         /// <summary>

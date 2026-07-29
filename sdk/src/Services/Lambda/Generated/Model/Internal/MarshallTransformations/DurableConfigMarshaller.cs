@@ -52,6 +52,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.ExecutionTimeout.Value);
             }
 
+            if(requestObject.IsSetKMSKeyArn())
+            {
+                context.Writer.WritePropertyName("KMSKeyArn");
+                context.Writer.WriteStringValue(requestObject.KMSKeyArn);
+            }
+
             if(requestObject.IsSetRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("RetentionPeriodInDays");

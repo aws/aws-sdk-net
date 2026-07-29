@@ -63,6 +63,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetDatasetType())
+                request.Parameters.Add("datasetType", StringUtils.FromString(publicRequest.DatasetType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
@@ -73,6 +76,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetSourceType())
                 request.Parameters.Add("sourceType", StringUtils.FromString(publicRequest.SourceType));
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/datasets";
             request.UseQueryString = true;
             

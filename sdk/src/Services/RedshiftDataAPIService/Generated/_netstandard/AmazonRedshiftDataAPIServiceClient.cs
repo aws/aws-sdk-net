@@ -458,6 +458,10 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the DescribeStatement service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -699,6 +703,10 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the GetStatementResult service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -751,6 +759,10 @@ namespace Amazon.RedshiftDataAPIService
         /// </param>
         /// 
         /// <returns>The response from the GetStatementResultV2 service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ActiveWaitingRequestsExceededException">
+        /// The number of active requests with <c>WaitTimeSeconds</c> for the same SQL statement
+        /// exceeds the limit.
+        /// </exception>
         /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
         /// The Amazon Redshift Data API operation failed due to invalid input.
         /// </exception>
@@ -952,6 +964,62 @@ namespace Amazon.RedshiftDataAPIService
             options.ResponseUnmarshaller = ListSchemasResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListSchemasResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListSessions
+
+        internal virtual ListSessionsResponse ListSessions(ListSessionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSessionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the sessions that the caller created in the last 24 hours. By default, only
+        /// sessions with a status of <c>AVAILABLE</c> or <c>BUSY</c> are returned. You can filter
+        /// the results by session status, compute target (cluster or serverless workgroup), or
+        /// database. To retrieve the metadata for a single session, provide the <c>SessionId</c>
+        /// parameter. Use <c>NextToken</c> to page through the session list.
+        /// 
+        ///  
+        /// <para>
+        /// Returns only the sessions that the caller created. When identity-enhanced role sessions
+        /// are used, you must provide either the <c>ClusterIdentifier</c> or <c>WorkgroupName</c>
+        /// parameter to ensure that the AWS IAM Identity Center user can only access the Amazon
+        /// Redshift IAM Identity Center applications they are assigned. For more information,
+        /// see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/trustedidentitypropagation-overview.html">
+        /// Trusted identity propagation overview</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSessions service method, as returned by RedshiftDataAPIService.</returns>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.InternalServerException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ResourceNotFoundException">
+        /// The Amazon Redshift Data API operation failed due to a missing resource.
+        /// </exception>
+        /// <exception cref="Amazon.RedshiftDataAPIService.Model.ValidationException">
+        /// The Amazon Redshift Data API operation failed due to invalid input.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-data-2019-12-20/ListSessions">REST API Reference for ListSessions Operation</seealso>
+        public virtual Task<ListSessionsResponse> ListSessionsAsync(ListSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListSessionsResponse>(request, options, cancellationToken);
         }
         #endregion
         

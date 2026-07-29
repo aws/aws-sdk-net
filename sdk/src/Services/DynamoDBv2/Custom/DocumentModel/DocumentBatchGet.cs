@@ -554,7 +554,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 if (requestSet.Batch.ProjectionExpression is { IsSet: true })
                 {
                     keys.ProjectionExpression = requestSet.Batch.ProjectionExpression.ExpressionStatement;
-                    keys.ExpressionAttributeNames = requestSet.Batch.ProjectionExpression.ExpressionAttributeNames;
+                    if (requestSet.Batch.ProjectionExpression.ExpressionAttributeNames?.Count > 0)
+                        keys.ExpressionAttributeNames = requestSet.Batch.ProjectionExpression.ExpressionAttributeNames;
                 }
                 else
                 {

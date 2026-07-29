@@ -35,7 +35,27 @@ namespace Amazon.Odb.Model
     /// </summary>
     public partial class InitializeServiceRequest : AmazonOdbRequest
     {
+        private Access _autonomousDatabaseOciAwsSecretsManagerIntegration;
         private bool? _ociIdentityDomain;
+
+        /// <summary>
+        /// Gets and sets the property AutonomousDatabaseOciAwsSecretsManagerIntegration. 
+        /// <para>
+        /// Specifies whether to enable or disable the OCI service-account role for Amazon Web
+        /// Services Secrets Manager integration with Autonomous Database.
+        /// </para>
+        /// </summary>
+        public Access AutonomousDatabaseOciAwsSecretsManagerIntegration
+        {
+            get { return this._autonomousDatabaseOciAwsSecretsManagerIntegration; }
+            set { this._autonomousDatabaseOciAwsSecretsManagerIntegration = value; }
+        }
+
+        // Check to see if AutonomousDatabaseOciAwsSecretsManagerIntegration property is set
+        internal bool IsSetAutonomousDatabaseOciAwsSecretsManagerIntegration()
+        {
+            return this._autonomousDatabaseOciAwsSecretsManagerIntegration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OciIdentityDomain. 

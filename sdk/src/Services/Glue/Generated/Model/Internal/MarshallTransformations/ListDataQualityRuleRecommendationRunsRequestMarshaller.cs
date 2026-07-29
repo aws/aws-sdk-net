@@ -98,6 +98,20 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

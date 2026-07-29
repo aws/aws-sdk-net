@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private string _imageUri;
         private int? _instanceCount;
         private AIRecommendationInstanceType _instanceType;
+        private int? _minCpuMemoryRequiredInMb;
         private List<AIRecommendationDeploymentS3Channel> _s3 = AWSConfigs.InitializeCollections ? new List<AIRecommendationDeploymentS3Channel>() : null;
 
         /// <summary>
@@ -135,6 +136,28 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MinCpuMemoryRequiredInMb. 
+        /// <para>
+        /// The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the
+        /// recommendation as an Inference Component. This value maps to the base Inference Component's
+        /// <c>ComputeResourceRequirements$MinMemoryRequiredInMb</c> and is sized so that <c>CopyCountPerInstance</c>
+        /// copies co-place within the instance's allocatable host memory.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int? MinCpuMemoryRequiredInMb
+        {
+            get { return this._minCpuMemoryRequiredInMb; }
+            set { this._minCpuMemoryRequiredInMb = value; }
+        }
+
+        // Check to see if MinCpuMemoryRequiredInMb property is set
+        internal bool IsSetMinCpuMemoryRequiredInMb()
+        {
+            return this._minCpuMemoryRequiredInMb.HasValue; 
         }
 
         /// <summary>

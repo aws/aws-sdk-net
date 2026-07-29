@@ -62,6 +62,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.Throughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TotalFilesConverted", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalFilesConverted = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TotalNumberOfFilesReadWithCustomerError", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
@@ -72,6 +78,36 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.TotalNumberOfImportedFiles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalNumberOfImportedNonFhirFiles", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalNumberOfImportedNonFhirFiles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalNumberOfNonFhirFilesReadWithCustomerError", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalNumberOfNonFhirFilesReadWithCustomerError = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalNumberOfNonFhirResourcesImported", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalNumberOfNonFhirResourcesImported = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalNumberOfNonFhirResourcesScanned", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalNumberOfNonFhirResourcesScanned = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalNumberOfNonFhirResourcesWithCustomerError", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalNumberOfNonFhirResourcesWithCustomerError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfResourcesImported", targetDepth, ref reader))
@@ -98,10 +134,28 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.TotalNumberOfScannedFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TotalNumberOfScannedNonFhirFiles", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalNumberOfScannedNonFhirFiles = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalResourcesGenerated", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.TotalResourcesGenerated = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("TotalSizeOfScannedFilesInMB", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
                     unmarshalledObject.TotalSizeOfScannedFilesInMB = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TotalSizeOfScannedNonFhirFilesInMB", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.TotalSizeOfScannedNonFhirFilesInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

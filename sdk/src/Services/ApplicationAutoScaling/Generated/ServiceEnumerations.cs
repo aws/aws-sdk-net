@@ -245,9 +245,17 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ECSServiceAverageCPUUtilization = new MetricType("ECSServiceAverageCPUUtilization");
         /// <summary>
+        /// Constant ECSServiceAverageCPUUtilizationHighResolution for MetricType
+        /// </summary>
+        public static readonly MetricType ECSServiceAverageCPUUtilizationHighResolution = new MetricType("ECSServiceAverageCPUUtilizationHighResolution");
+        /// <summary>
         /// Constant ECSServiceAverageMemoryUtilization for MetricType
         /// </summary>
         public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
+        /// <summary>
+        /// Constant ECSServiceAverageMemoryUtilizationHighResolution for MetricType
+        /// </summary>
+        public static readonly MetricType ECSServiceAverageMemoryUtilizationHighResolution = new MetricType("ECSServiceAverageMemoryUtilizationHighResolution");
         /// <summary>
         /// Constant ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage for MetricType
         /// </summary>

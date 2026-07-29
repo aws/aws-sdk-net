@@ -65,7 +65,14 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetDatasetId())
                 throw new AmazonIoTSiteWiseException("Request object does not have required field DatasetId set");
             request.AddPathResource("{datasetId}", StringUtils.FromString(publicRequest.DatasetId));
+            
+            if (publicRequest.IsSetDatasetVersion())
+                request.Parameters.Add("datasetVersion", StringUtils.FromString(publicRequest.DatasetVersion));
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/datasets/{datasetId}";
+            request.UseQueryString = true;
             
             request.HostPrefix = $"api.";
 

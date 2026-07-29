@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVS.Model
 {
     /// <summary>
-    /// 
+    /// User does not have sufficient access to perform this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

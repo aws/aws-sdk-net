@@ -20,6 +20,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.DynamoDBv2.Model;
 using Amazon.Runtime.Telemetry.Tracing;
 using ThirdParty.RuntimeBackports;
 
@@ -38,6 +39,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// This is only populated after a call to Execute.
         /// </remarks>
         List<object> UntypedResults { get; }
+
+        /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        List<ConsumedCapacity> ConsumedCapacity { get;}
     }
 
     /// <summary>
@@ -107,6 +114,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <inheritdoc/>
         public List<object> UntypedResults { get; } = new();
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
     }
 
     /// <summary>
@@ -183,7 +193,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             // Table.CreateTransactGet() returns the IDocumentTransactGet interface.
             // But since we rely on the internal behavior of DocumentTransactGet, we instantiate it via the constructor.
-            DocumentTransaction = new DocumentTransactGet(table);
+            DocumentTransaction = new DocumentTransactGet(table, _config.ReturnConsumedCapacity);
 
             TracerProvider = context?.Client?.Config?.TelemetryProvider?.TracerProvider
                 ?? AWSConfigs.TelemetryProvider.TracerProvider;
@@ -211,6 +221,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 UntypedResults.Add(result);
                 Results.Add(result);
             }
+            ConsumedCapacity = DocumentTransaction.ConsumedCapacity;
         }
     }
 
@@ -225,6 +236,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="transactionPart">TransactGet to add.</param>
         public void AddTransactionPart(ITransactGet transactionPart);
+
+        /// <summary>
+        /// List of consumed capacity details.
+        /// Populated after Execute is called if ReturnConsumedCapacity was set in request.
+        /// </summary>
+        public List<ConsumedCapacity> ConsumedCapacity { get; }
     }
 
     /// <summary>
@@ -236,6 +253,9 @@ namespace Amazon.DynamoDBv2.DataModel
         private readonly List<ITransactGet> allTransactionParts;
 
         internal TracerProvider TracerProvider { get; set; }
+
+        /// <inheritdoc/>
+        public List<ConsumedCapacity> ConsumedCapacity { get; internal set; }
 
         /// <summary>
         /// Constructs a MultiTableTransactGet object from a number of
@@ -272,6 +292,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
             transaction.ExecuteHelper();
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);
@@ -289,6 +310,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 transaction.AddTransactionPart(abstractTransactGet.DocumentTransaction);
             }
             await transaction.ExecuteHelperAsync(cancellationToken).ConfigureAwait(false);
+            ConsumedCapacity = transaction.ConsumedCapacity;
             foreach (var transactionPart in allTransactionParts)
             {
                 var abstractTransactGet = transactionPart as TransactGet ?? throw new InvalidOperationException(errorMsg);

@@ -195,6 +195,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             }
         }
 
+        /// <summary>
+        /// Regression test for https://github.com/aws/aws-sdk-net/issues/4432
+        /// PutObject must succeed with a non-seekable zero-length stream.
+        /// </summary>
+        [Theory]
+        [MemberData(nameof(GetAlgorithmsToTest))]
+        public async Task TestPutObject_NonSeekableZeroLengthStream(CoreChecksumAlgorithm algorithm)
+        {
+            var key = $"non-seekable-zero-length-{algorithm}";
+            using (var stream = new NonSeekableStream())
+            {
+                await _client.PutObjectAsync(new PutObjectRequest
+                {
+                    BucketName = _bucketName,
+                    Key = key,
+                    InputStream = stream,
+                    ChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString()),
+                });
+            }
+
+            var getResponse = await _client.GetObjectAsync(new GetObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = key,
+                ChecksumMode = ChecksumMode.ENABLED
+            });
+            Assert.Equal(0, getResponse.ContentLength);
+            Assert.Equal(algorithm, getResponse.ResponseMetadata.ChecksumAlgorithm);
+        }
+
         [Theory]
         // When the user sets ResponseChecksumValidation to WHEN_SUPPORTED, and the user has set the requestValidationModeMember to ENABLED, assert that the response checksum is validated.
         [InlineData(ResponseChecksumValidation.WHEN_SUPPORTED, true, true)]

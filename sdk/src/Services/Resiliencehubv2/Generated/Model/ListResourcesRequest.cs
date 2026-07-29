@@ -36,8 +36,10 @@ namespace Amazon.Resiliencehubv2.Model
     public partial class ListResourcesRequest : AmazonResiliencehubv2Request
     {
         private string _awsRegion;
+        private bool? _billable;
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceArn;
         private string _serviceFunctionId;
 
@@ -58,6 +60,25 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetAwsRegion()
         {
             return this._awsRegion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Billable. 
+        /// <para>
+        /// Specifies whether to filter non-billable resources. When true (the default), the operation
+        /// returns only billable resources.
+        /// </para>
+        /// </summary>
+        public bool? Billable
+        {
+            get { return this._billable; }
+            set { this._billable = value; }
+        }
+
+        // Check to see if Billable property is set
+        internal bool IsSetBillable()
+        {
+            return this._billable.HasValue; 
         }
 
         /// <summary>
@@ -90,6 +111,30 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceTypes. 
+        /// <para>
+        /// The CloudFormation resource types to include in the response.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> ResourceTypes
+        {
+            get { return this._resourceTypes; }
+            set { this._resourceTypes = value; }
+        }
+
+        // Check to see if ResourceTypes property is set
+        internal bool IsSetResourceTypes()
+        {
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

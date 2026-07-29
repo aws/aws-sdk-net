@@ -74,10 +74,46 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomLogGroupPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("DataQualityRuleResults", targetDepth, ref reader))
+                {
+                    var unmarshaller = DataQualityRuleResultsOptionsUnmarshaller.Instance;
+                    unmarshalledObject.DataQualityRuleResults = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ObservationMode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ObservationMode = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ObservationResults", targetDepth, ref reader))
+                {
+                    var unmarshaller = ObservationResultsOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ObservationResults = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ObservationScope", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ObservationScope = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ProfilingResults", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProfilingResultsOptionsUnmarshaller.Instance;
+                    unmarshalledObject.ProfilingResults = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ResultsS3Prefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResultsS3Prefix = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RowLevelResults", targetDepth, ref reader))
+                {
+                    var unmarshaller = RowLevelResultsOptionsUnmarshaller.Instance;
+                    unmarshalledObject.RowLevelResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

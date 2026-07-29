@@ -306,6 +306,12 @@ namespace Amazon.ECS
         /// To find the <c>hookId</c> of the paused hook, call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>
         /// and inspect the <c>lifecycleHookDetails</c> field.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/continue-service-deployment.html">Continuing
+        /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueServiceDeployment service method.</param>
         /// 
@@ -331,8 +337,8 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
-        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
-        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// The service deploy ARN that you specified in the <c>ContinueServiceDeployment</c>
+        /// doesn't exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
         /// ARNs.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -364,6 +370,12 @@ namespace Amazon.ECS
         /// To find the <c>hookId</c> of the paused hook, call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeServiceDeployments.html">DescribeServiceDeployments</a>
         /// and inspect the <c>lifecycleHookDetails</c> field.
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/continue-service-deployment.html">Continuing
+        /// Amazon ECS service deployments</a> in the <i>Amazon Elastic Container Service Developer
+        /// Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueServiceDeployment service method.</param>
         /// <param name="cancellationToken">
@@ -392,8 +404,8 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
-        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
-        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// The service deploy ARN that you specified in the <c>ContinueServiceDeployment</c>
+        /// doesn't exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
         /// ARNs.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -7540,8 +7552,8 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
-        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
-        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// The service deploy ARN that you specified in the <c>ContinueServiceDeployment</c>
+        /// doesn't exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
         /// ARNs.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">
@@ -7613,8 +7625,8 @@ namespace Amazon.ECS
         /// These errors are usually caused by a server issue.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServiceDeploymentNotFoundException">
-        /// The service deploy ARN that you specified in the <c>StopServiceDeployment</c> doesn't
-        /// exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
+        /// The service deploy ARN that you specified in the <c>ContinueServiceDeployment</c>
+        /// doesn't exist. You can use <c>ListServiceDeployments</c> to retrieve the service deployment
         /// ARNs.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.UnsupportedFeatureException">

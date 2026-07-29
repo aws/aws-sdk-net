@@ -70,7 +70,11 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
     if (this.Config.ServiceModel.SignatureVersion != "v2")
     {
 #>
+#if !NETFRAMEWORK
+            request.ContentStream = Amazon.Util.AWSSDKUtils.WriteParametersToPooledStream(request);
+#else
             request.Content = Amazon.Util.AWSSDKUtils.GetRequestPayloadBytes(request);
+#endif
 <#
     }
 #>

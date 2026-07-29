@@ -22,6 +22,11 @@
 using System;
 using System.Net;
 
+// This warning is disabled because the SecurityProtocolType enum is marked as obsolete in .NET 8.0 and later,
+// but we still need to use it for compatibility with older .NET versions. For newer .NET versions
+// this code will do nothing and that is okay.
+#pragma warning disable SYSLIB0014
+
 namespace Amazon.Runtime.Internal
 {
     public interface IAmazonSecurityProtocolManager

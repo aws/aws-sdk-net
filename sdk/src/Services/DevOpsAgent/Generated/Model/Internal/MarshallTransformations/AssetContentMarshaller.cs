@@ -57,6 +57,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSourceUrl())
+            {
+                context.Writer.WritePropertyName("sourceUrl");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AssetSourceUrlContentMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceUrl, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetZip())
             {
                 context.Writer.WritePropertyName("zip");

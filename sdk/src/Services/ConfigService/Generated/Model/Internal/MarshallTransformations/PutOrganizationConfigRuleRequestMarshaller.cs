@@ -125,6 +125,22 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

@@ -34,8 +34,64 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class EvaluationFormMultiSelectQuestionOption
     {
+        private bool? _automaticFail;
+        private AutomaticFailConfiguration _automaticFailConfiguration;
+        private QuestionOptionPointsConfiguration _pointsConfiguration;
         private string _refId;
+        private int? _score;
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property AutomaticFail. 
+        /// <para>
+        /// The flag to mark the option as automatic fail. If an automatic fail answer is provided,
+        /// the overall evaluation gets a score of 0.
+        /// </para>
+        /// </summary>
+        public bool? AutomaticFail
+        {
+            get { return this._automaticFail; }
+            set { this._automaticFail = value; }
+        }
+
+        // Check to see if AutomaticFail property is set
+        internal bool IsSetAutomaticFail()
+        {
+            return this._automaticFail.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutomaticFailConfiguration.
+        /// </summary>
+        public AutomaticFailConfiguration AutomaticFailConfiguration
+        {
+            get { return this._automaticFailConfiguration; }
+            set { this._automaticFailConfiguration = value; }
+        }
+
+        // Check to see if AutomaticFailConfiguration property is set
+        internal bool IsSetAutomaticFailConfiguration()
+        {
+            return this._automaticFailConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PointsConfiguration. 
+        /// <para>
+        /// The points configuration for point-based scoring.
+        /// </para>
+        /// </summary>
+        public QuestionOptionPointsConfiguration PointsConfiguration
+        {
+            get { return this._pointsConfiguration; }
+            set { this._pointsConfiguration = value; }
+        }
+
+        // Check to see if PointsConfiguration property is set
+        internal bool IsSetPointsConfiguration()
+        {
+            return this._pointsConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RefId. 
@@ -54,6 +110,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetRefId()
         {
             return this._refId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Score. 
+        /// <para>
+        /// The score assigned to the answer option.
+        /// </para>
+        /// </summary>
+        public int? Score
+        {
+            get { return this._score; }
+            set { this._score = value; }
+        }
+
+        // Check to see if Score property is set
+        internal bool IsSetScore()
+        {
+            return this._score.HasValue; 
         }
 
         /// <summary>

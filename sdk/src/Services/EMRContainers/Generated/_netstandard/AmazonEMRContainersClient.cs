@@ -483,10 +483,10 @@ namespace Amazon.EMRContainers
 
         /// <summary>
         /// Creates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS.
-        /// You can create, describe, list and delete virtual clusters. They do not consume any
-        /// additional resource in your system. A single virtual cluster maps to a single Kubernetes
-        /// namespace. Given this relationship, you can model virtual clusters the same way you
-        /// model Kubernetes namespaces to meet your requirements.
+        /// You can create, update, describe, list and delete virtual clusters. They do not consume
+        /// any additional resource in your system. A single virtual cluster maps to a single
+        /// Kubernetes namespace. Given this relationship, you can model virtual clusters the
+        /// same way you model Kubernetes namespaces to meet your requirements.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualCluster service method.</param>
         /// <param name="cancellationToken">
@@ -600,6 +600,45 @@ namespace Amazon.EMRContainers
         }
         #endregion
         
+        #region  DeleteSecurityConfiguration
+
+        internal virtual DeleteSecurityConfigurationResponse DeleteSecurityConfiguration(DeleteSecurityConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteSecurityConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a security configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSecurityConfiguration service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/DeleteSecurityConfiguration">REST API Reference for DeleteSecurityConfiguration Operation</seealso>
+        public virtual Task<DeleteSecurityConfigurationResponse> DeleteSecurityConfigurationAsync(DeleteSecurityConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteSecurityConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSecurityConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteSecurityConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteVirtualCluster
 
         internal virtual DeleteVirtualClusterResponse DeleteVirtualCluster(DeleteVirtualClusterRequest request)
@@ -615,10 +654,10 @@ namespace Amazon.EMRContainers
 
         /// <summary>
         /// Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS.
-        /// You can create, describe, list and delete virtual clusters. They do not consume any
-        /// additional resource in your system. A single virtual cluster maps to a single Kubernetes
-        /// namespace. Given this relationship, you can model virtual clusters the same way you
-        /// model Kubernetes namespaces to meet your requirements.
+        /// You can create, update, describe, list and delete virtual clusters. They do not consume
+        /// any additional resource in your system. A single virtual cluster maps to a single
+        /// Kubernetes namespace. Given this relationship, you can model virtual clusters the
+        /// same way you model Kubernetes namespaces to meet your requirements.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualCluster service method.</param>
         /// <param name="cancellationToken">
@@ -836,10 +875,11 @@ namespace Amazon.EMRContainers
 
         /// <summary>
         /// Displays detailed information about a specified virtual cluster. Virtual cluster is
-        /// a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual
-        /// clusters. They do not consume any additional resource in your system. A single virtual
-        /// cluster maps to a single Kubernetes namespace. Given this relationship, you can model
-        /// virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
+        /// a managed entity on Amazon EMR on EKS. You can create, update, describe, list and
+        /// delete virtual clusters. They do not consume any additional resource in your system.
+        /// A single virtual cluster maps to a single Kubernetes namespace. Given this relationship,
+        /// you can model virtual clusters the same way you model Kubernetes namespaces to meet
+        /// your requirements.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVirtualCluster service method.</param>
         /// <param name="cancellationToken">
@@ -1135,10 +1175,10 @@ namespace Amazon.EMRContainers
 
         /// <summary>
         /// Lists information about the specified virtual cluster. Virtual cluster is a managed
-        /// entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters.
-        /// They do not consume any additional resource in your system. A single virtual cluster
-        /// maps to a single Kubernetes namespace. Given this relationship, you can model virtual
-        /// clusters the same way you model Kubernetes namespaces to meet your requirements.
+        /// entity on Amazon EMR on EKS. You can create, update, describe, list and delete virtual
+        /// clusters. They do not consume any additional resource in your system. A single virtual
+        /// cluster maps to a single Kubernetes namespace. Given this relationship, you can model
+        /// virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVirtualClusters service method.</param>
         /// <param name="cancellationToken">
@@ -1295,6 +1335,52 @@ namespace Amazon.EMRContainers
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateVirtualCluster
+
+        internal virtual UpdateVirtualClusterResponse UpdateVirtualCluster(UpdateVirtualClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateVirtualClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS.
+        /// You can create, update, describe, list and delete virtual clusters. They do not consume
+        /// any additional resource in your system. A single virtual cluster maps to a single
+        /// Kubernetes namespace. Given this relationship, you can model virtual clusters the
+        /// same way you model Kubernetes namespaces to meet your requirements.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateVirtualCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateVirtualCluster service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/UpdateVirtualCluster">REST API Reference for UpdateVirtualCluster Operation</seealso>
+        public virtual Task<UpdateVirtualClusterResponse> UpdateVirtualClusterAsync(UpdateVirtualClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateVirtualClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateVirtualClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateVirtualClusterResponse>(request, options, cancellationToken);
         }
         #endregion
         

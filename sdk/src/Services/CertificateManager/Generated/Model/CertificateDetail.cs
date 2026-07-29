@@ -35,8 +35,11 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class CertificateDetail
     {
+        private string _acmeAccountId;
+        private string _acmeEndpointArn;
         private string _certificateArn;
         private string _certificateAuthorityArn;
+        private CertificateKeyPairOrigin _certificateKeyPairOrigin;
         private DateTime? _createdAt;
         private string _domainName;
         private List<DomainValidation> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<DomainValidation>() : null;
@@ -62,6 +65,44 @@ namespace Amazon.CertificateManager.Model
         private string _subject;
         private List<string> _subjectAlternativeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CertificateType _type;
+
+        /// <summary>
+        /// Gets and sets the property AcmeAccountId. 
+        /// <para>
+        /// The ACME account identifier associated with the certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string AcmeAccountId
+        {
+            get { return this._acmeAccountId; }
+            set { this._acmeAccountId = value; }
+        }
+
+        // Check to see if AcmeAccountId property is set
+        internal bool IsSetAcmeAccountId()
+        {
+            return this._acmeAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AcmeEndpointArn. 
+        /// <para>
+        /// The ARN of the ACME endpoint used to issue the certificate.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string AcmeEndpointArn
+        {
+            get { return this._acmeEndpointArn; }
+            set { this._acmeEndpointArn = value; }
+        }
+
+        // Check to see if AcmeEndpointArn property is set
+        internal bool IsSetAcmeEndpointArn()
+        {
+            return this._acmeEndpointArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
@@ -107,6 +148,24 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetCertificateAuthorityArn()
         {
             return this._certificateAuthorityArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateKeyPairOrigin. 
+        /// <para>
+        /// The origin of the certificate's key pair.
+        /// </para>
+        /// </summary>
+        public CertificateKeyPairOrigin CertificateKeyPairOrigin
+        {
+            get { return this._certificateKeyPairOrigin; }
+            set { this._certificateKeyPairOrigin = value; }
+        }
+
+        // Check to see if CertificateKeyPairOrigin property is set
+        internal bool IsSetCertificateKeyPairOrigin()
+        {
+            return this._certificateKeyPairOrigin != null;
         }
 
         /// <summary>

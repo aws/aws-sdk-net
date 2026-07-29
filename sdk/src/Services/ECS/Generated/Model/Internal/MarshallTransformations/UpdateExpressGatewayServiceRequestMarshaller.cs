@@ -138,6 +138,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ServiceArn);
             }
 
+            if(publicRequest.IsSetTaskDefinitionArn())
+            {
+                context.Writer.WritePropertyName("taskDefinitionArn");
+                context.Writer.WriteStringValue(publicRequest.TaskDefinitionArn);
+            }
+
             if(publicRequest.IsSetTaskRoleArn())
             {
                 context.Writer.WritePropertyName("taskRoleArn");

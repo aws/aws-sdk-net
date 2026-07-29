@@ -501,6 +501,18 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         public static readonly LogType ACCESS_LOGS = new LogType("ACCESS_LOGS");
         /// <summary>
+        /// Constant ALB_ACCESS_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ALB_ACCESS_LOGS = new LogType("ALB_ACCESS_LOGS");
+        /// <summary>
+        /// Constant ALB_CONNECTION_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ALB_CONNECTION_LOGS = new LogType("ALB_CONNECTION_LOGS");
+        /// <summary>
+        /// Constant ALB_HEALTH_CHECK_LOGS for LogType
+        /// </summary>
+        public static readonly LogType ALB_HEALTH_CHECK_LOGS = new LogType("ALB_HEALTH_CHECK_LOGS");
+        /// <summary>
         /// Constant APPLICATION_LOGS for LogType
         /// </summary>
         public static readonly LogType APPLICATION_LOGS = new LogType("APPLICATION_LOGS");
@@ -508,6 +520,10 @@ namespace Amazon.ObservabilityAdmin
         /// Constant CONNECTION_LOGS for LogType
         /// </summary>
         public static readonly LogType CONNECTION_LOGS = new LogType("CONNECTION_LOGS");
+        /// <summary>
+        /// Constant S3_SERVER_ACCESS_LOGS for LogType
+        /// </summary>
+        public static readonly LogType S3_SERVER_ACCESS_LOGS = new LogType("S3_SERVER_ACCESS_LOGS");
         /// <summary>
         /// Constant SECURITY_FINDING_LOGS for LogType
         /// </summary>
@@ -741,6 +757,10 @@ namespace Amazon.ObservabilityAdmin
         /// </summary>
         public static readonly ResourceType AWSBedrockAgentCoreWorkloadIdentity = new ResourceType("AWS::BedrockAgentCore::WorkloadIdentity");
         /// <summary>
+        /// Constant AWSBedrockKnowledgeBase for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSBedrockKnowledgeBase = new ResourceType("AWS::Bedrock::KnowledgeBase");
+        /// <summary>
         /// Constant AWSCloudFrontDistribution for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudFrontDistribution = new ResourceType("AWS::CloudFront::Distribution");
@@ -780,6 +800,10 @@ namespace Amazon.ObservabilityAdmin
         /// Constant AWSRoute53ResolverResolverEndpoint for ResourceType
         /// </summary>
         public static readonly ResourceType AWSRoute53ResolverResolverEndpoint = new ResourceType("AWS::Route53Resolver::ResolverEndpoint");
+        /// <summary>
+        /// Constant AWSS3Bucket for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSS3Bucket = new ResourceType("AWS::S3::Bucket");
         /// <summary>
         /// Constant AWSSecurityHubHub for ResourceType
         /// </summary>
@@ -876,6 +900,56 @@ namespace Amazon.ObservabilityAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RuleHealth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SignalType.
+    /// </summary>
+    public class SignalType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LOG for SignalType
+        /// </summary>
+        public static readonly SignalType LOG = new SignalType("LOG");
+        /// <summary>
+        /// Constant METRIC for SignalType
+        /// </summary>
+        public static readonly SignalType METRIC = new SignalType("METRIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SignalType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SignalType FindValue(string value)
+        {
+            return FindValue<SignalType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SignalType(string value)
         {
             return FindValue(value);
         }

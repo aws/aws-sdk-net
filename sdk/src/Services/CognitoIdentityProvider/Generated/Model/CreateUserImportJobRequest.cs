@@ -61,6 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private string _cloudWatchLogsRoleArn;
         private string _jobName;
+        private PasswordHashingAlgorithmType _passwordHashingAlgorithm;
         private string _userPoolId;
 
         /// <summary>
@@ -100,6 +101,30 @@ namespace Amazon.CognitoIdentityProvider.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PasswordHashingAlgorithm. 
+        /// <para>
+        /// The password hashing algorithm used to generate the hashes in the CSV file for this
+        /// import job.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <c>BCRYPT</c> | <c>SCRYPT</c> | <c>ARGON2ID</c> | <c>PBKDF2_SHA256</c>
+        /// 
+        /// </para>
+        /// </summary>
+        public PasswordHashingAlgorithmType PasswordHashingAlgorithm
+        {
+            get { return this._passwordHashingAlgorithm; }
+            set { this._passwordHashingAlgorithm = value; }
+        }
+
+        // Check to see if PasswordHashingAlgorithm property is set
+        internal bool IsSetPasswordHashingAlgorithm()
+        {
+            return this._passwordHashingAlgorithm != null;
         }
 
         /// <summary>

@@ -1163,7 +1163,8 @@
         "API_GATEWAY",
         "COGNITO_USER_POOL",
         "APP_RUNNER_SERVICE",
-        "VERIFIED_ACCESS_INSTANCE"
+        "VERIFIED_ACCESS_INSTANCE",
+        "AGENTCORE_GATEWAY"
       ]
     },
     "AssociationConfig":{
@@ -1248,6 +1249,7 @@
         "SearchString":{"shape":"SearchString"},
         "FieldToMatch":{"shape":"FieldToMatch"},
         "TextTransformations":{"shape":"TextTransformations"},
+        "PreParseTextTransformations":{"shape":"PreParseTextTransformations"},
         "PositionalConstraint":{"shape":"PositionalConstraint"}
       }
     },
@@ -3632,7 +3634,8 @@
         "MONETIZATION_CONFIG",
         "WALLET_ADDRESS",
         "PRICE_AMOUNT",
-        "PAYMENT_NETWORK"
+        "PAYMENT_NETWORK",
+        "PRE_PARSE_TEXT_TRANSFORMATION"
       ]
     },
     "ParameterExceptionParameter":{
@@ -3740,6 +3743,35 @@
         "CONTAINS",
         "CONTAINS_WORD"
       ]
+    },
+    "PreParseTextTransformation":{
+      "type":"structure",
+      "required":[
+        "Priority",
+        "Type"
+      ],
+      "members":{
+        "Priority":{"shape":"PreParseTextTransformationPriority"},
+        "Type":{"shape":"PreParseTextTransformationType"}
+      }
+    },
+    "PreParseTextTransformationPriority":{
+      "type":"integer",
+      "min":0
+    },
+    "PreParseTextTransformationType":{
+      "type":"string",
+      "enum":[
+        "NONE",
+        "URL_DECODE",
+        "URL_DECODE_UNI",
+        "COMBINE_DUPLICATE_QUERY_ARGS_BY_COMMA",
+        "REPLACE_SEMICOLONS_WITH_AMPERSANDS"
+      ]
+    },
+    "PreParseTextTransformations":{
+      "type":"list",
+      "member":{"shape":"PreParseTextTransformation"}
     },
     "Price":{
       "type":"structure",
@@ -4036,7 +4068,8 @@
       "members":{
         "RegexString":{"shape":"RegexPatternString"},
         "FieldToMatch":{"shape":"FieldToMatch"},
-        "TextTransformations":{"shape":"TextTransformations"}
+        "TextTransformations":{"shape":"TextTransformations"},
+        "PreParseTextTransformations":{"shape":"PreParseTextTransformations"}
       }
     },
     "RegexPatternSet":{
@@ -4059,7 +4092,8 @@
       "members":{
         "ARN":{"shape":"ResourceArn"},
         "FieldToMatch":{"shape":"FieldToMatch"},
-        "TextTransformations":{"shape":"TextTransformations"}
+        "TextTransformations":{"shape":"TextTransformations"},
+        "PreParseTextTransformations":{"shape":"PreParseTextTransformations"}
       }
     },
     "RegexPatternSetSummaries":{
@@ -4170,7 +4204,8 @@
         "COGNITO_USER_POOL",
         "APP_RUNNER_SERVICE",
         "VERIFIED_ACCESS_INSTANCE",
-        "AMPLIFY"
+        "AMPLIFY",
+        "AGENTCORE_GATEWAY"
       ]
     },
     "ResponseCode":{"type":"integer"},
@@ -4602,7 +4637,8 @@
         "FieldToMatch":{"shape":"FieldToMatch"},
         "ComparisonOperator":{"shape":"ComparisonOperator"},
         "Size":{"shape":"Size"},
-        "TextTransformations":{"shape":"TextTransformations"}
+        "TextTransformations":{"shape":"TextTransformations"},
+        "PreParseTextTransformations":{"shape":"PreParseTextTransformations"}
       }
     },
     "SizeInspectionLimit":{
@@ -4656,6 +4692,7 @@
       "members":{
         "FieldToMatch":{"shape":"FieldToMatch"},
         "TextTransformations":{"shape":"TextTransformations"},
+        "PreParseTextTransformations":{"shape":"PreParseTextTransformations"},
         "SensitivityLevel":{"shape":"SensitivityLevel"}
       }
     },
@@ -4789,7 +4826,17 @@
         "REPLACE_NULLS",
         "BASE64_DECODE_EXT",
         "URL_DECODE_UNI",
-        "UTF8_TO_UNICODE"
+        "UTF8_TO_UNICODE",
+        "REMOVE_WHITESPACE",
+        "TRIM",
+        "TRIM_LEFT",
+        "TRIM_RIGHT",
+        "REMOVE_COMMENTS_CHAR",
+        "UPPERCASE",
+        "CMD_LINE_WIN",
+        "CMD_LINE_UNIX",
+        "JS_DECODE_EXT",
+        "SHA256"
       ]
     },
     "TextTransformations":{
@@ -5266,7 +5313,8 @@
       ],
       "members":{
         "FieldToMatch":{"shape":"FieldToMatch"},
-        "TextTransformations":{"shape":"TextTransformations"}
+        "TextTransformations":{"shape":"TextTransformations"},
+        "PreParseTextTransformations":{"shape":"PreParseTextTransformations"}
       }
     }
   }

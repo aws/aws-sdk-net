@@ -25,6 +25,172 @@ namespace Amazon.Billing
 {
 
     /// <summary>
+    /// Constants used for properties of type ApplicationType.
+    /// </summary>
+    public class ApplicationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AFTER_DISCOUNTS for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType AFTER_DISCOUNTS = new ApplicationType("AFTER_DISCOUNTS");
+        /// <summary>
+        /// Constant BEFORE_CROSS_SERVICE_DISCOUNTS for ApplicationType
+        /// </summary>
+        public static readonly ApplicationType BEFORE_CROSS_SERVICE_DISCOUNTS = new ApplicationType("BEFORE_CROSS_SERVICE_DISCOUNTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationType FindValue(string value)
+        {
+            return FindValue<ApplicationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillingFeature.
+    /// </summary>
+    public class BillingFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BILLING_ALERTS for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature BILLING_ALERTS = new BillingFeature("BILLING_ALERTS");
+        /// <summary>
+        /// Constant CREDIT_LEVEL_SHARING for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature CREDIT_LEVEL_SHARING = new BillingFeature("CREDIT_LEVEL_SHARING");
+        /// <summary>
+        /// Constant CREDIT_PREFERENCE_OPTIONS for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature CREDIT_PREFERENCE_OPTIONS = new BillingFeature("CREDIT_PREFERENCE_OPTIONS");
+        /// <summary>
+        /// Constant CREDIT_SHARING for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature CREDIT_SHARING = new BillingFeature("CREDIT_SHARING");
+        /// <summary>
+        /// Constant CREDIT_SHARING_HISTORY for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature CREDIT_SHARING_HISTORY = new BillingFeature("CREDIT_SHARING_HISTORY");
+        /// <summary>
+        /// Constant RI_SHARING for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature RI_SHARING = new BillingFeature("RI_SHARING");
+        /// <summary>
+        /// Constant RI_SHARING_HISTORY for BillingFeature
+        /// </summary>
+        public static readonly BillingFeature RI_SHARING_HISTORY = new BillingFeature("RI_SHARING_HISTORY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingFeature FindValue(string value)
+        {
+            return FindValue<BillingFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BillingFeatureFilterName.
+    /// </summary>
+    public class BillingFeatureFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PREFERENCE_KEY for BillingFeatureFilterName
+        /// </summary>
+        public static readonly BillingFeatureFilterName PREFERENCE_KEY = new BillingFeatureFilterName("PREFERENCE_KEY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BillingFeatureFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BillingFeatureFilterName FindValue(string value)
+        {
+            return FindValue<BillingFeatureFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BillingFeatureFilterName(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BillingViewStatus.
     /// </summary>
     public class BillingViewStatus : ConstantClass
@@ -219,6 +385,114 @@ namespace Amazon.Billing
 
 
     /// <summary>
+    /// Constants used for properties of type CreditSharingType.
+    /// </summary>
+    public class CreditSharingType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COST_CATEGORY_RULE for CreditSharingType
+        /// </summary>
+        public static readonly CreditSharingType COST_CATEGORY_RULE = new CreditSharingType("COST_CATEGORY_RULE");
+        /// <summary>
+        /// Constant CUSTOM for CreditSharingType
+        /// </summary>
+        public static readonly CreditSharingType CUSTOM = new CreditSharingType("CUSTOM");
+        /// <summary>
+        /// Constant DEFAULT for CreditSharingType
+        /// </summary>
+        public static readonly CreditSharingType DEFAULT = new CreditSharingType("DEFAULT");
+        /// <summary>
+        /// Constant DISABLED for CreditSharingType
+        /// </summary>
+        public static readonly CreditSharingType DISABLED = new CreditSharingType("DISABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CreditSharingType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CreditSharingType FindValue(string value)
+        {
+            return FindValue<CreditSharingType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CreditSharingType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CreditStatus.
+    /// </summary>
+    public class CreditStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for CreditStatus
+        /// </summary>
+        public static readonly CreditStatus DISABLED = new CreditStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for CreditStatus
+        /// </summary>
+        public static readonly CreditStatus ENABLED = new CreditStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CreditStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CreditStatus FindValue(string value)
+        {
+            return FindValue<CreditStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CreditStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Dimension.
     /// </summary>
     public class Dimension : ConstantClass
@@ -258,6 +532,56 @@ namespace Amazon.Billing
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Dimension(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreferenceValue.
+    /// </summary>
+    public class PreferenceValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for PreferenceValue
+        /// </summary>
+        public static readonly PreferenceValue DISABLED = new PreferenceValue("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for PreferenceValue
+        /// </summary>
+        public static readonly PreferenceValue ENABLED = new PreferenceValue("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreferenceValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreferenceValue FindValue(string value)
+        {
+            return FindValue<PreferenceValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreferenceValue(string value)
         {
             return FindValue(value);
         }
