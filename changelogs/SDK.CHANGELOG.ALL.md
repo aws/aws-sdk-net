@@ -1,3 +1,17 @@
+### 4.0.299.0 (2026-07-29 18:16 UTC)
+* DatabaseMigrationService (4.0.100.8)
+	* Updated documentation for various DMS Schema Conversion operations
+* EC2 (4.0.107.0)
+	* This release adds support for policy-based routing on AWS Transit Gateway, enabling you to route traffic based on 5-tuple matching (source IP, destination IP, source port, destination port, and protocol) using new policy table entry APIs that direct matching traffic to a target route table.
+* GameLiftStreams (4.0.104.0)
+	* Adds ListApplicationShaderCaches API to retrieve shader cache metadata for applications and adds stream URLs, which give end users temporary, unauthenticated access to a stream session in their browser. Includes CreateStreamUrl, GetStreamUrl, ListStreamUrls, and RevokeStreamUrl operations.
+* Glue (4.0.102.0)
+	* Adding filtering, partitioning, and VPC support to AWS Glue REST API connector
+* IoTSiteWise (4.0.101.0)
+	* We have released a new set of APIs in support of a major new feature within AWS IoT SiteWise called Scenario Discover. Please see user guide about the feature and the API guide in public documentation for new APIs.
+* WAFV2 (4.0.101.0)
+	* AWS WAF now supports pre-parse text transformations, letting you normalize raw query strings before parsing, available on rule statements that use SingleQueryArgument or AllQueryArguments as the FieldToMatch. AWS WAF also added 10 new text transformations, including ModSecurity v3 parity options.
+
 ### 4.0.298.0 (2026-07-28 18:18 UTC)
 * BedrockAgentCoreControl (4.0.105.0)
 	* AgentCore Identity now supports Private Key JWT client authentication for OAuth 2.0 credential providers. Agents can authenticate to identity provider token endpoints with a JWT client assertion signed by a customer-managed AWS KMS asymmetric key, eliminating the need for client secrets.
