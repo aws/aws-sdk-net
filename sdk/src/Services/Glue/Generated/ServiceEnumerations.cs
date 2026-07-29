@@ -3445,6 +3445,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type FilterMode.
+    /// </summary>
+    public class FilterMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILTER_STRING for FilterMode
+        /// </summary>
+        public static readonly FilterMode FILTER_STRING = new FilterMode("FILTER_STRING");
+        /// <summary>
+        /// Constant QUERY_PARAMS for FilterMode
+        /// </summary>
+        public static readonly FilterMode QUERY_PARAMS = new FilterMode("QUERY_PARAMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterMode FindValue(string value)
+        {
+            return FindValue<FilterMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FilterOperation.
     /// </summary>
     public class FilterOperation : ConstantClass

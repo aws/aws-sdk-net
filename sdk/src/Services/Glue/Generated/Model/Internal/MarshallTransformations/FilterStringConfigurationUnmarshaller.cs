@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SourceConfiguration Object
+    /// Response Unmarshaller for FilterStringConfiguration Object
     /// </summary>  
-    public class SourceConfigurationUnmarshaller : IJsonUnmarshaller<SourceConfiguration, JsonUnmarshallerContext>
+    public class FilterStringConfigurationUnmarshaller : IJsonUnmarshaller<FilterStringConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SourceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public FilterStringConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SourceConfiguration unmarshalledObject = new SourceConfiguration();
+            FilterStringConfiguration unmarshalledObject = new FilterStringConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FilterConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = FilterConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.FilterConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("PaginationConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = PaginationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.PaginationConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RequestMethod", targetDepth, ref reader))
+                if (context.TestExpression("QueryParameterName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestMethod = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.QueryParameterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RequestParameters", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<ConnectorProperty, ConnectorPropertyUnmarshaller>(ConnectorPropertyUnmarshaller.Instance);
-                    unmarshalledObject.RequestParameters = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RequestPath", targetDepth, ref reader))
+                if (context.TestExpression("QuoteCharacter", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RequestPath = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.QuoteCharacter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ResponseConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("QuoteStringValues", targetDepth, ref reader))
                 {
-                    var unmarshaller = ResponseConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ResponseConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.QuoteStringValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +79,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static SourceConfigurationUnmarshaller _instance = new SourceConfigurationUnmarshaller();        
+        private static FilterStringConfigurationUnmarshaller _instance = new FilterStringConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SourceConfigurationUnmarshaller Instance
+        public static FilterStringConfigurationUnmarshaller Instance
         {
             get
             {
