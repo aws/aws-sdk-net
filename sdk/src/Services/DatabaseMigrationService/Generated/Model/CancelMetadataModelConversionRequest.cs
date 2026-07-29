@@ -32,6 +32,13 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the CancelMetadataModelConversion operation.
     /// Cancels a single metadata model conversion operation that was started with <c>StartMetadataModelConversion</c>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:CancelMetadataModelConversion</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class CancelMetadataModelConversionRequest : AmazonDatabaseMigrationServiceRequest
     {

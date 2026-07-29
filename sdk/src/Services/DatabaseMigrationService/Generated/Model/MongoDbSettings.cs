@@ -165,12 +165,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExtractDocId. 
         /// <para>
-        ///  Specifies the document ID. Use this setting when <c>NestingLevel</c> is set to <c>"none"</c>.
-        /// 
+        /// Specifies whether the document ID is added to the target table. Use this setting when
+        /// <c>NestingLevel</c> is set to <c>"none"</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Default value is <c>"false"</c>. 
+        /// Set <c>ExtractDocId</c> to <c>"true"</c> when using <a href="https://www.mongodb.com/docs/manual/reference/method/Session.startTransaction/#mongodb-method-Session.startTransaction">multi-document
+        /// transactions</a> with CDC. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value is <c>"false"</c>.
         /// </para>
         /// </summary>
         public string ExtractDocId

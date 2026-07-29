@@ -37,7 +37,15 @@ namespace Amazon.DatabaseMigrationService.Model
         private SchemaConversionRequest _request;
 
         /// <summary>
-        /// Gets and sets the property Request.
+        /// Gets and sets the property Request. 
+        /// <para>
+        /// The metadata model conversion request.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// DMS never populates the <c>ExportSqlDetails</c> field for this operation.
+        /// </para>
+        ///  </note>
         /// </summary>
         public SchemaConversionRequest Request
         {

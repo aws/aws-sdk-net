@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Provides information about a metadata model assessment exported to SQL.
+    /// The Amazon S3 location of the ZIP archive that contains the exported data definition
+    /// language (DDL) scripts.
     /// </summary>
     public partial class ExportSqlDetails
     {
@@ -40,7 +41,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ObjectURL. 
         /// <para>
-        /// The URL for the object containing the exported metadata model assessment.
+        /// The URL of the Amazon S3 object that contains the ZIP archive with exported DDL scripts.
         /// </para>
         /// </summary>
         public string ObjectURL
@@ -58,7 +59,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property S3ObjectKey. 
         /// <para>
-        /// The Amazon S3 object key for the object containing the exported metadata model assessment.
+        /// The Amazon S3 URI of the object that contains the ZIP archive with exported DDL scripts.
         /// </para>
         /// </summary>
         public string S3ObjectKey

@@ -30,8 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The properties of metadata model in JSON format. This object is a Union. Only one
-    /// member of this object can be specified or returned.
+    /// The properties of the metadata model.
     /// </summary>
     public partial class MetadataModelProperties
     {
@@ -40,7 +39,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property StatementProperties. 
         /// <para>
-        /// The properties of the statement.
+        /// The properties of the SQL statement.
         /// </para>
         /// </summary>
         public StatementProperties StatementProperties

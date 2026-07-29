@@ -59,8 +59,21 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SelectionRules. 
         /// <para>
-        /// The JSON string representing metadata model location.
+        /// A JSON string that identifies this metadata model in the metadata tree. For the selection
+        /// rule format, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-selection-rules.html">Selection
+        /// rules in DMS Schema Conversion</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// Usage:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can pass this value as the <c>SelectionRules</c> parameter to any operation that
+        /// accepts selection rules, such as <c>DescribeMetadataModel</c>, <c>StartMetadataModelConversion</c>,
+        /// and others.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string SelectionRules
         {

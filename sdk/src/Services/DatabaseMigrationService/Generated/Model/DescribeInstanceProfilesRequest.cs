@@ -32,6 +32,13 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeInstanceProfiles operation.
     /// Returns a paginated list of instance profiles for your account in the current region.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:ListInstanceProfiles</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeInstanceProfilesRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -42,13 +49,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to the instance profiles described in the form of key-value pairs.
+        /// The filters to apply to the instance profiles.
         /// </para>
         ///  
         /// <para>
-        /// Valid filter names and values: instance-profile-identifier, instance profile arn or
-        /// name
+        /// The following filter names are supported:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>instance-profile-identifier</c> – The instance profile name or ARN.
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

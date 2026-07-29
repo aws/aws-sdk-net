@@ -223,11 +223,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TransformationRules. 
         /// <para>
-        /// The settings in JSON format for migration rules. Migration rules make it possible
-        /// for you to change the object names according to the rules that you specify. For example,
-        /// you can change an object name to lowercase or uppercase, add or remove a prefix or
-        /// suffix, or rename objects.
+        /// The transformation rules for the migration project in JSON format. Transformation
+        /// rules let you customize how DMS Schema Conversion converts your source database objects,
+        /// including renaming, adding prefixes or suffixes, and changing data types. For the
+        /// transformation rule format and examples, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/sc-transformation-rules.html">Transformation
+        /// rules in DMS Schema Conversion</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Homogeneous data migrations do not support transformation rules.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string TransformationRules
         {

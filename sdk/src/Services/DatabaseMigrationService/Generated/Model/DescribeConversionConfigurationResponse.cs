@@ -40,7 +40,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ConversionConfiguration. 
         /// <para>
-        /// The configuration parameters for the schema conversion project.
+        /// A JSON string that contains the schema conversion settings for the migration project.
+        /// For the format and available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/schema-conversion-settings.html">Specifying
+        /// schema conversion settings for migration projects</a>.
         /// </para>
         /// </summary>
         public string ConversionConfiguration

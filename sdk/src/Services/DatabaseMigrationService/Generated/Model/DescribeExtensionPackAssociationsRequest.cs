@@ -31,9 +31,15 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeExtensionPackAssociations operation.
-    /// Returns a paginated list of extension pack associations for the specified migration
-    /// project. An extension pack is an add-on module that emulates functions present in
-    /// a source database that are required when converting objects to the target database.
+    /// Returns a paginated list of extension pack installation requests for a migration project,
+    /// initiated by <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartExtensionPackAssociation.html">StartExtensionPackAssociation</a>.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Required permissions:</b> <c>dms:ListExtensionPacks</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsdatabasemigrationservice.html">Actions,
+    /// resources, and condition keys for Database Migration Service</a>.
+    /// </para>
     /// </summary>
     public partial class DescribeExtensionPackAssociationsRequest : AmazonDatabaseMigrationServiceRequest
     {
@@ -45,9 +51,22 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters applied to the extension pack associations described in the form of key-value
-        /// pairs.
+        /// The filters to apply to the extension pack installation requests.
         /// </para>
+        ///  
+        /// <para>
+        /// The following filter names are supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>request-id</c> – The request identifier.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>status</c> – The request status. Valid values: <c>RECEIVED</c>, <c>IN_PROGRESS</c>,
+        /// <c>SUCCESS</c>, <c>FAILED</c>.
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -116,7 +135,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MigrationProjectIdentifier. 
         /// <para>
-        /// The name or Amazon Resource Name (ARN) for the migration project.
+        /// The migration project name or Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=255)]

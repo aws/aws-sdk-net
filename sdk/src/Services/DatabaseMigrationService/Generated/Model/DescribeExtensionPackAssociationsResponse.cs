@@ -67,8 +67,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Requests. 
         /// <para>
-        /// A paginated list of extension pack associations for the specified migration project.
+        /// A paginated list of extension pack installation requests.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// DMS never populates the <c>ExportSqlDetails</c> field for this operation.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
