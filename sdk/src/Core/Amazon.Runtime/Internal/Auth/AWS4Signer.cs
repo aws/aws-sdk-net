@@ -774,7 +774,7 @@ namespace Amazon.Runtime.Internal.Auth
                 out _);
         }
 
-        private static string CanonicalizeRequestHelper(Uri endpoint,
+        internal static string CanonicalizeRequestHelper(Uri endpoint,
                                                     string resourcePath,
                                                     string httpMethod,
                                                     IDictionary<string, string> sortedHeaders,

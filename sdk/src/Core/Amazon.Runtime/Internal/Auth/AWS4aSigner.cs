@@ -189,21 +189,22 @@ namespace Amazon.Runtime.Internal.Auth
             var bodyHash = SetRequestBodyHash(request, SignPayload, bodySha, ChunkedUploadWrapperStream.V4A_SIGNATURE_LENGTH);
             var sortedHeaders = SortAndPruneHeaders(request.Headers);
 
-            var canonicalRequest = CanonicalizeRequest(request.Endpoint,
-                                                       request.ResourcePath,
-                                                       request.HttpMethod,
-                                                       sortedHeaders,
-                                                       canonicalParameters,
-                                                       bodyHash,
-                                                       request.PathResources,
-                                                       request.UseDoubleEncoding);
+            var canonicalRequest = CanonicalizeRequestHelper(request.Endpoint,
+                                                             request.ResourcePath,
+                                                             request.HttpMethod,
+                                                             sortedHeaders,
+                                                             canonicalParameters,
+                                                             bodyHash,
+                                                             request.PathResources,
+                                                             request.UseDoubleEncoding,
+                                                             out var signedHeaderNames);
             metrics?.AddProperty(Metric.CanonicalRequest, canonicalRequest);
             request.SignatureVersion = SignatureVersion.SigV4a;
             return ComputeSignature(credentials,
                                     request.DeterminedSigningRegion,
                                     signedAt,
                                     serviceSigningName,
-                                    CanonicalizeHeaderNames(sortedHeaders),
+                                    signedHeaderNames,
                                     canonicalRequest,
                                     metrics);
         }
