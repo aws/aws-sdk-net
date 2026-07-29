@@ -64,8 +64,47 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters associated with the transit gateway policy table.
+        /// One or more filters. The possible values are:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>policy-rule-number</c> - The rule number for the transit gateway policy table
+        /// entry.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>target-route-table-id</c> - The ID of the target route table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>policy-rule.source-ip</c> - The source CIDR block for the policy rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>policy-rule.destination-ip</c> - The destination CIDR block for the policy rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>policy-rule.source-port</c> - The source port or port range for the policy rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>policy-rule.destination-port</c> - The destination port or port range for the
+        /// policy rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>policy-rule.protocol</c> - The protocol for the policy rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>policy-rule.meta-data.key</c> - The metadata key for the policy rule.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>policy-rule.meta-data.value</c> - The metadata value for the policy rule.
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

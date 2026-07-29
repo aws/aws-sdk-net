@@ -30,39 +30,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a transit gateway policy table entry
+    /// Container for the parameters to the DeleteTransitGatewayPolicyTableEntry operation.
+    /// Deletes the specified transit gateway policy table entry.
     /// </summary>
-    public partial class TransitGatewayPolicyTableEntry
+    public partial class DeleteTransitGatewayPolicyTableEntryRequest : AmazonEC2Request
     {
-        private TransitGatewayPolicyRule _policyRule;
+        private bool? _dryRun;
         private string _policyRuleNumber;
-        private TransitGatewayPolicyTableEntryState _state;
-        private string _targetRouteTableId;
+        private string _transitGatewayPolicyTableId;
 
         /// <summary>
-        /// Gets and sets the property PolicyRule. 
+        /// Gets and sets the property DryRun. 
         /// <para>
-        /// The policy rule associated with the transit gateway policy table.
+        /// Checks whether you have the required permissions for the action, without actually
+        /// making the request, and provides an error response. If you have the required permissions,
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
-        public TransitGatewayPolicyRule PolicyRule
+        public bool? DryRun
         {
-            get { return this._policyRule; }
-            set { this._policyRule = value; }
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
         }
 
-        // Check to see if PolicyRule property is set
-        internal bool IsSetPolicyRule()
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
         {
-            return this._policyRule != null;
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property PolicyRuleNumber. 
         /// <para>
-        /// The rule number for the transit gateway policy table entry.
+        /// The rule number of the policy table entry to delete.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PolicyRuleNumber
         {
             get { return this._policyRuleNumber; }
@@ -76,39 +79,22 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State. 
+        /// Gets and sets the property TransitGatewayPolicyTableId. 
         /// <para>
-        /// The state of the transit gateway policy table entry.
+        /// The ID of the transit gateway policy table.
         /// </para>
         /// </summary>
-        public TransitGatewayPolicyTableEntryState State
+        [AWSProperty(Required=true)]
+        public string TransitGatewayPolicyTableId
         {
-            get { return this._state; }
-            set { this._state = value; }
+            get { return this._transitGatewayPolicyTableId; }
+            set { this._transitGatewayPolicyTableId = value; }
         }
 
-        // Check to see if State property is set
-        internal bool IsSetState()
+        // Check to see if TransitGatewayPolicyTableId property is set
+        internal bool IsSetTransitGatewayPolicyTableId()
         {
-            return this._state != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TargetRouteTableId. 
-        /// <para>
-        /// The ID of the target route table.
-        /// </para>
-        /// </summary>
-        public string TargetRouteTableId
-        {
-            get { return this._targetRouteTableId; }
-            set { this._targetRouteTableId = value; }
-        }
-
-        // Check to see if TargetRouteTableId property is set
-        internal bool IsSetTargetRouteTableId()
-        {
-            return this._targetRouteTableId != null;
+            return this._transitGatewayPolicyTableId != null;
         }
 
     }

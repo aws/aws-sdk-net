@@ -33,9 +33,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetTransitGatewayPolicyTableEntries operation
+    /// Response Unmarshaller for CreateTransitGatewayPolicyTableEntry operation
     /// </summary>  
-    public class GetTransitGatewayPolicyTableEntriesResponseUnmarshaller : EC2ResponseUnmarshaller
+    public class CreateTransitGatewayPolicyTableEntryResponseUnmarshaller : EC2ResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
-            GetTransitGatewayPolicyTableEntriesResponse response = new GetTransitGatewayPolicyTableEntriesResponse();
+            CreateTransitGatewayPolicyTableEntryResponse response = new CreateTransitGatewayPolicyTableEntryResponse();
 
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
@@ -56,21 +56,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 if (context.IsStartElement || context.IsAttribute)
                 {
 
-                    if (context.TestExpression("nextToken", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        response.NextToken = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("transitGatewayPolicyTableEntries/item", targetDepth))
+                    if (context.TestExpression("transitGatewayPolicyTableEntry", targetDepth))
                     {
                         var unmarshaller = TransitGatewayPolicyTableEntryUnmarshaller.Instance;
-                        if (response.TransitGatewayPolicyTableEntries == null)
-                        {
-                            response.TransitGatewayPolicyTableEntries = new List<TransitGatewayPolicyTableEntry>();
-                        }
-                        var item = unmarshaller.Unmarshall(context);
-                        response.TransitGatewayPolicyTableEntries.Add(item);
+                        response.TransitGatewayPolicyTableEntry = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 } 
@@ -91,9 +80,9 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             return new AmazonEC2Exception(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
         }
-        private static GetTransitGatewayPolicyTableEntriesResponseUnmarshaller _instance = new GetTransitGatewayPolicyTableEntriesResponseUnmarshaller();        
+        private static CreateTransitGatewayPolicyTableEntryResponseUnmarshaller _instance = new CreateTransitGatewayPolicyTableEntryResponseUnmarshaller();        
 
-        internal static GetTransitGatewayPolicyTableEntriesResponseUnmarshaller GetInstance()
+        internal static CreateTransitGatewayPolicyTableEntryResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -101,7 +90,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetTransitGatewayPolicyTableEntriesResponseUnmarshaller Instance
+        public static CreateTransitGatewayPolicyTableEntryResponseUnmarshaller Instance
         {
             get
             {

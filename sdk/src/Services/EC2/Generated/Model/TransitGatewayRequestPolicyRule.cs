@@ -30,13 +30,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes a rule associated with a transit gateway policy.
+    /// The matching criteria for a transit gateway policy table entry.
     /// </summary>
-    public partial class TransitGatewayPolicyRule
+    public partial class TransitGatewayRequestPolicyRule
     {
         private string _destinationCidrBlock;
         private string _destinationPortRange;
-        private TransitGatewayPolicyRuleMetaData _metaData;
+        private TransitGatewayRequestPolicyRuleMetaData _metaData;
         private string _protocol;
         private string _sourceCidrBlock;
         private string _sourcePortRange;
@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationCidrBlock. 
         /// <para>
-        /// The destination CIDR block for the transit gateway policy rule.
+        /// The destination CIDR block for the policy rule.
         /// </para>
         /// </summary>
         public string DestinationCidrBlock
@@ -62,7 +62,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationPortRange. 
         /// <para>
-        /// The destination port or port range for the transit gateway policy rule.
+        /// The destination port or port range for the policy rule. You can specify a port range
+        /// only when <c>Protocol</c> is <c>6</c> (TCP) or <c>17</c> (UDP); for all other protocols,
+        /// this value must be <c>*</c>.
         /// </para>
         /// </summary>
         public string DestinationPortRange
@@ -80,10 +82,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MetaData. 
         /// <para>
-        /// The meta data tags used for the transit gateway policy rule.
+        /// The metadata key-value pair for the policy rule.
         /// </para>
         /// </summary>
-        public TransitGatewayPolicyRuleMetaData MetaData
+        public TransitGatewayRequestPolicyRuleMetaData MetaData
         {
             get { return this._metaData; }
             set { this._metaData = value; }
@@ -98,7 +100,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol used by the transit gateway policy rule.
+        /// The protocol for the policy rule. Valid values are <c>1</c> (ICMP), <c>6</c> (TCP),
+        /// <c>17</c> (UDP), <c>47</c> (GRE), or <c>*</c> for all protocols.
         /// </para>
         /// </summary>
         public string Protocol
@@ -116,7 +119,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceCidrBlock. 
         /// <para>
-        /// The source CIDR block for the transit gateway policy rule.
+        /// The source CIDR block for the policy rule.
         /// </para>
         /// </summary>
         public string SourceCidrBlock
@@ -134,7 +137,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourcePortRange. 
         /// <para>
-        /// The source port or port range for the transit gateway policy rule.
+        /// The source port or port range for the policy rule. You can specify a port range only
+        /// when <c>Protocol</c> is <c>6</c> (TCP) or <c>17</c> (UDP); for all other protocols,
+        /// this value must be <c>*</c>.
         /// </para>
         /// </summary>
         public string SourcePortRange

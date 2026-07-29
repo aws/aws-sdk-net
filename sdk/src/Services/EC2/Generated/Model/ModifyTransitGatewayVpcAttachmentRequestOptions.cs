@@ -80,7 +80,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Support. 
         /// <para>
-        /// Enable or disable IPv6 support. The default is <c>enable</c>.
+        /// Specifies whether IPv6 support is enabled for the attachment. When enabled, the transit
+        /// gateway network interface receives an IPv6 address. When you enable route propagation,
+        /// IPv6 VPC CIDRs propagate to the transit gateway route tables. When disabled, the network
+        /// interface does not receive an IPv6 address, and IPv6 routes do not propagate. The
+        /// setting does not filter IPv6 traffic.
         /// </para>
         /// </summary>
         public Ipv6SupportValue Ipv6Support
