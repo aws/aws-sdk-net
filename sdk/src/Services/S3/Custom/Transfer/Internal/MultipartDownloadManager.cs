@@ -866,7 +866,7 @@ namespace Amazon.S3.Transfer.Internal
 
                 var partProbeResponse = await _s3Client.GetObjectAsync(partProbeRequest, cancellationToken).ConfigureAwait(false);
 
-                if (partProbeResponse != null && partProbeResponse.ContentLength == 0)
+                if (partProbeResponse != null && partProbeResponse.ContentLength == 0 && partProbeResponse.ContentRange == null)
                 {
                     // Confirmed empty. This response has no ContentRange, so the caller's ContentRange == null
                     // branch treats it as a single empty part and completes with a 0-byte file.
