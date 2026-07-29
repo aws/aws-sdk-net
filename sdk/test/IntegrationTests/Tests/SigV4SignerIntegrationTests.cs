@@ -271,6 +271,40 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         /// <summary>
+        /// The presign counterpart of <see cref="Sign_S3_EncodedSlashInKey_CanonicalizesLikeRealSlash"/>. The
+        /// presign path (query signing + URL assembly) is separate code from header signing, so it is exercised
+        /// independently: a presigned URL the facade produces for the encoded-slash wire path ("/a%2Fb") must be
+        /// accepted by S3 and return the object under key "a/b".
+        /// </summary>
+        [Fact]
+        [Trait("Category", "SigV4Signer")]
+        public async Task Presign_S3_EncodedSlashInKey_CanonicalizesLikeRealSlash()
+        {
+            await WithS3ObjectAsync("a/b", async (uri, expectedBody) =>
+            {
+                var encodedSlashUri = new Uri(uri.GetLeftPart(UriPartial.Authority) + "/a%2Fb");
+
+                var signingRequest = new AWSSigningRequest
+                {
+                    HttpMethod = HttpMethod.Get,
+                    RequestUri = encodedSlashUri,
+                };
+
+                var result = await AWSSigV4Signer.PresignAsync(signingRequest, S3SigningParameters(), TimeSpan.FromSeconds(60));
+
+                using (var response = await HttpClient.GetAsync(result.Uri))
+                {
+                    var body = await response.Content.ReadAsStringAsync();
+                    Assert.True(response.StatusCode == HttpStatusCode.OK,
+                        $"S3 rejected a presigned URL for an encoded-slash wire path (/a%2Fb). The presign path " +
+                        $"must canonicalize \"%2F\" to \"/\" (canonical \"/a/b\") like header signing does. " +
+                        $"S3 returned {(int)response.StatusCode}: {body}");
+                    Assert.Equal(expectedBody, body);
+                }
+            });
+        }
+
+        /// <summary>
         /// Creates a temporary S3 bucket with a single object under <paramref name="key"/>, invokes
         /// <paramref name="body"/> with the object's request URI (encoded the way the S3 client encodes the
         /// key) and the expected object content, then deletes the object and bucket. The request URI is

@@ -465,6 +465,22 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
+        public void Sign_NonS3_EncodedSlash_DiffersFromRealSlash()
+        {
+            // The mirror of the S3 case, and the guard that decoding is S3-ONLY. A non-S3 service (execute-api)
+            // does NOT decode the wire path — it canonicalizes the encoded form, so "%2F" (double-encoded to
+            // "%252F") and a real "/" (a segment boundary) are different resources and MUST sign differently.
+            // A regression that decoded the path for every service would pass the S3 test but break this one.
+            var p = BaseParameters();
+            p.Service = "execute-api";
+            var encodedSlash = AWSSigV4Signer.Sign(GetRequest("https://host.us-east-1.amazonaws.com/a%2Fb"), p);
+            var realSlash = AWSSigV4Signer.Sign(GetRequest("https://host.us-east-1.amazonaws.com/a/b"), p);
+
+            Assert.AreNotEqual(realSlash.Headers[HeaderKeys.AuthorizationHeader], encodedSlash.Headers[HeaderKeys.AuthorizationHeader],
+                "A non-S3 service does not decode %2F, so an encoded slash and a real slash must sign differently.");
+        }
+
+        [TestMethod]
         public void Sign_AnonymousCredentials_Throws()
         {
             // AnonymousAWSCredentials.GetCredentials() returns null; the facade must fail with a clear
