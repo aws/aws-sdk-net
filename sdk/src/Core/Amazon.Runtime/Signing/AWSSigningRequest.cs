@@ -34,6 +34,11 @@ namespace Amazon.Runtime.Signing
         /// <summary>
         /// The full request URI, including any query string.
         /// </summary>
+        /// <remarks>
+        /// If an S3 object key contains a '+', encode it as "%2B" in the path. S3 treats a raw '+' in the path
+        /// as a space, so — for example — the key <c>beach+sunset.jpg</c> must be requested as
+        /// <c>/beach%2Bsunset.jpg</c>; a raw '+' signs a different key and S3 rejects the signature.
+        /// </remarks>
         public Uri RequestUri { get; set; }
 
         /// <summary>
