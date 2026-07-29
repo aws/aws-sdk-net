@@ -37,9 +37,9 @@ namespace AWSSDK.UnitTests.Signing
     /// fixture sigv4_test_cases.json (embedded resource). <see cref="Facade_MatchesKnownAnswerVector"/> asserts
     /// the facade reproduces each scenario's expectedSignature (header signing), and
     /// <see cref="Presign_MatchesKnownAnswerVector"/> asserts its expectedPresignSignature (query signing).
-    /// The fixture values are corroborated by the real-SDK oracles in reference/ (JS @smithy primary, botocore
-    /// secondary) and by the live-STS integration tests, so a systematic canonicalization / string-to-sign /
-    /// signing-key defect cannot pass unnoticed.
+    /// The fixture values are externally-computed known-answer vectors, and the live-STS integration tests
+    /// exercise the same signing paths, so a systematic canonicalization / string-to-sign / signing-key
+    /// defect cannot pass unnoticed.
     /// </summary>
     [TestClass]
     [TestCategory("Core")]
@@ -64,8 +64,7 @@ namespace AWSSDK.UnitTests.Signing
             public override string ToString() => Name;
         }
 
-        // The credentials/region/service/time come from the same shared JSON fixture that the Python
-        // reference oracle uses, so the two cannot drift.
+        // The credentials/region/service/time come from the shared JSON fixture.
         private static string AccessKey;
         private static string SecretKey;
         private static string Region;
@@ -192,11 +191,10 @@ namespace AWSSDK.UnitTests.Signing
         [DynamicData(nameof(PresignableScenarios))]
         public void Presign_MatchesKnownAnswerVector(string scenarioName)
         {
-            // Presign is checked against expectedPresignSignature, a .NET-authored known-answer value that the
-            // real-SDK oracles (JS @smithy primary, botocore secondary) independently corroborate. This is not
-            // a hand-built internal-signer comparison: reimplementing the presign steps in the test and calling
-            // the same AWS4PreSignedUrlSigner would be circular, so a shared bug could pass. The known-answer
-            // value is the anchor a facade-only presign bug would fail against.
+            // Presign is checked against expectedPresignSignature, an externally-computed known-answer value.
+            // This is not a hand-built internal-signer comparison: reimplementing the presign steps in the test
+            // and calling the same AWS4PreSignedUrlSigner would be circular, so a shared bug could pass. The
+            // known-answer value is the anchor a facade-only presign bug would fail against.
             var scenario = Get(scenarioName);
             Assert.IsNotNull(scenario.ExpectedPresignSignature,
                 $"Scenario '{scenario.Name}' is missing expectedPresignSignature.");

@@ -217,6 +217,60 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         }
 
         /// <summary>
+        /// Pins how S3 canonicalizes an encoded slash ("%2F") in the wire path. The object key is literally
+        /// "a/b"; a caller who percent-encodes the '/' addresses it as the wire path "/a%2Fb". S3 decodes
+        /// "%2F" to '/' before recomputing the canonical path it signs (its own CanonicalRequest for this
+        /// request is "/a/b"), so the facade must canonicalize the encoded slash the same way for the
+        /// signature to validate.
+        /// <para>
+        /// A signer that signed "/a%2Fb" verbatim (zero encode passes, treating the encoded slash as a
+        /// literal preserved within one segment) produces a canonical path S3 rejects with
+        /// SignatureDoesNotMatch. This is the one case that distinguishes "sign the encoded wire path
+        /// verbatim" from "canonicalize the wire path the way the service does" — every other special
+        /// character (space, '+', '=', unicode) signs identically under both. Verified against live S3:
+        /// this returns 200 only when the facade canonicalizes "%2F" like a real slash.
+        /// </para>
+        /// <para>
+        /// Most meaningful on modern TFMs: net8 sends "%2F" on the wire verbatim (RawUrl "/a%2Fb"), so S3
+        /// does the decoding. On net472 the client stack may itself decode "%2F" to '/' before sending, in
+        /// which case S3 receives "/a/b" directly; the request still succeeds once the facade signs "/a/b".
+        /// </para>
+        /// </summary>
+        [Fact]
+        [Trait("Category", "SigV4Signer")]
+        public async Task Sign_S3_EncodedSlashInKey_CanonicalizesLikeRealSlash()
+        {
+            await WithS3ObjectAsync("a/b", async (uri, expectedBody) =>
+            {
+                // uri addresses the object as the S3 client would ("/a/b"). Rebuild it with the slash
+                // percent-encoded so this exercises the "%2F" wire form specifically.
+                var encodedSlashUri = new Uri(uri.GetLeftPart(UriPartial.Authority) + "/a%2Fb");
+
+                var signingRequest = new AWSSigningRequest
+                {
+                    HttpMethod = HttpMethod.Get,
+                    RequestUri = encodedSlashUri,
+                };
+
+                var result = await AWSSigV4Signer.SignAsync(signingRequest, S3SigningParameters());
+
+                var message = new HttpRequestMessage(HttpMethod.Get, encodedSlashUri);
+                foreach (var header in result.Headers)
+                    message.Headers.TryAddWithoutValidation(header.Key, header.Value);
+
+                using (var response = await HttpClient.SendAsync(message))
+                {
+                    var body = await response.Content.ReadAsStringAsync();
+                    Assert.True(response.StatusCode == HttpStatusCode.OK,
+                        $"S3 rejected an encoded-slash wire path (/a%2Fb). S3 canonicalizes \"%2F\" to \"/\" " +
+                        $"before signing (its canonical path is \"/a/b\"), so the facade must too rather than " +
+                        $"signing the encoded slash verbatim. S3 returned {(int)response.StatusCode}: {body}");
+                    Assert.Equal(expectedBody, body);
+                }
+            });
+        }
+
+        /// <summary>
         /// Creates a temporary S3 bucket with a single object under <paramref name="key"/>, invokes
         /// <paramref name="body"/> with the object's request URI (encoded the way the S3 client encodes the
         /// key) and the expected object content, then deletes the object and bucket. The request URI is

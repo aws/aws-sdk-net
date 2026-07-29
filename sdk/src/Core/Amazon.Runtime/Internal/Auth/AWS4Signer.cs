@@ -226,34 +226,6 @@ namespace Amazon.Runtime.Internal.Auth
                                              string awsSecretAccessKey,
                                              DateTime signedAt)
         {
-            return SignRequestInternal(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey, signedAt, pathAlreadyEncoded: false);
-        }
-
-        /// <summary>
-        /// Same as <see cref="SignRequest(IRequest, IClientConfig, RequestMetrics, string, string, DateTime)"/> but
-        /// treats <see cref="IRequest.ResourcePath"/> as the already-encoded wire path and signs the canonical
-        /// path verbatim (no additional URL-encode pass). This is used by the standalone SigV4 signer for S3,
-        /// which must sign the encoded path byte-for-byte. Not for general client use: the normal SDK pipeline
-        /// supplies a decoded ResourcePath and relies on the encode pass.
-        /// </summary>
-        internal AWS4SigningResult SignRequestPreEncodedPath(IRequest request,
-                                             IClientConfig clientConfig,
-                                             RequestMetrics metrics,
-                                             string awsAccessKeyId,
-                                             string awsSecretAccessKey,
-                                             DateTime signedAt)
-        {
-            return SignRequestInternal(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey, signedAt, pathAlreadyEncoded: true);
-        }
-
-        private AWS4SigningResult SignRequestInternal(IRequest request,
-                                             IClientConfig clientConfig,
-                                             RequestMetrics metrics,
-                                             string awsAccessKeyId,
-                                             string awsSecretAccessKey,
-                                             DateTime signedAt,
-                                             bool pathAlreadyEncoded)
-        {
             ValidateRequest(request);
             signedAt = InitializeHeaders(request.Headers, request.Endpoint, signedAt);
 
@@ -291,8 +263,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                              bodyHash,
                                                              request.PathResources,
                                                              request.UseDoubleEncoding,
-                                                             out var signedHeaderNames,
-                                                             pathAlreadyEncoded);
+                                                             out var signedHeaderNames);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
             request.SignatureVersion = SignatureVersion.SigV4;
@@ -866,44 +837,6 @@ namespace Amazon.Runtime.Internal.Auth
                 out _);
         }
 
-        /// <summary>
-        /// Computes and returns the canonical request
-        /// </summary>
-        /// <param name="endpoint">The endpoint URL</param>
-        /// <param name="resourcePath">the path of the resource being operated on</param>
-        /// <param name="httpMethod">The http method used for the request</param>
-        /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
-        /// <param name="canonicalQueryString">The query parameters for the request</param>
-        /// <param name="precomputedBodyHash">
-        /// The hash of the binary request body if present. If not supplied, the routine
-        /// will look for the hash as a header on the request.
-        /// </param>
-        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
-        /// <param name="doubleEncode">Encode "/" when canonicalize resource path</param>
-        /// <param name="pathAlreadyEncoded">If true, the resource path is treated as already encoded (wire form) and joined verbatim with no encode pass.</param>
-        /// <returns>Canonicalised request as a string</returns>
-        protected static string CanonicalizeRequest(Uri endpoint,
-                                                    string resourcePath,
-                                                    string httpMethod,
-                                                    IDictionary<string, string> sortedHeaders,
-                                                    string canonicalQueryString,
-                                                    string precomputedBodyHash,
-                                                    IDictionary<string, string> pathResources,
-                                                    bool doubleEncode,
-                                                    bool pathAlreadyEncoded)
-        {
-            return CanonicalizeRequestHelper(endpoint,
-                resourcePath,
-                httpMethod,
-                sortedHeaders,
-                canonicalQueryString,
-                precomputedBodyHash,
-                pathResources,
-                doubleEncode,
-                out _,
-                pathAlreadyEncoded);
-        }
-
         private static string CanonicalizeRequestHelper(Uri endpoint,
                                                     string resourcePath,
                                                     string httpMethod,
@@ -912,15 +845,14 @@ namespace Amazon.Runtime.Internal.Auth
                                                     string precomputedBodyHash,
                                                     IDictionary<string, string> pathResources,
                                                     bool doubleEncode,
-                                                    out string signedHeaderNames,
-                                                    bool pathAlreadyEncoded = false)
+                                                    out string signedHeaderNames)
         {
             var namesBuilder = new ValueStringBuilder(256);
 
             var canonicalRequest = new ValueStringBuilder(512);
             canonicalRequest.Append(httpMethod);
             canonicalRequest.Append('\n');
-            canonicalRequest.Append(AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources, pathAlreadyEncoded));
+            canonicalRequest.Append(AWSSDKUtils.CanonicalizeResourcePathV2(endpoint, resourcePath, doubleEncode, pathResources));
             canonicalRequest.Append('\n');
             canonicalRequest.Append(canonicalQueryString);
             canonicalRequest.Append('\n');
@@ -1355,38 +1287,6 @@ namespace Amazon.Runtime.Internal.Auth
                                                  string overrideSigningRegion,
                                                  DateTime signedAt)
         {
-            return SignRequestInternal(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey,
-                                       service, overrideSigningRegion, signedAt, pathAlreadyEncoded: false);
-        }
-
-        /// <summary>
-        /// Same as the presigned-URL <see cref="SignRequest(IRequest, IClientConfig, RequestMetrics, string, string, string, string, DateTime)"/>
-        /// but treats <see cref="IRequest.ResourcePath"/> as the already-encoded wire path and signs the canonical
-        /// path verbatim (no additional URL-encode pass). Used by the standalone SigV4 signer for S3 presigning.
-        /// </summary>
-        internal static AWS4SigningResult SignRequestPreEncodedPath(IRequest request,
-                                                 IClientConfig clientConfig,
-                                                 RequestMetrics metrics,
-                                                 string awsAccessKeyId,
-                                                 string awsSecretAccessKey,
-                                                 string service,
-                                                 string overrideSigningRegion,
-                                                 DateTime signedAt)
-        {
-            return SignRequestInternal(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey,
-                                       service, overrideSigningRegion, signedAt, pathAlreadyEncoded: true);
-        }
-
-        private static AWS4SigningResult SignRequestInternal(IRequest request,
-                                                 IClientConfig clientConfig,
-                                                 RequestMetrics metrics,
-                                                 string awsAccessKeyId,
-                                                 string awsSecretAccessKey,
-                                                 string service,
-                                                 string overrideSigningRegion,
-                                                 DateTime signedAt,
-                                                 bool pathAlreadyEncoded)
-        {
             if (service == "s3" || service == "s3express")
             {
                 // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
@@ -1437,8 +1337,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                        canonicalQueryParams,
                                                        ServicesUsingUnsignedPayload.Contains(service) ? UnsignedPayload : EmptyBodySha256,
                                                        request.PathResources,
-                                                       request.UseDoubleEncoding,
-                                                       pathAlreadyEncoded);
+                                                       request.UseDoubleEncoding);
             if (metrics != null)
                 metrics.AddProperty(Metric.CanonicalRequest, canonicalRequest);
 

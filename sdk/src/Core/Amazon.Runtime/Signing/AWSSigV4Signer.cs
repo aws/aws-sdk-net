@@ -112,14 +112,10 @@ namespace Amazon.Runtime.Signing
             var config = SharedConfig;
             var signedAt = ResolveSignedAt(parameters, internalRequest);
 
-            // S3 signs the encoded path verbatim (zero encode passes); every other service applies one more
-            // pass (UseDoubleEncoding = false, set in BuildRequest). See BuildRequest for the full rationale.
-            var signer = new AWS4Signer();
-            var signingResult = IsS3(parameters.Service)
-                ? signer.SignRequestPreEncodedPath(internalRequest, config, new RequestMetrics(),
-                    credentials.AccessKey, credentials.SecretKey, signedAt)
-                : signer.SignRequest(internalRequest, config, new RequestMetrics(),
-                    credentials.AccessKey, credentials.SecretKey, signedAt);
+            // The service-specific path handling is done in BuildRequest (S3 gets the decoded path, non-S3 the
+            // encoded path); both then take the same single-pass canonicalization here.
+            var signingResult = new AWS4Signer().SignRequest(internalRequest, config, new RequestMetrics(),
+                credentials.AccessKey, credentials.SecretKey, signedAt);
 
             // SignRequest does not set Authorization on the request (only the Sign(...) wrapper does),
             // so read it off the result. The other signing headers were added onto the request.
@@ -167,18 +163,17 @@ namespace Amazon.Runtime.Signing
             // credential-scope region the service rejects.
             var region = parameters.Region.SystemName.ToLowerInvariant();
 
-            // S3 signs the encoded path verbatim (zero passes); other services apply one more pass. See BuildRequest.
-            var signingResult = IsS3(parameters.Service)
-                ? AWS4PreSignedUrlSigner.SignRequestPreEncodedPath(internalRequest, null, new RequestMetrics(),
-                    credentials.AccessKey, credentials.SecretKey, parameters.Service, region, signedAt)
-                : AWS4PreSignedUrlSigner.SignRequest(internalRequest, null, new RequestMetrics(),
-                    credentials.AccessKey, credentials.SecretKey, parameters.Service, region, signedAt);
+            // Path handling is service-specific in BuildRequest (S3 decoded, non-S3 encoded); both take the
+            // same single-pass canonicalization here.
+            var signingResult = AWS4PreSignedUrlSigner.SignRequest(internalRequest, null, new RequestMetrics(),
+                credentials.AccessKey, credentials.SecretKey, parameters.Service, region, signedAt);
 
             // Build the presigned URL's WIRE path from the caller's RequestUri verbatim, not from ComposeUrl.
-            // The service recomputes the canonical path from the wire path (one encode pass for non-S3, zero
-            // for S3) and compares it to the signature; that only matches if the wire path is exactly the
-            // encoded path we signed over. ComposeUrl, however, runs its own encode pass on the {Path+} value
-            // (double-encoding it), so we take only its rendered query string and pair it with the verbatim path.
+            // The wire path is always the caller's encoded path; the service recomputes its own canonical path
+            // from it (one encode pass for non-S3; decode-then-one-pass for S3) and compares to the signature,
+            // which we computed over that same canonical form (see BuildRequest). ComposeUrl, however, runs its
+            // own encode pass on the {Path+} value (double-encoding it), so we take only its rendered query
+            // string and pair it with the verbatim wire path.
             var composed = AmazonServiceClient.ComposeUrl(internalRequest).AbsoluteUri;
             var queryStart = composed.IndexOf('?');
             // The rendered query (when present) includes its leading '?'. Presigning always adds X-Amz-Expires as
@@ -218,40 +213,46 @@ namespace Amazon.Runtime.Signing
                 // GetLeftPart collapses that into one call.)
                 Endpoint = new Uri(request.RequestUri.GetLeftPart(UriPartial.Authority)),
 
-                // The caller's RequestUri is treated as the authoritative, already-encoded wire request: the
-                // signer does not decode or re-interpret the path. Uri.AbsolutePath is the encoded wire path,
-                // and the canonical path the service recomputes from it is one more URL-encode pass for non-S3
-                // and zero passes (verbatim) for S3. For example, a caller signing a key "hello world" passes
-                // RequestUri ".../hello%20world" (AbsolutePath = "/hello%20world"); the non-S3 canonical path is
-                // "/hello%2520world" and the S3 canonical path is "/hello%20world".
-                //
                 // The path is supplied as a single greedy path-resource ({Path+}) rather than set directly on
                 // ResourcePath. A plain ResourcePath string is treated as Literal segments and encoded with the
                 // lenient path encoder, which leaves sub-delims like '+' '=' ',' unencoded — but the SigV4
                 // canonical form requires them strict-encoded (e.g. "+" -> "%2B", "=" -> "%3D"). A path-resource
                 // value is a Label segment and gets the strict encoder, exactly as the generated S3 client
-                // encodes an object key ("/{Key+}"). The "+" suffix is greedy so real '/' separators in the
-                // value stay segment boundaries, while an encoded "%2F" stays within one segment and is
-                // preserved (never split into two segments).
+                // encodes an object key ("/{Key+}"). The "+" suffix is greedy so real '/' separators stay
+                // segment boundaries. The value bound to {Path+} is set below (encoded for non-S3, decoded for
+                // S3); see the comment there.
                 ResourcePath = "/{Path+}",
                 OverrideSigningServiceName = parameters.Service,
                 AuthenticationRegion = parameters.Region.SystemName,
                 DisablePayloadSigning = !parameters.SignPayload,
 
-                // Force single-pass (non-double) encoding. The {Path+} value is the already-encoded wire path,
-                // so exactly ONE more pass produces the non-S3 canonical path (e.g. "%20" -> "%2520"). For S3
-                // the signer is invoked via SignRequestPreEncodedPath (see SignInternal / PresignInternal),
-                // which applies ZERO passes and signs the encoded path verbatim.
+                // Single-pass (non-double) encoding for both S3 and non-S3 — the one pass that the greedy
+                // {Path+} label encoder always applies. Combined with the path value chosen below this
+                // reproduces each service's canonical path exactly (see below).
                 UseDoubleEncoding = false,
             };
 
-            // Bind the {Path+} placeholder to the caller's encoded wire path, verbatim. The leading '/' is
-            // stripped because ResourcePath ("/{Path+}") already supplies it; leaving it would produce a doubled
-            // "//" leading segment.
-            var encodedPath = request.RequestUri.AbsolutePath;
-            if (encodedPath.StartsWith("/", StringComparison.Ordinal))
-                encodedPath = encodedPath.Substring(1);
-            internalRequest.AddPathResource("{Path+}", encodedPath);
+            // Bind the {Path+} placeholder to the path the target service canonicalizes, then let the single
+            // label-encode pass produce the canonical path.
+            //
+            //   non-S3: the service applies one URL-encode pass over the ENCODED wire path it receives. So feed
+            //           Uri.AbsolutePath (the encoded wire path) unchanged; one pass yields the service's
+            //           canonical form (e.g. wire "/hello%20world" -> canonical "/hello%2520world", and an
+            //           encoded slash "%2F" is preserved and re-encoded to "%252F", matching execute-api).
+            //
+            //   S3:     the service DECODES the wire path before signing (e.g. it reads "%2F" as a literal '/'
+            //           and "%20" as a space), so its canonical path is one URL-encode of the DECODED key. Feed
+            //           the decoded path so the single pass reproduces that (wire "/a%2Fb" -> decoded "/a/b" ->
+            //           canonical "/a/b"; wire "/hello%20world" -> decoded "/hello world" -> "/hello%20world").
+            //           This is exactly how the generated S3 client signs an object key (raw key bound to
+            //           "/{Key+}" with double-encoding off). Signing the encoded "%2F" verbatim would be rejected
+            //           by S3 (SignatureDoesNotMatch) because S3's own canonical path is the decoded "/a/b".
+            var path = request.RequestUri.AbsolutePath;
+            if (IsS3(parameters.Service))
+                path = Uri.UnescapeDataString(path);
+            if (path.StartsWith("/", StringComparison.Ordinal))
+                path = path.Substring(1);
+            internalRequest.AddPathResource("{Path+}", path);
 
             // Copy caller headers into the request. A caller-supplied x-amz-content-sha256 is routed to
             // PrecomputedContentSha256 (below) rather than left on the header, so the signer honors it
@@ -309,15 +310,16 @@ namespace Amazon.Runtime.Signing
         }
 
         /// <summary>
-        /// Whether the signing service is part of the S3 family, which signs the encoded resource path verbatim
-        /// (zero additional encode passes) rather than applying the one extra pass every other service uses.
+        /// Whether the signing service is part of the S3 family, which decodes the wire path before computing
+        /// the canonical path it signs (so the facade feeds the decoded path — see BuildRequest), rather than
+        /// canonicalizing the encoded wire path the way every other service does.
         /// <para>
         /// The S3 family is exactly <see cref="AWS4PreSignedUrlSigner.ServicesUsingUnsignedPayload"/> ("s3", "s3express",
         /// "s3-object-lambda", "s3-outposts") — the same set the internal signer special-cases — reused here as
         /// the single source of truth so the two cannot drift. Matching only "s3"/"s3express" would send
-        /// "s3-object-lambda"/"s3-outposts" down the non-S3 path, double-encoding a special-character key and
-        /// producing a SignatureDoesNotMatch. Compared case-insensitively; AWS service names are lowercase, but
-        /// this is lenient for callers who capitalize.
+        /// "s3-object-lambda"/"s3-outposts" down the non-S3 path, canonicalizing a special-character key the
+        /// wrong way and producing a SignatureDoesNotMatch. Compared case-insensitively; AWS service names are
+        /// lowercase, but this is lenient for callers who capitalize.
         /// </para>
         /// </summary>
         private static bool IsS3(string service)

@@ -346,39 +346,42 @@ namespace AWSSDK.UnitTests.Signing
         };
 
         [TestMethod]
-        public void Presign_S3_SpecialCharPath_WireUrlPreservesCallerEncodingVerbatim()
+        public void Presign_S3_SpecialCharPath_WireUrlPreservesCallerEncoding()
         {
-            // For S3 the presigned URL's path must be the caller's encoded path byte-for-byte (zero encode
-            // passes), so the service — which recomputes the canonical path verbatim — accepts the signature.
-            // Regression guard for the original bug where the facade double-encoded ("%20" -> "%2520").
+            // The presigned URL's wire path is the caller's path as written; the facade never rewrites it. For
+            // these characters (space, '+', '=') the decoded canonical form the facade signs round-trips to the
+            // same wire bytes, so the service accepts the signature. Regression guard for the original bug where
+            // the facade double-encoded the wire path ("%20" -> "%2520").
             var request = GetRequest("https://bucket.s3.us-east-1.amazonaws.com/hello%20world/a%2Bb%3Dc");
             var result = AWSSigV4Signer.Presign(request, S3Parameters(), TimeSpan.FromSeconds(60));
 
             var path = result.Uri.AbsolutePath;
             Assert.AreEqual("/hello%20world/a%2Bb%3Dc", path,
-                "S3 presign must keep the caller's encoded path verbatim (no extra encode pass).");
+                "S3 presign must keep the caller's wire path as written (not double-encode it).");
             Assert.IsFalse(path.Contains("%2520"), "The path must not be double-encoded.");
         }
 
         [TestMethod]
-        public void Presign_S3_EncodedSlashInSegment_IsPreservedNotSplit()
+        public void Presign_S3_EncodedSlashInWirePath_WireUrlPreservesCallerForm()
         {
-            // "%2F" is an encoded slash inside a single segment. It must be preserved (kept as "%2F" for S3),
-            // never decoded into a real separator. A signer that decoded the path would sign "/a/b" (two
-            // segments) and produce a URL the service resolves to the wrong key.
+            // The presigned URL's wire path is always the caller's path as written ("/a%2Fb"); the facade does
+            // not rewrite it. S3 decodes "%2F" to "/" when it recomputes the canonical path it verifies, and the
+            // facade signs that same decoded form (see Sign_S3_EncodedSlash_MatchesRealSlash), so the signature
+            // validates. This only asserts the wire path is left as the caller sent it.
             var request = GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a%2Fb");
             var result = AWSSigV4Signer.Presign(request, S3Parameters(), TimeSpan.FromSeconds(60));
 
             Assert.AreEqual("/a%2Fb", result.Uri.AbsolutePath,
-                "An encoded slash must be preserved within the segment for S3, not re-encoded or split.");
+                "The presigned URL's wire path must be the caller's path as written.");
         }
 
         [TestMethod]
         public void Sign_S3_And_NonS3_SpecialCharPath_SignDifferently()
         {
-            // Same encoded path, two services: S3 signs it verbatim (0 passes); a non-S3 service applies one
-            // more encode pass. The canonical paths differ ("/hello%20world" vs "/hello%2520world"), so the
-            // signatures must differ. This guards that the S3 zero-pass branch is actually taken.
+            // Same encoded wire path, two services. S3 canonicalizes the DECODED path (one pass over "hello
+            // world" -> "/hello%20world"); a non-S3 service canonicalizes the ENCODED wire path (one pass over
+            // "hello%20world" -> "/hello%2520world"). The canonical paths differ, so the signatures must differ.
+            // This guards that the S3 decode branch is actually taken.
             var request = GetRequest("https://host.us-east-1.amazonaws.com/hello%20world");
 
             var s3 = AWSSigV4Signer.Sign(request, S3Parameters());
@@ -394,37 +397,38 @@ namespace AWSSDK.UnitTests.Signing
         [DataRow("s3-object-lambda")]
         [DataRow("s3-outposts")]
         [DataRow("s3express")]
-        public void Sign_S3FamilyService_SignsEncodedPathVerbatim(string service)
+        public void Sign_S3FamilyService_CanonicalizesDecodedPath(string service)
         {
             // Every service the internal signer treats as S3 (AWS4Signer.ServicesUsingUnsignedPayload: "s3",
-            // "s3express", "s3-object-lambda", "s3-outposts") must sign the encoded path VERBATIM — zero extra
-            // encode passes — exactly like "s3". A signer that matched only "s3"/"s3express" would route
-            // "s3-object-lambda"/"s3-outposts" down the non-S3 path, applying one extra encode pass ("%20" ->
-            // "%2520") and producing a SignatureDoesNotMatch. Regression guard for the narrowed IsS3 bug.
+            // "s3express", "s3-object-lambda", "s3-outposts") must take the S3 branch, which canonicalizes the
+            // DECODED wire path (matching how S3 canonicalizes). A signer that matched only "s3"/"s3express"
+            // would route "s3-object-lambda"/"s3-outposts" down the non-S3 path, double-encoding a special
+            // character ("%20" -> "%2520") and producing a SignatureDoesNotMatch. Regression guard for the
+            // narrowed IsS3 bug.
             //
             // Signatures can't be compared across service names (the service is folded into the credential scope
             // and the signing key), so this compares the facade against an internal-signer oracle that signs the
-            // SAME service with the pre-encoded (verbatim) path — the behavior the facade must reproduce for the
-            // S3 family. Before the fix the facade takes the one-extra-pass path and this oracle diverges.
+            // SAME service with the decoded path — the behavior the facade must reproduce for the S3 family. A
+            // facade that instead double-encoded (the non-S3 path) would diverge from this oracle.
             var url = "https://host.us-east-1.amazonaws.com/hello%20world";
 
             var parameters = BaseParameters();
             parameters.Service = service;
             var facade = AWSSigV4Signer.Sign(GetRequest(url), parameters);
 
-            var expected = SignViaInternalPreEncodedPath(url, service);
+            var expected = SignViaInternalDecodedPath(url, service);
 
             Assert.AreEqual(expected, facade.Headers[HeaderKeys.AuthorizationHeader],
-                $"'{service}' is in the S3 family and must sign the encoded path verbatim (zero encode passes).");
+                $"'{service}' is in the S3 family and must canonicalize the decoded path (single encode pass).");
         }
 
         /// <summary>
-        /// Signs a GET for <paramref name="url"/> via the internal <see cref="AWS4Signer"/> using the verbatim
-        /// (pre-encoded) path path, mirroring how <see cref="AWSSigV4Signer"/> wires an S3-family request: the
-        /// encoded wire path is bound as the greedy "{Path+}" path-resource with single-pass encoding disabled,
-        /// then signed with <c>SignRequestPreEncodedPath</c> (zero additional encode passes).
+        /// Signs a GET for <paramref name="url"/> via the internal <see cref="AWS4Signer"/> the way
+        /// <see cref="AWSSigV4Signer"/> wires an S3-family request: the DECODED wire path is bound as the greedy
+        /// "{Path+}" path-resource with double-encoding off (a single encode pass), then signed with the ordinary
+        /// <c>SignRequest</c>. This reproduces S3's own canonical path (S3 decodes the wire path before signing).
         /// </summary>
-        private static string SignViaInternalPreEncodedPath(string url, string service)
+        private static string SignViaInternalDecodedPath(string url, string service)
         {
             var uri = new Uri(url);
             var internalRequest = new DefaultRequest(new StubRequest(), service)
@@ -436,28 +440,28 @@ namespace AWSSDK.UnitTests.Signing
                 AuthenticationRegion = Region,
                 UseDoubleEncoding = false,
             };
-            var encodedPath = uri.AbsolutePath;
-            if (encodedPath.StartsWith("/", StringComparison.Ordinal))
-                encodedPath = encodedPath.Substring(1);
-            internalRequest.AddPathResource("{Path+}", encodedPath);
+            var decodedPath = Uri.UnescapeDataString(uri.AbsolutePath);
+            if (decodedPath.StartsWith("/", StringComparison.Ordinal))
+                decodedPath = decodedPath.Substring(1);
+            internalRequest.AddPathResource("{Path+}", decodedPath);
 
             var config = new MockClientConfig { AuthenticationRegion = Region };
             return new AWS4Signer()
-                .SignRequestPreEncodedPath(internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt)
+                .SignRequest(internalRequest, config, new RequestMetrics(), AccessKey, SecretKey, SignedAt)
                 .ForAuthorizationHeader;
         }
 
         [TestMethod]
-        public void Sign_S3_EncodedSlash_DiffersFromRealSlash()
+        public void Sign_S3_EncodedSlash_MatchesRealSlash()
         {
-            // "/a%2Fb" (one segment, encoded slash) and "/a/b" (two segments) are different resources and must
-            // sign differently. If the facade decoded the path, both would collapse to "/a/b" and sign the same
-            // — the exact interop bug this fix avoids.
+            // An object key can contain a literal '/'. A caller may address it with a real slash ("/a/b") or by
+            // percent-encoding it ("/a%2Fb"). S3 decodes "%2F" to "/" before signing, so both wire forms name
+            // the SAME key and must sign IDENTICALLY. The facade decodes the wire path for S3, so it does.
             var encodedSlash = AWSSigV4Signer.Sign(GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a%2Fb"), S3Parameters());
             var realSlash = AWSSigV4Signer.Sign(GetRequest("https://bucket.s3.us-east-1.amazonaws.com/a/b"), S3Parameters());
 
-            Assert.AreNotEqual(realSlash.Headers[HeaderKeys.AuthorizationHeader], encodedSlash.Headers[HeaderKeys.AuthorizationHeader],
-                "An encoded slash must not be signed the same as a real path separator.");
+            Assert.AreEqual(realSlash.Headers[HeaderKeys.AuthorizationHeader], encodedSlash.Headers[HeaderKeys.AuthorizationHeader],
+                "S3 decodes %2F to '/', so an encoded slash and a real slash must sign identically.");
         }
 
         [TestMethod]

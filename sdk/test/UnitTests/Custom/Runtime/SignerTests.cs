@@ -409,48 +409,43 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void TestCanonicalizeResourcePathAlreadyEncoded()
+        public void TestCanonicalizeResourcePathS3DecodedKeySinglePass()
         {
-            // pathAlreadyEncoded = true is the "zero encode passes" mode used by the standalone SigV4 signer for
-            // S3: the segment values are already the final encoded (wire) form, so the canonical path must equal
-            // them byte-for-byte. It is mutually exclusive with the encode pass, so the `encode` argument is
-            // ignored when pathAlreadyEncoded is true.
+            // The standalone SigV4 signer feeds S3 the DECODED object key as a greedy {Path+} label with a
+            // single encode pass (encode = false). This is how the generated S3 client signs a key, and it
+            // reproduces S3's own canonical path — S3 decodes the wire path before signing, so the canonical
+            // form is one URL-encode of the decoded key. This is the behavior that replaced the old zero-pass
+            // "already encoded" mode.
 
-            // Null/empty behave like the other overloads (return "/").
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3.us-east-1.amazonaws.com"), null, false, null, pathAlreadyEncoded: true));
-            Assert.AreEqual("/", AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://s3.us-east-1.amazonaws.com"), string.Empty, false, null, pathAlreadyEncoded: true));
-
-            // An already-encoded value is joined verbatim: no re-encoding of the '%' (so "%20" stays "%20",
-            // not "%2520"), and an encoded slash ("%2F") is preserved inside its segment rather than re-encoded
-            // or split into two segments.
+            // A decoded space encodes to "%20" (one pass), matching what S3 canonicalizes.
             Assert.AreEqual(
                 "/hello%20world",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello%20world" } }, pathAlreadyEncoded: true));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello world" } }));
 
+            // Decoded sub-delims '+' and '=' get strict-encoded by the Label encoder to "%2B"/"%3D".
             Assert.AreEqual(
                 "/a%2Bb%3Dc",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Bb%3Dc" } }, pathAlreadyEncoded: true));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a+b=c" } }));
 
+            // A key that literally contains a slash is a DECODED "/". Because {Path+} is greedy the slash stays
+            // a segment boundary, so the canonical path is "/a/b" — exactly what S3 computes when a caller sends
+            // the wire path "/a%2Fb" (S3 decodes "%2F" to "/"). The facade decodes the wire path before binding
+            // it here, so an encoded slash and a real slash canonicalize identically, as S3 requires.
             Assert.AreEqual(
-                "/a%2Fb",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }, pathAlreadyEncoded: true));
+                "/a/b",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a/b" } }));
 
-            // A greedy value containing real '/' separators keeps them as segment boundaries but does not
-            // re-encode the already-encoded content of each segment.
+            // Decoded unicode is UTF-8 percent-encoded in one pass.
             Assert.AreEqual(
                 "/hello%20world/caf%C3%A9-%E2%98%83.txt",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello%20world/caf%C3%A9-%E2%98%83.txt" } }, pathAlreadyEncoded: true));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello world/café-☃.txt" } }));
 
-            // pathAlreadyEncoded overrides encode: passing encode = true still produces the verbatim path.
-            Assert.AreEqual(
-                "/a%2Fb",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", true, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }, pathAlreadyEncoded: true));
-
-            // Contrast: the SAME encoded value with pathAlreadyEncoded = false (the non-S3 path) gets one more
-            // encode pass, so "%2F" becomes "%252F". This is the exact non-S3-vs-S3 divergence the facade relies on.
+            // Contrast the non-S3 path: the facade feeds the ENCODED wire path (not decoded), so the single pass
+            // double-encodes it. For wire "/a%2Fb" the {Path+} value is the encoded "a%2Fb", which becomes
+            // "/a%252Fb" — matching what execute-api canonicalizes. This is the S3-vs-non-S3 divergence.
             Assert.AreEqual(
                 "/a%252Fb",
-                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://example.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }, pathAlreadyEncoded: false));
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://example.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }));
         }
 
         [TestMethod]
