@@ -1213,6 +1213,125 @@ namespace Amazon.GameLiftStreams
 
         #endregion
         
+        #region  CreateStreamUrl
+
+
+        /// <summary>
+        /// Creates a stream URL that grants temporary access to a stream session in a web browser
+        /// without requiring an Amazon Web Services account or client integration.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the stream URL to start a stream session up to the number of times set
+        /// by <c>UsageLimit</c>, until it expires after <c>UrlExpiresAfterMinutes</c>. Each successful
+        /// use starts a new stream session.
+        /// </para>
+        ///  
+        /// <para>
+        /// To make the request idempotent, provide a <c>ClientToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamUrl service method.</param>
+        /// 
+        /// <returns>The response from the CreateStreamUrl service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ServiceQuotaExceededException">
+        /// The request would cause the resource to exceed an allowed service quota. Resolve the
+        /// issue before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamUrl">REST API Reference for CreateStreamUrl Operation</seealso>
+        public virtual CreateStreamUrlResponse CreateStreamUrl(CreateStreamUrlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateStreamUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamUrlResponseUnmarshaller.Instance;
+
+            return Invoke<CreateStreamUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a stream URL that grants temporary access to a stream session in a web browser
+        /// without requiring an Amazon Web Services account or client integration.
+        /// 
+        ///  
+        /// <para>
+        /// You can use the stream URL to start a stream session up to the number of times set
+        /// by <c>UsageLimit</c>, until it expires after <c>UrlExpiresAfterMinutes</c>. Each successful
+        /// use starts a new stream session.
+        /// </para>
+        ///  
+        /// <para>
+        /// To make the request idempotent, provide a <c>ClientToken</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateStreamUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateStreamUrl service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ConflictException">
+        /// The requested operation would cause a conflict with the current state of a service
+        /// resource associated with the request. Resolve the conflict before retrying this request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ServiceQuotaExceededException">
+        /// The request would cause the resource to exceed an allowed service quota. Resolve the
+        /// issue before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/CreateStreamUrl">REST API Reference for CreateStreamUrl Operation</seealso>
+        public virtual Task<CreateStreamUrlResponse> CreateStreamUrlAsync(CreateStreamUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateStreamUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateStreamUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateStreamUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteApplication
 
 
@@ -1990,6 +2109,99 @@ namespace Amazon.GameLiftStreams
 
         #endregion
         
+        #region  GetStreamUrl
+
+
+        /// <summary>
+        /// Retrieves properties for a stream URL, including its current status, usage, and the
+        /// stream sessions started through it.
+        /// 
+        ///  
+        /// <para>
+        /// If you delete the stream group or application that backs the stream URL, this operation
+        /// updates the status of the stream URL to <c>REVOKED</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetStreamUrl service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetStreamUrl">REST API Reference for GetStreamUrl Operation</seealso>
+        public virtual GetStreamUrlResponse GetStreamUrl(GetStreamUrlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStreamUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GetStreamUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves properties for a stream URL, including its current status, usage, and the
+        /// stream sessions started through it.
+        /// 
+        ///  
+        /// <para>
+        /// If you delete the stream group or application that backs the stream URL, this operation
+        /// updates the status of the stream URL to <c>REVOKED</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStreamUrl service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/GetStreamUrl">REST API Reference for GetStreamUrl Operation</seealso>
+        public virtual Task<GetStreamUrlResponse> GetStreamUrlAsync(GetStreamUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetStreamUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStreamUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetStreamUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListApplications
 
 
@@ -2061,6 +2273,99 @@ namespace Amazon.GameLiftStreams
             options.ResponseUnmarshaller = ListApplicationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListApplicationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListApplicationShaderCaches
+
+
+        /// <summary>
+        /// Lists the shader caches associated with an Amazon GameLift Streams application. Each
+        /// shader cache entry includes its status, associated stream groups, and size in bytes.
+        /// 
+        ///  
+        /// <para>
+        /// Returns shader caches associated with the specified Amazon GameLift Streams application
+        /// in all statuses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationShaderCaches service method.</param>
+        /// 
+        /// <returns>The response from the ListApplicationShaderCaches service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListApplicationShaderCaches">REST API Reference for ListApplicationShaderCaches Operation</seealso>
+        public virtual ListApplicationShaderCachesResponse ListApplicationShaderCaches(ListApplicationShaderCachesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListApplicationShaderCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationShaderCachesResponseUnmarshaller.Instance;
+
+            return Invoke<ListApplicationShaderCachesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the shader caches associated with an Amazon GameLift Streams application. Each
+        /// shader cache entry includes its status, associated stream groups, and size in bytes.
+        /// 
+        ///  
+        /// <para>
+        /// Returns shader caches associated with the specified Amazon GameLift Streams application
+        /// in all statuses.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApplicationShaderCaches service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApplicationShaderCaches service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListApplicationShaderCaches">REST API Reference for ListApplicationShaderCaches Operation</seealso>
+        public virtual Task<ListApplicationShaderCachesResponse> ListApplicationShaderCachesAsync(ListApplicationShaderCachesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListApplicationShaderCachesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApplicationShaderCachesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListApplicationShaderCachesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2340,6 +2645,85 @@ namespace Amazon.GameLiftStreams
 
         #endregion
         
+        #region  ListStreamUrls
+
+
+        /// <summary>
+        /// Retrieves a list of the stream URLs in the current Amazon Web Services Region for
+        /// your Amazon Web Services account. You can filter the results by status or by stream
+        /// group. Use the pagination parameters to retrieve results as a set of sequential pages.
+        /// If you delete the stream group or application that backs a stream URL, this operation
+        /// updates that stream URL's status to <c>REVOKED</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamUrls service method.</param>
+        /// 
+        /// <returns>The response from the ListStreamUrls service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamUrls">REST API Reference for ListStreamUrls Operation</seealso>
+        public virtual ListStreamUrlsResponse ListStreamUrls(ListStreamUrlsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListStreamUrlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamUrlsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStreamUrlsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of the stream URLs in the current Amazon Web Services Region for
+        /// your Amazon Web Services account. You can filter the results by status or by stream
+        /// group. Use the pagination parameters to retrieve results as a set of sequential pages.
+        /// If you delete the stream group or application that backs a stream URL, this operation
+        /// updates that stream URL's status to <c>REVOKED</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStreamUrls service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStreamUrls service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/ListStreamUrls">REST API Reference for ListStreamUrls Operation</seealso>
+        public virtual Task<ListStreamUrlsResponse> ListStreamUrlsAsync(ListStreamUrlsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListStreamUrlsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStreamUrlsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListStreamUrlsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -2546,6 +2930,99 @@ namespace Amazon.GameLiftStreams
             options.ResponseUnmarshaller = RemoveStreamGroupLocationsResponseUnmarshaller.Instance;
             
             return InvokeAsync<RemoveStreamGroupLocationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RevokeStreamUrl
+
+
+        /// <summary>
+        /// Revokes a stream URL so that it can no longer start new stream sessions. By default,
+        /// stream sessions that are already running continue until they end on their own. To
+        /// also end running sessions, set <c>RevocationMode</c> to <c>REVOKE_AND_TERMINATE_SESSIONS</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Revoking a stream URL is permanent. The status of the stream URL changes to <c>REVOKED</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeStreamUrl service method.</param>
+        /// 
+        /// <returns>The response from the RevokeStreamUrl service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/RevokeStreamUrl">REST API Reference for RevokeStreamUrl Operation</seealso>
+        public virtual RevokeStreamUrlResponse RevokeStreamUrl(RevokeStreamUrlRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RevokeStreamUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeStreamUrlResponseUnmarshaller.Instance;
+
+            return Invoke<RevokeStreamUrlResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Revokes a stream URL so that it can no longer start new stream sessions. By default,
+        /// stream sessions that are already running continue until they end on their own. To
+        /// also end running sessions, set <c>RevocationMode</c> to <c>REVOKE_AND_TERMINATE_SESSIONS</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Revoking a stream URL is permanent. The status of the stream URL changes to <c>REVOKED</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RevokeStreamUrl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RevokeStreamUrl service method, as returned by GameLiftStreams.</returns>
+        /// <exception cref="Amazon.GameLiftStreams.Model.AccessDeniedException">
+        /// You don't have the required permissions to access this Amazon GameLift Streams resource.
+        /// Correct the permissions before you try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.InternalServerException">
+        /// The service encountered an internal error and is unable to complete the request.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ResourceNotFoundException">
+        /// The resource specified in the request was not found. Correct the request before you
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request after the suggested
+        /// wait time.
+        /// </exception>
+        /// <exception cref="Amazon.GameLiftStreams.Model.ValidationException">
+        /// One or more parameter values in the request fail to satisfy the specified constraints.
+        /// Correct the invalid parameter values before retrying the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/gameliftstreams-2018-05-10/RevokeStreamUrl">REST API Reference for RevokeStreamUrl Operation</seealso>
+        public virtual Task<RevokeStreamUrlResponse> RevokeStreamUrlAsync(RevokeStreamUrlRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RevokeStreamUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RevokeStreamUrlResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RevokeStreamUrlResponse>(request, options, cancellationToken);
         }
 
         #endregion
