@@ -807,10 +807,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
         /// <param name="canonicalQueryString">The query parameters for the request</param>
         /// <param name="precomputedBodyHash">
-        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
         /// The hash of the binary request body if present. If not supplied, the routine
         /// will look for the hash as a header on the request.
         /// </param>
+        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
         /// <returns>Canonicalised request as a string</returns>
         protected static string CanonicalizeRequest(Uri endpoint,
                                                     string resourcePath,
@@ -840,10 +840,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
         /// <param name="canonicalQueryString">The query parameters for the request</param>
         /// <param name="precomputedBodyHash">
-        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
         /// The hash of the binary request body if present. If not supplied, the routine
         /// will look for the hash as a header on the request.
         /// </param>
+        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
         /// <param name="doubleEncode">Encode "/" when canonicalize resource path</param>
         /// <returns>Canonicalised request as a string</returns>
         protected static string CanonicalizeRequest(Uri endpoint,
@@ -875,10 +875,10 @@ namespace Amazon.Runtime.Internal.Auth
         /// <param name="sortedHeaders">The full request headers, sorted into canonical order</param>
         /// <param name="canonicalQueryString">The query parameters for the request</param>
         /// <param name="precomputedBodyHash">
-        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
         /// The hash of the binary request body if present. If not supplied, the routine
         /// will look for the hash as a header on the request.
         /// </param>
+        /// <param name="pathResources">The path resource values lookup to use to replace the keys within resourcePath</param>
         /// <param name="doubleEncode">Encode "/" when canonicalize resource path</param>
         /// <param name="pathAlreadyEncoded">If true, the resource path is treated as already encoded (wire form) and joined verbatim with no encode pass.</param>
         /// <returns>Canonicalised request as a string</returns>

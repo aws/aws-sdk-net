@@ -377,11 +377,17 @@ namespace Amazon.Runtime.Signing
             }
 
             // A key already present: promote to a list (or append to the existing list) so repeated query
-            // keys are all signed rather than collapsed to the last value.
+            // keys are all signed rather than collapsed to the last value. This method is the only code that
+            // populates the collection and only ever stores these two types, so any other type is a broken
+            // invariant — fail loud rather than silently drop the value from the signature.
             if (existing is StringListParameterValue list)
                 list.Value.Add(normalized);
             else if (existing is StringParameterValue single)
                 parameters[key] = new StringListParameterValue(new List<string> { single.Value, normalized });
+            else
+                throw new InvalidOperationException(
+                    $"Query parameter '{key}' has unexpected value type '{existing?.GetType().Name ?? "null"}'; " +
+                    $"expected {nameof(StringParameterValue)} or {nameof(StringListParameterValue)}.");
         }
 
         private static DateTime ResolveSignedAt(AWSSigV4Parameters parameters, IRequest internalRequest)
