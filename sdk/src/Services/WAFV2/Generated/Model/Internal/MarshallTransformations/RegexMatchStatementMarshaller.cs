@@ -57,6 +57,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPreParseTextTransformations())
+            {
+                context.Writer.WritePropertyName("PreParseTextTransformations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPreParseTextTransformationsListValue in requestObject.PreParseTextTransformations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PreParseTextTransformationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPreParseTextTransformationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetRegexString())
             {
                 context.Writer.WritePropertyName("RegexString");

@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RegexMatchStatement Object
+    /// Response Unmarshaller for PreParseTextTransformation Object
     /// </summary>  
-    public class RegexMatchStatementUnmarshaller : IJsonUnmarshaller<RegexMatchStatement, JsonUnmarshallerContext>
+    public class PreParseTextTransformationUnmarshaller : IJsonUnmarshaller<PreParseTextTransformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RegexMatchStatement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PreParseTextTransformation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RegexMatchStatement unmarshalledObject = new RegexMatchStatement();
+            PreParseTextTransformation unmarshalledObject = new PreParseTextTransformation();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("FieldToMatch", targetDepth, ref reader))
+                if (context.TestExpression("Priority", targetDepth, ref reader))
                 {
-                    var unmarshaller = FieldToMatchUnmarshaller.Instance;
-                    unmarshalledObject.FieldToMatch = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Priority = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PreParseTextTransformations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PreParseTextTransformation, PreParseTextTransformationUnmarshaller>(PreParseTextTransformationUnmarshaller.Instance);
-                    unmarshalledObject.PreParseTextTransformations = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("RegexString", targetDepth, ref reader))
+                if (context.TestExpression("Type", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegexString = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TextTransformations", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<TextTransformation, TextTransformationUnmarshaller>(TextTransformationUnmarshaller.Instance);
-                    unmarshalledObject.TextTransformations = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RegexMatchStatementUnmarshaller _instance = new RegexMatchStatementUnmarshaller();        
+        private static PreParseTextTransformationUnmarshaller _instance = new PreParseTextTransformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RegexMatchStatementUnmarshaller Instance
+        public static PreParseTextTransformationUnmarshaller Instance
         {
             get
             {

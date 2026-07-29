@@ -2689,6 +2689,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField POSITION = new ParameterExceptionField("POSITION");
         /// <summary>
+        /// Constant PRE_PARSE_TEXT_TRANSFORMATION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField PRE_PARSE_TEXT_TRANSFORMATION = new ParameterExceptionField("PRE_PARSE_TEXT_TRANSFORMATION");
+        /// <summary>
         /// Constant PRICE_AMOUNT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField PRICE_AMOUNT = new ParameterExceptionField("PRICE_AMOUNT");
@@ -2980,6 +2984,68 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PositionalConstraint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreParseTextTransformationType.
+    /// </summary>
+    public class PreParseTextTransformationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMBINE_DUPLICATE_QUERY_ARGS_BY_COMMA for PreParseTextTransformationType
+        /// </summary>
+        public static readonly PreParseTextTransformationType COMBINE_DUPLICATE_QUERY_ARGS_BY_COMMA = new PreParseTextTransformationType("COMBINE_DUPLICATE_QUERY_ARGS_BY_COMMA");
+        /// <summary>
+        /// Constant NONE for PreParseTextTransformationType
+        /// </summary>
+        public static readonly PreParseTextTransformationType NONE = new PreParseTextTransformationType("NONE");
+        /// <summary>
+        /// Constant REPLACE_SEMICOLONS_WITH_AMPERSANDS for PreParseTextTransformationType
+        /// </summary>
+        public static readonly PreParseTextTransformationType REPLACE_SEMICOLONS_WITH_AMPERSANDS = new PreParseTextTransformationType("REPLACE_SEMICOLONS_WITH_AMPERSANDS");
+        /// <summary>
+        /// Constant URL_DECODE for PreParseTextTransformationType
+        /// </summary>
+        public static readonly PreParseTextTransformationType URL_DECODE = new PreParseTextTransformationType("URL_DECODE");
+        /// <summary>
+        /// Constant URL_DECODE_UNI for PreParseTextTransformationType
+        /// </summary>
+        public static readonly PreParseTextTransformationType URL_DECODE_UNI = new PreParseTextTransformationType("URL_DECODE_UNI");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreParseTextTransformationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreParseTextTransformationType FindValue(string value)
+        {
+            return FindValue<PreParseTextTransformationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreParseTextTransformationType(string value)
         {
             return FindValue(value);
         }
@@ -3681,6 +3747,14 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly TextTransformationType CMD_LINE = new TextTransformationType("CMD_LINE");
         /// <summary>
+        /// Constant CMD_LINE_UNIX for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType CMD_LINE_UNIX = new TextTransformationType("CMD_LINE_UNIX");
+        /// <summary>
+        /// Constant CMD_LINE_WIN for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType CMD_LINE_WIN = new TextTransformationType("CMD_LINE_WIN");
+        /// <summary>
         /// Constant COMPRESS_WHITE_SPACE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType COMPRESS_WHITE_SPACE = new TextTransformationType("COMPRESS_WHITE_SPACE");
@@ -3705,6 +3779,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly TextTransformationType JS_DECODE = new TextTransformationType("JS_DECODE");
         /// <summary>
+        /// Constant JS_DECODE_EXT for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType JS_DECODE_EXT = new TextTransformationType("JS_DECODE_EXT");
+        /// <summary>
         /// Constant LOWERCASE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType LOWERCASE = new TextTransformationType("LOWERCASE");
@@ -3725,9 +3803,17 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly TextTransformationType NORMALIZE_PATH_WIN = new TextTransformationType("NORMALIZE_PATH_WIN");
         /// <summary>
+        /// Constant REMOVE_COMMENTS_CHAR for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType REMOVE_COMMENTS_CHAR = new TextTransformationType("REMOVE_COMMENTS_CHAR");
+        /// <summary>
         /// Constant REMOVE_NULLS for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType REMOVE_NULLS = new TextTransformationType("REMOVE_NULLS");
+        /// <summary>
+        /// Constant REMOVE_WHITESPACE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType REMOVE_WHITESPACE = new TextTransformationType("REMOVE_WHITESPACE");
         /// <summary>
         /// Constant REPLACE_COMMENTS for TextTransformationType
         /// </summary>
@@ -3737,9 +3823,29 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly TextTransformationType REPLACE_NULLS = new TextTransformationType("REPLACE_NULLS");
         /// <summary>
+        /// Constant SHA256 for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType SHA256 = new TextTransformationType("SHA256");
+        /// <summary>
         /// Constant SQL_HEX_DECODE for TextTransformationType
         /// </summary>
         public static readonly TextTransformationType SQL_HEX_DECODE = new TextTransformationType("SQL_HEX_DECODE");
+        /// <summary>
+        /// Constant TRIM for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType TRIM = new TextTransformationType("TRIM");
+        /// <summary>
+        /// Constant TRIM_LEFT for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType TRIM_LEFT = new TextTransformationType("TRIM_LEFT");
+        /// <summary>
+        /// Constant TRIM_RIGHT for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType TRIM_RIGHT = new TextTransformationType("TRIM_RIGHT");
+        /// <summary>
+        /// Constant UPPERCASE for TextTransformationType
+        /// </summary>
+        public static readonly TextTransformationType UPPERCASE = new TextTransformationType("UPPERCASE");
         /// <summary>
         /// Constant URL_DECODE for TextTransformationType
         /// </summary>
