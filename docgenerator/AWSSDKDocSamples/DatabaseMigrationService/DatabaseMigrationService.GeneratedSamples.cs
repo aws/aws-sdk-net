@@ -31,6 +31,38 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             #endregion
         }
 
+        public void DatabaseMigrationServiceCancelMetadataModelConversion()
+        {
+            #region cancel-metadata-model-conversion-1689722427798
+
+            var client = new AmazonDatabaseMigrationServiceClient();
+            var response = client.CancelMetadataModelConversion(new CancelMetadataModelConversionRequest 
+            {
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                RequestIdentifier = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
+            });
+
+            SchemaConversionRequest request = response.Request;
+
+            #endregion
+        }
+
+        public void DatabaseMigrationServiceCancelMetadataModelCreation()
+        {
+            #region cancel-metadata-model-creation-1689722427798
+
+            var client = new AmazonDatabaseMigrationServiceClient();
+            var response = client.CancelMetadataModelCreation(new CancelMetadataModelCreationRequest 
+            {
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                RequestIdentifier = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111"
+            });
+
+            SchemaConversionRequest request = response.Request;
+
+            #endregion
+        }
+
         public void DatabaseMigrationServiceCreateDataProvider()
         {
             #region create-data-provider-1689726511871
@@ -38,21 +70,16 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateDataProvider(new CreateDataProviderRequest 
             {
-                DataProviderName = "sqlServer-dev",
-                Description = "description",
+                DataProviderName = "example-data-provider",
+                Description = "Example data provider for documentation",
                 Engine = "sqlserver",
                 Settings = new DataProviderSettings { MicrosoftSqlServerSettings = new MicrosoftSqlServerDataProviderSettings {
-                    DatabaseName = "DatabaseName",
-                    Port = 11112,
-                    ServerName = "ServerName2",
-                    SslMode = "none"
-                } },
-                Tags = new List<Tag> {
-                    new Tag {
-                        Key = "access",
-                        Value = "authorizedusers"
-                    }
-                }
+                    CertificateArn = "arn:aws:dms:us-east-1:111122223333:cert:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                    DatabaseName = "ExampleDatabase",
+                    Port = 1433,
+                    ServerName = "example-source-server.us-east-1.rds.amazonaws.com",
+                    SslMode = "verify-full"
+                } }
             });
 
             DataProvider dataProvider = response.DataProvider;
@@ -99,17 +126,14 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateInstanceProfile(new CreateInstanceProfileRequest 
             {
-                Description = "Description",
-                InstanceProfileName = "my-instance-profile",
-                KmsKeyArn = "arn:aws:kms:us-east-1:012345678901:key/01234567-89ab-cdef-0123-456789abcdef",
-                NetworkType = "DUAL",
-                PubliclyAccessible = true,
-                SubnetGroupIdentifier = "my-subnet-group",
-                Tags = new List<Tag> {
-                    new Tag {
-                        Key = "access",
-                        Value = "authorizedusers"
-                    }
+                Description = "Example instance profile for documentation",
+                InstanceProfileName = "example-instance-profile",
+                KmsKeyArn = "arn:aws:kms:us-east-1:111122223333:key/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                NetworkType = "IPV4",
+                PubliclyAccessible = false,
+                SubnetGroupIdentifier = "example-replication-subnet-group",
+                VpcSecurityGroups = new List<string> {
+                    "sg-0123456789abcdef0"
                 }
             });
 
@@ -125,34 +149,28 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.CreateMigrationProject(new CreateMigrationProjectRequest 
             {
-                Description = "description",
-                InstanceProfileIdentifier = "ip-au-17",
-                MigrationProjectName = "my-migration-project",
+                Description = "Example migration project for documentation",
+                InstanceProfileIdentifier = "arn:aws:dms:us-east-1:111122223333:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                MigrationProjectName = "example-migration-project",
                 SchemaConversionApplicationAttributes = new SCApplicationAttributes {
-                    S3BucketPath = "arn:aws:s3:::mylogin-bucket",
-                    S3BucketRoleArn = "arn:aws:iam::012345678901:role/Admin"
+                    S3BucketPath = "s3://amzn-s3-demo-bucket",
+                    S3BucketRoleArn = "arn:aws:iam::111122223333:role/example-s3-access-role"
                 },
                 SourceDataProviderDescriptors = new List<DataProviderDescriptorDefinition> {
                     new DataProviderDescriptorDefinition {
-                        DataProviderIdentifier = "arn:aws:dms:us-east-1:012345678901:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
-                        SecretsManagerAccessRoleArn = "arn:aws:iam::012345678901:role/myuser-admin-access",
-                        SecretsManagerSecretId = "arn:aws:secretsmanager:us-east-1:012345678901:secret:myorg/example1/ALL.SOURCE.ORACLE_12-A1B2C3"
-                    }
-                },
-                Tags = new List<Tag> {
-                    new Tag {
-                        Key = "access",
-                        Value = "authorizedusers"
+                        DataProviderIdentifier = "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                        SecretsManagerAccessRoleArn = "arn:aws:iam::111122223333:role/example-secrets-manager-role",
+                        SecretsManagerSecretId = "arn:aws:secretsmanager:us-east-1:111122223333:secret:example-source-secret-A1B2C3"
                     }
                 },
                 TargetDataProviderDescriptors = new List<DataProviderDescriptorDefinition> {
                     new DataProviderDescriptorDefinition {
-                        DataProviderIdentifier = "arn:aws:dms:us-east-1:012345678901:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
-                        SecretsManagerAccessRoleArn = "arn:aws:iam::012345678901:role/myuser-admin-access",
-                        SecretsManagerSecretId = "arn:aws:secretsmanager:us-east-1:012345678901:secret:myorg/example1/TARGET.postgresql-A1B2C3"
+                        DataProviderIdentifier = "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                        SecretsManagerAccessRoleArn = "arn:aws:iam::111122223333:role/example-secrets-manager-role",
+                        SecretsManagerSecretId = "arn:aws:secretsmanager:us-east-1:111122223333:secret:example-target-secret-A1B2C3"
                     }
                 },
-                TransformationRules = "{\"key0\":\"value0\",\"key1\":\"value1\",\"key2\":\"value2\"}"
+                TransformationRules = "{\"rules\":[{\"rule-type\":\"transformation\",\"rule-id\":\"1\",\"rule-name\":\"1\",\"rule-target\":\"schema\",\"rule-action\":\"rename\",\"object-locator\":{\"schema-name\":\"ExampleSchema\"},\"value\":\"TargetSchema\"}]}"
             });
 
             MigrationProject migrationProject = response.MigrationProject;
@@ -286,7 +304,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteDataProvider(new DeleteDataProviderRequest 
             {
-                DataProviderIdentifier = "arn:aws:dms:us-east-1:012345678901:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                DataProviderIdentifier = "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
             DataProvider dataProvider = response.DataProvider;
@@ -316,7 +334,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteInstanceProfile(new DeleteInstanceProfileRequest 
             {
-                InstanceProfileIdentifier = "arn:aws:dms:us-east-1:012345678901:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                InstanceProfileIdentifier = "arn:aws:dms:us-east-1:111122223333:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
             InstanceProfile instanceProfile = response.InstanceProfile;
@@ -331,7 +349,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DeleteMigrationProject(new DeleteMigrationProjectRequest 
             {
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
             MigrationProject migrationProject = response.MigrationProject;
@@ -456,7 +474,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.DescribeConversionConfiguration(new DescribeConversionConfigurationRequest 
             {
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
             string conversionConfiguration = response.ConversionConfiguration;
@@ -476,16 +494,13 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     new Filter {
                         Name = "data-provider-identifier",
                         Values = new List<string> {
-                            "arn:aws:dms:us-east-1:012345678901:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                            "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS"
                         }
                     }
-                },
-                Marker = "EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
-                MaxRecords = 20
+                }
             });
 
             List<DataProvider> dataProviders = response.DataProviders;
-            string marker = response.Marker;
 
             #endregion
         }
@@ -551,18 +566,17 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             {
                 Filters = new List<Filter> {
                     new Filter {
-                        Name = "instance-profile-identifier",
+                        Name = "request-id",
                         Values = new List<string> {
-                            "arn:aws:dms:us-east-1:012345678901:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333"
                         }
                     }
                 },
-                Marker = "0123456789abcdefghijklmnopqrs",
-                MaxRecords = 20,
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
-            string marker = response.Marker;
             List<SchemaConversionRequest> requests = response.Requests;
 
             #endregion
@@ -579,16 +593,33 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     new Filter {
                         Name = "instance-profile-identifier",
                         Values = new List<string> {
-                            "arn:aws:dms:us-east-1:012345678901:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                            "arn:aws:dms:us-east-1:111122223333:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRS"
                         }
                     }
-                },
-                Marker = "0123456789abcdefghijklmnopqrs",
-                MaxRecords = 20
+                }
             });
 
             List<InstanceProfile> instanceProfiles = response.InstanceProfiles;
-            string marker = response.Marker;
+
+            #endregion
+        }
+
+        public void DatabaseMigrationServiceDescribeMetadataModel()
+        {
+            #region describe-metadata-model-1716000000000
+
+            var client = new AmazonDatabaseMigrationServiceClient();
+            var response = client.DescribeMetadataModel(new DescribeMetadataModelRequest 
+            {
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                Origin = "SOURCE",
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\", \"rule-id\": \"1\", \"rule-name\": \"1\", \"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\", \"table-name\": \"ExampleTable\"}, \"rule-action\": \"explicit\"}]}"
+            });
+
+            string definition = response.Definition;
+            string metadataModelName = response.MetadataModelName;
+            string metadataModelType = response.MetadataModelType;
+            List<MetadataModelReference> targetMetadataModels = response.TargetMetadataModels;
 
             #endregion
         }
@@ -602,19 +633,35 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             {
                 Filters = new List<Filter> {
                     new Filter {
-                        Name = "my-migration-project",
+                        Name = "request-id",
                         Values = new List<string> {
-                            "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012"
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333"
                         }
                     }
                 },
-                Marker = "0123456789abcdefghijklmnopqrs",
-                MaxRecords = 20,
-                MigrationProjectIdentifier = ""
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
-            string marker = response.Marker;
             List<SchemaConversionRequest> requests = response.Requests;
+
+            #endregion
+        }
+
+        public void DatabaseMigrationServiceDescribeMetadataModelChildren()
+        {
+            #region describe-metadata-model-children-1716000000000
+
+            var client = new AmazonDatabaseMigrationServiceClient();
+            var response = client.DescribeMetadataModelChildren(new DescribeMetadataModelChildrenRequest 
+            {
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                Origin = "SOURCE",
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\", \"rule-id\": \"1\", \"rule-name\": \"1\", \"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"}, \"rule-action\": \"explicit\"}]}"
+            });
+
+            List<MetadataModelReference> metadataModelChildren = response.MetadataModelChildren;
 
             #endregion
         }
@@ -630,16 +677,40 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     new Filter {
                         Name = "request-id",
                         Values = new List<string> {
-                            "01234567-89ab-cdef-0123-456789abcdef"
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333"
                         }
                     }
                 },
-                Marker = "EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ123456",
-                MaxRecords = 123,
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
-            string marker = response.Marker;
+            List<SchemaConversionRequest> requests = response.Requests;
+
+            #endregion
+        }
+
+        public void DatabaseMigrationServiceDescribeMetadataModelCreations()
+        {
+            #region describe-metadata-model-creations-1689719900000
+
+            var client = new AmazonDatabaseMigrationServiceClient();
+            var response = client.DescribeMetadataModelCreations(new DescribeMetadataModelCreationsRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "request-id",
+                        Values = new List<string> {
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333"
+                        }
+                    }
+                },
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
+            });
+
             List<SchemaConversionRequest> requests = response.Requests;
 
             #endregion
@@ -656,16 +727,15 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     new Filter {
                         Name = "request-id",
                         Values = new List<string> {
-                            "01234567-89ab-cdef-0123-456789abcdef"
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333"
                         }
                     }
                 },
-                Marker = "0123456789abcdefghijklmnopqrs",
-                MaxRecords = 20,
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
-            string marker = response.Marker;
             List<SchemaConversionRequest> requests = response.Requests;
 
             #endregion
@@ -682,16 +752,15 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     new Filter {
                         Name = "request-id",
                         Values = new List<string> {
-                            "01234567-89ab-cdef-0123-456789abcdef"
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333"
                         }
                     }
                 },
-                Marker = "0123456789abcdefghijklmnopqrs",
-                MaxRecords = 20,
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
-            string marker = response.Marker;
             List<SchemaConversionRequest> requests = response.Requests;
 
             #endregion
@@ -708,16 +777,15 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     new Filter {
                         Name = "request-id",
                         Values = new List<string> {
-                            "01234567-89ab-cdef-0123-456789abcdef"
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                            "a1b2c3d4-5678-90ab-cdef-EXAMPLE33333"
                         }
                     }
                 },
-                Marker = "0123456789abcdefghijklmnopqrs",
-                MaxRecords = 20,
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
-            string marker = response.Marker;
             List<SchemaConversionRequest> requests = response.Requests;
 
             #endregion
@@ -734,15 +802,12 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
                     new Filter {
                         Name = "migration-project-identifier",
                         Values = new List<string> {
-                            "arn:aws:dms:us-east-1:012345678901:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ12345678901"
+                            "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
                         }
                     }
-                },
-                Marker = "EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ123456",
-                MaxRecords = 20
+                }
             });
 
-            string marker = response.Marker;
             List<MigrationProject> migrationProjects = response.MigrationProjects;
 
             #endregion
@@ -903,15 +968,32 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var response = client.ExportMetadataModelAssessment(new ExportMetadataModelAssessmentRequest 
             {
                 AssessmentReportTypes = new List<string> {
-                    "pdf"
+                    "pdf",
+                    "csv"
                 },
-                FileName = "file",
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012",
-                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"aurora-pg.cluster-a1b2c3d4e5f6.us-east-1.rds.amazonaws.com\", \"schema-name\": \"schema1\", \"table-name\": \"Cities\"},\"rule-action\": \"explicit\"} ]}"
+                FileName = "example-assessment-report",
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\", \"rule-id\": \"1\", \"rule-name\": \"1\", \"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"}, \"rule-action\": \"explicit\"}]}"
             });
 
             ExportMetadataModelAssessmentResultEntry csvReport = response.CsvReport;
             ExportMetadataModelAssessmentResultEntry pdfReport = response.PdfReport;
+
+            #endregion
+        }
+
+        public void DatabaseMigrationServiceGetTargetSelectionRules()
+        {
+            #region get-target-selection-rules-1716000000000
+
+            var client = new AmazonDatabaseMigrationServiceClient();
+            var response = client.GetTargetSelectionRules(new GetTargetSelectionRulesRequest 
+            {
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\", \"rule-id\": \"1\", \"rule-name\": \"1\", \"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"database-name\": \"ExampleDatabase\", \"schema-name\": \"ExampleSchema\", \"table-name\": \"ExampleTable\"}, \"rule-action\": \"explicit\"}]}"
+            });
+
+            string targetSelectionRules = response.TargetSelectionRules;
 
             #endregion
         }
@@ -954,8 +1036,8 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ModifyConversionConfiguration(new ModifyConversionConfigurationRequest 
             {
-                ConversionConfiguration = "{\"Common project settings\":{\"ShowSeverityLevelInSql\":\"CRITICAL\"},\"ORACLE_TO_POSTGRESQL\" : {\"ToTimeZone\":false,\"LastDayBuiltinFunctionOracle\":false,   \"NextDayBuiltinFunctionOracle\":false,\"ConvertProceduresToFunction\":false,\"NvlBuiltinFunctionOracle\":false,\"DbmsAssertBuiltinFunctionOracle\":false}}",
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012"
+                ConversionConfiguration = "{\"Common project settings\":{\"EnableGenAiConversion\":true},\"MSSQL_TO_AURORA_POSTGRESQL\":{\"ConvertProceduresToFunction\":false}}",
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
             string migrationProjectIdentifier = response.MigrationProjectIdentifier;
@@ -970,16 +1052,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ModifyDataProvider(new ModifyDataProviderRequest 
             {
-                DataProviderIdentifier = "arn:aws:dms:us-east-1:012345678901:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
-                DataProviderName = "new-name",
-                Description = "description",
+                DataProviderIdentifier = "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                Description = "Updated data provider description",
                 Engine = "sqlserver",
-                Settings = new DataProviderSettings { MicrosoftSqlServerSettings = new MicrosoftSqlServerDataProviderSettings {
-                    DatabaseName = "DatabaseName",
-                    Port = 11112,
-                    ServerName = "ServerName2",
-                    SslMode = "none"
-                } }
+                Settings = new DataProviderSettings { MicrosoftSqlServerSettings = new MicrosoftSqlServerDataProviderSettings { ServerName = "new-source-server.us-east-1.rds.amazonaws.com" } }
             });
 
             DataProvider dataProvider = response.DataProvider;
@@ -1020,17 +1096,9 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ModifyInstanceProfile(new ModifyInstanceProfileRequest 
             {
-                AvailabilityZone = "",
-                Description = "",
-                InstanceProfileIdentifier = "",
-                InstanceProfileName = "",
-                KmsKeyArn = "",
-                NetworkType = "",
-                PubliclyAccessible = true,
-                SubnetGroupIdentifier = "",
-                VpcSecurityGroups = new List<string> {
-                    
-                }
+                Description = "Updated instance profile description",
+                InstanceProfileIdentifier = "arn:aws:dms:us-east-1:111122223333:instance-profile:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                NetworkType = "DUAL"
             });
 
             InstanceProfile instanceProfile = response.InstanceProfile;
@@ -1045,27 +1113,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.ModifyMigrationProject(new ModifyMigrationProjectRequest 
             {
-                Description = "description",
-                InstanceProfileIdentifier = "my-instance-profile",
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
-                MigrationProjectName = "new-name",
-                SchemaConversionApplicationAttributes = new SCApplicationAttributes {
-                    S3BucketPath = "arn:aws:s3:::myuser-bucket",
-                    S3BucketRoleArn = "arn:aws:iam::012345678901:role/Admin"
-                },
+                Description = "Updated migration project description",
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 SourceDataProviderDescriptors = new List<DataProviderDescriptorDefinition> {
-                    new DataProviderDescriptorDefinition {
-                        DataProviderIdentifier = "arn:aws:dms:us-east-1:012345678901:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
-                        SecretsManagerAccessRoleArn = "arn:aws:iam::012345678901:role/myuser-admin-access",
-                        SecretsManagerSecretId = "arn:aws:secretsmanager:us-east-1:012345678901:secret:myorg/myuser/ALL.SOURCE.ORACLE_12-A1B2C3"
-                    }
-                },
-                TargetDataProviderDescriptors = new List<DataProviderDescriptorDefinition> {
-                    new DataProviderDescriptorDefinition {
-                        DataProviderIdentifier = "arn:aws:dms:us-east-1:012345678901:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
-                        SecretsManagerAccessRoleArn = "arn:aws:iam::012345678901:role/myuser-admin-access",
-                        SecretsManagerSecretId = "arn:aws:secretsmanager:us-east-1:012345678901:secret:myorg/myuser/TARGET.postgresql-A1B2C3"
-                    }
+                    new DataProviderDescriptorDefinition { DataProviderIdentifier = "arn:aws:dms:us-east-1:111122223333:data-provider:EXAMPLEABCDEFGHIJKLMNOPQRS" }
                 }
             });
 
@@ -1160,7 +1211,7 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartExtensionPackAssociation(new StartExtensionPackAssociationRequest 
             {
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS"
             });
 
             string requestIdentifier = response.RequestIdentifier;
@@ -1175,8 +1226,8 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartMetadataModelAssessment(new StartMetadataModelAssessmentRequest 
             {
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012",
-                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"aurora-pg.cluster-0a1b2c3d4e5f.us-east-1.rds.amazonaws.com\", \"schema-name\": \"schema1\", \"table-name\": \"Cities\"},\"rule-action\": \"explicit\"} ]}"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"},\"rule-action\": \"explicit\"}]}"
             });
 
             string requestIdentifier = response.RequestIdentifier;
@@ -1191,8 +1242,26 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartMetadataModelConversion(new StartMetadataModelConversionRequest 
             {
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012",
-                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"aurora-pg.cluster-0a1b2c3d4e5f.us-east-1.rds.amazonaws.com\", \"schema-name\": \"schema1\", \"table-name\": \"Cities\"},\"rule-action\": \"explicit\"} ]}"
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"},\"rule-action\": \"explicit\"}]}"
+            });
+
+            string requestIdentifier = response.RequestIdentifier;
+
+            #endregion
+        }
+
+        public void DatabaseMigrationServiceStartMetadataModelCreation()
+        {
+            #region start-metadata-model-creation-1689722322596
+
+            var client = new AmazonDatabaseMigrationServiceClient();
+            var response = client.StartMetadataModelCreation(new StartMetadataModelCreationRequest 
+            {
+                MetadataModelName = "ExampleStatement",
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                Properties = new MetadataModelProperties { StatementProperties = new StatementProperties { Definition = "SELECT * FROM ExampleTable;" } },
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\", \"rule-id\": \"1\", \"rule-name\": \"1\", \"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"database-name\": \"ExampleDatabase\", \"schema-name\": \"ExampleSchema\"}, \"rule-action\": \"explicit\"}]}"
             });
 
             string requestIdentifier = response.RequestIdentifier;
@@ -1207,10 +1276,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartMetadataModelExportAsScript(new StartMetadataModelExportAsScriptRequest 
             {
-                FileName = "FILE",
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012",
-                Origin = "SOURCE",
-                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"aurora-pg.cluster-0a1b2c3d4e5f.us-east-1.rds.amazonaws.com\", \"schema-name\": \"schema1\", \"table-name\": \"Cities\"},\"rule-action\": \"explicit\"} ]}"
+                FileName = "ExampleScript",
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
+                Origin = "TARGET",
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"example-target-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"},\"rule-action\": \"explicit\"}]}"
             });
 
             string requestIdentifier = response.RequestIdentifier;
@@ -1225,9 +1294,9 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartMetadataModelExportToTarget(new StartMetadataModelExportToTargetRequest 
             {
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRSTUVWXYZ012345",
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 OverwriteExtensionPack = true,
-                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"aurora-pg.cluster-a1b2c3d4e5f6.us-east-1.rds.amazonaws.com\", \"schema-name\": \"schema1\", \"table-name\": \"Cities\"},\"rule-action\": \"explicit\"} ]}"
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"example-target-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"},\"rule-action\": \"explicit\"}]}"
             });
 
             string requestIdentifier = response.RequestIdentifier;
@@ -1242,10 +1311,10 @@ namespace AWSSDKDocSamples.Amazon.DatabaseMigrationService.Generated
             var client = new AmazonDatabaseMigrationServiceClient();
             var response = client.StartMetadataModelImport(new StartMetadataModelImportRequest 
             {
-                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:012345678901:migration-project:0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ012",
+                MigrationProjectIdentifier = "arn:aws:dms:us-east-1:111122223333:migration-project:EXAMPLEABCDEFGHIJKLMNOPQRS",
                 Origin = "SOURCE",
                 Refresh = false,
-                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"aurora-pg.cluster-0a1b2c3d4e5f.us-east-1.rds.amazonaws.com\", \"schema-name\": \"schema1\", \"table-name\": \"Cities\"},\"rule-action\": \"explicit\"} ]}"
+                SelectionRules = "{\"rules\": [{\"rule-type\": \"selection\",\"rule-id\": \"1\",\"rule-name\": \"1\",\"object-locator\": {\"server-name\": \"example-source-server.us-east-1.rds.amazonaws.com\", \"schema-name\": \"ExampleSchema\"},\"rule-action\": \"explicit\"}]}"
             });
 
             string requestIdentifier = response.RequestIdentifier;
