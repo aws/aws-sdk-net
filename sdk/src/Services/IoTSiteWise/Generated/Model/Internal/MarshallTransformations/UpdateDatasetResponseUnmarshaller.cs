@@ -111,6 +111,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceAlreadyExistsException"))
+                {
+                    return ResourceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

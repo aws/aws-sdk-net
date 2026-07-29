@@ -64,6 +64,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AssetModelCompositeModelPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("assetModelId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AssetModelId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("assetModelStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = AssetModelStatusUnmarshaller.Instance;

@@ -46,6 +46,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAnnotation())
+            {
+                context.Writer.WritePropertyName("annotation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AnnotationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Annotation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCsv())
             {
                 context.Writer.WritePropertyName("csv");
@@ -53,6 +64,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 
                 var marshaller = CsvMarshaller.Instance;
                 marshaller.Marshall(requestObject.Csv, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMp4())
+            {
+                context.Writer.WritePropertyName("mp4");
+                context.Writer.WriteStartObject();
+
+                var marshaller = Mp4Marshaller.Instance;
+                marshaller.Marshall(requestObject.Mp4, context);
 
                 context.Writer.WriteEndObject();
             }

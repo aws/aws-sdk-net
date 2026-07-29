@@ -40,6 +40,7 @@ namespace Amazon.IoTSiteWise.Model
         private int? _maxResults;
         private string _nextToken;
         private ListTimeSeriesType _timeSeriesType;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property AliasPrefix. 
@@ -145,6 +146,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetTimeSeriesType()
         {
             return this._timeSeriesType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

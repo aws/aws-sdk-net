@@ -84,6 +84,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetWorkspaceName())
+            {
+                context.Writer.WritePropertyName("workspaceName");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceName);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

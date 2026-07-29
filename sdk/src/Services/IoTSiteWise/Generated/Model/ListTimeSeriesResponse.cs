@@ -36,6 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _nextToken;
         private List<TimeSeriesSummary> _timeSeriesSummaries = AWSConfigs.InitializeCollections ? new List<TimeSeriesSummary>() : null;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -78,6 +79,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetTimeSeriesSummaries()
         {
             return this._timeSeriesSummaries != null && (this._timeSeriesSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

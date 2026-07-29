@@ -68,10 +68,22 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("datasetType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatasetType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("enrichmentStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = DatasetEnrichmentUnmarshaller.Instance;
+                    unmarshalledObject.EnrichmentStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth, ref reader))
@@ -90,6 +102,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("sourceType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth, ref reader))

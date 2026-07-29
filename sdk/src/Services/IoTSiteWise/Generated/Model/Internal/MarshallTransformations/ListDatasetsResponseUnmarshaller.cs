@@ -64,6 +64,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("workspaceName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkspaceName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;
@@ -96,6 +102,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {

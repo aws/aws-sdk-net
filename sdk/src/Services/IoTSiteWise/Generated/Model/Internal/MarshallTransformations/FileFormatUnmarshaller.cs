@@ -56,10 +56,22 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("annotation", targetDepth, ref reader))
+                {
+                    var unmarshaller = AnnotationUnmarshaller.Instance;
+                    unmarshalledObject.Annotation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("csv", targetDepth, ref reader))
                 {
                     var unmarshaller = CsvUnmarshaller.Instance;
                     unmarshalledObject.Csv = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("mp4", targetDepth, ref reader))
+                {
+                    var unmarshaller = Mp4Unmarshaller.Instance;
+                    unmarshalledObject.Mp4 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parquet", targetDepth, ref reader))

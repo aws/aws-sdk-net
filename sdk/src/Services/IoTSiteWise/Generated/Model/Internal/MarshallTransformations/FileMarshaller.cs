@@ -46,16 +46,44 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAlias())
+            {
+                context.Writer.WritePropertyName("alias");
+                context.Writer.WriteStringValue(requestObject.Alias);
+            }
+
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("bucket");
                 context.Writer.WriteStringValue(requestObject.Bucket);
             }
 
+            if(requestObject.IsSetFileFormat())
+            {
+                context.Writer.WritePropertyName("fileFormat");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FileFormatMarshaller.Instance;
+                marshaller.Marshall(requestObject.FileFormat, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
                 context.Writer.WriteStringValue(requestObject.Key);
+            }
+
+            if(requestObject.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("startTime");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeInNanosMarshaller.Instance;
+                marshaller.Marshall(requestObject.StartTime, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVersionId())

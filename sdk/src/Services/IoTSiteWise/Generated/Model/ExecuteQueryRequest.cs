@@ -118,7 +118,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The IoT SiteWise query statement.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10000)]
         public string QueryStatement
         {
             get { return this._queryStatement; }

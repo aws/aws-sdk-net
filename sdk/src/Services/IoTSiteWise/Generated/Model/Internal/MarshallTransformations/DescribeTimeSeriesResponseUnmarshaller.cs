@@ -106,6 +106,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.TimeSeriesLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("workspaceName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkspaceName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

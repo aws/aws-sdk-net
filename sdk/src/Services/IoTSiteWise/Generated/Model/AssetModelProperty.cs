@@ -50,6 +50,12 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
+        /// The <c>VIDEO</c>, <c>ANNOTATION</c>, and <c>JSON</c> data types aren't supported for
+        /// asset model properties. These types are used only by time series that store data for
+        /// datasets in a workspace.
+        /// </para>
+        ///  
+        /// <para>
         /// If you specify <c>STRUCT</c>, you must also specify <c>dataTypeSpec</c> to identify
         /// the type of the structure for this property.
         /// </para>

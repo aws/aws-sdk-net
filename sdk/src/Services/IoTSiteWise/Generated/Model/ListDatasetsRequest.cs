@@ -35,9 +35,30 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListDatasetsRequest : AmazonIoTSiteWiseRequest
     {
+        private DatasetTypeEnum _datasetType;
         private int? _maxResults;
         private string _nextToken;
         private DatasetSourceType _sourceType;
+        private string _workspaceName;
+
+        /// <summary>
+        /// Gets and sets the property DatasetType. 
+        /// <para>
+        /// The type of dataset to filter by: a session dataset, a curated dataset, or a connection
+        /// to an external datasource.
+        /// </para>
+        /// </summary>
+        public DatasetTypeEnum DatasetType
+        {
+            get { return this._datasetType; }
+            set { this._datasetType = value; }
+        }
+
+        // Check to see if DatasetType property is set
+        internal bool IsSetDatasetType()
+        {
+            return this._datasetType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -94,6 +115,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetSourceType()
         {
             return this._sourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace to filter datasets by.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

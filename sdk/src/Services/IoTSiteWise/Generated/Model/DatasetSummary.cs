@@ -36,10 +36,13 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _arn;
         private DateTime? _creationDate;
+        private DatasetTypeEnum _datasetType;
         private string _description;
+        private DatasetEnrichment _enrichmentStatus;
         private string _id;
         private DateTime? _lastUpdateDate;
         private string _name;
+        private DatasetSourceType _sourceType;
         private DatasetStatus _status;
 
         /// <summary>
@@ -82,6 +85,25 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DatasetType. 
+        /// <para>
+        /// The type of dataset: a session dataset, a curated dataset, or a connection to an external
+        /// datasource.
+        /// </para>
+        /// </summary>
+        public DatasetTypeEnum DatasetType
+        {
+            get { return this._datasetType; }
+            set { this._datasetType = value; }
+        }
+
+        // Check to see if DatasetType property is set
+        internal bool IsSetDatasetType()
+        {
+            return this._datasetType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// A description about the dataset, and its functionality.
@@ -98,6 +120,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnrichmentStatus. 
+        /// <para>
+        /// The enrichment status of the dataset.
+        /// </para>
+        /// </summary>
+        public DatasetEnrichment EnrichmentStatus
+        {
+            get { return this._enrichmentStatus; }
+            set { this._enrichmentStatus = value; }
+        }
+
+        // Check to see if EnrichmentStatus property is set
+        internal bool IsSetEnrichmentStatus()
+        {
+            return this._enrichmentStatus != null;
         }
 
         /// <summary>
@@ -155,6 +195,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The data source type of the dataset.
+        /// </para>
+        /// </summary>
+        public DatasetSourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
         /// <summary>

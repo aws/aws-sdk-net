@@ -35,6 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeBulkImportJobResponse : AmazonWebServiceResponse
     {
         private bool? _adaptiveIngestion;
+        private string _datasetId;
         private bool? _deleteFilesAfterImport;
         private ErrorReportLocation _errorReportLocation;
         private List<File> _files = AWSConfigs.InitializeCollections ? new List<File>() : null;
@@ -45,6 +46,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _jobName;
         private string _jobRoleArn;
         private JobStatus _jobStatus;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property AdaptiveIngestion. 
@@ -64,6 +66,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetAdaptiveIngestion()
         {
             return this._adaptiveIngestion.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetId. 
+        /// <para>
+        /// The ID of the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=36)]
+        public string DatasetId
+        {
+            get { return this._datasetId; }
+            set { this._datasetId = value; }
+        }
+
+        // Check to see if DatasetId property is set
+        internal bool IsSetDatasetId()
+        {
+            return this._datasetId != null;
         }
 
         /// <summary>
@@ -108,8 +129,18 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Files. 
         /// <para>
-        /// The files in the specified Amazon S3 bucket that contain your data.
+        /// The files in the specified Amazon S3 bucket that contain your data. You can specify
+        /// up to 100 files for each bulk import job. Each file supports the following size limits:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Parquet files – Up to 256 MiB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Other file formats – Up to 5 GiB.
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -136,7 +167,6 @@ namespace Amazon.IoTSiteWise.Model
         /// data in Amazon S3.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public JobConfiguration JobConfiguration
         {
             get { return this._jobConfiguration; }
@@ -293,6 +323,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetJobStatus()
         {
             return this._jobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

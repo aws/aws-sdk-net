@@ -71,6 +71,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/jobs";
             request.UseQueryString = true;
             

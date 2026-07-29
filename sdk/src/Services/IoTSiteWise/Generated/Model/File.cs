@@ -34,9 +34,31 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class File
     {
+        private string _alias;
         private string _bucket;
+        private FileFormat _fileFormat;
         private string _key;
+        private TimeInNanos _startTime;
         private string _versionId;
+
+        /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// The alias associated with the file's time series.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -58,6 +80,24 @@ namespace Amazon.IoTSiteWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FileFormat. 
+        /// <para>
+        /// The file format of the data in S3.
+        /// </para>
+        /// </summary>
+        public FileFormat FileFormat
+        {
+            get { return this._fileFormat; }
+            set { this._fileFormat = value; }
+        }
+
+        // Check to see if FileFormat property is set
+        internal bool IsSetFileFormat()
+        {
+            return this._fileFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
         /// The key of the Amazon S3 object that contains your data. Each object has a key that
@@ -75,6 +115,24 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// The nanosecond-precision start time for the file data.
+        /// </para>
+        /// </summary>
+        public TimeInNanos StartTime
+        {
+            get { return this._startTime; }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime != null;
         }
 
         /// <summary>

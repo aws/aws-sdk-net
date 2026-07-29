@@ -36,6 +36,8 @@ namespace Amazon.IoTSiteWise.Model
     public partial class DescribeDatasetRequest : AmazonIoTSiteWiseRequest
     {
         private string _datasetId;
+        private string _datasetVersion;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property DatasetId. 
@@ -54,6 +56,44 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDatasetId()
         {
             return this._datasetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetVersion. 
+        /// <para>
+        /// The version of the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public string DatasetVersion
+        {
+            get { return this._datasetVersion; }
+            set { this._datasetVersion = value; }
+        }
+
+        // Check to see if DatasetVersion property is set
+        internal bool IsSetDatasetVersion()
+        {
+            return this._datasetVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace that contains the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

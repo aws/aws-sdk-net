@@ -31,12 +31,17 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataset operation.
-    /// Deletes a dataset. This cannot be undone.
+    /// Deletes a dataset. This can't be undone. Deleting a session dataset also deletes the
+    /// underlying time series data in the session. You can't delete a session dataset while
+    /// a curated dataset references its data segments. First delete the curated dataset or
+    /// disassociate the data segments. Deleting a curated dataset doesn't delete the underlying
+    /// data in the source session datasets.
     /// </summary>
     public partial class DeleteDatasetRequest : AmazonIoTSiteWiseRequest
     {
         private string _clientToken;
         private string _datasetId;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -75,6 +80,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetDatasetId()
         {
             return this._datasetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace that contains the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

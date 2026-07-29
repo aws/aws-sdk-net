@@ -72,6 +72,9 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetPropertyId())
                 request.Parameters.Add("propertyId", StringUtils.FromString(publicRequest.PropertyId));
+            
+            if (publicRequest.IsSetWorkspaceName())
+                request.Parameters.Add("workspaceName", StringUtils.FromString(publicRequest.WorkspaceName));
             request.ResourcePath = "/timeseries/delete/";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();

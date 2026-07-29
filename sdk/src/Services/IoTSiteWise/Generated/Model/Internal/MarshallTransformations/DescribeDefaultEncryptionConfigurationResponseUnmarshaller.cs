@@ -103,6 +103,10 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                {
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

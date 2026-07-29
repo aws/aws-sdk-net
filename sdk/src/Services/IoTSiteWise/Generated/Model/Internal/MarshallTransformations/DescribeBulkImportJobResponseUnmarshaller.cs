@@ -58,6 +58,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.AdaptiveIngestion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("datasetId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DatasetId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("deleteFilesAfterImport", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
@@ -116,6 +122,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.JobStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("workspaceName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkspaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

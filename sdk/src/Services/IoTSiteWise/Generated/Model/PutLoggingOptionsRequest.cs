@@ -36,6 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class PutLoggingOptionsRequest : AmazonIoTSiteWiseRequest
     {
         private LoggingOptions _loggingOptions;
+        private string _workspaceName;
 
         /// <summary>
         /// Gets and sets the property LoggingOptions. 
@@ -54,6 +55,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetLoggingOptions()
         {
             return this._loggingOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkspaceName. 
+        /// <para>
+        /// The name of the workspace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string WorkspaceName
+        {
+            get { return this._workspaceName; }
+            set { this._workspaceName = value; }
+        }
+
+        // Check to see if WorkspaceName property is set
+        internal bool IsSetWorkspaceName()
+        {
+            return this._workspaceName != null;
         }
 
     }

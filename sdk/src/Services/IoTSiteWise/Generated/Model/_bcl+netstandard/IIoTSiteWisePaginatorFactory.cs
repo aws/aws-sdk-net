@@ -58,6 +58,16 @@ namespace Amazon.IoTSiteWise.Model
         IBatchGetAssetPropertyValueHistoryPaginator BatchGetAssetPropertyValueHistory(BatchGetAssetPropertyValueHistoryRequest request);
 
         /// <summary>
+        /// Paginator for DescribePipelineExecution operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribePipelineExecutionPaginator DescribePipelineExecution(DescribePipelineExecutionRequest request);
+
+        /// <summary>
         /// Paginator for ExecuteQuery operation
         ///</summary>
         [AWSPaginator(
@@ -98,6 +108,26 @@ namespace Amazon.IoTSiteWise.Model
         IGetInterpolatedAssetPropertyValuesPaginator GetInterpolatedAssetPropertyValues(GetInterpolatedAssetPropertyValuesRequest request);
 
         /// <summary>
+        /// Paginator for GetQueryResults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetQueryResultsPaginator GetQueryResults(GetQueryResultsRequest request);
+
+        /// <summary>
+        /// Paginator for GetSearchResults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetSearchResultsPaginator GetSearchResults(GetSearchResultsRequest request);
+
+        /// <summary>
         /// Paginator for ListAccessPolicies operation
         ///</summary>
         [AWSPaginator(
@@ -116,6 +146,16 @@ namespace Amazon.IoTSiteWise.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListActionsPaginator ListActions(ListActionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListApplications operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListApplicationsPaginator ListApplications(ListApplicationsRequest request);
 
         /// <summary>
         /// Paginator for ListAssetModelCompositeModels operation
@@ -248,6 +288,36 @@ namespace Amazon.IoTSiteWise.Model
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
 
         /// <summary>
+        /// Paginator for ListDatasetDataSegmentRelationships operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetDataSegmentRelationshipsPaginator ListDatasetDataSegmentRelationships(ListDatasetDataSegmentRelationshipsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasetDataSegments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetDataSegmentsPaginator ListDatasetDataSegments(ListDatasetDataSegmentsRequest request);
+
+        /// <summary>
+        /// Paginator for ListDatasetExportJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDatasetExportJobsPaginator ListDatasetExportJobs(ListDatasetExportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListDatasets operation
         ///</summary>
         [AWSPaginator(
@@ -256,6 +326,16 @@ namespace Amazon.IoTSiteWise.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListDatasetsPaginator ListDatasets(ListDatasetsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEnrichmentJobs operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListEnrichmentJobsPaginator ListEnrichmentJobs(ListEnrichmentJobsRequest request);
 
         /// <summary>
         /// Paginator for ListExecutions operation
@@ -288,6 +368,26 @@ namespace Amazon.IoTSiteWise.Model
         IListInterfaceRelationshipsPaginator ListInterfaceRelationships(ListInterfaceRelationshipsRequest request);
 
         /// <summary>
+        /// Paginator for ListPipelineExecutions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPipelineExecutionsPaginator ListPipelineExecutions(ListPipelineExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListPipelines operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListPipelinesPaginator ListPipelines(ListPipelinesRequest request);
+
+        /// <summary>
         /// Paginator for ListPortals operation
         ///</summary>
         [AWSPaginator(
@@ -318,6 +418,36 @@ namespace Amazon.IoTSiteWise.Model
         IListProjectsPaginator ListProjects(ListProjectsRequest request);
 
         /// <summary>
+        /// Paginator for ListQueries operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListQueriesPaginator ListQueries(ListQueriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListSearches operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSearchesPaginator ListSearches(ListSearchesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTasks operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTasksPaginator ListTasks(ListTasksRequest request);
+
+        /// <summary>
         /// Paginator for ListTimeSeries operation
         ///</summary>
         [AWSPaginator(
@@ -326,5 +456,15 @@ namespace Amazon.IoTSiteWise.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListTimeSeriesPaginator ListTimeSeries(ListTimeSeriesRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkspaces operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListWorkspacesPaginator ListWorkspaces(ListWorkspacesRequest request);
     }
 }

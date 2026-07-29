@@ -58,6 +58,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("datasetConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = DatasetConfigUnmarshaller.Instance;
+                    response.DatasetConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("datasetCreationDate", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -100,10 +106,34 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.DatasetStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("datasetType", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DatasetType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("datasetVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DatasetVersion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("enrichmentStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = DatasetEnrichmentUnmarshaller.Instance;
+                    response.EnrichmentStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("metadata", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Metadata = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("workspaceName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.WorkspaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
