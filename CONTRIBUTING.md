@@ -213,6 +213,18 @@ If you're contributing from outside AWS, you have several options for adding Dev
 1. **Add it yourself**: Include the DevConfig file in your PR (recommended)
 2. **Request assistance**: Ask the maintainers to add one for you
 
+### Dependencies
+
+**Pull requests should not add any new dependencies to the SDK.** We take a very hard stance against taking on new dependencies, particularly any dependency outside of the `System.*` namespace.
+
+If you believe a new dependency is genuinely warranted, please open a [GitHub discussion](https://github.com/aws/aws-sdk-net/discussions) first to propose it before submitting a PR. This lets us evaluate the trade-offs together before you invest time in an implementation.
+
+#### Why we avoid dependencies
+
+The AWS SDK for .NET is typically consumed at a very low level of an application's stack, so a dependency we take on is inherited by every application that uses the SDK. This creates a real risk of version collisions: if the SDK depends on one version of a package but the application (or another library it uses) references a different version, customers can hit runtime errors such as `MissingMethodException`. Because we cannot control which versions our customers already have in their applications, even a well-maintained, high-quality dependency can cause hard-to-diagnose breakages. Keeping our dependency footprint minimal is one of the most effective ways we protect the stability of the applications that rely on the SDK.
+
+Where a dependency is unavoidable, we prefer to isolate it in a separate, opt-in package (for example, `AWSSDK.Extensions.*` packages) so that only customers who explicitly choose that optional feature pull in the associated dependencies. When a capability from a third-party library would be broadly useful, we generally prefer to take inspiration from it and implement the needed functionality directly rather than take the dependency.
+
 ## Automated Tools
 
 The use of AI tooling for assisted development work is accepted and encouraged
