@@ -1,66 +1,56 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-
-<html lang="en-GB">
-
-    <head>
-        <title>AWS SDK for .NET Version 4 Documentation</title>
-        <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-        <meta name="description" content="AWS SDK for .NET Version 4 API Reference Documentation">
-        <meta name="guide-name" content="API Reference">
-        <meta name="service-name" content="AWS SDK for .NET Version 4">
-        <link rel="canonical" href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html">
-        <link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen">
-        <link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css" media="screen">
-		<link rel="shortcut icon" href="favicon.ico"/>
-        <script type="text/javascript" src="./resources/jquery.min.js"></script>
-
-        <script>
-            var LARGE_WINDOW_BREAKPOINT = 992;
-
-            jQuery(function () {
-                jQuery(window).resize(function () {
-                    windowWidthUpdated();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AWS SDK for .NET Version 4 Documentation</title>
+    <meta name="description" content="AWS SDK for .NET Version 4 API Reference Documentation">
+    <meta name="guide-name" content="API Reference">
+    <meta name="service-name" content="AWS SDK for .NET Version 4">
+    <link rel="canonical" href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/index.html">
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script>
+        /*
+         * Bootstrap + legacy redirect shim.
+         *
+         * The doc set used to be a <frameset> driven by
+         * index.html?page=<file>&tocid=<id>. Pages are now standalone
+         * documents navigated in place by htmx, so this page only:
+         *   1. Honors old ?page= bookmarks / RedirectWriter links by
+         *      forwarding to the canonical /items/<page> URL, and
+         *   2. Otherwise sends visitors to the landing page.
+         */
+        (function () {
+            function parseQuery() {
+                var q = {}, s = window.location.search.replace(/^\?/, "");
+                if (!s) return q;
+                s.split("&").forEach(function (pair) {
+                    var kv = pair.split("=");
+                    q[decodeURIComponent(kv[0])] = decodeURIComponent((kv[1] || "").replace(/\+/g, " "));
                 });
-                windowWidthUpdated();
-            });
-
-            function windowWidthUpdated() {
-                var windowWidth = jQuery(window).width();
-                if (windowWidth <= LARGE_WINDOW_BREAKPOINT) {
-                    jQuery('#contentFrameset')[0].cols = '0,*';
-                    jQuery('#mainFrameset')[0].rows = '40,*';
-                } else {
-                    jQuery('#contentFrameset')[0].cols = '250,*';
-                    jQuery('#mainFrameset')[0].rows = '0,*';
-                }
-
-                return windowWidth;
+                return q;
             }
 
-            function showTOC() {
-                var windowWidth = jQuery(window).width();
-                if (windowWidth > LARGE_WINDOW_BREAKPOINT) return;
+            var params = parseQuery();
+            var target;
 
-                jQuery('#contentFrameset')[0].cols = '*,0';
-                window.parent.frames["mobileNavBar"].showCrossButton();
+            if (params.page) {
+                // Generated filenames never contain underscores (FilenameGenerator
+                // strips them at build time), so ?page= values are forwarded as-is.
+                target = "./items/" + params.page;
+            } else {
+                target = "./items/sdk-api-home.html";
             }
 
-            function showContentPane() {
-                var windowWidth = jQuery(window).width();
-                if (windowWidth > LARGE_WINDOW_BREAKPOINT) return;
-
-                jQuery('#contentFrameset')[0].cols = '0,*';
-                window.parent.frames["mobileNavBar"].showHamburgerButton();
-            }
-
-        </script>
-    </head>
-
-    <frameset id="mainFrameset" rows="0,*" border="0">
-        <frame title="Mobile navigation bar" id="mobileNavBar" name="mobileNavBar" src="./MobileNavBar.html" />
-        <frameset id="contentFrameset" cols="250,*">
-            <frame title="Table of Content" id="TOC" name="TOC" src="./TOC.html" />
-            <frame title="Main content pane" id="contentpane" name="contentpane" tabindex="-1" />
-        </frameset>
-    </frameset>
+            window.location.replace(target);
+        })();
+    </script>
+</head>
+<body>
+    <noscript>
+        <p>This documentation requires JavaScript. Browse the
+        <a href="./items/sdk-api-home.html">API Reference home page</a>.</p>
+    </noscript>
+    <p><a href="./items/sdk-api-home.html">Continue to the AWS SDK for .NET API Reference</a></p>
+</body>
 </html>

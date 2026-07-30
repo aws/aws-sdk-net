@@ -68,7 +68,6 @@ namespace SDKDocGenerator.Writers
         protected override void WriteContent(TextWriter writer)
         {
             AddSummaryDocumentation(writer);
-            AddPageTOC(writer);
             AddInheritanceHierarchy(writer);
             AddNamespace(writer, this._versionType.Namespace, this._versionType.ManifestModuleName);
 
@@ -98,10 +97,14 @@ namespace SDKDocGenerator.Writers
             AddVersionInformation(writer, this._versionType);
         }
 
-        private void AddPageTOC(TextWriter writer)
+        protected override void WriteHeaderAside(TextWriter writer)
         {
-            writer.WriteLine("<div id=\"pageTOC\" class=\"collapsible-toc collapsed\">");
-            writer.WriteLine("<h2 onclick=\"toggleTOC()\">In this article <span id=\"tocToggle\">▶</span></h2>");
+            // "In this article" — collapsed-by-default dropdown, rendered in the page
+            // header (right of the class name). app.js manages open/close state.
+            // A real <button> gives native Enter/Space keyboard activation for free
+            // (an <h2 role="button"> would need a JS keydown handler to be operable).
+            writer.WriteLine("<div id=\"pageTOC\">");
+            writer.WriteLine("<h2><button type=\"button\" onclick=\"toggleTOC()\" aria-expanded=\"false\" aria-controls=\"tocList\">In this article <span id=\"tocToggle\" aria-hidden=\"true\">&#9662;</span></button></h2>");
             writer.WriteLine("<ul id=\"tocList\" style=\"display: none;\">");
             
             writer.WriteLine("<li><a href=\"#inheritancehierarchy\">Inheritance Hierarchy</a></li>");
@@ -246,7 +249,8 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("<td>");
             var filename = FilenameGenerator.GenerateFilename(info);
             var parameters = FormatParameters(info.GetParameters());
-            var hrefLink = string.Format("<a href=\"./{0}\">{1}({2})</a>", filename, info.DeclaringType.Name, parameters);
+            var hrefLink = string.Format("<a href=\"./{0}\">{1}</a>", filename,
+                FormatMemberSignatureHtml(info.DeclaringType.Name, parameters));
             writer.WriteLine(hrefLink);
             writer.WriteLine("</td>");
 
@@ -263,7 +267,12 @@ namespace SDKDocGenerator.Writers
 
         void AddProperties(TextWriter writer)
         {
-            var properties = this._versionType.GetProperties();
+            // Collapse same-named declarations to one row. Reflection returns BOTH the
+            // derived and base PropertyInfo when a type hides a base property with 'new',
+            // which would otherwise emit two <tr id="prop_<Name>"> rows sharing an id
+            // (invalid HTML; the search deep-link anchor then resolves only to the first).
+            // Keep the most-derived declaration, matching the search index's IsDeclaredOn.
+            var properties = DedupeByName(this._versionType.GetProperties(), x => x.Name, x => x.DeclaringType);
             if (!properties.Any())
                 return;
 
@@ -275,10 +284,25 @@ namespace SDKDocGenerator.Writers
             AddMemberTableSectionClosing(writer);
         }
 
+        // Collapses members sharing a name to a single declaration, preferring the one
+        // declared on the page's own type (a 'new'/shadowed member) over an inherited
+        // one, else the first encountered. Keeps <tr> anchor ids unique per page.
+        private IEnumerable<T> DedupeByName<T>(IEnumerable<T> members, System.Func<T, string> name, System.Func<T, TypeWrapper> declaringType)
+            where T : class
+        {
+            return members
+                .GroupBy(name)
+                .Select(g =>
+                    g.FirstOrDefault(m => declaringType(m) != null
+                        && string.Equals(declaringType(m).FullName, _versionType.FullName))
+                    ?? g.First());
+        }
+
 
         void AddProperty(TextWriter writer, PropertyInfoWrapper propertyInfo)
         {
-            writer.WriteLine("<tr>");
+            // Stable row id so local search results can deep-link to this property row.
+            writer.WriteLine("<tr id=\"{0}\">", FilenameGenerator.PropertyAnchor(propertyInfo.Name));
 
             writer.WriteLine("<td>");
             writer.WriteLine("<img class=\"publicProperty\" src=\"{0}/resources/blank.gif\" title=\"Public Property\" alt=\"Public Property\"/>", RootRelativePath);
@@ -342,12 +366,12 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
-            writer.WriteLine("<a href=\"{0}/items/{1}/{2}\">{3}({4})</a>",
+            writer.WriteLine("<a href=\"{0}/{1}/{2}/{3}\">{4}</a>",
                 RootRelativePath,
+                Artifacts.Options.ContentSubFolderName,
                 GenerationManifest.OutputSubFolderFromNamespace(info.DeclaringType.Namespace),
                 FilenameGenerator.GenerateFilename(info),
-                info.Name,
-                FormatParameters(info.GetParameters()));
+                FormatMemberSignatureHtml(info.Name, FormatParameters(info.GetParameters())));
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
@@ -374,7 +398,9 @@ namespace SDKDocGenerator.Writers
 
         void AddFields(TextWriter writer)
         {
-            var fields = this._versionType.GetFields();
+            // Dedupe by name for the same reason as AddProperties: a 'new'-shadowed field
+            // would otherwise produce two <tr id="field_<Name>"> rows with a colliding id.
+            var fields = DedupeByName(this._versionType.GetFields(), x => x.Name, x => x.DeclaringType);
             if (!fields.Any())
                 return;
 
@@ -388,7 +414,8 @@ namespace SDKDocGenerator.Writers
 
         void AddField(TextWriter writer, FieldInfoWrapper info)
         {
-            writer.WriteLine("<tr>");
+            // Stable row id so local search results can deep-link to this field row.
+            writer.WriteLine("<tr id=\"{0}\">", FilenameGenerator.FieldAnchor(info.Name));
 
             writer.WriteLine("<td>");
             writer.WriteLine("<img class=\"field\" src=\"{0}/resources/blank.gif\" title=\"Field\" alt=\"Field\"/>", RootRelativePath);
@@ -445,8 +472,9 @@ namespace SDKDocGenerator.Writers
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");
-            writer.WriteLine("<a href=\"{0}/items/{1}/{2}\">{3}</a>",
+            writer.WriteLine("<a href=\"{0}/{1}/{2}/{3}\">{4}</a>",
                 RootRelativePath,
+                Artifacts.Options.ContentSubFolderName,
                 GenerationManifest.OutputSubFolderFromNamespace(info.DeclaringType.Namespace),
                 FilenameGenerator.GenerateFilename(info),
                 info.Name);
@@ -487,10 +515,11 @@ namespace SDKDocGenerator.Writers
 
         void AddEnumMember(TextWriter writer, string enumName)
         {
-            writer.WriteLine("<tr>");
+            // Stable row id so local search results can deep-link to this enum member row.
+            writer.WriteLine("<tr id=\"{0}\">", FilenameGenerator.EnumMemberAnchor(enumName));
 
             writer.WriteLine("<td>");
-            writer.WriteLine("<img class=\"field\" src=\"{0}/resources/blank.gif\" title=\"Enum\" alt=\"Enum\"/>", RootRelativePath);
+            writer.WriteLine("<img class=\"enum\" src=\"{0}/resources/blank.gif\" title=\"Enum\" alt=\"Enum\"/>", RootRelativePath);
             writer.WriteLine("</td>");
 
             writer.WriteLine("<td>");

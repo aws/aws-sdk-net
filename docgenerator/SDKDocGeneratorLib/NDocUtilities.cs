@@ -38,8 +38,13 @@ namespace SDKDocGenerator
 
         private static readonly Dictionary<string, string> NdocToHtmlElementMapping = new Dictionary<string, string>(StringComparer.Ordinal)
         {
-            { "summary", "p" },
-            { "para", "p" },
+            // summary/para are block containers (rendered as <div>, not <p>) because
+            // their content may include block-level <note>/<important> noteblocks —
+            // a <div> inside a <p> is invalid HTML and browsers auto-close the <p>,
+            // leaving stray empty paragraphs and spurious vertical gaps. The
+            // "doc-para" class restores paragraph-like spacing (see aws-docs.css).
+            { "summary", "div" },
+            { "para", "div" },
             { "see", "a" },
             { "paramref", "code" },
             { "important", "div" },
@@ -51,8 +56,22 @@ namespace SDKDocGenerator
 
         private static readonly Dictionary<string, string> NdocToHtmlClassMapping = new Dictionary<string, string>(StringComparer.Ordinal)
         {
+            { "summary", "doc-para" },
+            { "para", "doc-para" },
             { "important", "noteblock noteblock-warning" },
             { "note", "noteblock" }
+        };
+
+        // HTML void elements — the only elements that may legally be emitted without a
+        // separate end tag. Everything else must get a full end tag (<div></div>), never
+        // the XML self-closing form (<div/>), which an HTML parser reads as an unclosed
+        // start tag that swallows the following siblings. None of the mapping targets
+        // (div/a/code/li/span/ul/ol) are void, so the emitted element is void iff its
+        // original NDoc local name is one of these (they pass through unmapped).
+        private static readonly HashSet<string> VoidHtmlElements = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "area", "base", "br", "col", "embed", "hr", "img", "input",
+            "link", "meta", "param", "source", "track", "wbr"
         };
 
         #region manage ndoc instances
@@ -714,6 +733,53 @@ namespace SDKDocGenerator
                                 else if (!NdocToHtmlElementMapping.TryGetValue(originalLocalName, out elementName))
                                     elementName = originalLocalName;
 
+                                // Resolve the cref (if any) exactly once here; both the
+                                // <a>-vs-<span> decision below and the attribute loop further
+                                // down consume this single result instead of each calling
+                                // typeProvider.GetType (which could otherwise drift). Reading
+                                // attributes via GetAttribute does not disturb the later
+                                // MoveToAttribute loop. A malformed cref (not "X:Name") is a
+                                // generation-time error, surfaced the same way as before.
+                                // Skip for <list> (its attributes aren't copied below, and it
+                                // carries type=, never cref=) to keep the throw set identical
+                                // to the original attribute-loop behavior.
+                                var crefAttr = isList ? null : reader.GetAttribute(crefAttributeName);
+                                TypeWrapper crefTargetType = null;
+                                string crefTypeName = null;
+                                bool crefIsUnresolved = false;
+                                if (crefAttr != null)
+                                {
+                                    var crefParts = crefAttr.Split(':');
+                                    if (crefParts.Length != 2)
+                                        throw new InvalidOperationException();
+                                    crefTypeName = crefParts[1];
+                                    crefTargetType = typeProvider.GetType(crefTypeName);
+                                    crefIsUnresolved = crefTargetType == null;
+                                }
+
+                                // Anchors that would have no href look clickable but go
+                                // nowhere. Render them as a plain <span> instead. This covers
+                                // both <see cref="..."> whose target isn't in the generated doc
+                                // set, and author-written <a> tags in the SDK XML that simply
+                                // omit href.
+                                if (elementName == "a")
+                                {
+                                    if (crefAttr != null)
+                                    {
+                                        if (crefIsUnresolved)
+                                            elementName = "span";
+                                    }
+                                    else if (string.IsNullOrEmpty(reader.GetAttribute(hrefAttributeName))
+                                             && string.IsNullOrEmpty(reader.GetAttribute(nameAttributeName)))
+                                    {
+                                        // <a> with no cref, no href, and no name — not a real
+                                        // link and not a bookmark target, so render as <span>.
+                                        // A bare <a name="foo"> in-page bookmark anchor is kept
+                                        // as <a> (name only creates a fragment target on <a>).
+                                        elementName = "span";
+                                    }
+                                }
+
                                 // some elements can't be empty, use this variable for that
                                 string emptyElementContents = null;
 
@@ -748,26 +814,21 @@ namespace SDKDocGenerator
 
                                         if (isCref)
                                         {
-                                            // replace cref with href
-                                            attributeName = hrefAttributeName;
-
-                                            // extract type name from cref value for emptyElementContents
-                                            var crefParts = attributeValue.Split(':');
-                                            if (crefParts.Length != 2)
-                                                throw new InvalidOperationException();
-                                            var typeName = crefParts[1];
-                                            var targetType = typeProvider.GetType(typeName);
-                                            if (targetType == null)
+                                            // Reuse the single resolution done at element-open.
+                                            if (crefIsUnresolved)
                                             {
-                                                emptyElementContents = typeName;
-                                                //If the type cannot be found do not render out the href attribute.
-                                                //This will make it so things such as properties which we do not have
-                                                //specific doc pages for do not render as a broken link but we can still
-                                                //use the crefs in the code correctly.
+                                                // Unresolved: the element was switched to <span> above.
+                                                // Emit the bare type name as text and drop the cref
+                                                // attribute entirely so nothing looks clickable.
+                                                emptyElementContents = crefTypeName;
                                                 writeAttribute = false;
                                             }
                                             else
-                                                emptyElementContents = targetType.CreateReferenceHtml(fullTypeName: true);
+                                            {
+                                                // Resolved: replace cref with href on the <a>.
+                                                attributeName = hrefAttributeName;
+                                                emptyElementContents = crefTargetType.CreateReferenceHtml(fullTypeName: true);
+                                            }
                                         }
                                         else if (isHref)
                                         {
@@ -808,17 +869,22 @@ namespace SDKDocGenerator
                                 {
                                     // write empty element contents, if any
                                     if (!string.IsNullOrEmpty(emptyElementContents))
-                                    {
                                         writer.WriteRaw(emptyElementContents);
-                                    }
 
-                                    // close element now
-                                    writer.WriteEndElement();
+                                    // Close it. For non-void elements force a full end tag
+                                    // (<div></div>) — the XML self-closing form (<div/>) is read
+                                    // by an HTML parser as an unclosed start tag that swallows the
+                                    // following siblings. Void elements (br/wbr/img/…) keep the
+                                    // self-closing form, which is valid for them.
+                                    WriteElementEnd(writer, originalLocalName);
                                 }
 
                                 break;
                             case XmlNodeType.EndElement:
-                                writer.WriteEndElement();
+                                // Same rule as the self-closing branch: an empty <para></para>
+                                // (no children) would otherwise be serialized as <div/> by
+                                // WriteEndElement. Force a full end tag for non-void elements.
+                                WriteElementEnd(writer, reader.LocalName);
                                 break;
                             case XmlNodeType.Text:
                                 writer.WriteRaw(reader.Value);
@@ -833,10 +899,27 @@ namespace SDKDocGenerator
             }
         }
 
+        // Closes the current element, choosing between a full end tag and the XML
+        // self-closing form based on whether the (original) element maps to a void HTML
+        // element. Non-void elements MUST get a full end tag so browsers don't mis-parse
+        // an empty <div/>/<span/>/<li/> as an unclosed start tag. `originalLocalName` is
+        // the NDoc source name; none of our remap targets are void, so its void-ness
+        // equals the emitted element's void-ness.
+        private static void WriteElementEnd(XmlWriter writer, string originalLocalName)
+        {
+            if (VoidHtmlElements.Contains(originalLocalName))
+                writer.WriteEndElement();       // e.g. <br/>, <wbr/> — valid self-closing
+            else
+                writer.WriteFullEndElement();   // e.g. <div></div>, <span></span>
+        }
+
         public static void PreprocessCodeBlocksToPreTags(GeneratorOptions options, XDocument doc)
         {
             var nodesToRemove = new List<XElement>();
-            var codeNodes = doc.XPathSelectElements("//code");
+            // Materialize the matches up front. We insert new <code class="language-csharp">
+            // elements below, which also match "//code"; iterating the lazy XPath result
+            // directly would re-find those and wrap them endlessly (OOM).
+            var codeNodes = doc.XPathSelectElements("//code").ToList();
             foreach (var codeNode in codeNodes)
             {
                 string processedCodeSample = null;
@@ -880,8 +963,12 @@ namespace SDKDocGenerator
                 {
 
                     processedCodeSample = LeftJustifyCodeBlocks(processedCodeSample);
-                    var preElement = new XElement("pre", processedCodeSample);
-                    preElement.SetAttributeValue("class", "brush: csharp");
+                    // Emit <pre><code class="language-csharp"> for highlight.js. The
+                    // sample text is set the same way as before (one level deeper), so
+                    // the existing encoding behavior is preserved.
+                    var codeElement = new XElement("code", processedCodeSample);
+                    codeElement.SetAttributeValue("class", "language-csharp");
+                    var preElement = new XElement("pre", codeElement);
 
                     codeNode.AddAfterSelf(preElement);
                     nodesToRemove.Add(codeNode);

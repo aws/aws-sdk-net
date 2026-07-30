@@ -113,40 +113,24 @@ namespace SDKDocGenerator.Writers
 
             using (var writer = new StringWriter())
             {
-                writer.WriteLine("<html>");
-                writer.WriteLine("<head>");
-               
-                writer.WriteLine("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\"/>");
+                // The page shell (head, top bar, sidebar, layout) is emitted by DocShell
+                // so it stays identical to the landing page and lives in one place.
+                var shell = new DocShell.Options
+                {
+                    RootRelativePath = RootRelativePath,
+                    Title = GetTitle(),
+                    TocId = FilenameGenerator.Escape(this.GetTOCID()),
+                    Service = Artifacts.ServiceName,
+                    CanonicalUrl = string.Format(
+                        "https://docs.aws.amazon.com/sdkfornet/v4/apidocs/items/{0}/{1}",
+                        FilenameGenerator.Escape(this.GenerateFilepath()),
+                        FilenameGenerator.Escape(this.GenerateFilename()))
+                };
 
-                writer.WriteLine("<meta name=\"guide-name\" content=\"API Reference\"/>");
-                writer.WriteLine("<meta name=\"service-name\" content=\"AWS SDK for .NET Version 4\"/>");
-
-                writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/style.css\"/>", RootRelativePath);
-                writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/syntaxhighlighter/shCore.css\">", RootRelativePath);
-                writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/syntaxhighlighter/shThemeDefault.css\">", RootRelativePath);
-                writer.WriteLine("<link rel=\"stylesheet\" type=\"text/css\" href=\"{0}/resources/sdkstyle.css\"/>", RootRelativePath);
-
-                // every page needs a title, meta description and canonical url to satisfy indexing. The summary/synopsis
-                // text for an element has proven unreliable as a useful source for info the search results so stay with
-                // the page title for now
-                writer.WriteLine("<meta name=\"description\" content=\"{0}\">", GetTitle());
-                writer.WriteLine("<title>{0} | AWS SDK for .NET Version 4</title>", GetTitle());                
-                writer.WriteLine("<script type=\"text/javascript\" src=\"/assets/js/awsdocs-boot.js\"></script>");
-                writer.WriteLine("<meta name=\"aws-tocid\" content=\"{0}\"/>", FilenameGenerator.Escape(this.GetTOCID()));
-                writer.WriteLine("<link rel=\"canonical\" href=\"https://docs.aws.amazon.com/sdkfornet/v4/apidocs/items/{0}/{1}\"/>",
-                                FilenameGenerator.Escape(this.GenerateFilepath()),
-                                FilenameGenerator.Escape(this.GenerateFilename()));
-
-                writer.WriteLine("</head>");                     
-
-                writer.WriteLine("<body>");
-
-                    // every page needs two hidden divs giving the search indexer the product title and guide name
-                    writer.WriteLine("<div id=\"product_name\">AWS SDK Version 4 for .NET</div>");
-                    writer.WriteLine("<div id=\"guide_name\">API Reference</div>");
+                DocShell.WriteHeadAndChrome(writer, shell);
 
                     WriteRegionDisclaimer(writer);
-                    
+
                     this.WriteHeader(writer);
                     this.WriteToolbar(writer);
 
@@ -156,8 +140,7 @@ namespace SDKDocGenerator.Writers
 
                     this.WriteFooter(writer);
 
-                writer.WriteLine("</body>");
-                writer.WriteLine("</html>");
+                DocShell.WriteFootShell(writer);
 
                 // normalize all line endings so any docs committed into Git present a consistent
                 // set of line terminators for core.autocrlf to work with
@@ -201,42 +184,24 @@ namespace SDKDocGenerator.Writers
                     if (this.GetMemberType() != null)
                         writer.WriteLine("<h2 class=\"subtitle\">{0}</h2>", this.GetMemberType());
                 writer.WriteLine("</div>");
+                this.WriteHeaderAside(writer);
             writer.WriteLine("</div>");
+        }
+
+        /// <summary>
+        /// Optional content rendered on the right of the page header, on the same row
+        /// as the title. Used by the class page for its "In this article" dropdown.
+        /// Empty by default.
+        /// </summary>
+        protected virtual void WriteHeaderAside(TextWriter writer)
+        {
         }
 
         protected virtual void WriteToolbar(TextWriter writer)
         {
-            writer.WriteLine("<div id=\"pageToolbar\">");
-
-                writer.WriteLine("<!-- BEGIN-SECTION -->");
-                writer.WriteLine("<div id=\"search\">");
-                    writer.WriteLine("<form action=\"/search/doc-search.html\" target=\"_blank\" onsubmit=\"return AWSHelpObj.searchFormSubmit(this);\" method=\"get\">");
-                        writer.WriteLine("<div id=\"sfrm\">");
-                            writer.WriteLine("<span id=\"lbl\">");
-                                writer.WriteLine("<label for=\"sel\">Search: </label>");
-                            writer.WriteLine("</span>");
-                            writer.WriteLine("<select aria-label=\"Search From\" name=\"searchPath\" id=\"sel\">");
-                                writer.WriteLine("<option value=\"all\">Entire Site</option>");
-                                writer.WriteLine("<option value=\"articles\">Articles &amp; Tutorials</option>");
-                                writer.WriteLine("<option value=\"documentation\">Documentation</option>");
-                                writer.WriteLine("<option value=\"documentation-product\">Documentation - This Product</option>");
-                                writer.WriteLine("<option selected=\"\" value=\"documentation-guide\">Documentation - This Guide</option>");
-                                writer.WriteLine("<option value=\"releasenotes\">Release Notes</option>");
-                                writer.WriteLine("<option value=\"code\">Sample Code &amp; Libraries</option>");
-                            writer.WriteLine("</select>");
-                            writer.WriteLine("<div id=\"searchInputContainer\">");
-                                writer.WriteLine("<input aria-label=\"Search\" type=\"text\" name=\"searchQuery\" id=\"sq\">");
-                                writer.WriteLine("<input type=\"image\" alt=\"Go\" src=\"{0}/resources/search-button.png\" id=\"sb\">", RootRelativePath);
-                            writer.WriteLine("</div>");
-                        writer.WriteLine("</div>");
-                        writer.WriteLine("<input id=\"this_doc_product\" type=\"hidden\" value=\"AWS SDK for .NET Version 4\" name=\"this_doc_product\">");
-                        writer.WriteLine("<input id=\"this_doc_guide\" type=\"hidden\" value=\"API Reference\" name=\"this_doc_guide\">");
-                        writer.WriteLine("<input type=\"hidden\" value=\"en_us\" name=\"doc_locale\">");
-                    writer.WriteLine("</form>");
-                writer.WriteLine("</div>");
-                writer.WriteLine("<!-- END-SECTION -->");
-
-            writer.WriteLine("</div>");
+            // The search form now lives in the fixed top bar (see WriteChrome).
+            // This placeholder is retained for layout/extension and hidden via CSS.
+            writer.WriteLine("<div id=\"pageToolbar\"></div>");
         }
 
         protected virtual void WriteFooter(TextWriter writer)
@@ -294,39 +259,23 @@ namespace SDKDocGenerator.Writers
 
         protected virtual void WriteScriptFiles(TextWriter writer)
         {
-            var isCore = Artifacts.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase);
+            // Scripts (htmx, highlight.js, app.js) are loaded once in <head> with defer.
+            // Per-page behavior — region disclaimer, assembly version, highlighting, sidebar
+            // sync — is handled by app.js on every htmx:afterSwap. This hook is intentionally
+            // empty and kept for subclasses that need page-specific tail scripts.
+        }
 
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/jquery.min.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\">jQuery.noConflict();</script>");
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/parseuri.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/pagescript.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/parentloader.js\"></script>", RootRelativePath);
-            writer.WriteLine("<!-- BEGIN-SECTION -->");
-            writer.WriteLine("<script type=\"text/javascript\">");
-            writer.WriteLine("jQuery(function ($) {");
-            writer.WriteLine("var host = parseUri($(window.parent.location).attr('href')).host;");
-            writer.WriteLine("if (AWSHelpObj.showRegionalDisclaimer(host)) {");
-            writer.WriteLine("$(\"div#regionDisclaimer\").css(\"display\", \"block\");");
-            writer.WriteLine("} else {");
-            writer.WriteLine("$(\"div#regionDisclaimer\").remove();");
-            writer.WriteLine("}");
+        /// <summary>
+        /// Builds the "Name(params)" HTML for a member link, inserting &lt;wbr&gt; word-break
+        /// opportunities after the opening brace and each comma so long signatures wrap at
+        /// natural boundaries first (breaking mid-word only as a last resort via CSS).
+        /// </summary>
+        protected static string FormatMemberSignatureHtml(string name, string parameters)
+        {
+            if (string.IsNullOrEmpty(parameters))
+                return string.Format("{0}()", name);
 
-            var versionInfoFile = RootRelativePath + "/items/_sdk-versions.json";
-            if (isCore)
-                writer.WriteLine("AWSHelpObj.setAssemblyVersion(\"{0}\");",
-                                 versionInfoFile);
-            else
-                writer.WriteLine("AWSHelpObj.setAssemblyVersion(\"{0}\", \"{1}\");",
-                                 versionInfoFile,
-                                 Artifacts.ServiceName);
-            writer.WriteLine("});");            
-            writer.WriteLine("</script>");
-            writer.WriteLine("<!-- END-SECTION -->");
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shCore.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushCSharp.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushPlain.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\" src=\"{0}/resources/syntaxhighlighter/shBrushXml.js\"></script>", RootRelativePath);
-            writer.WriteLine("<script type=\"text/javascript\">SyntaxHighlighter.all()</script>");
+            return string.Format("{0}(<wbr>{1})", name, parameters.Replace(", ", ",<wbr> "));
         }
 
         protected string FormatParameters(IList<ParameterInfoWrapper> infos)
@@ -503,12 +452,26 @@ namespace SDKDocGenerator.Writers
 
         protected void AddNamespace(TextWriter writer, string ns, string moduleName)
         {
+            // app.js reads the version file/service from data-* attributes and fills in
+            // #assemblyVersion on page load / htmx:afterSwap (replacing the old inline jQuery ajax call).
+            var isCore = Artifacts.ServiceName.Equals("Core", StringComparison.OrdinalIgnoreCase);
+            var versionInfoFile = RootRelativePath + "/items/_sdk-versions.json";
+
             writer.WriteLine("<div id=\"namespaceblock\">");
                 writer.Write("<p>");
                 writer.Write("<strong>Namespace: </strong>{0}<br/>", ns);
                 writer.Write("<strong>Assembly: </strong>{0}", moduleName);
                 writer.Write("<span id=\"versionData\">");
-                writer.Write("<br/><strong>Version: </strong><span id=\"assemblyVersion\">3.x.y.z</span>");
+                // "4.x.y.z" is only a pre-JS placeholder; app.js replaces it with the real
+                // version from _sdk-versions.json on load. Keep the major matching this v4
+                // reference so a JS-disabled reader never sees a misleading "3".
+                if (isCore)
+                    writer.Write("<br/><strong>Version: </strong><span id=\"assemblyVersion\" data-version-file=\"{0}\">4.x.y.z</span>",
+                                 versionInfoFile);
+                else
+                    writer.Write("<br/><strong>Version: </strong><span id=\"assemblyVersion\" data-version-file=\"{0}\" data-service=\"{1}\">4.x.y.z</span>",
+                                 versionInfoFile,
+                                 Artifacts.ServiceName);
                 writer.Write("</span>");
                 writer.Write("</p>");
             writer.WriteLine("</div>");
@@ -575,13 +538,14 @@ namespace SDKDocGenerator.Writers
 
                 writer.WriteLine("<div class=\"codeSnippetContainerTabs\">");
                     writer.WriteLine("<div class=\"codeSnippetContainerTabActive\">");
-                        writer.WriteLine("<a class=\"languageTabLabel\">C#</a>");
+                        // Not a link — there's only one language, so it's a static label.
+                        writer.WriteLine("<span class=\"languageTabLabel\">C#</span>");
                     writer.WriteLine("</div>");
                 writer.WriteLine("</div>");
 
                 writer.WriteLine("<div class=\"codeSnippetContainerCodeContainer\">");
-                    writer.WriteLine("<div style=\"color:Black;\">");
-                        writer.WriteLine("<pre class=\"syntax\">{0}</pre>", csharpSyntax);
+                    writer.WriteLine("<div>");
+                        writer.WriteLine("<pre class=\"syntax\"><code class=\"language-csharp\">{0}</code></pre>", csharpSyntax);
                     writer.WriteLine("</div>");
                 writer.WriteLine("</div>");
 

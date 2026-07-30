@@ -24,81 +24,59 @@
     <Content Include="output-files\feedbackno.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\MobileNavBar.html">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="output-files\feedbackyes.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="output-files\index.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\resources\parentloader.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>    
     <EmbeddedResource Include="Templates\sdk-api-home.html" />
-    <Content Include="output-files\resources\jquery.min.js">
+
+    <!-- Modern frontend runtime: htmx (in-place nav), highlight.js, app.js, design system. -->
+    <Content Include="output-files\resources\htmx.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="output-files\resources\pagescript.js">
+    <Content Include="output-files\resources\highlight.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="output-files\resources\hljs-csharp.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\hljs-xml.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <!-- Client runtime modules, loaded in dependency order (app-core → sidebar → search → app). -->
+    <Content Include="output-files\resources\app-core.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\sidebar.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\search.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\app.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\search-core.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\search-worker.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\aws-docs.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\hljs-theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="output-files\resources\THIRD-PARTY-NOTICES.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+
+    <!-- Transparent 1x1 used as the host element for CSS mask-image member-type
+         icons (emitted by ClassWriter / NamespaceWriter). -->
     <Content Include="output-files\resources\blank.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\document.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\documentation_logo200x29.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\feedback_titlegraphic.gif" />
-    <Content Include="output-files\resources\folder-horizontal.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\imagesprite.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\parseuri.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\sdkstyle.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\search-button.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\style.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shBrushCSharp.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shBrushPlain.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shBrushXml.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shCore.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shCore.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\syntaxhighlighter\shThemeDefault.css">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\tocscript.js">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\toggle-small-expand.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\toggle-small.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="output-files\resources\tocstyle.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Templates\TOC.html" />

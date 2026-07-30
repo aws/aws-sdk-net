@@ -28,24 +28,31 @@ namespace SDKDocGenerator.Writers
             }
         }
 
-        public void Write()
+        /// <summary>
+        /// Loads the embedded template and applies <see cref="ReplaceTokens"/>.
+        /// </summary>
+        protected string LoadAndReplace()
         {
             var templateName = GetTemplateName();
             using (var stream = Assembly.GetExecutingAssembly().GetManifestResourceStream("SDKDocGenerator.Templates." + templateName))
             using (var reader = new StreamReader(stream))
             {
-                var templateBody = reader.ReadToEnd();
-                var finalBody = ReplaceTokens(templateBody);
+                return ReplaceTokens(reader.ReadToEnd());
+            }
+        }
 
-                var templateOutput = TemplateOutputPath;
-                var outputPath = Path.GetDirectoryName(templateOutput);
-                if (!Directory.Exists(outputPath))
-                    Directory.CreateDirectory(outputPath);
+        public virtual void Write()
+        {
+            var finalBody = LoadAndReplace();
 
-                using (var writer = new StreamWriter(templateOutput))
-                {
-                    writer.Write(finalBody);
-                }
+            var templateOutput = TemplateOutputPath;
+            var outputPath = Path.GetDirectoryName(templateOutput);
+            if (!Directory.Exists(outputPath))
+                Directory.CreateDirectory(outputPath);
+
+            using (var writer = new StreamWriter(templateOutput))
+            {
+                writer.Write(finalBody);
             }
         }
 

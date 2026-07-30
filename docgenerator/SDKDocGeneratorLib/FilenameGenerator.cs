@@ -117,6 +117,26 @@ namespace SDKDocGenerator
             return Fixup(string.Format("N_{0}", namespaceName)) + ".html";
         }
 
+        // Anchor ids for members that are rendered as table rows on the owning type
+        // page (properties, fields, enum members) rather than as their own page.
+        // ClassWriter stamps these ids on the <tr>, and the local search index points
+        // at "T_<Type>.html#<anchor>" so a result can scroll to the exact row. Member
+        // names are .NET identifiers, so they are already URL-fragment safe.
+        public static string PropertyAnchor(string memberName)
+        {
+            return "prop_" + memberName;
+        }
+
+        public static string FieldAnchor(string memberName)
+        {
+            return "field_" + memberName;
+        }
+
+        public static string EnumMemberAnchor(string memberName)
+        {
+            return "member_" + memberName;
+        }
+
         public static string Escape(string url)
         {
             return url.Replace("`", "&#96;");
