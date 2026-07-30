@@ -1307,6 +1307,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlG6Xlarge = new AppInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG712xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG712xlarge = new AppInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG724xlarge = new AppInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG72xlarge = new AppInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG748xlarge = new AppInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG74xlarge = new AppInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG78xlarge = new AppInstanceType("ml.g7.8xlarge");
+        /// <summary>
         /// Constant MlG7e12xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlG7e12xlarge = new AppInstanceType("ml.g7e.12xlarge");

@@ -32,8 +32,8 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// The per-recommendation LoRA adapter details. Contains both the model package ARNs
     /// and Amazon S3 URIs for each adapter, regardless of which form was originally supplied
-    /// in the request. When the customer supplies only Amazon S3 URIs, Amazon SageMaker AI
-    /// creates model packages on their behalf.
+    /// in the request. When you supply only Amazon S3 URIs, Amazon SageMaker AI creates model
+    /// packages on your behalf.
     /// </summary>
     public partial class AIRecommendationAdapterDetails
     {

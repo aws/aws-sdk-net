@@ -141,10 +141,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MinCpuMemoryRequiredInMb. 
         /// <para>
-        /// The minimum host (CPU) memory, in MiB, to reserve per model copy when deploying the
-        /// recommendation as an Inference Component. This value maps to the base Inference Component's
-        /// <c>ComputeResourceRequirements$MinMemoryRequiredInMb</c> and is sized so that <c>CopyCountPerInstance</c>
-        /// copies co-place within the instance's allocatable host memory.
+        /// The minimum host (CPU) memory, in MiB, to reserve for each model copy when deploying
+        /// the recommendation as an Inference Component. This value maps to the Inference Component's
+        /// <c>ComputeResourceRequirements$MinMemoryRequiredInMb</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
