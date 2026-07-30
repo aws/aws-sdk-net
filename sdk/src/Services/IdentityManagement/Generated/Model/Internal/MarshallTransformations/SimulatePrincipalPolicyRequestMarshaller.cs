@@ -134,6 +134,42 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetPolicyExclusionList())
+                {
+                    if (publicRequest.PolicyExclusionList.Count == 0)
+                        request.Parameters.Add("PolicyExclusionList", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.PolicyExclusionList)
+                         {
+                            if(publicRequestlistValue.IsSetInlinePolicyIdentifier())
+                            {
+                                if(publicRequestlistValue.InlinePolicyIdentifier.IsSetAttachmentName())
+                                {
+                                    request.Parameters.Add("PolicyExclusionList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InlinePolicyIdentifier" + "." + "AttachmentName", StringUtils.FromString(publicRequestlistValue.InlinePolicyIdentifier.AttachmentName));
+                                }
+                                if(publicRequestlistValue.InlinePolicyIdentifier.IsSetAttachmentType())
+                                {
+                                    request.Parameters.Add("PolicyExclusionList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InlinePolicyIdentifier" + "." + "AttachmentType", StringUtils.FromString(publicRequestlistValue.InlinePolicyIdentifier.AttachmentType));
+                                }
+                                if(publicRequestlistValue.InlinePolicyIdentifier.IsSetPolicyName())
+                                {
+                                    request.Parameters.Add("PolicyExclusionList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "InlinePolicyIdentifier" + "." + "PolicyName", StringUtils.FromString(publicRequestlistValue.InlinePolicyIdentifier.PolicyName));
+                                }
+                            }
+                            if(publicRequestlistValue.IsSetPolicyArn())
+                            {
+                                request.Parameters.Add("PolicyExclusionList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PolicyArn", StringUtils.FromString(publicRequestlistValue.PolicyArn));
+                            }
+                            if(publicRequestlistValue.IsSetPolicyType())
+                            {
+                                request.Parameters.Add("PolicyExclusionList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "PolicyType", StringUtils.FromString(publicRequestlistValue.PolicyType));
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetPolicyInputList())
                 {
                     if (publicRequest.PolicyInputList.Count == 0)

@@ -61,7 +61,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The IAM policy simulator evaluates statements in the identity-based policy and the
+    /// The IAM policy simulator evaluates statements in identity-based policies, service
+    /// control policies (SCPs) including their condition keys and resource scoping, and the
     /// inputs that you provide during simulation. The policy simulator results can differ
     /// from your live Amazon Web Services environment. We recommend that you check your policies
     /// against your live Amazon Web Services environment after testing using the policy simulator
@@ -78,6 +79,7 @@ namespace Amazon.IdentityManagement.Model
         private List<ContextEntry> _contextEntries = AWSConfigs.InitializeCollections ? new List<ContextEntry>() : null;
         private string _marker;
         private int? _maxItems;
+        private List<OrderedOrganizationPolicyType> _orderedOrganizationPolicyInputList = AWSConfigs.InitializeCollections ? new List<OrderedOrganizationPolicyType>() : null;
         private List<string> _permissionsBoundaryPolicyInputList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _policyInputList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -115,14 +117,14 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property CallerArn. 
         /// <para>
-        /// The ARN of the IAM user that you want to use as the simulated caller of the API operations.
-        /// <c>CallerArn</c> is required if you include a <c>ResourcePolicy</c> so that the policy's
-        /// <c>Principal</c> element has a value to use in evaluating the policy.
+        /// The ARN of the IAM user, group, or role that you want to use as the simulated caller
+        /// of the API operations. <c>CallerArn</c> is required if you include a <c>ResourcePolicy</c>
+        /// so that the policy's <c>Principal</c> element has a value to use in evaluating the
+        /// policy.
         /// </para>
         ///  
         /// <para>
-        /// You can specify only the ARN of an IAM user. You cannot specify the ARN of an assumed
-        /// role, federated user, or a service principal.
+        /// You cannot specify the ARN of an assumed role, federated user, or a service principal.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -211,6 +213,43 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetMaxItems()
         {
             return this._maxItems.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrderedOrganizationPolicyInputList. 
+        /// <para>
+        /// An ordered list of service control policies (SCPs) to include in the simulation. Each
+        /// element represents one level of an Organizations hierarchy, from the organization
+        /// root to the account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The simulator evaluates SCPs in the order that you provide, consistent with how Organizations
+        /// enforces SCPs. The first element must represent the organization root, and the last
+        /// element must represent the account. Any elements between them represent organizational
+        /// units (OUs) in descending order.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this parameter to simulate the effect of an SCP hierarchy without calling <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=7)]
+        public List<OrderedOrganizationPolicyType> OrderedOrganizationPolicyInputList
+        {
+            get { return this._orderedOrganizationPolicyInputList; }
+            set { this._orderedOrganizationPolicyInputList = value; }
+        }
+
+        // Check to see if OrderedOrganizationPolicyInputList property is set
+        internal bool IsSetOrderedOrganizationPolicyInputList()
+        {
+            return this._orderedOrganizationPolicyInputList != null && (this._orderedOrganizationPolicyInputList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

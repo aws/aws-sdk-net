@@ -3512,6 +3512,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -3556,6 +3559,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -3602,6 +3608,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy service method.</param>
@@ -7103,7 +7112,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// The IAM policy simulator evaluates statements in identity-based policies, service
+        /// control policies (SCPs) including their condition keys and resource scoping, and the
         /// inputs that you provide during simulation. The policy simulator results can differ
         /// from your live Amazon Web Services environment. We recommend that you check your policies
         /// against your live Amazon Web Services environment after testing using the policy simulator
@@ -7162,6 +7172,13 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
+        /// For cross-account simulations, <c>EvalDecisionDetails</c> returns the decision for
+        /// each policy type (identity-based policy, resource-based policy, and permissions boundary).
+        /// This helps you identify which policy type is responsible for an allow or deny decision
+        /// when policies span multiple accounts.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Note:</b> This operation discloses information about the permissions granted to
         /// other users. If you do not want users to see other user's permissions, then consider
         /// allowing them to use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
@@ -7181,7 +7198,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// The IAM policy simulator evaluates statements in identity-based policies, service
+        /// control policies (SCPs) including their condition keys and resource scoping, and the
         /// inputs that you provide during simulation. The policy simulator results can differ
         /// from your live Amazon Web Services environment. We recommend that you check your policies
         /// against your live Amazon Web Services environment after testing using the policy simulator

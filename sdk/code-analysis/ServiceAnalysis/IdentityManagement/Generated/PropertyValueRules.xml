@@ -2342,6 +2342,18 @@
     <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.InlinePolicyIdentifierType.AttachmentName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.InlinePolicyIdentifierType.PolicyName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InstanceProfile.Arn</property>
     <min>20</min>
     <max>2048</max>
@@ -2510,6 +2522,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IdentityManagement.Model.PolicyIdentifier.PolicyArn</property>
+    <min>20</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.PolicyParameter.Name</property>

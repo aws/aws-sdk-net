@@ -38,6 +38,25 @@ namespace Amazon.IdentityManagement.Model
     /// </c> and <c> <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>
     /// </c>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// The simulator now returns a single <c>EvaluationResult</c> per action, regardless
+    /// of how many resource ARNs are provided. Previously, simulating one action against
+    /// N resources returned N evaluation results, each containing the same aggregate decision.
+    /// The top-level fields (<c>EvalDecision</c>, <c>MatchedStatements</c>, <c>MissingContextValues</c>,
+    /// <c>EvalDecisionDetails</c>) now represent the <i>aggregate</i> decision across all
+    /// requested resources. The top-level <c>EvalDecision</c> reflects the most restrictive
+    /// decision across all resources (for example, if any resource produces <c>explicitDeny</c>,
+    /// the top-level decision is <c>explicitDeny</c>).
+    /// </para>
+    ///  
+    /// <para>
+    /// To see the decision for each individual resource, use <c>ResourceSpecificResults</c>.
+    /// If your application parses evaluation results per resource ARN, update your code to
+    /// read per-resource decisions from <c>ResourceSpecificResults</c> rather than from the
+    /// top-level result.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class EvaluationResult
     {
@@ -98,6 +117,11 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
+        /// In the top-level result, this map reports the most restrictive decision per policy
+        /// type across all requested resources.
+        /// </para>
+        ///  
+        /// <para>
         /// If the simulation evaluates policies within the same account and includes a resource
         /// ARN, then the parameter is present but the response is empty. If the simulation evaluates
         /// policies within the same account and specifies all resources (<c>*</c>), then the
@@ -138,8 +162,17 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EvalResourceName. 
         /// <para>
-        /// The ARN of the resource that the indicated API operation was tested on.
+        /// The ARN template for the simulated resource type (for example, <c>arn:${Partition}:s3:::${BucketName}/${KeyName}</c>),
+        /// or <c>*</c> if no ARN format is defined for the action. This is not a specific customer-provided
+        /// resource ARN. To find the decision for a specific resource, use <c>ResourceSpecificResults</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you previously relied on <c>EvalResourceName</c> to identify which specific resource
+        /// a result applies to, you must now use the <c>EvalResourceName</c> field within individual
+        /// entries in <c>ResourceSpecificResults</c> instead.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string EvalResourceName
@@ -161,6 +194,14 @@ namespace Amazon.IdentityManagement.Model
         /// scenario. Remember that even if multiple statements allow the operation on the resource,
         /// if only one statement denies that operation, then the explicit deny overrides any
         /// allow. In addition, the deny statement is the only entry included in the result.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the top-level result, this field contains the union of matched statements across
+        /// all requested resources. Only statements that contributed to the reported decision
+        /// are included. For per-resource matched statements, see <c>ResourceSpecificResults</c>.
+        /// This field doesn't include statements from service control policies (SCPs). Only statements
+        /// from identity-based and resource-based policies appear here.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -191,6 +232,13 @@ namespace Amazon.IdentityManagement.Model
         /// keys used by a set of policies, you can call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForCustomPolicy.html">GetContextKeysForCustomPolicy</a>
         /// or <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// In the top-level result, this field contains the deduplicated set of missing context
+        /// values across all requested resources. This field doesn't include context keys referenced
+        /// by service control policies (SCPs). Only context keys referenced by identity-based
+        /// and resource-based policies appear here.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -215,6 +263,11 @@ namespace Amazon.IdentityManagement.Model
         /// A structure that details how Organizations and its service control policies affect
         /// the results of the simulation. Only applies if the simulated user's account is part
         /// of an organization.
+        /// </para>
+        ///  
+        /// <para>
+        /// For resources that don't support organization-level evaluation, this field is omitted
+        /// from the top-level result. For per-resource details, see <c>ResourceSpecificResults</c>.
         /// </para>
         /// </summary>
         public OrganizationsDecisionDetail OrganizationsDecisionDetail
