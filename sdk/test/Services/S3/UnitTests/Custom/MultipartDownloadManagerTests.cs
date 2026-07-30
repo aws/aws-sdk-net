@@ -436,6 +436,106 @@ namespace AWSSDK.UnitTests
             Assert.IsNotNull(result.InitialResponse);
         }
 
+        [TestMethod]
+        public async Task DiscoverUsingRangeStrategy_EmptyObject_FallsBackToPartNumberGet()
+        {
+            // Arrange
+            // S3 rejects a ranged GET (bytes=0-{partSize-1}) against a zero-byte object with
+            // 416 Range Not Satisfiable. The RANGE strategy must treat a 416 on the discovery request
+            // as a signal to probe with a partNumber=1 GET, which succeeds on an empty object, so the
+            // download completes as an empty file (matching the PART strategy's behavior).
+            var partProbeCount = 0;
+
+            var emptyObjectResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: 0,
+                partsCount: null,
+                contentRange: null,  // partNumber=1 GET on an empty object has no ContentRange
+                eTag: "empty-object-etag");
+
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client((req, ct) =>
+            {
+                if (req.ByteRange != null)
+                {
+                    // The initial ranged discovery request against the empty object.
+                    throw new AmazonS3Exception("The requested range is not satisfiable")
+                    {
+                        StatusCode = System.Net.HttpStatusCode.RequestedRangeNotSatisfiable,
+                        ErrorCode = "InvalidRange"
+                    };
+                }
+
+                // The partNumber=1 probe.
+                Assert.AreEqual(1, req.PartNumber, "Fallback probe should use partNumber=1.");
+                partProbeCount++;
+                return Task.FromResult(emptyObjectResponse);
+            });
+
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act
+            var result = await coordinator.StartDownloadAsync(null, CancellationToken.None);
+
+            // Assert
+            Assert.AreEqual(1, result.TotalParts);
+            Assert.AreEqual(0, result.ObjectSize);
+            Assert.IsNotNull(result.InitialResponse);
+            Assert.AreEqual(1, partProbeCount, "Expected exactly one partNumber=1 probe after the 416.");
+        }
+
+        [TestMethod]
+        public async Task DiscoverUsingRangeStrategy_ObjectReplacedAfter416_Throws()
+        {
+            // Arrange
+            // Simulate a race: the ranged GET 416s (empty object), but by the time the partNumber=1
+            // probe runs the object has been replaced server-side with a non-empty object. The probe
+            // reports ContentLength > 0, so discovery cannot safely treat it as empty and must surface
+            // an error (the caller can retry the whole download), consistent with how the IfMatch guard
+            // fails subsequent parts when an object changes mid-download.
+            var totalObjectSize = 50 * 1024 * 1024; // 50MB new object
+            var partSize = 8 * 1024 * 1024;         // 8MB parts
+            var partProbeCount = 0;
+
+            // partNumber=1 probe reports the (new) object is no longer empty.
+            var nonEmptyProbeResponse = MultipartDownloadTestHelpers.CreateMockGetObjectResponse(
+                contentLength: partSize,
+                partsCount: null,
+                contentRange: $"bytes 0-{partSize - 1}/{totalObjectSize}",
+                eTag: "new-object-etag");
+
+            var mockClient = MultipartDownloadTestHelpers.CreateMockS3Client((req, ct) =>
+            {
+                if (req.ByteRange != null)
+                {
+                    // Ranged GET: object was still empty -> 416.
+                    throw new AmazonS3Exception("The requested range is not satisfiable")
+                    {
+                        StatusCode = System.Net.HttpStatusCode.RequestedRangeNotSatisfiable,
+                        ErrorCode = "InvalidRange"
+                    };
+                }
+
+                // partNumber=1 probe sees the replaced, non-empty object.
+                Assert.AreEqual(1, req.PartNumber, "Fallback probe should use partNumber=1.");
+                partProbeCount++;
+                return Task.FromResult(nonEmptyProbeResponse);
+            });
+
+            var request = MultipartDownloadTestHelpers.CreateOpenStreamRequest(
+                partSize: partSize,
+                downloadType: MultipartDownloadType.RANGE);
+            var config = MultipartDownloadTestHelpers.CreateBufferedDownloadConfiguration();
+            var coordinator = new MultipartDownloadManager(mockClient.Object, request, config, CreateMockDataHandler().Object);
+
+            // Act & Assert
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(async () =>
+                await coordinator.StartDownloadAsync(null, CancellationToken.None));
+
+            Assert.AreEqual(1, partProbeCount, "Expected exactly one partNumber=1 probe.");
+        }
+
         #endregion
 
         #region Discovery - RANGE Strategy - Single Part from Range Tests

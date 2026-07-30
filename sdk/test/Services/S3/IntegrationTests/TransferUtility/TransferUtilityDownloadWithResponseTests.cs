@@ -175,6 +175,43 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         }
 
         [Fact]
+        public async Task DownloadWithResponse_RangeStrategy_EmptyObject()
+        {
+            // S3 rejects a ranged GET (bytes=0-{partSize-1}) against a zero-byte object with
+            // 416 Range Not Satisfiable. The RANGE strategy must detect the 416, probe with a
+            // partNumber=1 GET, and complete as an empty file instead of failing.
+            var key = UtilityMethods.GenerateName("range-empty-object");
+            await _client.PutObjectAsync(new PutObjectRequest
+            {
+                BucketName = _bucketName,
+                Key = key,
+                ContentBody = ""
+            });
+            var downloadPath = Path.Combine(_basePath, key);
+
+            var downloadRequest = new TransferUtilityDownloadRequest
+            {
+                BucketName = _bucketName,
+                Key = key,
+                FilePath = downloadPath,
+                MultipartDownloadType = MultipartDownloadType.RANGE,
+                PartSize = 8 * MB
+            };
+
+            var response = await _transfer.DownloadWithResponseAsync(downloadRequest);
+
+            Assert.NotNull(response);
+            Assert.Equal(0, response.Headers.ContentLength);
+            Assert.Null(response.ContentRange);
+
+            Assert.True(File.Exists(downloadPath));
+            var fileInfo = new FileInfo(downloadPath);
+            Assert.Equal(0, fileInfo.Length);
+
+            VerifyNoTempFilesExist(downloadPath);
+        }
+
+        [Fact]
         public async Task DownloadWithResponse_Multipart_RangeDownload()
         {
             var objectSize = 17 * MB;
