@@ -98,7 +98,10 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResolvedS3Object.
+        /// Gets and sets the property ResolvedS3Object. 
+        /// <para>
+        /// The resolved Amazon S3 object that contains the layer archive.
+        /// </para>
         /// </summary>
         public ResolvedS3Object ResolvedS3Object
         {

@@ -81,7 +81,20 @@ namespace Amazon.Lambda.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3ObjectStorageMode.
+        /// Gets and sets the property S3ObjectStorageMode. 
+        /// <para>
+        /// Specifies how the layer archive is stored. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>COPY</c> (default) – Uploads a copy of your layer archive to Lambda.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REFERENCE</c> – Lambda references the layer archive from the specified Amazon
+        /// S3 bucket.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public S3ObjectStorageMode S3ObjectStorageMode
         {
