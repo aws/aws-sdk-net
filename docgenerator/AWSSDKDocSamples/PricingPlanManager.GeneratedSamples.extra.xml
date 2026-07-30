@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.ApprovePaidSubscription(Amazon.PricingPlanManager.Model.ApprovePaidSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.ApprovePaidSubscription(Amazon.PricingPlanManager.Model.ApprovePaidSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.ApprovePaidSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.ApprovePaidSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Approve a pending paid subscription"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.AssociateResourcesToSubscription(Amazon.PricingPlanManager.Model.AssociateResourcesToSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.AssociateResourcesToSubscription(Amazon.PricingPlanManager.Model.AssociateResourcesToSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.AssociateResourcesToSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.AssociateResourcesToSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Associate additional resources to a subscription"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.CancelSubscription(Amazon.PricingPlanManager.Model.CancelSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.CancelSubscription(Amazon.PricingPlanManager.Model.CancelSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.CancelSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.CancelSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Cancel a subscription"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.CancelSubscriptionChange(Amazon.PricingPlanManager.Model.CancelSubscriptionChangeRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.CancelSubscriptionChange(Amazon.PricingPlanManager.Model.CancelSubscriptionChangeRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.CancelSubscriptionChangeRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.CancelSubscriptionChangeResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Cancel a pending subscription change"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.CreateSubscription(Amazon.PricingPlanManager.Model.CreateSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.CreateSubscription(Amazon.PricingPlanManager.Model.CreateSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.CreateSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.CreateSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a flat-rate pricing subscription (deferred approval)"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.CreateSubscription(Amazon.PricingPlanManager.Model.CreateSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.CreateSubscription(Amazon.PricingPlanManager.Model.CreateSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.CreateSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.CreateSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Create a subscription with approval mode"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.DisassociateResourcesFromSubscription(Amazon.PricingPlanManager.Model.DisassociateResourcesFromSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.DisassociateResourcesFromSubscription(Amazon.PricingPlanManager.Model.DisassociateResourcesFromSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.DisassociateResourcesFromSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.DisassociateResourcesFromSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Remove a resource from a subscription"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.GetSubscription(Amazon.PricingPlanManager.Model.GetSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.GetSubscription(Amazon.PricingPlanManager.Model.GetSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.GetSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.GetSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Get subscription details"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.ListSubscriptions(Amazon.PricingPlanManager.Model.ListSubscriptionsRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.ListSubscriptions(Amazon.PricingPlanManager.Model.ListSubscriptionsRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.ListSubscriptionsRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.ListSubscriptionsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="List all subscriptions"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.PricingPlanManager.IAmazonPricingPlanManager.UpdateSubscription(Amazon.PricingPlanManager.Model.UpdateSubscriptionRequest)" />
+            <member name="M:Amazon.PricingPlanManager.AmazonPricingPlanManagerClient.UpdateSubscription(Amazon.PricingPlanManager.Model.UpdateSubscriptionRequest)" />
+            <member name="T:Amazon.PricingPlanManager.Model.UpdateSubscriptionRequest" />
+            <member name="T:Amazon.PricingPlanManager.Model.UpdateSubscriptionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update a subscription plan tier"
+                    source=".\AWSSDKDocSamples\PricingPlanManager\PricingPlanManager.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>
