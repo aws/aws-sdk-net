@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// EvaluatorModelConfig Marshaller
+    /// ReasoningConfiguration Marshaller
     /// </summary>
-    public class EvaluatorModelConfigMarshaller : IRequestMarshaller<EvaluatorModelConfig, JsonMarshallerContext> 
+    public class ReasoningConfigurationMarshaller : IRequestMarshaller<ReasoningConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(EvaluatorModelConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ReasoningConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBedrockEvaluatorModelConfig())
+            if(requestObject.IsSetEffort())
             {
-                context.Writer.WritePropertyName("bedrockEvaluatorModelConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = BedrockEvaluatorModelConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.BedrockEvaluatorModelConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetResponsesEvaluatorModelConfig())
-            {
-                context.Writer.WritePropertyName("responsesEvaluatorModelConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = OpenResponsesEvaluatorModelConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.ResponsesEvaluatorModelConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("effort");
+                context.Writer.WriteStringValue(requestObject.Effort);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static EvaluatorModelConfigMarshaller Instance = new EvaluatorModelConfigMarshaller();
+        public readonly static ReasoningConfigurationMarshaller Instance = new ReasoningConfigurationMarshaller();
 
     }
 }

@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class EvaluatorModelConfig
     {
         private BedrockEvaluatorModelConfig _bedrockEvaluatorModelConfig;
+        private OpenResponsesEvaluatorModelConfig _responsesEvaluatorModelConfig;
 
         /// <summary>
         /// Gets and sets the property BedrockEvaluatorModelConfig. 
@@ -53,6 +54,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetBedrockEvaluatorModelConfig()
         {
             return this._bedrockEvaluatorModelConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponsesEvaluatorModelConfig. 
+        /// <para>
+        ///  The OpenResponses model configuration for evaluation. 
+        /// </para>
+        /// </summary>
+        public OpenResponsesEvaluatorModelConfig ResponsesEvaluatorModelConfig
+        {
+            get { return this._responsesEvaluatorModelConfig; }
+            set { this._responsesEvaluatorModelConfig = value; }
+        }
+
+        // Check to see if ResponsesEvaluatorModelConfig property is set
+        internal bool IsSetResponsesEvaluatorModelConfig()
+        {
+            return this._responsesEvaluatorModelConfig != null;
         }
 
     }

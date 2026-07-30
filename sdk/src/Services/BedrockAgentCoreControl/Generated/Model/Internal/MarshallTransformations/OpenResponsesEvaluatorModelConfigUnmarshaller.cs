@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EvaluatorModelConfig Object
+    /// Response Unmarshaller for OpenResponsesEvaluatorModelConfig Object
     /// </summary>  
-    public class EvaluatorModelConfigUnmarshaller : IJsonUnmarshaller<EvaluatorModelConfig, JsonUnmarshallerContext>
+    public class OpenResponsesEvaluatorModelConfigUnmarshaller : IJsonUnmarshaller<OpenResponsesEvaluatorModelConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EvaluatorModelConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OpenResponsesEvaluatorModelConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            EvaluatorModelConfig unmarshalledObject = new EvaluatorModelConfig();
+            OpenResponsesEvaluatorModelConfig unmarshalledObject = new OpenResponsesEvaluatorModelConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,34 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bedrockEvaluatorModelConfig", targetDepth, ref reader))
+                if (context.TestExpression("maxOutputTokens", targetDepth, ref reader))
                 {
-                    var unmarshaller = BedrockEvaluatorModelConfigUnmarshaller.Instance;
-                    unmarshalledObject.BedrockEvaluatorModelConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxOutputTokens = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("responsesEvaluatorModelConfig", targetDepth, ref reader))
+                if (context.TestExpression("modelId", targetDepth, ref reader))
                 {
-                    var unmarshaller = OpenResponsesEvaluatorModelConfigUnmarshaller.Instance;
-                    unmarshalledObject.ResponsesEvaluatorModelConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("reasoning", targetDepth, ref reader))
+                {
+                    var unmarshaller = ReasoningConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Reasoning = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("temperature", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.Temperature = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("topP", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableFloatUnmarshaller.Instance;
+                    unmarshalledObject.TopP = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +91,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static EvaluatorModelConfigUnmarshaller _instance = new EvaluatorModelConfigUnmarshaller();        
+        private static OpenResponsesEvaluatorModelConfigUnmarshaller _instance = new OpenResponsesEvaluatorModelConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EvaluatorModelConfigUnmarshaller Instance
+        public static OpenResponsesEvaluatorModelConfigUnmarshaller Instance
         {
             get
             {

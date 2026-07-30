@@ -4843,6 +4843,20 @@
     <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.OpenResponsesEvaluatorModelConfig.MaxOutputTokens</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.OpenResponsesEvaluatorModelConfig.Temperature</property>
+    <min>0</min>
+    <max>2</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.OpenResponsesEvaluatorModelConfig.TopP</property>
+    <min>0</min>
+    <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.PassthroughTargetConfiguration.Endpoint</property>
     <min>1</min>
     <max>2048</max>
@@ -5097,6 +5111,11 @@
     <property>Amazon.BedrockAgentCoreControl.Model.ProviderPrefix.Separator</property>
     <min>1</min>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.ReasoningConfiguration.Effort</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.RegistryRecordIamCredentialProvider.Region</property>
