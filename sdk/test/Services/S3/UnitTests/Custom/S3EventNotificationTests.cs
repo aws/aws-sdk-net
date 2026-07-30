@@ -100,5 +100,38 @@ namespace AWSSDK_DotNet.UnitTests
         {
             Assert.ThrowsExactly<Amazon.Runtime.AmazonClientException>(() => S3EventNotification.ParseJson("{"));
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void ToJsonRoundTripTest()
+        {
+            var original = S3EventNotification.ParseJson(SAMPLE_EVENT_JSON);
+            var roundTripped = S3EventNotification.ParseJson(original.ToJson());
+            Assert.AreEqual(original.Records.Count, roundTripped.Records.Count);
+
+            var expected = original.Records[0];
+            var actual = roundTripped.Records[0];
+            Assert.AreEqual(expected.EventVersion, actual.EventVersion);
+            Assert.AreEqual(expected.EventSource, actual.EventSource);
+            Assert.AreEqual(expected.AwsRegion, actual.AwsRegion);
+            Assert.AreEqual(expected.EventTime, actual.EventTime);
+            Assert.AreEqual(expected.EventName, actual.EventName);
+            Assert.AreEqual(expected.UserIdentity.PrincipalId, actual.UserIdentity.PrincipalId);
+            Assert.AreEqual(expected.RequestParameters.SourceIPAddress, actual.RequestParameters.SourceIPAddress);
+            Assert.AreEqual(expected.ResponseElements.XAmzRequestId, actual.ResponseElements.XAmzRequestId);
+            Assert.AreEqual(expected.ResponseElements.XAmzId2, actual.ResponseElements.XAmzId2);
+            Assert.AreEqual(expected.S3.S3SchemaVersion, actual.S3.S3SchemaVersion);
+            Assert.AreEqual(expected.S3.ConfigurationId, actual.S3.ConfigurationId);
+            Assert.AreEqual(expected.S3.Bucket.Name, actual.S3.Bucket.Name);
+            Assert.AreEqual(expected.S3.Bucket.OwnerIdentity.PrincipalId, actual.S3.Bucket.OwnerIdentity.PrincipalId);
+            Assert.AreEqual(expected.S3.Bucket.Arn, actual.S3.Bucket.Arn);
+            Assert.AreEqual(expected.S3.Object.Key, actual.S3.Object.Key);
+            Assert.AreEqual(expected.S3.Object.Size, actual.S3.Object.Size);
+            Assert.AreEqual(expected.S3.Object.ETag, actual.S3.Object.ETag);
+            Assert.AreEqual(expected.S3.Object.VersionId, actual.S3.Object.VersionId);
+            Assert.AreEqual(expected.S3.Object.Sequencer, actual.S3.Object.Sequencer);
+            Assert.AreEqual(expected.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime, actual.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime);
+            Assert.AreEqual(expected.GlacierEventData.RestoreEventData.LifecycleRestoreStorageClass, actual.GlacierEventData.RestoreEventData.LifecycleRestoreStorageClass);
+        }
     }
 }
