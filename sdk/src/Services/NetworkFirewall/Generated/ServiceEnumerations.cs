@@ -162,6 +162,10 @@ namespace Amazon.NetworkFirewall
         /// Constant DELETING for ContainerAssociationStatus
         /// </summary>
         public static readonly ContainerAssociationStatus DELETING = new ContainerAssociationStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for ContainerAssociationStatus
+        /// </summary>
+        public static readonly ContainerAssociationStatus UPDATING = new ContainerAssociationStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
