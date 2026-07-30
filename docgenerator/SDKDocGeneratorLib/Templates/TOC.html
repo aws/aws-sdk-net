@@ -1,114 +1,33 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html lang="en-GB">
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="guide-name" content="API Reference" />
     <meta name="service-name" content="AWS SDK for .NET Version 4" />
-    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-    <link rel="stylesheet" type="text/css" href="./resources/tocstyle.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./resources/aws-docs.css" media="screen">
     <title>API Reference - Table of Contents | AWS SDK for .NET Version 4</title>
 </head>
 <body>
-    <button id="skipToMain" tabindex="0">Skip to main content</button>
-    <a href="https://docs.aws.amazon.com/" title="AWS Documentation Home" target="_top" rel="noopener noreferrer">
-        <img id="awslogo" src="./resources/blank.gif" title="AWS Documentation Home" alt="AWS Documentation Home" />
-    </a>
-    <div id="toc">{TOC}</div>
-
-    <script type="text/javascript" src="./resources/jquery.min.js"></script>
-    <script type="text/javascript">jQuery.noConflict();</script>
-    <script type="text/javascript" src="./resources/parseuri.js"></script>
-    <script type="text/javascript" src="./resources/tocscript.js"></script>
-    <script type="text/javascript">
-        jQuery(function ($) {
-            AWSTOCObj.init("div#toc");
-
-            $("li.nav").click(function (event) {
-                event.stopPropagation();
-                AWSTOCObj.clearActiveTopic();
-
-                var tocLink = $(this).children("a.nav");
-                if ($(this).hasClass("leaf")) {
-                    AWSTOCObj.setActiveTopic(tocLink);
-                } else {
-                    var prevExpanded = $(this).siblings("li.expanded");
-                    if (prevExpanded.length > 0)
-                        AWSTOCObj.toggleTOCGroup(prevExpanded);
-                    AWSTOCObj.setActiveTopic(tocLink);
-                    AWSTOCObj.toggleTOCGroup(this);
-                }
-                if($(event.target)[0].hasAttribute("aria-label")) {
-                    $(this).focus();
-                } else {
-                    AWSTOCObj.setFrameFocus("contentpane");
-                    window.parent.showContentPane();
-                }
-            });
-
-            $("#skipToMain").click(function () {
-                AWSTOCObj.setFrameFocus("contentpane");
-            });
-
-            var params = parseUri($(window.parent.location).attr('href')).queryKey;
-            var li = jQuery("li#" + params.tocid);
-            var tocItem = li.children("a.nav");
-
-            if (params && params.page) {
-                var page = tocItem.attr('href');
-                var contentPage = params.page;
-                if (page) {
-                    page = page.substr(('./items/').length, page.length);
-                    // Code to check if customer's bookmark has been deprecated. If so, the customer will be
-                    // redirected to the correct page.
-                    if (page != contentPage) {
-                        var fileStartIndex = page.lastIndexOf('/');
-                        if (fileStartIndex == -1 || params.page.length == 0 || params.page[0] != 'M') {
-                            contentPage = page;
-                        }
-                        else {
-                            //Handle the method pages that exist but don't exist in the TOC.
-                            contentPage = page.substring(0, fileStartIndex + 1);
-                            contentPage += params.page;
-                        }
-
-                        params.page = page;
-                    }
-                }
-
-                AWSTOCObj.setContentPane("./items/" + contentPage.replace(/_/g, ""));
-            }
-            else {
-                AWSTOCObj.setContentPane("./items/sdk-api-home.html");
-            }
-
-            if (params && params.tocid) {
-                // If the page is not a namespace page then we need to expand the namespace node
-                if (params.page.length > 0 && params.page[0] != 'N') {
-                    var pos = params.tocid.lastIndexOf('_');
-                    if (pos > 0) {
-
-                        var nid = params.tocid.substr(0, pos);
-
-                        var nli = jQuery("li#" + nid);
-                        AWSTOCObj.expandTOCGroup(nli);
-                    }
-                }
-
-                AWSTOCObj.setActiveTopic(tocItem);
-                AWSTOCObj.toggleTOCGroup(li);
-            }
-        });
-
-        function updateContentPane(basePageName) {
-            if (parent.contentpane.location && parent.contentpane.location.href) {
-
-                var frameworkPos = parent.contentpane.location.href.indexOf('NET3_5.html');
-                if (frameworkPos != -1) {
-                    basePageName = basePageName.replace('NET4_5.html', 'NET3_5.html');
-                }
-            }
-            parent.contentpane.location.href = basePageName;
-        }
-    </script>
-    
+    <!--
+        Static, fully-linked table of contents. The interactive sidebar is
+        hydrated client-side from toc.json by app.js; this page is a
+        crawlable / no-JavaScript fallback listing every namespace and type.
+        Every link is a real URL, so search engines and JS-disabled clients
+        can still reach all pages.
+    -->
+    <main id="main" role="main">
+        <div class="content-shell">
+            <div id="pageHeader">
+                <div id="titles">
+                    <h1>API Reference Contents</h1>
+                    <h2 class="subtitle">AWS SDK for .NET Version 4</h2>
+                </div>
+            </div>
+            <div id="pageContent">
+                <div id="toc">{TOC}</div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>

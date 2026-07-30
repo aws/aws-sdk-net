@@ -1,251 +1,69 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-  <style media="screen" type="text/css">
-        body {
-            font-family: verdana, Arial, Helvetica, sans-serif;
-        }
+<!--
+    Landing page CONTENT ONLY.
 
-        code {
-            font-family: consolas, courier;
-        }
+    The surrounding page shell (head, top bar, sidebar, layout) is emitted by
+    DocShell via LandingPageWriter, so this file holds just the inner content of
+    <main>. Keep it free of <html>/<head>/<body>/topbar/sidebar markup — those
+    live in DocShell.cs and must not be duplicated here.
+-->
+<!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+<!-- BEGIN-SECTION -->
+<div id="regionDisclaimer">{regionDisclaimer}</div>
+<!-- END-SECTION -->
 
-        pre {
-            font-size: 1.3em;
-            margin-left: 3em;
-            color: mediumblue;
-            background-color: rgb(225,225,225);
-        }
-
-  </style>
-
-  <title>API Reference Home | AWS SDK for .NET Version 4</title>  
-  <script type="text/javascript" src="/assets/js/awsdocs-boot.js"></script>
-
-  <meta name="guide-name" content="API Reference"/>
-  <meta name="service-name" content="AWS SDK for .NET Version 4"/>
-  <meta http-equiv="Content-Type" content= "text/html; charset=us-ascii">
-  <meta http-equiv="X-UA-Compatible" content="IE=8">
-  <meta http-equiv="X-UA-Compatible" content="IE=8">
-  <meta name="description" content=
-  "Get started quickly using AWS with the AWS SDK for .NET. The SDK helps take the complexity out of coding by providing .NET APIs for many AWS services including Amazon S3, Amazon EC2, DynamoDB and more. The single, downloadable package includes the AWS Toolkit for Microsoft Visual Studio, Visual Studio project templates, the AWS Tools for Windows PowerShell, the AWS .NET Library, C# code samples, and documentation.">
-  <meta name="keywords" content="">
-
-  <link rel="icon" type="image/ico" href="../favicon.ico">
-  <link rel="shortcut icon" type="image/ico" href="../favicon.ico">
-  <link rel="canonical" href="http://docs.aws.amazon.com/sdkfornet/v4/apidocs/items/sdk-api-home.html">
-  <link rel="stylesheet" type="text/css" href="../resources/style.css">
-  <link rel="stylesheet" type="text/css" href="../resources/sdkstyle.css">
-
-</head>
-
-<body id="top" class="yui-skin-sam noJS">
-
-    <!-- used by search indexer -->
-    <div id="product_name">AWS SDK Version 4 for .NET</div>
-    <div id="guide_name">API Reference</div>
-
-    <div id="divContent">
-
-        <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
-        <!-- BEGIN-SECTION -->
-        <div id="regionDisclaimer">{regionDisclaimer}</div>
-        <!-- END-SECTION -->
-
-        <div class="chapter" id="sdkref-welcome">
-
-            <div id="pageHeader">
-                <div id="titles">
-                    <h1 class="title">AWS SDK for .NET Version 4 API Reference</h1>
-                </div>
-            </div>
-
-            <div id="pageToolbar">
-                <!-- BEGIN-SECTION -->
-                <div id="search">
-                    <form action="/search/doc-search.html" target="_parent" rel="noopener noreferrer" onsubmit="return AWSHelpObj.searchFormSubmit(this);" method="get">
-                        <div id="sfrm">
-                            <span id="lbl">
-                                <label for="sel">Search: </label>
-                            </span>
-                            <select aria-label="Search From" name="searchPath" id="sel">
-                                <option value="all">Entire Site</option>
-                                <option value="articles">Articles &amp; Tutorials</option>
-                                <option value="documentation">Documentation</option>
-                                <option value="documentation-product">Documentation - This Product</option>
-                                <option selected="" value="documentation-guide">Documentation - This Guide</option>
-                                <option value="releasenotes">Release Notes</option>
-                                <option value="code">Sample Code &amp; Libraries</option>
-                            </select>
-                            <div id="searchInputContainer">
-                                <input aria-label="Search" name="searchQuery" id="sq">
-                                <input type="image" alt="Go" src="../resources/search-button.png" id="sb">
-                            </div>
-                        </div>
-                        <input id="this_doc_product" type="hidden" value="AWS SDK for .NET Version 4" name="this_doc_product">
-                        <input id="this_doc_guide" type="hidden" value="API Reference" name="this_doc_guide">
-                        <input type="hidden" value="en_us" name="doc_locale">
-                    </form>
-                </div>
-                <!-- END-SECTION -->
-            </div>
-
-            <div id="pageContent">
-                <p>
-                    The AWS SDK for .NET makes it easier for developers to build .NET applications that tap into the cost-effective, scalable, and reliable AWS infrastructure
-                    services such as Amazon Simple Storage Service (Amazon S3) and Amazon Elastic Compute Cloud (Amazon EC2).
-                </p>
-                <p>The AWS SDK for .NET supports development on .NET Framework 4.7.2 or later, .NET Core 2.0 or later, and any platform that supports .NET Standard 2.0 or later. As of version 4.0, the AWS SDK for .NET no longer supports .NET Framework 3.5 or 4.5.</p>
-                <p></p>
-
-                <div class="section">
-                    <div class="titlepage">
-
-                        <div>
-                            <div>
-                                <h2 class="title" style="clear: both" id="d0e153">
-                                    Additional Information
-                                </h2>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <p>These pages contain additional information about the AWS SDK for .NET and using .NET to access AWS:</p>
-
-                    <div class="variablelist">
-                        <dl>
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/quick-start.html" target="_blank" rel="noopener noreferrer" title="Getting Started with the AWS SDK for .NET">
-                                        Getting Started with the AWS SDK for .NET
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>
-                                    This section introduces you to the fundamentals of tool installation,
-                                    configuring AWS access keys, and getting started with a sample project.
-                                </p>
-                            </dd>
-
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/configuring-the-sdk.html" target="_blank" rel="noopener noreferrer" title="Setting up a project">
-                                        Setting up a project
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>
-                                    This section describes how to start a project and then set it up by configuring AWS access keys, 
-                                    configuring an AWS Region, and installing packages.
-                                </p>
-                            </dd>
-
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-sdk-features.html" target="_blank" rel="noopener noreferrer" title="Programming AWS">
-                                        Programming AWS
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>General programming techniques and information for developing software with the AWS SDK for .NET</p>
-                            </dd>
-
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://aws.amazon.com/blogs/developer/category/net/" target="_blank" rel="noopener noreferrer" title="AWS Developer Blog - Windows and .NET">
-                                        AWS Developer Blog - Windows and .NET
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>Developer blog for the AWS SDK for .NET, Visual Studio toolkit and AWS Tools for Windows PowerShell.</p>
-                            </dd>
-
-                            <dt>
-                                <span class="term">
-                                    <a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-v4.html" target="_blank" title="V4 Migration Guide">
-                                        V4 Migration Guide
-                                    </a>
-                                </span>
-                            </dt>
-
-                            <dd>
-                                <p>Guide to help developers move their applications from version 3 to version 4 of the AWS SDK for .NET.</p>
-                            </dd>
-                        </dl>
-                    </div>                                        
-                </div>
-            </div>
-        </div>
-
-        <div id="pageFooter">
-            <!-- BEGIN-FEEDBACK-SECTION -->
-            <div class="newline feedback">
-                <div class="feedbackLinks">
-                    Did this page help you?&nbsp;&nbsp;
-                    <a href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackyes.html?topic_id=sdk-api-home" target="_parent" rel="noopener noreferrer">Yes</a>&nbsp;&nbsp;
-                    <a href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackno.html?topic_id=sdk-api-home" target="_parent" rel="noopener noreferrer">No</a>&nbsp;&nbsp;&nbsp;
-                    <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?service_name=NET-Ref-V4&amp;file_name=sdk-api-home" target="_parent" rel="noopener noreferrer">Tell us about it...</a>
-                </div>
-            </div>
-            <!-- END-FEEDBACK-SECTION -->
-            <div id="awsdocs-legal-zone-copyright"></div>
-        </div>
-
+<div id="pageHeader">
+    <div id="titles">
+        <h1>AWS SDK for .NET Version 4 API Reference</h1>
     </div>
+</div>
 
-    <script type="text/javascript" src="../resources/jquery.min.js"></script>
-    <script type="text/javascript">jQuery.noConflict();</script>
-    <script type="text/javascript" src="../resources/parseuri.js"></script>
-    <script type="text/javascript" src="../resources/pagescript.js"></script>
-    <script type="text/javascript">AWSHelpObj.setCopyrightText();</script>
-    <!-- BEGIN-SECTION -->
-    <script type="text/javascript">
-        jQuery(function ($) {
-            var host = parseUri($(window.parent.location).attr('href')).host;
-            if (AWSHelpObj.showRegionalDisclaimer(host)) {
-                $("div#regionDisclaimer").css("display", "block");
-            } else {
-                $("div#regionDisclaimer").remove();
-            }
-        });
-    </script>
-    <!-- END-SECTION -->
+<div id="pageContent">
+    <p>
+        The AWS SDK for .NET makes it easier for developers to build .NET applications that tap into the cost-effective, scalable, and reliable AWS infrastructure
+        services such as Amazon Simple Storage Service (Amazon S3) and Amazon Elastic Compute Cloud (Amazon EC2).
+    </p>
+    <p>The AWS SDK for .NET supports development on .NET Framework 4.7.2 or later, .NET Core 2.0 or later, and any platform that supports .NET Standard 2.0 or later. As of version 4.0, the AWS SDK for .NET no longer supports .NET Framework 3.5 or 4.5.</p>
 
-    <noscript>
+    <p>Use the navigation panel on the left to browse services, namespaces, and types. Use the filter box to quickly locate a service or type by name.</p>
 
-        <div class="yui-b" style="padding: 20px; padding-top: 0;">
-            <div class="yui-ge">
-                <div class="yui-u first">
-                    <div id="error_messages">
-                        <!-- BEGIN-SECTION -->
-                        <img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" style="float: left;" alt="Warning">
-                        <!-- END-SECTION -->
-                        <div style="float:left; margin-left: 1em;">
-                            <strong>Javascript is disabled or is unavailable in your browser.</strong>
-                            <br>
-                            To use the AWS Documentation, Javascript must be enabled. Please
-                            refer to your browser's Help pages for instructions.
-                        </div>
-
-                        <div style="clear: both;">
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="section">
+        <div class="collapsibleSection">
+            <h2 class="title">Additional Information</h2>
         </div>
 
-    </noscript>
+        <p>These pages contain additional information about the AWS SDK for .NET and using .NET to access AWS:</p>
 
-    
-</body>
-</html>
+        <div class="variablelist">
+            <dl>
+                <dt><a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/quick-start.html" target="_blank" rel="noopener noreferrer">Getting Started with the AWS SDK for .NET</a></dt>
+                <dd>This section introduces you to the fundamentals of tool installation, configuring AWS access keys, and getting started with a sample project.</dd>
+
+                <dt><a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/configuring-the-sdk.html" target="_blank" rel="noopener noreferrer">Setting up a project</a></dt>
+                <dd>This section describes how to start a project and then set it up by configuring AWS access keys, configuring an AWS Region, and installing packages.</dd>
+
+                <dt><a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-sdk-features.html" target="_blank" rel="noopener noreferrer">Programming AWS</a></dt>
+                <dd>General programming techniques and information for developing software with the AWS SDK for .NET.</dd>
+
+                <dt><a class="link" href="https://aws.amazon.com/blogs/developer/category/net/" target="_blank" rel="noopener noreferrer">AWS Developer Blog - Windows and .NET</a></dt>
+                <dd>Developer blog for the AWS SDK for .NET, Visual Studio toolkit and AWS Tools for Windows PowerShell.</dd>
+
+                <dt><a class="link" href="https://docs.aws.amazon.com/sdk-for-net/v4/developer-guide/net-dg-v4.html" target="_blank" rel="noopener noreferrer">V4 Migration Guide</a></dt>
+                <dd>Guide to help developers move their applications from version 3 to version 4 of the AWS SDK for .NET.</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div id="pageFooter">
+    <!-- BEGIN-FEEDBACK-SECTION -->
+    <div class="newline feedback">
+        <div class="feedbackLinks">
+            Did this page help you?&nbsp;&nbsp;
+            <a href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackyes.html?topic_id=sdk-api-home" target="_blank" rel="noopener noreferrer">Yes</a>&nbsp;&nbsp;
+            <a href="https://docs.aws.amazon.com/sdkfornet/v4/apidocs/feedbackno.html?topic_id=sdk-api-home" target="_blank" rel="noopener noreferrer">No</a>&nbsp;&nbsp;&nbsp;
+            <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?service_name=NET-Ref-V4&amp;file_name=sdk-api-home" target="_blank" rel="noopener noreferrer">Tell us about it...</a>
+        </div>
+    </div>
+    <!-- END-FEEDBACK-SECTION -->
+    <div id="awsdocs-legal-zone-copyright"></div>
+</div>
