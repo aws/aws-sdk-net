@@ -1,3 +1,24 @@
+### 4.0.300.0 (2026-07-30 18:14 UTC)
+* BedrockAgentCoreControl (4.0.106.0)
+	* Adds support for configuring models through the OpenResponses API for custom evaluators. CreateEvaluator and UpdateEvaluator now accept an OpenResponses model configuration for LLM-as-a-Judge evaluations.
+* IdentityManagement (4.0.101.0)
+	* Improved IAM Policy Simulator accuracy. Simulator now evaluates SCP conditions and resource scoping, returns explicitDeny for explicit SCP denials, and reports accurate cross-account decisions.
+* Kafka (4.0.101.0)
+	* Amazon MSK Express brokers now support streaming tables for Apache Iceberg, continuously materializing Apache Kafka topics as Iceberg tables in Amazon S3 Tables. Express brokers also now support data delivery to Amazon S3 general purpose buckets.
+* Lambda (4.0.105.0)
+	* Add Python3.15 (python3.15) and NodeJs 26 (nodejs26.x) support to AWS Lambda
+* NetworkFirewall (4.0.102.0)
+	* Adds UPDATING field to Container Association Status
+* PricingPlanManager (4.0.100.0)
+	* Adds support for Public PricingPlanManager SDK
+* S3 (4.0.101.6)
+	* Added `S3EventNotification.ToJson` to serialize an event notification into the documented S3 wire format that `ParseJson` can round-trip (https://github.com/aws/aws-sdk-net/issues/2124)
+	* Fixed `TransferUtility` multipart download in RANGE mode failing on zero-byte objects. The initial ranged GET (`bytes=0-{partSize-1}`) returns `416 Range Not Satisfiable` for an empty object; the RANGE strategy now detects the 416, probes with a `partNumber=1` GET, and completes as an empty file, matching the PART strategy's behavior.
+* SageMaker (4.0.105.0)
+	* Adds support for g7 family instance types for SageMaker Studio JupyterLab and CodeEditor apps for IAD (us-east-1), PDX (us-west-2), CMH (us-east-2).
+* SecurityAgent (4.0.102.0)
+	* Adds support for providing a branch override when configured integrated repositories
+
 ### 4.0.299.0 (2026-07-29 18:16 UTC)
 * DatabaseMigrationService (4.0.100.8)
 	* Updated documentation for various DMS Schema Conversion operations
