@@ -35,8 +35,27 @@ namespace Amazon.SecurityAgent.Model
     /// </summary>
     public partial class IntegratedRepository
     {
+        private string _branch;
         private string _integrationId;
         private string _providerResourceId;
+
+        /// <summary>
+        /// Gets and sets the property Branch. 
+        /// <para>
+        /// An optional override for the repository branch.
+        /// </para>
+        /// </summary>
+        public string Branch
+        {
+            get { return this._branch; }
+            set { this._branch = value; }
+        }
+
+        // Check to see if Branch property is set
+        internal bool IsSetBranch()
+        {
+            return this._branch != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IntegrationId. 
