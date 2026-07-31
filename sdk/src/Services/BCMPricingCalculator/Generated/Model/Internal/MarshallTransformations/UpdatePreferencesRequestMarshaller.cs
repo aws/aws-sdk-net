@@ -28,10 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -58,68 +59,63 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         public IRequest Marshall(UpdatePreferencesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.BCMPricingCalculator");
-            request.Headers["smithy-protocol"] = "rpc-v2-cbor";
-            request.ResourcePath = "service/AWSBCMPricingCalculator/operation/UpdatePreferences";
-            request.Headers["Content-Type"] = "application/cbor";
-            request.Headers["Accept"] = "application/cbor";
+            string target = "AWSBCMPricingCalculator.UpdatePreferences";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-06-19";
             request.HttpMethod = "POST";
 
-            var writer = CborWriterPool.Rent();
-            try
-            {
-                writer.WriteStartMap(null);
-                var context = new CborMarshallerContext(request, writer);
-                if (publicRequest.IsSetManagementAccountRateTypeSelections())
-                {
-                    context.Writer.WriteTextString("managementAccountRateTypeSelections");
-                    context.Writer.WriteStartArray(publicRequest.ManagementAccountRateTypeSelections.Count);
-                    foreach(var publicRequestManagementAccountRateTypeSelectionsListValue in publicRequest.ManagementAccountRateTypeSelections)
-                    {
-                            context.Writer.WriteTextString(publicRequestManagementAccountRateTypeSelectionsListValue);
-                    }
-                    context.Writer.WriteEndArray();
-                }
-                if (publicRequest.IsSetMemberAccountRateTypeSelections())
-                {
-                    context.Writer.WriteTextString("memberAccountRateTypeSelections");
-                    context.Writer.WriteStartArray(publicRequest.MemberAccountRateTypeSelections.Count);
-                    foreach(var publicRequestMemberAccountRateTypeSelectionsListValue in publicRequest.MemberAccountRateTypeSelections)
-                    {
-                            context.Writer.WriteTextString(publicRequestMemberAccountRateTypeSelectionsListValue);
-                    }
-                    context.Writer.WriteEndArray();
-                }
-                if (publicRequest.IsSetStandaloneAccountRateTypeSelections())
-                {
-                    context.Writer.WriteTextString("standaloneAccountRateTypeSelections");
-                    context.Writer.WriteStartArray(publicRequest.StandaloneAccountRateTypeSelections.Count);
-                    foreach(var publicRequestStandaloneAccountRateTypeSelectionsListValue in publicRequest.StandaloneAccountRateTypeSelections)
-                    {
-                            context.Writer.WriteTextString(publicRequestStandaloneAccountRateTypeSelectionsListValue);
-                    }
-                    context.Writer.WriteEndArray();
-                }
-                writer.WriteEndMap();
+            request.ResourcePath = "/";
 #if !NETFRAMEWORK
-                // Encode directly into a pooled buffer instead of allocating a new byte[] per request.
-                // The buffer is pre-sized to writer.BytesWritten so it's rented at the right size up front,
-                // avoiding the default-size rent followed by a resize+return.
-                var encodedLength = writer.BytesWritten;
-                request.ContentStream = new PooledContentStream(encodedLength);
-                var bufferWriter = ((PooledContentStream)request.ContentStream).BufferWriter;
-                var span = bufferWriter.GetSpan(encodedLength);
-                var bytesWritten = writer.Encode(span);
-                bufferWriter.Advance(bytesWritten);
+            request.ContentStream = new PooledContentStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
-                request.Content = writer.Encode();
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
 #endif
-            }
-            finally
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetManagementAccountRateTypeSelections())
             {
-                CborWriterPool.Return(writer);
+                context.Writer.WritePropertyName("managementAccountRateTypeSelections");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestManagementAccountRateTypeSelectionsListValue in publicRequest.ManagementAccountRateTypeSelections)
+                {
+                        context.Writer.WriteStringValue(publicRequestManagementAccountRateTypeSelectionsListValue);
+                }
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetMemberAccountRateTypeSelections())
+            {
+                context.Writer.WritePropertyName("memberAccountRateTypeSelections");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMemberAccountRateTypeSelectionsListValue in publicRequest.MemberAccountRateTypeSelections)
+                {
+                        context.Writer.WriteStringValue(publicRequestMemberAccountRateTypeSelectionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStandaloneAccountRateTypeSelections())
+            {
+                context.Writer.WritePropertyName("standaloneAccountRateTypeSelections");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStandaloneAccountRateTypeSelectionsListValue in publicRequest.StandaloneAccountRateTypeSelections)
+                {
+                        context.Writer.WriteStringValue(publicRequestStandaloneAccountRateTypeSelectionsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+#if NETFRAMEWORK
+            request.Content = memoryStream.ToArray();
+#endif
             
+
+
             return request;
         }
         private static UpdatePreferencesRequestMarshaller _instance = new UpdatePreferencesRequestMarshaller();        

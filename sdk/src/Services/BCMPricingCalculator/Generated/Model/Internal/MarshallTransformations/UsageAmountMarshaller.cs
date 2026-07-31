@@ -28,16 +28,13 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// UsageAmount Marshaller
     /// </summary>
-    public class UsageAmountMarshaller : IRequestMarshaller<UsageAmount, CborMarshallerContext> 
+    public class UsageAmountMarshaller : IRequestMarshaller<UsageAmount, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,21 +42,29 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(UsageAmount requestObject, CborMarshallerContext context)
+        public void Marshall(UsageAmount requestObject, JsonMarshallerContext context)
         {
-            if (requestObject == null)
+            if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmount())
+            {
+                context.Writer.WritePropertyName("amount");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Amount.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.Amount.Value);
+                }
+            }
 
-            if (requestObject.IsSetAmount())
+            if(requestObject.IsSetStartHour())
             {
-                context.Writer.WriteTextString("amount");
-                context.Writer.WriteOptimizedNumber(requestObject.Amount.Value);
+                context.Writer.WritePropertyName("startHour");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartHour.Value)));
             }
-            if (requestObject.IsSetStartHour())
-            {
-                context.Writer.WriteTextString("startHour");
-                context.Writer.WriteDateTime(requestObject.StartHour.Value);
-            }
+
         }
 
         /// <summary>

@@ -29,61 +29,46 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Formats.Cbor;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CostAmount Object
     /// </summary>  
-    public class CostAmountUnmarshaller : ICborUnmarshaller<CostAmount, CborUnmarshallerContext>
+    public class CostAmountUnmarshaller : IJsonUnmarshaller<CostAmount, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CostAmount Unmarshall(CborUnmarshallerContext context)
+        public CostAmount Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CostAmount unmarshalledObject = new CostAmount();
             if (context.IsEmptyResponse)
                 return null;
-            var reader = context.Reader;
-            if (reader.PeekState() == CborReaderState.Null)
-            {
-                reader.ReadNull();
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
-            }
 
-            reader.ReadStartMap();
-            while (reader.PeekState() != CborReaderState.EndMap)
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                string propertyName = reader.ReadTextString();
-                switch (propertyName)
+                if (context.TestExpression("amount", targetDepth, ref reader))
                 {
-                    case "amount":
-                        {
-                            context.AddPathSegment("Amount");
-                            var unmarshaller = CborNullableDoubleUnmarshaller.Instance;
-                            unmarshalledObject.Amount = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "currency":
-                        {
-                            context.AddPathSegment("Currency");
-                            var unmarshaller = CborStringUnmarshaller.Instance;
-                            unmarshalledObject.Currency = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    default:
-                        reader.SkipValue();
-                        break;
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.Amount = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("currency", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Currency = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
                 }
             }
-            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

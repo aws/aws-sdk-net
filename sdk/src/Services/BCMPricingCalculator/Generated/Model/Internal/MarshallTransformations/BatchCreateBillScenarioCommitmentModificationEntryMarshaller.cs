@@ -28,16 +28,13 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchCreateBillScenarioCommitmentModificationEntry Marshaller
     /// </summary>
-    public class BatchCreateBillScenarioCommitmentModificationEntryMarshaller : IRequestMarshaller<BatchCreateBillScenarioCommitmentModificationEntry, CborMarshallerContext> 
+    public class BatchCreateBillScenarioCommitmentModificationEntryMarshaller : IRequestMarshaller<BatchCreateBillScenarioCommitmentModificationEntry, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,36 +42,39 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BatchCreateBillScenarioCommitmentModificationEntry requestObject, CborMarshallerContext context)
+        public void Marshall(BatchCreateBillScenarioCommitmentModificationEntry requestObject, JsonMarshallerContext context)
         {
-            if (requestObject == null)
+            if(requestObject == null)
                 return;
-
-            if (requestObject.IsSetCommitmentAction())
+            if(requestObject.IsSetCommitmentAction())
             {
-                context.Writer.WriteTextString("commitmentAction");
-                context.Writer.WriteStartMap(null);
+                context.Writer.WritePropertyName("commitmentAction");
+                context.Writer.WriteStartObject();
 
                 var marshaller = BillScenarioCommitmentModificationActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CommitmentAction, context);
 
-                context.Writer.WriteEndMap();
+                context.Writer.WriteEndObject();
             }
-            if (requestObject.IsSetGroup())
+
+            if(requestObject.IsSetGroup())
             {
-                context.Writer.WriteTextString("group");
-                context.Writer.WriteTextString(requestObject.Group);
+                context.Writer.WritePropertyName("group");
+                context.Writer.WriteStringValue(requestObject.Group);
             }
-            if (requestObject.IsSetKey())
+
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WriteTextString("key");
-                context.Writer.WriteTextString(requestObject.Key);
+                context.Writer.WritePropertyName("key");
+                context.Writer.WriteStringValue(requestObject.Key);
             }
-            if (requestObject.IsSetUsageAccountId())
+
+            if(requestObject.IsSetUsageAccountId())
             {
-                context.Writer.WriteTextString("usageAccountId");
-                context.Writer.WriteTextString(requestObject.UsageAccountId);
+                context.Writer.WritePropertyName("usageAccountId");
+                context.Writer.WriteStringValue(requestObject.UsageAccountId);
             }
+
         }
 
         /// <summary>

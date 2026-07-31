@@ -28,16 +28,13 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BillInterval Marshaller
     /// </summary>
-    public class BillIntervalMarshaller : IRequestMarshaller<BillInterval, CborMarshallerContext> 
+    public class BillIntervalMarshaller : IRequestMarshaller<BillInterval, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,21 +42,22 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BillInterval requestObject, CborMarshallerContext context)
+        public void Marshall(BillInterval requestObject, JsonMarshallerContext context)
         {
-            if (requestObject == null)
+            if(requestObject == null)
                 return;
+            if(requestObject.IsSetEnd())
+            {
+                context.Writer.WritePropertyName("end");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.End.Value)));
+            }
 
-            if (requestObject.IsSetEnd())
+            if(requestObject.IsSetStart())
             {
-                context.Writer.WriteTextString("end");
-                context.Writer.WriteDateTime(requestObject.End.Value);
+                context.Writer.WritePropertyName("start");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Start.Value)));
             }
-            if (requestObject.IsSetStart())
-            {
-                context.Writer.WriteTextString("start");
-                context.Writer.WriteDateTime(requestObject.Start.Value);
-            }
+
         }
 
         /// <summary>

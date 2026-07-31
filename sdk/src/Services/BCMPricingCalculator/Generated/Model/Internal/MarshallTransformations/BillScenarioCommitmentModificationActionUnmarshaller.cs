@@ -29,77 +29,58 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Formats.Cbor;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BillScenarioCommitmentModificationAction Object
     /// </summary>  
-    public class BillScenarioCommitmentModificationActionUnmarshaller : ICborUnmarshaller<BillScenarioCommitmentModificationAction, CborUnmarshallerContext>
+    public class BillScenarioCommitmentModificationActionUnmarshaller : IJsonUnmarshaller<BillScenarioCommitmentModificationAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BillScenarioCommitmentModificationAction Unmarshall(CborUnmarshallerContext context)
+        public BillScenarioCommitmentModificationAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BillScenarioCommitmentModificationAction unmarshalledObject = new BillScenarioCommitmentModificationAction();
             if (context.IsEmptyResponse)
                 return null;
-            var reader = context.Reader;
-            if (reader.PeekState() == CborReaderState.Null)
-            {
-                reader.ReadNull();
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
-            }
 
-            reader.ReadStartMap();
-            while (reader.PeekState() != CborReaderState.EndMap)
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                string propertyName = reader.ReadTextString();
-                switch (propertyName)
+                if (context.TestExpression("addReservedInstanceAction", targetDepth, ref reader))
                 {
-                    case "addReservedInstanceAction":
-                        {
-                            context.AddPathSegment("AddReservedInstanceAction");
-                            var unmarshaller = AddReservedInstanceActionUnmarshaller.Instance;
-                            unmarshalledObject.AddReservedInstanceAction = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "addSavingsPlanAction":
-                        {
-                            context.AddPathSegment("AddSavingsPlanAction");
-                            var unmarshaller = AddSavingsPlanActionUnmarshaller.Instance;
-                            unmarshalledObject.AddSavingsPlanAction = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "negateReservedInstanceAction":
-                        {
-                            context.AddPathSegment("NegateReservedInstanceAction");
-                            var unmarshaller = NegateReservedInstanceActionUnmarshaller.Instance;
-                            unmarshalledObject.NegateReservedInstanceAction = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    case "negateSavingsPlanAction":
-                        {
-                            context.AddPathSegment("NegateSavingsPlanAction");
-                            var unmarshaller = NegateSavingsPlanActionUnmarshaller.Instance;
-                            unmarshalledObject.NegateSavingsPlanAction = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    default:
-                        reader.SkipValue();
-                        break;
+                    var unmarshaller = AddReservedInstanceActionUnmarshaller.Instance;
+                    unmarshalledObject.AddReservedInstanceAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("addSavingsPlanAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = AddSavingsPlanActionUnmarshaller.Instance;
+                    unmarshalledObject.AddSavingsPlanAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("negateReservedInstanceAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = NegateReservedInstanceActionUnmarshaller.Instance;
+                    unmarshalledObject.NegateReservedInstanceAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("negateSavingsPlanAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = NegateSavingsPlanActionUnmarshaller.Instance;
+                    unmarshalledObject.NegateSavingsPlanAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
                 }
             }
-            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

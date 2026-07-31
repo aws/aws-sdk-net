@@ -28,16 +28,13 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// HistoricalUsageEntity Marshaller
     /// </summary>
-    public class HistoricalUsageEntityMarshaller : IRequestMarshaller<HistoricalUsageEntity, CborMarshallerContext> 
+    public class HistoricalUsageEntityMarshaller : IRequestMarshaller<HistoricalUsageEntity, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,56 +42,62 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HistoricalUsageEntity requestObject, CborMarshallerContext context)
+        public void Marshall(HistoricalUsageEntity requestObject, JsonMarshallerContext context)
         {
-            if (requestObject == null)
+            if(requestObject == null)
                 return;
-
-            if (requestObject.IsSetBillInterval())
+            if(requestObject.IsSetBillInterval())
             {
-                context.Writer.WriteTextString("billInterval");
-                context.Writer.WriteStartMap(null);
+                context.Writer.WritePropertyName("billInterval");
+                context.Writer.WriteStartObject();
 
                 var marshaller = BillIntervalMarshaller.Instance;
                 marshaller.Marshall(requestObject.BillInterval, context);
 
-                context.Writer.WriteEndMap();
+                context.Writer.WriteEndObject();
             }
-            if (requestObject.IsSetFilterExpression())
+
+            if(requestObject.IsSetFilterExpression())
             {
-                context.Writer.WriteTextString("filterExpression");
-                context.Writer.WriteStartMap(null);
+                context.Writer.WritePropertyName("filterExpression");
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExpressionMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterExpression, context);
 
-                context.Writer.WriteEndMap();
+                context.Writer.WriteEndObject();
             }
-            if (requestObject.IsSetLocation())
+
+            if(requestObject.IsSetLocation())
             {
-                context.Writer.WriteTextString("location");
-                context.Writer.WriteTextString(requestObject.Location);
+                context.Writer.WritePropertyName("location");
+                context.Writer.WriteStringValue(requestObject.Location);
             }
-            if (requestObject.IsSetOperation())
+
+            if(requestObject.IsSetOperation())
             {
-                context.Writer.WriteTextString("operation");
-                context.Writer.WriteTextString(requestObject.Operation);
+                context.Writer.WritePropertyName("operation");
+                context.Writer.WriteStringValue(requestObject.Operation);
             }
-            if (requestObject.IsSetServiceCode())
+
+            if(requestObject.IsSetServiceCode())
             {
-                context.Writer.WriteTextString("serviceCode");
-                context.Writer.WriteTextString(requestObject.ServiceCode);
+                context.Writer.WritePropertyName("serviceCode");
+                context.Writer.WriteStringValue(requestObject.ServiceCode);
             }
-            if (requestObject.IsSetUsageAccountId())
+
+            if(requestObject.IsSetUsageAccountId())
             {
-                context.Writer.WriteTextString("usageAccountId");
-                context.Writer.WriteTextString(requestObject.UsageAccountId);
+                context.Writer.WritePropertyName("usageAccountId");
+                context.Writer.WriteStringValue(requestObject.UsageAccountId);
             }
-            if (requestObject.IsSetUsageType())
+
+            if(requestObject.IsSetUsageType())
             {
-                context.Writer.WriteTextString("usageType");
-                context.Writer.WriteTextString(requestObject.UsageType);
+                context.Writer.WritePropertyName("usageType");
+                context.Writer.WriteStringValue(requestObject.UsageType);
             }
+
         }
 
         /// <summary>
