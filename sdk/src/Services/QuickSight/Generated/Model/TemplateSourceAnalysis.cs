@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _arn;
         private List<DataSetReference> _dataSetReferences = AWSConfigs.InitializeCollections ? new List<DataSetReference>() : null;
+        private List<TopicReference> _topicReferences = AWSConfigs.InitializeCollections ? new List<TopicReference>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -68,7 +69,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Min=0)]
         public List<DataSetReference> DataSetReferences
         {
             get { return this._dataSetReferences; }
@@ -79,6 +80,31 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetReferences()
         {
             return this._dataSetReferences != null && (this._dataSetReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicReferences. 
+        /// <para>
+        /// A structure containing information about the topic references used as placeholders
+        /// in the template.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public List<TopicReference> TopicReferences
+        {
+            get { return this._topicReferences; }
+            set { this._topicReferences = value; }
+        }
+
+        // Check to see if TopicReferences property is set
+        internal bool IsSetTopicReferences()
+        {
+            return this._topicReferences != null && (this._topicReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

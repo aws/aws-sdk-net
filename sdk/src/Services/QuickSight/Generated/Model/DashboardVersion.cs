@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
         private string _sourceEntityArn;
         private ResourceStatus _status;
         private string _themeArn;
+        private List<string> _topicArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _versionNumber;
 
         /// <summary>
@@ -84,8 +85,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetArns. 
         /// <para>
-        /// The Amazon Resource Numbers (ARNs) for the datasets that are associated with this
-        /// version of the dashboard.
+        /// The Amazon Resource Names (ARNs) for the datasets that are associated with this version
+        /// of the dashboard.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -225,6 +226,31 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetThemeArn()
         {
             return this._themeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicArns. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) for the topics that are associated with this version
+        /// of the dashboard.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public List<string> TopicArns
+        {
+            get { return this._topicArns; }
+            set { this._topicArns = value; }
+        }
+
+        // Check to see if TopicArns property is set
+        internal bool IsSetTopicArns()
+        {
+            return this._topicArns != null && (this._topicArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

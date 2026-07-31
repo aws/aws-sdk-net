@@ -52,6 +52,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.FieldName);
             }
 
+            if(requestObject.IsSetIsHidden())
+            {
+                context.Writer.WritePropertyName("IsHidden");
+                context.Writer.WriteBooleanValue(requestObject.IsHidden.Value);
+            }
+
             if(requestObject.IsSetMetric())
             {
                 context.Writer.WritePropertyName("Metric");
@@ -61,6 +67,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Metric, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetPresentationOrder())
+            {
+                context.Writer.WritePropertyName("PresentationOrder");
+                context.Writer.WriteNumberValue(requestObject.PresentationOrder.Value);
             }
 
             if(requestObject.IsSetPropertyName())
@@ -79,6 +91,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("PropertyUsage");
                 context.Writer.WriteStringValue(requestObject.PropertyUsage);
+            }
+
+            if(requestObject.IsSetRankOrder())
+            {
+                context.Writer.WritePropertyName("RankOrder");
+                context.Writer.WriteNumberValue(requestObject.RankOrder.Value);
             }
 
         }

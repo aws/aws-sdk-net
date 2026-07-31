@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class TopicRelativeDateFilter
     {
         private TopicSingularFilterConstant _constant;
+        private NullFilterType _nullFilter;
         private TopicRelativeDateFilterFunction _relativeDateFilterFunction;
         private TopicTimeGranularity _timeGranularity;
 
@@ -55,6 +56,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetConstant()
         {
             return this._constant != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NullFilter. 
+        /// <para>
+        /// The <c>null</c> filter that is applied to the relative date filter.
+        /// </para>
+        /// </summary>
+        public NullFilterType NullFilter
+        {
+            get { return this._nullFilter; }
+            set { this._nullFilter = value; }
+        }
+
+        // Check to see if NullFilter property is set
+        internal bool IsSetNullFilter()
+        {
+            return this._nullFilter != null;
         }
 
         /// <summary>

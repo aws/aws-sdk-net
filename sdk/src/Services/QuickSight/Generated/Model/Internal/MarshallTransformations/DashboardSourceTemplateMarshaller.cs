@@ -68,6 +68,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTopicReferences())
+            {
+                context.Writer.WritePropertyName("TopicReferences");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTopicReferencesListValue in requestObject.TopicReferences)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TopicReferenceMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTopicReferencesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

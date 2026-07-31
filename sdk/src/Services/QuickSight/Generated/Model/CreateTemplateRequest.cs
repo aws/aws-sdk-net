@@ -162,7 +162,9 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Use the <c>DataSetReferences</c> entity within <c>SourceTemplate</c> or <c>SourceAnalysis</c>
         /// to list the replacement datasets for the placeholders listed in the original. The
-        /// schema in each dataset must match its placeholder. 
+        /// schema in each dataset must match its placeholder. Use the <c>TopicReferences</c>
+        /// entity to list the replacement topics for the topic placeholders listed in the original.
+        /// The schema in each topic must match its placeholder.
         /// </para>
         ///  
         /// <para>

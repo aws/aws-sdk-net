@@ -207,6 +207,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTopicConfigurations())
+            {
+                context.Writer.WritePropertyName("TopicConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTopicConfigurationsListValue in requestObject.TopicConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TopicConfigurationMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTopicConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

@@ -2424,6 +2424,66 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  CreateTopicV2
+
+        internal virtual CreateTopicV2Response CreateTopicV2(CreateTopicV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateTopicV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Q topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTopicV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTopicV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTopicV2">REST API Reference for CreateTopicV2 Operation</seealso>
+        public virtual Task<CreateTopicV2Response> CreateTopicV2Async(CreateTopicV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateTopicV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateTopicV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateVPCConnection
 
         internal virtual CreateVPCConnectionResponse CreateVPCConnection(CreateVPCConnectionRequest request)
@@ -4510,6 +4570,60 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DeleteTopicRefreshScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteTopicRefreshScheduleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteTopicV2
+
+        internal virtual DeleteTopicV2Response DeleteTopicV2(DeleteTopicV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteTopicV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a Q topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTopicV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTopicV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTopicV2">REST API Reference for DeleteTopicV2 Operation</seealso>
+        public virtual Task<DeleteTopicV2Response> DeleteTopicV2Async(DeleteTopicV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteTopicV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteTopicV2Response>(request, options, cancellationToken);
         }
         #endregion
         
@@ -8254,6 +8368,57 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  DescribeTopicPermissionsV2
+
+        internal virtual DescribeTopicPermissionsV2Response DescribeTopicPermissionsV2(DescribeTopicPermissionsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicPermissionsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicPermissionsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTopicPermissionsV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the permissions of a topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopicPermissionsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTopicPermissionsV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicPermissionsV2">REST API Reference for DescribeTopicPermissionsV2 Operation</seealso>
+        public virtual Task<DescribeTopicPermissionsV2Response> DescribeTopicPermissionsV2Async(DescribeTopicPermissionsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicPermissionsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicPermissionsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTopicPermissionsV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeTopicRefresh
 
         internal virtual DescribeTopicRefreshResponse DescribeTopicRefresh(DescribeTopicRefreshRequest request)
@@ -8362,6 +8527,57 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DescribeTopicRefreshScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTopicRefreshScheduleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeTopicV2
+
+        internal virtual DescribeTopicV2Response DescribeTopicV2(DescribeTopicV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeTopicV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a Q topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTopicV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTopicV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTopicV2">REST API Reference for DescribeTopicV2 Operation</seealso>
+        public virtual Task<DescribeTopicV2Response> DescribeTopicV2Async(DescribeTopicV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeTopicV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeTopicV2Response>(request, options, cancellationToken);
         }
         #endregion
         
@@ -11436,6 +11652,58 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  ListTopicsV2
+
+        internal virtual ListTopicsV2Response ListTopicsV2(ListTopicsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTopicsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<ListTopicsV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all of the Q topics in the specified Amazon Web Services account in an Amazon
+        /// Web Services Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTopicsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTopicsV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTopicsV2">REST API Reference for ListTopicsV2 Operation</seealso>
+        public virtual Task<ListTopicsV2Response> ListTopicsV2Async(ListTopicsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListTopicsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTopicsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListTopicsV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListUserGroups
 
         internal virtual ListUserGroupsResponse ListUserGroups(ListUserGroupsRequest request)
@@ -12561,6 +12829,12 @@ namespace Amazon.QuickSight
         /// </param>
         /// 
         /// <returns>The response from the SearchTopics service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
         /// </exception>
@@ -12590,6 +12864,60 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = SearchTopicsResponseUnmarshaller.Instance;
 
             return InvokeAsync<SearchTopicsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  SearchTopicsV2
+
+        internal virtual SearchTopicsV2Response SearchTopicsV2(SearchTopicsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTopicsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTopicsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<SearchTopicsV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for any Q topic that exists in an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchTopicsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchTopicsV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <c>NextToken</c> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchTopicsV2">REST API Reference for SearchTopicsV2 Operation</seealso>
+        public virtual Task<SearchTopicsV2Response> SearchTopicsV2Async(SearchTopicsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchTopicsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchTopicsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchTopicsV2Response>(request, options, cancellationToken);
         }
         #endregion
         
@@ -16638,6 +16966,69 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  UpdateTopicPermissionsV2
+
+        internal virtual UpdateTopicPermissionsV2Response UpdateTopicPermissionsV2(UpdateTopicPermissionsV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTopicPermissionsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTopicPermissionsV2ResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTopicPermissionsV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the permissions of a topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTopicPermissionsV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTopicPermissionsV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon Quick Suite subscription
+        /// where the edition doesn't include support for that operation. Amazon Quick Suite currently
+        /// has Standard Edition and Enterprise Edition. Not every operation and capability is
+        /// available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicPermissionsV2">REST API Reference for UpdateTopicPermissionsV2 Operation</seealso>
+        public virtual Task<UpdateTopicPermissionsV2Response> UpdateTopicPermissionsV2Async(UpdateTopicPermissionsV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTopicPermissionsV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTopicPermissionsV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTopicPermissionsV2Response>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateTopicRefreshSchedule
 
         internal virtual UpdateTopicRefreshScheduleResponse UpdateTopicRefreshSchedule(UpdateTopicRefreshScheduleRequest request)
@@ -16695,6 +17086,66 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateTopicRefreshScheduleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateTopicRefreshScheduleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateTopicV2
+
+        internal virtual UpdateTopicV2Response UpdateTopicV2(UpdateTopicV2Request request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTopicV2ResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateTopicV2Response>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the definition of a Q topic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTopicV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTopicV2 service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTopicV2">REST API Reference for UpdateTopicV2 Operation</seealso>
+        public virtual Task<UpdateTopicV2Response> UpdateTopicV2Async(UpdateTopicV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateTopicV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateTopicV2ResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateTopicV2Response>(request, options, cancellationToken);
         }
         #endregion
         

@@ -38,6 +38,8 @@ namespace Amazon.QuickSight.Model
         private NamedFilterAggType _aggregation;
         private TopicRangeFilterConstant _constant;
         private bool? _inclusive;
+        private bool? _inverse;
+        private NullFilterType _nullFilter;
 
         /// <summary>
         /// Gets and sets the property Aggregation. 
@@ -98,6 +100,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetInclusive()
         {
             return this._inclusive.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Inverse. 
+        /// <para>
+        /// A Boolean value that indicates if the filter is inverse.
+        /// </para>
+        /// </summary>
+        public bool? Inverse
+        {
+            get { return this._inverse; }
+            set { this._inverse = value; }
+        }
+
+        // Check to see if Inverse property is set
+        internal bool IsSetInverse()
+        {
+            return this._inverse.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NullFilter. 
+        /// <para>
+        /// The <c>null</c> filter that is applied to the numeric range filter.
+        /// </para>
+        /// </summary>
+        public NullFilterType NullFilter
+        {
+            get { return this._nullFilter; }
+            set { this._nullFilter = value; }
+        }
+
+        // Check to see if NullFilter property is set
+        internal bool IsSetNullFilter()
+        {
+            return this._nullFilter != null;
         }
 
     }

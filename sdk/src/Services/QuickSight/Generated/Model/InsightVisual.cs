@@ -45,6 +45,7 @@ namespace Amazon.QuickSight.Model
         private InsightConfiguration _insightConfiguration;
         private VisualSubtitleLabelOptions _subtitle;
         private VisualTitleLabelOptions _title;
+        private string _topicIdentifier;
         private string _visualContentAltText;
         private string _visualId;
 
@@ -78,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// The dataset that is used in the insight visual.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string DataSetIdentifier
         {
             get { return this._dataSetIdentifier; }
@@ -143,6 +144,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTitle()
         {
             return this._title != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicIdentifier. 
+        /// <para>
+        /// The topic that is used in the insight visual.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string TopicIdentifier
+        {
+            get { return this._topicIdentifier; }
+            set { this._topicIdentifier = value; }
+        }
+
+        // Check to see if TopicIdentifier property is set
+        internal bool IsSetTopicIdentifier()
+        {
+            return this._topicIdentifier != null;
         }
 
         /// <summary>

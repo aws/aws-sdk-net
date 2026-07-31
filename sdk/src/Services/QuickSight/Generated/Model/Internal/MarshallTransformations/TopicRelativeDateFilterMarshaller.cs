@@ -57,6 +57,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetNullFilter())
+            {
+                context.Writer.WritePropertyName("NullFilter");
+                context.Writer.WriteStringValue(requestObject.NullFilter);
+            }
+
             if(requestObject.IsSetRelativeDateFilterFunction())
             {
                 context.Writer.WritePropertyName("RelativeDateFilterFunction");

@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// The value of the singular filter constant.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string SingularConstant
         {
             get { return this._singularConstant; }

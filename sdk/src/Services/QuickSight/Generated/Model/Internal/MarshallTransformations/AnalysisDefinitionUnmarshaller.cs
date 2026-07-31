@@ -122,6 +122,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.TooltipSheets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TopicIdentifierDeclarations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TopicIdentifierDeclaration, TopicIdentifierDeclarationUnmarshaller>(TopicIdentifierDeclarationUnmarshaller.Instance);
+                    unmarshalledObject.TopicIdentifierDeclarations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

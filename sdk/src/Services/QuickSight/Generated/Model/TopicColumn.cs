@@ -143,7 +143,7 @@ namespace Amazon.QuickSight.Model
         /// A description of the column and its contents.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string ColumnDescription
         {
             get { return this._columnDescription; }
@@ -162,7 +162,7 @@ namespace Amazon.QuickSight.Model
         /// A user-friendly name for the column.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string ColumnFriendlyName
         {
             get { return this._columnFriendlyName; }

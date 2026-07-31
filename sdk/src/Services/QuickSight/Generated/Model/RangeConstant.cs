@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// The maximum value for a range constant.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string Maximum
         {
             get { return this._maximum; }
@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// The minimum value for a range constant.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string Minimum
         {
             get { return this._minimum; }

@@ -43,6 +43,7 @@ namespace Amazon.QuickSight.Model
     {
         private List<VisualCustomAction> _actions = AWSConfigs.InitializeCollections ? new List<VisualCustomAction>() : null;
         private string _dataSetIdentifier;
+        private string _topicIdentifier;
         private string _visualId;
 
         /// <summary>
@@ -72,11 +73,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetIdentifier. 
         /// <para>
-        /// The data set that is used in the empty visual. Every visual requires a dataset to
-        /// render.
+        /// The data set that is used in the empty visual. Every visual requires a dataset or
+        /// a topic to render.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string DataSetIdentifier
         {
             get { return this._dataSetIdentifier; }
@@ -87,6 +88,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetIdentifier()
         {
             return this._dataSetIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicIdentifier. 
+        /// <para>
+        /// The topic that is used in the empty visual. Every visual requires a dataset or a topic
+        /// to render.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string TopicIdentifier
+        {
+            get { return this._topicIdentifier; }
+            set { this._topicIdentifier = value; }
+        }
+
+        // Check to see if TopicIdentifier property is set
+        internal bool IsSetTopicIdentifier()
+        {
+            return this._topicIdentifier != null;
         }
 
         /// <summary>

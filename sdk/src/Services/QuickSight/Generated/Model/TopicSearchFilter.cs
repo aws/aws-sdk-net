@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// The value of the topic search filter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Value
         {
             get { return this._value; }

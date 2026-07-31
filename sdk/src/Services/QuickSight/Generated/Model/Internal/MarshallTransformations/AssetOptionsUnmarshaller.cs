@@ -80,6 +80,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Timezone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("VisualMessages", targetDepth, ref reader))
+                {
+                    var unmarshaller = VisualMessagesUnmarshaller.Instance;
+                    unmarshalledObject.VisualMessages = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("WeekStart", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

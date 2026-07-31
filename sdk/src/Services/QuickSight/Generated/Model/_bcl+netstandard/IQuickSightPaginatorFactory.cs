@@ -338,6 +338,16 @@ namespace Amazon.QuickSight.Model
         IListTopicsPaginator ListTopics(ListTopicsRequest request);
 
         /// <summary>
+        /// Paginator for ListTopicsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTopicsV2Paginator ListTopicsV2(ListTopicsV2Request request);
+
+        /// <summary>
         /// Paginator for ListUserGroups operation
         ///</summary>
         [AWSPaginator(
@@ -466,5 +476,15 @@ namespace Amazon.QuickSight.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchTopicsPaginator SearchTopics(SearchTopicsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchTopicsV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchTopicsV2Paginator SearchTopicsV2(SearchTopicsV2Request request);
     }
 }

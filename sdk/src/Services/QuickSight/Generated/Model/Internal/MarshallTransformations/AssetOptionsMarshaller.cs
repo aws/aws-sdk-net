@@ -80,6 +80,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
+            if(requestObject.IsSetVisualMessages())
+            {
+                context.Writer.WritePropertyName("VisualMessages");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VisualMessagesMarshaller.Instance;
+                marshaller.Marshall(requestObject.VisualMessages, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetWeekStart())
             {
                 context.Writer.WritePropertyName("WeekStart");

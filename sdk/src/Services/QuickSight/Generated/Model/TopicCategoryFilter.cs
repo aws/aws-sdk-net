@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private CategoryFilterType _categoryFilterType;
         private TopicCategoryFilterConstant _constant;
         private bool? _inverse;
+        private NullFilterType _nullFilter;
 
         /// <summary>
         /// Gets and sets the property CategoryFilterFunction. 
@@ -112,6 +113,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetInverse()
         {
             return this._inverse.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NullFilter. 
+        /// <para>
+        /// The <c>null</c> filter that is applied to the category filter.
+        /// </para>
+        /// </summary>
+        public NullFilterType NullFilter
+        {
+            get { return this._nullFilter; }
+            set { this._nullFilter = value; }
+        }
+
+        // Check to see if NullFilter property is set
+        internal bool IsSetNullFilter()
+        {
+            return this._nullFilter != null;
         }
 
     }

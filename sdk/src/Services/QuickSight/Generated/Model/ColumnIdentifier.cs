@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _columnName;
         private string _dataSetIdentifier;
+        private string _topicIdentifier;
 
         /// <summary>
         /// Gets and sets the property ColumnName. 
@@ -62,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// The data set that the column belongs to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string DataSetIdentifier
         {
             get { return this._dataSetIdentifier; }
@@ -73,6 +74,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetIdentifier()
         {
             return this._dataSetIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicIdentifier. 
+        /// <para>
+        /// The topic that the column belongs to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string TopicIdentifier
+        {
+            get { return this._topicIdentifier; }
+            set { this._topicIdentifier = value; }
+        }
+
+        // Check to see if TopicIdentifier property is set
+        internal bool IsSetTopicIdentifier()
+        {
+            return this._topicIdentifier != null;
         }
 
     }

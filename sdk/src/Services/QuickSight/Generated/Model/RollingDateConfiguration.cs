@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// The data set that is used in the rolling date configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string DataSetIdentifier
         {
             get { return this._dataSetIdentifier; }

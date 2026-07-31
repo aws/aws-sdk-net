@@ -285,6 +285,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListTopicsV2 operation
+        ///</summary>
+        public IListTopicsV2Paginator ListTopicsV2(ListTopicsV2Request request) 
+        {
+            return new ListTopicsV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUserGroups operation
         ///</summary>
         public IListUserGroupsPaginator ListUserGroups(ListUserGroupsRequest request) 
@@ -386,6 +394,14 @@ namespace Amazon.QuickSight.Model
         public ISearchTopicsPaginator SearchTopics(SearchTopicsRequest request) 
         {
             return new SearchTopicsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchTopicsV2 operation
+        ///</summary>
+        public ISearchTopicsV2Paginator SearchTopicsV2(SearchTopicsV2Request request) 
+        {
+            return new SearchTopicsV2Paginator(this.client, request);
         }
     }
 }

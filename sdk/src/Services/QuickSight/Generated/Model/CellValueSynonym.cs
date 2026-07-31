@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// The cell value.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string CellValue
         {
             get { return this._cellValue; }

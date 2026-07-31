@@ -6525,6 +6525,10 @@ namespace Amazon.QuickSight
         /// </summary>
         public static readonly FilterClass CONDITIONAL_VALUE_FILTER = new FilterClass("CONDITIONAL_VALUE_FILTER");
         /// <summary>
+        /// Constant DASHBOARD_DEFAULT_FILTER for FilterClass
+        /// </summary>
+        public static readonly FilterClass DASHBOARD_DEFAULT_FILTER = new FilterClass("DASHBOARD_DEFAULT_FILTER");
+        /// <summary>
         /// Constant ENFORCED_VALUE_FILTER for FilterClass
         /// </summary>
         public static readonly FilterClass ENFORCED_VALUE_FILTER = new FilterClass("ENFORCED_VALUE_FILTER");
@@ -16438,6 +16442,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TopicUserExperienceVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TopicV2PublishOption.
+    /// </summary>
+    public class TopicV2PublishOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRAFT for TopicV2PublishOption
+        /// </summary>
+        public static readonly TopicV2PublishOption DRAFT = new TopicV2PublishOption("DRAFT");
+        /// <summary>
+        /// Constant PUBLISH for TopicV2PublishOption
+        /// </summary>
+        public static readonly TopicV2PublishOption PUBLISH = new TopicV2PublishOption("PUBLISH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TopicV2PublishOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicV2PublishOption FindValue(string value)
+        {
+            return FindValue<TopicV2PublishOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TopicV2PublishOption(string value)
         {
             return FindValue(value);
         }
