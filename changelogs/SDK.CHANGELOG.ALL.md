@@ -1,3 +1,35 @@
+### 4.0.302.0 (2026-07-31 18:13 UTC)
+* BedrockRuntime (4.0.101.0)
+	* Added support for mid-conversation tool changes in the Amazon Bedrock Converse and ConverseStream APIs
+* Billing (4.0.102.0)
+	* Adds GetEnterpriseSupportChargeSummary, GetEnterpriseSupportContractDetails, and ListEnterpriseSupportLinkedAccountCharges. These APIs provide first-time programmatic access to billing data for Enterprise Support usage previously only available upon request through AWS Concierge or Support.
+* CloudFormation (4.0.102.0)
+	* Adding enum for sensitive property to DriftIgnoredReason
+* CloudWatchLogs (4.0.102.0)
+	* Amazon CloudWatch Logs now lets you create and update lookup tables directly from CloudWatch Logs query results by passing a queryId, and configure a lookup table as a scheduled query destination so it refreshes automatically with the latest query results on each run.
+* ConnectCampaignsV2 (4.0.101.0)
+	* Launching feature for abandonment rate pacing control for outbound campaigns.
+* DataZone (4.0.103.0)
+	* Adding support for enhanced Git experience in Sagemaker Unified Studio.
+* ElementalInference (4.0.102.0)
+	* AWS Elemental Inference now supports graphic composition on cropped video outputs, enabling branded graphics and other visual elements to be overlaid as part of the inference workflow.
+* MarketplaceCatalog (4.0.102.0)
+	* This release enhances the ListEntities API to support TargetAgreementId, TargetAgreementIntent, and CreatedBySource filters for the Offer entity type.
+* NetworkFirewall (4.0.103.0)
+	* Doc Updates for Container Attributes
+* Outposts (4.0.102.0)
+	* Adds the "EKS" value to the AWSServiceName enum and marks the Address field as sensitive.
+* PrometheusService (4.0.102.0)
+	* Amazon Managed Service for Prometheus adds support for an Amazon OpenSearch Service exporter for managed collectors.
+* QuickSight (4.0.106.0)
+	* Adding TopicV2 management APIs, adding possibility to use Topics in Analysis
+* RDS (4.0.104.0)
+	* Adds StorageOperationStatus and StorageOperationPercentProgress to DescribeDBInstances, letting you monitor RDS storage initialization and optimization progress.
+* Resiliencehubv2 (4.0.102.0)
+	* Adding support for new testing capability in AWS Resilience Hub.
+* TranscribeStreaming (4.0.101.0)
+	* This release adds a new optional TranscriptFormat parameter to the Amazon Transcribe streaming API, letting customers select spoken or written form for numeric and formatted output.
+
 ### 4.0.301.0 (2026-07-31 02:59 UTC)
 * BCMPricingCalculator (4.0.102.0)
 	* Removing Smithy RPC v2 CBOR support that was added in previous SDK release.
