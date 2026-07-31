@@ -30,32 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateLookupTable operation.
-    /// Creates a lookup table by uploading CSV data or from CloudWatch Logs query results.
-    /// You can use lookup tables to enrich log data in CloudWatch Logs queries with reference
-    /// data such as user details, application names, or error descriptions.
-    /// 
-    ///  
-    /// <para>
-    /// The table name must be unique within your account and Region. You must specify either
-    /// <c>tableBody</c> or <c>queryId</c>, but not both. If you use <c>tableBody</c>, the
-    /// CSV content must include a header row with column names, use UTF-8 encoding, and not
-    /// exceed 10 MB.
-    /// </para>
+    /// Configuration for a lookup table destination. Use it to automatically refresh a lookup
+    /// table with query results on a schedule.
     /// </summary>
-    public partial class CreateLookupTableRequest : AmazonCloudWatchLogsRequest
+    public partial class LookupTableConfiguration
     {
         private string _description;
         private string _kmsKeyId;
-        private string _lookupTableName;
-        private string _queryId;
-        private string _tableBody;
+        private string _roleArn;
+        private string _tableName;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the lookup table. The description can be up to 1024 characters long.
+        /// A description of the lookup table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -92,79 +81,50 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LookupTableName. 
+        /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The name of the lookup table. The name must be unique within your account and Region.
-        /// The name can contain only alphanumeric characters and underscores, and can be up to
-        /// 256 characters long.
+        /// The ARN of the IAM role that grants permissions to create or update the lookup table
+        /// with query results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1)]
+        public string RoleArn
+        {
+            get { return this._roleArn; }
+            set { this._roleArn = value; }
+        }
+
+        // Check to see if RoleArn property is set
+        internal bool IsSetRoleArn()
+        {
+            return this._roleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TableName. 
+        /// <para>
+        /// The name of the lookup table to create or update with query results. The name can
+        /// contain only alphanumeric characters and underscores.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
-        public string LookupTableName
+        public string TableName
         {
-            get { return this._lookupTableName; }
-            set { this._lookupTableName = value; }
+            get { return this._tableName; }
+            set { this._tableName = value; }
         }
 
-        // Check to see if LookupTableName property is set
-        internal bool IsSetLookupTableName()
+        // Check to see if TableName property is set
+        internal bool IsSetTableName()
         {
-            return this._lookupTableName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property QueryId. 
-        /// <para>
-        /// The ID of a completed CloudWatch Logs query whose results populate the lookup table.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must specify either <c>tableBody</c> or <c>queryId</c>, but not both.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=256)]
-        public string QueryId
-        {
-            get { return this._queryId; }
-            set { this._queryId = value; }
-        }
-
-        // Check to see if QueryId property is set
-        internal bool IsSetQueryId()
-        {
-            return this._queryId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TableBody. 
-        /// <para>
-        /// The CSV content of the lookup table. The first row must be a header row with column
-        /// names. The content must use UTF-8 encoding and not exceed 10 MB.
-        /// </para>
-        ///  
-        /// <para>
-        /// You must specify either <c>tableBody</c> or <c>queryId</c>, but not both.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=10485760)]
-        public string TableBody
-        {
-            get { return this._tableBody; }
-            set { this._tableBody = value; }
-        }
-
-        // Check to see if TableBody property is set
-        internal bool IsSetTableBody()
-        {
-            return this._tableBody != null;
+            return this._tableName != null;
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs to associate with the lookup table. You can associate as
-        /// many as 50 tags with a lookup table. Tags can help you organize and categorize your
-        /// resources.
+        /// Key-value pairs to associate with the lookup table for resource management and cost
+        /// allocation. The service applies tags only during initial table creation.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

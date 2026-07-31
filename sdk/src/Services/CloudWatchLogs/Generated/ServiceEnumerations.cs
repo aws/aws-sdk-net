@@ -1773,6 +1773,10 @@ namespace Amazon.CloudWatchLogs
     {
 
         /// <summary>
+        /// Constant LOOKUP_TABLE for ScheduledQueryDestinationType
+        /// </summary>
+        public static readonly ScheduledQueryDestinationType LOOKUP_TABLE = new ScheduledQueryDestinationType("LOOKUP_TABLE");
+        /// <summary>
         /// Constant S3 for ScheduledQueryDestinationType
         /// </summary>
         public static readonly ScheduledQueryDestinationType S3 = new ScheduledQueryDestinationType("S3");

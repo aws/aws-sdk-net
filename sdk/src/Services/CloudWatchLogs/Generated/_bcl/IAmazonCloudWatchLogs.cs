@@ -1421,14 +1421,16 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates a lookup table by uploading CSV data. You can use lookup tables to enrich
-        /// log data in CloudWatch Logs Insights queries with reference data such as user details,
-        /// application names, or error descriptions.
+        /// Creates a lookup table by uploading CSV data or from CloudWatch Logs query results.
+        /// You can use lookup tables to enrich log data in CloudWatch Logs queries with reference
+        /// data such as user details, application names, or error descriptions.
         /// 
         ///  
         /// <para>
-        /// The table name must be unique within your account and Region. The CSV content must
-        /// include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.
+        /// The table name must be unique within your account and Region. You must specify either
+        /// <c>tableBody</c> or <c>queryId</c>, but not both. If you use <c>tableBody</c>, the
+        /// CSV content must include a header row with column names, use UTF-8 encoding, and not
+        /// exceed 10 MB.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLookupTable service method.</param>
@@ -1458,14 +1460,16 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Creates a lookup table by uploading CSV data. You can use lookup tables to enrich
-        /// log data in CloudWatch Logs Insights queries with reference data such as user details,
-        /// application names, or error descriptions.
+        /// Creates a lookup table by uploading CSV data or from CloudWatch Logs query results.
+        /// You can use lookup tables to enrich log data in CloudWatch Logs queries with reference
+        /// data such as user details, application names, or error descriptions.
         /// 
         ///  
         /// <para>
-        /// The table name must be unique within your account and Region. The CSV content must
-        /// include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.
+        /// The table name must be unique within your account and Region. You must specify either
+        /// <c>tableBody</c> or <c>queryId</c>, but not both. If you use <c>tableBody</c>, the
+        /// CSV content must include a header row with column names, use UTF-8 encoding, and not
+        /// exceed 10 MB.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLookupTable service method.</param>
@@ -5840,7 +5844,7 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns the storage tier policy for your account.
+        /// Returns the storage tier policy for the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageTierPolicy service method.</param>
         /// 
@@ -5866,7 +5870,7 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns the storage tier policy for your account.
+        /// Returns the storage tier policy for the account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStorageTierPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -9664,9 +9668,9 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Sets the storage tier policy for your account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
-        /// CloudWatch Logs automatically moves your log data between storage tiers based on access
-        /// patterns to optimize costs.
+        /// Sets the storage tier policy for the account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
+        /// the service automatically moves log data to the most cost-effective storage tier based
+        /// on access frequency.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStorageTierPolicy service method.</param>
         /// 
@@ -9692,9 +9696,9 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Sets the storage tier policy for your account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
-        /// CloudWatch Logs automatically moves your log data between storage tiers based on access
-        /// patterns to optimize costs.
+        /// Sets the storage tier policy for the account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
+        /// the service automatically moves log data to the most cost-effective storage tier based
+        /// on access frequency.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutStorageTierPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -11208,13 +11212,14 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Updates an existing lookup table by replacing all of its CSV content. After the update
-        /// completes, queries that use this table will use the new data.
+        /// Updates an existing lookup table by replacing all of its content with new CSV data
+        /// or CloudWatch Logs query results. After the update completes, queries that use this
+        /// table use the new data.
         /// 
         ///  
         /// <para>
-        /// This is a full replacement operation. All existing content is replaced with the new
-        /// CSV data.
+        /// This is a full replacement operation. All existing content is replaced. You must specify
+        /// either <c>tableBody</c> or <c>queryId</c>, but not both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLookupTable service method.</param>
@@ -11241,13 +11246,14 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Updates an existing lookup table by replacing all of its CSV content. After the update
-        /// completes, queries that use this table will use the new data.
+        /// Updates an existing lookup table by replacing all of its content with new CSV data
+        /// or CloudWatch Logs query results. After the update completes, queries that use this
+        /// table use the new data.
         /// 
         ///  
         /// <para>
-        /// This is a full replacement operation. All existing content is replaced with the new
-        /// CSV data.
+        /// This is a full replacement operation. All existing content is replaced. You must specify
+        /// either <c>tableBody</c> or <c>queryId</c>, but not both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLookupTable service method.</param>

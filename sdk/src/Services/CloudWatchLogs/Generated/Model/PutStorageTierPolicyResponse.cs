@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
         /// The time when the storage tier policy was last updated, expressed as the number of
-        /// milliseconds after <c>Jan 1, 1970 00:00:00 UTC</c>.
+        /// milliseconds after <c>January 1, 1970 00:00:00 UTC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -60,7 +60,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StorageTier. 
         /// <para>
-        /// The storage tier that was set.
+        /// The storage tier for the account.
         /// </para>
         /// </summary>
         public StorageTier StorageTier

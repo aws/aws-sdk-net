@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DestinationConfiguration Object
+    /// Response Unmarshaller for LookupTableConfiguration Object
     /// </summary>  
-    public class DestinationConfigurationUnmarshaller : IJsonUnmarshaller<DestinationConfiguration, JsonUnmarshallerContext>
+    public class LookupTableConfigurationUnmarshaller : IJsonUnmarshaller<LookupTableConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DestinationConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LookupTableConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            DestinationConfiguration unmarshalledObject = new DestinationConfiguration();
+            LookupTableConfiguration unmarshalledObject = new LookupTableConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,34 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("lookupTableConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("description", targetDepth, ref reader))
                 {
-                    var unmarshaller = LookupTableConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LookupTableConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("s3Configuration", targetDepth, ref reader))
+                if (context.TestExpression("kmsKeyId", targetDepth, ref reader))
                 {
-                    var unmarshaller = S3ConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tableName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +91,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         }
 
 
-        private static DestinationConfigurationUnmarshaller _instance = new DestinationConfigurationUnmarshaller();        
+        private static LookupTableConfigurationUnmarshaller _instance = new LookupTableConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DestinationConfigurationUnmarshaller Instance
+        public static LookupTableConfigurationUnmarshaller Instance
         {
             get
             {

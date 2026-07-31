@@ -46,6 +46,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetLookupTableConfiguration())
+            {
+                context.Writer.WritePropertyName("lookupTableConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LookupTableConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.LookupTableConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("s3Configuration");

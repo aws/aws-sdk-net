@@ -31,13 +31,14 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateLookupTable operation.
-    /// Updates an existing lookup table by replacing all of its CSV content. After the update
-    /// completes, queries that use this table will use the new data.
+    /// Updates an existing lookup table by replacing all of its content with new CSV data
+    /// or CloudWatch Logs query results. After the update completes, queries that use this
+    /// table use the new data.
     /// 
     ///  
     /// <para>
-    /// This is a full replacement operation. All existing content is replaced with the new
-    /// CSV data.
+    /// This is a full replacement operation. All existing content is replaced. You must specify
+    /// either <c>tableBody</c> or <c>queryId</c>, but not both.
     /// </para>
     /// </summary>
     public partial class UpdateLookupTableRequest : AmazonCloudWatchLogsRequest
@@ -45,6 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _description;
         private string _kmsKeyId;
         private string _lookupTableArn;
+        private string _queryId;
         private string _tableBody;
 
         /// <summary>
@@ -107,13 +109,41 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryId. 
+        /// <para>
+        /// The ID of a completed CloudWatch Logs query whose results replace the lookup table
+        /// content.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>tableBody</c> or <c>queryId</c>, but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string QueryId
+        {
+            get { return this._queryId; }
+            set { this._queryId = value; }
+        }
+
+        // Check to see if QueryId property is set
+        internal bool IsSetQueryId()
+        {
+            return this._queryId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TableBody. 
         /// <para>
         /// The new CSV content to replace the existing data. The first row must be a header row
         /// with column names. The content must use UTF-8 encoding and not exceed 10 MB.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>tableBody</c> or <c>queryId</c>, but not both.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10485760)]
+        [AWSProperty(Min=1, Max=10485760)]
         public string TableBody
         {
             get { return this._tableBody; }

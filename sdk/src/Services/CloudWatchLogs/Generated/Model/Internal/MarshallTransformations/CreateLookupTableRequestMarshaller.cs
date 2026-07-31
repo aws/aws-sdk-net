@@ -93,6 +93,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.LookupTableName);
             }
 
+            if(publicRequest.IsSetQueryId())
+            {
+                context.Writer.WritePropertyName("queryId");
+                context.Writer.WriteStringValue(publicRequest.QueryId);
+            }
+
             if(publicRequest.IsSetTableBody())
             {
                 context.Writer.WritePropertyName("tableBody");
