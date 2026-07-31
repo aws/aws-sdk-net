@@ -6336,6 +6336,54 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesInput.CodeConnectionArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[^:]*:(codeconnections|codestar-connections):[a-z0-9\-]+:\d{12}:connection/[a-f0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesInput.DefaultBranch</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._\-/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesInput.RepositoryId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._\-]+(/[a-zA-Z0-9._\-]+)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesOutput.CodeConnectionArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[^:]*:(codeconnections|codestar-connections):[a-z0-9\-]+:\d{12}:connection/[a-f0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesOutput.DefaultBranch</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._\-/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesOutput.RepositoryId</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._\-]+(/[a-zA-Z0-9._\-]+)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesPatch.CodeConnectionArn</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>arn:aws[^:]*:(codeconnections|codestar-connections):[a-z0-9\-]+:\d{12}:connection/[a-f0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.DataZone.Model.GitPropertiesPatch.DefaultBranch</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9._\-/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DataZone.Model.GlossaryItem.Description</property>
     <min>0</min>
     <max>4096</max>

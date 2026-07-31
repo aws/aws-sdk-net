@@ -587,6 +587,10 @@ namespace Amazon.DataZone
         /// </summary>
         public static readonly ConnectionType DYNAMODB = new ConnectionType("DYNAMODB");
         /// <summary>
+        /// Constant GIT for ConnectionType
+        /// </summary>
+        public static readonly ConnectionType GIT = new ConnectionType("GIT");
+        /// <summary>
         /// Constant HYPERPOD for ConnectionType
         /// </summary>
         public static readonly ConnectionType HYPERPOD = new ConnectionType("HYPERPOD");
