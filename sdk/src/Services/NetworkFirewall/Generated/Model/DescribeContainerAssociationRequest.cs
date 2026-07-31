@@ -31,7 +31,7 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContainerAssociation operation.
-    /// Returns the properties of a container association.
+    /// Retrieves the configuration and status of a container association.
     /// </summary>
     public partial class DescribeContainerAssociationRequest : AmazonNetworkFirewallRequest
     {
@@ -41,8 +41,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerAssociationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the container association. You must specify the
-        /// ARN or the name, and you can specify both.
+        /// The Amazon Resource Name (ARN) of the container association.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the ARN or the name, and you can specify both. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -61,8 +64,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerAssociationName. 
         /// <para>
-        /// The descriptive name of the container association. You must specify the ARN or the
-        /// name, and you can specify both.
+        /// The descriptive name of the container association.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the ARN or the name, and you can specify both. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

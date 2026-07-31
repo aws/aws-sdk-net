@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// A key-value pair that defines a container attribute filter for a container monitoring
-    /// configuration.
+    /// A key-value filter pair used in container association monitoring configurations to
+    /// narrow which containers are tracked.
     /// </summary>
     public partial class ContainerAttribute
     {
@@ -41,7 +41,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the container attribute to filter on.
+        /// The attribute key to filter on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -60,7 +60,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the container attribute to filter on.
+        /// The attribute value to match.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

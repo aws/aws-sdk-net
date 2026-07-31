@@ -79,7 +79,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the container association.
+        /// The current status of the container association. After deletion is initiated, the
+        /// status is <c>DELETING</c>.
         /// </para>
         /// </summary>
         public ContainerAssociationStatus Status

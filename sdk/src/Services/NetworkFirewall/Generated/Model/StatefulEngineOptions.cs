@@ -31,7 +31,15 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Configuration settings for the handling of the stateful rule groups in a firewall
-    /// policy.
+    /// policy. 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Updating any setting in <c>StatefulEngineOptions</c> may require a restart of the
+    /// stateful engine in order to apply the changes. When this occurs, existing connections
+    /// will be treated according to your stream exception policy configuration.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class StatefulEngineOptions
     {

@@ -31,8 +31,8 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the ListContainerAssociations operation.
-    /// Retrieves the metadata for the container associations that you have defined. You can
-    /// optionally page through results.
+    /// Lists the container associations in your account and Region. Use the <c>NextToken</c>
+    /// parameter in subsequent requests to retrieve additional results.
     /// </summary>
     public partial class ListContainerAssociationsRequest : AmazonNetworkFirewallRequest
     {

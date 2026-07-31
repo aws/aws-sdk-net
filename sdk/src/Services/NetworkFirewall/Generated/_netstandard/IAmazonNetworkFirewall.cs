@@ -79,8 +79,8 @@ namespace Amazon.NetworkFirewall
     /// traffic going to and coming from an internet gateway, NAT gateway, or over VPN or
     /// Direct Connect. Network Firewall uses rules that are compatible with Suricata, a free,
     /// open source network analysis and threat detection engine. Network Firewall supports
-    /// Suricata version 7.0.3. For information about Suricata, see the <a href="https://suricata.io/">Suricata
-    /// website</a> and the <a href="https://suricata.readthedocs.io/en/suricata-7.0.3/">Suricata
+    /// Suricata version 7.0.8. For information about Suricata, see the <a href="https://suricata.io/">Suricata
+    /// website</a> and the <a href="https://suricata.readthedocs.io/en/suricata-7.0.8/">Suricata
     /// User Guide</a>. 
     /// </para>
     ///  
@@ -487,20 +487,9 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Creates a container association for Network Firewall. A container association links
-        /// container clusters (ECS or EKS) to Network Firewall, enabling dynamic IP resolution
-        /// for firewall rules based on container attributes.
-        /// 
-        ///  
-        /// <para>
-        /// To manage a container association's tags, use the standard Amazon Web Services resource
-        /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-        /// </para>
-        ///  
-        /// <para>
-        /// To retrieve information about container associations, use <a>ListContainerAssociations</a>
-        /// and <a>DescribeContainerAssociation</a>.
-        /// </para>
+        /// Creates a Network Firewall container association. The association monitors container
+        /// lifecycle events in your Amazon ECS or Amazon EKS clusters and resolves running container
+        /// addresses for use in firewall rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateContainerAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -1141,9 +1130,10 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Deletes the specified container association. When you delete a container association,
-        /// Network Firewall stops monitoring the associated container clusters and removes the
-        /// resolved IP addresses from firewall rules.
+        /// Deletes a container association. The resource transitions to a <c>DELETING</c> state.
+        /// Deletion is asynchronous - Network Firewall returns immediately while cleanup proceeds
+        /// in the background. You can't delete a container association while a rule group references
+        /// it.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteContainerAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -1779,7 +1769,7 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Returns the properties of a container association.
+        /// Retrieves the configuration and status of a container association.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContainerAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2803,8 +2793,8 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Retrieves the metadata for the container associations that you have defined. You can
-        /// optionally page through results.
+        /// Lists the container associations in your account and Region. Use the <c>NextToken</c>
+        /// parameter in subsequent requests to retrieve additional results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerAssociations service method.</param>
         /// <param name="cancellationToken">
@@ -3892,8 +3882,9 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Updates the properties of an existing container association. Use this to modify the
-        /// container monitoring configurations or description.
+        /// Updates the monitoring configurations and description of a container association.
+        /// You can't change the container type after creation. Provide an update token to enable
+        /// optimistic concurrency control.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContainerAssociation service method.</param>
         /// <param name="cancellationToken">

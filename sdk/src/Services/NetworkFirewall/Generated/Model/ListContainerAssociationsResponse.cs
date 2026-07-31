@@ -40,7 +40,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerAssociations. 
         /// <para>
-        /// The container association metadata objects.
+        /// The container association metadata objects for the account and Region.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

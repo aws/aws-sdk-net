@@ -84,7 +84,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerMonitoringConfigurations. 
         /// <para>
-        /// The container monitoring configurations for this container association.
+        /// The monitoring configurations for the container association.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -144,7 +144,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key:value pairs associated with the resource.
+        /// The key:value pairs to associate with the resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -168,8 +168,17 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of container orchestration platform. Either <c>ECS</c> or <c>EKS</c>.
+        /// The container type. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ECS</c> - Amazon Elastic Container Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EKS</c> - Amazon Elastic Kubernetes Service
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public ContainerMonitoringType Type
         {
@@ -189,6 +198,15 @@ namespace Amazon.NetworkFirewall.Model
         /// A token used for optimistic locking. Network Firewall returns a token to your requests
         /// that access the container association. The token marks the state of the container
         /// association resource at the time of the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To make changes to the container association, you provide the token in your request.
+        /// Network Firewall uses the token to ensure that the container association hasn't changed
+        /// since you last retrieved it. If it has changed, the operation fails with an <c>InvalidTokenException</c>.
+        /// If this happens, retrieve the container association again to get a current copy of
+        /// it with a current token. Reapply your changes as needed, then try the operation again
+        /// using the new token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
