@@ -659,6 +659,56 @@ namespace Amazon.MarketplaceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type OfferCreatedBySourceString.
+    /// </summary>
+    public class OfferCreatedBySourceString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsMarketplace for OfferCreatedBySourceString
+        /// </summary>
+        public static readonly OfferCreatedBySourceString AwsMarketplace = new OfferCreatedBySourceString("AwsMarketplace");
+        /// <summary>
+        /// Constant Seller for OfferCreatedBySourceString
+        /// </summary>
+        public static readonly OfferCreatedBySourceString Seller = new OfferCreatedBySourceString("Seller");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferCreatedBySourceString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferCreatedBySourceString FindValue(string value)
+        {
+            return FindValue<OfferCreatedBySourceString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferCreatedBySourceString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferSetSortBy.
     /// </summary>
     public class OfferSetSortBy : ConstantClass
@@ -789,6 +839,10 @@ namespace Amazon.MarketplaceCatalog
         /// </summary>
         public static readonly OfferSortBy BuyerAccounts = new OfferSortBy("BuyerAccounts");
         /// <summary>
+        /// Constant CreatedBySource for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy CreatedBySource = new OfferSortBy("CreatedBySource");
+        /// <summary>
         /// Constant EntityId for OfferSortBy
         /// </summary>
         public static readonly OfferSortBy EntityId = new OfferSortBy("EntityId");
@@ -820,6 +874,14 @@ namespace Amazon.MarketplaceCatalog
         /// Constant State for OfferSortBy
         /// </summary>
         public static readonly OfferSortBy State = new OfferSortBy("State");
+        /// <summary>
+        /// Constant TargetAgreementId for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy TargetAgreementId = new OfferSortBy("TargetAgreementId");
+        /// <summary>
+        /// Constant TargetAgreementIntent for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy TargetAgreementIntent = new OfferSortBy("TargetAgreementIntent");
         /// <summary>
         /// Constant Targeting for OfferSortBy
         /// </summary>
@@ -904,6 +966,52 @@ namespace Amazon.MarketplaceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OfferStateString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferTargetAgreementIntentString.
+    /// </summary>
+    public class OfferTargetAgreementIntentString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Renew for OfferTargetAgreementIntentString
+        /// </summary>
+        public static readonly OfferTargetAgreementIntentString Renew = new OfferTargetAgreementIntentString("Renew");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferTargetAgreementIntentString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferTargetAgreementIntentString FindValue(string value)
+        {
+            return FindValue<OfferTargetAgreementIntentString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferTargetAgreementIntentString(string value)
         {
             return FindValue(value);
         }

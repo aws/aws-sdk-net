@@ -653,6 +653,12 @@
     <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.OfferSummary.TargetAgreementId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ResaleAuthorizationAvailabilityEndDateFilterDateRange.AfterValue</property>
     <min>20</min>
     <max>20</max>
