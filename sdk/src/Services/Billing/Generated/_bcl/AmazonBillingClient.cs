@@ -924,6 +924,150 @@ namespace Amazon.Billing
 
         #endregion
         
+        #region  GetEnterpriseSupportChargeSummary
+
+
+        /// <summary>
+        /// Returns a summary of Enterprise Support data aggregated across all accounts in the
+        /// Enterprise Support profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportChargeSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportChargeSummary service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportChargeSummary">REST API Reference for GetEnterpriseSupportChargeSummary Operation</seealso>
+        public virtual GetEnterpriseSupportChargeSummaryResponse GetEnterpriseSupportChargeSummary(GetEnterpriseSupportChargeSummaryRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEnterpriseSupportChargeSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnterpriseSupportChargeSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetEnterpriseSupportChargeSummaryResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a summary of Enterprise Support data aggregated across all accounts in the
+        /// Enterprise Support profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportChargeSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportChargeSummary service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportChargeSummary">REST API Reference for GetEnterpriseSupportChargeSummary Operation</seealso>
+        public virtual Task<GetEnterpriseSupportChargeSummaryResponse> GetEnterpriseSupportChargeSummaryAsync(GetEnterpriseSupportChargeSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEnterpriseSupportChargeSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnterpriseSupportChargeSummaryResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEnterpriseSupportChargeSummaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEnterpriseSupportContractDetails
+
+
+        /// <summary>
+        /// Returns Enterprise Support contract details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportContractDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportContractDetails service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportContractDetails">REST API Reference for GetEnterpriseSupportContractDetails Operation</seealso>
+        public virtual GetEnterpriseSupportContractDetailsResponse GetEnterpriseSupportContractDetails(GetEnterpriseSupportContractDetailsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEnterpriseSupportContractDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnterpriseSupportContractDetailsResponseUnmarshaller.Instance;
+
+            return Invoke<GetEnterpriseSupportContractDetailsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns Enterprise Support contract details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportContractDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportContractDetails service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportContractDetails">REST API Reference for GetEnterpriseSupportContractDetails Operation</seealso>
+        public virtual Task<GetEnterpriseSupportContractDetailsResponse> GetEnterpriseSupportContractDetailsAsync(GetEnterpriseSupportContractDetailsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetEnterpriseSupportContractDetailsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEnterpriseSupportContractDetailsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetEnterpriseSupportContractDetailsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetResourcePolicy
 
 
@@ -1074,6 +1218,77 @@ namespace Amazon.Billing
             options.ResponseUnmarshaller = ListBillingViewsResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListBillingViewsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEnterpriseSupportLinkedAccountCharges
+
+
+        /// <summary>
+        /// Returns Support-eligible spend broken down at linked account level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnterpriseSupportLinkedAccountCharges service method.</param>
+        /// 
+        /// <returns>The response from the ListEnterpriseSupportLinkedAccountCharges service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListEnterpriseSupportLinkedAccountCharges">REST API Reference for ListEnterpriseSupportLinkedAccountCharges Operation</seealso>
+        public virtual ListEnterpriseSupportLinkedAccountChargesResponse ListEnterpriseSupportLinkedAccountCharges(ListEnterpriseSupportLinkedAccountChargesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEnterpriseSupportLinkedAccountChargesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnterpriseSupportLinkedAccountChargesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEnterpriseSupportLinkedAccountChargesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns Support-eligible spend broken down at linked account level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnterpriseSupportLinkedAccountCharges service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEnterpriseSupportLinkedAccountCharges service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListEnterpriseSupportLinkedAccountCharges">REST API Reference for ListEnterpriseSupportLinkedAccountCharges Operation</seealso>
+        public virtual Task<ListEnterpriseSupportLinkedAccountChargesResponse> ListEnterpriseSupportLinkedAccountChargesAsync(ListEnterpriseSupportLinkedAccountChargesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEnterpriseSupportLinkedAccountChargesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEnterpriseSupportLinkedAccountChargesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListEnterpriseSupportLinkedAccountChargesResponse>(request, options, cancellationToken);
         }
 
         #endregion

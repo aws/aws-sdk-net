@@ -599,6 +599,124 @@ namespace Amazon.Billing
 
         #endregion
         
+        #region  GetEnterpriseSupportChargeSummary
+
+
+        /// <summary>
+        /// Returns a summary of Enterprise Support data aggregated across all accounts in the
+        /// Enterprise Support profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportChargeSummary service method.</param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportChargeSummary service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportChargeSummary">REST API Reference for GetEnterpriseSupportChargeSummary Operation</seealso>
+        GetEnterpriseSupportChargeSummaryResponse GetEnterpriseSupportChargeSummary(GetEnterpriseSupportChargeSummaryRequest request);
+
+
+
+        /// <summary>
+        /// Returns a summary of Enterprise Support data aggregated across all accounts in the
+        /// Enterprise Support profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportChargeSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportChargeSummary service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportChargeSummary">REST API Reference for GetEnterpriseSupportChargeSummary Operation</seealso>
+        Task<GetEnterpriseSupportChargeSummaryResponse> GetEnterpriseSupportChargeSummaryAsync(GetEnterpriseSupportChargeSummaryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetEnterpriseSupportContractDetails
+
+
+        /// <summary>
+        /// Returns Enterprise Support contract details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportContractDetails service method.</param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportContractDetails service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportContractDetails">REST API Reference for GetEnterpriseSupportContractDetails Operation</seealso>
+        GetEnterpriseSupportContractDetailsResponse GetEnterpriseSupportContractDetails(GetEnterpriseSupportContractDetailsRequest request);
+
+
+
+        /// <summary>
+        /// Returns Enterprise Support contract details.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEnterpriseSupportContractDetails service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEnterpriseSupportContractDetails service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/GetEnterpriseSupportContractDetails">REST API Reference for GetEnterpriseSupportContractDetails Operation</seealso>
+        Task<GetEnterpriseSupportContractDetailsResponse> GetEnterpriseSupportContractDetailsAsync(GetEnterpriseSupportContractDetailsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetResourcePolicy
 
 
@@ -724,6 +842,64 @@ namespace Amazon.Billing
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListBillingViews">REST API Reference for ListBillingViews Operation</seealso>
         Task<ListBillingViewsResponse> ListBillingViewsAsync(ListBillingViewsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListEnterpriseSupportLinkedAccountCharges
+
+
+        /// <summary>
+        /// Returns Support-eligible spend broken down at linked account level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnterpriseSupportLinkedAccountCharges service method.</param>
+        /// 
+        /// <returns>The response from the ListEnterpriseSupportLinkedAccountCharges service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListEnterpriseSupportLinkedAccountCharges">REST API Reference for ListEnterpriseSupportLinkedAccountCharges Operation</seealso>
+        ListEnterpriseSupportLinkedAccountChargesResponse ListEnterpriseSupportLinkedAccountCharges(ListEnterpriseSupportLinkedAccountChargesRequest request);
+
+
+
+        /// <summary>
+        /// Returns Support-eligible spend broken down at linked account level.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEnterpriseSupportLinkedAccountCharges service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEnterpriseSupportLinkedAccountCharges service method, as returned by Billing.</returns>
+        /// <exception cref="Amazon.Billing.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.InternalServerException">
+        /// The request processing failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ResourceNotFoundException">
+        /// The specified ARN in the request doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Billing.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/billing-2023-09-07/ListEnterpriseSupportLinkedAccountCharges">REST API Reference for ListEnterpriseSupportLinkedAccountCharges Operation</seealso>
+        Task<ListEnterpriseSupportLinkedAccountChargesResponse> ListEnterpriseSupportLinkedAccountChargesAsync(ListEnterpriseSupportLinkedAccountChargesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

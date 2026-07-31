@@ -53,6 +53,14 @@ namespace Amazon.Billing.Model
         }
 
         /// <summary>
+        /// Paginator for ListEnterpriseSupportLinkedAccountCharges operation
+        ///</summary>
+        public IListEnterpriseSupportLinkedAccountChargesPaginator ListEnterpriseSupportLinkedAccountCharges(ListEnterpriseSupportLinkedAccountChargesRequest request) 
+        {
+            return new ListEnterpriseSupportLinkedAccountChargesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSourceViewsForBillingView operation
         ///</summary>
         public IListSourceViewsForBillingViewPaginator ListSourceViewsForBillingView(ListSourceViewsForBillingViewRequest request) 
