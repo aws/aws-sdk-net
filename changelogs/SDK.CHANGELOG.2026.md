@@ -1,3 +1,9 @@
+### 4.0.301.0 (2026-07-31 02:59 UTC)
+* BCMPricingCalculator (4.0.102.0)
+	* Removing Smithy RPC v2 CBOR support that was added in previous SDK release.
+* BCMRecommendedActions (4.0.102.0)
+	* Removing Smithy RPC v2 CBOR support that was added in previous SDK release.
+
 ### 4.0.300.0 (2026-07-30 18:14 UTC)
 * BedrockAgentCoreControl (4.0.106.0)
 	* Adds support for configuring models through the OpenResponses API for custom evaluators. CreateEvaluator and UpdateEvaluator now accept an OpenResponses model configuration for LLM-as-a-Judge evaluations.
