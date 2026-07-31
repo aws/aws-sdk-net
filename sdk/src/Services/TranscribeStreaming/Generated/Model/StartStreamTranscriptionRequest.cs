@@ -77,6 +77,7 @@ namespace Amazon.TranscribeStreaming.Model
         private string _sessionId;
         private int? _sessionResumeWindow;
         private bool? _showSpeakerLabel;
+        private TranscriptFormat _transcriptFormat;
         private VocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
         private string _vocabularyFilterNames;
@@ -663,6 +664,39 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetShowSpeakerLabel()
         {
             return this._showSpeakerLabel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TranscriptFormat. 
+        /// <para>
+        /// Specify how numbers, dates, and other alphanumeric entities are rendered in your transcription
+        /// results.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>WRITTEN</c> renders these entities in their standard written form (for example,
+        /// <c>$50</c>, <c>10:30 AM</c>, and <c>101</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SPOKEN</c> renders these entities as words, exactly as they were spoken (for example,
+        /// <c>fifty dollars</c>, <c>ten thirty a m</c>, and <c>one oh one</c>).
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// If you don't specify a value, Amazon Transcribe uses <c>WRITTEN</c> by default.
+        /// </para>
+        /// </summary>
+        public TranscriptFormat TranscriptFormat
+        {
+            get { return this._transcriptFormat; }
+            set { this._transcriptFormat = value; }
+        }
+
+        // Check to see if TranscriptFormat property is set
+        internal bool IsSetTranscriptFormat()
+        {
+            return this._transcriptFormat != null;
         }
 
         /// <summary>

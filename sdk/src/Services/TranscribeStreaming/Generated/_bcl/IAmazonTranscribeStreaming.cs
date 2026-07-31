@@ -87,9 +87,11 @@ namespace Amazon.TranscribeStreaming
         /// A problem occurred while processing the audio. Amazon Transcribe terminated processing.
         /// </exception>
         /// <exception cref="Amazon.TranscribeStreaming.Model.LimitExceededException">
-        /// Your client has exceeded one of the Amazon Transcribe limits. This is typically the
-        /// audio length limit. Break your audio stream into smaller chunks and try your request
-        /// again.
+        /// Your client has exceeded one of the Amazon Transcribe limits, typically the concurrent
+        /// stream service quota. This error can also occur if a stream exceeds the maximum session
+        /// duration. In rare cases, this error can also occur if you increase your number of
+        /// concurrent streams too quickly. Reduce your number of concurrent streams and try your
+        /// request again using an exponential backoff strategy.
         /// </exception>
         /// <exception cref="Amazon.TranscribeStreaming.Model.ResourceNotFoundException">
         /// The request references a resource which doesn't exist.
@@ -121,9 +123,11 @@ namespace Amazon.TranscribeStreaming
         /// A problem occurred while processing the audio. Amazon Transcribe terminated processing.
         /// </exception>
         /// <exception cref="Amazon.TranscribeStreaming.Model.LimitExceededException">
-        /// Your client has exceeded one of the Amazon Transcribe limits. This is typically the
-        /// audio length limit. Break your audio stream into smaller chunks and try your request
-        /// again.
+        /// Your client has exceeded one of the Amazon Transcribe limits, typically the concurrent
+        /// stream service quota. This error can also occur if a stream exceeds the maximum session
+        /// duration. In rare cases, this error can also occur if you increase your number of
+        /// concurrent streams too quickly. Reduce your number of concurrent streams and try your
+        /// request again using an exponential backoff strategy.
         /// </exception>
         /// <exception cref="Amazon.TranscribeStreaming.Model.ResourceNotFoundException">
         /// The request references a resource which doesn't exist.

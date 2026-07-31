@@ -797,6 +797,18 @@ namespace Amazon.TranscribeStreaming
         /// </summary>
         public static readonly MediaEncoding Flac = new MediaEncoding("flac");
         /// <summary>
+        /// Constant G711Alaw for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding G711Alaw = new MediaEncoding("g711-alaw");
+        /// <summary>
+        /// Constant G711Ulaw for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding G711Ulaw = new MediaEncoding("g711-ulaw");
+        /// <summary>
+        /// Constant G729 for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding G729 = new MediaEncoding("g729");
+        /// <summary>
         /// Constant OggOpus for MediaEncoding
         /// </summary>
         public static readonly MediaEncoding OggOpus = new MediaEncoding("ogg-opus");
@@ -1590,6 +1602,56 @@ namespace Amazon.TranscribeStreaming
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Specialty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TranscriptFormat.
+    /// </summary>
+    public class TranscriptFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Spoken for TranscriptFormat
+        /// </summary>
+        public static readonly TranscriptFormat Spoken = new TranscriptFormat("spoken");
+        /// <summary>
+        /// Constant Written for TranscriptFormat
+        /// </summary>
+        public static readonly TranscriptFormat Written = new TranscriptFormat("written");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranscriptFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscriptFormat FindValue(string value)
+        {
+            return FindValue<TranscriptFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscriptFormat(string value)
         {
             return FindValue(value);
         }
