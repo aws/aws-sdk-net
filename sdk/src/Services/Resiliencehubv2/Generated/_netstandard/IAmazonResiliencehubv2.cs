@@ -333,6 +333,40 @@ namespace Amazon.Resiliencehubv2
 
         #endregion
                 
+        #region  CreateTest
+
+
+
+        /// <summary>
+        /// Creates a test for a service by configuring a test template. Each service has one
+        /// test per template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateTest service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/CreateTest">REST API Reference for CreateTest Operation</seealso>
+        Task<CreateTestResponse> CreateTestAsync(CreateTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateUserJourney
 
 
@@ -594,6 +628,73 @@ namespace Amazon.Resiliencehubv2
 
         #endregion
                 
+        #region  DeleteTest
+
+
+
+        /// <summary>
+        /// Deletes a test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTest service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/DeleteTest">REST API Reference for DeleteTest Operation</seealso>
+        Task<DeleteTestResponse> DeleteTestAsync(DeleteTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteTestSources
+
+
+
+        /// <summary>
+        /// Removes monitoring sources from a test. The operation is transactional and idempotent
+        /// — removing a source that is not attached is a no-op.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteTestSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteTestSources service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/DeleteTestSources">REST API Reference for DeleteTestSources Operation</seealso>
+        Task<DeleteTestSourcesResponse> DeleteTestSourcesAsync(DeleteTestSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteUserJourney
 
 
@@ -744,6 +845,98 @@ namespace Amazon.Resiliencehubv2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetSystem">REST API Reference for GetSystem Operation</seealso>
         Task<GetSystemResponse> GetSystemAsync(GetSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTest
+
+
+
+        /// <summary>
+        /// Retrieves a test by ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTest service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetTest">REST API Reference for GetTest Operation</seealso>
+        Task<GetTestResponse> GetTestAsync(GetTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTestRun
+
+
+
+        /// <summary>
+        /// Retrieves a test run by ID, including its status, results, and the configuration snapshotted
+        /// when the run started.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTestRun service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetTestRun">REST API Reference for GetTestRun Operation</seealso>
+        Task<GetTestRunResponse> GetTestRunAsync(GetTestRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetTestTemplate
+
+
+
+        /// <summary>
+        /// Retrieves a resilience test template by ARN, including the parameters it accepts and
+        /// the fault actions it runs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetTestTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetTestTemplate service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/GetTestTemplate">REST API Reference for GetTestTemplate Operation</seealso>
+        Task<GetTestTemplateResponse> GetTestTemplateAsync(GetTestTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1054,6 +1247,37 @@ namespace Amazon.Resiliencehubv2
 
         #endregion
                 
+        #region  ListResolvedTestRunTargetResources
+
+
+
+        /// <summary>
+        /// Lists the AWS resources that AWS Fault Injection Service (AWS FIS) resolved as targets
+        /// for a test run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListResolvedTestRunTargetResources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListResolvedTestRunTargetResources service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListResolvedTestRunTargetResources">REST API Reference for ListResolvedTestRunTargetResources Operation</seealso>
+        Task<ListResolvedTestRunTargetResourcesResponse> ListResolvedTestRunTargetResourcesAsync(ListResolvedTestRunTargetResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListResources
 
 
@@ -1288,6 +1512,185 @@ namespace Amazon.Resiliencehubv2
 
         #endregion
                 
+        #region  ListTestRunEvents
+
+
+
+        /// <summary>
+        /// Lists the events in a test run's timeline.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestRunEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestRunEvents service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunEvents">REST API Reference for ListTestRunEvents Operation</seealso>
+        Task<ListTestRunEventsResponse> ListTestRunEventsAsync(ListTestRunEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestRuns
+
+
+
+        /// <summary>
+        /// Lists the runs of a test, or all test runs for a service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestRuns service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRuns">REST API Reference for ListTestRuns Operation</seealso>
+        Task<ListTestRunsResponse> ListTestRunsAsync(ListTestRunsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestRunSources
+
+
+
+        /// <summary>
+        /// Lists the monitoring source snapshots captured for a test run, optionally filtered
+        /// by type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestRunSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestRunSources service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestRunSources">REST API Reference for ListTestRunSources Operation</seealso>
+        Task<ListTestRunSourcesResponse> ListTestRunSourcesAsync(ListTestRunSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTests
+
+
+
+        /// <summary>
+        /// Lists the tests configured for a service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTests service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTests service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTests">REST API Reference for ListTests Operation</seealso>
+        Task<ListTestsResponse> ListTestsAsync(ListTestsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestSources
+
+
+
+        /// <summary>
+        /// Lists the monitoring sources attached to a test, optionally filtered by type.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestSources service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestSources">REST API Reference for ListTestSources Operation</seealso>
+        Task<ListTestSourcesResponse> ListTestSourcesAsync(ListTestSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListTestTemplates
+
+
+
+        /// <summary>
+        /// Lists the available resilience test templates. A test template is a pre-configured,
+        /// AWS recommended test that defines which resilience capability to validate.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTestTemplates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTestTemplates service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListTestTemplates">REST API Reference for ListTestTemplates Operation</seealso>
+        Task<ListTestTemplatesResponse> ListTestTemplatesAsync(ListTestTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListUserJourneys
 
 
@@ -1315,6 +1718,43 @@ namespace Amazon.Resiliencehubv2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/ListUserJourneys">REST API Reference for ListUserJourneys Operation</seealso>
         Task<ListUserJourneysResponse> ListUserJourneysAsync(ListUserJourneysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutTestSources
+
+
+
+        /// <summary>
+        /// Adds or updates the monitoring sources on a test. The operation is transactional —
+        /// either every source is written or the call fails and nothing is written.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutTestSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutTestSources service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ServiceQuotaExceededException">
+        /// Service quota exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/PutTestSources">REST API Reference for PutTestSources Operation</seealso>
+        Task<PutTestSourcesResponse> PutTestSourcesAsync(PutTestSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1351,6 +1791,73 @@ namespace Amazon.Resiliencehubv2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/StartFailureModeAssessment">REST API Reference for StartFailureModeAssessment Operation</seealso>
         Task<StartFailureModeAssessmentResponse> StartFailureModeAssessmentAsync(StartFailureModeAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartTestRun
+
+
+
+        /// <summary>
+        /// Starts a run of a test. Each run scopes to the current resources in the service and
+        /// produces a pass or fail outcome.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartTestRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartTestRun service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/StartTestRun">REST API Reference for StartTestRun Operation</seealso>
+        Task<StartTestRunResponse> StartTestRunAsync(StartTestRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StopTestRun
+
+
+
+        /// <summary>
+        /// Stops an in-progress test run.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopTestRun service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopTestRun service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/StopTestRun">REST API Reference for StopTestRun Operation</seealso>
+        Task<StopTestRunResponse> StopTestRunAsync(StopTestRunRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1651,6 +2158,39 @@ namespace Amazon.Resiliencehubv2
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/UpdateSystem">REST API Reference for UpdateSystem Operation</seealso>
         Task<UpdateSystemResponse> UpdateSystemAsync(UpdateSystemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateTest
+
+
+
+        /// <summary>
+        /// Updates the configuration of an existing test.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateTest service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateTest service method, as returned by Resiliencehubv2.</returns>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.AccessDeniedException">
+        /// Access denied — caller lacks required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ConflictException">
+        /// Conflict — resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.InternalServerException">
+        /// Internal service error.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ResourceNotFoundException">
+        /// Resource not found.
+        /// </exception>
+        /// <exception cref="Amazon.Resiliencehubv2.Model.ValidationException">
+        /// Validation error — invalid input parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehubv2-2026-02-17/UpdateTest">REST API Reference for UpdateTest Operation</seealso>
+        Task<UpdateTestResponse> UpdateTestAsync(UpdateTestRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

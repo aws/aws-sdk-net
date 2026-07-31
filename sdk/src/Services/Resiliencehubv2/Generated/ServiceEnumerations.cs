@@ -25,6 +25,56 @@ namespace Amazon.Resiliencehubv2
 {
 
     /// <summary>
+    /// Constants used for properties of type AccountTargeting.
+    /// </summary>
+    public class AccountTargeting : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_ACCOUNT for AccountTargeting
+        /// </summary>
+        public static readonly AccountTargeting MULTI_ACCOUNT = new AccountTargeting("MULTI_ACCOUNT");
+        /// <summary>
+        /// Constant SINGLE_ACCOUNT for AccountTargeting
+        /// </summary>
+        public static readonly AccountTargeting SINGLE_ACCOUNT = new AccountTargeting("SINGLE_ACCOUNT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccountTargeting(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccountTargeting FindValue(string value)
+        {
+            return FindValue<AccountTargeting>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccountTargeting(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AchievabilityStatus.
     /// </summary>
     public class AchievabilityStatus : ConstantClass
@@ -987,6 +1037,60 @@ namespace Amazon.Resiliencehubv2
 
 
     /// <summary>
+    /// Constants used for properties of type ParameterType.
+    /// </summary>
+    public class ParameterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTEGER for ParameterType
+        /// </summary>
+        public static readonly ParameterType INTEGER = new ParameterType("INTEGER");
+        /// <summary>
+        /// Constant STRING for ParameterType
+        /// </summary>
+        public static readonly ParameterType STRING = new ParameterType("STRING");
+        /// <summary>
+        /// Constant STRING_LIST for ParameterType
+        /// </summary>
+        public static readonly ParameterType STRING_LIST = new ParameterType("STRING_LIST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterType FindValue(string value)
+        {
+            return FindValue<ParameterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyComponent.
     /// </summary>
     public class PolicyComponent : ConstantClass
@@ -1262,6 +1366,10 @@ namespace Amazon.Resiliencehubv2
         /// Constant FAILURE_MODE for ReportType
         /// </summary>
         public static readonly ReportType FAILURE_MODE = new ReportType("FAILURE_MODE");
+        /// <summary>
+        /// Constant TESTING for ReportType
+        /// </summary>
+        public static readonly ReportType TESTING = new ReportType("TESTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1699,6 +1807,56 @@ namespace Amazon.Resiliencehubv2
 
 
     /// <summary>
+    /// Constants used for properties of type StopConditionSource.
+    /// </summary>
+    public class StopConditionSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsCloudwatchAlarm for StopConditionSource
+        /// </summary>
+        public static readonly StopConditionSource AwsCloudwatchAlarm = new StopConditionSource("aws:cloudwatch:alarm");
+        /// <summary>
+        /// Constant None for StopConditionSource
+        /// </summary>
+        public static readonly StopConditionSource None = new StopConditionSource("none");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StopConditionSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StopConditionSource FindValue(string value)
+        {
+            return FindValue<StopConditionSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StopConditionSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SystemEventType.
     /// </summary>
     public class SystemEventType : ConstantClass
@@ -1770,6 +1928,230 @@ namespace Amazon.Resiliencehubv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SystemEventType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestRunSourceType.
+    /// </summary>
+    public class TestRunSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OBSERVABILITY for TestRunSourceType
+        /// </summary>
+        public static readonly TestRunSourceType OBSERVABILITY = new TestRunSourceType("OBSERVABILITY");
+        /// <summary>
+        /// Constant SUCCESS_CRITERIA for TestRunSourceType
+        /// </summary>
+        public static readonly TestRunSourceType SUCCESS_CRITERIA = new TestRunSourceType("SUCCESS_CRITERIA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestRunSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestRunSourceType FindValue(string value)
+        {
+            return FindValue<TestRunSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestRunSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestRunStatus.
+    /// </summary>
+    public class TestRunStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for TestRunStatus
+        /// </summary>
+        public static readonly TestRunStatus ERROR = new TestRunStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for TestRunStatus
+        /// </summary>
+        public static readonly TestRunStatus FAILED = new TestRunStatus("FAILED");
+        /// <summary>
+        /// Constant INITIALIZING for TestRunStatus
+        /// </summary>
+        public static readonly TestRunStatus INITIALIZING = new TestRunStatus("INITIALIZING");
+        /// <summary>
+        /// Constant PASSED for TestRunStatus
+        /// </summary>
+        public static readonly TestRunStatus PASSED = new TestRunStatus("PASSED");
+        /// <summary>
+        /// Constant RUNNING for TestRunStatus
+        /// </summary>
+        public static readonly TestRunStatus RUNNING = new TestRunStatus("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for TestRunStatus
+        /// </summary>
+        public static readonly TestRunStatus STOPPED = new TestRunStatus("STOPPED");
+        /// <summary>
+        /// Constant STOPPING for TestRunStatus
+        /// </summary>
+        public static readonly TestRunStatus STOPPING = new TestRunStatus("STOPPING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestRunStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestRunStatus FindValue(string value)
+        {
+            return FindValue<TestRunStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestRunStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestSourceOutcome.
+    /// </summary>
+    public class TestSourceOutcome : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ERROR for TestSourceOutcome
+        /// </summary>
+        public static readonly TestSourceOutcome ERROR = new TestSourceOutcome("ERROR");
+        /// <summary>
+        /// Constant FAILED for TestSourceOutcome
+        /// </summary>
+        public static readonly TestSourceOutcome FAILED = new TestSourceOutcome("FAILED");
+        /// <summary>
+        /// Constant PASSED for TestSourceOutcome
+        /// </summary>
+        public static readonly TestSourceOutcome PASSED = new TestSourceOutcome("PASSED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestSourceOutcome(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestSourceOutcome FindValue(string value)
+        {
+            return FindValue<TestSourceOutcome>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestSourceOutcome(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TestSourceType.
+    /// </summary>
+    public class TestSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OBSERVABILITY for TestSourceType
+        /// </summary>
+        public static readonly TestSourceType OBSERVABILITY = new TestSourceType("OBSERVABILITY");
+        /// <summary>
+        /// Constant SUCCESS_CRITERIA for TestSourceType
+        /// </summary>
+        public static readonly TestSourceType SUCCESS_CRITERIA = new TestSourceType("SUCCESS_CRITERIA");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TestSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TestSourceType FindValue(string value)
+        {
+            return FindValue<TestSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TestSourceType(string value)
         {
             return FindValue(value);
         }

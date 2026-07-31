@@ -98,6 +98,16 @@ namespace Amazon.Resiliencehubv2.Model
         IListReportsPaginator ListReports(ListReportsRequest request);
 
         /// <summary>
+        /// Paginator for ListResolvedTestRunTargetResources operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListResolvedTestRunTargetResourcesPaginator ListResolvedTestRunTargetResources(ListResolvedTestRunTargetResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListResources operation
         ///</summary>
         [AWSPaginator(
@@ -166,6 +176,56 @@ namespace Amazon.Resiliencehubv2.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListSystemsPaginator ListSystems(ListSystemsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestRunEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestRunEventsPaginator ListTestRunEvents(ListTestRunEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestRuns operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestRunsPaginator ListTestRuns(ListTestRunsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestRunSources operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestRunSourcesPaginator ListTestRunSources(ListTestRunSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListTests operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestsPaginator ListTests(ListTestsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTestSources operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListTestSourcesPaginator ListTestSources(ListTestSourcesRequest request);
 
         /// <summary>
         /// Paginator for ListUserJourneys operation

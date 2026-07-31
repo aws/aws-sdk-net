@@ -165,6 +165,22 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.CreateTestRequest.RoleName</property>
+    <min>2</min>
+    <max>60</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.CreateTestRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.CreateTestRequest.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.CreateUserJourneyRequest.ClientToken</property>
     <min>1</min>
     <max>63</max>
@@ -300,6 +316,16 @@
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DeleteTestRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.DeleteTestSourcesRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.DeleteUserJourneyRequest.SystemArn</property>
     <min>31</min>
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
@@ -341,6 +367,21 @@
     <property>Amazon.Resiliencehubv2.Model.GetSystemRequest.SystemArn</property>
     <min>31</min>
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.GetTestRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.GetTestRunRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.GetTestTemplateRequest.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.GetUserJourneyRequest.SystemArn</property>
@@ -535,6 +576,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.ListReportsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListResolvedTestRunTargetResourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListResolvedTestRunTargetResourcesRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListResolvedTestRunTargetResourcesRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListResolvedTestRunTargetResourcesResponse.NextToken</property>
     <min>1</min>
     <max>2000</max>
     <pattern>\S{1,2000}</pattern>
@@ -740,6 +803,116 @@
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunEventsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunEventsRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunEventsRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunEventsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunsRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunsRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunSourcesRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunSourcesRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestRunSourcesResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestsRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestsRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestsResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestSourcesRequest.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestSourcesRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ListTestSourcesResponse.NextToken</property>
+    <min>1</min>
+    <max>2000</max>
+    <pattern>\S{1,2000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.ListUserJourneysRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -762,6 +935,11 @@
     <pattern>\S{1,2000}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.PutTestSourcesRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.StartFailureModeAssessmentRequest.ClientToken</property>
     <min>1</min>
     <max>63</max>
@@ -780,6 +958,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.StartFailureModeAssessmentResponse.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.StartTestRunRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.StopTestRunRequest.ServiceArn</property>
     <min>31</min>
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
@@ -900,6 +1088,17 @@
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.UpdateTestRequest.RoleName</property>
+    <min>2</min>
+    <max>60</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.UpdateTestRequest.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.UpdateUserJourneyRequest.Description</property>
     <min>0</min>
     <max>500</max>
@@ -1015,6 +1214,11 @@
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ExperimentDetails.ExperimentArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.Finding.Comment</property>
     <min>0</min>
     <max>2048</max>
@@ -1070,6 +1274,11 @@
     <pattern>((https://([^/]+)\.s3[^/]*\.[^/]+)|(s3://([^/]+)))/\S{1,2000}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.LoggingConfiguration.CloudWatchLogGroupArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.MultiAzTargets.RpoInMinutes</property>
     <min>0</min>
   </property-value-rule>
@@ -1086,10 +1295,22 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ObservabilityAlarmInput.AlarmArn</property>
+    <min>31</min>
+    <max>1024</max>
+    <pattern>arn:aws[a-zA-Z-]*:cloudwatch:[a-z]{2}(-[a-z]+)+-\d{1}:\d{12}:alarm:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ObservabilityAlarmSummary.AlarmArn</property>
+    <min>31</min>
+    <max>1024</max>
+    <pattern>arn:aws[a-zA-Z-]*:cloudwatch:[a-z]{2}(-[a-z]+)+-\d{1}:\d{12}:alarm:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.PermissionModel.InvokerRoleName</property>
     <min>1</min>
-    <max>64</max>
-    <pattern>[A-Za-z0-9_+=,.@\-]{1,64}</pattern>
+    <max>576</max>
+    <pattern>([A-Za-z0-9_+=,.@\-]+/)*[A-Za-z0-9_+=,.@\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.Policy.Description</property>
@@ -1135,6 +1356,11 @@
     <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ReportGenerationResult.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.ResilienceHubSystem.Description</property>
     <min>0</min>
     <max>500</max>
@@ -1172,6 +1398,16 @@
     <min>1</min>
     <max>255</max>
     <pattern>\S{1,255}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ResolvedTargetResource.ResourceType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.ResolvedTargetResource.TargetName</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.Resource.AwsAccountId</property>
@@ -1379,6 +1615,18 @@
     <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.SuccessCriteriaAlarmInput.AlarmArn</property>
+    <min>31</min>
+    <max>1024</max>
+    <pattern>arn:aws[a-zA-Z-]*:cloudwatch:[a-z]{2}(-[a-z]+)+-\d{1}:\d{12}:alarm:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.SuccessCriteriaAlarmSummary.AlarmArn</property>
+    <min>31</min>
+    <max>1024</max>
+    <pattern>arn:aws[a-zA-Z-]*:cloudwatch:[a-z]{2}(-[a-z]+)+-\d{1}:\d{12}:alarm:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.SystemEvent.EventId</property>
     <min>36</min>
     <max>36</max>
@@ -1443,6 +1691,117 @@
     <min>2</min>
     <max>60</max>
     <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.Test.RoleName</property>
+    <min>2</min>
+    <max>60</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.Test.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.Test.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRun.RegionSwitchExecutionId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-z]{2}(-[a-z]+)+-[0-9]+/[0-9a-fA-F]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRun.RegionSwitchPlanArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRun.RoleName</property>
+    <min>2</min>
+    <max>60</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRun.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRun.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunEvent.EventId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunEvent.EventType</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunEvent.Message</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunObservabilityAlarmSummary.AlarmArn</property>
+    <min>31</min>
+    <max>1024</max>
+    <pattern>arn:aws[a-zA-Z-]*:cloudwatch:[a-z]{2}(-[a-z]+)+-\d{1}:\d{12}:alarm:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunPolicySnapshot.Name</property>
+    <min>2</min>
+    <max>60</max>
+    <pattern>[A-Za-z0-9][A-Za-z0-9_\-]{1,59}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunPolicySnapshot.PolicyArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunSuccessCriteriaAlarmSummary.AlarmArn</property>
+    <min>31</min>
+    <max>1024</max>
+    <pattern>arn:aws[a-zA-Z-]*:cloudwatch:[a-z]{2}(-[a-z]+)+-\d{1}:\d{12}:alarm:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunSummary.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestRunSummary.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestSummary.ServiceArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):[0-9]{12}:[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestSummary.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestTemplate.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Resiliencehubv2.Model.TestTemplateSummary.TestTemplateArn</property>
+    <min>31</min>
+    <pattern>arn:(aws|aws-cn|aws-iso|aws-iso-[a-z]{1}|aws-us-gov):[A-Za-z0-9][A-Za-z0-9_/.-]{0,62}:([a-z]{2}-((iso[a-z]{0,1}-)|(gov-)){0,1}[a-z]+-[0-9]):([0-9]{12}|aws):[A-Za-z0-9/][A-Za-z0-9:_/+.-]{0,1023}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Resiliencehubv2.Model.UserJourney.Description</property>
