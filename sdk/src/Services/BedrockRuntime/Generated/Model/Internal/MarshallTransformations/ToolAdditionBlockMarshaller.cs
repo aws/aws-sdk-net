@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// OutputConfig Marshaller
+    /// ToolAdditionBlock Marshaller
     /// </summary>
-    public class OutputConfigMarshaller : IRequestMarshaller<OutputConfig, JsonMarshallerContext> 
+    public class ToolAdditionBlockMarshaller : IRequestMarshaller<ToolAdditionBlock, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,23 +42,17 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(OutputConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ToolAdditionBlock requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEffort())
+            if(requestObject.IsSetTool())
             {
-                context.Writer.WritePropertyName("effort");
-                context.Writer.WriteStringValue(requestObject.Effort);
-            }
-
-            if(requestObject.IsSetTextFormat())
-            {
-                context.Writer.WritePropertyName("textFormat");
+                context.Writer.WritePropertyName("tool");
                 context.Writer.WriteStartObject();
 
-                var marshaller = OutputFormatMarshaller.Instance;
-                marshaller.Marshall(requestObject.TextFormat, context);
+                var marshaller = ToolReferenceMarshaller.Instance;
+                marshaller.Marshall(requestObject.Tool, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -68,7 +62,7 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static OutputConfigMarshaller Instance = new OutputConfigMarshaller();
+        public readonly static ToolAdditionBlockMarshaller Instance = new ToolAdditionBlockMarshaller();
 
     }
 }

@@ -35,7 +35,35 @@ namespace Amazon.BedrockRuntime.Model
     /// </summary>
     public partial class OutputConfig
     {
+        private string _effort;
         private OutputFormat _textFormat;
+
+        /// <summary>
+        /// Gets and sets the property Effort. 
+        /// <para>
+        /// The effort level for the model to use when generating a response. Higher effort levels
+        /// allow the model to spend more time reasoning before responding. Supported values are
+        /// <c>low</c>, <c>medium</c>, <c>high</c>, <c>xhigh</c>, and <c>max</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When extended thinking is disabled, the effort level is capped at <c>high</c>. Use
+        /// effort <c>high</c> or below, or enable thinking to use higher effort levels.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=0, Max=16)]
+        public string Effort
+        {
+            get { return this._effort; }
+            set { this._effort = value; }
+        }
+
+        // Check to see if Effort property is set
+        internal bool IsSetEffort()
+        {
+            return this._effort != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TextFormat. 

@@ -46,6 +46,8 @@ namespace Amazon.BedrockRuntime.Model
         private ReasoningContentBlock _reasoningContent;
         private SearchResultBlock _searchResult;
         private string _text;
+        private ToolAdditionBlock _toolAddition;
+        private ToolRemovalBlock _toolRemoval;
         private ToolResultBlock _toolResult;
         private ToolUseBlock _toolUse;
         private VideoBlock _video;
@@ -226,6 +228,36 @@ namespace Amazon.BedrockRuntime.Model
         internal bool IsSetText()
         {
             return this._text != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolAddition.
+        /// </summary>
+        public ToolAdditionBlock ToolAddition
+        {
+            get { return this._toolAddition; }
+            set { this._toolAddition = value; }
+        }
+
+        // Check to see if ToolAddition property is set
+        internal bool IsSetToolAddition()
+        {
+            return this._toolAddition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolRemoval.
+        /// </summary>
+        public ToolRemovalBlock ToolRemoval
+        {
+            get { return this._toolRemoval; }
+            set { this._toolRemoval = value; }
+        }
+
+        // Check to see if ToolRemoval property is set
+        internal bool IsSetToolRemoval()
+        {
+            return this._toolRemoval != null;
         }
 
         /// <summary>
