@@ -61,7 +61,7 @@ namespace Amazon.ConnectCampaignsV2.Model
         /// <summary>
         /// Gets and sets the property BandwidthAllocation.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=2)]
         public double? BandwidthAllocation
         {
             get { return this._bandwidthAllocation; }

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PredictiveConfig Marshaller
+    /// AbandonmentRatePacingConfig Marshaller
     /// </summary>
-    public class PredictiveConfigMarshaller : IRequestMarshaller<PredictiveConfig, JsonMarshallerContext> 
+    public class AbandonmentRatePacingConfigMarshaller : IRequestMarshaller<AbandonmentRatePacingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,39 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PredictiveConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(AbandonmentRatePacingConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBandwidthAllocation())
+            if(requestObject.IsSetConnectionStartPoint())
             {
-                context.Writer.WritePropertyName("bandwidthAllocation");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation.Value))
+                context.Writer.WritePropertyName("connectionStartPoint");
+                context.Writer.WriteStringValue(requestObject.ConnectionStartPoint);
+            }
+
+            if(requestObject.IsSetConnectionThresholdSeconds())
+            {
+                context.Writer.WritePropertyName("connectionThresholdSeconds");
+                context.Writer.WriteNumberValue(requestObject.ConnectionThresholdSeconds.Value);
+            }
+
+            if(requestObject.IsSetEvaluationWindow())
+            {
+                context.Writer.WritePropertyName("evaluationWindow");
+                context.Writer.WriteStringValue(requestObject.EvaluationWindow);
+            }
+
+            if(requestObject.IsSetTargetRate())
+            {
+                context.Writer.WritePropertyName("targetRate");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.TargetRate.Value))
                 {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.TargetRate.Value));
                 }
                 else
                 {
-                    context.Writer.WriteNumberValue(requestObject.BandwidthAllocation.Value);
+                    context.Writer.WriteNumberValue(requestObject.TargetRate.Value);
                 }
-            }
-
-            if(requestObject.IsSetPacingStrategies())
-            {
-                context.Writer.WritePropertyName("pacingStrategies");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectPacingStrategiesListValue in requestObject.PacingStrategies)
-                {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = PacingStrategyMarshaller.Instance;
-                    marshaller.Marshall(requestObjectPacingStrategiesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
             }
 
         }
@@ -80,7 +82,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PredictiveConfigMarshaller Instance = new PredictiveConfigMarshaller();
+        public readonly static AbandonmentRatePacingConfigMarshaller Instance = new AbandonmentRatePacingConfigMarshaller();
 
     }
 }

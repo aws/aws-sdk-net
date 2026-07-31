@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictiveConfig Object
+    /// Response Unmarshaller for PacingStrategy Object
     /// </summary>  
-    public class PredictiveConfigUnmarshaller : IJsonUnmarshaller<PredictiveConfig, JsonUnmarshallerContext>
+    public class PacingStrategyUnmarshaller : IJsonUnmarshaller<PacingStrategy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PredictiveConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PacingStrategy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PredictiveConfig unmarshalledObject = new PredictiveConfig();
+            PacingStrategy unmarshalledObject = new PacingStrategy();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bandwidthAllocation", targetDepth, ref reader))
+                if (context.TestExpression("abandonmentRate", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("pacingStrategies", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<PacingStrategy, PacingStrategyUnmarshaller>(PacingStrategyUnmarshaller.Instance);
-                    unmarshalledObject.PacingStrategies = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AbandonmentRatePacingConfigUnmarshaller.Instance;
+                    unmarshalledObject.AbandonmentRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictiveConfigUnmarshaller _instance = new PredictiveConfigUnmarshaller();        
+        private static PacingStrategyUnmarshaller _instance = new PacingStrategyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictiveConfigUnmarshaller Instance
+        public static PacingStrategyUnmarshaller Instance
         {
             get
             {

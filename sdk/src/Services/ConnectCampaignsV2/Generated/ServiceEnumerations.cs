@@ -395,6 +395,60 @@ namespace Amazon.ConnectCampaignsV2
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionStartPoint.
+    /// </summary>
+    public class ConnectionStartPoint : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONNECTED_TO_SYSTEM for ConnectionStartPoint
+        /// </summary>
+        public static readonly ConnectionStartPoint CONNECTED_TO_SYSTEM = new ConnectionStartPoint("CONNECTED_TO_SYSTEM");
+        /// <summary>
+        /// Constant GREETING_END for ConnectionStartPoint
+        /// </summary>
+        public static readonly ConnectionStartPoint GREETING_END = new ConnectionStartPoint("GREETING_END");
+        /// <summary>
+        /// Constant GREETING_START for ConnectionStartPoint
+        /// </summary>
+        public static readonly ConnectionStartPoint GREETING_START = new ConnectionStartPoint("GREETING_START");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionStartPoint(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionStartPoint FindValue(string value)
+        {
+            return FindValue<ConnectionStartPoint>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionStartPoint(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DayOfWeek.
     /// </summary>
     public class DayOfWeek : ConstantClass

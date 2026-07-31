@@ -30,26 +30,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCampaignsV2.Model
 {
     /// <summary>
-    /// Progressive config
+    /// Pacing constraint the dialer may enforce.
     /// </summary>
-    public partial class ProgressiveConfig
+    public partial class PacingStrategy
     {
-        private double? _bandwidthAllocation;
+        private AbandonmentRatePacingConfig _abandonmentRate;
 
         /// <summary>
-        /// Gets and sets the property BandwidthAllocation.
+        /// Gets and sets the property AbandonmentRate.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=2)]
-        public double? BandwidthAllocation
+        public AbandonmentRatePacingConfig AbandonmentRate
         {
-            get { return this._bandwidthAllocation; }
-            set { this._bandwidthAllocation = value; }
+            get { return this._abandonmentRate; }
+            set { this._abandonmentRate = value; }
         }
 
-        // Check to see if BandwidthAllocation property is set
-        internal bool IsSetBandwidthAllocation()
+        // Check to see if AbandonmentRate property is set
+        internal bool IsSetAbandonmentRate()
         {
-            return this._bandwidthAllocation.HasValue; 
+            return this._abandonmentRate != null;
         }
 
     }

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PredictiveConfig Marshaller
+    /// PacingStrategy Marshaller
     /// </summary>
-    public class PredictiveConfigMarshaller : IRequestMarshaller<PredictiveConfig, JsonMarshallerContext> 
+    public class PacingStrategyMarshaller : IRequestMarshaller<PacingStrategy, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,37 +42,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PredictiveConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(PacingStrategy requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBandwidthAllocation())
+            if(requestObject.IsSetAbandonmentRate())
             {
-                context.Writer.WritePropertyName("bandwidthAllocation");
-                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation.Value))
-                {
-                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
-                }
-                else
-                {
-                    context.Writer.WriteNumberValue(requestObject.BandwidthAllocation.Value);
-                }
-            }
+                context.Writer.WritePropertyName("abandonmentRate");
+                context.Writer.WriteStartObject();
 
-            if(requestObject.IsSetPacingStrategies())
-            {
-                context.Writer.WritePropertyName("pacingStrategies");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectPacingStrategiesListValue in requestObject.PacingStrategies)
-                {
-                    context.Writer.WriteStartObject();
+                var marshaller = AbandonmentRatePacingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AbandonmentRate, context);
 
-                    var marshaller = PacingStrategyMarshaller.Instance;
-                    marshaller.Marshall(requestObjectPacingStrategiesListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -80,7 +62,7 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PredictiveConfigMarshaller Instance = new PredictiveConfigMarshaller();
+        public readonly static PacingStrategyMarshaller Instance = new PacingStrategyMarshaller();
 
     }
 }

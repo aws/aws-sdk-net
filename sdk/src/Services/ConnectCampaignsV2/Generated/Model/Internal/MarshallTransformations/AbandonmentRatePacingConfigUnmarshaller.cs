@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PredictiveConfig Object
+    /// Response Unmarshaller for AbandonmentRatePacingConfig Object
     /// </summary>  
-    public class PredictiveConfigUnmarshaller : IJsonUnmarshaller<PredictiveConfig, JsonUnmarshallerContext>
+    public class AbandonmentRatePacingConfigUnmarshaller : IJsonUnmarshaller<AbandonmentRatePacingConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PredictiveConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AbandonmentRatePacingConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PredictiveConfig unmarshalledObject = new PredictiveConfig();
+            AbandonmentRatePacingConfig unmarshalledObject = new AbandonmentRatePacingConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,28 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bandwidthAllocation", targetDepth, ref reader))
+                if (context.TestExpression("connectionStartPoint", targetDepth, ref reader))
                 {
-                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionStartPoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("pacingStrategies", targetDepth, ref reader))
+                if (context.TestExpression("connectionThresholdSeconds", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<PacingStrategy, PacingStrategyUnmarshaller>(PacingStrategyUnmarshaller.Instance);
-                    unmarshalledObject.PacingStrategies = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.ConnectionThresholdSeconds = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("evaluationWindow", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EvaluationWindow = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("targetRate", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.TargetRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +85,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static PredictiveConfigUnmarshaller _instance = new PredictiveConfigUnmarshaller();        
+        private static AbandonmentRatePacingConfigUnmarshaller _instance = new AbandonmentRatePacingConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PredictiveConfigUnmarshaller Instance
+        public static AbandonmentRatePacingConfigUnmarshaller Instance
         {
             get
             {
