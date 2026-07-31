@@ -56,7 +56,7 @@ namespace Amazon.Outposts.Model
         ///  The address for the site. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Address Address
         {
             get { return this._address; }

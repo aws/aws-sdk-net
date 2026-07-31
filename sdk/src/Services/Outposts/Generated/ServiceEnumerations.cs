@@ -209,6 +209,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly AWSServiceName EC2 = new AWSServiceName("EC2");
         /// <summary>
+        /// Constant EKS for AWSServiceName
+        /// </summary>
+        public static readonly AWSServiceName EKS = new AWSServiceName("EKS");
+        /// <summary>
         /// Constant ELASTICACHE for AWSServiceName
         /// </summary>
         public static readonly AWSServiceName ELASTICACHE = new AWSServiceName("ELASTICACHE");

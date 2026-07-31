@@ -103,6 +103,7 @@ namespace Amazon.Outposts.Model
         /// from the shipping address. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Address OperatingAddress
         {
             get { return this._operatingAddress; }
@@ -142,6 +143,7 @@ namespace Amazon.Outposts.Model
         /// address. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Address ShippingAddress
         {
             get { return this._shippingAddress; }
