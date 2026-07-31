@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CroppingConfig Marshaller
+    /// TemplateGroup Marshaller
     /// </summary>
-    public class CroppingConfigMarshaller : IRequestMarshaller<CroppingConfig, JsonMarshallerContext> 
+    public class TemplateGroupMarshaller : IRequestMarshaller<TemplateGroup, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,22 +42,23 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CroppingConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(TemplateGroup requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetTemplateGroups())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("templateGroups");
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetTemplateUris())
+            {
+                context.Writer.WritePropertyName("templateUris");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectTemplateGroupsListValue in requestObject.TemplateGroups)
+                foreach(var requestObjectTemplateUrisListValue in requestObject.TemplateUris)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TemplateGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTemplateGroupsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteStringValue(requestObjectTemplateUrisListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -67,7 +68,7 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CroppingConfigMarshaller Instance = new CroppingConfigMarshaller();
+        public readonly static TemplateGroupMarshaller Instance = new TemplateGroupMarshaller();
 
     }
 }

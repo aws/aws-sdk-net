@@ -76,6 +76,12 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("accessRoleArn");
+                context.Writer.WriteStringValue(publicRequest.AccessRoleArn);
+            }
+
             if(publicRequest.IsSetName())
             {
                 context.Writer.WritePropertyName("name");

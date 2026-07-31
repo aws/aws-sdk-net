@@ -30,18 +30,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElementalInference.Model
 {
     /// <summary>
-    /// A type of OutputConfig, used when the output in a feed is for the crop feature.
+    /// A named set of graphics-compositing templates used by the crop feature, specified
+    /// in the templateGroups array of a CroppingConfig.
     /// </summary>
-    public partial class CroppingConfig
+    public partial class TemplateGroup
     {
-        private List<TemplateGroup> _templateGroups = AWSConfigs.InitializeCollections ? new List<TemplateGroup>() : null;
+        private string _name;
+        private List<string> _templateUris = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property TemplateGroups. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// An array of template groups for the crop output. Each template group provides the
-        /// graphics-compositing templates that Elemental Inference applies to the cropped video.
-        /// You can specify from 1 to 4 template groups. 
+        /// A name for the template group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Name
+        {
+            get { return this._name; }
+            set { this._name = value; }
+        }
+
+        // Check to see if Name property is set
+        internal bool IsSetName()
+        {
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateUris. 
+        /// <para>
+        /// An array of Amazon S3 URIs that point to the graphics-compositing templates for this
+        /// group. You can specify 1 or 2 URIs. Each URI must be in the form <c>s3://bucket-name/key</c>.
+        /// Elemental Inference reads these templates using the IAM role that you specify in accessRoleArn.
+        /// 
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -49,17 +71,17 @@ namespace Amazon.ElementalInference.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=4)]
-        public List<TemplateGroup> TemplateGroups
+        [AWSProperty(Required=true, Min=1, Max=2)]
+        public List<string> TemplateUris
         {
-            get { return this._templateGroups; }
-            set { this._templateGroups = value; }
+            get { return this._templateUris; }
+            set { this._templateUris = value; }
         }
 
-        // Check to see if TemplateGroups property is set
-        internal bool IsSetTemplateGroups()
+        // Check to see if TemplateUris property is set
+        internal bool IsSetTemplateUris()
         {
-            return this._templateGroups != null && (this._templateGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._templateUris != null && (this._templateUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

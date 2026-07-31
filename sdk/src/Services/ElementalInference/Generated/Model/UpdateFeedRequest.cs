@@ -52,9 +52,31 @@ namespace Amazon.ElementalInference.Model
     /// </summary>
     public partial class UpdateFeedRequest : AmazonElementalInferenceRequest
     {
+        private string _accessRoleArn;
         private string _id;
         private string _name;
         private List<UpdateOutput> _outputs = AWSConfigs.InitializeCollections ? new List<UpdateOutput>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AccessRoleArn. 
+        /// <para>
+        /// The ARN of an IAM role that Elemental Inference assumes to access resources in your
+        /// account on your behalf. You can specify the existing role (to leave it unchanged)
+        /// or a new role. You specify one access role for each feed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=255)]
+        public string AccessRoleArn
+        {
+            get { return this._accessRoleArn; }
+            set { this._accessRoleArn = value; }
+        }
+
+        // Check to see if AccessRoleArn property is set
+        internal bool IsSetAccessRoleArn()
+        {
+            return this._accessRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Id. 
