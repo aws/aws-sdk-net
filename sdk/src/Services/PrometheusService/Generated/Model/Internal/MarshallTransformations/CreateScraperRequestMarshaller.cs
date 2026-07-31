@@ -101,6 +101,22 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetExporters())
+            {
+                context.Writer.WritePropertyName("exporters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestExportersListValue in publicRequest.Exporters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ExporterConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestExportersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetRoleConfiguration())
             {
                 context.Writer.WritePropertyName("roleConfiguration");

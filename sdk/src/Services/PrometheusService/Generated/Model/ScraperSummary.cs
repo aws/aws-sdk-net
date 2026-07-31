@@ -39,6 +39,7 @@ namespace Amazon.PrometheusService.Model
         private string _arn;
         private DateTime? _createdAt;
         private Destination _destination;
+        private List<ExporterConfiguration> _exporters = AWSConfigs.InitializeCollections ? new List<ExporterConfiguration>() : null;
         private DateTime? _lastModifiedAt;
         private string _roleArn;
         private RoleConfiguration _roleConfiguration;
@@ -123,6 +124,31 @@ namespace Amazon.PrometheusService.Model
         internal bool IsSetDestination()
         {
             return this._destination != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Exporters. 
+        /// <para>
+        /// The exporter configurations for the scraper, if configured. The list contains at most
+        /// one configuration for an Amazon OpenSearch Service domain.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<ExporterConfiguration> Exporters
+        {
+            get { return this._exporters; }
+            set { this._exporters = value; }
+        }
+
+        // Check to see if Exporters property is set
+        internal bool IsSetExporters()
+        {
+            return this._exporters != null && (this._exporters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

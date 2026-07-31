@@ -80,6 +80,12 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
                     unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("exporters", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ExporterConfiguration, ExporterConfigurationUnmarshaller>(ExporterConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.Exporters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("lastModifiedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
