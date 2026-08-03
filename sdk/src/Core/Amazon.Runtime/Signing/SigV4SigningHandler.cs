@@ -45,9 +45,11 @@ namespace Amazon.Runtime.Signing
     /// </para>
     /// <para>
     /// <b>Important — disable automatic redirects.</b> The primary/inner handler must set
-    /// <c>AllowAutoRedirect = false</c>. An auto-followed redirect is replayed below this handler, so it is
-    /// not re-signed; because it often targets a different host it would carry a signature computed for the
-    /// original host and be rejected. Handle redirects above this handler so each hop is re-signed.
+    /// <c>AllowAutoRedirect = false</c>. An auto-followed redirect is handled by the transport below this
+    /// handler, so it is never re-signed: a cross-host redirect has its Authorization header stripped by the
+    /// runtime and arrives unsigned, and a same-host redirect replays the original signature over a canonical
+    /// request that no longer matches the new path or query. Either way the redirected hop is rejected. Handle
+    /// redirects above this handler so each hop is re-signed for its own destination.
     /// </para>
     /// <para>
     /// <b>Important — retry ordering.</b> Any retry handler must sit <i>outside</i> (before) this handler in
