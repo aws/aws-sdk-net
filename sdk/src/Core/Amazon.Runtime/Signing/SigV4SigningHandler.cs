@@ -184,18 +184,15 @@ namespace Amazon.Runtime.Signing
             if (mustHashBody)
             {
                 cancellationToken.ThrowIfCancellationRequested();
+                // Reading the content here to hash it also buffers it internally: HttpContent loads its body
+                // into an in-memory buffer on the first read, so the same message can be re-serialized on a
+                // retry resend without re-reading (or exhausting) a one-shot stream. No explicit rebuffering is
+                // needed to make the body survive a resend.
 #if NET5_0_OR_GREATER
                 body = await request.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
 #else
                 body = await request.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
 #endif
-
-                // Replace the (possibly one-shot) content with a re-readable buffer so the body survives a
-                // resend on retry, preserving the original content headers.
-                var buffered = new ByteArrayContent(body);
-                foreach (var header in request.Content.Headers)
-                    buffered.Headers.TryAddWithoutValidation(header.Key, header.Value);
-                request.Content = buffered;
             }
 
             var signingRequest = new AWSSigningRequest
