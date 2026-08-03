@@ -76,10 +76,28 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEksNodeName())
+            {
+                context.Writer.WritePropertyName("eksNodeName");
+                context.Writer.WriteStringValue(publicRequest.EksNodeName);
+            }
+
+            if(publicRequest.IsSetInstanceId())
+            {
+                context.Writer.WritePropertyName("instanceId");
+                context.Writer.WriteStringValue(publicRequest.InstanceId);
+            }
+
             if(publicRequest.IsSetToken())
             {
                 context.Writer.WritePropertyName("token");
                 context.Writer.WriteStringValue(publicRequest.Token);
+            }
+
+            if(publicRequest.IsSetZone())
+            {
+                context.Writer.WritePropertyName("zone");
+                context.Writer.WriteStringValue(publicRequest.Zone);
             }
 
             writer.WriteEndObject();

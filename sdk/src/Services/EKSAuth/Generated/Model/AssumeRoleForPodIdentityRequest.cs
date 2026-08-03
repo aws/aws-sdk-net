@@ -44,7 +44,10 @@ namespace Amazon.EKSAuth.Model
     public partial class AssumeRoleForPodIdentityRequest : AmazonEKSAuthRequest
     {
         private string _clusterName;
+        private string _eksNodeName;
+        private string _instanceId;
         private string _token;
+        private string _zone;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -66,6 +69,42 @@ namespace Amazon.EKSAuth.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EksNodeName. 
+        /// <para>
+        /// The Kubernetes node name of the worker node where the pod is running.
+        /// </para>
+        /// </summary>
+        public string EksNodeName
+        {
+            get { return this._eksNodeName; }
+            set { this._eksNodeName = value; }
+        }
+
+        // Check to see if EksNodeName property is set
+        internal bool IsSetEksNodeName()
+        {
+            return this._eksNodeName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceId. 
+        /// <para>
+        /// The Amazon EC2 instance ID of the worker node where the pod is running.
+        /// </para>
+        /// </summary>
+        public string InstanceId
+        {
+            get { return this._instanceId; }
+            set { this._instanceId = value; }
+        }
+
+        // Check to see if InstanceId property is set
+        internal bool IsSetInstanceId()
+        {
+            return this._instanceId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
         /// The token of the Kubernetes service account for the pod.
@@ -82,6 +121,24 @@ namespace Amazon.EKSAuth.Model
         internal bool IsSetToken()
         {
             return this._token != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Zone. 
+        /// <para>
+        /// The Availability Zone ID of the worker node where the pod is running.
+        /// </para>
+        /// </summary>
+        public string Zone
+        {
+            get { return this._zone; }
+            set { this._zone = value; }
+        }
+
+        // Check to see if Zone property is set
+        internal bool IsSetZone()
+        {
+            return this._zone != null;
         }
 
     }
