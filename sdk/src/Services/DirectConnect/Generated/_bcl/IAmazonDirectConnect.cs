@@ -3675,6 +3675,74 @@ namespace Amazon.DirectConnect
 
         #endregion
         
+        #region  ListVirtualInterfaceRoutes
+
+
+        /// <summary>
+        /// Lists the routes for the specified virtual interface.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>routeDirection</c> filter to control which routes are returned:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>accepted</c>: routes received from the customer network over the virtual interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>advertised</c>: routes advertised to the customer network over the virtual interface.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualInterfaceRoutes service method.</param>
+        /// 
+        /// <returns>The response from the ListVirtualInterfaceRoutes service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceRoutes">REST API Reference for ListVirtualInterfaceRoutes Operation</seealso>
+        ListVirtualInterfaceRoutesResponse ListVirtualInterfaceRoutes(ListVirtualInterfaceRoutesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the routes for the specified virtual interface.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>routeDirection</c> filter to control which routes are returned:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>accepted</c>: routes received from the customer network over the virtual interface.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>advertised</c>: routes advertised to the customer network over the virtual interface.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVirtualInterfaceRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVirtualInterfaceRoutes service method, as returned by DirectConnect.</returns>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectClientException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.DirectConnect.Model.DirectConnectServerException">
+        /// A server-side error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceRoutes">REST API Reference for ListVirtualInterfaceRoutes Operation</seealso>
+        Task<ListVirtualInterfaceRoutesResponse> ListVirtualInterfaceRoutesAsync(ListVirtualInterfaceRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListVirtualInterfaceTestHistory
 
 
