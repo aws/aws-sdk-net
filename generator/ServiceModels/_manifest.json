@@ -65,6 +65,7 @@
                 "Custom\\Runtime\\EventStreams\\test_vectors\\*",
                 "Custom\\Runtime\\TestEndpoints\\*.json",
                 "Custom\\TestTools\\ComparerTest.json",
+                "Custom\\Runtime\\Signing\\reference\\sigv4_test_cases.json",
                 "..\\Services\\S3\\UnitTests\\Custom\\EmbeddedResource\\*"
             ],
             "packageReferences": [
