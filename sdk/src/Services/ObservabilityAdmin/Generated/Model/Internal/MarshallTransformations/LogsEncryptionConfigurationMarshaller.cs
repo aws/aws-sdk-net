@@ -52,6 +52,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.EncryptionConflictResolutionStrategy);
             }
 
+            if(requestObject.IsSetEncryptionScope())
+            {
+                context.Writer.WritePropertyName("EncryptionScope");
+                context.Writer.WriteStringValue(requestObject.EncryptionScope);
+            }
+
             if(requestObject.IsSetEncryptionStrategy())
             {
                 context.Writer.WritePropertyName("EncryptionStrategy");

@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
-    /// Configuration parameters for Amazon Bedrock AgentCore logging, including <c>logType</c>
-    /// settings.
+    /// The configuration parameters for log delivery, including <c>logType</c> settings.
+    /// Applies to resource types that support configurable log delivery, such as Amazon Bedrock
+    /// Knowledge Bases and Elastic Load Balancing Application Load Balancers.
     /// </summary>
     public partial class LogDeliveryParameters
     {
@@ -40,7 +41,7 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property LogTypes. 
         /// <para>
-        /// The type of log that the source is sending.
+        /// The types of logs to collect from the resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

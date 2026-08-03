@@ -420,6 +420,12 @@
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TelemetryDestinationConfiguration.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:kms:[a-z0-9-]+:\d{12}:key/(mrk-)?[a-f0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.TelemetryDestinationConfiguration.RetentionInDays</property>
     <min>1</min>
     <max>3653</max>
