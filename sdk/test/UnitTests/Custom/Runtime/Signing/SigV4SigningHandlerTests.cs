@@ -120,6 +120,46 @@ namespace AWSSDK.UnitTests.Signing
             StringAssert.Contains(auth, "x-amz-security-token");
         }
 
+#if NET5_0_OR_GREATER
+        [TestMethod]
+        public void SyncSend_SignsOutgoingRequest()
+        {
+            // A synchronous HttpClient.Send must be signed too, not passed through unsigned by the base handler.
+            var handler = NewHandler(out var inner);
+            using (var client = NewClient(handler))
+            {
+                client.Send(new HttpRequestMessage(HttpMethod.Get, "https://example.execute-api.us-east-1.amazonaws.com/items"));
+            }
+
+            var sent = inner.LastRequest;
+            Assert.IsTrue(sent.Headers.Contains(HeaderKeys.AuthorizationHeader));
+            Assert.IsTrue(sent.Headers.Contains(HeaderKeys.XAmzDateHeader));
+            var auth = sent.Headers.GetValues(HeaderKeys.AuthorizationHeader).Single();
+            StringAssert.StartsWith(auth, "AWS4-HMAC-SHA256 ");
+        }
+
+        [TestMethod]
+        public void SyncSend_WithBody_SignsBufferedContent()
+        {
+            var handler = NewHandler(out var inner);
+            inner.CaptureBody = true;
+            using (var client = NewClient(handler))
+            {
+                var message = new HttpRequestMessage(HttpMethod.Post, "https://example.execute-api.us-east-1.amazonaws.com/items")
+                {
+                    Content = new StringContent("{\"a\":1}", Encoding.UTF8, "application/json"),
+                };
+                client.Send(message);
+            }
+
+            var sent = inner.LastRequest;
+            var expectedHash = AWSSDKUtils.ToHex(
+                CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(Encoding.UTF8.GetBytes("{\"a\":1}")), true);
+            Assert.AreEqual(expectedHash, sent.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single());
+            Assert.AreEqual("{\"a\":1}", inner.LastContentBody);
+        }
+#endif
+
         // -----------------------------------------------------------------------
         // Credentials resolve per send.
         // -----------------------------------------------------------------------
@@ -189,6 +229,56 @@ namespace AWSSDK.UnitTests.Signing
             // Signing headers replaced, not accumulated, across the resign.
             Assert.AreEqual(1, message.Headers.GetValues(HeaderKeys.AuthorizationHeader).Count());
             Assert.AreEqual(1, message.Headers.GetValues(HeaderKeys.XAmzDateHeader).Count());
+        }
+
+        [TestMethod]
+        public async Task Send_ReSigningAfterCredentialsDropToken_RemovesStaleSecurityTokenHeader()
+        {
+            // Session credentials on the first send emit x-amz-security-token; if the credential source then
+            // returns long-term credentials, the re-signed message must not carry the stale token header, or it
+            // would go out uncovered by the new signature.
+            var credentials = new SwitchableCredentials(
+                new SessionAWSCredentials(AccessKey, SecretKey, "the-session-token"),
+                new BasicAWSCredentials(AccessKey, SecretKey));
+            var handler = NewHandler(credentials, out var inner);
+            var invoker = new HttpMessageInvoker(handler);
+
+            var message = new HttpRequestMessage(HttpMethod.Get, "https://example.execute-api.us-east-1.amazonaws.com/items");
+
+            // First send uses session credentials: the token header is present.
+            await invoker.SendAsync(message, CancellationToken.None);
+            Assert.IsTrue(message.Headers.Contains(HeaderKeys.XAmzSecurityTokenHeader));
+
+            // Retry resolves long-term credentials: the token header must be gone, not left over.
+            credentials.Advance();
+            await invoker.SendAsync(message, CancellationToken.None);
+            Assert.IsFalse(message.Headers.Contains(HeaderKeys.XAmzSecurityTokenHeader));
+        }
+
+        // -----------------------------------------------------------------------
+        // Header collection for signing.
+        // -----------------------------------------------------------------------
+
+        [TestMethod]
+        public async Task Send_SameHeaderOnRequestAndContent_SignsCombinedValue()
+        {
+            // HttpClient sends a header set on both the request and the content as one combined line
+            // (request value first, then content value). The signature must cover that same combined value.
+            var handler = NewHandler(out var inner);
+            var invoker = new HttpMessageInvoker(handler);
+
+            var message = new HttpRequestMessage(HttpMethod.Post, "https://example.execute-api.us-east-1.amazonaws.com/items")
+            {
+                Content = new StringContent("{\"a\":1}", Encoding.UTF8, "application/json"),
+            };
+            message.Headers.TryAddWithoutValidation("x-custom", "request-value");
+            message.Content.Headers.TryAddWithoutValidation("x-custom", "content-value");
+
+            await invoker.SendAsync(message, CancellationToken.None);
+
+            // x-custom appears in the signed headers, so it is part of SignedHeaders in the Authorization value.
+            var auth = message.Headers.GetValues(HeaderKeys.AuthorizationHeader).Single();
+            StringAssert.Contains(auth, "x-custom");
         }
 
         // -----------------------------------------------------------------------
@@ -264,10 +354,10 @@ namespace AWSSDK.UnitTests.Signing
         [TestMethod]
         public void Constructor_MissingRequiredParameters_Throws()
         {
-            AssertThrows<ArgumentNullException>(() => new SigV4SigningHandler((AWSSigV4Parameters)null));
-            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Region = Region, Service = Service }));
-            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Service = Service }));
-            AssertThrows<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Region = Region }));
+            Assert.ThrowsExactly<ArgumentNullException>(() => new SigV4SigningHandler((AWSSigV4Parameters)null));
+            Assert.ThrowsExactly<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Region = Region, Service = Service }));
+            Assert.ThrowsExactly<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Service = Service }));
+            Assert.ThrowsExactly<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Region = Region }));
         }
 
         [TestMethod]
@@ -277,7 +367,7 @@ namespace AWSSDK.UnitTests.Signing
             var invoker = new HttpMessageInvoker(handler);
             var message = new HttpRequestMessage(HttpMethod.Get, new Uri("/items", UriKind.Relative));
 
-            await AssertThrowsAsync<InvalidOperationException>(() => invoker.SendAsync(message, CancellationToken.None));
+            await Assert.ThrowsExactlyAsync<InvalidOperationException>(() => invoker.SendAsync(message, CancellationToken.None));
         }
 
         // -----------------------------------------------------------------------
@@ -291,22 +381,6 @@ namespace AWSSDK.UnitTests.Signing
 #else
             message.Properties[key] = value;
 #endif
-        }
-
-        private static void AssertThrows<TException>(Action action) where TException : Exception
-        {
-            try { action(); }
-            catch (TException) { return; }
-            catch (Exception ex) { Assert.Fail($"Expected {typeof(TException).Name} but got {ex.GetType().Name}."); }
-            Assert.Fail($"Expected {typeof(TException).Name} but no exception was thrown.");
-        }
-
-        private static async Task AssertThrowsAsync<TException>(Func<Task> action) where TException : Exception
-        {
-            try { await action(); }
-            catch (TException) { return; }
-            catch (Exception ex) { Assert.Fail($"Expected {typeof(TException).Name} but got {ex.GetType().Name}."); }
-            Assert.Fail($"Expected {typeof(TException).Name} but no exception was thrown.");
         }
 
         // Captures the request as it reaches the transport (after signing) and returns 200. The content body
@@ -329,6 +403,20 @@ namespace AWSSDK.UnitTests.Signing
                     LastContentBody = await request.Content.ReadAsStringAsync().ConfigureAwait(false);
                 return new HttpResponseMessage(HttpStatusCode.OK);
             }
+
+#if NET5_0_OR_GREATER
+            protected override HttpResponseMessage Send(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                LastRequest = request;
+                if (CaptureBody && request.Content != null)
+                {
+                    using (var stream = request.Content.ReadAsStream(cancellationToken))
+                    using (var reader = new StreamReader(stream))
+                        LastContentBody = reader.ReadToEnd();
+                }
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+#endif
         }
 
         // Counts how many times credentials are resolved, to prove per-send resolution.
@@ -353,6 +441,29 @@ namespace AWSSDK.UnitTests.Signing
                 ResolveCount++;
                 return Task.FromResult(_credentials);
             }
+        }
+
+        // Returns one set of credentials until Advance() is called, then the next. Models a credential source
+        // whose resolved credentials change type (e.g. session -> long-term) between a send and its retry.
+        private sealed class SwitchableCredentials : AWSCredentials
+        {
+            private readonly AWSCredentials _first;
+            private readonly AWSCredentials _second;
+            private bool _advanced;
+
+            public SwitchableCredentials(AWSCredentials first, AWSCredentials second)
+            {
+                _first = first;
+                _second = second;
+            }
+
+            public void Advance() => _advanced = true;
+
+            private AWSCredentials Current => _advanced ? _second : _first;
+
+            public override ImmutableCredentials GetCredentials() => Current.GetCredentials();
+
+            public override Task<ImmutableCredentials> GetCredentialsAsync() => Current.GetCredentialsAsync();
         }
 
         private sealed class ThrowOnReadStream : Stream

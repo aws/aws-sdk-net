@@ -120,11 +120,7 @@ namespace Amazon.Runtime.Signing
         /// </summary>
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            if (request == null)
-                throw new ArgumentNullException(nameof(request));
-            if (request.RequestUri == null || !request.RequestUri.IsAbsoluteUri)
-                throw new InvalidOperationException(
-                    "The request URI must be an absolute URI. Set HttpClient.BaseAddress or use an absolute request URI.");
+            ValidateRequest(request);
 
             var parameters = ResolveParameters(request);
             var signingRequest = await BuildSigningRequestAsync(request, parameters, cancellationToken).ConfigureAwait(false);
@@ -134,6 +130,36 @@ namespace Amazon.Runtime.Signing
             ApplySigningHeaders(request, result);
 
             return await base.SendAsync(request, cancellationToken).ConfigureAwait(false);
+        }
+
+#if NET5_0_OR_GREATER
+        /// <summary>
+        /// Signs <paramref name="request"/> with SigV4 and forwards it to the inner handler synchronously.
+        /// Present so a synchronous <c>HttpClient.Send</c> is signed too, rather than bypassing this handler
+        /// and going out unsigned via the base implementation.
+        /// </summary>
+        protected override HttpResponseMessage Send(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            ValidateRequest(request);
+
+            var parameters = ResolveParameters(request);
+            var signingRequest = BuildSigningRequest(request, parameters, cancellationToken);
+
+            var result = AWSSigV4Signer.Sign(signingRequest, parameters);
+
+            ApplySigningHeaders(request, result);
+
+            return base.Send(request, cancellationToken);
+        }
+#endif
+
+        private static void ValidateRequest(HttpRequestMessage request)
+        {
+            if (request == null)
+                throw new ArgumentNullException(nameof(request));
+            if (request.RequestUri == null || !request.RequestUri.IsAbsoluteUri)
+                throw new InvalidOperationException(
+                    "The request URI must be an absolute URI. Set HttpClient.BaseAddress or use an absolute request URI.");
         }
 
         private static AWSSigV4Parameters BuildParameters(AWSCredentials credentials, RegionEndpoint region, string service)
@@ -172,16 +198,37 @@ namespace Amazon.Runtime.Signing
             return parameters;
         }
 
+        // The body is only needed when the signer will hash it: payload signing is on and the caller hasn't
+        // already supplied a hash. Otherwise (UNSIGNED-PAYLOAD, or a precomputed hash) the body is never read,
+        // which is what keeps a large or streaming upload from being buffered.
+        private static bool MustHashBody(HttpRequestMessage request, AWSSigV4Parameters parameters)
+        {
+            return parameters.SignPayload && !HasContentSha256Header(request) && request.Content != null;
+        }
+
+        private static AWSSigningRequest NewSigningRequest(HttpRequestMessage request, byte[] body)
+        {
+            // Drop a security-token header left over from an earlier signing pass before collecting headers.
+            // On a re-signed retry the credentials may have changed from short-term to long-term; if the stale
+            // token stayed on the request it would be collected into the signing request, signed, and echoed
+            // back in the result even though the current credentials carry no token. Removing it here means the
+            // token is present only when the current pass's credentials re-add it.
+            request.Headers.Remove(HeaderKeys.XAmzSecurityTokenHeader);
+
+            var signingRequest = new AWSSigningRequest
+            {
+                HttpMethod = request.Method,
+                RequestUri = request.RequestUri,
+                Content = body,
+            };
+            CollectHeaders(request, signingRequest.Headers);
+            return signingRequest;
+        }
+
         private static async Task<AWSSigningRequest> BuildSigningRequestAsync(HttpRequestMessage request, AWSSigV4Parameters parameters, CancellationToken cancellationToken)
         {
-            // The body is only needed when the signer will hash it: payload signing is on and the caller
-            // hasn't already supplied a hash. Otherwise (UNSIGNED-PAYLOAD, or a precomputed hash) the body is
-            // never read, which is what keeps a large or streaming upload from being buffered.
-            var hasPrecomputedHash = HasContentSha256Header(request);
-            var mustHashBody = parameters.SignPayload && !hasPrecomputedHash && request.Content != null;
-
             byte[] body = null;
-            if (mustHashBody)
+            if (MustHashBody(request, parameters))
             {
                 cancellationToken.ThrowIfCancellationRequested();
                 // Reading the content here to hash it also buffers it internally: HttpContent loads its body
@@ -195,20 +242,33 @@ namespace Amazon.Runtime.Signing
 #endif
             }
 
-            var signingRequest = new AWSSigningRequest
-            {
-                HttpMethod = request.Method,
-                RequestUri = request.RequestUri,
-                Content = body,
-            };
-            CollectHeaders(request, signingRequest.Headers);
-            return signingRequest;
+            return NewSigningRequest(request, body);
         }
+
+#if NET5_0_OR_GREATER
+        private static AWSSigningRequest BuildSigningRequest(HttpRequestMessage request, AWSSigV4Parameters parameters, CancellationToken cancellationToken)
+        {
+            byte[] body = null;
+            if (MustHashBody(request, parameters))
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                // ReadAsByteArrayAsync buffers the content in memory (so it survives a retry resend) and, once
+                // buffered, completes synchronously — the same read the async path uses. The BCL exposes no
+                // fully synchronous buffering primitive, so block on it here to keep the sync send genuinely
+                // synchronous end to end.
+                body = request.Content.ReadAsByteArrayAsync(cancellationToken).GetAwaiter().GetResult();
+            }
+
+            return NewSigningRequest(request, body);
+        }
+#endif
 
         // Flatten the request and content headers into the single-value-per-name shape AWSSigningRequest
         // expects, adding them to its (case-insensitive, get-only) Headers collection. A multi-valued header
         // is joined with commas, each value trimmed, per the SigV4 canonical form documented on
-        // AWSSigningRequest.Headers.
+        // AWSSigningRequest.Headers. When the same header name appears on both the request and the content,
+        // HttpClient sends both values (request first, then content) as one comma-joined line, so the
+        // signature must cover that same combined value rather than only the content value.
         private static void CollectHeaders(HttpRequestMessage request, IDictionary<string, string> headers)
         {
             foreach (var header in request.Headers)
@@ -217,7 +277,12 @@ namespace Amazon.Runtime.Signing
             if (request.Content != null)
             {
                 foreach (var header in request.Content.Headers)
-                    headers[header.Key] = JoinValues(header.Value);
+                {
+                    var contentValue = JoinValues(header.Value);
+                    headers[header.Key] = headers.TryGetValue(header.Key, out var requestValue)
+                        ? requestValue + "," + contentValue
+                        : contentValue;
+                }
             }
         }
 

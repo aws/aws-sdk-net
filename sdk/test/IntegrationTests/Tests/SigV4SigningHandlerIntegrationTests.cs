@@ -36,7 +36,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     /// in a form-encoded body, so the same operation exercises both the no-body and body-hashing paths.
     /// </summary>
     [Trait("Category", "SigV4Signer")]
-    [Collection("Serial")]
     public class SigV4SigningHandlerIntegrationTests
     {
         private const string StsService = "sts";
@@ -92,6 +91,36 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     "application/x-www-form-urlencoded");
 
                 using (var response = await client.PostAsync(StsEndpoint(), content))
+                {
+                    var body = await response.Content.ReadAsStringAsync();
+                    Assert.True(response.StatusCode == HttpStatusCode.OK, $"STS returned {(int)response.StatusCode}: {body}");
+                    Assert.Contains("<Arn>", body);
+                }
+            }
+        }
+
+        [Fact]
+        [Trait("Category", "SigV4Signer")]
+        public async Task Post_WithSameHeaderOnRequestAndContent_SucceedsAgainstSts()
+        {
+            // A header set on both the request and the content goes on the wire as two lines (request value
+            // first, then content value), which SigV4 canonicalizes as one comma-joined value in that order.
+            // The handler must sign that same combined value. STS includes the header in SignedHeaders and
+            // recomputes the signature over the value it received, so a wrong combination (or order) is
+            // rejected with a 403 SignatureDoesNotMatch — making a 200 here proof the combination is correct
+            // end-to-end.
+            using (var client = NewSignedClient())
+            {
+                var content = new StringContent(
+                    "Action=GetCallerIdentity&Version=2011-06-15",
+                    Encoding.UTF8,
+                    "application/x-www-form-urlencoded");
+                content.Headers.TryAddWithoutValidation("x-custom", "content-value");
+
+                var request = new HttpRequestMessage(HttpMethod.Post, StsEndpoint()) { Content = content };
+                request.Headers.TryAddWithoutValidation("x-custom", "request-value");
+
+                using (var response = await client.SendAsync(request))
                 {
                     var body = await response.Content.ReadAsStringAsync();
                     Assert.True(response.StatusCode == HttpStatusCode.OK, $"STS returned {(int)response.StatusCode}: {body}");
