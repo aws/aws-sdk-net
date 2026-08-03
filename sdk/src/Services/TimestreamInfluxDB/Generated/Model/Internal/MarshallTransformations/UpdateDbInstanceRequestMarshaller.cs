@@ -81,6 +81,22 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.AllocatedStorage.Value);
             }
 
+            if(publicRequest.IsSetDbBackupConfigurations())
+            {
+                context.Writer.WritePropertyName("dbBackupConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDbBackupConfigurationsListValue in publicRequest.DbBackupConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DbBackupConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDbBackupConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDbInstanceType())
             {
                 context.Writer.WritePropertyName("dbInstanceType");

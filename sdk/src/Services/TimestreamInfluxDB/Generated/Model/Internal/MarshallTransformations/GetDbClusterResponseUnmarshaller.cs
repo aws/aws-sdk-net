@@ -70,6 +70,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     response.ClusterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("dbBackupConfigurations", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DbBackupConfigurationOutput, DbBackupConfigurationOutputUnmarshaller>(DbBackupConfigurationOutputUnmarshaller.Instance);
+                    response.DbBackupConfigurations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("dbInstanceType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.InfluxAuthParametersSecretArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("kmsKeyId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastMaintenanceTime", targetDepth, ref reader))

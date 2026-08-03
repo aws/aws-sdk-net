@@ -37,11 +37,13 @@ namespace Amazon.TimestreamInfluxDB.Model
     {
         private int? _allocatedStorage;
         private string _bucket;
+        private List<DbBackupConfiguration> _dbBackupConfigurations = AWSConfigs.InitializeCollections ? new List<DbBackupConfiguration>() : null;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
         private DbStorageType _dbStorageType;
         private ClusterDeploymentType _deploymentType;
         private FailoverMode _failoverMode;
+        private string _kmsKeyId;
         private LogDeliveryConfiguration _logDeliveryConfiguration;
         private MaintenanceSchedule _maintenanceSchedule;
         private string _name;
@@ -93,6 +95,30 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetBucket()
         {
             return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbBackupConfigurations. 
+        /// <para>
+        /// A list of backup configurations to enable automated backups for the DB cluster.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<DbBackupConfiguration> DbBackupConfigurations
+        {
+            get { return this._dbBackupConfigurations; }
+            set { this._dbBackupConfigurations = value; }
+        }
+
+        // Check to see if DbBackupConfigurations property is set
+        internal bool IsSetDbBackupConfigurations()
+        {
+            return this._dbBackupConfigurations != null && (this._dbBackupConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,6 +231,26 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetFailoverMode()
         {
             return this._failoverMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The Amazon Web Services KMS key identifier to use for encryption of the DB cluster.
+        /// Can be a key ID, key ARN, alias name, or alias ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

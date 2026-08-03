@@ -37,6 +37,14 @@ namespace Amazon.TimestreamInfluxDB.Model
         }
 
         /// <summary>
+        /// Paginator for ListDbBackups operation
+        ///</summary>
+        public IListDbBackupsPaginator ListDbBackups(ListDbBackupsRequest request) 
+        {
+            return new ListDbBackupsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDbClusters operation
         ///</summary>
         public IListDbClustersPaginator ListDbClusters(ListDbClustersRequest request) 

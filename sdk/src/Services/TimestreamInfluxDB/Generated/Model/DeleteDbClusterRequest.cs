@@ -36,6 +36,7 @@ namespace Amazon.TimestreamInfluxDB.Model
     public partial class DeleteDbClusterRequest : AmazonTimestreamInfluxDBRequest
     {
         private string _dbClusterId;
+        private bool? _retainAutomatedBackups;
 
         /// <summary>
         /// Gets and sets the property DbClusterId. 
@@ -54,6 +55,25 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetDbClusterId()
         {
             return this._dbClusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetainAutomatedBackups. 
+        /// <para>
+        /// Specifies whether to retain automated backups after the DB cluster is deleted. If
+        /// set to true, automated backups are not deleted and can be restored later.
+        /// </para>
+        /// </summary>
+        public bool? RetainAutomatedBackups
+        {
+            get { return this._retainAutomatedBackups; }
+            set { this._retainAutomatedBackups = value; }
+        }
+
+        // Check to see if RetainAutomatedBackups property is set
+        internal bool IsSetRetainAutomatedBackups()
+        {
+            return this._retainAutomatedBackups.HasValue; 
         }
 
     }
