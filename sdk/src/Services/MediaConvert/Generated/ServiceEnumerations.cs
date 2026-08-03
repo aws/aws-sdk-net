@@ -22387,6 +22387,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly S3StorageClass GLACIER = new S3StorageClass("GLACIER");
         /// <summary>
+        /// Constant GLACIER_IR for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER_IR = new S3StorageClass("GLACIER_IR");
+        /// <summary>
         /// Constant INTELLIGENT_TIERING for S3StorageClass
         /// </summary>
         public static readonly S3StorageClass INTELLIGENT_TIERING = new S3StorageClass("INTELLIGENT_TIERING");
