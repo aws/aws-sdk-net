@@ -58,6 +58,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private Attachment _attachment;
         private Dictionary<string, PerObjectStatus> _config = AWSConfigs.InitializeCollections ? new Dictionary<string, PerObjectStatus>() : null;
+        private List<NatGatewayAttachment> _natGatewayAttachments = AWSConfigs.InitializeCollections ? new List<NatGatewayAttachment>() : null;
 
         /// <summary>
         /// Gets and sets the property Attachment. 
@@ -104,6 +105,31 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetConfig()
         {
             return this._config != null && (this._config.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NatGatewayAttachments. 
+        /// <para>
+        /// The status of the NAT gateway attachments for a proxy mode firewall in the Availability
+        /// Zone. This reflects the attachment of the firewall to each NAT gateway that proxies
+        /// its traffic. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<NatGatewayAttachment> NatGatewayAttachments
+        {
+            get { return this._natGatewayAttachments; }
+            set { this._natGatewayAttachments = value; }
+        }
+
+        // Check to see if NatGatewayAttachments property is set
+        internal bool IsSetNatGatewayAttachments()
+        {
+            return this._natGatewayAttachments != null && (this._natGatewayAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

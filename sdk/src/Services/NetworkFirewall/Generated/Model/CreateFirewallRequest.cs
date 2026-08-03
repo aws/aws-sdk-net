@@ -77,10 +77,14 @@ namespace Amazon.NetworkFirewall.Model
         private string _firewallName;
         private string _firewallPolicyArn;
         private bool? _firewallPolicyChangeProtection;
+        private List<NatGatewayMapping> _natGatewayMappings = AWSConfigs.InitializeCollections ? new List<NatGatewayMapping>() : null;
+        private bool? _noSourcePreservation;
+        private ProxySettings _proxySettings;
         private bool? _subnetChangeProtection;
         private List<SubnetMapping> _subnetMappings = AWSConfigs.InitializeCollections ? new List<SubnetMapping>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _transitGatewayId;
+        private VpcEndpoint _vpcEndpoint;
         private string _vpcId;
 
         /// <summary>
@@ -283,6 +287,85 @@ namespace Amazon.NetworkFirewall.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NatGatewayMappings. 
+        /// <para>
+        /// The NAT gateways that the firewall uses to proxy traffic when <c>NoSourcePreservation</c>
+        /// is <c>TRUE</c>. Network Firewall attaches the firewall to each NAT gateway that you
+        /// specify, so that egress traffic is proxied through the NAT gateway. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<NatGatewayMapping> NatGatewayMappings
+        {
+            get { return this._natGatewayMappings; }
+            set { this._natGatewayMappings = value; }
+        }
+
+        // Check to see if NatGatewayMappings property is set
+        internal bool IsSetNatGatewayMappings()
+        {
+            return this._natGatewayMappings != null && (this._natGatewayMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NoSourcePreservation. 
+        /// <para>
+        /// Optional. Indicates whether the firewall operates in proxy mode, in which the source
+        /// IP address of the traffic is not preserved. When set to <c>TRUE</c>, the firewall
+        /// proxies traffic through a NAT gateway and the traffic reaching the destination uses
+        /// the NAT gateway's IP address as the source. 
+        /// </para>
+        ///  
+        /// <para>
+        /// When you set this to <c>TRUE</c>, you must specify <c>NatGatewayMappings</c> and <c>VpcEndpoint</c>
+        /// instead of a top-level <c>VpcId</c> and <c>SubnetMappings</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can't change this setting after you create the firewall. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>FALSE</c> 
+        /// </para>
+        /// </summary>
+        public bool? NoSourcePreservation
+        {
+            get { return this._noSourcePreservation; }
+            set { this._noSourcePreservation = value; }
+        }
+
+        // Check to see if NoSourcePreservation property is set
+        internal bool IsSetNoSourcePreservation()
+        {
+            return this._noSourcePreservation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProxySettings. 
+        /// <para>
+        /// The listener configuration for a proxy mode firewall, used when <c>NoSourcePreservation</c>
+        /// is <c>TRUE</c>. This specifies the ports and protocols on which the firewall's proxy
+        /// listens for traffic. 
+        /// </para>
+        /// </summary>
+        public ProxySettings ProxySettings
+        {
+            get { return this._proxySettings; }
+            set { this._proxySettings = value; }
+        }
+
+        // Check to see if ProxySettings property is set
+        internal bool IsSetProxySettings()
+        {
+            return this._proxySettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubnetChangeProtection. 
         /// <para>
         /// A setting indicating whether the firewall is protected against changes to the subnet
@@ -383,6 +466,31 @@ namespace Amazon.NetworkFirewall.Model
         internal bool IsSetTransitGatewayId()
         {
             return this._transitGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpoint. 
+        /// <para>
+        /// The VPC and subnets for the firewall endpoint, used when <c>NoSourcePreservation</c>
+        /// is <c>TRUE</c>. Network Firewall creates the firewall endpoint in the subnets that
+        /// you specify here. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For proxy mode firewalls, provide the firewall's VPC and endpoint subnets through
+        /// this parameter instead of the top-level <c>VpcId</c> and <c>SubnetMappings</c>. 
+        /// </para>
+        /// </summary>
+        public VpcEndpoint VpcEndpoint
+        {
+            get { return this._vpcEndpoint; }
+            set { this._vpcEndpoint = value; }
+        }
+
+        // Check to see if VpcEndpoint property is set
+        internal bool IsSetVpcEndpoint()
+        {
+            return this._vpcEndpoint != null;
         }
 
         /// <summary>

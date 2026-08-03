@@ -835,6 +835,68 @@ namespace Amazon.NetworkFirewall
 
 
     /// <summary>
+    /// Constants used for properties of type NatGatewayAttachmentStatus.
+    /// </summary>
+    public class NatGatewayAttachmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATING for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus CREATING = new NatGatewayAttachmentStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus DELETING = new NatGatewayAttachmentStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus FAILED = new NatGatewayAttachmentStatus("FAILED");
+        /// <summary>
+        /// Constant READY for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus READY = new NatGatewayAttachmentStatus("READY");
+        /// <summary>
+        /// Constant UPDATING for NatGatewayAttachmentStatus
+        /// </summary>
+        public static readonly NatGatewayAttachmentStatus UPDATING = new NatGatewayAttachmentStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NatGatewayAttachmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NatGatewayAttachmentStatus FindValue(string value)
+        {
+            return FindValue<NatGatewayAttachmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NatGatewayAttachmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OverrideAction.
     /// </summary>
     public class OverrideAction : ConstantClass
