@@ -1,3 +1,19 @@
+### 4.0.303.0 (2026-08-03 18:35 UTC)
+* DirectConnect (4.0.101.0)
+	* Added route visibility support for AWS Direct Connect, allowing customers to call ListVirtualInterfaceRoutes to view the BGP routes including AS path and BGP communities advertised over their virtual interfaces.
+* EKSAuth (4.0.101.0)
+	* Added eksNodeName, instanceId, and zone optional parameters to the AssumeRoleForPodIdentity API.
+* MediaConvert (4.0.102.0)
+	* Updates Kantar server URL validation to accept Fifty5Blue domain. Adds support for output to S3 Glacier Instant Retrieval.
+* NetworkFirewall (4.0.104.0)
+	* This launch allows customers to use Network Firewall as an explicit Proxy and protect their workloads against threat of data exfiltration.
+* ObservabilityAdmin (4.0.103.0)
+	* Launch CMK support for Telemetry Enablement Organization and Account Rules.
+* TimestreamInfluxDB (4.0.102.0)
+	* This release adds support for customer-managed backup restore, and encryption of new DbInstances and DbClusters using customer-managed KMS keys.
+* WAFV2 (4.0.101.1)
+	* Updated descriptions for number of PreParseTextTransformations allowed per rule statement
+
 ### 4.0.302.0 (2026-07-31 18:13 UTC)
 * BedrockRuntime (4.0.101.0)
 	* Added support for mid-conversation tool changes in the Amazon Bedrock Converse and ConverseStream APIs
