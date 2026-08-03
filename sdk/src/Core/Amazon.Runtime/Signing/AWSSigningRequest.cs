@@ -35,9 +35,20 @@ namespace Amazon.Runtime.Signing
         /// The full request URI, including any query string.
         /// </summary>
         /// <remarks>
-        /// If an S3 object key contains a '+', encode it as "%2B" in the path. S3 treats a raw '+' in the path
-        /// as a space, so — for example — the key <c>beach+sunset.jpg</c> must be requested as
-        /// <c>/beach%2Bsunset.jpg</c>; a raw '+' signs a different key and S3 rejects the signature.
+        /// <para>
+        /// A '+' is interpreted differently in the path than in the query, so it is the one character
+        /// callers must encode deliberately:
+        /// </para>
+        /// <para>
+        /// <b>Path</b> — a '+' is a literal '+' to this signer, but S3 reads a raw '+' in a key as a space.
+        /// So an S3 key containing a '+' must be percent-encoded as "%2B": the key
+        /// <c>beach+sunset.jpg</c> must be requested as <c>/beach%2Bsunset.jpg</c>. A raw '+' signs a
+        /// different key and S3 rejects the signature.
+        /// </para>
+        /// <para>
+        /// <b>Query</b> — the opposite: a '+' in a query value is decoded to a space. So "?q=a+b" signs
+        /// the same as "?q=a%20b"; to sign a literal '+' in a query value, encode it as "%2B" ("?q=a%2Bb").
+        /// </para>
         /// </remarks>
         public Uri RequestUri { get; set; }
 

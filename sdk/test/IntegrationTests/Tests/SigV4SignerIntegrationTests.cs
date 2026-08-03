@@ -41,7 +41,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
     /// return the object. Each S3 test creates and deletes its own bucket so the tests are self-contained.
     /// </summary>
     [Trait("Category", "SigV4Signer")]
-    [Collection("Serial")]
     public class SigV4SignerIntegrationTests
     {
         private const string StsService = "sts";
