@@ -20,8 +20,7 @@ namespace SDKDocGenerator
             "AWSSDK.Extensions.CrtIntegration.dll",
             "AWSSDK.Extensions.NETCore.Setup.dll",
             "AWSSDK.Extensions.CloudFront.Signers.dll",
-            "AWSSDK.Extensions.EC2.DecryptPassword.dll",
-            "AWSSDK.Extensions.Bedrock.MEAI"
+            "AWSSDK.Extensions.EC2.DecryptPassword.dll"
         };
 
         public GeneratorOptions Options { get; private set; }

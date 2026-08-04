@@ -44,7 +44,7 @@ public sealed class SdkVersionManifest
     [JsonPropertyName("ServiceVersions")]
     public IReadOnlyDictionary<string, ServiceVersion> ServiceVersions { get; init; } = new Dictionary<string, ServiceVersion>();
 
-    /// <summary>Per-extension version entries (e.g. "Extensions.Bedrock.MEAI"), same shape as service entries.</summary>
+    /// <summary>Per-extension version entries (e.g. "Extensions.CborProtocol"), same shape as service entries.</summary>
     [JsonPropertyName("ExtensionVersions")]
     public IReadOnlyDictionary<string, ServiceVersion> ExtensionVersions { get; init; } = new Dictionary<string, ServiceVersion>();
 
