@@ -469,7 +469,7 @@ namespace Amazon.Runtime.Signing
 
         #region Validation
 
-        // Return parameters whose Region is set, falling back to the ambient region (env var, profile, IMDS)
+        // Return parameters whose Region is set, falling back to the ambient region via FallbackRegionFactory
         // when the caller left it null — matching how the service clients resolve a missing region. The
         // caller's object is never mutated; a shallow copy carries the resolved region. Throws only when no
         // region can be determined at all.
@@ -481,7 +481,7 @@ namespace Amazon.Runtime.Signing
             var region = FallbackRegionFactory.GetRegionEndpoint()
                 ?? throw new ArgumentException(
                     "Region must be set. No region was supplied and none could be resolved from the environment " +
-                    "(AWS_REGION, the shared config file, or EC2 instance metadata).", nameof(parameters));
+                    "by the default region resolution chain.", nameof(parameters));
 
             return new AWSSigV4Parameters
             {
