@@ -91,14 +91,18 @@ namespace Amazon.DSQL.Model
     /// </para>
     ///  </li> </ul> </dd> <dt>dsql:RemovePeerCluster</dt> <dd> 
     /// <para>
-    /// Permission to remove peer clusters. The <i>dsql:RemovePeerCluster</i> permission uses
-    /// a wildcard ARN pattern to simplify permission management during updates.
+    /// Permission to remove peer clusters. When you list peer clusters in <c>multiRegionProperties.clusters</c>,
+    /// you need this permission for each current peer cluster that your list omits.
     /// </para>
     ///  
     /// <para>
-    /// Resources: <c>arn:aws:dsql:*:<i>account-id</i>:cluster/*</c> 
+    /// Resources:
     /// </para>
-    ///  </dd> </dl> <dl> <dt>dsql:PutWitnessRegion</dt> <dd> 
+    ///  <ul> <li> 
+    /// <para>
+    /// Each removed peer cluster: exact ARN of each removed peer cluster, in its own Region
+    /// </para>
+    ///  </li> </ul> </dd> </dl> <dl> <dt>dsql:PutWitnessRegion</dt> <dd> 
     /// <para>
     /// Permission to set a witness Region.
     /// </para>
@@ -118,18 +122,14 @@ namespace Amazon.DSQL.Model
     /// </para>
     ///  </dd> </dl> <important> <ul> <li> 
     /// <para>
-    /// The witness region specified in <c>multiRegionProperties.witnessRegion</c> cannot
+    /// The witness Region specified in <c>multiRegionProperties.witnessRegion</c> cannot
     /// be the same as the cluster's Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// When updating clusters with peer relationships, permissions are checked for both adding
-    /// and removing peers.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// The <c>dsql:RemovePeerCluster</c> permission uses a wildcard ARN pattern to simplify
-    /// permission management during updates.
+    /// When you list peer clusters in <c>multiRegionProperties.clusters</c>, you need <c>dsql:AddPeerCluster</c>
+    /// for every peer cluster in your request. You need <c>dsql:RemovePeerCluster</c> only
+    /// for the peer clusters that the update removes.
     /// </para>
     ///  </li> </ul> </important>
     /// </summary>
@@ -212,6 +212,10 @@ namespace Amazon.DSQL.Model
         /// The KMS key that encrypts and protects the data on your cluster. You can specify the
         /// ARN, ID, or alias of an existing key or have Amazon Web Services create a default
         /// key for you.
+        /// </para>
+        ///  
+        /// <para>
+        /// To switch to the key owned by Amazon Web Services, specify the reserved value <c>AWS_OWNED_KMS_KEY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
