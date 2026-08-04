@@ -42,7 +42,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementRequest.Title</property>
-    <pattern>(?s).{1,40}</pattern>
+    <pattern>(?s).{0,40}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.CreateEngagementResponse.Arn</property>
@@ -234,7 +234,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementResponse.Title</property>
-    <pattern>(?s).{1,40}</pattern>
+    <pattern>(?s).{0,40}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationRequest.Catalog</property>
@@ -258,7 +258,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.EngagementTitle</property>
-    <pattern>(?s).{1,40}</pattern>
+    <pattern>(?s).{0,40}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.GetEngagementInvitationResponse.Id</property>
@@ -1005,7 +1005,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.EngagementTitle</property>
-    <pattern>(?s).{1,40}</pattern>
+    <pattern>(?s).{0,40}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementInvitationSummary.Id</property>
@@ -1073,7 +1073,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.EngagementSummary.Title</property>
-    <pattern>(?s).{1,40}</pattern>
+    <pattern>(?s).{0,40}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.ExpectedCustomerSpend.Amount</property>
@@ -1092,12 +1092,34 @@
     <pattern>(?s).{1,255}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadAddress.City</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadAddress.CountryCode</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadAddress.PostalCode</property>
+    <min>0</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadAddress.StateOrRegion</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadContact.BusinessTitle</property>
-    <pattern>(?s).{0,80}</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadContact.Email</property>
-    <pattern>(?=.{0,80}$)[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&amp;'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?</pattern>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadContact.FirstName</property>
@@ -1109,7 +1131,8 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadContact.Phone</property>
-    <pattern>\+[1-9]\d{1,14}</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadContext.QualificationStatus</property>
@@ -1117,51 +1140,83 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadCustomer.AwsMaturity</property>
-    <pattern>(?s).{1,20}</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadCustomer.CompanyName</property>
     <pattern>(?s).{1,120}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadCustomer.Industry</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadCustomer.MarketSegment</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadCustomer.WebsiteUrl</property>
-    <pattern>(?=.{4,255}$)((http|https)://)??(www[.])??([a-zA-Z0-9]|-)+?([.][a-zA-Z0-9(-|/|=|?)??]+?)+?</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInteraction.BusinessProblem</property>
-    <pattern>(?s).{20,2000}</pattern>
+    <min>0</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInteraction.CustomerAction</property>
-    <pattern>(?s).{1,255}</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInteraction.SourceId</property>
-    <pattern>(?s).{1,255}</pattern>
+    <pattern>(?s).{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInteraction.SourceName</property>
-    <pattern>(?s).{1,255}</pattern>
+    <pattern>(?s).{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInteraction.SourceType</property>
-    <pattern>(?s).{1,255}</pattern>
+    <pattern>(?s).{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInteraction.Usecase</property>
-    <pattern>(?s).{1,255}</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationCustomer.AwsMaturity</property>
-    <pattern>(?s).{1,20}</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationCustomer.CompanyName</property>
     <pattern>(?s).{1,120}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadInvitationCustomer.CountryCode</property>
+    <min>0</min>
+    <max>10</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadInvitationCustomer.Industry</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PartnerCentralSelling.Model.LeadInvitationCustomer.MarketSegment</property>
+    <min>0</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationCustomer.WebsiteUrl</property>
-    <pattern>(?=.{4,255}$)((http|https)://)??(www[.])??([a-zA-Z0-9]|-)+?([.][a-zA-Z0-9(-|/|=|?)??]+?)+?</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationInteraction.ContactBusinessTitle</property>
@@ -1169,19 +1224,20 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationInteraction.SourceId</property>
-    <pattern>(?s).{1,255}</pattern>
+    <pattern>(?s).{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationInteraction.SourceName</property>
-    <pattern>(?s).{1,255}</pattern>
+    <pattern>(?s).{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationInteraction.SourceType</property>
-    <pattern>(?s).{1,255}</pattern>
+    <pattern>(?s).{0,255}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LeadInvitationInteraction.Usecase</property>
-    <pattern>(?s).{1,255}</pattern>
+    <min>0</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PartnerCentralSelling.Model.LifeCycle.NextSteps</property>

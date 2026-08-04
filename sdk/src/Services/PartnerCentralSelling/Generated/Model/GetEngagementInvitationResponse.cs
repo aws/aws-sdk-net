@@ -39,6 +39,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private string _engagementDescription;
         private string _engagementId;
         private string _engagementTitle;
+        private EnrichmentContext _enrichmentContext;
         private List<EngagementMemberSummary> _existingMembers = AWSConfigs.InitializeCollections ? new List<EngagementMemberSummary>() : null;
         private DateTime? _expirationDate;
         private string _id;
@@ -145,6 +146,26 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetEngagementTitle()
         {
             return this._engagementTitle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnrichmentContext. 
+        /// <para>
+        /// The enrichment data for the engagement associated with this invitation. You can view
+        /// propensity scores, program eligibility, and lead readiness assessments before taking
+        /// action on the invitation.
+        /// </para>
+        /// </summary>
+        public EnrichmentContext EnrichmentContext
+        {
+            get { return this._enrichmentContext; }
+            set { this._enrichmentContext = value; }
+        }
+
+        // Check to see if EnrichmentContext property is set
+        internal bool IsSetEnrichmentContext()
+        {
+            return this._enrichmentContext != null;
         }
 
         /// <summary>

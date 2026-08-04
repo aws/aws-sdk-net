@@ -36,18 +36,20 @@ namespace Amazon.PartnerCentralSelling.Model
     /// </summary>
     public partial class LeadCustomer
     {
-        private AddressSummary _address;
+        private LeadAddress _address;
         private string _awsMaturity;
         private string _companyName;
-        private Industry _industry;
-        private MarketSegment _marketSegment;
+        private string _industry;
+        private string _marketSegment;
         private string _websiteUrl;
 
         /// <summary>
-        /// Gets and sets the property Address.
+        /// Gets and sets the property Address. 
+        /// <para>
+        /// The address information for the lead customer.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public AddressSummary Address
+        public LeadAddress Address
         {
             get { return this._address; }
             set { this._address = value; }
@@ -66,6 +68,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// assessment helps determine the appropriate engagement approach and solution complexity.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string AwsMaturity
         {
             get { return this._awsMaturity; }
@@ -105,7 +108,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// helps in understanding the customer's business context and tailoring appropriate solutions.
         /// </para>
         /// </summary>
-        public Industry Industry
+        [AWSProperty(Min=0, Max=255)]
+        public string Industry
         {
             get { return this._industry; }
             set { this._industry = value; }
@@ -125,7 +129,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// and engagement strategies.
         /// </para>
         /// </summary>
-        public MarketSegment MarketSegment
+        [AWSProperty(Min=0, Max=255)]
+        public string MarketSegment
         {
             get { return this._marketSegment; }
             set { this._marketSegment = value; }
@@ -144,7 +149,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// the customer organization and helps verify company legitimacy and size.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string WebsiteUrl
         {
             get { return this._websiteUrl; }

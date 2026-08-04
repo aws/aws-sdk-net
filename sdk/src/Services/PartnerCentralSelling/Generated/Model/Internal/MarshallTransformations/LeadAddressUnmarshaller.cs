@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LeadCustomer Object
+    /// Response Unmarshaller for LeadAddress Object
     /// </summary>  
-    public class LeadCustomerUnmarshaller : IJsonUnmarshaller<LeadCustomer, JsonUnmarshallerContext>
+    public class LeadAddressUnmarshaller : IJsonUnmarshaller<LeadAddress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LeadCustomer Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public LeadAddress Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LeadCustomer unmarshalledObject = new LeadCustomer();
+            LeadAddress unmarshalledObject = new LeadAddress();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,40 +56,28 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Address", targetDepth, ref reader))
-                {
-                    var unmarshaller = LeadAddressUnmarshaller.Instance;
-                    unmarshalledObject.Address = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AwsMaturity", targetDepth, ref reader))
+                if (context.TestExpression("City", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsMaturity = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.City = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("CompanyName", targetDepth, ref reader))
+                if (context.TestExpression("CountryCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CompanyName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CountryCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Industry", targetDepth, ref reader))
+                if (context.TestExpression("PostalCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Industry = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("MarketSegment", targetDepth, ref reader))
+                if (context.TestExpression("StateOrRegion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MarketSegment = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("WebsiteUrl", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebsiteUrl = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.StateOrRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -97,12 +85,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         }
 
 
-        private static LeadCustomerUnmarshaller _instance = new LeadCustomerUnmarshaller();        
+        private static LeadAddressUnmarshaller _instance = new LeadAddressUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LeadCustomerUnmarshaller Instance
+        public static LeadAddressUnmarshaller Instance
         {
             get
             {

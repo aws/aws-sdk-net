@@ -3341,68 +3341,6 @@ namespace Amazon.PartnerCentralSelling
 
 
     /// <summary>
-    /// Constants used for properties of type MarketSegment.
-    /// </summary>
-    public class MarketSegment : ConstantClass
-    {
-
-        /// <summary>
-        /// Constant Enterprise for MarketSegment
-        /// </summary>
-        public static readonly MarketSegment Enterprise = new MarketSegment("Enterprise");
-        /// <summary>
-        /// Constant Large for MarketSegment
-        /// </summary>
-        public static readonly MarketSegment Large = new MarketSegment("Large");
-        /// <summary>
-        /// Constant Medium for MarketSegment
-        /// </summary>
-        public static readonly MarketSegment Medium = new MarketSegment("Medium");
-        /// <summary>
-        /// Constant Micro for MarketSegment
-        /// </summary>
-        public static readonly MarketSegment Micro = new MarketSegment("Micro");
-        /// <summary>
-        /// Constant Small for MarketSegment
-        /// </summary>
-        public static readonly MarketSegment Small = new MarketSegment("Small");
-
-        /// <summary>
-        /// This constant constructor does not need to be called if the constant
-        /// you are attempting to use is already defined as a static instance of 
-        /// this class.
-        /// This constructor should be used to construct constants that are not
-        /// defined as statics, for instance if attempting to use a feature that is
-        /// newer than the current version of the SDK.
-        /// </summary>
-        public MarketSegment(string value)
-            : base(value)
-        {
-        }
-
-        /// <summary>
-        /// Finds the constant for the unique value.
-        /// </summary>
-        /// <param name="value">The unique value for the constant</param>
-        /// <returns>The constant for the unique value</returns>
-        public static MarketSegment FindValue(string value)
-        {
-            return FindValue<MarketSegment>(value);
-        }
-
-        /// <summary>
-        /// Utility method to convert strings to the constant class.
-        /// </summary>
-        /// <param name="value">The string value to convert to the constant class.</param>
-        /// <returns></returns>
-        public static implicit operator MarketSegment(string value)
-        {
-            return FindValue(value);
-        }
-    }
-
-
-    /// <summary>
     /// Constants used for properties of type NationalSecurity.
     /// </summary>
     public class NationalSecurity : ConstantClass

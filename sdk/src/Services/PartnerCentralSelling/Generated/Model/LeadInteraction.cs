@@ -52,7 +52,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// interaction. This information helps qualify the lead and identify appropriate solutions.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2000)]
         public string BusinessProblem
         {
             get { return this._businessProblem; }
@@ -93,7 +93,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// solution.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Min=0, Max=255)]
         public string CustomerAction
         {
             get { return this._customerAction; }
@@ -132,7 +132,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// This ID provides traceability back to the original lead generation activity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceId
         {
             get { return this._sourceId; }
@@ -152,7 +151,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// a human-readable identifier for the lead generation channel or activity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceName
         {
             get { return this._sourceName; }
@@ -173,7 +171,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// effectiveness across different channels.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceType
         {
             get { return this._sourceType; }
@@ -193,6 +190,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// This helps categorize the customer's interests and potential solutions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Usecase
         {
             get { return this._usecase; }

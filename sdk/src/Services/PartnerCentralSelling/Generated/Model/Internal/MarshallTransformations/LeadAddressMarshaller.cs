@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AddressSummary Marshaller
+    /// LeadAddress Marshaller
     /// </summary>
-    public class AddressSummaryMarshaller : IRequestMarshaller<AddressSummary, JsonMarshallerContext> 
+    public class LeadAddressMarshaller : IRequestMarshaller<LeadAddress, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,7 +42,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AddressSummary requestObject, JsonMarshallerContext context)
+        public void Marshall(LeadAddress requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
@@ -75,7 +75,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AddressSummaryMarshaller Instance = new AddressSummaryMarshaller();
+        public readonly static LeadAddressMarshaller Instance = new LeadAddressMarshaller();
 
     }
 }
