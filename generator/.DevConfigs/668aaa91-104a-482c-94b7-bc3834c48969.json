@@ -1,0 +1,11 @@
+{
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix round-trip of empty filters for lifecycle configurations (https://github.com/aws/aws-sdk-net/issues/4480)"
+      ]
+    }
+  ]
+}
