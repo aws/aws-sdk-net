@@ -1,6 +1,9 @@
-﻿using Amazon.DynamoDBv2;
+﻿using Amazon;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
+using Amazon.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Moq;
 using System;
 using System.Collections.Generic;
 
@@ -12,8 +15,20 @@ namespace AWSSDK_DotNet.UnitTests
     [TestClass]
     public class TableBuilderTests
     {
-        private IAmazonDynamoDB _amazonDynamoDBClient = new AmazonDynamoDBClient();
+        private IAmazonDynamoDB _amazonDynamoDBClient;
 
+        [TestInitialize]
+        public void Setup()
+        {
+            var ddbClientMock = new Mock<IAmazonDynamoDB>(MockBehavior.Strict);
+
+            var clientConfigMock = new Mock<IClientConfig>();
+            clientConfigMock.SetupGet(c => c.RegionEndpoint).Returns((RegionEndpoint)null);
+            clientConfigMock.SetupGet(c => c.ServiceURL).Returns((string)null);
+            ddbClientMock.SetupGet(c => c.Config).Returns(clientConfigMock.Object);
+
+            _amazonDynamoDBClient = ddbClientMock.Object;
+        }
         /// <summary>
         /// Asserts that the table requires a hash key definition
         /// </summary>
@@ -312,9 +327,9 @@ namespace AWSSDK_DotNet.UnitTests
         public void AddGlobalSecondaryIndex_DuplicateHashKey_ThrowsArgumentException()
         {
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
-            
-            var hash = new List<KeyValuePair<string, DynamoDBEntryType>> 
-            { 
+
+            var hash = new List<KeyValuePair<string, DynamoDBEntryType>>
+            {
                 new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String),
                 new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String)
             };
@@ -326,10 +341,10 @@ namespace AWSSDK_DotNet.UnitTests
         public void AddGlobalSecondaryIndex_DuplicateRangeKey_ThrowsArgumentException()
         {
             var builder = new TableBuilder(_amazonDynamoDBClient, "TestTable");
-            
+
             var hash = new List<KeyValuePair<string, DynamoDBEntryType>> { new KeyValuePair<string, DynamoDBEntryType>("Id", DynamoDBEntryType.String) };
-            var range = new List<KeyValuePair<string, DynamoDBEntryType>> 
-            { 
+            var range = new List<KeyValuePair<string, DynamoDBEntryType>>
+            {
                 new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String),
                 new KeyValuePair<string, DynamoDBEntryType>("Date", DynamoDBEntryType.String)
             };

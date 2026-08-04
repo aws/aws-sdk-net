@@ -217,6 +217,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #endregion
 
+
+        #region SearchVectors
+
+        /// <summary>
+        /// Initiates a SearchVectors object to perform a vector search on a DynamoDB table, with the
+        /// specified operation request.
+        /// </summary>
+        /// <param name="operationRequest">Operation request configuration</param>
+        /// <returns>Resultant SearchVectors container.</returns>
+        ISearchVectors SearchVectors(SearchVectorsOperationRequest operationRequest);
+
+        #endregion
+
         #region BatchGet
 
         /// <summary>
@@ -2044,6 +2057,32 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         #endregion
 
+        #region SearchVectors
+
+        /// <inheritdoc/>
+        public ISearchVectors SearchVectors(SearchVectorsOperationRequest operationRequest)
+        {
+            if (operationRequest == null)
+                throw new ArgumentNullException(nameof(operationRequest));
+            if (string.IsNullOrEmpty(operationRequest.IndexName))
+                throw new ArgumentException("IndexName is required.", nameof(operationRequest));
+            if (operationRequest.SearchVector == null || operationRequest.SearchVector.Count == 0)
+                throw new ArgumentException("SearchVector is required and must contain at least one value.", nameof(operationRequest));
+
+            return new SearchVectors
+            {
+                SourceTable = this,
+                TableName = TableName,
+                IndexName = operationRequest.IndexName,
+                SearchVector = new List<float>(operationRequest.SearchVector),
+                SearchConditionExpression = operationRequest.SearchConditionExpression,
+                ProjectionExpression = operationRequest.ProjectionExpression,
+                ReturnConsumedCapacity = operationRequest.ReturnConsumedCapacity,
+                TopK = operationRequest.TopK
+            };
+        }
+
+        #endregion
 
         #region BatchGet
 

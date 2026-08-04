@@ -75,6 +75,7 @@ namespace Amazon.DynamoDBv2.Model
         private StreamSpecification _streamSpecification;
         private TableClass _tableClass;
         private string _tableName;
+        private List<VectorIndexUpdate> _vectorIndexUpdates = AWSConfigs.InitializeCollections ? new List<VectorIndexUpdate>() : null;
         private WarmThroughput _warmThroughput;
 
         /// <summary>
@@ -476,6 +477,36 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableName()
         {
             return this._tableName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIndexUpdates. 
+        /// <para>
+        /// A list of vector indexes to be added to or removed from the table. You can add or
+        /// remove one vector index for each <c>UpdateTable</c> operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// To add a vector index, specify <c>IndexName</c>, <c>VectorAttribute</c>, <c>Dimensions</c>,
+        /// <c>DistanceFunction</c>, and <c>Projection</c>. To remove a vector index, specify
+        /// only the <c>IndexName</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VectorIndexUpdate> VectorIndexUpdates
+        {
+            get { return this._vectorIndexUpdates; }
+            set { this._vectorIndexUpdates = value; }
+        }
+
+        // Check to see if VectorIndexUpdates property is set
+        internal bool IsSetVectorIndexUpdates()
+        {
+            return this._vectorIndexUpdates != null && (this._vectorIndexUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

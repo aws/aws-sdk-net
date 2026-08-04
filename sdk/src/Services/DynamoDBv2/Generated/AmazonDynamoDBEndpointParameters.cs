@@ -111,5 +111,14 @@ namespace Amazon.DynamoDBv2.Endpoints
             get { return (IEnumerable<string>)this["ResourceArnList"]; }
             set { this["ResourceArnList"] = value; } 
         }
+
+        /// <summary>
+        /// IsSearchOperation parameter
+        /// </summary>
+        public bool? IsSearchOperation 
+        { 
+            get { return (bool?)this["IsSearchOperation"]; }
+            set { this["IsSearchOperation"] = value; } 
+        }
     }
 }

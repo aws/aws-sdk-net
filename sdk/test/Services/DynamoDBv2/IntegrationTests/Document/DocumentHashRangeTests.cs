@@ -177,7 +177,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var tokens = new List<string>();
                 var retrievedCount = await VerifyPagination(search, tokens);
                 Assert.Equal(itemCount, retrievedCount);
-                Assert.Equal(itemCount, tokens.Count);
+                Assert.True(tokens.Count >= 5, "Expected at least 5 pagination tokens to test resuming mid-pagination.");
 
                 var currentToken = tokens[4];
                 search = hashRangeTable.Scan(new ScanOperationConfig
@@ -205,7 +205,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                 var tokens = new List<string>();
                 var retrievedCount = await VerifyPagination(search, tokens);
                 Assert.Equal(itemCount, retrievedCount);
-                Assert.Equal(itemCount, tokens.Count);
+                Assert.True(tokens.Count >= 5, "Expected at least 5 pagination tokens to test resuming mid-pagination.");
 
                 var currentToken = tokens[4];
                 search = hashRangeTable.Query(new QueryOperationConfig

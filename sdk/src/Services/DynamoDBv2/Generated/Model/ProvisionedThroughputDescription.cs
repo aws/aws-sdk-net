@@ -106,6 +106,11 @@ namespace Amazon.DynamoDBv2.Model
         /// than strongly consistent reads, so a setting of 50 <c>ReadCapacityUnits</c> per second
         /// provides 100 eventually consistent <c>ReadCapacityUnits</c> per second.
         /// </para>
+        ///  
+        /// <para>
+        /// For a table or global secondary index that uses on-demand capacity mode (<c>PAY_PER_REQUEST</c>),
+        /// this value is <c>0</c>, because on-demand mode does not use provisioned throughput.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
         public long? ReadCapacityUnits
@@ -124,6 +129,11 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property WriteCapacityUnits. 
         /// <para>
         /// The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a table or global secondary index that uses on-demand capacity mode (<c>PAY_PER_REQUEST</c>),
+        /// this value is <c>0</c>, because on-demand mode does not use provisioned throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

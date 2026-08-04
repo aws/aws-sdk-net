@@ -240,6 +240,53 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
+    /// Represents a request to perform a vector search in a DynamoDB table using the Document Model.
+    /// </summary>
+    public class SearchVectorsOperationRequest : DocumentOperationRequest
+    {
+        /// <summary>
+        /// Gets or sets the required query vector as a list of numeric (<c>N</c>) values.
+        /// Values must be f32-compatible and the vector length must match the index dimensions.
+        /// </summary>
+        public List<float> SearchVector { get; set; }
+
+        /// <summary>
+        /// Gets or sets the index name to query against.
+        /// </summary>
+        public string IndexName { get; set; }
+
+        /// <summary>
+        /// Gets or sets the number of top results to return from the vector search.
+        /// </summary>
+        public int TopK { get; set; }
+
+        /// <summary>
+        /// Gets or sets the filter expression specifying which items should be returned.
+        /// </summary>
+        public Expression SearchConditionExpression { get; set; }
+
+        /// <summary>
+        /// Gets or sets the projection expression specifying which attributes should be retrieved.
+        /// </summary>
+        public Expression ProjectionExpression { get; set; }
+
+
+        /// <summary>
+        /// Controls whether DynamoDB returns vector capacity consumption details for each SearchVectors request.
+        /// Defaults to NONE. Set to TOTAL or INDEXES to capture consumed capacity metrics in SearchVectors.Metrics.
+        /// </summary>
+        public ReturnConsumedCapacity ReturnConsumedCapacity { get; set; }
+
+        /// <summary>
+        /// Initializes a new <see cref="SearchVectorsOperationRequest"/> with default settings.
+        /// </summary>
+        public SearchVectorsOperationRequest()
+        {
+            ReturnConsumedCapacity = ReturnConsumedCapacity.NONE;
+        }
+    }
+
+    /// <summary>
     /// Represents a request to update an item in a DynamoDB table using the Document Model.
     /// This class introduces a modern expression-based API that replaces legacy parameter-based approaches.
     /// Legacy parameters such as AttributeUpdates, Expected are not supported.

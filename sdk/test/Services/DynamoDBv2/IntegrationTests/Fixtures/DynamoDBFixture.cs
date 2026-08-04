@@ -15,12 +15,13 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
     [Flags]
     public enum DynamoDBTestTables
     {
-        Nested             = 1,
-        Hash               = 2,
-        HashRange          = 4,
-        NumericHashRange   = 8,
-        CompositeHashRange = 16,
-        All = Nested | Hash | HashRange | NumericHashRange | CompositeHashRange
+        Nested               = 1,
+        Hash                 = 2,
+        HashRange            = 4,
+        NumericHashRange     = 8,
+        CompositeHashRange   = 16, 
+        SearchVectorsFixture = 32,
+        All = Nested | Hash | HashRange | NumericHashRange | CompositeHashRange | SearchVectorsFixture
     }
 
     public class DynamoDBFixture : IAsyncLifetime
@@ -52,11 +53,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
         public string HashRangeTableName { get; private set; }
         public string NumericHashRangeTableName { get; private set; }
         public string CompositeHashRangeTableName { get; private set; }
+        public string SearchVectorsTableName { get; private set; }
 
         public DynamoDBFixture()
         {
             _tablePrefix = "DotNetTests-" + Guid.NewGuid().ToString("N") + "-";
         }
+
+        /// <summary>
+        /// Creates the <see cref="AmazonDynamoDBClient"/> used by this fixture.
+        /// Override to target a custom endpoint (e.g. a preview/zeta service URL).
+        /// </summary>
+        protected virtual AmazonDynamoDBClient CreateClient() => new AmazonDynamoDBClient();
 
         /// <summary>
         /// Programmatically configures DynamoDB context mappings that were previously
@@ -114,7 +122,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
         {
             ConfigureDynamoDBMappings();
 
-            Client = new AmazonDynamoDBClient();
+            Client = CreateClient();
 
             if (Includes(DynamoDBTestTables.Nested))
             {
@@ -139,6 +147,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
             if (Includes(DynamoDBTestTables.CompositeHashRange))
             {
                 CompositeHashRangeTableName = _tablePrefix + "CompositeHashRangeTable";
+            }
+
+            if(Includes(DynamoDBTestTables.SearchVectorsFixture))
+            {
+                SearchVectorsTableName = _tablePrefix + "SearchVectorsTable";
             }
 
             await CreateTestTables();
@@ -208,6 +221,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
             {
                 createTasks.Add(CreateCompositeHashRangeTable());
             }
+
+            if (Includes(DynamoDBTestTables.SearchVectorsFixture))
+            {
+                createTasks.Add(CreateSearchVectorsTable());
+            }
             
             await Task.WhenAll(createTasks);
             await Task.WhenAll(ActiveTableNames().Select(EnsureTTL));
@@ -238,6 +256,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
             if (CompositeHashRangeTableName != null)
             {
                 yield return CompositeHashRangeTableName;
+            }
+
+            if (SearchVectorsTableName != null)
+            {
+                yield return SearchVectorsTableName;
             }
         }
 
@@ -435,7 +458,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
                         new KeySchemaElement("Amount", KeyType.RANGE),
                         new KeySchemaElement("Priority", KeyType.RANGE)
                     },
-                    Projection = new Projection { ProjectionType = ProjectionType.ALL }
+                    Projection = new Projection { ProjectionType = ProjectionType.ALL }                   
                 }
             };
 
@@ -453,6 +476,73 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB.Fixtures
             });
 
             await WaitForTableStatus(CompositeHashRangeTableName, TableStatus.ACTIVE);
+        }
+
+        private async Task CreateSearchVectorsTable()
+        {
+            await Client.CreateTableAsync(new CreateTableRequest
+            {
+                TableName = SearchVectorsTableName,
+                AttributeDefinitions = new List<AttributeDefinition>
+                {
+                    new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.S },
+                    new AttributeDefinition { AttributeName = "VectorHash", AttributeType = ScalarAttributeType.S },
+                    new AttributeDefinition { AttributeName = "VectorInlineFilter1", AttributeType = ScalarAttributeType.S },
+                    new AttributeDefinition { AttributeName = "VectorInlineFilter2", AttributeType = ScalarAttributeType.N }
+                },
+                KeySchema = new List<KeySchemaElement>
+                {
+                    new KeySchemaElement { AttributeName = "Id", KeyType = KeyType.HASH }
+                },
+                VectorIndexes = new List<VectorIndex>
+                {
+                    new VectorIndex
+                    {
+                        IndexName = "VectorIndex",
+                        Dimensions = 1536,
+                        VectorAttribute = new VectorAttributeDefinition { AttributeName = "VectorEmbedding" },
+                        Projection = new Projection { ProjectionType = ProjectionType.ALL },
+                        DistanceFunction = VectorDistanceFunction.COSINE,
+                        SearchSchema = new List<SearchSchemaElement>()
+                        {
+                            new SearchSchemaElement(){
+                                AttributeName = "VectorHash",
+                                SearchSchemaElementType = SearchSchemaElementType.HASH
+                            },
+                            new SearchSchemaElement(){
+                                AttributeName = "VectorInlineFilter1",
+                                SearchSchemaElementType = SearchSchemaElementType.INLINE_FILTER
+                            },
+                            new SearchSchemaElement(){
+                                AttributeName = "VectorInlineFilter2",
+                                SearchSchemaElementType = SearchSchemaElementType.INLINE_FILTER
+                            }
+                        }
+                    },
+                     new VectorIndex
+                    {
+                        IndexName = "VectorIndexNoHash",
+                        Dimensions = 1536,
+                        VectorAttribute = new VectorAttributeDefinition { AttributeName = "VectorEmbedding" },
+                        Projection = new Projection { ProjectionType = ProjectionType.ALL },
+                        DistanceFunction = VectorDistanceFunction.COSINE,
+                        SearchSchema = new List<SearchSchemaElement>()
+                        {
+                            new SearchSchemaElement(){
+                                AttributeName = "VectorInlineFilter1",
+                                SearchSchemaElementType = SearchSchemaElementType.INLINE_FILTER
+                            },
+                            new SearchSchemaElement(){
+                                AttributeName = "VectorInlineFilter2",
+                                SearchSchemaElementType = SearchSchemaElementType.INLINE_FILTER
+                            }
+                        }
+                    }
+
+                },
+                BillingMode = BillingMode.PAY_PER_REQUEST
+            });
+            await WaitForTableStatus(SearchVectorsTableName, TableStatus.ACTIVE);
         }
 
         public async Task EnsureTTL(string tableName)

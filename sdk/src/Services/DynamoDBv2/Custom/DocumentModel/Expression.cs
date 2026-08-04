@@ -109,20 +109,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
             }
 
-            if (this.ExpressionAttributeNames?.Count > 0)
-            {
-                if (request.ExpressionAttributeNames==null)
-                {
-                    request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
-                }
-                else
-                {
-                    var combinedEan= Common.Combine(request.ExpressionAttributeNames,
-                        this.ExpressionAttributeNames, StringComparer.Ordinal);
-
-                    request.ExpressionAttributeNames = combinedEan;
-                }
-            }
+            request.ExpressionAttributeNames = MergeExpressionAttributeNames(request.ExpressionAttributeNames);
         }
 
         internal void ApplyExpression(DeleteItemRequest request, Table table)
@@ -286,6 +273,56 @@ namespace Amazon.DynamoDBv2.DocumentModel
             {
                 request.ExpressionAttributeValues = attributeValues;
             }
+        }
+
+        internal void ApplySearchCondition(SearchVectorsRequest request, Table table)
+        {
+            request.SearchConditionExpression = ExpressionStatement;
+
+            if (this.ExpressionAttributeValues?.Count > 0)
+            {
+                if (request.ExpressionAttributeValues == null)
+                {
+                    request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+                }
+                else
+                {
+                    var reqEav = request.ExpressionAttributeValues;
+                    var feav = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+                    var combinedEav = Common.Combine(reqEav, feav, null);
+
+
+                    if (combinedEav?.Count > 0)
+                    {
+                        request.ExpressionAttributeValues = combinedEav;
+                    }
+                }
+            }
+
+            request.ExpressionAttributeNames = MergeExpressionAttributeNames(request.ExpressionAttributeNames);
+        }
+
+        internal void ApplyProjection(SearchVectorsRequest request, Table table)
+        {
+            request.ProjectionExpression = ExpressionStatement;
+
+            request.ExpressionAttributeNames = MergeExpressionAttributeNames(request.ExpressionAttributeNames);
+        }
+
+        private Dictionary<string, string> MergeExpressionAttributeNames(Dictionary<string, string> requestExpressionAttributeNames)
+        {
+            if (this.ExpressionAttributeNames?.Count <= 0)
+            {
+                return requestExpressionAttributeNames;
+            }
+
+            if (requestExpressionAttributeNames == null)
+            {
+                return new Dictionary<string, string>(this.ExpressionAttributeNames);
+            }
+
+            return Common.Combine(requestExpressionAttributeNames,
+                this.ExpressionAttributeNames, StringComparer.Ordinal);
         }
 
         internal static Dictionary<string, AttributeValue> ConvertToAttributeValues(

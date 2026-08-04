@@ -86,6 +86,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimeToLiveDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("VectorIndexes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<VectorIndexInfo, VectorIndexInfoUnmarshaller>(VectorIndexInfoUnmarshaller.Instance);
+                    unmarshalledObject.VectorIndexes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

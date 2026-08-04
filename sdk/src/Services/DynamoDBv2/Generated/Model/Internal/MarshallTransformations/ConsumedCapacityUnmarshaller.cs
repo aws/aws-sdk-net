@@ -92,6 +92,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("VectorIndexes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, VectorCapacity, StringUnmarshaller, VectorCapacityUnmarshaller>(StringUnmarshaller.Instance, VectorCapacityUnmarshaller.Instance);
+                    unmarshalledObject.VectorIndexes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("WriteCapacityUnits", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;

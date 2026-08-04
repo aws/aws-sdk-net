@@ -218,6 +218,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     unmarshalledObject.TableStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("VectorIndexes", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<VectorIndexDescription, VectorIndexDescriptionUnmarshaller>(VectorIndexDescriptionUnmarshaller.Instance);
+                    unmarshalledObject.VectorIndexes = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("WarmThroughput", targetDepth, ref reader))
                 {
                     var unmarshaller = TableWarmThroughputDescriptionUnmarshaller.Instance;

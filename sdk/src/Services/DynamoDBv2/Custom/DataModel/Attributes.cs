@@ -480,6 +480,54 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
+    /// DynamoDB property attribute that marks a member as a search vector associated with a vector index on a table.
+    ///
+    /// Members marked with this attribute must be of type <see cref="System.Collections.Generic.List{T}"/> of <see cref="float"/>.
+    /// </summary>
+    /// <remarks>
+    /// A member can participate in multiple vector indexes by applying this attribute once per index.
+    ///
+    /// Search vectors are only supported with <see cref="DynamoDBEntryConversion.V2"/>. Using
+    /// <see cref="DynamoDBEntryConversion.V1"/> with a search vector member is not supported and results in an
+    /// <see cref="InvalidOperationException"/> when the type is configured.
+    /// </remarks>
+    /// <example>
+    /// <code>
+    /// public class Document
+    /// {
+    ///     [DynamoDBSearchVector("VectorIndex")]
+    ///     public List&lt;float&gt; Embedding { get; set; }
+    /// }
+    /// </code>
+    /// </example>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
+    public sealed class DynamoDBSearchVectorAttribute : DynamoDBPropertyAttribute
+    {
+        /// <summary>
+        /// Name of the vector index this search vector belongs to.
+        /// </summary>
+        public string IndexName { get; private set; }
+
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public DynamoDBSearchVectorAttribute()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies the vector index this search vector belongs to.
+        /// </summary>
+        /// <param name="indexName">Name of the vector index this search vector belongs to.</param>
+        public DynamoDBSearchVectorAttribute(string indexName)
+            : base()
+        {
+            IndexName = indexName;
+        }
+    }
+
+    /// <summary>
     /// DynamoDB property that marks up current member as a hash key element.
     /// Exactly one member in a class must be marked with this attribute.
     /// 

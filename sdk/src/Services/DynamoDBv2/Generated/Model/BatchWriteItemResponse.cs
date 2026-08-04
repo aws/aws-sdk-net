@@ -55,7 +55,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         ///  <c>CapacityUnits</c> - The total number of capacity units consumed.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// If the table has vector indexes, each element also includes a <c>VectorIndexes</c>
+        /// field with <c>VectorWriteRequestBytes</c> consumed for each affected vector index.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

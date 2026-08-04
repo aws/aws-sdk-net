@@ -173,6 +173,21 @@ namespace Amazon.DynamoDBv2.DataModel
             );
         }
 
+        internal static void ValidateSearchVectorType(Type memberType)
+        {
+            if (memberType.IsGenericType &&
+                memberType.GetGenericTypeDefinition() == typeof(List<>) &&
+                memberType.GetGenericArguments()[0] == typeof(float))
+            {
+                return;
+            }
+            throw new InvalidOperationException(
+                $"Search vector properties must be of type List<float>. " +
+                $"Invalid type: {memberType.FullName}. " +
+                "Please ensure your property is declared as 'List<float>'."
+            );
+        }
+
         [return: DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.PublicConstructors)]
         internal static Type GetPrimitiveElementType(Type collectionType)
         {

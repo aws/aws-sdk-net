@@ -620,6 +620,11 @@ namespace Amazon.DynamoDBv2.DataModel
         internal T FromDocumentHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Document document, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            return FromDocumentHelper<T>(document, storageConfig, flatConfig);
+        }
+
+        internal T FromDocumentHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(Document document, ItemStorageConfig storageConfig, DynamoDBFlatConfig flatConfig)
+        {
             ItemStorage storage = new ItemStorage(storageConfig);
             storage.Document = document;
             T instance = DocumentToObject<T>(storage, flatConfig);
@@ -655,10 +660,21 @@ namespace Amazon.DynamoDBv2.DataModel
 
         internal IEnumerable<T> FromDocumentsHelper<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<Document> documents, DynamoDBFlatConfig flatConfig)
         {
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
             foreach (var document in documents)
             {
-                T item = FromDocumentHelper<T>(document, flatConfig);
+                T item = FromDocumentHelper<T>(document, storageConfig, flatConfig);
                 yield return item;
+            }
+        }
+
+        internal IEnumerable<SearchVectorsItem<T>> DocumentSearchVectorsItem<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(IEnumerable<DocumentSearchVectorsItem> documentSearchVectorsItems, DynamoDBFlatConfig flatConfig)
+        {
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            foreach (var documentSearchVectorsItem in documentSearchVectorsItems)
+            {
+                T item = FromDocumentHelper<T>(documentSearchVectorsItem.Document, storageConfig, flatConfig);
+                yield return new SearchVectorsItem<T>(item, documentSearchVectorsItem.Score);
             }
         }
 

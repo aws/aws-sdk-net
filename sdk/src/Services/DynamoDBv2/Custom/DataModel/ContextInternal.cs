@@ -1527,6 +1527,32 @@ namespace Amazon.DynamoDBv2.DataModel
             cs.Search.Reset();
         }
 
+        //Search Vectors
+        internal class ContextSearchVectors
+        {
+            public DynamoDBFlatConfig FlatConfig { get; set; }
+            public SearchVectors SearchVectors { get; set; }
+
+            public ContextSearchVectors(SearchVectors searchVectors, DynamoDBFlatConfig flatConfig)
+            {
+                SearchVectors = searchVectors;
+                FlatConfig = flatConfig;
+            }
+        }
+
+        private IEnumerable<SearchVectorsItem<T>> FromSearchVectors<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextSearchVectors csv)
+        {
+            if (csv == null) throw new ArgumentNullException(nameof(csv));
+
+            ItemStorageConfig storageConfig = StorageConfigCache.GetConfig<T>(csv.FlatConfig);
+
+            foreach (var element in csv.SearchVectors.GetHelper())
+            {
+                T instance = FromDocumentHelper<T>(element.Document, storageConfig, csv.FlatConfig);
+                yield return new SearchVectorsItem<T>(instance, element.Score);
+            }
+        }
+
         #endregion
 
         #region Scan/Query
@@ -2005,7 +2031,173 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region SearchVectors
+
+
+        internal ContextSearchVectors ConvertSearchVectors<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(SearchVectorsOperationRequest searchVectorsOperationRequest, DynamoDBOperationConfig operationConfig)
+        {
+            if (searchVectorsOperationRequest == null)
+                throw new ArgumentNullException(nameof(searchVectorsOperationRequest));
+            if (searchVectorsOperationRequest.SearchVector == null || searchVectorsOperationRequest.SearchVector.Count == 0)
+                throw new ArgumentException("Search vector cannot be null or empty.", nameof(searchVectorsOperationRequest));
+            if (searchVectorsOperationRequest.TopK <= 0)
+                throw new ArgumentOutOfRangeException(nameof(SearchVectorsOperationRequest.TopK), "TopK must be greater than 0.");
+
+            var (table, flatConfig) = GetTableAndFlatConfig<T>(operationConfig);
+
+            var storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            var resolvedIndexName = GetSearchVectorIndexName(searchVectorsOperationRequest.IndexName, storageConfig);
+            if (string.IsNullOrEmpty(resolvedIndexName))
+                throw new ArgumentException("IndexName must be specified for SearchVectors.", nameof(searchVectorsOperationRequest));
+
+            var operationRequest = new SearchVectorsOperationRequest
+            {
+                SearchVector = searchVectorsOperationRequest.SearchVector,
+                IndexName = resolvedIndexName,
+                TopK = searchVectorsOperationRequest.TopK,
+                SearchConditionExpression = searchVectorsOperationRequest.SearchConditionExpression,
+                ProjectionExpression = searchVectorsOperationRequest.ProjectionExpression,
+                ReturnConsumedCapacity = searchVectorsOperationRequest.ReturnConsumedCapacity
+            };
+
+            var search = (SearchVectors)table.SearchVectors(operationRequest);
+            return new ContextSearchVectors(search, flatConfig);
+        }
+
+        internal ContextSearchVectors ConvertSearchVectors<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(List<float> vector, int topk, DynamoDBOperationConfig operationConfig)
+        {
+            if (vector == null || vector.Count == 0)
+            {
+                throw new ArgumentException("Search vector cannot be null or empty.", nameof(vector));
+            }
+
+            if (topk <= 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(topk), "TopK must be greater than 0.");
+            }
+
+            if (operationConfig == null)
+                throw new ArgumentNullException(nameof(operationConfig));
+
+            var (table, flatConfig) = GetTableAndFlatConfig<T>(operationConfig);
+
+            var storageConfig = StorageConfigCache.GetConfig<T>(flatConfig);
+            var resolvedIndexName = GetSearchVectorIndexName(flatConfig.IndexName, storageConfig);
+            if (string.IsNullOrEmpty(resolvedIndexName))
+                throw new ArgumentException("IndexName must be specified for SearchVectors.", nameof(operationConfig));
+
+            var searchConditionExpression = operationConfig?.Expression?.Filter != null ? 
+                ComposeSearchConditionExpression(operationConfig.Expression.Filter, storageConfig, flatConfig) : null;
+
+            var operationRequest = new SearchVectorsOperationRequest
+            {
+                SearchVector = vector,
+                IndexName = resolvedIndexName,
+                SearchConditionExpression = searchConditionExpression,
+                TopK = topk
+            };
+
+            SearchVectors search = table.SearchVectors(operationRequest) as SearchVectors;
+            return new ContextSearchVectors(search, flatConfig);
+        }
+
+        /// <summary>
+        /// Reconciles the index name specified on the request/config with the search vector index names
+        /// declared on the model via <see cref="DynamoDBSearchVectorAttribute"/>.
+        /// If the model declares exactly one index and none is specified, that index is inferred.
+        /// If a specified index does not match the model's declared index(es), an exception is thrown locally.
+        /// When the model declares no search vector index, the specified value is used as-is.
+        /// </summary>
+        private static string GetSearchVectorIndexName(string specifiedIndexName, ItemStorageConfig storageConfig)
+        {
+            var indexNames = storageConfig.IndexNameToSearchVectorPropertiesMapping;
+
+            // Model declares no search vector index; nothing to reconcile, use the specified value as-is.
+            if (indexNames.Count == 0)
+                return specifiedIndexName;
+
+            if (string.IsNullOrEmpty(specifiedIndexName))
+            {
+                if (indexNames.Count == 1)
+                    return indexNames.Keys.First();
+
+                throw new InvalidOperationException(
+                    "Multiple search vector indexes are declared on the model. Specify IndexName explicitly for SearchVectors.");
+            }
+
+            // A specified index that matches one of the declared indexes is accepted.
+            if (indexNames.ContainsKey(specifiedIndexName))
+                return specifiedIndexName;
+
+            // A specified index that does not match the model's declared index(es) is rejected locally.
+            if (indexNames.Count == 1)
+                throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                    "Specified index name {0} does not match with inferred index name {1}", specifiedIndexName, indexNames.Keys.First()));
+
+            throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                "Specified index name {0} does not match any search vector index declared on the model.", specifiedIndexName));
+        }
+
+        private AsyncSearchVectors<T> FromSearchVectorsAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(ContextSearchVectors contextSearchVectors)
+        {
+            return new AsyncSearchVectors<T>(this, contextSearchVectors);
+        }
+
+        #endregion
+
         #region Expression Building
+
+        private DocumentModel.Expression ComposeSearchConditionExpression(Expression filterExpression, ItemStorageConfig storageConfig,
+            DynamoDBFlatConfig flatConfig)
+        {
+            if (filterExpression == null) return new DocumentModel.Expression();
+
+            ValidateSearchConditionNodes(filterExpression);
+
+            var expression = ComposeExpression(filterExpression, storageConfig, flatConfig);
+
+            // Enforce the top-level-only requirement. The shared translator supports nested document
+            // paths (e.g. "#C0.#C1") and collection indexing (e.g. "#C0[0]"), but search conditions
+            // only allow top-level attribute equality. Flattened properties (e.g. e.Nested.FlatProp1
+            // where Nested is [DynamoDBFlatten]) collapse to a single top-level attribute token and are
+            // therefore permitted; genuine nested member paths are rejected here.
+            if (expression.ExpressionStatement != null &&
+                (expression.ExpressionStatement.IndexOf('.') >= 0 || expression.ExpressionStatement.IndexOf('[') >= 0))
+            {
+                throw new InvalidOperationException(
+                    "Search condition only supports top-level property equality conditions.");
+            }
+
+            return expression;
+        }
+
+        private static void ValidateSearchConditionNodes(Expression expression)
+        {
+            switch (expression)
+            {
+                case LambdaExpression lambda:
+                    ValidateSearchConditionNodes(lambda.Body);
+                    break;
+
+                case BinaryExpression binary when binary.NodeType == ExpressionType.AndAlso:
+                    ValidateSearchConditionNodes(binary.Left);
+                    ValidateSearchConditionNodes(binary.Right);
+                    break;
+
+                case BinaryExpression binary when binary.NodeType == ExpressionType.Equal:
+                    if (!ContextExpressionsUtils.IsMember(binary.Left) &&
+                        !ContextExpressionsUtils.IsMember(binary.Right))
+                    {
+                        throw new InvalidOperationException(
+                            "Search condition requires a top-level member equality comparison.");
+                    }
+                    break;
+
+                default:
+                    throw new InvalidOperationException(
+                        "Search condition only supports '=' comparisons joined by 'AND'.");
+            }
+        }
 
         private DocumentModel.Expression ComposeExpression(Expression filterExpression, ItemStorageConfig storageConfig,
             DynamoDBFlatConfig flatConfig)
@@ -2401,10 +2593,14 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         private PropertyStorage ResolveNestedPropertyStorage(StorageConfig rootConfig, DynamoDBFlatConfig flatConfig,
-            List<PathNode> path, Queue<string> namesNodeNames)
+            List<PathNode> path, Queue<string> namesNodeNames, out string formattedExpression)
         {
             StorageConfig currentConfig = rootConfig;
             PropertyStorage propertyStorage = null;
+            // Format tokens are accumulated per enqueued name so the resulting expression contains
+            // exactly one '#n' placeholder for every name in namesNodeNames. Flattened properties
+            // collapse multiple path segments into a single top-level attribute (single token).
+            var formatTokens = new List<string>(path.Count);
             for (int i = 0; i < path.Count; i++)
             {
                 var pathNode = path[i];
@@ -2413,6 +2609,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (pathNode.IsMap)
                 {
                     namesNodeNames.Enqueue(pathNode.Path);
+                    formatTokens.Add(pathNode.FormattedPath);
                     continue;
                 }
 
@@ -2424,8 +2621,18 @@ namespace Amazon.DynamoDBv2.DataModel
                 {
                     throw new InvalidOperationException($"Property '{pathNode.Path}' is marked as ignored and cannot be used in a filter expression.");
                 }
+                
+                if (propertyStorage.ShouldFlattenChildProperties && i < path.Count - 1)
+                {
+                    propertyStorage = ResolveFlattenedPropertyStorage(propertyStorage, path, i + 1, namesNodeNames);
+                    // The flattened tail resolves to a single top-level attribute name.
+                    formatTokens.Add(ExpressionFormatConstants.Name);
+                    // The flattened path has been fully consumed by the helper.
+                    break;
+                }
 
                 namesNodeNames.Enqueue(propertyStorage.AttributeName);
+                formatTokens.Add(pathNode.FormattedPath);
                 // If not the last segment, descend into the nested StorageConfig
                 if (i >= path.Count - 1) continue;
 
@@ -2459,10 +2666,49 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
                 elementType ??= propertyType;
 
-                ItemStorageConfig config = StorageConfigCache.GetConfig(elementType, flatConfig);
+                ItemStorageConfig config = StorageConfigCache.GetConfig(elementType, flatConfig, conversionOnly: true);
                 currentConfig = config.BaseTypeStorageConfig;
             }
 
+            formattedExpression = string.Join(".", formatTokens);
+            return propertyStorage;
+        }
+
+       private PropertyStorage ResolveFlattenedPropertyStorage(PropertyStorage flatteningProperty,
+            List<PathNode> path, int startIndex, Queue<string> namesNodeNames)
+        {
+            var currentProperty = flatteningProperty;
+            PropertyStorage propertyStorage = null;
+
+            for (int i = startIndex; i < path.Count; i++)
+            {
+                var pathNode = path[i];
+                if (pathNode.IsMap || pathNode.IndexDepth != 0)
+                {
+                    throw new InvalidOperationException($"Property '{pathNode.Path}' is not a valid flattened property segment.");
+                }
+
+                propertyStorage = currentProperty.FlattenProperties
+                    .FirstOrDefault(p => string.Equals(p.PropertyName, pathNode.Path, StringComparison.Ordinal));
+
+                if (propertyStorage == null)
+                    throw new InvalidOperationException($"Property '{pathNode.Path}' not found in storage config.");
+
+                if (propertyStorage.IsIgnored)
+                {
+                    throw new InvalidOperationException($"Property '{pathNode.Path}' is marked as ignored and cannot be used in a filter expression.");
+                }
+
+                if (i < path.Count - 1)
+                {
+                    if (!propertyStorage.ShouldFlattenChildProperties)
+                        throw new InvalidOperationException($"Property '{pathNode.Path}' is not a complex type.");
+
+                    currentProperty = propertyStorage;
+                }
+            }
+
+            namesNodeNames.Enqueue(propertyStorage.AttributeName);
             return propertyStorage;
         }
 
@@ -2492,12 +2738,14 @@ namespace Amazon.DynamoDBv2.DataModel
             {
                 throw new InvalidOperationException("Expected a valid property path in the expression.");
             }
-            var namesNode = new ExpressionNode()
-            {
-                FormatedExpression = string.Join(".", path.Select(pn => pn.FormattedPath))
-            };
+            var namesNode = new ExpressionNode();
 
-            var propertyStorage = ResolveNestedPropertyStorage(storageConfig.BaseTypeStorageConfig, flatConfig, path, namesNode.Names);
+            // The formatted expression is built by the resolver so that flattened properties,
+            // which collapse multiple path segments into a single top-level attribute, emit exactly
+            // one '#n' placeholder per enqueued name.
+            var propertyStorage = ResolveNestedPropertyStorage(storageConfig.BaseTypeStorageConfig, flatConfig, path,
+                namesNode.Names, out var formattedExpression);
+            namesNode.FormatedExpression = formattedExpression;
             node.Children.Enqueue(namesNode);
 
             return propertyStorage;

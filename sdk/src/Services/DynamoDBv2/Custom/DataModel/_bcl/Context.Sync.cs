@@ -499,6 +499,36 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region SearchVectors
+
+        /// <inheritdoc/>
+        public IEnumerable<SearchVectorsItem<T>> SearchVectors<T>(List<float> vector, int topK, SearchVectorsConfig vectorsSearchConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(SearchVectors)))
+            {
+                if (vector == null)
+                    throw new ArgumentNullException(nameof(vector));
+                if (vectorsSearchConfig == null)
+                    throw new ArgumentNullException(nameof(vectorsSearchConfig));
+                var contextSearchVectors = ConvertSearchVectors<T>(vector, topK, vectorsSearchConfig?.ToDynamoDBOperationConfig());
+                return FromSearchVectors<T>(contextSearchVectors);
+            }
+        }
+
+        /// <inheritdoc/>
+        public IEnumerable<SearchVectorsItem<T>> FromSearchVectors<T>(SearchVectorsOperationRequest searchVectorsOperationRequest, FromSearchVectorsConfig fromSearchVectorsConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(FromSearchVectors)))
+            {
+                if (searchVectorsOperationRequest == null) throw new ArgumentNullException(nameof(searchVectorsOperationRequest));
+                if (fromSearchVectorsConfig == null) throw new ArgumentNullException(nameof(fromSearchVectorsConfig));
+                var searchVectors = ConvertSearchVectors<T>(searchVectorsOperationRequest, fromSearchVectorsConfig?.ToDynamoDBOperationConfig());
+                return FromSearchVectors<T>(searchVectors);
+            }
+        }
+
+        #endregion
+
         #region Table methods
 
         /// <inheritdoc/>

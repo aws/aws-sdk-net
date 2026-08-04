@@ -44,6 +44,7 @@ namespace Amazon.DynamoDBv2.Model
         private double? _readCapacityUnits;
         private Capacity _table;
         private string _tableName;
+        private Dictionary<string, VectorCapacity> _vectorIndexes = AWSConfigs.InitializeCollections ? new Dictionary<string, VectorCapacity>() : null;
         private double? _writeCapacityUnits;
 
         /// <summary>
@@ -165,6 +166,31 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableName()
         {
             return this._tableName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIndexes. 
+        /// <para>
+        /// The amount of throughput consumed on each vector index affected by the operation.
+        /// Each entry contains <c>VectorWriteRequestBytes</c> (for write operations) or <c>VectorSearchRequestBytes</c>
+        /// (for search operations).
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, VectorCapacity> VectorIndexes
+        {
+            get { return this._vectorIndexes; }
+            set { this._vectorIndexes = value; }
+        }
+
+        // Check to see if VectorIndexes property is set
+        internal bool IsSetVectorIndexes()
+        {
+            return this._vectorIndexes != null && (this._vectorIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
