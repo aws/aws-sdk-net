@@ -40,10 +40,6 @@ namespace Amazon.Runtime.Signing
     /// <see cref="SignPayloadOptionKey"/>.
     /// </para>
     /// <para>
-    /// Credentials are resolved on every send (not captured at construction), so a rotating credential
-    /// source such as SSO, assume-role, or IMDS always signs with current credentials.
-    /// </para>
-    /// <para>
     /// <b>Important — disable automatic redirects.</b> The primary/inner handler must set
     /// <c>AllowAutoRedirect = false</c>. An auto-followed redirect is handled by the transport below this
     /// handler, so it is never re-signed: a cross-host redirect has its Authorization header stripped by the
@@ -93,26 +89,40 @@ namespace Amazon.Runtime.Signing
         /// <param name="credentials">The credentials to sign with; resolved on every send.</param>
         /// <param name="region">The default signing region.</param>
         /// <param name="service">The default signing service name, e.g. "execute-api".</param>
-        public SigV4SigningHandler(AWSCredentials credentials, RegionEndpoint region, string service)
-            : this(BuildParameters(credentials, region, service))
+        /// <param name="innerHandler">
+        /// The inner handler that sends the signed request. When null, a default transport handler is used.
+        /// </param>
+        public SigV4SigningHandler(AWSCredentials credentials, RegionEndpoint region, string service, HttpMessageHandler innerHandler = null)
+            : this(BuildParameters(credentials, region, service), innerHandler)
         {
         }
 
         /// <summary>
-        /// Creates a handler from a set of default signing parameters. <see cref="AWSSigV4Parameters.Credentials"/>
-        /// is resolved on every send. Leave <see cref="AWSSigV4Parameters.SignedAt"/> unset so each request is
-        /// signed with a current timestamp.
+        /// Creates a handler from a set of default signing parameters. Leave
+        /// <see cref="AWSSigV4Parameters.SignedAt"/> unset so each request is signed with a current timestamp.
         /// </summary>
         /// <param name="parameters">The default signing parameters.</param>
-        public SigV4SigningHandler(AWSSigV4Parameters parameters)
+        /// <param name="innerHandler">
+        /// The inner handler that sends the signed request. When null, a default transport handler is used.
+        /// </param>
+        public SigV4SigningHandler(AWSSigV4Parameters parameters, HttpMessageHandler innerHandler = null)
+            : base(innerHandler ?? CreateDefaultInnerHandler())
         {
             _parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
-            if (_parameters.Credentials == null)
-                throw new ArgumentException("Credentials must be set.", nameof(parameters));
-            if (_parameters.Region == null)
-                throw new ArgumentException("Region must be set.", nameof(parameters));
             if (string.IsNullOrEmpty(_parameters.Service))
                 throw new ArgumentException("Service must be set.", nameof(parameters));
+        }
+
+        // The inner handler must not auto-follow redirects: a followed redirect is replayed below this handler
+        // (unsigned for the new host) and would be rejected, so the default transport disables it. On .NET Core
+        // 2.1+ SocketsHttpHandler is the modern transport; earlier targets have only HttpClientHandler.
+        private static HttpMessageHandler CreateDefaultInnerHandler()
+        {
+#if NETCOREAPP3_1_OR_GREATER
+            return new SocketsHttpHandler { AllowAutoRedirect = false };
+#else
+            return new HttpClientHandler { AllowAutoRedirect = false };
+#endif
         }
 
         /// <summary>

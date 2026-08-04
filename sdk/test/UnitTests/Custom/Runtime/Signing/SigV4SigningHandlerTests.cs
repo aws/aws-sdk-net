@@ -352,12 +352,28 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
-        public void Constructor_MissingRequiredParameters_Throws()
+        public void Constructor_NullParameters_Throws()
         {
             Assert.ThrowsExactly<ArgumentNullException>(() => new SigV4SigningHandler((AWSSigV4Parameters)null));
-            Assert.ThrowsExactly<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Region = Region, Service = Service }));
-            Assert.ThrowsExactly<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Service = Service }));
-            Assert.ThrowsExactly<ArgumentException>(() => new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Region = Region }));
+        }
+
+        [TestMethod]
+        public void Constructor_MissingService_Throws()
+        {
+            // Service has no ambient fallback, so it must be supplied at construction.
+            Assert.ThrowsExactly<ArgumentException>(() => new SigV4SigningHandler(
+                new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Region = Region }));
+        }
+
+        [TestMethod]
+        public void Constructor_MissingRegionOrCredentials_DoesNotThrow()
+        {
+            // Region and Credentials are resolved from the environment at send time, so their absence is not a
+            // construction-time error (unlike Service).
+            using (new SigV4SigningHandler(new AWSSigV4Parameters { Region = Region, Service = Service }))
+            using (new SigV4SigningHandler(new AWSSigV4Parameters { Credentials = new BasicAWSCredentials(AccessKey, SecretKey), Service = Service }))
+            {
+            }
         }
 
         [TestMethod]

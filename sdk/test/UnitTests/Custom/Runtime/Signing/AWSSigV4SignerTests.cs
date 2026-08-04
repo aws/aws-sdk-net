@@ -915,8 +915,9 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
-        public void Sign_MissingRegion_Throws()
+        public void Sign_MissingRegion_FallsBackToAmbientRegion()
         {
+            // A null Region is not an error: it resolves from the environment like the service clients do.
             var request = new AWSSigningRequest
             {
                 HttpMethod = HttpMethod.Get,
@@ -925,7 +926,22 @@ namespace AWSSDK.UnitTests.Signing
             var parameters = BaseParameters();
             parameters.Region = null;
 
-            AssertThrows<ArgumentException>(() => AWSSigV4Signer.Sign(request, parameters));
+            var original = Environment.GetEnvironmentVariable(EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION);
+            try
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, "us-west-2");
+                FallbackRegionFactory.Reset();
+
+                var result = AWSSigV4Signer.Sign(request, parameters);
+
+                // The ambient region flows into the credential scope of the Authorization header.
+                StringAssert.Contains(result.Headers[HeaderKeys.AuthorizationHeader], "/us-west-2/");
+            }
+            finally
+            {
+                Environment.SetEnvironmentVariable(EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, original);
+                FallbackRegionFactory.Reset();
+            }
         }
 
         // -----------------------------------------------------------------------

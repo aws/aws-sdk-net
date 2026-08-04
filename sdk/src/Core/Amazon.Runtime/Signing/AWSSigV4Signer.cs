@@ -19,6 +19,7 @@ using System.Globalization;
 using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
+using Amazon.Runtime.Credentials;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Util;
@@ -55,7 +56,8 @@ namespace Amazon.Runtime.Signing
         public static AWSSigningResult Sign(AWSSigningRequest request, AWSSigV4Parameters parameters)
         {
             ValidateArguments(request, parameters, presign: false);
-            var credentials = parameters.Credentials.GetCredentials();
+            parameters = ResolveRegion(parameters);
+            var credentials = ResolveCredentials(parameters).GetCredentials();
             return SignInternal(request, parameters, credentials);
         }
 
@@ -67,7 +69,8 @@ namespace Amazon.Runtime.Signing
         {
             cancellationToken.ThrowIfCancellationRequested();
             ValidateArguments(request, parameters, presign: false);
-            var credentials = await parameters.Credentials.GetCredentialsAsync().ConfigureAwait(false);
+            parameters = ResolveRegion(parameters);
+            var credentials = await ResolveCredentials(parameters).GetCredentialsAsync().ConfigureAwait(false);
             cancellationToken.ThrowIfCancellationRequested();
             return SignInternal(request, parameters, credentials);
         }
@@ -79,7 +82,8 @@ namespace Amazon.Runtime.Signing
         {
             ValidateArguments(request, parameters, presign: true);
             ValidateExpiry(expiry);
-            var credentials = ResolveForPresign(parameters.Credentials, expiry);
+            parameters = ResolveRegion(parameters);
+            var credentials = ResolveForPresign(ResolveCredentials(parameters), expiry);
             return PresignInternal(request, parameters, expiry, credentials);
         }
 
@@ -92,7 +96,8 @@ namespace Amazon.Runtime.Signing
             cancellationToken.ThrowIfCancellationRequested();
             ValidateArguments(request, parameters, presign: true);
             ValidateExpiry(expiry);
-            var credentials = await ResolveForPresignAsync(parameters.Credentials, expiry).ConfigureAwait(false);
+            parameters = ResolveRegion(parameters);
+            var credentials = await ResolveForPresignAsync(ResolveCredentials(parameters), expiry).ConfigureAwait(false);
             cancellationToken.ThrowIfCancellationRequested();
             return PresignInternal(request, parameters, expiry, credentials);
         }
@@ -464,6 +469,42 @@ namespace Amazon.Runtime.Signing
 
         #region Validation
 
+        // Return parameters whose Region is set, falling back to the ambient region (env var, profile, IMDS)
+        // when the caller left it null — matching how the service clients resolve a missing region. The
+        // caller's object is never mutated; a shallow copy carries the resolved region. Throws only when no
+        // region can be determined at all.
+        private static AWSSigV4Parameters ResolveRegion(AWSSigV4Parameters parameters)
+        {
+            if (parameters.Region != null)
+                return parameters;
+
+            var region = FallbackRegionFactory.GetRegionEndpoint()
+                ?? throw new ArgumentException(
+                    "Region must be set. No region was supplied and none could be resolved from the environment " +
+                    "(AWS_REGION, the shared config file, or EC2 instance metadata).", nameof(parameters));
+
+            return new AWSSigV4Parameters
+            {
+                Credentials = parameters.Credentials,
+                Region = region,
+                Service = parameters.Service,
+                SignPayload = parameters.SignPayload,
+                SignedAt = parameters.SignedAt,
+            };
+        }
+
+        // Return the credentials to sign with, falling back to the default credential resolution chain when the
+        // caller left them null — matching how the service clients resolve missing credentials. Throws only
+        // when no credentials can be determined at all.
+        private static AWSCredentials ResolveCredentials(AWSSigV4Parameters parameters)
+        {
+            return parameters.Credentials
+                ?? DefaultAWSCredentialsIdentityResolver.GetCredentials()
+                ?? throw new ArgumentException(
+                    "Credentials must be set. No credentials were supplied and none could be resolved from the " +
+                    "environment (the default AWS credential resolution chain).", nameof(parameters));
+        }
+
         private static void ValidateArguments(AWSSigningRequest request, AWSSigV4Parameters parameters, bool presign)
         {
             if (request == null)
@@ -476,12 +517,12 @@ namespace Amazon.Runtime.Signing
                 throw new ArgumentException("RequestUri must be set.", nameof(request));
             if (!request.RequestUri.IsAbsoluteUri)
                 throw new ArgumentException("RequestUri must be an absolute URI.", nameof(request));
-            if (parameters.Region == null)
-                throw new ArgumentException("Region must be set.", nameof(parameters));
             if (string.IsNullOrEmpty(parameters.Service))
                 throw new ArgumentException("Service must be set.", nameof(parameters));
-            if (parameters.Credentials == null)
-                throw new ArgumentException("Credentials must be set.", nameof(parameters));
+            // Region and Credentials are intentionally not validated here: when unset they are resolved from
+            // the environment (FallbackRegionFactory / DefaultAWSCredentialsIdentityResolver), matching the
+            // behavior of our other libraries. Resolution — and the error when it too comes up empty — happens
+            // in ResolveRegion / the credential resolution path.
 
             var hasPrecomputedHash = TryGetContentSha256Header(request.Headers, out _);
 
