@@ -3460,15 +3460,6 @@
             },
             "InPreview"               : false
         },
-        "Extensions.Bedrock.MEAI" : {
-            "Version" : "4.0.101.7",
-            "AssemblyVersionOverride" : "4.0",
-            "Dependencies"            : {
-                "Core" : "4.0.100.9",
-                "BedrockRuntime" : "4.0.100.7"
-            },
-            "InPreview"               : false
-        },
         "Extensions.CborProtocol" : {
             "Version" : "4.0.100.7",
             "AssemblyVersionOverride" : "4.0",
