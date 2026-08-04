@@ -1,3 +1,27 @@
+### 4.0.304.0 (2026-08-04 21:04 UTC)
+* Connect (4.0.106.0)
+	* Amazon Connect Customer now supports up to 50 attachments per email, increased from the previous limit of 10. The individual maximum attachment size limit of 20 MB and the total email size limit of 25 MB still hold true.
+* DSQL (4.0.101.5)
+	* UpdateCluster now checks the RemovePeerCluster permission on the specific cluster being removed, not a wildcard and docs now clarify how to set kmsEncryptionKey so the cluster uses the AWS-owned key.
+* DynamoDBv2 (4.0.103.0)
+	* Vector indexes are a type of index in Amazon DynamoDB that enable similarity search on vector embedding stored in your table items. Vector indexes use approximate nearest neighbor search to find items whose vectors are most similar to a query vector that you provide.
+* EC2 (4.0.108.0)
+	* Amazon EC2 now supports Application Status Checks, a new status check that monitors your application's health through configurable HTTP(S) paths and ports, so you can detect and automatically respond to application-level impairments.
+* IdentityManagement (4.0.102.0)
+	* Updating endpoint generation logic
+* Inspector2 (4.0.105.0)
+	* Adding Azure SBOM export capability.
+* Organizations (4.0.100.9)
+	* Improved accuracy of CloudTrail event documentation for AWS Organizations membership operations.
+* PartnerCentralSelling (4.0.102.0)
+	* Partners can now create leads with only 5 required fields and free-text values for all other fields, reducing import friction. Engagement invitations now include enrichment data (propensity scores, lead readiness) directly in the response.
+* S3 (4.0.101.7)
+	* Fix round-trip of empty filters for lifecycle configurations (https://github.com/aws/aws-sdk-net/issues/4480)
+* SSOAdmin (4.0.102.0)
+	* AWS IAM Identity Center now lets you create organization-level instances without enabling multi-account permissions. You can enable multi-account permissions during instance creation or later via console or API, which then provisions the necessary service-linked roles.
+* WorkSpaces (4.0.101.0)
+	* Added ClientExperiencePolicy to ClientProperties object for ModifyClientProperties and DescribeClientProperties APIs.
+
 ### 4.0.303.0 (2026-08-03 18:35 UTC)
 * DirectConnect (4.0.101.0)
 	* Added route visibility support for AWS Direct Connect, allowing customers to call ListVirtualInterfaceRoutes to view the BGP routes including AS path and BGP communities advertised over their virtual interfaces.
