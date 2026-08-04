@@ -33,12 +33,33 @@ namespace Amazon.SSOAdmin.Model
     /// Container for the parameters to the UpdateInstance operation.
     /// Update the details for the instance of IAM Identity Center that is owned by the Amazon
     /// Web Services account.
+    /// 
+    ///  
+    /// <para>
+    /// In a single <c>UpdateInstance</c> request, you can perform only one of the following
+    /// operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Update the encryption configuration of the instance by specifying <c>EncryptionConfiguration</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Enable permission sets for the instance by specifying <c>PermissionSetsEnabled</c>.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// A request that specifies both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
+    /// returns a <c>ValidationException</c>. To perform both operations, call <c>UpdateInstance</c>
+    /// separately for each. The two calls can be made in parallel.
+    /// </para>
     /// </summary>
     public partial class UpdateInstanceRequest : AmazonSSOAdminRequest
     {
         private EncryptionConfiguration _encryptionConfiguration;
         private string _instanceArn;
         private string _name;
+        private bool? _permissionSetsEnabled;
 
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
@@ -99,6 +120,32 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionSetsEnabled. 
+        /// <para>
+        /// Enables permission sets for this Identity Center instance. The only accepted value
+        /// is <c>true </c>. After permission sets are enabled, they cannot be disabled.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You can't set <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c> in the
+        /// same request. To configure both, make two separate <c>UpdateInstance</c> calls. These
+        /// calls can be made in parallel.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public bool? PermissionSetsEnabled
+        {
+            get { return this._permissionSetsEnabled; }
+            set { this._permissionSetsEnabled = value; }
+        }
+
+        // Check to see if PermissionSetsEnabled property is set
+        internal bool IsSetPermissionSetsEnabled()
+        {
+            return this._permissionSetsEnabled.HasValue; 
         }
 
     }

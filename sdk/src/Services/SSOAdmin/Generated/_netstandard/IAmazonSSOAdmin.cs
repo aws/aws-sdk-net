@@ -3241,6 +3241,26 @@ namespace Amazon.SSOAdmin
         /// <summary>
         /// Update the details for the instance of IAM Identity Center that is owned by the Amazon
         /// Web Services account.
+        /// 
+        ///  
+        /// <para>
+        /// In a single <c>UpdateInstance</c> request, you can perform only one of the following
+        /// operations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Update the encryption configuration of the instance by specifying <c>EncryptionConfiguration</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Enable permission sets for the instance by specifying <c>PermissionSetsEnabled</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A request that specifies both <c>EncryptionConfiguration</c> and <c>PermissionSetsEnabled</c>
+        /// returns a <c>ValidationException</c>. To perform both operations, call <c>UpdateInstance</c>
+        /// separately for each. The two calls can be made in parallel.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInstance service method.</param>
         /// <param name="cancellationToken">

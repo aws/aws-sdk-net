@@ -40,6 +40,7 @@ namespace Amazon.SSOAdmin.Model
         private string _instanceArn;
         private string _name;
         private string _ownerAccountId;
+        private bool? _permissionSetsEnabled;
         private InstanceStatus _status;
         private string _statusReason;
 
@@ -158,6 +159,24 @@ namespace Amazon.SSOAdmin.Model
         internal bool IsSetOwnerAccountId()
         {
             return this._ownerAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PermissionSetsEnabled. 
+        /// <para>
+        /// Indicates whether permission sets are enabled for this Identity Center instance.
+        /// </para>
+        /// </summary>
+        public bool? PermissionSetsEnabled
+        {
+            get { return this._permissionSetsEnabled; }
+            set { this._permissionSetsEnabled = value; }
+        }
+
+        // Check to see if PermissionSetsEnabled property is set
+        internal bool IsSetPermissionSetsEnabled()
+        {
+            return this._permissionSetsEnabled.HasValue; 
         }
 
         /// <summary>
