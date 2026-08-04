@@ -273,10 +273,10 @@ namespace Amazon.Organizations
         /// When a handshake is accepted, Organizations logs membership events in CloudTrail,
         /// available only in the management account's event history. If the account was standalone
         /// and joined a new organization, an <c>AccountJoinedOrganization</c> event is logged
-        /// with <c>joinedMethod:Invited</c> and <c>joinedTime</c> fields. If the account departed
+        /// with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> fields. If the account departed
         /// one organization and joined another, both an <c>AccountDepartedOrganization</c> event
-        /// with <c>departedMethod:Left</c> and <c>departedTime</c> and an <c>AccountJoinedOrganization</c>
-        /// event with <c>joinedMethod:Invited</c> and <c>joinedTime</c> are logged in their respective
+        /// with <c>departureMethod:LEFT</c> and <c>departureTime</c> and an <c>AccountJoinedOrganization</c>
+        /// event with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> are logged in their respective
         /// management accounts.
         /// </para>
         /// </summary>
@@ -1825,8 +1825,8 @@ namespace Amazon.Organizations
         /// <para>
         /// After the permanent termination of the account after the 90-day waiting period, Organizations
         /// logs a membership event in CloudTrail. The event is an <c>AccountDepartedOrganization</c>
-        /// event with <c>departedMethod:Cleaned</c> and <c>departedTime</c>. This event is available
-        /// only in the management account's event history.
+        /// event with <c>departureMethod:CLEANED</c> and <c>departureTime</c>. This event is
+        /// available only in the management account's event history.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseAccount service method.</param>
@@ -3688,7 +3688,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// The <c>AccountJoinedOrganization</c> event is logged in CloudTrail and is available
-        /// only in the management account's event history. This event includes <c>joinedMethod:Invited</c>
+        /// only in the management account's event history. This event includes <c>joinedMethod:INVITED</c>
         /// and <c>joinedTime</c> fields to provide context on how and when the account joined
         /// the organization.
         /// </para>
@@ -5569,8 +5569,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an organization is deleted, Organizations logs a membership event in CloudTrail.
-        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:LEFT</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         /// </summary>
@@ -14581,8 +14581,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an account leaves an organization, Organizations logs a membership event in CloudTrail.
-        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:LEFT</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         ///  <important> <ul> <li> 
@@ -23429,8 +23429,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an account is removed from an organization, Organizations logs a membership event
-        /// in CloudTrail. The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Removed</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// in CloudTrail. The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:REMOVED</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         ///  <important> <ul> <li> 
