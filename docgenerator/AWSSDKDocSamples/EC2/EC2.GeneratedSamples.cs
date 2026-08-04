@@ -93,6 +93,28 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2AssociateApplicationStatusCheck()
+        {
+            #region ec2-associate-application-status-check-1
+
+            var client = new AmazonEC2Client();
+            var response = client.AssociateApplicationStatusCheck(new AssociateApplicationStatusCheckRequest 
+            {
+                ApplicationStatusCheckId = "asc-0123456789abcdef0",
+                TargetTagAssociations = new List<CustomTagKeyValueRequestPair> {
+                    new CustomTagKeyValueRequestPair {
+                        Key = "env",
+                        Value = "prod"
+                    }
+                }
+            });
+
+            List<SuccessfulAssociationResponseObject> successfulResults = response.SuccessfulResults;
+            List<UnsuccessfulAssociationResponseObject> unsuccessfulResults = response.UnsuccessfulResults;
+
+            #endregion
+        }
+
         public void EC2AssociateDhcpOptions()
         {
             #region ec2-associate-dhcp-options-1
@@ -429,6 +451,24 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             string snapshotId = response.SnapshotId;
+
+            #endregion
+        }
+
+        public void EC2CreateApplicationStatusCheck()
+        {
+            #region ec2-create-application-status-check-1
+
+            var client = new AmazonEC2Client();
+            var response = client.CreateApplicationStatusCheck(new CreateApplicationStatusCheckRequest 
+            {
+                Aggregation = "included",
+                Path = "/health",
+                Port = 80,
+                Protocol = "http"
+            });
+
+            ApplicationStatusCheckResponseObject applicationStatusCheck = response.ApplicationStatusCheck;
 
             #endregion
         }
@@ -930,6 +970,21 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2DeleteApplicationStatusCheck()
+        {
+            #region ec2-delete-application-status-check-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DeleteApplicationStatusCheck(new DeleteApplicationStatusCheckRequest 
+            {
+                ApplicationStatusCheckId = "asc-0123456789abcdef0"
+            });
+
+            ApplicationStatusCheckResponseObject applicationStatusCheck = response.ApplicationStatusCheck;
+
+            #endregion
+        }
+
         public void EC2DeleteCustomerGateway()
         {
             #region ec2-delete-customer-gateway-1
@@ -1302,6 +1357,86 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             List<Address> addresses = response.Addresses;
+
+            #endregion
+        }
+
+        public void EC2DescribeApplicationStatus()
+        {
+            #region ec2-describe-application-status-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeApplicationStatus(new DescribeApplicationStatusRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-0123456789abcdef0"
+                }
+            });
+
+            ApplicationStatusesResponseType applicationStatuses = response.ApplicationStatuses;
+
+            #endregion
+        }
+
+        public void EC2DescribeApplicationStatus()
+        {
+            #region ec2-describe-application-status-2
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeApplicationStatus(new DescribeApplicationStatusRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "availability-zone",
+                        Values = new List<string> {
+                            "us-east-1a"
+                        }
+                    }
+                },
+                MaxResults = 10
+            });
+
+            ApplicationStatusesResponseType applicationStatuses = response.ApplicationStatuses;
+
+            #endregion
+        }
+
+        public void EC2DescribeApplicationStatusChecks()
+        {
+            #region ec2-describe-application-status-checks-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeApplicationStatusChecks(new DescribeApplicationStatusChecksRequest 
+            {
+                ApplicationStatusCheckIds = new List<string> {
+                    "asc-0123456789abcdef0"
+                }
+            });
+
+            List<ApplicationStatusCheckResponseObject> applicationStatusChecks = response.ApplicationStatusChecks;
+
+            #endregion
+        }
+
+        public void EC2DescribeApplicationStatusChecks()
+        {
+            #region ec2-describe-application-status-checks-2
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeApplicationStatusChecks(new DescribeApplicationStatusChecksRequest 
+            {
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "tag:Environment",
+                        Values = new List<string> {
+                            "Production"
+                        }
+                    }
+                },
+                MaxResults = 10
+            });
+
+            List<ApplicationStatusCheckResponseObject> applicationStatusChecks = response.ApplicationStatusChecks;
 
             #endregion
         }
@@ -2337,6 +2472,24 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2DisableApplicationStatusCheckSuppression()
+        {
+            #region ec2-disable-application-status-check-suppression-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DisableApplicationStatusCheckSuppression(new DisableApplicationStatusCheckSuppressionRequest 
+            {
+                InstanceIds = new List<string> {
+                    "i-0123456789abcdef0"
+                }
+            });
+
+            List<SuccessfulSuppressionResponseObject> successfulResults = response.SuccessfulResults;
+            List<UnsuccessfulSuppressionResponseObject> unsuccessfulResults = response.UnsuccessfulResults;
+
+            #endregion
+        }
+
         public void EC2DisableVgwRoutePropagation()
         {
             #region ec2-disable-vgw-route-propagation-1
@@ -2366,6 +2519,28 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             #endregion
         }
 
+        public void EC2DisassociateApplicationStatusCheck()
+        {
+            #region ec2-disassociate-application-status-check-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DisassociateApplicationStatusCheck(new DisassociateApplicationStatusCheckRequest 
+            {
+                ApplicationStatusCheckId = "asc-0123456789abcdef0",
+                TargetTagAssociations = new List<CustomTagKeyValueRequestPair> {
+                    new CustomTagKeyValueRequestPair {
+                        Key = "env",
+                        Value = "prod"
+                    }
+                }
+            });
+
+            List<SuccessfulAssociationResponseObject> successfulResults = response.SuccessfulResults;
+            List<UnsuccessfulAssociationResponseObject> unsuccessfulResults = response.UnsuccessfulResults;
+
+            #endregion
+        }
+
         public void EC2DisassociateIamInstanceProfile()
         {
             #region to-disassociate-an-iam-instance-profile-1529355364478
@@ -2391,6 +2566,25 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
                 AssociationId = "rtbassoc-781d0d1a"
             });
 
+
+            #endregion
+        }
+
+        public void EC2EnableApplicationStatusCheckSuppression()
+        {
+            #region ec2-enable-application-status-check-suppression-1
+
+            var client = new AmazonEC2Client();
+            var response = client.EnableApplicationStatusCheckSuppression(new EnableApplicationStatusCheckSuppressionRequest 
+            {
+                DurationSeconds = 3600,
+                InstanceIds = new List<string> {
+                    "i-0123456789abcdef0"
+                }
+            });
+
+            List<SuccessfulSuppressionResponseObject> successfulResults = response.SuccessfulResults;
+            List<UnsuccessfulSuppressionResponseObject> unsuccessfulResults = response.UnsuccessfulResults;
 
             #endregion
         }
@@ -2452,6 +2646,23 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             ResponseLaunchTemplateData launchTemplateData = response.LaunchTemplateData;
+
+            #endregion
+        }
+
+        public void EC2ModifyApplicationStatusCheck()
+        {
+            #region ec2-modify-application-status-check-1
+
+            var client = new AmazonEC2Client();
+            var response = client.ModifyApplicationStatusCheck(new ModifyApplicationStatusCheckRequest 
+            {
+                ApplicationStatusCheckId = "asc-0123456789abcdef0",
+                Path = "/healthv2",
+                Port = 8080
+            });
+
+            ApplicationStatusCheckResponseObject applicationStatusCheck = response.ApplicationStatusCheck;
 
             #endregion
         }

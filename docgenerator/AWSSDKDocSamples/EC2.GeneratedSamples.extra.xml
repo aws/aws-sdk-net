@@ -97,6 +97,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.AssociateApplicationStatusCheck(Amazon.EC2.Model.AssociateApplicationStatusCheckRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.AssociateApplicationStatusCheck(Amazon.EC2.Model.AssociateApplicationStatusCheckRequest)" />
+            <member name="T:Amazon.EC2.Model.AssociateApplicationStatusCheckRequest" />
+            <member name="T:Amazon.EC2.Model.AssociateApplicationStatusCheckResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example associates an application status check with instances matching the specified tag.
+                </para>
+                <code
+                    title="To associate an application status check with tags"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-associate-application-status-check-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.AssociateDhcpOptions(Amazon.EC2.Model.AssociateDhcpOptionsRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.AssociateDhcpOptions(Amazon.EC2.Model.AssociateDhcpOptionsRequest)" />
             <member name="T:Amazon.EC2.Model.AssociateDhcpOptionsRequest" />
@@ -434,6 +453,25 @@
                     title="To copy a snapshot"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="to-copy-a-snapshot-1472502259774" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.CreateApplicationStatusCheck(Amazon.EC2.Model.CreateApplicationStatusCheckRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.CreateApplicationStatusCheck(Amazon.EC2.Model.CreateApplicationStatusCheckRequest)" />
+            <member name="T:Amazon.EC2.Model.CreateApplicationStatusCheckRequest" />
+            <member name="T:Amazon.EC2.Model.CreateApplicationStatusCheckResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an application status check that monitors HTTP health on port 80.
+                </para>
+                <code
+                    title="To create an application status check"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-create-application-status-check-1" />
             </example>
         </value>
     </doc>
@@ -890,6 +928,25 @@
                     title="To create a VPC"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-create-vpc-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DeleteApplicationStatusCheck(Amazon.EC2.Model.DeleteApplicationStatusCheckRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DeleteApplicationStatusCheck(Amazon.EC2.Model.DeleteApplicationStatusCheckRequest)" />
+            <member name="T:Amazon.EC2.Model.DeleteApplicationStatusCheckRequest" />
+            <member name="T:Amazon.EC2.Model.DeleteApplicationStatusCheckResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example deletes the specified application status check.
+                </para>
+                <code
+                    title="To delete an application status check"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-delete-application-status-check-1" />
             </example>
         </value>
     </doc>
@@ -1366,6 +1423,82 @@
                     title="To describe your Elastic IP addresses"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-describe-addresses-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeApplicationStatus(Amazon.EC2.Model.DescribeApplicationStatusRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeApplicationStatus(Amazon.EC2.Model.DescribeApplicationStatusRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the application status for the specified instances.
+                </para>
+                <code
+                    title="To describe application status for instances"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-application-status-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeApplicationStatus(Amazon.EC2.Model.DescribeApplicationStatusRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeApplicationStatus(Amazon.EC2.Model.DescribeApplicationStatusRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example uses filters to describe application status for instances in a specific Availability Zone.
+                </para>
+                <code
+                    title="To describe application status using filters"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-application-status-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeApplicationStatusChecks(Amazon.EC2.Model.DescribeApplicationStatusChecksRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeApplicationStatusChecks(Amazon.EC2.Model.DescribeApplicationStatusChecksRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusChecksRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusChecksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes the specified application status checks.
+                </para>
+                <code
+                    title="To describe application status checks"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-application-status-checks-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeApplicationStatusChecks(Amazon.EC2.Model.DescribeApplicationStatusChecksRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeApplicationStatusChecks(Amazon.EC2.Model.DescribeApplicationStatusChecksRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusChecksRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusChecksResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example uses filters to describe application status checks with a specific tag.
+                </para>
+                <code
+                    title="To describe application status checks using filters"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-application-status-checks-2" />
             </example>
         </value>
     </doc>
@@ -2457,6 +2590,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DisableApplicationStatusCheckSuppression(Amazon.EC2.Model.DisableApplicationStatusCheckSuppressionRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DisableApplicationStatusCheckSuppression(Amazon.EC2.Model.DisableApplicationStatusCheckSuppressionRequest)" />
+            <member name="T:Amazon.EC2.Model.DisableApplicationStatusCheckSuppressionRequest" />
+            <member name="T:Amazon.EC2.Model.DisableApplicationStatusCheckSuppressionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disables application status check suppression for the specified instance, resuming normal status reporting.
+                </para>
+                <code
+                    title="To disable application status check suppression"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-disable-application-status-check-suppression-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DisableVgwRoutePropagation(Amazon.EC2.Model.DisableVgwRoutePropagationRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DisableVgwRoutePropagation(Amazon.EC2.Model.DisableVgwRoutePropagationRequest)" />
             <member name="T:Amazon.EC2.Model.DisableVgwRoutePropagationRequest" />
@@ -2495,6 +2647,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DisassociateApplicationStatusCheck(Amazon.EC2.Model.DisassociateApplicationStatusCheckRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateApplicationStatusCheck(Amazon.EC2.Model.DisassociateApplicationStatusCheckRequest)" />
+            <member name="T:Amazon.EC2.Model.DisassociateApplicationStatusCheckRequest" />
+            <member name="T:Amazon.EC2.Model.DisassociateApplicationStatusCheckResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example disassociates an application status check from instances matching the specified tag.
+                </para>
+                <code
+                    title="To disassociate an application status check from tags"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-disassociate-application-status-check-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.EC2.IAmazonEC2.DisassociateIamInstanceProfile(Amazon.EC2.Model.DisassociateIamInstanceProfileRequest)" />
             <member name="M:Amazon.EC2.AmazonEC2Client.DisassociateIamInstanceProfile(Amazon.EC2.Model.DisassociateIamInstanceProfileRequest)" />
             <member name="T:Amazon.EC2.Model.DisassociateIamInstanceProfileRequest" />
@@ -2528,6 +2699,25 @@
                     title="To disassociate a route table"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-disassociate-route-table-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.EnableApplicationStatusCheckSuppression(Amazon.EC2.Model.EnableApplicationStatusCheckSuppressionRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.EnableApplicationStatusCheckSuppression(Amazon.EC2.Model.EnableApplicationStatusCheckSuppressionRequest)" />
+            <member name="T:Amazon.EC2.Model.EnableApplicationStatusCheckSuppressionRequest" />
+            <member name="T:Amazon.EC2.Model.EnableApplicationStatusCheckSuppressionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example suppresses application status check reporting for the specified instance for one hour.
+                </para>
+                <code
+                    title="To enable application status check suppression"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-enable-application-status-check-suppression-1" />
             </example>
         </value>
     </doc>
@@ -2604,6 +2794,25 @@
                     title="To get the launch template data for an instance "
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="to-get-the-launch-template-data-for-an-instance--1529356515702" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.ModifyApplicationStatusCheck(Amazon.EC2.Model.ModifyApplicationStatusCheckRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.ModifyApplicationStatusCheck(Amazon.EC2.Model.ModifyApplicationStatusCheckRequest)" />
+            <member name="T:Amazon.EC2.Model.ModifyApplicationStatusCheckRequest" />
+            <member name="T:Amazon.EC2.Model.ModifyApplicationStatusCheckResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example modifies the port and path of an existing application status check.
+                </para>
+                <code
+                    title="To modify an application status check"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-modify-application-status-check-1" />
             </example>
         </value>
     </doc>
