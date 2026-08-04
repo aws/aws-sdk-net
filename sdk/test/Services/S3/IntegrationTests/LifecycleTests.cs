@@ -80,11 +80,33 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 return res.Configuration?.Rules?.Any(r => r.Id == "Empty-filter-test") == true ? res.Configuration : null;
             });
 
-            Assert.Equal(configuration.Rules.First().Id, "Empty-filter-test");
-            Assert.Equal(configuration.Rules.First().Expiration.Days, 30);
+            var rule = configuration.Rules.First();
+            Assert.NotNull(rule);
+            Assert.Equal(rule.Id, "Empty-filter-test");
+            Assert.Equal(rule.Expiration.Days, 30);
+            // Issue #4480: an empty <Filter/> must deserialize to a non-null Filter. If it is null,
+            // the element is dropped when the rule is re-submitted and S3 rejects it with MalformedXML.
+            Assert.NotNull(rule.Filter);
+
+            configuration.Rules.Add(new LifecycleRule
+            {
+                Id = "extra-rule",
+                Status = LifecycleRuleStatus.Enabled,
+                Filter = new LifecycleFilter
+                {
+                    LifecycleFilterPredicate = new LifecyclePrefixPredicate { Prefix = "logs/" }
+                },
+                Expiration = new LifecycleRuleExpiration { Days = 30 }
+            });
+
+            await _client.PutLifecycleConfigurationAsync(new PutLifecycleConfigurationRequest
+            {
+                BucketName = _bucketName,
+                Configuration = configuration
+            });
         }
 
-        // even if a user explicitly sets status to null we should set it to disabled so the 
+        // even if a user explicitly sets status to null we should set it to disabled so the
         // request succeeds
         [Fact]
         public async Task LifecycleNullStatusTest()

@@ -20,8 +20,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         private static void FilterCustomUnmarshall(XmlUnmarshallerContext context, LifecycleRule rule)
         {
             var predicateList = LifecycleFilterPredicateListUnmarshaller.Instance.Unmarshall(context);
-
-            if (predicateList.Count == 1)
+            if (predicateList.Count == 0)
+            {
+                // Preserve an empty <Filter/> so a Get/Put round-trip doesn't drop it (https://github.com/aws/aws-sdk-net/issues/4480).
+                rule.Filter = new LifecycleFilter();
+            }
+            else if (predicateList.Count == 1)
             {
                 rule.Filter = new LifecycleFilter()
                 {
