@@ -687,6 +687,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AggregationStatusEnum.
+    /// </summary>
+    public class AggregationStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Excluded for AggregationStatusEnum
+        /// </summary>
+        public static readonly AggregationStatusEnum Excluded = new AggregationStatusEnum("excluded");
+        /// <summary>
+        /// Constant Included for AggregationStatusEnum
+        /// </summary>
+        public static readonly AggregationStatusEnum Included = new AggregationStatusEnum("included");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AggregationStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AggregationStatusEnum FindValue(string value)
+        {
+            return FindValue<AggregationStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AggregationStatusEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AllocationState.
     /// </summary>
     public class AllocationState : ConstantClass
@@ -1223,6 +1273,134 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type ApplicationStatusCheckEnum.
+    /// </summary>
+    public class ApplicationStatusCheckEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for ApplicationStatusCheckEnum
+        /// </summary>
+        public static readonly ApplicationStatusCheckEnum Failed = new ApplicationStatusCheckEnum("failed");
+        /// <summary>
+        /// Constant Initializing for ApplicationStatusCheckEnum
+        /// </summary>
+        public static readonly ApplicationStatusCheckEnum Initializing = new ApplicationStatusCheckEnum("initializing");
+        /// <summary>
+        /// Constant InsufficientData for ApplicationStatusCheckEnum
+        /// </summary>
+        public static readonly ApplicationStatusCheckEnum InsufficientData = new ApplicationStatusCheckEnum("insufficient-data");
+        /// <summary>
+        /// Constant NotApplicable for ApplicationStatusCheckEnum
+        /// </summary>
+        public static readonly ApplicationStatusCheckEnum NotApplicable = new ApplicationStatusCheckEnum("not-applicable");
+        /// <summary>
+        /// Constant Passed for ApplicationStatusCheckEnum
+        /// </summary>
+        public static readonly ApplicationStatusCheckEnum Passed = new ApplicationStatusCheckEnum("passed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationStatusCheckEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationStatusCheckEnum FindValue(string value)
+        {
+            return FindValue<ApplicationStatusCheckEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationStatusCheckEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApplicationStatusEnum.
+    /// </summary>
+    public class ApplicationStatusEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Impaired for ApplicationStatusEnum
+        /// </summary>
+        public static readonly ApplicationStatusEnum Impaired = new ApplicationStatusEnum("impaired");
+        /// <summary>
+        /// Constant Initializing for ApplicationStatusEnum
+        /// </summary>
+        public static readonly ApplicationStatusEnum Initializing = new ApplicationStatusEnum("initializing");
+        /// <summary>
+        /// Constant InsufficientData for ApplicationStatusEnum
+        /// </summary>
+        public static readonly ApplicationStatusEnum InsufficientData = new ApplicationStatusEnum("insufficient-data");
+        /// <summary>
+        /// Constant NotApplicable for ApplicationStatusEnum
+        /// </summary>
+        public static readonly ApplicationStatusEnum NotApplicable = new ApplicationStatusEnum("not-applicable");
+        /// <summary>
+        /// Constant Ok for ApplicationStatusEnum
+        /// </summary>
+        public static readonly ApplicationStatusEnum Ok = new ApplicationStatusEnum("ok");
+        /// <summary>
+        /// Constant Suppressed for ApplicationStatusEnum
+        /// </summary>
+        public static readonly ApplicationStatusEnum Suppressed = new ApplicationStatusEnum("suppressed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicationStatusEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicationStatusEnum FindValue(string value)
+        {
+            return FindValue<ApplicationStatusEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicationStatusEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplyCancellationCharges.
     /// </summary>
     public class ApplyCancellationCharges : ConstantClass
@@ -1626,6 +1804,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssociationStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssociationTypeEnum.
+    /// </summary>
+    public class AssociationTypeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InstanceId for AssociationTypeEnum
+        /// </summary>
+        public static readonly AssociationTypeEnum InstanceId = new AssociationTypeEnum("instance-id");
+        /// <summary>
+        /// Constant Tag for AssociationTypeEnum
+        /// </summary>
+        public static readonly AssociationTypeEnum Tag = new AssociationTypeEnum("tag");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationTypeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationTypeEnum FindValue(string value)
+        {
+            return FindValue<AssociationTypeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationTypeEnum(string value)
         {
             return FindValue(value);
         }
@@ -18805,6 +19033,52 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type IpScopeEnum.
+    /// </summary>
+    public class IpScopeEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Private for IpScopeEnum
+        /// </summary>
+        public static readonly IpScopeEnum Private = new IpScopeEnum("private");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpScopeEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpScopeEnum FindValue(string value)
+        {
+            return FindValue<IpScopeEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpScopeEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpSource.
     /// </summary>
     public class IpSource : ConstantClass
@@ -18952,6 +19226,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Ipv6SupportValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type IpVersionEnum.
+    /// </summary>
+    public class IpVersionEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ipv4 for IpVersionEnum
+        /// </summary>
+        public static readonly IpVersionEnum Ipv4 = new IpVersionEnum("ipv4");
+        /// <summary>
+        /// Constant Ipv6 for IpVersionEnum
+        /// </summary>
+        public static readonly IpVersionEnum Ipv6 = new IpVersionEnum("ipv6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IpVersionEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IpVersionEnum FindValue(string value)
+        {
+            return FindValue<IpVersionEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IpVersionEnum(string value)
         {
             return FindValue(value);
         }
@@ -21753,6 +22077,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type NetworkProtocolEnum.
+    /// </summary>
+    public class NetworkProtocolEnum : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Http for NetworkProtocolEnum
+        /// </summary>
+        public static readonly NetworkProtocolEnum Http = new NetworkProtocolEnum("http");
+        /// <summary>
+        /// Constant Https for NetworkProtocolEnum
+        /// </summary>
+        public static readonly NetworkProtocolEnum Https = new NetworkProtocolEnum("https");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NetworkProtocolEnum(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NetworkProtocolEnum FindValue(string value)
+        {
+            return FindValue<NetworkProtocolEnum>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NetworkProtocolEnum(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NitroEnclavesSupport.
     /// </summary>
     public class NitroEnclavesSupport : ConstantClass
@@ -23854,6 +24228,10 @@ namespace Amazon.EC2
     public class ResourceType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ApplicationStatusCheck for ResourceType
+        /// </summary>
+        public static readonly ResourceType ApplicationStatusCheck = new ResourceType("application-status-check");
         /// <summary>
         /// Constant CapacityBlock for ResourceType
         /// </summary>

@@ -37,6 +37,16 @@
     <max>2880</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateApplicationStatusCheckRequest.InitializationGracePeriodSeconds</property>
+    <min>-1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateApplicationStatusCheckRequest.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateCapacityReservationRequest.CommitmentDuration</property>
     <min>1</min>
     <max>200000000</max>
@@ -143,6 +153,21 @@
     <property>Amazon.EC2.Model.DescribeAddressTransfersRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeApplicationStatusRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeApplicationStatusCheckAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeApplicationStatusChecksRequest.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeAwsNetworkPerformanceMetricSubscriptionsRequest.MaxResults</property>
@@ -1007,6 +1032,16 @@
     <max>36500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyApplicationStatusCheckRequest.InitializationGracePeriodSeconds</property>
+    <min>-1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyApplicationStatusCheckRequest.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.ModifyIpamPoolRequest.AllocationDefaultNetmaskLength</property>
     <min>0</min>
     <max>128</max>
@@ -1082,6 +1117,11 @@
     <property>Amazon.EC2.Model.AnalysisRouteTableRoute.CoreNetworkArn</property>
     <min>1</min>
     <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ApplicationStatusCheckResponseObject.InitializationGracePeriodSeconds</property>
+    <min>-1</min>
+    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.AssociatedRole.AssociatedRoleArn</property>

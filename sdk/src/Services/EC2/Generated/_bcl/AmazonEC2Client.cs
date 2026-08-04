@@ -1562,6 +1562,109 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  AssociateApplicationStatusCheck
+
+
+        /// <summary>
+        /// Associates an application status check with instances or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+        /// Once you create an association, health monitoring automatically begins for the specified
+        /// instances or for instances that match the specified tags. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify either <c>TargetTagAssociations</c> or <c>InstanceIds</c>, but not
+        /// both. Specifying both results in an <c>InvalidParameterCombination</c> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application status check must already exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys must not be blank.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum 50 tag associations per application status check.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DisassociateApplicationStatusCheck</c> to remove associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you associate <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>,
+        /// the application status check automatically monitors all current and future instances
+        /// that have the specified tags.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationStatusCheck service method.</param>
+        /// 
+        /// <returns>The response from the AssociateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateApplicationStatusCheck">REST API Reference for AssociateApplicationStatusCheck Operation</seealso>
+        public virtual AssociateApplicationStatusCheckResponse AssociateApplicationStatusCheck(AssociateApplicationStatusCheckRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationStatusCheckResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateApplicationStatusCheckResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Associates an application status check with instances or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+        /// Once you create an association, health monitoring automatically begins for the specified
+        /// instances or for instances that match the specified tags. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify either <c>TargetTagAssociations</c> or <c>InstanceIds</c>, but not
+        /// both. Specifying both results in an <c>InvalidParameterCombination</c> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application status check must already exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys must not be blank.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum 50 tag associations per application status check.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DisassociateApplicationStatusCheck</c> to remove associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you associate <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>,
+        /// the application status check automatically monitors all current and future instances
+        /// that have the specified tags.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateApplicationStatusCheck">REST API Reference for AssociateApplicationStatusCheck Operation</seealso>
+        public virtual Task<AssociateApplicationStatusCheckResponse> AssociateApplicationStatusCheckAsync(AssociateApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateApplicationStatusCheckResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateApplicationStatusCheckResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AssociateCapacityReservationBillingOwner
 
 
@@ -3361,8 +3464,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// BundleInstance is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>
+        /// instead. For more information about creating an Amazon EBS-backed AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
         /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
@@ -3391,8 +3494,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// BundleInstance is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>
+        /// instead. For more information about creating an Amazon EBS-backed AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
         /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
@@ -3420,6 +3523,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Cancels a bundling operation for an instance store-backed Windows instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// CancelBundleTask is no longer supported because <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html">BundleInstance</a>,
+        /// the operation it cancels, is no longer supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelBundleTask service method.</param>
         /// 
@@ -3437,6 +3547,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Cancels a bundling operation for an instance store-backed Windows instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// CancelBundleTask is no longer supported because <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html">BundleInstance</a>,
+        /// the operation it cancels, is no longer supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelBundleTask service method.</param>
         /// <param name="cancellationToken">
@@ -4657,6 +4774,123 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = CopyVolumesResponseUnmarshaller.Instance;
             
             return InvokeAsync<CopyVolumesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateApplicationStatusCheck
+
+
+        /// <summary>
+        /// Creates an application status check for monitoring the health of applications running
+        /// on your instances. You can configure the protocol, port, path, and thresholds for
+        /// the health check. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You can create a maximum of 50 application status checks per account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Health checks do not start until you associate the check with instances or tags using
+        /// <c>AssociateApplicationStatusCheck</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Timeout</c> value must be less than the <c>Interval</c> value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Path</c> must start with a forward slash (<c>/</c>). Default: <c>/</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you do not specify <c>Aggregation</c>, it defaults to <c>included</c>, which means
+        /// the check contributes to the instance-level application status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
+        /// is 2, <c>SuccessThreshold</c> is 5, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
+        /// is 300 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can tag the application status check during creation. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
+        /// your Amazon EC2 resources</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationStatusCheck service method.</param>
+        /// 
+        /// <returns>The response from the CreateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateApplicationStatusCheck">REST API Reference for CreateApplicationStatusCheck Operation</seealso>
+        public virtual CreateApplicationStatusCheckResponse CreateApplicationStatusCheck(CreateApplicationStatusCheckRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationStatusCheckResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApplicationStatusCheckResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an application status check for monitoring the health of applications running
+        /// on your instances. You can configure the protocol, port, path, and thresholds for
+        /// the health check. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You can create a maximum of 50 application status checks per account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Health checks do not start until you associate the check with instances or tags using
+        /// <c>AssociateApplicationStatusCheck</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Timeout</c> value must be less than the <c>Interval</c> value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Path</c> must start with a forward slash (<c>/</c>). Default: <c>/</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you do not specify <c>Aggregation</c>, it defaults to <c>included</c>, which means
+        /// the check contributes to the instance-level application status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
+        /// is 2, <c>SuccessThreshold</c> is 5, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
+        /// is 300 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can tag the application status check during creation. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
+        /// your Amazon EC2 resources</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateApplicationStatusCheck">REST API Reference for CreateApplicationStatusCheck Operation</seealso>
+        public virtual Task<CreateApplicationStatusCheckResponse> CreateApplicationStatusCheckAsync(CreateApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApplicationStatusCheckResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateApplicationStatusCheckResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -11611,6 +11845,67 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteApplicationStatusCheck
+
+
+        /// <summary>
+        /// Deletes an application status check. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Deleting a check automatically removes all of its associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatusChecks</c> to view existing checks before deleting.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationStatusCheck service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteApplicationStatusCheck">REST API Reference for DeleteApplicationStatusCheck Operation</seealso>
+        public virtual DeleteApplicationStatusCheckResponse DeleteApplicationStatusCheck(DeleteApplicationStatusCheckRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationStatusCheckResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApplicationStatusCheckResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an application status check. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Deleting a check automatically removes all of its associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatusChecks</c> to view existing checks before deleting.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteApplicationStatusCheck">REST API Reference for DeleteApplicationStatusCheck Operation</seealso>
+        public virtual Task<DeleteApplicationStatusCheckResponse> DeleteApplicationStatusCheckAsync(DeleteApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApplicationStatusCheckResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteApplicationStatusCheckResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCapacityManagerDataExport
 
 
@@ -17213,6 +17508,211 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DescribeApplicationStatus
+
+
+        /// <summary>
+        /// Describes the application status for the specified instances. Returns the aggregated
+        /// application health status for each instance. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The instance-level status is derived from all application status checks with the aggregation
+        /// setting set to <c>included</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatusChecks</c> to view the configuration of individual
+        /// checks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>EnableApplicationStatusCheckSuppression</c> to temporarily suppress health
+        /// check results from affecting the instance-level status.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatus service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatus">REST API Reference for DescribeApplicationStatus Operation</seealso>
+        public virtual DescribeApplicationStatusResponse DescribeApplicationStatus(DescribeApplicationStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the application status for the specified instances. Returns the aggregated
+        /// application health status for each instance. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The instance-level status is derived from all application status checks with the aggregation
+        /// setting set to <c>included</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatusChecks</c> to view the configuration of individual
+        /// checks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>EnableApplicationStatusCheckSuppression</c> to temporarily suppress health
+        /// check results from affecting the instance-level status.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatus">REST API Reference for DescribeApplicationStatus Operation</seealso>
+        public virtual Task<DescribeApplicationStatusResponse> DescribeApplicationStatusAsync(DescribeApplicationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeApplicationStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeApplicationStatusCheckAssociations
+
+
+        /// <summary>
+        /// Describes the associations for one or more application status checks. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-application-status-checks.html">Application
+        /// status checks</a>. To avoid timeouts and retrieve complete results, use the pagination
+        /// parameters.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatusCheckAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatusCheckAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusCheckAssociations">REST API Reference for DescribeApplicationStatusCheckAssociations Operation</seealso>
+        public virtual DescribeApplicationStatusCheckAssociationsResponse DescribeApplicationStatusCheckAssociations(DescribeApplicationStatusCheckAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationStatusCheckAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationStatusCheckAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationStatusCheckAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the associations for one or more application status checks. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-application-status-checks.html">Application
+        /// status checks</a>. To avoid timeouts and retrieve complete results, use the pagination
+        /// parameters.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatusCheckAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatusCheckAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusCheckAssociations">REST API Reference for DescribeApplicationStatusCheckAssociations Operation</seealso>
+        public virtual Task<DescribeApplicationStatusCheckAssociationsResponse> DescribeApplicationStatusCheckAssociationsAsync(DescribeApplicationStatusCheckAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationStatusCheckAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationStatusCheckAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeApplicationStatusCheckAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeApplicationStatusChecks
+
+
+        /// <summary>
+        /// Describes one or more application status checks. Returns configuration details for
+        /// your application status checks, including protocol, port, path, thresholds, and associations.
+        /// The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If you do not specify any application status check IDs, all checks in your account
+        /// are returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatus</c> to see the actual health status of instances.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatusChecks service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatusChecks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusChecks">REST API Reference for DescribeApplicationStatusChecks Operation</seealso>
+        public virtual DescribeApplicationStatusChecksResponse DescribeApplicationStatusChecks(DescribeApplicationStatusChecksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationStatusChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationStatusChecksResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApplicationStatusChecksResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes one or more application status checks. Returns configuration details for
+        /// your application status checks, including protocol, port, path, thresholds, and associations.
+        /// The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If you do not specify any application status check IDs, all checks in your account
+        /// are returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatus</c> to see the actual health status of instances.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatusChecks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatusChecks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusChecks">REST API Reference for DescribeApplicationStatusChecks Operation</seealso>
+        public virtual Task<DescribeApplicationStatusChecksResponse> DescribeApplicationStatusChecksAsync(DescribeApplicationStatusChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApplicationStatusChecksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApplicationStatusChecksResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeApplicationStatusChecksResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeAvailabilityZones
 
 
@@ -21139,6 +21639,12 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>Application status checks</b> - Amazon EC2 reports application-level health status
+        /// for instances, indicating whether applications running on the instance are functioning
+        /// properly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
@@ -21189,6 +21695,12 @@ namespace Amazon.EC2
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
         /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Application status checks</b> - Amazon EC2 reports application-level health status
+        /// for instances, indicating whether applications running on the instance are functioning
+        /// properly.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21250,6 +21762,12 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>Application status checks</b> - Amazon EC2 reports application-level health status
+        /// for instances, indicating whether applications running on the instance are functioning
+        /// properly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
@@ -21302,6 +21820,12 @@ namespace Amazon.EC2
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
         /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Application status checks</b> - Amazon EC2 reports application-level health status
+        /// for instances, indicating whether applications running on the instance are functioning
+        /// properly.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29582,6 +30106,51 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisableApplicationStatusCheckSuppression
+
+
+        /// <summary>
+        /// Disables suppression of application status checks for the specified instances. After
+        /// suppression is disabled, health check results resume affecting the instance-level
+        /// application status. You can specify a maximum of 100 instance IDs per request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableApplicationStatusCheckSuppression service method.</param>
+        /// 
+        /// <returns>The response from the DisableApplicationStatusCheckSuppression service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableApplicationStatusCheckSuppression">REST API Reference for DisableApplicationStatusCheckSuppression Operation</seealso>
+        public virtual DisableApplicationStatusCheckSuppressionResponse DisableApplicationStatusCheckSuppression(DisableApplicationStatusCheckSuppressionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableApplicationStatusCheckSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableApplicationStatusCheckSuppressionResponseUnmarshaller.Instance;
+
+            return Invoke<DisableApplicationStatusCheckSuppressionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables suppression of application status checks for the specified instances. After
+        /// suppression is disabled, health check results resume affecting the instance-level
+        /// application status. You can specify a maximum of 100 instance IDs per request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableApplicationStatusCheckSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableApplicationStatusCheckSuppression service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableApplicationStatusCheckSuppression">REST API Reference for DisableApplicationStatusCheckSuppression Operation</seealso>
+        public virtual Task<DisableApplicationStatusCheckSuppressionResponse> DisableApplicationStatusCheckSuppressionAsync(DisableApplicationStatusCheckSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisableApplicationStatusCheckSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableApplicationStatusCheckSuppressionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableApplicationStatusCheckSuppressionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisableAwsNetworkPerformanceMetricSubscription
 
 
@@ -30824,6 +31393,81 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DisassociateApplicationStatusCheck
+
+
+        /// <summary>
+        /// Disassociates an application status check from instances or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+        /// After disassociation, health monitoring stops for the affected instances. The following
+        /// rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify either <c>TargetTagAssociations</c> or <c>InstanceIds</c>, but not
+        /// both. Specifying both results in an <c>InvalidParameterCombination</c> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application status check must already exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys must not be blank.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationStatusCheck service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateApplicationStatusCheck">REST API Reference for DisassociateApplicationStatusCheck Operation</seealso>
+        public virtual DisassociateApplicationStatusCheckResponse DisassociateApplicationStatusCheck(DisassociateApplicationStatusCheckRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationStatusCheckResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateApplicationStatusCheckResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disassociates an application status check from instances or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+        /// After disassociation, health monitoring stops for the affected instances. The following
+        /// rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify either <c>TargetTagAssociations</c> or <c>InstanceIds</c>, but not
+        /// both. Specifying both results in an <c>InvalidParameterCombination</c> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application status check must already exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys must not be blank.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateApplicationStatusCheck">REST API Reference for DisassociateApplicationStatusCheck Operation</seealso>
+        public virtual Task<DisassociateApplicationStatusCheckResponse> DisassociateApplicationStatusCheckAsync(DisassociateApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateApplicationStatusCheckResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateApplicationStatusCheckResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DisassociateCapacityReservationBillingOwner
 
 
@@ -31851,6 +32495,83 @@ namespace Amazon.EC2
             options.ResponseUnmarshaller = EnableAllowedImagesSettingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<EnableAllowedImagesSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableApplicationStatusCheckSuppression
+
+
+        /// <summary>
+        /// Suppresses application status checks for the specified instances. While suppressed,
+        /// health checks continue to run but do not affect the instance-level application status.
+        /// The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum 100 instance IDs per request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DisableApplicationStatusCheckSuppression</c> to resume normal health check
+        /// reporting.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you do not specify <c>DurationSeconds</c>, suppression continues indefinitely until
+        /// you call <c>DisableApplicationStatusCheckSuppression</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableApplicationStatusCheckSuppression service method.</param>
+        /// 
+        /// <returns>The response from the EnableApplicationStatusCheckSuppression service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableApplicationStatusCheckSuppression">REST API Reference for EnableApplicationStatusCheckSuppression Operation</seealso>
+        public virtual EnableApplicationStatusCheckSuppressionResponse EnableApplicationStatusCheckSuppression(EnableApplicationStatusCheckSuppressionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableApplicationStatusCheckSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableApplicationStatusCheckSuppressionResponseUnmarshaller.Instance;
+
+            return Invoke<EnableApplicationStatusCheckSuppressionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Suppresses application status checks for the specified instances. While suppressed,
+        /// health checks continue to run but do not affect the instance-level application status.
+        /// The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum 100 instance IDs per request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DisableApplicationStatusCheckSuppression</c> to resume normal health check
+        /// reporting.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you do not specify <c>DurationSeconds</c>, suppression continues indefinitely until
+        /// you call <c>DisableApplicationStatusCheckSuppression</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableApplicationStatusCheckSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableApplicationStatusCheckSuppression service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableApplicationStatusCheckSuppression">REST API Reference for EnableApplicationStatusCheckSuppression Operation</seealso>
+        public virtual Task<EnableApplicationStatusCheckSuppressionResponse> EnableApplicationStatusCheckSuppressionAsync(EnableApplicationStatusCheckSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = EnableApplicationStatusCheckSuppressionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableApplicationStatusCheckSuppressionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableApplicationStatusCheckSuppressionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -37871,6 +38592,69 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ModifyApplicationStatusCheck
+
+
+        /// <summary>
+        /// Modifies an existing application status check. You can update the protocol, port,
+        /// path, thresholds, and other configuration settings. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The application status check must exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect on the next health check interval.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyApplicationStatusCheck service method.</param>
+        /// 
+        /// <returns>The response from the ModifyApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyApplicationStatusCheck">REST API Reference for ModifyApplicationStatusCheck Operation</seealso>
+        public virtual ModifyApplicationStatusCheckResponse ModifyApplicationStatusCheck(ModifyApplicationStatusCheckRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyApplicationStatusCheckResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyApplicationStatusCheckResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Modifies an existing application status check. You can update the protocol, port,
+        /// path, thresholds, and other configuration settings. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The application status check must exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect on the next health check interval.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyApplicationStatusCheck">REST API Reference for ModifyApplicationStatusCheck Operation</seealso>
+        public virtual Task<ModifyApplicationStatusCheckResponse> ModifyApplicationStatusCheckAsync(ModifyApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ModifyApplicationStatusCheckRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyApplicationStatusCheckResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ModifyApplicationStatusCheckResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ModifyAvailabilityZoneGroup
 
 
@@ -42918,7 +43702,9 @@ namespace Amazon.EC2
         /// Amazon Web Services verifies that you own the address range and are authorized to
         /// advertise it. You must ensure that the address range is registered to you and that
         /// you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the
-        /// address range. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// address range. For the Amazon Web Services GovCloud (US) Regions, authorize only ASN
+        /// 8987. For the Amazon Web Services European Sovereign Cloud, authorize ASNs 16509 and
+        /// 214101. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
         /// your own IP addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
@@ -42953,7 +43739,9 @@ namespace Amazon.EC2
         /// Amazon Web Services verifies that you own the address range and are authorized to
         /// advertise it. You must ensure that the address range is registered to you and that
         /// you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the
-        /// address range. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// address range. For the Amazon Web Services GovCloud (US) Regions, authorize only ASN
+        /// 8987. For the Amazon Web Services European Sovereign Cloud, authorize ASNs 16509 and
+        /// 214101. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
         /// your own IP addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  

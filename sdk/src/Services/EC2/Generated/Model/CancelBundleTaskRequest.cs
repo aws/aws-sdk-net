@@ -32,6 +32,13 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CancelBundleTask operation.
     /// Cancels a bundling operation for an instance store-backed Windows instance.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// CancelBundleTask is no longer supported because <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html">BundleInstance</a>,
+    /// the operation it cancels, is no longer supported.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CancelBundleTaskRequest : AmazonEC2Request
     {

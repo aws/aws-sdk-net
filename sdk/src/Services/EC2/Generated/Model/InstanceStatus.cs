@@ -30,10 +30,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the status of an instance.
+    /// Describes the status of an instance, including system status, instance status, attached
+    /// EBS status, and application status.
     /// </summary>
     public partial class InstanceStatus
     {
+        private ApplicationStatusSummary _applicationStatus;
         private EbsStatusSummary _attachedEbsStatus;
         private string _availabilityZone;
         private string _availabilityZoneId;
@@ -44,6 +46,25 @@ namespace Amazon.EC2.Model
         private string _outpostArn;
         private InstanceStatusSummary _status;
         private InstanceStatusSummary _systemStatus;
+
+        /// <summary>
+        /// Gets and sets the property ApplicationStatus. 
+        /// <para>
+        /// Reports impaired functionality that stems from issues with applications running on
+        /// the instance.
+        /// </para>
+        /// </summary>
+        public ApplicationStatusSummary ApplicationStatus
+        {
+            get { return this._applicationStatus; }
+            set { this._applicationStatus = value; }
+        }
+
+        // Check to see if ApplicationStatus property is set
+        internal bool IsSetApplicationStatus()
+        {
+            return this._applicationStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AttachedEbsStatus. 
