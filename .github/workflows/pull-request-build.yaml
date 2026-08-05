@@ -5,7 +5,7 @@ permissions: {}
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
     branches:
       - development
 
@@ -21,8 +21,25 @@ env:
 jobs:
   build-sdk-v4:
     name: build-sdk-v4
-    # Skip draft PRs and PRs from forked repos (they don't have access)
-    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
+    # Only run for PRs from the same repo (forks don't have access to the role), and either:
+    #   - a "run-build" label was just added (opts a draft into building), or
+    #   - for any other event, the PR is not a draft, or it is a draft that
+    #     already carries the "run-build" label (so labeled drafts keep building
+    #     on every push / synchronize).
+    # Requiring label.name == 'run-build' on the `labeled` action also prevents
+    # unrelated labels from starting a fresh build.
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (
+        (github.event.action == 'labeled' && github.event.label.name == 'run-build') ||
+        (
+          github.event.action != 'labeled' &&
+          (
+            github.event.pull_request.draft == false ||
+            contains(github.event.pull_request.labels.*.name, 'run-build')
+          )
+        )
+      )
     runs-on: ubuntu-latest
     permissions:
       id-token: write        # request the OIDC token used to assume the AWS IAM role
