@@ -101,6 +101,31 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
         [Fact]
         [Trait("Category", "SigV4Signer")]
+        public async Task Post_WithLargeBody_SucceedsAgainstSts()
+        {
+            // A body larger than the LOH threshold exercises the handler's streamed body hashing end to end:
+            // the handler hashes the buffered content stream in chunks rather than a materialized byte[], and
+            // STS recomputes the body hash and rejects the signature if the streamed hash is wrong. The extra
+            // ignored form field pads the body past 85 KB while keeping GetCallerIdentity the requested action.
+            using (var client = NewSignedClient())
+            {
+                var padding = new string('a', 200 * 1024);
+                var content = new StringContent(
+                    "Action=GetCallerIdentity&Version=2011-06-15&Padding=" + padding,
+                    Encoding.UTF8,
+                    "application/x-www-form-urlencoded");
+
+                using (var response = await client.PostAsync(StsEndpoint(), content))
+                {
+                    var body = await response.Content.ReadAsStringAsync();
+                    Assert.True(response.StatusCode == HttpStatusCode.OK, $"STS returned {(int)response.StatusCode}: {body}");
+                    Assert.Contains("<Arn>", body);
+                }
+            }
+        }
+
+        [Fact]
+        [Trait("Category", "SigV4Signer")]
         public async Task Post_WithSameHeaderOnRequestAndContent_SucceedsAgainstSts()
         {
             // A header set on both the request and the content goes on the wire as two lines (request value

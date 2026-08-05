@@ -106,6 +106,58 @@ namespace AWSSDK.UnitTests.Signing
         }
 
         [TestMethod]
+        public async Task Send_WithLargeBody_SignsStreamedHashMatchingByteArrayHash()
+        {
+            // The handler hashes the body off the buffered content stream rather than a materialized byte[].
+            // A body larger than the LOH threshold (and larger than the hasher's internal read chunk) proves
+            // the streamed hash spans many reads correctly and matches the byte[] hash the signer would compute
+            // over the same bytes. Non-repeating content guards against a chunk-boundary bug being masked by
+            // uniform bytes.
+            var bytes = new byte[200 * 1024];
+            for (int i = 0; i < bytes.Length; i++)
+                bytes[i] = (byte)(i * 31 + 7);
+
+            var handler = NewHandler(out var inner);
+            inner.CaptureBody = true;
+            using (var client = NewClient(handler))
+            {
+                var content = new ByteArrayContent(bytes);
+                await client.PostAsync("https://example.execute-api.us-east-1.amazonaws.com/items", content);
+            }
+
+            var sent = inner.LastRequest;
+            var expectedHash = AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(bytes), true);
+            var actualHash = sent.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single();
+            Assert.AreEqual(expectedHash, actualHash);
+        }
+
+        [TestMethod]
+        public async Task Send_ReSigningLargeBody_ResendsAndReHashesBody()
+        {
+            // Buffering the large body (rather than reading it into a one-shot byte[]) must still leave it
+            // re-readable, so a retry resends the same bytes and recomputes the same hash.
+            var bytes = new byte[200 * 1024];
+            for (int i = 0; i < bytes.Length; i++)
+                bytes[i] = (byte)(i * 17 + 3);
+            var expectedHash = AWSSDKUtils.ToHex(CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(bytes), true);
+
+            var handler = NewHandler(out var inner);
+            var invoker = new HttpMessageInvoker(handler);
+            var message = new HttpRequestMessage(HttpMethod.Post, "https://example.execute-api.us-east-1.amazonaws.com/items")
+            {
+                Content = new ByteArrayContent(bytes),
+            };
+
+            await invoker.SendAsync(message, CancellationToken.None);
+            Assert.AreEqual(expectedHash, inner.LastRequest.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single());
+
+            // Retry: same message re-enters the handler; the buffered body must still be readable and re-hashed.
+            await invoker.SendAsync(message, CancellationToken.None);
+            Assert.AreEqual(expectedHash, inner.LastRequest.Headers.GetValues(HeaderKeys.XAmzContentSha256Header).Single());
+            Assert.AreEqual(1, message.Headers.GetValues(HeaderKeys.AuthorizationHeader).Count());
+        }
+
+        [TestMethod]
         public async Task Send_WithSessionCredentials_AddsSecurityTokenHeader()
         {
             var handler = NewHandler(new SessionAWSCredentials(AccessKey, SecretKey, "the-session-token"), out var inner);
