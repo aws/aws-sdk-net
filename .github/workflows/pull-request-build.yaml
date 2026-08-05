@@ -21,7 +21,10 @@ env:
 jobs:
   build-sdk-v4:
     name: build-sdk-v4
-    # Only run for PRs from the same repo (forks don't have access to the role), and either:
+    # Only run for PRs from the same repo (forks don't have access to the role).
+    # The "skip-build" label is a global override: if it is present the build never
+    # runs, even for a non-draft PR (and it wins over "run-build").
+    # Otherwise the build runs when either:
     #   - a "run-build" label was just added (opts a draft into building), or
     #   - for any other event, the PR is not a draft, or it is a draft that
     #     already carries the "run-build" label (so labeled drafts keep building
@@ -30,6 +33,7 @@ jobs:
     # unrelated labels from starting a fresh build.
     if: >-
       github.event.pull_request.head.repo.full_name == github.repository &&
+      !contains(github.event.pull_request.labels.*.name, 'skip-build') &&
       (
         (github.event.action == 'labeled' && github.event.label.name == 'run-build') ||
         (
