@@ -5,14 +5,16 @@ permissions: {}
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
+    # No `synchronize` build trigger: pushes do NOT auto-start a build.
+    # A new commit just leaves the new SHA without a passing check, which
+    # blocks merge until you manually re-add the run-build label.
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
     branches:
       - development
 
 concurrency:
-  # Per-PR group so a cheap gate evaluation never queues behind another PR's
-  # long-running build, and a newer commit cancels the now-stale build for the
-  # same PR (which keeps the required check bound to the latest commit).
+  # Per-PR group so one PR's long build never blocks another, and a newer commit
+  # cancels the now-stale build for the same PR.
   group: build-sdk-v4-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
@@ -24,39 +26,39 @@ env:
 jobs:
   build-sdk-v4:
     name: build-sdk-v4
-    # This job intentionally runs on every same-repo PR event (forks are excluded
-    # because they can't assume the build role). It always produces a definitive
-    # pass/fail check-run on the PR's head commit so it can be used as a required
-    # status check for merging. Which outcome it produces is decided by labels:
-    #   - "skip-build"  -> succeed immediately without building (explicit bypass).
-    #   - "run-build"   -> run the full build; the build's result is the check.
-    #   - neither label -> fail, forcing the author to opt in (or skip) explicitly.
-    # skip-build wins over run-build. Because the required check is bound to the
-    # head SHA, pushing a new commit invalidates a prior pass and (with run-build
-    # still applied) triggers a fresh build, so a stale build can never be merged.
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    # Forks are excluded because they can't assume the build role. Beyond that,
+    # this job runs only when:
+    #   - the run-build label was just ADDED (manual, one-shot build trigger), or
+    #   - the PR carries skip-build (so pushes keep stamping a success check and
+    #     the PR stays mergeable without building).
+    # A plain push with neither condition does not run, so the new head commit
+    # has no passing check and merge is blocked until run-build is added again.
+    # Because the required check is bound to the head SHA, a stale build can
+    # never be merged onto a newer commit.
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (
+        (github.event.action == 'labeled' && github.event.label.name == 'run-build') ||
+        contains(github.event.pull_request.labels.*.name, 'skip-build')
+      )
     runs-on: ubuntu-latest
     permissions:
       id-token: write        # request the OIDC token used to assume the AWS IAM role
-      issues: write          # allow the build script to comment on the associated issue
+      issues: write          # comment on the associated issue / manage PR labels
       pull-requests: write   # allow the build script to post build status/comments on the PR
       contents: read         # check out the repository contents
     env:
       HAS_SKIP_BUILD: ${{ contains(github.event.pull_request.labels.*.name, 'skip-build') }}
-      HAS_RUN_BUILD: ${{ contains(github.event.pull_request.labels.*.name, 'run-build') }}
     steps:
       - name: Evaluate build labels
         id: gate
         run: |
           if [ "$HAS_SKIP_BUILD" = "true" ]; then
             echo "decision=skip" >> "$GITHUB_OUTPUT"
-            echo "::notice::'skip-build' label present - skipping the build and reporting success."
-          elif [ "$HAS_RUN_BUILD" = "true" ]; then
-            echo "decision=build" >> "$GITHUB_OUTPUT"
-            echo "::notice::'run-build' label present - running the build."
+            echo "::notice::'skip-build' label present - reporting success without building."
           else
-            echo "::error::This PR has neither the 'run-build' nor 'skip-build' label. Add 'run-build' to build (required to merge) or 'skip-build' to bypass."
-            exit 1
+            echo "decision=build" >> "$GITHUB_OUTPUT"
+            echo "::notice::'run-build' label added - running the build."
           fi
       - name: Configure AWS Credentials
         if: steps.gate.outputs.decision == 'build'
@@ -86,3 +88,14 @@ jobs:
             --pr-number "$PR_NUMBER" \
             --run-id "$RUN_ID"
         timeout-minutes: 150
+      # One-shot: strip the label whether the build passed or failed, so the next
+      # `add run-build` is always a fresh event (re-adding an already-present
+      # label fires nothing). This must never turn a green build red.
+      - name: Remove run-build label
+        if: always() && steps.gate.outputs.decision == 'build'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh api -X DELETE "repos/$REPO/issues/$PR_NUMBER/labels/run-build" || true
