@@ -1,3 +1,15 @@
+### 4.0.305.0 (2026-08-05 18:19 UTC)
+* ACMPCA (4.0.101.0)
+	* Private Certificate Authority service now supports RSASSA-PSS signing algorithm.
+* BedrockAgentCoreControl (4.0.107.0)
+	* Adding support for fine-grained access control for AgentCore Memory through managed AgentCore Gateway HTTP Connectors.
+* Deadline (4.0.101.0)
+	* AWS Deadline Cloud now reports persistent volume costs alongside compute and license costs. Customers can view per-fleet storage costs in Usage Explorer by selecting the Usage Type grouping, helping them better understand the costs of their infrastructure.
+* ECS (4.0.102.0)
+	* New enum values added for Agent Connectivity issues
+* Glue (4.0.103.0)
+	* Added the PutDataCatalogExportConfiguration to export Glue Data Catalog metadata to systems tables stored in S3 Tables.
+
 ### 4.0.304.0 (2026-08-04 21:04 UTC)
 * Connect (4.0.106.0)
 	* Amazon Connect Customer now supports up to 50 attachments per email, increased from the previous limit of 10. The individual maximum attachment size limit of 20 MB and the total email size limit of 25 MB still hold true.
