@@ -5,11 +5,12 @@ permissions: {}
 
 on:
   pull_request:
-    # No `synchronize` build trigger: pushes do NOT auto-start a build.
-    # A new commit just leaves the new SHA without a passing check, which
-    # blocks merge until you manually re-add the run-build label.
-    # `unlabeled` is included so that removing skip-build re-evaluates and
-    # overwrites the bypass "success" check with a failing one.
+    # We listen broadly, but the gate step (not the job `if`) decides what to do.
+    # A job that is *skipped* via `if` reports its required check as "skipped",
+    # which branch protection treats as PASSING - that would let an unbuilt PR
+    # merge. So the required check is an explicit commit status ("pr-build")
+    # that we post ourselves; merge is blocked whenever that status is absent
+    # or not success on the PR head commit.
     types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
     branches:
       - development
@@ -25,56 +26,95 @@ env:
   # constants
   DOWNLOAD_FOLDER: '.build-scripts/'
   SCRIPT_LOCATION: 'workflows/start-pull-request-build/pull-request-build-v1.sh'
+  # The commit-status context that branch protection should require. Merge is
+  # allowed only when this context is "success" on the PR head commit.
+  STATUS_CONTEXT: 'pr-build'
 
 jobs:
   build-sdk-v4:
     name: build-sdk-v4
-    # Forks are excluded because they can't assume the build role. Beyond that,
-    # this job wakes only for events that should (re)compute the check:
-    #   - run-build or skip-build was just ADDED,
-    #   - skip-build was just REMOVED (re-evaluate: overwrite the bypass success
-    #     check with a failing one so the PR is blocked again), or
-    #   - a push/open/reopen/ready while skip-build is present (keep stamping a
-    #     success check on the new head so a bypassed PR stays mergeable).
-    # It deliberately does NOT wake on `unlabeled` of run-build: that is this
-    # job's own post-build cleanup, and re-running would clobber the green check
-    # we just earned. Unrelated labels are ignored for the same reason.
-    if: >-
-      github.event.pull_request.head.repo.full_name == github.repository &&
-      (
-        (github.event.action == 'labeled' && (github.event.label.name == 'run-build' || github.event.label.name == 'skip-build')) ||
-        (github.event.action == 'unlabeled' && github.event.label.name == 'skip-build') ||
-        (
-          github.event.action != 'labeled' && github.event.action != 'unlabeled' &&
-          contains(github.event.pull_request.labels.*.name, 'skip-build')
-        )
-      )
+    # Only forks are excluded (they can't assume the build role). Same-repo PRs
+    # always enter the job so the gate can run; the gate then decides whether to
+    # build, bypass, re-block, or leave the existing status untouched.
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
       id-token: write        # request the OIDC token used to assume the AWS IAM role
-      issues: write          # comment on the associated issue / manage PR labels
+      issues: write          # allow the build script to comment on the associated issue
       pull-requests: write   # allow the build script to post build status/comments on the PR
       contents: read         # check out the repository contents
+      statuses: write        # post the required "pr-build" commit status
     env:
+      HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
       HAS_SKIP_BUILD: ${{ contains(github.event.pull_request.labels.*.name, 'skip-build') }}
       IS_RUN_BUILD_ADD: ${{ github.event.action == 'labeled' && github.event.label.name == 'run-build' }}
+      IS_SKIP_BUILD_REMOVED: ${{ github.event.action == 'unlabeled' && github.event.label.name == 'skip-build' }}
     steps:
+      # Decide what this run should do. Precedence: skip-build > run-build add >
+      # skip-build removal > no-op.
+      #   build : run-build was just ADDED  -> run the build, status = its result
+      #   skip  : skip-build present        -> post success without building (bypass)
+      #   block : skip-build was just REMOVED (and no build starting) -> post failure
+      #   noop  : anything else (push, open, unrelated label toggle)  -> leave the
+      #           existing status alone. A brand-new commit therefore has no
+      #           success status and stays blocked; an already-built commit keeps
+      #           its green status through unrelated events. Builds never auto-start
+      #           on push - re-add run-build to build a new commit.
       - name: Evaluate build labels
         id: gate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
         run: |
           if [ "$HAS_SKIP_BUILD" = "true" ]; then
             echo "decision=skip" >> "$GITHUB_OUTPUT"
-            echo "::notice::'skip-build' label present - reporting success without building."
           elif [ "$IS_RUN_BUILD_ADD" = "true" ]; then
             echo "decision=build" >> "$GITHUB_OUTPUT"
-            echo "::notice::'run-build' label added - running the build."
+          elif [ "$IS_SKIP_BUILD_REMOVED" = "true" ]; then
+            echo "decision=block" >> "$GITHUB_OUTPUT"
           else
-            # Reached when skip-build was just removed and run-build is not set.
-            # Fail so this run overwrites the prior bypass "success" check with a
-            # failing one, re-blocking the PR until run-build is added.
-            echo "::error::No 'run-build' or 'skip-build' label. Add 'run-build' to build (required to merge) or 'skip-build' to bypass."
-            exit 1
+            echo "decision=noop" >> "$GITHUB_OUTPUT"
           fi
+
+      - name: Report bypass (skip-build)
+        if: steps.gate.outputs.decision == 'skip'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "::notice::'skip-build' present - reporting success without building."
+          gh api -X POST "repos/$REPO/statuses/$HEAD_SHA" \
+            -f state=success \
+            -f context="$STATUS_CONTEXT" \
+            -f description="Bypassed via skip-build label" \
+            -f target_url="$RUN_URL"
+
+      - name: Report re-block (skip-build removed)
+        if: steps.gate.outputs.decision == 'block'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          echo "::notice::'skip-build' removed - re-blocking; add 'run-build' to build."
+          gh api -X POST "repos/$REPO/statuses/$HEAD_SHA" \
+            -f state=failure \
+            -f context="$STATUS_CONTEXT" \
+            -f description="skip-build removed - add run-build to build" \
+            -f target_url="$RUN_URL"
+
+      - name: Mark build pending
+        if: steps.gate.outputs.decision == 'build'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          gh api -X POST "repos/$REPO/statuses/$HEAD_SHA" \
+            -f state=pending \
+            -f context="$STATUS_CONTEXT" \
+            -f description="Build running" \
+            -f target_url="$RUN_URL"
+
       - name: Configure AWS Credentials
         if: steps.gate.outputs.decision == 'build'
         uses: aws-actions/configure-aws-credentials@517a711dbcd0e402f90c77e7e2f81e849156e31d # v6.2.2
@@ -83,12 +123,15 @@ jobs:
           role-session-name: PullRequestBuildGitHubAction
           role-duration-seconds: 7200
           aws-region: us-west-2
+
       - name: Download Build Script
         if: steps.gate.outputs.decision == 'build'
         run: |
           aws s3 cp s3://aws-sdk-builds-github-assets-prod-us-west-2/$SCRIPT_LOCATION ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION --no-progress
           chmod +x ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION
+
       - name: Build
+        id: build
         if: steps.gate.outputs.decision == 'build'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -103,14 +146,25 @@ jobs:
             --pr-number "$PR_NUMBER" \
             --run-id "$RUN_ID"
         timeout-minutes: 150
-      # One-shot: strip the label whether the build passed or failed, so the next
-      # `add run-build` is always a fresh event (re-adding an already-present
-      # label fires nothing). This must never turn a green build red.
-      - name: Remove run-build label
+
+      # Post the final build result to the head commit. `always()` so a failed or
+      # cancelled build still reports failure (rather than leaving a stale pending).
+      - name: Report build result
         if: always() && steps.gate.outputs.decision == 'build'
-        continue-on-error: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: gh api -X DELETE "repos/$REPO/issues/$PR_NUMBER/labels/run-build" || true
+          BUILD_OUTCOME: ${{ steps.build.outcome }}
+        run: |
+          if [ "$BUILD_OUTCOME" = "success" ]; then
+            STATE=success
+            DESC="Build passed"
+          else
+            STATE=failure
+            DESC="Build $BUILD_OUTCOME"
+          fi
+          gh api -X POST "repos/$REPO/statuses/$HEAD_SHA" \
+            -f state="$STATE" \
+            -f context="$STATUS_CONTEXT" \
+            -f description="$DESC" \
+            -f target_url="$RUN_URL"
