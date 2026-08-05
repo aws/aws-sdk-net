@@ -13,10 +13,15 @@ on:
       - development
 
 concurrency:
-  # Per-PR group so one PR's long build never blocks another, and a newer commit
-  # cancels the now-stale build for the same PR.
-  group: build-sdk-v4-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  # Global serial lock: every real build shares one group so only one build runs
+  # at a time across ALL PRs; a second build is held pending until the first
+  # finishes (cancel-in-progress: false = queue, don't cancel). skip-build no-ops
+  # get their own per-PR group so they never sit in the queue behind a real build.
+  # Note: GitHub keeps only one in-progress + one pending run per group, so if a
+  # third build is triggered while one is running and one is queued, the queued
+  # one is superseded (its PR simply needs run-build re-added).
+  group: ${{ contains(github.event.pull_request.labels.*.name, 'skip-build') && format('build-sdk-v4-skip-{0}', github.event.pull_request.number) || 'build-sdk-v4-global' }}
+  cancel-in-progress: false
 
 env:
   # constants
