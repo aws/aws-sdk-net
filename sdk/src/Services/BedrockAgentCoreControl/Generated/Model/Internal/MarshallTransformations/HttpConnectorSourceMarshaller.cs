@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// HttpTargetConfiguration Marshaller
+    /// HttpConnectorSource Marshaller
     /// </summary>
-    public class HttpTargetConfigurationMarshaller : IRequestMarshaller<HttpTargetConfiguration, JsonMarshallerContext> 
+    public class HttpConnectorSourceMarshaller : IRequestMarshaller<HttpConnectorSource, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,14 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(HttpTargetConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(HttpConnectorSource requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAgentcoreRuntime())
+            if(requestObject.IsSetConnectorId())
             {
-                context.Writer.WritePropertyName("agentcoreRuntime");
-                context.Writer.WriteStartObject();
-
-                var marshaller = RuntimeTargetConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.AgentcoreRuntime, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetConnector())
-            {
-                context.Writer.WritePropertyName("connector");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HttpConnectorTargetConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Connector, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetPassthrough())
-            {
-                context.Writer.WritePropertyName("passthrough");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PassthroughTargetConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Passthrough, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("connectorId");
+                context.Writer.WriteStringValue(requestObject.ConnectorId);
             }
 
         }
@@ -84,7 +57,7 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static HttpTargetConfigurationMarshaller Instance = new HttpTargetConfigurationMarshaller();
+        public readonly static HttpConnectorSourceMarshaller Instance = new HttpConnectorSourceMarshaller();
 
     }
 }

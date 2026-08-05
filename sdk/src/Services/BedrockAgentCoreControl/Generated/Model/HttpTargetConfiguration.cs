@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class HttpTargetConfiguration
     {
         private RuntimeTargetConfiguration _agentcoreRuntime;
+        private HttpConnectorTargetConfiguration _connector;
         private PassthroughTargetConfiguration _passthrough;
 
         /// <summary>
@@ -55,6 +56,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAgentcoreRuntime()
         {
             return this._agentcoreRuntime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Connector. 
+        /// <para>
+        /// The connector-based configuration for the HTTP target. Use this configuration when
+        /// you want to route HTTP requests through a managed connector.
+        /// </para>
+        /// </summary>
+        public HttpConnectorTargetConfiguration Connector
+        {
+            get { return this._connector; }
+            set { this._connector = value; }
+        }
+
+        // Check to see if Connector property is set
+        internal bool IsSetConnector()
+        {
+            return this._connector != null;
         }
 
         /// <summary>

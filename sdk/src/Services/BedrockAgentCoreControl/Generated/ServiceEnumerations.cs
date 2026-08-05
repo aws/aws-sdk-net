@@ -5167,6 +5167,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly TargetType CONNECTOR = new TargetType("CONNECTOR");
         /// <summary>
+        /// Constant HTTP_CONNECTOR for TargetType
+        /// </summary>
+        public static readonly TargetType HTTP_CONNECTOR = new TargetType("HTTP_CONNECTOR");
+        /// <summary>
         /// Constant LAMBDA for TargetType
         /// </summary>
         public static readonly TargetType LAMBDA = new TargetType("LAMBDA");

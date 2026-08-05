@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for HttpTargetConfiguration Object
+    /// Response Unmarshaller for HttpConnectorSource Object
     /// </summary>  
-    public class HttpTargetConfigurationUnmarshaller : IJsonUnmarshaller<HttpTargetConfiguration, JsonUnmarshallerContext>
+    public class HttpConnectorSourceUnmarshaller : IJsonUnmarshaller<HttpConnectorSource, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HttpTargetConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public HttpConnectorSource Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            HttpTargetConfiguration unmarshalledObject = new HttpTargetConfiguration();
+            HttpConnectorSource unmarshalledObject = new HttpConnectorSource();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("agentcoreRuntime", targetDepth, ref reader))
+                if (context.TestExpression("connectorId", targetDepth, ref reader))
                 {
-                    var unmarshaller = RuntimeTargetConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AgentcoreRuntime = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("connector", targetDepth, ref reader))
-                {
-                    var unmarshaller = HttpConnectorTargetConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Connector = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("passthrough", targetDepth, ref reader))
-                {
-                    var unmarshaller = PassthroughTargetConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Passthrough = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static HttpTargetConfigurationUnmarshaller _instance = new HttpTargetConfigurationUnmarshaller();        
+        private static HttpConnectorSourceUnmarshaller _instance = new HttpConnectorSourceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static HttpTargetConfigurationUnmarshaller Instance
+        public static HttpConnectorSourceUnmarshaller Instance
         {
             get
             {
