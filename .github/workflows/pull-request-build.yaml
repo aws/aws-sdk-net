@@ -5,13 +5,16 @@ permissions: {}
 
 on:
   pull_request:
-    types: [opened, synchronize, reopened, ready_for_review, labeled]
+    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
     branches:
       - development
 
 concurrency:
-  group: build-sdk-v4
-  cancel-in-progress: false
+  # Per-PR group so a cheap gate evaluation never queues behind another PR's
+  # long-running build, and a newer commit cancels the now-stale build for the
+  # same PR (which keeps the required check bound to the latest commit).
+  group: build-sdk-v4-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 env:
   # constants
@@ -21,37 +24,42 @@ env:
 jobs:
   build-sdk-v4:
     name: build-sdk-v4
-    # Only run for PRs from the same repo (forks don't have access to the role).
-    # The "skip-build" label is a global override: if it is present the build never
-    # runs, even for a non-draft PR (and it wins over "run-build").
-    # Otherwise the build runs when either:
-    #   - a "run-build" label was just added (opts a draft into building), or
-    #   - for any other event, the PR is not a draft, or it is a draft that
-    #     already carries the "run-build" label (so labeled drafts keep building
-    #     on every push / synchronize).
-    # Requiring label.name == 'run-build' on the `labeled` action also prevents
-    # unrelated labels from starting a fresh build.
-    if: >-
-      github.event.pull_request.head.repo.full_name == github.repository &&
-      !contains(github.event.pull_request.labels.*.name, 'skip-build') &&
-      (
-        (github.event.action == 'labeled' && github.event.label.name == 'run-build') ||
-        (
-          github.event.action != 'labeled' &&
-          (
-            github.event.pull_request.draft == false ||
-            contains(github.event.pull_request.labels.*.name, 'run-build')
-          )
-        )
-      )
+    # This job intentionally runs on every same-repo PR event (forks are excluded
+    # because they can't assume the build role). It always produces a definitive
+    # pass/fail check-run on the PR's head commit so it can be used as a required
+    # status check for merging. Which outcome it produces is decided by labels:
+    #   - "skip-build"  -> succeed immediately without building (explicit bypass).
+    #   - "run-build"   -> run the full build; the build's result is the check.
+    #   - neither label -> fail, forcing the author to opt in (or skip) explicitly.
+    # skip-build wins over run-build. Because the required check is bound to the
+    # head SHA, pushing a new commit invalidates a prior pass and (with run-build
+    # still applied) triggers a fresh build, so a stale build can never be merged.
+    if: github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     permissions:
       id-token: write        # request the OIDC token used to assume the AWS IAM role
       issues: write          # allow the build script to comment on the associated issue
       pull-requests: write   # allow the build script to post build status/comments on the PR
       contents: read         # check out the repository contents
+    env:
+      HAS_SKIP_BUILD: ${{ contains(github.event.pull_request.labels.*.name, 'skip-build') }}
+      HAS_RUN_BUILD: ${{ contains(github.event.pull_request.labels.*.name, 'run-build') }}
     steps:
+      - name: Evaluate build labels
+        id: gate
+        run: |
+          if [ "$HAS_SKIP_BUILD" = "true" ]; then
+            echo "decision=skip" >> "$GITHUB_OUTPUT"
+            echo "::notice::'skip-build' label present - skipping the build and reporting success."
+          elif [ "$HAS_RUN_BUILD" = "true" ]; then
+            echo "decision=build" >> "$GITHUB_OUTPUT"
+            echo "::notice::'run-build' label present - running the build."
+          else
+            echo "::error::This PR has neither the 'run-build' nor 'skip-build' label. Add 'run-build' to build (required to merge) or 'skip-build' to bypass."
+            exit 1
+          fi
       - name: Configure AWS Credentials
+        if: steps.gate.outputs.decision == 'build'
         uses: aws-actions/configure-aws-credentials@517a711dbcd0e402f90c77e7e2f81e849156e31d # v6.2.2
         with:
           role-to-assume: ${{ vars.BUILD_SYSTEM_ROLE_ARN }}
@@ -59,10 +67,12 @@ jobs:
           role-duration-seconds: 7200
           aws-region: us-west-2
       - name: Download Build Script
+        if: steps.gate.outputs.decision == 'build'
         run: |
           aws s3 cp s3://aws-sdk-builds-github-assets-prod-us-west-2/$SCRIPT_LOCATION ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION --no-progress
           chmod +x ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION
       - name: Build
+        if: steps.gate.outputs.decision == 'build'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
