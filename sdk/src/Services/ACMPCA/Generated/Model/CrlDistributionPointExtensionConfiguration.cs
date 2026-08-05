@@ -50,7 +50,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Only set this if you have another way to distribute the CRL Distribution Points ffor
+        /// Only set this if you have another way to distribute the CRL Distribution Points for
         /// certificates issued by your CA, such as the Matter Distributed Compliance Ledger
         /// </para>
         ///  
