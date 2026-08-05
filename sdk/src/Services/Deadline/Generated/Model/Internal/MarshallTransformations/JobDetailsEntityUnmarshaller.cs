@@ -58,7 +58,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("jobAttachmentSettings", targetDepth, ref reader))
                 {
-                    var unmarshaller = JobAttachmentSettingsUnmarshaller.Instance;
+                    var unmarshaller = JobDetailsJobAttachmentSettingsUnmarshaller.Instance;
                     unmarshalledObject.JobAttachmentSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
