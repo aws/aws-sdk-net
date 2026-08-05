@@ -3001,6 +3001,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.PutDataCatalogExportConfigurationRequest.ClientToken</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.PutDataQualityProfileAnnotationRequest.ProfileId</property>
     <min>1</min>
     <max>255</max>
@@ -5547,6 +5552,10 @@
     <property>Amazon.Glue.Model.ExecutionAttempt.ErrorMessage</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.ExportEncryptionConfiguration.KmsKeyArn</property>
+    <pattern>arn:aws[-a-z0-9]*:kms:[-a-z0-9]*:[0-9]{12}:key/.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.ExtractedParameter.DefaultValue</property>
