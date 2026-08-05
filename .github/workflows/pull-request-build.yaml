@@ -8,7 +8,9 @@ on:
     # No `synchronize` build trigger: pushes do NOT auto-start a build.
     # A new commit just leaves the new SHA without a passing check, which
     # blocks merge until you manually re-add the run-build label.
-    types: [opened, synchronize, reopened, ready_for_review, labeled]
+    # `unlabeled` is included so that removing skip-build re-evaluates and
+    # overwrites the bypass "success" check with a failing one.
+    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
     branches:
       - development
 
@@ -28,19 +30,24 @@ jobs:
   build-sdk-v4:
     name: build-sdk-v4
     # Forks are excluded because they can't assume the build role. Beyond that,
-    # this job runs only when:
-    #   - the run-build label was just ADDED (manual, one-shot build trigger), or
-    #   - the PR carries skip-build (so pushes keep stamping a success check and
-    #     the PR stays mergeable without building).
-    # A plain push with neither condition does not run, so the new head commit
-    # has no passing check and merge is blocked until run-build is added again.
-    # Because the required check is bound to the head SHA, a stale build can
-    # never be merged onto a newer commit.
+    # this job wakes only for events that should (re)compute the check:
+    #   - run-build or skip-build was just ADDED,
+    #   - skip-build was just REMOVED (re-evaluate: overwrite the bypass success
+    #     check with a failing one so the PR is blocked again), or
+    #   - a push/open/reopen/ready while skip-build is present (keep stamping a
+    #     success check on the new head so a bypassed PR stays mergeable).
+    # It deliberately does NOT wake on `unlabeled` of run-build: that is this
+    # job's own post-build cleanup, and re-running would clobber the green check
+    # we just earned. Unrelated labels are ignored for the same reason.
     if: >-
       github.event.pull_request.head.repo.full_name == github.repository &&
       (
-        (github.event.action == 'labeled' && github.event.label.name == 'run-build') ||
-        contains(github.event.pull_request.labels.*.name, 'skip-build')
+        (github.event.action == 'labeled' && (github.event.label.name == 'run-build' || github.event.label.name == 'skip-build')) ||
+        (github.event.action == 'unlabeled' && github.event.label.name == 'skip-build') ||
+        (
+          github.event.action != 'labeled' && github.event.action != 'unlabeled' &&
+          contains(github.event.pull_request.labels.*.name, 'skip-build')
+        )
       )
     runs-on: ubuntu-latest
     permissions:
@@ -50,6 +57,7 @@ jobs:
       contents: read         # check out the repository contents
     env:
       HAS_SKIP_BUILD: ${{ contains(github.event.pull_request.labels.*.name, 'skip-build') }}
+      IS_RUN_BUILD_ADD: ${{ github.event.action == 'labeled' && github.event.label.name == 'run-build' }}
     steps:
       - name: Evaluate build labels
         id: gate
@@ -57,9 +65,15 @@ jobs:
           if [ "$HAS_SKIP_BUILD" = "true" ]; then
             echo "decision=skip" >> "$GITHUB_OUTPUT"
             echo "::notice::'skip-build' label present - reporting success without building."
-          else
+          elif [ "$IS_RUN_BUILD_ADD" = "true" ]; then
             echo "decision=build" >> "$GITHUB_OUTPUT"
             echo "::notice::'run-build' label added - running the build."
+          else
+            # Reached when skip-build was just removed and run-build is not set.
+            # Fail so this run overwrites the prior bypass "success" check with a
+            # failing one, re-blocking the PR until run-build is added.
+            echo "::error::No 'run-build' or 'skip-build' label. Add 'run-build' to build (required to merge) or 'skip-build' to bypass."
+            exit 1
           fi
       - name: Configure AWS Credentials
         if: steps.gate.outputs.decision == 'build'
