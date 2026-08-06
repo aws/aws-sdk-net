@@ -4198,8 +4198,14 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns a list of custom and default field indexes which are discovered in log data.
+        /// Returns a list of field indexes discovered in log data. By default, the response includes
+        /// the <c>DEFAULT</c>, <c>CUSTOM</c>, and <c>INACTIVE</c> index categories. To return
+        /// indexes from other categories, use the <c>indexCategories</c> parameter.
+        /// 
+        ///  
+        /// <para>
         /// For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFieldIndexes service method.</param>
         /// 
@@ -4231,8 +4237,14 @@ namespace Amazon.CloudWatchLogs
 
 
         /// <summary>
-        /// Returns a list of custom and default field indexes which are discovered in log data.
+        /// Returns a list of field indexes discovered in log data. By default, the response includes
+        /// the <c>DEFAULT</c>, <c>CUSTOM</c>, and <c>INACTIVE</c> index categories. To return
+        /// indexes from other categories, use the <c>indexCategories</c> parameter.
+        /// 
+        ///  
+        /// <para>
         /// For more information about field index policies, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutIndexPolicy.html">PutIndexPolicy</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFieldIndexes service method.</param>
         /// <param name="cancellationToken">

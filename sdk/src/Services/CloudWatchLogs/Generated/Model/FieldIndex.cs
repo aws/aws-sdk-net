@@ -37,6 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _fieldIndexName;
         private long? _firstEventTime;
+        private IndexCategory _indexCategory;
         private long? _lastEventTime;
         private long? _lastScanTime;
         private string _logGroupIdentifier;
@@ -79,6 +80,54 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetFirstEventTime()
         {
             return this._firstEventTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IndexCategory. 
+        /// <para>
+        /// The category of the field index:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DEFAULT</c>: Fields that CloudWatch Logs indexes by default. Examples include
+        /// <c>@logStream</c> and <c>@data_format</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CUSTOM</c>: Fields that you added manually to the field index policy. CloudWatch
+        /// Logs always indexes these fields. These fields count toward the quota of 20 fields
+        /// for each log group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AUTO</c>: Fields that CloudWatch Logs indexes automatically based on your query
+        /// patterns and usage. These fields do not count toward the field index quota. CloudWatch
+        /// Logs might update these fields based on changes in your query patterns. To keep a
+        /// field indexed permanently, add it to an account-level or log-group level field index
+        /// policy.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>INACTIVE</c>: Fields that CloudWatch Logs indexed before but does not index now.
+        /// This happens if you remove a field from the field index policy or if CloudWatch Logs
+        /// automatically selects a different field based on your queries.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about automatically indexed fields, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogs-Field-Indexing-Automatic.html">Automatically
+        /// indexed fields</a>.
+        /// </para>
+        /// </summary>
+        public IndexCategory IndexCategory
+        {
+            get { return this._indexCategory; }
+            set { this._indexCategory = value; }
+        }
+
+        // Check to see if IndexCategory property is set
+        internal bool IsSetIndexCategory()
+        {
+            return this._indexCategory != null;
         }
 
         /// <summary>

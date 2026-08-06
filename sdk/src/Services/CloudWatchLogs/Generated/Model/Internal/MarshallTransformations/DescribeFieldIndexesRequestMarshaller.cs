@@ -75,6 +75,17 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIndexCategories())
+            {
+                context.Writer.WritePropertyName("indexCategories");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIndexCategoriesListValue in publicRequest.IndexCategories)
+                {
+                        context.Writer.WriteStringValue(publicRequestIndexCategoriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetLogGroupIdentifiers())
             {
                 context.Writer.WritePropertyName("logGroupIdentifiers");

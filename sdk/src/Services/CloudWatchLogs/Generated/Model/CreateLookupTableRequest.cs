@@ -115,7 +115,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The ID of a completed CloudWatch Logs query whose results populate the lookup table.
+        /// The ID of a completed or cancelled CloudWatch Logs query whose results populate the
+        /// lookup table. A cancelled query populates the table with the partial results that
+        /// were available when the query was stopped.
         /// </para>
         ///  
         /// <para>
