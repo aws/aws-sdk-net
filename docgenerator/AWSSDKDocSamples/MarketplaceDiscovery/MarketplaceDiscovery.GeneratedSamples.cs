@@ -366,6 +366,21 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             #endregion
         }
 
+        public void MarketplaceDiscoveryGetOfferTerms()
+        {
+            #region example-10
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            {
+                OfferId = "offer-sampleNetPaymentId"
+            });
+
+            List<OfferTerm> offerTerms = response.OfferTerms;
+
+            #endregion
+        }
+
         public void MarketplaceDiscoveryGetProduct()
         {
             #region example-1
