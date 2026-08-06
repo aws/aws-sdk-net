@@ -39,6 +39,7 @@ namespace Amazon.DeviceFarm.Model
         private DateTime? _created;
         private Device _device;
         private DeviceMinutes _deviceMinutes;
+        private JobInsights _insights;
         private string _instanceArn;
         private string _message;
         private string _name;
@@ -139,6 +140,26 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDeviceMinutes()
         {
             return this._deviceMinutes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Insights. 
+        /// <para>
+        /// The insights for the job, including the report status and test-level metrics. This
+        /// field contains data only if you specified <c>insightsTypes</c> when you scheduled
+        /// the run.
+        /// </para>
+        /// </summary>
+        public JobInsights Insights
+        {
+            get { return this._insights; }
+            set { this._insights = value; }
+        }
+
+        // Check to see if Insights property is set
+        internal bool IsSetInsights()
+        {
+            return this._insights != null;
         }
 
         /// <summary>

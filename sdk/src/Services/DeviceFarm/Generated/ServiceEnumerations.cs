@@ -919,6 +919,52 @@ namespace Amazon.DeviceFarm
 
 
     /// <summary>
+    /// Constants used for properties of type InsightsType.
+    /// </summary>
+    public class InsightsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TEST_REPORT for InsightsType
+        /// </summary>
+        public static readonly InsightsType TEST_REPORT = new InsightsType("TEST_REPORT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InsightsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InsightsType FindValue(string value)
+        {
+            return FindValue<InsightsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InsightsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InstanceStatus.
     /// </summary>
     public class InstanceStatus : ConstantClass
@@ -1220,6 +1266,68 @@ namespace Amazon.DeviceFarm
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecurringChargeFrequency(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReportStatus.
+    /// </summary>
+    public class ReportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus COMPLETED = new ReportStatus("COMPLETED");
+        /// <summary>
+        /// Constant ERRORED for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus ERRORED = new ReportStatus("ERRORED");
+        /// <summary>
+        /// Constant PENDING for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus PENDING = new ReportStatus("PENDING");
+        /// <summary>
+        /// Constant RUNNING for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus RUNNING = new ReportStatus("RUNNING");
+        /// <summary>
+        /// Constant SKIPPED for ReportStatus
+        /// </summary>
+        public static readonly ReportStatus SKIPPED = new ReportStatus("SKIPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReportStatus FindValue(string value)
+        {
+            return FindValue<ReportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReportStatus(string value)
         {
             return FindValue(value);
         }

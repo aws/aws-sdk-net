@@ -113,6 +113,17 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.ExtraDataPackageArn);
             }
 
+            if(requestObject.IsSetInsightsTypes())
+            {
+                context.Writer.WritePropertyName("insightsTypes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectInsightsTypesListValue in requestObject.InsightsTypes)
+                {
+                        context.Writer.WriteStringValue(requestObjectInsightsTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetLocale())
             {
                 context.Writer.WritePropertyName("locale");
