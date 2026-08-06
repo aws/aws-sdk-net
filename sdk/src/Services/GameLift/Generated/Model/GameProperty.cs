@@ -91,7 +91,7 @@ namespace Amazon.GameLift.Model
         /// The game property value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=96)]
+        [AWSProperty(Required=true, Sensitive=true, Max=96)]
         public string Value
         {
             get { return this._value; }

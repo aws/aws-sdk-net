@@ -172,7 +172,7 @@ namespace Amazon.GameLift.Model
         /// Information to be added to all events that are related to this game session queue.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string CustomEventData
         {
             get { return this._customEventData; }

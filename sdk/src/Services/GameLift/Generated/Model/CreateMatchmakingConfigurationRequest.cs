@@ -185,7 +185,7 @@ namespace Amazon.GameLift.Model
         /// Information to be added to all events related to this matchmaking configuration. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string CustomEventData
         {
             get { return this._customEventData; }
@@ -299,7 +299,7 @@ namespace Amazon.GameLift.Model
         /// is set to <c>STANDALONE</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string GameSessionData
         {
             get { return this._gameSessionData; }

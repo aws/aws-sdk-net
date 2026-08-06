@@ -95,7 +95,7 @@ namespace Amazon.GameLift.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string GameServerData
         {
             get { return this._gameServerData; }

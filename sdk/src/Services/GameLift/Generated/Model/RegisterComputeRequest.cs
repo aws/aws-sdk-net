@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
-    /// <b>This API works with the following fleet types:</b> Anywhere, Container
+    /// <b>This API works with the following fleet types:</b> Anywhere
     /// 
     ///  
     /// <para>

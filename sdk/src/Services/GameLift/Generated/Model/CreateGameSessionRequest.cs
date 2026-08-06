@@ -241,7 +241,7 @@ namespace Amazon.GameLift.Model
         /// a game session</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=262144)]
+        [AWSProperty(Sensitive=true, Min=1, Max=262144)]
         public string GameSessionData
         {
             get { return this._gameSessionData; }
