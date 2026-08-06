@@ -34,8 +34,28 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class FunctionRef
     {
+        private string _alias;
         private string _functionId;
         private string _runCondition;
+
+        /// <summary>
+        /// Gets and sets the property Alias. 
+        /// <para>
+        /// An optional alternate name for the function within the executor. If omitted, MediaTailor
+        /// uses the function identifier.
+        /// </para>
+        /// </summary>
+        public string Alias
+        {
+            get { return this._alias; }
+            set { this._alias = value; }
+        }
+
+        // Check to see if Alias property is set
+        internal bool IsSetAlias()
+        {
+            return this._alias != null;
+        }
 
         /// <summary>
         /// Gets and sets the property FunctionId. 

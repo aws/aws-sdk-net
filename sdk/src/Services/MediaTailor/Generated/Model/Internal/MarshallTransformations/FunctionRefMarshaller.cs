@@ -46,6 +46,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAlias())
+            {
+                context.Writer.WritePropertyName("Alias");
+                context.Writer.WriteStringValue(requestObject.Alias);
+            }
+
             if(requestObject.IsSetFunctionId())
             {
                 context.Writer.WritePropertyName("FunctionId");

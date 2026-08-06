@@ -661,6 +661,10 @@ namespace Amazon.MediaTailor
     {
 
         /// <summary>
+        /// Constant CONCURRENT_EXECUTOR for FunctionType
+        /// </summary>
+        public static readonly FunctionType CONCURRENT_EXECUTOR = new FunctionType("CONCURRENT_EXECUTOR");
+        /// <summary>
         /// Constant CUSTOM_OUTPUT for FunctionType
         /// </summary>
         public static readonly FunctionType CUSTOM_OUTPUT = new FunctionType("CUSTOM_OUTPUT");

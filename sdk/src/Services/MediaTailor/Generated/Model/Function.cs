@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
     public partial class Function
     {
         private string _arn;
+        private ConcurrentExecutorConfiguration _concurrentExecutorConfiguration;
         private CustomOutputConfiguration _customOutputConfiguration;
         private string _description;
         private string _functionId;
@@ -62,6 +63,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConcurrentExecutorConfiguration. 
+        /// <para>
+        /// The configuration for a <c>CONCURRENT_EXECUTOR</c> function.
+        /// </para>
+        /// </summary>
+        public ConcurrentExecutorConfiguration ConcurrentExecutorConfiguration
+        {
+            get { return this._concurrentExecutorConfiguration; }
+            set { this._concurrentExecutorConfiguration = value; }
+        }
+
+        // Check to see if ConcurrentExecutorConfiguration property is set
+        internal bool IsSetConcurrentExecutorConfiguration()
+        {
+            return this._concurrentExecutorConfiguration != null;
         }
 
         /// <summary>

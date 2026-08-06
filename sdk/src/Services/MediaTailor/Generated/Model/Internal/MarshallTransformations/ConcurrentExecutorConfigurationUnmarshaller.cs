@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FunctionRef Object
+    /// Response Unmarshaller for ConcurrentExecutorConfiguration Object
     /// </summary>  
-    public class FunctionRefUnmarshaller : IJsonUnmarshaller<FunctionRef, JsonUnmarshallerContext>
+    public class ConcurrentExecutorConfigurationUnmarshaller : IJsonUnmarshaller<ConcurrentExecutorConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FunctionRef Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ConcurrentExecutorConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FunctionRef unmarshalledObject = new FunctionRef();
+            ConcurrentExecutorConfiguration unmarshalledObject = new ConcurrentExecutorConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,34 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Alias", targetDepth, ref reader))
+                if (context.TestExpression("FunctionList", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<FunctionRef, FunctionRefUnmarshaller>(FunctionRefUnmarshaller.Instance);
+                    unmarshalledObject.FunctionList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("FunctionId", targetDepth, ref reader))
+                if (context.TestExpression("MaxConcurrency", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionId = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("RunCondition", targetDepth, ref reader))
+                if (context.TestExpression("Output", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Output = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Runtime", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RunCondition = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Runtime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TimeoutMilliseconds", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TimeoutMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +91,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static FunctionRefUnmarshaller _instance = new FunctionRefUnmarshaller();        
+        private static ConcurrentExecutorConfigurationUnmarshaller _instance = new ConcurrentExecutorConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FunctionRefUnmarshaller Instance
+        public static ConcurrentExecutorConfigurationUnmarshaller Instance
         {
             get
             {
