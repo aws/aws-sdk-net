@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// LoggingInfo Marshaller
+    /// AuthorizerLogs Marshaller
     /// </summary>
-    public class LoggingInfoMarshaller : IRequestMarshaller<LoggingInfo, JsonMarshallerContext> 
+    public class AuthorizerLogsMarshaller : IRequestMarshaller<AuthorizerLogs, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +42,39 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(LoggingInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(AuthorizerLogs requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetAuthorizerLogs())
+            if(requestObject.IsSetCloudWatchLogs())
             {
-                context.Writer.WritePropertyName("authorizerLogs");
+                context.Writer.WritePropertyName("cloudWatchLogs");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AuthorizerLogsMarshaller.Instance;
-                marshaller.Marshall(requestObject.AuthorizerLogs, context);
+                var marshaller = CloudWatchLogsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CloudWatchLogs, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetBrokerLogs())
+            if(requestObject.IsSetFirehose())
             {
-                context.Writer.WritePropertyName("brokerLogs");
+                context.Writer.WritePropertyName("firehose");
                 context.Writer.WriteStartObject();
 
-                var marshaller = BrokerLogsMarshaller.Instance;
-                marshaller.Marshall(requestObject.BrokerLogs, context);
+                var marshaller = FirehoseMarshaller.Instance;
+                marshaller.Marshall(requestObject.Firehose, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetS3())
+            {
+                context.Writer.WritePropertyName("s3");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3Marshaller.Instance;
+                marshaller.Marshall(requestObject.S3, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -73,7 +84,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static LoggingInfoMarshaller Instance = new LoggingInfoMarshaller();
+        public readonly static AuthorizerLogsMarshaller Instance = new AuthorizerLogsMarshaller();
 
     }
 }
