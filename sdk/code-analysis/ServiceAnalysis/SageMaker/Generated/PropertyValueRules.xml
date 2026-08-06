@@ -15126,6 +15126,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.ServerlessJobConfig.SequenceLength</property>
+    <min>1</min>
+    <max>50</max>
+    <pattern>\d+K</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.ServiceCatalogProvisionedProductDetails.ProvisionedProductId</property>
     <min>1</min>
     <max>100</max>

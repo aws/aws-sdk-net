@@ -17183,6 +17183,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProcessingInstanceType MlG6Xlarge = new ProcessingInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG712xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG712xlarge = new ProcessingInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG724xlarge = new ProcessingInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG72xlarge = new ProcessingInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG748xlarge = new ProcessingInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG74xlarge = new ProcessingInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG78xlarge = new ProcessingInstanceType("ml.g7.8xlarge");
+        /// <summary>
         /// Constant MlG7e12xlarge for ProcessingInstanceType
         /// </summary>
         public static readonly ProcessingInstanceType MlG7e12xlarge = new ProcessingInstanceType("ml.g7e.12xlarge");
@@ -24204,6 +24228,30 @@ namespace Amazon.SageMaker
         /// Constant MlG6Xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlG6Xlarge = new TrainingInstanceType("ml.g6.xlarge");
+        /// <summary>
+        /// Constant MlG712xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG712xlarge = new TrainingInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG724xlarge = new TrainingInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG72xlarge = new TrainingInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG748xlarge = new TrainingInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG74xlarge = new TrainingInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG78xlarge = new TrainingInstanceType("ml.g7.8xlarge");
         /// <summary>
         /// Constant MlG7e12xlarge for TrainingInstanceType
         /// </summary>

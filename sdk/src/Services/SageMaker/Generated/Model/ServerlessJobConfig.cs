@@ -41,6 +41,7 @@ namespace Amazon.SageMaker.Model
         private string _evaluatorArn;
         private ServerlessJobType _jobType;
         private Peft _peft;
+        private string _sequenceLength;
 
         /// <summary>
         /// Gets and sets the property AcceptEula. 
@@ -177,6 +178,65 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPeft()
         {
             return this._peft != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SequenceLength. 
+        /// <para>
+        ///  The maximum sequence length, in tokens, that the customization job supports. SageMaker
+        /// uses this value to select a training configuration for the base model that you specify.
+        /// The parameter supports the following values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>1K</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>2K</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>4K</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>8K</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>16K</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>32K</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>64K</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>128K</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  If you don't specify a value, SageMaker selects a training configuration based on
+        /// the other values that you specify. The selection is not restricted to a particular
+        /// sequence length. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public string SequenceLength
+        {
+            get { return this._sequenceLength; }
+            set { this._sequenceLength = value; }
+        }
+
+        // Check to see if SequenceLength property is set
+        internal bool IsSetSequenceLength()
+        {
+            return this._sequenceLength != null;
         }
 
     }
