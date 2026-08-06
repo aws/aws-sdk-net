@@ -7,6 +7,18 @@
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppDatasetRequest.Id</property>
+    <min>1</min>
+    <max>115</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.CreateWhatsAppDatasetResponse.DatasetId</property>
+    <min>10</min>
+    <max>20</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.CreateWhatsAppFlowRequest.CloneFlowId</property>
     <min>1</min>
     <max>100</max>
@@ -398,6 +410,23 @@
     <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.SendWhatsAppConversionEventRequest.DatasetId</property>
+    <min>10</min>
+    <max>20</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.SendWhatsAppConversionEventRequest.EventData</property>
+    <min>1</min>
+    <max>1024000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.SendWhatsAppConversionEventRequest.Id</property>
+    <min>1</min>
+    <max>115</max>
+    <pattern>.*(^waba-.*$)|(^arn:.*:waba/[0-9a-zA-Z]+$).*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.SendWhatsAppMessageRequest.Message</property>
     <min>1</min>
     <max>2048000</max>
@@ -538,6 +567,12 @@
     <pattern>arn:.*:waba/[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.DatasetId</property>
+    <min>10</min>
+    <max>20</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccount.Id</property>
     <min>1</min>
     <max>115</max>
@@ -574,6 +609,12 @@
     <min>0</min>
     <max>2048</max>
     <pattern>arn:.*:waba/[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.DatasetId</property>
+    <min>10</min>
+    <max>20</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SocialMessaging.Model.LinkedWhatsAppBusinessAccountSummary.Id</property>

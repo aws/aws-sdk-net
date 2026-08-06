@@ -35,6 +35,7 @@ namespace Amazon.SocialMessaging.Model
     public partial class LinkedWhatsAppBusinessAccountSummary
     {
         private string _arn;
+        private string _datasetId;
         private List<WhatsAppBusinessAccountEventDestination> _eventDestinations = AWSConfigs.InitializeCollections ? new List<WhatsAppBusinessAccountEventDestination>() : null;
         private string _id;
         private DateTime? _linkDate;
@@ -60,6 +61,27 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetId. 
+        /// <para>
+        /// The Meta Conversions API dataset ID associated with this WhatsApp Business Account.
+        /// This value is a numeric string of 10 to 20 digits. This field is not present when
+        /// no dataset has been created for this account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=20)]
+        public string DatasetId
+        {
+            get { return this._datasetId; }
+            set { this._datasetId = value; }
+        }
+
+        // Check to see if DatasetId property is set
+        internal bool IsSetDatasetId()
+        {
+            return this._datasetId != null;
         }
 
         /// <summary>

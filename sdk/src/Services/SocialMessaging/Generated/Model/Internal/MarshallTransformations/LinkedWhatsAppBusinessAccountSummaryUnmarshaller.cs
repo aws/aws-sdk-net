@@ -62,6 +62,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("datasetId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DatasetId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("eventDestinations", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<WhatsAppBusinessAccountEventDestination, WhatsAppBusinessAccountEventDestinationUnmarshaller>(WhatsAppBusinessAccountEventDestinationUnmarshaller.Instance);
