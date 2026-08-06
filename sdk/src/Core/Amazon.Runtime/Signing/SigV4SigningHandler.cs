@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
@@ -216,7 +217,7 @@ namespace Amazon.Runtime.Signing
             return parameters.SignPayload && !HasContentSha256Header(request) && request.Content != null;
         }
 
-        private static AWSSigningRequest NewSigningRequest(HttpRequestMessage request, byte[] body)
+        private static AWSSigningRequest NewSigningRequest(HttpRequestMessage request, string precomputedContentSha256)
         {
             // Drop a security-token header left over from an earlier signing pass before collecting headers.
             // On a re-signed retry the credentials may have changed from short-term to long-term; if the stale
@@ -229,47 +230,79 @@ namespace Amazon.Runtime.Signing
             {
                 HttpMethod = request.Method,
                 RequestUri = request.RequestUri,
-                Content = body,
             };
             CollectHeaders(request, signingRequest.Headers);
+
+            // The body is hashed here (off the buffered content stream) rather than handed to the signer as a
+            // byte[] so the signer does not re-materialize the whole payload to hash it. The hash is supplied as
+            // the precomputed x-amz-content-sha256, which the signer honors instead of reading a body. When the
+            // body must not be hashed (UNSIGNED-PAYLOAD, or a caller-supplied hash) this is null and no header
+            // is added, leaving the signer's existing behavior unchanged.
+            if (precomputedContentSha256 != null)
+                signingRequest.Headers[HeaderKeys.XAmzContentSha256Header] = precomputedContentSha256;
+
             return signingRequest;
+        }
+
+        // Buffer the content once (so a one-shot body survives a retry resend, just as before) and hash it
+        // incrementally off the resulting re-readable stream. This avoids the second full-size allocation that
+        // ReadAsByteArrayAsync makes on top of the internal buffer: for a large body that removed copy is a
+        // Large Object Heap allocation that existed only to feed the hasher. ComputeSHA256Hash(Stream) reads in
+        // small chunks, so the peak footprint is one buffer rather than two.
+        private static async Task<string> HashBodyAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            cancellationToken.ThrowIfCancellationRequested();
+            // LoadIntoBufferAsync has no CancellationToken overload (its argument is a max buffer size), so the
+            // cancellation check above covers the buffering step; the stream read below honors the token where
+            // the overload accepts one.
+            await request.Content.LoadIntoBufferAsync().ConfigureAwait(false);
+#if NET5_0_OR_GREATER
+            var stream = await request.Content.ReadAsStreamAsync(cancellationToken).ConfigureAwait(false);
+#else
+            var stream = await request.Content.ReadAsStreamAsync().ConfigureAwait(false);
+#endif
+            return HashStream(stream);
+        }
+
+        private static string HashStream(Stream stream)
+        {
+            var hashBytes = CryptoUtilFactory.CryptoInstance.ComputeSHA256Hash(stream);
+
+            // The stream is owned by the HttpContent (a re-readable in-memory buffer after LoadIntoBuffer), so it
+            // is not disposed here — disposing it would break the subsequent wire send and any retry that reads
+            // the same content. Hashing read it to the end, so rewind it: the wire send, an inner handler, or a
+            // retry that re-enters this handler must read the body from the start, not from EOF.
+            if (stream.CanSeek)
+                stream.Position = 0;
+
+            return AWSSDKUtils.ToHex(hashBytes, true);
         }
 
         private static async Task<AWSSigningRequest> BuildSigningRequestAsync(HttpRequestMessage request, AWSSigV4Parameters parameters, CancellationToken cancellationToken)
         {
-            byte[] body = null;
+            string precomputedContentSha256 = null;
             if (MustHashBody(request, parameters))
-            {
-                cancellationToken.ThrowIfCancellationRequested();
-                // Reading the content here to hash it also buffers it internally: HttpContent loads its body
-                // into an in-memory buffer on the first read, so the same message can be re-serialized on a
-                // retry resend without re-reading (or exhausting) a one-shot stream. No explicit rebuffering is
-                // needed to make the body survive a resend.
-#if NET5_0_OR_GREATER
-                body = await request.Content.ReadAsByteArrayAsync(cancellationToken).ConfigureAwait(false);
-#else
-                body = await request.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
-#endif
-            }
+                precomputedContentSha256 = await HashBodyAsync(request, cancellationToken).ConfigureAwait(false);
 
-            return NewSigningRequest(request, body);
+            return NewSigningRequest(request, precomputedContentSha256);
         }
 
 #if NET5_0_OR_GREATER
         private static AWSSigningRequest BuildSigningRequest(HttpRequestMessage request, AWSSigV4Parameters parameters, CancellationToken cancellationToken)
         {
-            byte[] body = null;
+            string precomputedContentSha256 = null;
             if (MustHashBody(request, parameters))
             {
                 cancellationToken.ThrowIfCancellationRequested();
-                // ReadAsByteArrayAsync buffers the content in memory (so it survives a retry resend) and, once
-                // buffered, completes synchronously — the same read the async path uses. The BCL exposes no
-                // fully synchronous buffering primitive, so block on it here to keep the sync send genuinely
-                // synchronous end to end.
-                body = request.Content.ReadAsByteArrayAsync(cancellationToken).GetAwaiter().GetResult();
+                // LoadIntoBufferAsync buffers the content in memory (so it survives a retry resend) and, once
+                // buffered, the stream read completes synchronously. The BCL exposes no fully synchronous
+                // buffering primitive, so block on it here to keep the sync send genuinely synchronous end to
+                // end, then hash off the buffered stream (see HashBodyAsync for why we hash the stream).
+                request.Content.LoadIntoBufferAsync().GetAwaiter().GetResult();
+                precomputedContentSha256 = HashStream(request.Content.ReadAsStream(cancellationToken));
             }
 
-            return NewSigningRequest(request, body);
+            return NewSigningRequest(request, precomputedContentSha256);
         }
 #endif
 

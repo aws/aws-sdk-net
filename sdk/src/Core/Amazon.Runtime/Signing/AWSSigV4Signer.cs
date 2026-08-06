@@ -262,14 +262,17 @@ namespace Amazon.Runtime.Signing
 
             // Copy caller headers into the request. A caller-supplied x-amz-content-sha256 is routed to
             // PrecomputedContentSha256 (below) rather than left on the header, so the signer honors it
-            // instead of scrubbing it during InitializeHeaders/CleanHeaders.
-            string precomputedHash = null;
+            // instead of scrubbing it during InitializeHeaders/CleanHeaders. internalRequest.Headers is a
+            // case-insensitive dictionary, so the pulled-out hash header is found and removed regardless of
+            // the caller's casing.
             foreach (var header in request.Headers)
+                internalRequest.Headers[header.Key] = header.Value;
+
+            string precomputedHash = null;
+            if (internalRequest.Headers.TryGetValue(HeaderKeys.XAmzContentSha256Header, out var callerHash))
             {
-                if (string.Equals(header.Key, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase))
-                    precomputedHash = header.Value;
-                else
-                    internalRequest.Headers[header.Key] = header.Value;
+                precomputedHash = callerHash;
+                internalRequest.Headers.Remove(HeaderKeys.XAmzContentSha256Header);
             }
 
             // Parse any query string on the URI into the request's parameter collection. Query components
@@ -577,23 +580,20 @@ namespace Amazon.Runtime.Signing
             if (headers == null)
                 return false;
 
-            foreach (var header in headers)
-            {
-                if (string.Equals(header.Key, HeaderKeys.XAmzContentSha256Header, StringComparison.OrdinalIgnoreCase))
-                {
-                    // A blank (empty or whitespace-only) value is treated as "not supplied", matching how
-                    // BuildRequest routes the header to PrecomputedContentSha256 and how the downstream signer
-                    // (its own IsNullOrEmpty check) ignores such a value. Without this, ValidateArguments would
-                    // reject a blank header for presign and SignPayload = false even though it has no effect.
-                    if (string.IsNullOrWhiteSpace(header.Value))
-                        return false;
+            // AWSSigningRequest.Headers is a case-insensitive (OrdinalIgnoreCase) dictionary, so the lookup
+            // resolves the header regardless of the caller's casing without scanning every entry.
+            if (!headers.TryGetValue(HeaderKeys.XAmzContentSha256Header, out var headerValue))
+                return false;
 
-                    value = header.Value;
-                    return true;
-                }
-            }
+            // A blank (empty or whitespace-only) value is treated as "not supplied", matching how
+            // BuildRequest routes the header to PrecomputedContentSha256 and how the downstream signer
+            // (its own IsNullOrEmpty check) ignores such a value. Without this, ValidateArguments would
+            // reject a blank header for presign and SignPayload = false even though it has no effect.
+            if (string.IsNullOrWhiteSpace(headerValue))
+                return false;
 
-            return false;
+            value = headerValue;
+            return true;
         }
 
         #endregion
