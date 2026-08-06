@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCapacityProviderVolume())
+            {
+                context.Writer.WritePropertyName("capacityProviderVolume");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CapacityProviderVolumeConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.CapacityProviderVolume, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEfsAccessPoint())
             {
                 context.Writer.WritePropertyName("efsAccessPoint");

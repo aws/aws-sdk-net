@@ -38,6 +38,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private AgentRuntimeArtifact _agentRuntimeArtifact;
         private string _agentRuntimeId;
         private AuthorizerConfiguration _authorizerConfiguration;
+        private CapacityProviderConfiguration _capacityProviderConfiguration;
         private string _clientToken;
         private string _description;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -103,6 +104,24 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAuthorizerConfiguration()
         {
             return this._authorizerConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderConfiguration. 
+        /// <para>
+        /// The updated capacity provider configuration for the AgentCore Runtime.
+        /// </para>
+        /// </summary>
+        public CapacityProviderConfiguration CapacityProviderConfiguration
+        {
+            get { return this._capacityProviderConfiguration; }
+            set { this._capacityProviderConfiguration = value; }
+        }
+
+        // Check to see if CapacityProviderConfiguration property is set
+        internal bool IsSetCapacityProviderConfiguration()
+        {
+            return this._capacityProviderConfiguration != null;
         }
 
         /// <summary>
@@ -234,7 +253,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The updated network configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public NetworkConfiguration NetworkConfiguration
         {
             get { return this._networkConfiguration; }

@@ -47,7 +47,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// duration, it will be automatically terminated. Default: 900 seconds (15 minutes).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=28800)]
+        [AWSProperty(Min=60, Max=1209600)]
         public int? IdleRuntimeSessionTimeout
         {
             get { return this._idleRuntimeSessionTimeout; }
@@ -67,7 +67,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// terminated and replaced. Default: 28800 seconds (8 hours).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=60, Max=28800)]
+        [AWSProperty(Min=60, Max=1209600)]
         public int? MaxLifetime
         {
             get { return this._maxLifetime; }

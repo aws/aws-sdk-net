@@ -58,6 +58,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.AgentRuntimeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("agentRuntimeVersion", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AgentRuntimeVersion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentRuntimeEndpoint operation.
-    /// Deletes an AAgentCore Runtime endpoint.
+    /// Deletes an AgentCore Runtime endpoint.
     /// </summary>
     public partial class DeleteAgentRuntimeEndpointRequest : AmazonBedrockAgentCoreControlRequest
     {

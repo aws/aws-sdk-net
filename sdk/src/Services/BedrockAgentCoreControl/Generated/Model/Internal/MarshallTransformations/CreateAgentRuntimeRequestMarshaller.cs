@@ -101,6 +101,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetCapacityProviderConfiguration())
+            {
+                context.Writer.WritePropertyName("capacityProviderConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CapacityProviderConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CapacityProviderConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");

@@ -34,9 +34,30 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class FilesystemConfiguration
     {
+        private CapacityProviderVolumeConfiguration _capacityProviderVolume;
         private EfsAccessPointConfiguration _efsAccessPoint;
         private S3FilesAccessPointConfiguration _s3FilesAccessPoint;
         private SessionStorageConfiguration _sessionStorage;
+
+        /// <summary>
+        /// Gets and sets the property CapacityProviderVolume. 
+        /// <para>
+        /// Configuration for a capacity provider volume to mount into the AgentCore Runtime.
+        /// This mounts a persistent volume that is defined on the capacity provider, referenced
+        /// by its logical name.
+        /// </para>
+        /// </summary>
+        public CapacityProviderVolumeConfiguration CapacityProviderVolume
+        {
+            get { return this._capacityProviderVolume; }
+            set { this._capacityProviderVolume = value; }
+        }
+
+        // Check to see if CapacityProviderVolume property is set
+        internal bool IsSetCapacityProviderVolume()
+        {
+            return this._capacityProviderVolume != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EfsAccessPoint. 

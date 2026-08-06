@@ -31,11 +31,13 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAgentRuntime operation.
-    /// Deletes an Amazon Bedrock AgentCore Runtime.
+    /// Deletes an Amazon Bedrock AgentCore Runtime, or a single version of an AgentCore Runtime
+    /// when you provide the version qualifier.
     /// </summary>
     public partial class DeleteAgentRuntimeRequest : AmazonBedrockAgentCoreControlRequest
     {
         private string _agentRuntimeId;
+        private string _agentRuntimeVersion;
         private string _clientToken;
 
         /// <summary>
@@ -55,6 +57,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAgentRuntimeId()
         {
             return this._agentRuntimeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentRuntimeVersion. 
+        /// <para>
+        /// The version of the AgentCore Runtime to delete. When you provide this value, only
+        /// that version is deleted. When you omit it, the entire AgentCore Runtime and all of
+        /// its versions are deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public string AgentRuntimeVersion
+        {
+            get { return this._agentRuntimeVersion; }
+            set { this._agentRuntimeVersion = value; }
+        }
+
+        // Check to see if AgentRuntimeVersion property is set
+        internal bool IsSetAgentRuntimeVersion()
+        {
+            return this._agentRuntimeVersion != null;
         }
 
         /// <summary>
