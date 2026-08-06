@@ -25,6 +25,76 @@ namespace Amazon.Backup
 {
 
     /// <summary>
+    /// Constants used for properties of type AccessPointStatus.
+    /// </summary>
+    public class AccessPointStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for AccessPointStatus
+        /// </summary>
+        public static readonly AccessPointStatus AVAILABLE = new AccessPointStatus("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for AccessPointStatus
+        /// </summary>
+        public static readonly AccessPointStatus CREATING = new AccessPointStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for AccessPointStatus
+        /// </summary>
+        public static readonly AccessPointStatus DELETING = new AccessPointStatus("DELETING");
+        /// <summary>
+        /// Constant DISASSOCIATED for AccessPointStatus
+        /// </summary>
+        public static readonly AccessPointStatus DISASSOCIATED = new AccessPointStatus("DISASSOCIATED");
+        /// <summary>
+        /// Constant DISASSOCIATING for AccessPointStatus
+        /// </summary>
+        public static readonly AccessPointStatus DISASSOCIATING = new AccessPointStatus("DISASSOCIATING");
+        /// <summary>
+        /// Constant EXPIRED for AccessPointStatus
+        /// </summary>
+        public static readonly AccessPointStatus EXPIRED = new AccessPointStatus("EXPIRED");
+        /// <summary>
+        /// Constant FAILED for AccessPointStatus
+        /// </summary>
+        public static readonly AccessPointStatus FAILED = new AccessPointStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AccessPointStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AccessPointStatus FindValue(string value)
+        {
+            return FindValue<AccessPointStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AccessPointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggregationPeriod.
     /// </summary>
     public class AggregationPeriod : ConstantClass
@@ -248,6 +318,30 @@ namespace Amazon.Backup
     public class BackupVaultEvent : ConstantClass
     {
 
+        /// <summary>
+        /// Constant ACCESS_POINT_AVAILABLE for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent ACCESS_POINT_AVAILABLE = new BackupVaultEvent("ACCESS_POINT_AVAILABLE");
+        /// <summary>
+        /// Constant ACCESS_POINT_CREATION_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent ACCESS_POINT_CREATION_FAILED = new BackupVaultEvent("ACCESS_POINT_CREATION_FAILED");
+        /// <summary>
+        /// Constant ACCESS_POINT_DELETED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent ACCESS_POINT_DELETED = new BackupVaultEvent("ACCESS_POINT_DELETED");
+        /// <summary>
+        /// Constant ACCESS_POINT_DELETION_FAILED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent ACCESS_POINT_DELETION_FAILED = new BackupVaultEvent("ACCESS_POINT_DELETION_FAILED");
+        /// <summary>
+        /// Constant ACCESS_POINT_DISASSOCIATED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent ACCESS_POINT_DISASSOCIATED = new BackupVaultEvent("ACCESS_POINT_DISASSOCIATED");
+        /// <summary>
+        /// Constant ACCESS_POINT_EXPIRED for BackupVaultEvent
+        /// </summary>
+        public static readonly BackupVaultEvent ACCESS_POINT_EXPIRED = new BackupVaultEvent("ACCESS_POINT_EXPIRED");
         /// <summary>
         /// Constant BACKUP_JOB_COMPLETED for BackupVaultEvent
         /// </summary>

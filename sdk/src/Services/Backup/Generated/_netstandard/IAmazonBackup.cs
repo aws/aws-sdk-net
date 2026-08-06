@@ -119,6 +119,60 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  CreateBackupAccessPoint
+
+
+
+        /// <summary>
+        /// Creates a backup access point for an Amazon S3 recovery point. A backup access point
+        /// provides on-demand, read-only access to the backup data in a recovery point through
+        /// an Amazon S3 access point, without initiating a restore.
+        /// 
+        ///  
+        /// <para>
+        /// While a backup access point is active for a recovery point, Backup pauses lifecycle
+        /// transitions and blocks deletion of that recovery point.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateBackupAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateBackupAccessPoint service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.AlreadyExistsException">
+        /// The required resource already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ConflictException">
+        /// Backup can't perform the action that you requested until it finishes performing a
+        /// previous action. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.LimitExceededException">
+        /// A limit in the request has been exceeded; for example, a maximum number of items allowed
+        /// in a request.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/CreateBackupAccessPoint">REST API Reference for CreateBackupAccessPoint Operation</seealso>
+        Task<CreateBackupAccessPointResponse> CreateBackupAccessPointAsync(CreateBackupAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateBackupPlan
 
 
@@ -615,6 +669,49 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  DeleteBackupAccessPoint
+
+
+
+        /// <summary>
+        /// Deletes a backup access point. This deletes the underlying Amazon S3 access point
+        /// and, if no other backup access points remain for the recovery point, resumes lifecycle
+        /// transitions for that recovery point.
+        /// 
+        ///  
+        /// <para>
+        /// Always delete backup access points using this operation rather than deleting the underlying
+        /// Amazon S3 access point directly.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteBackupAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteBackupAccessPoint service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteBackupAccessPoint">REST API Reference for DeleteBackupAccessPoint Operation</seealso>
+        Task<DeleteBackupAccessPointResponse> DeleteBackupAccessPointAsync(DeleteBackupAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteBackupPlan
 
 
@@ -1047,6 +1144,49 @@ namespace Amazon.Backup
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DeleteTieringConfiguration">REST API Reference for DeleteTieringConfiguration Operation</seealso>
         Task<DeleteTieringConfigurationResponse> DeleteTieringConfigurationAsync(DeleteTieringConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeBackupAccessPoint
+
+
+
+        /// <summary>
+        /// Returns metadata about a backup access point, including its status and the details
+        /// of the underlying Amazon S3 access point.
+        /// 
+        ///  
+        /// <para>
+        /// After a backup access point reaches the <c>AVAILABLE</c> status, use this operation
+        /// to retrieve the Amazon S3 access point ARN and alias that you need to read the backup
+        /// data.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeBackupAccessPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeBackupAccessPoint service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
+        /// Indicates that a required parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ResourceNotFoundException">
+        /// A resource that is required for the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeBackupAccessPoint">REST API Reference for DescribeBackupAccessPoint Operation</seealso>
+        Task<DescribeBackupAccessPointResponse> DescribeBackupAccessPointAsync(DescribeBackupAccessPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -2059,6 +2199,88 @@ namespace Amazon.Backup
 
         #endregion
                 
+        #region  ListBackupAccessPoints
+
+
+
+        /// <summary>
+        /// Returns a list of the backup access points in your account and Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackupAccessPoints service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBackupAccessPoints service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupAccessPoints">REST API Reference for ListBackupAccessPoints Operation</seealso>
+        Task<ListBackupAccessPointsResponse> ListBackupAccessPointsAsync(ListBackupAccessPointsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListBackupAccessPointsByRecoveryPoint
+
+
+
+        /// <summary>
+        /// Returns the backup access points associated with the specified recovery point.
+        /// 
+        ///  
+        /// <para>
+        /// If you own the recovery point and have shared it with other accounts, the response
+        /// includes backup access points created by those accounts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackupAccessPointsByRecoveryPoint service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBackupAccessPointsByRecoveryPoint service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupAccessPointsByRecoveryPoint">REST API Reference for ListBackupAccessPointsByRecoveryPoint Operation</seealso>
+        Task<ListBackupAccessPointsByRecoveryPointResponse> ListBackupAccessPointsByRecoveryPointAsync(ListBackupAccessPointsByRecoveryPointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListBackupAccessPointsByResource
+
+
+
+        /// <summary>
+        /// Returns the backup access points associated with the specified resource, such as an
+        /// Amazon S3 bucket.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListBackupAccessPointsByResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListBackupAccessPointsByResource service method, as returned by Backup.</returns>
+        /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
+        /// Indicates that something is wrong with a parameter's value. For example, the value
+        /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.ServiceUnavailableException">
+        /// The request failed due to a temporary failure of the server.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/ListBackupAccessPointsByResource">REST API Reference for ListBackupAccessPointsByResource Operation</seealso>
+        Task<ListBackupAccessPointsByResourceResponse> ListBackupAccessPointsByResourceAsync(ListBackupAccessPointsByResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListBackupJobs
 
 
@@ -2425,9 +2647,10 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns an array of resources successfully backed up by Backup, including the time
-        /// the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource
-        /// type.
+        /// Returns an array of resources with recovery points created by Backup (regardless of
+        /// the recovery point's <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRecoveryPoint.html#Backup-DescribeRecoveryPoint-response-Status">status</a>),
+        /// including the time the resource was saved, an Amazon Resource Name (ARN) of the resource,
+        /// and a resource type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProtectedResources service method.</param>
         /// <param name="cancellationToken">

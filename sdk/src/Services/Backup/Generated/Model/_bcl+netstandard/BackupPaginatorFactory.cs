@@ -37,6 +37,30 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Paginator for ListBackupAccessPoints operation
+        ///</summary>
+        public IListBackupAccessPointsPaginator ListBackupAccessPoints(ListBackupAccessPointsRequest request) 
+        {
+            return new ListBackupAccessPointsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBackupAccessPointsByRecoveryPoint operation
+        ///</summary>
+        public IListBackupAccessPointsByRecoveryPointPaginator ListBackupAccessPointsByRecoveryPoint(ListBackupAccessPointsByRecoveryPointRequest request) 
+        {
+            return new ListBackupAccessPointsByRecoveryPointPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListBackupAccessPointsByResource operation
+        ///</summary>
+        public IListBackupAccessPointsByResourcePaginator ListBackupAccessPointsByResource(ListBackupAccessPointsByResourceRequest request) 
+        {
+            return new ListBackupAccessPointsByResourcePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListBackupJobs operation
         ///</summary>
         public IListBackupJobsPaginator ListBackupJobs(ListBackupJobsRequest request) 

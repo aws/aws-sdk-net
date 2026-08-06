@@ -30,13 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProtectedResources operation.
-    /// Returns an array of resources with recovery points created by Backup (regardless of
-    /// the recovery point's <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRecoveryPoint.html#Backup-DescribeRecoveryPoint-response-Status">status</a>),
-    /// including the time the resource was saved, an Amazon Resource Name (ARN) of the resource,
-    /// and a resource type.
+    /// Container for the parameters to the ListBackupAccessPoints operation.
+    /// Returns a list of the backup access points in your account and Region.
     /// </summary>
-    public partial class ListProtectedResourcesRequest : AmazonBackupRequest
+    public partial class ListBackupAccessPointsRequest : AmazonBackupRequest
     {
         private int? _maxResults;
         private string _nextToken;
@@ -47,7 +44,7 @@ namespace Amazon.Backup.Model
         /// The maximum number of items to be returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=100)]
         public int? MaxResults
         {
             get { return this._maxResults; }

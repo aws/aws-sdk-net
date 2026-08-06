@@ -30,68 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListRecoveryPointsByResource operation.
-    /// The information about the recovery points of the type specified by a resource Amazon
-    /// Resource Name (ARN).
-    /// 
-    ///  <note> 
-    /// <para>
-    /// For Amazon EFS and Amazon EC2, this action only lists recovery points created by Backup.
-    /// </para>
-    ///  </note>
+    /// Container for the parameters to the ListBackupAccessPointsByResource operation.
+    /// Returns the backup access points associated with the specified resource, such as an
+    /// Amazon S3 bucket.
     /// </summary>
-    public partial class ListRecoveryPointsByResourceRequest : AmazonBackupRequest
+    public partial class ListBackupAccessPointsByResourceRequest : AmazonBackupRequest
     {
-        private bool? _managedByAWSBackupOnly;
         private int? _maxResults;
         private string _nextToken;
         private string _resourceArn;
-
-        /// <summary>
-        /// Gets and sets the property ManagedByAWSBackupOnly. 
-        /// <para>
-        /// This attribute filters recovery points based on ownership.
-        /// </para>
-        ///  
-        /// <para>
-        /// If this is set to <c>TRUE</c>, the response will contain recovery points associated
-        /// with the selected resources that are managed by Backup.
-        /// </para>
-        ///  
-        /// <para>
-        /// If this is set to <c>FALSE</c>, the response will contain all recovery points associated
-        /// with the selected resource, except for EBS snapshots copied within the same Region
-        /// and account.
-        /// </para>
-        ///  
-        /// <para>
-        /// Type: Boolean
-        /// </para>
-        /// </summary>
-        public bool? ManagedByAWSBackupOnly
-        {
-            get { return this._managedByAWSBackupOnly; }
-            set { this._managedByAWSBackupOnly = value; }
-        }
-
-        // Check to see if ManagedByAWSBackupOnly property is set
-        internal bool IsSetManagedByAWSBackupOnly()
-        {
-            return this._managedByAWSBackupOnly.HasValue; 
-        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of items to be returned.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon RDS requires a value of at least 20.
-        /// </para>
-        ///  </note>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Min=1, Max=100)]
         public int? MaxResults
         {
             get { return this._maxResults; }
@@ -127,8 +82,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// An ARN that uniquely identifies a resource. The format of the ARN depends on the resource
-        /// type.
+        /// The Amazon Resource Name (ARN) of the resource whose backup access points you want
+        /// to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -4,6 +4,25 @@
     <property>Amazon.Backup.Model.AssociateBackupVaultMpaApprovalTeamRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.CreateBackupAccessPointRequest.AccessPointPolicy</property>
+    <min>1</min>
+    <max>200000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateBackupAccessPointRequest.Name</property>
+    <min>3</min>
+    <max>50</max>
+    <pattern>[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateBackupAccessPointRequest.RecoveryPointArn</property>
+    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.CreateBackupAccessPointResponse.AccessPointArn</property>
+    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.CreateBackupVaultRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -58,6 +77,10 @@
     <property>Amazon.Backup.Model.CreateRestoreAccessBackupVaultResponse.RestoreAccessBackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.DeleteBackupAccessPointRequest.AccessPointArn</property>
+    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.DeleteBackupVaultAccessPolicyRequest.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
@@ -84,6 +107,31 @@
   <property-value-rule>
     <property>Amazon.Backup.Model.DeleteTieringConfigurationRequest.TieringConfigurationName</property>
     <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeBackupAccessPointRequest.AccessPointArn</property>
+    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.AccessPointArn</property>
+    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.Name</property>
+    <min>3</min>
+    <max>50</max>
+    <pattern>[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.RecoveryPointArn</property>
+    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.DescribeBackupAccessPointResponse.ResourceArn</property>
+    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.DescribeBackupJobResponse.AccountId</property>
@@ -184,6 +232,29 @@
   <property-value-rule>
     <property>Amazon.Backup.Model.GetTieringConfigurationRequest.TieringConfigurationName</property>
     <pattern>^[a-zA-Z0-9_]{1,200}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupAccessPointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupAccessPointsByRecoveryPointRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupAccessPointsByRecoveryPointRequest.RecoveryPointArn</property>
+    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupAccessPointsByResourceRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListBackupAccessPointsByResourceRequest.ResourceArn</property>
+    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ListBackupJobsRequest.ByAccountId</property>
@@ -560,6 +631,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.IndexedRecoveryPoint.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListAccessPointsMember.AccessPointArn</property>
+    <pattern>(arn:aws[a-z-]*:backup:[a-z-\d]+:\d{12}:accesspoint/)[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListAccessPointsMember.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListAccessPointsMember.Name</property>
+    <min>3</min>
+    <max>50</max>
+    <pattern>[\da-z]{1}[\da-z-]{1,48}[\da-z]{1}(?&lt;!-s3alias)(?&lt;!-ext-s3alias)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListAccessPointsMember.RecoveryPointArn</property>
+    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:[a-z-\d]+:).+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.ListAccessPointsMember.ResourceArn</property>
+    <pattern>(arn:aws[a-z-]*:[a-z-\d]+:).+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Backup.Model.ProtectedResource.ResourceType</property>

@@ -30,34 +30,36 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProtectedResources operation.
-    /// Returns an array of resources with recovery points created by Backup (regardless of
-    /// the recovery point's <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRecoveryPoint.html#Backup-DescribeRecoveryPoint-response-Status">status</a>),
-    /// including the time the resource was saved, an Amazon Resource Name (ARN) of the resource,
-    /// and a resource type.
+    /// This is the response object from the ListBackupAccessPoints operation.
     /// </summary>
-    public partial class ListProtectedResourcesRequest : AmazonBackupRequest
+    public partial class ListBackupAccessPointsResponse : AmazonWebServiceResponse
     {
-        private int? _maxResults;
+        private List<ListAccessPointsMember> _backupAccessPoints = AWSConfigs.InitializeCollections ? new List<ListAccessPointsMember>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property BackupAccessPoints. 
         /// <para>
-        /// The maximum number of items to be returned.
+        /// A list of backup access points, each containing metadata such as its name, ARN, status,
+        /// and associated recovery point.
         /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
-        public int? MaxResults
+        [AWSProperty(Required=true)]
+        public List<ListAccessPointsMember> BackupAccessPoints
         {
-            get { return this._maxResults; }
-            set { this._maxResults = value; }
+            get { return this._backupAccessPoints; }
+            set { this._backupAccessPoints = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if BackupAccessPoints property is set
+        internal bool IsSetBackupAccessPoints()
         {
-            return this._maxResults.HasValue; 
+            return this._backupAccessPoints != null && (this._backupAccessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -3199,6 +3199,14 @@ namespace Amazon.S3
     {
 
         /// <summary>
+        /// Constant AWS_BACKUP_LOW_COST_WARM for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass AWS_BACKUP_LOW_COST_WARM = new S3StorageClass("AWS_BACKUP_LOW_COST_WARM");
+        /// <summary>
+        /// Constant AWS_BACKUP_WARM for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass AWS_BACKUP_WARM = new S3StorageClass("AWS_BACKUP_WARM");
+        /// <summary>
         /// Constant DeepArchive for S3StorageClass
         /// </summary>
         public static readonly S3StorageClass DeepArchive = new S3StorageClass("DEEP_ARCHIVE");
@@ -3346,6 +3354,10 @@ namespace Amazon.S3
         /// Constant AES256 for ServerSideEncryptionMethod
         /// </summary>
         public static readonly ServerSideEncryptionMethod AES256 = new ServerSideEncryptionMethod("AES256");
+        /// <summary>
+        /// Constant AwsBackup for ServerSideEncryptionMethod
+        /// </summary>
+        public static readonly ServerSideEncryptionMethod AwsBackup = new ServerSideEncryptionMethod("aws:backup");
         /// <summary>
         /// Constant AWSFSX for ServerSideEncryptionMethod
         /// </summary>
