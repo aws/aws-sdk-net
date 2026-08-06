@@ -94,6 +94,7 @@ namespace Amazon.EC2.Model
         /// /12 and /28.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Ipv4CidrBlock
         {
             get { return this._ipv4CidrBlock; }

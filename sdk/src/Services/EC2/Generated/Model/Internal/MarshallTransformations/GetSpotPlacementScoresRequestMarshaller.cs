@@ -63,6 +63,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DryRun", StringUtils.FromBool(publicRequest.DryRun));
                 }
+                if(publicRequest.IsSetIncludeLocalZones())
+                {
+                    request.Parameters.Add("IncludeLocalZones", StringUtils.FromBool(publicRequest.IncludeLocalZones));
+                }
                 if(publicRequest.IsSetInstanceRequirementsWithMetadata())
                 {
                     if(publicRequest.InstanceRequirementsWithMetadata.IsSetArchitectureTypes())
