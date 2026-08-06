@@ -189,6 +189,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListFreeTrialStatusesV2 operation
+        ///</summary>
+        public IListFreeTrialStatusesV2Paginator ListFreeTrialStatusesV2(ListFreeTrialStatusesV2Request request) 
+        {
+            return new ListFreeTrialStatusesV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
         public IListInvitationsPaginator ListInvitations(ListInvitationsRequest request) 

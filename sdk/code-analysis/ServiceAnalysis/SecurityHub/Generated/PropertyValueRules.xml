@@ -617,6 +617,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SecurityHub.Model.ListFreeTrialStatusesV2Request.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SecurityHub.Model.ListInvitationsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -857,6 +862,10 @@
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.AccountDetails.Email</property>
     <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityHub.Model.AccountFreeTrialStatus.AccountId</property>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityHub.Model.Action.ActionType</property>

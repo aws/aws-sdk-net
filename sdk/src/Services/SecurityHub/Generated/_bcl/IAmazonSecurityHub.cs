@@ -7534,6 +7534,70 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  ListFreeTrialStatusesV2
+
+
+        /// <summary>
+        /// Lists the free trial status of Security Hub features. A delegated Security Hub administrator
+        /// can list the status for accounts in its organization. Any other account can list the
+        /// status only for itself. Free trial status remains available after a feature is disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFreeTrialStatusesV2 service method.</param>
+        /// 
+        /// <returns>The response from the ListFreeTrialStatusesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFreeTrialStatusesV2">REST API Reference for ListFreeTrialStatusesV2 Operation</seealso>
+        ListFreeTrialStatusesV2Response ListFreeTrialStatusesV2(ListFreeTrialStatusesV2Request request);
+
+
+
+        /// <summary>
+        /// Lists the free trial status of Security Hub features. A delegated Security Hub administrator
+        /// can list the status for accounts in its organization. Any other account can list the
+        /// status only for itself. Free trial status remains available after a feature is disabled.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFreeTrialStatusesV2 service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFreeTrialStatusesV2 service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the service.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ValidationException">
+        /// The request has failed validation because it's missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListFreeTrialStatusesV2">REST API Reference for ListFreeTrialStatusesV2 Operation</seealso>
+        Task<ListFreeTrialStatusesV2Response> ListFreeTrialStatusesV2Async(ListFreeTrialStatusesV2Request request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListInvitations
 
 
