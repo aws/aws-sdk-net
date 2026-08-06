@@ -84,7 +84,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         Emit(Path.Combine(generated, $"{clientName}Client.g.cs"), clientWriter.Write(cancellationToken));
 
         var configWriter = new ConfigWriter(context, modelFileName, serviceFileVersion);
-        Emit(Path.Combine(generated, $"{clientName}Config.g.cs"), configWriter.Write(cancellationToken));
+        // Plain .cs (not .g.cs): the SDK release automation stages Amazon*Config.cs after the
+        // post-version generator run rewrites the embedded file version; the same name keeps the
+        // Smithy config on the existing staging path.
+        Emit(Path.Combine(generated, $"{clientName}Config.cs"), configWriter.Write(cancellationToken));
 
         var defaultConfigurationWriter = new DefaultConfigurationWriter(context, modelFileName, defaultConfigurationModes);
         Emit(Path.Combine(generated, $"{clientName}DefaultConfiguration.g.cs"), defaultConfigurationWriter.Write(cancellationToken));

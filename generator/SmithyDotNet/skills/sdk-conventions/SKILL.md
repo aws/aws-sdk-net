@@ -100,7 +100,7 @@ Generated files go under `Generated/`. Prefer `.g.cs` suffix:
 Generated/
   IAmazon{ServiceName}.g.cs
   Amazon{ServiceName}Client.g.cs
-  Amazon{ServiceName}Config.g.cs          # placeholder for now
+  Amazon{ServiceName}Config.cs            # plain .cs so CI's Amazon*Config.cs glob stages it
   Amazon{ServiceName}Exception.g.cs
   Model/
     Amazon{ServiceName}Request.g.cs       # empty service request base

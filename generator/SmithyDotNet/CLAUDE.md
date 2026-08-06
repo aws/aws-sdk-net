@@ -44,4 +44,4 @@ Read them before writing a writer; update them when behavior changes.
   the solution space is genuinely open.
 
 ## Testing
-To ensure the code you output is correct always run `dotnet test SmithyDotNet.Generator.slnx`
+To ensure the code you output is correct always run `dotnet test SmithyDotNet.Generator.sln`

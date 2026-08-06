@@ -82,6 +82,10 @@
     <Target Name="run-generator">
         <CallTarget Targets="clean-old-models" Condition="Exists('$(InternalBuildTools)/references.targets')" />
 
+        <Message Text="Build and run Smithy code generator (migrated services)"/>
+        <Exec Command="dotnet build -c $(Configuration) --no-incremental SmithyDotNet.Generator/SmithyDotNet.Generator.csproj" WorkingDirectory="../generator/SmithyDotNet"/>
+        <Exec Command="dotnet run -c $(Configuration) --no-build --project SmithyDotNet.Generator/SmithyDotNet.Generator.csproj -- --repo-root &quot;$(MSBuildProjectDirectory)/..&quot;" WorkingDirectory="../generator/SmithyDotNet"/>
+
         <Message Text="Build and run code generator"/>
         <Exec Command="dotnet restore -f  AWSSDKGenerator.sln" WorkingDirectory="../generator" />
         <Exec Command="dotnet clean -c $(Configuration) AWSSDKGenerator.sln" WorkingDirectory="../generator"/>

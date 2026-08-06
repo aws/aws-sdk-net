@@ -104,6 +104,9 @@ public sealed class BatchGenerator(string repoRoot)
 
     // Scans generator/ServiceModels/*/ for the single all-inclusive Smithy model each migrated
     // service carries at a fixed name, smithy.json (unlike C2J's versioned api/docs/endpoints split).
+    // A model has to be parsed to learn its name, so a model this generator can't yet handle is
+    // skipped here rather than aborting the batch; MatchListedServices below still fails loudly if
+    // that model belongs to a service actually listed in the control file.
     private Dictionary<string, DiscoveredModel> DiscoverModels(CancellationToken ct)
     {
         if (!Directory.Exists(_modelsRoot))
@@ -122,21 +125,37 @@ public sealed class BatchGenerator(string repoRoot)
                 continue;
             }
 
-            using var stream = File.OpenRead(modelPath);
-            var model = JsonSerializer.Deserialize<SmithyModel>(stream, ModelOptions) ?? throw new GeneratorException($"'{modelPath}' deserialized to null.");
-            ModelValidator.Validate(model);
-
-            var index = new ServiceIndex(model);
-            var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException($"'{modelPath}': service shape is missing the aws.api#service trait.");
-            var name = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
-
-            if (!discovered.TryAdd(name, new DiscoveredModel(name, modelPath, index, directory)))
+            DiscoveredModel model;
+            try
             {
-                throw new GeneratorException($"Service '{name}' resolves from both '{discovered[name].ModelPath}' and '{modelPath}'.");
+                model = LoadModel(modelPath, directory);
+            }
+            catch (Exception ex) when (ex is not OperationCanceledException)
+            {
+                Log.Warn($"Skipping '{modelPath}': failed to load ({ex.Message}).");
+                continue;
+            }
+
+            if (!discovered.TryAdd(model.Name, model))
+            {
+                throw new GeneratorException($"Service '{model.Name}' resolves from both '{discovered[model.Name].ModelPath}' and '{model.ModelPath}'.");
             }
         }
 
         return discovered;
+    }
+
+    private static DiscoveredModel LoadModel(string modelPath, string directory)
+    {
+        using var stream = File.OpenRead(modelPath);
+        var model = JsonSerializer.Deserialize<SmithyModel>(stream, ModelOptions) ?? throw new GeneratorException($"'{modelPath}' deserialized to null.");
+        ModelValidator.Validate(model);
+
+        var index = new ServiceIndex(model);
+        var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException($"'{modelPath}': service shape is missing the aws.api#service trait.");
+        var name = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
+
+        return new DiscoveredModel(name, modelPath, index, directory);
     }
 
     // Every listed service must resolve to exactly one discovered model (mirroring the C2J
@@ -151,12 +170,6 @@ public sealed class BatchGenerator(string repoRoot)
                 $"No Smithy model found for listed service(s): {string.Join(", ", unmatched)}. " +
                 $"Check {SdkTreeLayout.MigratedServicesFileName} for typos (names are SDK ServiceFolderNames, e.g. 'CloudTrailData')."
             );
-        }
-
-        var listedSet = new HashSet<string>(listed, StringComparer.OrdinalIgnoreCase);
-        foreach (var model in discovered.Values.Where(m => !listedSet.Contains(m.Name)).OrderBy(m => m.Name, StringComparer.Ordinal))
-        {
-            Log.Info($"Skipping '{model.Name}' ({model.ModelPath}): not listed in {SdkTreeLayout.MigratedServicesFileName}, C2J still owns it.");
         }
 
         // Deduplicate: a repeated or case-variant entry resolves to the same model, which would
