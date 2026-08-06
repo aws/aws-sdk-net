@@ -86,6 +86,12 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                     unmarshalledObject.LegalTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("netPaymentTerm", targetDepth, ref reader))
+                {
+                    var unmarshaller = NetPaymentTermUnmarshaller.Instance;
+                    unmarshalledObject.NetPaymentTerm = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("paymentScheduleTerm", targetDepth, ref reader))
                 {
                     var unmarshaller = PaymentScheduleTermUnmarshaller.Instance;

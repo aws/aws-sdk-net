@@ -40,6 +40,7 @@ namespace Amazon.MarketplaceAgreement.Model
         private FixedUpfrontPricingTerm _fixedUpfrontPricingTerm;
         private FreeTrialPricingTerm _freeTrialPricingTerm;
         private LegalTerm _legalTerm;
+        private NetPaymentTerm _netPaymentTerm;
         private PaymentScheduleTerm _paymentScheduleTerm;
         private RecurringPaymentTerm _recurringPaymentTerm;
         private RenewalTerm _renewalTerm;
@@ -141,6 +142,25 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetLegalTerm()
         {
             return this._legalTerm != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetPaymentTerm. 
+        /// <para>
+        /// Defines the net payment due period for the agreement, specifying when payment is due
+        /// after an invoice is issued.
+        /// </para>
+        /// </summary>
+        public NetPaymentTerm NetPaymentTerm
+        {
+            get { return this._netPaymentTerm; }
+            set { this._netPaymentTerm = value; }
+        }
+
+        // Check to see if NetPaymentTerm property is set
+        internal bool IsSetNetPaymentTerm()
+        {
+            return this._netPaymentTerm != null;
         }
 
         /// <summary>
