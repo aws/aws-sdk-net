@@ -46,8 +46,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AssociatedResourceArn. 
         /// <para>
         /// The resource to which the attached file is (being) uploaded to. The supported resources
-        /// are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>
-        /// and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.
+        /// are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>,
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>,
+        /// and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.
         /// </para>
         ///  <note> 
         /// <para>

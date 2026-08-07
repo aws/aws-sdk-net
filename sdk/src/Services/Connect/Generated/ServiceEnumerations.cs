@@ -8439,6 +8439,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly PropertyValidationExceptionReason RESOURCE_NAME_ALREADY_EXISTS = new PropertyValidationExceptionReason("RESOURCE_NAME_ALREADY_EXISTS");
         /// <summary>
+        /// Constant TYPE_MISMATCH for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason TYPE_MISMATCH = new PropertyValidationExceptionReason("TYPE_MISMATCH");
+        /// <summary>
         /// Constant UNIQUE_CONSTRAINT_VIOLATED for PropertyValidationExceptionReason
         /// </summary>
         public static readonly PropertyValidationExceptionReason UNIQUE_CONSTRAINT_VIOLATED = new PropertyValidationExceptionReason("UNIQUE_CONSTRAINT_VIOLATED");

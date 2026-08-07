@@ -3503,18 +3503,18 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Deletes the specified fields containing personally identifiable information (PII)
-        /// from a contact in the specified Connect Customer instance. This operation redacts
-        /// PII (such as customer endpoints, additional email recipients, and the email subject)
-        /// from the contact and its associated contact trace record (CTR). The contact must be
-        /// in a terminated state.
+        /// from a contact in the specified Connect Customer instance. We redact PII (such as
+        /// customer endpoints, additional email recipients, and the email subject) from the contact
+        /// and its associated contact trace record (CTR). The contact must be in a terminated
+        /// state.
         /// 
         ///  <important> 
         /// <para>
-        /// This operation performs a hard deletion of the specified PII and cannot be undone.
-        /// There is no retention period; after the data is deleted, it cannot be recovered. Only
-        /// fields that Connect Customer identifies and stores as PII are removed. Any PII that
-        /// you place in fields outside the scope of this operation remains your responsibility
-        /// to remove.
+        ///  <b>This deletion is permanent and cannot be undone.</b> Performing this operation
+        /// permanently deletes the specified PII. There is no retention period; you cannot recover
+        /// the data after deletion. We remove only the fields that Connect Customer identifies
+        /// and stores as PII. Any PII that you place in fields outside the scope of this operation
+        /// remains your responsibility to remove.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3525,9 +3525,9 @@ namespace Amazon.Connect
         /// 
         /// <returns>The response from the DeleteContactData service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.ContactNotTerminatedException">
-        /// The contact has not been disconnected and is not in a terminated state. PII can be
-        /// deleted only from a contact that has been disconnected. This error is returned with
-        /// an HTTP 409 status code.
+        /// The contact has not been disconnected and is not in a terminated state. To delete
+        /// PII, disconnect the contact first. Wait for it to reach the terminated state, then
+        /// retry the request.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
@@ -12129,9 +12129,10 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
-        /// Customer Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
-        /// Customer Email</a>. 
+        /// You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+        /// Customer Case</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
+        /// Customer Email</a>, or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Connect
+        /// Customer Task</a>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -14123,6 +14124,100 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactSchedule">REST API Reference for UpdateContactSchedule Operation</seealso>
         Task<UpdateContactScheduleResponse> UpdateContactScheduleAsync(UpdateContactScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateContactTaskTemplate
+
+
+
+        /// <summary>
+        /// Updates the task template association on an existing task contact. You can update
+        /// the task template on a contact before assignment to support tasks that are created
+        /// without a template (for example <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-rules.html">Rules</a>
+        /// or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-disconnect-flow.html">disconnect
+        /// flows</a>) or change the agent interaction form to represent the latest task data
+        /// (for example an initial request that was submitted as a refund gets updated to an
+        /// account cancellation and requires a new template).
+        /// 
+        ///  
+        /// <para>
+        /// This operation can only be used with task contacts that are in progress and not connected
+        /// to an agent. A task template can be updated a maximum of 5 times per contact.
+        /// </para>
+        ///  
+        /// <para>
+        /// The task's references must be compatible with the fields of the target task template.
+        /// If the target template has a required field, the task must have a corresponding reference
+        /// with a matching name and compatible type. The following task template field types
+        /// map to reference types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>TEXT</c>, <c>TEXT_AREA</c>, <c>BOOLEAN</c>, and <c>SINGLE_SELECT</c> map to references
+        /// of type <c>STRING</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NUMBER</c> maps to references of type <c>NUMBER</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DATE_TIME</c> maps to references of type <c>DATE</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>URL</c> maps to references of type <c>URL</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EMAIL</c> maps to references of type <c>EMAIL</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// References corresponding to <c>TEXT</c> fields must be fewer than 512 characters.
+        /// <c>TEXT_AREA</c> fields must be fewer than 4,096 characters. <c>BOOLEAN</c> fields
+        /// must have a value of <c>true</c> or <c>false</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// An <c>InvalidRequestException</c> occurs when <c>UpdateContactTaskTemplate</c> is
+        /// called on a connected or terminated task, when it is called on non-task contacts,
+        /// and when the task contact already uses the provided task template. A <c>PropertyValidationException</c>
+        /// occurs when the task's references conflict with the task template's fields, for example
+        /// if the task is missing a reference that matches a required field, or if the task has
+        /// a reference that matches a required field's name but not its datatype.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactTaskTemplate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateContactTaskTemplate service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.PropertyValidationException">
+        /// The property is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactTaskTemplate">REST API Reference for UpdateContactTaskTemplate Operation</seealso>
+        Task<UpdateContactTaskTemplateResponse> UpdateContactTaskTemplateAsync(UpdateContactTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
