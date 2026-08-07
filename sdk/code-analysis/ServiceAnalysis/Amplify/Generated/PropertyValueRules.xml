@@ -48,7 +48,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.OauthToken</property>
-    <max>1000</max>
+    <max>4096</max>
     <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -661,7 +661,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.OauthToken</property>
-    <max>1000</max>
+    <max>4096</max>
     <pattern>(?s).*</pattern>
   </property-value-rule>
   <property-value-rule>
