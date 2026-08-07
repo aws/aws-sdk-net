@@ -1,3 +1,23 @@
+### 4.0.307.0 (2026-08-07 18:19 UTC)
+* Amplify (4.0.101.0)
+	* Increased the maximum allowed length of the oauthToken parameter in the CreateApp and UpdateApp APIs to support longer OAuth tokens issued by third-party Git providers.
+* CloudTrailData (4.0.100.8)
+	* CloudTrailData is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.107.0)
+	* Supports updating the task template associated with in-progress task contacts using the new UpdateContactTaskTemplate API. This enables supervisors and developers to dynamically reassign task templates without creating a new task.
+* EC2 (4.0.110.0)
+	* This release adds support for BGP route protection in Amazon VPC IP Address Manager (IPAM), including route discovery, RPKI route protection findings, and delegated RPKI (Internet Registry Associations, routing policy registrations, and ROA management) for BYOIP prefixes.
+* HealthLake (4.0.102.0)
+	* Adds provenanceEnabled to StartFHIRImportJob
+* MediaPackageV2 (4.0.102.0)
+	* StreamNameOutputMode - a new optional field on MediaPackageV2 OriginEndpoints that lets customers choose whether egress manifests use numeric stream indices (default) or encoder-assigned stream names from the input
+* MediaTailor (4.0.104.0)
+	* Added support for inserting ads via the VAST Ad Buffet standard. You can now configure MediaTailor to insert ads in sequence order using the AdSequencingMode setting in your playback configuration. Standalone ads are used as fallbacks when a sequenced ad is unavailable.
+* SageMaker (4.0.107.0)
+	* Amazon SageMaker adds maintenance lifecycle statuses for Notebook Instances
+* SecurityAgent (4.0.103.0)
+	* Added enableEmailMfa input field on Actor to enable email-based MFA during penetration tests. When enabled, a server-generated mfaForwardingAddress is returned. Set up a forwarding rule in your email provider to forward MFA emails to this address so the agent can complete email-based MFA login flows
+
 ### 4.0.306.0 (2026-08-06 18:33 UTC)
 * AgentRegistry (4.0.100.0)
 	* Agent Registry's Public Preview release
