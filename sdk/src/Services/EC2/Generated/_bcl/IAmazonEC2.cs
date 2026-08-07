@@ -2603,6 +2603,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  BatchModifyIpamRoutingPolicyRegistrations
+
+
+        /// <summary>
+        /// Modifies multiple routing policy registrations in a single operation. You can create,
+        /// update, or delete Route Origin Authorizations (ROAs) in batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchModifyIpamRoutingPolicyRegistrations service method.</param>
+        /// 
+        /// <returns>The response from the BatchModifyIpamRoutingPolicyRegistrations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BatchModifyIpamRoutingPolicyRegistrations">REST API Reference for BatchModifyIpamRoutingPolicyRegistrations Operation</seealso>
+        BatchModifyIpamRoutingPolicyRegistrationsResponse BatchModifyIpamRoutingPolicyRegistrations(BatchModifyIpamRoutingPolicyRegistrationsRequest request);
+
+
+
+        /// <summary>
+        /// Modifies multiple routing policy registrations in a single operation. You can create,
+        /// update, or delete Route Origin Authorizations (ROAs) in batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchModifyIpamRoutingPolicyRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchModifyIpamRoutingPolicyRegistrations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BatchModifyIpamRoutingPolicyRegistrations">REST API Reference for BatchModifyIpamRoutingPolicyRegistrations Operation</seealso>
+        Task<BatchModifyIpamRoutingPolicyRegistrationsResponse> BatchModifyIpamRoutingPolicyRegistrationsAsync(BatchModifyIpamRoutingPolicyRegistrationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BundleInstance
 
 
@@ -3742,7 +3772,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
-        /// is 2, <c>SuccessThreshold</c> is 5, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
+        /// is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
         /// is 300 seconds.
         /// </para>
         ///  </li> <li> 
@@ -3791,7 +3821,7 @@ namespace Amazon.EC2
         ///  </li> <li> 
         /// <para>
         /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
-        /// is 2, <c>SuccessThreshold</c> is 5, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
+        /// is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
         /// is 300 seconds.
         /// </para>
         ///  </li> <li> 
@@ -5256,6 +5286,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  CreateIpamInternetRegistryAssociation
+
+
+        /// <summary>
+        /// Creates an association between an IPAM and a Regional Internet Registry (RIR) for
+        /// Resource Public Key Infrastructure (RPKI) management. You can use this association
+        /// to create Route Origin Authorizations (ROAs) for IP address prefixes registered with
+        /// the internet registry. Your IPAM must be in the Advanced tier to use this feature.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamInternetRegistryAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamInternetRegistryAssociation">REST API Reference for CreateIpamInternetRegistryAssociation Operation</seealso>
+        CreateIpamInternetRegistryAssociationResponse CreateIpamInternetRegistryAssociation(CreateIpamInternetRegistryAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Creates an association between an IPAM and a Regional Internet Registry (RIR) for
+        /// Resource Public Key Infrastructure (RPKI) management. You can use this association
+        /// to create Route Origin Authorizations (ROAs) for IP address prefixes registered with
+        /// the internet registry. Your IPAM must be in the Advanced tier to use this feature.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamInternetRegistryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamInternetRegistryAssociation">REST API Reference for CreateIpamInternetRegistryAssociation Operation</seealso>
+        Task<CreateIpamInternetRegistryAssociationResponse> CreateIpamInternetRegistryAssociationAsync(CreateIpamInternetRegistryAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateIpamPolicy
 
 
@@ -5503,6 +5567,36 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
         Task<CreateIpamResourceDiscoveryResponse> CreateIpamResourceDiscoveryAsync(CreateIpamResourceDiscoveryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateIpamRoutingPolicyRegistration
+
+
+        /// <summary>
+        /// Creates a routing policy registration and publishes Route Origin Authorizations (ROAs)
+        /// to the RPKI for the specified CIDR prefix and ASNs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamRoutingPolicyRegistration service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamRoutingPolicyRegistration">REST API Reference for CreateIpamRoutingPolicyRegistration Operation</seealso>
+        CreateIpamRoutingPolicyRegistrationResponse CreateIpamRoutingPolicyRegistration(CreateIpamRoutingPolicyRegistrationRequest request);
+
+
+
+        /// <summary>
+        /// Creates a routing policy registration and publishes Route Origin Authorizations (ROAs)
+        /// to the RPKI for the specified CIDR prefix and ASNs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamRoutingPolicyRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamRoutingPolicyRegistration">REST API Reference for CreateIpamRoutingPolicyRegistration Operation</seealso>
+        Task<CreateIpamRoutingPolicyRegistrationResponse> CreateIpamRoutingPolicyRegistrationAsync(CreateIpamRoutingPolicyRegistrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -10150,6 +10244,36 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  DeleteIpamInternetRegistryAssociation
+
+
+        /// <summary>
+        /// Deletes an IPAM internet registry association. Before deleting, you must remove all
+        /// routing policy registrations associated with the internet registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamInternetRegistryAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamInternetRegistryAssociation">REST API Reference for DeleteIpamInternetRegistryAssociation Operation</seealso>
+        DeleteIpamInternetRegistryAssociationResponse DeleteIpamInternetRegistryAssociation(DeleteIpamInternetRegistryAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an IPAM internet registry association. Before deleting, you must remove all
+        /// routing policy registrations associated with the internet registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamInternetRegistryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamInternetRegistryAssociation">REST API Reference for DeleteIpamInternetRegistryAssociation Operation</seealso>
+        Task<DeleteIpamInternetRegistryAssociationResponse> DeleteIpamInternetRegistryAssociationAsync(DeleteIpamInternetRegistryAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteIpamPolicy
 
 
@@ -10351,6 +10475,34 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
         Task<DeleteIpamResourceDiscoveryResponse> DeleteIpamResourceDiscoveryAsync(DeleteIpamResourceDiscoveryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteIpamRoutingPolicyRegistration
+
+
+        /// <summary>
+        /// Deletes a routing policy registration for a specified CIDR prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamRoutingPolicyRegistration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamRoutingPolicyRegistration">REST API Reference for DeleteIpamRoutingPolicyRegistration Operation</seealso>
+        DeleteIpamRoutingPolicyRegistrationResponse DeleteIpamRoutingPolicyRegistration(DeleteIpamRoutingPolicyRegistrationRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a routing policy registration for a specified CIDR prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamRoutingPolicyRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamRoutingPolicyRegistration">REST API Reference for DeleteIpamRoutingPolicyRegistration Operation</seealso>
+        Task<DeleteIpamRoutingPolicyRegistrationResponse> DeleteIpamRoutingPolicyRegistrationAsync(DeleteIpamRoutingPolicyRegistrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -17358,6 +17510,36 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeIpamExternalResourceVerificationTokens service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
         Task<DescribeIpamExternalResourceVerificationTokensResponse> DescribeIpamExternalResourceVerificationTokensAsync(DescribeIpamExternalResourceVerificationTokensRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeIpamInternetRegistryAssociations
+
+
+        /// <summary>
+        /// Describes one or more IPAM internet registry associations. We recommend using pagination
+        /// to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamInternetRegistryAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeIpamInternetRegistryAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamInternetRegistryAssociations">REST API Reference for DescribeIpamInternetRegistryAssociations Operation</seealso>
+        DescribeIpamInternetRegistryAssociationsResponse DescribeIpamInternetRegistryAssociations(DescribeIpamInternetRegistryAssociationsRequest request);
+
+
+
+        /// <summary>
+        /// Describes one or more IPAM internet registry associations. We recommend using pagination
+        /// to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamInternetRegistryAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamInternetRegistryAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamInternetRegistryAssociations">REST API Reference for DescribeIpamInternetRegistryAssociations Operation</seealso>
+        Task<DescribeIpamInternetRegistryAssociationsResponse> DescribeIpamInternetRegistryAssociationsAsync(DescribeIpamInternetRegistryAssociationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -25936,6 +26118,40 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  EnableIpamInternetRegistryAssociation
+
+
+        /// <summary>
+        /// Enables Resource Public Key Infrastructure (RPKI) on an existing IPAM internet registry
+        /// association by providing BGP Public Key Infrastructure (BPKI) certificate details.
+        /// After enabling, you can create Route Origin Authorizations (ROAs) for prefixes registered
+        /// with the internet registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamInternetRegistryAssociation service method.</param>
+        /// 
+        /// <returns>The response from the EnableIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamInternetRegistryAssociation">REST API Reference for EnableIpamInternetRegistryAssociation Operation</seealso>
+        EnableIpamInternetRegistryAssociationResponse EnableIpamInternetRegistryAssociation(EnableIpamInternetRegistryAssociationRequest request);
+
+
+
+        /// <summary>
+        /// Enables Resource Public Key Infrastructure (RPKI) on an existing IPAM internet registry
+        /// association by providing BGP Public Key Infrastructure (BPKI) certificate details.
+        /// After enabling, you can create Route Origin Authorizations (ROAs) for prefixes registered
+        /// with the internet registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamInternetRegistryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamInternetRegistryAssociation">REST API Reference for EnableIpamInternetRegistryAssociation Operation</seealso>
+        Task<EnableIpamInternetRegistryAssociationResponse> EnableIpamInternetRegistryAssociationAsync(EnableIpamInternetRegistryAssociationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  EnableIpamOrganizationAdminAccount
 
 
@@ -27850,6 +28066,104 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetIpamDiscoveredRoutes
+
+
+        /// <summary>
+        /// Retrieves Border Gateway Protocol (BGP) routes discovered by IPAM resource discovery
+        /// for a specified Region. Use this operation to view the Bring Your Own IP (BYOIP) address
+        /// ranges that are currently advertised through BGP. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredRoutes service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredRoutes">REST API Reference for GetIpamDiscoveredRoutes Operation</seealso>
+        GetIpamDiscoveredRoutesResponse GetIpamDiscoveredRoutes(GetIpamDiscoveredRoutesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves Border Gateway Protocol (BGP) routes discovered by IPAM resource discovery
+        /// for a specified Region. Use this operation to view the Bring Your Own IP (BYOIP) address
+        /// ranges that are currently advertised through BGP. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredRoutes">REST API Reference for GetIpamDiscoveredRoutes Operation</seealso>
+        Task<GetIpamDiscoveredRoutesResponse> GetIpamDiscoveredRoutesAsync(GetIpamDiscoveredRoutesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIpamInternetRegistryAssociationAsns
+
+
+        /// <summary>
+        /// Retrieves Autonomous System Numbers (ASNs) registered with an internet registry for
+        /// an IPAM internet registry association. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamInternetRegistryAssociationAsns service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamInternetRegistryAssociationAsns service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationAsns">REST API Reference for GetIpamInternetRegistryAssociationAsns Operation</seealso>
+        GetIpamInternetRegistryAssociationAsnsResponse GetIpamInternetRegistryAssociationAsns(GetIpamInternetRegistryAssociationAsnsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves Autonomous System Numbers (ASNs) registered with an internet registry for
+        /// an IPAM internet registry association. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamInternetRegistryAssociationAsns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamInternetRegistryAssociationAsns service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationAsns">REST API Reference for GetIpamInternetRegistryAssociationAsns Operation</seealso>
+        Task<GetIpamInternetRegistryAssociationAsnsResponse> GetIpamInternetRegistryAssociationAsnsAsync(GetIpamInternetRegistryAssociationAsnsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIpamInternetRegistryAssociationCidrs
+
+
+        /// <summary>
+        /// Retrieves IP address CIDRs registered with an internet registry for an IPAM internet
+        /// registry association. We recommend using pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamInternetRegistryAssociationCidrs service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamInternetRegistryAssociationCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationCidrs">REST API Reference for GetIpamInternetRegistryAssociationCidrs Operation</seealso>
+        GetIpamInternetRegistryAssociationCidrsResponse GetIpamInternetRegistryAssociationCidrs(GetIpamInternetRegistryAssociationCidrsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves IP address CIDRs registered with an internet registry for an IPAM internet
+        /// registry association. We recommend using pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamInternetRegistryAssociationCidrs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamInternetRegistryAssociationCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationCidrs">REST API Reference for GetIpamInternetRegistryAssociationCidrs Operation</seealso>
+        Task<GetIpamInternetRegistryAssociationCidrsResponse> GetIpamInternetRegistryAssociationCidrsAsync(GetIpamInternetRegistryAssociationCidrsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetIpamPolicyAllocationRules
 
 
@@ -28283,6 +28597,140 @@ namespace Amazon.EC2
         /// <returns>The response from the GetIpamResourceCidrs service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
         Task<GetIpamResourceCidrsResponse> GetIpamResourceCidrsAsync(GetIpamResourceCidrsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIpamRouteOriginAuthorizations
+
+
+        /// <summary>
+        /// Retrieves the current Route Origin Authorizations (ROAs) published to the RPKI for
+        /// an IPAM internet registry association. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRouteOriginAuthorizations service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamRouteOriginAuthorizations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteOriginAuthorizations">REST API Reference for GetIpamRouteOriginAuthorizations Operation</seealso>
+        GetIpamRouteOriginAuthorizationsResponse GetIpamRouteOriginAuthorizations(GetIpamRouteOriginAuthorizationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the current Route Origin Authorizations (ROAs) published to the RPKI for
+        /// an IPAM internet registry association. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRouteOriginAuthorizations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRouteOriginAuthorizations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteOriginAuthorizations">REST API Reference for GetIpamRouteOriginAuthorizations Operation</seealso>
+        Task<GetIpamRouteOriginAuthorizationsResponse> GetIpamRouteOriginAuthorizationsAsync(GetIpamRouteOriginAuthorizationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIpamRouteProtectionFindings
+
+
+        /// <summary>
+        /// Retrieves route protection findings for an IPAM. Route protection findings show the
+        /// Resource Public Key Infrastructure (RPKI) validation status of your Bring Your Own
+        /// IP (BYOIP) routes. Findings identify routes that have valid, invalid, or unknown validation
+        /// states. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRouteProtectionFindings service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamRouteProtectionFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteProtectionFindings">REST API Reference for GetIpamRouteProtectionFindings Operation</seealso>
+        GetIpamRouteProtectionFindingsResponse GetIpamRouteProtectionFindings(GetIpamRouteProtectionFindingsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves route protection findings for an IPAM. Route protection findings show the
+        /// Resource Public Key Infrastructure (RPKI) validation status of your Bring Your Own
+        /// IP (BYOIP) routes. Findings identify routes that have valid, invalid, or unknown validation
+        /// states. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRouteProtectionFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRouteProtectionFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteProtectionFindings">REST API Reference for GetIpamRouteProtectionFindings Operation</seealso>
+        Task<GetIpamRouteProtectionFindingsResponse> GetIpamRouteProtectionFindingsAsync(GetIpamRouteProtectionFindingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIpamRoutingPolicyRegistrationDeltas
+
+
+        /// <summary>
+        /// Retrieves the history of routing policy registration changes for an IPAM internet
+        /// registry association. We recommend using pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRoutingPolicyRegistrationDeltas service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamRoutingPolicyRegistrationDeltas service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrationDeltas">REST API Reference for GetIpamRoutingPolicyRegistrationDeltas Operation</seealso>
+        GetIpamRoutingPolicyRegistrationDeltasResponse GetIpamRoutingPolicyRegistrationDeltas(GetIpamRoutingPolicyRegistrationDeltasRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the history of routing policy registration changes for an IPAM internet
+        /// registry association. We recommend using pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRoutingPolicyRegistrationDeltas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRoutingPolicyRegistrationDeltas service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrationDeltas">REST API Reference for GetIpamRoutingPolicyRegistrationDeltas Operation</seealso>
+        Task<GetIpamRoutingPolicyRegistrationDeltasResponse> GetIpamRoutingPolicyRegistrationDeltasAsync(GetIpamRoutingPolicyRegistrationDeltasRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetIpamRoutingPolicyRegistrations
+
+
+        /// <summary>
+        /// Retrieves routing policy registrations for an IPAM internet registry association.
+        /// Each registration represents a Route Origin Authorization (ROA) that has been created
+        /// or is pending publication to the RPKI. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRoutingPolicyRegistrations service method.</param>
+        /// 
+        /// <returns>The response from the GetIpamRoutingPolicyRegistrations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrations">REST API Reference for GetIpamRoutingPolicyRegistrations Operation</seealso>
+        GetIpamRoutingPolicyRegistrationsResponse GetIpamRoutingPolicyRegistrations(GetIpamRoutingPolicyRegistrationsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves routing policy registrations for an IPAM internet registry association.
+        /// Each registration represents a Route Origin Authorization (ROA) that has been created
+        /// or is pending publication to the RPKI. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRoutingPolicyRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRoutingPolicyRegistrations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrations">REST API Reference for GetIpamRoutingPolicyRegistrations Operation</seealso>
+        Task<GetIpamRoutingPolicyRegistrationsResponse> GetIpamRoutingPolicyRegistrationsAsync(GetIpamRoutingPolicyRegistrationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -31761,6 +32209,36 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
         Task<ModifyIpamResourceDiscoveryResponse> ModifyIpamResourceDiscoveryAsync(ModifyIpamResourceDiscoveryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ModifyIpamRoutingPolicyRegistration
+
+
+        /// <summary>
+        /// Modifies an existing routing policy registration. You can update the authorized ASNs,
+        /// maximum prefix length, and other properties of a Route Origin Authorization (ROA).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamRoutingPolicyRegistration service method.</param>
+        /// 
+        /// <returns>The response from the ModifyIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamRoutingPolicyRegistration">REST API Reference for ModifyIpamRoutingPolicyRegistration Operation</seealso>
+        ModifyIpamRoutingPolicyRegistrationResponse ModifyIpamRoutingPolicyRegistration(ModifyIpamRoutingPolicyRegistrationRequest request);
+
+
+
+        /// <summary>
+        /// Modifies an existing routing policy registration. You can update the authorized ASNs,
+        /// maximum prefix length, and other properties of a Route Origin Authorization (ROA).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamRoutingPolicyRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamRoutingPolicyRegistration">REST API Reference for ModifyIpamRoutingPolicyRegistration Operation</seealso>
+        Task<ModifyIpamRoutingPolicyRegistrationResponse> ModifyIpamRoutingPolicyRegistrationAsync(ModifyIpamRoutingPolicyRegistrationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

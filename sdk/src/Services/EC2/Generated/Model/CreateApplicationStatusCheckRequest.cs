@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
-    /// is 2, <c>SuccessThreshold</c> is 5, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
+    /// is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
     /// is 300 seconds.
     /// </para>
     ///  </li> <li> 
