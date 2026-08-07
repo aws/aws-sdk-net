@@ -15759,6 +15759,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly NotebookInstanceStatus Failed = new NotebookInstanceStatus("Failed");
         /// <summary>
+        /// Constant InMaintenance for NotebookInstanceStatus
+        /// </summary>
+        public static readonly NotebookInstanceStatus InMaintenance = new NotebookInstanceStatus("InMaintenance");
+        /// <summary>
         /// Constant InService for NotebookInstanceStatus
         /// </summary>
         public static readonly NotebookInstanceStatus InService = new NotebookInstanceStatus("InService");
@@ -15766,6 +15770,10 @@ namespace Amazon.SageMaker
         /// Constant Pending for NotebookInstanceStatus
         /// </summary>
         public static readonly NotebookInstanceStatus Pending = new NotebookInstanceStatus("Pending");
+        /// <summary>
+        /// Constant PendingMaintenance for NotebookInstanceStatus
+        /// </summary>
+        public static readonly NotebookInstanceStatus PendingMaintenance = new NotebookInstanceStatus("PendingMaintenance");
         /// <summary>
         /// Constant Stopped for NotebookInstanceStatus
         /// </summary>
