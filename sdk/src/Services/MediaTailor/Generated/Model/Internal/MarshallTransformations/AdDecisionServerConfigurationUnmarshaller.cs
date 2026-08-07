@@ -62,6 +62,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                     unmarshalledObject.HttpRequest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("VastResponse", targetDepth, ref reader))
+                {
+                    var unmarshaller = VastResponseUnmarshaller.Instance;
+                    unmarshalledObject.VastResponse = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

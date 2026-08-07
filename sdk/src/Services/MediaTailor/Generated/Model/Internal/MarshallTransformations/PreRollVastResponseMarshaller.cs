@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AdDecisionServerConfiguration Marshaller
+    /// PreRollVastResponse Marshaller
     /// </summary>
-    public class AdDecisionServerConfigurationMarshaller : IRequestMarshaller<AdDecisionServerConfiguration, JsonMarshallerContext> 
+    public class PreRollVastResponseMarshaller : IRequestMarshaller<PreRollVastResponse, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AdDecisionServerConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(PreRollVastResponse requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetHttpRequest())
+            if(requestObject.IsSetAdSequencingMode())
             {
-                context.Writer.WritePropertyName("HttpRequest");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HttpRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.HttpRequest, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetVastResponse())
-            {
-                context.Writer.WritePropertyName("VastResponse");
-                context.Writer.WriteStartObject();
-
-                var marshaller = VastResponseMarshaller.Instance;
-                marshaller.Marshall(requestObject.VastResponse, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("AdSequencingMode");
+                context.Writer.WriteStringValue(requestObject.AdSequencingMode);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AdDecisionServerConfigurationMarshaller Instance = new AdDecisionServerConfigurationMarshaller();
+        public readonly static PreRollVastResponseMarshaller Instance = new PreRollVastResponseMarshaller();
 
     }
 }

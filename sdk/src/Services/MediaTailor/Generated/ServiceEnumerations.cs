@@ -129,6 +129,64 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type AdSequencingMode.
+    /// </summary>
+    public class AdSequencingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOW_AD_SEQUENCE for AdSequencingMode
+        /// </summary>
+        public static readonly AdSequencingMode FOLLOW_AD_SEQUENCE = new AdSequencingMode("FOLLOW_AD_SEQUENCE");
+        /// <summary>
+        /// Constant FOLLOW_AD_SEQUENCE_ONLY_LIVE for AdSequencingMode
+        /// </summary>
+        public static readonly AdSequencingMode FOLLOW_AD_SEQUENCE_ONLY_LIVE = new AdSequencingMode("FOLLOW_AD_SEQUENCE_ONLY_LIVE");
+        /// <summary>
+        /// Constant FOLLOW_AD_SEQUENCE_ONLY_VOD for AdSequencingMode
+        /// </summary>
+        public static readonly AdSequencingMode FOLLOW_AD_SEQUENCE_ONLY_VOD = new AdSequencingMode("FOLLOW_AD_SEQUENCE_ONLY_VOD");
+        /// <summary>
+        /// Constant IGNORE_AD_SEQUENCE for AdSequencingMode
+        /// </summary>
+        public static readonly AdSequencingMode IGNORE_AD_SEQUENCE = new AdSequencingMode("IGNORE_AD_SEQUENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdSequencingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdSequencingMode FindValue(string value)
+        {
+            return FindValue<AdSequencingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdSequencingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AdsInteractionExcludeEventType.
     /// </summary>
     public class AdsInteractionExcludeEventType : ConstantClass
@@ -1534,6 +1592,56 @@ namespace Amazon.MediaTailor
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrefetchScheduleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreRollAdSequencingMode.
+    /// </summary>
+    public class PreRollAdSequencingMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FOLLOW_AD_SEQUENCE for PreRollAdSequencingMode
+        /// </summary>
+        public static readonly PreRollAdSequencingMode FOLLOW_AD_SEQUENCE = new PreRollAdSequencingMode("FOLLOW_AD_SEQUENCE");
+        /// <summary>
+        /// Constant IGNORE_AD_SEQUENCE for PreRollAdSequencingMode
+        /// </summary>
+        public static readonly PreRollAdSequencingMode IGNORE_AD_SEQUENCE = new PreRollAdSequencingMode("IGNORE_AD_SEQUENCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreRollAdSequencingMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreRollAdSequencingMode FindValue(string value)
+        {
+            return FindValue<PreRollAdSequencingMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreRollAdSequencingMode(string value)
         {
             return FindValue(value);
         }

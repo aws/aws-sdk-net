@@ -30,41 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// Configuration parameters for customizing HTTP requests sent to the ad decision server
-    /// (ADS). This allows you to specify the HTTP method, headers, request body, and compression
-    /// settings for ADS requests.
+    /// The ad decision server configuration for live pre-roll ads. It contains settings that
+    /// control how MediaTailor processes VAST responses for pre-roll ad breaks.
     /// </summary>
-    public partial class AdDecisionServerConfiguration
+    public partial class PreRollAdDecisionServerConfiguration
     {
-        private HttpRequest _httpRequest;
-        private VastResponse _vastResponse;
-
-        /// <summary>
-        /// Gets and sets the property HttpRequest. 
-        /// <para>
-        /// The HTTP request configuration parameters for the ad decision server.
-        /// </para>
-        /// </summary>
-        public HttpRequest HttpRequest
-        {
-            get { return this._httpRequest; }
-            set { this._httpRequest = value; }
-        }
-
-        // Check to see if HttpRequest property is set
-        internal bool IsSetHttpRequest()
-        {
-            return this._httpRequest != null;
-        }
+        private PreRollVastResponse _vastResponse;
 
         /// <summary>
         /// Gets and sets the property VastResponse. 
         /// <para>
-        /// The settings that control how MediaTailor processes VAST responses from the ad decision
-        /// server.
+        /// The settings that control how MediaTailor processes VAST responses for live pre-roll
+        /// ad breaks.
         /// </para>
         /// </summary>
-        public VastResponse VastResponse
+        public PreRollVastResponse VastResponse
         {
             get { return this._vastResponse; }
             set { this._vastResponse = value; }

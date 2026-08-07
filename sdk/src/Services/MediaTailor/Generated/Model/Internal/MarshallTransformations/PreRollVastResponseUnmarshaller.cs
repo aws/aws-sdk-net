@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LivePreRollConfiguration Object
+    /// Response Unmarshaller for PreRollVastResponse Object
     /// </summary>  
-    public class LivePreRollConfigurationUnmarshaller : IJsonUnmarshaller<LivePreRollConfiguration, JsonUnmarshallerContext>
+    public class PreRollVastResponseUnmarshaller : IJsonUnmarshaller<PreRollVastResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LivePreRollConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PreRollVastResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            LivePreRollConfiguration unmarshalledObject = new LivePreRollConfiguration();
+            PreRollVastResponse unmarshalledObject = new PreRollVastResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("AdDecisionServerConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = PreRollAdDecisionServerConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AdDecisionServerConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("AdDecisionServerUrl", targetDepth, ref reader))
+                if (context.TestExpression("AdSequencingMode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdDecisionServerUrl = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MaxDurationSeconds", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxDurationSeconds = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.AdSequencingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         }
 
 
-        private static LivePreRollConfigurationUnmarshaller _instance = new LivePreRollConfigurationUnmarshaller();        
+        private static PreRollVastResponseUnmarshaller _instance = new PreRollVastResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LivePreRollConfigurationUnmarshaller Instance
+        public static PreRollVastResponseUnmarshaller Instance
         {
             get
             {
