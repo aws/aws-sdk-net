@@ -46,6 +46,7 @@ namespace Amazon.HealthLake.Model
         private string _jobName;
         private OutputDataConfig _jobOutputDataConfig;
         private string _profileId;
+        private bool? _provenanceEnabled;
         private ValidationLevel _validationLevel;
 
         /// <summary>
@@ -204,6 +205,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetProfileId()
         {
             return this._profileId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvenanceEnabled. 
+        /// <para>
+        /// Specifies whether to enable provenance for the import job.
+        /// </para>
+        /// </summary>
+        public bool? ProvenanceEnabled
+        {
+            get { return this._provenanceEnabled; }
+            set { this._provenanceEnabled = value; }
+        }
+
+        // Check to see if ProvenanceEnabled property is set
+        internal bool IsSetProvenanceEnabled()
+        {
+            return this._provenanceEnabled.HasValue; 
         }
 
         /// <summary>
