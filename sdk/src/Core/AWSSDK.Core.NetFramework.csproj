@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RunAnalyzersDuringBuild Condition="'$(RunAnalyzersDuringBuild)'==''">true</RunAnalyzersDuringBuild>
     <TargetFrameworks>$(SdkNetFrameworkTargets)</TargetFrameworks>
@@ -76,6 +76,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.Formats.Asn1" Version="6.0.1" />
     <PackageReference Include="System.Memory" Version="4.5.5" />
     <PackageReference Include="System.Text.Json" Version="$(SystemTextJsonVersion)" />
   </ItemGroup>
