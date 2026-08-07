@@ -214,6 +214,27 @@ namespace Amazon.Runtime.Internal
         string ComputeContentStreamHash();
 
         /// <summary>
+        /// A caller-supplied, precomputed SHA256 hash of the request body used as the
+        /// x-amz-content-sha256 value during signing, in place of the signer reading and hashing
+        /// the body itself. The value must be the lowercase hex encoding of the 32-byte SHA256
+        /// digest (64 hex characters); it is used verbatim (no normalization), so it must match the
+        /// body byte-for-byte or the request will fail to authenticate.
+        /// <para>
+        /// When set, <c>AWS4Signer.SetRequestBodyHash</c> uses this value ahead of the body read,
+        /// so it survives the header scrub that clears a stale x-amz-content-sha256 before (re)signing.
+        /// It is only applied when payload signing is effectively enabled: it is ignored when the
+        /// payload is unsigned (<see cref="DisablePayloadSigning"/> is true, or the signer is
+        /// configured not to sign the payload), and when chunk encoding is used, since those paths
+        /// use their own content-hash magic strings.
+        /// </para>
+        /// <para>
+        /// The standard service pipeline never sets this; it exists for standalone signing scenarios
+        /// where the body should not be read (large or non-seekable content).
+        /// </para>
+        /// </summary>
+        string PrecomputedContentSha256 { get; set; }
+
+        /// <summary>
         /// If the request needs to be signed with a different service name 
         /// than the client config AuthenticationServiceName, set it here to override
         /// the result of DetermineService in AWS4Signer

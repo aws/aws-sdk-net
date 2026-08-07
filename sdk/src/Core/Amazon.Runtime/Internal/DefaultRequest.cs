@@ -395,6 +395,9 @@ namespace Amazon.Runtime.Internal
             return this.contentStreamHash;
         }
 
+        /// <inheritdoc/>
+        public string PrecomputedContentSha256 { get; set; }
+
         /// <summary>
         /// The name of the service to which this request is being sent.
         /// </summary>
