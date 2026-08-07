@@ -1613,6 +1613,56 @@ namespace Amazon.MediaPackageV2
 
 
     /// <summary>
+    /// Constants used for properties of type StreamNameOutputMode.
+    /// </summary>
+    public class StreamNameOutputMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INDEX for StreamNameOutputMode
+        /// </summary>
+        public static readonly StreamNameOutputMode INDEX = new StreamNameOutputMode("INDEX");
+        /// <summary>
+        /// Constant PASSTHROUGH_NAME for StreamNameOutputMode
+        /// </summary>
+        public static readonly StreamNameOutputMode PASSTHROUGH_NAME = new StreamNameOutputMode("PASSTHROUGH_NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamNameOutputMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamNameOutputMode FindValue(string value)
+        {
+            return FindValue<StreamNameOutputMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamNameOutputMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TsEncryptionMethod.
     /// </summary>
     public class TsEncryptionMethod : ConstantClass
@@ -2069,6 +2119,10 @@ namespace Amazon.MediaPackageV2
         /// </summary>
         public static readonly ValidationExceptionType ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION = new ValidationExceptionType("ONLY_CMAF_INPUT_TYPE_ALLOW_PREFERRED_INPUT_CONFIGURATION");
         /// <summary>
+        /// Constant ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE = new ValidationExceptionType("ONLY_HLS_INPUT_TYPE_ALLOW_STREAM_NAME_OUTPUT_MODE");
+        /// <summary>
         /// Constant ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE = new ValidationExceptionType("ONLY_NON_EPOCH_LOCKED_ALLOW_OUTPUT_TIMESTAMP_MODE");
@@ -2124,6 +2178,10 @@ namespace Amazon.MediaPackageV2
         /// Constant START_TAG_TIME_OFFSET_INVALID for ValidationExceptionType
         /// </summary>
         public static readonly ValidationExceptionType START_TAG_TIME_OFFSET_INVALID = new ValidationExceptionType("START_TAG_TIME_OFFSET_INVALID");
+        /// <summary>
+        /// Constant STREAM_NAME_OUTPUT_MODE_IMMUTABLE for ValidationExceptionType
+        /// </summary>
+        public static readonly ValidationExceptionType STREAM_NAME_OUTPUT_MODE_IMMUTABLE = new ValidationExceptionType("STREAM_NAME_OUTPUT_MODE_IMMUTABLE");
         /// <summary>
         /// Constant TIMING_SOURCE_MISSING for ValidationExceptionType
         /// </summary>

@@ -186,6 +186,12 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(publicRequest.StartoverWindowSeconds.Value);
             }
 
+            if(publicRequest.IsSetStreamNameOutputMode())
+            {
+                context.Writer.WritePropertyName("StreamNameOutputMode");
+                context.Writer.WriteStringValue(publicRequest.StreamNameOutputMode);
+            }
+
             if(publicRequest.IsSetUriSeparator())
             {
                 context.Writer.WritePropertyName("UriSeparator");

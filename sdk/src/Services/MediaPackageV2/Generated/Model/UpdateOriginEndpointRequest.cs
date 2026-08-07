@@ -54,6 +54,7 @@ namespace Amazon.MediaPackageV2.Model
         private string _originEndpointName;
         private Segment _segment;
         private int? _startoverWindowSeconds;
+        private StreamNameOutputMode _streamNameOutputMode;
         private UriSeparator _uriSeparator;
 
         /// <summary>
@@ -327,6 +328,26 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetStartoverWindowSeconds()
         {
             return this._startoverWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamNameOutputMode. 
+        /// <para>
+        /// The output mode for stream names in egress manifests. If you provide a value, it must
+        /// match the current value. You can't change the stream name output mode after you create
+        /// the endpoint.
+        /// </para>
+        /// </summary>
+        public StreamNameOutputMode StreamNameOutputMode
+        {
+            get { return this._streamNameOutputMode; }
+            set { this._streamNameOutputMode = value; }
+        }
+
+        // Check to see if StreamNameOutputMode property is set
+        internal bool IsSetStreamNameOutputMode()
+        {
+            return this._streamNameOutputMode != null;
         }
 
         /// <summary>
