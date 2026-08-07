@@ -234,14 +234,4 @@
         </ExtensionProjectReference>
     </ItemGroup>
 
-    <ItemGroup Condition="'$(TargetFramework)' == 'net472' and '$(BuildType)' != 'PREVIEW'">
-        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.Bedrock.MEAI\AWSSDK.Extensions.Bedrock.MEAI.NetFramework.csproj">
-            <SubFolder>BedrockMEAI</SubFolder>
-        </ExtensionProjectReference>
-    </ItemGroup>
-    <ItemGroup Condition="'$(TargetFramework)' != 'net472' and '$(TargetFramework)' != 'netcoreapp3.1' and '$(BuildType)' != 'PREVIEW'">
-        <ExtensionProjectReference Include="..\..\extensions\src\AWSSDK.Extensions.Bedrock.MEAI\AWSSDK.Extensions.Bedrock.MEAI.NetStandard.csproj">
-            <SubFolder>BedrockMEAI</SubFolder>
-        </ExtensionProjectReference>
-    </ItemGroup>
 </Project>
