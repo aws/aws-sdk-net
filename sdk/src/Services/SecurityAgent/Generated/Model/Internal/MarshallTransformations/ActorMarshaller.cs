@@ -63,10 +63,22 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Description);
             }
 
+            if(requestObject.IsSetEnableEmailMfa())
+            {
+                context.Writer.WritePropertyName("enableEmailMfa");
+                context.Writer.WriteBooleanValue(requestObject.EnableEmailMfa.Value);
+            }
+
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
                 context.Writer.WriteStringValue(requestObject.Identifier);
+            }
+
+            if(requestObject.IsSetMfaForwardingAddress())
+            {
+                context.Writer.WritePropertyName("mfaForwardingAddress");
+                context.Writer.WriteStringValue(requestObject.MfaForwardingAddress);
             }
 
             if(requestObject.IsSetUris())

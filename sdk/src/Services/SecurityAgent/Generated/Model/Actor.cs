@@ -38,7 +38,9 @@ namespace Amazon.SecurityAgent.Model
     {
         private Authentication _authentication;
         private string _description;
+        private bool? _enableEmailMfa;
         private string _identifier;
+        private string _mfaForwardingAddress;
         private List<string> _uris = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -78,6 +80,24 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnableEmailMfa. 
+        /// <para>
+        /// Whether email-based MFA is enabled for this actor.
+        /// </para>
+        /// </summary>
+        public bool? EnableEmailMfa
+        {
+            get { return this._enableEmailMfa; }
+            set { this._enableEmailMfa = value; }
+        }
+
+        // Check to see if EnableEmailMfa property is set
+        internal bool IsSetEnableEmailMfa()
+        {
+            return this._enableEmailMfa.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The unique identifier for the actor.
@@ -93,6 +113,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MfaForwardingAddress. 
+        /// <para>
+        /// Server-generated email forwarding address for receiving MFA codes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string MfaForwardingAddress
+        {
+            get { return this._mfaForwardingAddress; }
+            set { this._mfaForwardingAddress = value; }
+        }
+
+        // Check to see if MfaForwardingAddress property is set
+        internal bool IsSetMfaForwardingAddress()
+        {
+            return this._mfaForwardingAddress != null;
         }
 
         /// <summary>
