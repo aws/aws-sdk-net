@@ -1436,7 +1436,7 @@
         <value>
             <example>
                 <para>
-                    This example describes the application status for the specified instances.
+                    This example describes the application status for the specified instance.
                 </para>
                 <code
                     title="To describe application status for instances"
@@ -1455,12 +1455,31 @@
         <value>
             <example>
                 <para>
-                    This example uses filters to describe application status for instances in a specific Availability Zone.
+                    This example uses a filter to describe impaired application status in a specific Availability Zone.
                 </para>
                 <code
                     title="To describe application status using filters"
                     source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
                     region="ec2-describe-application-status-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.EC2.IAmazonEC2.DescribeApplicationStatusCheckAssociations(Amazon.EC2.Model.DescribeApplicationStatusCheckAssociationsRequest)" />
+            <member name="M:Amazon.EC2.AmazonEC2Client.DescribeApplicationStatusCheckAssociations(Amazon.EC2.Model.DescribeApplicationStatusCheckAssociationsRequest)" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusCheckAssociationsRequest" />
+            <member name="T:Amazon.EC2.Model.DescribeApplicationStatusCheckAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example describes instance ID associations for the specified application status check.
+                </para>
+                <code
+                    title="To describe application status check associations"
+                    source=".\AWSSDKDocSamples\EC2\EC2.GeneratedSamples.cs"
+                    region="ec2-describe-application-status-check-associations-1" />
             </example>
         </value>
     </doc>
@@ -1493,7 +1512,7 @@
         <value>
             <example>
                 <para>
-                    This example uses filters to describe application status checks with a specific tag.
+                    This example uses a filter to describe application status checks included in aggregation.
                 </para>
                 <code
                     title="To describe application status checks using filters"

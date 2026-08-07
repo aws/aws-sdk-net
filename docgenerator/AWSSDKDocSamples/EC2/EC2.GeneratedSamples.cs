@@ -1387,9 +1387,15 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             {
                 Filters = new List<Filter> {
                     new Filter {
-                        Name = "availability-zone",
+                        Name = "availability-zone-id",
                         Values = new List<string> {
-                            "us-east-1a"
+                            "use1-az1"
+                        }
+                    },
+                    new Filter {
+                        Name = "status",
+                        Values = new List<string> {
+                            "impaired"
                         }
                     }
                 },
@@ -1397,6 +1403,31 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             });
 
             ApplicationStatusesResponseType applicationStatuses = response.ApplicationStatuses;
+
+            #endregion
+        }
+
+        public void EC2DescribeApplicationStatusCheckAssociations()
+        {
+            #region ec2-describe-application-status-check-associations-1
+
+            var client = new AmazonEC2Client();
+            var response = client.DescribeApplicationStatusCheckAssociations(new DescribeApplicationStatusCheckAssociationsRequest 
+            {
+                ApplicationStatusCheckIds = new List<string> {
+                    "asc-0123456789abcdef0"
+                },
+                Filters = new List<Filter> {
+                    new Filter {
+                        Name = "association-type",
+                        Values = new List<string> {
+                            "instance-id"
+                        }
+                    }
+                }
+            });
+
+            List<ApplicationStatusCheckAssociationObject> associations = response.Associations;
 
             #endregion
         }
@@ -1427,9 +1458,9 @@ namespace AWSSDKDocSamples.Amazon.EC2.Generated
             {
                 Filters = new List<Filter> {
                     new Filter {
-                        Name = "tag:Environment",
+                        Name = "aggregation",
                         Values = new List<string> {
-                            "Production"
+                            "included"
                         }
                     }
                 },
