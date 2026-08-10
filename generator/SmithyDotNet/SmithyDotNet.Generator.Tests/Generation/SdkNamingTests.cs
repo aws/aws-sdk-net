@@ -17,4 +17,14 @@ public class SdkNamingTests
     {
         Assert.Equal(expected, SdkNaming.NormalizeSdkId(sdkId));
     }
+
+    [Theory]
+    [InlineData("MyService", "example-arn", "example-signing", "example-signing")] // sigv4 name wins
+    [InlineData("MyService", "example-arn", null, "example-arn")]                  // falls back to arnNamespace
+    [InlineData("MyService", null, null, "myservice")]                             // last resort: lowercase shape name
+    [InlineData("MyService", "execute-api", "example-signing", "execute-api")]     // execute-api overrides sigv4 name
+    public void ResolveSigningName_FollowsPrecedence(string shapeName, string? arnNamespace, string? sigV4Name, string expected)
+    {
+        Assert.Equal(expected, SdkNaming.ResolveSigningName(shapeName, arnNamespace, sigV4Name));
+    }
 }

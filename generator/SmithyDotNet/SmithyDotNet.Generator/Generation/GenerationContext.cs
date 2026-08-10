@@ -50,9 +50,9 @@ public class GenerationContext
 
     /// <summary>
     /// The signing name used as the service config's <c>AuthenticationServiceName</c> (e.g.
-    /// "cloudtrail-data"). This is the <c>aws.auth#sigv4</c> trait's <c>name</c> when present,
-    /// falling back to <see cref="EndpointPrefix"/>, matching the legacy generator's precedence
-    /// (<c>SigningName ?? EndpointPrefix</c>).
+    /// "cloudtrail-data"): the <c>aws.auth#sigv4</c> trait's <c>name</c>, falling back to the
+    /// <c>aws.api#service</c> trait's <c>arnNamespace</c>, then the lowercase service shape name
+    /// (with <c>execute-api</c> taking precedence to preserve API Gateway signing).
     /// </summary>
     public string AuthenticationServiceName { get; }
 
@@ -162,15 +162,15 @@ public class GenerationContext
         ClientName = $"Amazon{ServiceName}";
         ApiVersion = index.Service.ApiVersion;
         AssemblyName = $"AWSSDK.{ServiceName}";
-        // TODO: EndpointPrefix and ApiVersion together form the generated <seealso> doc URL
-        // ("{EndpointPrefix}-{ApiVersion}"). EndpointPrefix is null-guarded below, but an empty or
-        // whitespace value in either would silently produce a malformed URL. Validate both once more
-        // services are onboarded.
-        EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
 
-        // AuthenticationServiceName follows the legacy generator's precedence: the sigv4 signing name
-        // when the trait is present, otherwise the endpoint prefix.
-        AuthenticationServiceName = index.Service.GetSigV4()?.SigningName ?? EndpointPrefix;
+        var signingName = SdkNaming.ResolveSigningName(index.ServiceId.Name, serviceTrait.ArnNamespace, index.Service.GetSigV4()?.SigningName);
+
+        // Use the aws.api#service trait's endpointPrefix when modeled, otherwise the resolved signing
+        // name (some services, e.g. inspector-scan, omit endpointPrefix and rely on it).
+        EndpointPrefix = (serviceTrait.EndpointPrefix ?? signingName).ToLowerInvariant();
+
+        // AuthenticationServiceName is the resolved signing name.
+        AuthenticationServiceName = signingName;
 
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;

@@ -10,9 +10,9 @@ namespace SmithyDotNet.Generator.Writers.Endpoints;
 /// (<c>IsSet</c>, <c>Equals</c>, <c>GetAttr</c>, <c>Partition</c>, <c>Interpolate</c>, ...), imported
 /// via <c>using static Amazon.Runtime.Internal.Endpoints.StandardLibrary.Fn</c>.
 /// <para />
-/// Only the rule-set functions CloudTrailData uses are supported; anything else fails loudly rather
-/// than emitting code with unverified semantics. Add functions to <see cref="Functions"/> as more
-/// services are onboarded.
+/// Supports the rule-set functions used across the restJson1 services; anything else fails loudly
+/// rather than emitting code with unverified semantics. Add functions to <see cref="Functions"/> as
+/// more are needed.
 /// </summary>
 public static class EndpointRulesCompiler
 {
@@ -28,8 +28,18 @@ public static class EndpointRulesCompiler
     {
         ["isSet"] = new("IsSet", IsBoolean: true, ArgCasts: []),
         ["booleanEquals"] = new("Equals", IsBoolean: true, ArgCasts: []),
+        ["stringEquals"] = new("Equals", IsBoolean: true, ArgCasts: []),
         ["getAttr"] = new("GetAttr", IsBoolean: false, ArgCasts: []),
+        ["not"] = new("!", IsBoolean: true, ArgCasts: []),
         ["aws.partition"] = new("Partition", IsBoolean: false, ArgCasts: ["string"]),
+        ["aws.parseArn"] = new("ParseArn", IsBoolean: false, ArgCasts: ["string"]),
+        ["parseURL"] = new("ParseURL", IsBoolean: false, ArgCasts: ["string"]),
+        ["isValidHostLabel"] = new("IsValidHostLabel", IsBoolean: true, ArgCasts: ["string", "bool"]),
+        ["substring"] = new("Substring", IsBoolean: false, ArgCasts: ["string", "int", "int", "bool"]),
+        ["uriEncode"] = new("UriEncode", IsBoolean: false, ArgCasts: ["string"]),
+        // TODO: aws.isVirtualHostableS3Bucket is intentionally omitted — it's S3-specific (restXml),
+        // which the generator can't emit yet (DetectProtocol only accepts restJson1). Add it when
+        // restXml/S3 support lands.
     };
 
     /// <summary>Emits the compiled rules into <paramref name="writer"/> at its current indent.</summary>
@@ -101,6 +111,17 @@ public static class EndpointRulesCompiler
         if (!Functions.TryGetValue(fn, out var spec))
         {
             throw new GeneratorException($"Endpoint rule function '{fn}' is not supported yet.");
+        }
+
+        // "not" negates its single argument (e.g. !IsSet(...)) rather than emitting a call, matching
+        // the legacy generator.
+        if (fn == "not")
+        {
+            if (argv.Count != 1)
+            {
+                throw new GeneratorException($"Endpoint rule function 'not' expects exactly one argument but got {argv.Count}.");
+            }
+            return $"!{BuildArgument(argv[0], spec, 0)}";
         }
 
         var args = argv.Select((arg, i) => BuildArgument(arg, spec, i));

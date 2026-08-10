@@ -18,6 +18,9 @@ public class ServiceIndex
     /// <summary>The single service shape in the model.</summary>
     public ServiceShape Service { get; }
 
+    /// <summary>The service shape's ID. Its <see cref="ShapeId.Name"/> is the last-resort signing-name fallback.</summary>
+    public ShapeId ServiceId { get; }
+
     /// <summary>
     /// All operations reachable from the service, resource-attached ones included, each paired
     /// with its shape id. Ordered alphabetically by operation name (ordinal), matching the order
@@ -35,7 +38,14 @@ public class ServiceIndex
 
     public ServiceIndex(SmithyModel model)
     {
-        Service = model.Shapes.Values.OfType<ServiceShape>().Single();
+        var serviceEntry = model.Shapes.Single(kvp => kvp.Value is ServiceShape);
+        if (serviceEntry.Value is not ServiceShape service)
+        {
+            throw new GeneratorException("Model has no service shape.");
+        }
+
+        Service = service;
+        ServiceId = ShapeId.Parse(serviceEntry.Key);
         Operations = CollectOperations(model, Service);
         Shapes = CollectReachableShapes(model, Service, Operations);
     }

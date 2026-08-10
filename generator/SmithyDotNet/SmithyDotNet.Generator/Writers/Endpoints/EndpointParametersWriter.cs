@@ -85,11 +85,15 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
     }
 
     // Rule-set parameters are nullable value types so an unset parameter is distinguishable from a
-    // false/empty one (the provider checks IsSet before reading them).
-    private static string NativeType(string smithyType) => smithyType switch
+    // false/empty one (the provider checks IsSet before reading them). stringArray is a reference
+    // type (IEnumerable<string>), so it needs no "?".
+    // The type is matched case-insensitively: the rules-engine spec uses lowercase (string/boolean/
+    // stringArray), but some models may carry the capitalized shape names (String/Boolean).
+    private static string NativeType(string smithyType) => smithyType.ToLowerInvariant() switch
     {
         "string" => "string",
         "boolean" => "bool?",
+        "stringarray" => "IEnumerable<string>",
         _ => throw new GeneratorException($"Unsupported endpoint parameter type '{smithyType}'."),
     };
 }

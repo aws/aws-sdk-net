@@ -42,6 +42,22 @@ public static partial class SdkNaming
         return char.ToUpperInvariant(name[0]) + name[1..];
     }
 
+    /// <summary>
+    /// Resolves the service signing name: the <c>aws.auth#sigv4</c> name, falling back to the
+    /// <c>aws.api#service</c> <c>arnNamespace</c>, then the lowercase service shape name. The
+    /// <c>execute-api</c> arnNamespace takes precedence over the sigv4 name to preserve API Gateway
+    /// signing.
+    /// </summary>
+    public static string ResolveSigningName(string shapeName, string? arnNamespace, string? sigV4Name)
+    {
+        if (arnNamespace == "execute-api")
+        {
+            return arnNamespace;
+        }
+
+        return sigV4Name ?? arnNamespace ?? shapeName.ToLowerInvariant();
+    }
+
     [GeneratedRegex("[^a-zA-Z0-9]")]
     private static partial Regex AlphaNumericOnlyRegex();
 }
