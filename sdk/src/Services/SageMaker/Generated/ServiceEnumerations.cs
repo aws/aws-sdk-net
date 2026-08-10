@@ -20523,6 +20523,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly RoutingStrategy LEAST_OUTSTANDING_REQUESTS = new RoutingStrategy("LEAST_OUTSTANDING_REQUESTS");
         /// <summary>
+        /// Constant PREFIX_AWARE for RoutingStrategy
+        /// </summary>
+        public static readonly RoutingStrategy PREFIX_AWARE = new RoutingStrategy("PREFIX_AWARE");
+        /// <summary>
         /// Constant RANDOM for RoutingStrategy
         /// </summary>
         public static readonly RoutingStrategy RANDOM = new RoutingStrategy("RANDOM");

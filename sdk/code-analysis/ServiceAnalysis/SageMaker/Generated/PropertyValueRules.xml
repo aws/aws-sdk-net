@@ -14239,6 +14239,16 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.PrefixAwareRoutingConfig.ConcurrencyThreshold</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.PrefixAwareRoutingConfig.PrefixLength</property>
+    <min>1024</min>
+    <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.PresignedUrlAccessConfig.ExpectedS3Url</property>
     <min>0</min>
     <max>1024</max>

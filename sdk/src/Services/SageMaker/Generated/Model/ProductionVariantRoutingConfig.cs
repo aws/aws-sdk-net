@@ -35,7 +35,27 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ProductionVariantRoutingConfig
     {
+        private PrefixAwareRoutingConfig _prefixAwareRoutingConfig;
         private RoutingStrategy _routingStrategy;
+
+        /// <summary>
+        /// Gets and sets the property PrefixAwareRoutingConfig. 
+        /// <para>
+        /// The configuration for prefix-aware routing. Specify this parameter only when you set
+        /// <c>RoutingStrategy</c> to <c>PREFIX_AWARE</c>.
+        /// </para>
+        /// </summary>
+        public PrefixAwareRoutingConfig PrefixAwareRoutingConfig
+        {
+            get { return this._prefixAwareRoutingConfig; }
+            set { this._prefixAwareRoutingConfig = value; }
+        }
+
+        // Check to see if PrefixAwareRoutingConfig property is set
+        internal bool IsSetPrefixAwareRoutingConfig()
+        {
+            return this._prefixAwareRoutingConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RoutingStrategy. 
@@ -50,6 +70,13 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>RANDOM</c>: The endpoint routes each request to a randomly chosen instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PREFIX_AWARE</c>: The endpoint routes requests that share the same prompt prefix
+        /// to the same instance. When the number of in-flight requests on the selected instance
+        /// reaches the configured threshold, the endpoint routes the request to an instance with
+        /// more available capacity.
         /// </para>
         ///  </li> </ul>
         /// </summary>

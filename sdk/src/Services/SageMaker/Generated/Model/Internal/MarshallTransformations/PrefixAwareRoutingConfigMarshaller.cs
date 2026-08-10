@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProductionVariantRoutingConfig Marshaller
+    /// PrefixAwareRoutingConfig Marshaller
     /// </summary>
-    public class ProductionVariantRoutingConfigMarshaller : IRequestMarshaller<ProductionVariantRoutingConfig, JsonMarshallerContext> 
+    public class PrefixAwareRoutingConfigMarshaller : IRequestMarshaller<PrefixAwareRoutingConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,20 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProductionVariantRoutingConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(PrefixAwareRoutingConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetPrefixAwareRoutingConfig())
+            if(requestObject.IsSetConcurrencyThreshold())
             {
-                context.Writer.WritePropertyName("PrefixAwareRoutingConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PrefixAwareRoutingConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.PrefixAwareRoutingConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("ConcurrencyThreshold");
+                context.Writer.WriteNumberValue(requestObject.ConcurrencyThreshold.Value);
             }
 
-            if(requestObject.IsSetRoutingStrategy())
+            if(requestObject.IsSetPrefixLength())
             {
-                context.Writer.WritePropertyName("RoutingStrategy");
-                context.Writer.WriteStringValue(requestObject.RoutingStrategy);
+                context.Writer.WritePropertyName("PrefixLength");
+                context.Writer.WriteNumberValue(requestObject.PrefixLength.Value);
             }
 
         }
@@ -68,7 +63,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProductionVariantRoutingConfigMarshaller Instance = new ProductionVariantRoutingConfigMarshaller();
+        public readonly static PrefixAwareRoutingConfigMarshaller Instance = new PrefixAwareRoutingConfigMarshaller();
 
     }
 }
