@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClippingConfig Object
+    /// Response Unmarshaller for DataSourceConfiguration Object
     /// </summary>  
-    public class ClippingConfigUnmarshaller : IJsonUnmarshaller<ClippingConfig, JsonUnmarshallerContext>
+    public class DataSourceConfigurationUnmarshaller : IJsonUnmarshaller<DataSourceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClippingConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DataSourceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClippingConfig unmarshalledObject = new ClippingConfig();
+            DataSourceConfiguration unmarshalledObject = new DataSourceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("callbackMetadata", targetDepth, ref reader))
+                if (context.TestExpression("fixtureId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CallbackMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dataSourceConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = DataSourceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DataSourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FixtureId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         }
 
 
-        private static ClippingConfigUnmarshaller _instance = new ClippingConfigUnmarshaller();        
+        private static DataSourceConfigurationUnmarshaller _instance = new DataSourceConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClippingConfigUnmarshaller Instance
+        public static DataSourceConfigurationUnmarshaller Instance
         {
             get
             {

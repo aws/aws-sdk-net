@@ -46,5 +46,15 @@ namespace Amazon.ElementalInference.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListFeedsPaginator ListFeeds(ListFeedsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchFixtures operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchFixturesPaginator SearchFixtures(SearchFixturesRequest request);
     }
 }

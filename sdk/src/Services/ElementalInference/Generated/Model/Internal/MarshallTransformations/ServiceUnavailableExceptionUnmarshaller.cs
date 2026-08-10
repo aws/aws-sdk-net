@@ -30,55 +30,60 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ClippingConfig Object
+    /// Response Unmarshaller for ServiceUnavailableException Object
     /// </summary>  
-    public class ClippingConfigUnmarshaller : IJsonUnmarshaller<ClippingConfig, JsonUnmarshallerContext>
+    public class ServiceUnavailableExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<ServiceUnavailableException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="reader"></param>
-        /// <returns>The unmarshalled object</returns>
-        public ClippingConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        /// <returns></returns>
+        public ServiceUnavailableException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ClippingConfig unmarshalledObject = new ClippingConfig();
-            if (context.IsEmptyResponse)
-                return null;
-            context.Read(ref reader);
-            if (context.CurrentTokenType == JsonTokenType.Null) 
-                return null;
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
+        }
 
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
+        /// <returns></returns>
+        public ServiceUnavailableException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
+        {
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("callbackMetadata", targetDepth, ref reader))
+                context.Read(ref reader);
+            }
+
+            ServiceUnavailableException unmarshalledObject = new ServiceUnavailableException(errorResponse.Message, errorResponse.InnerException,
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+        
+            int targetDepth = context.CurrentDepth;
+            if (context.Stream.Length > 0)
+            {
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CallbackMetadata = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dataSourceConfiguration", targetDepth, ref reader))
-                {
-                    var unmarshaller = DataSourceConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DataSourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
                 }
             }
+          
             return unmarshalledObject;
         }
 
-
-        private static ClippingConfigUnmarshaller _instance = new ClippingConfigUnmarshaller();        
+        private static ServiceUnavailableExceptionUnmarshaller _instance = new ServiceUnavailableExceptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ClippingConfigUnmarshaller Instance
+        public static ServiceUnavailableExceptionUnmarshaller Instance
         {
             get
             {

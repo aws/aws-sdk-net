@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClippingConfig Marshaller
+    /// DataSourceConfiguration Marshaller
     /// </summary>
-    public class ClippingConfigMarshaller : IRequestMarshaller<ClippingConfig, JsonMarshallerContext> 
+    public class DataSourceConfigurationMarshaller : IRequestMarshaller<DataSourceConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,14 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClippingConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(DataSourceConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCallbackMetadata())
+            if(requestObject.IsSetFixtureId())
             {
-                context.Writer.WritePropertyName("callbackMetadata");
-                context.Writer.WriteStringValue(requestObject.CallbackMetadata);
-            }
-
-            if(requestObject.IsSetDataSourceConfiguration())
-            {
-                context.Writer.WritePropertyName("dataSourceConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DataSourceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataSourceConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("fixtureId");
+                context.Writer.WriteStringValue(requestObject.FixtureId);
             }
 
         }
@@ -68,7 +57,7 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClippingConfigMarshaller Instance = new ClippingConfigMarshaller();
+        public readonly static DataSourceConfigurationMarshaller Instance = new DataSourceConfigurationMarshaller();
 
     }
 }

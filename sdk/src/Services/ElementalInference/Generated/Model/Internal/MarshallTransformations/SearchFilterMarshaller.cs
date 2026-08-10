@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ClippingConfig Marshaller
+    /// SearchFilter Marshaller
     /// </summary>
-    public class ClippingConfigMarshaller : IRequestMarshaller<ClippingConfig, JsonMarshallerContext> 
+    public class SearchFilterMarshaller : IRequestMarshaller<SearchFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,25 +42,25 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ClippingConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(SearchFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetCallbackMetadata())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("callbackMetadata");
-                context.Writer.WriteStringValue(requestObject.CallbackMetadata);
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
-            if(requestObject.IsSetDataSourceConfiguration())
+            if(requestObject.IsSetValues())
             {
-                context.Writer.WritePropertyName("dataSourceConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = DataSourceConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataSourceConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("values");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectValuesListValue in requestObject.Values)
+                {
+                        context.Writer.WriteStringValue(requestObjectValuesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
         }
@@ -68,7 +68,7 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ClippingConfigMarshaller Instance = new ClippingConfigMarshaller();
+        public readonly static SearchFilterMarshaller Instance = new SearchFilterMarshaller();
 
     }
 }

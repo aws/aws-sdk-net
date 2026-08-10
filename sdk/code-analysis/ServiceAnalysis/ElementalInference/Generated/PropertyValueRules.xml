@@ -139,6 +139,19 @@
     <pattern>arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:(feed|dictionary)/[a-zA-Z0-9]{1,19}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.SearchFixturesRequest.EndDate</property>
+    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.SearchFixturesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.SearchFixturesRequest.StartDate</property>
+    <pattern>\d{4}-\d{2}-\d{2}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.TagResourceRequest.ResourceArn</property>
     <pattern>arn:aws[a-z\-]*:elemental-inference[a-z\-]*:[a-z0-9\-]+:[0-9]{12}:(feed|dictionary)/[a-zA-Z0-9]{1,19}</pattern>
   </property-value-rule>
@@ -210,6 +223,11 @@
     <pattern>[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElementalInference.Model.DataSourceConfiguration.FixtureId</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElementalInference.Model.DictionarySummary.Id</property>
     <min>1</min>
     <max>19</max>
@@ -232,6 +250,11 @@
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.FeedSummary.Name</property>
     <pattern>[a-zA-Z0-9]([a-zA-Z0-9-_]{0,126}[a-zA-Z0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElementalInference.Model.FixtureSummary.FixtureId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElementalInference.Model.GetOutput.Description</property>
