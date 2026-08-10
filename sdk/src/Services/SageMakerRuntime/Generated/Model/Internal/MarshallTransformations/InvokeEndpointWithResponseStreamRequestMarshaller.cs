@@ -101,6 +101,11 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                 request.Headers["X-Amzn-SageMaker-Inference-Id"] = publicRequest.InferenceId;
             }
         
+            if (publicRequest.IsSetPrefixAwareId()) 
+            {
+                request.Headers["X-Amzn-SageMaker-Prefix-Aware-Id"] = publicRequest.PrefixAwareId;
+            }
+        
             if (publicRequest.IsSetSessionId()) 
             {
                 request.Headers["X-Amzn-SageMaker-Session-Id"] = publicRequest.SessionId;
