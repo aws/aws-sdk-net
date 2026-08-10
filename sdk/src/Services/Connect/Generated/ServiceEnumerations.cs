@@ -3269,6 +3269,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
         /// <summary>
+        /// Constant MsMY for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MsMY = new EvaluationFormLanguageCode("ms-MY");
+        /// <summary>
         /// Constant PtBR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
