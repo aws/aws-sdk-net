@@ -15,6 +15,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsRequired">True if the member is required.</param>
 /// <param name="IsElementStructure">True if the member is a structure and the target of a list. i.e. List of structure.</param>
 /// <param name="AwsProperty">The attributes that are part of [AwsProperty(...)]</param>
+/// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
@@ -27,6 +28,7 @@ public sealed record Member(
     bool IsRequired,
     bool IsElementStructure,
     string? AwsProperty,
+    string? Obsolete,
     string Documentation,
     string ModeledName,
     string? JsonName = null,
@@ -79,6 +81,7 @@ public static class TypeMapper
                 IsRequired: member.IsRequired(),
                 IsElementStructure: isElementStructure,
                 AwsProperty: BuildAwsProperty(member, target),
+                Obsolete: BuildObsolete(memberName, member, target),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
                 JsonName: member.GetJsonName(),
@@ -140,20 +143,28 @@ public static class TypeMapper
     public static string? BuildAwsProperty(MemberShape member, Shape target)
     {
         var parts = new List<string>();
-        if (member.IsRequired())
+
+        // An idempotency-token member is auto-populated by the SDK, so it is never surfaced as
+        // Required even when the model marks it @required.
+        if (member.IsRequired() && !member.IsIdempotencyToken())
         {
             parts.Add("Required=true");
         }
 
-        var length = member.GetLength() ?? target.GetLength();
-        if (length?.Min is not null)
+        if (target.IsSensitive())
         {
-            parts.Add($"Min={length.Min}");
+            parts.Add("Sensitive=true");
         }
 
-        if (length?.Max is not null)
+        var (min, max) = ResolveBounds(member, target);
+        if (min is not null)
         {
-            parts.Add($"Max={length.Max}");
+            parts.Add($"Min={min}");
+        }
+
+        if (max is not null)
+        {
+            parts.Add($"Max={max}");
         }
 
         if (parts.Count == 0)
@@ -162,5 +173,49 @@ public static class TypeMapper
         }
 
         return $"[AWSProperty({string.Join(", ", parts)})]";
+    }
+
+    /// <summary>
+    /// Builds the <c>[Obsolete(...)]</c> attribute string for a @deprecated member, or null when the
+    /// member is not deprecated.
+    /// </summary>
+    /// <remarks>
+    /// A message is mandatory: <c>[Obsolete]</c> without one trips analyzer CA1041, so we throw rather
+    /// than emit a message-less attribute.
+    /// </remarks>
+    public static string? BuildObsolete(string memberName, MemberShape member, Shape target)
+    {
+        var deprecated = member.GetDeprecated() ?? target.GetDeprecated();
+        if (deprecated is null)
+        {
+            return null;
+        }
+
+        // TODO: fall back to the customization file's deprecation message (c2j's PropertyModifier.DeprecationMessage)
+        // once the customization layer is implemented.
+        var message = deprecated.Message
+            ?? throw new GeneratorException(
+                $"The 'message' property of the @deprecated trait is missing for member '{memberName}'. " +
+                "[Obsolete] requires a message (CA1041); provide one in the model or via a customization.");
+
+        return $"[Obsolete({CodeWriter.Literal(message)})]";
+    }
+
+    // Min/Max flatten two distinct Smithy traits: @length (string/collection size) and @range
+    // (numeric bounds). A shape carries at most one of them; the member reference can also carry
+    // its own, which takes precedence over the target shape's.
+    private static (long? Min, long? Max) ResolveBounds(MemberShape member, Shape target)
+    {
+        if ((member.GetLength() ?? target.GetLength()) is { } length)
+        {
+            return (length.Min, length.Max);
+        }
+
+        if ((member.GetRange() ?? target.GetRange()) is { } range)
+        {
+            return (range.Min, range.Max);
+        }
+
+        return (null, null);
     }
 }

@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using SmithyDotNet.Generator.Model.Converters;
 
 namespace SmithyDotNet.Generator.Model.Traits;
 
@@ -39,4 +40,28 @@ public record LengthTrait : TraitRecord
 
     [JsonPropertyName("max")]
     public long? Max { get; init; }
+}
+
+/// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#range-trait" /></remarks>
+public record RangeTrait : TraitRecord
+{
+    // Bounds are bigDecimal in the AST but AWSPropertyAttribute.Min/Max are long; the converter
+    // reproduces the c2j generator's parse (non-integral bounds like 0.01 are skipped, not errors).
+    [JsonPropertyName("min")]
+    [JsonConverter(typeof(RangeBoundConverter))]
+    public long? Min { get; init; }
+
+    [JsonPropertyName("max")]
+    [JsonConverter(typeof(RangeBoundConverter))]
+    public long? Max { get; init; }
+}
+
+/// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#deprecated-trait" /></remarks>
+public record DeprecatedTrait : TraitRecord
+{
+    [JsonPropertyName("message")]
+    public string? Message { get; init; }
+
+    [JsonPropertyName("since")]
+    public string? Since { get; init; }
 }

@@ -43,6 +43,11 @@ public static class MemberWriter
 
         writer.WriteLine("/// </summary>");
 
+        if (member.Obsolete is string obsolete)
+        {
+            writer.WriteLine(obsolete);
+        }
+
         if (member.AwsProperty is string awsProperty)
         {
             writer.WriteLine(awsProperty);
