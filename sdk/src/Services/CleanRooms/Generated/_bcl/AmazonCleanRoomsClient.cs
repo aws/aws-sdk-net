@@ -1321,10 +1321,8 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates an intermediate table in a membership. An intermediate table stores a query
-        /// definition that you can execute later using <c>PopulateIntermediateTable</c> to materialize
-        /// cached results. The intermediate table is owned by the member with the CAN_QUERY ability.
-        /// This operation does not execute the stored query.
+        /// Creates an intermediate table in a membership. The intermediate table is owned by
+        /// the member with the CAN_QUERY ability. To populate the table with results, use <c>PopulateIntermediateTable</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTable service method.</param>
         /// 
@@ -1362,10 +1360,8 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Creates an intermediate table in a membership. An intermediate table stores a query
-        /// definition that you can execute later using <c>PopulateIntermediateTable</c> to materialize
-        /// cached results. The intermediate table is owned by the member with the CAN_QUERY ability.
-        /// This operation does not execute the stored query.
+        /// Creates an intermediate table in a membership. The intermediate table is owned by
+        /// the member with the CAN_QUERY ability. To populate the table with results, use <c>PopulateIntermediateTable</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTable service method.</param>
         /// <param name="cancellationToken">
@@ -1411,9 +1407,7 @@ namespace Amazon.CleanRooms
 
         /// <summary>
         /// Creates an analysis rule for an intermediate table. Only the CUSTOM analysis rule
-        /// type is supported. The service automatically determines whether the rule is first-party
-        /// or multi-party restricted based on the intermediate table's inherited constraints.
-        /// Only the intermediate table owner can call this operation.
+        /// type is supported. Only the intermediate table owner can call this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTableAnalysisRule service method.</param>
         /// 
@@ -1452,9 +1446,7 @@ namespace Amazon.CleanRooms
 
         /// <summary>
         /// Creates an analysis rule for an intermediate table. Only the CUSTOM analysis rule
-        /// type is supported. The service automatically determines whether the rule is first-party
-        /// or multi-party restricted based on the intermediate table's inherited constraints.
-        /// Only the intermediate table owner can call this operation.
+        /// type is supported. Only the intermediate table owner can call this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIntermediateTableAnalysisRule service method.</param>
         /// <param name="cancellationToken">
@@ -2326,9 +2318,8 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Deletes an intermediate table. When you delete the table, the service marks it as
-        /// DELETED, removes its analysis rule and schema, and triggers storage cleanup. This
-        /// operation is idempotent. Only the intermediate table owner can call this operation.
+        /// Deletes an intermediate table. The delete is idempotent. Only the intermediate table
+        /// owner can call this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntermediateTable service method.</param>
         /// 
@@ -2363,9 +2354,8 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Deletes an intermediate table. When you delete the table, the service marks it as
-        /// DELETED, removes its analysis rule and schema, and triggers storage cleanup. This
-        /// operation is idempotent. Only the intermediate table owner can call this operation.
+        /// Deletes an intermediate table. The delete is idempotent. Only the intermediate table
+        /// owner can call this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntermediateTable service method.</param>
         /// <param name="cancellationToken">
@@ -2717,9 +2707,10 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Invalidates a specific intermediate table that references the caller's base table.
+        /// Marks an intermediate table as invalid when it references the caller's base table.
         /// The data provider (base table owner) calls this operation, not the intermediate table
-        /// owner. By default, invalidation cascades to descendant intermediate tables.
+        /// owner. By default, the operation also marks all descendant intermediate tables as
+        /// invalid.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisallowIntermediateTable service method.</param>
         /// 
@@ -2754,9 +2745,10 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Invalidates a specific intermediate table that references the caller's base table.
+        /// Marks an intermediate table as invalid when it references the caller's base table.
         /// The data provider (base table owner) calls this operation, not the intermediate table
-        /// owner. By default, invalidation cascades to descendant intermediate tables.
+        /// owner. By default, the operation also marks all descendant intermediate tables as
+        /// invalid.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisallowIntermediateTable service method.</param>
         /// <param name="cancellationToken">
@@ -2790,6 +2782,91 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = DisallowIntermediateTableResponseUnmarshaller.Instance;
             
             return InvokeAsync<DisallowIntermediateTableResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAnalysisLogExport
+
+
+        /// <summary>
+        /// Returns information about an analysis log export, including its current status and,
+        /// if the export failed, the reason for the failure.
+        /// 
+        ///  
+        /// <para>
+        /// Poll this operation until the <c>status</c> is <c>SUCCESS</c> or <c>FAILED</c>. An
+        /// export can't be canceled after it starts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisLogExport service method.</param>
+        /// 
+        /// <returns>The response from the GetAnalysisLogExport service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisLogExport">REST API Reference for GetAnalysisLogExport Operation</seealso>
+        public virtual GetAnalysisLogExportResponse GetAnalysisLogExport(GetAnalysisLogExportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAnalysisLogExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisLogExportResponseUnmarshaller.Instance;
+
+            return Invoke<GetAnalysisLogExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about an analysis log export, including its current status and,
+        /// if the export failed, the reason for the failure.
+        /// 
+        ///  
+        /// <para>
+        /// Poll this operation until the <c>status</c> is <c>SUCCESS</c> or <c>FAILED</c>. An
+        /// export can't be canceled after it starts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAnalysisLogExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAnalysisLogExport service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/GetAnalysisLogExport">REST API Reference for GetAnalysisLogExport Operation</seealso>
+        public virtual Task<GetAnalysisLogExportResponse> GetAnalysisLogExportAsync(GetAnalysisLogExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAnalysisLogExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAnalysisLogExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAnalysisLogExportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4350,6 +4427,79 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = GetSchemaAnalysisRuleResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetSchemaAnalysisRuleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAnalysisLogExports
+
+
+        /// <summary>
+        /// Lists analysis log exports, sorted by the most recent export. Results are paginated.
+        /// Use the <c>nextToken</c> parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisLogExports service method.</param>
+        /// 
+        /// <returns>The response from the ListAnalysisLogExports service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisLogExports">REST API Reference for ListAnalysisLogExports Operation</seealso>
+        public virtual ListAnalysisLogExportsResponse ListAnalysisLogExports(ListAnalysisLogExportsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAnalysisLogExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisLogExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAnalysisLogExportsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists analysis log exports, sorted by the most recent export. Results are paginated.
+        /// Use the <c>nextToken</c> parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAnalysisLogExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAnalysisLogExports service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/ListAnalysisLogExports">REST API Reference for ListAnalysisLogExports Operation</seealso>
+        public virtual Task<ListAnalysisLogExportsResponse> ListAnalysisLogExportsAsync(ListAnalysisLogExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAnalysisLogExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAnalysisLogExportsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAnalysisLogExportsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6050,10 +6200,9 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Executes the stored query of an intermediate table to materialize data into managed
-        /// storage. With this operation, you can perform initial population and subsequent refreshes.
-        /// Each call creates a new version. The returned analysis ID can be tracked using <c>GetProtectedQuery</c>.
-        /// Only the intermediate table owner can call this operation.
+        /// Runs the stored query of an intermediate table and makes the results available for
+        /// querying. Each call creates a new version. Use <c>GetProtectedQuery</c> with the returned
+        /// analysis ID to track progress. Only the intermediate table owner can call this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PopulateIntermediateTable service method.</param>
         /// 
@@ -6091,10 +6240,9 @@ namespace Amazon.CleanRooms
 
 
         /// <summary>
-        /// Executes the stored query of an intermediate table to materialize data into managed
-        /// storage. With this operation, you can perform initial population and subsequent refreshes.
-        /// Each call creates a new version. The returned analysis ID can be tracked using <c>GetProtectedQuery</c>.
-        /// Only the intermediate table owner can call this operation.
+        /// Runs the stored query of an intermediate table and makes the results available for
+        /// querying. Each call creates a new version. Use <c>GetProtectedQuery</c> with the returned
+        /// analysis ID to track progress. Only the intermediate table owner can call this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PopulateIntermediateTable service method.</param>
         /// <param name="cancellationToken">
@@ -6204,6 +6352,163 @@ namespace Amazon.CleanRooms
             options.ResponseUnmarshaller = PreviewPrivacyImpactResponseUnmarshaller.Instance;
             
             return InvokeAsync<PreviewPrivacyImpactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAnalysisLogExport
+
+
+        /// <summary>
+        /// Starts an export of the Apache Spark logs for a protected query to an Amazon S3 bucket
+        /// that you own. Use the exported logs to diagnose a query that failed or that ran more
+        /// slowly than you expected.
+        /// 
+        ///  
+        /// <para>
+        /// Clean Rooms exports a redacted copy of the Spark logs instead of the raw logs. Analyze
+        /// the exported logs with the tooling of your choice, such as Spark History Server. For
+        /// details about what the exported logs contain, see <a href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs-contents.html">https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs-contents.html</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The export runs asynchronously and returns with a <c>status</c> of <c>IN_PROGRESS</c>.
+        /// Call <c>GetAnalysisLogExport</c> to poll for the final status.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To use this operation, you must have the <c>CAN_EXPORT_QUERY_ANALYSIS_LOG</c> ability
+        /// for your membership. You must also be the query runner or the query payer. Having
+        /// the ability alone is not sufficient.
+        /// </para>
+        ///  
+        /// <para>
+        /// The query must have reached a terminal state, and it must have reached the execution
+        /// stage. A query that failed validation or that was canceled before it started produces
+        /// no Spark logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Log export isn't supported for queries that use differential privacy, and isn't supported
+        /// for PySpark jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The destination bucket must be in the same Amazon Web Services Region as the collaboration.
+        /// Cross-Region export isn't supported.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs.html">https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs.html</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAnalysisLogExport service method.</param>
+        /// 
+        /// <returns>The response from the StartAnalysisLogExport service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartAnalysisLogExport">REST API Reference for StartAnalysisLogExport Operation</seealso>
+        public virtual StartAnalysisLogExportResponse StartAnalysisLogExport(StartAnalysisLogExportRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAnalysisLogExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAnalysisLogExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartAnalysisLogExportResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts an export of the Apache Spark logs for a protected query to an Amazon S3 bucket
+        /// that you own. Use the exported logs to diagnose a query that failed or that ran more
+        /// slowly than you expected.
+        /// 
+        ///  
+        /// <para>
+        /// Clean Rooms exports a redacted copy of the Spark logs instead of the raw logs. Analyze
+        /// the exported logs with the tooling of your choice, such as Spark History Server. For
+        /// details about what the exported logs contain, see <a href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs-contents.html">https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs-contents.html</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The export runs asynchronously and returns with a <c>status</c> of <c>IN_PROGRESS</c>.
+        /// Call <c>GetAnalysisLogExport</c> to poll for the final status.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To use this operation, you must have the <c>CAN_EXPORT_QUERY_ANALYSIS_LOG</c> ability
+        /// for your membership. You must also be the query runner or the query payer. Having
+        /// the ability alone is not sufficient.
+        /// </para>
+        ///  
+        /// <para>
+        /// The query must have reached a terminal state, and it must have reached the execution
+        /// stage. A query that failed validation or that was canceled before it started produces
+        /// no Spark logs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Log export isn't supported for queries that use differential privacy, and isn't supported
+        /// for PySpark jobs.
+        /// </para>
+        ///  
+        /// <para>
+        /// The destination bucket must be in the same Amazon Web Services Region as the collaboration.
+        /// Cross-Region export isn't supported.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs.html">https://docs.aws.amazon.com/clean-rooms/latest/userguide/export-analysis-logs.html</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAnalysisLogExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAnalysisLogExport service method, as returned by CleanRooms.</returns>
+        /// <exception cref="Amazon.CleanRooms.Model.AccessDeniedException">
+        /// Caller does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.InternalServerException">
+        /// Unexpected error during processing of request.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
+        /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cleanrooms-2022-02-17/StartAnalysisLogExport">REST API Reference for StartAnalysisLogExport Operation</seealso>
+        public virtual Task<StartAnalysisLogExportResponse> StartAnalysisLogExportAsync(StartAnalysisLogExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAnalysisLogExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAnalysisLogExportResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAnalysisLogExportResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6872,6 +7177,9 @@ namespace Amazon.CleanRooms
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
+        /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.
         /// </exception>
@@ -6909,6 +7217,9 @@ namespace Amazon.CleanRooms
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ResourceNotFoundException">
         /// Request references a resource which does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CleanRooms.Model.ServiceQuotaExceededException">
+        /// Request denied because service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CleanRooms.Model.ThrottlingException">
         /// Request was denied due to request throttling.

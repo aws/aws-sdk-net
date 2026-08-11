@@ -28,6 +28,16 @@ namespace Amazon.CleanRooms.Model
     {
 
         /// <summary>
+        /// Paginator for ListAnalysisLogExports operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAnalysisLogExportsPaginator ListAnalysisLogExports(ListAnalysisLogExportsRequest request);
+
+        /// <summary>
         /// Paginator for ListAnalysisTemplates operation
         ///</summary>
         [AWSPaginator(

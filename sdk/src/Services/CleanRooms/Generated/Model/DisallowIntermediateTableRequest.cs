@@ -31,9 +31,10 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// Container for the parameters to the DisallowIntermediateTable operation.
-    /// Invalidates a specific intermediate table that references the caller's base table.
+    /// Marks an intermediate table as invalid when it references the caller's base table.
     /// The data provider (base table owner) calls this operation, not the intermediate table
-    /// owner. By default, invalidation cascades to descendant intermediate tables.
+    /// owner. By default, the operation also marks all descendant intermediate tables as
+    /// invalid.
     /// </summary>
     public partial class DisallowIntermediateTableRequest : AmazonCleanRoomsRequest
     {

@@ -30,38 +30,45 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteIntermediateTable operation.
-    /// Deletes an intermediate table. The delete is idempotent. Only the intermediate table
-    /// owner can call this operation.
+    /// Container for the parameters to the GetAnalysisLogExport operation.
+    /// Returns information about an analysis log export, including its current status and,
+    /// if the export failed, the reason for the failure.
+    /// 
+    ///  
+    /// <para>
+    /// Poll this operation until the <c>status</c> is <c>SUCCESS</c> or <c>FAILED</c>. An
+    /// export can't be canceled after it starts.
+    /// </para>
     /// </summary>
-    public partial class DeleteIntermediateTableRequest : AmazonCleanRoomsRequest
+    public partial class GetAnalysisLogExportRequest : AmazonCleanRoomsRequest
     {
-        private string _intermediateTableIdentifier;
+        private string _analysisLogExportIdentifier;
         private string _membershipIdentifier;
 
         /// <summary>
-        /// Gets and sets the property IntermediateTableIdentifier. 
+        /// Gets and sets the property AnalysisLogExportIdentifier. 
         /// <para>
-        /// The unique identifier of the intermediate table to delete.
+        /// The unique identifier of the analysis log export to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
-        public string IntermediateTableIdentifier
+        public string AnalysisLogExportIdentifier
         {
-            get { return this._intermediateTableIdentifier; }
-            set { this._intermediateTableIdentifier = value; }
+            get { return this._analysisLogExportIdentifier; }
+            set { this._analysisLogExportIdentifier = value; }
         }
 
-        // Check to see if IntermediateTableIdentifier property is set
-        internal bool IsSetIntermediateTableIdentifier()
+        // Check to see if AnalysisLogExportIdentifier property is set
+        internal bool IsSetAnalysisLogExportIdentifier()
         {
-            return this._intermediateTableIdentifier != null;
+            return this._analysisLogExportIdentifier != null;
         }
 
         /// <summary>
         /// Gets and sets the property MembershipIdentifier. 
         /// <para>
-        /// The unique identifier of the membership that contains the intermediate table.
+        /// A unique identifier for the membership that the analysis log export belongs to. Currently
+        /// accepts the membership ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

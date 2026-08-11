@@ -30,25 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Contains the compute configuration for an intermediate table population operation.
+    /// The analysis log export error.
     /// </summary>
-    public partial class IntermediateTableComputeConfiguration
+    public partial class AnalysisLogExportError
     {
-        private WorkerComputeConfiguration _queryComputeConfiguration;
+        private string _code;
+        private string _message;
 
         /// <summary>
-        /// Gets and sets the property QueryComputeConfiguration.
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The error code for the analysis log export.
+        /// </para>
         /// </summary>
-        public WorkerComputeConfiguration QueryComputeConfiguration
+        [AWSProperty(Required=true)]
+        public string Code
         {
-            get { return this._queryComputeConfiguration; }
-            set { this._queryComputeConfiguration = value; }
+            get { return this._code; }
+            set { this._code = value; }
         }
 
-        // Check to see if QueryComputeConfiguration property is set
-        internal bool IsSetQueryComputeConfiguration()
+        // Check to see if Code property is set
+        internal bool IsSetCode()
         {
-            return this._queryComputeConfiguration != null;
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// The message for the analysis log export error.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string Message
+        {
+            get { return this._message; }
+            set { this._message = value; }
+        }
+
+        // Check to see if Message property is set
+        internal bool IsSetMessage()
+        {
+            return this._message != null;
         }
 
     }

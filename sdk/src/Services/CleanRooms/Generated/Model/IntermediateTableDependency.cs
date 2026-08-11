@@ -100,9 +100,9 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property ParentType. 
         /// <para>
-        /// Whether the dependency is direct or indirect. A direct dependency is a table explicitly
-        /// referenced in the stored query, while an indirect dependency is referenced through
-        /// another intermediate table.
+        /// The type of dependency, either direct or indirect. A direct dependency is a table
+        /// explicitly referenced in the stored query. An indirect dependency is a table referenced
+        /// through another intermediate table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

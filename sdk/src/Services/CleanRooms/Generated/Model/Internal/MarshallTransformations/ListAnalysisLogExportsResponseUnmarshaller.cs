@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateConfiguredTableAnalysisRule operation
+    /// Response Unmarshaller for ListAnalysisLogExports operation
     /// </summary>  
-    public class UpdateConfiguredTableAnalysisRuleResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListAnalysisLogExportsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,16 +46,22 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateConfiguredTableAnalysisRuleResponse response = new UpdateConfiguredTableAnalysisRuleResponse();
+            ListAnalysisLogExportsResponse response = new ListAnalysisLogExportsResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("analysisRule", targetDepth, ref reader))
+                if (context.TestExpression("analysisLogExports", targetDepth, ref reader))
                 {
-                    var unmarshaller = ConfiguredTableAnalysisRuleUnmarshaller.Instance;
-                    response.AnalysisRule = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<AnalysisLogExportSummary, AnalysisLogExportSummaryUnmarshaller>(AnalysisLogExportSummaryUnmarshaller.Instance);
+                    response.AnalysisLogExports = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("nextToken", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -87,10 +93,6 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
@@ -98,10 +100,6 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -115,9 +113,9 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             return new AmazonCleanRoomsException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateConfiguredTableAnalysisRuleResponseUnmarshaller _instance = new UpdateConfiguredTableAnalysisRuleResponseUnmarshaller();        
+        private static ListAnalysisLogExportsResponseUnmarshaller _instance = new ListAnalysisLogExportsResponseUnmarshaller();        
 
-        internal static UpdateConfiguredTableAnalysisRuleResponseUnmarshaller GetInstance()
+        internal static ListAnalysisLogExportsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +123,7 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateConfiguredTableAnalysisRuleResponseUnmarshaller Instance
+        public static ListAnalysisLogExportsResponseUnmarshaller Instance
         {
             get
             {

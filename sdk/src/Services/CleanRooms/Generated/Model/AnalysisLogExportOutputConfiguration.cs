@@ -30,25 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Contains the compute configuration for an intermediate table population operation.
+    /// Contains configuration details for analysis log export output.
     /// </summary>
-    public partial class IntermediateTableComputeConfiguration
+    public partial class AnalysisLogExportOutputConfiguration
     {
-        private WorkerComputeConfiguration _queryComputeConfiguration;
+        private AnalysisLogExportS3OutputConfiguration _s3;
 
         /// <summary>
-        /// Gets and sets the property QueryComputeConfiguration.
+        /// Gets and sets the property S3. 
+        /// <para>
+        /// Required configuration for an analysis log export with an <c>s3</c> output type.
+        /// </para>
         /// </summary>
-        public WorkerComputeConfiguration QueryComputeConfiguration
+        [AWSProperty(Required=true)]
+        public AnalysisLogExportS3OutputConfiguration S3
         {
-            get { return this._queryComputeConfiguration; }
-            set { this._queryComputeConfiguration = value; }
+            get { return this._s3; }
+            set { this._s3 = value; }
         }
 
-        // Check to see if QueryComputeConfiguration property is set
-        internal bool IsSetQueryComputeConfiguration()
+        // Check to see if S3 property is set
+        internal bool IsSetS3()
         {
-            return this._queryComputeConfiguration != null;
+            return this._s3 != null;
         }
 
     }

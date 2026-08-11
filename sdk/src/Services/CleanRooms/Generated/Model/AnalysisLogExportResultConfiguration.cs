@@ -30,25 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// Contains the compute configuration for an intermediate table population operation.
+    /// Contains configurations for analysis log export results.
     /// </summary>
-    public partial class IntermediateTableComputeConfiguration
+    public partial class AnalysisLogExportResultConfiguration
     {
-        private WorkerComputeConfiguration _queryComputeConfiguration;
+        private AnalysisLogExportOutputConfiguration _outputConfiguration;
 
         /// <summary>
-        /// Gets and sets the property QueryComputeConfiguration.
+        /// Gets and sets the property OutputConfiguration. 
+        /// <para>
+        /// The configuration for analysis log export results.
+        /// </para>
         /// </summary>
-        public WorkerComputeConfiguration QueryComputeConfiguration
+        [AWSProperty(Required=true)]
+        public AnalysisLogExportOutputConfiguration OutputConfiguration
         {
-            get { return this._queryComputeConfiguration; }
-            set { this._queryComputeConfiguration = value; }
+            get { return this._outputConfiguration; }
+            set { this._outputConfiguration = value; }
         }
 
-        // Check to see if QueryComputeConfiguration property is set
-        internal bool IsSetQueryComputeConfiguration()
+        // Check to see if OutputConfiguration property is set
+        internal bool IsSetOutputConfiguration()
         {
-            return this._queryComputeConfiguration != null;
+            return this._outputConfiguration != null;
         }
 
     }

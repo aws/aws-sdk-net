@@ -31,10 +31,8 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateIntermediateTable operation.
-    /// Creates an intermediate table in a membership. An intermediate table stores a query
-    /// definition that you can execute later using <c>PopulateIntermediateTable</c> to materialize
-    /// cached results. The intermediate table is owned by the member with the CAN_QUERY ability.
-    /// This operation does not execute the stored query.
+    /// Creates an intermediate table in a membership. The intermediate table is owned by
+    /// the member with the CAN_QUERY ability. To populate the table with results, use <c>PopulateIntermediateTable</c>.
     /// </summary>
     public partial class CreateIntermediateTableRequest : AmazonCleanRoomsRequest
     {
@@ -127,7 +125,6 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property PopulationAnalysisConfiguration. 
         /// <para>
         /// The configuration that defines the analysis used to populate the intermediate table.
-        /// This configuration contains the SQL query or analysis template reference.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,8 +143,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property RetentionInDays. 
         /// <para>
-        /// The number of days to retain populated data versions. Minimum value of 1, maximum
-        /// value of 365.
+        /// The number of days to retain populated data versions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=365)]

@@ -341,6 +341,60 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type AnalysisLogExportStatus.
+    /// </summary>
+    public class AnalysisLogExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AnalysisLogExportStatus
+        /// </summary>
+        public static readonly AnalysisLogExportStatus FAILED = new AnalysisLogExportStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for AnalysisLogExportStatus
+        /// </summary>
+        public static readonly AnalysisLogExportStatus IN_PROGRESS = new AnalysisLogExportStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCESS for AnalysisLogExportStatus
+        /// </summary>
+        public static readonly AnalysisLogExportStatus SUCCESS = new AnalysisLogExportStatus("SUCCESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AnalysisLogExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AnalysisLogExportStatus FindValue(string value)
+        {
+            return FindValue<AnalysisLogExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AnalysisLogExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnalysisMethod.
     /// </summary>
     public class AnalysisMethod : ConstantClass
@@ -717,9 +771,17 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly AutoApprovedChangeType ADD_MEMBER = new AutoApprovedChangeType("ADD_MEMBER");
         /// <summary>
+        /// Constant GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY for AutoApprovedChangeType
+        /// </summary>
+        public static readonly AutoApprovedChangeType GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY = new AutoApprovedChangeType("GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
+        /// <summary>
         /// Constant GRANT_RECEIVE_RESULTS_ABILITY for AutoApprovedChangeType
         /// </summary>
         public static readonly AutoApprovedChangeType GRANT_RECEIVE_RESULTS_ABILITY = new AutoApprovedChangeType("GRANT_RECEIVE_RESULTS_ABILITY");
+        /// <summary>
+        /// Constant REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY for AutoApprovedChangeType
+        /// </summary>
+        public static readonly AutoApprovedChangeType REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY = new AutoApprovedChangeType("REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
         /// <summary>
         /// Constant REVOKE_RECEIVE_RESULTS_ABILITY for AutoApprovedChangeType
         /// </summary>
@@ -1111,6 +1173,10 @@ namespace Amazon.CleanRooms
         /// </summary>
         public static readonly ChangeType GRANT_CAN_RECEIVE_MODEL_OUTPUT = new ChangeType("GRANT_CAN_RECEIVE_MODEL_OUTPUT");
         /// <summary>
+        /// Constant GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY for ChangeType
+        /// </summary>
+        public static readonly ChangeType GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY = new ChangeType("GRANT_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
+        /// <summary>
         /// Constant GRANT_RECEIVE_RESULTS_ABILITY for ChangeType
         /// </summary>
         public static readonly ChangeType GRANT_RECEIVE_RESULTS_ABILITY = new ChangeType("GRANT_RECEIVE_RESULTS_ABILITY");
@@ -1126,6 +1192,10 @@ namespace Amazon.CleanRooms
         /// Constant REVOKE_CAN_RECEIVE_MODEL_OUTPUT for ChangeType
         /// </summary>
         public static readonly ChangeType REVOKE_CAN_RECEIVE_MODEL_OUTPUT = new ChangeType("REVOKE_CAN_RECEIVE_MODEL_OUTPUT");
+        /// <summary>
+        /// Constant REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY for ChangeType
+        /// </summary>
+        public static readonly ChangeType REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY = new ChangeType("REVOKE_EXPORT_QUERY_ANALYSIS_LOG_ABILITY");
         /// <summary>
         /// Constant REVOKE_RECEIVE_RESULTS_ABILITY for ChangeType
         /// </summary>
@@ -2231,11 +2301,61 @@ namespace Amazon.CleanRooms
 
 
     /// <summary>
+    /// Constants used for properties of type LogExportAnalysisType.
+    /// </summary>
+    public class LogExportAnalysisType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROTECTED_QUERY for LogExportAnalysisType
+        /// </summary>
+        public static readonly LogExportAnalysisType PROTECTED_QUERY = new LogExportAnalysisType("PROTECTED_QUERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogExportAnalysisType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogExportAnalysisType FindValue(string value)
+        {
+            return FindValue<LogExportAnalysisType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogExportAnalysisType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MemberAbility.
     /// </summary>
     public class MemberAbility : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CAN_EXPORT_QUERY_ANALYSIS_LOG for MemberAbility
+        /// </summary>
+        public static readonly MemberAbility CAN_EXPORT_QUERY_ANALYSIS_LOG = new MemberAbility("CAN_EXPORT_QUERY_ANALYSIS_LOG");
         /// <summary>
         /// Constant CAN_QUERY for MemberAbility
         /// </summary>
