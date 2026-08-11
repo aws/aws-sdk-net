@@ -183,6 +183,17 @@ namespace Amazon.Textract.Model
         /// <para>
         /// Sets the configuration for the human in the loop workflow for analyzing documents.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Textract uses Amazon Augmented AI (A2I) to run the human review workflows that
+        /// you specify in <c>HumanLoopConfig</c>. A2I entered maintenance mode in July 2026 and
+        /// no longer accepts new customers. If your account is not an existing A2I customer,
+        /// requests fail with an <c>InvalidParameterException</c>. For more information, see
+        /// <a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/">AWS
+        /// service availability</a>. If you're an existing A2I customer but receive this error,
+        /// contact AWS Support and request assistance from the A2I team.
+        /// </para>
+        ///  </note>
         /// </summary>
         public HumanLoopConfig HumanLoopConfig
         {

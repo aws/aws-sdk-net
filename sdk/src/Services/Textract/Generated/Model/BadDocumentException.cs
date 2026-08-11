@@ -31,7 +31,8 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// Amazon Textract isn't able to read the document. For more information on the document
-    /// limits in Amazon Textract, see <a>limits</a>.
+    /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+    /// limits</a>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
