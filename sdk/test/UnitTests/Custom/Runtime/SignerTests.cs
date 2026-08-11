@@ -409,6 +409,48 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
+        public void TestCanonicalizeResourcePathS3DecodedKeySinglePass()
+        {
+            // The standalone SigV4 signer feeds S3 the DECODED object key as a greedy {Path+} label with a
+            // single encode pass (encode = false). This is how the generated S3 client signs a key, and it
+            // reproduces S3's own canonical path — S3 decodes the wire path before signing, so the canonical
+            // form is one URL-encode of the decoded key. This is the behavior that replaced the old zero-pass
+            // "already encoded" mode.
+
+            // A decoded space encodes to "%20" (one pass), matching what S3 canonicalizes.
+            Assert.AreEqual(
+                "/hello%20world",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello world" } }));
+
+            // Decoded sub-delims '+' and '=' get strict-encoded by the Label encoder to "%2B"/"%3D".
+            Assert.AreEqual(
+                "/a%2Bb%3Dc",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a+b=c" } }));
+
+            // A key that literally contains a slash is a DECODED "/". Because {Path+} is greedy the slash stays
+            // a segment boundary, so the canonical path is "/a/b" — exactly what S3 computes when a caller sends
+            // the wire path "/a%2Fb" (S3 decodes "%2F" to "/"). The facade decodes the wire path before binding
+            // it here, so an encoded slash and a real slash canonicalize identically, as S3 requires.
+            Assert.AreEqual(
+                "/a/b",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a/b" } }));
+
+            // Decoded unicode is UTF-8 percent-encoded in one pass.
+            Assert.AreEqual(
+                "/hello%20world/caf%C3%A9-%E2%98%83.txt",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://bucket.s3.us-east-1.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "hello world/café-☃.txt" } }));
+
+            // Contrast the non-S3 path: the facade feeds the ENCODED wire path (not decoded), so the single pass
+            // double-encodes it. For wire "/a%2Fb" the {Path+} value is the encoded "a%2Fb", which becomes
+            // "/a%252Fb" — matching what execute-api canonicalizes. This is the S3-vs-non-S3 divergence.
+            Assert.AreEqual(
+                "/a%252Fb",
+                AWSSDKUtils.CanonicalizeResourcePathV2(new Uri("https://example.amazonaws.com"), "/{Path+}", false, new Dictionary<string, string> { { "{Path+}", "a%2Fb" } }));
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
         public async Task TestSignerWithBasicCredentialsAsync()
         {
             var pipeline = new RuntimePipeline(new MockHandler());            

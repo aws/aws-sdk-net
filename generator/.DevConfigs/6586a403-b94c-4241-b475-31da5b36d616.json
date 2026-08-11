@@ -1,0 +1,9 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "Added `SigV4SigningHandler`, a `System.Net.Http.DelegatingHandler` in the `Amazon.Runtime.Signing` namespace that SigV4-signs each outbound request. Install it on an `HttpClient` (directly or via `IHttpClientFactory`) to sign requests transparently. It is a thin layer over the standalone `AWSSigV4Signer` facade, resolves credentials on every send, and supports per-request region/service/payload-signing overrides via `HttpRequestMessage.Options`."
+    ],
+    "type": "minor",
+    "updateMinimum": true
+  }
+}
