@@ -185,7 +185,7 @@ public class GenerationContext
 
         ServiceDocumentation = index.Service.GetDocumentation();
         ServiceTitle = index.Service.GetTitle();
-        Protocol = DetectProtocol(index.Service);
+        Protocol = DetectProtocol(index.Service, SdkId);
         Operations = ResolveOperations(index);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
@@ -216,7 +216,7 @@ public class GenerationContext
     }
 
     /// <summary>
-    /// Looks up a shape by its <see cref="ShapeId"/>. 
+    /// Looks up a shape by its <see cref="ShapeId"/>.
     /// <para />
     /// Prelude shapes (e.g. <c>smithy.api#String</c>)
     /// are not in the index but resolve via <see cref="PreludeShapes"/>, so callers never need to
@@ -264,14 +264,48 @@ public class GenerationContext
             .Any(member => member.HasEndpointContextParams());
     }
 
-    private static AWSProtocol DetectProtocol(ServiceShape service)
+    // AWS protocol trait IDs in the legacy generator's resolution priority
+    // (smithy-rpc-v2-cbor > json > rest-json > rest-xml > query > ec2). A service that models several
+    // resolves to the highest-priority one; awsJson1_0/1_1 share C2J's single "json" slot.
+    private static readonly string[] ProtocolPriority =
+    [
+        "smithy.protocols#rpcv2Cbor",
+        "aws.protocols#awsJson1_0",
+        "aws.protocols#awsJson1_1",
+        "aws.protocols#restJson1",
+        "aws.protocols#restXml",
+        "aws.protocols#awsQuery",
+        "aws.protocols#ec2Query",
+    ];
+
+    // Per-service protocol skips, mirroring the legacy generator: ARC Region switch models CBOR but
+    // must resolve to its awsJson protocol. Keyed by sdkId (the raw aws.api#service value).
+    private static readonly Dictionary<string, string> SkipProtocolForService = new()
     {
-        if (service.IsRestJson1())
+        ["ARC Region switch"] = "smithy.protocols#rpcv2Cbor",
+    };
+
+    // Resolves the service's protocol the way the legacy generator does — highest-priority trait,
+    // less any per-service skip — then fails loudly unless it is restJson1, the only one implemented.
+    // TODO: return the resolved protocol (extend AWSProtocol) once a second protocol is implemented.
+    private static AWSProtocol DetectProtocol(ServiceShape service, string sdkId)
+    {
+        var resolved = ResolveProtocol(service.Traits.Keys, sdkId) ?? throw new GeneratorException("Service shape has no recognized AWS protocol trait.");
+
+        if (resolved == "aws.protocols#restJson1")
         {
             return AWSProtocol.RestJson1;
         }
 
-        throw new GeneratorException("Service shape has no recognized AWS protocol trait.");
+        throw new GeneratorException($"Resolved protocol '{resolved}' is not supported yet; only aws.protocols#restJson1 is implemented.");
+    }
+
+    // The highest-priority protocol trait the service carries, less any per-service skip, or null when
+    // it models none.
+    public static string? ResolveProtocol(IReadOnlyCollection<string> traitIds, string sdkId)
+    {
+        var skip = SkipProtocolForService.GetValueOrDefault(sdkId);
+        return ProtocolPriority.FirstOrDefault(id => id != skip && traitIds.Contains(id));
     }
 
     private static List<Operation> ResolveOperations(ServiceIndex index)
