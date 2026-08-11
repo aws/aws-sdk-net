@@ -36,6 +36,8 @@ namespace Amazon.EKS.Model
     {
         private string _clusterType;
         private string _clusterVersion;
+        private ControlPlaneConfigInfo _controlPlaneComponentConfig;
+        private List<ControlPlaneScalingTierInfo> _controlPlaneScalingTiers = AWSConfigs.InitializeCollections ? new List<ControlPlaneScalingTierInfo>() : null;
         private string _defaultPlatformVersion;
         private bool? _defaultVersion;
         private DateTime? _endOfExtendedSupportDate;
@@ -79,6 +81,50 @@ namespace Amazon.EKS.Model
         internal bool IsSetClusterVersion()
         {
             return this._clusterVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlaneComponentConfig. 
+        /// <para>
+        /// The default control plane component configuration and constraints for this Kubernetes
+        /// version.
+        /// </para>
+        /// </summary>
+        public ControlPlaneConfigInfo ControlPlaneComponentConfig
+        {
+            get { return this._controlPlaneComponentConfig; }
+            set { this._controlPlaneComponentConfig = value; }
+        }
+
+        // Check to see if ControlPlaneComponentConfig property is set
+        internal bool IsSetControlPlaneComponentConfig()
+        {
+            return this._controlPlaneComponentConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ControlPlaneScalingTiers. 
+        /// <para>
+        /// The available provisioned control plane scaling tiers and their capabilities for this
+        /// Kubernetes version.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<ControlPlaneScalingTierInfo> ControlPlaneScalingTiers
+        {
+            get { return this._controlPlaneScalingTiers; }
+            set { this._controlPlaneScalingTiers = value; }
+        }
+
+        // Check to see if ControlPlaneScalingTiers property is set
+        internal bool IsSetControlPlaneScalingTiers()
+        {
+            return this._controlPlaneScalingTiers != null && (this._controlPlaneScalingTiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

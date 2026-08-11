@@ -193,6 +193,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EKS.Model.ResourceWeight.Name</property>
+    <min>1</min>
+    <max>253</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EKS.Model.ResourceWeight.Weight</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EKS.Model.Taint.Key</property>
     <min>1</min>
     <max>63</max>

@@ -126,6 +126,28 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.DeletionProtection.Value);
             }
 
+            if(publicRequest.IsSetKubeApiServerConfig())
+            {
+                context.Writer.WritePropertyName("kubeApiServerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KubeApiServerConfigRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KubeApiServerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKubeControllerManagerConfig())
+            {
+                context.Writer.WritePropertyName("kubeControllerManagerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KubeControllerManagerConfigRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KubeControllerManagerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetKubernetesNetworkConfig())
             {
                 context.Writer.WritePropertyName("kubernetesNetworkConfig");
@@ -133,6 +155,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
 
                 var marshaller = KubernetesNetworkConfigRequestMarshaller.Instance;
                 marshaller.Marshall(publicRequest.KubernetesNetworkConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKubeSchedulerConfig())
+            {
+                context.Writer.WritePropertyName("kubeSchedulerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KubeSchedulerConfigRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KubeSchedulerConfig, context);
 
                 context.Writer.WriteEndObject();
             }

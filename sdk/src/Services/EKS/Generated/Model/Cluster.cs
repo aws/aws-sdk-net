@@ -48,7 +48,10 @@ namespace Amazon.EKS.Model
         private ClusterHealth _health;
         private string _id;
         private Identity _identity;
+        private KubeApiServerConfigResponse _kubeApiServerConfig;
+        private KubeControllerManagerConfigResponse _kubeControllerManagerConfig;
         private KubernetesNetworkConfigResponse _kubernetesNetworkConfig;
+        private KubeSchedulerConfigResponse _kubeSchedulerConfig;
         private Logging _logging;
         private string _name;
         private OutpostConfigResponse _outpostConfig;
@@ -332,6 +335,42 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KubeApiServerConfig. 
+        /// <para>
+        /// The Kubernetes API server configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public KubeApiServerConfigResponse KubeApiServerConfig
+        {
+            get { return this._kubeApiServerConfig; }
+            set { this._kubeApiServerConfig = value; }
+        }
+
+        // Check to see if KubeApiServerConfig property is set
+        internal bool IsSetKubeApiServerConfig()
+        {
+            return this._kubeApiServerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubeControllerManagerConfig. 
+        /// <para>
+        /// The Kubernetes controller manager configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public KubeControllerManagerConfigResponse KubeControllerManagerConfig
+        {
+            get { return this._kubeControllerManagerConfig; }
+            set { this._kubeControllerManagerConfig = value; }
+        }
+
+        // Check to see if KubeControllerManagerConfig property is set
+        internal bool IsSetKubeControllerManagerConfig()
+        {
+            return this._kubeControllerManagerConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property KubernetesNetworkConfig. 
         /// <para>
         /// The Kubernetes network configuration for the cluster.
@@ -347,6 +386,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetKubernetesNetworkConfig()
         {
             return this._kubernetesNetworkConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KubeSchedulerConfig. 
+        /// <para>
+        /// The Kubernetes scheduler configuration for the cluster.
+        /// </para>
+        /// </summary>
+        public KubeSchedulerConfigResponse KubeSchedulerConfig
+        {
+            get { return this._kubeSchedulerConfig; }
+            set { this._kubeSchedulerConfig = value; }
+        }
+
+        // Check to see if KubeSchedulerConfig property is set
+        internal bool IsSetKubeSchedulerConfig()
+        {
+            return this._kubeSchedulerConfig != null;
         }
 
         /// <summary>

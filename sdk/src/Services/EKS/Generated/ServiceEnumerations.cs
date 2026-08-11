@@ -2367,6 +2367,56 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type ScoringStrategyType.
+    /// </summary>
+    public class ScoringStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LeastAllocated for ScoringStrategyType
+        /// </summary>
+        public static readonly ScoringStrategyType LeastAllocated = new ScoringStrategyType("LeastAllocated");
+        /// <summary>
+        /// Constant MostAllocated for ScoringStrategyType
+        /// </summary>
+        public static readonly ScoringStrategyType MostAllocated = new ScoringStrategyType("MostAllocated");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScoringStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScoringStrategyType FindValue(string value)
+        {
+            return FindValue<ScoringStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScoringStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SpreadLevel.
     /// </summary>
     public class SpreadLevel : ConstantClass
@@ -2625,9 +2675,21 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType IdentityProviderConfig = new UpdateParamType("IdentityProviderConfig");
         /// <summary>
+        /// Constant KubeApiServerConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType KubeApiServerConfig = new UpdateParamType("KubeApiServerConfig");
+        /// <summary>
+        /// Constant KubeControllerManagerConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType KubeControllerManagerConfig = new UpdateParamType("KubeControllerManagerConfig");
+        /// <summary>
         /// Constant KubernetesNetworkConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType KubernetesNetworkConfig = new UpdateParamType("KubernetesNetworkConfig");
+        /// <summary>
+        /// Constant KubeSchedulerConfig for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType KubeSchedulerConfig = new UpdateParamType("KubeSchedulerConfig");
         /// <summary>
         /// Constant LabelsToAdd for UpdateParamType
         /// </summary>
@@ -2908,6 +2970,10 @@ namespace Amazon.EKS
         /// Constant ConfigUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType ConfigUpdate = new UpdateType("ConfigUpdate");
+        /// <summary>
+        /// Constant ControlPlaneComponentConfigUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType ControlPlaneComponentConfigUpdate = new UpdateType("ControlPlaneComponentConfigUpdate");
         /// <summary>
         /// Constant ControlPlaneEgressUpdate for UpdateType
         /// </summary>

@@ -68,6 +68,18 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("controlPlaneComponentConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = ControlPlaneConfigInfoUnmarshaller.Instance;
+                    unmarshalledObject.ControlPlaneComponentConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("controlPlaneScalingTiers", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ControlPlaneScalingTierInfo, ControlPlaneScalingTierInfoUnmarshaller>(ControlPlaneScalingTierInfoUnmarshaller.Instance);
+                    unmarshalledObject.ControlPlaneScalingTiers = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("defaultPlatformVersion", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
