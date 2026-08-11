@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgentTracesConfig Object
+    /// Response Unmarshaller for OnlineEvaluationTraceConfig Object
     /// </summary>  
-    public class AgentTracesConfigUnmarshaller : IJsonUnmarshaller<AgentTracesConfig, JsonUnmarshallerContext>
+    public class OnlineEvaluationTraceConfigUnmarshaller : IJsonUnmarshaller<OnlineEvaluationTraceConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentTracesConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public OnlineEvaluationTraceConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AgentTracesConfig unmarshalledObject = new AgentTracesConfig();
+            OnlineEvaluationTraceConfig unmarshalledObject = new OnlineEvaluationTraceConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("batchEvaluation", targetDepth, ref reader))
+                if (context.TestExpression("endTime", targetDepth, ref reader))
                 {
-                    var unmarshaller = BatchEvaluationTraceConfigUnmarshaller.Instance;
-                    unmarshalledObject.BatchEvaluation = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("cloudwatchLogs", targetDepth, ref reader))
+                if (context.TestExpression("onlineEvaluationConfigArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = CloudWatchLogsTraceConfigUnmarshaller.Instance;
-                    unmarshalledObject.CloudwatchLogs = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OnlineEvaluationConfigArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("onlineEvaluation", targetDepth, ref reader))
+                if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
-                    var unmarshaller = OnlineEvaluationTraceConfigUnmarshaller.Instance;
-                    unmarshalledObject.OnlineEvaluation = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sessionSpans", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Amazon.Runtime.Documents.Document, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
-                    unmarshalledObject.SessionSpans = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgentTracesConfigUnmarshaller _instance = new AgentTracesConfigUnmarshaller();        
+        private static OnlineEvaluationTraceConfigUnmarshaller _instance = new OnlineEvaluationTraceConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgentTracesConfigUnmarshaller Instance
+        public static OnlineEvaluationTraceConfigUnmarshaller Instance
         {
             get
             {
