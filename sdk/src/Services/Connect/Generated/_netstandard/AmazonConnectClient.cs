@@ -3323,6 +3323,65 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  CreateMetric
+
+        internal virtual CreateMetricResponse CreateMetric(CreateMetricRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetricResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMetricResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new metric definition for the specified Connect Customer instance. You can
+        /// create custom metrics that use formulas referencing existing Amazon Web Services-managed
+        /// metrics, optionally with filters applied.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateMetric service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateMetric">REST API Reference for CreateMetric Operation</seealso>
+        public virtual Task<CreateMetricResponse> CreateMetricAsync(CreateMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMetricResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateMetricResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateNotification
 
         internal virtual CreateNotificationResponse CreateNotification(CreateNotificationRequest request)
@@ -5614,6 +5673,65 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  DeleteMetric
+
+        internal virtual DeleteMetricResponse DeleteMetric(DeleteMetricRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteMetricResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing metric from the specified Connect Customer instance. This operation
+        /// fails with <c>ResourceConflictException</c> if the metric is currently in use in a
+        /// dashboard.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteMetric service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceInUseException">
+        /// That resource is already in use (for example, you're trying to add a record with the
+        /// same name as an existing record). If you are trying to delete a resource (for example,
+        /// DeleteHoursOfOperation or DeletePredefinedAttribute), remove its reference from related
+        /// resources and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteMetric">REST API Reference for DeleteMetric Operation</seealso>
+        public virtual Task<DeleteMetricResponse> DeleteMetricAsync(DeleteMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteMetricResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteMetricResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteNotification
 
         internal virtual DeleteNotificationResponse DeleteNotification(DeleteNotificationRequest request)
@@ -7753,6 +7871,58 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeInstanceStorageConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeInstanceStorageConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeMetric
+
+        internal virtual DescribeMetricResponse DescribeMetric(DescribeMetricRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeMetricResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the full definition of an existing metric from the specified Connect Customer
+        /// instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeMetric service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeMetric service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeMetric">REST API Reference for DescribeMetric Operation</seealso>
+        public virtual Task<DescribeMetricResponse> DescribeMetricAsync(DescribeMetricRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeMetricRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeMetricResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeMetricResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -12593,6 +12763,58 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  ListMetrics
+
+        internal virtual ListMetricsResponse ListMetrics(ListMetricsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a paginated list of metric summaries for the specified Connect Customer
+        /// instance. Use pagination to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListMetrics service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListMetrics">REST API Reference for ListMetrics Operation</seealso>
+        public virtual Task<ListMetricsResponse> ListMetricsAsync(ListMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListMetricsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListNotifications
 
         internal virtual ListNotificationsResponse ListNotifications(ListNotificationsRequest request)
@@ -15614,6 +15836,59 @@ namespace Amazon.Connect
         }
         #endregion
         
+        #region  SearchMetrics
+
+        internal virtual SearchMetricsResponse SearchMetrics(SearchMetricsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchMetricsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchMetricsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Searches for metrics in the specified Connect Customer instance using search criteria
+        /// and optional tag-based filters. Use pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchMetrics service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchMetrics">REST API Reference for SearchMetrics Operation</seealso>
+        public virtual Task<SearchMetricsResponse> SearchMetricsAsync(SearchMetricsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchMetricsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchMetricsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchMetricsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  SearchNotifications
 
         internal virtual SearchNotificationsResponse SearchNotifications(SearchNotificationsRequest request)
@@ -18231,8 +18506,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// Some of the supported resource types are agents, routing profiles, queues, quick connects,
-        /// flows, agent statuses, hours of operation, phone numbers, security profiles, and task
-        /// templates. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
+        /// flows, agent statuses, hours of operation, phone numbers, security profiles, task
+        /// templates, and custom metrics. For a complete list, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tagging.html">Tagging
         /// resources in Connect Customer</a>.
         /// </para>
         ///  
@@ -19903,6 +20178,113 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateInstanceStorageConfigResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateInstanceStorageConfigResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateMetricContent
+
+        internal virtual UpdateMetricContentResponse UpdateMetricContent(UpdateMetricContentRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMetricContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricContentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMetricContentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the calculation, unit, and/or trend indicator of an existing metric in the
+        /// specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricContent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMetricContent service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateMetricContent">REST API Reference for UpdateMetricContent Operation</seealso>
+        public virtual Task<UpdateMetricContentResponse> UpdateMetricContentAsync(UpdateMetricContentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMetricContentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricContentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMetricContentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateMetricMetadata
+
+        internal virtual UpdateMetricMetadataResponse UpdateMetricMetadata(UpdateMetricMetadataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMetricMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateMetricMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the name and/or description of an existing metric in the specified Connect
+        /// Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateMetricMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateMetricMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateMetricMetadata">REST API Reference for UpdateMetricMetadata Operation</seealso>
+        public virtual Task<UpdateMetricMetadataResponse> UpdateMetricMetadataAsync(UpdateMetricMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateMetricMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateMetricMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateMetricMetadataResponse>(request, options, cancellationToken);
         }
         #endregion
         

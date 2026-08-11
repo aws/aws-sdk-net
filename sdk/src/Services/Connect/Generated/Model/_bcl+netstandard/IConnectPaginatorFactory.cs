@@ -378,6 +378,16 @@ namespace Amazon.Connect.Model
         IListLexBotsPaginator ListLexBots(ListLexBotsRequest request);
 
         /// <summary>
+        /// Paginator for ListMetrics operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMetricsPaginator ListMetrics(ListMetricsRequest request);
+
+        /// <summary>
         /// Paginator for ListPhoneNumbers operation
         ///</summary>
         [AWSPaginator(
@@ -746,6 +756,16 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchMetrics operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchMetricsPaginator SearchMetrics(SearchMetricsRequest request);
 
         /// <summary>
         /// Paginator for SearchPredefinedAttributes operation

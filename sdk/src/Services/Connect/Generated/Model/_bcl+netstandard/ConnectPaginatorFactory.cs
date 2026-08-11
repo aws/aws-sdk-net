@@ -317,6 +317,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListMetrics operation
+        ///</summary>
+        public IListMetricsPaginator ListMetrics(ListMetricsRequest request) 
+        {
+            return new ListMetricsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPhoneNumbers operation
         ///</summary>
         public IListPhoneNumbersPaginator ListPhoneNumbers(ListPhoneNumbersRequest request) 
@@ -610,6 +618,14 @@ namespace Amazon.Connect.Model
         public ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request) 
         {
             return new SearchHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchMetrics operation
+        ///</summary>
+        public ISearchMetricsPaginator SearchMetrics(SearchMetricsRequest request) 
+        {
+            return new SearchMetricsPaginator(this.client, request);
         }
 
         /// <summary>
