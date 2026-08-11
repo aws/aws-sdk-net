@@ -38,13 +38,29 @@ public sealed record Member(
     /// <summary>
     /// Body expression for the internal <c>IsSet{Property}()</c> method. Collections honor
     /// <c>AWSConfigs.InitializeCollections</c>: an empty list is "set" only when the
-    /// V4-default null mode is active.
+    /// V4-default null mode is active. Nullable value types (<c>int?</c>, and later
+    /// <c>bool?</c>/<c>long?</c>/<c>DateTime?</c>) test <c>.HasValue</c>; everything else is a
+    /// reference type tested against null. A trailing <c>?</c> in the .NET type is the discriminator:
+    /// only nullable value types carry one.
     /// </summary>
-    // TODO: when nullable value types land (int?, bool?, DateTime?) IsSet should use .HasValue;
-    // Document has its own .IsSet().
-    public string IsSetExpression => IsCollection
-        ? $"this.{PropertyName} != null && (this.{PropertyName}.Count > 0 || !AWSConfigs.InitializeCollections)"
-        : $"this.{PropertyName} != null";
+    public string IsSetExpression
+    {
+        get
+        {
+            if (IsCollection)
+            {
+                return $"this.{PropertyName} != null && (this.{PropertyName}.Count > 0 || !AWSConfigs.InitializeCollections)";
+            }
+            else if (DotNetType.EndsWith('?'))
+            {
+                return $"this.{PropertyName}.HasValue";
+            }
+            else
+            {
+                return $"this.{PropertyName} != null";
+            }
+        }
+    }
 }
 
 /// <summary>
@@ -100,6 +116,11 @@ public static class TypeMapper
         if (target is StringShape)
         {
             return "string";
+        }
+
+        if (target is IntegerShape)
+        {
+            return "int?";
         }
 
         if (target is ListShape list)

@@ -8,8 +8,8 @@ namespace SmithyDotNet.Generator.Writers;
 /// Emits the C# source for a JSON structure unmarshaller matching the public API surface
 /// of the existing AWS SDK for .NET.
 /// <para />
-/// Phase 1 scope: Structures whose members all resolve to <c>string</c>. Any other member type
-/// throws a <see cref="GeneratorException"/>.
+/// Phase 1 scope: Structures whose members all resolve to <c>string</c> or <c>int?</c>. Any other
+/// member type throws a <see cref="GeneratorException"/>.
 /// </summary>
 public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -78,15 +78,12 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
     {
         for (int i = 0; i < members.Count; i++)
         {
-            if (members[i].DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string members are handled currently. Member '{members[i].ModeledName}' resolved to '{members[i].DotNetType}'.");
-            }
+            var unmarshaller = ScalarUnmarshaller(members[i]);
 
             var wireName = members[i].JsonName ?? members[i].ModeledName;
             writer.OpenBlock($"if (context.TestExpression(\"{wireName}\", targetDepth, ref reader))", () =>
             {
-                writer.WriteLine("var unmarshaller = StringUnmarshaller.Instance;");
+                writer.WriteLine($"var unmarshaller = {unmarshaller};");
                 writer.WriteLine($"unmarshalledObject.{members[i].PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
                 writer.WriteLine("continue;");
             });
@@ -97,6 +94,13 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             }
         }
     }
+
+    private static string ScalarUnmarshaller(Member member) => member.DotNetType switch
+    {
+        "string" => "StringUnmarshaller.Instance",
+        "int?" => "NullableIntUnmarshaller.Instance",
+        _ => throw new GeneratorException($"Only string and int? members are handled currently. Member '{member.ModeledName}' resolved to '{member.DotNetType}'."),
+    };
 
     private static void WriteSingleton(CodeWriter writer, string className)
     {

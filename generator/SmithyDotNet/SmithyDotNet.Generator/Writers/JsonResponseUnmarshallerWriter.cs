@@ -98,25 +98,28 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         if (member.DotNetType == "string")
         {
             writer.WriteLine("var unmarshaller = StringUnmarshaller.Instance;");
-            writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+        }
+        else if (member.DotNetType == "int?")
+        {
+            writer.WriteLine("var unmarshaller = NullableIntUnmarshaller.Instance;");
         }
         else if (member.IsCollection && member.IsElementStructure)
         {
             var elementType = member.ElementType ?? throw new GeneratorException($"List member '{member.PropertyName}' has no element type.");
             var unmarshallerType = $"{elementType}Unmarshaller";
             writer.WriteLine($"var unmarshaller = new JsonListUnmarshaller<{elementType}, {unmarshallerType}>({unmarshallerType}.Instance);");
-            writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else if (member.IsStructure)
         {
             var unmarshallerType = $"{member.DotNetType}Unmarshaller";
             writer.WriteLine($"var unmarshaller = {unmarshallerType}.Instance;");
-            writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else
         {
             throw new GeneratorException($"Unsupported response member type '{member.DotNetType}' for member '{member.PropertyName}'.");
         }
+
+        writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
     }
 
     private void WriteUnmarshallExceptionMethod(CodeWriter writer, Operation operation)

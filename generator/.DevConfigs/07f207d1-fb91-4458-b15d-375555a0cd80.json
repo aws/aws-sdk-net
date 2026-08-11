@@ -1,0 +1,8 @@
+{
+  "core": {
+    "changeLogMessages": [
+      "[C2J to Smithy] Add int member support to the JSON marshaller/unmarshaller writers"    ],
+    "type": "patch",
+    "updateMinimum": true
+  }
+}

@@ -1,4 +1,5 @@
 using System.Text.Json;
+using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
@@ -143,4 +144,38 @@ public class TypeMapperTests
         Assert.Contains("Min=2", result);
         Assert.Contains("Max=8", result);
     }
+
+    [Fact]
+    public void MapType_Integer_ReturnsNullableInt()
+    {
+        // Disabling Cannot convert null literal to non-nullable reference type, since we don't really
+        // need the context here and it isn't used anywhere in this class.
+#pragma warning disable CS8625 
+        Assert.Equal("int?", TypeMapper.MapType(ShapeId.Parse("smithy.api#Integer"), new IntegerShape(), context: null));
+#pragma warning restore CS8625
+    }
+
+    [Fact]
+    public void IsSetExpression_NullableValueType_UsesHasValue()
+    {
+        Assert.Equal("this.Count.HasValue", SimpleScalarMember("Count", "int?").IsSetExpression);
+    }
+
+    [Fact]
+    public void IsSetExpression_ReferenceType_UsesNullCheck()
+    {
+        Assert.Equal("this.Plain != null", SimpleScalarMember("Plain", "string").IsSetExpression);
+    }
+
+    private static Member SimpleScalarMember(string propertyName, string dotNetType) => new(
+        PropertyName: propertyName,
+        DotNetType: dotNetType,
+        IsCollection: false,
+        IsStructure: false,
+        IsRequired: false,
+        IsElementStructure: false,
+        AwsProperty: null,
+        Obsolete: null,
+        Documentation: string.Empty,
+        ModeledName: propertyName);
 }

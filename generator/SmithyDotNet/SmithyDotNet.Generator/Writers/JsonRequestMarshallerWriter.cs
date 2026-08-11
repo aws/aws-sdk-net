@@ -8,8 +8,8 @@ namespace SmithyDotNet.Generator.Writers;
 /// Emits the C# source for a JSON request marshaller matching the public API surface
 /// of the existing AWS SDK for .NET.
 /// <para />
-/// Phase 1 scope: restJson1 operations whose body members are lists of structures or strings,
-/// and whose query-string members are strings. Other member types throw a
+/// Phase 1 scope: restJson1 operations whose body members are lists of structures, strings, or
+/// int?, and whose query-string members are strings or int?. Other member types throw a
 /// <see cref="GeneratorException"/>.
 /// </summary>
 public sealed class JsonRequestMarshallerWriter(GenerationContext context, string modelFileName)
@@ -100,14 +100,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         foreach (var (member, queryName) in queryMembers)
         {
-            if (member.DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string query members are handled currently (member: {member.PropertyName}).");
-            }
-
             if (member.IsRequired)
             {
-                writer.OpenBlock($"if (string.IsNullOrEmpty(publicRequest.{member.PropertyName}))", () =>
+                var condition = member.DotNetType == "string"
+                    ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
+                    : $"!publicRequest.IsSet{member.PropertyName}()";
+
+                writer.OpenBlock($"if ({condition})", () =>
                 {
                     writer.WriteLine($"throw new Amazon{context.ServiceName}Exception(\"Request object does not have required field {member.PropertyName} set\");");
                 });
@@ -116,7 +115,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"request.Parameters.Add(\"{queryName}\", StringUtils.FromString(publicRequest.{member.PropertyName}));");
+                writer.WriteLine($"request.Parameters.Add(\"{queryName}\", {ScalarToStringUtils(member, "query")});");
             });
             writer.WriteLine("");
         }
@@ -127,13 +126,14 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         foreach (var (member, headerName) in headerMembers)
         {
-            if (member.DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string header members are handled currently (member: {member.PropertyName}).");
-            }
+            // A header value is already a string, other scalars convert through StringUtils first.
+            var value = member.DotNetType == "string"
+                ? $"publicRequest.{member.PropertyName}"
+                : ScalarToStringUtils(member, "header");
+
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"request.Headers[\"{headerName}\"] = publicRequest.{member.PropertyName};");
+                writer.WriteLine($"request.Headers[\"{headerName}\"] = {value};");
             });
             writer.WriteLine("");
         }
@@ -144,19 +144,23 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         foreach (var member in labelMembers)
         {
-            if (member.DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string label members are handled currently (member: {member.PropertyName}).");
-            }
+            var value = ScalarToStringUtils(member, "label");
             writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"throw new Amazon{context.ServiceName}Exception(\"Request object does not have required field {member.PropertyName} set\");");
             });
-            writer.WriteLine($"request.AddPathResource(\"{{{member.ModeledName}}}\", StringUtils.FromString(publicRequest.{member.PropertyName}));");
+            writer.WriteLine($"request.AddPathResource(\"{{{member.ModeledName}}}\", {value});");
             writer.WriteLine("");
         }
         writer.WriteLine($"request.ResourcePath = \"{httpTrait.Uri}\";");
     }
+
+    private string ScalarToStringUtils(Member member, string binding) => member.DotNetType switch
+    {
+        "string" => $"StringUtils.FromString(publicRequest.{member.PropertyName})",
+        "int?" => $"StringUtils.FromInt(publicRequest.{member.PropertyName})",
+        _ => throw new GeneratorException($"Only string and int? {binding} members are handled currently (member: {member.PropertyName}, type: {member.DotNetType})."),
+    };
 
     private void WriteBodySerialization(CodeWriter writer, List<Member> bodyMembers)
     {
@@ -185,35 +189,35 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     private void WriteBodyMember(CodeWriter writer, Member member)
     {
-        if (member.DotNetType == "string")
+        writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
         {
-            writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
+            writer.WriteLine($"context.Writer.WritePropertyName(\"{member.JsonName ?? member.ModeledName}\");");
+            if (member.DotNetType == "string")
             {
-                writer.WriteLine($"context.Writer.WritePropertyName(\"{member.JsonName ?? member.ModeledName}\");");
                 writer.WriteLine($"context.Writer.WriteStringValue(publicRequest.{member.PropertyName});");
-            });
-        }
-        else if (member.DotNetType.StartsWith("List<", StringComparison.Ordinal))
-        {
-            if (string.IsNullOrEmpty(member.ElementType))
-            {
-                throw new GeneratorException("A List's element type must be populated.");
             }
-            writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
+            else if (member.DotNetType == "int?")
             {
-                writer.WriteLine($"context.Writer.WritePropertyName(\"{member.JsonName ?? member.ModeledName}\");");
+                writer.WriteLine($"context.Writer.WriteNumberValue(publicRequest.{member.PropertyName}.Value);");
+            }
+            else if (member.DotNetType.StartsWith("List<", StringComparison.Ordinal))
+            {
+                if (string.IsNullOrEmpty(member.ElementType))
+                {
+                    throw new GeneratorException("A List's element type must be populated.");
+                }
                 writer.WriteLine("context.Writer.WriteStartArray();");
                 writer.OpenBlock($"foreach (var publicRequest{member.PropertyName}ListValue in publicRequest.{member.PropertyName})", () =>
                 {
                     WriteListElement(writer, member);
                 });
                 writer.WriteLine("context.Writer.WriteEndArray();");
-            });
-        }
-        else
-        {
-            throw new GeneratorException($"Only string and List<T> body members are handled currently (member: {member.PropertyName}, type: {member.DotNetType}).");
-        }
+            }
+            else
+            {
+                throw new GeneratorException($"Only string, int?, and List<T> body members are handled currently (member: {member.PropertyName}, type: {member.DotNetType}).");
+            }
+        });
     }
 
     private void WriteListElement(CodeWriter writer, Member member)

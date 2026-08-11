@@ -8,7 +8,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// Emits the C# source for a JSON structure marshaller matching the public API surface
 /// of the existing AWS SDK for .Net.
 /// <para />
-/// Phase 1 scope: Structures whose members all resolve to <c>string</c>. Any other member type
+/// Phase 1 scope: Structures whose members all resolve to <c>string</c> or <c>int?</c>. Any other member type
 /// throws a <see cref="GeneratorException"/>. 
 /// </summary>
 /// <param name="context"></param>
@@ -72,9 +72,17 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
                     writer.WriteLine($"context.Writer.WriteStringValue(requestObject.{members[i].PropertyName});");
                 });
             }
+            else if (members[i].DotNetType == "int?")
+            {
+                writer.OpenBlock($"if (requestObject.IsSet{members[i].PropertyName}())", () =>
+                {
+                    writer.WriteLine($"context.Writer.WritePropertyName(\"{members[i].JsonName ?? members[i].ModeledName}\");");
+                    writer.WriteLine($"context.Writer.WriteNumberValue(requestObject.{members[i].PropertyName}.Value);");
+                });
+            }
             else
             {
-                throw new GeneratorException("Only string members are handled currently");
+                throw new GeneratorException("Only string and int? members are handled currently");
             }
             if (i < members.Count - 1)
             {
