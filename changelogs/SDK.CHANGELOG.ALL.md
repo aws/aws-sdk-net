@@ -1,3 +1,29 @@
+### 4.0.309.0 (2026-08-11 18:18 UTC)
+* AccountAccess (4.0.100.0)
+	* Adds SDK support for AWS IAM account access manager, a feature that enables mapping of IAM roles to the users and groups in AWS IAM Identity Center.
+* BedrockAgentCore (4.0.104.0)
+	* Adding online eval arn as input for recommendation API
+* CleanRooms (4.0.103.0)
+	* Adds support for exporting redacted query execution logs in AWS Clean Rooms
+* CloudDirectory (4.0.100.8)
+	* Added an end-of-support notice to Amazon Cloud Directory public CLI reference documentation.
+* Connect (4.0.109.0)
+	* Seven new APIs for managing custom metrics, including create, describe, update, and delete. Using Custom Metrics, customers of Amazon Connect Customer can tailor analytics dashboards to their needs by applying custom thresholds, filters, and calculations to one or more out of the box measurements.
+* DataZone (4.0.104.0)
+	* GetSubscriptionGrant now returns materialized asset scope name for mapping Lake Formation data cell filters or Redshift views to subscription grants.
+* EKS (4.0.102.0)
+	* This feature would give customers the ability to selectively tune certain configurations of Kubernetes control plane components in an Amazon EKS cluster.
+* Organizations (4.0.100.10)
+	* Documentation update for AWS Organizations that clarifies valid input values for the HandshakePartyType parameter in the InviteAccountToOrganization. API ORGANIZATION is valid in responses only. valid input values are ACCOUNT and EMAIL
+* Textract (4.0.100.8)
+	* Amazon A2I entered maintenance mode in July 2026 and now rejects StartHumanLoop requests from accounts that it does not recognize as existing customers. This update adds a corresponding note to the HumanLoopConfig parameter documentation so that the API Reference and SDK docs explain this behavior.
+* Core 4.0.101.0
+	* Added `IRequest.PrecomputedContentSha256`, a caller-supplied body hash that `AWS4Signer` uses verbatim (when payload signing is enabled) in place of reading the request body.
+	* Added `SigV4SigningHandler`, a `System.Net.Http.DelegatingHandler` in the `Amazon.Runtime.Signing` namespace that SigV4-signs each outbound request. Install it on an `HttpClient` (directly or via `IHttpClientFactory`) to sign requests transparently. It is a thin layer over the standalone `AWSSigV4Signer` facade, resolves credentials on every send, and supports per-request region/service/payload-signing overrides via `HttpRequestMessage.Options`.
+	* Added a public standalone SigV4 request signing API in the `Amazon.Runtime.Signing` namespace (`AWSSigV4Signer` with `Sign`/`SignAsync` for header signing and `Presign`/`PresignAsync` for presigned URLs, plus the `AWSSigningRequest`, `AWSSigV4Parameters`, `AWSSigningResult`, and `PresignResult` types). This lets callers sign an arbitrary HTTP request with SigV4 without constructing internal signer types.
+	* Added time-accepting overloads of `AWS4Signer.SignRequest` and `AWS4PreSignedUrlSigner.SignRequest` that take an explicit `signedAt`, enabling deterministic signing. Existing overloads are unchanged and delegate to these with the previously computed default time.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.308.0 (2026-08-10 18:15 UTC)
 * Connect (4.0.108.0)
 	* Added Malay language option to use AI to automatically fill evaluation forms in Malay
