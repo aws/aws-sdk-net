@@ -437,6 +437,55 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  BatchDescribeUserLimits
+
+        internal virtual BatchDescribeUserLimitsResponse BatchDescribeUserLimits(BatchDescribeUserLimitsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeUserLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeUserLimitsResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDescribeUserLimitsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the effective resource limits for one or more Amazon Quick Sight users,
+        /// including the limits that apply to each user based on their profile assignments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDescribeUserLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDescribeUserLimits service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/BatchDescribeUserLimits">REST API Reference for BatchDescribeUserLimits Operation</seealso>
+        public virtual Task<BatchDescribeUserLimitsResponse> BatchDescribeUserLimitsAsync(BatchDescribeUserLimitsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = BatchDescribeUserLimitsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDescribeUserLimitsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDescribeUserLimitsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CancelIngestion
 
         internal virtual CancelIngestionResponse CancelIngestion(CancelIngestionRequest request)
@@ -850,6 +899,63 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  CreateApprovalPolicy
+
+        internal virtual CreateApprovalPolicyResponse CreateApprovalPolicy(CreateApprovalPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApprovalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateApprovalPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an approval policy in Quick Sight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApprovalPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApprovalPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateApprovalPolicy">REST API Reference for CreateApprovalPolicy Operation</seealso>
+        public virtual Task<CreateApprovalPolicyResponse> CreateApprovalPolicyAsync(CreateApprovalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateApprovalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateApprovalPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateBrand
 
         internal virtual CreateBrandResponse CreateBrand(CreateBrandRequest request)
@@ -1173,6 +1279,66 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = CreateDataSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateDataSourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateDlpSetting
+
+        internal virtual CreateDlpSettingResponse CreateDlpSetting(CreateDlpSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDlpSettingResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDlpSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a data loss prevention (DLP) setting configuration for an Amazon Web Services
+        /// account. A DLP setting defines the DLP provider, the enforcement behavior, and the
+        /// Quick capabilities that the setting applies to.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDlpSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDlpSetting service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateDlpSetting">REST API Reference for CreateDlpSetting Operation</seealso>
+        public virtual Task<CreateDlpSettingResponse> CreateDlpSettingAsync(CreateDlpSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDlpSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateDlpSettingResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1721,6 +1887,61 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = CreateKnowledgeBaseResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateKnowledgeBaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateLimitsProfile
+
+        internal virtual CreateLimitsProfileResponse CreateLimitsProfile(CreateLimitsProfileRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLimitsProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateLimitsProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a limits profile that defines resource usage limits for Amazon Quick Sight
+        /// users.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateLimitsProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateLimitsProfile service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateLimitsProfile">REST API Reference for CreateLimitsProfile Operation</seealso>
+        public virtual Task<CreateLimitsProfileResponse> CreateLimitsProfileAsync(CreateLimitsProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateLimitsProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateLimitsProfileResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2971,6 +3192,57 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  DeleteApprovalPolicy
+
+        internal virtual DeleteApprovalPolicyResponse DeleteApprovalPolicy(DeleteApprovalPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApprovalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteApprovalPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an approval policy in Quick Sight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApprovalPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApprovalPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteApprovalPolicy">REST API Reference for DeleteApprovalPolicy Operation</seealso>
+        public virtual Task<DeleteApprovalPolicyResponse> DeleteApprovalPolicyAsync(DeleteApprovalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteApprovalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteApprovalPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteBrand
 
         internal virtual DeleteBrandResponse DeleteBrand(DeleteBrandRequest request)
@@ -3430,6 +3702,58 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DeleteDefaultQBusinessApplicationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDefaultQBusinessApplicationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteDlpSetting
+
+        internal virtual DeleteDlpSettingResponse DeleteDlpSetting(DeleteDlpSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDlpSettingResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDlpSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a DLP setting configuration from an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDlpSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDlpSetting service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDlpSetting">REST API Reference for DeleteDlpSetting Operation</seealso>
+        public virtual Task<DeleteDlpSettingResponse> DeleteDlpSettingAsync(DeleteDlpSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDlpSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteDlpSettingResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3898,6 +4222,60 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DeleteKnowledgeBaseResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteKnowledgeBaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteLimitsProfile
+
+        internal virtual DeleteLimitsProfileResponse DeleteLimitsProfile(DeleteLimitsProfileRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLimitsProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteLimitsProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a limits profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteLimitsProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteLimitsProfile service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteLimitsProfile">REST API Reference for DeleteLimitsProfile Operation</seealso>
+        public virtual Task<DeleteLimitsProfileResponse> DeleteLimitsProfileAsync(DeleteLimitsProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteLimitsProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteLimitsProfileResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -5533,6 +5911,57 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  DescribeApprovalPolicy
+
+        internal virtual DescribeApprovalPolicyResponse DescribeApprovalPolicy(DescribeApprovalPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApprovalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeApprovalPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an approval policy in Quick Sight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApprovalPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApprovalPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeApprovalPolicy">REST API Reference for DescribeApprovalPolicy Operation</seealso>
+        public virtual Task<DescribeApprovalPolicyResponse> DescribeApprovalPolicyAsync(DescribeApprovalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeApprovalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeApprovalPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeAssetBundleExportJob
 
         internal virtual DescribeAssetBundleExportJobResponse DescribeAssetBundleExportJob(DescribeAssetBundleExportJobRequest request)
@@ -6697,6 +7126,58 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  DescribeDlpSetting
+
+        internal virtual DescribeDlpSettingResponse DescribeDlpSetting(DescribeDlpSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDlpSettingResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDlpSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the full configuration of a DLP setting in an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDlpSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDlpSetting service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDlpSetting">REST API Reference for DescribeDlpSetting Operation</seealso>
+        public virtual Task<DescribeDlpSettingResponse> DescribeDlpSettingAsync(DescribeDlpSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDlpSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeDlpSettingResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DescribeFlow
 
         internal virtual DescribeFlowResponse DescribeFlow(DescribeFlowRequest request)
@@ -7369,6 +7850,57 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DescribeKnowledgeBasePermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeKnowledgeBasePermissionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeLimitsProfile
+
+        internal virtual DescribeLimitsProfileResponse DescribeLimitsProfile(DescribeLimitsProfileRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLimitsProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeLimitsProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the properties of an existing limits profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeLimitsProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeLimitsProfile service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeLimitsProfile">REST API Reference for DescribeLimitsProfile Operation</seealso>
+        public virtual Task<DescribeLimitsProfileResponse> DescribeLimitsProfileAsync(DescribeLimitsProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeLimitsProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeLimitsProfileResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -9642,6 +10174,59 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  ListApprovalPolicies
+
+        internal virtual ListApprovalPoliciesResponse ListApprovalPolicies(ListApprovalPoliciesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListApprovalPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApprovalPoliciesResponseUnmarshaller.Instance;
+
+            return Invoke<ListApprovalPoliciesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all approval policies in the specified Quick Sight account. The results are
+        /// paginated. If the response includes a <c>NextToken</c> value, pass it in a subsequent
+        /// call to retrieve the next set of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApprovalPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApprovalPolicies service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListApprovalPolicies">REST API Reference for ListApprovalPolicies Operation</seealso>
+        public virtual Task<ListApprovalPoliciesResponse> ListApprovalPoliciesAsync(ListApprovalPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListApprovalPoliciesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListApprovalPoliciesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListApprovalPoliciesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListAssetBundleExportJobs
 
         internal virtual ListAssetBundleExportJobsResponse ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request)
@@ -10070,6 +10655,55 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = ListDataSourcesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDataSourcesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListDlpSettings
+
+        internal virtual ListDlpSettingsResponse ListDlpSettings(ListDlpSettingsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDlpSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDlpSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDlpSettingsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all DLP settings in an Amazon Web Services account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDlpSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDlpSettings service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDlpSettings">REST API Reference for ListDlpSettings Operation</seealso>
+        public virtual Task<ListDlpSettingsResponse> ListDlpSettingsAsync(ListDlpSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDlpSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDlpSettingsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDlpSettingsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -10702,6 +11336,56 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = ListKnowledgeBasesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListKnowledgeBasesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListLimitsProfiles
+
+        internal virtual ListLimitsProfilesResponse ListLimitsProfiles(ListLimitsProfilesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLimitsProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLimitsProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListLimitsProfilesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all limits profiles in an Amazon Quick Sight account. Results are paginated.
+        /// Use the <c>maxResults</c> parameter to limit the number of results returned in a single
+        /// call, and use the <c>nextToken</c> parameter to retrieve the next page of results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListLimitsProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListLimitsProfiles service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListLimitsProfiles">REST API Reference for ListLimitsProfiles Operation</seealso>
+        public virtual Task<ListLimitsProfilesResponse> ListLimitsProfilesAsync(ListLimitsProfilesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListLimitsProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListLimitsProfilesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListLimitsProfilesResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -14238,6 +14922,60 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  UpdateApprovalPolicy
+
+        internal virtual UpdateApprovalPolicyResponse UpdateApprovalPolicy(UpdateApprovalPolicyRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApprovalPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApprovalPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an approval policy in Quick Sight.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApprovalPolicy service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateApprovalPolicy">REST API Reference for UpdateApprovalPolicy Operation</seealso>
+        public virtual Task<UpdateApprovalPolicyResponse> UpdateApprovalPolicyAsync(UpdateApprovalPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateApprovalPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApprovalPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateApprovalPolicyResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateBrand
 
         internal virtual UpdateBrandResponse UpdateBrand(UpdateBrandRequest request)
@@ -15046,6 +15784,62 @@ namespace Amazon.QuickSight
         }
         #endregion
         
+        #region  UpdateDlpSetting
+
+        internal virtual UpdateDlpSettingResponse UpdateDlpSetting(UpdateDlpSettingRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDlpSettingResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateDlpSettingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing DLP setting configuration in an Amazon Web Services account. Fields
+        /// that are omitted from the request retain their current values.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDlpSetting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateDlpSetting service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidRequestException">
+        /// You don't have this feature activated for your account. To fix this issue, contact
+        /// Amazon Web Services support.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateDlpSetting">REST API Reference for UpdateDlpSetting Operation</seealso>
+        public virtual Task<UpdateDlpSettingResponse> UpdateDlpSettingAsync(UpdateDlpSettingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateDlpSettingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDlpSettingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateDlpSettingResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  UpdateFlow
 
         internal virtual UpdateFlowResponse UpdateFlow(UpdateFlowRequest request)
@@ -15681,6 +16475,60 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdateKnowledgeBasePermissionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateKnowledgeBasePermissionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateLimitsProfile
+
+        internal virtual UpdateLimitsProfileResponse UpdateLimitsProfile(UpdateLimitsProfileRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLimitsProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateLimitsProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the properties of an existing limits profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateLimitsProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateLimitsProfile service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateLimitsProfile">REST API Reference for UpdateLimitsProfile Operation</seealso>
+        public virtual Task<UpdateLimitsProfileResponse> UpdateLimitsProfileAsync(UpdateLimitsProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateLimitsProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateLimitsProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateLimitsProfileResponse>(request, options, cancellationToken);
         }
         #endregion
         

@@ -69,6 +69,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListApprovalPolicies operation
+        ///</summary>
+        public IListApprovalPoliciesPaginator ListApprovalPolicies(ListApprovalPoliciesRequest request) 
+        {
+            return new ListApprovalPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetBundleExportJobs operation
         ///</summary>
         public IListAssetBundleExportJobsPaginator ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request) 
@@ -130,6 +138,14 @@ namespace Amazon.QuickSight.Model
         public IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request) 
         {
             return new ListDataSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDlpSettings operation
+        ///</summary>
+        public IListDlpSettingsPaginator ListDlpSettings(ListDlpSettingsRequest request) 
+        {
+            return new ListDlpSettingsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -210,6 +226,14 @@ namespace Amazon.QuickSight.Model
         public IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request) 
         {
             return new ListKnowledgeBasesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListLimitsProfiles operation
+        ///</summary>
+        public IListLimitsProfilesPaginator ListLimitsProfiles(ListLimitsProfilesRequest request) 
+        {
+            return new ListLimitsProfilesPaginator(this.client, request);
         }
 
         /// <summary>

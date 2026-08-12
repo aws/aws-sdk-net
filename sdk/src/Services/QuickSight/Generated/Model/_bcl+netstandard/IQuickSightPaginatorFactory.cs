@@ -68,6 +68,16 @@ namespace Amazon.QuickSight.Model
         IListAnalysesPaginator ListAnalyses(ListAnalysesRequest request);
 
         /// <summary>
+        /// Paginator for ListApprovalPolicies operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListApprovalPoliciesPaginator ListApprovalPolicies(ListApprovalPoliciesRequest request);
+
+        /// <summary>
         /// Paginator for ListAssetBundleExportJobs operation
         ///</summary>
         [AWSPaginator(
@@ -146,6 +156,16 @@ namespace Amazon.QuickSight.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request);
+
+        /// <summary>
+        /// Paginator for ListDlpSettings operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDlpSettingsPaginator ListDlpSettings(ListDlpSettingsRequest request);
 
         /// <summary>
         /// Paginator for ListFlows operation
@@ -246,6 +266,16 @@ namespace Amazon.QuickSight.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListKnowledgeBasesPaginator ListKnowledgeBases(ListKnowledgeBasesRequest request);
+
+        /// <summary>
+        /// Paginator for ListLimitsProfiles operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListLimitsProfilesPaginator ListLimitsProfiles(ListLimitsProfilesRequest request);
 
         /// <summary>
         /// Paginator for ListNamespaces operation

@@ -39,7 +39,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TemplateConfiguration. 
         /// <para>
-        /// The template configuration for the knowledge base.
+        /// The template configuration that defines how the data source connector crawls and indexes
+        /// data for the knowledge base. The template structure varies by connector type. See
+        /// <c>KbTemplateConfiguration</c> for connector-specific details.
         /// </para>
         /// </summary>
         public KbTemplateConfiguration TemplateConfiguration
