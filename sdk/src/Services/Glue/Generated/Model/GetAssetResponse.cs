@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the GetAsset operation.
+    /// The asset metadata returned by the <c>GetAsset</c> operation.
     /// </summary>
     public partial class GetAssetResponse : AmazonWebServiceResponse
     {

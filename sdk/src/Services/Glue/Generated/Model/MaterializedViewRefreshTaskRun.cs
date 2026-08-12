@@ -257,7 +257,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The IAM role that the service assumes to generate statistics.
+        /// The IAM role that the service assumes to run the materialized view refresh task.
         /// </para>
         /// </summary>
         public string Role
@@ -311,7 +311,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table for which statistics is generated.
+        /// The name of the materialized view.
         /// </para>
         /// </summary>
         public string TableName

@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the GetDataCatalogExportConfiguration operation.
+    /// The export configuration returned by the <c>GetDataCatalogExportConfiguration</c>
+    /// operation.
     /// </summary>
     public partial class GetDataCatalogExportConfigurationResponse : AmazonWebServiceResponse
     {

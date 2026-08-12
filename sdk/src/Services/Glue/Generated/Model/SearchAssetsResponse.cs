@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// This is the response object from the SearchAssets operation.
+    /// The search results returned by the <c>SearchAssets</c> operation.
     /// </summary>
     public partial class SearchAssetsResponse : AmazonWebServiceResponse
     {

@@ -19147,7 +19147,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts a materialized view refresh task run, for a specified table and columns.
+        /// Starts a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMaterializedViewRefreshTaskRun service method.</param>
         /// 
@@ -19182,7 +19182,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts a materialized view refresh task run, for a specified table and columns.
+        /// Starts a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMaterializedViewRefreshTaskRun service method.</param>
         /// <param name="cancellationToken">
@@ -19860,7 +19860,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Stops a materialized view refresh task run, for a specified table and columns.
+        /// Stops a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMaterializedViewRefreshTaskRun service method.</param>
         /// 
@@ -19892,7 +19892,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Stops a materialized view refresh task run, for a specified table and columns.
+        /// Stops a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMaterializedViewRefreshTaskRun service method.</param>
         /// <param name="cancellationToken">
