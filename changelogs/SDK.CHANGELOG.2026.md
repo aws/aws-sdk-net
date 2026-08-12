@@ -1,3 +1,19 @@
+### 4.0.310.0 (2026-08-12 18:15 UTC)
+* DSQL (4.0.102.0)
+	* Improved validation of Kinesis stream ARN format to ensure only valid ARN characters are accepted
+* Glue (4.0.103.2)
+	* Documentation updates for materialized views APIs.
+* IdentityManagement (4.0.103.0)
+	* Introduced role manager, an IAM capability that automatically sets up the IAM roles your AWS services need. When you set up a supported service in the console, role manager creates a role for you or reuses an existing one from an AWS-managed template.
+* MediaConnect (4.0.101.0)
+	* AWS MediaConnect now supports tuning the internal recovery latency between Router Inputs and Outputs to prioritize stream quality versus end-to-end latency.
+* Odb (4.0.102.0)
+	* Adds support for Oracle Exadata on Exascale Infrastructure (ExaDB-XS) resources including storage vaults and VM clusters.
+* QuickSight (4.0.107.0)
+	* Added APIs for DLP with Microsoft Purview (manage configs with label enforcement across Spaces, Chat, Knowledge Bases), Approval Workflows (CRUD for policies on asset sharing for Agents, Knowledge Bases, Spaces), and Limits Management (limit profiles for index storage and agent hours per user).
+* WellArchitected (4.0.101.0)
+	* This change releases the Well-Architected Agent, a generative AI service that analyzes a customer's AWS environment and delivers personalized, prioritized recommendations across cost, security, performance, and resilience.
+
 ### 4.0.309.0 (2026-08-11 18:18 UTC)
 * AccountAccess (4.0.100.0)
 	* Adds SDK support for AWS IAM account access manager, a feature that enables mapping of IAM roles to the users and groups in AWS IAM Identity Center.
