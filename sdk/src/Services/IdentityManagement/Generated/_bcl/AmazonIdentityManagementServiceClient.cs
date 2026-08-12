@@ -437,6 +437,145 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  AcquireRole
+
+
+        /// <summary>
+        /// Creates an IAM role from the specified role template. The new role takes its configuration—including
+        /// its name, path, trust policy, inline and managed policies, permissions boundary, tags,
+        /// and maximum session duration—from the role template version that you specify. For
+        /// more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// If the template version defines parameters, use the <c>ReplacementValues</c> parameter
+        /// to supply the values that the service substitutes into the role during creation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcquireRole service method.</param>
+        /// 
+        /// <returns>The response from the AcquireRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NameConflictException">
+        /// The request was rejected because the resulting role name conflicts with an existing
+        /// role in the account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleModifiedException">
+        /// The request was rejected because someone modified the role template while the service
+        /// was creating the role. Wait a few minutes and try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleTemplateDisabledException">
+        /// The request was rejected because the specified role template is disabled. A disabled
+        /// role template cannot be used to create new roles. Contact your administrator to enable
+        /// the role template, or use a different role template.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcquireRole">REST API Reference for AcquireRole Operation</seealso>
+        public virtual AcquireRoleResponse AcquireRole(AcquireRoleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcquireRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcquireRoleResponseUnmarshaller.Instance;
+
+            return Invoke<AcquireRoleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an IAM role from the specified role template. The new role takes its configuration—including
+        /// its name, path, trust policy, inline and managed policies, permissions boundary, tags,
+        /// and maximum session duration—from the role template version that you specify. For
+        /// more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// If the template version defines parameters, use the <c>ReplacementValues</c> parameter
+        /// to supply the values that the service substitutes into the role during creation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcquireRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcquireRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NameConflictException">
+        /// The request was rejected because the resulting role name conflicts with an existing
+        /// role in the account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleModifiedException">
+        /// The request was rejected because someone modified the role template while the service
+        /// was creating the role. Wait a few minutes and try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleTemplateDisabledException">
+        /// The request was rejected because the specified role template is disabled. A disabled
+        /// role template cannot be used to create new roles. Contact your administrator to enable
+        /// the role template, or use a different role template.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcquireRole">REST API Reference for AcquireRole Operation</seealso>
+        public virtual Task<AcquireRoleResponse> AcquireRoleAsync(AcquireRoleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AcquireRoleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AcquireRoleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AcquireRoleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  AddClientIDToOpenIDConnectProvider
 
 
@@ -7174,6 +7313,79 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetAccountProperties
+
+
+        /// <summary>
+        /// Retrieves the account-level properties for the caller's Amazon Web Services account.
+        /// Account properties are configuration settings that control account-wide IAM features
+        /// such as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// The service returns properties as key-value pairs in <c>Namespace/PropertyName</c>
+        /// format. Each namespace groups related configuration settings. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutAccountProperties.html">PutAccountProperties</a>
+        /// to modify these properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountProperties service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountProperties">REST API Reference for GetAccountProperties Operation</seealso>
+        public virtual GetAccountPropertiesResponse GetAccountProperties(GetAccountPropertiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAccountPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<GetAccountPropertiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the account-level properties for the caller's Amazon Web Services account.
+        /// Account properties are configuration settings that control account-wide IAM features
+        /// such as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// The service returns properties as key-value pairs in <c>Namespace/PropertyName</c>
+        /// format. Each namespace groups related configuration settings. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutAccountProperties.html">PutAccountProperties</a>
+        /// to modify these properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountProperties">REST API Reference for GetAccountProperties Operation</seealso>
+        public virtual Task<GetAccountPropertiesResponse> GetAccountPropertiesAsync(GetAccountPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAccountPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAccountPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetAccountPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAccountSummary
 
 
@@ -9057,6 +9269,87 @@ namespace Amazon.IdentityManagement
             options.ResponseUnmarshaller = GetRolePolicyResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetRolePolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRoleTemplateVersion
+
+
+        /// <summary>
+        /// Retrieves information about a version of the specified role template. Role templates
+        /// define a reusable configuration—including role name and path patterns, trust policy,
+        /// inline and managed policies, permissions boundary, tags, and maximum session duration—that
+        /// you use to create IAM roles with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify a minor version, the service returns the template's default
+        /// minor version.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoleTemplateVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetRoleTemplateVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRoleTemplateVersion">REST API Reference for GetRoleTemplateVersion Operation</seealso>
+        public virtual GetRoleTemplateVersionResponse GetRoleTemplateVersion(GetRoleTemplateVersionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRoleTemplateVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoleTemplateVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetRoleTemplateVersionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves information about a version of the specified role template. Role templates
+        /// define a reusable configuration—including role name and path patterns, trust policy,
+        /// inline and managed policies, permissions boundary, tags, and maximum session duration—that
+        /// you use to create IAM roles with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify a minor version, the service returns the template's default
+        /// minor version.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoleTemplateVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRoleTemplateVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRoleTemplateVersion">REST API Reference for GetRoleTemplateVersion Operation</seealso>
+        public virtual Task<GetRoleTemplateVersionResponse> GetRoleTemplateVersionAsync(GetRoleTemplateVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetRoleTemplateVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRoleTemplateVersionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRoleTemplateVersionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -13609,6 +13902,87 @@ namespace Amazon.IdentityManagement
             options.ResponseUnmarshaller = ListVirtualMFADevicesResponseUnmarshaller.Instance;
             
             return InvokeAsync<ListVirtualMFADevicesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutAccountProperties
+
+
+        /// <summary>
+        /// Sets account-level properties for the caller's Amazon Web Services account. Account
+        /// properties are configuration settings that control account-wide IAM features such
+        /// as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// Specify properties as key-value pairs in <c>Namespace/PropertyName</c> format. All
+        /// properties in a single request must belong to the same namespace. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountProperties.html">GetAccountProperties</a>
+        /// to view the current properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountProperties service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutAccountProperties">REST API Reference for PutAccountProperties Operation</seealso>
+        public virtual PutAccountPropertiesResponse PutAccountProperties(PutAccountPropertiesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAccountPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<PutAccountPropertiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Sets account-level properties for the caller's Amazon Web Services account. Account
+        /// properties are configuration settings that control account-wide IAM features such
+        /// as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// Specify properties as key-value pairs in <c>Namespace/PropertyName</c> format. All
+        /// properties in a single request must belong to the same namespace. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountProperties.html">GetAccountProperties</a>
+        /// to view the current properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutAccountProperties">REST API Reference for PutAccountProperties Operation</seealso>
+        public virtual Task<PutAccountPropertiesResponse> PutAccountPropertiesAsync(PutAccountPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = PutAccountPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutAccountPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutAccountPropertiesResponse>(request, options, cancellationToken);
         }
 
         #endregion

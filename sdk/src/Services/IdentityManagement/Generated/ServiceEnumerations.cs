@@ -647,6 +647,118 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ManagedByTypeType.
+    /// </summary>
+    public class ManagedByTypeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Service for ManagedByTypeType
+        /// </summary>
+        public static readonly ManagedByTypeType Service = new ManagedByTypeType("Service");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedByTypeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedByTypeType FindValue(string value)
+        {
+            return FindValue<ManagedByTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedByTypeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParameterTypeType.
+    /// </summary>
+    public class ParameterTypeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Arn for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType Arn = new ParameterTypeType("Arn");
+        /// <summary>
+        /// Constant ArnList for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType ArnList = new ParameterTypeType("ArnList");
+        /// <summary>
+        /// Constant Number for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType Number = new ParameterTypeType("Number");
+        /// <summary>
+        /// Constant NumberList for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType NumberList = new ParameterTypeType("NumberList");
+        /// <summary>
+        /// Constant String for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType String = new ParameterTypeType("String");
+        /// <summary>
+        /// Constant StringList for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType StringList = new ParameterTypeType("StringList");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterTypeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterTypeType FindValue(string value)
+        {
+            return FindValue<ParameterTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterTypeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PermissionCheckResultType.
     /// </summary>
     public class PermissionCheckResultType : ConstantClass
