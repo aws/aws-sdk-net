@@ -1,143 +1,41 @@
 {
     "smithy": "2.0",
     "shapes": {
-        "com.amazonaws.cloudtraildata#AuditEvent": {
-            "type": "structure",
-            "members": {
-                "id": {
-                    "target": "com.amazonaws.cloudtraildata#Uuid",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The original event ID from the source event.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "eventData": {
-                    "target": "smithy.api#String",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The content of an audit event that comes from the event, such as <code>userIdentity</code>, \n         <code>userAgent</code>, and <code>eventSource</code>.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "eventDataChecksum": {
-                    "target": "smithy.api#String",
-                    "traits": {
-                        "smithy.api#documentation": "<p>A checksum is a base64-SHA256 algorithm that helps you verify that CloudTrail receives the event that matches \n         with the checksum. Calculate the checksum by running a command like the following:</p>\n         <p>\n            <code>printf %s <i>$eventdata</i> | openssl dgst -binary -sha256 | base64</code>\n         </p>"
-                    }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "<p>An event from a source outside of Amazon Web Services that you want CloudTrail \n      to log.</p>"
-            }
-        },
-        "com.amazonaws.cloudtraildata#AuditEventResultEntries": {
-            "type": "list",
-            "member": {
-                "target": "com.amazonaws.cloudtraildata#AuditEventResultEntry"
-            },
-            "traits": {
-                "smithy.api#length": {
-                    "min": 0,
-                    "max": 100
-                }
-            }
-        },
-        "com.amazonaws.cloudtraildata#AuditEventResultEntry": {
-            "type": "structure",
-            "members": {
-                "id": {
-                    "target": "com.amazonaws.cloudtraildata#Uuid",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The original event ID from the source event.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "eventID": {
-                    "target": "com.amazonaws.cloudtraildata#Uuid",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The event ID assigned by CloudTrail.</p>",
-                        "smithy.api#required": {}
-                    }
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "<p>A response that includes successful and failed event results.</p>"
-            }
-        },
-        "com.amazonaws.cloudtraildata#AuditEvents": {
-            "type": "list",
-            "member": {
-                "target": "com.amazonaws.cloudtraildata#AuditEvent"
-            },
-            "traits": {
-                "smithy.api#length": {
-                    "min": 1,
-                    "max": 100
-                }
-            }
-        },
-        "com.amazonaws.cloudtraildata#ChannelArn": {
-            "type": "string",
-            "traits": {
-                "aws.api#arnReference": {},
-                "smithy.api#pattern": "^arn:.*$"
-            }
-        },
-        "com.amazonaws.cloudtraildata#ChannelInsufficientPermission": {
-            "type": "structure",
-            "members": {
-                "message": {
-                    "target": "smithy.api#String"
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "<p>The caller's account ID must be the same as the channel owner's account ID.</p>",
-                "smithy.api#error": "client"
-            }
-        },
-        "com.amazonaws.cloudtraildata#ChannelNotFound": {
-            "type": "structure",
-            "members": {
-                "message": {
-                    "target": "smithy.api#String"
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "<p>The channel could not be found.</p>",
-                "smithy.api#error": "client"
-            }
-        },
-        "com.amazonaws.cloudtraildata#ChannelUnsupportedSchema": {
-            "type": "structure",
-            "members": {
-                "message": {
-                    "target": "smithy.api#String"
-                }
-            },
-            "traits": {
-                "smithy.api#documentation": "<p>The schema type of the event is not supported.</p>",
-                "smithy.api#error": "client"
-            }
-        },
-        "com.amazonaws.cloudtraildata#CloudTrailDataService": {
+        "com.amazonaws.kinesisvideowebrtcstorage#AWSAcuityRoutingServiceLambda": {
             "type": "service",
-            "version": "2021-08-11",
+            "version": "2018-05-10",
             "operations": [
                 {
-                    "target": "com.amazonaws.cloudtraildata#PutAuditEvents"
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSession"
+                },
+                {
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSessionAsViewer"
                 }
             ],
             "traits": {
                 "aws.api#service": {
-                    "sdkId": "CloudTrail Data",
-                    "endpointPrefix": "cloudtrail-data"
+                    "sdkId": "Kinesis Video WebRTC Storage",
+                    "arnNamespace": "kinesisvideo",
+                    "endpointPrefix": "kinesisvideo"
                 },
                 "aws.auth#sigv4": {
-                    "name": "cloudtrail-data"
+                    "name": "kinesisvideo"
                 },
                 "aws.protocols#restJson1": {},
-                "smithy.api#cors": {},
-                "smithy.api#documentation": "<p>The CloudTrail Data Service lets you ingest events into CloudTrail from any source in your\nhybrid environments, such as in-house or SaaS applications hosted on-premises or in the cloud,\nvirtual machines, or containers. You can store, access, analyze, troubleshoot and take action on\nthis data without maintaining multiple log aggregators and reporting tools. After you run \n<code>PutAuditEvents</code> to ingest your application activity into CloudTrail, you can use CloudTrail Lake to search, query, and analyze the data that is logged\nfrom your applications.</p>",
-                "smithy.api#title": "AWS CloudTrail Data Service",
+                "smithy.api#cors": {
+                    "additionalAllowedHeaders": [
+                        "Authorization",
+                        "Content-Type",
+                        "Credentials",
+                        "X-Amz-Date",
+                        "X-Api-Key",
+                        "X-Amz-Security-Token",
+                        "x-amz-content-sha256",
+                        "X-Amz-User-Agent"
+                    ]
+                },
+                "smithy.api#documentation": "<fullname>webrtc</fullname>\n         <p>\n    </p>",
+                "smithy.api#title": "Amazon Kinesis Video WebRTC Storage",
                 "smithy.rules#endpointBdd": {
                     "version": "1.1",
                     "parameters": {
@@ -268,7 +166,7 @@
                         {
                             "conditions": [],
                             "endpoint": {
-                                "url": "https://cloudtrail-data-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
                                 "properties": {},
                                 "headers": {}
                             },
@@ -282,7 +180,7 @@
                         {
                             "conditions": [],
                             "endpoint": {
-                                "url": "https://cloudtrail-data-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dnsSuffix}",
                                 "properties": {},
                                 "headers": {}
                             },
@@ -296,7 +194,7 @@
                         {
                             "conditions": [],
                             "endpoint": {
-                                "url": "https://cloudtrail-data.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dualStackDnsSuffix}",
                                 "properties": {},
                                 "headers": {}
                             },
@@ -310,7 +208,7 @@
                         {
                             "conditions": [],
                             "endpoint": {
-                                "url": "https://cloudtrail-data.{Region}.{PartitionResult#dnsSuffix}",
+                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dnsSuffix}",
                                 "properties": {},
                                 "headers": {}
                             },
@@ -509,7 +407,7 @@
                                                                         {
                                                                             "conditions": [],
                                                                             "endpoint": {
-                                                                                "url": "https://cloudtrail-data-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
                                                                                 "properties": {},
                                                                                 "headers": {}
                                                                             },
@@ -567,7 +465,7 @@
                                                                         {
                                                                             "conditions": [],
                                                                             "endpoint": {
-                                                                                "url": "https://cloudtrail-data-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                                "url": "https://kinesisvideo-fips.{Region}.{PartitionResult#dnsSuffix}",
                                                                                 "properties": {},
                                                                                 "headers": {}
                                                                             },
@@ -625,7 +523,7 @@
                                                                         {
                                                                             "conditions": [],
                                                                             "endpoint": {
-                                                                                "url": "https://cloudtrail-data.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dualStackDnsSuffix}",
                                                                                 "properties": {},
                                                                                 "headers": {}
                                                                             },
@@ -651,7 +549,7 @@
                                                         {
                                                             "conditions": [],
                                                             "endpoint": {
-                                                                "url": "https://cloudtrail-data.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "url": "https://kinesisvideo.{Region}.{PartitionResult#dnsSuffix}",
                                                                 "properties": {},
                                                                 "headers": {}
                                                             },
@@ -682,7 +580,7 @@
                             "documentation": "For region us-east-1 with FIPS enabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.us-east-1.api.aws"
+                                    "url": "https://kinesisvideo-fips.us-east-1.api.aws"
                                 }
                             },
                             "params": {
@@ -695,7 +593,7 @@
                             "documentation": "For region us-east-1 with FIPS enabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.us-east-1.amazonaws.com"
+                                    "url": "https://kinesisvideo-fips.us-east-1.amazonaws.com"
                                 }
                             },
                             "params": {
@@ -708,7 +606,7 @@
                             "documentation": "For region us-east-1 with FIPS disabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.us-east-1.api.aws"
+                                    "url": "https://kinesisvideo.us-east-1.api.aws"
                                 }
                             },
                             "params": {
@@ -721,7 +619,7 @@
                             "documentation": "For region us-east-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.us-east-1.amazonaws.com"
+                                    "url": "https://kinesisvideo.us-east-1.amazonaws.com"
                                 }
                             },
                             "params": {
@@ -734,7 +632,7 @@
                             "documentation": "For region cn-north-1 with FIPS enabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.cn-north-1.api.amazonwebservices.com.cn"
+                                    "url": "https://kinesisvideo-fips.cn-north-1.api.amazonwebservices.com.cn"
                                 }
                             },
                             "params": {
@@ -747,7 +645,7 @@
                             "documentation": "For region cn-north-1 with FIPS enabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.cn-north-1.amazonaws.com.cn"
+                                    "url": "https://kinesisvideo-fips.cn-north-1.amazonaws.com.cn"
                                 }
                             },
                             "params": {
@@ -760,7 +658,7 @@
                             "documentation": "For region cn-north-1 with FIPS disabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.cn-north-1.api.amazonwebservices.com.cn"
+                                    "url": "https://kinesisvideo.cn-north-1.api.amazonwebservices.com.cn"
                                 }
                             },
                             "params": {
@@ -773,7 +671,7 @@
                             "documentation": "For region cn-north-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.cn-north-1.amazonaws.com.cn"
+                                    "url": "https://kinesisvideo.cn-north-1.amazonaws.com.cn"
                                 }
                             },
                             "params": {
@@ -786,7 +684,7 @@
                             "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.us-gov-east-1.api.aws"
+                                    "url": "https://kinesisvideo-fips.us-gov-east-1.api.aws"
                                 }
                             },
                             "params": {
@@ -799,7 +697,7 @@
                             "documentation": "For region us-gov-east-1 with FIPS enabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.us-gov-east-1.amazonaws.com"
+                                    "url": "https://kinesisvideo-fips.us-gov-east-1.amazonaws.com"
                                 }
                             },
                             "params": {
@@ -812,7 +710,7 @@
                             "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack enabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.us-gov-east-1.api.aws"
+                                    "url": "https://kinesisvideo.us-gov-east-1.api.aws"
                                 }
                             },
                             "params": {
@@ -825,7 +723,7 @@
                             "documentation": "For region us-gov-east-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.us-gov-east-1.amazonaws.com"
+                                    "url": "https://kinesisvideo.us-gov-east-1.amazonaws.com"
                                 }
                             },
                             "params": {
@@ -838,7 +736,7 @@
                             "documentation": "For region us-iso-east-1 with FIPS enabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.us-iso-east-1.c2s.ic.gov"
+                                    "url": "https://kinesisvideo-fips.us-iso-east-1.c2s.ic.gov"
                                 }
                             },
                             "params": {
@@ -851,7 +749,7 @@
                             "documentation": "For region us-iso-east-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.us-iso-east-1.c2s.ic.gov"
+                                    "url": "https://kinesisvideo.us-iso-east-1.c2s.ic.gov"
                                 }
                             },
                             "params": {
@@ -864,7 +762,7 @@
                             "documentation": "For region us-isob-east-1 with FIPS enabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data-fips.us-isob-east-1.sc2s.sgov.gov"
+                                    "url": "https://kinesisvideo-fips.us-isob-east-1.sc2s.sgov.gov"
                                 }
                             },
                             "params": {
@@ -877,7 +775,7 @@
                             "documentation": "For region us-isob-east-1 with FIPS disabled and DualStack disabled",
                             "expect": {
                                 "endpoint": {
-                                    "url": "https://cloudtrail-data.us-isob-east-1.sc2s.sgov.gov"
+                                    "url": "https://kinesisvideo.us-isob-east-1.sc2s.sgov.gov"
                                 }
                             },
                             "params": {
@@ -948,7 +846,7 @@
                 }
             }
         },
-        "com.amazonaws.cloudtraildata#DuplicatedAuditEventId": {
+        "com.amazonaws.kinesisvideowebrtcstorage#AccessDeniedException": {
             "type": "structure",
             "members": {
                 "message": {
@@ -956,39 +854,28 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Two or more entries in the request have the same event ID.</p>",
-                "smithy.api#error": "client"
+                "smithy.api#documentation": "<p>You do not have required permissions to perform this operation.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 403
             }
         },
-        "com.amazonaws.cloudtraildata#ErrorCode": {
+        "com.amazonaws.kinesisvideowebrtcstorage#ChannelArn": {
+            "type": "string",
+            "traits": {
+                "smithy.api#pattern": "^arn:(aws[a-zA-Z-]*):kinesisvideo:[a-z0-9-]+:[0-9]+:[a-z]+/[a-zA-Z0-9_.-]+/[0-9]+$"
+            }
+        },
+        "com.amazonaws.kinesisvideowebrtcstorage#ClientId": {
             "type": "string",
             "traits": {
                 "smithy.api#length": {
                     "min": 1,
-                    "max": 128
-                }
-            }
-        },
-        "com.amazonaws.cloudtraildata#ErrorMessage": {
-            "type": "string",
-            "traits": {
-                "smithy.api#length": {
-                    "min": 1,
-                    "max": 1024
-                }
-            }
-        },
-        "com.amazonaws.cloudtraildata#ExternalId": {
-            "type": "string",
-            "traits": {
-                "smithy.api#length": {
-                    "min": 2,
-                    "max": 1224
+                    "max": 256
                 },
-                "smithy.api#pattern": "^[\\w+=,.@:\\/-]*$"
+                "smithy.api#pattern": "^[a-zA-Z0-9_.-]+$"
             }
         },
-        "com.amazonaws.cloudtraildata#InvalidChannelARN": {
+        "com.amazonaws.kinesisvideowebrtcstorage#ClientLimitExceededException": {
             "type": "structure",
             "members": {
                 "message": {
@@ -996,134 +883,124 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The specified channel ARN is not a valid \n         channel ARN.</p>",
-                "smithy.api#error": "client"
+                "smithy.api#documentation": "<p>\n      Kinesis Video Streams has throttled the request because you have exceeded the limit of allowed client calls. Try making the call later.\n    </p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
             }
         },
-        "com.amazonaws.cloudtraildata#PutAuditEvents": {
+        "com.amazonaws.kinesisvideowebrtcstorage#InvalidArgumentException": {
+            "type": "structure",
+            "members": {
+                "message": {
+                    "target": "smithy.api#String"
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The value for this input parameter is invalid.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 400
+            }
+        },
+        "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSession": {
             "type": "operation",
             "input": {
-                "target": "com.amazonaws.cloudtraildata#PutAuditEventsRequest"
+                "target": "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSessionInput"
             },
             "output": {
-                "target": "com.amazonaws.cloudtraildata#PutAuditEventsResponse"
+                "target": "smithy.api#Unit"
             },
             "errors": [
                 {
-                    "target": "com.amazonaws.cloudtraildata#ChannelInsufficientPermission"
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#AccessDeniedException"
                 },
                 {
-                    "target": "com.amazonaws.cloudtraildata#ChannelNotFound"
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#ClientLimitExceededException"
                 },
                 {
-                    "target": "com.amazonaws.cloudtraildata#ChannelUnsupportedSchema"
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#InvalidArgumentException"
                 },
                 {
-                    "target": "com.amazonaws.cloudtraildata#DuplicatedAuditEventId"
-                },
-                {
-                    "target": "com.amazonaws.cloudtraildata#InvalidChannelARN"
-                },
-                {
-                    "target": "com.amazonaws.cloudtraildata#UnsupportedOperationException"
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#ResourceNotFoundException"
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Ingests your application events into CloudTrail Lake. A required parameter,\n            <code>auditEvents</code>, accepts the JSON records (also called\n            <i>payload</i>) of events that you want CloudTrail to ingest. You\n         can add up to 100 of these events (or up to 1 MB) per <code>PutAuditEvents</code>\n         request.</p>",
+                "smithy.api#documentation": "<note>\n            <p>Before using this API, you must call the <code>GetSignalingChannelEndpoint</code> API to request the WEBRTC endpoint. You then specify the endpoint and region in your <code>JoinStorageSession</code> API request.</p>\n         </note>\n         <p>Join the ongoing one way-video and/or multi-way audio WebRTC session as a video producing\n      device for an input channel. If there’s no existing session for the channel, a new streaming\n      session needs to be created, and the Amazon Resource Name (ARN) of the signaling channel must\n      be provided. </p>\n         <p>Currently for the <code>SINGLE_MASTER</code> type, a video producing\n      device is able to ingest both audio and video media into a stream. Only video producing devices can join the session and record media.</p>\n         <important>\n            <p>Both audio and video tracks are currently required for WebRTC ingestion.</p>\n            <p>Current requirements:</p>\n            <ul>\n               <li>\n                  <p>Video track: H.264</p>\n               </li>\n               <li>\n                  <p>Audio track: Opus</p>\n               </li>\n            </ul>\n         </important>\n         <p>The resulting ingested video in the Kinesis video stream will have the following\n      parameters: H.264 video and AAC audio.</p>\n         <p>Once a master participant has negotiated a connection through WebRTC, the ingested media\n      session will be stored in the Kinesis video stream. Multiple viewers are then able to play\n      back real-time media through our Playback APIs.</p>\n         <p>You can also use existing Kinesis Video Streams features like <code>HLS</code> or\n      <code>DASH</code> playback, image generation via <a href=\"https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/gs-getImages.html\">GetImages</a>, and more\n      with ingested WebRTC media.</p>\n         <note>\n            <p>S3 image delivery and notifications are not currently supported.</p>\n         </note>\n         <note>\n            <p>Assume that only one video producing device client\n      can be associated with a session for the channel. If more than one \n      client joins the session of a specific channel as a video producing device,\n      the most recent client request takes precedence. </p>\n         </note>\n         <p>\n            <b>Additional information</b>\n         </p>\n         <ul>\n            <li>\n               <p>\n                  <b>Idempotent</b> - This API is not idempotent.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Retry behavior</b> - This is counted as a new API call.</p>\n            </li>\n            <li>\n               <p>\n                  <b>Concurrent calls</b> - Concurrent calls are allowed. An offer is sent once per each call.</p>\n            </li>\n         </ul>",
                 "smithy.api#http": {
-                    "uri": "/PutAuditEvents",
-                    "method": "POST"
+                    "code": 200,
+                    "method": "POST",
+                    "uri": "/joinStorageSession"
                 }
             }
         },
-        "com.amazonaws.cloudtraildata#PutAuditEventsRequest": {
+        "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSessionAsViewer": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSessionAsViewerInput"
+            },
+            "output": {
+                "target": "smithy.api#Unit"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#AccessDeniedException"
+                },
+                {
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#ClientLimitExceededException"
+                },
+                {
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#InvalidArgumentException"
+                },
+                {
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#ResourceNotFoundException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>\n      Join the ongoing one way-video and/or multi-way audio WebRTC session as \n      a viewer for an input channel. If there’s\n      no existing session for the channel, create a new streaming session and provide\n      the Amazon Resource Name (ARN) of the signaling channel (<code>channelArn</code>)\n      and client id (<code>clientId</code>).\n    </p>\n         <p>Currently for <code>SINGLE_MASTER</code> type, a video producing device\n      is able to ingest both audio and video media into a stream, while viewers\n      can only ingest audio. Both a video producing device and viewers can join\n      a session first and wait for other participants. While participants are having peer to peer conversations through WebRTC,\n      the ingested media session will be stored into the Kinesis Video Stream.\n      Multiple viewers are able to playback real-time media.\n    </p>\n         <p>Customers can also use existing Kinesis Video Streams features like\n      <code>HLS</code> or <code>DASH</code> playback, Image generation, and more \n      with ingested WebRTC media. If there’s an existing session with the same\n      <code>clientId</code> that's found in the join session request, the new request takes precedence.</p>",
+                "smithy.api#http": {
+                    "code": 200,
+                    "method": "POST",
+                    "uri": "/joinStorageSessionAsViewer"
+                }
+            }
+        },
+        "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSessionAsViewerInput": {
             "type": "structure",
             "members": {
-                "auditEvents": {
-                    "target": "com.amazonaws.cloudtraildata#AuditEvents",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The JSON payload of events that you want to ingest. You can also point to the JSON event\n         payload in a file.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
                 "channelArn": {
-                    "target": "com.amazonaws.cloudtraildata#ChannelArn",
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#ChannelArn",
                     "traits": {
-                        "smithy.api#documentation": "<p>The ARN or ID (the ARN suffix) of a channel.</p>",
-                        "smithy.api#httpQuery": "channelArn",
+                        "smithy.api#documentation": "<p>\n      The Amazon Resource Name (ARN) of the signaling channel.\n    </p>",
                         "smithy.api#required": {}
                     }
                 },
-                "externalId": {
-                    "target": "com.amazonaws.cloudtraildata#ExternalId",
+                "clientId": {
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#ClientId",
                     "traits": {
-                        "smithy.api#documentation": "<p>A unique identifier that is conditionally required when the channel's resource policy includes an external \n         ID. This value can be any string, \n         such as a passphrase or account number.</p>",
-                        "smithy.api#httpQuery": "externalId"
-                    }
-                }
-            }
-        },
-        "com.amazonaws.cloudtraildata#PutAuditEventsResponse": {
-            "type": "structure",
-            "members": {
-                "successful": {
-                    "target": "com.amazonaws.cloudtraildata#AuditEventResultEntries",
-                    "traits": {
-                        "smithy.api#documentation": "<p>Lists events in the provided event payload that were successfully ingested \n      into CloudTrail.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "failed": {
-                    "target": "com.amazonaws.cloudtraildata#ResultErrorEntries",
-                    "traits": {
-                        "smithy.api#documentation": "<p>Lists events in the provided event payload that could not be \n         ingested into CloudTrail, and includes the error code and error message \n         returned for events that could not be ingested.</p>",
-                        "smithy.api#required": {}
-                    }
-                }
-            }
-        },
-        "com.amazonaws.cloudtraildata#ResultErrorEntries": {
-            "type": "list",
-            "member": {
-                "target": "com.amazonaws.cloudtraildata#ResultErrorEntry"
-            },
-            "traits": {
-                "smithy.api#length": {
-                    "min": 0,
-                    "max": 100
-                }
-            }
-        },
-        "com.amazonaws.cloudtraildata#ResultErrorEntry": {
-            "type": "structure",
-            "members": {
-                "id": {
-                    "target": "com.amazonaws.cloudtraildata#Uuid",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The original event ID from the source event that could not be ingested by CloudTrail.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "errorCode": {
-                    "target": "com.amazonaws.cloudtraildata#ErrorCode",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The error code for events that could not be ingested by CloudTrail. Possible error codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, \n         <code>InvalidChecksum</code>, <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>, <code>AccountNotSubscribed</code>, \n         <code>Throttling</code>, and <code>InternalFailure</code>.</p>",
-                        "smithy.api#required": {}
-                    }
-                },
-                "errorMessage": {
-                    "target": "com.amazonaws.cloudtraildata#ErrorMessage",
-                    "traits": {
-                        "smithy.api#documentation": "<p>The message that describes the error for events that could not be ingested by CloudTrail.</p>",
+                        "smithy.api#documentation": "<p>\n      The unique identifier for the sender client.\n    </p>",
                         "smithy.api#required": {}
                     }
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Includes the error code and error message for events that could not be ingested by CloudTrail.</p>"
+                "smithy.api#input": {}
             }
         },
-        "com.amazonaws.cloudtraildata#UnsupportedOperationException": {
+        "com.amazonaws.kinesisvideowebrtcstorage#JoinStorageSessionInput": {
+            "type": "structure",
+            "members": {
+                "channelArn": {
+                    "target": "com.amazonaws.kinesisvideowebrtcstorage#ChannelArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>\n      The Amazon Resource Name (ARN) of the signaling channel.\n    </p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.kinesisvideowebrtcstorage#ResourceNotFoundException": {
             "type": "structure",
             "members": {
                 "message": {
@@ -1131,18 +1008,9 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>The operation requested is not supported in this region or account.</p>",
-                "smithy.api#error": "client"
-            }
-        },
-        "com.amazonaws.cloudtraildata#Uuid": {
-            "type": "string",
-            "traits": {
-                "smithy.api#length": {
-                    "min": 1,
-                    "max": 128
-                },
-                "smithy.api#pattern": "^[-_A-Za-z0-9]+$"
+                "smithy.api#documentation": "<p>The specified resource is not found.</p>",
+                "smithy.api#error": "client",
+                "smithy.api#httpError": 404
             }
         }
     }
