@@ -3,6 +3,9 @@ name: Build SDK V4
 # Deny all permissions by default; the build job opts into exactly what it needs.
 permissions: {}
 
+# Comment-triggered build. Listens ONLY on issue_comment, so it is never
+# evaluated on pull_request events and never adds a check-run row to a PR. The
+# build result is surfaced via the build-sdk-v4 commit status (see Post step).
 on:
   issue_comment:
     types: [created]
@@ -17,12 +20,13 @@ env:
   SCRIPT_LOCATION: 'workflows/start-pull-request-build/pull-request-build-v1.sh'
 
 jobs:
-  build-sdk-v4:
-    name: build-sdk-v4
+  # Job name is intentionally NOT "build-sdk-v4" (the required status context).
+  # Keeps the check-run namespace clear of the required status.
+  run-build:
+    name: run-build
     # Trigger: a "/run-build" comment on a PR (not a plain issue) from an org
-    # member/owner. This is the cheap gate so external contributors can't even
-    # start the job; the commenter's actual push access is then verified in the
-    # first step as the precise lock.
+    # member/owner. Cheap gate so external contributors can't even start the
+    # job; the commenter's actual push access is verified in the first step.
     if: >-
       github.event.issue.pull_request &&
       github.event.comment.body == '/run-build' &&
@@ -32,7 +36,7 @@ jobs:
       id-token: write        # request the OIDC token used to assume the AWS IAM role
       issues: write          # allow the build script to comment on the associated issue
       pull-requests: write   # allow the build script to post build status/comments on the PR
-      statuses: write        # post the commit status that shows as a PR check
+      statuses: write        # post the build-sdk-v4 commit status shown as a PR check
       contents: read         # check out the repository contents
     steps:
       - name: Verify requester permission
@@ -100,9 +104,6 @@ jobs:
             --pr-number "$PR_NUMBER" \
             --run-id "$RUN_ID"
         timeout-minutes: 150
-      # Post the final build result as a commit status on the PR head SHA so it
-      # shows as a check on the PR (branch protection can require it). Runs on
-      # success AND failure so the PR always gets an accurate result.
       - name: Post commit status
         if: always() && steps.pr.outputs.head_sha != ''
         env:

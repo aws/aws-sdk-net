@@ -1,0 +1,48 @@
+name: Skip Build Gate
+
+# Deny all permissions by default; the job opts into exactly what it needs.
+permissions: {}
+
+# Label-driven gate for the build-sdk-v4 required check. Lets a PR satisfy the
+# check without building (e.g. docs-only) and re-blocks when the label is
+# removed. Kept separate from the build workflow so the comment-triggered build
+# never shows a misleading "skipped" row on PRs.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
+    branches:
+      - development
+
+concurrency:
+  group: skip-build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  skip-build:
+    name: skip-build
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (
+        contains(github.event.pull_request.labels.*.name, 'skip-build') ||
+        (github.event.action == 'unlabeled' && github.event.label.name == 'skip-build')
+      )
+    runs-on: ubuntu-latest
+    permissions:
+      statuses: write        # post the build-sdk-v4 commit status shown as a PR check
+    steps:
+      - name: Stamp build-sdk-v4 status from skip-build label
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          RUN_ID: ${{ github.run_id }}
+          HAS_SKIP: ${{ contains(github.event.pull_request.labels.*.name, 'skip-build') }}
+        run: |
+          if [ "$HAS_SKIP" = "true" ]; then
+            state=success; desc="Skipped via skip-build label"
+          else
+            state=pending; desc="skip-build removed — run /run-build"
+          fi
+          gh api -X POST "repos/$REPO/statuses/$HEAD_SHA" \
+            -f state="$state" -f context="build-sdk-v4" -f description="$desc" \
+            -f target_url="https://github.com/$REPO/actions/runs/$RUN_ID"
