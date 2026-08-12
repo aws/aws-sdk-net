@@ -79,7 +79,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             var member = members[i];
             var wireName = member.JsonName ?? member.ModeledName;
 
-            writer.OpenBlock($"if (context.TestExpression(\"{wireName}\", targetDepth, ref reader))", () =>
+            writer.OpenBlock($"""if (context.TestExpression("{wireName}", targetDepth, ref reader))""", () =>
             {
                 WriteUnmarshallerForMember(writer, member);
                 writer.WriteLine("continue;");
@@ -92,12 +92,29 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         }
     }
 
-    // Only types that are used by CloudTrailData are handled for now.
+    /// <summary>
+    /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a scalar .NET type,
+    /// or null when the type is not a supported scalar. Timestamps follow the JSON-protocol default
+    /// (epoch seconds via the nullable <c>DateTime</c> unmarshaller).
+    /// </summary>
+    internal static string? ScalarUnmarshaller(string dotNetType) => dotNetType switch
+    {
+        "string" => "StringUnmarshaller",
+        "bool?" => "NullableBoolUnmarshaller",
+        "int?" => "NullableIntUnmarshaller",
+        "long?" => "NullableLongUnmarshaller",
+        "float?" => "NullableFloatUnmarshaller",
+        "double?" => "NullableDoubleUnmarshaller",
+        "DateTime?" => "NullableDateTimeUnmarshaller",
+        _ => null,
+    };
+
+    // Only types that are used by CloudTrailData and the supported scalars are handled for now.
     private static void WriteUnmarshallerForMember(CodeWriter writer, Member member)
     {
-        if (member.DotNetType == "string")
+        if (ScalarUnmarshaller(member.DotNetType) is string scalarUnmarshaller)
         {
-            writer.WriteLine("var unmarshaller = StringUnmarshaller.Instance;");
+            writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
             writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else if (member.IsCollection && member.IsElementStructure)
@@ -145,7 +162,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                     {
                         var errorShapeName = error.Id.Name;
                         var exceptionClassName = ExceptionWriter.ToExceptionName(errorShapeName);
-                        writer.OpenBlock($"if (errorResponse.Code != null && errorResponse.Code.Equals(\"{errorShapeName}\"))", () =>
+                        writer.OpenBlock($"""if (errorResponse.Code != null && errorResponse.Code.Equals("{errorShapeName}"))""", () =>
                         {
                             writer.WriteLine($"return {exceptionClassName}Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);");
                         });

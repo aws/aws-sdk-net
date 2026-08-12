@@ -25,7 +25,11 @@ current SDK. Reads the Smithy AST directly - no C2J concepts internally.
 - CRLF on disk (run `unix2dos`).
 - No null-forgiving `!` - use `?? throw` or pattern matching.
 - Braces on all `if`/`return`.
-- net10.0, nullable enabled, xUnit v3 (tests pass `TestContext.Current.CancellationToken`).
+- Prefer raw string literals (`"""..."""`) over `\"` escaping wherever a literal contains quotes —
+  including interpolated (`$"""..."""`). Only reach for `$$"""..."""` when the *emitted* text has
+  literal braces, and if the triple/quadruple braces get hard to read, hoist the token into a local
+  (`var t = "{" + name + "}";`) and interpolate that instead.
+- net8.0, nullable enabled, xUnit v3 (tests pass `TestContext.Current.CancellationToken`).
 
 ## Source of truth
 

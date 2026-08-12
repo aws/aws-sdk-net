@@ -12,21 +12,21 @@ Definitive mapping from Smithy shape types to .NET types, plus nullability and c
 
 | Smithy shape | .NET type | Notes |
 |---|---|---|
-| `blob` | `MemoryStream` | Streaming blob shapes map to `Stream`; non-streaming blobs map to `MemoryStream` |
 | `boolean` | `bool?` | Nullable |
 | `string` | `string` | Reference type, nullable by nature |
-| `byte` | `int?` | Widened to int, nullable |
-| `short` | `int?` | Widened to int, nullable |
 | `integer` | `int?` | Nullable |
 | `long` | `long?` | Nullable |
 | `float` | `float?` | Nullable |
 | `double` | `double?` | Nullable |
-| `bigInteger` | `long?` | Narrowed to long, nullable |
-| `bigDecimal` | `decimal?` | Nullable |
 | `timestamp` | `DateTime?` | Nullable |
-| `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type |
-| `enum` | `string` (Phase 1) / `ConstantClass` (Phase 2) | Phase 2 uses the `ConstantClass` pattern |
-| `intEnum` | `int?` | Nullable |
+| `byte` | — | Not supported yet — throws. No settled .NET mapping (the current SDK never emitted `byte`/`short`) |
+| `short` | — | Not supported yet — throws |
+| `bigInteger` | — | Not supported yet — throws. Wider-numeric types are earmarked for a dedicated numerics extension |
+| `bigDecimal` | — | Not supported yet — throws |
+| `blob` | `MemoryStream` | Not supported yet — throws. Target: streaming blobs → `Stream`, non-streaming → `MemoryStream` |
+| `document` | `Amazon.Runtime.Documents.Document` | Not supported yet — throws. SDK runtime type |
+| `enum` | `string` (Phase 1) / `ConstantClass` (Phase 2) | Not supported yet — throws. Phase 2 uses the `ConstantClass` pattern |
+| `intEnum` | `int?` | Not supported yet — throws |
 | `list` | `List<T>` | V4 default: `null`; see Collection Defaults |
 | `map` | `Dictionary<TKey, TValue>` | V4 default: `null`; see Collection Defaults |
 | `structure` | Generated class | See structure rules below |
@@ -107,7 +107,9 @@ To get the .NET type for a structure member:
 
 ## Prelude Shape Mapping
 
-These shapes are implicit (not in the model JSON) and map directly:
+These shapes are implicit (not in the model JSON) and map directly. The .NET types below are the
+target mapping; see the Type Mapping Table above for which are supported today vs. still throw
+(`Blob`/`Document` are not supported yet):
 
 | Prelude shape ID | .NET type |
 |---|---|

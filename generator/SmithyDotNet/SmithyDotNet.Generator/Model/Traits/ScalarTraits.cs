@@ -28,4 +28,7 @@ public static class ScalarTraits
 
     /// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#pattern-trait" /></remarks>
     public static string? GetPattern(this Shape shape) => GetStringTrait(shape, "smithy.api#pattern");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#timestampformat-trait" /></remarks>
+    public static string? GetTimestampFormat(this Shape shape) => GetStringTrait(shape, "smithy.api#timestampFormat");
 }

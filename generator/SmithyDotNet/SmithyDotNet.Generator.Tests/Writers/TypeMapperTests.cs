@@ -114,7 +114,7 @@ public class TypeMapperTests
     [Fact]
     public void Deprecated_WithMessage_EmitsObsoleteWithMessage()
     {
-        Assert.Equal("[Obsolete(\"Use name instead\")]", Obsolete("legacy"));
+        Assert.Equal("""[Obsolete("Use name instead")]""", Obsolete("legacy"));
     }
 
     [Fact]
@@ -142,5 +142,35 @@ public class TypeMapperTests
         Assert.Contains("Sensitive=true", result);
         Assert.Contains("Min=2", result);
         Assert.Contains("Max=8", result);
+    }
+
+    [Theory]
+    [InlineData("boolean", "bool?")]
+    [InlineData("integer", "int?")]
+    [InlineData("long", "long?")]
+    [InlineData("float", "float?")]
+    [InlineData("double", "double?")]
+    [InlineData("timestamp", "DateTime?")]
+    public void MapScalar_SupportedScalars_MapToNullableValueTypes(string smithyType, string expected)
+    {
+        var shape = Deserialize($$"""{ "type": "{{smithyType}}" }""");
+        Assert.Equal(expected, TypeMapper.MapScalar(shape));
+    }
+
+    // MapScalar only maps the primitive value scalars and timestamp above. Everything else returns
+    // null: string maps via a dedicated path, aggregates are never scalars, and the remaining scalars
+    // are not supported yet (MapType throws for them).
+    [Theory]
+    [InlineData("""{ "type": "byte" }""")]
+    [InlineData("""{ "type": "short" }""")]
+    [InlineData("""{ "type": "bigInteger" }""")]
+    [InlineData("""{ "type": "bigDecimal" }""")]
+    [InlineData("""{ "type": "blob" }""")]
+    [InlineData("""{ "type": "document" }""")]
+    [InlineData("""{ "type": "string" }""")]
+    [InlineData("""{ "type": "structure", "members": {} }""")]
+    public void MapScalar_NonValueScalars_ReturnNull(string json)
+    {
+        Assert.Null(TypeMapper.MapScalar(Deserialize(json)));
     }
 }

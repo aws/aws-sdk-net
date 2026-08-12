@@ -78,16 +78,15 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
     {
         for (int i = 0; i < members.Count; i++)
         {
-            if (members[i].DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string members are handled currently. Member '{members[i].ModeledName}' resolved to '{members[i].DotNetType}'.");
-            }
+            var member = members[i];
+            var scalarUnmarshaller = JsonResponseUnmarshallerWriter.ScalarUnmarshaller(member.DotNetType)
+                ?? throw new GeneratorException($"Only scalar members are handled currently. Member '{member.ModeledName}' resolved to '{member.DotNetType}'.");
 
-            var wireName = members[i].JsonName ?? members[i].ModeledName;
-            writer.OpenBlock($"if (context.TestExpression(\"{wireName}\", targetDepth, ref reader))", () =>
+            var wireName = member.JsonName ?? member.ModeledName;
+            writer.OpenBlock($"""if (context.TestExpression("{wireName}", targetDepth, ref reader))""", () =>
             {
-                writer.WriteLine("var unmarshaller = StringUnmarshaller.Instance;");
-                writer.WriteLine($"unmarshalledObject.{members[i].PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+                writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
+                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
                 writer.WriteLine("continue;");
             });
 

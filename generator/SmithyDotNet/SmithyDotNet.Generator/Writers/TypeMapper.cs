@@ -14,12 +14,14 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsStructure">True if the member is a structure. IsElementStructure should be used for members that are structure and the target of a list.</param>
 /// <param name="IsRequired">True if the member is required.</param>
 /// <param name="IsElementStructure">True if the member is a structure and the target of a list. i.e. List of structure.</param>
+/// <param name="IsNullableValueType">True if the member maps to a nullable .NET value type (e.g. <c>int?</c>, <c>DateTime?</c>); drives <c>.HasValue</c> vs <c>!= null</c> in <see cref="Member.IsSetExpression"/>.</param>
 /// <param name="AwsProperty">The attributes that are part of [AwsProperty(...)]</param>
 /// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="ElementType">The type of the list element.</param>
+/// <param name="TimestampFormat">The explicit <c>@timestampFormat</c> (<c>date-time</c>/<c>http-date</c>/<c>epoch-seconds</c>) from the member or its target, or null when unset (the binding's protocol default applies).</param>
 public sealed record Member(
     string PropertyName,
     string DotNetType,
@@ -27,24 +29,34 @@ public sealed record Member(
     bool IsStructure,
     bool IsRequired,
     bool IsElementStructure,
+    bool IsNullableValueType,
     string? AwsProperty,
     string? Obsolete,
     string Documentation,
     string ModeledName,
     string? JsonName = null,
-    string? ElementType = null
+    string? ElementType = null,
+    string? TimestampFormat = null
 )
 {
     /// <summary>
     /// Body expression for the internal <c>IsSet{Property}()</c> method. Collections honor
-    /// <c>AWSConfigs.InitializeCollections</c>: an empty list is "set" only when the
-    /// V4-default null mode is active.
+    /// <c>AWSConfigs.InitializeCollections</c>: an empty list is "set" only when the V4-default null
+    /// mode is active. Nullable value types (<c>int?</c>, <c>bool?</c>, <c>DateTime?</c>, …) use
+    /// <c>.HasValue</c>; reference types (<c>string</c>, generated classes) use <c>!= null</c>.
     /// </summary>
-    // TODO: when nullable value types land (int?, bool?, DateTime?) IsSet should use .HasValue;
-    // Document has its own .IsSet().
     public string IsSetExpression => IsCollection
         ? $"this.{PropertyName} != null && (this.{PropertyName}.Count > 0 || !AWSConfigs.InitializeCollections)"
-        : $"this.{PropertyName} != null";
+        : IsNullableValueType
+            ? $"this.{PropertyName}.HasValue"
+            : $"this.{PropertyName} != null";
+
+    /// <summary>
+    /// True for a scalar member — <c>string</c> or a nullable value type. Aggregates (list, map,
+    /// structure) are excluded; unsupported shapes never reach here (they throw in
+    /// <see cref="TypeMapper.MapType"/>).
+    /// </summary>
+    public bool IsScalar => !IsCollection && !IsStructure;
 }
 
 /// <summary>
@@ -73,19 +85,25 @@ public static class TypeMapper
                 isElementStructure = elementTarget is StructureShape;
             }
 
+            // MapScalar returns the .NET type for value-type scalars (and null otherwise), so it
+            // doubles as both the type and the IsNullableValueType signal without a second MapType walk.
+            var scalarType = MapScalar(target);
+
             resolved.Add(new Member(
                 PropertyName: SdkNaming.ToUpperFirstCharacter(memberName),
-                DotNetType: MapType(member.Target, target, context),
+                DotNetType: scalarType ?? MapType(member.Target, target, context),
                 IsCollection: IsCollection(target),
                 IsStructure: isStructure,
                 IsRequired: member.IsRequired(),
                 IsElementStructure: isElementStructure,
+                IsNullableValueType: scalarType is not null,
                 AwsProperty: BuildAwsProperty(member, target),
                 Obsolete: BuildObsolete(memberName, member, target),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
                 JsonName: member.GetJsonName(),
-                ElementType: elementType)
+                ElementType: elementType,
+                TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat())
             );
         }
 
@@ -105,6 +123,7 @@ public static class TypeMapper
         if (target is ListShape list)
         {
             var elementTarget = context.Resolve(list.Member.Target);
+            RejectValueTypeScalarCollectionElement(elementTarget, "list");
             return $"List<{MapType(list.Member.Target, elementTarget, context)}>";
         }
 
@@ -112,6 +131,7 @@ public static class TypeMapper
         {
             var keyTarget = context.Resolve(map.Key.Target);
             var valueTarget = context.Resolve(map.Value.Target);
+            RejectValueTypeScalarCollectionElement(valueTarget, "map");
             return $"Dictionary<{MapType(map.Key.Target, keyTarget, context)}, {MapType(map.Value.Target, valueTarget, context)}>";
         }
 
@@ -120,7 +140,37 @@ public static class TypeMapper
             return context.ToDotNetName(targetId);
         }
 
-        throw new GeneratorException($"Unsupported member type '{target.Type}'.");
+        // Scalars are checked last so the aggregate branches above return without a MapScalar call.
+        // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
+        // bigDecimal/blob/document/enum/union) have no settled mapping yet and fall through to the
+        // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
+        return MapScalar(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
+    }
+
+    /// <summary>
+    /// The nullable .NET type for a primitive scalar or timestamp shape, or null when the shape is
+    /// not one of the supported scalars.
+    /// </summary>
+    public static string? MapScalar(Shape target) => target switch
+    {
+        BooleanShape => "bool?",
+        IntegerShape => "int?",
+        LongShape => "long?",
+        FloatShape => "float?",
+        DoubleShape => "double?",
+        TimestampShape => "DateTime?",
+        _ => null,
+    };
+
+    // The writers can't marshal/unmarshal scalar collection elements yet (they need the element to
+    // be a first-class Member with its own @timestampFormat). Fail here so a model like list<Integer>
+    // doesn't silently map the type then blow up in the writer with a confusing error.
+    private static void RejectValueTypeScalarCollectionElement(Shape elementTarget, string collectionKind)
+    {
+        if (MapScalar(elementTarget) is not null)
+        {
+            throw new GeneratorException($"Scalar elements in a {collectionKind} are not supported yet (element type: '{elementTarget.Type}').");
+        }
     }
 
     /// <summary>

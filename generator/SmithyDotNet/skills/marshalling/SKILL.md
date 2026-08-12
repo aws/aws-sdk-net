@@ -170,12 +170,25 @@ while (context.Read())
 
 ### Timestamp Formats
 
-| Smithy `@timestampFormat` | Protocol default | Marshal |
+An explicit `@timestampFormat` (on the member or its target) always wins. When unset, the default is
+**binding-specific**, not one per protocol — see the binding-default table below.
+
+| `@timestampFormat` | Marshal (body) | Marshal (header/query/label) |
 |---|---|---|
-| `date-time` | restJson1, restXml | `StringUtils.FromDateTimeToISO8601WithOptionalMs(value)` |
-| `http-date` | (headers) | `StringUtils.FromDateTimeToRFC822(value)` |
-| `epoch-seconds` | awsJson1.x | `Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(value.Value))` (as number) |
-| unset | Uses protocol default | — |
+| `date-time` | `WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(value))` | `StringUtils.FromDateTimeToISO8601WithOptionalMs(value)` |
+| `http-date` | `WriteStringValue(StringUtils.FromDateTimeToRFC822(value))` | `StringUtils.FromDateTimeToRFC822(value)` |
+| `epoch-seconds` | `WriteNumberValue(System.Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(value.Value)))` | `StringUtils.FromDateTimeToUnixTimestamp(value)` |
+
+restJson1 binding defaults when `@timestampFormat` is unset (matches the C2J generator's output):
+
+| Binding | Default |
+|---|---|
+| Body / structure member | `epoch-seconds` (restJson1's document-timestamp default per the Smithy spec; the generic `@timestampFormat` default of `date-time` applies only when a protocol sets none) |
+| `@httpHeader` | `http-date` |
+| `@httpQuery`, `@httpLabel` | `date-time` |
+
+String forms pass the nullable `DateTime?` straight to the `StringUtils` overload; the epoch form
+unwraps with `.Value`.
 
 ## Error Dispatch
 
@@ -217,7 +230,7 @@ public {Exception} Unmarshall(JsonUnmarshallerContext context, ErrorResponse err
 | Routing | HTTP method + path | `X-Amz-Target: {ServiceName}.{Operation}` | HTTP method + path | `Action={Operation}` param | `Action={Operation}` param |
 | Member placement | HTTP traits | All body | HTTP traits | All body | All body |
 | Body format | JSON | JSON | XML | URL-encoded | URL-encoded |
-| Timestamp default | `date-time` | `epoch-seconds` | `date-time` | `date-time` | `date-time` |
+| Timestamp body default | `epoch-seconds` | `epoch-seconds` | `date-time` | `date-time` | `date-time` |
 | Error code source | JSON `code` or `__type` | JSON `code` or `__type` | XML `<Code>` | XML `<Code>` | XML `<Code>` |
 | Error wrapping | None | None | `<ErrorResponse><Error>` | `<ErrorResponse><Error>` | `<Response><Errors><Error>` |
 | Response unmarshaller base | `JsonResponseUnmarshaller` | `JsonResponseUnmarshaller` | `XmlResponseUnmarshaller` | `XmlResponseUnmarshaller` | `XmlResponseUnmarshaller` |
