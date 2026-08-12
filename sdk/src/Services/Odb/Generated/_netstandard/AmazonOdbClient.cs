@@ -419,6 +419,65 @@ namespace Amazon.Odb
         }
         #endregion
         
+        #region  AssociateVirtualMachinesToExadbVmCluster
+
+        internal virtual AssociateVirtualMachinesToExadbVmClusterResponse AssociateVirtualMachinesToExadbVmCluster(AssociateVirtualMachinesToExadbVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateVirtualMachinesToExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateVirtualMachinesToExadbVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateVirtualMachinesToExadbVmClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds virtual machines to the specified Exascale VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateVirtualMachinesToExadbVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateVirtualMachinesToExadbVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
+        /// You have exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/AssociateVirtualMachinesToExadbVmCluster">REST API Reference for AssociateVirtualMachinesToExadbVmCluster Operation</seealso>
+        public virtual Task<AssociateVirtualMachinesToExadbVmClusterResponse> AssociateVirtualMachinesToExadbVmClusterAsync(AssociateVirtualMachinesToExadbVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateVirtualMachinesToExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateVirtualMachinesToExadbVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateVirtualMachinesToExadbVmClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateAutonomousDatabase
 
         internal virtual CreateAutonomousDatabaseResponse CreateAutonomousDatabase(CreateAutonomousDatabaseRequest request)
@@ -759,6 +818,120 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = CreateCloudVmClusterResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateCloudVmClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateExadbVmCluster
+
+        internal virtual CreateExadbVmClusterResponse CreateExadbVmCluster(CreateExadbVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExadbVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExadbVmClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Exascale VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExadbVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExadbVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
+        /// You have exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateExadbVmCluster">REST API Reference for CreateExadbVmCluster Operation</seealso>
+        public virtual Task<CreateExadbVmClusterResponse> CreateExadbVmClusterAsync(CreateExadbVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExadbVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateExadbVmClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateExascaleDbStorageVault
+
+        internal virtual CreateExascaleDbStorageVaultResponse CreateExascaleDbStorageVault(CreateExascaleDbStorageVaultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExascaleDbStorageVaultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an Exascale storage vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExascaleDbStorageVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExascaleDbStorageVault service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ServiceQuotaExceededException">
+        /// You have exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/CreateExascaleDbStorageVault">REST API Reference for CreateExascaleDbStorageVault Operation</seealso>
+        public virtual Task<CreateExascaleDbStorageVaultResponse> CreateExascaleDbStorageVaultAsync(CreateExascaleDbStorageVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateExascaleDbStorageVaultResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1154,6 +1327,118 @@ namespace Amazon.Odb
         }
         #endregion
         
+        #region  DeleteExadbVmCluster
+
+        internal virtual DeleteExadbVmClusterResponse DeleteExadbVmCluster(DeleteExadbVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExadbVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExadbVmClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified Exascale VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExadbVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExadbVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteExadbVmCluster">REST API Reference for DeleteExadbVmCluster Operation</seealso>
+        public virtual Task<DeleteExadbVmClusterResponse> DeleteExadbVmClusterAsync(DeleteExadbVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExadbVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteExadbVmClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteExascaleDbStorageVault
+
+        internal virtual DeleteExascaleDbStorageVaultResponse DeleteExascaleDbStorageVault(DeleteExascaleDbStorageVaultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExascaleDbStorageVaultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the specified Exascale storage vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExascaleDbStorageVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExascaleDbStorageVault service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DeleteExascaleDbStorageVault">REST API Reference for DeleteExascaleDbStorageVault Operation</seealso>
+        public virtual Task<DeleteExascaleDbStorageVaultResponse> DeleteExascaleDbStorageVaultAsync(DeleteExascaleDbStorageVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteExascaleDbStorageVaultResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteOdbNetwork
 
         internal virtual DeleteOdbNetworkResponse DeleteOdbNetwork(DeleteOdbNetworkRequest request)
@@ -1318,6 +1603,62 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = DisassociateIamRoleFromResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DisassociateIamRoleFromResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DisassociateVirtualMachinesFromExadbVmCluster
+
+        internal virtual DisassociateVirtualMachinesFromExadbVmClusterResponse DisassociateVirtualMachinesFromExadbVmCluster(DisassociateVirtualMachinesFromExadbVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateVirtualMachinesFromExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateVirtualMachinesFromExadbVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateVirtualMachinesFromExadbVmClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes virtual machines from the specified Exascale VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateVirtualMachinesFromExadbVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateVirtualMachinesFromExadbVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/DisassociateVirtualMachinesFromExadbVmCluster">REST API Reference for DisassociateVirtualMachinesFromExadbVmCluster Operation</seealso>
+        public virtual Task<DisassociateVirtualMachinesFromExadbVmClusterResponse> DisassociateVirtualMachinesFromExadbVmClusterAsync(DisassociateVirtualMachinesFromExadbVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateVirtualMachinesFromExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateVirtualMachinesFromExadbVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateVirtualMachinesFromExadbVmClusterResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1842,6 +2183,110 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = GetDbServerResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDbServerResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetExadbVmCluster
+
+        internal virtual GetExadbVmClusterResponse GetExadbVmCluster(GetExadbVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExadbVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<GetExadbVmClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the specified Exascale VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExadbVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExadbVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetExadbVmCluster">REST API Reference for GetExadbVmCluster Operation</seealso>
+        public virtual Task<GetExadbVmClusterResponse> GetExadbVmClusterAsync(GetExadbVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExadbVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExadbVmClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetExascaleDbStorageVault
+
+        internal virtual GetExascaleDbStorageVaultResponse GetExascaleDbStorageVault(GetExascaleDbStorageVaultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return Invoke<GetExascaleDbStorageVaultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the specified Exascale storage vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetExascaleDbStorageVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetExascaleDbStorageVault service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/GetExascaleDbStorageVault">REST API Reference for GetExascaleDbStorageVault Operation</seealso>
+        public virtual Task<GetExascaleDbStorageVaultResponse> GetExascaleDbStorageVaultAsync(GetExascaleDbStorageVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetExascaleDbStorageVaultResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2703,6 +3148,157 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = ListDbSystemShapesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDbSystemShapesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListExadbVmClusters
+
+        internal virtual ListExadbVmClustersResponse ListExadbVmClusters(ListExadbVmClustersRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExadbVmClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExadbVmClustersResponseUnmarshaller.Instance;
+
+            return Invoke<ListExadbVmClustersResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the Exascale VM clusters owned by your Amazon Web Services
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExadbVmClusters service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExadbVmClusters service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListExadbVmClusters">REST API Reference for ListExadbVmClusters Operation</seealso>
+        public virtual Task<ListExadbVmClustersResponse> ListExadbVmClustersAsync(ListExadbVmClustersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExadbVmClustersRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExadbVmClustersResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExadbVmClustersResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListExascaleDbStorageVaults
+
+        internal virtual ListExascaleDbStorageVaultsResponse ListExascaleDbStorageVaults(ListExascaleDbStorageVaultsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExascaleDbStorageVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExascaleDbStorageVaultsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExascaleDbStorageVaultsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the Exascale storage vaults owned by your Amazon Web Services
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExascaleDbStorageVaults service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExascaleDbStorageVaults service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListExascaleDbStorageVaults">REST API Reference for ListExascaleDbStorageVaults Operation</seealso>
+        public virtual Task<ListExascaleDbStorageVaultsResponse> ListExascaleDbStorageVaultsAsync(ListExascaleDbStorageVaultsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExascaleDbStorageVaultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExascaleDbStorageVaultsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExascaleDbStorageVaultsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListGiMinorVersions
+
+        internal virtual ListGiMinorVersionsResponse ListGiMinorVersions(ListGiMinorVersionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGiMinorVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGiMinorVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListGiMinorVersionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of the Oracle Grid Infrastructure (GI) minor versions for the specified
+        /// major version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGiMinorVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGiMinorVersions service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListGiMinorVersions">REST API Reference for ListGiMinorVersions Operation</seealso>
+        public virtual Task<ListGiMinorVersionsResponse> ListGiMinorVersionsAsync(ListGiMinorVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListGiMinorVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListGiMinorVersionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListGiMinorVersionsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -3679,6 +4275,118 @@ namespace Amazon.Odb
             options.ResponseUnmarshaller = UpdateCloudExadataInfrastructureResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateCloudExadataInfrastructureResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateExadbVmCluster
+
+        internal virtual UpdateExadbVmClusterResponse UpdateExadbVmCluster(UpdateExadbVmClusterRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExadbVmClusterResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExadbVmClusterResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the specified Exascale VM cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExadbVmCluster service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExadbVmCluster service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateExadbVmCluster">REST API Reference for UpdateExadbVmCluster Operation</seealso>
+        public virtual Task<UpdateExadbVmClusterResponse> UpdateExadbVmClusterAsync(UpdateExadbVmClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExadbVmClusterRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExadbVmClusterResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateExadbVmClusterResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateExascaleDbStorageVault
+
+        internal virtual UpdateExascaleDbStorageVaultResponse UpdateExascaleDbStorageVault(UpdateExascaleDbStorageVaultRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExascaleDbStorageVaultResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the specified Exascale storage vault.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExascaleDbStorageVault service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExascaleDbStorageVault service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ConflictException">
+        /// Occurs when a conflict with the current status of your resource. Fix any inconsistencies
+        /// with your resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ResourceNotFoundException">
+        /// The operation tried to access a resource that doesn't exist. Make sure you provided
+        /// the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/UpdateExascaleDbStorageVault">REST API Reference for UpdateExascaleDbStorageVault Operation</seealso>
+        public virtual Task<UpdateExascaleDbStorageVaultResponse> UpdateExascaleDbStorageVaultAsync(UpdateExascaleDbStorageVaultRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExascaleDbStorageVaultRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExascaleDbStorageVaultResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateExascaleDbStorageVaultResponse>(request, options, cancellationToken);
         }
         #endregion
         

@@ -37,14 +37,16 @@ namespace Amazon.Odb.Model
     {
         private string _cloudVmClusterId;
         private string _dbNodeId;
+        private string _exadbVmClusterId;
 
         /// <summary>
         /// Gets and sets the property CloudVmClusterId. 
         /// <para>
-        /// The unique identifier of the VM cluster that contains the DB node to start.
+        /// The unique identifier of the VM cluster that contains the DB node to start. You must
+        /// specify either this parameter or <c>exadbVmClusterId</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=64)]
+        [AWSProperty(Min=6, Max=64)]
         public string CloudVmClusterId
         {
             get { return this._cloudVmClusterId; }
@@ -74,6 +76,26 @@ namespace Amazon.Odb.Model
         internal bool IsSetDbNodeId()
         {
             return this._dbNodeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExadbVmClusterId. 
+        /// <para>
+        /// The unique identifier of the Exascale VM cluster that contains the DB node to start.
+        /// You must specify either this parameter or <c>cloudVmClusterId</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=6, Max=64)]
+        public string ExadbVmClusterId
+        {
+            get { return this._exadbVmClusterId; }
+            set { this._exadbVmClusterId = value; }
+        }
+
+        // Check to see if ExadbVmClusterId property is set
+        internal bool IsSetExadbVmClusterId()
+        {
+            return this._exadbVmClusterId != null;
         }
 
     }

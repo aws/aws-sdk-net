@@ -81,6 +81,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CloudVmClusterId);
             }
 
+            if(publicRequest.IsSetExadbVmClusterId())
+            {
+                context.Writer.WritePropertyName("exadbVmClusterId");
+                context.Writer.WriteStringValue(publicRequest.ExadbVmClusterId);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");

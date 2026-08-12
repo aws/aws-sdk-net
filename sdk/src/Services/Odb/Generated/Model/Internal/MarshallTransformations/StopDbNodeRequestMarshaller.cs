@@ -87,6 +87,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DbNodeId);
             }
 
+            if(publicRequest.IsSetExadbVmClusterId())
+            {
+                context.Writer.WritePropertyName("exadbVmClusterId");
+                context.Writer.WriteStringValue(publicRequest.ExadbVmClusterId);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

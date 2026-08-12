@@ -36,16 +36,18 @@ namespace Amazon.Odb.Model
     public partial class ListDbNodesRequest : AmazonOdbRequest
     {
         private string _cloudVmClusterId;
+        private string _exadbVmClusterId;
         private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property CloudVmClusterId. 
         /// <para>
-        /// The unique identifier of the VM cluster.
+        /// The unique identifier of the VM cluster. You must specify either this parameter or
+        /// <c>exadbVmClusterId</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=64)]
+        [AWSProperty(Min=6, Max=64)]
         public string CloudVmClusterId
         {
             get { return this._cloudVmClusterId; }
@@ -56,6 +58,26 @@ namespace Amazon.Odb.Model
         internal bool IsSetCloudVmClusterId()
         {
             return this._cloudVmClusterId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExadbVmClusterId. 
+        /// <para>
+        /// The unique identifier of the Exascale VM cluster. You must specify either this parameter
+        /// or <c>cloudVmClusterId</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=6, Max=64)]
+        public string ExadbVmClusterId
+        {
+            get { return this._exadbVmClusterId; }
+            set { this._exadbVmClusterId = value; }
+        }
+
+        // Check to see if ExadbVmClusterId property is set
+        internal bool IsSetExadbVmClusterId()
+        {
+            return this._exadbVmClusterId != null;
         }
 
         /// <summary>

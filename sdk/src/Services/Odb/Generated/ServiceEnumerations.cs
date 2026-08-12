@@ -1499,6 +1499,56 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type GridImageType.
+    /// </summary>
+    public class GridImageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOM_IMAGE for GridImageType
+        /// </summary>
+        public static readonly GridImageType CUSTOM_IMAGE = new GridImageType("CUSTOM_IMAGE");
+        /// <summary>
+        /// Constant RELEASE_UPDATE for GridImageType
+        /// </summary>
+        public static readonly GridImageType RELEASE_UPDATE = new GridImageType("RELEASE_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GridImageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GridImageType FindValue(string value)
+        {
+            return FindValue<GridImageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GridImageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IamRoleStatus.
     /// </summary>
     public class IamRoleStatus : ConstantClass
@@ -2637,6 +2687,56 @@ namespace Amazon.Odb
 
 
     /// <summary>
+    /// Constants used for properties of type ShapeAttribute.
+    /// </summary>
+    public class ShapeAttribute : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCK_STORAGE for ShapeAttribute
+        /// </summary>
+        public static readonly ShapeAttribute BLOCK_STORAGE = new ShapeAttribute("BLOCK_STORAGE");
+        /// <summary>
+        /// Constant SMART_STORAGE for ShapeAttribute
+        /// </summary>
+        public static readonly ShapeAttribute SMART_STORAGE = new ShapeAttribute("SMART_STORAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShapeAttribute(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShapeAttribute FindValue(string value)
+        {
+            return FindValue<ShapeAttribute>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShapeAttribute(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShapeType.
     /// </summary>
     public class ShapeType : ConstantClass
@@ -2858,6 +2958,64 @@ namespace Amazon.Odb
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SupportedAwsIntegration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type UpdateAction.
+    /// </summary>
+    public class UpdateAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NON_ROLLING_APPLY for UpdateAction
+        /// </summary>
+        public static readonly UpdateAction NON_ROLLING_APPLY = new UpdateAction("NON_ROLLING_APPLY");
+        /// <summary>
+        /// Constant PRECHECK for UpdateAction
+        /// </summary>
+        public static readonly UpdateAction PRECHECK = new UpdateAction("PRECHECK");
+        /// <summary>
+        /// Constant ROLLBACK for UpdateAction
+        /// </summary>
+        public static readonly UpdateAction ROLLBACK = new UpdateAction("ROLLBACK");
+        /// <summary>
+        /// Constant ROLLING_APPLY for UpdateAction
+        /// </summary>
+        public static readonly UpdateAction ROLLING_APPLY = new UpdateAction("ROLLING_APPLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UpdateAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UpdateAction FindValue(string value)
+        {
+            return FindValue<UpdateAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UpdateAction(string value)
         {
             return FindValue(value);
         }

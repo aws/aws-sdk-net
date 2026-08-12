@@ -99,6 +99,12 @@ namespace Amazon.Odb.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.NextToken);
             }
 
+            if(publicRequest.IsSetShapeFamily())
+            {
+                context.Writer.WritePropertyName("shapeFamily");
+                context.Writer.WriteStringValue(publicRequest.ShapeFamily);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK
