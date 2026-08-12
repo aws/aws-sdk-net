@@ -80,6 +80,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("fabricConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = FabricConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.FabricConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

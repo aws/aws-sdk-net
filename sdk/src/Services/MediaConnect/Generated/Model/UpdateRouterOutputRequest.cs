@@ -37,6 +37,7 @@ namespace Amazon.MediaConnect.Model
     {
         private string _arn;
         private RouterOutputConfiguration _configuration;
+        private FabricConfiguration _fabricConfiguration;
         private MaintenanceConfiguration _maintenanceConfiguration;
         private long? _maximumBitrate;
         private string _name;
@@ -79,6 +80,26 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FabricConfiguration. 
+        /// <para>
+        /// The updated fabric configuration settings for the router output. You cannot update
+        /// the fabric configuration while the output has an active route. You must unroute the
+        /// output before updating the fabric configuration.
+        /// </para>
+        /// </summary>
+        public FabricConfiguration FabricConfiguration
+        {
+            get { return this._fabricConfiguration; }
+            set { this._fabricConfiguration = value; }
+        }
+
+        // Check to see if FabricConfiguration property is set
+        internal bool IsSetFabricConfiguration()
+        {
+            return this._fabricConfiguration != null;
         }
 
         /// <summary>
