@@ -192,6 +192,8 @@ public sealed class BatchGenerator(string repoRoot)
         var metadata = File.Exists(metadataPath) ? ServiceMetadata.Load(metadataPath) : null;
 
         var context = new GenerationContext(service.Index, versionManifest, metadata);
+        UnsupportedTraitValidator.Validate(service.Index);
+
         var serviceFileVersion = versionManifest.GetServiceVersion(context.ServiceName);
         var generator = new ServiceGenerator(context, Path.GetFileName(service.ModelPath), serviceFileVersion, defaultConfigurationModes);
 

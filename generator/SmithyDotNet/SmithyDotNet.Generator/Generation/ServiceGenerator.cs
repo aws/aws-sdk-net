@@ -201,7 +201,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Input))
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Input, operation.Input))
             {
                 if (marshalledStructures.Add(shapeId))
                 {
@@ -209,7 +209,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 }
             }
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Output))
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Output, operation.Output))
             {
                 if (unmarshalledStructures.Add(shapeId))
                 {
@@ -259,10 +259,16 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         return written.Keys.ToList();
     }
 
-    // Finds the nested structures inside a request or response so each gets its own (un)marshaller.
-    // A member is either a structure itself or a list/map of structures.
-    // TODO: only scans one level deep; make this recursive once the writers need (un)marshallers for deeper nesting.
-    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(StructureShape parent)
+    // Finds all structures transitively referenced from a request or response so each gets its own
+    // (un)marshaller. A member targets a structure directly, or indirectly via a list/map element.
+    // The visited set prevents infinite recursion on circular references.
+    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(ShapeId parentId, StructureShape parent)
+    {
+        var visited = new HashSet<ShapeId> { parentId };
+        return ReferencedStructuresRecursive(parent, visited);
+    }
+
+    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
     {
         foreach (var member in parent.Members.Values)
         {
@@ -275,9 +281,18 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 _ => member.Target,
             };
 
+            if (!visited.Add(structureId))
+            {
+                continue;
+            }
+
             if (context.Resolve(structureId) is StructureShape structure)
             {
                 yield return (structureId, structure);
+                foreach (var nested in ReferencedStructuresRecursive(structure, visited))
+                {
+                    yield return nested;
+                }
             }
         }
     }

@@ -177,7 +177,7 @@ An explicit `@timestampFormat` (on the member or its target) always wins. When u
 |---|---|---|
 | `date-time` | `WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(value))` | `StringUtils.FromDateTimeToISO8601WithOptionalMs(value)` |
 | `http-date` | `WriteStringValue(StringUtils.FromDateTimeToRFC822(value))` | `StringUtils.FromDateTimeToRFC822(value)` |
-| `epoch-seconds` | `WriteNumberValue(System.Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(value.Value)))` | `StringUtils.FromDateTimeToUnixTimestamp(value)` |
+| `epoch-seconds` | `WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(value.Value)))` | `StringUtils.FromDateTimeToUnixTimestamp(value)` |
 
 restJson1 binding defaults when `@timestampFormat` is unset (matches the C2J generator's output):
 

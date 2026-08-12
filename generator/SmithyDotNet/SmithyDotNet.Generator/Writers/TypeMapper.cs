@@ -15,6 +15,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsRequired">True if the member is required.</param>
 /// <param name="IsElementStructure">True if the member is a structure and the target of a list. i.e. List of structure.</param>
 /// <param name="IsNullableValueType">True if the member maps to a nullable .NET value type (e.g. <c>int?</c>, <c>DateTime?</c>); drives <c>.HasValue</c> vs <c>!= null</c> in <see cref="Member.IsSetExpression"/>.</param>
+/// <param name="IsIdempotencyToken">True if the member carries <c>@idempotencyToken</c>; the marshaller auto-fills with a GUID when unset.</param>
 /// <param name="AwsProperty">The attributes that are part of [AwsProperty(...)]</param>
 /// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
@@ -30,6 +31,7 @@ public sealed record Member(
     bool IsRequired,
     bool IsElementStructure,
     bool IsNullableValueType,
+    bool IsIdempotencyToken,
     string? AwsProperty,
     string? Obsolete,
     string Documentation,
@@ -97,6 +99,7 @@ public static class TypeMapper
                 IsRequired: member.IsRequired(),
                 IsElementStructure: isElementStructure,
                 IsNullableValueType: scalarType is not null,
+                IsIdempotencyToken: member.IsIdempotencyToken(),
                 AwsProperty: BuildAwsProperty(member, target),
                 Obsolete: BuildObsolete(memberName, member, target),
                 Documentation: member.GetDocumentation() ?? string.Empty,

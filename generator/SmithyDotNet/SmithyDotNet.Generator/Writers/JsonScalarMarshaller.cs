@@ -55,13 +55,11 @@ public static class JsonScalarMarshaller
 
     private static void WriteTimestamp(CodeWriter writer, string format, string expression)
     {
-        // String formats use the DateTime? overload directly; epoch seconds unwraps with .Value.
-        // System.Convert is fully qualified because the structure marshaller's usings omit System.
         writer.WriteLine(format switch
         {
             "date-time" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs({expression}));",
             "http-date" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822({expression}));",
-            "epoch-seconds" => $"context.Writer.WriteNumberValue(System.Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp({expression}.Value)));",
+            "epoch-seconds" => $"context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp({expression}.Value)));",
             _ => throw new GeneratorException($"Unsupported @timestampFormat '{format}'."),
         });
     }

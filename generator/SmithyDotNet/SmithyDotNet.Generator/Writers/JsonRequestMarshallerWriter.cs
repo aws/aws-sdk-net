@@ -67,7 +67,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
             // TODO: Content-type must be smarter and it can be overridden in customizations or for non restJSON
-            // it can be application/x-amz-json, and for string payloads it can be "text/plain". For now we just put 
+            // it can be application/x-amz-json, and for string payloads it can be "text/plain". For now we just put
             // "application/json" here since this is just a start.
             writer.WriteLine("""request.Headers["Content-Type"] = "application/json";""");
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
@@ -137,9 +137,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
                 ?? throw new GeneratorException($"Unsupported query member type '{member.DotNetType}' (member: {member.PropertyName}).");
 
-            // A required member must be present on the wire: strings use an empty-string guard,
-            // other scalars a null check (IsSet alone would silently omit an unset required field).
-            if (member.IsRequired)
+            // An idempotency token is auto-populated, so it is never "required from the customer".
+            if (member.IsRequired && !member.IsIdempotencyToken)
             {
                 var guard = member.DotNetType == "string"
                     ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
@@ -155,6 +154,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 writer.WriteLine($"""request.Parameters.Add("{queryName}", {conversion});""");
             });
+            if (member.IsIdempotencyToken)
+            {
+                writer.OpenBlock("else", () =>
+                {
+                    writer.WriteLine($"""request.Parameters.Add("{queryName}", Guid.NewGuid().ToString());""");
+                });
+            }
             writer.WriteLine("");
         }
     }
@@ -229,6 +235,14 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
                 JsonScalarMarshaller.WriteScalar(writer, member, $"publicRequest.{member.PropertyName}");
             });
+            if (member.IsIdempotencyToken)
+            {
+                writer.OpenBlock("else", () =>
+                {
+                    writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
+                    writer.WriteLine("context.Writer.WriteStringValue(Guid.NewGuid().ToString());");
+                });
+            }
         }
         else if (member.DotNetType.StartsWith("List<", StringComparison.Ordinal))
         {

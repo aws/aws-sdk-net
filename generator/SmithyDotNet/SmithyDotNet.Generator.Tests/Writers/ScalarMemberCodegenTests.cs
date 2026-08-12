@@ -143,7 +143,7 @@ public class ScalarMemberCodegenTests
         Assert.Contains("""context.Writer.WritePropertyName("created");""", _requestMarshaller);
         Assert.Contains("context.Writer.WriteBooleanValue(publicRequest.Flag.Value);", _requestMarshaller);
         Assert.Contains("context.Writer.WriteNumberValue(publicRequest.Size.Value);", _requestMarshaller);
-        Assert.Contains("context.Writer.WriteNumberValue(System.Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Created.Value)));", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Created.Value)));", _requestMarshaller);
 
         // float/double branch through IsSpecial*Value: WriteNumberValue rejects NaN/±Infinity, which
         // JSON protocols send as strings.
@@ -156,7 +156,7 @@ public class ScalarMemberCodegenTests
     public void RequestMarshaller_TimestampFormat_ResolvesPerBindingAndOverride()
     {
         // Body defaults to epoch seconds; member and target @timestampFormat override it.
-        Assert.Contains("context.Writer.WriteNumberValue(System.Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Created.Value)));", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Created.Value)));", _requestMarshaller);
         Assert.Contains("context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.Expiry));", _requestMarshaller);   // member @date-time
         Assert.Contains("context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822(publicRequest.SealedAt));", _requestMarshaller);              // target @http-date
 
@@ -216,7 +216,7 @@ public class ScalarMemberCodegenTests
         Assert.Contains("if (requestObject.IsSetLevel())", _structureMarshaller);
         Assert.Contains("""context.Writer.WritePropertyName("level");""", _structureMarshaller);
         Assert.Contains("context.Writer.WriteNumberValue(requestObject.Level.Value);", _structureMarshaller);
-        Assert.Contains("context.Writer.WriteNumberValue(System.Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.At.Value)));", _structureMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.At.Value)));", _structureMarshaller);
     }
 
     [Fact]
