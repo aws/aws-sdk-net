@@ -61,7 +61,7 @@ namespace Amazon.WellArchitected.Model
         /// The profile ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2084)]
+        [AWSProperty(Required=true, Min=0, Max=2084)]
         public string ProfileArn
         {
             get { return this._profileArn; }

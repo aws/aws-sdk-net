@@ -77,7 +77,7 @@ namespace Amazon.WellArchitected.Model
         /// An optional string added to the beginning of each profile name returned in the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string ProfileNamePrefix
         {
             get { return this._profileNamePrefix; }

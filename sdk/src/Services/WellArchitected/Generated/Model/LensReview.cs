@@ -171,7 +171,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Notes.
         /// </summary>
-        [AWSProperty(Max=2084)]
+        [AWSProperty(Min=0, Max=2084)]
         public string Notes
         {
             get { return this._notes; }
@@ -235,7 +235,7 @@ namespace Amazon.WellArchitected.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<WorkloadProfile> Profiles
         {
             get { return this._profiles; }
@@ -269,7 +269,10 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time when the lens review was last updated.
+        /// </para>
         /// </summary>
         public DateTime? UpdatedAt
         {

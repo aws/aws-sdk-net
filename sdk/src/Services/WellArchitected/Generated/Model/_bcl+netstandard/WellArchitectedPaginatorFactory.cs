@@ -45,6 +45,54 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgentContexts operation
+        ///</summary>
+        public IListAgentContextsPaginator ListAgentContexts(ListAgentContextsRequest request) 
+        {
+            return new ListAgentContextsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentGoals operation
+        ///</summary>
+        public IListAgentGoalsPaginator ListAgentGoals(ListAgentGoalsRequest request) 
+        {
+            return new ListAgentGoalsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentProfiles operation
+        ///</summary>
+        public IListAgentProfilesPaginator ListAgentProfiles(ListAgentProfilesRequest request) 
+        {
+            return new ListAgentProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentRecommendationGenerations operation
+        ///</summary>
+        public IListAgentRecommendationGenerationsPaginator ListAgentRecommendationGenerations(ListAgentRecommendationGenerationsRequest request) 
+        {
+            return new ListAgentRecommendationGenerationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentRecommendationItems operation
+        ///</summary>
+        public IListAgentRecommendationItemsPaginator ListAgentRecommendationItems(ListAgentRecommendationItemsRequest request) 
+        {
+            return new ListAgentRecommendationItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAgentRecommendations operation
+        ///</summary>
+        public IListAgentRecommendationsPaginator ListAgentRecommendations(ListAgentRecommendationsRequest request) 
+        {
+            return new ListAgentRecommendationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAnswers operation
         ///</summary>
         public IListAnswersPaginator ListAnswers(ListAnswersRequest request) 

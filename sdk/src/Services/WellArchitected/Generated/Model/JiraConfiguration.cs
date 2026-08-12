@@ -57,7 +57,10 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LastSyncedTime.
+        /// Gets and sets the property LastSyncedTime. 
+        /// <para>
+        /// The date and time when the Jira configuration was last synced.
+        /// </para>
         /// </summary>
         public DateTime? LastSyncedTime
         {

@@ -71,7 +71,7 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetWorkloadId())
                 request.Parameters.Add("WorkloadId", StringUtils.FromString(publicRequest.WorkloadId));
-            request.ResourcePath = "/profileNotifications/";
+            request.ResourcePath = "/profileNotifications";
             request.UseQueryString = true;
 
             return request;

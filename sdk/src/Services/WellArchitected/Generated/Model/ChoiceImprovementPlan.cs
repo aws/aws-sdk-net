@@ -31,6 +31,11 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// The choice level improvement plan.
+    /// 
+    ///  
+    /// <para>
+    /// This value is only applicable to custom lenses.
+    /// </para>
     /// </summary>
     public partial class ChoiceImprovementPlan
     {

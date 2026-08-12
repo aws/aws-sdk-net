@@ -81,7 +81,7 @@ namespace Amazon.WellArchitected.Model
         /// The profile ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2084)]
+        [AWSProperty(Required=true, Min=0, Max=2084)]
         public string ProfileArn
         {
             get { return this._profileArn; }
@@ -101,7 +101,7 @@ namespace Amazon.WellArchitected.Model
         /// with which the profile is shared.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string SharedWithPrefix
         {
             get { return this._sharedWithPrefix; }

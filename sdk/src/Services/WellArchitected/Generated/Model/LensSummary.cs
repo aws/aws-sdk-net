@@ -46,7 +46,10 @@ namespace Amazon.WellArchitected.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time when the lens was created.
+        /// </para>
         /// </summary>
         public DateTime? CreatedAt
         {
@@ -198,7 +201,10 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time when the lens was last updated.
+        /// </para>
         /// </summary>
         public DateTime? UpdatedAt
         {

@@ -62,7 +62,7 @@ namespace Amazon.WellArchitected.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public List<string> AccountIds
         {
             get { return this._accountIds; }
@@ -86,7 +86,7 @@ namespace Amazon.WellArchitected.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<string> Applications
         {
             get { return this._applications; }
@@ -102,7 +102,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ArchitecturalDesign.
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Min=0, Max=2048)]
         public string ArchitecturalDesign
         {
             get { return this._architecturalDesign; }
@@ -123,7 +123,7 @@ namespace Amazon.WellArchitected.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Min=0, Max=50)]
         public List<string> AwsRegions
         {
             get { return this._awsRegions; }
@@ -203,7 +203,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Industry.
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string Industry
         {
             get { return this._industry; }
@@ -219,7 +219,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property IndustryType.
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string IndustryType
         {
             get { return this._industryType; }
@@ -282,7 +282,7 @@ namespace Amazon.WellArchitected.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public List<string> NonAwsRegions
         {
             get { return this._nonAwsRegions; }
@@ -298,7 +298,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Notes.
         /// </summary>
-        [AWSProperty(Max=2084)]
+        [AWSProperty(Min=0, Max=2084)]
         public string Notes
         {
             get { return this._notes; }

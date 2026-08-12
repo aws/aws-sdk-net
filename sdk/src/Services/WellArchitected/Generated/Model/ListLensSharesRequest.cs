@@ -98,7 +98,7 @@ namespace Amazon.WellArchitected.Model
         /// with which the lens is shared.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string SharedWithPrefix
         {
             get { return this._sharedWithPrefix; }

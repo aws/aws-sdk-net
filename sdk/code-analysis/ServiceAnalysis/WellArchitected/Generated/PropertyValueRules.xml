@@ -13,9 +13,134 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentContextRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentContextRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentContextRequest.Title</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentGoalRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentGoalRequest.Description</property>
+    <min>1</min>
+    <max>4000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentGoalRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentGoalRequest.Title</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileRequest.BusinessOverview</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileRequest.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileRequest.DisplayName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileRequest.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:([a-z\-]+):iam::\d{12}:role/(service-role/)?[a-zA-Z0-9+=,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileRequest.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.Arn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.BusinessOverview</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.DisplayName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:([a-z\-]+):iam::\d{12}:role/(service-role/)?[a-zA-Z0-9+=,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CreateAgentProfileResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateLensShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateLensShareRequest.LensAlias</property>
@@ -35,6 +160,7 @@
     <property>Amazon.WellArchitected.Model.CreateLensVersionRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateLensVersionRequest.LensAlias</property>
@@ -55,6 +181,7 @@
     <property>Amazon.WellArchitected.Model.CreateMilestoneRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateMilestoneRequest.MilestoneName</property>
@@ -82,6 +209,7 @@
     <property>Amazon.WellArchitected.Model.CreateProfileRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateProfileRequest.ProfileDescription</property>
@@ -95,6 +223,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateProfileResponse.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -102,15 +231,17 @@
     <property>Amazon.WellArchitected.Model.CreateProfileResponse.ProfileVersion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateProfileShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateProfileShareRequest.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -121,6 +252,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateProfileShareResponse.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -132,22 +264,24 @@
     <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.Description</property>
     <min>3</min>
     <max>250</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateReviewTemplateRequest.TemplateName</property>
     <min>3</min>
     <max>100</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateReviewTemplateResponse.TemplateArn</property>
@@ -159,6 +293,7 @@
     <property>Amazon.WellArchitected.Model.CreateTemplateShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateTemplateShareRequest.SharedWith</property>
@@ -183,13 +318,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.ArchitecturalDesign</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$</pattern>
+    <pattern>(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.Description</property>
@@ -198,14 +335,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.Industry</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.IndustryType</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadRequest.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -228,6 +368,7 @@
     <property>Amazon.WellArchitected.Model.CreateWorkloadShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.CreateWorkloadShareRequest.SharedWith</property>
@@ -251,9 +392,36 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteAgentContextRequest.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteAgentContextRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteAgentGoalRequest.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteAgentGoalRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.DeleteAgentProfileRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteLensRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteLensRequest.LensAlias</property>
@@ -264,6 +432,7 @@
     <property>Amazon.WellArchitected.Model.DeleteLensShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteLensShareRequest.LensAlias</property>
@@ -278,9 +447,11 @@
     <property>Amazon.WellArchitected.Model.DeleteProfileRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteProfileRequest.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -288,9 +459,11 @@
     <property>Amazon.WellArchitected.Model.DeleteProfileShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteProfileShareRequest.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -302,6 +475,7 @@
     <property>Amazon.WellArchitected.Model.DeleteReviewTemplateRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteReviewTemplateRequest.TemplateArn</property>
@@ -313,6 +487,7 @@
     <property>Amazon.WellArchitected.Model.DeleteTemplateShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteTemplateShareRequest.ShareId</property>
@@ -328,6 +503,7 @@
     <property>Amazon.WellArchitected.Model.DeleteWorkloadRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteWorkloadRequest.WorkloadId</property>
@@ -339,6 +515,7 @@
     <property>Amazon.WellArchitected.Model.DeleteWorkloadShareRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.DeleteWorkloadShareRequest.ShareId</property>
@@ -376,6 +553,151 @@
     <property>Amazon.WellArchitected.Model.ExportLensResponse.LensJSON</property>
     <min>2</min>
     <max>500000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentContextRequest.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentContextRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentGoalRequest.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentGoalRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.Arn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.BusinessOverview</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.DisplayName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:([a-z\-]+):iam::\d{12}:role/(service-role/)?[a-zA-Z0-9+=,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentProfileResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationRequest.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationResponse.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationResponse.Description</property>
+    <min>80</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationResponse.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationResponse.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationResponse.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationResponse.Title</property>
+    <min>3</min>
+    <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationResponse.UpdateReason</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationGenerationRequest.GenerationId</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationGenerationRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationGenerationResponse.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationGenerationResponse.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationGenerationResponse.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetAgentRecommendationGenerationResponse.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetAnswerRequest.LensAlias</property>
@@ -418,6 +740,14 @@
     <property>Amazon.WellArchitected.Model.GetConsolidatedReportRequest.MaxResults</property>
     <min>1</min>
     <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetConsolidatedReportRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetConsolidatedReportResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensRequest.LensAlias</property>
@@ -537,6 +867,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetProfileRequest.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -544,7 +875,7 @@
     <property>Amazon.WellArchitected.Model.GetProfileRequest.ProfileVersion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetReviewTemplateRequest.TemplateArn</property>
@@ -606,6 +937,7 @@
     <property>Amazon.WellArchitected.Model.ImportLensRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ImportLensRequest.JSONString</property>
@@ -616,6 +948,126 @@
     <property>Amazon.WellArchitected.Model.ImportLensRequest.LensAlias</property>
     <min>1</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentContextsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentContextsRequest.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentContextsRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentContextsResponse.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentGoalsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentGoalsRequest.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentGoalsRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentGoalsResponse.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentProfilesRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentProfilesRequest.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentProfilesResponse.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationGenerationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationGenerationsRequest.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationGenerationsRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationGenerationsResponse.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationItemsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationItemsRequest.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationItemsRequest.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationItemsResponse.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationsRequest.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationsRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAgentRecommendationsResponse.NextToken</property>
+    <min>1</min>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListAnswersRequest.LensAlias</property>
@@ -631,6 +1083,10 @@
     <property>Amazon.WellArchitected.Model.ListAnswersRequest.MilestoneNumber</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAnswersRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListAnswersRequest.PillarId</property>
@@ -654,6 +1110,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListAnswersResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListAnswersResponse.WorkloadId</property>
     <min>32</min>
     <max>32</max>
@@ -668,6 +1128,10 @@
     <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListCheckDetailsRequest.PillarId</property>
@@ -686,6 +1150,10 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckDetailsResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.ChoiceId</property>
     <min>1</min>
     <max>64</max>
@@ -694,6 +1162,10 @@
     <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListCheckSummariesRequest.PillarId</property>
@@ -712,6 +1184,10 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListCheckSummariesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensesRequest.LensName</property>
     <min>1</min>
     <max>128</max>
@@ -720,6 +1196,14 @@
     <property>Amazon.WellArchitected.Model.ListLensesRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsRequest.LensAlias</property>
@@ -735,6 +1219,10 @@
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsRequest.MilestoneNumber</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsRequest.PillarId</property>
@@ -758,6 +1246,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewImprovementsResponse.WorkloadId</property>
     <min>32</min>
     <max>32</max>
@@ -774,6 +1266,10 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensReviewsRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewsRequest.WorkloadId</property>
     <min>32</min>
     <max>32</max>
@@ -783,6 +1279,10 @@
     <property>Amazon.WellArchitected.Model.ListLensReviewsResponse.MilestoneNumber</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensReviewsResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensReviewsResponse.WorkloadId</property>
@@ -801,8 +1301,17 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensSharesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListLensSharesRequest.SharedWithPrefix</property>
+    <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListLensSharesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListMilestonesRequest.MaxResults</property>
@@ -810,10 +1319,18 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListMilestonesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListMilestonesRequest.WorkloadId</property>
     <min>32</min>
     <max>32</max>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListMilestonesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListMilestonesResponse.WorkloadId</property>
@@ -825,6 +1342,10 @@
     <property>Amazon.WellArchitected.Model.ListNotificationsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListNotificationsRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListNotificationsRequest.ResourceArn</property>
@@ -839,9 +1360,17 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListNotificationsResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListProfileNotificationsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListProfileNotificationsRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListProfileNotificationsRequest.WorkloadId</property>
@@ -850,13 +1379,26 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListProfileNotificationsResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListProfilesRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListProfilesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListProfilesRequest.ProfileNamePrefix</property>
+    <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListProfilesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListProfileSharesRequest.MaxResults</property>
@@ -864,13 +1406,23 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListProfileSharesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListProfileSharesRequest.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListProfileSharesRequest.SharedWithPrefix</property>
+    <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListProfileSharesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.LensAlias</property>
@@ -881,6 +1433,10 @@
     <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersRequest.PillarId</property>
@@ -899,6 +1455,10 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListReviewTemplateAnswersResponse.TemplateArn</property>
     <min>50</min>
     <max>250</max>
@@ -910,7 +1470,16 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplatesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListReviewTemplatesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.LensNamePrefix</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -919,17 +1488,28 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.ProfileNamePrefix</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.TemplateNamePrefix</property>
+    <min>0</min>
     <max>100</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListShareInvitationsRequest.WorkloadNamePrefix</property>
+    <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListShareInvitationsResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListTemplateSharesRequest.MaxResults</property>
@@ -937,7 +1517,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListTemplateSharesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListTemplateSharesRequest.SharedWithPrefix</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -945,6 +1530,10 @@
     <min>50</min>
     <max>250</max>
     <pattern>arn:aws(-us-gov|-iso(-[a-z])?|-cn)?:wellarchitected:[a-z]{2}(-gov|-iso([a-z])?)?-[a-z]+-\d:\d{12}:(review-template)/[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListTemplateSharesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListTemplateSharesResponse.TemplateArn</property>
@@ -958,8 +1547,17 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListWorkloadsRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListWorkloadsRequest.WorkloadNamePrefix</property>
+    <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListWorkloadsResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListWorkloadSharesRequest.MaxResults</property>
@@ -967,7 +1565,12 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListWorkloadSharesRequest.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListWorkloadSharesRequest.SharedWithPrefix</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
@@ -977,10 +1580,201 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ListWorkloadSharesResponse.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ListWorkloadSharesResponse.WorkloadId</property>
     <min>32</min>
     <max>32</max>
     <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.PutAgentRecommendationFeedbackRequest.Comments</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>[\P{C}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.PutAgentRecommendationFeedbackRequest.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.StartAgentRecommendationGenerationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.StartAgentRecommendationGenerationRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.StartAgentRecommendationGenerationResponse.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.StartAgentRecommendationGenerationResponse.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.StartAgentRecommendationGenerationResponse.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.StartAgentRecommendationGenerationResponse.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentContextRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentContextRequest.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentContextRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentContextRequest.Title</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentGoalRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentGoalRequest.Description</property>
+    <min>1</min>
+    <max>4000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentGoalRequest.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentGoalRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentGoalRequest.Title</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileRequest.BusinessOverview</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileRequest.ClientToken</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\x21-\x7E]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileRequest.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileRequest.DisplayName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileRequest.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:([a-z\-]+):iam::\d{12}:role/(service-role/)?[a-zA-Z0-9+=,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileRequest.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.Arn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.BusinessOverview</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.DisplayName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:([a-z\-]+):iam::\d{12}:role/(service-role/)?[a-zA-Z0-9+=,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentProfileResponse.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentRecommendationStatusRequest.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.UpdateAgentRecommendationStatusRequest.UpdateReason</property>
+    <min>1</min>
+    <max>4096</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateAnswerRequest.LensAlias</property>
@@ -989,6 +1783,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateAnswerRequest.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1017,6 +1812,7 @@
     <property>Amazon.WellArchitected.Model.UpdateIntegrationRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateIntegrationRequest.WorkloadId</property>
@@ -1031,6 +1827,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateLensReviewRequest.LensNotes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1047,6 +1844,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateProfileRequest.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -1059,10 +1857,11 @@
     <property>Amazon.WellArchitected.Model.UpdateReviewTemplateRequest.Description</property>
     <min>3</min>
     <max>250</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateReviewTemplateRequest.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1075,7 +1874,7 @@
     <property>Amazon.WellArchitected.Model.UpdateReviewTemplateRequest.TemplateName</property>
     <min>3</min>
     <max>100</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerRequest.LensAlias</property>
@@ -1084,6 +1883,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateReviewTemplateAnswerRequest.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1115,6 +1915,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateReviewTemplateLensReviewRequest.LensNotes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1135,8 +1936,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateWorkloadRequest.ArchitecturalDesign</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$</pattern>
+    <pattern>(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateWorkloadRequest.Description</property>
@@ -1145,14 +1947,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateWorkloadRequest.Industry</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateWorkloadRequest.IndustryType</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpdateWorkloadRequest.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1191,6 +1996,7 @@
     <property>Amazon.WellArchitected.Model.UpgradeLensReviewRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpgradeLensReviewRequest.LensAlias</property>
@@ -1212,6 +2018,7 @@
     <property>Amazon.WellArchitected.Model.UpgradeProfileVersionRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpgradeProfileVersionRequest.MilestoneName</property>
@@ -1220,6 +2027,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpgradeProfileVersionRequest.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -1233,6 +2041,7 @@
     <property>Amazon.WellArchitected.Model.UpgradeReviewTemplateLensReviewRequest.ClientRequestToken</property>
     <min>1</min>
     <max>2048</max>
+    <pattern>[\x00-\x7F]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.UpgradeReviewTemplateLensReviewRequest.LensAlias</property>
@@ -1249,13 +2058,13 @@
     <property>Amazon.WellArchitected.Model.AccountJiraConfigurationInput.JiraProjectKey</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Z][A-Z0-9_]*$</pattern>
+    <pattern>[A-Z][A-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.AccountJiraConfigurationOutput.JiraProjectKey</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Z][A-Z0-9_]*$</pattern>
+    <pattern>[A-Z][A-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.AccountJiraConfigurationOutput.StatusMessage</property>
@@ -1266,6 +2075,151 @@
     <property>Amazon.WellArchitected.Model.AccountJiraConfigurationOutput.Subdomain</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.Arn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.BusinessOverview</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.Description</property>
+    <min>0</min>
+    <max>512</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.DisplayName</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.ExecutionRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:([a-z\-]+):iam::\d{12}:role/(service-role/)?[a-zA-Z0-9+=,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentProfileSummary.Name</property>
+    <min>3</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationGenerationSummary.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationGenerationSummary.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationGenerationSummary.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationGenerationSummary.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationItemSummary.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationItemSummary.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationItemSummary.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationRemediation.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationRemediation.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationRemediation.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationSummary.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationSummary.Description</property>
+    <min>80</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationSummary.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationSummary.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationSummary.RecommendationArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-recommendation/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationSummary.Title</property>
+    <min>3</min>
+    <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AgentRecommendationSummary.UpdateReason</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AggregationConfiguration.AccessRoleArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:([a-z\-]+):iam::\d{12}:role/(service-role/)?[a-zA-Z0-9+=,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.AggregationConfiguration.AccountId</property>
+    <pattern>\d{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Answer.HelpfulResourceDisplayText</property>
@@ -1284,6 +2238,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Answer.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1394,6 +2349,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ChoiceAnswer.Notes</property>
+    <min>0</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
@@ -1428,6 +2384,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ChoiceUpdate.Notes</property>
+    <min>0</min>
     <max>250</max>
   </property-value-rule>
   <property-value-rule>
@@ -1444,6 +2401,110 @@
     <property>Amazon.WellArchitected.Model.ConsolidatedReportMetric.WorkloadName</property>
     <min>3</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextContent.AdditionalContext</property>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextContent.ApplicationOverview</property>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextContent.ArchitectureOverview</property>
+    <min>0</min>
+    <max>10000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextContent.Industry</property>
+    <min>0</min>
+    <max>1000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}\r\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextResourceTag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextResourceTag.Value</property>
+    <min>0</min>
+    <max>256</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextSummary.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextSummary.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextSummary.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextSummary.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ContextSummary.Title</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CrossPillarBenefit.Description</property>
+    <min>30</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.CrossPillarBenefit.Title</property>
+    <min>3</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GoalSummary.CreatedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GoalSummary.Description</property>
+    <min>1</min>
+    <max>4000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GoalSummary.Id</property>
+    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GoalSummary.LastModifiedBy</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GoalSummary.ProfileArn</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>arn:aws([a-z0-9-]+)?:wellarchitected:[a-z0-9-]{6,64}:\d{12}:agent-profile/([a-zA-Z0-9_-]+)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GoalSummary.Title</property>
+    <min>1</min>
+    <max>1000</max>
+    <pattern>(?:(?!\$\{[a-zA-Z]+:)[\P{C}])+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ImprovementSummary.ImprovementPlanUrl</property>
@@ -1464,6 +2525,16 @@
     <property>Amazon.WellArchitected.Model.ImprovementSummary.QuestionTitle</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Insight.SignalsDetected</property>
+    <min>30</min>
+    <max>1500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Insight.UsagePattern</property>
+    <min>100</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.JiraConfiguration.JiraIssueUrl</property>
@@ -1505,7 +2576,12 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.LensReview.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.LensReview.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1642,6 +2718,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.PillarReviewSummary.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1662,6 +2739,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Profile.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -1679,7 +2757,7 @@
     <property>Amazon.WellArchitected.Model.Profile.ProfileVersion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Profile.ShareInvitationId</property>
@@ -1704,16 +2782,17 @@
     <property>Amazon.WellArchitected.Model.ProfileNotificationSummary.CurrentProfileVersion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ProfileNotificationSummary.LatestProfileVersion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ProfileNotificationSummary.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -1783,6 +2862,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ProfileSummary.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -1800,7 +2880,7 @@
     <property>Amazon.WellArchitected.Model.ProfileSummary.ProfileVersion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ProfileTemplate.TemplateName</property>
@@ -1861,13 +2941,39 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.RemediationStep.Content</property>
+    <min>80</min>
+    <max>8000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.RemediationStep.Title</property>
+    <min>3</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.RemediationSummary.Recommendation</property>
+    <min>80</min>
+    <max>240</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ResourceLink.Title</property>
+    <min>3</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ResourceLink.Url</property>
+    <min>10</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ReviewTemplate.Description</property>
     <min>3</min>
     <max>250</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ReviewTemplate.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1890,7 +2996,7 @@
     <property>Amazon.WellArchitected.Model.ReviewTemplate.TemplateName</property>
     <min>3</min>
     <max>100</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.HelpfulResourceDisplayText</property>
@@ -1909,6 +3015,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ReviewTemplateAnswer.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1962,11 +3069,17 @@
     <max>32</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ReviewTemplateLensReview.NextToken</property>
+    <pattern>[A-Za-z0-9+\/=_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.ReviewTemplateLensReview.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ReviewTemplatePillarReviewSummary.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -1983,7 +3096,7 @@
     <property>Amazon.WellArchitected.Model.ReviewTemplateSummary.Description</property>
     <min>3</min>
     <max>250</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ReviewTemplateSummary.Owner</property>
@@ -2001,7 +3114,17 @@
     <property>Amazon.WellArchitected.Model.ReviewTemplateSummary.TemplateName</property>
     <min>3</min>
     <max>100</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Roi.Detail</property>
+    <min>30</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Roi.Estimate</property>
+    <min>2</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.SelectedPillar.PillarId</property>
@@ -2015,6 +3138,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitation.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -2041,6 +3165,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitationSummary.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -2074,7 +3199,7 @@
     <property>Amazon.WellArchitected.Model.ShareInvitationSummary.TemplateName</property>
     <min>3</min>
     <max>100</max>
-    <pattern>^[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+$</pattern>
+    <pattern>[A-Za-z0-9-_.,:/()@!&amp;?#+'’\s]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitationSummary.WorkloadId</property>
@@ -2086,6 +3211,18 @@
     <property>Amazon.WellArchitected.Model.ShareInvitationSummary.WorkloadName</property>
     <min>3</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Tag.Key</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.Tag.Value</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[\p{L}\p{Z}\p{N}_.:/=+\-@]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.TemplateShareSummary.SharedWith</property>
@@ -2102,9 +3239,30 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.TradeOff.Description</property>
+    <min>30</min>
+    <max>450</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.TradeOff.Mitigation</property>
+    <min>30</min>
+    <max>450</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.TradeOff.RiskExplanation</property>
+    <min>1</min>
+    <max>160</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.TradeOff.Title</property>
+    <min>3</min>
+    <max>80</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.ArchitecturalDesign</property>
+    <min>0</min>
     <max>2048</max>
-    <pattern>^(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)$</pattern>
+    <pattern>(|(https?|ftp):\/\/[^\s/$.?#].[^\s]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.Description</property>
@@ -2113,14 +3271,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.Industry</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.IndustryType</property>
+    <min>0</min>
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.Workload.Notes</property>
+    <min>0</min>
     <max>2084</max>
   </property-value-rule>
   <property-value-rule>
@@ -2153,13 +3314,13 @@
     <property>Amazon.WellArchitected.Model.WorkloadJiraConfigurationInput.JiraProjectKey</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Z][A-Z0-9_]*$</pattern>
+    <pattern>[A-Z][A-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.WorkloadJiraConfigurationOutput.JiraProjectKey</property>
     <min>1</min>
     <max>100</max>
-    <pattern>^[A-Z][A-Z0-9_]*$</pattern>
+    <pattern>[A-Z][A-Z0-9_]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.WorkloadJiraConfigurationOutput.StatusMessage</property>
@@ -2168,6 +3329,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.WorkloadProfile.ProfileArn</property>
+    <min>0</min>
     <max>2084</max>
     <pattern>arn:aws[-a-z]*:wellarchitected:[a-z]{2}(-gov)?-[a-z]+-\d:\d{12}:profile/[a-z0-9]+</pattern>
   </property-value-rule>
@@ -2175,7 +3337,7 @@
     <property>Amazon.WellArchitected.Model.WorkloadProfile.ProfileVersion</property>
     <min>1</min>
     <max>32</max>
-    <pattern>^[A-Za-z0-9-]+$</pattern>
+    <pattern>[A-Za-z0-9-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.WorkloadShare.SharedBy</property>
