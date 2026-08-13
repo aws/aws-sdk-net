@@ -393,7 +393,9 @@ namespace ServiceClientGenerator
                         {
                             Name = item[ModelsSectionKeys.DependencyNameKey].ToString(),
                             Version = item.PropertyNames.Contains(ModelsSectionKeys.DependencyVersionKey) ? item[ModelsSectionKeys.DependencyVersionKey].ToString() : "0.0.0.0",
-                            HintPath = item[ModelsSectionKeys.DependencyHintPathKey].ToString(),
+                            // hint-path is optional: framework references (e.g. "System.Net.Http" for net472)
+                            // don't need one — the template only emits <HintPath> when it is set.
+                            HintPath = item.PropertyNames.Contains(ModelsSectionKeys.DependencyHintPathKey) ? item[ModelsSectionKeys.DependencyHintPathKey].ToString() : null,
                         };
                         platformDependencies.Add(platformDependency);
                     }
