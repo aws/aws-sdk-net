@@ -3435,6 +3435,11 @@ namespace Amazon.AutoScaling
         /// </param>
         /// 
         /// <returns>The response from the LaunchInstances service method, as returned by AutoScaling.</returns>
+        /// <exception cref="Amazon.AutoScaling.Model.IdempotentCallInProgressException">
+        /// The service is currently processing another request with the same client token. Retry
+        /// the request with the same client token—the in-flight operation will complete and return
+        /// its result.
+        /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.IdempotentParameterMismatchErrorException">
         /// Indicates that the parameters in the current request do not match the parameters
         /// from a previous request with the same client token within the idempotency window.
@@ -4346,7 +4351,7 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// This call simply makes a termination request. The instance is not terminated immediately.
+        /// This call simply makes a termination request. The instances are not terminated immediately.
         /// When an instance is terminated, the instance status changes to <c>terminated</c>.
         /// You can't connect to or start an instance after you've terminated it.
         /// </para>
@@ -4354,6 +4359,12 @@ namespace Amazon.AutoScaling
         /// <para>
         /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
         /// Scaling launches instances to replace the ones that are terminated. 
+        /// </para>
+        ///  
+        /// <para>
+        /// To terminate multiple instances in a single call, use the <c>InstanceIds</c> and <c>AutoScalingGroupName</c>
+        /// parameters instead of <c>InstanceId</c>. When terminating multiple instances, the
+        /// response populates <c>Activities</c> instead of <c>Activity</c>.
         /// </para>
         ///  
         /// <para>

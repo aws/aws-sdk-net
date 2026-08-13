@@ -36,7 +36,7 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// This call simply makes a termination request. The instance is not terminated immediately.
+    /// This call simply makes a termination request. The instances are not terminated immediately.
     /// When an instance is terminated, the instance status changes to <c>terminated</c>.
     /// You can't connect to or start an instance after you've terminated it.
     /// </para>
@@ -44,6 +44,12 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// If you do not specify the option to decrement the desired capacity, Amazon EC2 Auto
     /// Scaling launches instances to replace the ones that are terminated. 
+    /// </para>
+    ///  
+    /// <para>
+    /// To terminate multiple instances in a single call, use the <c>InstanceIds</c> and <c>AutoScalingGroupName</c>
+    /// parameters instead of <c>InstanceId</c>. When terminating multiple instances, the
+    /// response populates <c>Activities</c> instead of <c>Activity</c>.
     /// </para>
     ///  
     /// <para>
@@ -57,8 +63,29 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupRequest : AmazonAutoScalingRequest
     {
+        private string _autoScalingGroupName;
         private string _instanceId;
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _shouldDecrementDesiredCapacity;
+
+        /// <summary>
+        /// Gets and sets the property AutoScalingGroupName. 
+        /// <para>
+        /// The name of the Auto Scaling group. Required when using <c>InstanceIds</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AutoScalingGroupName
+        {
+            get { return this._autoScalingGroupName; }
+            set { this._autoScalingGroupName = value; }
+        }
+
+        // Check to see if AutoScalingGroupName property is set
+        internal bool IsSetAutoScalingGroupName()
+        {
+            return this._autoScalingGroupName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -66,7 +93,7 @@ namespace Amazon.AutoScaling.Model
         /// The ID of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=19)]
+        [AWSProperty(Min=1, Max=19)]
         public string InstanceId
         {
             get { return this._instanceId; }
@@ -77,6 +104,34 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceIds. 
+        /// <para>
+        /// The IDs of the instances. You can specify up to 100 instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter requires that you also specify <c>AutoScalingGroupName</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public List<string> InstanceIds
+        {
+            get { return this._instanceIds; }
+            set { this._instanceIds = value; }
+        }
+
+        // Check to see if InstanceIds property is set
+        internal bool IsSetInstanceIds()
+        {
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
