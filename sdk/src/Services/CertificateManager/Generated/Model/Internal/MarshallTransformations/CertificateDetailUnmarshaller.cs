@@ -236,6 +236,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("UpdateSummary", targetDepth, ref reader))
+                {
+                    var unmarshaller = UpdateSummaryUnmarshaller.Instance;
+                    unmarshalledObject.UpdateSummary = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

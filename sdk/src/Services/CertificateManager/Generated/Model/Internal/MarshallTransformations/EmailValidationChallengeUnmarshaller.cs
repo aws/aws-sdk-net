@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CertificateOptions Object
+    /// Response Unmarshaller for EmailValidationChallenge Object
     /// </summary>  
-    public class CertificateOptionsUnmarshaller : IJsonUnmarshaller<CertificateOptions, JsonUnmarshallerContext>
+    public class EmailValidationChallengeUnmarshaller : IJsonUnmarshaller<EmailValidationChallenge, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CertificateOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public EmailValidationChallenge Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            CertificateOptions unmarshalledObject = new CertificateOptions();
+            EmailValidationChallenge unmarshalledObject = new EmailValidationChallenge();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("CertificateTransparencyLoggingPreference", targetDepth, ref reader))
+                if (context.TestExpression("ValidationDomain", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateTransparencyLoggingPreference = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ValidationDomain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Export", targetDepth, ref reader))
+                if (context.TestExpression("ValidationEmails", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Export = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ValidationMethod", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ValidationMethod = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ValidationEmails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static CertificateOptionsUnmarshaller _instance = new CertificateOptionsUnmarshaller();        
+        private static EmailValidationChallengeUnmarshaller _instance = new EmailValidationChallengeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateOptionsUnmarshaller Instance
+        public static EmailValidationChallengeUnmarshaller Instance
         {
             get
             {

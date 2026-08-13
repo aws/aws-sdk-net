@@ -175,6 +175,10 @@ namespace Amazon.CertificateManager.Internal
                 result.ServiceType = "ACM-ACME";
                 return result;
             }
+            if (requestContext.RequestName == "ListCertificateDomainValidationsRequest") {
+                result.ServiceType = "ACM";
+                return result;
+            }
             if (requestContext.RequestName == "ListCertificatesRequest") {
                 result.ServiceType = "ACM";
                 return result;

@@ -68,6 +68,16 @@ namespace Amazon.CertificateManager.Model
         IListAcmeExternalAccountBindingsPaginator ListAcmeExternalAccountBindings(ListAcmeExternalAccountBindingsRequest request);
 
         /// <summary>
+        /// Paginator for ListCertificateDomainValidations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxItems",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCertificateDomainValidationsPaginator ListCertificateDomainValidations(ListCertificateDomainValidationsRequest request);
+
+        /// <summary>
         /// Paginator for ListCertificates operation
         ///</summary>
         [AWSPaginator(

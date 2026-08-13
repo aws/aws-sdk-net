@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateCertificateOptions operation
+    /// Response Unmarshaller for ListCertificateDomainValidations operation
     /// </summary>  
-    public class UpdateCertificateOptionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListCertificateDomainValidationsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,7 +46,25 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateCertificateOptionsResponse response = new UpdateCertificateOptionsResponse();
+            ListCertificateDomainValidationsResponse response = new ListCertificateDomainValidationsResponse();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            context.Read(ref reader);
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
+            {
+                if (context.TestExpression("DomainValidationSummaryList", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<DomainValidationSummary, DomainValidationSummaryUnmarshaller>(DomainValidationSummaryUnmarshaller.Instance);
+                    response.DomainValidationSummaryList = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -71,37 +89,29 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
                 StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArnException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidArgsException"))
                 {
-                    return InvalidArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidStateException"))
-                {
-                    return InvalidStateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
-                {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return InvalidArgsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonCertificateManagerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateCertificateOptionsResponseUnmarshaller _instance = new UpdateCertificateOptionsResponseUnmarshaller();        
+        private static ListCertificateDomainValidationsResponseUnmarshaller _instance = new ListCertificateDomainValidationsResponseUnmarshaller();        
 
-        internal static UpdateCertificateOptionsResponseUnmarshaller GetInstance()
+        internal static ListCertificateDomainValidationsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -109,7 +119,7 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateCertificateOptionsResponseUnmarshaller Instance
+        public static ListCertificateDomainValidationsResponseUnmarshaller Instance
         {
             get
             {

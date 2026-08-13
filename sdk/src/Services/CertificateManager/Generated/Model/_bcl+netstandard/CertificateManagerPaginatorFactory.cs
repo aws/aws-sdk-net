@@ -69,6 +69,14 @@ namespace Amazon.CertificateManager.Model
         }
 
         /// <summary>
+        /// Paginator for ListCertificateDomainValidations operation
+        ///</summary>
+        public IListCertificateDomainValidationsPaginator ListCertificateDomainValidations(ListCertificateDomainValidationsRequest request) 
+        {
+            return new ListCertificateDomainValidationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListCertificates operation
         ///</summary>
         public IListCertificatesPaginator ListCertificates(ListCertificatesRequest request) 

@@ -215,6 +215,29 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListCertificateDomainValidationsRequest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:acm:[\w+=/,.@-]*:[0-9]+:certificate/[\w+=,.@-]+.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListCertificateDomainValidationsRequest.MaxItems</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListCertificateDomainValidationsRequest.NextToken</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.ListCertificateDomainValidationsResponse.NextToken</property>
+    <min>1</min>
+    <max>10000</max>
+    <pattern>[\u0009\u000A\u000D\u0020-\u00FF]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CertificateManager.Model.ListCertificatesRequest.MaxItems</property>
     <min>1</min>
     <max>1000</max>
@@ -587,6 +610,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CertificateManager.Model.DomainValidationOption.ValidationDomain</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.DomainValidationSummary.DomainName</property>
+    <min>1</min>
+    <max>253</max>
+    <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CertificateManager.Model.EmailValidationChallenge.ValidationDomain</property>
     <min>1</min>
     <max>253</max>
     <pattern>(\*\.)?(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])</pattern>
