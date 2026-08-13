@@ -30,29 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The details of the participant, including their display name.
+    /// The AI agent that participates in the contact, including its identifier.
     /// </summary>
-    public partial class ParticipantDetails
+    public partial class AiAgentInput
     {
-        private string _displayName;
+        private string _aiAgentId;
 
         /// <summary>
-        /// Gets and sets the property DisplayName. 
+        /// Gets and sets the property AiAgentId. 
         /// <para>
-        /// Display name of the participant.
+        /// The identifier of the AI agent that participates in the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
-        public string DisplayName
+        [AWSProperty(Required=true, Min=0, Max=128)]
+        public string AiAgentId
         {
-            get { return this._displayName; }
-            set { this._displayName = value; }
+            get { return this._aiAgentId; }
+            set { this._aiAgentId = value; }
         }
 
-        // Check to see if DisplayName property is set
-        internal bool IsSetDisplayName()
+        // Check to see if AiAgentId property is set
+        internal bool IsSetAiAgentId()
         {
-            return this._displayName != null;
+            return this._aiAgentId != null;
         }
 
     }

@@ -46,6 +46,7 @@ namespace Amazon.Connect.Model
         private ParticipantDetails _participantDetails;
         private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
         private string _relatedContactId;
+        private Dictionary<string, SegmentAttributeValue> _segmentAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, SegmentAttributeValue>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedCapabilities. 
@@ -248,6 +249,34 @@ namespace Amazon.Connect.Model
         internal bool IsSetRelatedContactId()
         {
             return this._relatedContactId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SegmentAttributes. 
+        /// <para>
+        /// Use this map to specify system-defined attributes for the WebRTC contact segment.
+        /// Use the <c>connect:Subtype</c> attribute to specify the channel subtype, such as <c>connect:WebRTC</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Attribute keys can contain only alphanumeric characters, hyphens, and underscores.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, SegmentAttributeValue> SegmentAttributes
+        {
+            get { return this._segmentAttributes; }
+            set { this._segmentAttributes = value; }
+        }
+
+        // Check to see if SegmentAttributes property is set
+        internal bool IsSetSegmentAttributes()
+        {
+            return this._segmentAttributes != null && (this._segmentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

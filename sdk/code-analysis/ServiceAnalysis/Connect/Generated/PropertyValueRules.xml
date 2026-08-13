@@ -3902,6 +3902,40 @@
     <max>36</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartAssistantContactRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAssistantContactRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAssistantContactRequest.RelatedContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAssistantContactResponse.ContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAssistantContactResponse.ContinuedFromContactId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAssistantContactResponse.ParticipantId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAssistantContactResponse.ParticipantToken</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.ClientToken</property>
     <max>500</max>
   </property-value-rule>
@@ -5507,6 +5541,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AiAgentInfo.AiAgentVersionId</property>
+    <min>0</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AiAgentInput.AiAgentId</property>
     <min>0</min>
     <max>128</max>
   </property-value-rule>

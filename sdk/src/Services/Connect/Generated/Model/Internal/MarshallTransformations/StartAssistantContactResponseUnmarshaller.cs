@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartWebRTCContact operation
+    /// Response Unmarshaller for StartAssistantContact operation
     /// </summary>  
-    public class StartWebRTCContactResponseUnmarshaller : JsonResponseUnmarshaller
+    public class StartAssistantContactResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,22 +46,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartWebRTCContactResponse response = new StartWebRTCContactResponse();
+            StartAssistantContactResponse response = new StartAssistantContactResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ConnectionData", targetDepth, ref reader))
-                {
-                    var unmarshaller = ConnectionDataUnmarshaller.Instance;
-                    response.ConnectionData = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
                 if (context.TestExpression("ContactId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.ContactId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ContinuedFromContactId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ContinuedFromContactId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParticipantId", targetDepth, ref reader))
@@ -129,9 +129,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartWebRTCContactResponseUnmarshaller _instance = new StartWebRTCContactResponseUnmarshaller();        
+        private static StartAssistantContactResponseUnmarshaller _instance = new StartAssistantContactResponseUnmarshaller();        
 
-        internal static StartWebRTCContactResponseUnmarshaller GetInstance()
+        internal static StartAssistantContactResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -139,7 +139,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartWebRTCContactResponseUnmarshaller Instance
+        public static StartAssistantContactResponseUnmarshaller Instance
         {
             get
             {

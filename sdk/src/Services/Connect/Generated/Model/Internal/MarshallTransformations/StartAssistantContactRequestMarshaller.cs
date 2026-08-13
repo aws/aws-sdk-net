@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// StartWebRTCContact Request Marshaller
+    /// StartAssistantContact Request Marshaller
     /// </summary>       
-    public class StartWebRTCContactRequestMarshaller : IMarshaller<IRequest, StartWebRTCContactRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class StartAssistantContactRequestMarshaller : IMarshaller<IRequest, StartAssistantContactRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((StartWebRTCContactRequest)input);
+            return this.Marshall((StartAssistantContactRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(StartWebRTCContactRequest publicRequest)
+        public IRequest Marshall(StartAssistantContactRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Connect");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-08-08";
             request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/contact/webrtc";
+            request.ResourcePath = "/contact/assistant";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -73,13 +73,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAllowedCapabilities())
+            if(publicRequest.IsSetAiAgent())
             {
-                context.Writer.WritePropertyName("AllowedCapabilities");
+                context.Writer.WritePropertyName("AiAgent");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AllowedCapabilitiesMarshaller.Instance;
-                marshaller.Marshall(publicRequest.AllowedCapabilities, context);
+                var marshaller = AiAgentInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AiAgent, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -109,16 +109,15 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-            if(publicRequest.IsSetContactFlowId())
+            if(publicRequest.IsSetInitialMessage())
             {
-                context.Writer.WritePropertyName("ContactFlowId");
-                context.Writer.WriteStringValue(publicRequest.ContactFlowId);
-            }
+                context.Writer.WritePropertyName("InitialMessage");
+                context.Writer.WriteStartObject();
 
-            if(publicRequest.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("Description");
-                context.Writer.WriteStringValue(publicRequest.Description);
+                var marshaller = ChatMessageMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InitialMessage, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetInstanceId())
@@ -138,22 +137,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetReferences())
+            if(publicRequest.IsSetPersistentChat())
             {
-                context.Writer.WritePropertyName("References");
+                context.Writer.WritePropertyName("PersistentChat");
                 context.Writer.WriteStartObject();
-                foreach (var publicRequestReferencesKvp in publicRequest.References)
-                {
-                    context.Writer.WritePropertyName(publicRequestReferencesKvp.Key);
-                    var publicRequestReferencesValue = publicRequestReferencesKvp.Value;
 
-                    context.Writer.WriteStartObject();
+                var marshaller = PersistentChatMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PersistentChat, context);
 
-                    var marshaller = ReferenceMarshaller.Instance;
-                    marshaller.Marshall(publicRequestReferencesValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
                 context.Writer.WriteEndObject();
             }
 
@@ -161,25 +152,6 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("RelatedContactId");
                 context.Writer.WriteStringValue(publicRequest.RelatedContactId);
-            }
-
-            if(publicRequest.IsSetSegmentAttributes())
-            {
-                context.Writer.WritePropertyName("SegmentAttributes");
-                context.Writer.WriteStartObject();
-                foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
-                {
-                    context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
-                    var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
-
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = SegmentAttributeValueMarshaller.Instance;
-                    marshaller.Marshall(publicRequestSegmentAttributesValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndObject();
             }
 
             writer.WriteEndObject();
@@ -192,9 +164,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static StartWebRTCContactRequestMarshaller _instance = new StartWebRTCContactRequestMarshaller();        
+        private static StartAssistantContactRequestMarshaller _instance = new StartAssistantContactRequestMarshaller();        
 
-        internal static StartWebRTCContactRequestMarshaller GetInstance()
+        internal static StartAssistantContactRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -202,7 +174,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartWebRTCContactRequestMarshaller Instance
+        public static StartAssistantContactRequestMarshaller Instance
         {
             get
             {

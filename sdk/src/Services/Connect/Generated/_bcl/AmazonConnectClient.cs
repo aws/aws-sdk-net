@@ -26240,6 +26240,127 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  StartAssistantContact
+
+
+        /// <summary>
+        /// Starts a chat contact with an AI agent.
+        /// 
+        ///  
+        /// <para>
+        /// Use the returned <c>ParticipantToken</c> to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about chat, see the following topics in the <i>Connect Customer
+        /// Administrator Guide</i>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+        /// Web and mobile messaging capabilities in Connect Customer</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssistantContact service method.</param>
+        /// 
+        /// <returns>The response from the StartAssistantContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAssistantContact">REST API Reference for StartAssistantContact Operation</seealso>
+        public virtual StartAssistantContactResponse StartAssistantContact(StartAssistantContactRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAssistantContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssistantContactResponseUnmarshaller.Instance;
+
+            return Invoke<StartAssistantContactResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a chat contact with an AI agent.
+        /// 
+        ///  
+        /// <para>
+        /// Use the returned <c>ParticipantToken</c> to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// API.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about chat, see the following topics in the <i>Connect Customer
+        /// Administrator Guide</i>: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/web-and-mobile-chat.html">Concepts:
+        /// Web and mobile messaging capabilities in Connect Customer</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security-best-practices.html#bp-security-chat">Connect
+        /// Customer Chat security best practices</a> 
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssistantContact service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAssistantContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAssistantContact">REST API Reference for StartAssistantContact Operation</seealso>
+        public virtual Task<StartAssistantContactResponse> StartAssistantContactAsync(StartAssistantContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = StartAssistantContactRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssistantContactResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartAssistantContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartAttachedFileUpload
 
 
@@ -27972,6 +28093,9 @@ namespace Amazon.Connect
         /// <param name="request">Container for the necessary parameters to execute the StartWebRTCContact service method.</param>
         /// 
         /// <returns>The response from the StartWebRTCContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
@@ -28009,6 +28133,9 @@ namespace Amazon.Connect
         /// </param>
         /// 
         /// <returns>The response from the StartWebRTCContact service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
