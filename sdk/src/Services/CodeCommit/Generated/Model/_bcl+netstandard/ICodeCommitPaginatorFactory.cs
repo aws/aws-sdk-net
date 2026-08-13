@@ -48,6 +48,16 @@ namespace Amazon.CodeCommit.Model
         IDescribePullRequestEventsPaginator DescribePullRequestEvents(DescribePullRequestEventsRequest request);
 
         /// <summary>
+        /// Paginator for GetBlobDifferences operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IGetBlobDifferencesPaginator GetBlobDifferences(GetBlobDifferencesRequest request);
+
+        /// <summary>
         /// Paginator for GetCommentReactions operation
         ///</summary>
         [AWSPaginator(

@@ -53,6 +53,14 @@ namespace Amazon.CodeCommit.Model
         }
 
         /// <summary>
+        /// Paginator for GetBlobDifferences operation
+        ///</summary>
+        public IGetBlobDifferencesPaginator GetBlobDifferences(GetBlobDifferencesRequest request) 
+        {
+            return new GetBlobDifferencesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetCommentReactions operation
         ///</summary>
         public IGetCommentReactionsPaginator GetCommentReactions(GetCommentReactionsRequest request) 
