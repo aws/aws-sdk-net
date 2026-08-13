@@ -107,6 +107,19 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetMaxTaskHours())
+            {
+                context.Writer.WritePropertyName("maxTaskHours");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxTaskHours.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.MaxTaskHours.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.MaxTaskHours.Value);
+                }
+            }
+
             if(publicRequest.IsSetServiceRole())
             {
                 context.Writer.WritePropertyName("serviceRole");

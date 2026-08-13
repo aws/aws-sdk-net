@@ -44,6 +44,7 @@ namespace Amazon.SecurityAgent.Model
         private List<ExecutionContext> _executionContext = AWSConfigs.InitializeCollections ? new List<ExecutionContext>() : null;
         private List<IntegratedRepository> _integratedRepositories = AWSConfigs.InitializeCollections ? new List<IntegratedRepository>() : null;
         private CloudWatchLog _logConfig;
+        private double? _maxTaskHours;
         private string _overview;
         private string _serviceRole;
         private List<SourceCodeRepository> _sourceCode = AWSConfigs.InitializeCollections ? new List<SourceCodeRepository>() : null;
@@ -227,6 +228,25 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetLogConfig()
         {
             return this._logConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxTaskHours. 
+        /// <para>
+        /// The maximum number of billable task hours allowed for this code review job. If the
+        /// cumulative task hours reach this limit, the job is gracefully stopped.
+        /// </para>
+        /// </summary>
+        public double? MaxTaskHours
+        {
+            get { return this._maxTaskHours; }
+            set { this._maxTaskHours = value; }
+        }
+
+        // Check to see if MaxTaskHours property is set
+        internal bool IsSetMaxTaskHours()
+        {
+            return this._maxTaskHours.HasValue; 
         }
 
         /// <summary>
