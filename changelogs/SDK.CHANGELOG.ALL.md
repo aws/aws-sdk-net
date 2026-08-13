@@ -1,3 +1,23 @@
+### 4.0.311.0 (2026-08-13 18:13 UTC)
+* AutoScaling (4.0.103.0)
+	* Amazon EC2 Auto Scaling now supports terminating multiple instances in a single TerminateInstanceInAutoScalingGroup call via the new InstanceIds parameter, returning an Activities list. LaunchInstances now returns IdempotentCallInProgressFault for duplicate client tokens.
+* CertificateManager (4.0.102.0)
+	* This change allows customers to update their existing email-validated certificates to use the DNS validation method.
+* CleanRooms (4.0.104.0)
+	* This release adds support for minimum aggregation thresholds and comparison controls to the Custom analysis rule type.
+* CloudTrailData (4.0.100.10)
+	* Add missing trait to service Smithy model. There are no changes to the public API.
+* CodeCommit (4.0.101.0)
+	* Added the GetBlobDifferences API operation, which returns line-level diffs between two blob versions without requiring a local clone. Returns structured hunks with context, additions, and deletions. Supports pagination for large diffs.
+* Connect (4.0.110.0)
+	* Adds the StartAssistantContact API to start chat contacts handled by an AI agent. Adds SegmentAttributes to StartWebRTCContact, and corrects its error response to now receive AccessDeniedException (previously returned as an internal server error due to a missing error declaration).
+* EKSAuth (4.0.101.2)
+	* EKSAuth is now generated from its Smithy model. There are no changes to the public API.
+* KinesisVideoWebRTCStorage (4.0.100.9)
+	* KinesisVideoWebRTCStorage is now generated from its Smithy model. There are no changes to the public API.
+* SecurityAgent (4.0.104.0)
+	* Add support for setting a maximum task-hour budget cap on penetration tests and code reviews, and for revalidating previously reported findings via a new REVALIDATION job type.
+
 ### 4.0.310.0 (2026-08-12 18:15 UTC)
 * DSQL (4.0.102.0)
 	* Improved validation of Kinesis stream ARN format to ensure only valid ARN characters are accepted
