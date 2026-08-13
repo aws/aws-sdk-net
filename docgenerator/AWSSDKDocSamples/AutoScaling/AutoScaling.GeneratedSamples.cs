@@ -1145,6 +1145,26 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
+        public void AutoScalingTerminateInstanceInAutoScalingGroup()
+        {
+            #region autoscaling-terminate-instance-in-auto-scaling-group-2
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.TerminateInstanceInAutoScalingGroup(new TerminateInstanceInAutoScalingGroupRequest 
+            {
+                AutoScalingGroupName = "my-asg",
+                InstanceIds = new List<string> {
+                    "i-93633f9b",
+                    "i-ab4d5e6f7"
+                },
+                ShouldDecrementDesiredCapacity = false
+            });
+
+            List<Activity> activities = response.Activities;
+
+            #endregion
+        }
+
         public void AutoScalingUpdateAutoScalingGroup()
         {
             #region autoscaling-update-auto-scaling-group-1
