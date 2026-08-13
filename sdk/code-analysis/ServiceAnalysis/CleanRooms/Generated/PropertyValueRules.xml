@@ -1545,6 +1545,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CleanRooms.Model.AggregationThreshold.MinimumIdentityCount</property>
+    <min>2</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CleanRooms.Model.AnalysisLogExport.AnalysisId</property>
     <min>36</min>
     <max>36</max>
@@ -3287,6 +3292,17 @@
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.MLSyntheticDataParameters.MaxMembershipInferenceAttackScore</property>
     <max>1</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.OutputColumnThreshold.MinimumIdentityCount</property>
+    <min>0</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CleanRooms.Model.OutputColumnThreshold.OutputColumnName</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[a-z0-9_](([a-z0-9_ ]+-)*([a-z0-9_ ]+))?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CleanRooms.Model.PopulationAnalysisSqlParameters.AnalysisTemplateArn</property>
