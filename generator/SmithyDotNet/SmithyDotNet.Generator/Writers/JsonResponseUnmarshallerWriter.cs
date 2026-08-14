@@ -81,7 +81,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
             writer.OpenBlock($"""if (context.TestExpression("{wireName}", targetDepth, ref reader))""", () =>
             {
-                WriteUnmarshallerForMember(writer, member);
+                WriteMemberUnmarshall(writer, member, "response");
                 writer.WriteLine("continue;");
             });
 
@@ -111,30 +111,32 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         _ => null,
     };
 
-    // Only types that are used by CloudTrailData and the supported scalars are handled for now.
-    private static void WriteUnmarshallerForMember(CodeWriter writer, Member member)
+    // Scalar / list-of-structure / structure dispatch shared with the exception unmarshaller;
+    // <paramref name="target"/> is the local being populated ("response" or "unmarshalledObject").
+    // Only types used by CloudTrailData and the supported scalars are handled for now.
+    internal static void WriteMemberUnmarshall(CodeWriter writer, Member member, string target)
     {
         if (ScalarUnmarshaller(member.MarshalType) is string scalarUnmarshaller)
         {
             writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
-            writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else if (member.IsCollection && member.IsElementStructure)
         {
             var elementType = member.ElementType ?? throw new GeneratorException($"List member '{member.PropertyName}' has no element type.");
             var unmarshallerType = $"{elementType}Unmarshaller";
             writer.WriteLine($"var unmarshaller = new JsonListUnmarshaller<{elementType}, {unmarshallerType}>({unmarshallerType}.Instance);");
-            writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else if (member.IsStructure)
         {
             var unmarshallerType = $"{member.DotNetType}Unmarshaller";
             writer.WriteLine($"var unmarshaller = {unmarshallerType}.Instance;");
-            writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else
         {
-            throw new GeneratorException($"Unsupported response member type '{member.DotNetType}' for member '{member.PropertyName}'.");
+            throw new GeneratorException($"Unsupported member type '{member.DotNetType}' for member '{member.PropertyName}'.");
         }
     }
 

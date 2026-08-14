@@ -65,3 +65,11 @@ public record DeprecatedTrait : TraitRecord
     [JsonPropertyName("since")]
     public string? Since { get; init; }
 }
+
+/// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#retryable-trait" /></remarks>
+public record RetryableTrait : TraitRecord
+{
+    // Optional in the model; an empty @retryable ({}) leaves this false — retryable but not throttling.
+    [JsonPropertyName("throttling")]
+    public bool Throttling { get; init; }
+}

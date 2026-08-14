@@ -101,6 +101,44 @@ public class TypeMapperTests
         return TypeMapper.BuildObsolete(memberName, member, Targets[member.Target.AbsoluteName]);
     }
 
+    // Resolves the given members as a plain (non-exception) structure's input, so ResolveMembers can be
+    // exercised with a real GenerationContext.
+    private static List<Member> ResolveMembers(string members)
+    {
+        var json = $$"""
+        {
+          "smithy": "2.0",
+          "shapes": {
+            "com.example#Example": {
+              "type": "service",
+              "version": "2023-01-01",
+              "operations": [{ "target": "com.example#DoThing" }],
+              "traits": {
+                "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+                "aws.protocols#restJson1": {}
+              }
+            },
+            "com.example#DoThing": {
+              "type": "operation",
+              "input": { "target": "com.example#Thing" },
+              "output": { "target": "smithy.api#Unit" },
+              "traits": { "smithy.api#http": { "uri": "/things", "method": "POST" } }
+            },
+            "com.example#Thing": { "type": "structure", "members": { {{members}} } }
+          }
+        }
+        """;
+
+        var model = JsonSerializer.Deserialize<SmithyModel>(json, CloudTrailModelFixture.Options)
+            ?? throw new InvalidOperationException("Model deserialized to null.");
+        var context = new GenerationContext(new ServiceIndex(model), new SdkVersionManifest
+        {
+            ServiceVersions = new Dictionary<string, ServiceVersion> { ["Example"] = new() { Version = "4.0.0.0" } },
+        });
+
+        return TypeMapper.ResolveMembers(context.Operations.Single().Input, context);
+    }
+
     [Fact]
     public void Sensitive_TargetTrait_EmitsSensitive()
     {
@@ -246,5 +284,22 @@ public class TypeMapperTests
         var list = Deserialize($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
         var id = ShapeId.Parse("com.example#EnumList");
         Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
+    }
+
+    [Fact]
+    public void ResolveMembers_EqualsMember_FlaggedToHideBaseMember()
+    {
+        // A member named "equals" collides with object.Equals on EVERY structure, not just exceptions, so
+        // ResolveMembers flags it shape-agnostically; siblings are untouched. The emitted `new` keyword is
+        // covered by RichExceptionCodegenTests.ShadowingMembers_EmittedWithNewModifier — this pins the flag
+        // that feeds it, and is the only coverage of the non-exception path.
+        var members = ResolveMembers(
+            """
+            "equals": { "target": "smithy.api#String" },
+            "name":   { "target": "smithy.api#String" }
+            """);
+
+        Assert.True(members.Single(m => m.PropertyName == "Equals").HidesBaseMember);
+        Assert.False(members.Single(m => m.PropertyName == "Name").HidesBaseMember);
     }
 }

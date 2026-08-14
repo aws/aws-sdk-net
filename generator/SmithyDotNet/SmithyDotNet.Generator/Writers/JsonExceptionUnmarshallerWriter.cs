@@ -15,18 +15,10 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         var exceptionName = ExceptionWriter.ToExceptionName(shapeId.Name);
         var unmarshallerClassName = $"{exceptionName}Unmarshaller";
 
-        var members = TypeMapper.ResolveMembers(structure, context);
-
-        // message doesn't need its own deserialization because it is deserialized by JsonErrorResponseUnmarshaller already. All the error shapes 
-        // today that have a message member do not deserialize it, so we skip that member and pass in all other members.
-        var nonMessageMembers = members
-            .Where(m => !m.ModeledName.Equals("message", StringComparison.OrdinalIgnoreCase))
-            .ToList();
-        if (nonMessageMembers.Count > 0)
-        {
-            var names = string.Join(", ", nonMessageMembers.Select(m => m.ModeledName));
-            throw new GeneratorException($"Exception '{shapeId.Name}' carries members beyond 'message' ({names}), which are not yet supported by {nameof(JsonExceptionUnmarshallerWriter)}.");
-        }
+        // message is deserialized by JsonErrorResponseUnmarshaller into the base Exception.Message,
+        // so it is excluded here; every other member — including base-owned RequestId/ErrorCode — is
+        // unmarshalled from the error body.
+        var members = ExceptionWriter.ResolveSerializedMembers(structure, context);
 
         var writer = new CodeWriter();
 
@@ -41,7 +33,7 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
             {
                 WriteUnmarshallMethod(writer, exceptionName);
                 writer.WriteLine("");
-                WriteMainUnmarshallMethod(writer, exceptionName, nonMessageMembers);
+                WriteMainUnmarshallMethod(writer, exceptionName, members);
                 writer.WriteLine("");
                 WriteSingleton(writer, unmarshallerClassName);
             });
@@ -78,8 +70,6 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    // members currently holds only "message" (Write rejects anything else); it is threaded through
-    // so member unmarshallers can be emitted inside the read loop once extra fields are supported.
     private static void WriteMainUnmarshallMethod(CodeWriter writer, string exceptionName, List<Member> members)
     {
         writer.WriteLine("/// <summary>");
@@ -110,34 +100,15 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    // only support what the JsonResponseUnmarshaller supports for now, and fail loudly for any other types.
+    // Reuses JsonResponseUnmarshallerWriter's member dispatch, writing into unmarshalledObject. Each
+    // arm ends in `continue;` so the read loop advances to the next field, matching the legacy template.
     private static void WriteMemberUnmarshaller(CodeWriter writer, Member member)
     {
-        writer.OpenBlock($"if (context.TestExpression(\"{member.ModeledName}\", targetDepth, ref reader))", () =>
+        var wireName = member.JsonName ?? member.ModeledName;
+        writer.OpenBlock($"""if (context.TestExpression("{wireName}", targetDepth, ref reader))""", () =>
         {
-            if (member.DotNetType == "string")
-            {
-                writer.WriteLine("var unmarshaller = StringUnmarshaller.Instance;");
-                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
-                writer.WriteLine("continue;");
-            }
-            else if (member.IsCollection && member.IsElementStructure)
-            {
-                var elementType = member.ElementType ?? throw new GeneratorException($"List member '{member.PropertyName}' has no element type.");
-                var unmarshallerType = $"{elementType}Unmarshaller";
-                writer.WriteLine($"var unmarshaller = new JsonListUnmarshaller<{elementType}, {unmarshallerType}>({unmarshallerType}.Instance);");
-                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
-            }
-            else if (member.IsStructure)
-            {
-                var unmarshallerType = $"{member.DotNetType}Unmarshaller";
-                writer.WriteLine($"var unmarshaller = {unmarshallerType}.Instance;");
-                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
-            }
-            else
-            {
-                throw new GeneratorException($"Unsupported response member type '{member.DotNetType}' for member '{member.PropertyName}'.");
-            }
+            JsonResponseUnmarshallerWriter.WriteMemberUnmarshall(writer, member, "unmarshalledObject");
+            writer.WriteLine("continue;");
         });
     }
 

@@ -38,9 +38,9 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
             WriteSerializableAttribute(writer);
             writer.OpenBlock($"public partial class {className} : AmazonServiceException", () =>
             {
-                WriteConstructors(writer, className);
+                WriteBaseConstructors(writer, className);
                 writer.WriteLine();
-                WriteSerializationBlock(writer, className, includeGetObjectData: false);
+                WriteSerializationBlock(writer, className, [], includeGetObjectData: false);
             });
         });
 
@@ -54,6 +54,11 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
     {
         var className = ToExceptionName(shapeId.Name);
         var baseClassName = $"{context.ClientName}Exception";
+        var serializedMembers = ResolveSerializedMembers(errorShape, context);
+        // Class properties are the serialized members minus base-owned RequestId/ErrorCode, which
+        // AmazonServiceException already declares — emitting them as properties would shadow the base (CS0108).
+        var propertyMembers = serializedMembers.Where(m => m.PropertyName is not ("RequestId" or "ErrorCode")).ToList();
+        var retryable = errorShape.GetRetryable();
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -66,14 +71,65 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
             writer.OpenBlock($"public partial class {className} : {baseClassName}", () =>
             {
                 WriteConstructors(writer, className);
+                if (propertyMembers.Count > 0)
+                {
+                    writer.WriteLine();
+                    MemberWriter.WriteMembers(writer, propertyMembers);
+                }
+
                 writer.WriteLine();
-                // TODO: emit additional members (with [AWSProperty] and IsSet) when an exception
-                // shape carries fields beyond "message". CloudTrail Data has none.
-                WriteSerializationBlock(writer, className, includeGetObjectData: true);
+                WriteSerializationBlock(writer, className, serializedMembers, includeGetObjectData: true);
+
+                if (retryable is not null)
+                {
+                    writer.WriteLine();
+                    WriteRetryable(writer, retryable);
+                }
             });
         });
 
         return writer.ToFormattedString(cancellationToken);
+    }
+
+    private static void WriteRetryable(CodeWriter writer, RetryableTrait retryable)
+    {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Flag indicating if the exception is retryable and the associated retry");
+        writer.WriteLine("/// details. A null value indicates that the exception is not retryable.");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public override RetryableDetails Retryable {{ get; }} = new RetryableDetails({(retryable.Throttling ? "true" : "false")});");
+    }
+
+    /// <summary>
+    /// Members carried by the serialization block and the JSON error unmarshaller: every modeled
+    /// member except <c>Message</c> (which flows to <c>Exception.Message</c> via the constructor).
+    /// Base-owned <c>RequestId</c>/<c>ErrorCode</c> ARE kept here. Also renames errorType→RequestErrorType
+    /// and flags a modeled Retryable as <c>new</c>.
+    /// </summary>
+    public static List<Member> ResolveSerializedMembers(StructureShape errorShape, GenerationContext context)
+    {
+        var members = new List<Member>();
+        foreach (var member in TypeMapper.ResolveMembers(errorShape, context))
+        {
+            if (member.PropertyName == "Message")
+            {
+                continue;
+            }
+
+            // A property named ErrorType would hide AmazonServiceException.ErrorType (the Amazon.Runtime.ErrorType
+            // enum, not the member's type).
+            var resolved = member.PropertyName == "ErrorType" ? member with { PropertyName = "RequestErrorType" } : member;
+
+            // A modeled member named Retryable hides AmazonServiceException.Retryable (the CloudHSM
+            // case).
+            members.Add(resolved.PropertyName == "Retryable"
+                ? resolved with { HidesBaseMember = true }
+                : resolved);
+        }
+
+        // The errorType→RequestErrorType rename above changes a member's sort key, so re-sort to
+        // keep emitted order aligned with TypeMapper's property-name ordering.
+        return [.. members.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
     }
 
     private static void WriteClassDocumentation(CodeWriter writer, StructureShape errorShape)
@@ -109,7 +165,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine($"/// Constructs a new {className} with the specified error");
         writer.WriteLine("/// message.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine("/// <param name=\"message\">");
+        writer.WriteLine("""/// <param name="message">""");
         writer.WriteLine("/// Describes the error encountered.");
         writer.WriteLine("/// </param>");
         writer.WriteLine($"public {className}(string message) : base(message) {{ }}");
@@ -139,36 +195,88 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
     }
 
-    private static void WriteSerializationBlock(CodeWriter writer, string className, bool includeGetObjectData)
+    // Base service-exception constructors. These differ from the derived exceptions in order (the
+    // all-args ctor comes last), the (Exception) ctor body (base(innerException.Message, ...)), and
+    // the "Construct instance of" summary on every ctor — match BaseServiceException.tt.
+    private static void WriteBaseConstructors(CodeWriter writer, string className)
+    {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {className}() : base() {{ }}");
+        writer.WriteLine();
+
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {className}(string message) : base(message) {{ }}");
+        writer.WriteLine();
+
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {className}(string message, Exception innerException) : base(message, innerException) {{ }}");
+        writer.WriteLine();
+
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {className}(Exception innerException) : base(innerException.Message, innerException) {{ }}");
+        writer.WriteLine();
+
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
+        writer.WriteLine();
+
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {className}(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, innerException, errorType, errorCode, requestId, statusCode) {{ }}");
+    }
+
+    private static void WriteSerializationBlock(CodeWriter writer, string className, IReadOnlyList<Member> members, bool includeGetObjectData)
     {
         writer.WriteLine("#if !NETSTANDARD");
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Constructs a new instance of the {className} class with serialized data.");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine("/// <param name=\"info\">The <see cref=\"T:System.Runtime.Serialization.SerializationInfo\" /> that holds the serialized object data about the exception being thrown.</param>");
-        writer.WriteLine("/// <param name=\"context\">The <see cref=\"T:System.Runtime.Serialization.StreamingContext\" /> that contains contextual information about the source or destination.</param>");
-        writer.WriteLine("/// <exception cref=\"T:System.ArgumentNullException\">The <paramref name=\"info\" /> parameter is null. </exception>");
-        writer.WriteLine("/// <exception cref=\"T:System.Runtime.Serialization.SerializationException\">The class name is null or <see cref=\"P:System.Exception.HResult\" /> is zero (0). </exception>");
+        writer.WriteLine("""/// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>""");
+        writer.WriteLine("""/// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>""");
+        writer.WriteLine("""/// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>""");
+        writer.WriteLine("""/// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>""");
         writer.WriteLine($"protected {className}(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)");
         writer.WriteLine("    : base(info, context)");
         writer.WriteLine("{");
-        // TODO: for exceptions with members beyond "message", emit info.GetValue per member.
+        foreach (var member in members)
+        {
+            writer.WriteLine($"""this.{member.PropertyName} = ({member.DotNetType})info.GetValue("{member.PropertyName}", typeof({member.DotNetType}));""");
+        }
+
         writer.WriteLine("}");
 
         if (includeGetObjectData)
         {
             writer.WriteLine();
             writer.WriteLine("/// <summary>");
-            writer.WriteLine("/// Sets the <see cref=\"T:System.Runtime.Serialization.SerializationInfo\" /> with information about the exception.");
+            writer.WriteLine("""/// Sets the <see cref="T:System.Runtime.Serialization.SerializationInfo" /> with information about the exception.""");
             writer.WriteLine("/// </summary>");
-            writer.WriteLine("/// <param name=\"info\">The <see cref=\"T:System.Runtime.Serialization.SerializationInfo\" /> that holds the serialized object data about the exception being thrown.</param>");
-            writer.WriteLine("/// <param name=\"context\">The <see cref=\"T:System.Runtime.Serialization.StreamingContext\" /> that contains contextual information about the source or destination.</param>");
-            writer.WriteLine("/// <exception cref=\"T:System.ArgumentNullException\">The <paramref name=\"info\" /> parameter is a null reference (Nothing in Visual Basic). </exception>");
+            writer.WriteLine("""/// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>""");
+            writer.WriteLine("""/// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>""");
+            writer.WriteLine("""/// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>""");
             writer.WriteLine("[System.Security.SecurityCritical]");
+
+            writer.WriteLine("// These FxCop rules are giving false-positives for this method");
+            writer.WriteLine("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]""");
+            writer.WriteLine("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]""");
             writer.OpenBlock("public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)", () =>
             {
                 writer.WriteLine("base.GetObjectData(info, context);");
-                // TODO: for exceptions with members beyond "message", emit info.AddValue per member.
+                foreach (var member in members)
+                {
+                    writer.WriteLine($"""info.AddValue("{member.PropertyName}", this.{member.PropertyName});""");
+                }
             });
         }
 

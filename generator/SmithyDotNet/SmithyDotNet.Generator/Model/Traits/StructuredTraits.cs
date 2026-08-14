@@ -31,4 +31,7 @@ public static class StructuredTraits
 
     /// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#deprecated-trait" /></remarks>
     public static DeprecatedTrait? GetDeprecated(this Shape shape) => DeserializeTrait<DeprecatedTrait>(shape, "smithy.api#deprecated");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#retryable-trait" /></remarks>
+    public static RetryableTrait? GetRetryable(this Shape shape) => DeserializeTrait<RetryableTrait>(shape, "smithy.api#retryable");
 }

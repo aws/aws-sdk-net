@@ -223,6 +223,19 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 {
                     var name = ExceptionWriter.ToExceptionName(error.Id.Name);
                     Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(error.Shape, error.Id, cancellationToken));
+
+                    // An exception's rich members can target structures (directly, or as list/map
+                    // elements); the exception unmarshaller deserializes them, so those nested
+                    // structures need unmarshallers too. Exceptions are response-only, so only the
+                    // unmarshaller side is walked (never a marshaller), deduped against the shared set
+                    // so a structure also reachable from an output isn't emitted twice.
+                    foreach (var (shapeId, structure) in ReferencedStructures(error.Id, error.Shape))
+                    {
+                        if (unmarshalledStructures.Add(shapeId))
+                        {
+                            Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                        }
+                    }
                 }
             }
         }

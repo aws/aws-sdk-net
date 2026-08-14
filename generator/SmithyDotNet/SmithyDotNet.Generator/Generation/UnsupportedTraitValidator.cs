@@ -27,13 +27,6 @@ public static class UnsupportedTraitValidator
         ["smithy.api#httpHeader"] = "@httpHeader (response)",
     };
 
-    // Shape-level (not member-level): C2J emits a RetryableDetails property for error shapes
-    // carrying this trait, which the Smithy generator's ExceptionWriter does not yet do.
-    private static readonly Dictionary<string, string> DeniedErrorTraits = new()
-    {
-        ["smithy.api#retryable"] = "@retryable",
-    };
-
     /// <summary>
     /// Checks service, operation, and top-level input/output/error member traits and throws a
     /// single aggregated <see cref="GeneratorException"/> listing every denied trait found.
@@ -63,7 +56,6 @@ public static class UnsupportedTraitValidator
             {
                 if (index.Shapes.TryGetValue(errorId, out var errorShape) && errorShape is StructureShape error)
                 {
-                    CollectDenied(error.Traits, DeniedErrorTraits, found);
                     CollectDeniedOnResponseMembers(error, found);
                 }
             }

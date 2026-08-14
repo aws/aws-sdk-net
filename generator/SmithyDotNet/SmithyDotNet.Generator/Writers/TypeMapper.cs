@@ -24,6 +24,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="ElementType">The type of the list element.</param>
 /// <param name="TimestampFormat">The explicit <c>@timestampFormat</c> (<c>date-time</c>/<c>http-date</c>/<c>epoch-seconds</c>) from the member or its target, or null when unset (the binding's protocol default applies).</param>
+/// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
 public sealed record Member(
     string PropertyName,
     string DotNetType,
@@ -40,7 +41,8 @@ public sealed record Member(
     bool IsEnum = false,
     string? JsonName = null,
     string? ElementType = null,
-    string? TimestampFormat = null
+    string? TimestampFormat = null,
+    bool HidesBaseMember = false
 )
 {
     /// <summary>
@@ -101,9 +103,10 @@ public static class TypeMapper
             // MapScalar returns the .NET type for value-type scalars (and null otherwise), so it
             // doubles as both the type and the IsNullableValueType signal without a second MapType walk.
             var scalarType = MapScalar(target);
+            var propertyName = SdkNaming.ToUpperFirstCharacter(memberName);
 
             resolved.Add(new Member(
-                PropertyName: SdkNaming.ToUpperFirstCharacter(memberName),
+                PropertyName: propertyName,
                 DotNetType: scalarType ?? MapType(member.Target, target, context),
                 IsCollection: IsCollection(target),
                 IsStructure: isStructure,
@@ -118,7 +121,9 @@ public static class TypeMapper
                 IsEnum: target is EnumShape,
                 JsonName: member.GetJsonName(),
                 ElementType: elementType,
-                TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat())
+                TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
+                // Any structure can model a member named "Equals" — it hides object.Equals(object).
+                HidesBaseMember: propertyName == "Equals")
             );
         }
 
