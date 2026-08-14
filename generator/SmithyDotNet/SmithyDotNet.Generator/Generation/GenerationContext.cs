@@ -128,6 +128,14 @@ public class GenerationContext
     public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
 
     /// <summary>
+    /// Every <c>enum</c> shape in the model paired with its <see cref="ShapeId"/>, ordered by name for
+    /// stable output (the API does not depend on declaration order). <c>intEnum</c> shapes are excluded:
+    /// C2J emits a <c>ConstantClass</c> only for string enums, so an <c>intEnum</c>-typed member maps to
+    /// a plain integer with no enumeration entry.
+    /// </summary>
+    public IReadOnlyList<(ShapeId Id, EnumShape Shape)> Enums { get; }
+
+    /// <summary>
     /// The service's <c>metadata.json</c>, or <c>null</c> when no metadata file was supplied.
     /// Carries package/naming values (synopsis, base-name, tags, ...) and other metadata that the Smithy model can't
     /// express.
@@ -213,6 +221,13 @@ public class GenerationContext
 
         Structures = structures;
         Errors = errors;
+
+        // Every model enum shape emits a ConstantClass, ordered by shape name for stable output.
+        // Scanning all shapes (not just the reachable set) matches C2J: some models carry orphan
+        // *ExceptionReason enums that no operation references.
+        Enums = index.AllEnums
+            .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
+            .ToList();
     }
 
     /// <summary>

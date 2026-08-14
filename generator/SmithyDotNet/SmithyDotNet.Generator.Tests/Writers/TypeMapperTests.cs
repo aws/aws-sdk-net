@@ -1,4 +1,6 @@
 using System.Text.Json;
+using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
@@ -43,6 +45,49 @@ public class TypeMapperTests
     private static Shape Deserialize(string json) =>
         JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options)
         ?? throw new InvalidOperationException("Shape deserialized to null.");
+
+    // An enum-bearing model + context for the enum type-mapping tests: category is a string enum
+    // (maps to its ConstantClass, marshals as a string), priority is an intEnum (maps to int?), and
+    // filter keeps Status reachable so it resolves as a collection element target below.
+    private const string EnumModel = """
+    {
+      "smithy": "2.0",
+      "shapes": {
+        "com.example#Example": {
+          "type": "service", "version": "2023-01-01", "operations": [{ "target": "com.example#DoThing" }],
+          "traits": { "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" }, "aws.protocols#restJson1": {} }
+        },
+        "com.example#DoThing": {
+          "type": "operation", "input": { "target": "com.example#DoThingRequest" }, "output": { "target": "com.example#DoThingResponse" },
+          "traits": { "smithy.api#http": { "uri": "/things", "method": "POST" } }
+        },
+        "com.example#DoThingRequest": {
+          "type": "structure",
+          "members": {
+            "category": { "target": "com.example#Category" },
+            "priority": { "target": "com.example#Priority" },
+            "filter":   { "target": "com.example#Status" }
+          }
+        },
+        "com.example#DoThingResponse": { "type": "structure", "members": {} },
+        "com.example#Category": { "type": "enum", "members": { "STANDARD": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "STANDARD" } } } },
+        "com.example#Priority": { "type": "intEnum", "members": { "LOW": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 1 } } } },
+        "com.example#Status": { "type": "enum", "members": { "ACTIVE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ACTIVE" } } } }
+      }
+    }
+    """;
+
+    private readonly GenerationContext _context;
+
+    public TypeMapperTests()
+    {
+        var model = JsonSerializer.Deserialize<SmithyModel>(EnumModel, CloudTrailModelFixture.Options)
+            ?? throw new InvalidOperationException("Model deserialized to null.");
+        _context = new GenerationContext(new ServiceIndex(model), new SdkVersionManifest
+        {
+            ServiceVersions = new Dictionary<string, ServiceVersion> { ["Example"] = new() { Version = "4.0.0.0" } },
+        });
+    }
 
     private static string? AwsProperty(string memberName)
     {
@@ -172,5 +217,34 @@ public class TypeMapperTests
     public void MapScalar_NonValueScalars_ReturnNull(string json)
     {
         Assert.Null(TypeMapper.MapScalar(Deserialize(json)));
+    }
+
+    [Fact]
+    public void EnumMember_MapsToConstantClass_IntEnumMapsToInt()
+    {
+        var request = _context.Operations.Single(o => o.Name == "DoThing").Input;
+        var members = TypeMapper.ResolveMembers(request, _context);
+
+        var category = members.Single(m => m.ModeledName == "category");
+        Assert.Equal("Category", category.DotNetType);
+        Assert.True(category.IsEnum);
+        Assert.Equal("string", category.MarshalType);
+
+        var priority = members.Single(m => m.ModeledName == "priority");
+        Assert.Equal("int?", priority.DotNetType);
+        Assert.False(priority.IsEnum);
+    }
+
+    [Theory]
+    [InlineData("com.example#Status")]   // string enum element
+    [InlineData("com.example#Priority")] // intEnum element
+    public void EnumCollectionElement_Throws(string elementTarget)
+    {
+        // The marshaller writers only route string and structure list elements; an enum element would
+        // map to its ConstantClass, which WriteListElement can't emit. MapType must fail loud here
+        // rather than mapping the type and blowing up deep in the writer.
+        var list = Deserialize($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
+        var id = ShapeId.Parse("com.example#EnumList");
+        Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
     }
 }

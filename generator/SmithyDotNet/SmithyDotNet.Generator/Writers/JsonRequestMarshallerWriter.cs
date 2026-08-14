@@ -107,8 +107,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     /// unwrapped with <c>.Value</c> (timestamps keep the nullable overload); the caller guards each
     /// with an <c>IsSet</c> check first. <paramref name="timestampDefault"/> is the binding's
     /// <c>@timestampFormat</c> default, used when the member carries no explicit format.
+    /// Dispatch is on <see cref="Member.MarshalType"/> so an enum rides the <c>string</c> path.
     /// </summary>
-    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.DotNetType switch
+    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.MarshalType switch
     {
         "string" => $"StringUtils.FromString({expression})",
         "bool?" => $"StringUtils.FromBool({expression}.Value)",
@@ -174,8 +175,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 ?? throw new GeneratorException($"Unsupported header member type '{member.DotNetType}' (member: {member.PropertyName}).");
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                // A string header is assigned directly; scalars go through StringUtils.
-                writer.WriteLine(member.DotNetType == "string"
+                // A string header is assigned directly; scalars go through StringUtils. An enum rides the
+                // string path (implicit ConstantClass->string), so it is assigned directly too.
+                writer.WriteLine(member.MarshalType == "string"
                     ? $"""request.Headers["{headerName}"] = publicRequest.{member.PropertyName};"""
                     : $"""request.Headers["{headerName}"] = {conversion};""");
             });

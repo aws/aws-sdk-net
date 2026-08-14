@@ -79,7 +79,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         for (int i = 0; i < members.Count; i++)
         {
             var member = members[i];
-            var scalarUnmarshaller = JsonResponseUnmarshallerWriter.ScalarUnmarshaller(member.DotNetType)
+            var scalarUnmarshaller = JsonResponseUnmarshallerWriter.ScalarUnmarshaller(member.MarshalType)
                 ?? throw new GeneratorException($"Only scalar members are handled currently. Member '{member.ModeledName}' resolved to '{member.DotNetType}'.");
 
             var wireName = member.JsonName ?? member.ModeledName;

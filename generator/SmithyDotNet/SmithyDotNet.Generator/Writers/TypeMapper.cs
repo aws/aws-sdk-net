@@ -20,6 +20,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
+/// <param name="IsEnum">True if the member targets an enum shape. Its <see cref="DotNetType"/> is the enum's ConstantClass, but it marshals and unmarshals as a string (ConstantClass has implicit string conversions both ways), so the (un)marshaller writers route it through the string path.</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="ElementType">The type of the list element.</param>
 /// <param name="TimestampFormat">The explicit <c>@timestampFormat</c> (<c>date-time</c>/<c>http-date</c>/<c>epoch-seconds</c>) from the member or its target, or null when unset (the binding's protocol default applies).</param>
@@ -36,6 +37,7 @@ public sealed record Member(
     string? Obsolete,
     string Documentation,
     string ModeledName,
+    bool IsEnum = false,
     string? JsonName = null,
     string? ElementType = null,
     string? TimestampFormat = null
@@ -59,6 +61,15 @@ public sealed record Member(
     /// <see cref="TypeMapper.MapType"/>).
     /// </summary>
     public bool IsScalar => !IsCollection && !IsStructure;
+
+    /// <summary>
+    /// The type the (un)marshaller writers dispatch on. An enum member rides the string path — its
+    /// <see cref="DotNetType"/> is the ConstantClass, but <c>ConstantClass</c> converts implicitly to and
+    /// from <c>string</c>, so the generated JSON/query/header/label code treats it exactly like a string
+    /// (matching C2J, which wraps an enum member with <c>StringUnmarshaller</c>/writes its string value).
+    /// Property declarations keep <see cref="DotNetType"/>.
+    /// </summary>
+    public string MarshalType => IsEnum ? "string" : DotNetType;
 }
 
 /// <summary>
@@ -104,6 +115,7 @@ public static class TypeMapper
                 Obsolete: BuildObsolete(memberName, member, target),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
+                IsEnum: target is EnumShape,
                 JsonName: member.GetJsonName(),
                 ElementType: elementType,
                 TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat())
@@ -126,7 +138,7 @@ public static class TypeMapper
         if (target is ListShape list)
         {
             var elementTarget = context.Resolve(list.Member.Target);
-            RejectValueTypeScalarCollectionElement(elementTarget, "list");
+            RejectUnsupportedCollectionElement(elementTarget, "list");
             return $"List<{MapType(list.Member.Target, elementTarget, context)}>";
         }
 
@@ -134,7 +146,7 @@ public static class TypeMapper
         {
             var keyTarget = context.Resolve(map.Key.Target);
             var valueTarget = context.Resolve(map.Value.Target);
-            RejectValueTypeScalarCollectionElement(valueTarget, "map");
+            RejectUnsupportedCollectionElement(valueTarget, "map");
             return $"Dictionary<{MapType(map.Key.Target, keyTarget, context)}, {MapType(map.Value.Target, valueTarget, context)}>";
         }
 
@@ -143,12 +155,36 @@ public static class TypeMapper
             return context.ToDotNetName(targetId);
         }
 
+        if (target is EnumShape)
+        {
+            // An enum-typed member's .NET type is the ConstantClass the ServiceEnumerationsWriter emits,
+            // matching C2J. The name derivation (ToUpperFirstCharacter over the shape name) is shared with
+            // that writer so the member type and the class declaration always agree.
+            return EnumTypeName(targetId, context);
+        }
+
+        if (target is IntEnumShape)
+        {
+            // C2J has no intEnum: an integer-valued enum maps to a plain integer with no ConstantClass.
+            // The V4 Smithy convention makes value types nullable, exactly as IntegerShape is mapped above.
+            return "int?";
+        }
+
         // Scalars are checked last so the aggregate branches above return without a MapScalar call.
         // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
-        // bigDecimal/blob/document/enum/union) have no settled mapping yet and fall through to the
+        // bigDecimal/blob/document/union) have no settled mapping yet and fall through to the
         // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
         return MapScalar(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }
+
+    /// <summary>
+    /// The emitted <c>ConstantClass</c> name for an <c>enum</c> shape. Shared by <see cref="MapType"/>
+    /// (the member's .NET type) and <see cref="ServiceEnumerationsWriter"/> (the class declaration), so a
+    /// member typed as an enum always names the class that gets emitted. C2J upper-cases the first
+    /// character of the shape name; a no-op for the PascalCase shape names AWS models use.
+    /// </summary>
+    public static string EnumTypeName(ShapeId shapeId, GenerationContext context) =>
+        SdkNaming.ToUpperFirstCharacter(context.ToDotNetName(shapeId));
 
     /// <summary>
     /// The nullable .NET type for a primitive scalar or timestamp shape, or null when the shape is
@@ -165,14 +201,16 @@ public static class TypeMapper
         _ => null,
     };
 
-    // The writers can't marshal/unmarshal scalar collection elements yet (they need the element to
-    // be a first-class Member with its own @timestampFormat). Fail here so a model like list<Integer>
-    // doesn't silently map the type then blow up in the writer with a confusing error.
-    private static void RejectValueTypeScalarCollectionElement(Shape elementTarget, string collectionKind)
+    // The writers only handle string and structure collection elements. A value-type scalar needs a
+    // first-class Member with its own @timestampFormat; an enum element would map to its ConstantClass,
+    // which WriteListElement does not route through the string path. Fail here so a model like
+    // list<Integer> or list<SomeEnum> doesn't silently map the type then blow up in the writer with a
+    // confusing error.
+    private static void RejectUnsupportedCollectionElement(Shape elementTarget, string collectionKind)
     {
-        if (MapScalar(elementTarget) is not null)
+        if (MapScalar(elementTarget) is not null || elementTarget is EnumShape or IntEnumShape)
         {
-            throw new GeneratorException($"Scalar elements in a {collectionKind} are not supported yet (element type: '{elementTarget.Type}').");
+            throw new GeneratorException($"Elements of type '{elementTarget.Type}' in a {collectionKind} are not supported yet.");
         }
     }
 

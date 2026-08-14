@@ -31,4 +31,14 @@ public static class ScalarTraits
 
     /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#timestampformat-trait" /></remarks>
     public static string? GetTimestampFormat(this Shape shape) => GetStringTrait(shape, "smithy.api#timestampFormat");
+
+    /// <summary>
+    /// The <c>smithy.api#enumValue</c> string trait carried by an <c>enum</c> member — the wire value
+    /// C2J stores verbatim as the <c>ConstantClass</c> constructor argument. Returns null when the trait
+    /// is absent or is not a string. An <c>intEnum</c> member's <c>enumValue</c> is an integer, so this
+    /// yields null for it (never a throw); the enum writer treats a null as an error because C2J has no
+    /// value to carry.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/simple-types.html#enum" /></remarks>
+    public static string? GetEnumValue(this Shape shape) => GetStringTrait(shape, "smithy.api#enumValue");
 }

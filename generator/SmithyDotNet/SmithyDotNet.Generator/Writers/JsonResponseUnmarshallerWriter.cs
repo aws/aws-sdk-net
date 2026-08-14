@@ -93,11 +93,13 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     }
 
     /// <summary>
-    /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a scalar .NET type,
-    /// or null when the type is not a supported scalar. Timestamps follow the JSON-protocol default
-    /// (epoch seconds via the nullable <c>DateTime</c> unmarshaller).
+    /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a member's
+    /// <see cref="Member.MarshalType"/> (the .NET type for plain scalars; <c>string</c> for enums, so an
+    /// enum member unmarshals via <c>StringUnmarshaller</c> and the implicit string-to-ConstantClass
+    /// conversion), or null when the type is not a supported scalar. Timestamps follow the JSON-protocol
+    /// default (epoch seconds via the nullable <c>DateTime</c> unmarshaller).
     /// </summary>
-    internal static string? ScalarUnmarshaller(string dotNetType) => dotNetType switch
+    internal static string? ScalarUnmarshaller(string marshalType) => marshalType switch
     {
         "string" => "StringUnmarshaller",
         "bool?" => "NullableBoolUnmarshaller",
@@ -112,7 +114,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     // Only types that are used by CloudTrailData and the supported scalars are handled for now.
     private static void WriteUnmarshallerForMember(CodeWriter writer, Member member)
     {
-        if (ScalarUnmarshaller(member.DotNetType) is string scalarUnmarshaller)
+        if (ScalarUnmarshaller(member.MarshalType) is string scalarUnmarshaller)
         {
             writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
             writer.WriteLine($"response.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");

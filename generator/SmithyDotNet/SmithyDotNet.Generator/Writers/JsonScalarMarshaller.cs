@@ -14,11 +14,13 @@ public static class JsonScalarMarshaller
     /// Emits the writer call(s) for <paramref name="expression"/> (a scalar value). Nullable value
     /// types unwrap with <c>.Value</c>; the caller guards each with an <c>IsSet</c> check. Float and
     /// double branch through <c>StringUtils.IsSpecial*Value</c> so NaN/±Infinity serialize as strings
-    /// (<c>WriteNumberValue</c> rejects them). Timestamps honor <c>@timestampFormat</c>.
+    /// (<c>WriteNumberValue</c> rejects them). Timestamps honor <c>@timestampFormat</c>. Dispatch is on
+    /// <see cref="Member.MarshalType"/> so an enum rides the <c>string</c> path (implicit ConstantClass
+    /// to string), matching C2J which writes an enum member's string value.
     /// </summary>
     public static void WriteScalar(CodeWriter writer, Member member, string expression)
     {
-        switch (member.DotNetType)
+        switch (member.MarshalType)
         {
             case "string":
                 writer.WriteLine($"context.Writer.WriteStringValue({expression});");
