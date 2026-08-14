@@ -78,7 +78,6 @@
 
 ## Notable Extension Packages
 
-- **Extensions.Bedrock.MEAI** (`AWSSDK.Extensions.Bedrock.MEAI`) — Microsoft.Extensions.AI (`IChatClient`) integration for Amazon Bedrock. Supports prompt caching, structured JSON responses via JSON Schema, and multi-modal tool returns.
 - **Extensions.CborProtocol** — RPCv2 CBOR protocol support. Pulled in automatically by service packages that support the protocol.
 - **Extensions.CrtIntegration** — AWS Common Runtime integration for SigV4a signing and CRC-32C checksums.
 - **Extensions.CloudFront.Signers** — CloudFront URL and cookie signing. Supports RSA and ECDSA private keys.
