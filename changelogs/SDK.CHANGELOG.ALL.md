@@ -1,3 +1,25 @@
+### 4.0.312.0 (2026-08-14 18:17 UTC)
+* BedrockAgentCore (4.0.105.0)
+	* Add support for the Machine Payments Protocol (MPP) and x402 upto scheme payments protocol in Amazon Bedrock AgentCore Payments. Customers can now pay for MPP-gated resources and also pay services which requires upto scheme in x402
+* BedrockAgentCoreControl (4.0.109.0)
+	* Adds AgentCore Payments support for CMK, Marketplace Subscriptions and QuickCreate
+* BedrockAgentRuntime (4.0.101.0)
+	* Adds CheckIngestedDocumentAcl and GetIngestedDocumentAcl APIs to Amazon Bedrock Knowledge Bases. Customers can verify user access to documents based on ingested ACLs and retrieve full ACL details including allow and deny entries, enabling validation of ACL ingestion without test retrievals.
+* Glue (4.0.104.0)
+	* Added support for associating glossary terms with iterable form items, such as table columns.
+* MWAAServerless (4.0.101.0)
+	* Adds support for Consuming code for MWAA Serverless
+* ObservabilityAdmin (4.0.104.0)
+	* CloudWatch Logs centralization rules now support tag propagation. You can configure a TagPropagationConfiguration on your centralization rule to automatically sync resource tags from source to destination log groups, with configurable conflict resolution strategies.
+* Redshift (4.0.101.4)
+	* Amazon Redshift now unlocks a locked admin user account and resets the failed-login counter when you update the admin password using the ModifyCluster API. This option is available only when account lockout security is enabled.
+* RedshiftServerless (4.0.101.6)
+	* Amazon Redshift now unlocks a locked admin user account and resets the failed-login counter when you update the admin password using the UpdateNamespace API. This option is available only when account lockout security is enabled.
+* SageMaker (4.0.109.0)
+	* Release support for g7.2xlarge, g7.4xlarge, g7.8xlarge, g7.12xlarge, g7.24xlarge, and g7.48xlarge instance types for SageMaker HyperPod
+* Extensions.Bedrock.MEAI (Removed)
+	* The AWSSDK.Extensions.Bedrock.MEAI extension has been renamed to `AWS.Bedrock.MEAI` and moved to the [AI Integrations on AWS for .NET](https://github.com/aws/aws-dotnet-ai) repository.
+
 ### 4.0.311.0 (2026-08-13 18:13 UTC)
 * AutoScaling (4.0.103.0)
 	* Amazon EC2 Auto Scaling now supports terminating multiple instances in a single TerminateInstanceInAutoScalingGroup call via the new InstanceIds parameter, returning an Activities list. LaunchInstances now returns IdempotentCallInProgressFault for duplicate client tokens.
