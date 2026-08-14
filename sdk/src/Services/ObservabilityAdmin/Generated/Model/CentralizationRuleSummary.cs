@@ -44,6 +44,8 @@ namespace Amazon.ObservabilityAdmin.Model
         private string _ruleArn;
         private RuleHealth _ruleHealth;
         private string _ruleName;
+        private TagPropagationFailureReason _tagPropagationFailureReason;
+        private TagPropagationStatus _tagPropagationStatus;
 
         /// <summary>
         /// Gets and sets the property CreatedRegion. 
@@ -227,6 +229,46 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetRuleName()
         {
             return this._ruleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagationFailureReason. 
+        /// <para>
+        /// The reason tag propagation is unhealthy for this rule. Only present when <c>TagPropagationStatus</c>
+        /// is <c>Unhealthy</c>.
+        /// </para>
+        /// </summary>
+        public TagPropagationFailureReason TagPropagationFailureReason
+        {
+            get { return this._tagPropagationFailureReason; }
+            set { this._tagPropagationFailureReason = value; }
+        }
+
+        // Check to see if TagPropagationFailureReason property is set
+        internal bool IsSetTagPropagationFailureReason()
+        {
+            return this._tagPropagationFailureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagationStatus. 
+        /// <para>
+        /// The health status of tag propagation for this rule. This status is independent of
+        /// the overall <c>RuleHealth</c> for log delivery. Returns <c>Healthy</c> when the most
+        /// recent tag-propagation attempt succeeded, or <c>Unhealthy</c> when the most recent
+        /// attempt failed.
+        /// </para>
+        /// </summary>
+        public TagPropagationStatus TagPropagationStatus
+        {
+            get { return this._tagPropagationStatus; }
+            set { this._tagPropagationStatus = value; }
+        }
+
+        // Check to see if TagPropagationStatus property is set
+        internal bool IsSetTagPropagationStatus()
+        {
+            return this._tagPropagationStatus != null;
         }
 
     }

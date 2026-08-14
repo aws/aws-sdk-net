@@ -38,6 +38,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private LogsBackupConfiguration _backupConfiguration;
         private LogGroupNameConfiguration _logGroupNameConfiguration;
         private LogsEncryptionConfiguration _logsEncryptionConfiguration;
+        private TagPropagationConfiguration _tagPropagationConfiguration;
 
         /// <summary>
         /// Gets and sets the property BackupConfiguration. 
@@ -93,6 +94,26 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetLogsEncryptionConfiguration()
         {
             return this._logsEncryptionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagPropagationConfiguration. 
+        /// <para>
+        /// Specifies the tag propagation configuration for this centralization rule. When present,
+        /// <c>LogGroupNameConfiguration</c> must use a <c>LogGroupNamePattern</c> that contains
+        /// <c>${source.logGroup}</c>, <c>${source.accountId}</c>, and <c>${source.region}</c>.
+        /// </para>
+        /// </summary>
+        public TagPropagationConfiguration TagPropagationConfiguration
+        {
+            get { return this._tagPropagationConfiguration; }
+            set { this._tagPropagationConfiguration = value; }
+        }
+
+        // Check to see if TagPropagationConfiguration property is set
+        internal bool IsSetTagPropagationConfiguration()
+        {
+            return this._tagPropagationConfiguration != null;
         }
 
     }

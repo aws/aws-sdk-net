@@ -414,6 +414,12 @@
     <max>2000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ObservabilityAdmin.Model.TagPropagationConfiguration.DestinationRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws[a-zA-Z-]*:iam::\d{12}:role/[\w+=,.@/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ObservabilityAdmin.Model.TelemetryConfiguration.AccountIdentifier</property>
     <min>12</min>
     <max>12</max>

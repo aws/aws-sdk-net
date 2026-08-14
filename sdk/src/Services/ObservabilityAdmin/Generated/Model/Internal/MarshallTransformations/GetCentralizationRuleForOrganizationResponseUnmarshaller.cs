@@ -106,6 +106,18 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     response.RuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TagPropagationFailureReason", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TagPropagationFailureReason = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("TagPropagationStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.TagPropagationStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;
