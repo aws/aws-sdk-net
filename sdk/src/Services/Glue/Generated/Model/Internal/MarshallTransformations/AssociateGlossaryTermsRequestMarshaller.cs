@@ -103,6 +103,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetItemIdentifier())
+            {
+                context.Writer.WritePropertyName("ItemIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ItemIdentifier);
+            }
+
+            if(publicRequest.IsSetIterableFormName())
+            {
+                context.Writer.WritePropertyName("IterableFormName");
+                context.Writer.WriteStringValue(publicRequest.IterableFormName);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

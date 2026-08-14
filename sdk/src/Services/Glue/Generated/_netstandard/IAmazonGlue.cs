@@ -7829,6 +7829,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>

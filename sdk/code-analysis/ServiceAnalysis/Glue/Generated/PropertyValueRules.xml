@@ -11,9 +11,31 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.AssociateGlossaryTermsRequest.ItemIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AssociateGlossaryTermsRequest.IterableFormName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.AssetIdentifier</property>
     <min>1</min>
     <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.ItemIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.AssociateGlossaryTermsResponse.IterableFormName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.BatchCreatePartitionRequest.CatalogId</property>
@@ -879,6 +901,17 @@
     <max>1087</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteAttachmentResponse.ItemIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DeleteAttachmentResponse.IterableFormName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DeleteBlueprintRequest.Name</property>
     <min>1</min>
     <max>255</max>
@@ -1355,9 +1388,31 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DisassociateGlossaryTermsRequest.ItemIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DisassociateGlossaryTermsRequest.IterableFormName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.AssetIdentifier</property>
     <min>1</min>
     <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.ItemIdentifier</property>
+    <min>1</min>
+    <max>1087</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.DisassociateGlossaryTermsResponse.IterableFormName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9_]*(::[a-zA-Z][a-zA-Z0-9_]*)?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.GetAssetRequest.Identifier</property>
