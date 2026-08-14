@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CryptoX402PaymentInput Marshaller
+    /// MppPaymentInput Marshaller
     /// </summary>
-    public class CryptoX402PaymentInputMarshaller : IRequestMarshaller<CryptoX402PaymentInput, JsonMarshallerContext> 
+    public class MppPaymentInputMarshaller : IRequestMarshaller<MppPaymentInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,20 +42,14 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CryptoX402PaymentInput requestObject, JsonMarshallerContext context)
+        public void Marshall(MppPaymentInput requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetPayload())
+            if(requestObject.IsSetBuyerPaysGasFees())
             {
-                context.Writer.WritePropertyName("payload");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Payload);
-            }
-
-            if(requestObject.IsSetPermit2AllowanceLimit())
-            {
-                context.Writer.WritePropertyName("permit2AllowanceLimit");
-                context.Writer.WriteStringValue(requestObject.Permit2AllowanceLimit);
+                context.Writer.WritePropertyName("buyerPaysGasFees");
+                context.Writer.WriteBooleanValue(requestObject.BuyerPaysGasFees.Value);
             }
 
             if(requestObject.IsSetVersion())
@@ -64,12 +58,23 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Version);
             }
 
+            if(requestObject.IsSetWwwAuthenticateHeaders())
+            {
+                context.Writer.WritePropertyName("wwwAuthenticateHeaders");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectWwwAuthenticateHeadersListValue in requestObject.WwwAuthenticateHeaders)
+                {
+                        context.Writer.WriteStringValue(requestObjectWwwAuthenticateHeadersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CryptoX402PaymentInputMarshaller Instance = new CryptoX402PaymentInputMarshaller();
+        public readonly static MppPaymentInputMarshaller Instance = new MppPaymentInputMarshaller();
 
     }
 }

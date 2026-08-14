@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PaymentOutput Object
+    /// Response Unmarshaller for MppPaymentOutput Object
     /// </summary>  
-    public class PaymentOutputUnmarshaller : IJsonUnmarshaller<PaymentOutput, JsonUnmarshallerContext>
+    public class MppPaymentOutputUnmarshaller : IJsonUnmarshaller<MppPaymentOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PaymentOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MppPaymentOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PaymentOutput unmarshalledObject = new PaymentOutput();
+            MppPaymentOutput unmarshalledObject = new MppPaymentOutput();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("cryptoX402", targetDepth, ref reader))
+                if (context.TestExpression("paymentCredential", targetDepth, ref reader))
                 {
-                    var unmarshaller = CryptoX402PaymentOutputUnmarshaller.Instance;
-                    unmarshalledObject.CryptoX402 = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PaymentCredential = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mpp", targetDepth, ref reader))
+                if (context.TestExpression("selectedPaymentId", targetDepth, ref reader))
                 {
-                    var unmarshaller = MppPaymentOutputUnmarshaller.Instance;
-                    unmarshalledObject.Mpp = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SelectedPaymentId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("version", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Version = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +79,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         }
 
 
-        private static PaymentOutputUnmarshaller _instance = new PaymentOutputUnmarshaller();        
+        private static MppPaymentOutputUnmarshaller _instance = new MppPaymentOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PaymentOutputUnmarshaller Instance
+        public static MppPaymentOutputUnmarshaller Instance
         {
             get
             {

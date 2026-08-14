@@ -2199,6 +2199,10 @@ namespace Amazon.BedrockAgentCore
         /// </summary>
         public static readonly PaymentInstrumentStatus ACTIVE = new PaymentInstrumentStatus("ACTIVE");
         /// <summary>
+        /// Constant BLOCKED for PaymentInstrumentStatus
+        /// </summary>
+        public static readonly PaymentInstrumentStatus BLOCKED = new PaymentInstrumentStatus("BLOCKED");
+        /// <summary>
         /// Constant DELETED for PaymentInstrumentStatus
         /// </summary>
         public static readonly PaymentInstrumentStatus DELETED = new PaymentInstrumentStatus("DELETED");
@@ -2402,6 +2406,10 @@ namespace Amazon.BedrockAgentCore
         /// Constant CRYPTO_X402 for PaymentType
         /// </summary>
         public static readonly PaymentType CRYPTO_X402 = new PaymentType("CRYPTO_X402");
+        /// <summary>
+        /// Constant MPP for PaymentType
+        /// </summary>
+        public static readonly PaymentType MPP = new PaymentType("MPP");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
