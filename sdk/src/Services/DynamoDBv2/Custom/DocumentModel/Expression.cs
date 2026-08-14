@@ -159,7 +159,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private void MergeAttributes(UpdateItemRequest request, Table table)
         {
-            var convertToAttributeValues  = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
+            var convertToAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
             if (convertToAttributeValues != null)
             {
                 request.ExpressionAttributeValues ??= new Dictionary<string, AttributeValue>(StringComparer.Ordinal);
@@ -185,13 +185,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
         internal void ApplyExpression(GetItemRequest request, Table table)
         {
             request.ProjectionExpression = ExpressionStatement;
-            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+            if (this.ExpressionAttributeNames?.Count > 0)
+            {
+                request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+            }
         }
 
         internal void ApplyExpression(Get request, Table table)
         {
             request.ProjectionExpression = ExpressionStatement;
-            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+            if (this.ExpressionAttributeNames?.Count > 0)
+            {
+                request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+            }
         }
 
         internal void ApplyExpression(Put request, Table table)
@@ -311,7 +317,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 
         private Dictionary<string, string> MergeExpressionAttributeNames(Dictionary<string, string> requestExpressionAttributeNames)
         {
-            if (this.ExpressionAttributeNames?.Count <= 0)
+            if (this.ExpressionAttributeNames == null || this.ExpressionAttributeNames.Count <= 0)
             {
                 return requestExpressionAttributeNames;
             }

@@ -639,6 +639,88 @@ namespace AWSSDK_DotNet.UnitTests
             Assert.AreEqual(1, captured.Segment);
         }
 
+        // Regression test for https://github.com/aws/aws-sdk-net/issues/4489
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task GetNextSetHelper_Scan_FilterExpression_NullNames_DoesNotThrow()
+        {
+            ScanRequest captured = null;
+            var filterExpression = new Expression
+            {
+                ExpressionStatement = "Price > :price",
+                ExpressionAttributeNames = null,
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":price", new Primitive("10", true) } }
+            };
+
+            var scanSearch = new Search(SearchType.Scan)
+            {
+                SourceTable = _mockTable,
+                TableName = "TestTable",
+                CollectResults = true,
+                Filter = null,
+                FilterExpression = filterExpression
+            };
+
+            var mockScanResponse = new ScanResponse
+            {
+                Items = new List<Dictionary<string, AttributeValue>>(),
+                LastEvaluatedKey = null
+            };
+
+            _mockDynamoDBClient
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<ScanRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockScanResponse);
+
+            _ = await scanSearch.GetNextSetHelperAsync(CancellationToken.None);
+            Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
+            Assert.AreEqual("Price > :price", captured.FilterExpression);
+            Assert.IsNull(captured.ExpressionAttributeNames);
+            Assert.IsNotNull(captured.ExpressionAttributeValues);
+            Assert.IsTrue(captured.ExpressionAttributeValues.ContainsKey(":price"));
+        }
+
+        // Regression test for https://github.com/aws/aws-sdk-net/issues/4489
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task GetNextSetHelper_Scan_FilterExpressionNullNames_MergesWithAttributesToGet()
+        {
+            ScanRequest captured = null;
+            var filterExpression = new Expression
+            {
+                ExpressionStatement = "Price > :price",
+                ExpressionAttributeNames = null,
+                ExpressionAttributeValues = new Dictionary<string, DynamoDBEntry> { { ":price", new Primitive("10", true) } }
+            };
+
+            var scanSearch = new Search(SearchType.Scan)
+            {
+                SourceTable = _mockTable,
+                TableName = "TestTable",
+                CollectResults = true,
+                Filter = null,
+                FilterExpression = filterExpression,
+                AttributesToGet = new List<string> { "Id", "Status" }
+            };
+
+            var mockScanResponse = new ScanResponse
+            {
+                Items = new List<Dictionary<string, AttributeValue>>(),
+                LastEvaluatedKey = null
+            };
+
+            _mockDynamoDBClient
+                .Setup(client => client.ScanAsync(It.IsAny<ScanRequest>(), It.IsAny<CancellationToken>()))
+                .Callback<ScanRequest, CancellationToken>((req, ct) => captured = req)
+                .ReturnsAsync(mockScanResponse);
+
+            _ = await scanSearch.GetNextSetHelperAsync(CancellationToken.None);
+            Assert.IsNotNull(captured, "Expected ScanRequest to be captured.");
+            Assert.IsNotNull(captured.ExpressionAttributeNames);
+            Assert.IsTrue(captured.ExpressionAttributeNames.ContainsValue("Id"));
+            Assert.IsTrue(captured.ExpressionAttributeNames.ContainsValue("Status"));
+        }
+
 #if NETFRAMEWORK
         [TestMethod]
         [TestCategory("DynamoDBv2")]
