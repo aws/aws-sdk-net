@@ -44,6 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The Amazon Resource Name (ARN) of the capacity provider to use for the AgentCore Runtime.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string CapacityProviderArn
         {
             get { return this._capacityProviderArn; }

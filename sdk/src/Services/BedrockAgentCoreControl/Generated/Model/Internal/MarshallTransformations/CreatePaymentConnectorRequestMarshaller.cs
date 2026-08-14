@@ -115,6 +115,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetProvisionMode())
+            {
+                context.Writer.WritePropertyName("provisionMode");
+                context.Writer.WriteStringValue(publicRequest.ProvisionMode);
+            }
+
             if(publicRequest.IsSetType())
             {
                 context.Writer.WritePropertyName("type");

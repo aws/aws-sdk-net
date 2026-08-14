@@ -4031,11 +4031,73 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentConnectorProvisionMode.
+    /// </summary>
+    public class PaymentConnectorProvisionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANUAL for PaymentConnectorProvisionMode
+        /// </summary>
+        public static readonly PaymentConnectorProvisionMode MANUAL = new PaymentConnectorProvisionMode("MANUAL");
+        /// <summary>
+        /// Constant QUICK_CREATE for PaymentConnectorProvisionMode
+        /// </summary>
+        public static readonly PaymentConnectorProvisionMode QUICK_CREATE = new PaymentConnectorProvisionMode("QUICK_CREATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentConnectorProvisionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentConnectorProvisionMode FindValue(string value)
+        {
+            return FindValue<PaymentConnectorProvisionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentConnectorProvisionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PaymentConnectorStatus.
     /// </summary>
     public class PaymentConnectorStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTHENTICATION_EXPIRED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus AUTHENTICATION_EXPIRED = new PaymentConnectorStatus("AUTHENTICATION_EXPIRED");
+        /// <summary>
+        /// Constant AUTHENTICATION_FAILED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus AUTHENTICATION_FAILED = new PaymentConnectorStatus("AUTHENTICATION_FAILED");
+        /// <summary>
+        /// Constant AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED = new PaymentConnectorStatus("AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED");
         /// <summary>
         /// Constant CREATE_FAILED for PaymentConnectorStatus
         /// </summary>
@@ -4052,6 +4114,14 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant DELETING for PaymentConnectorStatus
         /// </summary>
         public static readonly PaymentConnectorStatus DELETING = new PaymentConnectorStatus("DELETING");
+        /// <summary>
+        /// Constant PENDING_AUTHENTICATION for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus PENDING_AUTHENTICATION = new PaymentConnectorStatus("PENDING_AUTHENTICATION");
+        /// <summary>
+        /// Constant PROVISIONING for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus PROVISIONING = new PaymentConnectorStatus("PROVISIONING");
         /// <summary>
         /// Constant READY for PaymentConnectorStatus
         /// </summary>

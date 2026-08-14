@@ -34,6 +34,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class GetPaymentConnectorResponse : AmazonWebServiceResponse
     {
+        private string _authorizationUrl;
         private DateTime? _createdAt;
         private List<CredentialsProviderConfiguration> _credentialProviderConfigurations = AWSConfigs.InitializeCollections ? new List<CredentialsProviderConfiguration>() : null;
         private string _description;
@@ -42,6 +43,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _paymentConnectorId;
         private PaymentConnectorStatus _status;
         private PaymentConnectorType _type;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizationUrl. 
+        /// <para>
+        /// The URL that the user must open to complete OAuth consent. This field is only present
+        /// when the payment connector status is <c>PENDING_AUTHENTICATION</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=4096)]
+        public string AuthorizationUrl
+        {
+            get { return this._authorizationUrl; }
+            set { this._authorizationUrl = value; }
+        }
+
+        // Check to see if AuthorizationUrl property is set
+        internal bool IsSetAuthorizationUrl()
+        {
+            return this._authorizationUrl != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -73,7 +94,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<CredentialsProviderConfiguration> CredentialProviderConfigurations
         {
             get { return this._credentialProviderConfigurations; }

@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private AuthorizerConfiguration _authorizerConfiguration;
         private PaymentsAuthorizerType _authorizerType;
         private DateTime? _createdAt;
+        private string _kmsKeyArn;
         private string _name;
         private string _paymentManagerArn;
         private string _paymentManagerId;
@@ -96,6 +97,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the KMS key used to encrypt sensitive payment manager
+        /// data at rest, if configured.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

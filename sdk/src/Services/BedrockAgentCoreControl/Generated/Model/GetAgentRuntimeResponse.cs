@@ -352,7 +352,6 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// The network configuration for the AgentCore Runtime.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public NetworkConfiguration NetworkConfiguration
         {
             get { return this._networkConfiguration; }

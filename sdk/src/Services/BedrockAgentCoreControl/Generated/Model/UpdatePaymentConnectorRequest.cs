@@ -77,7 +77,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=1)]
+        [AWSProperty(Min=0, Max=1)]
         public List<CredentialsProviderConfiguration> CredentialProviderConfigurations
         {
             get { return this._credentialProviderConfigurations; }

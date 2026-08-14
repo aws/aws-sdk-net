@@ -683,7 +683,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentConnectorRequest.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9\s]+</pattern>
+    <pattern>[^\p{C}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentConnectorRequest.Name</property>
@@ -698,6 +698,12 @@
     <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentConnectorResponse.AuthorizationUrl</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>https://[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentConnectorResponse.Name</property>
     <min>1</min>
     <max>48</max>
@@ -707,7 +713,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentConnectorResponse.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentConnectorResponse.PaymentManagerId</property>
@@ -741,7 +747,13 @@
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentManagerRequest.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9\s]+</pattern>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentManagerRequest.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentManagerRequest.Name</property>
@@ -754,6 +766,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentManagerResponse.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.CreatePaymentManagerResponse.Name</property>
@@ -1255,7 +1273,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.DeletePaymentConnectorRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.DeletePaymentConnectorRequest.PaymentManagerId</property>
@@ -1267,7 +1285,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.DeletePaymentConnectorResponse.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.DeletePaymentCredentialProviderRequest.Name</property>
@@ -1940,7 +1958,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentConnectorRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentConnectorRequest.PaymentManagerId</property>
@@ -1949,10 +1967,16 @@
     <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentConnectorResponse.AuthorizationUrl</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>https://[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentConnectorResponse.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9\s]+</pattern>
+    <pattern>[^\p{C}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentConnectorResponse.Name</property>
@@ -1964,7 +1988,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentConnectorResponse.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentCredentialProviderRequest.Name</property>
@@ -1992,7 +2016,13 @@
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentManagerResponse.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9\s]+</pattern>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentManagerResponse.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.GetPaymentManagerResponse.Name</property>
@@ -3646,19 +3676,25 @@
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentConnectorRequest.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9\s]+</pattern>
+    <pattern>[^\p{C}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentConnectorRequest.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentConnectorRequest.PaymentManagerId</property>
     <min>12</min>
     <max>211</max>
     <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentConnectorResponse.AuthorizationUrl</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>https://[^\p{C}]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentConnectorResponse.Name</property>
@@ -3670,7 +3706,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentConnectorResponse.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentConnectorResponse.PaymentManagerId</property>
@@ -3704,7 +3740,13 @@
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentManagerRequest.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9\s]+</pattern>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentManagerRequest.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentManagerRequest.PaymentManagerId</property>
@@ -3717,6 +3759,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws(-[^:]+)?:iam::([0-9]{12})?:role/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentManagerResponse.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.UpdatePaymentManagerResponse.Name</property>
@@ -5356,7 +5404,7 @@
     <property>Amazon.BedrockAgentCoreControl.Model.PaymentConnectorSummary.PaymentConnectorId</property>
     <min>12</min>
     <max>211</max>
-    <pattern>([0-9a-z][-]?){1,100}-[0-9a-z]{10}</pattern>
+    <pattern>([0-9a-z_][-]?){1,100}-[0-9a-z]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.PaymentCredentialProviderConfiguration.CredentialProviderArn</property>
@@ -5378,7 +5426,13 @@
     <property>Amazon.BedrockAgentCoreControl.Model.PaymentManagerSummary.Description</property>
     <min>1</min>
     <max>4096</max>
-    <pattern>[a-zA-Z0-9\s]+</pattern>
+    <pattern>[^\p{C}]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.PaymentManagerSummary.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.PaymentManagerSummary.Name</property>
