@@ -1,0 +1,11 @@
+{
+  "extensions": [
+    {
+      "extensionName": "Extensions.Bedrock.MEAI",
+      "type": "removal",
+      "changeLogMessages": [
+        "The AWSSDK.Extensions.Bedrock.MEAI extension has been renamed to `AWS.Bedrock.MEAI` and moved to the [AI Integrations on AWS for .NET](https://github.com/aws/aws-dotnet-ai) repository."
+      ]
+    }
+  ]
+}
