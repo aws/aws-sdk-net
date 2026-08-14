@@ -43,6 +43,7 @@ namespace Amazon.MWAAServerless.Model
     public partial class CreateWorkflowRequest : AmazonMWAAServerlessRequest
     {
         private string _clientToken;
+        private Code _code;
         private DefinitionS3Location _definitionS3Location;
         private string _description;
         private EncryptionConfiguration _encryptionConfiguration;
@@ -72,6 +73,25 @@ namespace Amazon.MWAAServerless.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The location of code artifacts in Amazon S3 for the workflow. The service copies the
+        /// code from this location at the time of the request.
+        /// </para>
+        /// </summary>
+        public Code Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
         }
 
         /// <summary>

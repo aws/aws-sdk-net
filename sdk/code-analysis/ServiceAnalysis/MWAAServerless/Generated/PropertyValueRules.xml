@@ -375,6 +375,21 @@
     <pattern>[a-z0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAAServerless.Model.S3Location.Bucket</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAAServerless.Model.S3Location.ObjectKey</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAAServerless.Model.S3Location.VersionId</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAAServerless.Model.TaskInstanceSummary.OperatorName</property>
     <min>1</min>
     <max>255</max>
