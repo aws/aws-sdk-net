@@ -707,6 +707,106 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type DocumentAclMemberRelation.
+    /// </summary>
+    public class DocumentAclMemberRelation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AND for DocumentAclMemberRelation
+        /// </summary>
+        public static readonly DocumentAclMemberRelation AND = new DocumentAclMemberRelation("AND");
+        /// <summary>
+        /// Constant OR for DocumentAclMemberRelation
+        /// </summary>
+        public static readonly DocumentAclMemberRelation OR = new DocumentAclMemberRelation("OR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentAclMemberRelation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentAclMemberRelation FindValue(string value)
+        {
+            return FindValue<DocumentAclMemberRelation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentAclMemberRelation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DocumentAclMembershipType.
+    /// </summary>
+    public class DocumentAclMembershipType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATA_SOURCE for DocumentAclMembershipType
+        /// </summary>
+        public static readonly DocumentAclMembershipType DATA_SOURCE = new DocumentAclMembershipType("DATA_SOURCE");
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE for DocumentAclMembershipType
+        /// </summary>
+        public static readonly DocumentAclMembershipType KNOWLEDGE_BASE = new DocumentAclMembershipType("KNOWLEDGE_BASE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DocumentAclMembershipType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DocumentAclMembershipType FindValue(string value)
+        {
+            return FindValue<DocumentAclMembershipType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DocumentAclMembershipType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DocumentOutputFormat.
     /// </summary>
     public class DocumentOutputFormat : ConstantClass

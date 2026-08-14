@@ -138,7 +138,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UserContext.
+        /// Gets and sets the property UserContext. 
+        /// <para>
+        /// Contains information about the user making the request. This is used for access control
+        /// filtering to ensure that retrieval results only include documents the user is authorized
+        /// to access.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public UserContext UserContext

@@ -30,17 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetDocumentContent operation.
-    /// Retrieves the content of an ingested document from a knowledge base. Returns a pre-signed
-    /// URL for secure document access.
+    /// Container for the parameters to the GetIngestedDocumentAcl operation.
+    /// Retrieves the ingested access control list (ACL) for a specific document in a knowledge
+    /// base. Use this operation to inspect the allow and deny lists that were ingested for
+    /// a document to troubleshoot access control issues. To use this operation, you must
+    /// have the <c>bedrock:GetIngestedDocumentAcl</c> permission.
     /// </summary>
-    public partial class GetDocumentContentRequest : AmazonBedrockAgentRuntimeRequest
+    public partial class GetIngestedDocumentAclRequest : AmazonBedrockAgentRuntimeRequest
     {
         private string _dataSourceId;
         private string _documentId;
         private string _knowledgeBaseId;
-        private DocumentOutputFormat _outputFormat;
-        private UserContext _userContext;
 
         /// <summary>
         /// Gets and sets the property DataSourceId. 
@@ -64,7 +64,8 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property DocumentId. 
         /// <para>
-        /// The unique identifier of the document to retrieve content for.
+        /// The unique identifier of the document to retrieve the ingested access control list
+        /// (ACL) for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1825)]
@@ -97,46 +98,6 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetKnowledgeBaseId()
         {
             return this._knowledgeBaseId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property OutputFormat. 
-        /// <para>
-        /// The output format for the document content. <c>RAW</c> returns the original file.
-        /// <c>EXTRACTED</c> returns parsed text as JSON. Defaults to <c>RAW</c>.
-        /// </para>
-        /// </summary>
-        public DocumentOutputFormat OutputFormat
-        {
-            get { return this._outputFormat; }
-            set { this._outputFormat = value; }
-        }
-
-        // Check to see if OutputFormat property is set
-        internal bool IsSetOutputFormat()
-        {
-            return this._outputFormat != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UserContext. 
-        /// <para>
-        /// Contains information about the user making the request. This is used for access control
-        /// filtering to ensure that results only include documents the user is authorized to
-        /// access.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Sensitive=true)]
-        public UserContext UserContext
-        {
-            get { return this._userContext; }
-            set { this._userContext = value; }
-        }
-
-        // Check to see if UserContext property is set
-        internal bool IsSetUserContext()
-        {
-            return this._userContext != null;
         }
 
     }
