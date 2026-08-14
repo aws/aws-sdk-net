@@ -195,20 +195,25 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
     }
 
-    // Base service-exception constructors. These differ from the derived exceptions in order (the
-    // all-args ctor comes last), the (Exception) ctor body (base(innerException.Message, ...)), and
-    // the "Construct instance of" summary on every ctor — match BaseServiceException.tt.
+    // Base service-exception constructors. The first two carry their own doc comments; the rest reuse the
+    // "Construct instance of" summary. The innerException-only ctor forwards to base(innerException), and
+    // the message-with-inner all-args ctor precedes the message-only one.
     private static void WriteBaseConstructors(CodeWriter writer, string className)
     {
         writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine($"/// Default constructor for {className}");
+        writer.WriteLine("/// message.");
         writer.WriteLine("/// </summary>");
         writer.WriteLine($"public {className}() : base() {{ }}");
         writer.WriteLine();
 
         writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine($"/// Constructs a new {className} with the specified error");
+        writer.WriteLine("/// message.");
         writer.WriteLine("/// </summary>");
+        writer.WriteLine("""/// <param name="message">""");
+        writer.WriteLine("/// Describes the error encountered.");
+        writer.WriteLine("/// </param>");
         writer.WriteLine($"public {className}(string message) : base(message) {{ }}");
         writer.WriteLine();
 
@@ -221,19 +226,19 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Construct instance of {className}");
         writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public {className}(Exception innerException) : base(innerException.Message, innerException) {{ }}");
-        writer.WriteLine();
-
-        writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// Construct instance of {className}");
-        writer.WriteLine("/// </summary>");
-        writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
+        writer.WriteLine($"public {className}(Exception innerException) : base(innerException) {{ }}");
         writer.WriteLine();
 
         writer.WriteLine("/// <summary>");
         writer.WriteLine($"/// Construct instance of {className}");
         writer.WriteLine("/// </summary>");
         writer.WriteLine($"public {className}(string message, Exception innerException, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, innerException, errorType, errorCode, requestId, statusCode) {{ }}");
+        writer.WriteLine();
+
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine($"/// Construct instance of {className}");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine($"public {className}(string message, Amazon.Runtime.ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) : base(message, errorType, errorCode, requestId, statusCode) {{ }}");
     }
 
     private static void WriteSerializationBlock(CodeWriter writer, string className, IReadOnlyList<Member> members, bool includeGetObjectData)
@@ -266,10 +271,6 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
             writer.WriteLine("""/// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>""");
             writer.WriteLine("""/// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is a null reference (Nothing in Visual Basic). </exception>""");
             writer.WriteLine("[System.Security.SecurityCritical]");
-
-            writer.WriteLine("// These FxCop rules are giving false-positives for this method");
-            writer.WriteLine("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]""");
-            writer.WriteLine("""[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]""");
             writer.OpenBlock("public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)", () =>
             {
                 writer.WriteLine("base.GetObjectData(info, context);");

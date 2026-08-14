@@ -290,7 +290,7 @@ Exception members are named like any structure member, with two base-class adjus
 
 The `Equals`-gets-`new` rule is structure-wide (it hides `object.Equals(object)`), not exception-specific — applied by `TypeMapper.ResolveMembers` on every structure.
 
-`RequestId` and `ErrorCode` get **no property** — `AmazonServiceException` already declares them, so one would shadow the base (matching C2J's `StructureGenerator.tt`). They are still serialized and read from the error body into the inherited property, though: C2J's `ExceptionSerialization.t4` and `JsonRPCExceptionUnmarshaller.tt` loop the member set that filters only `message`, so `ExceptionWriter.ResolveSerializedMembers` (serialization block + unmarshaller) keeps them while `ResolvePropertyMembers` drops them. Every other member is emitted as-is, even when it shadows an inherited property (`StatusCode`, `InnerException`, …) — matching C2J. See type-mapping's "Error Shape Members".
+`RequestId` and `ErrorCode` get **no property** — `AmazonServiceException` already declares them, so one would shadow the base (matching C2J's `StructureGenerator.tt`). They are still serialized and read from the error body into the inherited property, though: C2J's `ExceptionSerialization.t4` and `JsonRPCExceptionUnmarshaller.tt` loop the member set that filters only `message`, so `ExceptionWriter.ResolveSerializedMembers` (serialization block + unmarshaller) keeps them, while `WriteException` filters them out of the property set inline. Every other member is emitted as-is, even when it shadows an inherited property (`StatusCode`, `InnerException`, …) — matching C2J. See type-mapping's "Error Shape Members".
 
 ### Retryable Errors
 
