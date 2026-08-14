@@ -98,6 +98,12 @@ namespace Amazon.RedshiftServerless.Model
         /// <para>
         /// You can't use <c>adminUserPassword</c> if <c>manageAdminPassword</c> is true. 
         /// </para>
+        ///  
+        /// <para>
+        /// If your admin user account is locked, this operation also unlocks your account and
+        /// resets the failed-login counter. This option is available only when account lockout
+        /// security is enabled for the namespace.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string AdminUserPassword
