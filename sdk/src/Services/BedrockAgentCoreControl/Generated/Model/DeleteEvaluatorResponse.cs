@@ -63,7 +63,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The unique identifier of the deleted evaluator. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }

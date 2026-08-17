@@ -1460,6 +1460,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant AGENTCORE_EVALUATION_SIMULATED_V1 for DatasetSchemaType
         /// </summary>
         public static readonly DatasetSchemaType AGENTCORE_EVALUATION_SIMULATED_V1 = new DatasetSchemaType("AGENTCORE_EVALUATION_SIMULATED_V1");
+        /// <summary>
+        /// Constant GENERIC_EVALUATION_PREDEFINED_V1 for DatasetSchemaType
+        /// </summary>
+        public static readonly DatasetSchemaType GENERIC_EVALUATION_PREDEFINED_V1 = new DatasetSchemaType("GENERIC_EVALUATION_PREDEFINED_V1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1982,6 +1986,14 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant CustomCode for EvaluatorType
         /// </summary>
         public static readonly EvaluatorType CustomCode = new EvaluatorType("CustomCode");
+        /// <summary>
+        /// Constant CustomDerived for EvaluatorType
+        /// </summary>
+        public static readonly EvaluatorType CustomDerived = new EvaluatorType("CustomDerived");
+        /// <summary>
+        /// Constant ThirdParty for EvaluatorType
+        /// </summary>
+        public static readonly EvaluatorType ThirdParty = new EvaluatorType("ThirdParty");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -4732,6 +4744,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrincipalMatchOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Provider.
+    /// </summary>
+    public class Provider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutoEval for Provider
+        /// </summary>
+        public static readonly Provider AutoEval = new Provider("AutoEval");
+        /// <summary>
+        /// Constant AWS for Provider
+        /// </summary>
+        public static readonly Provider AWS = new Provider("AWS");
+        /// <summary>
+        /// Constant Custom for Provider
+        /// </summary>
+        public static readonly Provider Custom = new Provider("Custom");
+        /// <summary>
+        /// Constant DeepEval for Provider
+        /// </summary>
+        public static readonly Provider DeepEval = new Provider("DeepEval");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Provider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Provider FindValue(string value)
+        {
+            return FindValue<Provider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Provider(string value)
         {
             return FindValue(value);
         }

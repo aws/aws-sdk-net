@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for EvaluatorConfig Object
+    /// Response Unmarshaller for DerivedEvaluatorConfig Object
     /// </summary>  
-    public class EvaluatorConfigUnmarshaller : IJsonUnmarshaller<EvaluatorConfig, JsonUnmarshallerContext>
+    public class DerivedEvaluatorConfigUnmarshaller : IJsonUnmarshaller<DerivedEvaluatorConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EvaluatorConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public DerivedEvaluatorConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            EvaluatorConfig unmarshalledObject = new EvaluatorConfig();
+            DerivedEvaluatorConfig unmarshalledObject = new DerivedEvaluatorConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,16 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("codeBased", targetDepth, ref reader))
+                if (context.TestExpression("baseEvaluatorId", targetDepth, ref reader))
                 {
-                    var unmarshaller = CodeBasedEvaluatorConfigUnmarshaller.Instance;
-                    unmarshalledObject.CodeBased = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BaseEvaluatorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("derived", targetDepth, ref reader))
+                if (context.TestExpression("modelConfig", targetDepth, ref reader))
                 {
-                    var unmarshaller = DerivedEvaluatorConfigUnmarshaller.Instance;
-                    unmarshalledObject.Derived = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("llmAsAJudge", targetDepth, ref reader))
-                {
-                    var unmarshaller = LlmAsAJudgeEvaluatorConfigUnmarshaller.Instance;
-                    unmarshalledObject.LlmAsAJudge = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = EvaluatorModelConfigUnmarshaller.Instance;
+                    unmarshalledObject.ModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +73,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         }
 
 
-        private static EvaluatorConfigUnmarshaller _instance = new EvaluatorConfigUnmarshaller();        
+        private static DerivedEvaluatorConfigUnmarshaller _instance = new DerivedEvaluatorConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static EvaluatorConfigUnmarshaller Instance
+        public static DerivedEvaluatorConfigUnmarshaller Instance
         {
             get
             {

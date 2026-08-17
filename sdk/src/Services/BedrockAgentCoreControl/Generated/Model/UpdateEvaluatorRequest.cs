@@ -111,7 +111,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The unique identifier of the evaluator to update. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }

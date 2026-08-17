@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class EvaluatorConfig
     {
         private CodeBasedEvaluatorConfig _codeBased;
+        private DerivedEvaluatorConfig _derived;
         private LlmAsAJudgeEvaluatorConfig _llmAsAJudge;
 
         /// <summary>
@@ -55,6 +56,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetCodeBased()
         {
             return this._codeBased != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Derived. 
+        /// <para>
+        ///  The configuration for an evaluator derived from an existing base evaluator (a built-in
+        /// or third-party evaluator), run on your own model. The base evaluator supplies the
+        /// prompt and scoring. 
+        /// </para>
+        /// </summary>
+        public DerivedEvaluatorConfig Derived
+        {
+            get { return this._derived; }
+            set { this._derived = value; }
+        }
+
+        // Check to see if Derived property is set
+        internal bool IsSetDerived()
+        {
+            return this._derived != null;
         }
 
         /// <summary>
