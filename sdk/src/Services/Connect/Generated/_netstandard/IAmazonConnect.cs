@@ -2195,6 +2195,48 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  CreateExtractionDefinition
+
+
+
+        /// <summary>
+        /// Creates an extraction definition in the specified Connect Customer instance. An extraction
+        /// definition specifies how structured data is extracted from customer interactions using
+        /// generative AI, including the prompt hint that guides extraction and the behavior when
+        /// a value cannot be found.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateExtractionDefinition">REST API Reference for CreateExtractionDefinition Operation</seealso>
+        Task<CreateExtractionDefinitionResponse> CreateExtractionDefinitionAsync(CreateExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateHoursOfOperation
 
 
@@ -3975,6 +4017,39 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  DeleteExtractionDefinition
+
+
+
+        /// <summary>
+        /// Deletes an extraction definition from the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteExtractionDefinition">REST API Reference for DeleteExtractionDefinition Operation</seealso>
+        Task<DeleteExtractionDefinitionResponse> DeleteExtractionDefinitionAsync(DeleteExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteHoursOfOperation
 
 
@@ -5529,6 +5604,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEvaluationForm">REST API Reference for DescribeEvaluationForm Operation</seealso>
         Task<DescribeEvaluationFormResponse> DescribeEvaluationFormAsync(DescribeEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeExtractionDefinition
+
+
+
+        /// <summary>
+        /// Describes an extraction definition in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeExtractionDefinition">REST API Reference for DescribeExtractionDefinition Operation</seealso>
+        Task<DescribeExtractionDefinitionResponse> DescribeExtractionDefinitionAsync(DescribeExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -8956,6 +9064,39 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  ListExtractionDefinitions
+
+
+
+        /// <summary>
+        /// Lists extraction definitions in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtractionDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExtractionDefinitions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListExtractionDefinitions">REST API Reference for ListExtractionDefinitions Operation</seealso>
+        Task<ListExtractionDefinitionsResponse> ListExtractionDefinitionsAsync(ListExtractionDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListFlowAssociations
 
 
@@ -12329,8 +12470,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Use the returned <c>ParticipantToken</c> to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-        /// API.
+        /// Use the returned <c>ParticipantToken</c> with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -12372,6 +12513,9 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAssistantContact">REST API Reference for StartAssistantContact Operation</seealso>
         Task<StartAssistantContactResponse> StartAssistantContactAsync(StartAssistantContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -14703,6 +14847,42 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">REST API Reference for UpdateEvaluationForm Operation</seealso>
         Task<UpdateEvaluationFormResponse> UpdateEvaluationFormAsync(UpdateEvaluationFormRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateExtractionDefinition
+
+
+
+        /// <summary>
+        /// Updates an extraction definition in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateExtractionDefinition">REST API Reference for UpdateExtractionDefinition Operation</seealso>
+        Task<UpdateExtractionDefinitionResponse> UpdateExtractionDefinitionAsync(UpdateExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -107,6 +107,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetExtractInformationAction())
+            {
+                context.Writer.WritePropertyName("ExtractInformationAction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExtractInformationActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ExtractInformationAction, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSendNotificationAction())
             {
                 context.Writer.WritePropertyName("SendNotificationAction");

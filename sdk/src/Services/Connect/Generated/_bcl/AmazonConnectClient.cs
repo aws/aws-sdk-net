@@ -4755,6 +4755,95 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateExtractionDefinition
+
+
+        /// <summary>
+        /// Creates an extraction definition in the specified Connect Customer instance. An extraction
+        /// definition specifies how structured data is extracted from customer interactions using
+        /// generative AI, including the prompt hint that guides extraction and the behavior when
+        /// a value cannot be found.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtractionDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateExtractionDefinition">REST API Reference for CreateExtractionDefinition Operation</seealso>
+        public virtual CreateExtractionDefinitionResponse CreateExtractionDefinition(CreateExtractionDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExtractionDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateExtractionDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an extraction definition in the specified Connect Customer instance. An extraction
+        /// definition specifies how structured data is extracted from customer interactions using
+        /// generative AI, including the prompt hint that guides extraction and the behavior when
+        /// a value cannot be found.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateExtractionDefinition">REST API Reference for CreateExtractionDefinition Operation</seealso>
+        public virtual Task<CreateExtractionDefinitionResponse> CreateExtractionDefinitionAsync(CreateExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateExtractionDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateExtractionDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateHoursOfOperation
 
 
@@ -8515,6 +8604,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeleteExtractionDefinition
+
+
+        /// <summary>
+        /// Deletes an extraction definition from the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtractionDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteExtractionDefinition">REST API Reference for DeleteExtractionDefinition Operation</seealso>
+        public virtual DeleteExtractionDefinitionResponse DeleteExtractionDefinition(DeleteExtractionDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExtractionDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteExtractionDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an extraction definition from the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteExtractionDefinition">REST API Reference for DeleteExtractionDefinition Operation</seealso>
+        public virtual Task<DeleteExtractionDefinitionResponse> DeleteExtractionDefinitionAsync(DeleteExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteExtractionDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteExtractionDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteHoursOfOperation
 
 
@@ -11820,6 +11980,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribeEvaluationFormResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribeEvaluationFormResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeExtractionDefinition
+
+
+        /// <summary>
+        /// Describes an extraction definition in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExtractionDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DescribeExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeExtractionDefinition">REST API Reference for DescribeExtractionDefinition Operation</seealso>
+        public virtual DescribeExtractionDefinitionResponse DescribeExtractionDefinition(DescribeExtractionDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExtractionDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeExtractionDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes an extraction definition in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeExtractionDefinition">REST API Reference for DescribeExtractionDefinition Operation</seealso>
+        public virtual Task<DescribeExtractionDefinitionResponse> DescribeExtractionDefinitionAsync(DescribeExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeExtractionDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeExtractionDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -19092,6 +19323,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListExtractionDefinitions
+
+
+        /// <summary>
+        /// Lists extraction definitions in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtractionDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListExtractionDefinitions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListExtractionDefinitions">REST API Reference for ListExtractionDefinitions Operation</seealso>
+        public virtual ListExtractionDefinitionsResponse ListExtractionDefinitions(ListExtractionDefinitionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExtractionDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExtractionDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExtractionDefinitionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists extraction definitions in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExtractionDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExtractionDefinitions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListExtractionDefinitions">REST API Reference for ListExtractionDefinitions Operation</seealso>
+        public virtual Task<ListExtractionDefinitionsResponse> ListExtractionDefinitionsAsync(ListExtractionDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListExtractionDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExtractionDefinitionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListExtractionDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListFlowAssociations
 
 
@@ -26248,8 +26550,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Use the returned <c>ParticipantToken</c> to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-        /// API.
+        /// Use the returned <c>ParticipantToken</c> with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -26289,6 +26591,9 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAssistantContact">REST API Reference for StartAssistantContact Operation</seealso>
         public virtual StartAssistantContactResponse StartAssistantContact(StartAssistantContactRequest request)
         {
@@ -26305,8 +26610,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Use the returned <c>ParticipantToken</c> to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-        /// API.
+        /// Use the returned <c>ParticipantToken</c> with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -26348,6 +26653,9 @@ namespace Amazon.Connect
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
         /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAssistantContact">REST API Reference for StartAssistantContact Operation</seealso>
         public virtual Task<StartAssistantContactResponse> StartAssistantContactAsync(StartAssistantContactRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -31253,6 +31561,83 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdateEvaluationFormResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateEvaluationFormResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateExtractionDefinition
+
+
+        /// <summary>
+        /// Updates an extraction definition in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtractionDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateExtractionDefinition">REST API Reference for UpdateExtractionDefinition Operation</seealso>
+        public virtual UpdateExtractionDefinitionResponse UpdateExtractionDefinition(UpdateExtractionDefinitionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExtractionDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateExtractionDefinitionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an extraction definition in the specified Connect Customer instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateExtractionDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateExtractionDefinition service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateExtractionDefinition">REST API Reference for UpdateExtractionDefinition Operation</seealso>
+        public virtual Task<UpdateExtractionDefinitionResponse> UpdateExtractionDefinitionAsync(UpdateExtractionDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateExtractionDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateExtractionDefinitionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateExtractionDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion

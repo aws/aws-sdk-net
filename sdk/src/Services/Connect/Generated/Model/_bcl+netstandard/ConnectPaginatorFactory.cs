@@ -245,6 +245,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListExtractionDefinitions operation
+        ///</summary>
+        public IListExtractionDefinitionsPaginator ListExtractionDefinitions(ListExtractionDefinitionsRequest request) 
+        {
+            return new ListExtractionDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFlowAssociations operation
         ///</summary>
         public IListFlowAssociationsPaginator ListFlowAssociations(ListFlowAssociationsRequest request) 

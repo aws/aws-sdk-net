@@ -35,8 +35,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// Use the returned <c>ParticipantToken</c> to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-    /// API.
+    /// Use the returned <c>ParticipantToken</c> with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AiAgent. 
         /// <para>
-        /// The AI agent that participates in the contact.
+        /// The AI agent configuration for this contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,13 +88,12 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A map of key-value pairs to associate with the contact. Amazon Connect makes these
-        /// attributes available to flows as standard contact attributes.
+        /// A map of key-value pairs to associate with the contact. We make these attributes available
+        /// to flows as standard contact attributes.
         /// </para>
         ///  
         /// <para>
-        /// You can provide up to 32,768 UTF-8 bytes across all key-value pairs per contact. Attribute
-        /// keys can contain only alphanumeric characters, dashes, and underscores.
+        /// You can provide up to 32,768 UTF-8 bytes across all key-value pairs for each contact.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

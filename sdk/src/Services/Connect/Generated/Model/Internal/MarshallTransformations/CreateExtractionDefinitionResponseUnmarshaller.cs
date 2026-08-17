@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for StartAssistantContact operation
+    /// Response Unmarshaller for CreateExtractionDefinition operation
     /// </summary>  
-    public class StartAssistantContactResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateExtractionDefinitionResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,34 +46,22 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartAssistantContactResponse response = new StartAssistantContactResponse();
+            CreateExtractionDefinitionResponse response = new CreateExtractionDefinitionResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ContactId", targetDepth, ref reader))
+                if (context.TestExpression("ExtractionDefinitionArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ContactId = unmarshaller.Unmarshall(context, ref reader);
+                    response.ExtractionDefinitionArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ContinuedFromContactId", targetDepth, ref reader))
+                if (context.TestExpression("ExtractionDefinitionId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ContinuedFromContactId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ParticipantId", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ParticipantId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ParticipantToken", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.ParticipantToken = unmarshaller.Unmarshall(context, ref reader);
+                    response.ExtractionDefinitionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -109,21 +97,21 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 {
                     return InternalServiceExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterException"))
-                {
-                    return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidRequestException"))
                 {
                     return InvalidRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("LimitExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceConflictException"))
                 {
-                    return LimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ResourceConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                {
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -133,9 +121,9 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             return new AmazonConnectException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static StartAssistantContactResponseUnmarshaller _instance = new StartAssistantContactResponseUnmarshaller();        
+        private static CreateExtractionDefinitionResponseUnmarshaller _instance = new CreateExtractionDefinitionResponseUnmarshaller();        
 
-        internal static StartAssistantContactResponseUnmarshaller GetInstance()
+        internal static CreateExtractionDefinitionResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -143,7 +131,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static StartAssistantContactResponseUnmarshaller Instance
+        public static CreateExtractionDefinitionResponseUnmarshaller Instance
         {
             get
             {

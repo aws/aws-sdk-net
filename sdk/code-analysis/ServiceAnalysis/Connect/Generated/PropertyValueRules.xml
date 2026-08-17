@@ -639,6 +639,25 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreateExtractionDefinitionRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateExtractionDefinitionRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateExtractionDefinitionRequest.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreateExtractionDefinitionResponse.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.Description</property>
     <min>1</min>
     <max>250</max>
@@ -1338,6 +1357,16 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteExtractionDefinitionRequest.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteExtractionDefinitionRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -1729,6 +1758,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeEvaluationFormRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeExtractionDefinitionRequest.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribeExtractionDefinitionRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -2654,6 +2693,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListEvaluationFormVersionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListExtractionDefinitionsRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ListExtractionDefinitionsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
   </property-value-rule>
@@ -4896,6 +4945,25 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateExtractionDefinitionRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateExtractionDefinitionRequest.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateExtractionDefinitionRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdateExtractionDefinitionRequest.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateHoursOfOperationRequest.Description</property>
     <min>0</min>
     <max>250</max>
@@ -5548,11 +5616,13 @@
     <property>Amazon.Connect.Model.AiAgentInput.AiAgentId</property>
     <min>0</min>
     <max>128</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AiAgentSearchCriteria.Id</property>
     <min>0</min>
     <max>128</max>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(:[A-Z0-9_$]+){0,1}$|^arn:[a-z-]*?:wisdom:[a-z0-9-]*?:[0-9]{12}:[a-z-]*?/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}(?:/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}){0,2}(:[A-Z0-9_$]+){0,1}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.AliasConfiguration.EmailAddressId</property>
@@ -6677,6 +6747,39 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.ExtractionConfiguration.PromptHint</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ExtractionDefinition.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ExtractionDefinition.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ExtractionDefinitionDisplay.Label</property>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ExtractionDefinitionNotFoundBehavior.DefaultValue</property>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ExtractionDefinitionSummary.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.ExtractionDefinitionSummary.Name</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.FailedBatchAssociationSummary.ErrorCode</property>
     <pattern>^[1-5][0-9]{2}$</pattern>
   </property-value-rule>
@@ -7677,6 +7780,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RuleSearchSummary.RuleId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RulesExtractionDefinitionIdentifier.Identifier</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

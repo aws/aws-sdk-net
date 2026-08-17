@@ -254,12 +254,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SegmentAttributes. 
         /// <para>
-        /// Use this map to specify system-defined attributes for the WebRTC contact segment.
-        /// Use the <c>connect:Subtype</c> attribute to specify the channel subtype, such as <c>connect:WebRTC</c>.
-        /// </para>
-        ///  
-        /// <para>
-        /// Attribute keys can contain only alphanumeric characters, hyphens, and underscores.
+        /// A map of system-defined attributes for the WebRTC contact segment. Use the <c>connect:Subtype</c>
+        /// attribute to specify the channel subtype, such as <c>connect:WebRTC</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

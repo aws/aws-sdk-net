@@ -97,6 +97,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ActionType END_ASSOCIATED_TASKS = new ActionType("END_ASSOCIATED_TASKS");
         /// <summary>
+        /// Constant EXTRACT_INFORMATION for ActionType
+        /// </summary>
+        public static readonly ActionType EXTRACT_INFORMATION = new ActionType("EXTRACT_INFORMATION");
+        /// <summary>
         /// Constant GENERATE_EVENTBRIDGE_EVENT for ActionType
         /// </summary>
         public static readonly ActionType GENERATE_EVENTBRIDGE_EVENT = new ActionType("GENERATE_EVENTBRIDGE_EVENT");
@@ -4151,6 +4155,14 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant OnAfterCallWorkAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAfterCallWorkAvailable = new EventSourceName("OnAfterCallWorkAvailable");
+        /// <summary>
+        /// Constant OnAfterChatWorkAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAfterChatWorkAvailable = new EventSourceName("OnAfterChatWorkAvailable");
+        /// <summary>
         /// Constant OnAlertUpdate for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnAlertUpdate = new EventSourceName("OnAlertUpdate");
@@ -6542,6 +6554,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NextContactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotFoundBehaviorType.
+    /// </summary>
+    public class NotFoundBehaviorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OMIT for NotFoundBehaviorType
+        /// </summary>
+        public static readonly NotFoundBehaviorType OMIT = new NotFoundBehaviorType("OMIT");
+        /// <summary>
+        /// Constant USE_DEFAULT_VALUE for NotFoundBehaviorType
+        /// </summary>
+        public static readonly NotFoundBehaviorType USE_DEFAULT_VALUE = new NotFoundBehaviorType("USE_DEFAULT_VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotFoundBehaviorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotFoundBehaviorType FindValue(string value)
+        {
+            return FindValue<NotFoundBehaviorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotFoundBehaviorType(string value)
         {
             return FindValue(value);
         }

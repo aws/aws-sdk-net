@@ -61,8 +61,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContinuedFromContactId. 
         /// <para>
-        /// For a persistent chat, the identifier of the contact from which the chat continues.
-        /// Amazon Connect returns this field only for persistent chats.
+        /// The identifier of the contact from which the chat continues, returned only for persistent
+        /// chats.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -101,8 +101,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ParticipantToken. 
         /// <para>
-        /// The token that the chat participant uses to call the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
-        /// API. The token remains valid for the lifetime of the chat participant.
+        /// The token that the chat participant uses with the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a>
+        /// operation. The token remains valid for the lifetime of the chat participant.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
