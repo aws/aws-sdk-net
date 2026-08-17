@@ -78,6 +78,12 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             
+            if (publicRequest.IsSetPoiCategories())
+                request.ParameterCollection.Add("poi-categories", publicRequest.PoiCategories);
+            
+            if (publicRequest.IsSetPoiDensity())
+                request.Parameters.Add("poi-density", StringUtils.FromString(publicRequest.PoiDensity));
+            
             if (publicRequest.IsSetPoliticalView())
                 request.Parameters.Add("political-view", StringUtils.FromString(publicRequest.PoliticalView));
             
@@ -89,7 +95,7 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetTravelModes())
                 request.ParameterCollection.Add("travel-modes", publicRequest.TravelModes);
-            request.ResourcePath = "/styles/{Style}/descriptor";
+            request.ResourcePath = "/v2/styles/{Style}/descriptor";
             request.UseQueryString = true;
 
             return request;

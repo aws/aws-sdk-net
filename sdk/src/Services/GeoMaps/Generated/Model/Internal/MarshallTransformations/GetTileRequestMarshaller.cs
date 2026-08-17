@@ -80,7 +80,7 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
-            request.ResourcePath = "/tiles/{Tileset}/{Z}/{X}/{Y}";
+            request.ResourcePath = "/v2/tiles/{Tileset}/{Z}/{X}/{Y}";
             request.UseQueryString = true;
 
             return request;

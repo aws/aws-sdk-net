@@ -333,6 +333,150 @@ namespace Amazon.GeoMaps
 
 
     /// <summary>
+    /// Constants used for properties of type PoiCategory.
+    /// </summary>
+    public class PoiCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accommodations for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Accommodations = new PoiCategory("Accommodations");
+        /// <summary>
+        /// Constant BusinessAndServices for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory BusinessAndServices = new PoiCategory("BusinessAndServices");
+        /// <summary>
+        /// Constant Entertainment for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Entertainment = new PoiCategory("Entertainment");
+        /// <summary>
+        /// Constant FacilitiesAndBuildings for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory FacilitiesAndBuildings = new PoiCategory("FacilitiesAndBuildings");
+        /// <summary>
+        /// Constant FoodAndDrink for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory FoodAndDrink = new PoiCategory("FoodAndDrink");
+        /// <summary>
+        /// Constant LeisureAndOutdoor for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory LeisureAndOutdoor = new PoiCategory("LeisureAndOutdoor");
+        /// <summary>
+        /// Constant Shopping for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Shopping = new PoiCategory("Shopping");
+        /// <summary>
+        /// Constant SightsAndMuseums for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory SightsAndMuseums = new PoiCategory("SightsAndMuseums");
+        /// <summary>
+        /// Constant Transportation for PoiCategory
+        /// </summary>
+        public static readonly PoiCategory Transportation = new PoiCategory("Transportation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PoiCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PoiCategory FindValue(string value)
+        {
+            return FindValue<PoiCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PoiCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PoiDensity.
+    /// </summary>
+    public class PoiDensity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Default = new PoiDensity("Default");
+        /// <summary>
+        /// Constant Dense for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Dense = new PoiDensity("Dense");
+        /// <summary>
+        /// Constant Off for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Off = new PoiDensity("Off");
+        /// <summary>
+        /// Constant Sparse for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity Sparse = new PoiDensity("Sparse");
+        /// <summary>
+        /// Constant VeryDense for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity VeryDense = new PoiDensity("VeryDense");
+        /// <summary>
+        /// Constant VerySparse for PoiDensity
+        /// </summary>
+        public static readonly PoiDensity VerySparse = new PoiDensity("VerySparse");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PoiDensity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PoiDensity FindValue(string value)
+        {
+            return FindValue<PoiDensity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PoiDensity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScaleBarUnit.
     /// </summary>
     public class ScaleBarUnit : ConstantClass

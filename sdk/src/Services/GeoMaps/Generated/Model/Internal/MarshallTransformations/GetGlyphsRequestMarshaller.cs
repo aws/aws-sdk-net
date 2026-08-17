@@ -68,7 +68,7 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetFontUnicodeRange())
                 throw new AmazonGeoMapsException("Request object does not have required field FontUnicodeRange set");
             request.AddPathResource("{FontUnicodeRange}", StringUtils.FromString(publicRequest.FontUnicodeRange));
-            request.ResourcePath = "/glyphs/{FontStack}/{FontUnicodeRange}";
+            request.ResourcePath = "/v2/glyphs/{FontStack}/{FontUnicodeRange}";
 
             return request;
         }
