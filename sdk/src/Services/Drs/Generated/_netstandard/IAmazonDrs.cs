@@ -85,6 +85,46 @@ namespace Amazon.Drs
 
         #endregion
                 
+        #region  CancelRecoveryPlanExecution
+
+
+
+        /// <summary>
+        /// Cancels an in-progress Recovery Plan execution. Remaining steps are skipped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelRecoveryPlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelRecoveryPlanExecution service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CancelRecoveryPlanExecution">REST API Reference for CancelRecoveryPlanExecution Operation</seealso>
+        Task<CancelRecoveryPlanExecutionResponse> CancelRecoveryPlanExecutionAsync(CancelRecoveryPlanExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateExtendedSourceServer
 
 
@@ -158,6 +198,90 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateLaunchConfigurationTemplate">REST API Reference for CreateLaunchConfigurationTemplate Operation</seealso>
         Task<CreateLaunchConfigurationTemplateResponse> CreateLaunchConfigurationTemplateAsync(CreateLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateRecoveryPlan
+
+
+
+        /// <summary>
+        /// Creates a Recovery Plan to orchestrate multi-server disaster recovery.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecoveryPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecoveryPlan service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateRecoveryPlan">REST API Reference for CreateRecoveryPlan Operation</seealso>
+        Task<CreateRecoveryPlanResponse> CreateRecoveryPlanAsync(CreateRecoveryPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateRecoveryPlanStep
+
+
+
+        /// <summary>
+        /// Creates a step in a Recovery Plan. A step is either <c>SERVER</c> type (servers to
+        /// recover in parallel) or <c>WAIT</c> type (timed pause between steps).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRecoveryPlanStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRecoveryPlanStep service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateRecoveryPlanStep">REST API Reference for CreateRecoveryPlanStep Operation</seealso>
+        Task<CreateRecoveryPlanStepResponse> CreateRecoveryPlanStepAsync(CreateRecoveryPlanStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -371,6 +495,127 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryInstance">REST API Reference for DeleteRecoveryInstance Operation</seealso>
         Task<DeleteRecoveryInstanceResponse> DeleteRecoveryInstanceAsync(DeleteRecoveryInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteRecoveryPlan
+
+
+
+        /// <summary>
+        /// Deletes a Recovery Plan. Cannot delete a plan that has an execution in a non-terminal
+        /// status (<c>CREATED</c>, <c>IN_PROGRESS</c>).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecoveryPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecoveryPlan service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryPlan">REST API Reference for DeleteRecoveryPlan Operation</seealso>
+        Task<DeleteRecoveryPlanResponse> DeleteRecoveryPlanAsync(DeleteRecoveryPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteRecoveryPlanExecution
+
+
+
+        /// <summary>
+        /// Deletes a Recovery Plan execution record. Must be in a terminal status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecoveryPlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecoveryPlanExecution service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryPlanExecution">REST API Reference for DeleteRecoveryPlanExecution Operation</seealso>
+        Task<DeleteRecoveryPlanExecutionResponse> DeleteRecoveryPlanExecutionAsync(DeleteRecoveryPlanExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteRecoveryPlanStep
+
+
+
+        /// <summary>
+        /// Deletes a step from a Recovery Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRecoveryPlanStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRecoveryPlanStep service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteRecoveryPlanStep">REST API Reference for DeleteRecoveryPlanStep Operation</seealso>
+        Task<DeleteRecoveryPlanStepResponse> DeleteRecoveryPlanStepAsync(DeleteRecoveryPlanStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -918,6 +1163,150 @@ namespace Amazon.Drs
 
         #endregion
                 
+        #region  GetRecoveryPlan
+
+
+
+        /// <summary>
+        /// Gets a Recovery Plan by ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecoveryPlan service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlan">REST API Reference for GetRecoveryPlan Operation</seealso>
+        Task<GetRecoveryPlanResponse> GetRecoveryPlanAsync(GetRecoveryPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRecoveryPlanExecution
+
+
+
+        /// <summary>
+        /// Gets the details of a Recovery Plan execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecoveryPlanExecution service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlanExecution">REST API Reference for GetRecoveryPlanExecution Operation</seealso>
+        Task<GetRecoveryPlanExecutionResponse> GetRecoveryPlanExecutionAsync(GetRecoveryPlanExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRecoveryPlanExecutionStep
+
+
+
+        /// <summary>
+        /// Gets the details of a step within a Recovery Plan execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPlanExecutionStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecoveryPlanExecutionStep service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlanExecutionStep">REST API Reference for GetRecoveryPlanExecutionStep Operation</seealso>
+        Task<GetRecoveryPlanExecutionStepResponse> GetRecoveryPlanExecutionStepAsync(GetRecoveryPlanExecutionStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetRecoveryPlanStep
+
+
+
+        /// <summary>
+        /// Gets a Recovery Plan step by ARN.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRecoveryPlanStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRecoveryPlanStep service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/GetRecoveryPlanStep">REST API Reference for GetRecoveryPlanStep Operation</seealso>
+        Task<GetRecoveryPlanStepResponse> GetRecoveryPlanStepAsync(GetRecoveryPlanStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetReplicationConfiguration
 
 
@@ -1049,6 +1438,144 @@ namespace Amazon.Drs
 
         #endregion
                 
+        #region  ListRecoveryPlanExecutions
+
+
+
+        /// <summary>
+        /// Lists executions of Recovery Plans, optionally filtered by plan or status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecoveryPlanExecutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecoveryPlanExecutions service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlanExecutions">REST API Reference for ListRecoveryPlanExecutions Operation</seealso>
+        Task<ListRecoveryPlanExecutionsResponse> ListRecoveryPlanExecutionsAsync(ListRecoveryPlanExecutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRecoveryPlanExecutionSteps
+
+
+
+        /// <summary>
+        /// Lists all steps within a Recovery Plan execution.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecoveryPlanExecutionSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecoveryPlanExecutionSteps service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlanExecutionSteps">REST API Reference for ListRecoveryPlanExecutionSteps Operation</seealso>
+        Task<ListRecoveryPlanExecutionStepsResponse> ListRecoveryPlanExecutionStepsAsync(ListRecoveryPlanExecutionStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRecoveryPlans
+
+
+
+        /// <summary>
+        /// Lists all Recovery Plans in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecoveryPlans service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecoveryPlans service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlans">REST API Reference for ListRecoveryPlans Operation</seealso>
+        Task<ListRecoveryPlansResponse> ListRecoveryPlansAsync(ListRecoveryPlansRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListRecoveryPlanSteps
+
+
+
+        /// <summary>
+        /// Lists all steps in a Recovery Plan.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRecoveryPlanSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRecoveryPlanSteps service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ListRecoveryPlanSteps">REST API Reference for ListRecoveryPlanSteps Operation</seealso>
+        Task<ListRecoveryPlanStepsResponse> ListRecoveryPlanStepsAsync(ListRecoveryPlanStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListStagingAccounts
 
 
@@ -1152,6 +1679,46 @@ namespace Amazon.Drs
 
         #endregion
                 
+        #region  ReorderRecoveryPlanSteps
+
+
+
+        /// <summary>
+        /// Reorders steps in a Recovery Plan. Accepts a complete ordered list of step ARNs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReorderRecoveryPlanSteps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReorderRecoveryPlanSteps service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/ReorderRecoveryPlanSteps">REST API Reference for ReorderRecoveryPlanSteps Operation</seealso>
+        Task<ReorderRecoveryPlanStepsResponse> ReorderRecoveryPlanStepsAsync(ReorderRecoveryPlanStepsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  RetryDataReplication
 
 
@@ -1186,6 +1753,46 @@ namespace Amazon.Drs
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RetryDataReplication">REST API Reference for RetryDataReplication Operation</seealso>
         [Obsolete("WARNING: RetryDataReplication is deprecated")]
         Task<RetryDataReplicationResponse> RetryDataReplicationAsync(RetryDataReplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  RetryRecoveryPlanExecutionStep
+
+
+
+        /// <summary>
+        /// Retries a failed <c>SERVER</c> type execution step.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RetryRecoveryPlanExecutionStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RetryRecoveryPlanExecutionStep service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RetryRecoveryPlanExecutionStep">REST API Reference for RetryRecoveryPlanExecutionStep Operation</seealso>
+        Task<RetryRecoveryPlanExecutionStepResponse> RetryRecoveryPlanExecutionStepAsync(RetryRecoveryPlanExecutionStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1303,6 +1910,50 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartRecovery">REST API Reference for StartRecovery Operation</seealso>
         Task<StartRecoveryResponse> StartRecoveryAsync(StartRecoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartRecoveryPlanExecution
+
+
+
+        /// <summary>
+        /// Starts executing a Recovery Plan in <c>DRILL</c> or <c>RECOVERY</c> mode. A plan cannot
+        /// have more than one execution in a non-terminal status at a time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartRecoveryPlanExecution service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartRecoveryPlanExecution service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/StartRecoveryPlanExecution">REST API Reference for StartRecoveryPlanExecution Operation</seealso>
+        Task<StartRecoveryPlanExecutionResponse> StartRecoveryPlanExecutionAsync(StartRecoveryPlanExecutionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1728,6 +2379,128 @@ namespace Amazon.Drs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateLaunchConfigurationTemplate">REST API Reference for UpdateLaunchConfigurationTemplate Operation</seealso>
         Task<UpdateLaunchConfigurationTemplateResponse> UpdateLaunchConfigurationTemplateAsync(UpdateLaunchConfigurationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateRecoveryPlan
+
+
+
+        /// <summary>
+        /// Updates a Recovery Plan's name or description.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPlan service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPlan service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateRecoveryPlan">REST API Reference for UpdateRecoveryPlan Operation</seealso>
+        Task<UpdateRecoveryPlanResponse> UpdateRecoveryPlanAsync(UpdateRecoveryPlanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateRecoveryPlanExecutionStep
+
+
+
+        /// <summary>
+        /// Updates an execution step. Supports two actions: (1) skip a step that is in <c>NOT_STARTED</c>
+        /// or <c>FAILED</c> status; (2) update the wait duration of a <c>WAIT</c> type step that
+        /// is in <c>NOT_STARTED</c> status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPlanExecutionStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPlanExecutionStep service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateRecoveryPlanExecutionStep">REST API Reference for UpdateRecoveryPlanExecutionStep Operation</seealso>
+        Task<UpdateRecoveryPlanExecutionStepResponse> UpdateRecoveryPlanExecutionStepAsync(UpdateRecoveryPlanExecutionStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateRecoveryPlanStep
+
+
+
+        /// <summary>
+        /// Updates a Recovery Plan step's name or configuration. Step type is immutable.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecoveryPlanStep service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecoveryPlanStep service method, as returned by Drs.</returns>
+        /// <exception cref="Amazon.Drs.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ResourceNotFoundException">
+        /// The resource for this operation was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.UninitializedAccountException">
+        /// The account performing the request has not been initialized.
+        /// </exception>
+        /// <exception cref="Amazon.Drs.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateRecoveryPlanStep">REST API Reference for UpdateRecoveryPlanStep Operation</seealso>
+        Task<UpdateRecoveryPlanStepResponse> UpdateRecoveryPlanStepAsync(UpdateRecoveryPlanStepRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
