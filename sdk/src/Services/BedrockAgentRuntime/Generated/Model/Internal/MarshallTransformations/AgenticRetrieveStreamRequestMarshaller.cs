@@ -90,6 +90,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.GenerateResponse.Value);
             }
 
+            if(publicRequest.IsSetMemoryConfiguration())
+            {
+                context.Writer.WritePropertyName("memoryConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AgenticRetrieveMemoryConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MemoryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMessages())
             {
                 context.Writer.WritePropertyName("messages");

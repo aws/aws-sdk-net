@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     public partial class AgenticRetrieveAction
     {
         private AgenticRetrieveFullDocExpansionDetails _fullDocumentExpansion;
+        private AgenticRetrieveMemoryRetrieveDetails _memoryRetrieve;
         private AgenticRetrieveActionDetails _retrieve;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetFullDocumentExpansion()
         {
             return this._fullDocumentExpansion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryRetrieve. 
+        /// <para>
+        /// The details of a long-term memory retrieval that the agent chose to perform.
+        /// </para>
+        /// </summary>
+        public AgenticRetrieveMemoryRetrieveDetails MemoryRetrieve
+        {
+            get { return this._memoryRetrieve; }
+            set { this._memoryRetrieve = value; }
+        }
+
+        // Check to see if MemoryRetrieve property is set
+        internal bool IsSetMemoryRetrieve()
+        {
+            return this._memoryRetrieve != null;
         }
 
         /// <summary>

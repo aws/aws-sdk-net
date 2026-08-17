@@ -195,6 +195,138 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type AgenticRetrieveMemoryMetadataFilterOperator.
+    /// </summary>
+    public class AgenticRetrieveMemoryMetadataFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AFTER for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator AFTER = new AgenticRetrieveMemoryMetadataFilterOperator("AFTER");
+        /// <summary>
+        /// Constant BEFORE for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator BEFORE = new AgenticRetrieveMemoryMetadataFilterOperator("BEFORE");
+        /// <summary>
+        /// Constant CONTAINS for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator CONTAINS = new AgenticRetrieveMemoryMetadataFilterOperator("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS_TO for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator EQUALS_TO = new AgenticRetrieveMemoryMetadataFilterOperator("EQUALS_TO");
+        /// <summary>
+        /// Constant EXISTS for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator EXISTS = new AgenticRetrieveMemoryMetadataFilterOperator("EXISTS");
+        /// <summary>
+        /// Constant GREATER_THAN for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator GREATER_THAN = new AgenticRetrieveMemoryMetadataFilterOperator("GREATER_THAN");
+        /// <summary>
+        /// Constant GREATER_THAN_OR_EQUALS for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator GREATER_THAN_OR_EQUALS = new AgenticRetrieveMemoryMetadataFilterOperator("GREATER_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant LESS_THAN for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator LESS_THAN = new AgenticRetrieveMemoryMetadataFilterOperator("LESS_THAN");
+        /// <summary>
+        /// Constant LESS_THAN_OR_EQUALS for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator LESS_THAN_OR_EQUALS = new AgenticRetrieveMemoryMetadataFilterOperator("LESS_THAN_OR_EQUALS");
+        /// <summary>
+        /// Constant NOT_EXISTS for AgenticRetrieveMemoryMetadataFilterOperator
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryMetadataFilterOperator NOT_EXISTS = new AgenticRetrieveMemoryMetadataFilterOperator("NOT_EXISTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgenticRetrieveMemoryMetadataFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgenticRetrieveMemoryMetadataFilterOperator FindValue(string value)
+        {
+            return FindValue<AgenticRetrieveMemoryMetadataFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgenticRetrieveMemoryMetadataFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgenticRetrieveMemoryPersistenceMode.
+    /// </summary>
+    public class AgenticRetrieveMemoryPersistenceMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEFAULT for AgenticRetrieveMemoryPersistenceMode
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryPersistenceMode DEFAULT = new AgenticRetrieveMemoryPersistenceMode("DEFAULT");
+        /// <summary>
+        /// Constant NONE for AgenticRetrieveMemoryPersistenceMode
+        /// </summary>
+        public static readonly AgenticRetrieveMemoryPersistenceMode NONE = new AgenticRetrieveMemoryPersistenceMode("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgenticRetrieveMemoryPersistenceMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgenticRetrieveMemoryPersistenceMode FindValue(string value)
+        {
+            return FindValue<AgenticRetrieveMemoryPersistenceMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgenticRetrieveMemoryPersistenceMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AgenticRetrieveRerankingConfigurationType.
     /// </summary>
     public class AgenticRetrieveRerankingConfigurationType : ConstantClass
@@ -367,6 +499,10 @@ namespace Amazon.BedrockAgentRuntime
         /// </summary>
         public static readonly AgenticRetrieveStep Retrieval = new AgenticRetrieveStep("Retrieval");
         /// <summary>
+        /// Constant SessionHistoryLoad for AgenticRetrieveStep
+        /// </summary>
+        public static readonly AgenticRetrieveStep SessionHistoryLoad = new AgenticRetrieveStep("SessionHistoryLoad");
+        /// <summary>
         /// Constant SpeculativeRetrieval for AgenticRetrieveStep
         /// </summary>
         public static readonly AgenticRetrieveStep SpeculativeRetrieval = new AgenticRetrieveStep("SpeculativeRetrieval");
@@ -412,6 +548,10 @@ namespace Amazon.BedrockAgentRuntime
     public class AgenticRetrieveType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant BedrockAgentCoreMemory for AgenticRetrieveType
+        /// </summary>
+        public static readonly AgenticRetrieveType BedrockAgentCoreMemory = new AgenticRetrieveType("BedrockAgentCoreMemory");
         /// <summary>
         /// Constant BedrockKnowledgeBase for AgenticRetrieveType
         /// </summary>

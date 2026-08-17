@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AgenticRetrieveAction Object
+    /// Response Unmarshaller for AgenticRetrieveMemoryRetrieveDetails Object
     /// </summary>  
-    public class AgenticRetrieveActionUnmarshaller : IJsonUnmarshaller<AgenticRetrieveAction, JsonUnmarshallerContext>
+    public class AgenticRetrieveMemoryRetrieveDetailsUnmarshaller : IJsonUnmarshaller<AgenticRetrieveMemoryRetrieveDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgenticRetrieveAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AgenticRetrieveMemoryRetrieveDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AgenticRetrieveAction unmarshalledObject = new AgenticRetrieveAction();
+            AgenticRetrieveMemoryRetrieveDetails unmarshalledObject = new AgenticRetrieveMemoryRetrieveDetails();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,34 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("fullDocumentExpansion", targetDepth, ref reader))
+                if (context.TestExpression("inputQuery", targetDepth, ref reader))
                 {
-                    var unmarshaller = AgenticRetrieveFullDocExpansionDetailsUnmarshaller.Instance;
-                    unmarshalledObject.FullDocumentExpansion = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = AgenticRetrieveMessageContentUnmarshaller.Instance;
+                    unmarshalledObject.InputQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("memoryRetrieve", targetDepth, ref reader))
+                if (context.TestExpression("memoryId", targetDepth, ref reader))
                 {
-                    var unmarshaller = AgenticRetrieveMemoryRetrieveDetailsUnmarshaller.Instance;
-                    unmarshalledObject.MemoryRetrieve = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MemoryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("retrieve", targetDepth, ref reader))
+                if (context.TestExpression("namespace", targetDepth, ref reader))
                 {
-                    var unmarshaller = AgenticRetrieveActionDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Retrieve = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("namespacePath", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.NamespacePath = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("strategyId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StrategyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +91,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         }
 
 
-        private static AgenticRetrieveActionUnmarshaller _instance = new AgenticRetrieveActionUnmarshaller();        
+        private static AgenticRetrieveMemoryRetrieveDetailsUnmarshaller _instance = new AgenticRetrieveMemoryRetrieveDetailsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AgenticRetrieveActionUnmarshaller Instance
+        public static AgenticRetrieveMemoryRetrieveDetailsUnmarshaller Instance
         {
             get
             {
