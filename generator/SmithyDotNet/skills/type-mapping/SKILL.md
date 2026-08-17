@@ -1,6 +1,6 @@
 ---
 name: type-mapping
-description: Rules for converting Smithy shape types to .NET types, including nullability and collection defaults
+description: Smithy shape to .NET type mapping, nullability, and collection defaults. Use when changing TypeMapper or member resolution in the SmithyDotNet generator.
 ---
 # Skill: Smithy to .NET Type Mapping
 

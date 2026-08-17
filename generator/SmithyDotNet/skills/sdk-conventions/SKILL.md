@@ -1,6 +1,6 @@
 ---
 name: sdk-conventions
-description: Exact patterns generated code must follow to match the AWS SDK for .NET public API surface
+description: The public-API contract SmithyDotNet-generated code must match against the shipping AWS SDK for .NET - what must match vs. what can differ. Use before writing or changing any SmithyDotNet writer.
 ---
 # Skill: .NET SDK Conventions
 

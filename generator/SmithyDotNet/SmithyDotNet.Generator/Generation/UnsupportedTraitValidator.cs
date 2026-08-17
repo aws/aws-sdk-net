@@ -18,7 +18,6 @@ public static class UnsupportedTraitValidator
         ["smithy.api#httpPayload"] = "@httpPayload",
         ["smithy.api#httpResponseCode"] = "@httpResponseCode",
         ["smithy.api#streaming"] = "@streaming",
-        ["smithy.api#paginated"] = "@paginated",
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
     };
 

@@ -73,3 +73,19 @@ public record RetryableTrait : TraitRecord
     [JsonPropertyName("throttling")]
     public bool Throttling { get; init; }
 }
+
+/// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#paginated-trait" /></remarks>
+public record PaginatedTrait : TraitRecord
+{
+    [JsonPropertyName("inputToken")]
+    public string? InputToken { get; init; }
+
+    [JsonPropertyName("outputToken")]
+    public string? OutputToken { get; init; }
+
+    [JsonPropertyName("items")]
+    public string? Items { get; init; }
+
+    [JsonPropertyName("pageSize")]
+    public string? PageSize { get; init; }
+}

@@ -24,6 +24,23 @@ public record OperationError(StructureShape Shape, ShapeId Id);
 public record Operation(string Name, OperationShape Shape, StructureShape Input, StructureShape Output, IReadOnlyList<OperationError> Errors);
 
 /// <summary>
+/// A paginated operation with its trait resolved and token/items members mapped to .NET property names.
+/// <see cref="ItemsProperty"/> is the leaf member name (the generated enumerable's name), while
+/// <see cref="ItemsPath"/> and <see cref="OutputTokenProperty"/> are full accessor paths off the
+/// response — they contain dots when the trait uses a dotted path (e.g. "DistributionList.NextMarker").
+/// </summary>
+public record PaginatedOperation(
+    Operation Operation,
+    PaginatedTrait Trait,
+    string InputTokenProperty,
+    string OutputTokenProperty,
+    string? PageSizeProperty,
+    string? ItemsProperty,
+    string? ItemsPath,
+    string? ItemsElementType
+);
+
+/// <summary>
 /// Aggregates everything code writers need about a single service: derived names,
 /// detected protocol, resolved operations, and partitioned reachable shapes.
 /// Built from a validated <see cref="ServiceIndex"/>.
@@ -121,6 +138,12 @@ public class GenerationContext
     /// <summary>All operations with their input/output/error shapes resolved.</summary>
     public IReadOnlyList<Operation> Operations { get; }
 
+    /// <summary>Operations carrying <c>@paginated</c>, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
+    public IReadOnlyList<PaginatedOperation> PaginatedOperations { get; }
+
+    /// <summary>Whether the service has any paginated operations.</summary>
+    public bool HasPaginators => PaginatedOperations.Count > 0;
+
     /// <summary>Reachable structures excluding input, output, and error shapes, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
     public IReadOnlyDictionary<ShapeId, StructureShape> Structures { get; }
 
@@ -198,6 +221,7 @@ public class GenerationContext
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
+        PaginatedOperations = PaginationResolver.Resolve(Operations, index);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();
@@ -360,4 +384,5 @@ public class GenerationContext
 
         throw new GeneratorException($"Could not resolve {property} shape '{shapeId}' for operation '{operationId}'.");
     }
+
 }

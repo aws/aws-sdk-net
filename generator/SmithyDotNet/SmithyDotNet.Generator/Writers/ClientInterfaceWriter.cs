@@ -35,6 +35,15 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
             WriteInterfaceDocumentation(writer);
             writer.OpenBlock($"public partial interface I{context.ClientName} : IAmazonService, IDisposable", () =>
             {
+                if (context.HasPaginators)
+                {
+                    writer.WriteLine("/// <summary>");
+                    writer.WriteLine("/// Paginators for the service");
+                    writer.WriteLine("/// </summary>");
+                    writer.WriteLine($"I{context.ServiceName}PaginatorFactory Paginators {{ get; }}");
+                    writer.WriteLine();
+                }
+
                 for (var i = 0; i < context.Operations.Count; i++)
                 {
                     if (i > 0)

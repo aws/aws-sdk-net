@@ -34,4 +34,7 @@ public static class StructuredTraits
 
     /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#retryable-trait" /></remarks>
     public static RetryableTrait? GetRetryable(this Shape shape) => DeserializeTrait<RetryableTrait>(shape, "smithy.api#retryable");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#paginated-trait" /></remarks>
+    public static PaginatedTrait? GetPaginated(this Shape shape) => DeserializeTrait<PaginatedTrait>(shape, "smithy.api#paginated");
 }

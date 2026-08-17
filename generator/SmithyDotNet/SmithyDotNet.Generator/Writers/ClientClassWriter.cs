@@ -59,6 +59,11 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
             {
                 writer.WriteLine($"private static IServiceMetadata serviceMetadata = new {_clientName}Metadata();");
 
+                if (context.HasPaginators)
+                {
+                    WritePaginatorsProperty(writer);
+                }
+
                 WriteConstructors(writer);
                 WriteOverrides(writer);
                 WriteDispose(writer);
@@ -298,6 +303,29 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
         {
             writer.WriteLine("var parameters = new ServiceOperationEndpointParameters(request);");
             writer.WriteLine("return Config.DetermineServiceOperationEndpoint(parameters);");
+        });
+    }
+
+    private void WritePaginatorsProperty(CodeWriter writer)
+    {
+        var factoryInterface = $"I{context.ServiceName}PaginatorFactory";
+        var factoryClass = $"{context.ServiceName}PaginatorFactory";
+
+        writer.WriteLine($"private {factoryInterface} _paginators;");
+        writer.WriteLine();
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Paginators for the service");
+        writer.WriteLine("/// </summary>");
+        writer.OpenBlock($"public {factoryInterface} Paginators", () =>
+        {
+            writer.OpenBlock("get", () =>
+            {
+                writer.OpenBlock("if (this._paginators == null)", () =>
+                {
+                    writer.WriteLine($"this._paginators = new {factoryClass}(this);");
+                });
+                writer.WriteLine("return this._paginators;");
+            });
         });
     }
 }

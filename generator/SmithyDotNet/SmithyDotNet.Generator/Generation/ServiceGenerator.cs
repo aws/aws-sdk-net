@@ -4,6 +4,7 @@ using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.NuGet;
+using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
 using System.Collections.Concurrent;
 
@@ -244,6 +245,24 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // this is emitted unconditionally (unlike the endpoint files, which are gated on a rule set).
         var authResolverWriter = new AuthResolverWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}AuthResolver.g.cs"), authResolverWriter.Write(cancellationToken));
+
+        if (context.HasPaginators)
+        {
+            var paginatorInterfaceWriter = new PaginatorInterfaceWriter(context, modelFileName);
+            var paginatorClassWriter = new PaginatorClassWriter(context, modelFileName);
+
+            foreach (var paginatedOp in context.PaginatedOperations)
+            {
+                Emit(Path.Combine(model, $"I{paginatedOp.Operation.Name}Paginator.g.cs"), paginatorInterfaceWriter.Write(paginatedOp, cancellationToken));
+                Emit(Path.Combine(model, $"{paginatedOp.Operation.Name}Paginator.g.cs"), paginatorClassWriter.Write(paginatedOp, cancellationToken));
+            }
+
+            var factoryInterfaceWriter = new PaginatorFactoryInterfaceWriter(context, modelFileName);
+            Emit(Path.Combine(model, $"I{context.ServiceName}PaginatorFactory.g.cs"), factoryInterfaceWriter.Write(cancellationToken));
+
+            var factoryClassWriter = new PaginatorFactoryClassWriter(context, modelFileName);
+            Emit(Path.Combine(model, $"{context.ServiceName}PaginatorFactory.g.cs"), factoryClassWriter.Write(cancellationToken));
+        }
 
         var structureWriter = new StructureWriter(context, modelFileName);
         foreach (var (shapeId, structure) in context.Structures)

@@ -135,11 +135,6 @@ public static class TypeMapper
     /// </summary>
     public static string MapType(ShapeId targetId, Shape target, GenerationContext context)
     {
-        if (target is StringShape)
-        {
-            return "string";
-        }
-
         if (target is ListShape list)
         {
             var elementTarget = context.Resolve(list.Member.Target);
@@ -179,7 +174,7 @@ public static class TypeMapper
         // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
         // bigDecimal/blob/document/union) have no settled mapping yet and fall through to the
         // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
-        return MapScalar(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
+        return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }
 
     /// <summary>
@@ -190,6 +185,16 @@ public static class TypeMapper
     /// </summary>
     public static string EnumTypeName(ShapeId shapeId, GenerationContext context) =>
         SdkNaming.ToUpperFirstCharacter(context.ToDotNetName(shapeId));
+
+    /// <summary>
+    /// The .NET type for a string or value-type scalar, or null when the shape is not a primitive.
+    /// Unlike <see cref="MapScalar"/>, includes <c>string</c>.
+    /// </summary>
+    public static string? MapPrimitive(Shape target) => target switch
+    {
+        StringShape => "string",
+        _ => MapScalar(target),
+    };
 
     /// <summary>
     /// The nullable .NET type for a primitive scalar or timestamp shape, or null when the shape is

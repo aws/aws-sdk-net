@@ -33,9 +33,18 @@ current SDK. Reads the Smithy AST directly - no C2J concepts internally.
 
 ## Source of truth
 
-The skills under `skills/` are authoritative for the rules: `sdk-conventions` (the public-API
-contract — what must match vs. what can differ), `type-mapping`, and `smithy-ast-model`.
-Read them before writing a writer; update them when behavior changes.
+The skills under `skills/` are authoritative over anything inferred from code. Before editing
+these areas, read the matching skill first; update it when behavior changes:
+
+- Any writer under `Writers/` -> `skills/sdk-conventions/SKILL.md` (the public-API contract —
+  what must match vs. what can differ)
+- Marshaller/unmarshaller writers -> `skills/marshalling/SKILL.md` as well
+- `TypeMapper` / member resolution -> `skills/type-mapping/SKILL.md`
+- `Model/` (ShapeConverter, ServiceIndex, shapes, traits) -> `skills/smithy-ast-model/SKILL.md`
+
+Add a skill only for areas with recurring work (marshalling grows with every protocol). A
+finished area doesn't get one — its known gaps live as TODOs in the code, where the next
+change will find them, not in a skill that would go stale.
 
 ## Orchestrating workflows
 

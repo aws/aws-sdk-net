@@ -1,6 +1,6 @@
 ---
 name: marshalling
-description: Maps Smithy protocol traits to generated SDK marshaller/unmarshaller code patterns
+description: Marshaller/unmarshaller file layout and per-protocol serialization patterns. Use when writing or reviewing any marshaller/unmarshaller writer in the SmithyDotNet generator.
 ---
 # Skill: Marshalling
 
