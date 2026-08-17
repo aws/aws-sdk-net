@@ -1,3 +1,21 @@
+### 4.0.313.0 (2026-08-17 19:35 UTC)
+* BedrockAgentCoreControl (4.0.110.0)
+	* Adds implementations of third-party evaluators, both managed-as-a-service and as templates within custom evaluators.
+* BedrockAgentRuntime (4.0.102.0)
+	* AgenticRetrieveStream API now supports Amazon Bedrock AgentCore Memory. Use the new memoryConfiguration parameter to continue a session from short-term memory and retrieve from long-term memory.
+* Connect (4.0.111.0)
+	* This release adds new APIs to create, describe, update, delete, and list extraction definitions, enabling customers to manage lifecycle of extraction definition resources. Additionally, this release adds new event sources for Rules related to ACW and new action to Extract Information.
+* Drs (4.0.102.0)
+	* AWS Elastic Disaster Recovery (AWS DRS) now offers Recovery Plans to recover multi-server applications in the right order in one action. Define the launch sequence once, with ordered steps and wait times, and DRS runs it automatically. Validate with non-disruptive drills and monitor in real time.
+* DynamoDBv2 (4.0.103.2)
+	* Fix regression for null `ExpressionAttributeNames` in document model
+* ECR (4.0.101.0)
+	* Documentation update for the ECR PutReplicationConfiguration API to increase the replication rule limit from 10 to 25
+* GeoMaps (4.0.101.0)
+	* Amazon Location Service now supports POI density and category filtering on dynamic maps. The GetStyleDescriptor API adds two optional parameters. PoiDensity (Off to VeryDense) controls POI volume, and PoiCategories filters by up to nine categories. Available on HERE and Grab map styles.
+* Organizations (4.0.101.0)
+	* Add new Transfer Responsibility error codes and document related CloudTrail events for accepting and terminating a Transfer Responsibility.
+
 ### 4.0.312.0 (2026-08-14 18:17 UTC)
 * BedrockAgentCore (4.0.105.0)
 	* Add support for the Machine Payments Protocol (MPP) and x402 upto scheme payments protocol in Amazon Bedrock AgentCore Payments. Customers can now pay for MPP-gated resources and also pay services which requires upto scheme in x402
