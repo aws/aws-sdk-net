@@ -77,9 +77,9 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-    /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-    /// or contact your Amazon Web Services Partner for help.
+    /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+    /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+    /// your Amazon Web Services Channel Partner for help.
     /// </para>
     ///  </li> <li> 
     /// <para>

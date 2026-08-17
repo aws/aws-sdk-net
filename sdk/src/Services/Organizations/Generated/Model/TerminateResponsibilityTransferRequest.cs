@@ -33,6 +33,15 @@ namespace Amazon.Organizations.Model
     /// Container for the parameters to the TerminateResponsibilityTransfer operation.
     /// Ends a transfer. A <i>transfer</i> is an arrangement between two management accounts
     /// where one account designates the other with specified responsibilities for their organization.
+    /// 
+    ///  
+    /// <para>
+    /// When a transfer ends, Organizations publishes a <c>ResponsibilityTransferTerminated</c>
+    /// service event to CloudTrail. Each affected account receives this event, including
+    /// upstream participants such as distributors in a chained transfer. For an example log
+    /// entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-terminate-responsibility-transfer">Example
+    /// log entries: TerminateResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class TerminateResponsibilityTransferRequest : AmazonOrganizationsRequest
     {

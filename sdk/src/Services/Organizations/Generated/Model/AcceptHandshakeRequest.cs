@@ -81,6 +81,14 @@ namespace Amazon.Organizations.Model
     /// event with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> are logged in their respective
     /// management accounts.
     /// </para>
+    ///  
+    /// <para>
+    /// When a billing transfer (<c>TRANSFER_RESPONSIBILITY</c>) handshake is accepted, Organizations
+    /// publishes a <c>ResponsibilityTransferAccepted</c> service event to CloudTrail. Each
+    /// affected account receives this event, including upstream participants such as distributors
+    /// in a chained transfer. For an example log entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-accept-responsibility-transfer">Example
+    /// log entries: AcceptResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.
+    /// </para>
     /// </summary>
     public partial class AcceptHandshakeRequest : AmazonOrganizationsRequest
     {
