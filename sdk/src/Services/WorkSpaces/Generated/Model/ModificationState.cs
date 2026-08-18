@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The resource.
+        /// The WorkSpace property being modified.
         /// </para>
         /// </summary>
         public ModificationResourceEnum Resource

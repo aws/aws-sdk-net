@@ -3396,6 +3396,12 @@ namespace Amazon.WorkSpaces
         /// best practices, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate
         /// a WorkSpace</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the source WorkSpace has nested virtualization enabled and the target bundle does
+        /// not support nested virtualization, the migration fails.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MigrateWorkspace service method.</param>
         /// <param name="cancellationToken">
