@@ -2800,6 +2800,13 @@ namespace Amazon.EC2
         /// If the source instance is in a Local Zone, you can create the snapshots in the same
         /// Local Zone or in its parent Region.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source instance is on an Outpost that supports local snapshots, you can create
+        /// the snapshots on the same Outpost or in the parent Region of that Outpost. In this
+        /// case, you must use the <c>SnapshotLocation</c> parameter to specify where to create
+        /// the snapshots.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
