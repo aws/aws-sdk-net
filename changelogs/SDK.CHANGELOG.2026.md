@@ -1,3 +1,22 @@
+### 4.0.314.0 (2026-08-18 18:21 UTC)
+* Batch (4.0.100.9)
+	* Update AWS Batch documentation with newer Fargate Supported configurations, notes, and fix broken Docker link re-directs.
+* EC2 (4.0.110.2)
+	* Doc release for CreateImage support for instances with local snapshots in Outpost
+* EntityResolution (4.0.102.0)
+	* Added ResourceNotFoundException to DeleteSchemaMapping, DeleteMatchingWorkflow, DeleteIdMappingWorkflow, and DeleteIdNamespace. These operations now return a 404 ResourceNotFoundException (previously a 200 Success) when the target resource does not exist.
+* MarketplaceCatalog (4.0.103.0)
+	* Introducing two new APIs, DescribeAssessment and ListAssessments. These APIs expose validation issues on Marketplace resources. The validation issues are exposed via a newly created resource called Assessment.
+* MediaLive (4.0.102.0)
+	* AWS Elemental MediaLive now supports SCTE-35 marker passthrough without IDR frame insertion for CMAF Ingest, MediaPackage V2, and transport stream outputs.
+* Outposts (4.0.103.0)
+	* AWS Outposts now supports VPC Endpoint configuration in CreatePrivateConnectivityConfig, enabling scoped private connectivity with provisioning role creation for secure outpost installations
+* WorkSpaces (4.0.102.0)
+	* Amazon WorkSpaces now supports nested virtualization, allowing you to run hypervisors and virtualization-based workloads within your WorkSpaces. You can enable or disable nested virtualization when creating a WorkSpace or by modifying an existing WorkSpace's properties.
+* Core 4.0.101.1
+	* Update `RegionEndpoint.GetBySystemName` to validate the provided region system name is a valid host label
+	* All service and extension packages updated to require new Core
+
 ### 4.0.313.0 (2026-08-17 19:35 UTC)
 * BedrockAgentCoreControl (4.0.110.0)
 	* Adds implementations of third-party evaluators, both managed-as-a-service and as templates within custom evaluators.
