@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Amazon Lex Runtime Service. Amazon Lex is a service for building conversational interactions into any application using voice or text.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

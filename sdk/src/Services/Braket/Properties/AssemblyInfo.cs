@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Braket. Amazon Braket general availability with Device and Quantum Task operations.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Braket. Amazon Braket general availability with Device and Quantum Task operations.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Braket. Amazon Braket general availability with Device and Quantum Task operations.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Braket. Amazon Braket general availability with Device and Quantum Task operations.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Braket. Amazon Braket general availability with Device and Quantum Task operations.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

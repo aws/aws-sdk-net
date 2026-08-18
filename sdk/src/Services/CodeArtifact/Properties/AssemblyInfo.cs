@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - CodeArtifact. Added support for AWS CodeArtifact.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - CodeArtifact. Added support for AWS CodeArtifact.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - CodeArtifact. Added support for AWS CodeArtifact.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - CodeArtifact. Added support for AWS CodeArtifact.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - CodeArtifact. Added support for AWS CodeArtifact.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

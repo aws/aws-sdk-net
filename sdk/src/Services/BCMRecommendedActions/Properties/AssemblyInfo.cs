@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Billing and Cost Management Recommended Actions. Initial SDK release for AWS Billing and Cost Management Recommended Actions.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Billing and Cost Management Recommended Actions. Initial SDK release for AWS Billing and Cost Management Recommended Actions.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Billing and Cost Management Recommended Actions. Initial SDK release for AWS Billing and Cost Management Recommended Actions.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - AWS Billing and Cost Management Recommended Actions. Initial SDK release for AWS Billing and Cost Management Recommended Actions.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - AWS Billing and Cost Management Recommended Actions. Initial SDK release for AWS Billing and Cost Management Recommended Actions.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

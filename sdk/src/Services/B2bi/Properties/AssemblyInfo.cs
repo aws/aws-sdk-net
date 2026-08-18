@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS B2B Data Interchange. This is the initial SDK release for AWS B2B Data Interchange.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS B2B Data Interchange. This is the initial SDK release for AWS B2B Data Interchange.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS B2B Data Interchange. This is the initial SDK release for AWS B2B Data Interchange.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - AWS B2B Data Interchange. This is the initial SDK release for AWS B2B Data Interchange.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - AWS B2B Data Interchange. This is the initial SDK release for AWS B2B Data Interchange.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Lex Runtime V2. This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Lex Runtime V2. This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Lex Runtime V2. This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Amazon Lex Runtime V2. This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Amazon Lex Runtime V2. This release adds support for Amazon Lex V2 APIs for runtime, including Streaming APIs for conversation management.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

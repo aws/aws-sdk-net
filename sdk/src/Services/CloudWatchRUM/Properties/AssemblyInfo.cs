@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - CloudWatch RUM. This is the first public release of CloudWatch RUM")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
