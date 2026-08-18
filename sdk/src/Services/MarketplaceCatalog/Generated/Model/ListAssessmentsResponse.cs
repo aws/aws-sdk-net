@@ -30,17 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// This is the response object from the ListChangeSets operation.
+    /// This is the response object from the ListAssessments operation.
     /// </summary>
-    public partial class ListChangeSetsResponse : AmazonWebServiceResponse
+    public partial class ListAssessmentsResponse : AmazonWebServiceResponse
     {
-        private List<ChangeSetSummaryListItem> _changeSetSummaryList = AWSConfigs.InitializeCollections ? new List<ChangeSetSummaryListItem>() : null;
+        private List<AssessmentSummary> _assessmentSummaryList = AWSConfigs.InitializeCollections ? new List<AssessmentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ChangeSetSummaryList. 
+        /// Gets and sets the property AssessmentSummaryList. 
         /// <para>
-        ///  Array of <c>ChangeSetSummaryListItem</c> objects.
+        /// An array of <c>AssessmentSummary</c> objects.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -48,22 +48,22 @@ namespace Amazon.MarketplaceCatalog.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        public List<ChangeSetSummaryListItem> ChangeSetSummaryList
+        public List<AssessmentSummary> AssessmentSummaryList
         {
-            get { return this._changeSetSummaryList; }
-            set { this._changeSetSummaryList = value; }
+            get { return this._assessmentSummaryList; }
+            set { this._assessmentSummaryList = value; }
         }
 
-        // Check to see if ChangeSetSummaryList property is set
-        internal bool IsSetChangeSetSummaryList()
+        // Check to see if AssessmentSummaryList property is set
+        internal bool IsSetAssessmentSummaryList()
         {
-            return this._changeSetSummaryList != null && (this._changeSetSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._assessmentSummaryList != null && (this._assessmentSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The value of the next token, if it exists. Null if there are no more results.
+        /// The value of the next token, if it exists. <c>null</c> if there are no more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

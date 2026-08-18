@@ -28,6 +28,26 @@ namespace Amazon.MarketplaceCatalog.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeAssessment operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IDescribeAssessmentPaginator DescribeAssessment(DescribeAssessmentRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssessments operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAssessmentsPaginator ListAssessments(ListAssessmentsRequest request);
+
+        /// <summary>
         /// Paginator for ListChangeSets operation
         ///</summary>
         [AWSPaginator(

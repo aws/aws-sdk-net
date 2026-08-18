@@ -31,6 +31,65 @@
     <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentRequest.AssessmentIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(assessment-[a-zA-Z0-9]+|arn:[a-zA-Z0-9-]+:[a-zA-Z0-9-]+:[a-zA-Z0-9-]*:[0-9]*:[a-zA-Z0-9-]+/Assessment/assessment-[a-zA-Z0-9]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentResponse.AssessmentArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:*/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentResponse.AssessmentId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentResponse.CreatedAt</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentResponse.ExpiresAt</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentResponse.FrameworkId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-@.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DescribeAssessmentResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.DescribeChangeSetRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
@@ -133,6 +192,35 @@
     <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListAssessmentsRequest.Catalog</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListAssessmentsRequest.FrameworkId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-@]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListAssessmentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListAssessmentsRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ListAssessmentsResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListChangeSetsRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
@@ -146,14 +234,14 @@
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListChangeSetsRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
-    <pattern>^[\w+=.:@\-\/]$</pattern>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListChangeSetsResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
-    <pattern>^[\w+=.:@\-\/]$</pattern>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListEntitiesRequest.Catalog</property>
@@ -175,14 +263,14 @@
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListEntitiesRequest.NextToken</property>
     <min>1</min>
-    <max>2048</max>
-    <pattern>^[\w+=.:@\-\/]$</pattern>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListEntitiesResponse.NextToken</property>
     <min>1</min>
-    <max>2048</max>
-    <pattern>^[\w+=.:@\-\/]$</pattern>
+    <max>4096</max>
+    <pattern>^[\w+=.:@\-\/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListTagsForResourceRequest.ResourceArn</property>
@@ -273,6 +361,72 @@
     <min>1</min>
     <max>255</max>
     <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AMISecurityFilters.DeliveryOptionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AMISecuritySummary.DeliveryOptionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentSummary.AssessmentArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^[a-zA-Z0-9:*/-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentSummary.AssessmentId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentSummary.CreatedAt</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentSummary.ExpiresAt</property>
+    <min>20</min>
+    <max>20</max>
+    <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentSummary.FrameworkId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-@.]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentTargetFilter.ChangeSetId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentTargetFilter.EntityId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentTargetSummary.ChangeSetId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.AssessmentTargetSummary.EntityId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.BatchDescribeErrorDetail.ErrorCode</property>
@@ -375,6 +529,35 @@
     <min>1</min>
     <max>255</max>
     <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ContainerSecurityFilters.DeliveryOptionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ContainerSecuritySummary.DeliveryOptionId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ControlAssessment.ControlId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ControlError.Code</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[A-Z_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ControlError.Message</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.DataProductLastModifiedDateFilterDateRange.AfterValue</property>
@@ -495,6 +678,16 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(.)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ErrorScope.Name</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ErrorScope.Value</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.Filter.Name</property>
@@ -837,5 +1030,35 @@
     <min>0</min>
     <max>256</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ValidationExceptionField.ChangeType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[A-Z][\w]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ValidationExceptionField.EntityId</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9][.a-zA-Z0-9/-]+[a-zA-Z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ValidationExceptionField.EntityType</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ValidationExceptionField.Field</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z0-9\-_\.\/]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.ValidationExceptionField.Message</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>^(.)+$</pattern>
   </property-value-rule>
 </property-value-rules>
