@@ -67,6 +67,18 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.CreatePrivateConnectivityConfigRequest.OutpostId</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.CreatePrivateConnectivityConfigResponse.OutpostId</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.CreateQuoteRequest.CountryCode</property>
     <min>2</min>
     <max>2</max>
@@ -302,6 +314,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.GetPrivateConnectivityConfigRequest.OutpostId</property>
+    <min>1</min>
+    <max>180</max>
+    <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/)?op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetQuoteRequest.QuoteIdentifier</property>
@@ -1081,6 +1099,18 @@
     <pattern>^(arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:site/)?(os-[a-f0-9]{17})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Outposts.Model.PrivateConnectivityConfig.ProvisioningRoleArn</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>^arn:aws([a-z-]+)?:iam::\d{12}:role\/[a-zA-Z_0-9+=,.@\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.PrivateConnectivityConfig.RoleArn</property>
+    <min>1</min>
+    <max>150</max>
+    <pattern>^arn:aws([a-z-]+)?:iam::\d{12}:role\/[a-zA-Z_0-9+=,.@\-_\/]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Outposts.Model.Quote.AccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1253,5 +1283,17 @@
     <min>1</min>
     <max>1000</max>
     <pattern>^[\S \n]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.VpcInformation.VpcEndpointId</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>^vpce-[a-f0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.VpcInformation.VpcId</property>
+    <min>1</min>
+    <max>25</max>
+    <pattern>[a-z0-9-]+</pattern>
   </property-value-rule>
 </property-value-rules>

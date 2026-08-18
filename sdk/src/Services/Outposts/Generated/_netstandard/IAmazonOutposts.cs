@@ -38,6 +38,13 @@ namespace Amazon.Outposts
     /// to build and run applications on premises using the same programming interfaces as
     /// in Amazon Web Services Regions, while using local compute and storage resources for
     /// lower latency and local data processing needs.
+    /// 
+    ///  
+    /// <para>
+    /// You can use certain Amazon EC2 API actions for Amazon Web Services Outposts. For more
+    /// information on these API actions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/operation-list-outposts.html">Amazon
+    /// Web Services Outposts actions</a> in the <i>Amazon EC2 API Reference</i>.
+    /// </para>
     /// </summary>
     public partial interface IAmazonOutposts : IAmazonService, IDisposable
     {
@@ -188,6 +195,42 @@ namespace Amazon.Outposts
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreateOutpost">REST API Reference for CreateOutpost Operation</seealso>
         Task<CreateOutpostResponse> CreateOutpostAsync(CreateOutpostRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreatePrivateConnectivityConfig
+
+
+
+        /// <summary>
+        /// Creates the private connectivity configuration for the specified Outpost. Private
+        /// connectivity establishes a service link VPN connection between the Outpost and its
+        /// home Amazon Web Services Region using a VPC and subnet that you specify, which allows
+        /// the service link traffic to flow through your VPC and minimizes public internet exposure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrivateConnectivityConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePrivateConnectivityConfig service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ConflictException">
+        /// Updating or deleting this resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/CreatePrivateConnectivityConfig">REST API Reference for CreatePrivateConnectivityConfig Operation</seealso>
+        Task<CreatePrivateConnectivityConfigResponse> CreatePrivateConnectivityConfigAsync(CreatePrivateConnectivityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -631,6 +674,36 @@ namespace Amazon.Outposts
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetOutpostSupportedInstanceTypes">REST API Reference for GetOutpostSupportedInstanceTypes Operation</seealso>
         Task<GetOutpostSupportedInstanceTypesResponse> GetOutpostSupportedInstanceTypesAsync(GetOutpostSupportedInstanceTypesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPrivateConnectivityConfig
+
+
+
+        /// <summary>
+        /// Gets the private connectivity configuration for the specified Outpost.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPrivateConnectivityConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPrivateConnectivityConfig service method, as returned by Outposts.</returns>
+        /// <exception cref="Amazon.Outposts.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.NotFoundException">
+        /// The specified request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Outposts.Model.ValidationException">
+        /// A parameter is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/outposts-2019-12-03/GetPrivateConnectivityConfig">REST API Reference for GetPrivateConnectivityConfig Operation</seealso>
+        Task<GetPrivateConnectivityConfigResponse> GetPrivateConnectivityConfigAsync(GetPrivateConnectivityConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
