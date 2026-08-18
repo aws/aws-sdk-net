@@ -805,8 +805,8 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>IdMappingWorkflow</c> with a given name. This operation will succeed
-        /// even if a workflow with the given name does not exist.
+        /// Deletes the <c>IdMappingWorkflow</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+        /// if a workflow with the given name does not exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdMappingWorkflow service method.</param>
         /// 
@@ -821,6 +821,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -840,8 +843,8 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>IdMappingWorkflow</c> with a given name. This operation will succeed
-        /// even if a workflow with the given name does not exist.
+        /// Deletes the <c>IdMappingWorkflow</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+        /// if a workflow with the given name does not exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdMappingWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -859,6 +862,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -882,7 +888,8 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>IdNamespace</c> with a given name.
+        /// Deletes the <c>IdNamespace</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+        /// if an ID namespace with the given name does not exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespace service method.</param>
         /// 
@@ -892,6 +899,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -911,7 +921,8 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>IdNamespace</c> with a given name.
+        /// Deletes the <c>IdNamespace</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+        /// if an ID namespace with the given name does not exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIdNamespace service method.</param>
         /// <param name="cancellationToken">
@@ -924,6 +935,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -947,8 +961,8 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>MatchingWorkflow</c> with a given name. This operation will succeed
-        /// even if a workflow with the given name does not exist.
+        /// Deletes the <c>MatchingWorkflow</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+        /// if a workflow with the given name does not exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMatchingWorkflow service method.</param>
         /// 
@@ -963,6 +977,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -982,8 +999,8 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>MatchingWorkflow</c> with a given name. This operation will succeed
-        /// even if a workflow with the given name does not exist.
+        /// Deletes the <c>MatchingWorkflow</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+        /// if a workflow with the given name does not exist.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMatchingWorkflow service method.</param>
         /// <param name="cancellationToken">
@@ -1001,6 +1018,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1105,7 +1125,7 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>SchemaMapping</c> with a given name. This operation will succeed even
+        /// Deletes the <c>SchemaMapping</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
         /// if a schema with the given name does not exist. This operation will fail if there
         /// is a <c>MatchingWorkflow</c> object that references the <c>SchemaMapping</c> in the
         /// workflow's <c>InputSourceConfig</c>.
@@ -1123,6 +1143,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1142,7 +1165,7 @@ namespace Amazon.EntityResolution
 
 
         /// <summary>
-        /// Deletes the <c>SchemaMapping</c> with a given name. This operation will succeed even
+        /// Deletes the <c>SchemaMapping</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
         /// if a schema with the given name does not exist. This operation will fail if there
         /// is a <c>MatchingWorkflow</c> object that references the <c>SchemaMapping</c> in the
         /// workflow's <c>InputSourceConfig</c>.
@@ -1163,6 +1186,9 @@ namespace Amazon.EntityResolution
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.InternalServerException">
         /// This exception occurs when there is an internal failure in the Entity Resolution service.
+        /// </exception>
+        /// <exception cref="Amazon.EntityResolution.Model.ResourceNotFoundException">
+        /// The resource couldn't be found.
         /// </exception>
         /// <exception cref="Amazon.EntityResolution.Model.ThrottlingException">
         /// The request was denied due to request throttling.

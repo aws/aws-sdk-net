@@ -31,7 +31,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIdNamespace operation.
-    /// Deletes the <c>IdNamespace</c> with a given name.
+    /// Deletes the <c>IdNamespace</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+    /// if an ID namespace with the given name does not exist.
     /// </summary>
     public partial class DeleteIdNamespaceRequest : AmazonEntityResolutionRequest
     {
