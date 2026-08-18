@@ -59,9 +59,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Command. 
         /// <para>
         /// The command that's passed to the container. This parameter maps to <c>Cmd</c> in the
-        /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
-        /// section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a>
-        /// and the <c>COMMAND</c> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
+        /// Remote API</a> and the <c>COMMAND</c> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
         /// reference: CMD</a>.
         /// </para>
@@ -110,9 +110,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Environment. 
         /// <para>
         /// The environment variables to pass to a container. This parameter maps to Env in the
-        /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
-        /// section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a>
-        /// and the <c>--env</c> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
+        /// Remote API</a> and the <c>--env</c> parameter to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. 
         /// </para>
         ///  <important> 
@@ -202,8 +202,8 @@ namespace Amazon.Batch.Model
         /// are specified with either <c>repository-url/image:tag</c> or <c>repository-url/image@digest</c>.
         /// Up to 255 letters (uppercase and lowercase), numbers, hyphens, underscores, colons,
         /// periods, forward slashes, and number signs are allowed. This parameter maps to <c>Image</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+        /// in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>IMAGE</c> parameter of the <a href="https://docs.docker.com/engine/reference/run/#security-configuration">
         /// <i>docker run</i> </a>.
         /// </para>
@@ -247,8 +247,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>LogConfig</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+        /// This parameter maps to <c>LogConfig</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--log-driver</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
@@ -305,8 +305,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>Volumes</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+        /// This parameter maps to <c>Volumes</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <a href="">--volume</a> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
@@ -358,8 +358,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// When this parameter is <c>true</c>, the container is given elevated privileges on
         /// the host container instance (similar to the <c>root</c> user). This parameter maps
-        /// to <c>Privileged</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+        /// to <c>Privileged</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--privileged</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
@@ -385,8 +385,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ReadonlyRootFilesystem. 
         /// <para>
         /// When this parameter is true, the container is given read-only access to its root file
-        /// system. This parameter maps to <c>ReadonlyRootfs</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+        /// system. This parameter maps to <c>ReadonlyRootfs</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--read-only</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
@@ -524,8 +524,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// A list of <c>ulimits</c> to set in the container. If a <c>ulimit</c> value is specified
         /// in a task definition, it overrides the default values set by Docker. This parameter
-        /// maps to <c>Ulimits</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+        /// maps to <c>Ulimits</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--ulimit</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>

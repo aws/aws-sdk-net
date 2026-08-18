@@ -317,8 +317,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <c>LogConfig</c> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// This parameter maps to <c>LogConfig</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--log-driver</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. By default, containers use the same logging driver that the Docker daemon
         /// uses. However, the container might use a different logging driver than the Docker
@@ -500,8 +500,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ReadonlyRootFilesystem. 
         /// <para>
         /// When this parameter is true, the container is given read-only access to its root file
-        /// system. This parameter maps to <c>ReadonlyRootfs</c> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// system. This parameter maps to <c>ReadonlyRootfs</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--read-only</c> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
         /// <c>docker run</c> </a>.
         /// </para>
@@ -645,8 +645,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Ulimits. 
         /// <para>
         /// A list of <c>ulimit</c> values to set in the container. This parameter maps to <c>Ulimits</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--ulimit</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
@@ -677,9 +677,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property User. 
         /// <para>
         /// The user name to use inside the container. This parameter maps to <c>User</c> in the
-        /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
-        /// section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a>
-        /// and the <c>--user</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
+        /// Remote API</a> and the <c>--user</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
         /// </summary>
@@ -701,8 +701,8 @@ namespace Amazon.Batch.Model
         /// The number of vCPUs reserved for the container. For jobs that run on Amazon EC2 resources,
         /// you can specify the vCPU requirement for the job using <c>resourceRequirements</c>,
         /// but you can't specify the vCPU requirements in both the <c>vcpus</c> and <c>resourceRequirements</c>
-        /// object. This parameter maps to <c>CpuShares</c> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// object. This parameter maps to <c>CpuShares</c> in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--cpu-shares</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
         /// vCPU. This is required but can be specified in several places. It must be specified
