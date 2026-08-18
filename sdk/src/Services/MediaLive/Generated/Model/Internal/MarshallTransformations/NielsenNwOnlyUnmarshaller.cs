@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for NielsenWatermarksSettings Object
+    /// Response Unmarshaller for NielsenNwOnly Object
     /// </summary>  
-    public class NielsenWatermarksSettingsUnmarshaller : IJsonUnmarshaller<NielsenWatermarksSettings, JsonUnmarshallerContext>
+    public class NielsenNwOnlyUnmarshaller : IJsonUnmarshaller<NielsenNwOnly, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NielsenWatermarksSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public NielsenNwOnly Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            NielsenWatermarksSettings unmarshalledObject = new NielsenWatermarksSettings();
+            NielsenNwOnly unmarshalledObject = new NielsenNwOnly();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("nielsenCbetSettings", targetDepth, ref reader))
-                {
-                    var unmarshaller = NielsenCBETUnmarshaller.Instance;
-                    unmarshalledObject.NielsenCbetSettings = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("nielsenDistributionType", targetDepth, ref reader))
+                if (context.TestExpression("checkDigitString", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NielsenDistributionType = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.CheckDigitString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenNaesIiNwSettings", targetDepth, ref reader))
+                if (context.TestExpression("sid", targetDepth, ref reader))
                 {
-                    var unmarshaller = NielsenNaesIiNwUnmarshaller.Instance;
-                    unmarshalledObject.NielsenNaesIiNwSettings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    unmarshalledObject.Sid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("nielsenNwOnlySettings", targetDepth, ref reader))
+                if (context.TestExpression("timezone", targetDepth, ref reader))
                 {
-                    var unmarshaller = NielsenNwOnlyUnmarshaller.Instance;
-                    unmarshalledObject.NielsenNwOnlySettings = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Timezone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         }
 
 
-        private static NielsenWatermarksSettingsUnmarshaller _instance = new NielsenWatermarksSettingsUnmarshaller();        
+        private static NielsenNwOnlyUnmarshaller _instance = new NielsenNwOnlyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static NielsenWatermarksSettingsUnmarshaller Instance
+        public static NielsenNwOnlyUnmarshaller Instance
         {
             get
             {

@@ -37,6 +37,7 @@ namespace Amazon.MediaLive.Model
         private NielsenCBET _nielsenCbetSettings;
         private NielsenWatermarksDistributionTypes _nielsenDistributionType;
         private NielsenNaesIiNw _nielsenNaesIiNwSettings;
+        private NielsenNwOnly _nielsenNwOnlySettings;
 
         /// <summary>
         /// Gets and sets the property NielsenCbetSettings. Complete these fields only if you
@@ -84,6 +85,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetNielsenNaesIiNwSettings()
         {
             return this._nielsenNaesIiNwSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NielsenNwOnlySettings. Complete these fields only if you
+        /// want to insert watermarks of type Nielsen NAES VI (NW) only,without inserting NAES
+        /// II (N2) watermarks.
+        /// </summary>
+        public NielsenNwOnly NielsenNwOnlySettings
+        {
+            get { return this._nielsenNwOnlySettings; }
+            set { this._nielsenNwOnlySettings = value; }
+        }
+
+        // Check to see if NielsenNwOnlySettings property is set
+        internal bool IsSetNielsenNwOnlySettings()
+        {
+            return this._nielsenNwOnlySettings != null;
         }
 
     }
