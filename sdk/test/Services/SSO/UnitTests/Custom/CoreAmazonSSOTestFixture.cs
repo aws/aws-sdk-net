@@ -60,28 +60,25 @@ namespace AWSSDK.UnitTests
 
         public CoreAmazonSSOTestFixture WithGetRoleCredentialsSuccess()
         {
-#if BCL
+#if NETFRAMEWORK
             SsoClient.Setup(mock => mock.GetRoleCredentials(It.IsAny<GetRoleCredentialsRequest>()))
                 .Returns(() => GetRoleCredentialsResponse);
 #endif
 
-#if ASYNC_AWAIT
             SsoClient.Setup(mock =>
                     mock.GetRoleCredentialsAsync(It.IsAny<GetRoleCredentialsRequest>(), It.IsAny<CancellationToken>()))
                 .ReturnsAsync(() => GetRoleCredentialsResponse);
-#endif
 
             return this;
         }
 
-#if BCL
+#if NETFRAMEWORK
         public void AssertGetRoleCredentialsRequest(GetRoleCredentialsRequest expectedRequest)
         {
             SsoClient.Verify(mock => mock.GetRoleCredentials(It.Is<GetRoleCredentialsRequest>(MatchesRequest(expectedRequest))), Times.Once);
         }
 #endif
 
-#if ASYNC_AWAIT
         public void AssertGetRoleCredentialsAsyncRequest(GetRoleCredentialsRequest expectedRequest)
         {
             SsoClient.Verify(
@@ -90,7 +87,6 @@ namespace AWSSDK.UnitTests
                     It.IsAny<CancellationToken>()),
                 Times.Once);
         }
-#endif
 
         private static Expression<Func<GetRoleCredentialsRequest, bool>> MatchesRequest(
             GetRoleCredentialsRequest expectedRequest)

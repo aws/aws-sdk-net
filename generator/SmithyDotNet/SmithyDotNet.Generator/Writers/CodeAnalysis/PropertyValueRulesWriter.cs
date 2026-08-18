@@ -13,8 +13,8 @@ namespace SmithyDotNet.Generator.Writers.CodeAnalysis;
 /// <para />
 /// Mirrors the legacy generator's walk: operation input/output structures first (named
 /// <c>{Operation}Request</c>/<c>{Operation}Response</c> after the generated classes), then every
-/// other structure sorted by shape name. Only scalar members carrying a <c>length</c> or
-/// <c>pattern</c> constraint produce a rule.
+/// other structure sorted by shape name. Only scalar members carrying a <c>length</c>,
+/// <c>range</c>, or <c>pattern</c> constraint produce a rule.
 /// </summary>
 public sealed class PropertyValueRulesWriter(GenerationContext context)
 {
@@ -75,11 +75,14 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
             }
 
             // A constraint on the member overrides one on the target shape, matching TypeMapper.
-            // TODO: numeric range (smithy.api#range) isn't emitted yet - CloudTrail Data has none. Add
-            // a GetRange trait accessor and fold its min/max in here once a service needs it.
+            // length (string/blob) and range (numeric) are mutually exclusive per the Smithy spec, so
+            // a single min/max pair covers both.
             var length = member.GetLength() ?? target.GetLength();
+            var range = member.GetRange() ?? target.GetRange();
+            var min = length?.Min ?? range?.Min;
+            var max = length?.Max ?? range?.Max;
             var pattern = member.GetPattern() ?? target.GetPattern();
-            if (length?.Min is null && length?.Max is null && pattern is null)
+            if (min is null && max is null && pattern is null)
             {
                 continue;
             }
@@ -87,19 +90,20 @@ public sealed class PropertyValueRulesWriter(GenerationContext context)
             writer.WriteStartElement("property-value-rule");
             writer.WriteElementString("property", $"{context.Namespace}.Model.{shapeName}.{property}");
 
-            if (length?.Min is not null)
+            if (min is not null)
             {
-                writer.WriteElementString("min", length.Min.Value.ToString(CultureInfo.InvariantCulture));
+                writer.WriteElementString("min", min.Value.ToString(CultureInfo.InvariantCulture));
             }
 
-            if (length?.Max is not null)
+            if (max is not null)
             {
-                writer.WriteElementString("max", length.Max.Value.ToString(CultureInfo.InvariantCulture));
+                writer.WriteElementString("max", max.Value.ToString(CultureInfo.InvariantCulture));
             }
 
-            // TODO: the consuming analyzer compiles this pattern as a .NET Regex. If a service ever
-            // models a pattern that isn't a valid .NET regex, guard this (the legacy generator dropped
-            // such patterns). CloudTrail Data's all compile, so no guard yet.
+            // The consuming analyzer (AbstractPropertyValueAssignmentAnalyzer) wraps its `new Regex(pattern)`
+            // in a try/catch and silently skips the rule on failure, so an invalid .NET regex here is a
+            // missed check, not a build break. Every pattern across the six migrated services compiles
+            // today; revisit only if that stops being true.
             if (pattern is not null)
             {
                 writer.WriteElementString("pattern", pattern);

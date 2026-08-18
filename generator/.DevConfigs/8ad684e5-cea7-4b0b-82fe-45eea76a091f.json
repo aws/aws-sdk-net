@@ -1,0 +1,25 @@
+{
+  "services": [
+    {
+      "serviceName": "SSO",
+      "type": "patch",
+      "changeLogMessages": [
+        "SSO is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SimpleDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "SimpleDBv2 is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "SupportApp",
+      "type": "patch",
+      "changeLogMessages": [
+        "SupportApp is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}

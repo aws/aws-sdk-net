@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests
             _testFixture.Dispose();
         }
 
-#if BCL
+#if NETFRAMEWORK
         [TestMethod]
         public void CredentialsFromSsoAccessToken()
         {
@@ -61,7 +61,6 @@ namespace AWSSDK.UnitTests
         }
 #endif
 
-#if ASYNC_AWAIT
         [TestMethod]
         public async Task CredentialsFromSsoAccessTokenAsync()
         {
@@ -83,6 +82,5 @@ namespace AWSSDK.UnitTests
 
             _testFixture.AssertGetRoleCredentialsAsyncRequest(_testFixture.GetRoleCredentialsRequest);
         }
-#endif
     }
 }

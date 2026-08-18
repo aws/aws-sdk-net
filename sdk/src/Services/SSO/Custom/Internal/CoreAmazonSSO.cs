@@ -29,7 +29,7 @@ namespace Amazon.SSO.Internal
     /// </summary>
     public static class CoreAmazonSSO
     {
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Create credentials from SSO access token
         /// </summary>

@@ -27,7 +27,7 @@ namespace Amazon.SSO
     /// </summary>	
     public partial class AmazonSSOClient : AmazonServiceClient, IAmazonSSO
     {
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Create credentials from SSO access token
         /// </summary>

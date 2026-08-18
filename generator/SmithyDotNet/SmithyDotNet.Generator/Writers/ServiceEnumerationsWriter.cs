@@ -28,9 +28,14 @@ public sealed class ServiceEnumerationsWriter(GenerationContext context, string 
         FileHeader.WriteUsings(writer, FileHeader.ServiceEnumerationsUsings);
         writer.OpenNamespace(context.Namespace, () =>
         {
-            foreach (var (id, shape) in context.Enums)
+            for (var i = 0; i < context.Enums.Count; i++)
             {
-                WriteEnum(writer, id, shape);
+                if (i > 0)
+                {
+                    writer.WriteLine();
+                }
+
+                WriteEnum(writer, context.Enums[i].Id, context.Enums[i].Shape);
             }
         });
         return writer.ToFormattedString(cancellationToken);
@@ -46,10 +51,15 @@ public sealed class ServiceEnumerationsWriter(GenerationContext context, string 
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public class {className} : ConstantClass", () =>
         {
-            writer.WriteLine();
-
-            foreach (var member in members)
+            for (var i = 0; i < members.Count; i++)
             {
+                if (i > 0)
+                {
+                    writer.WriteLine();
+                }
+
+                var member = members[i];
+
                 // A member named Equals is emitted with `new` so the readonly field doesn't hide
                 // object.Equals.
                 var newModifier = member.PropertyName == "Equals" ? "new " : string.Empty;

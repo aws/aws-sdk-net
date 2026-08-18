@@ -18,7 +18,10 @@ public static class UnsupportedTraitValidator
         ["smithy.api#httpPayload"] = "@httpPayload",
         ["smithy.api#httpResponseCode"] = "@httpResponseCode",
         ["smithy.api#streaming"] = "@streaming",
+        ["smithy.api#httpChecksumRequired"] = "@httpChecksumRequired",
+        ["smithy.api#requestCompression"] = "@requestCompression",
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
+        ["aws.protocols#httpChecksum"] = "httpChecksum",
     };
 
     private static readonly Dictionary<string, string> DeniedResponseMemberTraits = new()
