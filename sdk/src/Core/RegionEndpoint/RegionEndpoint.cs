@@ -24,6 +24,8 @@ using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal.Endpoints.StandardLibrary;
 
 namespace Amazon
 {
@@ -115,8 +117,17 @@ namespace Amazon
         /// </summary>
         /// <param name="systemName">The system name of the service like "us-west-1"</param>
         /// <returns></returns>
+        /// <exception cref="AmazonClientException">
+        /// Thrown if <paramref name="systemName"/> is not null/empty/whitespace and is not a valid RFC 1123 host label (dotted subdomains are permitted).
+        /// </exception>
         public static RegionEndpoint GetBySystemName(string systemName)
         {
+            // Mirrors ClientConfig.ValidateRegion.
+            if (!string.IsNullOrWhiteSpace(systemName) && !Fn.IsValidHostLabel(systemName, true))
+            {
+                throw new AmazonClientException(string.Format(CultureInfo.InvariantCulture, "The specified '{0}' region is not a valid hostname component.", systemName));
+            }
+
             RegionEndpoint similarRegionEndpoint = null;
             string regionDescription = null;
             try

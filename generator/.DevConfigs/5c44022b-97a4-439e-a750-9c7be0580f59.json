@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Update `RegionEndpoint.GetBySystemName` to validate the provided region system name is a valid host label"
+    ]
+  }
+}

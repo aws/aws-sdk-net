@@ -47,10 +47,12 @@ namespace AWSSDK.UnitTests.DSQL
 
 #if NETFRAMEWORK
         private Dictionary<Type, IIdentityResolver> originalIdentityResolvers;
+        private string originalAWSRegion;
 
         [TestInitialize]
         public void Initialize()
         {
+            originalAWSRegion = AWSConfigs.AWSRegion;
             AWSConfigs.AWSRegion = AWSRegion.SystemName;
 
             FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
@@ -70,6 +72,9 @@ namespace AWSSDK.UnitTests.DSQL
         {
             FieldInfo field = typeof(DefaultIdentityResolverConfiguration).GetField("identityResolvers", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, originalIdentityResolvers);
+
+            AWSConfigs.AWSRegion = originalAWSRegion;
+            FallbackRegionFactory.Reset();
         }
 #endif
 

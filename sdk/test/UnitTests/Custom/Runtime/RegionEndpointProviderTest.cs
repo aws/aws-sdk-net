@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon;
+using Amazon.Runtime;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AWSSDK.UnitTests
@@ -20,6 +21,27 @@ namespace AWSSDK.UnitTests
     [TestClass]
     public class RegionEndpointProviderTest
     {
+        [TestMethod]
+        [DataRow("evil.com#")]
+        [DataRow("evil.com?x=")]
+        [DataRow("@external.com#")]
+        [DataRow("us-east-1-")]
+        [DataRow("-us-east-1")]
+        [DataRow("+-*/")]
+        [DataRow("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")] // Over 63 characters
+        public void TestThrowsForInvalidRegion(string region)
+        {
+            Assert.ThrowsExactly<AmazonClientException>(() => RegionEndpoint.GetBySystemName(region));
+        }
+
+        [TestMethod]
+        [DataRow("")]
+        [DataRow(" ")]
+        public void TestDoesNotThrowForEmptyOrWhitespaceRegion(string region)
+        {
+            var regionEndpoint = RegionEndpoint.GetBySystemName(region);
+            Assert.AreEqual(region, regionEndpoint.SystemName);
+        }
 
         [TestMethod]
         [DataRow("us-east-1", "US East (Virginia)")]

@@ -234,6 +234,11 @@ namespace Amazon.Runtime
                     {
                         cachedRegion = generator();
                     }
+                    catch (AmazonClientException)
+                    {
+                        // Invalid region value, not a missing source - don't fall through.
+                        throw;
+                    }
                     catch (Exception)
                     {
                         cachedRegion = null;
