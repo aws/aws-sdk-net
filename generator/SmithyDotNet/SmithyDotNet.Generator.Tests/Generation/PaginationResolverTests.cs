@@ -1,17 +1,15 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
-using SmithyDotNet.Generator.Model.Converters;
 using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Paginators;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Generation;
 
 public class PaginationResolverTests
 {
-    private static readonly JsonSerializerOptions Options = new() { Converters = { new ShapeConverter() } };
-
     [Fact]
     public void Resolves_WithItems()
     {
@@ -139,6 +137,38 @@ public class PaginationResolverTests
         Assert.Equal("d", trait.PageSize);
     }
 
+    // ModelFileName only feeds the license-header comment.
+    private const string ModelFileName = "paginated.json";
+    private static readonly GenerationContext PaginatorContext = TestModels.Context("Model/paginated-model.json");
+
+    [Fact]
+    public void PaginatorInterfaceAndClass_EmitTokenLoopAndResultKey()
+    {
+        var token = TestContext.Current.CancellationToken;
+        var op = PaginatorContext.PaginatedOperations.Single(p => p.Operation.Name == "ListThings");
+        var interfaceCode = new PaginatorInterfaceWriter(PaginatorContext, ModelFileName).Write(op, token);
+        var classCode = new PaginatorClassWriter(PaginatorContext, ModelFileName).Write(op, token);
+
+        Assert.Contains("public interface IListThingsPaginator", interfaceCode);
+        Assert.Contains("IPaginatedEnumerable<Thing> Things { get; }", interfaceCode);
+        Assert.Contains("internal sealed partial class ListThingsPaginator : IPaginator<ListThingsResponse>, IListThingsPaginator", classCode);
+        Assert.Contains("var nextToken = _request.NextToken;", classCode);
+        Assert.Contains("nextToken = response.NextToken;", classCode);
+        Assert.Contains("new PaginatedResultKeyResponse<ListThingsResponse, Thing>(this, (i) => i.Things ?? new List<Thing>());", classCode);
+    }
+
+    [Fact]
+    public void PaginatorFactory_EmitsAnnotatedMethodAndConstruction()
+    {
+        var token = TestContext.Current.CancellationToken;
+        var interfaceCode = new PaginatorFactoryInterfaceWriter(PaginatorContext, ModelFileName).Write(token);
+        var classCode = new PaginatorFactoryClassWriter(PaginatorContext, ModelFileName).Write(token);
+
+        Assert.Contains("""[AWSPaginator(InputToken = ["NextToken"], LimitKey = "MaxResults", OutputToken = ["NextToken"])]""", interfaceCode);
+        Assert.Contains("IListThingsPaginator ListThings(ListThingsRequest request);", interfaceCode);
+        Assert.Contains("return new ListThingsPaginator(this.client, request);", classCode);
+    }
+
     private static PaginatedOperation Resolve(string operationName)
     {
         var (index, ops) = LoadPaginatedModel();
@@ -147,9 +177,7 @@ public class PaginationResolverTests
 
     private static (ServiceIndex Index, List<Operation> Operations) LoadPaginatedModel()
     {
-        TargetPlatforms.Initialize("TestData");
-        var model = JsonSerializer.Deserialize<SmithyModel>(File.ReadAllBytes("TestData/paginated-model.json"), Options) ?? throw new InvalidOperationException();
-        var index = new ServiceIndex(model);
+        var index = new ServiceIndex(TestModels.Load("Model/paginated-model.json"));
         var ops = new List<Operation>();
         foreach (var (opId, opShape) in index.Operations)
         {

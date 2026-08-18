@@ -28,8 +28,8 @@ public class SdkNamingTests
         Assert.Equal(expected, SdkNaming.ResolveSigningName(shapeName, arnNamespace, sigV4Name));
     }
 
-    // Exhaustive coverage of the enum member-name munging. Each row exercises a distinct case; the
-    // expected values are the C2J generator's output for the same wire value (SimpleModels.cs).
+    // Exhaustive coverage of the wire-value-to-member-name conversion. Each row exercises a distinct
+    // case; the expected values are the C2J generator's output for the same wire value (SimpleModels.cs).
     [Theory]
     // Single token, already capitalized -> unchanged.
     [InlineData("ACTIVE", "ACTIVE")]
@@ -60,7 +60,7 @@ public class SdkNamingTests
     [InlineData("foo(bar)", "Foobar")]
     // Collides with object.Equals (drives the `new` keyword in emission).
     [InlineData("Equals", "Equals")]
-    public void ToEnumMemberName_ReproducesC2jMunging(string wireValue, string expected)
+    public void ToEnumMemberName_MatchesC2jNaming(string wireValue, string expected)
     {
         Assert.Equal(expected, SdkNaming.ToEnumMemberName(wireValue));
     }

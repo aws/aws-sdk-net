@@ -52,7 +52,7 @@ public class EndpointResolverWriterTests
     {
         // Present because the rule set has a Region parameter.
         Assert.Contains("var regionName = AWSSDKUtils.DetermineRegion(config.ServiceURL);", _output);
-        Assert.Contains("if (result.Region == \"us-east-1-regional\")", _output);
+        Assert.Contains("""if (result.Region == "us-east-1-regional")""", _output);
         Assert.Contains("if (requestContext.Request.AlternateEndpoint != null)", _output);
     }
 }

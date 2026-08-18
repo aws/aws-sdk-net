@@ -68,11 +68,11 @@ public class JsonStructureUnmarshallerWriterTests
     public void UnmarshallMethodContainsCorrectReadLogic()
     {
         Assert.Contains("while (context.ReadAtDepth(targetDepth, ref reader))", _auditEventUnmarshaller);
-        Assert.Contains("if (context.TestExpression(\"eventID\", targetDepth, ref reader))", _auditEventUnmarshaller);
+        Assert.Contains("""if (context.TestExpression("eventID", targetDepth, ref reader))""", _auditEventUnmarshaller);
         Assert.Contains("var unmarshaller = StringUnmarshaller.Instance;", _auditEventUnmarshaller);
         Assert.Contains("unmarshalledObject.EventID = unmarshaller.Unmarshall(context, ref reader);", _auditEventUnmarshaller);
         Assert.Contains("continue;", _auditEventUnmarshaller);
-        Assert.Contains("if (context.TestExpression(\"id\", targetDepth, ref reader))", _auditEventUnmarshaller);
+        Assert.Contains("""if (context.TestExpression("id", targetDepth, ref reader))""", _auditEventUnmarshaller);
         Assert.Contains("var unmarshaller = StringUnmarshaller.Instance;", _auditEventUnmarshaller);
         Assert.Contains("unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);", _auditEventUnmarshaller);
         Assert.Contains("continue;", _auditEventUnmarshaller);

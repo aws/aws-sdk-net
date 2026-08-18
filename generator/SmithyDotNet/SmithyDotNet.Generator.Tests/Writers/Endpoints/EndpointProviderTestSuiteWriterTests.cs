@@ -32,10 +32,10 @@ public class EndpointProviderTestSuiteWriterTests
     {
         // Every test case shares the same categories, so they're hoisted to the class instead of
         // repeated per [TestMethod].
-        Assert.Contains("[TestCategory(\"UnitTest\")]", _output);
-        Assert.Contains("[TestCategory(\"Endpoints\")]", _output);
-        Assert.Contains("[TestCategory(\"CloudTrailData\")]", _output);
-        Assert.Equal(1, Regex.Count(_output, Regex.Escape("[TestCategory(\"UnitTest\")]")));
+        Assert.Contains("""[TestCategory("UnitTest")]""", _output);
+        Assert.Contains("""[TestCategory("Endpoints")]""", _output);
+        Assert.Contains("""[TestCategory("CloudTrailData")]""", _output);
+        Assert.Equal(1, Regex.Count(_output, Regex.Escape("""[TestCategory("UnitTest")]""")));
     }
 
     [Fact]
@@ -56,7 +56,7 @@ public class EndpointProviderTestSuiteWriterTests
     [Fact]
     public void EmitsDescriptionPerTestMethod()
     {
-        Assert.Contains("[Description(\"For region us-east-1 with FIPS enabled and DualStack enabled\")]", _output);
+        Assert.Contains("""[Description("For region us-east-1 with FIPS enabled and DualStack enabled")]""", _output);
     }
 
     [Fact]
@@ -64,10 +64,10 @@ public class EndpointProviderTestSuiteWriterTests
     {
         Assert.Contains("public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()", _output);
         Assert.Contains("var parameters = new CloudTrailDataEndpointParameters();", _output);
-        Assert.Contains("parameters[\"Region\"] = \"us-east-1\";", _output);
-        Assert.Contains("parameters[\"UseFIPS\"] = true;", _output);
+        Assert.Contains("""parameters["Region"] = "us-east-1";""", _output);
+        Assert.Contains("""parameters["UseFIPS"] = true;""", _output);
         Assert.Contains("var endpoint = new AmazonCloudTrailDataEndpointProvider().ResolveEndpoint(parameters);", _output);
-        Assert.Contains("Assert.AreEqual(\"https://cloudtrail-data-fips.us-east-1.api.aws\", endpoint.URL);", _output);
+        Assert.Contains("""Assert.AreEqual("https://cloudtrail-data-fips.us-east-1.api.aws", endpoint.URL);""", _output);
     }
 
     [Fact]
@@ -76,7 +76,7 @@ public class EndpointProviderTestSuiteWriterTests
         Assert.Contains("public void Missing_region_Test()", _output);
         Assert.Contains("var exception = Assert.ThrowsExactly<AmazonClientException>(() =>", _output);
         Assert.Contains("new AmazonCloudTrailDataEndpointProvider().ResolveEndpoint(parameters);", _output);
-        Assert.Contains("Assert.AreEqual(@\"Invalid Configuration: Missing Region\", exception.Message);", _output);
+        Assert.Contains("""Assert.AreEqual(@"Invalid Configuration: Missing Region", exception.Message);""", _output);
     }
 
     [Fact]

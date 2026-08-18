@@ -1,4 +1,3 @@
-using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -30,63 +29,26 @@ public class TypeMapperTests
 
     private static readonly Dictionary<string, Shape> Targets = new()
     {
-        ["test#RangedInt"] = Deserialize("""{ "type": "integer", "traits": { "smithy.api#range": { "min": 1, "max": 1000 } } }"""),
-        ["test#SecretString"] = Deserialize("""{ "type": "string", "traits": { "smithy.api#sensitive": {} } }"""),
-        ["test#BoundedString"] = Deserialize("""{ "type": "string", "traits": { "smithy.api#length": { "min": 1, "max": 64 } } }"""),
-        ["test#FractionalRatio"] = Deserialize("""{ "type": "float", "traits": { "smithy.api#range": { "min": 0.01, "max": 99.99 } } }"""),
-        ["test#IntegralLiteralPercent"] = Deserialize("""{ "type": "double", "traits": { "smithy.api#range": { "min": 0.0, "max": 100.0 } } }"""),
-        ["test#MixedRatio"] = Deserialize("""{ "type": "double", "traits": { "smithy.api#range": { "min": 0.01, "max": 100 } } }"""),
-        ["test#ScientificBound"] = Deserialize("""{ "type": "double", "traits": { "smithy.api#range": { "min": 0, "max": 1E+17 } } }"""),
+        ["test#RangedInt"] = TestModels.DeserializeShape("""{ "type": "integer", "traits": { "smithy.api#range": { "min": 1, "max": 1000 } } }"""),
+        ["test#SecretString"] = TestModels.DeserializeShape("""{ "type": "string", "traits": { "smithy.api#sensitive": {} } }"""),
+        ["test#BoundedString"] = TestModels.DeserializeShape("""{ "type": "string", "traits": { "smithy.api#length": { "min": 1, "max": 64 } } }"""),
+        ["test#FractionalRatio"] = TestModels.DeserializeShape("""{ "type": "float", "traits": { "smithy.api#range": { "min": 0.01, "max": 99.99 } } }"""),
+        ["test#IntegralLiteralPercent"] = TestModels.DeserializeShape("""{ "type": "double", "traits": { "smithy.api#range": { "min": 0.0, "max": 100.0 } } }"""),
+        ["test#MixedRatio"] = TestModels.DeserializeShape("""{ "type": "double", "traits": { "smithy.api#range": { "min": 0.01, "max": 100 } } }"""),
+        ["test#ScientificBound"] = TestModels.DeserializeShape("""{ "type": "double", "traits": { "smithy.api#range": { "min": 0, "max": 1E+17 } } }"""),
         ["smithy.api#String"] = new StringShape(),
     };
 
-    private static readonly StructureShape Structure = (StructureShape)Deserialize(Model);
-
-    private static Shape Deserialize(string json) =>
-        JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options)
-        ?? throw new InvalidOperationException("Shape deserialized to null.");
-
-    // An enum-bearing model + context for the enum type-mapping tests: category is a string enum
-    // (maps to its ConstantClass, marshals as a string), priority is an intEnum (maps to int?), and
-    // filter keeps Status reachable so it resolves as a collection element target below.
-    private const string EnumModel = """
-    {
-      "smithy": "2.0",
-      "shapes": {
-        "com.example#Example": {
-          "type": "service", "version": "2023-01-01", "operations": [{ "target": "com.example#DoThing" }],
-          "traits": { "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" }, "aws.protocols#restJson1": {} }
-        },
-        "com.example#DoThing": {
-          "type": "operation", "input": { "target": "com.example#DoThingRequest" }, "output": { "target": "com.example#DoThingResponse" },
-          "traits": { "smithy.api#http": { "uri": "/things", "method": "POST" } }
-        },
-        "com.example#DoThingRequest": {
-          "type": "structure",
-          "members": {
-            "category": { "target": "com.example#Category" },
-            "priority": { "target": "com.example#Priority" },
-            "filter":   { "target": "com.example#Status" }
-          }
-        },
-        "com.example#DoThingResponse": { "type": "structure", "members": {} },
-        "com.example#Category": { "type": "enum", "members": { "STANDARD": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "STANDARD" } } } },
-        "com.example#Priority": { "type": "intEnum", "members": { "LOW": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 1 } } } },
-        "com.example#Status": { "type": "enum", "members": { "ACTIVE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ACTIVE" } } } }
-      }
-    }
-    """;
+    private static readonly StructureShape Structure = (StructureShape)TestModels.DeserializeShape(Model);
 
     private readonly GenerationContext _context;
 
     public TypeMapperTests()
     {
-        var model = JsonSerializer.Deserialize<SmithyModel>(EnumModel, CloudTrailModelFixture.Options)
-            ?? throw new InvalidOperationException("Model deserialized to null.");
-        _context = new GenerationContext(new ServiceIndex(model), new SdkVersionManifest
-        {
-            ServiceVersions = new Dictionary<string, ServiceVersion> { ["Example"] = new() { Version = "4.0.0.0" } },
-        });
+        // The enum type-mapping tests ride the codegen model's DoEnums operation: category is a string
+        // enum (maps to its ConstantClass, marshals as a string), priority is an intEnum (maps to int?),
+        // and Status stays reachable so it resolves as a collection element target below.
+        _context = TestModels.Context("Codegen/codegen-model.json");
     }
 
     private static string? AwsProperty(string memberName)
@@ -99,44 +61,6 @@ public class TypeMapperTests
     {
         var member = Structure.Members[memberName];
         return TypeMapper.BuildObsolete(memberName, member, Targets[member.Target.AbsoluteName]);
-    }
-
-    // Resolves the given members as a plain (non-exception) structure's input, so ResolveMembers can be
-    // exercised with a real GenerationContext.
-    private static List<Member> ResolveMembers(string members)
-    {
-        var json = $$"""
-        {
-          "smithy": "2.0",
-          "shapes": {
-            "com.example#Example": {
-              "type": "service",
-              "version": "2023-01-01",
-              "operations": [{ "target": "com.example#DoThing" }],
-              "traits": {
-                "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
-                "aws.protocols#restJson1": {}
-              }
-            },
-            "com.example#DoThing": {
-              "type": "operation",
-              "input": { "target": "com.example#Thing" },
-              "output": { "target": "smithy.api#Unit" },
-              "traits": { "smithy.api#http": { "uri": "/things", "method": "POST" } }
-            },
-            "com.example#Thing": { "type": "structure", "members": { {{members}} } }
-          }
-        }
-        """;
-
-        var model = JsonSerializer.Deserialize<SmithyModel>(json, CloudTrailModelFixture.Options)
-            ?? throw new InvalidOperationException("Model deserialized to null.");
-        var context = new GenerationContext(new ServiceIndex(model), new SdkVersionManifest
-        {
-            ServiceVersions = new Dictionary<string, ServiceVersion> { ["Example"] = new() { Version = "4.0.0.0" } },
-        });
-
-        return TypeMapper.ResolveMembers(context.Operations.Single().Input, context);
     }
 
     [Fact]
@@ -217,7 +141,7 @@ public class TypeMapperTests
     public void MultipleFacets_AllEmitted()
     {
         var member = Structure.Members["name"];
-        var sensitiveBounded = Deserialize("""{ "type": "string", "traits": { "smithy.api#sensitive": {}, "smithy.api#length": { "min": 2, "max": 8 } } }""");
+        var sensitiveBounded = TestModels.DeserializeShape("""{ "type": "string", "traits": { "smithy.api#sensitive": {}, "smithy.api#length": { "min": 2, "max": 8 } } }""");
         var result = TypeMapper.BuildAwsProperty(member, sensitiveBounded);
         Assert.NotNull(result);
         Assert.StartsWith("[AWSProperty(", result);
@@ -236,7 +160,7 @@ public class TypeMapperTests
     [InlineData("timestamp", "DateTime?")]
     public void MapScalar_SupportedScalars_MapToNullableValueTypes(string smithyType, string expected)
     {
-        var shape = Deserialize($$"""{ "type": "{{smithyType}}" }""");
+        var shape = TestModels.DeserializeShape($$"""{ "type": "{{smithyType}}" }""");
         Assert.Equal(expected, TypeMapper.MapScalar(shape));
     }
 
@@ -254,13 +178,13 @@ public class TypeMapperTests
     [InlineData("""{ "type": "structure", "members": {} }""")]
     public void MapScalar_NonValueScalars_ReturnNull(string json)
     {
-        Assert.Null(TypeMapper.MapScalar(Deserialize(json)));
+        Assert.Null(TypeMapper.MapScalar(TestModels.DeserializeShape(json)));
     }
 
     [Fact]
     public void EnumMember_MapsToConstantClass_IntEnumMapsToInt()
     {
-        var request = _context.Operations.Single(o => o.Name == "DoThing").Input;
+        var request = _context.Operations.Single(o => o.Name == "DoEnums").Input;
         var members = TypeMapper.ResolveMembers(request, _context);
 
         var category = members.Single(m => m.ModeledName == "category");
@@ -281,7 +205,7 @@ public class TypeMapperTests
         // The marshaller writers only route string and structure list elements; an enum element would
         // map to its ConstantClass, which WriteListElement can't emit. MapType must fail loud here
         // rather than mapping the type and blowing up deep in the writer.
-        var list = Deserialize($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
+        var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
         var id = ShapeId.Parse("com.example#EnumList");
         Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
     }
@@ -293,11 +217,9 @@ public class TypeMapperTests
         // ResolveMembers flags it shape-agnostically; siblings are untouched. The emitted `new` keyword is
         // covered by RichExceptionCodegenTests.ShadowingMembers_EmittedWithNewModifier — this pins the flag
         // that feeds it, and is the only coverage of the non-exception path.
-        var members = ResolveMembers(
-            """
-            "equals": { "target": "smithy.api#String" },
-            "name":   { "target": "smithy.api#String" }
-            """);
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        var op = context.Operations.Single(o => o.Name == "DoShadow");
+        var members = TypeMapper.ResolveMembers(op.Input, context);
 
         Assert.True(members.Single(m => m.PropertyName == "Equals").HidesBaseMember);
         Assert.False(members.Single(m => m.PropertyName == "Name").HidesBaseMember);

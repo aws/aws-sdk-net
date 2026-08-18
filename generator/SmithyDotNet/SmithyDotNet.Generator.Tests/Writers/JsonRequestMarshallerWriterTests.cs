@@ -48,18 +48,18 @@ public class JsonRequestMarshallerWriterTests
     [Fact]
     public void EmitsRequestSetup()
     {
-        Assert.Contains("IRequest request = new DefaultRequest(publicRequest, \"Amazon.CloudTrailData\");", _putAuditEventsRequestMarshaller);
-        Assert.Contains("request.Headers[\"Content-Type\"] = \"application/json\";", _putAuditEventsRequestMarshaller);
-        Assert.Contains("request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = \"2021-08-11\";", _putAuditEventsRequestMarshaller);
-        Assert.Contains("request.HttpMethod = \"POST\";", _putAuditEventsRequestMarshaller);
-        Assert.Contains("request.ResourcePath = \"/PutAuditEvents\";", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""IRequest request = new DefaultRequest(publicRequest, "Amazon.CloudTrailData");""", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""request.Headers["Content-Type"] = "application/json";""", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-08-11";""", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""request.HttpMethod = "POST";""", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""request.ResourcePath = "/PutAuditEvents";""", _putAuditEventsRequestMarshaller);
     }
 
     [Fact]
     public void EmitsQueryStringParameters()
     {
-        Assert.Contains("request.Parameters.Add(\"channelArn\", StringUtils.FromString(publicRequest.ChannelArn));", _putAuditEventsRequestMarshaller);
-        Assert.Contains("request.Parameters.Add(\"externalId\", StringUtils.FromString(publicRequest.ExternalId));", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""request.Parameters.Add("channelArn", StringUtils.FromString(publicRequest.ChannelArn));""", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""request.Parameters.Add("externalId", StringUtils.FromString(publicRequest.ExternalId));""", _putAuditEventsRequestMarshaller);
         Assert.Contains("request.UseQueryString = true;", _putAuditEventsRequestMarshaller);
     }
 
@@ -68,7 +68,7 @@ public class JsonRequestMarshallerWriterTests
     {
         Assert.Contains("writer.WriteStartObject();", _putAuditEventsRequestMarshaller);
         Assert.Contains("var context = new JsonMarshallerContext(request, writer);", _putAuditEventsRequestMarshaller);
-        Assert.Contains("context.Writer.WritePropertyName(\"auditEvents\");", _putAuditEventsRequestMarshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("auditEvents");""", _putAuditEventsRequestMarshaller);
         Assert.Contains("context.Writer.WriteStartArray();", _putAuditEventsRequestMarshaller);
         Assert.Contains("var marshaller = AuditEventMarshaller.Instance;", _putAuditEventsRequestMarshaller);
         Assert.Contains("context.Writer.WriteEndArray();", _putAuditEventsRequestMarshaller);
@@ -110,6 +110,6 @@ public class JsonRequestMarshallerWriterTests
     public void EmitsIsRequiredCheck()
     {
         Assert.Contains("if (string.IsNullOrEmpty(publicRequest.ChannelArn))", _putAuditEventsRequestMarshaller);
-        Assert.Contains(" throw new AmazonCloudTrailDataException(\"Request object does not have required field ChannelArn set\");", _putAuditEventsRequestMarshaller);
+        Assert.Contains(""" throw new AmazonCloudTrailDataException("Request object does not have required field ChannelArn set");""", _putAuditEventsRequestMarshaller);
     }
 }

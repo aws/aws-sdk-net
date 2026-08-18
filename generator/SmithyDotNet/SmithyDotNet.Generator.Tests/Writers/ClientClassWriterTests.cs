@@ -118,11 +118,11 @@ public class ClientClassWriterTests
         // impact), and a single doc keeps the generator simpler. This is a deliberate, documented
         // cosmetic divergence from the C2J output. The fuller _netstandard wording is the one emitted.
         Assert.Contains("/// Customizes the runtime pipeline.", _output);
-        Assert.Contains("/// <param name=\"pipeline\">Runtime pipeline for the current client.</param>", _output);
+        Assert.Contains("""/// <param name="pipeline">Runtime pipeline for the current client.</param>""", _output);
 
         // The _bcl-only wording and its empty <param> are not emitted.
         Assert.DoesNotContain("/// Customize the pipeline", _output);
-        Assert.DoesNotContain("/// <param name=\"pipeline\"></param>", _output);
+        Assert.DoesNotContain("""/// <param name="pipeline"></param>""", _output);
 
         // The doc block carries no preprocessor guard. The only #if NETFRAMEWORK in the file is the
         // sync-method-visibility split, which sits after CustomizeRuntimePipeline.
@@ -168,11 +168,11 @@ public class ClientClassWriterTests
     public void EmitsOperationDocumentationAndExceptionTags()
     {
         Assert.Contains("Ingests your application events into CloudTrail Lake.", _output);
-        Assert.Contains("<param name=\"request\">Container for the necessary parameters to execute the PutAuditEvents service method.</param>", _output);
+        Assert.Contains("""<param name="request">Container for the necessary parameters to execute the PutAuditEvents service method.</param>""", _output);
         Assert.Contains("<returns>The response from the PutAuditEvents service method, as returned by CloudTrailData.</returns>", _output);
-        Assert.Contains("<exception cref=\"Amazon.CloudTrailData.Model.ChannelNotFoundException\">", _output);
-        Assert.Contains("<exception cref=\"Amazon.CloudTrailData.Model.UnsupportedOperationException\">", _output);
-        Assert.Contains("<seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-data-2021-08-11/PutAuditEvents\">REST API Reference for PutAuditEvents Operation</seealso>", _output);
+        Assert.Contains("""<exception cref="Amazon.CloudTrailData.Model.ChannelNotFoundException">""", _output);
+        Assert.Contains("""<exception cref="Amazon.CloudTrailData.Model.UnsupportedOperationException">""", _output);
+        Assert.Contains("""<seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-data-2021-08-11/PutAuditEvents">REST API Reference for PutAuditEvents Operation</seealso>""", _output);
     }
 
     [Fact]

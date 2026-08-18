@@ -1,4 +1,3 @@
-using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
@@ -9,93 +8,15 @@ using Xunit;
 namespace SmithyDotNet.Generator.Tests.Writers;
 
 /// <summary>
-/// Drives the enum path against an inline model: the <see cref="ServiceEnumerationsWriter"/> emission
-/// (ConstantClass declarations, member munging, the <c>Equals</c>/<c>new</c> guard, intEnum exclusion,
-/// unreachable-enum collection, the throw on a missing value) plus the marshaller/unmarshaller writers
-/// that route an enum member through the string path. Type-mapping is covered by <see cref="TypeMapperTests"/>.
+/// Drives the enum path in the shared codegen model (the DoEnums operation): the
+/// <see cref="ServiceEnumerationsWriter"/> emission (ConstantClass declarations, member naming, the
+/// <c>Equals</c>/<c>new</c> guard, intEnum exclusion, unreachable-enum collection, the throw on a
+/// missing value) plus the marshaller/unmarshaller writers that route an enum member through the
+/// string path. Type-mapping is covered by <see cref="TypeMapperTests"/>.
 /// </summary>
 public class EnumCodegenTests
 {
     private const string ModelFileName = "enums.json";
-
-    // InstanceType's member KEYS deliberately differ from the munged property names (e.g. AWS ->
-    // AmazonWebServices) to prove the writer munges the smithy.api#enumValue wire value, not the
-    // member name. Priority is an intEnum: C2J emits no ConstantClass for it. OrphanExceptionReason is
-    // referenced by no operation, proving enum collection scans every model shape, not the reachable set.
-    private const string ModelJson = """
-    {
-      "smithy": "2.0",
-      "shapes": {
-        "com.example#Example": {
-          "type": "service",
-          "version": "2023-01-01",
-          "operations": [{ "target": "com.example#DoThing" }],
-          "traits": {
-            "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
-            "aws.protocols#restJson1": {}
-          }
-        },
-        "com.example#DoThing": {
-          "type": "operation",
-          "input": { "target": "com.example#DoThingRequest" },
-          "output": { "target": "com.example#DoThingResponse" },
-          "traits": { "smithy.api#http": { "uri": "/things/{kind}", "method": "POST" } }
-        },
-        "com.example#DoThingRequest": {
-          "type": "structure",
-          "members": {
-            "kind":     { "target": "com.example#InstanceType", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
-            "filter":   { "target": "com.example#Status", "traits": { "smithy.api#httpQuery": "status" } },
-            "tag":      { "target": "com.example#Status", "traits": { "smithy.api#httpHeader": "x-status" } },
-            "category": { "target": "com.example#Category" },
-            "priority": { "target": "com.example#Priority" }
-          }
-        },
-        "com.example#DoThingResponse": {
-          "type": "structure",
-          "members": {
-            "resultStatus": { "target": "com.example#Status" }
-          }
-        },
-        "com.example#InstanceType": {
-          "type": "enum",
-          "members": {
-            "T2MICRO": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "t2.micro" } },
-            "AWS":     { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "amazon-web-services" } },
-            "EQ":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "Equals" } },
-            "GP":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "GENERAL_PURPOSE" } },
-            "AB":      { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "a.b" } }
-          }
-        },
-        "com.example#Status": {
-          "type": "enum",
-          "members": {
-            "ACTIVE":   { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ACTIVE" } },
-            "INACTIVE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "INACTIVE" } }
-          }
-        },
-        "com.example#Category": {
-          "type": "enum",
-          "members": {
-            "STANDARD": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "STANDARD" } }
-          }
-        },
-        "com.example#Priority": {
-          "type": "intEnum",
-          "members": {
-            "LOW":  { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 1 } },
-            "HIGH": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 10 } }
-          }
-        },
-        "com.example#OrphanExceptionReason": {
-          "type": "enum",
-          "members": {
-            "UNKNOWN": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "UNKNOWN" } }
-          }
-        }
-      }
-    }
-    """;
 
     private readonly GenerationContext _context;
     private readonly string _enums;
@@ -104,27 +25,19 @@ public class EnumCodegenTests
 
     public EnumCodegenTests()
     {
-        _context = BuildContext(ModelJson);
+        // InstanceType's member KEYS deliberately differ from the generated property names (e.g. AWS ->
+        // AmazonWebServices) to prove the writer derives the property name from the smithy.api#enumValue
+        // wire value, not the member name. Priority is an intEnum: C2J emits no ConstantClass for it. OrphanExceptionReason is
+        // referenced by no operation, proving enum collection scans every model shape, not the reachable set.
+        _context = TestModels.Context("Codegen/codegen-model.json");
         _enums = new ServiceEnumerationsWriter(_context, ModelFileName).Write(TestContext.Current.CancellationToken);
 
-        var operation = _context.Operations.Single(o => o.Name == "DoThing");
+        var operation = _context.Operations.Single(o => o.Name == "DoEnums");
         _requestMarshaller = new JsonRequestMarshallerWriter(_context, ModelFileName)
             .Write(operation, TestContext.Current.CancellationToken);
         _responseUnmarshaller = new JsonResponseUnmarshallerWriter(_context, ModelFileName)
             .Write(operation, TestContext.Current.CancellationToken);
     }
-
-    private static GenerationContext BuildContext(string modelJson)
-    {
-        var model = JsonSerializer.Deserialize<SmithyModel>(modelJson, CloudTrailModelFixture.Options)
-            ?? throw new InvalidOperationException("Model deserialized to null.");
-        return new GenerationContext(new ServiceIndex(model), new SdkVersionManifest
-        {
-            ServiceVersions = new Dictionary<string, ServiceVersion> { ["Example"] = new() { Version = "4.0.0.0" } },
-        });
-    }
-
-    // ---- Emission (ServiceEnumerationsWriter) ------------------------------------------------
 
     [Fact]
     public void Emission_DeclaresConstantClassPerEnum()
@@ -135,9 +48,8 @@ public class EnumCodegenTests
     }
 
     [Fact]
-    public void Emission_MungesTheWireValueNotTheMemberName()
+    public void Emission_NamesPropertiesFromTheWireValueNotTheMemberName()
     {
-        // Member key "T2MICRO" with enumValue "t2.micro" -> property T2Micro; key "AWS" -> AmazonWebServices.
         Assert.Contains("""public static readonly InstanceType T2Micro = new InstanceType("t2.micro");""", _enums);
         Assert.Contains("""public static readonly InstanceType AmazonWebServices = new InstanceType("amazon-web-services");""", _enums);
         Assert.Contains("""public static readonly InstanceType GENERAL_PURPOSE = new InstanceType("GENERAL_PURPOSE");""", _enums);
@@ -186,30 +98,12 @@ public class EnumCodegenTests
     public void Emission_EnumMemberWithoutValue_Throws()
     {
         // C2J has no value to fall back to, so a member missing smithy.api#enumValue is an error rather
-        // than a silent default to the Smithy member name.
-        var context = BuildContext("""
-        {
-          "smithy": "2.0",
-          "shapes": {
-            "com.example#Svc": {
-              "type": "service", "version": "2023-01-01", "operations": [{ "target": "com.example#Op" }],
-              "traits": { "aws.api#service": { "sdkId": "Example", "endpointPrefix": "svc" }, "aws.protocols#restJson1": {} }
-            },
-            "com.example#Op": {
-              "type": "operation", "input": { "target": "com.example#OpRequest" }, "output": { "target": "com.example#OpResponse" },
-              "traits": { "smithy.api#http": { "uri": "/x", "method": "POST" } }
-            },
-            "com.example#OpRequest": { "type": "structure", "members": {} },
-            "com.example#OpResponse": { "type": "structure", "members": {} },
-            "com.example#Bare": { "type": "enum", "members": { "NOVALUE": { "target": "smithy.api#Unit" } } }
-          }
-        }
-        """);
+        // than a silent default to the Smithy member name. The bad enum needs its own model — in the
+        // shared one it would break every emission test above.
+        var context = TestModels.Context("Codegen/enum-missing-value-model.json");
         var writer = new ServiceEnumerationsWriter(context, ModelFileName);
         Assert.Throws<GeneratorException>(() => writer.Write(TestContext.Current.CancellationToken));
     }
-
-    // ---- Marshalling: enum rides the string path ---------------------------------------------
 
     [Fact]
     public void RequestMarshaller_BodyEnum_WritesStringValue()
@@ -242,7 +136,7 @@ public class EnumCodegenTests
     {
         // A nested structure with an enum member (rides the string path) and an intEnum member (a plain
         // int). Without MarshalType dispatch the enum member would miss the "string" case and throw.
-        var detail = (StructureShape)Deserialize("""
+        var detail = (StructureShape)TestModels.DeserializeShape("""
             { "type": "structure", "members": {
                 "state": { "target": "com.example#Status" },
                 "rank":  { "target": "com.example#Priority" } } }
@@ -263,18 +157,16 @@ public class EnumCodegenTests
         Assert.Contains("response.ResultStatus = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
     }
 
-    // ---- Shape deserialization ----------------------------------------------------------------
-
     [Fact]
     public void ShapeConverter_DeserializesEnumAndIntEnum()
     {
-        var enumShape = Deserialize("""
+        var enumShape = TestModels.DeserializeShape("""
             { "type": "enum", "members": { "A": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "a-value" } } } }
             """);
         var enumMember = Assert.IsType<EnumShape>(enumShape).Members["A"];
         Assert.Equal("a-value", enumMember.GetEnumValue());
 
-        var intEnum = Deserialize("""
+        var intEnum = TestModels.DeserializeShape("""
             { "type": "intEnum", "members": { "ONE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 1 } } } }
             """);
         Assert.IsType<IntEnumShape>(intEnum);
@@ -285,7 +177,7 @@ public class EnumCodegenTests
     {
         // An intEnum member's enumValue is an integer; GetStringTrait returns null for a non-string value
         // rather than throwing, so an intEnum member never reads as a string.
-        var intEnum = (IntEnumShape)Deserialize("""
+        var intEnum = (IntEnumShape)TestModels.DeserializeShape("""
             { "type": "intEnum", "members": { "ONE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": 1 } } } }
             """);
         Assert.Null(intEnum.Members["ONE"].GetEnumValue());
@@ -296,13 +188,9 @@ public class EnumCodegenTests
     {
         // A member with no enumValue trait yields null; the enum writer then throws (C2J has no value to
         // carry).
-        var enumShape = (EnumShape)Deserialize("""
+        var enumShape = (EnumShape)TestModels.DeserializeShape("""
             { "type": "enum", "members": { "BARE": { "target": "smithy.api#Unit" } } }
             """);
         Assert.Null(enumShape.Members["BARE"].GetEnumValue());
     }
-
-    private static Shape Deserialize(string json) =>
-        JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options)
-        ?? throw new InvalidOperationException("Shape deserialized to null.");
 }

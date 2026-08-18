@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.RegularExpressions;
-using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
+using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
 
@@ -12,81 +12,21 @@ public class RichExceptionCodegenTests
     private const string ModelFileName = "example-2023-01-01.normal.json";
     private const string Namespace = "com.example";
 
-    private const string ModelJson = """
-    {
-      "smithy": "2.0",
-      "shapes": {
-        "com.example#Example": {
-          "type": "service",
-          "version": "2023-01-01",
-          "operations": [{ "target": "com.example#DoThing" }],
-          "traits": {
-            "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
-            "aws.protocols#restJson1": {}
-          }
-        },
-        "com.example#DoThing": {
-          "type": "operation",
-          "input": { "target": "smithy.api#Unit" },
-          "output": { "target": "smithy.api#Unit" },
-          "errors": [{ "target": "com.example#ResourceConflict" }],
-          "traits": { "smithy.api#http": { "uri": "/things", "method": "POST" } }
-        },
-        "com.example#ResourceConflict": {
-          "type": "structure",
-          "members": {
-            "message":      { "target": "smithy.api#String" },
-            "resourceName": { "target": "smithy.api#String", "traits": { "smithy.api#jsonName": "resource_name" } },
-            "attemptCount": { "target": "smithy.api#Integer" },
-            "details":      { "target": "com.example#ConflictDetails" },
-            "related":      { "target": "com.example#ResourceList" },
-            "errorType":    { "target": "smithy.api#String" },
-            "equals":       { "target": "smithy.api#String" },
-            "retryable":    { "target": "smithy.api#String" },
-            "requestId":    { "target": "smithy.api#String" },
-            "errorCode":    { "target": "smithy.api#String" }
-          },
-          "traits": {
-            "smithy.api#error": "client",
-            "smithy.api#documentation": "The resource is in conflict."
-          }
-        },
-        "com.example#ConflictDetails": {
-          "type": "structure",
-          "members": {
-            "reason": { "target": "smithy.api#String" }
-          }
-        },
-        "com.example#ResourceList": {
-          "type": "list",
-          "member": { "target": "com.example#RelatedResource" }
-        },
-        "com.example#RelatedResource": {
-          "type": "structure",
-          "members": {
-            "arn": { "target": "smithy.api#String" }
-          }
-        }
-      }
-    }
-    """;
+    // ResourceConflict in the shared codegen model carries every rich-member scenario asserted below:
+    // @jsonName, a nested structure, a list of structures, and the renamed/shadowed/base-owned names.
+    private const string SharedModel = "Codegen/codegen-model.json";
 
     private readonly string _exceptionClass;
     private readonly string _exceptionUnmarshaller;
 
     public RichExceptionCodegenTests()
     {
-        (_exceptionClass, _exceptionUnmarshaller) = Generate(ModelJson, "ResourceConflict");
+        (_exceptionClass, _exceptionUnmarshaller) = Generate(TestModels.Load(SharedModel), "ResourceConflict");
     }
 
-    private static (string ExceptionClass, string Unmarshaller) Generate(string modelJson, string errorShapeName)
+    private static (string ExceptionClass, string Unmarshaller) Generate(SmithyModel model, string errorShapeName)
     {
-        var model = JsonSerializer.Deserialize<SmithyModel>(modelJson, CloudTrailModelFixture.Options)
-            ?? throw new InvalidOperationException("Model deserialized to null.");
-        var context = new GenerationContext(new ServiceIndex(model), new SdkVersionManifest
-        {
-            ServiceVersions = new Dictionary<string, ServiceVersion> { ["Example"] = new() { Version = "4.0.0.0" } },
-        });
+        var context = TestModels.Context(model);
 
         var errorId = ShapeId.Parse($"{Namespace}#{errorShapeName}");
         var errorShape = context.Errors[errorId];
@@ -212,46 +152,21 @@ public class RichExceptionCodegenTests
     }
 
     [Theory]
-    [InlineData(""" "smithy.api#retryable": { "throttling": true } """, "new RetryableDetails(true)")]
-    [InlineData(""" "smithy.api#retryable": { "throttling": false } """, "new RetryableDetails(false)")]
-    [InlineData(""" "smithy.api#retryable": {} """, "new RetryableDetails(false)")]
+    [InlineData("""{ "throttling": true }""", "new RetryableDetails(true)")]
+    [InlineData("""{ "throttling": false }""", "new RetryableDetails(false)")]
+    [InlineData("""{}""", "new RetryableDetails(false)")]
     public void RetryableTrait_EmitsOverride(string retryableTrait, string expectedCtor)
     {
         // A non-null RetryableDetails override marks the exception retryable; the bool is throttling vs
-        // plain retryable. An empty @retryable ({}) is retryable but not throttling. Uses a bare shape —
-        // the @retryable trait can't coexist with a member named "retryable" (they'd both emit Retryable).
-        var (exceptionClass, _) = Generate(BuildRetryableModel(retryableTrait), "Boom");
+        // plain retryable. An empty @retryable ({}) is retryable but not throttling. The trait is
+        // injected onto the message-only Boom error: it can't coexist with ResourceConflict's
+        // "retryable" member (they'd both emit Retryable).
+        var model = TestModels.Load(SharedModel);
+        var boom = Assert.IsType<StructureShape>(model.Shapes["com.example#Boom"]);
+        boom.Traits["smithy.api#retryable"] = JsonDocument.Parse(retryableTrait).RootElement;
+
+        var (exceptionClass, _) = Generate(model, "Boom");
 
         Assert.Contains($"public override RetryableDetails Retryable {{ get; }} = {expectedCtor};", exceptionClass);
     }
-
-    // A message-only error shape carrying the given @retryable trait, used only by the trait matrix above.
-    private static string BuildRetryableModel(string retryableTrait) => $$"""
-    {
-      "smithy": "2.0",
-      "shapes": {
-        "com.example#Example": {
-          "type": "service",
-          "version": "2023-01-01",
-          "operations": [{ "target": "com.example#DoThing" }],
-          "traits": {
-            "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
-            "aws.protocols#restJson1": {}
-          }
-        },
-        "com.example#DoThing": {
-          "type": "operation",
-          "input": { "target": "smithy.api#Unit" },
-          "output": { "target": "smithy.api#Unit" },
-          "errors": [{ "target": "com.example#Boom" }],
-          "traits": { "smithy.api#http": { "uri": "/things", "method": "POST" } }
-        },
-        "com.example#Boom": {
-          "type": "structure",
-          "members": { "message": { "target": "smithy.api#String" } },
-          "traits": { "smithy.api#error": "client", {{retryableTrait}} }
-        }
-      }
-    }
-    """;
 }

@@ -105,7 +105,7 @@ public class TraitAccessorTests(CloudTrailModelFixture fixture)
             "traits": { "smithy.api#http": { "method": "GET", "uri": "/health", "code": 204 } }
         }
         """;
-        var shape = JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options);
+        var shape = JsonSerializer.Deserialize<Shape>(json, TestModels.Options);
         Assert.NotNull(shape);
 
         var http = shape.GetHttp();

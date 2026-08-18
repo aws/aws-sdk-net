@@ -47,13 +47,13 @@ public class JsonStructureMarshallerWriterTests
     public void AuditEventMarshaller_MarshallMethodIsCorrect()
     {
         Assert.Contains("if (requestObject.IsSetEventData())", _auditEventMarshaller);
-        Assert.Contains("context.Writer.WritePropertyName(\"eventData\");", _auditEventMarshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("eventData");""", _auditEventMarshaller);
         Assert.Contains("context.Writer.WriteStringValue(requestObject.EventData);", _auditEventMarshaller);
         Assert.Contains("if (requestObject.IsSetEventDataChecksum())", _auditEventMarshaller);
-        Assert.Contains("context.Writer.WritePropertyName(\"eventDataChecksum\");", _auditEventMarshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("eventDataChecksum");""", _auditEventMarshaller);
         Assert.Contains("context.Writer.WriteStringValue(requestObject.EventDataChecksum);", _auditEventMarshaller);
         Assert.Contains("if (requestObject.IsSetId())", _auditEventMarshaller);
-        Assert.Contains("context.Writer.WritePropertyName(\"id\");", _auditEventMarshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("id");""", _auditEventMarshaller);
         Assert.Contains("context.Writer.WriteStringValue(requestObject.Id);", _auditEventMarshaller);
     }
 }

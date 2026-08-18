@@ -1,4 +1,3 @@
-using System.Text.Json;
 using SmithyDotNet.Generator.Model;
 using Xunit;
 
@@ -11,56 +10,8 @@ public class ResourceTraversalTests
     // (collectionOperations), and all six lifecycle slots (create/put/read/update/delete on
     // Thing, list on NestedThing) — so dropping any slot from the traversal fails a test.
     // SharedOp is listed on both the service and the resource, so de-duplication is exercised.
-    private const string ModelJson = """
-    {
-      "smithy": "2.0",
-      "shapes": {
-        "com.example#MyService": {
-          "type": "service",
-          "version": "2023-01-01",
-          "operations": [
-            { "target": "com.example#DirectOp" },
-            { "target": "com.example#SharedOp" }
-          ],
-          "resources": [{ "target": "com.example#Thing" }]
-        },
-        "com.example#Thing": {
-          "type": "resource",
-          "create": { "target": "com.example#CreateThing" },
-          "put": { "target": "com.example#PutThing" },
-          "read": { "target": "com.example#ReadThing" },
-          "update": { "target": "com.example#UpdateThing" },
-          "delete": { "target": "com.example#DeleteThing" },
-          "operations": [
-            { "target": "com.example#TagThing" },
-            { "target": "com.example#SharedOp" }
-          ],
-          "collectionOperations": [{ "target": "com.example#SearchThings" }],
-          "resources": [{ "target": "com.example#NestedThing" }]
-        },
-        "com.example#NestedThing": {
-          "type": "resource",
-          "list": { "target": "com.example#ListNestedThings" }
-        },
-        "com.example#DirectOp": { "type": "operation" },
-        "com.example#SharedOp": { "type": "operation" },
-        "com.example#CreateThing": { "type": "operation" },
-        "com.example#PutThing": { "type": "operation" },
-        "com.example#ReadThing": { "type": "operation" },
-        "com.example#UpdateThing": { "type": "operation" },
-        "com.example#DeleteThing": { "type": "operation" },
-        "com.example#TagThing": { "type": "operation" },
-        "com.example#SearchThings": { "type": "operation" },
-        "com.example#ListNestedThings": { "type": "operation" }
-      }
-    }
-    """;
-
-    private static ServiceIndex BuildIndex()
-    {
-        var model = JsonSerializer.Deserialize<SmithyModel>(ModelJson, CloudTrailModelFixture.Options)!;
-        return new ServiceIndex(model);
-    }
+    private static ServiceIndex BuildIndex() =>
+        new(TestModels.Load("Model/service-index-model.json"));
 
     [Fact]
     public void CollectsOperationsFromResources_LifecycleInstanceCollectionAndNested()

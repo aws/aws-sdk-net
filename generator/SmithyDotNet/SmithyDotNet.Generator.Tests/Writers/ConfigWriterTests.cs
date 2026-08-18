@@ -59,7 +59,7 @@ public class ConfigWriterTests
     public void EmitsUserAgentString_WithRawSdkIdAndExternalPackageVersion()
     {
         // First arg is the sdkId; second is the package version.
-        Assert.Contains("InternalSDKUtils.BuildUserAgentString(\"CloudTrail Data\", \"4.0.1.29\")", _output);
+        Assert.Contains("""InternalSDKUtils.BuildUserAgentString("CloudTrail Data", "4.0.1.29")""", _output);
     }
 
     [Fact]
@@ -81,8 +81,10 @@ public class ConfigWriterTests
     public void EmitsStaticNewServiceId_ReturningRawSdkId()
     {
         // Static ServiceId is the sdkId ("CloudTrail Data"), not the normalized class name.
-        Assert.Contains("public static new string ServiceId => \"CloudTrail Data\";", _output);
-        Assert.DoesNotContain("\"CloudTrailData\";", _output);
+        Assert.Contains("""public static new string ServiceId => "CloudTrail Data";""", _output);
+        Assert.DoesNotContain("""
+            "CloudTrailData";
+            """, _output);
     }
 
     [Fact]
@@ -95,9 +97,9 @@ public class ConfigWriterTests
     [Fact]
     public void EmitsConstructorBody_SettingServiceIdAuthNameAndEndpointProvider()
     {
-        Assert.Contains("base.ServiceId = \"CloudTrail Data\";", _output);
+        Assert.Contains("""base.ServiceId = "CloudTrail Data";""", _output);
         // AuthenticationServiceName = sigv4.name ?? endpointPrefix => "cloudtrail-data".
-        Assert.Contains("this.AuthenticationServiceName = \"cloudtrail-data\";", _output);
+        Assert.Contains("""this.AuthenticationServiceName = "cloudtrail-data";""", _output);
         // EndpointProvider wiring is part of the endpointRuleSet branch.
         Assert.Contains("this.EndpointProvider = new AmazonCloudTrailDataEndpointProvider();", _output);
     }
@@ -105,13 +107,13 @@ public class ConfigWriterTests
     [Fact]
     public void EmitsRegionEndpointServiceName_ReturningEndpointPrefix()
     {
-        Assert.Contains("public override string RegionEndpointServiceName => \"cloudtrail-data\";", _output);
+        Assert.Contains("""public override string RegionEndpointServiceName => "cloudtrail-data";""", _output);
     }
 
     [Fact]
     public void EmitsServiceVersion_ReturningApiVersion()
     {
-        Assert.Contains("public override string ServiceVersion => \"2021-08-11\";", _output);
+        Assert.Contains("""public override string ServiceVersion => "2021-08-11";""", _output);
     }
 
     [Fact]

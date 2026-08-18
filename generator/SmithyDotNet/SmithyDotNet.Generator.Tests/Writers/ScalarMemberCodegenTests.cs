@@ -1,103 +1,20 @@
-using System.Text.Json;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model;
-using SmithyDotNet.Generator.Model.Shapes;
 using SmithyDotNet.Generator.Writers;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers;
 
 /// <summary>
-/// Drives the JSON marshaller/unmarshaller writers against an inline model whose members cover the
-/// supported scalars (bool/int/long/float/double/timestamp) in body, query, header, and label
-/// positions. Complements <see cref="TypeMapperTests"/> (type mapping) by asserting the generated
-/// marshalling code for each scalar.
+/// Drives the JSON marshaller/unmarshaller writers against the shared codegen model, whose
+/// DoScalars operation covers the supported scalars (bool/int/long/float/double/timestamp) in body, query,
+/// header, and label positions. Complements <see cref="TypeMapperTests"/> (type mapping) by
+/// asserting the generated marshalling code for each scalar.
 /// </summary>
 public class ScalarMemberCodegenTests
 {
     private const string ModelFileName = "scalars.json";
     private const string Namespace = "com.example";
-
-    // One operation:
-    //  - input Scalars: a body member per scalar type, plus httpQuery(count), httpHeader(ratio),
-    //    httpLabel(id) scalars.
-    //  - output Scalars carried on the response and on a nested structure (Nested) so both the
-    //    response unmarshaller and the structure unmarshaller see scalar members.
-    private const string ModelJson = """
-    {
-      "smithy": "2.0",
-      "shapes": {
-        "com.example#Example": {
-          "type": "service",
-          "version": "2023-01-01",
-          "operations": [{ "target": "com.example#DoThing" }],
-          "traits": {
-            "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
-            "aws.protocols#restJson1": {}
-          }
-        },
-        "com.example#DoThing": {
-          "type": "operation",
-          "input": { "target": "com.example#DoThingRequest" },
-          "output": { "target": "com.example#DoThingResponse" },
-          "traits": { "smithy.api#http": { "uri": "/things/{id}/{seq}/{when}", "method": "POST" } }
-        },
-        "com.example#DoThingRequest": {
-          "type": "structure",
-          "members": {
-            "id":         { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
-            "seq":        { "target": "smithy.api#Integer", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
-            "when":       { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
-            "count":      { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "count" } },
-            "token":      { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "token", "smithy.api#required": {} } },
-            "since":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpQuery": "since", "smithy.api#timestampFormat": "epoch-seconds" } },
-            "ratio":      { "target": "smithy.api#Double", "traits": { "smithy.api#httpHeader": "x-ratio" } },
-            "stamp":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-stamp" } },
-            "until":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-until", "smithy.api#timestampFormat": "date-time" } },
-            "flag":       { "target": "smithy.api#Boolean" },
-            "size":       { "target": "smithy.api#Long" },
-            "fraction":   { "target": "smithy.api#Float" },
-            "amount":     { "target": "smithy.api#Double" },
-            "created":    { "target": "smithy.api#Timestamp" },
-            "expiry":     { "target": "smithy.api#Timestamp", "traits": { "smithy.api#timestampFormat": "date-time" } },
-            "sealedAt":   { "target": "com.example#HttpDateTimestamp" },
-            "details":    { "target": "com.example#DetailList" }
-          }
-        },
-        "com.example#HttpDateTimestamp": {
-          "type": "timestamp",
-          "traits": { "smithy.api#timestampFormat": "http-date" }
-        },
-        "com.example#DetailList": {
-          "type": "list",
-          "member": { "target": "com.example#Detail" }
-        },
-        "com.example#Detail": {
-          "type": "structure",
-          "members": {
-            "level":    { "target": "smithy.api#Integer" },
-            "at":       { "target": "smithy.api#Timestamp" }
-          }
-        },
-        "com.example#DoThingResponse": {
-          "type": "structure",
-          "members": {
-            "enabled":  { "target": "smithy.api#Boolean" },
-            "total":    { "target": "smithy.api#Long" },
-            "updated":  { "target": "smithy.api#Timestamp" },
-            "nested":   { "target": "com.example#Nested" }
-          }
-        },
-        "com.example#Nested": {
-          "type": "structure",
-          "members": {
-            "seq":      { "target": "smithy.api#Integer" },
-            "when":     { "target": "smithy.api#Timestamp" }
-          }
-        }
-      }
-    }
-    """;
 
     private readonly GenerationContext _context;
     private readonly string _requestMarshaller;
@@ -108,14 +25,12 @@ public class ScalarMemberCodegenTests
 
     public ScalarMemberCodegenTests()
     {
-        var model = JsonSerializer.Deserialize<SmithyModel>(ModelJson, CloudTrailModelFixture.Options)
-            ?? throw new InvalidOperationException("Model deserialized to null.");
-        _context = new GenerationContext(new ServiceIndex(model), new SdkVersionManifest
-        {
-            ServiceVersions = new Dictionary<string, ServiceVersion> { ["Example"] = new() { Version = "4.0.0.0" } },
-        });
+        // DoScalars' input has a body member per scalar type, plus httpQuery(count), httpHeader(ratio),
+        // and httpLabel(id) scalars; output scalars are carried on the response and on a nested
+        // structure (Nested) so both the response unmarshaller and the structure unmarshaller see them.
+        _context = TestModels.Context("Codegen/codegen-model.json");
 
-        var operation = _context.Operations.Single(o => o.Name == "DoThing");
+        var operation = _context.Operations.Single(o => o.Name == "DoScalars");
         _requestMarshaller = new JsonRequestMarshallerWriter(_context, ModelFileName)
             .Write(operation, TestContext.Current.CancellationToken);
         _responseUnmarshaller = new JsonResponseUnmarshallerWriter(_context, ModelFileName)
@@ -129,7 +44,7 @@ public class ScalarMemberCodegenTests
         _structureMarshaller = new JsonStructureMarshallerWriter(_context, ModelFileName)
             .Write(_context.Structures[detailId], detailId, TestContext.Current.CancellationToken);
 
-        var requestId = ShapeId.Parse($"{Namespace}#DoThingRequest");
+        var requestId = ShapeId.Parse($"{Namespace}#DoScalarsRequest");
         _requestStructure = new StructureWriter(_context, ModelFileName)
             .Write(_context.Structures[requestId], requestId, TestContext.Current.CancellationToken);
     }
@@ -223,7 +138,7 @@ public class ScalarMemberCodegenTests
     public void ScalarList_Throws()
     {
         var json = """{ "type": "list", "member": { "target": "smithy.api#Integer" } }""";
-        var list = JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options) ?? throw new InvalidOperationException("Shape deserialized to null.");
+        var list = TestModels.DeserializeShape(json);
         var id = ShapeId.Parse($"{Namespace}#TestList");
 
         Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));

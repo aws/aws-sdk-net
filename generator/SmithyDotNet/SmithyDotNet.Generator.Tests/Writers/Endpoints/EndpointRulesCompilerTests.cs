@@ -13,6 +13,9 @@ public class EndpointRulesCompilerTests
     [Fact]
     public void ThrowsOnUnsupportedFunction()
     {
+        var bucketArg = Json("""
+            "x"
+            """);
         var ruleSet = new EndpointRuleSet
         {
             Rules =
@@ -20,7 +23,7 @@ public class EndpointRulesCompilerTests
                 new EndpointRule
                 {
                     Type = "error",
-                    Conditions = [new EndpointCondition { Fn = "aws.isVirtualHostableS3Bucket", Argv = [Json("\"x\"")] }],
+                    Conditions = [new EndpointCondition { Fn = "aws.isVirtualHostableS3Bucket", Argv = [bucketArg] }],
                     Error = "unused",
                 },
             ],
@@ -103,7 +106,9 @@ public class EndpointRulesCompilerTests
     [Fact]
     public void StringEqualsEmitsEqualsCall()
     {
-        var output = CompileCondition("stringEquals", """{"ref": "Region"}""", "\"us-east-1\"");
+        var output = CompileCondition("stringEquals", """{"ref": "Region"}""", """
+            "us-east-1"
+            """);
         Assert.Contains("""if (Equals(refs["Region"], "us-east-1"))""", output);
     }
 

@@ -1,0 +1,16 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Svc": {
+      "type": "service", "version": "2023-01-01", "operations": [{ "target": "com.example#Op" }],
+      "traits": { "aws.api#service": { "sdkId": "Example", "endpointPrefix": "svc" }, "aws.protocols#restJson1": {} }
+    },
+    "com.example#Op": {
+      "type": "operation", "input": { "target": "com.example#OpRequest" }, "output": { "target": "com.example#OpResponse" },
+      "traits": { "smithy.api#http": { "uri": "/x", "method": "POST" } }
+    },
+    "com.example#OpRequest": { "type": "structure", "members": {} },
+    "com.example#OpResponse": { "type": "structure", "members": {} },
+    "com.example#Bare": { "type": "enum", "members": { "NOVALUE": { "target": "smithy.api#Unit" } } }
+  }
+}

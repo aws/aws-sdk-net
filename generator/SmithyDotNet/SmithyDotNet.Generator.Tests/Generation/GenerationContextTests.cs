@@ -142,4 +142,18 @@ public class GenerationContextTests
         var id = ShapeId.Parse("com.amazonaws.cloudtraildata#AuditEvent");
         Assert.Equal("AuditEvent", _context.ToDotNetName(id));
     }
+
+    [Fact]
+    public void OperationWithUnitInputAndOutput_ResolvesToEmptyStructures()
+    {
+        // smithy.api#Unit is the modeled form of "no input/output"; it is a prelude shape, so it
+        // never appears in the index and must resolve to an empty structure instead of throwing.
+        // The fixture model has no Unit operations, so this uses the codegen model's DoConflict,
+        // which models both its input and output as Unit.
+        var context = TestModels.Context("Codegen/codegen-model.json");
+
+        var operation = context.Operations.Single(o => o.Name == "DoConflict");
+        Assert.Empty(operation.Input.Members);
+        Assert.Empty(operation.Output.Members);
+    }
 }

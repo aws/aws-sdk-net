@@ -38,15 +38,15 @@ public class EndpointParametersWriterTests
     public void StringParametersEmitStringProperty()
     {
         Assert.Contains("public string Region", _output);
-        Assert.Contains("get => (string)this[\"Region\"];", _output);
-        Assert.Contains("set => this[\"Region\"] = value;", _output);
+        Assert.Contains("""get => (string)this["Region"];""", _output);
+        Assert.Contains("""set => this["Region"] = value;""", _output);
     }
 
     [Fact]
     public void BooleanParametersEmitNullableBoolProperty()
     {
         Assert.Contains("public bool? UseFIPS", _output);
-        Assert.Contains("get => (bool?)this[\"UseFIPS\"];", _output);
+        Assert.Contains("""get => (bool?)this["UseFIPS"];""", _output);
     }
 
     [Fact]
