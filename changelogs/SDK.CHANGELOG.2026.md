@@ -1,3 +1,29 @@
+### 4.0.315.0 (2026-08-19 18:47 UTC)
+* AccountAccess (4.0.101.0)
+	* Adds throttling exceptions to operation outputs that were previously inconsistent with other operations.
+* Batch (4.0.101.0)
+	* AWS Batch now supports managing CloudWatch Container Insights on compute environments via CreateComputeEnvironment and UpdateComputeEnvironment.
+* BedrockAgentCore (4.0.106.0)
+	* AgentCore Memory now supports Flexible Namespaces and Non-Conversational Payloads in CreateEvent API
+* BedrockAgentCoreControl (4.0.111.0)
+	* AgentCore Memory now supports Flexible Namespaces
+* EKS (4.0.103.0)
+	* Adds support for EKS cluster certificate authorities (CA)
+* MediaLive (4.0.103.0)
+	* AWS Elemental MediaLive now supports video cropping and output positioning. Use cropRectangle and outputPositionRectangle to position the encoded video within the output frame, with the surrounding area filled with black.
+* Redshift (4.0.102.0)
+	* Amazon Redshift enhanced System Table retention that allows customers to store their system table data directly in S3 Tables in customer's account instead of Redshift Managed Storage
+* RedshiftServerless (4.0.102.0)
+	* Amazon Redshift Enhanced System Table Retention that allows customers to store their system table data directly in S3 Tables in customer's account instead of Redshift Managed Storage
+* SimpleDBv2 (4.0.100.10)
+	* SimpleDBv2 is now generated from its Smithy model. There are no changes to the public API.
+* SSO (4.0.100.10)
+	* SSO is now generated from its Smithy model. There are no changes to the public API.
+* SupportApp (4.0.100.10)
+	* SupportApp is now generated from its Smithy model. There are no changes to the public API.
+* VPCLattice (4.0.101.0)
+	* Amazon VPC Lattice now supports modification of private DNS options on Service Network VPC Associations
+
 ### 4.0.314.0 (2026-08-18 18:21 UTC)
 * Batch (4.0.100.9)
 	* Update AWS Batch documentation with newer Fargate Supported configurations, notes, and fix broken Docker link re-directs.
