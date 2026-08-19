@@ -39,8 +39,46 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class UpdateServiceNetworkVpcAssociationRequest : AmazonVPCLatticeRequest
     {
+        private DnsOptions _dnsOptions;
+        private bool? _privateDnsEnabled;
         private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceNetworkVpcAssociationIdentifier;
+
+        /// <summary>
+        /// Gets and sets the property DnsOptions. 
+        /// <para>
+        ///  DNS options for the service network VPC association. 
+        /// </para>
+        /// </summary>
+        public DnsOptions DnsOptions
+        {
+            get { return this._dnsOptions; }
+            set { this._dnsOptions = value; }
+        }
+
+        // Check to see if DnsOptions property is set
+        internal bool IsSetDnsOptions()
+        {
+            return this._dnsOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrivateDnsEnabled. 
+        /// <para>
+        ///  Indicates if private DNS is enabled for the VPC association. 
+        /// </para>
+        /// </summary>
+        public bool? PrivateDnsEnabled
+        {
+            get { return this._privateDnsEnabled; }
+            set { this._privateDnsEnabled = value; }
+        }
+
+        // Check to see if PrivateDnsEnabled property is set
+        internal bool IsSetPrivateDnsEnabled()
+        {
+            return this._privateDnsEnabled.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
@@ -53,7 +91,7 @@ namespace Amazon.VPCLattice.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=5)]
         public List<string> SecurityGroupIds
         {
             get { return this._securityGroupIds; }
