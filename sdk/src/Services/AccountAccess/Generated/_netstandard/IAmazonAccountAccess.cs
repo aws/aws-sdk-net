@@ -72,6 +72,9 @@ namespace Amazon.AccountAccess
         /// <exception cref="Amazon.AccountAccess.Model.InternalServerException">
         /// An internal service error occurred. Try your request again later.
         /// </exception>
+        /// <exception cref="Amazon.AccountAccess.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Try your request again later.
+        /// </exception>
         /// <exception cref="Amazon.AccountAccess.Model.ValidationException">
         /// The input does not satisfy the constraints specified by the service. Check your request
         /// parameters and retry the request.
@@ -151,6 +154,9 @@ namespace Amazon.AccountAccess
         /// The specified resource does not exist. Verify that the resource identifier is correct
         /// and that the resource exists in the current Region.
         /// </exception>
+        /// <exception cref="Amazon.AccountAccess.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Try your request again later.
+        /// </exception>
         /// <exception cref="Amazon.AccountAccess.Model.ValidationException">
         /// The input does not satisfy the constraints specified by the service. Check your request
         /// parameters and retry the request.
@@ -223,6 +229,9 @@ namespace Amazon.AccountAccess
         /// <exception cref="Amazon.AccountAccess.Model.ResourceNotFoundException">
         /// The specified resource does not exist. Verify that the resource identifier is correct
         /// and that the resource exists in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.AccountAccess.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Try your request again later.
         /// </exception>
         /// <exception cref="Amazon.AccountAccess.Model.ValidationException">
         /// The input does not satisfy the constraints specified by the service. Check your request
