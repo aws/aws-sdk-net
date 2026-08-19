@@ -20,6 +20,7 @@
  *
  */
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 using Amazon.Util.Internal;
@@ -63,8 +64,10 @@ namespace Amazon.Runtime
             }
         }
 
-        private static IDictionary<string, TimeSpan> clockCorrectionDictionary = new Dictionary<string, TimeSpan>();
-        private static ReaderWriterLockSlim clockCorrectionDictionaryLock = new ReaderWriterLockSlim();
+        // ConcurrentDictionary gives lock-free reads (every signed request reads this via
+        // GetCorrectedUtcNowForEndpoint) and per-bucket striped writes, so ClientSkew is recorded
+        // on every response without serializing all endpoints through a single global write lock.
+        private static readonly ConcurrentDictionary<string, TimeSpan> clockCorrectionDictionary = new ConcurrentDictionary<string, TimeSpan>();
 
         /// <summary>
         /// Return clock skew correction value for an endpoint if there is one.
@@ -76,19 +79,7 @@ namespace Amazon.Runtime
         /// <returns>Clock correction value for an endpoint in TimeSpan.  TimeSpan.Zero if no such clock correction is set.</returns>
         public static TimeSpan GetClockCorrectionForEndpoint(string endpoint)
         {
-            TimeSpan span;
-            bool hasValue = false;
-            clockCorrectionDictionaryLock.EnterReadLock();
-            try
-            {
-                hasValue = clockCorrectionDictionary.TryGetValue(endpoint, out span);
-            }
-            finally
-            {
-                clockCorrectionDictionaryLock.ExitReadLock();
-            }
-
-            return hasValue ? span : TimeSpan.Zero;
+            return clockCorrectionDictionary.TryGetValue(endpoint, out var span) ? span : TimeSpan.Zero;
         }
 
         /// <summary>
@@ -98,6 +89,21 @@ namespace Amazon.Runtime
         /// <param name="endpoint"></param>
         /// <returns></returns>
         public static DateTime GetCorrectedUtcNowForEndpoint(string endpoint)
+        {
+            // Backwards-compatible overload. There is no client config at this call site, so no
+            // per-client disable value is resolved and none is invented from env/profile here
+            // (the disable precedence chain lives on the client config property). This behaves
+            // exactly as it did before the disable option existed: correction is gated only by
+            // AWSConfigs.CorrectForClockSkew and ManualClockCorrection.
+            return GetCorrectedUtcNowForEndpoint(endpoint, (IClientConfig)null);
+        }
+
+        /// <summary>
+        /// Overload that honors the per-client <see cref="IClientConfig.DisableClockSkewCorrection"/>
+        /// setting, which itself resolves the env var and shared-config profile fallbacks, giving
+        /// the per-client option top precedence over the environment and profile sources.
+        /// </summary>
+        public static DateTime GetCorrectedUtcNowForEndpoint(string endpoint, IClientConfig clientConfig)
         {
             TimeSpan adjustment = TimeSpan.Zero;
 
@@ -111,27 +117,19 @@ namespace Amazon.Runtime
             {
                 manualClockCorrectionLock.ExitReadLock();
             }
-            
 
-            if (AWSConfigs.CorrectForClockSkew && (adjustment == TimeSpan.Zero))
+            if (AWSConfigs.CorrectForClockSkew && adjustment == TimeSpan.Zero
+                && !(clientConfig != null && clientConfig.DisableClockSkewCorrection))
             {
                 adjustment = GetClockCorrectionForEndpoint(endpoint);
             }
-            
+
             return AWSConfigs.utcNowSource() + adjustment;
         }
 
         internal static void SetClockCorrectionForEndpoint(string endpoint, TimeSpan correction)
         {
-            clockCorrectionDictionaryLock.EnterWriteLock();
-            try
-            {
-                clockCorrectionDictionary[endpoint] = correction;
-            }
-            finally
-            {
-                clockCorrectionDictionaryLock.ExitWriteLock();
-            }
+            clockCorrectionDictionary[endpoint] = correction;
         }
     }
 }

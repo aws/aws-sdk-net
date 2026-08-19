@@ -181,7 +181,7 @@ namespace Amazon.Runtime.Internal.Auth
             // resulting exception) is unchanged from the pre-refactor flow, which validated first.
             ValidateRequest(request);
             return SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey,
-                               CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString()));
+                               CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString(), clientConfig));
         }
 
         /// <summary>
@@ -1239,7 +1239,7 @@ namespace Amazon.Runtime.Internal.Auth
                                                  string overrideSigningRegion)
         {
             return SignRequest(request, clientConfig, metrics, awsAccessKeyId, awsSecretAccessKey, service, overrideSigningRegion,
-                               CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString()));
+                               CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString(), clientConfig));
         }
 
         /// <summary>

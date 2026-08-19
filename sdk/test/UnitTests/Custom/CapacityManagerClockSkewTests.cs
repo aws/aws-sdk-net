@@ -14,7 +14,12 @@
  */
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
 using Amazon.S3;
+using Amazon.S3.Model;
+using Amazon.S3.Model.Internal.MarshallTransformations;
 using Amazon.Util;
 using AWSSDK.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -25,58 +30,98 @@ using System.Reflection;
 namespace AWSSDK_DotNet.UnitTests
 {
     [TestClass]
-    public class CapacityManagerClockSkewTests : RuntimePipelineTestBase<RetryHandler>
+    public class CapacityManagerClockSkewTests
     {    
-        private const int THROTTLED_RETRIES = 4;        
         private const int MAX_RETRIES = 2;
-
-        private static ClientConfig config;        
-
-        [ClassInitialize]
-        public static void Initialize(TestContext t)
-        {
-            config = new AmazonS3Config
-            {
-                ServiceURL = @"https://s3.amazonaws.com",
-                MaxErrorRetry = 2
-            };
-                                    
-            //Setup pipeline
-            Handler = new RetryHandler(new DefaultRetryPolicy(config));
-            RuntimePipeline.AddHandler(Handler);
-        }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void TestCapacityUsedForClockSkew()
-        {        
+        public void ClockSkewRetriesConsumeRetryCapacity()
+        {
+            var config = new AmazonS3Config
+            {
+                ServiceURL = @"https://s3-clockskew-capacity-test.amazonaws.com",
+                MaxErrorRetry = MAX_RETRIES
+            };
+
+            var retryPolicy = new DefaultRetryPolicy(config);
+            var retryHandler = new RetryHandler(retryPolicy);
+            var tester = new MockActionHandler();
+            var pipeline = new RuntimePipeline(tester);
+            pipeline.AddHandler(retryHandler);
+
             var info = typeof(DefaultRetryPolicy).GetField("_capacityManagerInstance", BindingFlags.NonPublic | BindingFlags.Static);
             var capacityManager = (CapacityManager)info.GetValue(null);
-            var availableCapacity = capacityManager.GetRetryCapacity(config.ServiceURL).AvailableCapacity;
+            var availableCapacityBefore = capacityManager.GetRetryCapacity(config.ServiceURL).AvailableCapacity;
 
-            //Loop that will typically reduce capacity
-            for (var i = 0; i < THROTTLED_RETRIES / 2; i++)
+            tester.Reset();
+            tester.Action = (int callCount) =>
             {
-                Tester.Reset();
-                Tester.Action = (int callCount) =>
-                {
-                    //Throw a clock skew error
-                    throw new AmazonServiceException(string.Format("Failed message ({0} + )", DateTime.UtcNow.AddDays(callCount).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat)),
-                        ErrorType.Sender, "RequestTimeTooSkewed", "Test123", HttpStatusCode.BadRequest);
-                };
+                throw new AmazonServiceException("clock skew", ErrorType.Sender,
+                    "RequestTimeTooSkewed", "Test123", HttpStatusCode.Forbidden);
+            };
 
-                Utils.AssertExceptionExpected(() =>
-                {
-                    var request = CreateTestContext();
-                    RuntimePipeline.InvokeSync(request);
-                },
-                typeof(AmazonServiceException));
-                Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-            }
+            Utils.AssertExceptionExpected(() =>
+            {
+                var request = CreateTestContext(config);
+                // Clock Skew Correction specification: skew is recorded in the HttpHandler; this
+                // RetryHandler-only pipeline has none, so seed the > 4-minute candidate the retry gate
+                // reads so the clock skew error is retried.
+                request.RequestContext.ContextAttributes[ClockSkewPipelineHelper.AttemptSkewCandidateKey] =
+                    TimeSpan.FromMinutes(-7);
+                pipeline.InvokeSync(request);
+            },
+            typeof(AmazonServiceException));
 
-            //Verify that the clock skew errors did not decrease any capacity
-            Assert.AreEqual(availableCapacity, capacityManager.GetRetryCapacity(config.ServiceURL).AvailableCapacity);
+            // The clock skew error is retried until max attempts...
+            Assert.AreEqual(MAX_RETRIES + 1, tester.CallCount);
+
+            // ...and each retry now consumes retry capacity (the specification removed the clock-skew
+            // capacity bypass), so available capacity has decreased from before the request.
+            var availableCapacityAfter = capacityManager.GetRetryCapacity(config.ServiceURL).AvailableCapacity;
+            Assert.IsTrue(availableCapacityAfter < availableCapacityBefore,
+                $"Expected capacity to decrease. Before={availableCapacityBefore}, After={availableCapacityAfter}");
+        }
+
+        private static IExecutionContext CreateTestContext(ClientConfig config)
+        {
+            var putObjectRequest = new PutObjectRequest
+            {
+                Key = "TestKey",
+                BucketName = "TestBucket",
+                ContentBody = "Test Content"
+            };
+
+            var requestContext = new RequestContext(true, new NullSigner())
+            {
+                OriginalRequest = putObjectRequest,
+                Request = new PutObjectRequestMarshaller().Marshall(putObjectRequest),
+                Unmarshaller = PutObjectResponseUnmarshaller.Instance,
+                ClientConfig = config
+            };
+
+            var serviceMetaData = Assembly.GetAssembly(requestContext.GetType()).CreateInstance("Amazon.Runtime.Internal.ServiceMetadata");
+            requestContext.GetType().GetProperty("ServiceMetaData").SetValue(requestContext, serviceMetaData);
+            requestContext.Request.Endpoint = new Uri(config.ServiceURL);
+
+#if NETFRAMEWORK
+            var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
+                as HttpWebResponse;
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext,
+                new ResponseContext
+                {
+                    HttpResponse = new HttpWebRequestResponseData(putObjectResponse)
+                });
+#else
+            var putObjectResponse = MockWebResponse.CreateFromResource("PutObjectResponse.txt")
+                as System.Net.Http.HttpResponseMessage;
+            return new Amazon.Runtime.Internal.ExecutionContext(requestContext,
+                new ResponseContext
+                {
+                    HttpResponse = new HttpClientResponseData(putObjectResponse)
+                });
+#endif
         }
     }
 }

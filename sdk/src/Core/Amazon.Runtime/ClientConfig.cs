@@ -81,6 +81,7 @@ namespace Amazon.Runtime
         private TimeSpan? timeout = null;
         private bool allowAutoRedirect = true;
         private bool? useDualstackEndpoint;
+        private bool? disableClockSkewCorrection;
         private bool? useFIPSEndpoint;
         private bool? disableRequestCompression;
         private long? requestMinCompressionSizeBytes;
@@ -944,6 +945,37 @@ namespace Amazon.Runtime
                 return this.useDualstackEndpoint.Value;
             }
             set { useDualstackEndpoint = value; }
+        }
+
+        /// <summary>
+        /// Disables the Clock Skew Correction behavior for this client (skew recording, corrected
+        /// signing, and clock-skew retries).
+        /// <para>
+        /// Clock skew correction runs for the client only when the global
+        /// <see cref="AWSConfigs.CorrectForClockSkew"/> switch is <c>true</c> AND this per-client
+        /// <c>DisableClockSkewCorrection</c> is <c>false</c>. If <c>CorrectForClockSkew</c> is
+        /// <c>false</c>, OR <c>DisableClockSkewCorrection</c> is <c>true</c>, no clock skew
+        /// calculation is performed for the client.
+        /// </para>
+        /// <para>
+        /// When not explicitly set on the client, this value falls back to the
+        /// <c>AWS_DISABLE_CLOCK_SKEW_CORRECTION</c> environment variable and then the
+        /// <c>disable_clock_skew_correction</c> shared-config profile setting; an explicit
+        /// per-client value takes precedence over both.
+        /// </para>
+        /// </summary>
+        public bool DisableClockSkewCorrection
+        {
+            get
+            {
+                if (!this.disableClockSkewCorrection.HasValue)
+                {
+                    return FallbackInternalConfigurationFactory.DisableClockSkewCorrection ?? false;
+                }
+
+                return this.disableClockSkewCorrection.Value;
+            }
+            set { disableClockSkewCorrection = value; }
         }
 
         /// <summary>

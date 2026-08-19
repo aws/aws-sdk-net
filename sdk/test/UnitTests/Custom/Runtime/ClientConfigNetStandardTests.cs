@@ -76,6 +76,7 @@ namespace AWSSDK.UnitTests
             "AuthSchemePreference",
             "SigV4aSigningRegionSet",
             "JsonMaxDepth",
+            "DisableClockSkewCorrection",
         };
 
         [TestMethod]

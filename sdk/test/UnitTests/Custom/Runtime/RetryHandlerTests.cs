@@ -163,143 +163,133 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(MAX_INVALID_ENDPOINT_RETRIES, Tester.CallCount);
         }
 
+        // Clock Skew Correction specification: a clock skew error is retried only when the absolute
+        // skew computed from that response exceeds the 4-minute detection threshold. Skew is measured
+        // from the response Date header in the HttpHandler; this RetryHandler-only pipeline has none,
+        // so we seed the > 4-minute candidate the retry gate reads (it persists across attempts).
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void ChangeSkewBasedOnRequestEndpointAndNotConfigEndpoint()
+        public void RetriesClockSkewErrorWhenSkewExceedsThreshold()
         {
-            Uri configEndpoint = new Uri("https://s3.amazonaws.com");
+            Tester.Reset();
             Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
 
-            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-                new object[] { configEndpoint.ToString(), TimeSpan.FromHours(-1) });
-            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
-
-            Assert.AreEqual(TimeSpan.Zero, CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()));
-
-            Tester.Reset();
             Tester.Action = (int callCount) =>
             {
-                var timeString = DateTime.UtcNow.AddHours(-1).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
-                var exception = new AmazonS3Exception("(" + timeString + " - ");
-                exception.ErrorCode = "RequestTimeTooSkewed";
-                throw exception;
+                throw new AmazonServiceException("Signature error", ErrorType.Sender,
+                    "RequestTimeTooSkewed", "req-1", HttpStatusCode.Forbidden);
             };
 
             Utils.AssertExceptionExpected(() =>
             {
                 var request = CreateTestContext();
                 request.RequestContext.Request.Endpoint = requestEndpoint;
-                RuntimePipeline.InvokeSync(request);
-            },
-            typeof(AmazonServiceException));
-
-            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -1 hour
-            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-55));
-        }
-
-        // Tests that if the error code is a definite clockskew error code such as RequestTimeTooSkewed, the request is always retried
-        // and the clock skew is always updated. Purposely setting the skew to -3 to test that the retry handler will only consider the error code.
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void AlwaysRetryOnDefiniteClockSkewErrorCode()
-        {
-            Tester.Reset();
-            Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
-
-            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
-            
-            Tester.Action = (int callCount) =>
-            {
-                var timeString = DateTime.UtcNow.AddMinutes(-3).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
-                var exception = new AmazonS3Exception("(" + timeString + " - ");
-                exception.ErrorCode = "RequestTimeTooSkewed";
-                throw exception;
-            };
-
-            Utils.AssertExceptionExpected(() =>
-            {
-                var request = CreateTestContext();
-                request.RequestContext.Request.Endpoint = requestEndpoint;
+                request.RequestContext.ContextAttributes[ClockSkewPipelineHelper.AttemptSkewCandidateKey] =
+                    TimeSpan.FromMinutes(-7);
                 RuntimePipeline.InvokeSync(request);
             }, typeof(AmazonServiceException));
-            //Always retrying if the error code is RequestTooSkewed, so we must hit the max attempts here.
+
+            // Above the 4-minute threshold => retried until max attempts.
             Assert.AreEqual(MAX_RETRIES + 1, Tester.CallCount);
-
-            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -3
-            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-3));
         }
 
-        // Tests that if the error code is a possible clockskew error such as InvalidSignatureException,  the retry handler
-        // checks the diff to see whether to retry or not. In this case since the diff > 5 minutes we retry.
+        // Clock Skew Correction specification: a clock skew error whose computed skew is at or below
+        // the 4-minute detection threshold is NOT retried through the clock skew classification.
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Runtime")]
-        public void RetryOnPossibleClockSkewErrorCodeIfAboveThreshold()
+        public void DoesNotRetryClockSkewErrorWhenSkewBelowThreshold()
         {
             Tester.Reset();
             Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
 
-            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
-
             Tester.Action = (int callCount) =>
             {
-                var timeString = DateTime.UtcNow.AddMinutes(-7).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
-                var exception = new AmazonS3Exception("(" + timeString + " - ");
-                exception.ErrorCode = "InvalidSignatureException";
-                throw exception;
+                throw new AmazonServiceException("Signature error", ErrorType.Sender,
+                    "InvalidSignatureException", "req-1", HttpStatusCode.Forbidden);
             };
 
             Utils.AssertExceptionExpected(() =>
             {
                 var request = CreateTestContext();
                 request.RequestContext.Request.Endpoint = requestEndpoint;
+                request.RequestContext.ContextAttributes[ClockSkewPipelineHelper.AttemptSkewCandidateKey] =
+                    TimeSpan.FromMinutes(-2);
                 RuntimePipeline.InvokeSync(request);
             }, typeof(AmazonServiceException));
-            //Fails the first attempt, then succeeds on second attempt after retrying.
-            Assert.AreEqual(2, Tester.CallCount);
 
-            // RetryPolicy should see that the clock skew for bucketname.s3.amazonaws.com is zero and change it to ~ -7
-            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) < TimeSpan.FromMinutes(-7));
-        }
-
-        // Tests that if the error code is a possible clockskew error code such as  AuthFailure, the retry handler
-        // checks the diff to see whether to retry or not. In this case since the diff < 5 minutes we don't retry since this 
-        // is not a clockskew error.
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void NoRetryIfDiffIsBelowMaxThreshold()
-        {
-            Tester.Reset();
-            Uri requestEndpoint = new Uri("https://bucketname.s3.amazonaws.com");
-
-            ReflectionHelpers.Invoke(typeof(CorrectClockSkew), "SetClockCorrectionForEndpoint",
-                new object[] { requestEndpoint.ToString(), TimeSpan.Zero });
-
-            Tester.Action = (int callCount) =>
-            {
-                var timeString = DateTime.UtcNow.AddMinutes(-4).ToString(AWSSDKUtils.ISO8601BasicDateTimeFormat);
-                var exception = new AmazonS3Exception("(" + timeString + " - ");
-                exception.ErrorCode = "AuthFailure";
-                throw exception;
-            };
-
-            Utils.AssertExceptionExpected(() =>
-            {
-                var request = CreateTestContext();
-                request.RequestContext.Request.Endpoint = requestEndpoint;
-                RuntimePipeline.InvokeSync(request);
-            }, typeof(AmazonServiceException));
-            // Doesn't retry
+            // Below threshold => not a clock skew retry, and a 403 sender error is not otherwise retryable.
             Assert.AreEqual(1, Tester.CallCount);
+        }
 
-            // RetryPolicy shouldn't update clockskew because there is none.
-            Assert.IsTrue(CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint.ToString()) == TimeSpan.FromMinutes(0));
+        // .NET implementation test (not a specification JSON case): this SDK stores the correction
+        // per endpoint (in the process-global CorrectClockSkew dictionary), whereas the specification
+        // models ClientSkew as a single per-client value; per-endpoint is the pre-existing, finer-grained
+        // .NET behavior. A recorded skew must be keyed by the request endpoint and leave other endpoints
+        // untouched. Recording now lives in ClockSkewPipelineHelper.RecordFromResponse (invoked by the
+        // HttpHandler), so we drive that directly.
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void ClockSkewIsRecordedForTheRequestEndpointNotAnotherEndpoint()
+        {
+            var originalUtcNowSource = AWSConfigs.utcNowSource;
+            try
+            {
+                var otherEndpoint = "https://other-" + Guid.NewGuid().ToString("N");
+                CorrectClockSkew.SetClockCorrectionForEndpoint(otherEndpoint, TimeSpan.FromHours(-1));
+
+                var ctx = CreateTestContext();
+                ctx.RequestContext.Request.Endpoint = new Uri("https://request-" + Guid.NewGuid().ToString("N"));
+                var requestEndpoint = ctx.RequestContext.Request.Endpoint.ToString();
+                Assert.AreEqual(TimeSpan.Zero, CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint));
+
+                // Record a +5 minute skew: midpoint of send/receive is 00:00:01, server Date is 00:05:01.
+                var send = new DateTime(2026, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+                AWSConfigs.utcNowSource = () => new DateTime(2026, 1, 1, 0, 0, 2, DateTimeKind.Utc);
+                var response = new ClockSkewResponseStub(HttpStatusCode.OK, "Thu, 01 Jan 2026 00:05:01 GMT");
+                ClockSkewPipelineHelper.RecordFromResponse(ctx, send, response);
+
+                // The learned correction lands on the REQUEST endpoint...
+                Assert.AreEqual(300, CorrectClockSkew.GetClockCorrectionForEndpoint(requestEndpoint).TotalSeconds, 0.001);
+                // ...and the unrelated endpoint's entry is left untouched.
+                Assert.AreEqual(TimeSpan.FromHours(-1), CorrectClockSkew.GetClockCorrectionForEndpoint(otherEndpoint));
+            }
+            finally
+            {
+                AWSConfigs.utcNowSource = originalUtcNowSource;
+            }
+        }
+
+        // Minimal IWebResponseData carrying a status code + Date header, for driving RecordFromResponse.
+        private sealed class ClockSkewResponseStub : IWebResponseData
+        {
+            private readonly Dictionary<string, string> _headers =
+                new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+
+            public ClockSkewResponseStub(HttpStatusCode statusCode, string date)
+            {
+                StatusCode = statusCode;
+                if (!string.IsNullOrEmpty(date)) _headers[HeaderKeys.DateHeader] = date;
+            }
+
+            public long ContentLength => 0;
+            public string ContentType => null;
+            public HttpStatusCode StatusCode { get; }
+            public bool IsSuccessStatusCode => (int)StatusCode >= 200 && (int)StatusCode <= 299;
+            public string[] GetHeaderNames()
+            {
+                var names = new string[_headers.Count];
+                _headers.Keys.CopyTo(names, 0);
+                return names;
+            }
+            public bool IsHeaderPresent(string headerName) => _headers.ContainsKey(headerName);
+            public string GetHeaderValue(string headerName) =>
+                _headers.TryGetValue(headerName, out var v) ? v : null;
+            public IHttpResponseBody ResponseBody => null;
+            public Amazon.Runtime.EventStreams.IEventStreamHeader GetEventStreamHeader(string headerName) => null;
+            public bool IsEventHeaderPresent(string headerName) => false;
         }
 
 #if NETFRAMEWORK

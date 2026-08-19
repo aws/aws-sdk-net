@@ -151,6 +151,13 @@ namespace Amazon.Runtime.CredentialManagement
         public bool? DisableRequestCompression { get; set; }
 
         /// <summary>
+        /// Controls whether the SDK corrects the request signing timestamp to compensate
+        /// for clock drift between the caller and the service (Clock Skew Correction specification).
+        /// Set to "true" to disable clock skew correction. Default is enabled / false.
+        /// </summary>
+        public bool? DisableClockSkewCorrection { get; set; }
+
+        /// <summary>
         /// Minimum size in bytes that a request body should be to trigger compression.
         /// </summary>
         public long? RequestMinCompressionSizeBytes { get; set; }

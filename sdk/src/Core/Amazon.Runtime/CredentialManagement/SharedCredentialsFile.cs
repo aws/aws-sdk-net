@@ -67,6 +67,7 @@ namespace Amazon.Runtime.CredentialManagement
         private const string ServicesField = "services";
         private const string IgnoreConfiguredEndpointUrlsField = "ignore_configured_endpoint_urls";
         private const string DisableRequestCompressionField = "disable_request_compression";
+        private const string DisableClockSkewCorrectionField = "disable_clock_skew_correction";
         private const string RequestMinCompressionSizeBytesField = "request_min_compression_size_bytes";
         private const string ClientAppIdField = "sdk_ua_app_id";
         private const string AccountIdEndpointModeField = "account_id_endpoint_mode";
@@ -105,6 +106,7 @@ namespace Amazon.Runtime.CredentialManagement
             ServicesField,
             IgnoreConfiguredEndpointUrlsField,
             DisableRequestCompressionField,
+            DisableClockSkewCorrectionField,
             RequestMinCompressionSizeBytesField,
             ClientAppIdField,
             AccountIdEndpointModeField,
@@ -394,6 +396,9 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.DisableRequestCompression != null)
                 reservedProperties[DisableRequestCompressionField] = profile.DisableRequestCompression.ToString().ToLowerInvariant();
+
+            if (profile.DisableClockSkewCorrection != null)
+                reservedProperties[DisableClockSkewCorrectionField] = profile.DisableClockSkewCorrection.ToString().ToLowerInvariant();
 
             if (profile.RequestMinCompressionSizeBytes != null)
                 reservedProperties[RequestMinCompressionSizeBytesField] = profile.RequestMinCompressionSizeBytes.ToString().ToLowerInvariant();
@@ -808,6 +813,20 @@ namespace Amazon.Runtime.CredentialManagement
                     disableRequestCompression = disableRequestCompressionOut;
                 }
 
+                string disableClockSkewCorrectionString;
+                bool? disableClockSkewCorrection = null;
+                if (reservedProperties.TryGetValue(DisableClockSkewCorrectionField, out disableClockSkewCorrectionString))
+                {
+                    bool disableClockSkewCorrectionOut;
+                    if (!bool.TryParse(disableClockSkewCorrectionString, out disableClockSkewCorrectionOut))
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected.", disableClockSkewCorrectionString, DisableClockSkewCorrectionField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    disableClockSkewCorrection = disableClockSkewCorrectionOut;
+                }
+
                 string requestMinCompressionSizeBytesString;
                 long? requestMinCompressionSizeBytes = null;
                 if (reservedProperties.TryGetValue(RequestMinCompressionSizeBytesField, out requestMinCompressionSizeBytesString))
@@ -908,6 +927,7 @@ namespace Amazon.Runtime.CredentialManagement
                     IgnoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrls,
                     EndpointUrl = endpointUrlString,
                     DisableRequestCompression = disableRequestCompression,
+                    DisableClockSkewCorrection = disableClockSkewCorrection,
                     RequestMinCompressionSizeBytes = requestMinCompressionSizeBytes,
                     ClientAppId = clientAppId,
                     AccountIdEndpointMode = accountIdEndpointMode,

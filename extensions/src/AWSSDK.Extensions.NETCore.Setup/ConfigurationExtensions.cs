@@ -249,6 +249,16 @@ namespace Microsoft.Extensions.Configuration
                     options.DefaultClientConfig.JsonMaxDepth = jsonMaxDepth;
                 }
 
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.DisableClockSkewCorrection), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!bool.TryParse(element.Value, out var disableClockSkewCorrection))
+                    {
+                        throw new ArgumentException($"Invalid bool value for {nameof(DefaultClientConfig.DisableClockSkewCorrection)}.");
+                    }
+
+                    options.DefaultClientConfig.DisableClockSkewCorrection = disableClockSkewCorrection;
+                }
+
                 else if (string.Equals(element.Key, nameof(DefaultClientConfig.LogMetrics), StringComparison.OrdinalIgnoreCase))
                 {
                     if (!bool.TryParse(element.Value, out var logMetrics))

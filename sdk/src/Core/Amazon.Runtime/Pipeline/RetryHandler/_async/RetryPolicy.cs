@@ -56,7 +56,9 @@ namespace Amazon.Runtime
                             CapacityManager.CapacityType.Throttling : CapacityManager.CapacityType.Retry;
                         StoreRetryAfterHeader(executionContext, exception);
                     }
-                    return OnRetry(executionContext, isClockSkewError, IsThrottlingError(exception));
+                    // Clock Skew Correction specification: skew retries consume retry quota
+                    // (RETRY_COST) and count toward MAX_ATTEMPTS.
+                    return OnRetry(executionContext, false, IsThrottlingError(exception));
                 }
             }
             return false;
