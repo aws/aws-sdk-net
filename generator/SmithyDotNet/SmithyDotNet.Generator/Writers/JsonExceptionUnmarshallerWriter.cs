@@ -17,8 +17,9 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
 
         // message is deserialized by JsonErrorResponseUnmarshaller into the base Exception.Message,
         // so it is excluded here; every other member — including base-owned RequestId/ErrorCode — is
-        // unmarshalled from the error body.
+        // unmarshalled from the error body, except @httpHeader members which come from the headers.
         var members = ExceptionWriter.ResolveSerializedMembers(structure, context);
+        var (headerMembers, bodyMembers) = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members);
 
         var writer = new CodeWriter();
 
@@ -33,7 +34,7 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
             {
                 WriteUnmarshallMethod(writer, exceptionName);
                 writer.WriteLine("");
-                WriteMainUnmarshallMethod(writer, exceptionName, members);
+                WriteMainUnmarshallMethod(writer, exceptionName, headerMembers, bodyMembers);
                 writer.WriteLine("");
                 WriteSingleton(writer, unmarshallerClassName);
             });
@@ -70,31 +71,41 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         });
     }
 
-    private static void WriteMainUnmarshallMethod(CodeWriter writer, string exceptionName, List<Member> members)
+    private static void WriteMainUnmarshallMethod(
+        CodeWriter writer,
+        string exceptionName,
+        List<(Member Member, string HeaderName)> headerMembers,
+        List<Member> bodyMembers)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshall the exception from the service to the appropriate exception class");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {exceptionName} Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)", () =>
         {
-            writer.OpenBlock("if (context.Stream.Length > 0)", () =>
-            {
-                writer.WriteLine("context.Read(ref reader);");
-            });
-            writer.WriteLine();
             writer.WriteLine($"{exceptionName} unmarshalledObject = new {exceptionName}(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
-            writer.WriteLine();
-            writer.WriteLine("int targetDepth = context.CurrentDepth;");
-            writer.OpenBlock("if (context.Stream.Length > 0)", () =>
+
+            // Only body members are read from the error payload, so an exception whose members are all
+            // headers (or has none beyond message) emits no reader/loop.
+            if (bodyMembers.Count > 0)
             {
-                writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
+                writer.WriteLine();
+                writer.OpenBlock("if (context.Stream.Length > 0)", () =>
                 {
-                    foreach (var member in members)
+                    writer.WriteLine("context.Read(ref reader);");
+                    writer.WriteLine("int targetDepth = context.CurrentDepth;");
+                    writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
                     {
-                        WriteMemberUnmarshaller(writer, member);
-                    }
+                        foreach (var member in bodyMembers)
+                        {
+                            WriteMemberUnmarshaller(writer, member);
+                        }
+                    });
                 });
-            });
+            }
+
+            // @httpHeader error members are read from the response headers, not the error body.
+            JsonResponseUnmarshallerWriter.WriteHeaderUnmarshallers(writer, headerMembers, "unmarshalledObject");
+
             writer.WriteLine();
             writer.WriteLine("return unmarshalledObject;");
         });

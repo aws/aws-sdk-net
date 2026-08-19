@@ -152,6 +152,40 @@ while (context.Read())
 - Flattened lists: test on element name directly
 - Non-flattened lists: test on `ListName/member`
 
+## Response Header Unmarshalling
+
+Output and error members bound with `@httpHeader` are read from the HTTP response headers via
+`context.ResponseData`, **not** the body reader. Body members read from the JSON reader loop; header
+members are extracted after it. A JSON response whose members are all headers (or empty) emits no
+reader/`while` loop at all — just the header `if`s. The error (exception) unmarshaller populates
+`unmarshalledObject` the same way; its dispatch passes `context.ResponseData` into `contextCopy`, so
+the header API is available there too.
+
+Each member is guarded and assigned:
+
+```csharp
+if (context.ResponseData.IsHeaderPresent("x-foo"))
+{
+    response.Foo = <conversion>;   // "unmarshalledObject.Foo" on the exception path
+}
+```
+
+| Member type | `<conversion>` (with `value` = `context.ResponseData.GetHeaderValue("x-foo")`) |
+|---|---|
+| `string` / enum | `value` (direct; enum rides the string path via implicit ConstantClass conversion) |
+| `bool?` | `bool.Parse(value)` (no culture — its two literals are culture-invariant) |
+| `int?` | `int.Parse(value, CultureInfo.InvariantCulture)` |
+| `long?` | `long.Parse(value, CultureInfo.InvariantCulture)` |
+| `float?` | `float.Parse(value, CultureInfo.InvariantCulture)` |
+| `double?` | `double.Parse(value, CultureInfo.InvariantCulture)` |
+| `DateTime?` date-time / http-date | `DateTime.Parse(value, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal \| DateTimeStyles.AdjustToUniversal)` |
+| `DateTime?` epoch-seconds | `Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(value, CultureInfo.InvariantCulture))` |
+
+Header timestamps default to `http-date` when `@timestampFormat` is unset (see the binding-default
+table below). On the unmarshal side `date-time` and `http-date` produce identical `DateTime.Parse`
+code — only `epoch-seconds` differs. The `CultureInfo`/`DateTimeStyles` these parses use come from
+`System.Globalization`, which the response and exception unmarshallers import unconditionally.
+
 ## Type → Marshal/Unmarshal
 
 | .NET type | JSON Marshal | JSON Unmarshal |
@@ -215,9 +249,10 @@ public {Exception} Unmarshall(JsonUnmarshallerContext context, ErrorResponse err
     {
         while (context.ReadAtDepth(targetDepth, ref reader))
         {
-            // Additional exception members deserialized here (if any beyond "message")
+            // Additional body-bound exception members deserialized here (if any beyond "message")
         }
     }
+    // @httpHeader members extracted from context.ResponseData here (see Response Header Unmarshalling)
     return unmarshalledObject;
 }
 ```

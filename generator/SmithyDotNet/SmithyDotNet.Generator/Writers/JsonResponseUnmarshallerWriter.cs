@@ -1,4 +1,6 @@
 using SmithyDotNet.Generator.Generation;
+using SmithyDotNet.Generator.Model.Shapes;
+using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -13,6 +15,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         var className = $"{operation.Name}Response";
         var unmarshallerClassName = $"{className}Unmarshaller";
         var members = TypeMapper.ResolveMembers(operation.Output, context);
+        var (headerMembers, bodyMembers) = PartitionByBinding(operation.Output, members);
 
         var writer = new CodeWriter();
 
@@ -25,7 +28,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             WriteClassDocumentation(writer, operation.Name);
             writer.OpenBlock($"public partial class {unmarshallerClassName} : JsonResponseUnmarshaller", () =>
             {
-                WriteUnmarshallMethod(writer, className, members);
+                WriteUnmarshallMethod(writer, className, headerMembers, bodyMembers);
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
@@ -41,6 +44,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         writer.WriteLine($"using {context.Namespace}.Model;");
         FileHeader.WriteUsings(writer, FileHeader.MarshallerUsings, false);
         writer.WriteLine("using System.Text.Json;");
+        writer.WriteLine("using System.Globalization;");
         writer.WriteLine("using Amazon.Util;");
     }
 
@@ -51,7 +55,11 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         writer.WriteLine("/// </summary>");
     }
 
-    private static void WriteUnmarshallMethod(CodeWriter writer, string className, List<Member> members)
+    private static void WriteUnmarshallMethod(
+        CodeWriter writer,
+        string className,
+        List<(Member Member, string HeaderName)> headerMembers,
+        List<Member> bodyMembers)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller the response from the service to the response class.");
@@ -59,14 +67,22 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         writer.OpenBlock("public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)", () =>
         {
             writer.WriteLine($"{className} response = new {className}();");
-            writer.WriteLine("StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
-            writer.WriteLine();
-            writer.WriteLine("context.Read(ref reader);");
-            writer.WriteLine("int targetDepth = context.CurrentDepth;");
-            writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
+
+            // Only body members are read from the JSON payload, so a response with only header (or no)
+            // members emits no reader/loop.
+            if (bodyMembers.Count > 0)
             {
-                WriteMemberUnmarshallers(writer, members);
-            });
+                writer.WriteLine("StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+                writer.WriteLine();
+                writer.WriteLine("context.Read(ref reader);");
+                writer.WriteLine("int targetDepth = context.CurrentDepth;");
+                writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
+                {
+                    WriteMemberUnmarshallers(writer, bodyMembers);
+                });
+            }
+            WriteHeaderUnmarshallers(writer, headerMembers, "response");
+
             writer.WriteLine("");
             writer.WriteLine("return response;");
         });
@@ -138,6 +154,86 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         {
             throw new GeneratorException($"Unsupported member type '{member.DotNetType}' for member '{member.PropertyName}'.");
         }
+    }
+
+    /// <summary>
+    /// Splits members into those bound to a response header (<c>@httpHeader</c>, paired with the header
+    /// name) and those read from the JSON body. Header members are populated from
+    /// <c>context.ResponseData</c> rather than the body reader. Shared with the exception unmarshaller.
+    /// </summary>
+    internal static (List<(Member Member, string HeaderName)> HeaderMembers, List<Member> BodyMembers) PartitionByBinding(
+        StructureShape structure, List<Member> members)
+    {
+        var headerMembers = new List<(Member, string)>();
+        var bodyMembers = new List<Member>();
+        foreach (var member in members)
+        {
+            if (structure.Members[member.ModeledName].GetHttpHeader() is string headerName)
+            {
+                headerMembers.Add((member, headerName));
+            }
+            else
+            {
+                bodyMembers.Add(member);
+            }
+        }
+
+        return (headerMembers, bodyMembers);
+    }
+
+    // Emits `if (context.ResponseData.IsHeaderPresent("name")) target.Property = <conversion>;` per
+    // header member. Shared with the exception unmarshaller; <paramref name="target"/> is the local
+    // being populated ("response" or "unmarshalledObject").
+    internal static void WriteHeaderUnmarshallers(CodeWriter writer, List<(Member Member, string HeaderName)> headerMembers, string target)
+    {
+        foreach (var (member, headerName) in headerMembers)
+        {
+            var conversion = HeaderValueConversion(member, $"""context.ResponseData.GetHeaderValue("{headerName}")""");
+            writer.OpenBlock($"""if (context.ResponseData.IsHeaderPresent("{headerName}"))""", () =>
+            {
+                writer.WriteLine($"{target}.{member.PropertyName} = {conversion};");
+            });
+        }
+    }
+
+    /// <summary>
+    /// The right-hand side that reads a scalar member from the header value <paramref name="value"/>
+    /// (e.g. <c>context.ResponseData.GetHeaderValue("x-foo")</c>). A string/enum takes the value
+    /// directly; <c>bool</c> parses without a culture (its two literals are culture-invariant); numeric
+    /// scalars parse with the invariant culture; a timestamp parses per its resolved
+    /// <c>@timestampFormat</c>. Dispatch is on <see cref="Member.MarshalType"/> so an enum rides the
+    /// string path (implicit ConstantClass conversion).
+    /// </summary>
+    internal static string HeaderValueConversion(Member member, string value)
+    {
+        // A timestamp needs a second axis — its resolved @timestampFormat — so it is handled before the
+        // scalar switch. restJson1's header default when unset (null) is http-date; epoch-seconds is an
+        // integer count fed to the Unix-epoch helper, while date-time and http-date both parse via
+        // DateTime.Parse (the wire forms differ but the parser handles both).
+        // https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html
+        if (member.MarshalType == "DateTime?")
+        {
+            return member.TimestampFormat switch
+            {
+                "epoch-seconds" => $"Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse({value}, CultureInfo.InvariantCulture))",
+                "date-time" or "http-date" or null => $"DateTime.Parse({value}, CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal)",
+                _ => throw new GeneratorException($"Unsupported @timestampFormat '{member.TimestampFormat}'."),
+            };
+        }
+
+        return member.MarshalType switch
+        {
+            "string" => value,
+            "bool?" => $"bool.Parse({value})",
+            "int?" => $"int.Parse({value}, CultureInfo.InvariantCulture)",
+            "long?" => $"long.Parse({value}, CultureInfo.InvariantCulture)",
+            "float?" => $"float.Parse({value}, CultureInfo.InvariantCulture)",
+            "double?" => $"double.Parse({value}, CultureInfo.InvariantCulture)",
+            // TODO: a list/set bound to @httpHeader (a multi-value header) has a List<T> MarshalType and
+            // falls through here. C2J parses these via MultiValueHeaderParser (ToStringList /
+            // ToValueTypeList<T> / ToDateTimeList).
+            _ => throw new GeneratorException($"Unsupported header member type '{member.DotNetType}' (member: {member.PropertyName})."),
+        };
     }
 
     private void WriteUnmarshallExceptionMethod(CodeWriter writer, Operation operation)

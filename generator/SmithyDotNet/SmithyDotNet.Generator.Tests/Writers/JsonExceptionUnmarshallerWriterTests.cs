@@ -47,13 +47,15 @@ public class JsonExceptionUnmarshallerWriterTests
     public void MainExceptionUnmarshallMethodIsCorrect()
     {
         AssertHelper("public ChannelInsufficientPermissionException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)");
-        AssertHelper("if (context.Stream.Length > 0)");
-        AssertHelper("context.Read(ref reader);");
         AssertHelper("ChannelInsufficientPermissionException unmarshalledObject = new ChannelInsufficientPermissionException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
-        AssertHelper("int targetDepth = context.CurrentDepth;");
-        AssertHelper("if (context.Stream.Length > 0)");
-        AssertHelper("while (context.ReadAtDepth(targetDepth, ref reader))");
         AssertHelper("return unmarshalledObject;");
+
+        // ChannelInsufficientPermission models only message (owned by the base), so it has no body or
+        // header members: the method just constructs the exception and returns it, emitting no body
+        // reader/loop or its guarding stream-length check.
+        Assert.DoesNotContain("context.Stream.Length", _exceptionUnmarshaller);
+        Assert.DoesNotContain("context.Read(ref reader)", _exceptionUnmarshaller);
+        Assert.DoesNotContain("while (context.ReadAtDepth", _exceptionUnmarshaller);
     }
 
     [Fact]

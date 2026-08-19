@@ -24,11 +24,6 @@ public static class UnsupportedTraitValidator
         ["aws.protocols#httpChecksum"] = "httpChecksum",
     };
 
-    private static readonly Dictionary<string, string> DeniedResponseMemberTraits = new()
-    {
-        ["smithy.api#httpHeader"] = "@httpHeader (response)",
-    };
-
     /// <summary>
     /// Checks service, operation, and top-level input/output/error member traits and throws a
     /// single aggregated <see cref="GeneratorException"/> listing every denied trait found.
@@ -46,19 +41,19 @@ public static class UnsupportedTraitValidator
 
             if (index.Shapes.TryGetValue(op.Input, out var inputShape) && inputShape is StructureShape input)
             {
-                CollectDeniedOnMembers(input, DeniedTraits, found);
+                CollectDeniedOnMembers(input, found);
             }
 
             if (index.Shapes.TryGetValue(op.Output, out var outputShape) && outputShape is StructureShape output)
             {
-                CollectDeniedOnResponseMembers(output, found);
+                CollectDeniedOnMembers(output, found);
             }
 
             foreach (var errorId in op.Errors)
             {
                 if (index.Shapes.TryGetValue(errorId, out var errorShape) && errorShape is StructureShape error)
                 {
-                    CollectDeniedOnResponseMembers(error, found);
+                    CollectDeniedOnMembers(error, found);
                 }
             }
         }
@@ -80,18 +75,11 @@ public static class UnsupportedTraitValidator
         }
     }
 
-    private static void CollectDeniedOnMembers(StructureShape structure, Dictionary<string, string> denied, HashSet<string> found)
+    private static void CollectDeniedOnMembers(StructureShape structure, HashSet<string> found)
     {
         foreach (var (_, member) in structure.Members)
         {
-            CollectDenied(member.Traits, denied, found);
+            CollectDenied(member.Traits, DeniedTraits, found);
         }
-    }
-
-    // Output and error structures get the same member-level treatment: both are part of the response.
-    private static void CollectDeniedOnResponseMembers(StructureShape structure, HashSet<string> found)
-    {
-        CollectDeniedOnMembers(structure, DeniedTraits, found);
-        CollectDeniedOnMembers(structure, DeniedResponseMemberTraits, found);
     }
 }

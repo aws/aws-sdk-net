@@ -1,0 +1,39 @@
+{
+    "services": [
+        {
+            "serviceName": "CloudTrailData",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator"
+            ]
+        },
+        {
+            "serviceName": "EKSAuth",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator"
+            ]
+        },
+        {
+            "serviceName": "KinesisVideoWebRTCStorage",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator"
+            ]
+        },
+        {
+            "serviceName": "SimpleDBv2",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator"
+            ]
+        },
+        {
+            "serviceName": "SSO",
+            "type": "patch",
+            "changeLogMessages": [
+                "Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator"
+            ]
+        }
+    ]
+}

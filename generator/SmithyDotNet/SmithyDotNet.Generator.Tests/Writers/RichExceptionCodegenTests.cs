@@ -151,6 +151,44 @@ public class RichExceptionCodegenTests
         Assert.Equal(serialized, Regex.Count(_exceptionUnmarshaller, @"context\.TestExpression\("));
     }
 
+    [Fact]
+    public void ExceptionUnmarshaller_HeaderMembers_ReadFromResponseHeaders()
+    {
+        // An error's @httpHeader members are read from the response headers (via context.ResponseData),
+        // not the error body — the same header path the response unmarshaller uses. Boom carries a string
+        // header (direct) and a default-format timestamp header (http-date, DateTime.Parse).
+        var (_, unmarshaller) = Generate(TestModels.Load(SharedModel), "Boom");
+
+        Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-boom-token"))""", unmarshaller);
+        Assert.Contains("""unmarshalledObject.Token = context.ResponseData.GetHeaderValue("x-boom-token");""", unmarshaller);
+        Assert.Contains("""unmarshalledObject.At = DateTime.Parse(context.ResponseData.GetHeaderValue("x-boom-at"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);""", unmarshaller);
+
+        // message flows to the base and token/at are headers, so there are no body members: the
+        // unmarshaller emits neither the body reader/loop nor its guarding stream-length check.
+        Assert.DoesNotContain("context.TestExpression(", unmarshaller);
+        Assert.DoesNotContain("while (context.ReadAtDepth", unmarshaller);
+        Assert.DoesNotContain("context.Stream.Length", unmarshaller);
+    }
+
+    [Fact]
+    public void ExceptionUnmarshaller_BodyAndHeaderMembers_EmitBodyLoopThenHeaderReads()
+    {
+        // An error with both a body member and an @httpHeader member emits the JSON reader scaffolding
+        // and body loop for the body member, plus the header reads (from context.ResponseData). This is
+        // the only positive pin that the exception writer emits the reader scaffolding: the message-only
+        // (ChannelInsufficientPermission) and header-only (Boom) cases both assert its absence.
+        var (_, unmarshaller) = Generate(TestModels.Load(SharedModel), "MixedError");
+
+        Assert.Contains("if (context.Stream.Length > 0)", unmarshaller);
+        Assert.Contains("context.Read(ref reader);", unmarshaller);
+        Assert.Contains("int targetDepth = context.CurrentDepth;", unmarshaller);
+        Assert.Contains("while (context.ReadAtDepth(targetDepth, ref reader))", unmarshaller);
+        Assert.Contains("""if (context.TestExpression("detail", targetDepth, ref reader))""", unmarshaller);
+
+        Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-trace"))""", unmarshaller);
+        Assert.Contains("""unmarshalledObject.Trace = context.ResponseData.GetHeaderValue("x-trace");""", unmarshaller);
+    }
+
     [Theory]
     [InlineData("""{ "throttling": true }""", "new RetryableDetails(true)")]
     [InlineData("""{ "throttling": false }""", "new RetryableDetails(false)")]
