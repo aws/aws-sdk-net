@@ -29,31 +29,31 @@ namespace AWSSDK.Benchmarks.Serde;
 [Config(typeof(E2EBenchmarkConfig))]
 public class RestJson1E2EBenchmarks
 {
-    private AmazonRestJsonDataPlaneClient _copyClientBaseline = null!;
-    private AmazonRestJsonDataPlaneClient _copyClientM = null!;
-    private AmazonRestJsonDataPlaneClient _putClient = null!;
-    private AmazonRestJsonDataPlaneClient _getClientS = null!;
-    private AmazonRestJsonDataPlaneClient _getClientM = null!;
-    private AmazonRestJsonDataPlaneClient _getClientL = null!;
-    private AmazonRestJsonDataPlaneClient _putMetricClientS = null!;
-    private AmazonRestJsonDataPlaneClient _putMetricClientM = null!;
-    private AmazonRestJsonDataPlaneClient _putMetricClientL = null!;
-    private AmazonRestJsonDataPlaneClient _getMetricClientS = null!;
-    private AmazonRestJsonDataPlaneClient _getMetricClientM = null!;
-    private AmazonRestJsonDataPlaneClient _getMetricClientL = null!;
+    internal AmazonRestJsonDataPlaneClient _copyClientBaseline = null!;
+    internal AmazonRestJsonDataPlaneClient _copyClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _putClient = null!;
+    internal AmazonRestJsonDataPlaneClient _getClientS = null!;
+    internal AmazonRestJsonDataPlaneClient _getClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _getClientL = null!;
+    internal AmazonRestJsonDataPlaneClient _putMetricClientS = null!;
+    internal AmazonRestJsonDataPlaneClient _putMetricClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _putMetricClientL = null!;
+    internal AmazonRestJsonDataPlaneClient _getMetricClientS = null!;
+    internal AmazonRestJsonDataPlaneClient _getMetricClientM = null!;
+    internal AmazonRestJsonDataPlaneClient _getMetricClientL = null!;
 
-    private CopyObjectRequest _copyObjectBaseline = null!;
-    private CopyObjectRequest _copyObjectMedium = null!;
-    private PutObjectRequest _putObjectS = null!;
-    private PutObjectRequest _putObjectM = null!;
-    private PutObjectRequest _putObjectL = null!;
-    private GetObjectRequest _getObjectRequest = null!;
-    private PutMetricDataRequest _putMetricDataS = null!;
-    private PutMetricDataRequest _putMetricDataM = null!;
-    private PutMetricDataRequest _putMetricDataL = null!;
-    private GetMetricDataRequest _getMetricDataS = null!;
-    private GetMetricDataRequest _getMetricDataM = null!;
-    private GetMetricDataRequest _getMetricDataL = null!;
+    internal CopyObjectRequest _copyObjectBaseline = null!;
+    internal CopyObjectRequest _copyObjectMedium = null!;
+    internal PutObjectRequest _putObjectS = null!;
+    internal PutObjectRequest _putObjectM = null!;
+    internal PutObjectRequest _putObjectL = null!;
+    internal GetObjectRequest _getObjectRequest = null!;
+    internal PutMetricDataRequest _putMetricDataS = null!;
+    internal PutMetricDataRequest _putMetricDataM = null!;
+    internal PutMetricDataRequest _putMetricDataL = null!;
+    internal GetMetricDataRequest _getMetricDataS = null!;
+    internal GetMetricDataRequest _getMetricDataM = null!;
+    internal GetMetricDataRequest _getMetricDataL = null!;
 
     private static readonly byte[] CopyOutputBaseline = Encoding.UTF8.GetBytes("{}");
     private static readonly byte[] CopyOutputM = Encoding.UTF8.GetBytes(
@@ -82,7 +82,7 @@ public class RestJson1E2EBenchmarks
         return sb.ToString();
     }
 
-    private AmazonRestJsonDataPlaneClient CreateClient(byte[] responseBody)
+    internal AmazonRestJsonDataPlaneClient CreateClient(byte[] responseBody)
     {
         var handler = new MockHttpHandler(responseBody, "application/json");
         var config = new AmazonRestJsonDataPlaneConfig
