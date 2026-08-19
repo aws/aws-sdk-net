@@ -736,6 +736,10 @@ namespace Amazon.Redshift
         /// Constant S3 for LogDestinationType
         /// </summary>
         public static readonly LogDestinationType S3 = new LogDestinationType("s3");
+        /// <summary>
+        /// Constant S3table for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType S3table = new LogDestinationType("s3table");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

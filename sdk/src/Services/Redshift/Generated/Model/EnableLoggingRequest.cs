@@ -41,6 +41,8 @@ namespace Amazon.Redshift.Model
         private LogDestinationType _logDestinationType;
         private List<string> _logExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _s3KeyPrefix;
+        private string _s3TableGranularity;
+        private string _s3TableKmsKeyId;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -100,7 +102,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LogDestinationType. 
         /// <para>
-        /// The log destination type. An enum with possible values of <c>s3</c> and <c>cloudwatch</c>.
+        /// The log destination type. An enum with possible values of <c>s3</c>, <c>cloudwatch</c>,
+        /// and <c>s3table</c>.
         /// </para>
         /// </summary>
         public LogDestinationType LogDestinationType
@@ -118,8 +121,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LogExports. 
         /// <para>
-        /// The collection of exported log types. Possible values are <c>connectionlog</c>, <c>useractivitylog</c>,
-        /// and <c>userlog</c>.
+        /// The collection of exported log types. When <c>LogDestinationType</c> is <c>s3</c>
+        /// or <c>cloudwatch</c>, possible values are <c>connectionlog</c>, <c>useractivitylog</c>,
+        /// and <c>userlog</c>. When <c>LogDestinationType</c> is <c>s3table</c>, the values are
+        /// the names of the system tables to publish. Omitting this parameter, passing an empty
+        /// list, or including the value <c>all</c> publishes all current and future system tables.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -163,6 +169,48 @@ namespace Amazon.Redshift.Model
         internal bool IsSetS3KeyPrefix()
         {
             return this._s3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TableGranularity. 
+        /// <para>
+        /// The scope of system table publishing. Valid values are <c>cluster</c> and <c>account</c>.
+        /// A value of <c>cluster</c> scopes publishing to the individual cluster. A value of
+        /// <c>account</c> scopes publishing to the Amazon Web Services account. This parameter
+        /// is valid only when <c>LogDestinationType</c> is <c>s3table</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string S3TableGranularity
+        {
+            get { return this._s3TableGranularity; }
+            set { this._s3TableGranularity = value; }
+        }
+
+        // Check to see if S3TableGranularity property is set
+        internal bool IsSetS3TableGranularity()
+        {
+            return this._s3TableGranularity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TableKmsKeyId. 
+        /// <para>
+        /// The identifier of a customer managed KMS key used to encrypt the S3 tables. This parameter
+        /// is valid only when <c>LogDestinationType</c> is <c>s3table</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string S3TableKmsKeyId
+        {
+            get { return this._s3TableKmsKeyId; }
+            set { this._s3TableKmsKeyId = value; }
+        }
+
+        // Check to see if S3TableKmsKeyId property is set
+        internal bool IsSetS3TableKmsKeyId()
+        {
+            return this._s3TableKmsKeyId != null;
         }
 
     }

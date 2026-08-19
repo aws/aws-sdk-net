@@ -42,6 +42,7 @@ namespace Amazon.Redshift.Model
         private List<string> _logExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _loggingEnabled;
         private string _s3KeyPrefix;
+        private S3TablePublishStatus _s3Tables;
 
         /// <summary>
         /// Gets and sets the property BucketName. 
@@ -120,7 +121,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LogDestinationType. 
         /// <para>
-        /// The log destination type. An enum with possible values of <c>s3</c> and <c>cloudwatch</c>.
+        /// The log destination type. An enum with possible values of <c>s3</c>, <c>cloudwatch</c>,
+        /// and <c>s3table</c>.
         /// </para>
         /// </summary>
         public LogDestinationType LogDestinationType
@@ -138,8 +140,10 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LogExports. 
         /// <para>
-        /// The collection of exported log types. Possible values are <c>connectionlog</c>, <c>useractivitylog</c>,
-        /// and <c>userlog</c>.
+        /// The collection of exported log types. When <c>LogDestinationType</c> is <c>s3</c>
+        /// or <c>cloudwatch</c>, possible values are <c>connectionlog</c>, <c>useractivitylog</c>,
+        /// and <c>userlog</c>. When <c>LogDestinationType</c> is <c>s3table</c>, the values are
+        /// the names of the system tables being published.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -194,6 +198,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetS3KeyPrefix()
         {
             return this._s3KeyPrefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3Tables. 
+        /// <para>
+        /// The status of system table publishing to S3 Tables. This field is populated only when
+        /// system table publishing is active.
+        /// </para>
+        /// </summary>
+        public S3TablePublishStatus S3Tables
+        {
+            get { return this._s3Tables; }
+            set { this._s3Tables = value; }
+        }
+
+        // Check to see if S3Tables property is set
+        internal bool IsSetS3Tables()
+        {
+            return this._s3Tables != null;
         }
 
     }

@@ -37,6 +37,8 @@ namespace Amazon.Redshift.Model
     public partial class DisableLoggingRequest : AmazonRedshiftRequest
     {
         private string _clusterIdentifier;
+        private LogDestinationType _logDestinationType;
+        private List<string> _logExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
@@ -59,6 +61,51 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogDestinationType. 
+        /// <para>
+        /// The log destination type. An enum with possible values of <c>s3</c>, <c>cloudwatch</c>,
+        /// and <c>s3table</c>. When set to <c>s3table</c>, stops system table publishing. When
+        /// omitted, the operation disables audit logging.
+        /// </para>
+        /// </summary>
+        public LogDestinationType LogDestinationType
+        {
+            get { return this._logDestinationType; }
+            set { this._logDestinationType = value; }
+        }
+
+        // Check to see if LogDestinationType property is set
+        internal bool IsSetLogDestinationType()
+        {
+            return this._logDestinationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogExports. 
+        /// <para>
+        /// The collection of log types to stop exporting. When <c>LogDestinationType</c> is <c>s3table</c>,
+        /// the values are the names of the system tables to stop publishing. Omitting this parameter
+        /// or passing <c>all</c> stops publishing all system tables.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> LogExports
+        {
+            get { return this._logExports; }
+            set { this._logExports = value; }
+        }
+
+        // Check to see if LogExports property is set
+        internal bool IsSetLogExports()
+        {
+            return this._logExports != null && (this._logExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

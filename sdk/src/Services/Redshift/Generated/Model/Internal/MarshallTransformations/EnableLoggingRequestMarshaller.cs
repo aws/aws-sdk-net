@@ -89,6 +89,14 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("S3KeyPrefix", StringUtils.FromString(publicRequest.S3KeyPrefix));
                 }
+                if(publicRequest.IsSetS3TableGranularity())
+                {
+                    request.Parameters.Add("S3TableGranularity", StringUtils.FromString(publicRequest.S3TableGranularity));
+                }
+                if(publicRequest.IsSetS3TableKmsKeyId())
+                {
+                    request.Parameters.Add("S3TableKmsKeyId", StringUtils.FromString(publicRequest.S3TableKmsKeyId));
+                }
             }
 
 #if !NETFRAMEWORK
