@@ -40,6 +40,7 @@ namespace Amazon.Batch.Model
         private OrchestrationType _containerOrchestrationType;
         private string _context;
         private string _ecsClusterArn;
+        private EcsSettings _ecsSettings;
         private EksConfiguration _eksConfiguration;
         private string _serviceRole;
         private CEState _state;
@@ -164,6 +165,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetEcsClusterArn()
         {
             return this._ecsClusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsSettings. 
+        /// <para>
+        /// The Amazon ECS settings for the compute environment. These settings control CloudWatch
+        /// Container Insights collection.
+        /// </para>
+        /// </summary>
+        public EcsSettings EcsSettings
+        {
+            get { return this._ecsSettings; }
+            set { this._ecsSettings = value; }
+        }
+
+        // Check to see if EcsSettings property is set
+        internal bool IsSetEcsSettings()
+        {
+            return this._ecsSettings != null;
         }
 
         /// <summary>

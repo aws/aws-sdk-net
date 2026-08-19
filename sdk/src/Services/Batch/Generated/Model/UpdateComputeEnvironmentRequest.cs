@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
         private string _computeEnvironment;
         private ComputeResourceUpdate _computeResources;
         private string _context;
+        private EcsSettings _ecsSettings;
         private string _serviceRole;
         private CEState _state;
         private int? _unmanagedvCpus;
@@ -98,6 +99,25 @@ namespace Amazon.Batch.Model
         internal bool IsSetContext()
         {
             return this._context != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsSettings. 
+        /// <para>
+        /// The Amazon ECS settings for the compute environment. These settings control CloudWatch
+        /// Container Insights collection for the compute environment.
+        /// </para>
+        /// </summary>
+        public EcsSettings EcsSettings
+        {
+            get { return this._ecsSettings; }
+            set { this._ecsSettings = value; }
+        }
+
+        // Check to see if EcsSettings property is set
+        internal bool IsSetEcsSettings()
+        {
+            return this._ecsSettings != null;
         }
 
         /// <summary>

@@ -92,6 +92,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.EcsClusterArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ecsSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = EcsSettingsUnmarshaller.Instance;
+                    unmarshalledObject.EcsSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("eksConfiguration", targetDepth, ref reader))
                 {
                     var unmarshaller = EksConfigurationUnmarshaller.Instance;
