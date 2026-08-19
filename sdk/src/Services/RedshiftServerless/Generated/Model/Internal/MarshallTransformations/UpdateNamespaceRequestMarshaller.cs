@@ -116,6 +116,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.KmsKeyId);
             }
 
+            if(publicRequest.IsSetLogDestinationType())
+            {
+                context.Writer.WritePropertyName("logDestinationType");
+                context.Writer.WriteStringValue(publicRequest.LogDestinationType);
+            }
+
             if(publicRequest.IsSetLogExports())
             {
                 context.Writer.WritePropertyName("logExports");
@@ -137,6 +143,35 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("namespaceName");
                 context.Writer.WriteStringValue(publicRequest.NamespaceName);
+            }
+
+            if(publicRequest.IsSetS3TableAction())
+            {
+                context.Writer.WritePropertyName("s3TableAction");
+                context.Writer.WriteStringValue(publicRequest.S3TableAction);
+            }
+
+            if(publicRequest.IsSetS3TableGranularity())
+            {
+                context.Writer.WritePropertyName("s3TableGranularity");
+                context.Writer.WriteStringValue(publicRequest.S3TableGranularity);
+            }
+
+            if(publicRequest.IsSetS3TableKmsKeyId())
+            {
+                context.Writer.WritePropertyName("s3TableKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.S3TableKmsKeyId);
+            }
+
+            if(publicRequest.IsSetS3TableNames())
+            {
+                context.Writer.WritePropertyName("s3TableNames");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestS3TableNamesListValue in publicRequest.S3TableNames)
+                {
+                        context.Writer.WriteStringValue(publicRequestS3TableNamesListValue);
+                }
+                context.Writer.WriteEndArray();
             }
 
             writer.WriteEndObject();

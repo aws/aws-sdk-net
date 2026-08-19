@@ -35,6 +35,13 @@ namespace Amazon.RedshiftServerless.Model
     /// multiple parameters in one request. For example, you must specify both <c>adminUsername</c>
     /// and <c>adminUserPassword</c> to update either field, but you can't update both <c>kmsKeyId</c>
     /// and <c>logExports</c> in a single request.
+    /// 
+    ///  
+    /// <para>
+    /// Similarly, an S3 Tables log-publishing update (a request where <c>logDestinationType</c>
+    /// is <c>s3table</c>) cannot be combined with any other namespace configuration change
+    /// and must be submitted as its own request.
+    /// </para>
     /// </summary>
     public partial class UpdateNamespaceRequest : AmazonRedshiftServerlessRequest
     {
@@ -44,9 +51,14 @@ namespace Amazon.RedshiftServerless.Model
         private string _defaultIamRoleArn;
         private List<string> _iamRoles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _kmsKeyId;
+        private LogDestinationType _logDestinationType;
         private List<string> _logExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _manageAdminPassword;
         private string _namespaceName;
+        private S3TableAction _s3TableAction;
+        private S3TableGranularity _s3TableGranularity;
+        private string _s3TableKmsKeyId;
+        private List<string> _s3TableNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdminPasswordSecretKmsKeyId. 
@@ -181,6 +193,29 @@ namespace Amazon.RedshiftServerless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LogDestinationType. 
+        /// <para>
+        /// The destination for the log data. Valid values are <c>s3table</c> and <c>cloudwatch</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Set this to <c>s3table</c> to manage Amazon S3 Tables system-table publishing for
+        /// the namespace.
+        /// </para>
+        /// </summary>
+        public LogDestinationType LogDestinationType
+        {
+            get { return this._logDestinationType; }
+            set { this._logDestinationType = value; }
+        }
+
+        // Check to see if LogDestinationType property is set
+        internal bool IsSetLogDestinationType()
+        {
+            return this._logDestinationType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogExports. 
         /// <para>
         /// The types of logs the namespace can export. The export types are <c>userlog</c>, <c>connectionlog</c>,
@@ -244,6 +279,115 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetNamespaceName()
         {
             return this._namespaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TableAction. 
+        /// <para>
+        /// Whether to enable or disable Amazon S3 Tables publishing. Valid values are <c>Enable</c>
+        /// and <c>Disable</c>, matched case-insensitively.
+        /// </para>
+        ///  
+        /// <para>
+        /// When omitted, defaults to <c>Enable</c>. Valid only when <c>logDestinationType</c>
+        /// is <c>s3table</c>.
+        /// </para>
+        /// </summary>
+        public S3TableAction S3TableAction
+        {
+            get { return this._s3TableAction; }
+            set { this._s3TableAction = value; }
+        }
+
+        // Check to see if S3TableAction property is set
+        internal bool IsSetS3TableAction()
+        {
+            return this._s3TableAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TableGranularity. 
+        /// <para>
+        /// The scope of the Amazon S3 Tables destination. Valid values are <c>namespace</c> and
+        /// <c>account</c>, matched case-insensitively. <c>namespace</c> scopes the published
+        /// tables to this namespace; <c>account</c> scopes them to the Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Required when enabling. Omitting this parameter or passing a blank value fails with
+        /// <c>ValidationException</c>. Valid only when <c>logDestinationType</c> is <c>s3table</c>.
+        /// </para>
+        /// </summary>
+        public S3TableGranularity S3TableGranularity
+        {
+            get { return this._s3TableGranularity; }
+            set { this._s3TableGranularity = value; }
+        }
+
+        // Check to see if S3TableGranularity property is set
+        internal bool IsSetS3TableGranularity()
+        {
+            return this._s3TableGranularity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TableKmsKeyId. 
+        /// <para>
+        /// The identifier of the Key Management Service key used to encrypt the published Amazon
+        /// S3 Tables data. When omitted, the data is encrypted with SSE-S3 (Amazon S3 managed
+        /// keys).
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid only when <c>logDestinationType</c> is <c>s3table</c>.
+        /// </para>
+        /// </summary>
+        public string S3TableKmsKeyId
+        {
+            get { return this._s3TableKmsKeyId; }
+            set { this._s3TableKmsKeyId = value; }
+        }
+
+        // Check to see if S3TableKmsKeyId property is set
+        internal bool IsSetS3TableKmsKeyId()
+        {
+            return this._s3TableKmsKeyId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TableNames. 
+        /// <para>
+        /// The system tables to publish (on enable) or to stop publishing (on disable). Each
+        /// value is either a system table view name that begins with <c>sys_</c> or the keyword
+        /// <c>all</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Omitting this parameter, passing an empty list, or including <c>all</c> each select
+        /// every current and future system table. Each name must be 1-128 characters, and the
+        /// list can contain up to 256 names.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid only when <c>logDestinationType</c> is <c>s3table</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public List<string> S3TableNames
+        {
+            get { return this._s3TableNames; }
+            set { this._s3TableNames = value; }
+        }
+
+        // Check to see if S3TableNames property is set
+        internal bool IsSetS3TableNames()
+        {
+            return this._s3TableNames != null && (this._s3TableNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -125,6 +125,56 @@ namespace Amazon.RedshiftServerless
 
 
     /// <summary>
+    /// Constants used for properties of type LogDestinationType.
+    /// </summary>
+    public class LogDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Cloudwatch for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType Cloudwatch = new LogDestinationType("cloudwatch");
+        /// <summary>
+        /// Constant S3table for LogDestinationType
+        /// </summary>
+        public static readonly LogDestinationType S3table = new LogDestinationType("s3table");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LogDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LogDestinationType FindValue(string value)
+        {
+            return FindValue<LogDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LogDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogExport.
     /// </summary>
     public class LogExport : ConstantClass
@@ -388,6 +438,106 @@ namespace Amazon.RedshiftServerless
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PerformanceTargetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3TableAction.
+    /// </summary>
+    public class S3TableAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disable for S3TableAction
+        /// </summary>
+        public static readonly S3TableAction Disable = new S3TableAction("Disable");
+        /// <summary>
+        /// Constant Enable for S3TableAction
+        /// </summary>
+        public static readonly S3TableAction Enable = new S3TableAction("Enable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3TableAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3TableAction FindValue(string value)
+        {
+            return FindValue<S3TableAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3TableAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3TableGranularity.
+    /// </summary>
+    public class S3TableGranularity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Account for S3TableGranularity
+        /// </summary>
+        public static readonly S3TableGranularity Account = new S3TableGranularity("account");
+        /// <summary>
+        /// Constant Namespace for S3TableGranularity
+        /// </summary>
+        public static readonly S3TableGranularity Namespace = new S3TableGranularity("namespace");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3TableGranularity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3TableGranularity FindValue(string value)
+        {
+            return FindValue<S3TableGranularity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3TableGranularity(string value)
         {
             return FindValue(value);
         }
