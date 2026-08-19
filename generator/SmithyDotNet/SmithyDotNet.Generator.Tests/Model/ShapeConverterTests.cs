@@ -1,5 +1,6 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Model.Shapes;
+using SmithyDotNet.Generator.Model.Traits;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Model;
@@ -41,6 +42,36 @@ public class ShapeConverterTests(CloudTrailModelFixture fixture)
         var json = """{"type": "someFutureType"}""";
         var shape = JsonSerializer.Deserialize<Shape>(json, TestModels.Options);
         Assert.Null(shape);
+    }
+
+    // A pre-IDL-2.0 enum (string + smithy.api#enum trait) normalizes to an EnumShape so the
+    // writers emit the same ConstantClass C2J does — SupportApp's AccountType is the shape that
+    // slipped through as a plain string in #1462. One entry carries an explicit name (keys the
+    // member), the other keys by its value; the consumed legacy trait must not survive.
+    [Fact]
+    public void Deserialize_LegacyEnumTraitString_BecomesEnumShape()
+    {
+        var json = """{"type": "string", "traits": {"smithy.api#enum": [{"value": "management", "name": "MANAGEMENT"}, {"value": "member"}]}}""";
+        var shape = Assert.IsType<EnumShape>(JsonSerializer.Deserialize<Shape>(json, TestModels.Options));
+
+        Assert.Equal(["management", "member"], shape.Members.Values.Select(m => m.GetEnumValue()));
+        Assert.Equal(["MANAGEMENT", "member"], shape.Members.Keys);
+        Assert.False(shape.Traits.ContainsKey("smithy.api#enum"));
+    }
+
+    // Colliding member names (one entry's name equals another entry's value) must fail loudly:
+    // a silent overwrite would drop a constant.
+    [Fact]
+    public void Deserialize_LegacyEnumTrait_CollidingNamesThrow()
+    {
+        var json = """
+            {"type": "string", "traits": {"smithy.api#enum": [
+                {"value": "foo"},
+                {"value": "bar", "name": "foo"}
+            ]}}
+            """;
+        var ex = Assert.Throws<GeneratorException>(() => JsonSerializer.Deserialize<Shape>(json, TestModels.Options));
+        Assert.Contains("collide", ex.Message);
     }
 
     [Fact]
