@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MemoryRecordDeleteInput Marshaller
+    /// ExtractionConfig Marshaller
     /// </summary>
-    public class MemoryRecordDeleteInputMarshaller : IRequestMarshaller<MemoryRecordDeleteInput, JsonMarshallerContext> 
+    public class ExtractionConfigMarshaller : IRequestMarshaller<ExtractionConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,20 +42,22 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MemoryRecordDeleteInput requestObject, JsonMarshallerContext context)
+        public void Marshall(ExtractionConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMemoryRecordId())
+            if(requestObject.IsSetNamespaceVariables())
             {
-                context.Writer.WritePropertyName("memoryRecordId");
-                context.Writer.WriteStringValue(requestObject.MemoryRecordId);
-            }
+                context.Writer.WritePropertyName("namespaceVariables");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectNamespaceVariablesKvp in requestObject.NamespaceVariables)
+                {
+                    context.Writer.WritePropertyName(requestObjectNamespaceVariablesKvp.Key);
+                    var requestObjectNamespaceVariablesValue = requestObjectNamespaceVariablesKvp.Value;
 
-            if(requestObject.IsSetNamespace())
-            {
-                context.Writer.WritePropertyName("namespace");
-                context.Writer.WriteStringValue(requestObject.Namespace);
+                        context.Writer.WriteStringValue(requestObjectNamespaceVariablesValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -63,7 +65,7 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MemoryRecordDeleteInputMarshaller Instance = new MemoryRecordDeleteInputMarshaller();
+        public readonly static ExtractionConfigMarshaller Instance = new ExtractionConfigMarshaller();
 
     }
 }

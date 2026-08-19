@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private string _memoryId;
         private string _memoryRecordId;
+        private string _awsNamespace;
 
         /// <summary>
         /// Gets and sets the property MemoryId. 
@@ -80,6 +81,26 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetMemoryRecordId()
         {
             return this._memoryRecordId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// The namespace of the memory record to retrieve. This value is used for IAM condition
+        /// key authorization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
         }
 
     }

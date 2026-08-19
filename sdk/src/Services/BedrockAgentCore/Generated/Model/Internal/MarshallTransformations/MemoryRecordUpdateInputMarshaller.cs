@@ -99,6 +99,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetSourceNamespaces())
+            {
+                context.Writer.WritePropertyName("sourceNamespaces");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSourceNamespacesListValue in requestObject.SourceNamespaces)
+                {
+                        context.Writer.WriteStringValue(requestObjectSourceNamespacesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("timestamp");

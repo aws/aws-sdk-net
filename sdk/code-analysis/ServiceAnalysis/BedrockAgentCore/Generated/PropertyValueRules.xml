@@ -209,6 +209,12 @@
     <pattern>mem-[a-zA-Z0-9-_]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.DeleteMemoryRecordRequest.Namespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteMemoryRecordResponse.MemoryRecordId</property>
     <min>40</min>
     <max>50</max>
@@ -398,6 +404,12 @@
     <min>40</min>
     <max>50</max>
     <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.GetMemoryRecordRequest.Namespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.GetPaymentInstrumentRequest.AgentName</property>
@@ -1999,6 +2011,12 @@
     <min>40</min>
     <max>50</max>
     <pattern>mem-[a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MemoryRecordDeleteInput.Namespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>[a-zA-Z0-9/*][a-zA-Z0-9-_/*]*(?::[a-zA-Z0-9-_/*]+)*[a-zA-Z0-9-_/*]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.MemoryRecordLeftExpression.MetadataKey</property>

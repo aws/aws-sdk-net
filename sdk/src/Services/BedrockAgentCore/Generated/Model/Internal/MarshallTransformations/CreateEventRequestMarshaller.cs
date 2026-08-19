@@ -110,6 +110,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EventTimestamp.Value)));
             }
 
+            if(publicRequest.IsSetExtractionConfig())
+            {
+                context.Writer.WritePropertyName("extractionConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExtractionConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExtractionConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetExtractionMode())
             {
                 context.Writer.WritePropertyName("extractionMode");

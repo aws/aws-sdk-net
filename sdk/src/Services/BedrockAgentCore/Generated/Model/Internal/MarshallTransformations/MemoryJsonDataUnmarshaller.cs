@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PayloadType Object
+    /// Response Unmarshaller for MemoryJsonData Object
     /// </summary>  
-    public class PayloadTypeUnmarshaller : IJsonUnmarshaller<PayloadType, JsonUnmarshallerContext>
+    public class MemoryJsonDataUnmarshaller : IJsonUnmarshaller<MemoryJsonData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PayloadType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MemoryJsonData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PayloadType unmarshalledObject = new PayloadType();
+            MemoryJsonData unmarshalledObject = new MemoryJsonData();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("blob", targetDepth, ref reader))
+                if (context.TestExpression("content", targetDepth, ref reader))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Blob = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("conversational", targetDepth, ref reader))
-                {
-                    var unmarshaller = ConversationalUnmarshaller.Instance;
-                    unmarshalledObject.Conversational = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("json", targetDepth, ref reader))
-                {
-                    var unmarshaller = MemoryJsonDataUnmarshaller.Instance;
-                    unmarshalledObject.Json = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Content = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
         }
 
 
-        private static PayloadTypeUnmarshaller _instance = new PayloadTypeUnmarshaller();        
+        private static MemoryJsonDataUnmarshaller _instance = new MemoryJsonDataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PayloadTypeUnmarshaller Instance
+        public static MemoryJsonDataUnmarshaller Instance
         {
             get
             {
