@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Shared fields for GatewayRateLimit responses
+    /// Contains detailed information about a gateway rate limit, including its configuration
+    /// and current status.
     /// </summary>
     public partial class GatewayRateLimitDetail
     {
@@ -65,7 +66,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Optional human-readable description for this limit.
+        /// The human-readable description of the rate limit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -82,7 +83,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DimensionKeys.
+        /// Gets and sets the property DimensionKeys. 
+        /// <para>
+        /// The ordered list of dimension key names that define the scope of this rate limit.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -103,7 +107,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Entries.
+        /// Gets and sets the property Entries. 
+        /// <para>
+        /// The list of rule entries that map dimension values to rate configurations.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -143,7 +150,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RateLimitId.
+        /// Gets and sets the property RateLimitId. 
+        /// <para>
+        /// The unique identifier of the rate limit.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]
         public string RateLimitId
@@ -159,7 +169,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the rate limit.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public GatewayRateLimitStatus Status

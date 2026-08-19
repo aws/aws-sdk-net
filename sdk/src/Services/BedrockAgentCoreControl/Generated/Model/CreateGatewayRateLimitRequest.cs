@@ -70,7 +70,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Optional human-readable description for this limit.
+        /// An optional human-readable description for this rate limit. If not provided, the rate
+        /// limit is created without a description.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -89,8 +90,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property DimensionKeys. 
         /// <para>
-        /// Ordered list of dimension names defining the scope of this limit. Unique per gateway
-        /// — no two limits can share the same dimensionKeys.
+        /// The ordered list of dimension key names that define the scope of this rate limit.
+        /// Must be unique per gateway—no two rate limits can share the same dimension keys.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -114,7 +115,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// Rule entries mapping dimension values to rate configurations.
+        /// The rule entries that map dimension values to rate configurations.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -157,7 +158,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property RateLimitId. 
         /// <para>
-        /// Optional customer-defined limit ID. If not provided, system generates one.
+        /// An optional customer-defined identifier for the rate limit. If not provided, the system
+        /// generates one.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]

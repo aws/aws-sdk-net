@@ -122,6 +122,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("namespaceKeys", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NamespaceKeyEntry, NamespaceKeyEntryUnmarshaller>(NamespaceKeyEntryUnmarshaller.Instance);
+                    unmarshalledObject.NamespaceKeys = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

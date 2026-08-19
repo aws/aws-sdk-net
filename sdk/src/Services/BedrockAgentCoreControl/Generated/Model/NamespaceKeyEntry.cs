@@ -30,49 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteGatewayRateLimit operation.
+    /// A namespace variable key definition with optional <c>NamespaceKeyValidation</c> rules.
     /// </summary>
-    public partial class DeleteGatewayRateLimitResponse : AmazonWebServiceResponse
+    public partial class NamespaceKeyEntry
     {
-        private string _rateLimitId;
-        private GatewayRateLimitStatus _status;
+        private string _key;
+        private NamespaceKeyValidation _validation;
 
         /// <summary>
-        /// Gets and sets the property RateLimitId. 
+        /// Gets and sets the property Key. 
         /// <para>
-        /// The unique identifier of the deleted rate limit.
+        /// The namespace variable key name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
-        public string RateLimitId
+        [AWSProperty(Required=true, Min=1, Max=32)]
+        public string Key
         {
-            get { return this._rateLimitId; }
-            set { this._rateLimitId = value; }
+            get { return this._key; }
+            set { this._key = value; }
         }
 
-        // Check to see if RateLimitId property is set
-        internal bool IsSetRateLimitId()
+        // Check to see if Key property is set
+        internal bool IsSetKey()
         {
-            return this._rateLimitId != null;
+            return this._key != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Status. 
+        /// Gets and sets the property Validation. 
         /// <para>
-        /// The current status of the rate limit deletion.
+        /// The validation rules that constrain values for this namespace variable at runtime
+        /// (<c>CreateEvent</c> API).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public GatewayRateLimitStatus Status
+        public NamespaceKeyValidation Validation
         {
-            get { return this._status; }
-            set { this._status = value; }
+            get { return this._validation; }
+            set { this._validation = value; }
         }
 
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
+        // Check to see if Validation property is set
+        internal bool IsSetValidation()
         {
-            return this._status != null;
+            return this._validation != null;
         }
 
     }

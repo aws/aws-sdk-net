@@ -42,6 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _memoryExecutionRoleArn;
         private string _memoryId;
         private ModifyMemoryStrategies _memoryStrategies;
+        private List<NamespaceKeyEntry> _namespaceKeys = AWSConfigs.InitializeCollections ? new List<NamespaceKeyEntry>() : null;
         private StreamDeliveryResources _streamDeliveryResources;
 
         /// <summary>
@@ -179,6 +180,32 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetMemoryStrategies()
         {
             return this._memoryStrategies != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceKeys. 
+        /// <para>
+        /// The namespace variable key definitions with validation rules for this memory. Use
+        /// this parameter to update existing <c>namespaceKey</c> validation rules or add new
+        /// keys when namespace templates change.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<NamespaceKeyEntry> NamespaceKeys
+        {
+            get { return this._namespaceKeys; }
+            set { this._namespaceKeys = value; }
+        }
+
+        // Check to see if NamespaceKeys property is set
+        internal bool IsSetNamespaceKeys()
+        {
+            return this._namespaceKeys != null && (this._namespaceKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

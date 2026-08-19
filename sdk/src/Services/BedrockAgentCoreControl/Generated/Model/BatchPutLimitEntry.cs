@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// A limit definition within a BatchPut request (rateLimitId used for upsert matching)
+    /// A rate limit definition within a batch put request. If you provide a <c>rateLimitId</c>,
+    /// the service uses it for upsert matching against existing rate limits.
     /// </summary>
     public partial class BatchPutLimitEntry
     {
@@ -42,7 +43,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Optional human-readable description for this limit.
+        /// An optional human-readable description for this rate limit. If not provided, the rate
+        /// limit is created without a description.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -59,7 +61,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DimensionKeys.
+        /// Gets and sets the property DimensionKeys. 
+        /// <para>
+        /// The ordered list of dimension key names that define the scope of this rate limit.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -80,7 +85,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Entries.
+        /// Gets and sets the property Entries. 
+        /// <para>
+        /// The list of rule entries that map dimension values to rate configurations.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -103,7 +111,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property RateLimitId. 
         /// <para>
-        /// Optional — if provided, used for upsert matching against existing limits.
+        /// The unique identifier of the rate limit. If provided, the service uses it for upsert
+        /// matching against existing rate limits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]

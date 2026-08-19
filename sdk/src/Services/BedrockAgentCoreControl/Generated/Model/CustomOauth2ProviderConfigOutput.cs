@@ -160,7 +160,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateKeyJwtConfig.
+        /// Gets and sets the property PrivateKeyJwtConfig. 
+        /// <para>
+        /// The configuration for private_key_jwt client authentication used by this OAuth2 credential
+        /// provider.
+        /// </para>
         /// </summary>
         public PrivateKeyJwtConfig PrivateKeyJwtConfig
         {

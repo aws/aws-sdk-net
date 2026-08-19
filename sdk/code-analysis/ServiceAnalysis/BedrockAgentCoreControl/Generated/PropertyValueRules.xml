@@ -5343,6 +5343,17 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.NamespaceKeyEntry.Key</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>(?!memoryStrategyId$|actorId$|sessionId$)[a-z][a-z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCoreControl.Model.NamespaceKeyValidation.RegexPattern</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCoreControl.Model.NumericalScaleDefinition.Label</property>
     <min>1</min>
     <max>100</max>

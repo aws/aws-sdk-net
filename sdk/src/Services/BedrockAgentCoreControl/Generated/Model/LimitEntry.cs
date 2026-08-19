@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// A single rule entry within a limit, mapping dimension values to rate configurations
+    /// A single rule entry within a rate limit that maps dimension values to rate configurations.
+    /// Each entry defines the rate limits for a specific combination of dimension values.
     /// </summary>
     public partial class LimitEntry
     {
@@ -42,7 +43,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Connections. 
         /// <para>
-        /// Connection rate limits (per second only). Limited to 1 entry for now. — P2
+        /// The connection rate limit configuration. Specifies the maximum number of concurrent
+        /// connections allowed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -66,9 +68,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// Map of dimension name to dimension value, matching the parent limit's dimensionKeys.
-        /// Keys must exactly match the dimensionKeys. Values may be &quot;<em>&quot; as a wildcard.
-        /// &quot;</em>&quot; may only appear at trailing positions (based on dimensionKeys ordering).
+        /// A map of dimension names to dimension values for this rule entry. Keys must match
+        /// the parent rate limit's dimension keys. Values may use <c>*</c> as a wildcard, but
+        /// only in trailing positions based on the dimension keys ordering.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -92,7 +94,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Requests. 
         /// <para>
-        /// Request rate limits (RPS or RPM). Limited to 1 entry for now.
+        /// The request rate limit configuration. Specifies the maximum number of requests allowed
+        /// per time period.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -116,7 +119,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Tokens. 
         /// <para>
-        /// Token rate limits (TPM). Limited to 1 entry for now. — P1
+        /// The token rate limit configuration. Specifies the maximum number of tokens allowed
+        /// per time period.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

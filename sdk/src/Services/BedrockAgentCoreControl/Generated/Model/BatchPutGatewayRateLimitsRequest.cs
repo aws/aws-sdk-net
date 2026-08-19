@@ -86,7 +86,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property RateLimits. 
         /// <para>
-        /// Complete set of rate limits for this gateway. Replaces all existing limits atomically.
+        /// The complete set of rate limits for this gateway. This operation replaces all existing
+        /// rate limits in a single request. If the operation fails, no rate limits are changed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

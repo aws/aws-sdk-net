@@ -146,6 +146,22 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetNamespaceKeys())
+            {
+                context.Writer.WritePropertyName("namespaceKeys");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNamespaceKeysListValue in publicRequest.NamespaceKeys)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NamespaceKeyEntryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNamespaceKeysListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetStreamDeliveryResources())
             {
                 context.Writer.WritePropertyName("streamDeliveryResources");
