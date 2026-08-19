@@ -1,0 +1,219 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the restjsondataplane-1999-12-31.normal.json service model.
+ */
+
+
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+using Amazon.Runtime;
+using Amazon.RestJsonDataPlane.Model;
+
+#pragma warning disable CS1570
+namespace Amazon.RestJsonDataPlane
+{
+    /// <summary>
+    /// <para>Interface for accessing RestJsonDataPlane</para>
+    ///
+    /// 
+    /// </summary>
+    public partial interface IAmazonRestJsonDataPlane : IAmazonService, IDisposable
+    {
+
+
+        
+        #region  CopyObject
+
+
+        /// <summary>
+        /// <pre><c>From Amazon S3. CopyObject serializes a large set of headers. </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
+        /// 
+        /// <returns>The response from the CopyObject service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/CopyObject">REST API Reference for CopyObject Operation</seealso>
+        CopyObjectResponse CopyObject(CopyObjectRequest request);
+
+
+
+        /// <summary>
+        /// <pre><c>From Amazon S3. CopyObject serializes a large set of headers. </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CopyObject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CopyObject service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/CopyObject">REST API Reference for CopyObject Operation</seealso>
+        Task<CopyObjectResponse> CopyObjectAsync(CopyObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetMetricData
+
+
+        /// <summary>
+        /// <pre><c>As seen in Amazon CloudWatch </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricData service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        GetMetricDataResponse GetMetricData(GetMetricDataRequest request);
+
+
+
+        /// <summary>
+        /// <pre><c>As seen in Amazon CloudWatch </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetMetricData service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/GetMetricData">REST API Reference for GetMetricData Operation</seealso>
+        Task<GetMetricDataResponse> GetMetricDataAsync(GetMetricDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetObject
+
+
+        /// <summary>
+        /// As seen in Amazon S3. Object I/O is HTTP payload I/O, and is more of a function of
+        /// network and checksum performance than serde. It is here because it's an important
+        /// operation, for completeness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
+        /// 
+        /// <returns>The response from the GetObject service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/GetObject">REST API Reference for GetObject Operation</seealso>
+        GetObjectResponse GetObject(GetObjectRequest request);
+
+
+
+        /// <summary>
+        /// As seen in Amazon S3. Object I/O is HTTP payload I/O, and is more of a function of
+        /// network and checksum performance than serde. It is here because it's an important
+        /// operation, for completeness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetObject service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/GetObject">REST API Reference for GetObject Operation</seealso>
+        Task<GetObjectResponse> GetObjectAsync(GetObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  Healthcheck
+
+
+        /// <summary>
+        /// <pre><c>A response that only says &quot;OK&quot;, if it can. </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Healthcheck service method.</param>
+        /// 
+        /// <returns>The response from the Healthcheck service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/Healthcheck">REST API Reference for Healthcheck Operation</seealso>
+        HealthcheckResponse Healthcheck(HealthcheckRequest request);
+
+
+
+        /// <summary>
+        /// <pre><c>A response that only says &quot;OK&quot;, if it can. </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the Healthcheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the Healthcheck service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/Healthcheck">REST API Reference for Healthcheck Operation</seealso>
+        Task<HealthcheckResponse> HealthcheckAsync(HealthcheckRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutMetricData
+
+
+        /// <summary>
+        /// <pre><c>As seen in Amazon CloudWatch. </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricData service method.</param>
+        /// 
+        /// <returns>The response from the PutMetricData service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
+        PutMetricDataResponse PutMetricData(PutMetricDataRequest request);
+
+
+
+        /// <summary>
+        /// <pre><c>As seen in Amazon CloudWatch. </c></pre>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutMetricData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutMetricData service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/PutMetricData">REST API Reference for PutMetricData Operation</seealso>
+        Task<PutMetricDataResponse> PutMetricDataAsync(PutMetricDataRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutObject
+
+
+        /// <summary>
+        /// As seen in Amazon S3. Object I/O is HTTP payload I/O, and is more of a function of
+        /// network and checksum performance than serde. It is here because it's an important
+        /// operation, for completeness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
+        /// 
+        /// <returns>The response from the PutObject service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/PutObject">REST API Reference for PutObject Operation</seealso>
+        PutObjectResponse PutObject(PutObjectRequest request);
+
+
+
+        /// <summary>
+        /// As seen in Amazon S3. Object I/O is HTTP payload I/O, and is more of a function of
+        /// network and checksum performance than serde. It is here because it's an important
+        /// operation, for completeness.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutObject service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutObject service method, as returned by RestJsonDataPlane.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/restjsondataplane-1999-12-31/PutObject">REST API Reference for PutObject Operation</seealso>
+        Task<PutObjectResponse> PutObjectAsync(PutObjectRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+    }
+}

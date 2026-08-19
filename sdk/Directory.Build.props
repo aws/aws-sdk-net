@@ -1,6 +1,9 @@
 <Project>
  <PropertyGroup>
    <BaseIntermediateOutputPath>$(MSBuildProjectDirectory)\obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
+   <SdkPerformanceTargets>net8.0</SdkPerformanceTargets>
+   <SdkNetFrameworkTargets>net472</SdkNetFrameworkTargets>
+   <SdkNetTargets>netstandard2.0;netcoreapp3.1;net8.0</SdkNetTargets>
    <NuGetAuditMode>direct</NuGetAuditMode>
  </PropertyGroup>
 </Project>

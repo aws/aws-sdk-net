@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "test-service": true,
+  "synopsis": "AWS JSON RPC 1.0 serde benchmark data plane service"
+}
