@@ -93,6 +93,14 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
+        /// Paginator for ListCertificateAuthorities operation
+        ///</summary>
+        public IListCertificateAuthoritiesPaginator ListCertificateAuthorities(ListCertificateAuthoritiesRequest request) 
+        {
+            return new ListCertificateAuthoritiesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
         public IListClustersPaginator ListClusters(ListClustersRequest request) 

@@ -30,50 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the <c>certificate-authority-data</c> for your cluster.
+    /// This is the response object from the ActivateCertificateAuthority operation.
     /// </summary>
-    public partial class Certificate
+    public partial class ActivateCertificateAuthorityResponse : AmazonWebServiceResponse
     {
-        private ActiveCertificateAuthority _active;
-        private string _data;
+        private CertificateAuthoritySummary _certificateAuthority;
+        private Update _update;
 
         /// <summary>
-        /// Gets and sets the property Active. 
+        /// Gets and sets the property CertificateAuthority. 
         /// <para>
-        /// An object identifying the certificate authority that is currently signing certificates
-        /// for the cluster.
+        /// Summary information about the certificate authority that is being activated.
         /// </para>
         /// </summary>
-        public ActiveCertificateAuthority Active
+        public CertificateAuthoritySummary CertificateAuthority
         {
-            get { return this._active; }
-            set { this._active = value; }
+            get { return this._certificateAuthority; }
+            set { this._certificateAuthority = value; }
         }
 
-        // Check to see if Active property is set
-        internal bool IsSetActive()
+        // Check to see if CertificateAuthority property is set
+        internal bool IsSetCertificateAuthority()
         {
-            return this._active != null;
+            return this._certificateAuthority != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Data. 
+        /// Gets and sets the property Update. 
         /// <para>
-        /// The Base64-encoded certificate data required to communicate with your cluster. Add
-        /// this to the <c>certificate-authority-data</c> section of the <c>kubeconfig</c> file
-        /// for your cluster.
+        /// An object representing the asynchronous update that promotes the certificate authority
+        /// to be the cluster's signer.
         /// </para>
         /// </summary>
-        public string Data
+        public Update Update
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._update; }
+            set { this._update = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if Update property is set
+        internal bool IsSetUpdate()
         {
-            return this._data != null;
+            return this._update != null;
         }
 
     }

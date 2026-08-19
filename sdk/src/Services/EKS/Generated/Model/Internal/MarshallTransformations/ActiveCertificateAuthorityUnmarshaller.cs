@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Certificate Object
+    /// Response Unmarshaller for ActiveCertificateAuthority Object
     /// </summary>  
-    public class CertificateUnmarshaller : IJsonUnmarshaller<Certificate, JsonUnmarshallerContext>
+    public class ActiveCertificateAuthorityUnmarshaller : IJsonUnmarshaller<ActiveCertificateAuthority, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Certificate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ActiveCertificateAuthority Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Certificate unmarshalledObject = new Certificate();
+            ActiveCertificateAuthority unmarshalledObject = new ActiveCertificateAuthority();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("active", targetDepth, ref reader))
-                {
-                    var unmarshaller = ActiveCertificateAuthorityUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("data", targetDepth, ref reader))
+                if (context.TestExpression("activatedBy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Data = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ActivatedBy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static CertificateUnmarshaller _instance = new CertificateUnmarshaller();        
+        private static ActiveCertificateAuthorityUnmarshaller _instance = new ActiveCertificateAuthorityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateUnmarshaller Instance
+        public static ActiveCertificateAuthorityUnmarshaller Instance
         {
             get
             {

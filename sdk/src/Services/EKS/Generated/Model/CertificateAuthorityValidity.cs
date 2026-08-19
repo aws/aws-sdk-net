@@ -30,50 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing the <c>certificate-authority-data</c> for your cluster.
+    /// The validity period of a certificate authority's certificate.
     /// </summary>
-    public partial class Certificate
+    public partial class CertificateAuthorityValidity
     {
-        private ActiveCertificateAuthority _active;
-        private string _data;
+        private DateTime? _notAfter;
+        private DateTime? _notBefore;
 
         /// <summary>
-        /// Gets and sets the property Active. 
+        /// Gets and sets the property NotAfter. 
         /// <para>
-        /// An object identifying the certificate authority that is currently signing certificates
-        /// for the cluster.
+        /// The Unix epoch timestamp in seconds for the end of the certificate authority's validity
+        /// period.
         /// </para>
         /// </summary>
-        public ActiveCertificateAuthority Active
+        public DateTime? NotAfter
         {
-            get { return this._active; }
-            set { this._active = value; }
+            get { return this._notAfter; }
+            set { this._notAfter = value; }
         }
 
-        // Check to see if Active property is set
-        internal bool IsSetActive()
+        // Check to see if NotAfter property is set
+        internal bool IsSetNotAfter()
         {
-            return this._active != null;
+            return this._notAfter.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Data. 
+        /// Gets and sets the property NotBefore. 
         /// <para>
-        /// The Base64-encoded certificate data required to communicate with your cluster. Add
-        /// this to the <c>certificate-authority-data</c> section of the <c>kubeconfig</c> file
-        /// for your cluster.
+        /// The Unix epoch timestamp in seconds for the start of the certificate authority's validity
+        /// period.
         /// </para>
         /// </summary>
-        public string Data
+        public DateTime? NotBefore
         {
-            get { return this._data; }
-            set { this._data = value; }
+            get { return this._notBefore; }
+            set { this._notBefore = value; }
         }
 
-        // Check to see if Data property is set
-        internal bool IsSetData()
+        // Check to see if NotBefore property is set
+        internal bool IsSetNotBefore()
         {
-            return this._data != null;
+            return this._notBefore.HasValue; 
         }
 
     }

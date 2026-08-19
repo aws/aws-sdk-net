@@ -98,6 +98,16 @@ namespace Amazon.EKS.Model
         IListCapabilitiesPaginator ListCapabilities(ListCapabilitiesRequest request);
 
         /// <summary>
+        /// Paginator for ListCertificateAuthorities operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCertificateAuthoritiesPaginator ListCertificateAuthorities(ListCertificateAuthoritiesRequest request);
+
+        /// <summary>
         /// Paginator for ListClusters operation
         ///</summary>
         [AWSPaginator(

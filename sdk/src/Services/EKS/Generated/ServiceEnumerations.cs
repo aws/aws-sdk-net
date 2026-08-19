@@ -855,6 +855,218 @@ namespace Amazon.EKS
 
 
     /// <summary>
+    /// Constants used for properties of type CertificateAuthorityActivatedBy.
+    /// </summary>
+    public class CertificateAuthorityActivatedBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER for CertificateAuthorityActivatedBy
+        /// </summary>
+        public static readonly CertificateAuthorityActivatedBy CUSTOMER = new CertificateAuthorityActivatedBy("CUSTOMER");
+        /// <summary>
+        /// Constant EKS for CertificateAuthorityActivatedBy
+        /// </summary>
+        public static readonly CertificateAuthorityActivatedBy EKS = new CertificateAuthorityActivatedBy("EKS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateAuthorityActivatedBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateAuthorityActivatedBy FindValue(string value)
+        {
+            return FindValue<CertificateAuthorityActivatedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateAuthorityActivatedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CertificateAuthorityCreatedBy.
+    /// </summary>
+    public class CertificateAuthorityCreatedBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER for CertificateAuthorityCreatedBy
+        /// </summary>
+        public static readonly CertificateAuthorityCreatedBy CUSTOMER = new CertificateAuthorityCreatedBy("CUSTOMER");
+        /// <summary>
+        /// Constant EKS for CertificateAuthorityCreatedBy
+        /// </summary>
+        public static readonly CertificateAuthorityCreatedBy EKS = new CertificateAuthorityCreatedBy("EKS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateAuthorityCreatedBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateAuthorityCreatedBy FindValue(string value)
+        {
+            return FindValue<CertificateAuthorityCreatedBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateAuthorityCreatedBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CertificateAuthorityDistributionStatus.
+    /// </summary>
+    public class CertificateAuthorityDistributionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETE for CertificateAuthorityDistributionStatus
+        /// </summary>
+        public static readonly CertificateAuthorityDistributionStatus COMPLETE = new CertificateAuthorityDistributionStatus("COMPLETE");
+        /// <summary>
+        /// Constant DELETING for CertificateAuthorityDistributionStatus
+        /// </summary>
+        public static readonly CertificateAuthorityDistributionStatus DELETING = new CertificateAuthorityDistributionStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for CertificateAuthorityDistributionStatus
+        /// </summary>
+        public static readonly CertificateAuthorityDistributionStatus FAILED = new CertificateAuthorityDistributionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CertificateAuthorityDistributionStatus
+        /// </summary>
+        public static readonly CertificateAuthorityDistributionStatus IN_PROGRESS = new CertificateAuthorityDistributionStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateAuthorityDistributionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateAuthorityDistributionStatus FindValue(string value)
+        {
+            return FindValue<CertificateAuthorityDistributionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateAuthorityDistributionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CertificateAuthoritySigningStatus.
+    /// </summary>
+    public class CertificateAuthoritySigningStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVATING for CertificateAuthoritySigningStatus
+        /// </summary>
+        public static readonly CertificateAuthoritySigningStatus ACTIVATING = new CertificateAuthoritySigningStatus("ACTIVATING");
+        /// <summary>
+        /// Constant IN_USE for CertificateAuthoritySigningStatus
+        /// </summary>
+        public static readonly CertificateAuthoritySigningStatus IN_USE = new CertificateAuthoritySigningStatus("IN_USE");
+        /// <summary>
+        /// Constant NOT_USED for CertificateAuthoritySigningStatus
+        /// </summary>
+        public static readonly CertificateAuthoritySigningStatus NOT_USED = new CertificateAuthoritySigningStatus("NOT_USED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CertificateAuthoritySigningStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CertificateAuthoritySigningStatus FindValue(string value)
+        {
+            return FindValue<CertificateAuthoritySigningStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CertificateAuthoritySigningStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterIssueCode.
     /// </summary>
     public class ClusterIssueCode : ConstantClass
@@ -2627,6 +2839,10 @@ namespace Amazon.EKS
     {
 
         /// <summary>
+        /// Constant ActiveCertificateAuthority for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType ActiveCertificateAuthority = new UpdateParamType("ActiveCertificateAuthority");
+        /// <summary>
         /// Constant AddonVersion for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType AddonVersion = new UpdateParamType("AddonVersion");
@@ -2634,6 +2850,10 @@ namespace Amazon.EKS
         /// Constant AuthenticationMode for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType AuthenticationMode = new UpdateParamType("AuthenticationMode");
+        /// <summary>
+        /// Constant CertificateAuthorityId for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType CertificateAuthorityId = new UpdateParamType("CertificateAuthorityId");
         /// <summary>
         /// Constant ClusterLogging for UpdateParamType
         /// </summary>
@@ -2783,6 +3003,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly UpdateParamType ServiceAccountRoleArn = new UpdateParamType("ServiceAccountRoleArn");
         /// <summary>
+        /// Constant SigningStatus for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType SigningStatus = new UpdateParamType("SigningStatus");
+        /// <summary>
         /// Constant StorageConfig for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType StorageConfig = new UpdateParamType("StorageConfig");
@@ -2798,6 +3022,10 @@ namespace Amazon.EKS
         /// Constant TaintsToRemove for UpdateParamType
         /// </summary>
         public static readonly UpdateParamType TaintsToRemove = new UpdateParamType("TaintsToRemove");
+        /// <summary>
+        /// Constant TrustedCertificateAuthorities for UpdateParamType
+        /// </summary>
+        public static readonly UpdateParamType TrustedCertificateAuthorities = new UpdateParamType("TrustedCertificateAuthorities");
         /// <summary>
         /// Constant UpdatedTier for UpdateParamType
         /// </summary>
@@ -2966,6 +3194,10 @@ namespace Amazon.EKS
         /// Constant CapabilityUpdate for UpdateType
         /// </summary>
         public static readonly UpdateType CapabilityUpdate = new UpdateType("CapabilityUpdate");
+        /// <summary>
+        /// Constant CertificateAuthorityUpdate for UpdateType
+        /// </summary>
+        public static readonly UpdateType CertificateAuthorityUpdate = new UpdateType("CertificateAuthorityUpdate");
         /// <summary>
         /// Constant ConfigUpdate for UpdateType
         /// </summary>

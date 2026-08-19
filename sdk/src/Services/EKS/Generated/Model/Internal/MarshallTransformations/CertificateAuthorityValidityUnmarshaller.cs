@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Certificate Object
+    /// Response Unmarshaller for CertificateAuthorityValidity Object
     /// </summary>  
-    public class CertificateUnmarshaller : IJsonUnmarshaller<Certificate, JsonUnmarshallerContext>
+    public class CertificateAuthorityValidityUnmarshaller : IJsonUnmarshaller<CertificateAuthorityValidity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Certificate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public CertificateAuthorityValidity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Certificate unmarshalledObject = new Certificate();
+            CertificateAuthorityValidity unmarshalledObject = new CertificateAuthorityValidity();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("active", targetDepth, ref reader))
+                if (context.TestExpression("notAfter", targetDepth, ref reader))
                 {
-                    var unmarshaller = ActiveCertificateAuthorityUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.NotAfter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("data", targetDepth, ref reader))
+                if (context.TestExpression("notBefore", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Data = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.NotBefore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static CertificateUnmarshaller _instance = new CertificateUnmarshaller();        
+        private static CertificateAuthorityValidityUnmarshaller _instance = new CertificateAuthorityValidityUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CertificateUnmarshaller Instance
+        public static CertificateAuthorityValidityUnmarshaller Instance
         {
             get
             {
