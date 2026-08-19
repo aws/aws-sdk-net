@@ -57,6 +57,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetCropRectangle())
+            {
+                context.Writer.WritePropertyName("cropRectangle");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VideoPositionRectangleMarshaller.Instance;
+                marshaller.Marshall(requestObject.CropRectangle, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
@@ -67,6 +78,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.WriteStringValue(requestObject.Name);
+            }
+
+            if(requestObject.IsSetOutputPositionRectangle())
+            {
+                context.Writer.WritePropertyName("outputPositionRectangle");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VideoPositionRectangleMarshaller.Instance;
+                marshaller.Marshall(requestObject.OutputPositionRectangle, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRespondToAfd())

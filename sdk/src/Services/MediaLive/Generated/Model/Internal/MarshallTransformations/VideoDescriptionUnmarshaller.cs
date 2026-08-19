@@ -62,6 +62,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodecSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("cropRectangle", targetDepth, ref reader))
+                {
+                    var unmarshaller = VideoPositionRectangleUnmarshaller.Instance;
+                    unmarshalledObject.CropRectangle = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("height", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
@@ -72,6 +78,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("outputPositionRectangle", targetDepth, ref reader))
+                {
+                    var unmarshaller = VideoPositionRectangleUnmarshaller.Instance;
+                    unmarshalledObject.OutputPositionRectangle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("respondToAfd", targetDepth, ref reader))

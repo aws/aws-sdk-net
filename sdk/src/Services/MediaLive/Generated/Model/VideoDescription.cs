@@ -35,8 +35,10 @@ namespace Amazon.MediaLive.Model
     public partial class VideoDescription
     {
         private VideoCodecSettings _codecSettings;
+        private VideoPositionRectangle _cropRectangle;
         private int? _height;
         private string _name;
+        private VideoPositionRectangle _outputPositionRectangle;
         private VideoDescriptionRespondToAfd _respondToAfd;
         private VideoDescriptionScalingBehavior _scalingBehavior;
         private int? _sharpness;
@@ -55,6 +57,26 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCodecSettings()
         {
             return this._codecSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CropRectangle. Region of the input video to crop before
+        /// scaling. If not specified, the entire inputframe is used.Note: Unlike {@link outputPositionRectangle},
+        /// the bounds of cropRectangle are validatedat ingest time by the encoder/scaler rather
+        /// than at the API level, because the inputresolution is not known until the source is
+        /// probed. Field-level constraints on (x, y,width, height) defined on {@link VideoPositionRectangle}
+        /// still apply.
+        /// </summary>
+        public VideoPositionRectangle CropRectangle
+        {
+            get { return this._cropRectangle; }
+            set { this._cropRectangle = value; }
+        }
+
+        // Check to see if CropRectangle property is set
+        internal bool IsSetCropRectangle()
+        {
+            return this._cropRectangle != null;
         }
 
         /// <summary>
@@ -91,6 +113,25 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputPositionRectangle. Position of the encoded video
+        /// within the output frame. The area outside the rectangleis filled with black. If not
+        /// specified, the video fills the entire output frame.When used, both {@link width} and
+        /// {@link height} of the VideoDescription must beexplicitly specified so that the rectangle
+        /// can be validated against the output frame.
+        /// </summary>
+        public VideoPositionRectangle OutputPositionRectangle
+        {
+            get { return this._outputPositionRectangle; }
+            set { this._outputPositionRectangle = value; }
+        }
+
+        // Check to see if OutputPositionRectangle property is set
+        internal bool IsSetOutputPositionRectangle()
+        {
+            return this._outputPositionRectangle != null;
         }
 
         /// <summary>
