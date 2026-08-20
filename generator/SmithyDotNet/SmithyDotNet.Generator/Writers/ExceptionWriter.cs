@@ -256,7 +256,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.WriteLine("{");
         foreach (var member in members)
         {
-            writer.WriteLine($"""this.{member.PropertyName} = ({member.DotNetType})info.GetValue("{member.PropertyName}", typeof({member.DotNetType}));""");
+            writer.WriteLine($"""this.{member.PropertyName} = ({member.Type.DotNetType})info.GetValue("{member.PropertyName}", typeof({member.Type.DotNetType}));""");
         }
 
         writer.WriteLine("}");

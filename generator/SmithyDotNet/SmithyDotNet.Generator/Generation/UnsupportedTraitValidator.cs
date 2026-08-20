@@ -13,15 +13,24 @@ public static class UnsupportedTraitValidator
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
         ["smithy.api#endpoint"] = "@endpoint (host prefix)",
-        ["smithy.api#jsonValue"] = "@jsonValue",
         ["smithy.api#httpPrefixHeaders"] = "@httpPrefixHeaders",
         ["smithy.api#httpPayload"] = "@httpPayload",
         ["smithy.api#httpResponseCode"] = "@httpResponseCode",
-        ["smithy.api#streaming"] = "@streaming",
         ["smithy.api#httpChecksumRequired"] = "@httpChecksumRequired",
         ["smithy.api#requestCompression"] = "@requestCompression",
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
         ["aws.protocols#httpChecksum"] = "httpChecksum",
+    };
+
+    // These live on a member's resolved *target* shape (the list/blob/union/string declaration), not
+    // on the member reference, so they need CollectDeniedOnMemberTargets instead of CollectDenied.
+    // @mediaType marks a base64-encoded (C2J jsonvalue) string that nothing decodes yet, so a model
+    // carrying it must fail loud rather than emit the raw header/body value.
+    private static readonly Dictionary<string, string> DeniedTargetTraits = new()
+    {
+        ["smithy.api#sparse"] = "@sparse",
+        ["smithy.api#streaming"] = "@streaming",
+        ["smithy.api#mediaType"] = "@mediaType",
     };
 
     /// <summary>
@@ -42,11 +51,13 @@ public static class UnsupportedTraitValidator
             if (index.Shapes.TryGetValue(op.Input, out var inputShape) && inputShape is StructureShape input)
             {
                 CollectDeniedOnMembers(input, found);
+                CollectDeniedOnMemberTargets(input, index.Shapes, found);
             }
 
             if (index.Shapes.TryGetValue(op.Output, out var outputShape) && outputShape is StructureShape output)
             {
                 CollectDeniedOnMembers(output, found);
+                CollectDeniedOnMemberTargets(output, index.Shapes, found);
             }
 
             foreach (var errorId in op.Errors)
@@ -54,6 +65,7 @@ public static class UnsupportedTraitValidator
                 if (index.Shapes.TryGetValue(errorId, out var errorShape) && errorShape is StructureShape error)
                 {
                     CollectDeniedOnMembers(error, found);
+                    CollectDeniedOnMemberTargets(error, index.Shapes, found);
                 }
             }
         }
@@ -80,6 +92,17 @@ public static class UnsupportedTraitValidator
         foreach (var (_, member) in structure.Members)
         {
             CollectDenied(member.Traits, DeniedTraits, found);
+        }
+    }
+
+    private static void CollectDeniedOnMemberTargets(StructureShape structure, IReadOnlyDictionary<ShapeId, Shape> shapes, HashSet<string> found)
+    {
+        foreach (var (_, member) in structure.Members)
+        {
+            if (shapes.TryGetValue(member.Target, out var target))
+            {
+                CollectDenied(target.Traits, DeniedTargetTraits, found);
+            }
         }
     }
 }

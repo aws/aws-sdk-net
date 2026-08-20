@@ -1,0 +1,74 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.testcollection#TestCollectionService": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        { "target": "com.amazonaws.testcollection#PutThings" }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Test Collection",
+          "arnNamespace": "testcollection"
+        },
+        "aws.auth#sigv4": { "name": "testcollection" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Test Collection Service"
+      }
+    },
+    "com.amazonaws.testcollection#PutThings": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testcollection#PutThingsRequest" },
+      "output": { "target": "com.amazonaws.testcollection#PutThingsResponse" },
+      "traits": {
+        "smithy.api#http": { "method": "POST", "uri": "/things" }
+      }
+    },
+    "com.amazonaws.testcollection#PutThingsRequest": {
+      "type": "structure",
+      "members": {
+        "tags": {
+          "target": "com.amazonaws.testcollection#TagList"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.testcollection#PutThingsResponse": {
+      "type": "structure",
+      "members": {
+        "tags": {
+          "target": "com.amazonaws.testcollection#TagList"
+        },
+        "widgets": {
+          "target": "com.amazonaws.testcollection#WidgetList"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.testcollection#TagList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#String"
+      }
+    },
+    "com.amazonaws.testcollection#WidgetList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testcollection#Widget"
+      }
+    },
+    "com.amazonaws.testcollection#Widget": {
+      "type": "structure",
+      "members": {
+        "id": {
+          "target": "smithy.api#String"
+        }
+      }
+    }
+  }
+}

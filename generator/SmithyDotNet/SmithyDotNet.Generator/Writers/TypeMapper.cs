@@ -6,41 +6,71 @@ using SmithyDotNet.Generator.Model.Traits;
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
+/// A member's resolved type, or (recursively via <see cref="Element"/>) a list element's type.
+/// One definition shared by both instead of two independent copies of the same flags.
+/// </summary>
+/// <param name="DotNetType">The .NET type name.</param>
+/// <param name="IsStructure">True if this targets a structure shape.</param>
+/// <param name="IsString">True if this targets a string shape.</param>
+/// <param name="IsCollection">True if this is itself a list or map.</param>
+/// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalType"/>).</param>
+/// <param name="Element">The list element's type; set only for a list (a map does not populate it), null otherwise.</param>
+public sealed record TypeDescriptor(
+    string DotNetType,
+    bool IsStructure,
+    bool IsString,
+    bool IsCollection,
+    bool IsEnum = false,
+    TypeDescriptor? Element = null)
+{
+    /// <summary>
+    /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
+    /// nullable value type. Aggregates (list, map, structure) are excluded; unsupported shapes never
+    /// reach here (they throw in <see cref="TypeMapper.MapType"/>).
+    /// </summary>
+    public bool IsScalar => !IsCollection && !IsStructure;
+
+    /// <summary>
+    /// The type (un)marshaller writers dispatch on. An enum marshals as a string (ConstantClass
+    /// converts implicitly to/from <c>string</c>, matching C2J), the only case this diverges from
+    /// <see cref="DotNetType"/>. A future divergent kind gets its own flag here, not a call-site
+    /// comparison.
+    /// </summary>
+    public string MarshalType => IsEnum ? "string" : DotNetType;
+
+    /// <summary>
+    /// True when the value is a string on the wire (a real string, or an enum). Equivalent to
+    /// <c>MarshalType == "string"</c> as a named flag, not a call-site comparison.
+    /// </summary>
+    public bool MarshalsAsString => IsString || IsEnum;
+}
+
+/// <summary>
 /// A resolved structure member ready for codegen: .NET type, attribute, doc, and modeledName (the name as it appears in the model)
 /// </summary>
 /// <param name="PropertyName">The name of the member as it appears in generated code.</param>
-/// <param name="DotNetType">The .NET type</param>
-/// <param name="IsCollection">True if member is a collection type.</param>
-/// <param name="IsStructure">True if the member is a structure. IsElementStructure should be used for members that are structure and the target of a list.</param>
+/// <param name="Type">The member's type - .NET type, structure/collection/enum-ness, and (for a list) its element's type.</param>
 /// <param name="IsRequired">True if the member is required.</param>
-/// <param name="IsElementStructure">True if the member is a structure and the target of a list. i.e. List of structure.</param>
 /// <param name="IsNullableValueType">True if the member maps to a nullable .NET value type (e.g. <c>int?</c>, <c>DateTime?</c>); drives <c>.HasValue</c> vs <c>!= null</c> in <see cref="Member.IsSetExpression"/>.</param>
 /// <param name="IsIdempotencyToken">True if the member carries <c>@idempotencyToken</c>; the marshaller auto-fills with a GUID when unset.</param>
 /// <param name="AwsProperty">The attributes that are part of [AwsProperty(...)]</param>
 /// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
-/// <param name="IsEnum">True if the member targets an enum shape. Its <see cref="DotNetType"/> is the enum's ConstantClass, but it marshals and unmarshals as a string (ConstantClass has implicit string conversions both ways), so the (un)marshaller writers route it through the string path.</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
-/// <param name="ElementType">The type of the list element.</param>
 /// <param name="TimestampFormat">The explicit <c>@timestampFormat</c> (<c>date-time</c>/<c>http-date</c>/<c>epoch-seconds</c>) from the member or its target, or null when unset (the binding's protocol default applies).</param>
 /// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
 public sealed record Member(
     string PropertyName,
-    string DotNetType,
-    bool IsCollection,
-    bool IsStructure,
+    TypeDescriptor Type,
     bool IsRequired,
-    bool IsElementStructure,
     bool IsNullableValueType,
     bool IsIdempotencyToken,
     string? AwsProperty,
     string? Obsolete,
     string Documentation,
     string ModeledName,
-    bool IsEnum = false,
     string? JsonName = null,
-    string? ElementType = null,
     string? TimestampFormat = null,
     bool HidesBaseMember = false
 )
@@ -51,27 +81,11 @@ public sealed record Member(
     /// mode is active. Nullable value types (<c>int?</c>, <c>bool?</c>, <c>DateTime?</c>, …) use
     /// <c>.HasValue</c>; reference types (<c>string</c>, generated classes) use <c>!= null</c>.
     /// </summary>
-    public string IsSetExpression => IsCollection
+    public string IsSetExpression => Type.IsCollection
         ? $"this.{PropertyName} != null && (this.{PropertyName}.Count > 0 || !AWSConfigs.InitializeCollections)"
         : IsNullableValueType
             ? $"this.{PropertyName}.HasValue"
             : $"this.{PropertyName} != null";
-
-    /// <summary>
-    /// True for a scalar member — <c>string</c> or a nullable value type. Aggregates (list, map,
-    /// structure) are excluded; unsupported shapes never reach here (they throw in
-    /// <see cref="TypeMapper.MapType"/>).
-    /// </summary>
-    public bool IsScalar => !IsCollection && !IsStructure;
-
-    /// <summary>
-    /// The type the (un)marshaller writers dispatch on. An enum member rides the string path — its
-    /// <see cref="DotNetType"/> is the ConstantClass, but <c>ConstantClass</c> converts implicitly to and
-    /// from <c>string</c>, so the generated JSON/query/header/label code treats it exactly like a string
-    /// (matching C2J, which wraps an enum member with <c>StringUnmarshaller</c>/writes its string value).
-    /// Property declarations keep <see cref="DotNetType"/>.
-    /// </summary>
-    public string MarshalType => IsEnum ? "string" : DotNetType;
 }
 
 /// <summary>
@@ -90,37 +104,23 @@ public static class TypeMapper
         foreach (var (memberName, member) in structure.Members)
         {
             var target = context.Resolve(member.Target);
-            string? elementType = null;
-            bool isStructure = target is StructureShape;
-            bool isElementStructure = false;
-            if (target is ListShape list)
-            {
-                var elementTarget = context.Resolve(list.Member.Target);
-                elementType = MapType(list.Member.Target, elementTarget, context);
-                isElementStructure = elementTarget is StructureShape;
-            }
 
-            // MapScalar returns the .NET type for value-type scalars (and null otherwise), so it
-            // doubles as both the type and the IsNullableValueType signal without a second MapType walk.
+            // MapScalar doubles as the IsNullableValueType signal - Member-only, since TypeDescriptor
+            // has no equivalent for list/map elements.
             var scalarType = MapScalar(target);
             var propertyName = SdkNaming.ToUpperFirstCharacter(memberName);
 
             resolved.Add(new Member(
                 PropertyName: propertyName,
-                DotNetType: scalarType ?? MapType(member.Target, target, context),
-                IsCollection: IsCollection(target),
-                IsStructure: isStructure,
+                Type: ResolveType(member.Target, context),
                 IsRequired: member.IsRequired(),
-                IsElementStructure: isElementStructure,
                 IsNullableValueType: scalarType is not null,
                 IsIdempotencyToken: member.IsIdempotencyToken(),
                 AwsProperty: BuildAwsProperty(member, target),
                 Obsolete: BuildObsolete(memberName, member, target),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
-                IsEnum: target is EnumShape,
                 JsonName: member.GetJsonName(),
-                ElementType: elementType,
                 TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
                 HidesBaseMember: propertyName == "Equals")
@@ -128,6 +128,22 @@ public static class TypeMapper
         }
 
         return [.. resolved.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
+    }
+
+    /// <summary>
+    /// Resolves the shape at <paramref name="id"/> into a <see cref="TypeDescriptor"/>, recursing for
+    /// a list element. Used for both a member's own type and its element.
+    /// </summary>
+    private static TypeDescriptor ResolveType(ShapeId id, GenerationContext context)
+    {
+        var target = context.Resolve(id);
+        return new TypeDescriptor(
+            DotNetType: MapType(id, target, context),
+            IsStructure: target is StructureShape,
+            IsString: target is StringShape,
+            IsCollection: IsCollection(target),
+            IsEnum: target is EnumShape,
+            Element: target is ListShape list ? ResolveType(list.Member.Target, context) : null);
     }
 
     /// <summary>

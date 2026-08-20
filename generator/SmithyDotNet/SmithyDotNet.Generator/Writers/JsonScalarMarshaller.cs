@@ -15,12 +15,12 @@ public static class JsonScalarMarshaller
     /// types unwrap with <c>.Value</c>; the caller guards each with an <c>IsSet</c> check. Float and
     /// double branch through <c>StringUtils.IsSpecial*Value</c> so NaN/±Infinity serialize as strings
     /// (<c>WriteNumberValue</c> rejects them). Timestamps honor <c>@timestampFormat</c>. Dispatch is on
-    /// <see cref="Member.MarshalType"/> so an enum rides the <c>string</c> path (implicit ConstantClass
-    /// to string), matching C2J which writes an enum member's string value.
+    /// <see cref="TypeDescriptor.MarshalType"/> so an enum marshals as a <c>string</c> (implicit
+    /// ConstantClass to string), matching C2J which writes an enum member's string value.
     /// </summary>
     public static void WriteScalar(CodeWriter writer, Member member, string expression)
     {
-        switch (member.MarshalType)
+        switch (member.Type.MarshalType)
         {
             case "string":
                 writer.WriteLine($"context.Writer.WriteStringValue({expression});");
@@ -32,13 +32,13 @@ public static class JsonScalarMarshaller
                 writer.WriteLine($"context.Writer.WriteNumberValue({expression}.Value);");
                 break;
             case "float?" or "double?":
-                WriteSpecialNumeric(writer, member.DotNetType, expression);
+                WriteSpecialNumeric(writer, member.Type.DotNetType, expression);
                 break;
             case "DateTime?":
                 WriteTimestamp(writer, member.TimestampFormat ?? BodyTimestampDefault, expression);
                 break;
             default:
-                throw new GeneratorException($"'{member.DotNetType}' is not a body scalar (member: {member.PropertyName}).");
+                throw new GeneratorException($"'{member.Type.DotNetType}' is not a body scalar (member: {member.PropertyName}).");
         }
     }
 

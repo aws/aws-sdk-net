@@ -65,7 +65,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         for (int i = 0; i < members.Count; i++)
         {
             var member = members[i];
-            if (member.IsScalar)
+            if (member.Type.IsScalar)
             {
                 writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>
                 {
@@ -75,7 +75,7 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
             }
             else
             {
-                throw new GeneratorException($"Unsupported structure member type '{member.DotNetType}' (member: {member.PropertyName}).");
+                throw new GeneratorException($"Unsupported structure member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
             }
 
             if (i < members.Count - 1)

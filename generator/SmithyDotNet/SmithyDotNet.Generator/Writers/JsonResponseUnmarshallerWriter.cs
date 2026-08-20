@@ -110,7 +110,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
     /// <summary>
     /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a member's
-    /// <see cref="Member.MarshalType"/> (the .NET type for plain scalars; <c>string</c> for enums, so an
+    /// <see cref="TypeDescriptor.MarshalType"/> (the .NET type for plain scalars; <c>string</c> for enums, so an
     /// enum member unmarshals via <c>StringUnmarshaller</c> and the implicit string-to-ConstantClass
     /// conversion), or null when the type is not a supported scalar. Timestamps follow the JSON-protocol
     /// default (epoch seconds via the nullable <c>DateTime</c> unmarshaller).
@@ -127,32 +127,36 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         _ => null,
     };
 
-    // Scalar / list-of-structure / structure dispatch shared with the exception unmarshaller;
-    // <paramref name="target"/> is the local being populated ("response" or "unmarshalledObject").
-    // Only types used by CloudTrailData and the supported scalars are handled for now.
+    // Scalar / list-of-structure / list-of-string / structure dispatch shared with the exception
+    // unmarshaller; <paramref name="target"/> is the local being populated ("response" or
+    // "unmarshalledObject").
     internal static void WriteMemberUnmarshall(CodeWriter writer, Member member, string target)
     {
-        if (ScalarUnmarshaller(member.MarshalType) is string scalarUnmarshaller)
+        if (ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller)
         {
             writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
             writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
-        else if (member.IsCollection && member.IsElementStructure)
+        else if (member.Type.Element is { IsStructure: true } element)
         {
-            var elementType = member.ElementType ?? throw new GeneratorException($"List member '{member.PropertyName}' has no element type.");
-            var unmarshallerType = $"{elementType}Unmarshaller";
-            writer.WriteLine($"var unmarshaller = new JsonListUnmarshaller<{elementType}, {unmarshallerType}>({unmarshallerType}.Instance);");
+            var unmarshallerType = $"{element.DotNetType}Unmarshaller";
+            writer.WriteLine($"var unmarshaller = new JsonListUnmarshaller<{element.DotNetType}, {unmarshallerType}>({unmarshallerType}.Instance);");
             writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
-        else if (member.IsStructure)
+        else if (member.Type.Element is { IsString: true })
         {
-            var unmarshallerType = $"{member.DotNetType}Unmarshaller";
+            writer.WriteLine("var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);");
+            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+        }
+        else if (member.Type.IsStructure)
+        {
+            var unmarshallerType = $"{member.Type.DotNetType}Unmarshaller";
             writer.WriteLine($"var unmarshaller = {unmarshallerType}.Instance;");
             writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else
         {
-            throw new GeneratorException($"Unsupported member type '{member.DotNetType}' for member '{member.PropertyName}'.");
+            throw new GeneratorException($"Unsupported member type '{member.Type.DotNetType}' for member '{member.PropertyName}'.");
         }
     }
 
@@ -201,8 +205,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     /// (e.g. <c>context.ResponseData.GetHeaderValue("x-foo")</c>). A string/enum takes the value
     /// directly; <c>bool</c> parses without a culture (its two literals are culture-invariant); numeric
     /// scalars parse with the invariant culture; a timestamp parses per its resolved
-    /// <c>@timestampFormat</c>. Dispatch is on <see cref="Member.MarshalType"/> so an enum rides the
-    /// string path (implicit ConstantClass conversion).
+    /// <c>@timestampFormat</c>. Dispatch is on <see cref="TypeDescriptor.MarshalType"/> so an enum
+    /// marshals as a <c>string</c> (implicit ConstantClass conversion).
     /// </summary>
     internal static string HeaderValueConversion(Member member, string value)
     {
@@ -211,7 +215,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         // integer count fed to the Unix-epoch helper, while date-time and http-date both parse via
         // DateTime.Parse (the wire forms differ but the parser handles both).
         // https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html
-        if (member.MarshalType == "DateTime?")
+        if (member.Type.MarshalType == "DateTime?")
         {
             return member.TimestampFormat switch
             {
@@ -221,7 +225,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             };
         }
 
-        return member.MarshalType switch
+        return member.Type.MarshalType switch
         {
             "string" => value,
             "bool?" => $"bool.Parse({value})",
@@ -232,7 +236,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             // TODO: a list/set bound to @httpHeader (a multi-value header) has a List<T> MarshalType and
             // falls through here. C2J parses these via MultiValueHeaderParser (ToStringList /
             // ToValueTypeList<T> / ToDateTimeList).
-            _ => throw new GeneratorException($"Unsupported header member type '{member.DotNetType}' (member: {member.PropertyName})."),
+            _ => throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName})."),
         };
     }
 

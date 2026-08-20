@@ -107,9 +107,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     /// unwrapped with <c>.Value</c> (timestamps keep the nullable overload); the caller guards each
     /// with an <c>IsSet</c> check first. <paramref name="timestampDefault"/> is the binding's
     /// <c>@timestampFormat</c> default, used when the member carries no explicit format.
-    /// Dispatch is on <see cref="Member.MarshalType"/> so an enum rides the <c>string</c> path.
+    /// Dispatch is on <see cref="TypeDescriptor.MarshalType"/> so an enum marshals as a <c>string</c>.
     /// </summary>
-    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.MarshalType switch
+    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.Type.MarshalType switch
     {
         "string" => $"StringUtils.FromString({expression})",
         "bool?" => $"StringUtils.FromBool({expression}.Value)",
@@ -136,12 +136,14 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         foreach (var (member, queryName) in queryMembers)
         {
             var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
-                ?? throw new GeneratorException($"Unsupported query member type '{member.DotNetType}' (member: {member.PropertyName}).");
+                ?? throw new GeneratorException($"Unsupported query member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
 
             // An idempotency token is auto-populated, so it is never "required from the customer".
             if (member.IsRequired && !member.IsIdempotencyToken)
             {
-                var guard = member.DotNetType == "string"
+                // A real string is checked for empty; anything else (including an enum's
+                // ConstantClass, a reference type) is checked for null.
+                var guard = member.Type.IsString
                     ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
                     : $"publicRequest.{member.PropertyName} == null";
                 writer.OpenBlock($"if ({guard})", () =>
@@ -172,12 +174,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         foreach (var (member, headerName) in headerMembers)
         {
             var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", HeaderTimestampDefault)
-                ?? throw new GeneratorException($"Unsupported header member type '{member.DotNetType}' (member: {member.PropertyName}).");
+                ?? throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                // A string header is assigned directly; scalars go through StringUtils. An enum rides the
-                // string path (implicit ConstantClass->string), so it is assigned directly too.
-                writer.WriteLine(member.MarshalType == "string"
+                // A string header is assigned directly; scalars go through StringUtils. An enum marshals
+                // as a string too (implicit ConstantClass->string), so it is assigned directly as well.
+                writer.WriteLine(member.Type.MarshalsAsString
                     ? $"""request.Headers["{headerName}"] = publicRequest.{member.PropertyName};"""
                     : $"""request.Headers["{headerName}"] = {conversion};""");
             });
@@ -191,7 +193,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         foreach (var member in labelMembers)
         {
             var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
-                ?? throw new GeneratorException($"Unsupported label member type '{member.DotNetType}' (member: {member.PropertyName}).");
+                ?? throw new GeneratorException($"Unsupported label member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
             writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
@@ -230,7 +232,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     private void WriteBodyMember(CodeWriter writer, Member member)
     {
-        if (member.IsScalar)
+        if (member.Type.IsScalar)
         {
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
@@ -246,41 +248,37 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 });
             }
         }
-        else if (member.DotNetType.StartsWith("List<", StringComparison.Ordinal))
+        // Only a list has Element set (ResolveType), so this is the list case; a map falls through.
+        else if (member.Type.Element is { } element)
         {
-            if (string.IsNullOrEmpty(member.ElementType))
-            {
-                throw new GeneratorException("A List's element type must be populated.");
-            }
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
                 writer.WriteLine("context.Writer.WriteStartArray();");
                 writer.OpenBlock($"foreach (var publicRequest{member.PropertyName}ListValue in publicRequest.{member.PropertyName})", () =>
                 {
-                    WriteListElement(writer, member);
+                    WriteListElement(writer, member, element);
                 });
                 writer.WriteLine("context.Writer.WriteEndArray();");
             });
         }
         else
         {
-            throw new GeneratorException($"Unsupported body member type '{member.DotNetType}' (member: {member.PropertyName}).");
+            throw new GeneratorException($"Unsupported body member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
         }
     }
 
-    private void WriteListElement(CodeWriter writer, Member member)
+    private void WriteListElement(CodeWriter writer, Member member, TypeDescriptor element)
     {
-        if (member.ElementType == "string")
+        if (element.IsString)
         {
             writer.WriteLine($"context.Writer.WriteStringValue(publicRequest{member.PropertyName}ListValue);");
         }
-        // a structure
-        else if (member.IsElementStructure)
+        else if (element.IsStructure)
         {
             writer.WriteLine("context.Writer.WriteStartObject();");
             writer.WriteLine("");
-            writer.WriteLine($"var marshaller = {member.ElementType}Marshaller.Instance;");
+            writer.WriteLine($"var marshaller = {element.DotNetType}Marshaller.Instance;");
             writer.WriteLine($"marshaller.Marshall(publicRequest{member.PropertyName}ListValue, context);");
             writer.WriteLine("");
             writer.WriteLine("context.Writer.WriteEndObject();");

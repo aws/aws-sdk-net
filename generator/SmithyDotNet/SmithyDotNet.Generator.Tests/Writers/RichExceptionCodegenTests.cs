@@ -70,8 +70,8 @@ public class RichExceptionCodegenTests
     public void Unmarshaller_DispatchesRichMembers()
     {
         // @jsonName overrides the wire name while the assignment targets the .NET property; a nested
-        // structure dispatches to its generated unmarshaller. (Scalar and list-of-structure dispatch ride
-        // the shared response-path codegen already covered by ScalarMemberCodegenTests and
+        // structure dispatches to its generated unmarshaller. (Scalar and list-of-structure dispatch go
+        // through the shared response-path codegen already covered by ScalarMemberCodegenTests and
         // JsonResponseUnmarshallerWriterTests.)
         Assert.Contains("""if (context.TestExpression("resource_name", targetDepth, ref reader))""", _exceptionUnmarshaller);
         Assert.Contains("var unmarshaller = StringUnmarshaller.Instance;", _exceptionUnmarshaller);
@@ -103,7 +103,7 @@ public class RichExceptionCodegenTests
     {
         // Members named "equals" or "retryable" collide with inherited members (object.Equals,
         // AmazonServiceException.Retryable) and are emitted with the `new` modifier, matching
-        // StructureGenerator.tt (the CloudHSM case). These ride two distinct code paths — Equals is
+        // StructureGenerator.tt (the CloudHSM case). These go through two distinct code paths — Equals is
         // flagged structure-wide in TypeMapper, Retryable is flagged only on the exception path — so we
         // pin both. The "retryable" member is unrelated to the @retryable trait.
         Assert.Contains("public new string Equals { get; set; }", _exceptionClass);

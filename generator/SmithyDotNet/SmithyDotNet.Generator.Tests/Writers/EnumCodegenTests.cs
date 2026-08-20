@@ -134,7 +134,7 @@ public class EnumCodegenTests
     [Fact]
     public void StructureMarshaller_RoutesEnumThroughStringAndIntEnumThroughNumber()
     {
-        // A nested structure with an enum member (rides the string path) and an intEnum member (a plain
+        // A nested structure with an enum member (marshals as a string) and an intEnum member (a plain
         // int). Without MarshalType dispatch the enum member would miss the "string" case and throw.
         var detail = (StructureShape)TestModels.DeserializeShape("""
             { "type": "structure", "members": {

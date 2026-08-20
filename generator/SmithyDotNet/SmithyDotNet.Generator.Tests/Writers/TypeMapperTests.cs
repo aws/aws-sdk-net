@@ -188,13 +188,13 @@ public class TypeMapperTests
         var members = TypeMapper.ResolveMembers(request, _context);
 
         var category = members.Single(m => m.ModeledName == "category");
-        Assert.Equal("Category", category.DotNetType);
-        Assert.True(category.IsEnum);
-        Assert.Equal("string", category.MarshalType);
+        Assert.Equal("Category", category.Type.DotNetType);
+        Assert.True(category.Type.IsEnum);
+        Assert.Equal("string", category.Type.MarshalType);
 
         var priority = members.Single(m => m.ModeledName == "priority");
-        Assert.Equal("int?", priority.DotNetType);
-        Assert.False(priority.IsEnum);
+        Assert.Equal("int?", priority.Type.DotNetType);
+        Assert.False(priority.Type.IsEnum);
     }
 
     [Theory]
