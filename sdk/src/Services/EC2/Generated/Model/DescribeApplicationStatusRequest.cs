@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplicationStatus operation.
-    /// Describes the application status for the specified instances. Returns the aggregated
-    /// application health status for each instance. The following rules apply:
+    /// Describes the aggregated application health status for the specified instances. The
+    /// following rules apply:
     /// 
     ///  <ul> <li> 
     /// <para>
