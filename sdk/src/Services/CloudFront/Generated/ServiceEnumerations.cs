@@ -1652,6 +1652,10 @@ namespace Amazon.CloudFront
         /// Constant Sigv4 for OriginAccessControlSigningProtocols
         /// </summary>
         public static readonly OriginAccessControlSigningProtocols Sigv4 = new OriginAccessControlSigningProtocols("sigv4");
+        /// <summary>
+        /// Constant Sigv4a for OriginAccessControlSigningProtocols
+        /// </summary>
+        public static readonly OriginAccessControlSigningProtocols Sigv4a = new OriginAccessControlSigningProtocols("sigv4a");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

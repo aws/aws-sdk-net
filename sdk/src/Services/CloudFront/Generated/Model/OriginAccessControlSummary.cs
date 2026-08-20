@@ -158,7 +158,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property SigningProtocol. 
         /// <para>
         /// The signing protocol of the origin access control. The signing protocol determines
-        /// how CloudFront signs (authenticates) requests. The only valid value is <c>sigv4</c>.
+        /// how CloudFront signs (authenticates) requests. The only valid values are <c>sigv4</c>
+        /// and <c>sigv4a</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
