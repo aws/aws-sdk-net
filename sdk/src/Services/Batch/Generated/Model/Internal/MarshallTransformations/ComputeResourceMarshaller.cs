@@ -58,6 +58,20 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.BidPercentage.Value);
             }
 
+            if(requestObject.IsSetCapacityTags())
+            {
+                context.Writer.WritePropertyName("capacityTags");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectCapacityTagsKvp in requestObject.CapacityTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectCapacityTagsKvp.Key);
+                    var requestObjectCapacityTagsValue = requestObjectCapacityTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectCapacityTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetDesiredvCpus())
             {
                 context.Writer.WritePropertyName("desiredvCpus");
@@ -116,6 +130,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                 var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchTemplate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetManagedInstancesProvider())
+            {
+                context.Writer.WritePropertyName("managedInstancesProvider");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManagedInstancesProviderMarshaller.Instance;
+                marshaller.Marshall(requestObject.ManagedInstancesProvider, context);
 
                 context.Writer.WriteEndObject();
             }

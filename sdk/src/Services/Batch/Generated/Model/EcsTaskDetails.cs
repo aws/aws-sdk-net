@@ -42,6 +42,7 @@ namespace Amazon.Batch.Model
         private string _executionRoleArn;
         private string _ipcMode;
         private NetworkConfiguration _networkConfiguration;
+        private string _networkMode;
         private string _pidMode;
         private string _platformVersion;
         private RuntimePlatform _runtimePlatform;
@@ -187,6 +188,26 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NetworkMode. 
+        /// <para>
+        /// The network mode configured for the task. This field is populated for jobs running
+        /// on Amazon ECS Managed Instances (<c>MANAGED_INSTANCES</c> platform capability) and
+        /// always returns <c>host</c>.
+        /// </para>
+        /// </summary>
+        public string NetworkMode
+        {
+            get { return this._networkMode; }
+            set { this._networkMode = value; }
+        }
+
+        // Check to see if NetworkMode property is set
+        internal bool IsSetNetworkMode()
+        {
+            return this._networkMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PidMode. 
         /// <para>
         /// The process namespace to use for the containers in the task. The valid values are
@@ -226,7 +247,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property RuntimePlatform. 
         /// <para>
-        /// An object that represents the compute environment architecture for Batch jobs on Fargate.
+        /// An object that represents the compute environment architecture for Batch jobs on Fargate
+        /// or Amazon ECS Managed Instances. Contains the operating system family and CPU architecture
+        /// of the task.
         /// </para>
         /// </summary>
         public RuntimePlatform RuntimePlatform

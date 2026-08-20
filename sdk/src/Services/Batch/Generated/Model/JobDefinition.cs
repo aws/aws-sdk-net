@@ -245,7 +245,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property PlatformCapabilities. 
         /// <para>
         /// The platform capabilities required by the job definition. If no value is specified,
-        /// it defaults to <c>EC2</c>. Jobs run on Fargate resources specify <c>FARGATE</c>.
+        /// it defaults to <c>EC2</c>. Jobs run on Fargate resources specify <c>FARGATE</c>. Jobs
+        /// run on Amazon ECS Managed Instances specify <c>MANAGED_INSTANCES</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

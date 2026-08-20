@@ -38,6 +38,7 @@ namespace Amazon.Batch.Model
     {
         private CRUpdateAllocationStrategy _allocationStrategy;
         private int? _bidPercentage;
+        private Dictionary<string, string> _capacityTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _desiredvCpus;
         private List<Ec2Configuration> _ec2Configuration = AWSConfigs.InitializeCollections ? new List<Ec2Configuration>() : null;
         private string _ec2KeyPair;
@@ -45,6 +46,7 @@ namespace Amazon.Batch.Model
         private string _instanceRole;
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LaunchTemplateSpecification _launchTemplate;
+        private UpdateManagedInstancesProviderConfiguration _managedInstancesProvider;
         private int? _maxvCpus;
         private int? _minvCpus;
         private string _placementGroup;
@@ -198,6 +200,33 @@ namespace Amazon.Batch.Model
         internal bool IsSetBidPercentage()
         {
             return this._bidPercentage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CapacityTags. 
+        /// <para>
+        /// The updated tags to apply to the Amazon ECS capacity provider and Amazon EC2 instances.
+        /// This parameter is only valid for <c>ECS_MANAGED_INSTANCES</c> compute environments.
+        /// You must have the <c>batch:SetCapacityTags</c> permission on the compute environment
+        /// resource to use this parameter.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> CapacityTags
+        {
+            get { return this._capacityTags; }
+            set { this._capacityTags = value; }
+        }
+
+        // Check to see if CapacityTags property is set
+        internal bool IsSetCapacityTags()
+        {
+            return this._capacityTags != null && (this._capacityTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -527,6 +556,26 @@ namespace Amazon.Batch.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ManagedInstancesProvider. 
+        /// <para>
+        /// The updated configuration for the Amazon ECS Managed Instances capacity provider.
+        /// This parameter is only valid when the compute environment type is <c>ECS_MANAGED_INSTANCES</c>.
+        /// You cannot change <c>capacityOptionType</c> or <c>fipsEnabled</c> on update.
+        /// </para>
+        /// </summary>
+        public UpdateManagedInstancesProviderConfiguration ManagedInstancesProvider
+        {
+            get { return this._managedInstancesProvider; }
+            set { this._managedInstancesProvider = value; }
+        }
+
+        // Check to see if ManagedInstancesProvider property is set
+        internal bool IsSetManagedInstancesProvider()
+        {
+            return this._managedInstancesProvider != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MaxvCpus. 
         /// <para>
         /// The maximum number of Amazon EC2 vCPUs that an environment can reach.
@@ -762,8 +811,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of compute environment: <c>EC2</c>, <c>SPOT</c>, <c>FARGATE</c>, or <c>FARGATE_SPOT</c>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// The type of compute environment: <c>EC2</c>, <c>SPOT</c>, <c>FARGATE</c>, <c>FARGATE_SPOT</c>,
+        /// or <c>ECS_MANAGED_INSTANCES</c>. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
         /// environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  
@@ -778,6 +827,10 @@ namespace Amazon.Batch.Model
         /// an infrastructure update of the compute environment. For more information, see <a
         /// href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
         /// compute environments</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot change the type to or from <c>ECS_MANAGED_INSTANCES</c>.
         /// </para>
         /// </summary>
         public CRType Type

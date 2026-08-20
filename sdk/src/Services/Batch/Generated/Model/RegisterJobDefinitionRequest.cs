@@ -214,6 +214,12 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The platform capabilities required by the job definition. If no value is specified,
         /// it defaults to <c>EC2</c>. To run the job on Fargate resources, specify <c>FARGATE</c>.
+        /// To run the job on Amazon ECS Managed Instances, specify <c>MANAGED_INSTANCES</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Jobs with the <c>MANAGED_INSTANCES</c> platform capability must use <c>ecsProperties</c>
+        /// (not <c>containerProperties</c>) and do not support multi-node parallel jobs.
         /// </para>
         ///  <note> 
         /// <para>

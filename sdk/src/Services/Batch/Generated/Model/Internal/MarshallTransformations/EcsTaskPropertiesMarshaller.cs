@@ -102,6 +102,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetNetworkMode())
+            {
+                context.Writer.WritePropertyName("networkMode");
+                context.Writer.WriteStringValue(requestObject.NetworkMode);
+            }
+
             if(requestObject.IsSetPidMode())
             {
                 context.Writer.WritePropertyName("pidMode");

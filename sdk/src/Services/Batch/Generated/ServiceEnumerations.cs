@@ -421,6 +421,10 @@ namespace Amazon.Batch
         /// </summary>
         public static readonly CRType EC2 = new CRType("EC2");
         /// <summary>
+        /// Constant ECS_MANAGED_INSTANCES for CRType
+        /// </summary>
+        public static readonly CRType ECS_MANAGED_INSTANCES = new CRType("ECS_MANAGED_INSTANCES");
+        /// <summary>
         /// Constant FARGATE for CRType
         /// </summary>
         public static readonly CRType FARGATE = new CRType("FARGATE");
@@ -798,6 +802,10 @@ namespace Amazon.Batch
         /// Constant ECS_FARGATE for JobQueueType
         /// </summary>
         public static readonly JobQueueType ECS_FARGATE = new JobQueueType("ECS_FARGATE");
+        /// <summary>
+        /// Constant ECS_MANAGED_INSTANCES for JobQueueType
+        /// </summary>
+        public static readonly JobQueueType ECS_MANAGED_INSTANCES = new JobQueueType("ECS_MANAGED_INSTANCES");
         /// <summary>
         /// Constant EKS for JobQueueType
         /// </summary>
@@ -1262,6 +1270,10 @@ namespace Amazon.Batch
         /// Constant FARGATE for PlatformCapability
         /// </summary>
         public static readonly PlatformCapability FARGATE = new PlatformCapability("FARGATE");
+        /// <summary>
+        /// Constant MANAGED_INSTANCES for PlatformCapability
+        /// </summary>
+        public static readonly PlatformCapability MANAGED_INSTANCES = new PlatformCapability("MANAGED_INSTANCES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

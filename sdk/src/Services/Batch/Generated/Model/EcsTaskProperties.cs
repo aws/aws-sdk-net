@@ -43,6 +43,7 @@ namespace Amazon.Batch.Model
         private string _executionRoleArn;
         private string _ipcMode;
         private NetworkConfiguration _networkConfiguration;
+        private string _networkMode;
         private string _pidMode;
         private string _platformVersion;
         private RuntimePlatform _runtimePlatform;
@@ -184,7 +185,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for jobs that are running on Fargate resources. Jobs that
-        /// are running on Amazon EC2 resources must not specify this parameter.
+        /// are running on Amazon EC2 resources or Amazon ECS Managed Instances must not specify
+        /// this parameter.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -197,6 +199,38 @@ namespace Amazon.Batch.Model
         internal bool IsSetNetworkConfiguration()
         {
             return this._networkConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NetworkMode. 
+        /// <para>
+        /// The network mode to use for the task. Valid values: <c>host</c>. When not specified,
+        /// the default is <c>host</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// With <c>host</c> mode, the container shares the host instance's network stack directly.
+        /// When running tasks that use the <c>host</c> network mode, do not run containers using
+        /// the root user (UID 0). Running as root grants unrestricted access to host resources
+        /// and increases the attack surface.
+        /// </para>
+        ///  
+        /// <para>
+        /// This parameter only applies to jobs running on Amazon ECS Managed Instances (<c>MANAGED_INSTANCES</c>
+        /// platform capability). It cannot be specified for Fargate or Amazon EC2 platform job
+        /// definitions.
+        /// </para>
+        /// </summary>
+        public string NetworkMode
+        {
+            get { return this._networkMode; }
+            set { this._networkMode = value; }
+        }
+
+        // Check to see if NetworkMode property is set
+        internal bool IsSetNetworkMode()
+        {
+            return this._networkMode != null;
         }
 
         /// <summary>
@@ -261,7 +295,15 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property RuntimePlatform. 
         /// <para>
-        /// An object that represents the compute environment architecture for Batch jobs on Fargate.
+        /// An object that represents the compute environment architecture for Batch jobs on Fargate
+        /// or Amazon ECS Managed Instances. Use this to specify the operating system family (<c>operatingSystemFamily</c>)
+        /// and CPU architecture (<c>cpuArchitecture</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For Amazon ECS Managed Instances, the valid value for <c>operatingSystemFamily</c>
+        /// is <c>LINUX</c> (default). The valid values for <c>cpuArchitecture</c> are <c>X86_64</c>
+        /// and <c>ARM64</c>.
         /// </para>
         /// </summary>
         public RuntimePlatform RuntimePlatform
