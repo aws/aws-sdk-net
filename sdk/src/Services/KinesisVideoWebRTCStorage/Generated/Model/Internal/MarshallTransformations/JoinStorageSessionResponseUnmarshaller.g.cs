@@ -29,6 +29,7 @@ using Amazon.KinesisVideoWebRTCStorage.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
+using System.Globalization;
 using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 
@@ -45,13 +46,6 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             JoinStorageSessionResponse response = new JoinStorageSessionResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-            }
 
             return response;
         }

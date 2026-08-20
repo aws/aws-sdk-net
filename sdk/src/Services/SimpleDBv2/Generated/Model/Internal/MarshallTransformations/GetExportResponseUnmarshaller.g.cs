@@ -29,6 +29,7 @@ using Amazon.SimpleDBv2.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
+using System.Globalization;
 using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 

@@ -53,20 +53,7 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         /// </summary>
         public ResourceNotFoundException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            if (context.Stream.Length > 0)
-            {
-                context.Read(ref reader);
-            }
-
             ResourceNotFoundException unmarshalledObject = new ResourceNotFoundException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-
-            int targetDepth = context.CurrentDepth;
-            if (context.Stream.Length > 0)
-            {
-                while (context.ReadAtDepth(targetDepth, ref reader))
-                {
-                }
-            }
 
             return unmarshalledObject;
         }

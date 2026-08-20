@@ -29,6 +29,7 @@ using Amazon.SSO.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
+using System.Globalization;
 using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 
@@ -45,13 +46,6 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             LogoutResponse response = new LogoutResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
-
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-            }
 
             return response;
         }
