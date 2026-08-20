@@ -32,10 +32,10 @@ namespace Amazon.PricingPlanManager
     /// <summary>
     /// <para>Interface for accessing PricingPlanManager</para>
     ///
-    /// Manages flat-rate pricing subscriptions for supported AWS services. Use this API to
-    /// create, approve, update, and cancel subscriptions; associate and disassociate resources;
-    /// and retrieve subscription details. With a flat-rate pricing subscription, you pay
-    /// a fixed recurring fee for eligible resources instead of usage-based pricing.
+    /// Manages flat-rate pricing subscriptions for supported services. Use this API to create,
+    /// approve, update, and cancel subscriptions; associate and disassociate resources; and
+    /// retrieve subscription details. With a flat-rate pricing subscription, you pay a fixed
+    /// recurring fee for eligible resources instead of usage-based pricing.
     /// </summary>
     public partial interface IAmazonPricingPlanManager : IAmazonService, IDisposable
     {
@@ -107,7 +107,7 @@ namespace Amazon.PricingPlanManager
         ///  <note> 
         /// <para>
         /// For subscriptions in the CloudFront plan family, the associated resources must include
-        /// exactly one Amazon CloudFront distribution and one AWS WAF web ACL. You can also include
+        /// exactly one Amazon CloudFront distribution and one WAF web ACL. You can also include
         /// other supported resources, such as Amazon Route 53 hosted zones, and CloudFront KeyValueStores.
         /// </para>
         ///  </note>
@@ -322,8 +322,8 @@ namespace Amazon.PricingPlanManager
         ///  <note> 
         /// <para>
         /// For subscriptions in the CloudFront plan family, the associated resources must always
-        /// include exactly one Amazon CloudFront distribution and exactly one AWS WAF web ACL.
-        /// You cannot remove these required resources.
+        /// include exactly one Amazon CloudFront distribution and exactly one WAF web ACL. You
+        /// cannot remove these required resources.
         /// </para>
         ///  </note>
         /// </summary>
