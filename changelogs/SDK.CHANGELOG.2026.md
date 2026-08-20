@@ -1,3 +1,47 @@
+### 4.0.316.0 (2026-08-20 18:19 UTC)
+* Amplify (4.0.102.0)
+	* Increased the maximum allowed length from 255 to 4,096 characters to support longer access tokens.
+* ARCRegionswitch (4.0.102.0)
+	* Adds support for Rds switchover read replica for Oracle databases in Region switch plans
+* Batch (4.0.102.0)
+	* AWS Batch now supports a new compute environment type that provides fully managed EC2 capacity with broader compute flexibility than Fargate, including GPU instances, bare metal, and specific instance type selection, without infrastructure management overhead.
+* CloudFront (4.0.101.0)
+	* Added SigV4a as a supported signing protocol for Origin Access Control (OAC), enabling CloudFront to sign requests to Amazon S3 Multi-Region Access Point (S3-MRAP) origins.
+* CloudTrailData (4.0.100.12)
+	* Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator
+* DirectConnect (4.0.102.0)
+	* This release adds custom route prefix pool allocations for Direct Connect. You can set IPv4 and IPv6 route prefix counts on private and transit virtual interfaces, and view pool size and unallocated counts on connections and LAGs, plus direct connect gateway attachment prefix allocation totals.
+* EC2 (4.0.111.0)
+	* EC2 marks UEFI instance metadata field as sensitive.
+* EKSAuth (4.0.101.4)
+	* Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator
+* KinesisVideoWebRTCStorage (4.0.100.11)
+	* Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator
+* Lambda (4.0.106.0)
+	* Adds support for full JSON resource-based policies, enabling customers to create, retrieve, update, and delete function resource policies as complete JSON documents.
+* PricingPlanManager (4.0.100.3)
+	* Documentation update for the CreateSubscription API to correct the default value of the approval mode parameter. The default value for paid subscriptions is MANUAL, not IMMEDIATE as previously documented. The default value remains IMMEDIATE for FREE tier subscriptions.
+* SageMaker (4.0.110.0)
+	* Added IAM Identity Center (IdC) support to CreatePartnerApp and UpdatePartnerApp APIs. Added Customer Managed Key (CMK) support to CreateMlflowApp and DescribeMlflowApp.
+* SimpleDBv2 (4.0.100.11)
+	* Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator
+* SimpleEmailV2 (4.0.103.0)
+	* Amazon SES now supports per-message tracking overrides. You can use the new ConfigurationOverrides parameter in SendEmail and SendBulkEmail to enable or disable open and click tracking for individual messages without changing your account-level or configuration set settings.
+* SSO (4.0.100.11)
+	* Add @httpHeader unmarshalling for response and error (exception) members in the Smithy generator
+* SupportApp (4.0.100.11)
+	* SupportApp is now generated from its Smithy model. There are no changes to the public API.
+* Extensions.CrtIntegration (4.0.100.10)
+	* The SigV4a (CRT) signer now honors the per-client DisableClockSkewCorrection setting when resolving the request signing time, matching the SigV4 signer.
+* Extensions.NETCore.Setup (4.0.101.0)
+	* Added support for the DisableClockSkewCorrection client configuration option, including binding from IConfiguration and the configuration schema.
+* Core 4.0.102.0
+	* Added the DisableClockSkewCorrection client configuration option to disable clock skew correction per client, resolved in order of precedence from the programmatic client configuration, the AWS_DISABLE_CLOCK_SKEW_CORRECTION environment variable, and the disable_clock_skew_correction shared config profile setting. The global AWSConfigs.CorrectForClockSkew switch continues to be honored.
+	* Clock skew errors are retried only when the absolute computed skew exceeds a 4-minute detection threshold, and clock skew retries now consume retry quota and count toward the maximum number of attempts.
+	* Implemented the Clock Skew Correction specification. Client skew is now measured from the response Date header using an NTP-style midpoint calculation and recorded from every response, with guards that discard the measurement when the request took longer than 15 minutes or the response was served from a cache (Age header present).
+	* The standalone AWSSigV4Signer now honors the DisableClockSkewCorrection configuration when resolving the signing timestamp.
+	* All service and extension packages updated to require new Core
+
 ### 4.0.315.0 (2026-08-19 18:47 UTC)
 * AccountAccess (4.0.101.0)
 	* Adds throttling exceptions to operation outputs that were previously inconsistent with other operations.
