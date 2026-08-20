@@ -30,11 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The resource-based policy you tried to add to the Lambda function would grant public
-    /// access to it, and your account's <c>BlockPublicAccess</c> setting prevents public
-    /// access. For more information about blocking public access to Lambda functions, see
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#access-control-block-public-access">Block
-    /// public access to Lambda resources</a>.
+    /// The resource-based policy you tried to add to the Lambda resource would grant public
+    /// access to it, which isn't allowed.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

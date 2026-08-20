@@ -30,32 +30,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The size of the function's <c>/tmp</c> directory in MB. The default value is 512,
-    /// but can be any whole number between 512 and 10,240 MB. For more information, see <a
-    /// href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-function-common.html#configuration-ephemeral-storage">Configuring
-    /// ephemeral storage (console)</a>.
+    /// Container for the parameters to the GetResourcePolicy operation.
+    /// Retrieves the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based
+    /// policy</a> attached to a Lambda resource.
     /// </summary>
-    public partial class EphemeralStorage
+    public partial class GetResourcePolicyRequest : AmazonLambdaRequest
     {
-        private int? _size;
+        private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property Size. 
+        /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The size of the function's <c>/tmp</c> directory.
+        /// The Amazon Resource Name (ARN) of the Lambda resource you want to retrieve the policy
+        /// for. You can use a qualified or an unqualified ARN. The value must be a complete ARN,
+        /// and the operation does not accept wildcard characters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=512, Max=32768)]
-        public int? Size
+        [AWSProperty(Required=true, Min=0, Max=256)]
+        public string ResourceArn
         {
-            get { return this._size; }
-            set { this._size = value; }
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
         }
 
-        // Check to see if Size property is set
-        internal bool IsSetSize()
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
         {
-            return this._size.HasValue; 
+            return this._resourceArn != null;
         }
 
     }
