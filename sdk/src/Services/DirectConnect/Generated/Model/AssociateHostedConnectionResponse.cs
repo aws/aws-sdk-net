@@ -53,6 +53,10 @@ namespace Amazon.DirectConnect.Model
         private bool? _partnerInterconnectMacSecCapable;
         private string _partnerName;
         private string _portEncryptionStatus;
+        private int? _prefixPoolSizeIpv4;
+        private int? _prefixPoolSizeIpv6;
+        private int? _prefixPoolUnallocatedCountIpv4;
+        private int? _prefixPoolUnallocatedCountIpv6;
         private string _providerName;
         private RateLimiterStatus _rateLimiterStatus;
         private string _region;
@@ -456,6 +460,86 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetPortEncryptionStatus()
         {
             return this._portEncryptionStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixPoolSizeIpv4. 
+        /// <para>
+        /// The total number of inbound IPv4 route prefixes you can allocate across the virtual
+        /// interfaces on the connection. Not applicable to hosted connections or interconnects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? PrefixPoolSizeIpv4
+        {
+            get { return this._prefixPoolSizeIpv4; }
+            set { this._prefixPoolSizeIpv4 = value; }
+        }
+
+        // Check to see if PrefixPoolSizeIpv4 property is set
+        internal bool IsSetPrefixPoolSizeIpv4()
+        {
+            return this._prefixPoolSizeIpv4.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixPoolSizeIpv6. 
+        /// <para>
+        /// The total number of inbound IPv6 route prefixes you can allocate across the virtual
+        /// interfaces on the connection. Not applicable to hosted connections or interconnects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? PrefixPoolSizeIpv6
+        {
+            get { return this._prefixPoolSizeIpv6; }
+            set { this._prefixPoolSizeIpv6 = value; }
+        }
+
+        // Check to see if PrefixPoolSizeIpv6 property is set
+        internal bool IsSetPrefixPoolSizeIpv6()
+        {
+            return this._prefixPoolSizeIpv6.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixPoolUnallocatedCountIpv4. 
+        /// <para>
+        /// The number of inbound IPv4 route prefixes in the connection prefix pool not yet allocated
+        /// to a virtual interface. Not applicable to hosted connections or interconnects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? PrefixPoolUnallocatedCountIpv4
+        {
+            get { return this._prefixPoolUnallocatedCountIpv4; }
+            set { this._prefixPoolUnallocatedCountIpv4 = value; }
+        }
+
+        // Check to see if PrefixPoolUnallocatedCountIpv4 property is set
+        internal bool IsSetPrefixPoolUnallocatedCountIpv4()
+        {
+            return this._prefixPoolUnallocatedCountIpv4.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixPoolUnallocatedCountIpv6. 
+        /// <para>
+        /// The number of inbound IPv6 route prefixes in the connection prefix pool not yet allocated
+        /// to a virtual interface. Not applicable to hosted connections or interconnects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? PrefixPoolUnallocatedCountIpv6
+        {
+            get { return this._prefixPoolUnallocatedCountIpv6; }
+            set { this._prefixPoolUnallocatedCountIpv6 = value; }
+        }
+
+        // Check to see if PrefixPoolUnallocatedCountIpv6 property is set
+        internal bool IsSetPrefixPoolUnallocatedCountIpv6()
+        {
+            return this._prefixPoolUnallocatedCountIpv6.HasValue; 
         }
 
         /// <summary>

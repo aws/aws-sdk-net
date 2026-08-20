@@ -42,6 +42,7 @@ namespace Amazon.DirectConnect.Model
         private string _ownerAccount;
         private string _stateChangeError;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private int? _totalPrefixPoolAllocations;
 
         /// <summary>
         /// Gets and sets the property AmazonSideAsn. 
@@ -190,6 +191,26 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalPrefixPoolAllocations. 
+        /// <para>
+        /// The total number of inbound route prefixes allocated to the attachments on the Direct
+        /// Connect gateway. The count combines the IPv4 and IPv6 address families.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? TotalPrefixPoolAllocations
+        {
+            get { return this._totalPrefixPoolAllocations; }
+            set { this._totalPrefixPoolAllocations = value; }
+        }
+
+        // Check to see if TotalPrefixPoolAllocations property is set
+        internal bool IsSetTotalPrefixPoolAllocations()
+        {
+            return this._totalPrefixPoolAllocations.HasValue; 
         }
 
     }

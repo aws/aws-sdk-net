@@ -158,6 +158,18 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.OwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("prefixPoolAllocatedCountIpv4", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.PrefixPoolAllocatedCountIpv4 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("prefixPoolAllocatedCountIpv6", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.PrefixPoolAllocatedCountIpv6 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("rateLimit", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
