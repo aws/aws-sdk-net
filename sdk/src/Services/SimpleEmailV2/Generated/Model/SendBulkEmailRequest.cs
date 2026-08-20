@@ -36,6 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class SendBulkEmailRequest : AmazonSimpleEmailServiceV2Request
     {
         private List<BulkEmailEntry> _bulkEmailEntries = AWSConfigs.InitializeCollections ? new List<BulkEmailEntry>() : null;
+        private ConfigurationOverrides _configurationOverrides;
         private string _configurationSetName;
         private BulkEmailContent _defaultContent;
         private List<MessageTag> _defaultEmailTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
@@ -69,6 +70,26 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetBulkEmailEntries()
         {
             return this._bulkEmailEntries != null && (this._bulkEmailEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationOverrides. 
+        /// <para>
+        /// An object that overrides, for the messages in this request only, settings that would
+        /// otherwise apply to them. The overrides apply to every message in the request. Each
+        /// setting that you don't override keeps the value that already applies.
+        /// </para>
+        /// </summary>
+        public ConfigurationOverrides ConfigurationOverrides
+        {
+            get { return this._configurationOverrides; }
+            set { this._configurationOverrides = value; }
+        }
+
+        // Check to see if ConfigurationOverrides property is set
+        internal bool IsSetConfigurationOverrides()
+        {
+            return this._configurationOverrides != null;
         }
 
         /// <summary>

@@ -3957,8 +3957,7 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Set the pricing plan for your Amazon SES account. Use this operation to choose a billing
-        /// plan that packages multiple Amazon SES features at a single rate.
+        /// Set the pricing plan for your Amazon SES account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPricingAttributes service method.</param>
         /// <param name="cancellationToken">

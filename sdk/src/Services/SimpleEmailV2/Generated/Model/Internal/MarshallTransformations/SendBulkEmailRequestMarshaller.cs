@@ -89,6 +89,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetConfigurationOverrides())
+            {
+                context.Writer.WritePropertyName("ConfigurationOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConfigurationOverridesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetConfigurationSetName())
             {
                 context.Writer.WritePropertyName("ConfigurationSetName");

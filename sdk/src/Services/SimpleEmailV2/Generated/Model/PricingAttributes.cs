@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// The pricing attributes that apply to your Amazon SES account, including the currently
-    /// active pricing plan and any scheduled change for the next billing cycle.
+    /// active pricing plan and any scheduled change.
     /// </summary>
     public partial class PricingAttributes
     {
@@ -59,7 +59,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property NextPlan. 
         /// <para>
-        /// The pricing plan that will become active at the start of the next billing cycle, if
+        /// The pricing plan that will become active at the start of the next monthly cycle, if
         /// a scheduled change has been requested. This field is empty when no scheduled change
         /// is pending.
         /// </para>
