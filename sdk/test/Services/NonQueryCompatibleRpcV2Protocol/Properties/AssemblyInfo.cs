@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Non Query Compatible RpcV2 Protocol Service. NonQueryCompatibleRpcV2Protocol test service")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Non Query Compatible RpcV2 Protocol Service. NonQueryCompatibleRpcV2Protocol test service")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Non Query Compatible RpcV2 Protocol Service. NonQueryCompatibleRpcV2Protocol test service")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Non Query Compatible RpcV2 Protocol Service. NonQueryCompatibleRpcV2Protocol test service")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Non Query Compatible RpcV2 Protocol Service. NonQueryCompatibleRpcV2Protocol test service")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

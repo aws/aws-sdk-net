@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - AWS Well-Architected Tool. This is the first release of AWS Well-Architected Tool API support, use to review your workload and compare against the latest AWS architectural best practices.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

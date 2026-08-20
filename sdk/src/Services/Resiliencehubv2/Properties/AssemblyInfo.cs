@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Resilience Hub V2. This is the initial SDK release for the next generation of Resilience Hub.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Resilience Hub V2. This is the initial SDK release for the next generation of Resilience Hub.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Resilience Hub V2. This is the initial SDK release for the next generation of Resilience Hub.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - AWS Resilience Hub V2. This is the initial SDK release for the next generation of Resilience Hub.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - AWS Resilience Hub V2. This is the initial SDK release for the next generation of Resilience Hub.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

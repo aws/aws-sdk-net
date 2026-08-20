@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Amazon CloudFront KeyValueStore. This release adds support for CloudFront KeyValueStore, a globally managed key value datastore associated with CloudFront Functions.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription

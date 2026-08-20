@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Partner Central Account API. Initial GA launch of Partner Central Account")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Partner Central Account API. Initial GA launch of Partner Central Account")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Partner Central Account API. Initial GA launch of Partner Central Account")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Partner Central Account API. Initial GA launch of Partner Central Account")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Partner Central Account API. Initial GA launch of Partner Central Account")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
