@@ -16582,6 +16582,10 @@ namespace Amazon.SageMaker
         /// Constant IAM for PartnerAppAuthType
         /// </summary>
         public static readonly PartnerAppAuthType IAM = new PartnerAppAuthType("IAM");
+        /// <summary>
+        /// Constant IDC for PartnerAppAuthType
+        /// </summary>
+        public static readonly PartnerAppAuthType IDC = new PartnerAppAuthType("IDC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

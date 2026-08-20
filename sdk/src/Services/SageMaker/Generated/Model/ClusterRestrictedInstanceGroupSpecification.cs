@@ -178,7 +178,7 @@ namespace Amazon.SageMaker.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> OnStartDeepHealthChecks
         {
             get { return this._onStartDeepHealthChecks; }

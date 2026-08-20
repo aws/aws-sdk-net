@@ -98,6 +98,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("KmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
+            }
+
             if(publicRequest.IsSetModelRegistrationMode())
             {
                 context.Writer.WritePropertyName("ModelRegistrationMode");

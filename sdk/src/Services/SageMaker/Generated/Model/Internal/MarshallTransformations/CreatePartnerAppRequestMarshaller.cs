@@ -121,6 +121,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
             }
 
+            if(publicRequest.IsSetIdcConfig())
+            {
+                context.Writer.WritePropertyName("IdcConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdcConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IdcConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");

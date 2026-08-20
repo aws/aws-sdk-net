@@ -1047,6 +1047,12 @@
     <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateMlflowAppRequest.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9:/_-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateMlflowAppRequest.Name</property>
     <min>1</min>
     <max>256</max>
@@ -3946,6 +3952,12 @@
     <min>0</min>
     <max>1024</max>
     <pattern>(https|s3)://([^/]+)/?(.*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeMlflowAppResponse.KmsKeyId</property>
+    <min>0</min>
+    <max>2048</max>
+    <pattern>[a-zA-Z0-9:/_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeMlflowAppResponse.MlflowVersion</property>
@@ -12077,6 +12089,24 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterTuningResourceConfig.VolumeSizeInGB</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IdcConfigInput.InstanceArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws[a-z\-]*:sso:::instance/(sso)?ins-[a-zA-Z0-9.-]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IdcConfigOutput.ApplicationArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws[a-z\-]*:sso::[0-9]{12}:application/(sso)?ins-[a-zA-Z0-9.-]{16}/apl-[a-zA-Z0-9.-]{16}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.IdcConfigOutput.InstanceArn</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>arn:aws[a-z\-]*:sso:::instance/(sso)?ins-[a-zA-Z0-9.-]{16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.IdentityProviderOAuthSetting.SecretArn</property>

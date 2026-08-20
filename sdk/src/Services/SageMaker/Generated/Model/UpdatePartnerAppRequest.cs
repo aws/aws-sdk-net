@@ -38,9 +38,11 @@ namespace Amazon.SageMaker.Model
         private PartnerAppConfig _applicationConfig;
         private string _appVersion;
         private string _arn;
+        private PartnerAppAuthType _authType;
         private string _clientToken;
         private bool? _enableAutoMinorVersionUpgrade;
         private bool? _enableIamSessionBasedIdentity;
+        private IdcConfigInput _idcConfig;
         private PartnerAppMaintenanceConfig _maintenanceConfig;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _tier;
@@ -104,6 +106,37 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AuthType. 
+        /// <para>
+        /// The authorization type that users use to access the SageMaker Partner AI App. Use
+        /// this parameter to migrate an existing SageMaker Partner AI App from <c>IAM</c> authorization
+        /// to <c>IDC</c> authorization. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IAM</c>: Users access the SageMaker Partner AI App with their Amazon Web Services
+        /// IAM identity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IDC</c>: Users access the SageMaker Partner AI App with their Amazon Web Services
+        /// IAM Identity Center identity. Specify the Identity Center instance to use in <c>IdcConfig</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PartnerAppAuthType AuthType
+        {
+            get { return this._authType; }
+            set { this._authType = value; }
+        }
+
+        // Check to see if AuthType property is set
+        internal bool IsSetAuthType()
+        {
+            return this._authType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique token that guarantees that the call to this API is idempotent.
@@ -159,6 +192,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetEnableIamSessionBasedIdentity()
         {
             return this._enableIamSessionBasedIdentity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdcConfig. 
+        /// <para>
+        /// Specifies the Amazon Web Services IAM Identity Center configuration for the SageMaker
+        /// Partner AI App. Specify this parameter when <c>AuthType</c> is <c>IDC</c>. Apps that
+        /// use <c>IAM</c> authorization don't use this parameter.
+        /// </para>
+        /// </summary>
+        public IdcConfigInput IdcConfig
+        {
+            get { return this._idcConfig; }
+            set { this._idcConfig = value; }
+        }
+
+        // Check to see if IdcConfig property is set
+        internal bool IsSetIdcConfig()
+        {
+            return this._idcConfig != null;
         }
 
         /// <summary>

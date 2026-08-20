@@ -45,6 +45,7 @@ namespace Amazon.SageMaker.Model
         private bool? _enableIamSessionBasedIdentity;
         private ErrorInfo _error;
         private string _executionRoleArn;
+        private IdcConfigOutput _idcConfig;
         private string _kmsKeyId;
         private DateTime? _lastModifiedTime;
         private PartnerAppMaintenanceConfig _maintenanceConfig;
@@ -94,8 +95,20 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AuthType. 
         /// <para>
-        /// The authorization type that users use to access the SageMaker Partner AI App.
+        /// The authorization type that users use to access the SageMaker Partner AI App. Valid
+        /// values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IAM</c>: Users access the SageMaker Partner AI App with their Amazon Web Services
+        /// IAM identity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IDC</c>: Users access the SageMaker Partner AI App with their Amazon Web Services
+        /// IAM Identity Center identity.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public PartnerAppAuthType AuthType
         {
@@ -260,6 +273,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdcConfig. 
+        /// <para>
+        /// Contains the Amazon Web Services IAM Identity Center configuration for the SageMaker
+        /// Partner AI App, including the Identity Center instance and the Identity Center application
+        /// that SageMaker creates for the app. The service returns this field for apps that use
+        /// <c>IDC</c> authorization.
+        /// </para>
+        /// </summary>
+        public IdcConfigOutput IdcConfig
+        {
+            get { return this._idcConfig; }
+            set { this._idcConfig = value; }
+        }
+
+        // Check to see if IdcConfig property is set
+        internal bool IsSetIdcConfig()
+        {
+            return this._idcConfig != null;
         }
 
         /// <summary>
