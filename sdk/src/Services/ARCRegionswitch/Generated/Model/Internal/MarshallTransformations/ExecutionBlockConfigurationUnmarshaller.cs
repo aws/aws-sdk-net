@@ -146,6 +146,12 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                     unmarshalledObject.RdsPromoteReadReplicaConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("rdsSwitchoverReadReplicaConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = RdsSwitchoverReadReplicaConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.RdsSwitchoverReadReplicaConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("regionSwitchPlanConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = RegionSwitchPlanConfigurationUnmarshaller.Instance;

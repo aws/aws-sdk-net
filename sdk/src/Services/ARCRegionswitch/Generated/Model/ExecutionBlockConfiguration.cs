@@ -50,6 +50,7 @@ namespace Amazon.ARCRegionswitch.Model
         private ParallelExecutionBlockConfiguration _parallelConfig;
         private RdsCreateCrossRegionReplicaConfiguration _rdsCreateCrossRegionReadReplicaConfig;
         private RdsPromoteReadReplicaConfiguration _rdsPromoteReadReplicaConfig;
+        private RdsSwitchoverReadReplicaConfiguration _rdsSwitchoverReadReplicaConfig;
         private RegionSwitchPlanConfiguration _regionSwitchPlanConfig;
         private Route53HealthCheckConfiguration _route53HealthCheckConfig;
 
@@ -318,6 +319,24 @@ namespace Amazon.ARCRegionswitch.Model
         internal bool IsSetRdsPromoteReadReplicaConfig()
         {
             return this._rdsPromoteReadReplicaConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RdsSwitchoverReadReplicaConfig. 
+        /// <para>
+        /// An Amazon RDS switchover read replica execution block.
+        /// </para>
+        /// </summary>
+        public RdsSwitchoverReadReplicaConfiguration RdsSwitchoverReadReplicaConfig
+        {
+            get { return this._rdsSwitchoverReadReplicaConfig; }
+            set { this._rdsSwitchoverReadReplicaConfig = value; }
+        }
+
+        // Check to see if RdsSwitchoverReadReplicaConfig property is set
+        internal bool IsSetRdsSwitchoverReadReplicaConfig()
+        {
+            return this._rdsSwitchoverReadReplicaConfig != null;
         }
 
         /// <summary>
