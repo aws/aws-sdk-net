@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.CreateAppRequest.AccessToken</property>
     <min>1</min>
-    <max>255</max>
+    <max>4096</max>
     <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -610,7 +610,7 @@
   <property-value-rule>
     <property>Amazon.Amplify.Model.UpdateAppRequest.AccessToken</property>
     <min>1</min>
-    <max>255</max>
+    <max>4096</max>
     <pattern>(?s).+</pattern>
   </property-value-rule>
   <property-value-rule>

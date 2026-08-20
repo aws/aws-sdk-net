@@ -84,7 +84,7 @@ namespace Amazon.Amplify.Model
         /// .
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string AccessToken
         {
             get { return this._accessToken; }
