@@ -114,6 +114,132 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
             #endregion
         }
 
+        public void BatchCreateComputeEnvironment()
+        {
+            #region to-create-an-ecs-managed-instances-compute-environment-1722800000000
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
+            {
+                Type = "MANAGED",
+                ComputeEnvironmentName = "my-managed-instances-ce",
+                ComputeResources = new ComputeResource {
+                    Type = "ECS_MANAGED_INSTANCES",
+                    ManagedInstancesProvider = new ManagedInstancesProvider {
+                        InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
+                        InstanceLaunchTemplate = new InstanceLaunchTemplate {
+                            Ec2InstanceProfileArn = "arn:aws:iam::123456789012:instance-profile/ecsInstanceProfile",
+                            NetworkConfiguration = new ManagedInstancesNetworkConfiguration {
+                                SecurityGroups = new List<string> {
+                                    "sg-abcde012"
+                                },
+                                Subnets = new List<string> {
+                                    "subnet-abcde012",
+                                    "subnet-bcde012a"
+                                }
+                            }
+                        }
+                    },
+                    MaxvCpus = 256
+                },
+                State = "ENABLED"
+            });
+
+            string computeEnvironmentArn = response.ComputeEnvironmentArn;
+            string computeEnvironmentName = response.ComputeEnvironmentName;
+
+            #endregion
+        }
+
+        public void BatchCreateComputeEnvironment()
+        {
+            #region to-create-an-ecs-managed-instances-spot-compute-environment-1722800000001
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
+            {
+                Type = "MANAGED",
+                ComputeEnvironmentName = "my-spot-managed-instances-ce",
+                ComputeResources = new ComputeResource {
+                    Type = "ECS_MANAGED_INSTANCES",
+                    ManagedInstancesProvider = new ManagedInstancesProvider {
+                        InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
+                        InstanceLaunchTemplate = new InstanceLaunchTemplate {
+                            CapacityOptionType = "SPOT",
+                            Ec2InstanceProfileArn = "arn:aws:iam::123456789012:instance-profile/ecsInstanceProfile",
+                            InstanceRequirements = new InstanceRequirementsRequest { AllowedInstanceTypes = new List<string> {
+                                "m5.large",
+                                "m5.xlarge",
+                                "m6i.large",
+                                "m6i.xlarge"
+                            } },
+                            NetworkConfiguration = new ManagedInstancesNetworkConfiguration {
+                                SecurityGroups = new List<string> {
+                                    "sg-abcde012"
+                                },
+                                Subnets = new List<string> {
+                                    "subnet-abcde012",
+                                    "subnet-bcde012a"
+                                }
+                            }
+                        }
+                    },
+                    MaxvCpus = 1000
+                },
+                State = "ENABLED"
+            });
+
+            string computeEnvironmentArn = response.ComputeEnvironmentArn;
+            string computeEnvironmentName = response.ComputeEnvironmentName;
+
+            #endregion
+        }
+
+        public void BatchCreateComputeEnvironment()
+        {
+            #region to-create-an-ecs-managed-instances-ce-with-capacity-reservations-1722800000002
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateComputeEnvironment(new CreateComputeEnvironmentRequest 
+            {
+                Type = "MANAGED",
+                ComputeEnvironmentName = "my-reserved-managed-instances-ce",
+                ComputeResources = new ComputeResource {
+                    Type = "ECS_MANAGED_INSTANCES",
+                    ManagedInstancesProvider = new ManagedInstancesProvider {
+                        InfrastructureRoleArn = "arn:aws:iam::123456789012:role/ecsInfrastructureRole",
+                        InstanceLaunchTemplate = new InstanceLaunchTemplate {
+                            CapacityReservations = new CapacityReservationRequest {
+                                ReservationGroupArn = "arn:aws:ec2:us-east-1:123456789012:capacity-reservation-group/my-reservation-group",
+                                ReservationPreference = "RESERVATIONS_FIRST"
+                            },
+                            Ec2InstanceProfileArn = "arn:aws:iam::123456789012:instance-profile/ecsInstanceProfile",
+                            InstanceRequirements = new InstanceRequirementsRequest { AllowedInstanceTypes = new List<string> {
+                                "m5.xlarge",
+                                "m5.2xlarge"
+                            } },
+                            NetworkConfiguration = new ManagedInstancesNetworkConfiguration {
+                                SecurityGroups = new List<string> {
+                                    "sg-abcde012"
+                                },
+                                Subnets = new List<string> {
+                                    "subnet-abcde012",
+                                    "subnet-bcde012a"
+                                }
+                            }
+                        }
+                    },
+                    MaxvCpus = 512
+                },
+                State = "ENABLED"
+            });
+
+            string computeEnvironmentArn = response.ComputeEnvironmentArn;
+            string computeEnvironmentName = response.ComputeEnvironmentName;
+
+            #endregion
+        }
+
         public void BatchCreateConsumableResource()
         {
             #region to-create-a-consumable-resource-1739494856623
@@ -179,6 +305,58 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                 },
                 JobQueueName = "HighPriority",
                 Priority = 10,
+                State = "ENABLED"
+            });
+
+            string jobQueueArn = response.JobQueueArn;
+            string jobQueueName = response.JobQueueName;
+
+            #endregion
+        }
+
+        public void BatchCreateJobQueue()
+        {
+            #region to-create-a-job-queue-with-ecs-managed-instances-1722800000003
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateJobQueue(new CreateJobQueueRequest 
+            {
+                ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
+                    new ComputeEnvironmentOrder {
+                        ComputeEnvironment = "my-managed-instances-ce",
+                        Order = 1
+                    }
+                },
+                JobQueueName = "ManagedInstancesQueue",
+                Priority = 10,
+                State = "ENABLED"
+            });
+
+            string jobQueueArn = response.JobQueueArn;
+            string jobQueueName = response.JobQueueName;
+
+            #endregion
+        }
+
+        public void BatchCreateJobQueue()
+        {
+            #region to-create-a-job-queue-with-on-demand-and-spot-ecs-managed-instances-1722800000004
+
+            var client = new AmazonBatchClient();
+            var response = client.CreateJobQueue(new CreateJobQueueRequest 
+            {
+                ComputeEnvironmentOrder = new List<ComputeEnvironmentOrder> {
+                    new ComputeEnvironmentOrder {
+                        ComputeEnvironment = "my-managed-instances-ce",
+                        Order = 1
+                    },
+                    new ComputeEnvironmentOrder {
+                        ComputeEnvironment = "my-spot-managed-instances-ce",
+                        Order = 2
+                    }
+                },
+                JobQueueName = "ManagedInstancesMixedQueue",
+                Priority = 5,
                 State = "ENABLED"
             });
 
@@ -489,6 +667,167 @@ namespace AWSSDKDocSamples.Amazon.Batch.Generated
                 Tags = new Dictionary<string, string> {
                     { "Department", "Engineering" },
                     { "User", "JaneDoe" }
+                }
+            });
+
+            string jobDefinitionArn = response.JobDefinitionArn;
+            string jobDefinitionName = response.JobDefinitionName;
+            int revision = response.Revision;
+
+            #endregion
+        }
+
+        public void BatchRegisterJobDefinition()
+        {
+            #region to-register-a-job-definition-on-ecs-managed-instances-1722800000005
+
+            var client = new AmazonBatchClient();
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
+            {
+                Type = "container",
+                EcsProperties = new EcsProperties { TaskProperties = new List<EcsTaskProperties> {
+                    new EcsTaskProperties {
+                        Containers = new List<TaskContainerProperties> {
+                            new TaskContainerProperties {
+                                Name = "main",
+                                Command = new List<string> {
+                                    "echo",
+                                    "hello managed instances"
+                                },
+                                Image = "public.ecr.aws/amazonlinux/amazonlinux:2023",
+                                ResourceRequirements = new List<ResourceRequirement> {
+                                    new ResourceRequirement {
+                                        Type = "VCPU",
+                                        Value = "1"
+                                    },
+                                    new ResourceRequirement {
+                                        Type = "MEMORY",
+                                        Value = "1024"
+                                    }
+                                }
+                            }
+                        },
+                        ExecutionRoleArn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
+                    }
+                } },
+                JobDefinitionName = "my-managed-instances-job-def",
+                PlatformCapabilities = new List<string> {
+                    "MANAGED_INSTANCES"
+                }
+            });
+
+            string jobDefinitionArn = response.JobDefinitionArn;
+            string jobDefinitionName = response.JobDefinitionName;
+            int revision = response.Revision;
+
+            #endregion
+        }
+
+        public void BatchRegisterJobDefinition()
+        {
+            #region to-register-a-gpu-job-definition-on-ecs-managed-instances-1722800000006
+
+            var client = new AmazonBatchClient();
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
+            {
+                Type = "container",
+                EcsProperties = new EcsProperties { TaskProperties = new List<EcsTaskProperties> {
+                    new EcsTaskProperties {
+                        Containers = new List<TaskContainerProperties> {
+                            new TaskContainerProperties {
+                                Name = "main",
+                                Command = new List<string> {
+                                    "nvidia-smi"
+                                },
+                                Image = "123456789012.dkr.ecr.us-east-1.amazonaws.com/my-gpu-image:latest",
+                                ResourceRequirements = new List<ResourceRequirement> {
+                                    new ResourceRequirement {
+                                        Type = "VCPU",
+                                        Value = "4"
+                                    },
+                                    new ResourceRequirement {
+                                        Type = "MEMORY",
+                                        Value = "16384"
+                                    },
+                                    new ResourceRequirement {
+                                        Type = "GPU",
+                                        Value = "1"
+                                    }
+                                }
+                            }
+                        },
+                        ExecutionRoleArn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
+                    }
+                } },
+                JobDefinitionName = "my-gpu-managed-instances-job-def",
+                PlatformCapabilities = new List<string> {
+                    "MANAGED_INSTANCES"
+                }
+            });
+
+            string jobDefinitionArn = response.JobDefinitionArn;
+            string jobDefinitionName = response.JobDefinitionName;
+            int revision = response.Revision;
+
+            #endregion
+        }
+
+        public void BatchRegisterJobDefinition()
+        {
+            #region to-register-a-multi-container-job-definition-on-ecs-managed-instances-1722800000007
+
+            var client = new AmazonBatchClient();
+            var response = client.RegisterJobDefinition(new RegisterJobDefinitionRequest 
+            {
+                Type = "container",
+                EcsProperties = new EcsProperties { TaskProperties = new List<EcsTaskProperties> {
+                    new EcsTaskProperties {
+                        Containers = new List<TaskContainerProperties> {
+                            new TaskContainerProperties {
+                                Name = "main",
+                                Command = new List<string> {
+                                    "echo",
+                                    "processing data"
+                                },
+                                Essential = true,
+                                Image = "public.ecr.aws/amazonlinux/amazonlinux:2023",
+                                ResourceRequirements = new List<ResourceRequirement> {
+                                    new ResourceRequirement {
+                                        Type = "VCPU",
+                                        Value = "2"
+                                    },
+                                    new ResourceRequirement {
+                                        Type = "MEMORY",
+                                        Value = "4096"
+                                    }
+                                }
+                            },
+                            new TaskContainerProperties {
+                                Name = "sidecar",
+                                Command = new List<string> {
+                                    "echo",
+                                    "logging sidecar"
+                                },
+                                Essential = false,
+                                Image = "public.ecr.aws/amazonlinux/amazonlinux:2023",
+                                ResourceRequirements = new List<ResourceRequirement> {
+                                    new ResourceRequirement {
+                                        Type = "VCPU",
+                                        Value = "1"
+                                    },
+                                    new ResourceRequirement {
+                                        Type = "MEMORY",
+                                        Value = "512"
+                                    }
+                                }
+                            }
+                        },
+                        ExecutionRoleArn = "arn:aws:iam::123456789012:role/ecsTaskExecutionRole"
+                    }
+                } },
+                JobDefinitionName = "my-sidecar-managed-instances-job-def",
+                PlatformCapabilities = new List<string> {
+                    "MANAGED_INSTANCES"
                 }
             });
 
