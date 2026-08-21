@@ -74,6 +74,20 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetParameters())
+            {
+                context.Writer.WritePropertyName("parameters");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectParametersKvp in requestObject.Parameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
+                    var requestObjectParametersValue = requestObjectParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetVpceConfigurationArns())
             {
                 context.Writer.WritePropertyName("vpceConfigurationArns");

@@ -68,38 +68,6 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        /// For all tests:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>app_performance_monitoring</c>: Performance monitoring is enabled by default.
-        /// Set this parameter to false to disable it.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For Appium tests (all types):
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// appium_version: The Appium version. Currently supported values are 1.6.5 (and later),
-        /// latest, and default.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// latest runs the latest Appium version supported by Device Farm (1.9.1).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For default, Device Farm selects a compatible version of Appium for the device. The
-        /// current behavior is to run 1.7.2 on Android devices and iOS 9 and earlier and 1.7.2
-        /// for iOS 10 and later.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// This behavior is subject to change.
-        /// </para>
-        ///  </li> </ul> </li> </ul> 
-        /// <para>
         /// For fuzz tests (Android only):
         /// </para>
         ///  <ul> <li> 
