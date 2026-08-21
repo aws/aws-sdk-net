@@ -1,0 +1,11 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+	  "Breaking Change: Removed support .NET Core 3.1",
+	  "Added build targets for .NET 10 and .NET 11",
+      "Replace checksum provider from the native Amazon Common Runtime to System.IO.Hashing"
+    ]
+  }
+}
