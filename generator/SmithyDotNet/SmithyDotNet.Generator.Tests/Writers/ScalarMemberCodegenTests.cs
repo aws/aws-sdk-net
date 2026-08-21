@@ -136,6 +136,19 @@ public class ScalarMemberCodegenTests
     }
 
     [Fact]
+    public void RequestMarshaller_StaticQueryLiteral_SplitsIntoSubResource()
+    {
+        var operation = _context.Operations.Single(o => o.Name == "DoHeaderOnly");
+        var marshaller = new JsonRequestMarshallerWriter(_context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+
+        // "/header-only?aws_iam=t": the query literal becomes a sub-resource, ResourcePath keeps the path.
+        Assert.Contains("""request.AddSubResource("aws_iam", "t");""", marshaller);
+        Assert.Contains("""request.ResourcePath = "/header-only";""", marshaller);
+        // Body-less operation (Unit input) omits Content-Type, matching C2J.
+        Assert.DoesNotContain("""request.Headers["Content-Type"]""", marshaller);
+    }
+
+    [Fact]
     public void ResponseUnmarshaller_HeaderOnly_EmitsNoBodyReader()
     {
         var operation = _context.Operations.Single(o => o.Name == "DoHeaderOnly");

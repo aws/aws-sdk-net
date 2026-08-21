@@ -66,10 +66,15 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
+            // Content-Type is only sent when there is a request body; a body-less request (GET, or
+            // query/header/label-only) omits it, matching C2J.
             // TODO: Content-type must be smarter and it can be overridden in customizations or for non restJSON
             // it can be application/x-amz-json, and for string payloads it can be "text/plain". For now we just put
             // "application/json" here since this is just a start.
-            writer.WriteLine("""request.Headers["Content-Type"] = "application/json";""");
+            if (partitioned.BodyMembers.Count > 0)
+            {
+                writer.WriteLine("""request.Headers["Content-Type"] = "application/json";""");
+            }
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
             writer.WriteLine("");
@@ -190,6 +195,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     // https://smithy.io/2.0/spec/http-bindings.html#httplabel-trait
     private void WriteResourcePath(CodeWriter writer, HttpTrait httpTrait, List<Member> labelMembers)
     {
+        // Split off any static query literal (e.g. "/token?aws_iam=t"): the path becomes ResourcePath,
+        // each query pair becomes a sub-resource. Left in ResourcePath, the runtime percent-encodes the
+        // '?' and drops the query, silently changing the request.
+        var uriParts = httpTrait.Uri.Split('?');
+        var path = uriParts[0];
+
         foreach (var member in labelMembers)
         {
             var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
@@ -202,7 +213,23 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             writer.WriteLine($"""request.AddPathResource("{pathTemplate}", {conversion});""");
             writer.WriteLine("");
         }
-        writer.WriteLine($"""request.ResourcePath = "{httpTrait.Uri}";""");
+
+        if (uriParts.Length > 1)
+        {
+            foreach (var pair in uriParts[1].Split('&'))
+            {
+                var nameValue = pair.Split('=');
+                if (nameValue.Length == 1)
+                {
+                    writer.WriteLine($"""request.AddSubResource("{nameValue[0]}");""");
+                }
+                else
+                {
+                    writer.WriteLine($"""request.AddSubResource("{nameValue[0]}", "{nameValue[1]}");""");
+                }
+            }
+        }
+        writer.WriteLine($"""request.ResourcePath = "{path}";""");
     }
 
     private void WriteBodySerialization(CodeWriter writer, List<Member> bodyMembers)

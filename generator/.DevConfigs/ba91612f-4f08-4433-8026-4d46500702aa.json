@@ -1,0 +1,39 @@
+{
+  "services": [
+    {
+      "serviceName": "SSO",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed the Content-Type header from requests that do not have a request body."
+      ]
+    },
+    {
+      "serviceName": "SupportApp",
+      "type": "patch",
+      "changeLogMessages": [
+        "Removed the Content-Type header from requests that do not have a request body."
+      ]
+    },
+    {
+      "serviceName": "SSOOIDC",
+      "type": "patch",
+      "changeLogMessages": [
+        "SSOOIDC is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "MarketplaceReporting",
+      "type": "patch",
+      "changeLogMessages": [
+        "MarketplaceReporting is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    },
+    {
+      "serviceName": "Uxc",
+      "type": "patch",
+      "changeLogMessages": [
+        "Uxc is now generated from its Smithy model. There are no changes to the public API."
+      ]
+    }
+  ]
+}

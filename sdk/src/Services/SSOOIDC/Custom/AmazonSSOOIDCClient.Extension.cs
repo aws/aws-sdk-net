@@ -23,7 +23,7 @@ namespace Amazon.SSOOIDC
 {
     public partial class AmazonSSOOIDCClient : AmazonServiceClient, IAmazonSSOOIDC
     {
-#if BCL
+#if NETFRAMEWORK
         GetSsoTokenResponse ICoreAmazonSSOOIDC.GetSsoToken(GetSsoTokenRequest request)
         {
             return CoreAmazonSSOOIDC.GetSsoToken(this, request);
@@ -40,7 +40,7 @@ namespace Amazon.SSOOIDC
             return await CoreAmazonSSOOIDC.GetSsoTokenAsync(this, request, cancellationToken).ConfigureAwait(false);
         }
 
-#if BCL
+#if NETFRAMEWORK
         GetSsoTokenResponse ICoreAmazonSSOOIDC.RefreshToken(
             GetSsoTokenResponse previousResponse)
         {

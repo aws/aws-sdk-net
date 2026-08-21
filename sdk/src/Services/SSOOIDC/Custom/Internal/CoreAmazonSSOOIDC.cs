@@ -49,7 +49,7 @@ namespace Amazon.SSOOIDC.Internal
             }
         }
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Get SSO token
         /// </summary>
@@ -387,7 +387,7 @@ namespace Amazon.SSOOIDC.Internal
             };
         }
 
-#if BCL
+#if NETFRAMEWORK
         /// <summary>
         /// Refresh SSO Token
         /// </summary>
@@ -450,7 +450,7 @@ namespace Amazon.SSOOIDC.Internal
             };
         }
 
-#if BCL
+#if NETFRAMEWORK
         private static CreateTokenResponse PollForSsoToken(IAmazonSSOOIDC client,
             CreateTokenRequest createTokenRequest,
             int pollingIntervalSeconds,

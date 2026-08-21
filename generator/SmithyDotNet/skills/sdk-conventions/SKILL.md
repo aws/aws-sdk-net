@@ -8,6 +8,14 @@ description: The public-API contract SmithyDotNet-generated code must match agai
 
 Patterns the generated code must follow so its **public API surface** matches the existing AWS SDK for .NET. The generated files do NOT need to be byte-for-byte identical — whitespace, file naming (e.g. `.g.cs` suffix), internal implementation details, and code organization can differ as long as the public types, members, signatures, and attributes are equivalent.
 
+## Reviewing Generated Output
+
+When reviewing a service migration's generated output, open and diff **every single generated file** — every operation's request marshaller and response unmarshaller, every model, exception, and client file. No sampling. Reviewing one operation and generalizing "clean" to its neighbors is how regressions ship. Thousands of files is not a reason to skip any.
+
+The public API surface can be identical while the wire behavior changes. AssemblyComparer and "the public surface is unchanged" only check the public contract; they **cannot** see marshaller/unmarshaller bodies — `ResourcePath`, query parameters, headers, serialization. A clean AssemblyComparer is necessary, not sufficient; it is not a substitute for reading the diff.
+
+A **removed** line in generated output is a red flag — investigate it, do not wave it through. Real example: the generator dropping `request.AddSubResource("aws_iam", "t")` and folding the query literal into `request.ResourcePath = "/token?aws_iam=t"` left the public API identical while silently changing the request sent to the wire (`?` gets percent-encoded, dropping the flag).
+
 ## What Must Match (Public API Contract)
 
 - Public class/interface names and their base types

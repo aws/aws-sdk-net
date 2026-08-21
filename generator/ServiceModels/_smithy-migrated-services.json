@@ -4,8 +4,11 @@
     "CloudTrailData",
     "EKSAuth",
     "KinesisVideoWebRTCStorage",
+    "MarketplaceReporting",
     "SSO",
+    "SSOOIDC",
     "SimpleDBv2",
-    "SupportApp"
+    "SupportApp",
+    "Uxc"
   ]
 }
