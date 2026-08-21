@@ -41,8 +41,19 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FieldKeys. 
         /// <para>
-        /// Specifies the keys to protect for the specified field type. If you don't specify any
-        /// key, then all keys for the field type are protected. 
+        /// Specifies the keys to protect for the specified field type.
+        /// </para>
+        ///  
+        /// <para>
+        /// Required for <c>SINGLE_HEADER</c>, <c>SINGLE_COOKIE</c>, and <c>SINGLE_QUERY_ARGUMENT</c>:
+        /// provide a non-empty array naming the specific headers, cookies, or query arguments
+        /// to protect. There is no option to protect all keys of these field types, so enumerate
+        /// each key you intend to protect.
+        /// </para>
+        ///  
+        /// <para>
+        /// Must be omitted for <c>QUERY_STRING</c> and <c>BODY</c>: the entire component is protected
+        /// and these field types take no keys. Supplying <c>FieldKeys</c> for them is rejected.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
