@@ -119,7 +119,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// Id created through the control plane API. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }

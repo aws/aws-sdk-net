@@ -140,7 +140,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// which evaluator generated specific results. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }
@@ -161,7 +161,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// this is the user-defined name. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=48)]
         public string EvaluatorName
         {
             get { return this._evaluatorName; }
