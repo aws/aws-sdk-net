@@ -238,6 +238,14 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                             context.PopPathSegment();
                             break;
                         }
+                    case "WarmUpConfiguration":
+                        {
+                            context.AddPathSegment("WarmUpConfiguration");
+                            var unmarshaller = WarmUpConfigurationUnmarshaller.Instance;
+                            unmarshalledObject.WarmUpConfiguration = unmarshaller.Unmarshall(context);
+                            context.PopPathSegment();
+                            break;
+                        }
                     default:
                         reader.SkipValue();
                         break;

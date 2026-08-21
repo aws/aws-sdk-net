@@ -66,6 +66,7 @@ namespace Amazon.CloudWatch.Model
         private string _thresholdMetricId;
         private string _treatMissingData;
         private StandardUnit _unit;
+        private WarmUpConfiguration _warmUpConfiguration;
 
         /// <summary>
         /// Gets and sets the property ActionsEnabled. 
@@ -728,6 +729,31 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetUnit()
         {
             return this._unit != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmUpConfiguration. 
+        /// <para>
+        /// The warm-up configuration for the alarm. A warm-up period delays alarm evaluation
+        /// after you create or update the alarm. During the warm-up period, the alarm stays in
+        /// <c>INSUFFICIENT_DATA</c> and does not perform alarm actions.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm
+        /// warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public WarmUpConfiguration WarmUpConfiguration
+        {
+            get { return this._warmUpConfiguration; }
+            set { this._warmUpConfiguration = value; }
+        }
+
+        // Check to see if WarmUpConfiguration property is set
+        internal bool IsSetWarmUpConfiguration()
+        {
+            return this._warmUpConfiguration != null;
         }
 
     }
