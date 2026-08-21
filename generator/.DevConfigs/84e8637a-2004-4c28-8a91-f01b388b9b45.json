@@ -1,0 +1,18 @@
+{
+  "services": [
+    {
+      "serviceName": "RDS",
+      "type": "patch",
+      "changeLogMessages": [
+        "Internal refactor of the RDS IAM auth token generator to build its presigned token via the public `Amazon.Runtime.Signing.AWSSigV4Signer` facade. Token output is unchanged. The .NET Framework target now references `System.Net.Http`."
+      ]
+    },
+    {
+      "serviceName": "DSQL",
+      "type": "patch",
+      "changeLogMessages": [
+        "Internal refactor of the DSQL auth token generator to build its presigned token via the public `Amazon.Runtime.Signing.AWSSigV4Signer` facade. Token output is unchanged. The .NET Framework target now references `System.Net.Http`."
+      ]
+    }
+  ]
+}
