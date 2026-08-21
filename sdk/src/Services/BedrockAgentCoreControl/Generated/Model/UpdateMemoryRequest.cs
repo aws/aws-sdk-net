@@ -185,9 +185,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property NamespaceKeys. 
         /// <para>
-        /// The namespace variable key definitions with validation rules for this memory. Use
-        /// this parameter to update existing <c>namespaceKey</c> validation rules or add new
-        /// keys when namespace templates change.
+        /// The namespace variable key definitions with validation rules for this memory. This
+        /// value fully replaces the existing set — any key you omit is removed. Any referenced
+        /// <c>namespaceKey</c> omission will throw ValidationException.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

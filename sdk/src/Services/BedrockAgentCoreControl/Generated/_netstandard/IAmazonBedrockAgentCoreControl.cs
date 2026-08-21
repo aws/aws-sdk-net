@@ -1943,7 +1943,8 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes an Amazon Bedrock AgentCore Memory resource.
+        /// Deletes an Amazon Bedrock AgentCore Memory resource. When you delete a memory resource,
+        /// it is permanently removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMemory service method.</param>
         /// <param name="cancellationToken">

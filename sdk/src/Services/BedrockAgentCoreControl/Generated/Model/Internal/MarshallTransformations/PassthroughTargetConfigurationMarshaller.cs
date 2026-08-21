@@ -69,6 +69,26 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetStaticQueryParameterConflictResolution())
+            {
+                context.Writer.WritePropertyName("staticQueryParameterConflictResolution");
+                context.Writer.WriteStringValue(requestObject.StaticQueryParameterConflictResolution);
+            }
+
+            if(requestObject.IsSetStaticQueryParameters())
+            {
+                context.Writer.WritePropertyName("staticQueryParameters");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectStaticQueryParametersKvp in requestObject.StaticQueryParameters)
+                {
+                    context.Writer.WritePropertyName(requestObjectStaticQueryParametersKvp.Key);
+                    var requestObjectStaticQueryParametersValue = requestObjectStaticQueryParametersKvp.Value;
+
+                        context.Writer.WriteStringValue(requestObjectStaticQueryParametersValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetStickinessConfiguration())
             {
                 context.Writer.WritePropertyName("stickinessConfiguration");

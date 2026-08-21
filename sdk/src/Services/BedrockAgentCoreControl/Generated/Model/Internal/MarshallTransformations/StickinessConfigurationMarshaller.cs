@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCompositeIdentifier())
+            {
+                context.Writer.WritePropertyName("compositeIdentifier");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectCompositeIdentifierListValue in requestObject.CompositeIdentifier)
+                {
+                        context.Writer.WriteStringValue(requestObjectCompositeIdentifierListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");

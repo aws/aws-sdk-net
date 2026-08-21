@@ -35,8 +35,35 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// </summary>
     public partial class StickinessConfiguration
     {
+        private List<string> _compositeIdentifier = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private int? _timeout;
+
+        /// <summary>
+        /// Gets and sets the property CompositeIdentifier. 
+        /// <para>
+        /// Additional headers to include in session affinity routing. When set, requests are
+        /// only considered part of the same session if both the <c>identifier</c> and all composite
+        /// identifier values match.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> CompositeIdentifier
+        {
+            get { return this._compositeIdentifier; }
+            set { this._compositeIdentifier = value; }
+        }
+
+        // Check to see if CompositeIdentifier property is set
+        internal bool IsSetCompositeIdentifier()
+        {
+            return this._compositeIdentifier != null && (this._compositeIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Identifier. 
