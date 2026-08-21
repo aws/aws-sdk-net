@@ -14,39 +14,36 @@
  */
 
 using System;
+using System.IO.Hashing;
 using System.Security.Cryptography;
-using ThirdParty.Ionic.Zlib;
 
 namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
     /// Implementation of CRC32 as a <see cref="HashAlgorithm"/> (without using the CRT dependency).
     /// </summary>
-    /// <remarks>
-    /// This classes uses the components included in the <see cref="ThirdParty.Ionic.Zlib.CRC32"/> class.
-    /// </remarks>
     public class Crc32Managed : HashAlgorithm
     {
-        private readonly CRC32 _crc32;
+        private Crc32 _crc32;
 
         public Crc32Managed()
         {
-            _crc32 = new CRC32();
+            _crc32 = new Crc32(Crc32ParameterSet.Crc32);
         }
 
         public override void Initialize() 
         {
-            // Each instance of CRC32 contains its own Crc32Result property, so we don't need to reset it here.
+            _crc32.Reset();
         }
 
         protected override void HashCore(byte[] array, int ibStart, int cbSize)
         {
-            _crc32.SlurpBlock(array, ibStart, cbSize);
+            _crc32.Append(array.AsSpan(ibStart, cbSize));
         }
 
         protected override byte[] HashFinal()
         {
-            var result = BitConverter.GetBytes(_crc32.Crc32Result);
+            var result = _crc32.GetHashAndReset();
 
             if (BitConverter.IsLittleEndian)
             {

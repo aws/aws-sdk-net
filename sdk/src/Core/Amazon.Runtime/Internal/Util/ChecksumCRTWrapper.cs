@@ -30,8 +30,10 @@ namespace AWSSDK.Runtime.Internal.Util
     /// <summary>
     /// Wrapper for checksum algorithms provided by the AWS Common Runtime
     /// </summary>
+    [Obsolete(ChecksumCRTWrapper.OBSOLETE_MESSAGE)]
     public static class ChecksumCRTWrapper
     {
+        internal const string OBSOLETE_MESSAGE = "Starting with version 4.1 this method no longer has any affect because the SDK no longer uses the native Amazon Common Runtime for hashing. Instead the SDK uses System.IO.Hashing.";
         internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
         private const string CRT_WRAPPER_NUGET_PACKAGE_NAME = "AWSSDK.Extensions.CrtIntegration";
         internal const string CRT_WRAPPER_CLASS_NAME = "AWSSDK.Extensions.CrtIntegration.CrtChecksums";

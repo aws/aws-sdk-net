@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -12,36 +12,42 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-using AWSSDK.Runtime.Internal.Util;
+
 using System;
+using System.IO.Hashing;
+using System.Linq;
 using System.Security.Cryptography;
 
 namespace Amazon.Runtime.Internal.Util
 {
     /// <summary>
-    /// Implementation of CRC32C, using the SDK-wide
-    /// instance of AWS Common Runtime's checksums
+    /// Implementation of CRC-64/NVME as a <see cref="HashAlgorithm"/> (without using the CRT dependency).
     /// </summary>
-    public class CrtCrc32c : HashAlgorithm
+    /// <remarks>
+    /// This class wraps <see cref="System.IO.Hashing.Crc64"/> configured with <see cref="Crc64ParameterSet.Nvme"/>.
+    /// </remarks>
+    public class Crc64NVMEManaged : HashAlgorithm
     {
-        private uint _rollingResult;
+        private Crc64 _crc64;
+
+        public Crc64NVMEManaged()
+        {
+            _crc64 = new Crc64(Crc64ParameterSet.Nvme);
+        }
 
         public override void Initialize()
         {
-            _rollingResult = 0;
+            _crc64.Reset();
         }
 
         protected override void HashCore(byte[] array, int ibStart, int cbSize)
         {
-            byte[] buffer = new byte[cbSize];
-            Buffer.BlockCopy(array, ibStart, buffer, 0, cbSize);
-            _rollingResult = ChecksumCRTWrapper.Crc32C(buffer, _rollingResult);
+            _crc64.Append(array.AsSpan(ibStart, cbSize));
         }
 
         protected override byte[] HashFinal()
         {
-            var result = BitConverter.GetBytes(_rollingResult);
-
+            var result = _crc64.GetHashAndReset();
             if (BitConverter.IsLittleEndian)
             {
                 Array.Reverse(result);
