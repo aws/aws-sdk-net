@@ -51,11 +51,13 @@ namespace Amazon.Kinesis.Internal
                 ["UseDualStack"] = parameters["UseDualStack"],
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
+                ["OperationType"] = parameters["OperationType"],
                 ["StreamId"] = parameters["StreamId"],
                 ["StreamARN"] = parameters["StreamARN"],
-                ["OperationType"] = parameters["OperationType"],
                 ["ConsumerARN"] = parameters["ConsumerARN"],
                 ["ResourceARN"] = parameters["ResourceARN"],
+                ["AccountId"] = parameters["AccountId"],
+                ["AccountIdEndpointMode"] = parameters["AccountIdEndpointMode"],
             };
             if (IsSet(refs["StreamId"]) && (refs["StreamIdDelimiterValue"] = Substring((string)refs["StreamId"], 20, 21, false)) != null && Equals(refs["StreamIdDelimiterValue"], "-") && (refs["StreamIdDelimiterReversedValue"] = Substring((string)refs["StreamId"], 3, 4, true)) != null && Equals(refs["StreamIdDelimiterReversedValue"], "-") && (refs["StreamIdPrefixValue"] = Substring((string)refs["StreamId"], 0, 20, false)) != null && (refs["StreamIdSuffixValue"] = Substring((string)refs["StreamId"], 21, 24, false)) != null && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
             {
@@ -348,6 +350,54 @@ namespace Amazon.Kinesis.Internal
                     throw new AmazonClientException("Invalid ARN: Invalid account id.");
                 }
                 throw new AmazonClientException("Invalid ARN: Failed to parse ARN.");
+            }
+            if (!IsSet(refs["Endpoint"]) && IsSet(refs["AccountIdEndpointMode"]) && !Equals(refs["AccountIdEndpointMode"], "disabled") && IsSet(refs["AccountId"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
+            {
+                if (IsValidHostLabel((string)refs["AccountId"], false))
+                {
+                    if (IsSet(refs["OperationType"]))
+                    {
+                        if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                        {
+                            if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
+                            {
+                                if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                                {
+                                    return new Endpoint(Interpolate(@"https://{AccountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
+                                }
+                                throw new AmazonClientException("DualStack is enabled, but this partition does not support DualStack.");
+                            }
+                            throw new AmazonClientException("FIPS is enabled, but this partition does not support FIPS.");
+                        }
+                        if (Equals(refs["UseFIPS"], true))
+                        {
+                            if (Equals(GetAttr(refs["PartitionResult"], "supportsFIPS"), true))
+                            {
+                                return new Endpoint(Interpolate(@"https://{AccountId}.{OperationType}-kinesis-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
+                            }
+                            throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                        }
+                        if (Equals(refs["UseDualStack"], true))
+                        {
+                            if (Equals(GetAttr(refs["PartitionResult"], "supportsDualStack"), true))
+                            {
+                                return new Endpoint(Interpolate(@"https://{AccountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
+                            }
+                            throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                        }
+                        return new Endpoint(Interpolate(@"https://{AccountId}.{OperationType}-kinesis.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""metricValues"":[""O""]}", refs), InterpolateJson(@"", refs));
+                    }
+                    throw new AmazonClientException("Operation Type is not set. Please contact service team for resolution.");
+                }
+                throw new AmazonClientException("Invalid account id.");
+            }
+            if (!IsSet(refs["Endpoint"]) && IsSet(refs["AccountIdEndpointMode"]) && Equals(refs["AccountIdEndpointMode"], "required") && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            {
+                if (!Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && !Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso-b"))
+                {
+                    throw new AmazonClientException("AccountIdEndpointMode is required but no AccountID was provided or able to be loaded");
+                }
+                throw new AmazonClientException("Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition");
             }
             if (IsSet(refs["Endpoint"]))
             {

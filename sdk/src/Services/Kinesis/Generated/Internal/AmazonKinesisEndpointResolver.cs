@@ -54,6 +54,8 @@ namespace Amazon.Kinesis.Internal
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
+            result.AccountId = requestContext.Identity is AWSCredentials credentials ? credentials.GetCredentials()?.AccountId : null;
+            result.AccountIdEndpointMode = config.AccountIdEndpointMode.ToString().ToLower();
 
 
             // The region needs to be determined from the ServiceURL if not set.
@@ -93,6 +95,10 @@ namespace Amazon.Kinesis.Internal
                 result.StreamId = request.StreamId;
                 return result;
             }
+            if (requestContext.RequestName == "CreateStreamRequest") {
+                result.OperationType = "control";
+                return result;
+            }
             if (requestContext.RequestName == "DecreaseStreamRetentionPeriodRequest") {
                 result.OperationType = "control";
                 var request = (DecreaseStreamRetentionPeriodRequest)requestContext.OriginalRequest;
@@ -120,6 +126,14 @@ namespace Amazon.Kinesis.Internal
                 result.ConsumerARN = request.ConsumerARN;
                 result.StreamARN = request.StreamARN;
                 result.StreamId = request.StreamId;
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeAccountSettingsRequest") {
+                result.OperationType = "control";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeLimitsRequest") {
+                result.OperationType = "control";
                 return result;
             }
             if (requestContext.RequestName == "DescribeStreamRequest") {
@@ -198,6 +212,10 @@ namespace Amazon.Kinesis.Internal
                 var request = (ListStreamConsumersRequest)requestContext.OriginalRequest;
                 result.StreamARN = request.StreamARN;
                 result.StreamId = request.StreamId;
+                return result;
+            }
+            if (requestContext.RequestName == "ListStreamsRequest") {
+                result.OperationType = "control";
                 return result;
             }
             if (requestContext.RequestName == "ListTagsForResourceRequest") {
@@ -296,6 +314,10 @@ namespace Amazon.Kinesis.Internal
                 var request = (UntagResourceRequest)requestContext.OriginalRequest;
                 result.ResourceARN = request.ResourceARN;
                 result.StreamId = request.StreamId;
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateAccountSettingsRequest") {
+                result.OperationType = "control";
                 return result;
             }
             if (requestContext.RequestName == "UpdateMaxRecordSizeRequest") {

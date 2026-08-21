@@ -77,6 +77,15 @@ namespace Amazon.Kinesis.Endpoints
         }
 
         /// <summary>
+        /// OperationType parameter
+        /// </summary>
+        public string OperationType 
+        { 
+            get { return (string)this["OperationType"]; }
+            set { this["OperationType"] = value; } 
+        }
+
+        /// <summary>
         /// StreamId parameter
         /// </summary>
         public string StreamId 
@@ -95,15 +104,6 @@ namespace Amazon.Kinesis.Endpoints
         }
 
         /// <summary>
-        /// OperationType parameter
-        /// </summary>
-        public string OperationType 
-        { 
-            get { return (string)this["OperationType"]; }
-            set { this["OperationType"] = value; } 
-        }
-
-        /// <summary>
         /// ConsumerARN parameter
         /// </summary>
         public string ConsumerARN 
@@ -119,6 +119,24 @@ namespace Amazon.Kinesis.Endpoints
         { 
             get { return (string)this["ResourceARN"]; }
             set { this["ResourceARN"] = value; } 
+        }
+
+        /// <summary>
+        /// AccountId parameter
+        /// </summary>
+        public string AccountId 
+        { 
+            get { return (string)this["AccountId"]; }
+            set { this["AccountId"] = value; } 
+        }
+
+        /// <summary>
+        /// AccountIdEndpointMode parameter
+        /// </summary>
+        public string AccountIdEndpointMode 
+        { 
+            get { return (string)this["AccountIdEndpointMode"]; }
+            set { this["AccountIdEndpointMode"] = value; } 
         }
     }
 }

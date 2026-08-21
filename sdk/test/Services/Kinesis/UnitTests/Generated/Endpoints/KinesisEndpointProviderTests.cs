@@ -3236,5 +3236,755 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
         }
 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("AccountId test: Account Id present")]
+        public void AccountId_test_Account_Id_present_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["AccountId"] = "012345678901";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://012345678901.data-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("AccountId test: Account Id present with fips")]
+        public void AccountId_test_Account_Id_present_with_fips_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "required";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis-fips.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("AccountId test: Account Id present with dual stack")]
+        public void AccountId_test_Account_Id_present_with_dual_stack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("AccountId test: Account Id present with fips and dual stack")]
+        public void AccountId_test_Account_Id_present_with_fips_and_dual_stack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis-fips.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present with streamId")]
+        public void Account_Id_present_with_streamId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present with stream ARN")]
+        public void Account_Id_present_with_stream_ARN_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present with consumer ARN")]
+        public void Account_Id_present_with_consumer_ARN_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ConsumerARN"] = "arn:aws:kinesis:us-west-2:123:stream/testStream/consumer/test-consumer:1525898737";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present with resource ARN")]
+        public void Account_Id_present_with_resource_ARN_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:123:stream/testStream/consumer/test-consumer:1525898737";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present and stream ARN with different accountId")]
+        public void Account_Id_present_and_stream_ARN_with_different_accountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:456:stream/testStream";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://456.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present and consumer ARN with different accountId")]
+        public void Account_Id_present_and_consumer_ARN_with_different_accountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:456:stream/testStream/consumer/test-consumer:1525898737";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://456.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id, streamId and resource ARN with different accountId")]
+        public void Account_Id_streamId_and_resource_ARN_with_different_accountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:456:stream/testStream/consumer/test-consumer:1525898737";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id with account id endpoint mode disabled")]
+        public void Account_Id_with_account_id_endpoint_mode_disabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id and StreamArn with account id endpoint mode disabled")]
+        public void Account_Id_and_StreamArn_with_account_id_endpoint_mode_disabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-west-2:456:stream/testStream";
+            parameters["AccountId"] = "123";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://456.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with account id endpoint mode required")]
+        public void Account_Id_missing_with_account_id_endpoint_mode_required_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountIdEndpointMode"] = "required";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with account id endpoint mode required, fips and dual stack enabled")]
+        public void Account_Id_missing_with_account_id_endpoint_mode_required_fips_and_dual_stack_enabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountIdEndpointMode"] = "required";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"AccountIdEndpointMode is required but no AccountID was provided or able to be loaded", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with account id endpoint mode required in ADC region")]
+        public void Account_Id_missing_with_account_id_endpoint_mode_required_in_ADC_region_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountIdEndpointMode"] = "required";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present with account id endpoint mode required in ADC region")]
+        public void Account_Id_present_with_account_id_endpoint_mode_required_in_ADC_region_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "required";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid Configuration: AccountIdEndpointMode is required but account endpoints are not supported in this partition", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id present with account id endpoint mode preferred in ADC region")]
+        public void Account_Id_present_with_account_id_endpoint_mode_preferred_in_ADC_region_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with account id endpoint mode required and endpoint override")]
+        public void Account_Id_missing_with_account_id_endpoint_mode_required_and_endpoint_override_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["Endpoint"] = "https://kinesis-pod1.us-west-2.amazonaws.com";
+            parameters["AccountIdEndpointMode"] = "required";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-pod1.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with StreamArn and account id endpoint mode required")]
+        public void Account_Id_missing_with_StreamArn_and_account_id_endpoint_mode_required_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamARN"] = "arn:aws:kinesis:us-west-2:456:stream/testStream";
+            parameters["AccountIdEndpointMode"] = "required";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://456.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with StreamId and account id endpoint mode required")]
+        public void Account_Id_missing_with_StreamId_and_account_id_endpoint_mode_required_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["StreamId"] = "af4lwng4k01746835071-xyz";
+            parameters["AccountIdEndpointMode"] = "required";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://af4lwng4k01746835071.xyz.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with account id endpoint mode preferred")]
+        public void Account_Id_missing_with_account_id_endpoint_mode_preferred_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Account Id missing with account id endpoint mode disabled")]
+        public void Account_Id_missing_with_account_id_endpoint_mode_disabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateStream: control operation type with AccountId")]
+        public void CreateStream_control_operation_type_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateStream: control operation type with FIPS and AccountId")]
+        public void CreateStream_control_operation_type_with_FIPS_and_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ListStreams: control operation type with AccountId")]
+        public void ListStreams_control_operation_type_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ListStreams: control operation type with FIPS and DualStack")]
+        public void ListStreams_control_operation_type_with_FIPS_and_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("DescribeLimits: control operation type with AccountId")]
+        public void DescribeLimits_control_operation_type_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("DescribeLimits: control operation type with FIPS")]
+        public void DescribeLimits_control_operation_type_with_FIPS_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("DescribeAccountSettings: control operation type with AccountId")]
+        public void DescribeAccountSettings_control_operation_type_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("DescribeAccountSettings: control operation type with FIPS and DualStack")]
+        public void DescribeAccountSettings_control_operation_type_with_FIPS_and_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("UpdateAccountSettings: control operation type with AccountId")]
+        public void UpdateAccountSettings_control_operation_type_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("UpdateAccountSettings: control operation type with FIPS")]
+        public void UpdateAccountSettings_control_operation_type_with_FIPS_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateStream: account id endpoint mode disabled falls back to regional endpoint")]
+        public void CreateStream_account_id_endpoint_mode_disabled_falls_back_to_regional_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ListStreams: account id endpoint mode disabled falls back to regional endpoint")]
+        public void ListStreams_account_id_endpoint_mode_disabled_falls_back_to_regional_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("DescribeLimits: account id endpoint mode disabled falls back to regional endpoint")]
+        public void DescribeLimits_account_id_endpoint_mode_disabled_falls_back_to_regional_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("DescribeAccountSettings: account id endpoint mode disabled falls back to regional endpoint")]
+        public void DescribeAccountSettings_account_id_endpoint_mode_disabled_falls_back_to_regional_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("UpdateAccountSettings: account id endpoint mode disabled falls back to regional endpoint")]
+        public void UpdateAccountSettings_account_id_endpoint_mode_disabled_falls_back_to_regional_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateStream: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint")]
+        public void CreateStream_account_id_endpoint_mode_disabled_with_FIPS_falls_back_to_regional_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateStream: account id endpoint mode disabled with DualStack falls back to regional DualStack endpoint")]
+        public void CreateStream_account_id_endpoint_mode_disabled_with_DualStack_falls_back_to_regional_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateStream: account id endpoint mode disabled with FIPS and DualStack falls back to regional FIPS DualStack endpoint")]
+        public void CreateStream_account_id_endpoint_mode_disabled_with_FIPS_and_DualStack_falls_back_to_regional_FIPS_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
     }
 }
