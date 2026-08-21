@@ -1,3 +1,31 @@
+### 4.0.317.0 (2026-08-21 18:32 UTC)
+* Backup (4.0.101.4)
+	* Updating CLI Docs for Backup Audit Manager List Job Summaries APIs.
+* BedrockAgentCore (4.0.107.0)
+	* Increase spans count from 1k to 20k
+* BedrockAgentCoreControl (4.0.112.0)
+	* Update Dataset schema to THIRDPARTYEVALUATIONV1
+* CloudWatch (4.0.104.0)
+	* Allows customers to specify an initial warm up period to wait for metrics to arrive when creating metric or log alarms
+* DeviceFarm (4.0.102.0)
+	* Added support to CreateRemoveAccessSession for selecting a server version on the mobile WebDriver endpoint.
+* Kinesis (4.0.101.0)
+	* Generate account endpoint for Kinesis Data Streams requests when the account ID is available
+* MarketplaceReporting (4.0.100.11)
+	* MarketplaceReporting is now generated from its Smithy model. There are no changes to the public API.
+* SSO (4.0.100.12)
+	* Removed the Content-Type header from requests that do not have a request body.
+* SSOOIDC (4.0.100.11)
+	* SSOOIDC is now generated from its Smithy model. There are no changes to the public API.
+* SupportApp (4.0.100.12)
+	* Removed the Content-Type header from requests that do not have a request body.
+* Uxc (4.0.100.11)
+	* Uxc is now generated from its Smithy model. There are no changes to the public API.
+* WAFV2 (4.0.101.5)
+	* DataProtectionConfig field Key Documentation Update
+* Extensions.CloudFront.Signers (4.0.101.0)
+	* Added ICloudFrontSigner and DelegateCloudFrontSigner, plus overloads of AmazonCloudFrontUrlSigner.SignUrl/GetCustomSignedURL and AmazonCloudFrontCookieSigner.GetCookiesForCustomPolicy that accept an ICloudFrontSigner, so policies can be signed with AWS KMS or another external signer (RSA or ECDSA P-256) without holding the private key in the process.
+
 ### 4.0.316.0 (2026-08-20 18:19 UTC)
 * Amplify (4.0.102.0)
 	* Increased the maximum allowed length from 255 to 4,096 characters to support longer access tokens.
