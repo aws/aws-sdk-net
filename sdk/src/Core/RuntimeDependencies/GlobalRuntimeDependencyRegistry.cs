@@ -15,6 +15,7 @@
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using AWSSDK.Runtime.Internal.Util;
+using System;
 
 namespace Amazon.RuntimeDependencies
 {
@@ -39,16 +40,20 @@ namespace Amazon.RuntimeDependencies
         {
         }
 
+#pragma warning disable CS0618 // Type or member is obsolete
         /// <summary>
         /// Register the Checksum provider. This should be an instance of AWSSDK.Extensions.CrtIntegration.CrtChecksums from AWSSDK.Extensions.CrtIntegration package.
-        /// 
-        /// The Checksum provider is used for features like S3 object integrity check when choosing certain algorithms that .NET does not support natively. For example CRC32 and CRC32C. 
+        ///
+        /// This is obsolete and no longer has any effect. Starting with version 4.1 the SDK computes checksums such as CRC32, CRC32C and CRC64NVME
+        /// using System.IO.Hashing rather than the native Amazon Common Runtime, so a registered checksum provider is no longer used.
         /// </summary>
         /// <param name="instance"></param>
+        [Obsolete(ChecksumCRTWrapper.OBSOLETE_MESSAGE)]
         public void RegisterChecksumProvider(object instance)
         {
             RegisterInstance(ChecksumCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, ChecksumCRTWrapper.CRT_WRAPPER_CLASS_NAME, instance);
         }
+#pragma warning restore CS0618
 
         /// <summary>
         /// Register the AWS SigV4a provider. This should be an instance of Amazon.Extensions.CrtIntegration.CrtAWS4aSigner from AWSSDK.Extensions.CrtIntegration package.

@@ -20,7 +20,6 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Xml;
-using ThirdParty.Ionic.Zlib;
 using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Transform
@@ -35,7 +34,7 @@ namespace Amazon.Runtime.Internal.Transform
 
         protected bool MaintainResponseBody { get; set; }
         protected bool IsException { get; set; }
-        protected CrcCalculatorStream CrcStream { get; set; }
+        protected Crc32Stream CrcStream { get; set; }
         protected int Crc32Result { get; set; }
         protected CoreChecksumAlgorithm ChecksumAlgorithm { get; set; }
         protected HashStream FlexibleChecksumStream { get; set; }
@@ -119,7 +118,7 @@ namespace Amazon.Runtime.Internal.Transform
             if (responseData != null && UInt32.TryParse(responseData.GetHeaderValue("x-amz-crc32"), out parsed))
             {
                 this.Crc32Result = unchecked((int) parsed);
-                this.CrcStream = new CrcCalculatorStream(responseStream, contentLength);
+                this.CrcStream = new Crc32Stream(responseStream, contentLength);
             }
         }
 
