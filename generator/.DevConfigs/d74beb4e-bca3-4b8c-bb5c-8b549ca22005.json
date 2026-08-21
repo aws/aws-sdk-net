@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "Centralize `AwsQueryCompatible` error-header parsing into a shared helper (`AwsQueryCompatibleErrorHandler`) used by generated service unmarshallers"
+    ]
+  }
+}

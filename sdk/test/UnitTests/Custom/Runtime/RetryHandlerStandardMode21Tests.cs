@@ -3,9 +3,6 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.S3;
-using Amazon.SQS;
-using Amazon.SQS.Model;
-using Amazon.SQS.Model.Internal.MarshallTransformations;
 using Amazon.DynamoDBv2;
 using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -93,19 +90,20 @@ namespace AWSSDK.UnitTests
 
         /// <summary>
         /// Creates an SQS ReceiveMessage execution context for testing long-polling behavior.
+        /// Long-polling detection (RetryHandler.IsLongPollingOperation) keys only off
+        /// ClientConfig.ServiceId == "SQS" and the operation name derived from the request type name
+        /// (ReceiveMessageRequest => ReceiveMessage), so a test-local request and a mock config are enough;
+        /// no concrete SQS types are required.
         /// </summary>
-        private IExecutionContext CreateSqsReceiveMessageContext(AmazonSQSConfig config)
+        private IExecutionContext CreateSqsReceiveMessageContext(ClientConfig config)
         {
-            var receiveMessageRequest = new ReceiveMessageRequest
-            {
-                QueueUrl = "https://sqs.us-east-1.amazonaws.com/123456789/test-queue"
-            };
+            var receiveMessageRequest = new ReceiveMessageRequest();
 
             var requestContext = new RequestContext(true, new NullSigner())
             {
                 OriginalRequest = receiveMessageRequest,
-                Request = new ReceiveMessageRequestMarshaller().Marshall(receiveMessageRequest),
-                Unmarshaller = ReceiveMessageResponseUnmarshaller.Instance,
+                Request = new DefaultRequest(receiveMessageRequest, "SQS"),
+                Unmarshaller = FakeReceiveMessageResponseUnmarshaller.Instance,
                 ClientConfig = config
             };
 
@@ -132,10 +130,11 @@ namespace AWSSDK.UnitTests
 #endif
         }
 
-        private AmazonSQSConfig CreateSQSConfig()
+        private ClientConfig CreateSQSConfig()
         {
-            return new AmazonSQSConfig
+            return new MockClientConfig
             {
+                ServiceId = "SQS",
                 ServiceURL = $"https://sqs-{Guid.NewGuid()}.amazonaws.com",
                 RetryMode = RequestRetryMode.Standard
             };
@@ -1055,6 +1054,31 @@ namespace AWSSDK.UnitTests
         private readonly double _value;
         public FixedRandom(double value) { _value = value; }
         public override double NextDouble() => _value;
+    }
+
+    /// <summary>
+    /// Test-local stand-in for the SQS ReceiveMessage request. The retry handler's long-polling
+    /// detection derives the operation name from the request type name (ReceiveMessageRequest =>
+    /// ReceiveMessage), so only the type name matters here — no concrete SQS reference is needed.
+    /// </summary>
+    internal class ReceiveMessageRequest : AmazonWebServiceRequest
+    {
+    }
+
+    /// <summary>
+    /// Minimal JSON response unmarshaller used only to populate RequestContext.Unmarshaller for the
+    /// long-polling retry tests. The retry pipeline never unmarshalls in these tests (the mock inner
+    /// handler throws or succeeds directly), so neither method is exercised.
+    /// </summary>
+    internal class FakeReceiveMessageResponseUnmarshaller : JsonResponseUnmarshaller
+    {
+        public static FakeReceiveMessageResponseUnmarshaller Instance { get; } = new FakeReceiveMessageResponseUnmarshaller();
+
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext input) =>
+            throw new NotImplementedException();
+
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext input, Exception innerException, HttpStatusCode statusCode) =>
+            throw new NotImplementedException();
     }
 
     public class Mock21StandardRetryPolicy : StandardRetryPolicy
