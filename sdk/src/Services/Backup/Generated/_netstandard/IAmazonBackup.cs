@@ -2314,7 +2314,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This is a request for a summary of backup jobs created or running within the most
-        /// recent 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
+        /// recent 14 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
         /// AggregationPeriod, MaxResults, or NextToken to filter results.
         /// 
         ///  
@@ -2529,7 +2529,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This request obtains a list of copy jobs created or running within the the most recent
-        /// 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
+        /// 14 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
         /// AggregationPeriod, MaxResults, or NextToken to filter results.
         /// 
         ///  
@@ -2958,7 +2958,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This request obtains a summary of restore jobs created or running within the the most
-        /// recent 30 days. You can include parameters AccountID, State, ResourceType, AggregationPeriod,
+        /// recent 14 days. You can include parameters AccountID, State, ResourceType, AggregationPeriod,
         /// MaxResults, or NextToken to filter results.
         /// 
         ///  
@@ -3071,7 +3071,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This is a request for a summary of scan jobs created or running within the most recent
-        /// 30 days.
+        /// 14 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListScanJobSummaries service method.</param>
         /// <param name="cancellationToken">

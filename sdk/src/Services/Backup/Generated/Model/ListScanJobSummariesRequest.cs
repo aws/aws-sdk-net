@@ -32,7 +32,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the ListScanJobSummaries operation.
     /// This is a request for a summary of scan jobs created or running within the most recent
-    /// 30 days.
+    /// 14 days.
     /// </summary>
     public partial class ListScanJobSummariesRequest : AmazonBackupRequest
     {
