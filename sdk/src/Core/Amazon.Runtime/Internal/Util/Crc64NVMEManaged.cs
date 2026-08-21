@@ -15,7 +15,6 @@
 
 using System;
 using System.IO.Hashing;
-using System.Linq;
 using System.Security.Cryptography;
 
 namespace Amazon.Runtime.Internal.Util

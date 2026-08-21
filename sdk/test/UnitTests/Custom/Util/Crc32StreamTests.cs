@@ -185,15 +185,35 @@ namespace AWSSDK.UnitTests
         }
 
         [TestMethod]
-        public void Capabilities_DelegateToInnerStream()
+        public void CanReadAndCanWrite_DelegateToInnerStream()
         {
             var readable = new MemoryStream(new byte[] { 1, 2, 3 });
             using (var crcStream = new Crc32Stream(readable))
             {
                 Assert.AreEqual(readable.CanRead, crcStream.CanRead);
-                Assert.AreEqual(readable.CanSeek, crcStream.CanSeek);
                 Assert.AreEqual(readable.CanWrite, crcStream.CanWrite);
             }
+        }
+
+        [TestMethod]
+        public void CanSeek_IsAlwaysFalse_EvenWhenInnerStreamIsSeekable()
+        {
+            // The inner MemoryStream is seekable, but seeking would invalidate the running
+            // CRC, so Crc32Stream must never report itself as seekable.
+            var seekableInner = new MemoryStream(new byte[] { 1, 2, 3 });
+            Assert.IsTrue(seekableInner.CanSeek);
+
+            using (var crcStream = new Crc32Stream(seekableInner))
+            {
+                Assert.IsFalse(crcStream.CanSeek);
+            }
+        }
+
+        [TestMethod]
+        public void Constructors_ThrowForNullStream()
+        {
+            Assert.ThrowsExactly<ArgumentNullException>(() => new Crc32Stream(null));
+            Assert.ThrowsExactly<ArgumentNullException>(() => new Crc32Stream(null, 10));
         }
 
         [TestMethod]

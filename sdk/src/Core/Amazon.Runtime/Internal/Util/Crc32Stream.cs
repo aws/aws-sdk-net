@@ -48,7 +48,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="stream">The underlying stream.</param>
         public Crc32Stream(Stream stream)
         {
-            _innerStream = stream;
+            _innerStream = stream ?? throw new ArgumentNullException(nameof(stream));
         }
 
         /// <summary>
@@ -59,7 +59,7 @@ namespace Amazon.Runtime.Internal.Util
         /// <param name="length">The maximum number of bytes to read from the underlying stream.</param>
         public Crc32Stream(Stream stream, long length)
         {
-            _innerStream = stream;
+            _innerStream = stream ?? throw new ArgumentNullException(nameof(stream));
             _length = length;
         }
 
@@ -118,7 +118,9 @@ namespace Amazon.Runtime.Internal.Util
 
         public override bool CanSeek
         {
-            get { return _innerStream.CanSeek; }
+            // Seeking would invalidate the running CRC, so this stream never supports it
+            // (regardless of the inner stream's capability), matching HashStream.
+            get { return false; }
         }
 
         public override bool CanWrite
@@ -133,7 +135,10 @@ namespace Amazon.Runtime.Internal.Util
 
         public override long Length
         {
-            get { return _length; }
+            // When a length cap was provided, report it. Otherwise defer to the inner stream
+            // rather than returning 0 (which would make the stream appear empty). The inner
+            // stream throws NotSupportedException if it does not support Length.
+            get { return _length != 0 ? _length : _innerStream.Length; }
         }
 
         public override long Position
