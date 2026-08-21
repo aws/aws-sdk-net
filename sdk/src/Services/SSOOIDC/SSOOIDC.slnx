@@ -1,0 +1,33 @@
+<Solution>
+  <Folder Name="/Core/">
+    <Project Path="../../Core/AWSSDK.Core.NetFramework.csproj" />
+    <Project Path="../../Core/AWSSDK.Core.NetStandard.csproj" />
+  </Folder>
+  <Folder Name="/Services/" />
+  <Folder Name="/Services/SSOOIDC/">
+    <Project Path="AWSSDK.SSOOIDC.NetFramework.csproj" />
+    <Project Path="AWSSDK.SSOOIDC.NetStandard.csproj" />
+  </Folder>
+  <Folder Name="/Test/">
+    <Project Path="../../../../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />
+    <Project Path="../../../test/Common/AWSSDK.CommonTest.csproj" />
+    <Project Path="../../../test/IntegrationTests/AWSSDK.IntegrationTestUtilities.csproj" />
+    <Project Path="../../../test/Services/SSOOIDC/UnitTests/AWSSDK.UnitTests.SSOOIDC.csproj" />
+    <Project Path="../../../test/UnitTests/AWSSDK.UnitTests.Core.csproj" />
+    <Project Path="../../../test/UnitTests/Custom/AWSSDK.UnitTestUtilities.csproj" />
+  </Folder>
+  <Folder Name="/TestDependencies/">
+    <Project Path="../S3/AWSSDK.S3.NetStandard.csproj" />
+    <Project Path="../SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj" />
+    <Project Path="../SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />
+    <Project Path="../SQS/AWSSDK.SQS.NetStandard.csproj" />
+    <Project Path="../DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj" />
+    <Project Path="../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj" />
+    <Project Path="../S3/AWSSDK.S3.NetFramework.csproj" />
+    <Project Path="../SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj" />
+    <Project Path="../SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
+    <Project Path="../SQS/AWSSDK.SQS.NetFramework.csproj" />
+    <Project Path="../DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj" />
+    <Project Path="../../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj" />
+  </Folder>
+</Solution>
