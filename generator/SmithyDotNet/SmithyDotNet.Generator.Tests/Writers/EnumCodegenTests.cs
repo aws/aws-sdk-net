@@ -154,7 +154,7 @@ public class EnumCodegenTests
         // C2J unmarshals an enum member with StringUnmarshaller, assigning to the ConstantClass member
         // via the implicit string->ConstantClass conversion.
         Assert.Contains("var unmarshaller = StringUnmarshaller.Instance;", _responseUnmarshaller);
-        Assert.Contains("response.ResultStatus = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.ResultStatus = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
     }
 
     [Fact]

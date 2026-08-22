@@ -15,7 +15,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         var className = $"{operation.Name}Response";
         var unmarshallerClassName = $"{className}Unmarshaller";
         var members = TypeMapper.ResolveMembers(operation.Output, context);
-        var (headerMembers, bodyMembers) = PartitionByBinding(operation.Output, members);
+        var (headerMembers, bodyMembers, payloadMember) = PartitionByBinding(operation.Output, members);
 
         var writer = new CodeWriter();
 
@@ -28,7 +28,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             WriteClassDocumentation(writer, operation.Name);
             writer.OpenBlock($"public partial class {unmarshallerClassName} : JsonResponseUnmarshaller", () =>
             {
-                WriteUnmarshallMethod(writer, className, headerMembers, bodyMembers);
+                WriteUnmarshallMethod(writer, className, headerMembers, bodyMembers, payloadMember);
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
@@ -59,36 +59,92 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         CodeWriter writer,
         string className,
         List<(Member Member, string HeaderName)> headerMembers,
-        List<Member> bodyMembers)
+        List<Member> bodyMembers,
+        Member? payloadMember)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller the response from the service to the response class.");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock("public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)", () =>
         {
-            writer.WriteLine($"{className} response = new {className}();");
+            writer.WriteLine($"var unmarshalledObject = new {className}();");
 
-            // Only body members are read from the JSON payload, so a response with only header (or no)
-            // members emits no reader/loop.
-            if (bodyMembers.Count > 0)
+            // A @httpPayload member IS the whole body (it replaces normal body members); otherwise the
+            // body members are read from the JSON payload. A response with only header (or no) members
+            // emits no reader/loop.
+            if (payloadMember is { } payload)
             {
-                writer.WriteLine("StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
-                writer.WriteLine();
-                writer.WriteLine("context.Read(ref reader);");
-                writer.WriteLine("int targetDepth = context.CurrentDepth;");
-                writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
-                {
-                    WriteMemberUnmarshallers(writer, bodyMembers);
-                });
+                WritePayloadUnmarshall(writer, payload);
             }
-            WriteHeaderUnmarshallers(writer, headerMembers, "response");
+            else if (bodyMembers.Count > 0)
+            {
+                writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+                writer.WriteLine();
+                WriteBodyReadLoop(writer, bodyMembers);
+            }
+            WriteHeaderUnmarshallers(writer, headerMembers);
 
             writer.WriteLine("");
-            writer.WriteLine("return response;");
+            writer.WriteLine("return unmarshalledObject;");
         });
     }
 
-    private static void WriteMemberUnmarshallers(CodeWriter writer, List<Member> members)
+    // Unmarshalls a @httpPayload response member — the ENTIRE body: a string/enum via StreamReader (an
+    // enum is a string shape in C2J and its ConstantClass converts implicitly from string), a structure
+    // via its unmarshaller over a fresh reader (empty-body early-return), a blob copied into a buffered
+    // MemoryStream. Matches C2J output. document/union throw earlier in TypeMapper; list/map fail loud
+    // here. Response-only: JsonExceptionUnmarshallerWriter fails loud on an @httpPayload error member.
+    private static void WritePayloadUnmarshall(CodeWriter writer, Member payload)
+    {
+        if (payload.Type.MarshalsAsString)
+        {
+            writer.OpenBlock("using (var sr = new StreamReader(context.Stream))", "}", () =>
+            {
+                writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = sr.ReadToEnd();");
+            });
+            return;
+        }
+
+        if (payload.Type.IsStructure)
+        {
+            writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+            writer.WriteLine("if (reader.Reader.IsFinalBlock) return unmarshalledObject;");
+            writer.WriteLine($"var unmarshaller = {payload.Type.DotNetType}Unmarshaller.Instance;");
+            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            return;
+        }
+
+        if (payload.Type.IsBlob)
+        {
+            writer.WriteLine("var ms = new MemoryStream();");
+            writer.WriteLine("Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms);");
+            writer.WriteLine("ms.Seek(0, SeekOrigin.Begin);");
+            writer.OpenBlock("if (ms.Length > 0)", () =>
+            {
+                writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = ms;");
+            });
+            return;
+        }
+
+        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+    }
+
+    // The JSON body reader loop over the in-scope `reader`, shared by the response and exception
+    // unmarshallers. The caller sets `reader` up first — the response constructs its own, the exception
+    // uses the passed `ref reader` guarded on stream length — which is the only part that differs.
+    internal static void WriteBodyReadLoop(CodeWriter writer, List<Member> bodyMembers)
+    {
+        writer.WriteLine("context.Read(ref reader);");
+        writer.WriteLine("int targetDepth = context.CurrentDepth;");
+        writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
+        {
+            WriteMemberUnmarshallers(writer, bodyMembers);
+        });
+    }
+
+    // Emits the per-member `if (context.TestExpression(...)) { <dispatch>; continue; }` blocks for a
+    // JSON body reader loop. Shared with the exception unmarshaller, which reuses the same loop body.
+    internal static void WriteMemberUnmarshallers(CodeWriter writer, List<Member> members)
     {
         for (int i = 0; i < members.Count; i++)
         {
@@ -97,7 +153,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
             writer.OpenBlock($"""if (context.TestExpression("{wireName}", targetDepth, ref reader))""", () =>
             {
-                WriteMemberUnmarshall(writer, member, "response");
+                WriteMemberUnmarshall(writer, member);
                 writer.WriteLine("continue;");
             });
 
@@ -127,32 +183,31 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         _ => null,
     };
 
-    // Scalar / list-of-structure / list-of-string / structure dispatch shared with the exception
-    // unmarshaller; <paramref name="target"/> is the local being populated ("response" or
-    // "unmarshalledObject").
-    internal static void WriteMemberUnmarshall(CodeWriter writer, Member member, string target)
+    // Scalar / list-of-structure / list-of-string / structure dispatch, writing into the
+    // `unmarshalledObject` local. Shared with the exception unmarshaller.
+    internal static void WriteMemberUnmarshall(CodeWriter writer, Member member)
     {
         if (ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller)
         {
             writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
-            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else if (member.Type.Element is { IsStructure: true } element)
         {
             var unmarshallerType = $"{element.DotNetType}Unmarshaller";
             writer.WriteLine($"var unmarshaller = new JsonListUnmarshaller<{element.DotNetType}, {unmarshallerType}>({unmarshallerType}.Instance);");
-            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else if (member.Type.Element is { IsString: true })
         {
             writer.WriteLine("var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);");
-            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else if (member.Type.IsStructure)
         {
             var unmarshallerType = $"{member.Type.DotNetType}Unmarshaller";
             writer.WriteLine($"var unmarshaller = {unmarshallerType}.Instance;");
-            writer.WriteLine($"{target}.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
         }
         else
         {
@@ -162,19 +217,31 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
     /// <summary>
     /// Splits members into those bound to a response header (<c>@httpHeader</c>, paired with the header
-    /// name) and those read from the JSON body. Header members are populated from
-    /// <c>context.ResponseData</c> rather than the body reader. Shared with the exception unmarshaller.
+    /// name), the single <c>@httpPayload</c> member (if any), and those read from the JSON body. Header
+    /// members are populated from <c>context.ResponseData</c>; a payload member is the entire body.
+    /// Shared with the exception unmarshaller.
     /// </summary>
-    internal static (List<(Member Member, string HeaderName)> HeaderMembers, List<Member> BodyMembers) PartitionByBinding(
+    internal static (List<(Member Member, string HeaderName)> HeaderMembers, List<Member> BodyMembers, Member? PayloadMember) PartitionByBinding(
         StructureShape structure, List<Member> members)
     {
         var headerMembers = new List<(Member, string)>();
         var bodyMembers = new List<Member>();
+        Member? payloadMember = null;
         foreach (var member in members)
         {
-            if (structure.Members[member.ModeledName].GetHttpHeader() is string headerName)
+            var memberShape = structure.Members[member.ModeledName];
+            if (memberShape.GetHttpHeader() is string headerName)
             {
                 headerMembers.Add((member, headerName));
+            }
+            else if (memberShape.IsHttpPayload())
+            {
+                if (payloadMember is not null)
+                {
+                    throw new GeneratorException($"Structure has more than one @httpPayload member ('{payloadMember.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                payloadMember = member;
             }
             else
             {
@@ -182,20 +249,27 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             }
         }
 
-        return (headerMembers, bodyMembers);
+        // When a @httpPayload member is present it IS the body, so no other member may be in the body
+        // (all others must be header-bound). Fail loud if that spec rule is violated.
+        if (payloadMember is not null && bodyMembers.Count > 0)
+        {
+            var names = string.Join(", ", bodyMembers.Select(m => m.PropertyName));
+            throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");
+        }
+
+        return (headerMembers, bodyMembers, payloadMember);
     }
 
-    // Emits `if (context.ResponseData.IsHeaderPresent("name")) target.Property = <conversion>;` per
-    // header member. Shared with the exception unmarshaller; <paramref name="target"/> is the local
-    // being populated ("response" or "unmarshalledObject").
-    internal static void WriteHeaderUnmarshallers(CodeWriter writer, List<(Member Member, string HeaderName)> headerMembers, string target)
+    // Emits `if (context.ResponseData.IsHeaderPresent("name")) unmarshalledObject.Property = <conversion>;`
+    // per header member. Shared with the exception unmarshaller (both use the `unmarshalledObject` local).
+    internal static void WriteHeaderUnmarshallers(CodeWriter writer, List<(Member Member, string HeaderName)> headerMembers)
     {
         foreach (var (member, headerName) in headerMembers)
         {
             var conversion = HeaderValueConversion(member, $"""context.ResponseData.GetHeaderValue("{headerName}")""");
             writer.OpenBlock($"""if (context.ResponseData.IsHeaderPresent("{headerName}"))""", () =>
             {
-                writer.WriteLine($"{target}.{member.PropertyName} = {conversion};");
+                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {conversion};");
             });
         }
     }
@@ -247,7 +321,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         writer.WriteLine("/// </summary>");
         writer.OpenBlock("public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)", () =>
         {
-            writer.WriteLine("StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+            writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
             writer.WriteLine("var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);");
             writer.WriteLine();
             writer.WriteLine("errorResponse.InnerException = innerException;");
@@ -260,7 +334,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             {
                 writer.OpenBlock("using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))", "}", () =>
                 {
-                    writer.WriteLine("StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+                    writer.WriteLine("var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
 
                     foreach (var error in operation.Errors)
                     {

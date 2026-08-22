@@ -14,7 +14,6 @@ public static class UnsupportedTraitValidator
     {
         ["smithy.api#endpoint"] = "@endpoint (host prefix)",
         ["smithy.api#httpPrefixHeaders"] = "@httpPrefixHeaders",
-        ["smithy.api#httpPayload"] = "@httpPayload",
         ["smithy.api#httpResponseCode"] = "@httpResponseCode",
         ["smithy.api#httpChecksumRequired"] = "@httpChecksumRequired",
         ["smithy.api#requestCompression"] = "@requestCompression",

@@ -14,6 +14,7 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsString">True if this targets a string shape.</param>
 /// <param name="IsCollection">True if this is itself a list or map.</param>
 /// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalType"/>).</param>
+/// <param name="IsBlob">True if this targets a blob shape (maps to <c>MemoryStream</c>). Only supported as an <c>@httpPayload</c> body.</param>
 /// <param name="Element">The list element's type; set only for a list (a map does not populate it), null otherwise.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
@@ -21,14 +22,15 @@ public sealed record TypeDescriptor(
     bool IsString,
     bool IsCollection,
     bool IsEnum = false,
+    bool IsBlob = false,
     TypeDescriptor? Element = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
-    /// nullable value type. Aggregates (list, map, structure) are excluded; unsupported shapes never
-    /// reach here (they throw in <see cref="TypeMapper.MapType"/>).
+    /// nullable value type. Aggregates (list, map, structure) and blobs are excluded; unsupported
+    /// shapes never reach here (they throw in <see cref="TypeMapper.MapType"/>).
     /// </summary>
-    public bool IsScalar => !IsCollection && !IsStructure;
+    public bool IsScalar => !IsCollection && !IsStructure && !IsBlob;
 
     /// <summary>
     /// The type (un)marshaller writers dispatch on. An enum marshals as a string (ConstantClass
@@ -143,6 +145,7 @@ public static class TypeMapper
             IsString: target is StringShape,
             IsCollection: IsCollection(target),
             IsEnum: target is EnumShape,
+            IsBlob: target is BlobShape,
             Element: target is ListShape list ? ResolveType(list.Member.Target, context) : null);
     }
 
@@ -186,9 +189,17 @@ public static class TypeMapper
             return "int?";
         }
 
+        if (target is BlobShape)
+        {
+            // A blob maps to MemoryStream, matching C2J. Only supported as an @httpPayload body (the
+            // marshaller/unmarshaller payload paths); a blob in any other position (JSON body member,
+            // header, ...) maps here but then fails loud in the writer (it is not a JSON scalar).
+            return "MemoryStream";
+        }
+
         // Scalars are checked last so the aggregate branches above return without a MapScalar call.
         // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
-        // bigDecimal/blob/document/union) have no settled mapping yet and fall through to the
+        // bigDecimal/document/union) have no settled mapping yet and fall through to the
         // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
         return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }

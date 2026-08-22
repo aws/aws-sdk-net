@@ -57,7 +57,7 @@ public class JsonStructureUnmarshallerWriterTests
     [Fact]
     public void UnmarshallMethodContentsContainsCorrectPrelude()
     {
-        Assert.Contains("AuditEventResultEntry unmarshalledObject = new AuditEventResultEntry();", _auditEventUnmarshaller);
+        Assert.Contains("var unmarshalledObject = new AuditEventResultEntry();", _auditEventUnmarshaller);
         Assert.Contains("if (context.IsEmptyResponse) return null;", _auditEventUnmarshaller);
         Assert.Contains("context.Read(ref reader);", _auditEventUnmarshaller);
         Assert.Contains("if (context.CurrentTokenType == JsonTokenType.Null) return null;", _auditEventUnmarshaller);

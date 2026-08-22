@@ -8,9 +8,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// Emits the C# source for a JSON request marshaller matching the public API surface
 /// of the existing AWS SDK for .NET.
 /// <para />
-/// Phase 1 scope: restJson1 operations whose body members are lists of structures or strings,
-/// and whose query-string members are strings. Other member types throw a
-/// <see cref="GeneratorException"/>.
+/// restJson1 only. Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
+/// bool, numeric, timestamp), body lists of strings or structures, and an @httpPayload
+/// string/structure/blob body. Unsupported member shapes throw a <see cref="GeneratorException"/>.
 /// </summary>
 public sealed class JsonRequestMarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -66,15 +66,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
             writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
-            // Content-Type is only sent when there is a request body; a body-less request (GET, or
-            // query/header/label-only) omits it, matching C2J.
-            // TODO: Content-type must be smarter and it can be overridden in customizations or for non restJSON
-            // it can be application/x-amz-json, and for string payloads it can be "text/plain". For now we just put
-            // "application/json" here since this is just a start.
-            if (partitioned.BodyMembers.Count > 0)
-            {
-                writer.WriteLine("""request.Headers["Content-Type"] = "application/json";""");
-            }
+            WriteContentType(writer, httpTrait, partitioned);
             writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
             writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
             writer.WriteLine("");
@@ -83,7 +75,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             WriteHeaderMembers(writer, partitioned.HeaderMembers);
             WriteResourcePath(writer, httpTrait, partitioned.LabelMembers);
 
-            if (partitioned.BodyMembers.Count > 0)
+            // A @httpPayload member IS the whole body, so it replaces (never coexists with) normal
+            // JSON body members.
+            if (partitioned.PayloadMember is { } payload)
+            {
+                WritePayloadSerialization(writer, payload);
+            }
+            else if (partitioned.BodyMembers.Count > 0)
             {
                 WriteBodySerialization(writer, partitioned.BodyMembers);
             }
@@ -98,6 +96,23 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             writer.WriteLine("return request;");
         });
+    }
+
+    // Content-Type mirrors C2J: omitted for GET/DELETE and for body-less operations. Otherwise a
+    // string/enum @httpPayload body is text/plain and everything else (structure/blob payload or a
+    // normal JSON body) is application/json — a blob payload later overrides it with
+    // application/octet-stream. TODO: customization OverrideContentType and non-restJson
+    // (application/x-amz-json) are not handled yet.
+    private static void WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned)
+    {
+        var hasBody = partitioned.PayloadMember is not null || partitioned.BodyMembers.Count > 0;
+        if (httpTrait.Method is "GET" or "DELETE" || !hasBody)
+        {
+            return;
+        }
+
+        var contentType = partitioned.PayloadMember is { Type.MarshalsAsString: true } ? "text/plain" : "application/json";
+        writer.WriteLine($"""request.Headers["Content-Type"] = "{contentType}";""");
     }
 
     // restJson1 @timestampFormat defaults for HTTP bindings when unset: http-date on a header,
@@ -234,23 +249,82 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     private void WriteBodySerialization(CodeWriter writer, List<Member> bodyMembers)
     {
-        writer.WriteLine("#if !NETFRAMEWORK");
-        writer.WriteLine("request.ContentStream = new PooledContentStream();");
-        writer.WriteLine("using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);");
-        writer.WriteLine("#else");
-        writer.WriteLine("using var memoryStream = new MemoryStream();");
-        writer.WriteLine("using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);");
-        writer.WriteLine("#endif");
-        writer.WriteLine("writer.WriteStartObject();");
-        writer.WriteLine("var context = new JsonMarshallerContext(request, writer);");
-
-        foreach (var member in bodyMembers)
+        WriteBodyScaffolding(writer, () =>
         {
-            WriteBodyMember(writer, member);
+            writer.WriteLine("writer.WriteStartObject();");
+            writer.WriteLine("var context = new JsonMarshallerContext(request, writer);");
+
+            foreach (var member in bodyMembers)
+            {
+                WriteBodyMember(writer, member);
+            }
+
+            writer.WriteLine("");
+            writer.WriteLine("writer.WriteEndObject();");
+        });
+    }
+
+    // A @httpPayload member is serialized as the ENTIRE request body, with no wrapping JSON object or
+    // property name. A structure payload writes its own object braces around the target's marshaller;
+    // a string/enum payload is the raw UTF-8 body (text/plain; an enum is a string shape in C2J and its
+    // ConstantClass converts implicitly to string); a blob payload is the raw octet-stream body. Matches
+    // C2J output. document/union throw earlier in TypeMapper; a list/map payload fails loud below.
+    private void WritePayloadSerialization(CodeWriter writer, Member payload)
+    {
+        if (payload.Type.MarshalsAsString)
+        {
+            writer.WriteLine($"request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{payload.PropertyName});");
+            return;
         }
 
-        writer.WriteLine("");
-        writer.WriteLine("writer.WriteEndObject();");
+        if (payload.Type.IsStructure)
+        {
+            WriteBodyScaffolding(writer, () =>
+            {
+                writer.WriteLine("var context = new JsonMarshallerContext(request, writer);");
+                writer.WriteLine("context.Writer.WriteStartObject();");
+                writer.WriteLine("");
+                writer.WriteLine($"var marshaller = {payload.Type.DotNetType}Marshaller.Instance;");
+                writer.WriteLine($"marshaller.Marshall(publicRequest.{payload.PropertyName}, context);");
+                writer.WriteLine("");
+                writer.WriteLine("context.Writer.WriteEndObject();");
+            });
+            return;
+        }
+
+        if (payload.Type.IsBlob)
+        {
+            // A blob payload is the raw body stream (Content-Type application/octet-stream overrides the
+            // application/json set above). @streaming is denied, so the stream is always seekable here and
+            // the content length is known; no chunked/unsigned-body handling is needed. Matches C2J.
+            writer.WriteLine($"request.ContentStream = publicRequest.{payload.PropertyName} ?? new MemoryStream();");
+            writer.OpenBlock("if (request.ContentStream.CanSeek)", () =>
+            {
+                writer.WriteLine("request.ContentStream.Seek(0, SeekOrigin.Begin);");
+            });
+            writer.WriteLine("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);");
+            writer.WriteLine("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";""");
+            return;
+        }
+
+        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+    }
+
+    // The Utf8JsonWriter + Content/ContentStream scaffold shared by the normal JSON body and the
+    // structure-payload body. Non-NETFRAMEWORK streams straight into a PooledContentStream; NETFRAMEWORK
+    // buffers in a MemoryStream and copies to request.Content. The caller fills in the object/members.
+    private static void WriteBodyScaffolding(CodeWriter writer, Action writeContents)
+    {
+        writer.WriteLine("#if !NETFRAMEWORK");
+        writer.WriteLine("request.ContentStream = new PooledContentStream();");
+        writer.WriteLine("using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);");
+        writer.WriteLine("#else");
+        writer.WriteLine("using var memoryStream = new MemoryStream();");
+        writer.WriteLine("using var writer = new Utf8JsonWriter(memoryStream);");
+        writer.WriteLine("#endif");
+
+        writeContents();
+
         writer.WriteLine("writer.Flush();");
         writer.WriteLine("#if NETFRAMEWORK");
         writer.WriteLine("request.Content = memoryStream.ToArray();");
@@ -322,6 +396,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         var headerMembers = new List<(Member Member, string HeaderName)>();
         var labelMembers = new List<Member>();
         var bodyMembers = new List<Member>();
+        Member? payloadMember = null;
 
         foreach (var member in members)
         {
@@ -343,7 +418,12 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             }
             else if (memberShape.IsHttpPayload())
             {
-                throw new GeneratorException($"@httpPayload members are not handled currently (member: {member.PropertyName}).");
+                if (payloadMember is not null)
+                {
+                    throw new GeneratorException($"Operation input has more than one @httpPayload member ('{payloadMember.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                payloadMember = member;
             }
             else
             {
@@ -351,14 +431,23 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             }
         }
 
-        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers);
+        // Per the Smithy spec, when a member is bound with @httpPayload every other member must be
+        // bound to a header/query/label — nothing else goes in the body. Fail loud if that is violated.
+        if (payloadMember is not null && bodyMembers.Count > 0)
+        {
+            var names = string.Join(", ", bodyMembers.Select(m => m.PropertyName));
+            throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with unbound body members ({names}); every other member must be bound to a header, query, or label.");
+        }
+
+        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers, payloadMember);
     }
 
     private record PartitionedMembers(
         List<(Member Member, string QueryName)> QueryMembers,
         List<(Member Member, string HeaderName)> HeaderMembers,
         List<Member> LabelMembers,
-        List<Member> BodyMembers);
+        List<Member> BodyMembers,
+        Member? PayloadMember);
 
     private static void WriteMarshallerDocumentation(CodeWriter writer, string operationName)
     {
@@ -383,6 +472,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         FileHeader.WriteUsings(writer, FileHeader.JsonRequestMarshallerUsings);
         writer.WriteLine($"using {context.Namespace}.Model;");
+        writer.WriteLine("using System.Globalization;");
         writer.WriteLine("#if !NETFRAMEWORK");
         writer.WriteLine("using ThirdParty.RuntimeBackports;");
         writer.WriteLine("#endif");

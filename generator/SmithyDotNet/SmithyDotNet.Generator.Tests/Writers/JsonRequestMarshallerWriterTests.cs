@@ -80,7 +80,7 @@ public class JsonRequestMarshallerWriterTests
     public void EmitsPooledContentStream()
     {
         Assert.Contains("request.ContentStream = new PooledContentStream();", _putAuditEventsRequestMarshaller);
-        Assert.Contains("using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);", _putAuditEventsRequestMarshaller);
+        Assert.Contains("using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);", _putAuditEventsRequestMarshaller);
     }
 
     [Fact]

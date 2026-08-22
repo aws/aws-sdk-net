@@ -41,8 +41,8 @@ public class JsonResponseUnmarshallerWriterTests
     [Fact]
     public void UnmarshallMethodContainsProperPrelude()
     {
-        AssertHelper("PutAuditEventsResponse response = new PutAuditEventsResponse();");
-        AssertHelper("StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+        AssertHelper("var unmarshalledObject = new PutAuditEventsResponse();");
+        AssertHelper("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
         AssertHelper("context.Read(ref reader);");
         AssertHelper("int targetDepth = context.CurrentDepth;");
     }
@@ -53,13 +53,13 @@ public class JsonResponseUnmarshallerWriterTests
         AssertHelper("while (context.ReadAtDepth(targetDepth, ref reader))");
         AssertHelper("""if (context.TestExpression("failed", targetDepth, ref reader))""");
         AssertHelper("var unmarshaller = new JsonListUnmarshaller<ResultErrorEntry, ResultErrorEntryUnmarshaller>(ResultErrorEntryUnmarshaller.Instance);");
-        AssertHelper("response.Failed = unmarshaller.Unmarshall(context, ref reader);");
+        AssertHelper("unmarshalledObject.Failed = unmarshaller.Unmarshall(context, ref reader);");
         AssertHelper("continue;");
         AssertHelper("""if (context.TestExpression("successful", targetDepth, ref reader))""");
         AssertHelper("var unmarshaller = new JsonListUnmarshaller<AuditEventResultEntry, AuditEventResultEntryUnmarshaller>(AuditEventResultEntryUnmarshaller.Instance);");
-        AssertHelper("response.Successful = unmarshaller.Unmarshall(context, ref reader);");
+        AssertHelper("unmarshalledObject.Successful = unmarshaller.Unmarshall(context, ref reader);");
         AssertHelper("continue;");
-        AssertHelper("return response;");
+        AssertHelper("return unmarshalledObject;");
     }
 
     [Fact]
@@ -74,7 +74,7 @@ public class JsonResponseUnmarshallerWriterTests
     [Fact]
     public void UnmarshallExceptionMethodContainsCorrectPrelude()
     {
-        AssertHelper("StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+        AssertHelper("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
         AssertHelper("var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);");
         AssertHelper("errorResponse.InnerException = innerException;");
         AssertHelper("errorResponse.StatusCode = statusCode;");
@@ -86,7 +86,7 @@ public class JsonResponseUnmarshallerWriterTests
     {
         AssertHelper("using (var streamCopy = new MemoryStream(responseBodyBytes))");
         AssertHelper("using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))");
-        AssertHelper("StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
+        AssertHelper("var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
         AssertHelper("""if (errorResponse.Code != null && errorResponse.Code.Equals("ChannelInsufficientPermission"))""");
         AssertHelper("return ChannelInsufficientPermissionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);");
         AssertHelper("""if (errorResponse.Code != null && errorResponse.Code.Equals("ChannelNotFound"))""");

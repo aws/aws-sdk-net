@@ -97,6 +97,28 @@ At the end of the request marshaller after flushing the writer write:
 
 For structure marshallers loop through the structures members and use the rules laid out in Type → Marshal/Unmarshal
 
+### `@httpPayload` (request)
+
+A `@httpPayload` member IS the entire body — no wrapping object/property name, no other member in the body (Smithy: all others are header/query/label). No `IsSet` guard (matches C2J).
+
+- **String** → `text/plain`, no scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
+- **Structure** → `application/json`; the scaffold above, then the target's marshaller as the body object:
+  ```csharp
+  context.Writer.WriteStartObject();
+  var marshaller = {Type}Marshaller.Instance;
+  marshaller.Marshall(publicRequest.{Prop}, context);
+  context.Writer.WriteEndObject();
+  ```
+- **Blob** (`MemoryStream`) → `application/octet-stream` (overrides the top `application/json`); adds `using System.Globalization;`:
+  ```csharp
+  request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();
+  if (request.ContentStream.CanSeek) { request.ContentStream.Seek(0, SeekOrigin.Begin); }
+  request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+  request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
+  ```
+
+list/map payloads fail loud in the writer; document/union throw in `TypeMapper`.
+
 ### XML (restXml)
 
 ```csharp
@@ -135,6 +157,16 @@ while (context.ReadAtDepth(targetDepth, ref reader))
 
 - Lists: `new JsonListUnmarshaller<T, TUnmarshaller>(TUnmarshaller.Instance)`
 - Maps: `new JsonDictionaryUnmarshaller<K, V, KU, VU>(...)`
+
+### `@httpPayload` (response)
+
+A `@httpPayload` output member IS the whole body (replaces the named-field loop; other members are header-bound), into `unmarshalledObject`:
+
+- **String** → `using (var sr = new StreamReader(context.Stream)) { unmarshalledObject.Body = sr.ReadToEnd(); }`
+- **Structure** → reader + `if (reader.Reader.IsFinalBlock) return unmarshalledObject;` + `{Type}Unmarshaller.Instance.Unmarshall(context, ref reader)`.
+- **Blob** (`MemoryStream`) → `Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms)` into a new `MemoryStream`; assigned only when `ms.Length > 0`, so an empty body leaves the property null (matches C2J).
+
+`@httpHeader` members read from `context.ResponseData` after. **Errors don't get a payload path** — C2J never bound an error body to a payload and no service does, so `JsonExceptionUnmarshallerWriter` throws a `GeneratorException` on an `@httpPayload` error member (Smithy permits it; we fail loud rather than emit a never-populated property). Request/response `@httpPayload` stay allowed.
 
 ### XML
 

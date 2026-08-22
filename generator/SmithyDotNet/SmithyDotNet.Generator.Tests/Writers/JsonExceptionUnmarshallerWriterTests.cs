@@ -47,7 +47,7 @@ public class JsonExceptionUnmarshallerWriterTests
     public void MainExceptionUnmarshallMethodIsCorrect()
     {
         AssertHelper("public ChannelInsufficientPermissionException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)");
-        AssertHelper("ChannelInsufficientPermissionException unmarshalledObject = new ChannelInsufficientPermissionException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
+        AssertHelper("var unmarshalledObject = new ChannelInsufficientPermissionException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
         AssertHelper("return unmarshalledObject;");
 
         // ChannelInsufficientPermission models only message (owned by the base), so it has no body or

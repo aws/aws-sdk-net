@@ -59,7 +59,7 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
         writer.WriteLine("/// <returns>The unmarshalled object</returns>");
         writer.OpenBlock($"public {className} Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)", () =>
         {
-            writer.WriteLine($"{className} unmarshalledObject = new {className}();");
+            writer.WriteLine($"var unmarshalledObject = new {className}();");
             writer.WriteLine("if (context.IsEmptyResponse) return null;");
             writer.WriteLine();
             writer.WriteLine("context.Read(ref reader);");

@@ -34,7 +34,7 @@ public class CollectionElementCodegenTests
     {
         Assert.Contains("""if (context.TestExpression("tags", targetDepth, ref reader))""", _responseUnmarshaller);
         Assert.Contains("var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);", _responseUnmarshaller);
-        Assert.Contains("response.Tags = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
     }
 
     [Fact]
@@ -42,6 +42,6 @@ public class CollectionElementCodegenTests
     {
         Assert.Contains("""if (context.TestExpression("widgets", targetDepth, ref reader))""", _responseUnmarshaller);
         Assert.Contains("var unmarshaller = new JsonListUnmarshaller<Widget, WidgetUnmarshaller>(WidgetUnmarshaller.Instance);", _responseUnmarshaller);
-        Assert.Contains("response.Widgets = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.Widgets = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
     }
 }

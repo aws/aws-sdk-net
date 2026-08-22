@@ -1,0 +1,146 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoStructurePayload" },
+        { "target": "com.example#DoStringPayload" },
+        { "target": "com.example#GetStructurePayload" },
+        { "target": "com.example#GetStringPayload" },
+        { "target": "com.example#DoBlobPayload" },
+        { "target": "com.example#GetBlobPayload" },
+        { "target": "com.example#DoEnumPayload" },
+        { "target": "com.example#GetEnumPayload" },
+        { "target": "com.example#DoNoBody" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#DoStructurePayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoStructurePayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/structure", "method": "POST" } }
+    },
+    "com.example#DoStructurePayloadRequest": {
+      "type": "structure",
+      "members": {
+        "trace":   { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } },
+        "details": { "target": "com.example#PayloadDetails", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#PayloadDetails": {
+      "type": "structure",
+      "members": {
+        "name":  { "target": "smithy.api#String" },
+        "count": { "target": "smithy.api#Integer" }
+      }
+    },
+    "com.example#DoStringPayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoStringPayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/strings", "method": "POST" } }
+    },
+    "com.example#DoStringPayloadRequest": {
+      "type": "structure",
+      "members": {
+        "filter": { "target": "smithy.api#String", "traits": { "smithy.api#httpQuery": "filter" } },
+        "body":   { "target": "smithy.api#String", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#GetStructurePayload": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetStructurePayloadResponse" },
+      "traits": { "smithy.api#http": { "uri": "/get-structure", "method": "GET" } }
+    },
+    "com.example#GetStructurePayloadResponse": {
+      "type": "structure",
+      "members": {
+        "trace":   { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } },
+        "details": { "target": "com.example#PayloadDetails", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#GetStringPayload": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetStringPayloadResponse" },
+      "traits": { "smithy.api#http": { "uri": "/get-string", "method": "GET" } }
+    },
+    "com.example#GetStringPayloadResponse": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "smithy.api#String", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#PayloadBlob": { "type": "blob" },
+    "com.example#DoBlobPayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoBlobPayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/blob", "method": "POST" } }
+    },
+    "com.example#DoBlobPayloadRequest": {
+      "type": "structure",
+      "members": {
+        "filter": { "target": "smithy.api#String", "traits": { "smithy.api#httpQuery": "filter" } },
+        "body":   { "target": "com.example#PayloadBlob", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#GetBlobPayload": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetBlobPayloadResponse" },
+      "traits": { "smithy.api#http": { "uri": "/get-blob", "method": "GET" } }
+    },
+    "com.example#GetBlobPayloadResponse": {
+      "type": "structure",
+      "members": {
+        "trace": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } },
+        "body":  { "target": "com.example#PayloadBlob", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#PayloadEnum": {
+      "type": "enum",
+      "members": {
+        "ONE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "one" } },
+        "TWO": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "two" } }
+      }
+    },
+    "com.example#DoEnumPayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoEnumPayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/enum", "method": "POST" } }
+    },
+    "com.example#DoEnumPayloadRequest": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "com.example#PayloadEnum", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#GetEnumPayload": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetEnumPayloadResponse" },
+      "traits": { "smithy.api#http": { "uri": "/get-enum", "method": "GET" } }
+    },
+    "com.example#GetEnumPayloadResponse": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "com.example#PayloadEnum", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#DoNoBody": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/no-body", "method": "POST" } }
+    }
+  }
+}

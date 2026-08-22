@@ -197,6 +197,21 @@ public class TypeMapperTests
         Assert.False(priority.Type.IsEnum);
     }
 
+    [Fact]
+    public void BlobMember_MapsToMemoryStream_AndIsNotScalar()
+    {
+        var blob = TestModels.DeserializeShape("""{ "type": "blob" }""");
+        Assert.Equal("MemoryStream", TypeMapper.MapType(ShapeId.Parse("test#Body"), blob, _context));
+
+        // Through a member, the TypeDescriptor flags a blob so it stays off the scalar (un)marshal paths.
+        var context = TestModels.Context("Codegen/payload-model.json");
+        var op = context.Operations.Single(o => o.Name == "DoBlobPayload");
+        var body = TypeMapper.ResolveMembers(op.Input, context).Single(m => m.ModeledName == "body");
+        Assert.Equal("MemoryStream", body.Type.DotNetType);
+        Assert.True(body.Type.IsBlob);
+        Assert.False(body.Type.IsScalar);
+    }
+
     [Theory]
     [InlineData("com.example#Status")]   // string enum element
     [InlineData("com.example#Priority")] // intEnum element

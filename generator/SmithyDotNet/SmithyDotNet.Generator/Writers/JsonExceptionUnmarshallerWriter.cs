@@ -17,9 +17,14 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
 
         // message is deserialized by JsonErrorResponseUnmarshaller into the base Exception.Message,
         // so it is excluded here; every other member — including base-owned RequestId/ErrorCode — is
-        // unmarshalled from the error body, except @httpHeader members which come from the headers.
+        // unmarshalled from the error body, except @httpHeader members (read from the headers).
         var members = ExceptionWriter.ResolveSerializedMembers(structure, context);
-        var (headerMembers, bodyMembers) = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members);
+        var (headerMembers, bodyMembers, payloadMember) = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members);
+
+        if (payloadMember is not null)
+        {
+            throw new GeneratorException($"@httpPayload on error member '{payloadMember.PropertyName}' of '{exceptionName}' is not supported.");
+        }
 
         var writer = new CodeWriter();
 
@@ -82,44 +87,24 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public {exceptionName} Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)", () =>
         {
-            writer.WriteLine($"{exceptionName} unmarshalledObject = new {exceptionName}(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
+            writer.WriteLine($"var unmarshalledObject = new {exceptionName}(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
 
-            // Only body members are read from the error payload, so an exception whose members are all
-            // headers (or has none beyond message) emits no reader/loop.
+            // Body members are read from the error payload; an exception whose members are all headers
+            // (or has none beyond message) emits no reader/loop.
             if (bodyMembers.Count > 0)
             {
                 writer.WriteLine();
                 writer.OpenBlock("if (context.Stream.Length > 0)", () =>
                 {
-                    writer.WriteLine("context.Read(ref reader);");
-                    writer.WriteLine("int targetDepth = context.CurrentDepth;");
-                    writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
-                    {
-                        foreach (var member in bodyMembers)
-                        {
-                            WriteMemberUnmarshaller(writer, member);
-                        }
-                    });
+                    JsonResponseUnmarshallerWriter.WriteBodyReadLoop(writer, bodyMembers);
                 });
             }
 
             // @httpHeader error members are read from the response headers, not the error body.
-            JsonResponseUnmarshallerWriter.WriteHeaderUnmarshallers(writer, headerMembers, "unmarshalledObject");
+            JsonResponseUnmarshallerWriter.WriteHeaderUnmarshallers(writer, headerMembers);
 
             writer.WriteLine();
             writer.WriteLine("return unmarshalledObject;");
-        });
-    }
-
-    // Reuses JsonResponseUnmarshallerWriter's member dispatch, writing into unmarshalledObject. Each
-    // arm ends in `continue;` so the read loop advances to the next field, matching the legacy template.
-    private static void WriteMemberUnmarshaller(CodeWriter writer, Member member)
-    {
-        var wireName = member.JsonName ?? member.ModeledName;
-        writer.OpenBlock($"""if (context.TestExpression("{wireName}", targetDepth, ref reader))""", () =>
-        {
-            JsonResponseUnmarshallerWriter.WriteMemberUnmarshall(writer, member, "unmarshalledObject");
-            writer.WriteLine("continue;");
         });
     }
 

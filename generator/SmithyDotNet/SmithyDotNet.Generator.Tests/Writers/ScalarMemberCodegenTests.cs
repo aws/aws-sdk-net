@@ -99,7 +99,7 @@ public class ScalarMemberCodegenTests
     public void ResponseUnmarshaller_Scalars_UseRuntimeUnmarshallers()
     {
         Assert.Contains("var unmarshaller = NullableBoolUnmarshaller.Instance;", _responseUnmarshaller);
-        Assert.Contains("response.Enabled = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
         Assert.Contains("var unmarshaller = NullableLongUnmarshaller.Instance;", _responseUnmarshaller);
         Assert.Contains("var unmarshaller = NullableDateTimeUnmarshaller.Instance;", _responseUnmarshaller);
         Assert.Contains("""if (context.TestExpression("updated", targetDepth, ref reader))""", _responseUnmarshaller);
@@ -112,13 +112,13 @@ public class ScalarMemberCodegenTests
         // not from the JSON body. string/enum take the value directly; bool parses without a culture
         // (its literals are culture-invariant); numeric scalars parse with the invariant culture.
         Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-string"))""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderString = context.ResponseData.GetHeaderValue("x-string");""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderEnum = context.ResponseData.GetHeaderValue("x-enum");""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderBool = bool.Parse(context.ResponseData.GetHeaderValue("x-bool"));""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderInt = int.Parse(context.ResponseData.GetHeaderValue("x-int"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderLong = long.Parse(context.ResponseData.GetHeaderValue("x-long"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderFloat = float.Parse(context.ResponseData.GetHeaderValue("x-float"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderDouble = double.Parse(context.ResponseData.GetHeaderValue("x-double"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderString = context.ResponseData.GetHeaderValue("x-string");""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderEnum = context.ResponseData.GetHeaderValue("x-enum");""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderBool = bool.Parse(context.ResponseData.GetHeaderValue("x-bool"));""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderInt = int.Parse(context.ResponseData.GetHeaderValue("x-int"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderLong = long.Parse(context.ResponseData.GetHeaderValue("x-long"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderFloat = float.Parse(context.ResponseData.GetHeaderValue("x-float"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderDouble = double.Parse(context.ResponseData.GetHeaderValue("x-double"), CultureInfo.InvariantCulture);""", _responseUnmarshaller);
 
         // Body members still ride the JSON reader loop, so a mixed response emits both paths.
         Assert.Contains("while (context.ReadAtDepth(targetDepth, ref reader))", _responseUnmarshaller);
@@ -130,9 +130,9 @@ public class ScalarMemberCodegenTests
         // Header timestamps default to http-date when unset; date-time and http-date both parse via
         // DateTime.Parse (only epoch-seconds differs).
         Assert.Contains("using System.Globalization;", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderHttpDate = DateTime.Parse(context.ResponseData.GetHeaderValue("x-httpdate"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderDateTime = DateTime.Parse(context.ResponseData.GetHeaderValue("x-datetime"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);""", _responseUnmarshaller);
-        Assert.Contains("""response.HeaderEpoch = Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(context.ResponseData.GetHeaderValue("x-epoch"), CultureInfo.InvariantCulture));""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderHttpDate = DateTime.Parse(context.ResponseData.GetHeaderValue("x-httpdate"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderDateTime = DateTime.Parse(context.ResponseData.GetHeaderValue("x-datetime"), CultureInfo.InvariantCulture, DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal);""", _responseUnmarshaller);
+        Assert.Contains("""unmarshalledObject.HeaderEpoch = Amazon.Util.AWSSDKUtils.ConvertFromUnixEpochSeconds(int.Parse(context.ResponseData.GetHeaderValue("x-epoch"), CultureInfo.InvariantCulture));""", _responseUnmarshaller);
     }
 
     [Fact]
@@ -156,7 +156,7 @@ public class ScalarMemberCodegenTests
             .Write(operation, TestContext.Current.CancellationToken);
 
         Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-token"))""", unmarshaller);
-        Assert.Contains("""response.Token = context.ResponseData.GetHeaderValue("x-token");""", unmarshaller);
+        Assert.Contains("""unmarshalledObject.Token = context.ResponseData.GetHeaderValue("x-token");""", unmarshaller);
 
         Assert.DoesNotContain("while (context.ReadAtDepth", unmarshaller);
         Assert.DoesNotContain("context.TestExpression(", unmarshaller);
