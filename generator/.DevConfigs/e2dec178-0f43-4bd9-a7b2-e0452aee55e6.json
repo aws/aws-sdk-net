@@ -1,0 +1,46 @@
+{
+  "services": [
+    {
+      "serviceName": "SSO",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix `seealso` links to API reference docs in generated service client"
+      ]
+    },
+    {
+      "serviceName": "SSOOIDC",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix `seealso` links to API reference docs in generated service client"
+      ]
+    },
+    {
+      "serviceName": "MarketplaceReporting",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix `seealso` links to API reference docs in generated service client"
+      ]
+    },
+    {
+      "serviceName": "SimpleDBv2",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix `seealso` links to API reference docs in generated service client"
+      ]
+    },
+    {
+      "serviceName": "SupportApp",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix `seealso` links to API reference docs in generated service client"
+      ]
+    },
+    {
+      "serviceName": "KinesisVideoWebRTCStorage",
+      "type": "patch",
+      "changeLogMessages": [
+        "Fix `seealso` links to API reference docs in generated service client"
+      ]
+    }
+  ]
+}

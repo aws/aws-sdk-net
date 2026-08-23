@@ -212,7 +212,7 @@ public static partial class DocumentationFormatter
             WriteExceptionTag(writer, context, error);
         }
 
-        writer.WriteLine($"/// <seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/{context.EndpointPrefix}-{context.ApiVersion}/{operation.Name}\">REST API Reference for {operation.Name} Operation</seealso>");
+        writer.WriteLine($"""/// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/{context.ServiceUid}/{operation.Name}">REST API Reference for {operation.Name} Operation</seealso>""");
     }
 
     /// <summary>

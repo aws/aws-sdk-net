@@ -70,6 +70,15 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void ServiceUid_DerivedFromSdkId_NotEndpointPrefix()
+    {
+        // sdkId "Example" (slug "example") vs endpointPrefix "svc" -- uid must follow sdkId.
+        var context = TestModels.Context("Codegen/enum-missing-value-model.json");
+        Assert.Equal("svc", context.EndpointPrefix);
+        Assert.Equal("example-2023-01-01", context.ServiceUid);
+    }
+
+    [Fact]
     public void HasEndpointContextParams_IsFalseForCloudTrailData()
     {
         // CloudTrailData uses no context params. If detection over-fires, the resolver writer throws

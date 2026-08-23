@@ -59,11 +59,14 @@ public class GenerationContext
     /// <summary>The client class name without "Client" suffix (e.g. "AmazonCloudTrailData").</summary>
     public string ClientName { get; }
 
-    /// <summary>The service's API version from the service shape (e.g. "2021-08-11"). Used in generated doc links.</summary>
+    /// <summary>The service's API version from the service shape (e.g. "2021-08-11").</summary>
     public string ApiVersion { get; }
 
-    /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data"). Used in generated doc links.</summary>
+    /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data").</summary>
     public string EndpointPrefix { get; }
+
+    /// <summary>The C2J <c>uid</c> slug (e.g. "sso-oidc-2019-06-10") used in generated doc links.</summary>
+    public string ServiceUid { get; }
 
     /// <summary>
     /// The signing name used as the service config's <c>AuthenticationServiceName</c> (e.g.
@@ -199,6 +202,8 @@ public class GenerationContext
         // Use the aws.api#service trait's endpointPrefix when modeled, otherwise the resolved signing
         // name (some services, e.g. inspector-scan, omit endpointPrefix and rely on it).
         EndpointPrefix = (serviceTrait.EndpointPrefix ?? signingName).ToLowerInvariant();
+
+        ServiceUid = $"{SdkId.Replace(' ', '-').ToLowerInvariant()}-{ApiVersion}";
 
         // AuthenticationServiceName is the resolved signing name.
         AuthenticationServiceName = signingName;
