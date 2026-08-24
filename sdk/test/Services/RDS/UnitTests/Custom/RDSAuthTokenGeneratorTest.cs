@@ -213,6 +213,22 @@ namespace AWSSDK.UnitTests.RDS
             }, typeof(ArgumentException));
         }
 
+        [TestMethod]
+        [TestCategory("RDS")]
+        public void GenerateAuthTokenDBUserRequiringEncoding()
+        {
+            // DBUser is a user-controlled query parameter. It must be URL-encoded exactly once so that
+            // decoding the DBUser value out of the token yields the original string. This guards against a
+            // regression where the value is double-encoded (e.g. '@' -> %40 -> %2540).
+            const string specialUser = "db user+admin@corp";
+            var token = RDSAuthTokenGenerator.GenerateAuthToken(BasicCredentials, AWSRegion, DBHost, DBPort, specialUser);
+
+            var match = Regex.Match(token, "[?&]DBUser=([^&]*)");
+            Assert.IsTrue(match.Success, "DBUser parameter not found in token: " + token);
+            Assert.AreEqual(specialUser, Uri.UnescapeDataString(match.Groups[1].Value),
+                "DBUser should be single-encoded so it decodes back to the original value. Token: " + token);
+        }
+
         private void AssertAuthToken(string token, string accessKey, RegionEndpoint region)
         {
             AssertAuthToken(token, accessKey, region, false);
