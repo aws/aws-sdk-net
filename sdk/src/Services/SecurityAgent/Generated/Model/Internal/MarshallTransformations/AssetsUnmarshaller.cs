@@ -86,6 +86,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("trustedCaCertificates", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TrustedCaCertificate, TrustedCaCertificateUnmarshaller>(TrustedCaCertificateUnmarshaller.Instance);
+                    unmarshalledObject.TrustedCaCertificates = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
