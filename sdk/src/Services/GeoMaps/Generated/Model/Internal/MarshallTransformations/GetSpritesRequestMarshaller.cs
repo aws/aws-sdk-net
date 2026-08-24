@@ -74,7 +74,7 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetVariant())
                 throw new AmazonGeoMapsException("Request object does not have required field Variant set");
             request.AddPathResource("{Variant}", StringUtils.FromString(publicRequest.Variant));
-            request.ResourcePath = "/styles/{Style}/{ColorScheme}/{Variant}/sprites/{FileName}";
+            request.ResourcePath = "/v2/styles/{Style}/{ColorScheme}/{Variant}/sprites/{FileName}";
 
             return request;
         }

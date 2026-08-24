@@ -923,10 +923,21 @@ namespace Amazon.BedrockAgentCore
         /// This is a temporary condition that will resolve itself with retries. We recommend
         /// implementing exponential backoff retry logic in your application.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
         /// The exception that occurs when the request would cause a service quota to be exceeded.
         /// Review your service quotas and either reduce your request rate or request a quota
         /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.SubscriptionRequiredException">
+        /// Returned when you attempt a wallet operation against a Coinbase Marketplace connector
+        /// whose account does not hold an active Marketplace subscription and is not within the
+        /// legacy exception period. Subscribe to the Marketplace listing before you retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
@@ -973,10 +984,21 @@ namespace Amazon.BedrockAgentCore
         /// This is a temporary condition that will resolve itself with retries. We recommend
         /// implementing exponential backoff retry logic in your application.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
         /// The exception that occurs when the request would cause a service quota to be exceeded.
         /// Review your service quotas and either reduce your request rate or request a quota
         /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.SubscriptionRequiredException">
+        /// Returned when you attempt a wallet operation against a Coinbase Marketplace connector
+        /// whose account does not hold an active Marketplace subscription and is not within the
+        /// legacy exception period. Subscribe to the Marketplace listing before you retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
@@ -1029,6 +1051,12 @@ namespace Amazon.BedrockAgentCore
         /// Review your service quotas and either reduce your request rate or request a quota
         /// increase.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.SubscriptionRequiredException">
+        /// Returned when you attempt a wallet operation against a Coinbase Marketplace connector
+        /// whose account does not hold an active Marketplace subscription and is not within the
+        /// legacy exception period. Subscribe to the Marketplace listing before you retry the
+        /// operation.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
         /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
@@ -1078,6 +1106,12 @@ namespace Amazon.BedrockAgentCore
         /// The exception that occurs when the request would cause a service quota to be exceeded.
         /// Review your service quotas and either reduce your request rate or request a quota
         /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.SubscriptionRequiredException">
+        /// Returned when you attempt a wallet operation against a Coinbase Marketplace connector
+        /// whose account does not hold an active Marketplace subscription and is not within the
+        /// legacy exception period. Subscribe to the Marketplace listing before you retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
@@ -1315,6 +1349,103 @@ namespace Amazon.BedrockAgentCore
             options.ResponseUnmarshaller = DeleteBatchEvaluationResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteBatchEvaluationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCapacityProviderSession
+
+
+        /// <summary>
+        /// Deletes a session associated with a capacity provider in Amazon Bedrock AgentCore
+        /// and makes the session unavailable for further use. To delete a capacity provider session,
+        /// specify both the capacity provider identifier and the session ID. After you delete
+        /// a session, you cannot restart it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProviderSession service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProviderSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteCapacityProviderSession">REST API Reference for DeleteCapacityProviderSession Operation</seealso>
+        public virtual DeleteCapacityProviderSessionResponse DeleteCapacityProviderSession(DeleteCapacityProviderSessionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityProviderSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityProviderSessionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCapacityProviderSessionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a session associated with a capacity provider in Amazon Bedrock AgentCore
+        /// and makes the session unavailable for further use. To delete a capacity provider session,
+        /// specify both the capacity provider identifier and the session ID. After you delete
+        /// a session, you cannot restart it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProviderSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProviderSession service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.InternalServerException">
+        /// The exception that occurs when the service encounters an unexpected internal error.
+        /// This is a temporary condition that will resolve itself with retries. We recommend
+        /// implementing exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
+        /// The exception that occurs when the request was denied due to request throttling. This
+        /// happens when you exceed the allowed request rate for an operation. Reduce the frequency
+        /// of requests or implement exponential backoff retry logic in your application.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteCapacityProviderSession">REST API Reference for DeleteCapacityProviderSession Operation</seealso>
+        public virtual Task<DeleteCapacityProviderSessionResponse> DeleteCapacityProviderSessionAsync(DeleteCapacityProviderSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityProviderSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityProviderSessionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCapacityProviderSessionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5885,10 +6016,21 @@ namespace Amazon.BedrockAgentCore
         /// This is a temporary condition that will resolve itself with retries. We recommend
         /// implementing exponential backoff retry logic in your application.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
         /// The exception that occurs when the request would cause a service quota to be exceeded.
         /// Review your service quotas and either reduce your request rate or request a quota
         /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.SubscriptionRequiredException">
+        /// Returned when you attempt a wallet operation against a Coinbase Marketplace connector
+        /// whose account does not hold an active Marketplace subscription and is not within the
+        /// legacy exception period. Subscribe to the Marketplace listing before you retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This
@@ -5935,10 +6077,21 @@ namespace Amazon.BedrockAgentCore
         /// This is a temporary condition that will resolve itself with retries. We recommend
         /// implementing exponential backoff retry logic in your application.
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
         /// The exception that occurs when the request would cause a service quota to be exceeded.
         /// Review your service quotas and either reduce your request rate or request a quota
         /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.SubscriptionRequiredException">
+        /// Returned when you attempt a wallet operation against a Coinbase Marketplace connector
+        /// whose account does not hold an active Marketplace subscription and is not within the
+        /// legacy exception period. Subscribe to the Marketplace listing before you retry the
+        /// operation.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottlingException">
         /// The exception that occurs when the request was denied due to request throttling. This

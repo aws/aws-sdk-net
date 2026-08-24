@@ -63,6 +63,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Inclusive.Value);
             }
 
+            if(requestObject.IsSetNullFilter())
+            {
+                context.Writer.WritePropertyName("NullFilter");
+                context.Writer.WriteStringValue(requestObject.NullFilter);
+            }
+
         }
 
         /// <summary>

@@ -915,6 +915,52 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type ApplicableToType.
+    /// </summary>
+    public class ApplicableToType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GROUP for ApplicableToType
+        /// </summary>
+        public static readonly ApplicableToType GROUP = new ApplicableToType("GROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApplicableToType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApplicableToType FindValue(string value)
+        {
+            return FindValue<ApplicableToType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApplicableToType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArcThickness.
     /// </summary>
     public class ArcThickness : ConstantClass
@@ -1533,6 +1579,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobTopicV2PropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobTopicV2PropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Description for AssetBundleExportJobTopicV2PropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobTopicV2PropertyToOverride Description = new AssetBundleExportJobTopicV2PropertyToOverride("Description");
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobTopicV2PropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobTopicV2PropertyToOverride Name = new AssetBundleExportJobTopicV2PropertyToOverride("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobTopicV2PropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobTopicV2PropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobTopicV2PropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobTopicV2PropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssetBundleExportJobVPCConnectionPropertyToOverride.
     /// </summary>
     public class AssetBundleExportJobVPCConnectionPropertyToOverride : ConstantClass
@@ -1700,6 +1796,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AssetBundleImportJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetType.
+    /// </summary>
+    public class AssetType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for AssetType
+        /// </summary>
+        public static readonly AssetType AGENT = new AssetType("AGENT");
+        /// <summary>
+        /// Constant KNOWLEDGE_BASE for AssetType
+        /// </summary>
+        public static readonly AssetType KNOWLEDGE_BASE = new AssetType("KNOWLEDGE_BASE");
+        /// <summary>
+        /// Constant SPACE for AssetType
+        /// </summary>
+        public static readonly AssetType SPACE = new AssetType("SPACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetType FindValue(string value)
+        {
+            return FindValue<AssetType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetType(string value)
         {
             return FindValue(value);
         }
@@ -6201,6 +6351,156 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type DlpAction.
+    /// </summary>
+    public class DlpAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALLOW for DlpAction
+        /// </summary>
+        public static readonly DlpAction ALLOW = new DlpAction("ALLOW");
+        /// <summary>
+        /// Constant BLOCK for DlpAction
+        /// </summary>
+        public static readonly DlpAction BLOCK = new DlpAction("BLOCK");
+        /// <summary>
+        /// Constant WARN for DlpAction
+        /// </summary>
+        public static readonly DlpAction WARN = new DlpAction("WARN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DlpAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DlpAction FindValue(string value)
+        {
+            return FindValue<DlpAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DlpAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DlpProviderType.
+    /// </summary>
+    public class DlpProviderType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MICROSOFT_PURVIEW for DlpProviderType
+        /// </summary>
+        public static readonly DlpProviderType MICROSOFT_PURVIEW = new DlpProviderType("MICROSOFT_PURVIEW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DlpProviderType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DlpProviderType FindValue(string value)
+        {
+            return FindValue<DlpProviderType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DlpProviderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DlpSettingStatus.
+    /// </summary>
+    public class DlpSettingStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DlpSettingStatus
+        /// </summary>
+        public static readonly DlpSettingStatus ACTIVE = new DlpSettingStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for DlpSettingStatus
+        /// </summary>
+        public static readonly DlpSettingStatus INACTIVE = new DlpSettingStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DlpSettingStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DlpSettingStatus FindValue(string value)
+        {
+            return FindValue<DlpSettingStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DlpSettingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Edition.
     /// </summary>
     public class Edition : ConstantClass
@@ -6524,6 +6824,10 @@ namespace Amazon.QuickSight
         /// Constant CONDITIONAL_VALUE_FILTER for FilterClass
         /// </summary>
         public static readonly FilterClass CONDITIONAL_VALUE_FILTER = new FilterClass("CONDITIONAL_VALUE_FILTER");
+        /// <summary>
+        /// Constant DASHBOARD_DEFAULT_FILTER for FilterClass
+        /// </summary>
+        public static readonly FilterClass DASHBOARD_DEFAULT_FILTER = new FilterClass("DASHBOARD_DEFAULT_FILTER");
         /// <summary>
         /// Constant ENFORCED_VALUE_FILTER for FilterClass
         /// </summary>
@@ -7530,6 +7834,52 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GeospatialSelectedPointStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GovernedAction.
+    /// </summary>
+    public class GovernedAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHARE for GovernedAction
+        /// </summary>
+        public static readonly GovernedAction SHARE = new GovernedAction("SHARE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GovernedAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GovernedAction FindValue(string value)
+        {
+            return FindValue<GovernedAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GovernedAction(string value)
         {
             return FindValue(value);
         }
@@ -9392,6 +9742,126 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LegendPosition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LimitSource.
+    /// </summary>
+    public class LimitSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT for LimitSource
+        /// </summary>
+        public static readonly LimitSource ACCOUNT = new LimitSource("ACCOUNT");
+        /// <summary>
+        /// Constant DIRECT_USER for LimitSource
+        /// </summary>
+        public static readonly LimitSource DIRECT_USER = new LimitSource("DIRECT_USER");
+        /// <summary>
+        /// Constant GROUP for LimitSource
+        /// </summary>
+        public static readonly LimitSource GROUP = new LimitSource("GROUP");
+        /// <summary>
+        /// Constant ROLE for LimitSource
+        /// </summary>
+        public static readonly LimitSource ROLE = new LimitSource("ROLE");
+        /// <summary>
+        /// Constant SYSTEM_DEFAULT for LimitSource
+        /// </summary>
+        public static readonly LimitSource SYSTEM_DEFAULT = new LimitSource("SYSTEM_DEFAULT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LimitSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LimitSource FindValue(string value)
+        {
+            return FindValue<LimitSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LimitSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LimitUnit.
+    /// </summary>
+    public class LimitUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DAYS for LimitUnit
+        /// </summary>
+        public static readonly LimitUnit DAYS = new LimitUnit("DAYS");
+        /// <summary>
+        /// Constant GB for LimitUnit
+        /// </summary>
+        public static readonly LimitUnit GB = new LimitUnit("GB");
+        /// <summary>
+        /// Constant HOURS for LimitUnit
+        /// </summary>
+        public static readonly LimitUnit HOURS = new LimitUnit("HOURS");
+        /// <summary>
+        /// Constant MB for LimitUnit
+        /// </summary>
+        public static readonly LimitUnit MB = new LimitUnit("MB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LimitUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LimitUnit FindValue(string value)
+        {
+            return FindValue<LimitUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LimitUnit(string value)
         {
             return FindValue(value);
         }
@@ -12648,6 +13118,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT_HOURS for ResourceType
+        /// </summary>
+        public static readonly ResourceType AGENT_HOURS = new ResourceType("AGENT_HOURS");
+        /// <summary>
+        /// Constant INDEX_STORAGE for ResourceType
+        /// </summary>
+        public static readonly ResourceType INDEX_STORAGE = new ResourceType("INDEX_STORAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }
@@ -16438,6 +16958,56 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TopicUserExperienceVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TopicV2PublishOption.
+    /// </summary>
+    public class TopicV2PublishOption : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRAFT for TopicV2PublishOption
+        /// </summary>
+        public static readonly TopicV2PublishOption DRAFT = new TopicV2PublishOption("DRAFT");
+        /// <summary>
+        /// Constant PUBLISH for TopicV2PublishOption
+        /// </summary>
+        public static readonly TopicV2PublishOption PUBLISH = new TopicV2PublishOption("PUBLISH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TopicV2PublishOption(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TopicV2PublishOption FindValue(string value)
+        {
+            return FindValue<TopicV2PublishOption>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TopicV2PublishOption(string value)
         {
             return FindValue(value);
         }

@@ -70,6 +70,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Username);
             }
 
+            if(requestObject.IsSetVirtualSourceAddress())
+            {
+                context.Writer.WritePropertyName("virtualSourceAddress");
+                context.Writer.WriteStringValue(requestObject.VirtualSourceAddress);
+            }
+
         }
 
         /// <summary>

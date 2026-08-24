@@ -34,6 +34,8 @@ namespace Amazon.MWAAServerless.Model
     /// </summary>
     public partial class GetWorkflowResponse : AmazonWebServiceResponse
     {
+        private Code _code;
+        private DateTime? _codeSnapshottedAt;
         private DateTime? _createdAt;
         private DefinitionS3Location _definitionS3Location;
         private string _description;
@@ -50,6 +52,44 @@ namespace Amazon.MWAAServerless.Model
         private string _workflowDefinition;
         private WorkflowStatus _workflowStatus;
         private string _workflowVersion;
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The Amazon S3 location of the code artifacts provided during workflow creation or
+        /// update.
+        /// </para>
+        /// </summary>
+        public Code Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeSnapshottedAt. 
+        /// <para>
+        /// The time at which the code artifacts were copied for this workflow, in ISO 8601 date-time
+        /// format.
+        /// </para>
+        /// </summary>
+        public DateTime? CodeSnapshottedAt
+        {
+            get { return this._codeSnapshottedAt; }
+            set { this._codeSnapshottedAt = value; }
+        }
+
+        // Check to see if CodeSnapshottedAt property is set
+        internal bool IsSetCodeSnapshottedAt()
+        {
+            return this._codeSnapshottedAt.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

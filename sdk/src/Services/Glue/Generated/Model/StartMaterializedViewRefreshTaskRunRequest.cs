@@ -31,7 +31,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the StartMaterializedViewRefreshTaskRun operation.
-    /// Starts a materialized view refresh task run, for a specified table and columns.
+    /// Starts a materialized view refresh task run for a specified materialized view.
     /// </summary>
     public partial class StartMaterializedViewRefreshTaskRunRequest : AmazonGlueRequest
     {
@@ -100,7 +100,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table to generate run the materialized view refresh task.
+        /// The name of the materialized view to run the refresh task for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

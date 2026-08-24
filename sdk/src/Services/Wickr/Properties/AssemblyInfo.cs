@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Wickr Admin API. AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Wickr Admin API. AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Wickr Admin API. AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - AWS Wickr Admin API. AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - AWS Wickr Admin API. AWS Wickr now provides a suite of admin APIs to allow you to programmatically manage secure communication for Wickr networks at scale. These APIs enable you to automate administrative workflows including user lifecycle management, network configuration, and security group administration.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
@@ -49,4 +52,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.100.7")]
+[assembly: AssemblyFileVersion("4.0.100.9")]

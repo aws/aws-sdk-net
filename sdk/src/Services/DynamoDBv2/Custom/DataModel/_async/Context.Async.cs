@@ -561,5 +561,37 @@ namespace Amazon.DynamoDBv2.DataModel
         }
 
         #endregion
+
+        #region Search Vectors async
+
+        /// <inheritdoc/>
+        public IAsyncSearchVectors<T> SearchVectorsAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(List<float> searchVector, int topK, SearchVectorsConfig searchVectorsConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(SearchVectorsAsync)))
+            {
+                if (searchVector == null) throw new ArgumentNullException("searchVector");
+
+                if (searchVectorsConfig == null) throw new ArgumentNullException("searchVectorsConfig");
+
+                var searchVectors = ConvertSearchVectors<T>(searchVector, topK, searchVectorsConfig.ToDynamoDBOperationConfig());
+                return FromSearchVectorsAsync<T>(searchVectors);
+            }
+        }
+
+        /// <inheritdoc/>
+        public IAsyncSearchVectors<T> FromSearchVectorsAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(SearchVectorsOperationRequest searchVectorsOperationRequest, FromSearchVectorsConfig fromSearchVectorsConfig)
+        {
+            using (DynamoDBTelemetry.CreateSpan(this, nameof(FromSearchVectorsAsync)))
+            {
+                if (searchVectorsOperationRequest == null) throw new ArgumentNullException("searchVectorsOperationRequest");
+
+                if (fromSearchVectorsConfig == null) throw new ArgumentNullException("fromSearchVectorsConfig");
+
+                var searchVectors = ConvertSearchVectors<T>(searchVectorsOperationRequest, fromSearchVectorsConfig?.ToDynamoDBOperationConfig());
+                return FromSearchVectorsAsync<T>(searchVectors);
+            }
+        }
+
+        #endregion
     }
 }

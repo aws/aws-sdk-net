@@ -43,7 +43,10 @@ namespace Amazon.WellArchitected.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The date and time when the profile was created.
+        /// </para>
         /// </summary>
         public DateTime? CreatedAt
         {
@@ -79,7 +82,7 @@ namespace Amazon.WellArchitected.Model
         /// The profile ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2084)]
+        [AWSProperty(Min=0, Max=2084)]
         public string ProfileArn
         {
             get { return this._profileArn; }
@@ -150,7 +153,10 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time when the profile was last updated.
+        /// </para>
         /// </summary>
         public DateTime? UpdatedAt
         {

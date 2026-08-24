@@ -35,10 +35,13 @@ namespace Amazon.QuickSight.Model
     public partial class NamedEntityDefinition
     {
         private string _fieldName;
+        private bool? _isHidden;
         private NamedEntityDefinitionMetric _metric;
+        private int? _presentationOrder;
         private string _propertyName;
         private PropertyRole _propertyRole;
         private PropertyUsage _propertyUsage;
+        private int? _rankOrder;
 
         /// <summary>
         /// Gets and sets the property FieldName. 
@@ -60,6 +63,24 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IsHidden. 
+        /// <para>
+        /// A Boolean value that indicates whether the named entity definition is hidden.
+        /// </para>
+        /// </summary>
+        public bool? IsHidden
+        {
+            get { return this._isHidden; }
+            set { this._isHidden = value; }
+        }
+
+        // Check to see if IsHidden property is set
+        internal bool IsSetIsHidden()
+        {
+            return this._isHidden.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
         /// The definition of a metric.
@@ -75,6 +96,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetMetric()
         {
             return this._metric != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PresentationOrder. 
+        /// <para>
+        /// The presentation order of the named entity definition.
+        /// </para>
+        /// </summary>
+        public int? PresentationOrder
+        {
+            get { return this._presentationOrder; }
+            set { this._presentationOrder = value; }
+        }
+
+        // Check to see if PresentationOrder property is set
+        internal bool IsSetPresentationOrder()
+        {
+            return this._presentationOrder.HasValue; 
         }
 
         /// <summary>
@@ -131,6 +170,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPropertyUsage()
         {
             return this._propertyUsage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RankOrder. 
+        /// <para>
+        /// The rank order of the named entity definition.
+        /// </para>
+        /// </summary>
+        public int? RankOrder
+        {
+            get { return this._rankOrder; }
+            set { this._rankOrder = value; }
+        }
+
+        // Check to see if RankOrder property is set
+        internal bool IsSetRankOrder()
+        {
+            return this._rankOrder.HasValue; 
         }
 
     }

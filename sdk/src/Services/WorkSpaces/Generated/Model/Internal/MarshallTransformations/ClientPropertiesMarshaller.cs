@@ -46,6 +46,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetClientExperiencePolicy())
+            {
+                context.Writer.WritePropertyName("ClientExperiencePolicy");
+                context.Writer.WriteStringValue(requestObject.ClientExperiencePolicy);
+            }
+
             if(requestObject.IsSetLogUploadEnabled())
             {
                 context.Writer.WritePropertyName("LogUploadEnabled");

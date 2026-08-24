@@ -48,6 +48,7 @@ namespace Amazon.BedrockAgentRuntime.Model
     {
         private AgenticRetrieveConfiguration _agenticRetrieveConfiguration;
         private bool? _generateResponse;
+        private AgenticRetrieveMemoryConfiguration _memoryConfiguration;
         private List<AgenticRetrieveMessage> _messages = AWSConfigs.InitializeCollections ? new List<AgenticRetrieveMessage>() : null;
         private string _nextToken;
         private AgenticRetrievePolicyConfiguration _policyConfiguration;
@@ -89,6 +90,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetGenerateResponse()
         {
             return this._generateResponse.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MemoryConfiguration. 
+        /// <para>
+        /// The configuration for using an Amazon Bedrock AgentCore Memory resource with this
+        /// retrieval.
+        /// </para>
+        /// </summary>
+        public AgenticRetrieveMemoryConfiguration MemoryConfiguration
+        {
+            get { return this._memoryConfiguration; }
+            set { this._memoryConfiguration = value; }
+        }
+
+        // Check to see if MemoryConfiguration property is set
+        internal bool IsSetMemoryConfiguration()
+        {
+            return this._memoryConfiguration != null;
         }
 
         /// <summary>

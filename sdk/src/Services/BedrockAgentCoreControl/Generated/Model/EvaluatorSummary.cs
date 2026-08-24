@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _kmsKeyArn;
         private EvaluatorLevel _level;
         private bool? _lockedForModification;
+        private Provider _provider;
         private EvaluatorStatus _status;
         private DateTime? _updatedAt;
 
@@ -109,7 +110,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The unique identifier of the evaluator. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }
@@ -128,7 +129,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The name of the evaluator. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=48)]
         public string EvaluatorName
         {
             get { return this._evaluatorName; }
@@ -218,6 +219,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLockedForModification()
         {
             return this._lockedForModification.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        ///  The source of the evaluator's logic: Amazon Web Services, a third-party library,
+        /// or you. 
+        /// </para>
+        /// </summary>
+        public Provider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.DataZone.Model
         private string _assetId;
         private string _errorMessage;
         private List<string> _filterIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _scopeName;
         private string _status;
 
         /// <summary>
@@ -98,6 +99,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetFilterIds()
         {
             return this._filterIds != null && (this._filterIds.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScopeName. 
+        /// <para>
+        /// The name of the materialized asset scope.
+        /// </para>
+        /// </summary>
+        public string ScopeName
+        {
+            get { return this._scopeName; }
+            set { this._scopeName = value; }
+        }
+
+        // Check to see if ScopeName property is set
+        internal bool IsSetScopeName()
+        {
+            return this._scopeName != null;
         }
 
         /// <summary>

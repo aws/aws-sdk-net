@@ -37,6 +37,22 @@ namespace Amazon.MarketplaceCatalog.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeAssessment operation
+        ///</summary>
+        public IDescribeAssessmentPaginator DescribeAssessment(DescribeAssessmentRequest request) 
+        {
+            return new DescribeAssessmentPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssessments operation
+        ///</summary>
+        public IListAssessmentsPaginator ListAssessments(ListAssessmentsRequest request) 
+        {
+            return new ListAssessmentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListChangeSets operation
         ///</summary>
         public IListChangeSetsPaginator ListChangeSets(ListChangeSetsRequest request) 

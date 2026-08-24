@@ -42,6 +42,7 @@ namespace Amazon.MediaConvert.Model
         private FrameRate _codedFrameRate;
         private ColorPrimaries _colorPrimaries;
         private ContentLightLevel _contentLightLevel;
+        private string _fieldOrder;
         private int? _height;
         private string _level;
         private MatrixCoefficients _matrixCoefficients;
@@ -134,6 +135,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetContentLightLevel()
         {
             return this._contentLightLevel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FieldOrder. The field order of interlaced video, which
+        /// indicates whether the top or bottom field is displayed first. Use this to select the
+        /// correct deinterlacing behavior. One of "TopFieldFirst" or "BottomFieldFirst". This
+        /// field is present only for interlaced video; it is omitted for progressive video and
+        /// when the field order is not indicated by the source.
+        /// </summary>
+        public string FieldOrder
+        {
+            get { return this._fieldOrder; }
+            set { this._fieldOrder = value; }
+        }
+
+        // Check to see if FieldOrder property is set
+        internal bool IsSetFieldOrder()
+        {
+            return this._fieldOrder != null;
         }
 
         /// <summary>

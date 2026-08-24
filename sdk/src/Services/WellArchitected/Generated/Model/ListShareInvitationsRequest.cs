@@ -55,7 +55,7 @@ namespace Amazon.WellArchitected.Model
         /// An optional string added to the beginning of each lens name returned in the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string LensNamePrefix
         {
             get { return this._lensNamePrefix; }
@@ -108,7 +108,7 @@ namespace Amazon.WellArchitected.Model
         /// An optional string added to the beginning of each profile name returned in the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string ProfileNamePrefix
         {
             get { return this._profileNamePrefix; }
@@ -146,7 +146,7 @@ namespace Amazon.WellArchitected.Model
         /// the results.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string TemplateNamePrefix
         {
             get { return this._templateNamePrefix; }
@@ -162,7 +162,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadNamePrefix.
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string WorkloadNamePrefix
         {
             get { return this._workloadNamePrefix; }

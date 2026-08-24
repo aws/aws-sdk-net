@@ -31,20 +31,9 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateContainerAssociation operation.
-    /// Creates a container association for Network Firewall. A container association links
-    /// container clusters (ECS or EKS) to Network Firewall, enabling dynamic IP resolution
-    /// for firewall rules based on container attributes.
-    /// 
-    ///  
-    /// <para>
-    /// To manage a container association's tags, use the standard Amazon Web Services resource
-    /// tagging operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and <a>UntagResource</a>.
-    /// </para>
-    ///  
-    /// <para>
-    /// To retrieve information about container associations, use <a>ListContainerAssociations</a>
-    /// and <a>DescribeContainerAssociation</a>.
-    /// </para>
+    /// Creates a Network Firewall container association. The association monitors container
+    /// lifecycle events in your Amazon ECS or Amazon EKS clusters and resolves running container
+    /// addresses for use in firewall rules.
     /// </summary>
     public partial class CreateContainerAssociationRequest : AmazonNetworkFirewallRequest
     {
@@ -77,8 +66,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerMonitoringConfigurations. 
         /// <para>
-        /// The list of container monitoring configurations that define which clusters and container
-        /// attributes to monitor.
+        /// The monitoring configurations for the container association. Each configuration specifies
+        /// an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters to narrow
+        /// which containers are tracked.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -145,9 +135,18 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of container orchestration platform for the clusters in this association.
-        /// Valid values are <c>ECS</c> and <c>EKS</c>. You can't change the type after creation.
+        /// The type of containers to monitor. You can't change the container type after creation.
+        /// Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ECS</c> - Amazon Elastic Container Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EKS</c> - Amazon Elastic Kubernetes Service
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ContainerMonitoringType Type

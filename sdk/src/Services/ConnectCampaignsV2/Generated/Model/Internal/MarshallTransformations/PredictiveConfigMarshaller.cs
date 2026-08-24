@@ -59,6 +59,22 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                 }
             }
 
+            if(requestObject.IsSetPacingStrategies())
+            {
+                context.Writer.WritePropertyName("pacingStrategies");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectPacingStrategiesListValue in requestObject.PacingStrategies)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PacingStrategyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPacingStrategiesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

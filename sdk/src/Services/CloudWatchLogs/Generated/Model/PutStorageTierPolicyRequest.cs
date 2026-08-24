@@ -31,9 +31,9 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the PutStorageTierPolicy operation.
-    /// Sets the storage tier policy for your account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
-    /// CloudWatch Logs automatically moves your log data between storage tiers based on access
-    /// patterns to optimize costs.
+    /// Sets the storage tier policy for the account. When you set the storage tier to <c>INTELLIGENT_TIERING</c>,
+    /// the service automatically moves log data to the most cost-effective storage tier based
+    /// on access frequency.
     /// </summary>
     public partial class PutStorageTierPolicyRequest : AmazonCloudWatchLogsRequest
     {
@@ -42,7 +42,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StorageTier. 
         /// <para>
-        /// The storage tier to set for the account. Valid values are <c>STANDARD</c> and <c>INTELLIGENT_TIERING</c>.
+        /// The storage tier to set for the account. Use <c>INTELLIGENT_TIERING</c> to automatically
+        /// optimize storage costs by moving log data to the appropriate tier based on access
+        /// frequency.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

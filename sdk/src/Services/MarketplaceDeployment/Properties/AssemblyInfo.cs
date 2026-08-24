@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS Marketplace Deployment Service. AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - AWS Marketplace Deployment Service. AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS Marketplace Deployment Service. AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - AWS Marketplace Deployment Service. AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - AWS Marketplace Deployment Service. AWS Marketplace Deployment is a new service that provides essential features that facilitate the deployment of software, data, and services procured through AWS Marketplace.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
@@ -49,4 +52,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.100.7")]
+[assembly: AssemblyFileVersion("4.0.100.9")]

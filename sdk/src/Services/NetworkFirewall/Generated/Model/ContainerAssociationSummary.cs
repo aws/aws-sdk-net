@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// High-level information about a container association, returned by the <a>ListContainerAssociations</a>
-    /// operation. You can use this information to retrieve the full details of a container
-    /// association using <a>DescribeContainerAssociation</a>.
+    /// The metadata for a container association returned by <c>ListContainerAssociations</c>.
+    /// Contains the ARN and name that you use to identify the container association in other
+    /// operations.
     /// </summary>
     public partial class ContainerAssociationSummary
     {

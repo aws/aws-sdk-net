@@ -162,6 +162,11 @@ namespace Amazon.Batch.Model
         /// daemon setting on the container instance. For more information, see <a href="https://docs.docker.com/engine/reference/run/#ipc-settings---ipc">IPC
         /// settings</a> in the Docker run reference.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not supported for jobs that run on Fargate resources.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string IpcMode
         {

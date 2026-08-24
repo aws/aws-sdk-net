@@ -179,6 +179,60 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type AttachmentType.
+    /// </summary>
+    public class AttachmentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Group for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType Group = new AttachmentType("group");
+        /// <summary>
+        /// Constant Role for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType Role = new AttachmentType("role");
+        /// <summary>
+        /// Constant User for AttachmentType
+        /// </summary>
+        public static readonly AttachmentType User = new AttachmentType("user");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachmentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachmentType FindValue(string value)
+        {
+            return FindValue<AttachmentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachmentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContextKeyTypeEnum.
     /// </summary>
     public class ContextKeyTypeEnum : ConstantClass
@@ -593,6 +647,118 @@ namespace Amazon.IdentityManagement
 
 
     /// <summary>
+    /// Constants used for properties of type ManagedByTypeType.
+    /// </summary>
+    public class ManagedByTypeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Service for ManagedByTypeType
+        /// </summary>
+        public static readonly ManagedByTypeType Service = new ManagedByTypeType("Service");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ManagedByTypeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ManagedByTypeType FindValue(string value)
+        {
+            return FindValue<ManagedByTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ManagedByTypeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParameterTypeType.
+    /// </summary>
+    public class ParameterTypeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Arn for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType Arn = new ParameterTypeType("Arn");
+        /// <summary>
+        /// Constant ArnList for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType ArnList = new ParameterTypeType("ArnList");
+        /// <summary>
+        /// Constant Number for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType Number = new ParameterTypeType("Number");
+        /// <summary>
+        /// Constant NumberList for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType NumberList = new ParameterTypeType("NumberList");
+        /// <summary>
+        /// Constant String for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType String = new ParameterTypeType("String");
+        /// <summary>
+        /// Constant StringList for ParameterTypeType
+        /// </summary>
+        public static readonly ParameterTypeType StringList = new ParameterTypeType("StringList");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParameterTypeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParameterTypeType FindValue(string value)
+        {
+            return FindValue<ParameterTypeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParameterTypeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PermissionCheckResultType.
     /// </summary>
     public class PermissionCheckResultType : ConstantClass
@@ -794,6 +960,72 @@ namespace Amazon.IdentityManagement
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PolicyEvaluationDecisionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyIdentifierPolicyType.
+    /// </summary>
+    public class PolicyIdentifierPolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsManaged for PolicyIdentifierPolicyType
+        /// </summary>
+        public static readonly PolicyIdentifierPolicyType AwsManaged = new PolicyIdentifierPolicyType("aws-managed");
+        /// <summary>
+        /// Constant Inline for PolicyIdentifierPolicyType
+        /// </summary>
+        public static readonly PolicyIdentifierPolicyType Inline = new PolicyIdentifierPolicyType("inline");
+        /// <summary>
+        /// Constant PermissionBoundary for PolicyIdentifierPolicyType
+        /// </summary>
+        public static readonly PolicyIdentifierPolicyType PermissionBoundary = new PolicyIdentifierPolicyType("permission-boundary");
+        /// <summary>
+        /// Constant Rcp for PolicyIdentifierPolicyType
+        /// </summary>
+        public static readonly PolicyIdentifierPolicyType Rcp = new PolicyIdentifierPolicyType("rcp");
+        /// <summary>
+        /// Constant Scp for PolicyIdentifierPolicyType
+        /// </summary>
+        public static readonly PolicyIdentifierPolicyType Scp = new PolicyIdentifierPolicyType("scp");
+        /// <summary>
+        /// Constant UserManaged for PolicyIdentifierPolicyType
+        /// </summary>
+        public static readonly PolicyIdentifierPolicyType UserManaged = new PolicyIdentifierPolicyType("user-managed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyIdentifierPolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyIdentifierPolicyType FindValue(string value)
+        {
+            return FindValue<PolicyIdentifierPolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyIdentifierPolicyType(string value)
         {
             return FindValue(value);
         }

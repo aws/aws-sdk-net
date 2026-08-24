@@ -92,6 +92,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventBridgeAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ExtractInformationAction", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExtractInformationActionDefinitionUnmarshaller.Instance;
+                    unmarshalledObject.ExtractInformationAction = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SendNotificationAction", targetDepth, ref reader))
                 {
                     var unmarshaller = SendNotificationActionDefinitionUnmarshaller.Instance;

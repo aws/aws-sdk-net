@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMpp())
+            {
+                context.Writer.WritePropertyName("mpp");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MppPaymentInputMarshaller.Instance;
+                marshaller.Marshall(requestObject.Mpp, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

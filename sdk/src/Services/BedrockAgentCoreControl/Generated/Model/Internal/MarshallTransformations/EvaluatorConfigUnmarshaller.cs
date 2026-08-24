@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.CodeBased = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("derived", targetDepth, ref reader))
+                {
+                    var unmarshaller = DerivedEvaluatorConfigUnmarshaller.Instance;
+                    unmarshalledObject.Derived = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("llmAsAJudge", targetDepth, ref reader))
                 {
                     var unmarshaller = LlmAsAJudgeEvaluatorConfigUnmarshaller.Instance;

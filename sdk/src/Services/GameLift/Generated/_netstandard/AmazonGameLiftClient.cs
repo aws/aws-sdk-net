@@ -1354,7 +1354,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
         ///  
         /// <para>
@@ -3303,7 +3303,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere
         /// 
         ///  
         /// <para>
@@ -3371,7 +3371,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere
         /// 
         ///  
         /// <para>
@@ -3453,7 +3453,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
         ///  
         /// <para>
@@ -3870,7 +3870,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2
+        /// <b>This API works with the following fleet types:</b> EC2, Container
         /// 
         ///  
         /// <para>
@@ -5470,7 +5470,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
         ///  
         /// <para>
@@ -5564,7 +5564,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
         /// 
         ///  
         /// <para>
@@ -5655,7 +5655,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere
         /// 
         ///  
         /// <para>
@@ -5740,7 +5740,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2
         /// 
         ///  
         /// <para>
@@ -5814,7 +5814,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2
         /// 
         ///  
         /// <para>
@@ -5902,7 +5902,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2
         /// 
         ///  
         /// <para>
@@ -7066,7 +7066,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2
+        /// <b>This API works with the following fleet types:</b> EC2, Container
         /// 
         ///  
         /// <para>
@@ -8818,7 +8818,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2
+        /// <b>This API works with the following fleet types:</b> EC2, Container
         /// 
         ///  
         /// <para>
@@ -8966,7 +8966,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> Anywhere, Container
+        /// <b>This API works with the following fleet types:</b> Anywhere
         /// 
         ///  
         /// <para>
@@ -11136,7 +11136,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
+        /// <b>This API works with the following fleet types:</b> EC2, Anywhere
         /// 
         ///  
         /// <para>
@@ -11359,7 +11359,7 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// <b>This API works with the following fleet types:</b> EC2, Container
+        /// <b>This API works with the following fleet types:</b> EC2
         /// 
         ///  
         /// <para>

@@ -66,7 +66,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// The value of the next token if it exists. Null if there is no more result.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=4096)]
         public string NextToken
         {
             get { return this._nextToken; }

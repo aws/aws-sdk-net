@@ -40,6 +40,7 @@ namespace Amazon.SecurityAgent.Model
         private Assets _assets;
         private CodeRemediationStrategy _codeRemediationStrategy;
         private CloudWatchLog _logConfig;
+        private double? _maxTaskHours;
         private string _serviceRole;
         private string _title;
         private ValidationMode _validationMode;
@@ -117,6 +118,26 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetLogConfig()
         {
             return this._logConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxTaskHours. 
+        /// <para>
+        /// The maximum number of billable task hours allowed for jobs started from this code
+        /// review. Must be a positive number. If not set, jobs run to completion with no budget
+        /// cap.
+        /// </para>
+        /// </summary>
+        public double? MaxTaskHours
+        {
+            get { return this._maxTaskHours; }
+            set { this._maxTaskHours = value; }
+        }
+
+        // Check to see if MaxTaskHours property is set
+        internal bool IsSetMaxTaskHours()
+        {
+            return this._maxTaskHours.HasValue; 
         }
 
         /// <summary>

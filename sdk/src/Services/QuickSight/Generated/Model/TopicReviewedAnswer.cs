@@ -140,7 +140,7 @@ namespace Amazon.QuickSight.Model
         /// The question for the <c>TopicReviewedAnswer</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string Question
         {
             get { return this._question; }

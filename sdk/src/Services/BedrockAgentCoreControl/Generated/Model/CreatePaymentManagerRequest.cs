@@ -47,6 +47,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private PaymentsAuthorizerType _authorizerType;
         private string _clientToken;
         private string _description;
+        private string _kmsKeyArn;
         private string _name;
         private string _roleArn;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
@@ -137,6 +138,27 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the customer managed KMS key to use for encrypting
+        /// sensitive payment manager data at rest. If you don't specify a key, the data is encrypted
+        /// with an Amazon Web Services owned key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

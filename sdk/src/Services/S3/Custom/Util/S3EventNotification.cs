@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.IO;
+using System.Text;
 using System.Text.Json;
 using Amazon.Runtime;
 
@@ -131,6 +133,124 @@ namespace Amazon.S3.Util
             {
                 throw new AmazonClientException("Failed to parse json string: " + e.Message, e);
             }
+        }
+
+        /// <summary>
+        /// Serializes this S3EventNotification to a JSON string using the same wire format
+        /// (property names, casing, and event name representation) that <see cref="ParseJson"/> reads.
+        /// The output can be round-tripped back through <see cref="ParseJson"/>.
+        /// </summary>
+        /// <returns>JSON string representation of this event notification.</returns>
+        public string ToJson()
+        {
+            using var stream = new MemoryStream();
+            using (var writer = new Utf8JsonWriter(stream))
+            {
+                writer.WriteStartObject();
+                writer.WritePropertyName("Records");
+                writer.WriteStartArray();
+
+                foreach (var record in Records ?? new List<S3EventNotificationRecord>())
+                {
+                    writer.WriteStartObject();
+
+                    WriteStringIfNotNull(writer, "eventVersion", record.EventVersion);
+                    WriteStringIfNotNull(writer, "eventSource", record.EventSource);
+                    WriteStringIfNotNull(writer, "awsRegion", record.AwsRegion);
+
+                    if (record.EventTime != default)
+                    {
+                        writer.WriteString("eventTime", record.EventTime.ToUniversalTime().ToString("o", CultureInfo.InvariantCulture));
+                    }
+
+                    if (record.EventName != null)
+                    {
+                        // ParseJson strips the "s3:" prefix, so emit the value without it to match the documented format.
+                        var eventName = record.EventName.Value;
+                        if (eventName.StartsWith("s3:", StringComparison.OrdinalIgnoreCase))
+                        {
+                            eventName = eventName.Substring(3);
+                        }
+                        writer.WriteString("eventName", eventName);
+                    }
+
+                    if (record.UserIdentity != null)
+                    {
+                        writer.WriteStartObject("userIdentity");
+                        WriteStringIfNotNull(writer, "principalId", record.UserIdentity.PrincipalId);
+                        writer.WriteEndObject();
+                    }
+
+                    if (record.RequestParameters != null)
+                    {
+                        writer.WriteStartObject("requestParameters");
+                        WriteStringIfNotNull(writer, "sourceIPAddress", record.RequestParameters.SourceIPAddress);
+                        writer.WriteEndObject();
+                    }
+
+                    if (record.ResponseElements != null)
+                    {
+                        writer.WriteStartObject("responseElements");
+                        WriteStringIfNotNull(writer, "x-amz-request-id", record.ResponseElements.XAmzRequestId);
+                        WriteStringIfNotNull(writer, "x-amz-id-2", record.ResponseElements.XAmzId2);
+                        writer.WriteEndObject();
+                    }
+
+                    if (record.S3 != null)
+                    {
+                        writer.WriteStartObject("s3");
+                        WriteStringIfNotNull(writer, "s3SchemaVersion", record.S3.S3SchemaVersion);
+                        WriteStringIfNotNull(writer, "configurationId", record.S3.ConfigurationId);
+
+                        if (record.S3.Bucket != null)
+                        {
+                            writer.WriteStartObject("bucket");
+                            WriteStringIfNotNull(writer, "name", record.S3.Bucket.Name);
+                            if (record.S3.Bucket.OwnerIdentity != null)
+                            {
+                                writer.WriteStartObject("ownerIdentity");
+                                WriteStringIfNotNull(writer, "principalId", record.S3.Bucket.OwnerIdentity.PrincipalId);
+                                writer.WriteEndObject();
+                            }
+                            WriteStringIfNotNull(writer, "arn", record.S3.Bucket.Arn);
+                            writer.WriteEndObject();
+                        }
+
+                        if (record.S3.Object != null)
+                        {
+                            writer.WriteStartObject("object");
+                            WriteStringIfNotNull(writer, "key", record.S3.Object.Key);
+                            writer.WriteNumber("size", record.S3.Object.Size);
+                            WriteStringIfNotNull(writer, "eTag", record.S3.Object.ETag);
+                            WriteStringIfNotNull(writer, "versionId", record.S3.Object.VersionId);
+                            WriteStringIfNotNull(writer, "sequencer", record.S3.Object.Sequencer);
+                            writer.WriteEndObject();
+                        }
+
+                        writer.WriteEndObject();
+                    }
+
+                    if (record.GlacierEventData != null)
+                    {
+                        writer.WriteStartObject("glacierEventData");
+                        if (record.GlacierEventData.RestoreEventData != null)
+                        {
+                            writer.WriteStartObject("restoreEventData");
+                            writer.WriteString("lifecycleRestorationExpiryTime", record.GlacierEventData.RestoreEventData.LifecycleRestorationExpiryTime.ToUniversalTime().ToString("o", CultureInfo.InvariantCulture));
+                            WriteStringIfNotNull(writer, "lifecycleRestoreStorageClass", record.GlacierEventData.RestoreEventData.LifecycleRestoreStorageClass);
+                            writer.WriteEndObject();
+                        }
+                        writer.WriteEndObject();
+                    }
+
+                    writer.WriteEndObject();
+                }
+
+                writer.WriteEndArray();
+                writer.WriteEndObject();
+            }
+
+            return Encoding.UTF8.GetString(stream.ToArray());
         }
 
         /// <summary>
@@ -338,6 +458,12 @@ namespace Amazon.S3.Util
             public S3GlacierEventDataEntity GlacierEventData { get; set; }
         }
 
+
+        private static void WriteStringIfNotNull(Utf8JsonWriter writer, string propertyName, string value)
+        {
+            if (value != null)
+                writer.WriteString(propertyName, value);
+        }
 
         private static string GetValueAsString(JsonElement data, string key)
         {

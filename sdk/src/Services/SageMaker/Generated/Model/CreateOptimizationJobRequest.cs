@@ -302,7 +302,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// When you use reserved capacity from a training plan, the optimization job runs on
         /// that reserved capacity instead of on-demand capacity. If you omit this field, the
-        /// job uses on-demand capacity. Currently, you can specify at most one training plan.
+        /// job uses on-demand capacity. You can specify at most one training plan.
         /// </para>
         ///  
         /// <para>

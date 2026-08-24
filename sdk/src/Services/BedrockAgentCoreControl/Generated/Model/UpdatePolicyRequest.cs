@@ -36,6 +36,17 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// identity. The updated policy is validated against the Cedar schema before being applied.
     /// This is an asynchronous operation. Use the <c>GetPolicy</c> operation to poll the
     /// <c>status</c> field to track completion.
+    /// 
+    ///  
+    /// <para>
+    /// If the updated policy is a temporal policy, the policy engine invalidates all active
+    /// temporal sessions. If the update adds or removes temporal operators, the policy engine
+    /// also invalidates active temporal sessions. For more information about temporal policy
+    /// sessions, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html">session-based
+    /// temporal policies</a>. The policy engine returns an HTTP 409 <c>ConflictException</c>
+    /// to in-flight sessions. To resume, you must start a new session with a new session
+    /// ID.
+    /// </para>
     /// </summary>
     public partial class UpdatePolicyRequest : AmazonBedrockAgentCoreControlRequest
     {

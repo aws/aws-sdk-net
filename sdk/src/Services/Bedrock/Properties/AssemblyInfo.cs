@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Bedrock. Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Bedrock. Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Bedrock. Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Amazon Bedrock. Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Amazon Bedrock. Model Invocation logging added to enable or disable logs in customer account. Model listing and description support added. Provisioned Throughput feature added. Custom model support added for creating custom models. Also includes list, and delete functions for custom model.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
@@ -49,4 +52,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.100.7")]
+[assembly: AssemblyFileVersion("4.0.100.9")]

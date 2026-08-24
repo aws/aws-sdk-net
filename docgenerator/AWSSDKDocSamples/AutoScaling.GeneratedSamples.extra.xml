@@ -1199,6 +1199,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.TerminateInstanceInAutoScalingGroup(Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.TerminateInstanceInAutoScalingGroup(Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.TerminateInstanceInAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example terminates multiple instances from the specified Auto Scaling group without updating the size of the group. Auto Scaling launches replacement instances after the specified instances terminate.
+                </para>
+                <code
+                    title="To terminate multiple instances in an Auto Scaling group"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-terminate-instance-in-auto-scaling-group-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
             <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.UpdateAutoScalingGroup(Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest)" />
             <member name="T:Amazon.AutoScaling.Model.UpdateAutoScalingGroupRequest" />

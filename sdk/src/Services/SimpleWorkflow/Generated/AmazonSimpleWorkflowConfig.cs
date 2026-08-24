@@ -33,7 +33,7 @@ namespace Amazon.SimpleWorkflow
     public partial class AmazonSimpleWorkflowConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SWF", "4.0.100.7");
+            InternalSDKUtils.BuildUserAgentString("SWF", "4.0.100.9");
 
         private static readonly AmazonSimpleWorkflowEndpointResolver EndpointResolver =
             new AmazonSimpleWorkflowEndpointResolver();

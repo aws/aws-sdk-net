@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// jobs, specify a value greater than 1. The default value is 1.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=100)]
         public int? InstanceCount
         {
             get { return this._instanceCount; }
@@ -65,7 +65,6 @@ namespace Amazon.SageMaker.Model
         /// The ML compute instance type for the processing job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public ProcessingInstanceType InstanceType
         {
             get { return this._instanceType; }

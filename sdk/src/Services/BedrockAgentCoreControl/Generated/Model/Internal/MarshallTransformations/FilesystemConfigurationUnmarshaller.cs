@@ -56,6 +56,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("capacityProviderVolume", targetDepth, ref reader))
+                {
+                    var unmarshaller = CapacityProviderVolumeConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.CapacityProviderVolume = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("efsAccessPoint", targetDepth, ref reader))
                 {
                     var unmarshaller = EfsAccessPointConfigurationUnmarshaller.Instance;

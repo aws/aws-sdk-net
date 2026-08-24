@@ -137,6 +137,11 @@ namespace Amazon.CodeCommit
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetBlobDifferences</a>, which returns a structured, line-level diff between two
+    /// blob versions in a repository, with optional surrounding context lines.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetFile</a>, which returns the base-64 encoded content of a specified file.
     /// </para>
     ///  </li> <li> 
@@ -2940,6 +2945,106 @@ namespace Amazon.CodeCommit
         }
         #endregion
         
+        #region  GetBlobDifferences
+
+        internal virtual GetBlobDifferencesResponse GetBlobDifferences(GetBlobDifferencesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBlobDifferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlobDifferencesResponseUnmarshaller.Instance;
+
+            return Invoke<GetBlobDifferencesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a structured, line-level diff between two blob versions in a repository. The
+        /// diff is returned as an ordered list of hunks, where each hunk represents a contiguous
+        /// run of changed lines together with any surrounding unchanged context lines.
+        /// 
+        ///  
+        /// <para>
+        /// Results are paginated. Use <c>MaxResults</c> and <c>NextToken</c> to retrieve additional
+        /// pages.
+        /// </para>
+        ///  
+        /// <para>
+        /// For the typical usage workflow, see <a>GetDifferences</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetBlobDifferences service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetBlobDifferences service method, as returned by CodeCommit.</returns>
+        /// <exception cref="Amazon.CodeCommit.Model.BlobIdDoesNotExistException">
+        /// The specified blob does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.BlobIdRequiredException">
+        /// A blob ID is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionIntegrityChecksFailedException">
+        /// An encryption integrity check failed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyAccessDeniedException">
+        /// An encryption key could not be accessed.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyDisabledException">
+        /// The encryption key is disabled.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyNotFoundException">
+        /// No encryption key was found.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.EncryptionKeyUnavailableException">
+        /// The encryption key is not available.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.FileTooLargeException">
+        /// The specified file exceeds the file size limit for CodeCommit. For more information
+        /// about limits in CodeCommit, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
+        /// in the <i>CodeCommit User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidBlobIdException">
+        /// The specified blob is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidContinuationTokenException">
+        /// The specified continuation token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidMaxResultsException">
+        /// The specified number of maximum results is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
+        /// A specified repository name is not valid.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This exception occurs only when a specified repository name is not valid. Other exceptions
+        /// occur when a required repository parameter is missing, or when a specified repository
+        /// does not exist.
+        /// </para>
+        ///  </note>
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryDoesNotExistException">
+        /// The specified repository does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.RepositoryNameRequiredException">
+        /// A repository name is required, but was not specified.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCommit.Model.ValidationException">
+        /// The specified input is either not valid, or it could not be validated.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetBlobDifferences">REST API Reference for GetBlobDifferences Operation</seealso>
+        public virtual Task<GetBlobDifferencesResponse> GetBlobDifferencesAsync(GetBlobDifferencesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetBlobDifferencesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetBlobDifferencesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetBlobDifferencesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetBranch
 
         internal virtual GetBranchResponse GetBranch(GetBranchRequest request)
@@ -3424,6 +3529,12 @@ namespace Amazon.CodeCommit
         /// Returns information about the differences in a valid commit specifier (such as a branch,
         /// tag, HEAD, commit ID, or other fully qualified reference). Results can be limited
         /// to a specified path.
+        /// 
+        ///  
+        /// <para>
+        /// For line-level diff details, pass the <c>beforeBlob.blobId</c> and <c>afterBlob.blobId</c>
+        /// values from a <c>Difference</c> object to <a>GetBlobDifferences</a>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDifferences service method.</param>
         /// <param name="cancellationToken">

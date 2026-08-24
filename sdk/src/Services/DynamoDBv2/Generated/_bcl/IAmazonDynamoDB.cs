@@ -874,12 +874,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// For tables and indexes with provisioned capacity, if none of the items can be processed
-        /// due to insufficient provisioned throughput on all of the tables in the request, then
-        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
-        /// all tables and indexes, if none of the items can be processed due to other throttling
-        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
-        /// a <c>ThrottlingException</c>.
+        /// If <c>BatchWriteItem</c> cannot process any items due to throttling (for example,
+        /// insufficient provisioned throughput on the tables in the request, or partition-level
+        /// or account-level limits), it returns a <c>ProvisionedThroughputExceededException</c>
+        /// or a <c>ThrottlingException</c>. Both indicate that the request was throttled; check
+        /// the <c>ThrottlingReason</c> field in the returned exception for details.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1033,12 +1032,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// For tables and indexes with provisioned capacity, if none of the items can be processed
-        /// due to insufficient provisioned throughput on all of the tables in the request, then
-        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
-        /// all tables and indexes, if none of the items can be processed due to other throttling
-        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
-        /// a <c>ThrottlingException</c>.
+        /// If <c>BatchWriteItem</c> cannot process any items due to throttling (for example,
+        /// insufficient provisioned throughput on the tables in the request, or partition-level
+        /// or account-level limits), it returns a <c>ProvisionedThroughputExceededException</c>
+        /// or a <c>ThrottlingException</c>. Both indicate that the request was throttled; check
+        /// the <c>ThrottlingReason</c> field in the returned exception for details.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1193,12 +1191,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// For tables and indexes with provisioned capacity, if none of the items can be processed
-        /// due to insufficient provisioned throughput on all of the tables in the request, then
-        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
-        /// all tables and indexes, if none of the items can be processed due to other throttling
-        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
-        /// a <c>ThrottlingException</c>.
+        /// If <c>BatchWriteItem</c> cannot process any items due to throttling (for example,
+        /// insufficient provisioned throughput on the tables in the request, or partition-level
+        /// or account-level limits), it returns a <c>ProvisionedThroughputExceededException</c>
+        /// or a <c>ThrottlingException</c>. Both indicate that the request was throttled; check
+        /// the <c>ThrottlingReason</c> field in the returned exception for details.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1356,12 +1353,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// For tables and indexes with provisioned capacity, if none of the items can be processed
-        /// due to insufficient provisioned throughput on all of the tables in the request, then
-        /// <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>. For
-        /// all tables and indexes, if none of the items can be processed due to other throttling
-        /// scenarios (such as exceeding partition level limits), then <c>BatchWriteItem</c> returns
-        /// a <c>ThrottlingException</c>.
+        /// If <c>BatchWriteItem</c> cannot process any items due to throttling (for example,
+        /// insufficient provisioned throughput on the tables in the request, or partition-level
+        /// or account-level limits), it returns a <c>ProvisionedThroughputExceededException</c>
+        /// or a <c>ThrottlingException</c>. Both indicate that the request was throttled; check
+        /// the <c>ThrottlingReason</c> field in the returned exception for details.
         /// </para>
         ///  <important> 
         /// <para>
@@ -5120,7 +5116,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
         /// Transaction cancellation reasons are ordered in the order of requested items, if an
-        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message. The <c>None</c>
+        /// code is returned as the literal string <c>"None"</c>, not a null or absent value;
+        /// the message field is omitted entirely for an item that has no error. This is important
+        /// to note when using an SDK that surfaces the code as an optional or nullable type.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5495,7 +5494,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
         /// Transaction cancellation reasons are ordered in the order of requested items, if an
-        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message. The <c>None</c>
+        /// code is returned as the literal string <c>"None"</c>, not a null or absent value;
+        /// the message field is omitted entirely for an item that has no error. This is important
+        /// to note when using an SDK that surfaces the code as an optional or nullable type.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7129,7 +7131,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. If the table has vector indexes, the following validations apply to write operations. A violation of any of these constraints results in a <c>ValidationException</c>: <ul> <li> The vector attribute must be a list of numbers with dimensions matching the index configuration. </li> <li> Vector values must fit in 32-bit IEEE-754 floating point format (f32). </li> <li> Partition key and inline filter attributes defined in the search schema must have data types matching the index schema definition. </li> </ul> Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ConditionalCheckFailedException">
@@ -7222,7 +7224,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. If the table has vector indexes, the following validations apply to write operations. A violation of any of these constraints results in a <c>ValidationException</c>: <ul> <li> The vector attribute must be a list of numbers with dimensions matching the index configuration. </li> <li> Vector values must fit in 32-bit IEEE-754 floating point format (f32). </li> <li> Partition key and inline filter attributes defined in the search schema must have data types matching the index schema definition. </li> </ul> Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appeared before they were updated with the <c>PutItem</c> request. For <c>PutItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - If <c>PutItem</c> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> The values returned are strongly consistent. There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. <note> The <c>ReturnValues</c> parameter is used by several DynamoDB operations; however, <c>PutItem</c> does not recognize any values other than <c>NONE</c> or <c>ALL_OLD</c>. </note></param>
         /// 
         /// <returns>The response from the PutItem service method, as returned by DynamoDB.</returns>
@@ -7409,7 +7411,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. If the table has vector indexes, the following validations apply to write operations. A violation of any of these constraints results in a <c>ValidationException</c>: <ul> <li> The vector attribute must be a list of numbers with dimensions matching the index configuration. </li> <li> Vector values must fit in 32-bit IEEE-754 floating point format (f32). </li> <li> Partition key and inline filter attributes defined in the search schema must have data types matching the index schema definition. </li> </ul> Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -7505,7 +7507,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to contain the item. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
-        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
+        /// <param name="item">A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item. You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key. If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition. If the table has vector indexes, the following validations apply to write operations. A violation of any of these constraints results in a <c>ValidationException</c>: <ul> <li> The vector attribute must be a list of numbers with dimensions matching the index configuration. </li> <li> Vector values must fit in 32-bit IEEE-754 floating point format (f32). </li> <li> Partition key and inline filter attributes defined in the search schema must have data types matching the index schema definition. </li> </ul> Empty String and Binary attribute values are allowed. Attribute values of type String and Binary must have a length greater than zero if the attribute is used as a key attribute for a table or index. For more information about primary keys, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html#HowItWorks.CoreComponents.PrimaryKey">Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. Each element in the <c>Item</c> map is an <c>AttributeValue</c> object.</param>
         /// <param name="returnValues">Use <c>ReturnValues</c> if you want to get the item attributes as they appeared before they were updated with the <c>PutItem</c> request. For <c>PutItem</c>, the valid values are: <ul> <li>  <c>NONE</c> - If <c>ReturnValues</c> is not specified, or if its value is <c>NONE</c>, then nothing is returned. (This setting is the default for <c>ReturnValues</c>.) </li> <li>  <c>ALL_OLD</c> - If <c>PutItem</c> overwrote an attribute name-value pair, then the content of the old item is returned. </li> </ul> The values returned are strongly consistent. There is no additional cost associated with requesting a return value aside from the small network and processing overhead of receiving a larger response. No read capacity units are consumed. <note> The <c>ReturnValues</c> parameter is used by several DynamoDB operations; however, <c>PutItem</c> does not recognize any values other than <c>NONE</c> or <c>ALL_OLD</c>. </note></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -9312,6 +9314,118 @@ namespace Amazon.DynamoDBv2
 
         #endregion
         
+        #region  SearchVectors
+
+
+        /// <summary>
+        /// Performs a vector similarity search on a vector index associated with an Amazon DynamoDB
+        /// table, and returns the most similar items sorted by similarity score based on the
+        /// distance function configured for the index.
+        /// 
+        ///  
+        /// <para>
+        /// Score interpretation depends on the distance function:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>COSINE</c> - Returns the items with the <i>k smallest</i> scores. Scores range
+        /// from 0 (identical) to 2 (opposite). Lower scores indicate higher similarity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EUCLIDEAN</c> - Returns the items with the <i>k smallest</i> scores. Scores represent
+        /// the Euclidean distance between vectors. Lower scores indicate higher similarity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DOT_PRODUCT</c> - Returns the items with the <i>k highest</i> scores. Higher scores
+        /// indicate higher similarity.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchVectors service method.</param>
+        /// 
+        /// <returns>The response from the SearchVectors service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/SearchVectors">REST API Reference for SearchVectors Operation</seealso>
+        SearchVectorsResponse SearchVectors(SearchVectorsRequest request);
+
+
+
+        /// <summary>
+        /// Performs a vector similarity search on a vector index associated with an Amazon DynamoDB
+        /// table, and returns the most similar items sorted by similarity score based on the
+        /// distance function configured for the index.
+        /// 
+        ///  
+        /// <para>
+        /// Score interpretation depends on the distance function:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>COSINE</c> - Returns the items with the <i>k smallest</i> scores. Scores range
+        /// from 0 (identical) to 2 (opposite). Lower scores indicate higher similarity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EUCLIDEAN</c> - Returns the items with the <i>k smallest</i> scores. Scores represent
+        /// the Euclidean distance between vectors. Lower scores indicate higher similarity.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DOT_PRODUCT</c> - Returns the items with the <i>k highest</i> scores. Higher scores
+        /// indicate higher similarity.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchVectors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchVectors service method, as returned by DynamoDB.</returns>
+        /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
+        /// An error occurred on the server side.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.RequestLimitExceededException">
+        /// Throughput exceeds the current throughput quota for your account. For detailed information
+        /// about why the request was throttled and the ARN of the impacted resource, find the
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception. Contact <a href="https://aws.amazon.com/support">Amazon
+        /// Web Services Support</a> to request a quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
+        /// The operation tried to access a nonexistent table or index. The resource might not
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
+        /// </exception>
+        /// <exception cref="Amazon.DynamoDBv2.Model.ThrottlingException">
+        /// The request was denied due to request throttling. For detailed information about why
+        /// the request was throttled and the ARN of the impacted resource, find the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_ThrottlingReason.html">ThrottlingReason</a>
+        /// field in the returned exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/SearchVectors">REST API Reference for SearchVectors Operation</seealso>
+        Task<SearchVectorsResponse> SearchVectorsAsync(SearchVectorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -9643,7 +9757,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
         /// Transaction cancellation reasons are ordered in the order of requested items, if an
-        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message. The <c>None</c>
+        /// code is returned as the literal string <c>"None"</c>, not a null or absent value;
+        /// the message field is omitted entirely for an item that has no error. This is important
+        /// to note when using an SDK that surfaces the code as an optional or nullable type.
         /// </para>
         ///  </note> 
         /// <para>
@@ -9955,7 +10072,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
         /// Transaction cancellation reasons are ordered in the order of requested items, if an
-        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message. The <c>None</c>
+        /// code is returned as the literal string <c>"None"</c>, not a null or absent value;
+        /// the message field is omitted entirely for an item that has no error. This is important
+        /// to note when using an SDK that surfaces the code as an optional or nullable type.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10317,7 +10437,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
         /// Transaction cancellation reasons are ordered in the order of requested items, if an
-        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message. The <c>None</c>
+        /// code is returned as the literal string <c>"None"</c>, not a null or absent value;
+        /// the message field is omitted entirely for an item that has no error. This is important
+        /// to note when using an SDK that surfaces the code as an optional or nullable type.
         /// </para>
         ///  </note> 
         /// <para>
@@ -10756,7 +10879,10 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
         /// Transaction cancellation reasons are ordered in the order of requested items, if an
-        /// item has no error it will have <c>None</c> code and <c>Null</c> message.
+        /// item has no error it will have <c>None</c> code and <c>Null</c> message. The <c>None</c>
+        /// code is returned as the literal string <c>"None"</c>, not a null or absent value;
+        /// the message field is omitted entirely for an item that has no error. This is important
+        /// to note when using an SDK that surfaces the code as an optional or nullable type.
         /// </para>
         ///  </note> 
         /// <para>

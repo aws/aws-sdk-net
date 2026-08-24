@@ -28,6 +28,36 @@ namespace Amazon.Backup.Model
     {
 
         /// <summary>
+        /// Paginator for ListBackupAccessPoints operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBackupAccessPointsPaginator ListBackupAccessPoints(ListBackupAccessPointsRequest request);
+
+        /// <summary>
+        /// Paginator for ListBackupAccessPointsByRecoveryPoint operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBackupAccessPointsByRecoveryPointPaginator ListBackupAccessPointsByRecoveryPoint(ListBackupAccessPointsByRecoveryPointRequest request);
+
+        /// <summary>
+        /// Paginator for ListBackupAccessPointsByResource operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListBackupAccessPointsByResourcePaginator ListBackupAccessPointsByResource(ListBackupAccessPointsByResourceRequest request);
+
+        /// <summary>
         /// Paginator for ListBackupJobs operation
         ///</summary>
         [AWSPaginator(

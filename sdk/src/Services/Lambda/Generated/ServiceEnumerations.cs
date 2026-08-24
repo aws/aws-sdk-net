@@ -2105,6 +2105,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Nodejs24X = new Runtime("nodejs24.x");
         /// <summary>
+        /// Constant Nodejs26X for Runtime
+        /// </summary>
+        public static readonly Runtime Nodejs26X = new Runtime("nodejs26.x");
+        /// <summary>
         /// Constant Nodejs43 for Runtime
         /// </summary>
         public static readonly Runtime Nodejs43 = new Runtime("nodejs4.3");
@@ -2156,6 +2160,10 @@ namespace Amazon.Lambda
         /// Constant Python314 for Runtime
         /// </summary>
         public static readonly Runtime Python314 = new Runtime("python3.14");
+        /// <summary>
+        /// Constant Python315 for Runtime
+        /// </summary>
+        public static readonly Runtime Python315 = new Runtime("python3.15");
         /// <summary>
         /// Constant Python36 for Runtime
         /// </summary>

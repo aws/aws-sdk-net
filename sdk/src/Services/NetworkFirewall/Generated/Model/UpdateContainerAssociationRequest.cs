@@ -31,8 +31,9 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContainerAssociation operation.
-    /// Updates the properties of an existing container association. Use this to modify the
-    /// container monitoring configurations or description.
+    /// Updates the monitoring configurations and description of a container association.
+    /// You can't change the container type after creation. Provide an update token to enable
+    /// optimistic concurrency control.
     /// </summary>
     public partial class UpdateContainerAssociationRequest : AmazonNetworkFirewallRequest
     {
@@ -47,8 +48,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerAssociationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the container association. You must specify the
-        /// ARN or the name, and you can specify both.
+        /// The Amazon Resource Name (ARN) of the container association.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the ARN or the name, and you can specify both. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -67,8 +71,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerAssociationName. 
         /// <para>
-        /// The descriptive name of the container association. You must specify the ARN or the
-        /// name, and you can specify both.
+        /// The descriptive name of the container association.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the ARN or the name, and you can specify both. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -87,8 +94,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerMonitoringConfigurations. 
         /// <para>
-        /// The updated list of container monitoring configurations that define which clusters
-        /// and container attributes to monitor.
+        /// The updated monitoring configurations for the container association. Each configuration
+        /// specifies an Amazon ECS or Amazon EKS cluster to monitor and optional attribute filters.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -112,7 +119,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the container association.
+        /// A description of the container association. When omitted, the existing description
+        /// remains unchanged. To clear the description, pass an empty string.
         /// </para>
         /// </summary>
         [AWSProperty(Max=512)]
@@ -131,7 +139,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key:value pairs associated with the resource.
+        /// The key:value pairs to associate with the resource.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -155,9 +163,18 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of container orchestration platform. This must match the type specified when
-        /// the container association was created.
+        /// The container type. This value must match the existing type and can't be changed.
+        /// Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ECS</c> - Amazon Elastic Container Service
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EKS</c> - Amazon Elastic Kubernetes Service
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ContainerMonitoringType Type
@@ -177,13 +194,16 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// A token used for optimistic locking. Network Firewall returns a token to your requests
         /// that access the container association. The token marks the state of the container
-        /// association resource at the time of the request. To make an update to the container
-        /// association, provide the token in your request. Network Firewall uses the token to
-        /// ensure that the container association hasn't changed since you last retrieved it.
-        /// If it has changed, the operation fails with an <c>InvalidTokenException</c>. If this
-        /// happens, retrieve the container association again to get a current copy of it with
-        /// a new token. Reapply your changes as needed, then try the operation again using the
-        /// new token.
+        /// association resource at the time of the request.
+        /// </para>
+        ///  
+        /// <para>
+        /// To make changes to the container association, you provide the token in your request.
+        /// Network Firewall uses the token to ensure that the container association hasn't changed
+        /// since you last retrieved it. If it has changed, the operation fails with an <c>InvalidTokenException</c>.
+        /// If this happens, retrieve the container association again to get a current copy of
+        /// it with a current token. Reapply your changes as needed, then try the operation again
+        /// using the new token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

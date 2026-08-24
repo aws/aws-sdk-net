@@ -25,6 +25,56 @@ namespace Amazon.ElementalInference
 {
 
     /// <summary>
+    /// Constants used for properties of type DataSourceSport.
+    /// </summary>
+    public class DataSourceSport : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AmericanFootball for DataSourceSport
+        /// </summary>
+        public static readonly DataSourceSport AmericanFootball = new DataSourceSport("american-football");
+        /// <summary>
+        /// Constant Basketball for DataSourceSport
+        /// </summary>
+        public static readonly DataSourceSport Basketball = new DataSourceSport("basketball");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataSourceSport(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataSourceSport FindValue(string value)
+        {
+            return FindValue<DataSourceSport>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataSourceSport(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DictionaryLanguage.
     /// </summary>
     public class DictionaryLanguage : ConstantClass
@@ -216,6 +266,52 @@ namespace Amazon.ElementalInference
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FeedStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FilterName.
+    /// </summary>
+    public class FilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPETITOR for FilterName
+        /// </summary>
+        public static readonly FilterName COMPETITOR = new FilterName("COMPETITOR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterName FindValue(string value)
+        {
+            return FindValue<FilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterName(string value)
         {
             return FindValue(value);
         }

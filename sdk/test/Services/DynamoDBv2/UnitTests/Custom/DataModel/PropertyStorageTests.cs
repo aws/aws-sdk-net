@@ -27,6 +27,7 @@ namespace AWSSDK_DotNet.UnitTests
             public int? Counter { get; set; }
             public int? Version { get; set; }
             public DateTime? Timestamp { get; set; }
+            public List<float> Embedding { get; set; }
         }
 
         private PropertyStorage CreatePropertyStorage(string propertyName = "Id")
@@ -42,6 +43,9 @@ namespace AWSSDK_DotNet.UnitTests
             {
             }
 
+            public DummyContext(IAmazonDynamoDB client, DynamoDBContextConfig config) : base(client, false, config)
+            {
+            }
         }
 
         private class FakePropertyConverter : IPropertyConverter
@@ -445,6 +449,43 @@ namespace AWSSDK_DotNet.UnitTests
             storage.Validate(_context);
 
             Assert.IsNull(storage.Converter);
+        }
+
+        [TestMethod]
+        public void Validate_AllowsSearchVectorOnListOfFloat()
+        {
+            var storage = CreatePropertyStorage("Embedding");
+            storage.IsSearchVector = true;
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+
+            // Should not throw for List<float> property with the V2 conversion
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var v2Context = new DummyContext(mockClient.Object, new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V2 });
+            storage.Validate(v2Context);
+        }
+
+        [TestMethod]
+        public void Validate_ThrowsSearchVectorOnNonListOfFloat()
+        {
+            var storage = CreatePropertyStorage("Name");
+            storage.IsSearchVector = true;
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+            Assert.ThrowsExactly<InvalidOperationException>(() => storage.Validate(_context));
+        }
+
+        [TestMethod]
+        public void Validate_ThrowsSearchVectorWithV1Conversion()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var v1Context = new DummyContext(mockClient.Object, new DynamoDBContextConfig { Conversion = DynamoDBEntryConversion.V1 });
+
+            var storage = CreatePropertyStorage("Embedding");
+            storage.IsSearchVector = true;
+            storage.IndexNames = new List<string>();
+            storage.FlattenProperties = new List<PropertyStorage>();
+            Assert.ThrowsExactly<InvalidOperationException>(() => storage.Validate(v1Context));
         }
     }
 }

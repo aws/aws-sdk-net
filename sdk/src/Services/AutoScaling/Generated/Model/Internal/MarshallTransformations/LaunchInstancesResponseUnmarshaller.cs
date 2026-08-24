@@ -141,6 +141,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentCallInProgress"))
+                {
+                    return IdempotentCallInProgressExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("IdempotentParameterMismatch"))
                 {
                     return IdempotentParameterMismatchErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

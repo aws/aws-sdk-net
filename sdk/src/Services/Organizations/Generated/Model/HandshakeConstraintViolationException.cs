@@ -78,8 +78,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-    /// is from a different marketplace than the accounts in the organization.
+    /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+    /// operates in the same Amazon Web Services partition as your account.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -90,6 +90,10 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
     /// of an account too quickly after its previous change.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -105,6 +109,11 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
     /// is both the sender and recipient of the invitation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+    /// Contact your billing administrator or Amazon Web Services Support for assistance.
     /// </para>
     ///  </li> <li> 
     /// <para>

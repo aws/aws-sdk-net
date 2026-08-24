@@ -213,7 +213,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property DbNodeStorageSizeInGBs. 
         /// <para>
-        /// The amount of local node storage, in gigabytes (GBs), that's allocated on the DB node.
+        /// The amount of local node storage, in gigabytes (GB), that's allocated on the DB node.
         /// </para>
         /// </summary>
         public int? DbNodeStorageSizeInGBs

@@ -203,6 +203,132 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  AcquireRole
+
+
+        /// <summary>
+        /// Creates an IAM role from the specified role template. The new role takes its configuration—including
+        /// its name, path, trust policy, inline and managed policies, permissions boundary, tags,
+        /// and maximum session duration—from the role template version that you specify. For
+        /// more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// If the template version defines parameters, use the <c>ReplacementValues</c> parameter
+        /// to supply the values that the service substitutes into the role during creation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcquireRole service method.</param>
+        /// 
+        /// <returns>The response from the AcquireRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NameConflictException">
+        /// The request was rejected because the resulting role name conflicts with an existing
+        /// role in the account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleModifiedException">
+        /// The request was rejected because someone modified the role template while the service
+        /// was creating the role. Wait a few minutes and try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleTemplateDisabledException">
+        /// The request was rejected because the specified role template is disabled. A disabled
+        /// role template cannot be used to create new roles. Contact your administrator to enable
+        /// the role template, or use a different role template.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcquireRole">REST API Reference for AcquireRole Operation</seealso>
+        AcquireRoleResponse AcquireRole(AcquireRoleRequest request);
+
+
+
+        /// <summary>
+        /// Creates an IAM role from the specified role template. The new role takes its configuration—including
+        /// its name, path, trust policy, inline and managed policies, permissions boundary, tags,
+        /// and maximum session duration—from the role template version that you specify. For
+        /// more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// If the template version defines parameters, use the <c>ReplacementValues</c> parameter
+        /// to supply the values that the service substitutes into the role during creation.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AcquireRole service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AcquireRole service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
+        /// The request was rejected because it attempted to create a resource that already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account limits. The error message describes the limit exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.MalformedPolicyDocumentException">
+        /// The request was rejected because the policy document was malformed. The error message
+        /// describes the specific error.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NameConflictException">
+        /// The request was rejected because the resulting role name conflicts with an existing
+        /// role in the account.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleModifiedException">
+        /// The request was rejected because someone modified the role template while the service
+        /// was creating the role. Wait a few minutes and try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.RoleTemplateDisabledException">
+        /// The request was rejected because the specified role template is disabled. A disabled
+        /// role template cannot be used to create new roles. Contact your administrator to enable
+        /// the role template, or use a different role template.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AcquireRole">REST API Reference for AcquireRole Operation</seealso>
+        Task<AcquireRoleResponse> AcquireRoleAsync(AcquireRoleRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AddClientIDToOpenIDConnectProvider
 
 
@@ -6101,6 +6227,66 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  GetAccountProperties
+
+
+        /// <summary>
+        /// Retrieves the account-level properties for the caller's Amazon Web Services account.
+        /// Account properties are configuration settings that control account-wide IAM features
+        /// such as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// The service returns properties as key-value pairs in <c>Namespace/PropertyName</c>
+        /// format. Each namespace groups related configuration settings. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutAccountProperties.html">PutAccountProperties</a>
+        /// to modify these properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountProperties service method.</param>
+        /// 
+        /// <returns>The response from the GetAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountProperties">REST API Reference for GetAccountProperties Operation</seealso>
+        GetAccountPropertiesResponse GetAccountProperties(GetAccountPropertiesRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the account-level properties for the caller's Amazon Web Services account.
+        /// Account properties are configuration settings that control account-wide IAM features
+        /// such as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// The service returns properties as key-value pairs in <c>Namespace/PropertyName</c>
+        /// format. Each namespace groups related configuration settings. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutAccountProperties.html">PutAccountProperties</a>
+        /// to modify these properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountProperties">REST API Reference for GetAccountProperties Operation</seealso>
+        Task<GetAccountPropertiesResponse> GetAccountPropertiesAsync(GetAccountPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetAccountSummary
 
 
@@ -6331,6 +6517,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -6372,6 +6561,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -6414,6 +6606,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy service method.</param>
@@ -6456,6 +6651,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -6500,6 +6698,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="policySourceArn">The ARN of a user, group, or role whose policies contain the context keys that you want listed. If you specify a user, the list includes context keys that are found in all policies that are attached to the user. The list also includes all groups that the user is a member of. If you pick a group or a role, then it includes only those context keys that are found in policies attached to that entity. Note that all parameters are shown in unencoded form here for clarity, but must be URL encoded to be included as a part of a real HTML request. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
@@ -6546,6 +6747,9 @@ namespace Amazon.IdentityManagement
         /// provide details about the context of an API query request. Context keys can be evaluated
         /// by testing against a value in an IAM policy. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetContextKeysForPrincipalPolicy.html">GetContextKeysForPrincipalPolicy</a>
         /// to understand what key names and values you must supply when you call <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulatePrincipalPolicy.html">SimulatePrincipalPolicy</a>.
+        /// This operation doesn't return context keys referenced by service control policies
+        /// (SCPs). Only context keys referenced by the identity-based policies attached to the
+        /// specified entity, and any additional policies that you provide, are included.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetContextKeysForPrincipalPolicy service method.</param>
@@ -7685,6 +7889,74 @@ namespace Amazon.IdentityManagement
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRolePolicy">REST API Reference for GetRolePolicy Operation</seealso>
         Task<GetRolePolicyResponse> GetRolePolicyAsync(GetRolePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetRoleTemplateVersion
+
+
+        /// <summary>
+        /// Retrieves information about a version of the specified role template. Role templates
+        /// define a reusable configuration—including role name and path patterns, trust policy,
+        /// inline and managed policies, permissions boundary, tags, and maximum session duration—that
+        /// you use to create IAM roles with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify a minor version, the service returns the template's default
+        /// minor version.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoleTemplateVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetRoleTemplateVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRoleTemplateVersion">REST API Reference for GetRoleTemplateVersion Operation</seealso>
+        GetRoleTemplateVersionResponse GetRoleTemplateVersion(GetRoleTemplateVersionRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a version of the specified role template. Role templates
+        /// define a reusable configuration—including role name and path patterns, trust policy,
+        /// inline and managed policies, permissions boundary, tags, and maximum session duration—that
+        /// you use to create IAM roles with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.
+        /// 
+        ///  
+        /// <para>
+        /// If you do not specify a minor version, the service returns the template's default
+        /// minor version.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRoleTemplateVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRoleTemplateVersion service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.NoSuchEntityException">
+        /// The request was rejected because it referenced a resource entity that does not exist.
+        /// The error message describes the resource.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetRoleTemplateVersion">REST API Reference for GetRoleTemplateVersion Operation</seealso>
+        Task<GetRoleTemplateVersionResponse> GetRoleTemplateVersionAsync(GetRoleTemplateVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -11603,6 +11875,74 @@ namespace Amazon.IdentityManagement
 
         #endregion
         
+        #region  PutAccountProperties
+
+
+        /// <summary>
+        /// Sets account-level properties for the caller's Amazon Web Services account. Account
+        /// properties are configuration settings that control account-wide IAM features such
+        /// as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// Specify properties as key-value pairs in <c>Namespace/PropertyName</c> format. All
+        /// properties in a single request must belong to the same namespace. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountProperties.html">GetAccountProperties</a>
+        /// to view the current properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountProperties service method.</param>
+        /// 
+        /// <returns>The response from the PutAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutAccountProperties">REST API Reference for PutAccountProperties Operation</seealso>
+        PutAccountPropertiesResponse PutAccountProperties(PutAccountPropertiesRequest request);
+
+
+
+        /// <summary>
+        /// Sets account-level properties for the caller's Amazon Web Services account. Account
+        /// properties are configuration settings that control account-wide IAM features such
+        /// as Role Manager.
+        /// 
+        ///  
+        /// <para>
+        /// Specify properties as key-value pairs in <c>Namespace/PropertyName</c> format. All
+        /// properties in a single request must belong to the same namespace. Use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_GetAccountProperties.html">GetAccountProperties</a>
+        /// to view the current properties.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountProperties service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.InvalidInputException">
+        /// The request was rejected because an invalid or out-of-range value was supplied for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.IdentityManagement.Model.ServiceFailureException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutAccountProperties">REST API Reference for PutAccountProperties Operation</seealso>
+        Task<PutAccountPropertiesResponse> PutAccountPropertiesAsync(PutAccountPropertiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  PutGroupPolicy
 
 
@@ -12865,7 +13205,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// The IAM policy simulator evaluates statements in identity-based policies, service
+        /// control policies (SCPs) including their condition keys and resource scoping, and the
         /// inputs that you provide during simulation. The policy simulator results can differ
         /// from your live Amazon Web Services environment. We recommend that you check your policies
         /// against your live Amazon Web Services environment after testing using the policy simulator
@@ -12922,7 +13263,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// The IAM policy simulator evaluates statements in identity-based policies, service
+        /// control policies (SCPs) including their condition keys and resource scoping, and the
         /// inputs that you provide during simulation. The policy simulator results can differ
         /// from your live Amazon Web Services environment. We recommend that you check your policies
         /// against your live Amazon Web Services environment after testing using the policy simulator
@@ -12980,6 +13322,13 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
+        /// For cross-account simulations, <c>EvalDecisionDetails</c> returns the decision for
+        /// each policy type (identity-based policy, resource-based policy, and permissions boundary).
+        /// This helps you identify which policy type is responsible for an allow or deny decision
+        /// when policies span multiple accounts.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Note:</b> This operation discloses information about the permissions granted to
         /// other users. If you do not want users to see other user's permissions, then consider
         /// allowing them to use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
@@ -12999,7 +13348,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// The IAM policy simulator evaluates statements in identity-based policies, service
+        /// control policies (SCPs) including their condition keys and resource scoping, and the
         /// inputs that you provide during simulation. The policy simulator results can differ
         /// from your live Amazon Web Services environment. We recommend that you check your policies
         /// against your live Amazon Web Services environment after testing using the policy simulator
@@ -13055,6 +13405,13 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
+        /// For cross-account simulations, <c>EvalDecisionDetails</c> returns the decision for
+        /// each policy type (identity-based policy, resource-based policy, and permissions boundary).
+        /// This helps you identify which policy type is responsible for an allow or deny decision
+        /// when policies span multiple accounts.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Note:</b> This operation discloses information about the permissions granted to
         /// other users. If you do not want users to see other user's permissions, then consider
         /// allowing them to use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_SimulateCustomPolicy.html">SimulateCustomPolicy</a>
@@ -13074,7 +13431,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  <note> 
         /// <para>
-        /// The IAM policy simulator evaluates statements in the identity-based policy and the
+        /// The IAM policy simulator evaluates statements in identity-based policies, service
+        /// control policies (SCPs) including their condition keys and resource scoping, and the
         /// inputs that you provide during simulation. The policy simulator results can differ
         /// from your live Amazon Web Services environment. We recommend that you check your policies
         /// against your live Amazon Web Services environment after testing using the policy simulator

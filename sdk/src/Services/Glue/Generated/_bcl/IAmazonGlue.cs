@@ -8014,6 +8014,60 @@ namespace Amazon.Glue
 
         #endregion
         
+        #region  GetDataCatalogExportConfiguration
+
+
+        /// <summary>
+        /// Retrieves the current export configuration for the Glue Data Catalog. The export configuration
+        /// controls whether catalog metadata is exported to S3 Tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogExportConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetDataCatalogExportConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogExportConfiguration">REST API Reference for GetDataCatalogExportConfiguration Operation</seealso>
+        GetDataCatalogExportConfigurationResponse GetDataCatalogExportConfiguration(GetDataCatalogExportConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves the current export configuration for the Glue Data Catalog. The export configuration
+        /// controls whether catalog metadata is exported to S3 Tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataCatalogExportConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataCatalogExportConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetDataCatalogExportConfiguration">REST API Reference for GetDataCatalogExportConfiguration Operation</seealso>
+        Task<GetDataCatalogExportConfigurationResponse> GetDataCatalogExportConfigurationAsync(GetDataCatalogExportConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetDataflowGraph
 
 
@@ -13741,6 +13795,9 @@ namespace Amazon.Glue
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
+        /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
         /// </exception>
@@ -13771,6 +13828,9 @@ namespace Amazon.Glue
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.ConcurrentModificationException">
         /// Two processes are trying to modify a resource simultaneously.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.EntityNotFoundException">
+        /// A specified entity does not exist
         /// </exception>
         /// <exception cref="Amazon.Glue.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -13897,6 +13957,66 @@ namespace Amazon.Glue
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogEncryptionSettings">REST API Reference for PutDataCatalogEncryptionSettings Operation</seealso>
         Task<PutDataCatalogEncryptionSettingsResponse> PutDataCatalogEncryptionSettingsAsync(PutDataCatalogEncryptionSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutDataCatalogExportConfiguration
+
+
+        /// <summary>
+        /// Creates or updates the export configuration for the Glue Data Catalog. Use this operation
+        /// to enable or disable the export of catalog metadata to S3 Tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogExportConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the PutDataCatalogExportConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogExportConfiguration">REST API Reference for PutDataCatalogExportConfiguration Operation</seealso>
+        PutDataCatalogExportConfigurationResponse PutDataCatalogExportConfiguration(PutDataCatalogExportConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates the export configuration for the Glue Data Catalog. Use this operation
+        /// to enable or disable the export of catalog metadata to S3 Tables.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataCatalogExportConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDataCatalogExportConfiguration service method, as returned by Glue.</returns>
+        /// <exception cref="Amazon.Glue.Model.AccessDeniedException">
+        /// Access to a resource was denied.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ConflictException">
+        /// The <c>CreatePartitions</c> API was called on a table that has indexes enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InternalServiceException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.InvalidInputException">
+        /// The input provided was not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Glue.Model.ThrottlingException">
+        /// The throttling threshhold was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/PutDataCatalogExportConfiguration">REST API Reference for PutDataCatalogExportConfiguration Operation</seealso>
+        Task<PutDataCatalogExportConfigurationResponse> PutDataCatalogExportConfigurationAsync(PutDataCatalogExportConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -15536,7 +15656,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts a materialized view refresh task run, for a specified table and columns.
+        /// Starts a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMaterializedViewRefreshTaskRun service method.</param>
         /// 
@@ -15565,7 +15685,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Starts a materialized view refresh task run, for a specified table and columns.
+        /// Starts a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMaterializedViewRefreshTaskRun service method.</param>
         /// <param name="cancellationToken">
@@ -16132,7 +16252,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Stops a materialized view refresh task run, for a specified table and columns.
+        /// Stops a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMaterializedViewRefreshTaskRun service method.</param>
         /// 
@@ -16158,7 +16278,7 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Stops a materialized view refresh task run, for a specified table and columns.
+        /// Stops a materialized view refresh task run for a specified materialized view.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMaterializedViewRefreshTaskRun service method.</param>
         /// <param name="cancellationToken">

@@ -46,7 +46,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// (e.g., Builtin.Helpfulness) or a custom evaluator ID. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }

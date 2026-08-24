@@ -82,6 +82,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     response.EngagementTitle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("EnrichmentContext", targetDepth, ref reader))
+                {
+                    var unmarshaller = EnrichmentContextUnmarshaller.Instance;
+                    response.EnrichmentContext = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ExistingMembers", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<EngagementMemberSummary, EngagementMemberSummaryUnmarshaller>(EngagementMemberSummaryUnmarshaller.Instance);

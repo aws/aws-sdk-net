@@ -151,6 +151,28 @@
     <pattern>[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionRequest.CapacityProviderId</property>
+    <min>12</min>
+    <max>59</max>
+    <pattern>[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionRequest.SessionId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionResponse.CapacityProviderArn</property>
+    <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:capacity-provider/[a-zA-Z][a-zA-Z0-9_]{0,47}-[a-zA-Z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.DeleteCapacityProviderSessionResponse.SessionId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.DeleteEventRequest.ActorId</property>
     <min>1</min>
     <max>255</max>
@@ -1548,6 +1570,12 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.CryptoX402PaymentInput.Permit2AllowanceLimit</property>
+    <min>1</min>
+    <max>78</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.CustomDescriptor.InlineContent</property>
     <min>1</min>
     <max>409600</max>
@@ -2042,6 +2070,28 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MppPaymentInput.Version</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MppPaymentOutput.PaymentCredential</property>
+    <min>1</min>
+    <max>32768</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MppPaymentOutput.SelectedPaymentId</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.MppPaymentOutput.Version</property>
+    <min>1</min>
+    <max>10</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.OAuth2Authentication.EmailAddress</property>
     <min>1</min>
     <max>254</max>
@@ -2074,6 +2124,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.OnlineEvaluationConfigSource.OnlineEvaluationConfigArn</property>
+    <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.OnlineEvaluationTraceConfig.OnlineEvaluationConfigArn</property>
     <pattern>arn:aws[a-zA-Z-]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:online-evaluation-config\/[a-zA-Z][a-zA-Z0-9-_]{0,99}-[a-zA-Z0-9]{10}</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -2352,6 +2406,16 @@
     <property>Amazon.BedrockAgentCore.Model.StripePrivyTokenResponseOutput.BasicAuthToken</property>
     <min>1</min>
     <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.SubscriptionRequiredException.ProductName</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockAgentCore.Model.SubscriptionRequiredException.SubscriptionUrl</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockAgentCore.Model.SystemPromptConfig.Text</property>

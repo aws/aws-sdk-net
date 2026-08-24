@@ -68,6 +68,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.Config = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NatGatewayAttachments", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NatGatewayAttachment, NatGatewayAttachmentUnmarshaller>(NatGatewayAttachmentUnmarshaller.Instance);
+                    unmarshalledObject.NatGatewayAttachments = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

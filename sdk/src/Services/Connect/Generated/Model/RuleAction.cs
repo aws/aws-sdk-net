@@ -40,6 +40,7 @@ namespace Amazon.Connect.Model
         private CreateCaseActionDefinition _createCaseAction;
         private EndAssociatedTasksActionDefinition _endAssociatedTasksAction;
         private EventBridgeActionDefinition _eventBridgeAction;
+        private ExtractInformationActionDefinition _extractInformationAction;
         private SendNotificationActionDefinition _sendNotificationAction;
         private SubmitAutoEvaluationActionDefinition _submitAutoEvaluationAction;
         private TaskActionDefinition _taskAction;
@@ -175,6 +176,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetEventBridgeAction()
         {
             return this._eventBridgeAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtractInformationAction. 
+        /// <para>
+        /// Information about the extract information action.
+        /// </para>
+        /// </summary>
+        public ExtractInformationActionDefinition ExtractInformationAction
+        {
+            get { return this._extractInformationAction; }
+            set { this._extractInformationAction = value; }
+        }
+
+        // Check to see if ExtractInformationAction property is set
+        internal bool IsSetExtractInformationAction()
+        {
+            return this._extractInformationAction != null;
         }
 
         /// <summary>

@@ -76,7 +76,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadNamePrefix.
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string WorkloadNamePrefix
         {
             get { return this._workloadNamePrefix; }

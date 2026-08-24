@@ -40,6 +40,7 @@ namespace Amazon.DynamoDBv2.Model
         private SSEDescription _sseDescription;
         private StreamSpecification _streamDescription;
         private TimeToLiveDescription _timeToLiveDescription;
+        private List<VectorIndexInfo> _vectorIndexes = AWSConfigs.InitializeCollections ? new List<VectorIndexInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexes. 
@@ -144,6 +145,31 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTimeToLiveDescription()
         {
             return this._timeToLiveDescription != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIndexes. 
+        /// <para>
+        /// The vector index properties for the table at the time the backup was created, including
+        /// the index name, vector attribute, dimensions, distance function, search schema, and
+        /// projection.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VectorIndexInfo> VectorIndexes
+        {
+            get { return this._vectorIndexes; }
+            set { this._vectorIndexes = value; }
+        }
+
+        // Check to see if VectorIndexes property is set
+        internal bool IsSetVectorIndexes()
+        {
+            return this._vectorIndexes != null && (this._vectorIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

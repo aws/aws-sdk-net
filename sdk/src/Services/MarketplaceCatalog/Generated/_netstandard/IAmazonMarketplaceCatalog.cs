@@ -226,6 +226,72 @@ namespace Amazon.MarketplaceCatalog
 
         #endregion
                 
+        #region  DescribeAssessment
+
+
+
+        /// <summary>
+        /// Returns the metadata and detailed results of a single assessment, including the framework
+        /// that was evaluated, the overall assessment result, and a paginated list of individual
+        /// control evaluation results.
+        /// 
+        ///  
+        /// <para>
+        /// To list available assessments before describing one, use the <c>ListAssessments</c>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssessment service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAssessment service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ResourceNotFoundException">
+        /// The specified resource wasn't found.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 404
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 429
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 422
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeAssessment">REST API Reference for DescribeAssessment Operation</seealso>
+        Task<DescribeAssessmentResponse> DescribeAssessmentAsync(DescribeAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeChangeSet
 
 
@@ -400,6 +466,70 @@ namespace Amazon.MarketplaceCatalog
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/GetResourcePolicy">REST API Reference for GetResourcePolicy Operation</seealso>
         Task<GetResourcePolicyResponse> GetResourcePolicyAsync(GetResourcePolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssessments
+
+
+
+        /// <summary>
+        /// Returns a paginated list of assessments associated with an entity or change set in
+        /// AWS Marketplace. An <i>assessment</i> is the result of evaluating a product or change
+        /// set against a framework, such as AMI Security or Container Security.
+        /// 
+        ///  
+        /// <para>
+        /// Use the <c>AssessmentTargetFilter</c> to scope results to a specific entity or change
+        /// set, and use <c>FrameworkFilters</c> to scope results to a single framework. To retrieve
+        /// detailed control-level results for an individual assessment, use the <c>DescribeAssessment</c>
+        /// action.
+        /// </para>
+        ///  
+        /// <para>
+        /// Results are sorted by assessment creation time in descending order.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssessments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssessments service method, as returned by MarketplaceCatalog.</returns>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.AccessDeniedException">
+        /// Access is denied.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 403
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.InternalServiceException">
+        /// There was an internal service exception.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 500
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ThrottlingException">
+        /// Too many requests.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 429
+        /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.MarketplaceCatalog.Model.ValidationException">
+        /// An error occurred during validation.
+        /// 
+        ///  
+        /// <para>
+        /// HTTP status code: 422
+        /// </para>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/ListAssessments">REST API Reference for ListAssessments Operation</seealso>
+        Task<ListAssessmentsResponse> ListAssessmentsAsync(ListAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

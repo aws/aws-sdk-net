@@ -609,6 +609,188 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityProviderStatus.
+    /// </summary>
+    public class CapacityProviderStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_FAILED for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus CREATE_FAILED = new CapacityProviderStatus("CREATE_FAILED");
+        /// <summary>
+        /// Constant CREATING for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus CREATING = new CapacityProviderStatus("CREATING");
+        /// <summary>
+        /// Constant DELETE_FAILED for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus DELETE_FAILED = new CapacityProviderStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETING for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus DELETING = new CapacityProviderStatus("DELETING");
+        /// <summary>
+        /// Constant READY for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus READY = new CapacityProviderStatus("READY");
+        /// <summary>
+        /// Constant UPDATE_FAILED for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus UPDATE_FAILED = new CapacityProviderStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for CapacityProviderStatus
+        /// </summary>
+        public static readonly CapacityProviderStatus UPDATING = new CapacityProviderStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderStatus FindValue(string value)
+        {
+            return FindValue<CapacityProviderStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityProviderStatusCode.
+    /// </summary>
+    public class CapacityProviderStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INTERNAL_SERVER_EXCEPTION for CapacityProviderStatusCode
+        /// </summary>
+        public static readonly CapacityProviderStatusCode INTERNAL_SERVER_EXCEPTION = new CapacityProviderStatusCode("INTERNAL_SERVER_EXCEPTION");
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for CapacityProviderStatusCode
+        /// </summary>
+        public static readonly CapacityProviderStatusCode QUOTA_EXCEEDED = new CapacityProviderStatusCode("QUOTA_EXCEEDED");
+        /// <summary>
+        /// Constant THROTTLED for CapacityProviderStatusCode
+        /// </summary>
+        public static readonly CapacityProviderStatusCode THROTTLED = new CapacityProviderStatusCode("THROTTLED");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for CapacityProviderStatusCode
+        /// </summary>
+        public static readonly CapacityProviderStatusCode VALIDATION_ERROR = new CapacityProviderStatusCode("VALIDATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityProviderStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityProviderStatusCode FindValue(string value)
+        {
+            return FindValue<CapacityProviderStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityProviderStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityReservationPreference.
+    /// </summary>
+    public class CapacityReservationPreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CapacityReservationsOnly for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference CapacityReservationsOnly = new CapacityReservationPreference("capacity-reservations-only");
+        /// <summary>
+        /// Constant None for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference None = new CapacityReservationPreference("none");
+        /// <summary>
+        /// Constant Open for CapacityReservationPreference
+        /// </summary>
+        public static readonly CapacityReservationPreference Open = new CapacityReservationPreference("open");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityReservationPreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityReservationPreference FindValue(string value)
+        {
+            return FindValue<CapacityReservationPreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityReservationPreference(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClaimMatchOperatorType.
     /// </summary>
     public class ClaimMatchOperatorType : ConstantClass
@@ -1278,6 +1460,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant AGENTCORE_EVALUATION_SIMULATED_V1 for DatasetSchemaType
         /// </summary>
         public static readonly DatasetSchemaType AGENTCORE_EVALUATION_SIMULATED_V1 = new DatasetSchemaType("AGENTCORE_EVALUATION_SIMULATED_V1");
+        /// <summary>
+        /// Constant GENERIC_EVALUATION_PREDEFINED_V1 for DatasetSchemaType
+        /// </summary>
+        public static readonly DatasetSchemaType GENERIC_EVALUATION_PREDEFINED_V1 = new DatasetSchemaType("GENERIC_EVALUATION_PREDEFINED_V1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1486,6 +1672,76 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DraftStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EbsVolumeType.
+    /// </summary>
+    public class EbsVolumeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Gp2 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Gp2 = new EbsVolumeType("gp2");
+        /// <summary>
+        /// Constant Gp3 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Gp3 = new EbsVolumeType("gp3");
+        /// <summary>
+        /// Constant Io1 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Io1 = new EbsVolumeType("io1");
+        /// <summary>
+        /// Constant Io2 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Io2 = new EbsVolumeType("io2");
+        /// <summary>
+        /// Constant Sc1 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Sc1 = new EbsVolumeType("sc1");
+        /// <summary>
+        /// Constant St1 for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType St1 = new EbsVolumeType("st1");
+        /// <summary>
+        /// Constant Standard for EbsVolumeType
+        /// </summary>
+        public static readonly EbsVolumeType Standard = new EbsVolumeType("standard");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EbsVolumeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EbsVolumeType FindValue(string value)
+        {
+            return FindValue<EbsVolumeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EbsVolumeType(string value)
         {
             return FindValue(value);
         }
@@ -1730,6 +1986,14 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant CustomCode for EvaluatorType
         /// </summary>
         public static readonly EvaluatorType CustomCode = new EvaluatorType("CustomCode");
+        /// <summary>
+        /// Constant CustomDerived for EvaluatorType
+        /// </summary>
+        public static readonly EvaluatorType CustomDerived = new EvaluatorType("CustomDerived");
+        /// <summary>
+        /// Constant ThirdParty for EvaluatorType
+        /// </summary>
+        public static readonly EvaluatorType ThirdParty = new EvaluatorType("ThirdParty");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2146,6 +2410,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GatewayProtocolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type GatewayRateLimitStatus.
+    /// </summary>
+    public class GatewayRateLimitStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for GatewayRateLimitStatus
+        /// </summary>
+        public static readonly GatewayRateLimitStatus ACTIVE = new GatewayRateLimitStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for GatewayRateLimitStatus
+        /// </summary>
+        public static readonly GatewayRateLimitStatus CREATING = new GatewayRateLimitStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for GatewayRateLimitStatus
+        /// </summary>
+        public static readonly GatewayRateLimitStatus DELETING = new GatewayRateLimitStatus("DELETING");
+        /// <summary>
+        /// Constant UPDATING for GatewayRateLimitStatus
+        /// </summary>
+        public static readonly GatewayRateLimitStatus UPDATING = new GatewayRateLimitStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public GatewayRateLimitStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static GatewayRateLimitStatus FindValue(string value)
+        {
+            return FindValue<GatewayRateLimitStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator GatewayRateLimitStatus(string value)
         {
             return FindValue(value);
         }
@@ -3227,6 +3549,56 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type Monitoring.
+    /// </summary>
+    public class Monitoring : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for Monitoring
+        /// </summary>
+        public static readonly Monitoring BASIC = new Monitoring("BASIC");
+        /// <summary>
+        /// Constant DETAILED for Monitoring
+        /// </summary>
+        public static readonly Monitoring DETAILED = new Monitoring("DETAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Monitoring(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Monitoring FindValue(string value)
+        {
+            return FindValue<Monitoring>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Monitoring(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type NetworkMode.
     /// </summary>
     public class NetworkMode : ConstantClass
@@ -3501,6 +3873,56 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type OperatingSystem.
+    /// </summary>
+    public class OperatingSystem : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LINUX_ARM64 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem LINUX_ARM64 = new OperatingSystem("LINUX_ARM64");
+        /// <summary>
+        /// Constant LINUX_X86_64 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem LINUX_X86_64 = new OperatingSystem("LINUX_X86_64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OperatingSystem(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OperatingSystem FindValue(string value)
+        {
+            return FindValue<OperatingSystem>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OperatingSystem(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OverrideType.
     /// </summary>
     public class OverrideType : ConstantClass
@@ -3621,11 +4043,73 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type PaymentConnectorProvisionMode.
+    /// </summary>
+    public class PaymentConnectorProvisionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MANUAL for PaymentConnectorProvisionMode
+        /// </summary>
+        public static readonly PaymentConnectorProvisionMode MANUAL = new PaymentConnectorProvisionMode("MANUAL");
+        /// <summary>
+        /// Constant QUICK_CREATE for PaymentConnectorProvisionMode
+        /// </summary>
+        public static readonly PaymentConnectorProvisionMode QUICK_CREATE = new PaymentConnectorProvisionMode("QUICK_CREATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PaymentConnectorProvisionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PaymentConnectorProvisionMode FindValue(string value)
+        {
+            return FindValue<PaymentConnectorProvisionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PaymentConnectorProvisionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PaymentConnectorStatus.
     /// </summary>
     public class PaymentConnectorStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AUTHENTICATION_EXPIRED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus AUTHENTICATION_EXPIRED = new PaymentConnectorStatus("AUTHENTICATION_EXPIRED");
+        /// <summary>
+        /// Constant AUTHENTICATION_FAILED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus AUTHENTICATION_FAILED = new PaymentConnectorStatus("AUTHENTICATION_FAILED");
+        /// <summary>
+        /// Constant AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED = new PaymentConnectorStatus("AWS_MARKETPLACE_SUBSCRIPTION_REQUIRED");
         /// <summary>
         /// Constant CREATE_FAILED for PaymentConnectorStatus
         /// </summary>
@@ -3642,6 +4126,14 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant DELETING for PaymentConnectorStatus
         /// </summary>
         public static readonly PaymentConnectorStatus DELETING = new PaymentConnectorStatus("DELETING");
+        /// <summary>
+        /// Constant PENDING_AUTHENTICATION for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus PENDING_AUTHENTICATION = new PaymentConnectorStatus("PENDING_AUTHENTICATION");
+        /// <summary>
+        /// Constant PROVISIONING for PaymentConnectorStatus
+        /// </summary>
+        public static readonly PaymentConnectorStatus PROVISIONING = new PaymentConnectorStatus("PROVISIONING");
         /// <summary>
         /// Constant READY for PaymentConnectorStatus
         /// </summary>
@@ -3904,6 +4396,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PaymentsAuthorizerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Period.
+    /// </summary>
+    public class Period : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Minute for Period
+        /// </summary>
+        public static readonly Period Minute = new Period("minute");
+        /// <summary>
+        /// Constant Second for Period
+        /// </summary>
+        public static readonly Period Second = new Period("second");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Period(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Period FindValue(string value)
+        {
+            return FindValue<Period>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Period(string value)
         {
             return FindValue(value);
         }
@@ -4202,6 +4744,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PrincipalMatchOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Provider.
+    /// </summary>
+    public class Provider : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AutoEval for Provider
+        /// </summary>
+        public static readonly Provider AutoEval = new Provider("AutoEval");
+        /// <summary>
+        /// Constant AWS for Provider
+        /// </summary>
+        public static readonly Provider AWS = new Provider("AWS");
+        /// <summary>
+        /// Constant Custom for Provider
+        /// </summary>
+        public static readonly Provider Custom = new Provider("Custom");
+        /// <summary>
+        /// Constant DeepEval for Provider
+        /// </summary>
+        public static readonly Provider DeepEval = new Provider("DeepEval");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Provider(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Provider FindValue(string value)
+        {
+            return FindValue<Provider>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Provider(string value)
         {
             return FindValue(value);
         }
@@ -5166,6 +5766,10 @@ namespace Amazon.BedrockAgentCoreControl
         /// Constant CONNECTOR for TargetType
         /// </summary>
         public static readonly TargetType CONNECTOR = new TargetType("CONNECTOR");
+        /// <summary>
+        /// Constant HTTP_CONNECTOR for TargetType
+        /// </summary>
+        public static readonly TargetType HTTP_CONNECTOR = new TargetType("HTTP_CONNECTOR");
         /// <summary>
         /// Constant LAMBDA for TargetType
         /// </summary>

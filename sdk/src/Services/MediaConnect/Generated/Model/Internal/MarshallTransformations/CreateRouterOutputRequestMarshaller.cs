@@ -101,6 +101,17 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetFabricConfiguration())
+            {
+                context.Writer.WritePropertyName("fabricConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FabricConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FabricConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetMaintenanceConfiguration())
             {
                 context.Writer.WritePropertyName("maintenanceConfiguration");

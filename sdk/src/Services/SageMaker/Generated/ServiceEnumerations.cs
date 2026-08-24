@@ -609,6 +609,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AIRecommendationInstanceType MlG6Xlarge = new AIRecommendationInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG712xlarge for AIRecommendationInstanceType
+        /// </summary>
+        public static readonly AIRecommendationInstanceType MlG712xlarge = new AIRecommendationInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for AIRecommendationInstanceType
+        /// </summary>
+        public static readonly AIRecommendationInstanceType MlG724xlarge = new AIRecommendationInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for AIRecommendationInstanceType
+        /// </summary>
+        public static readonly AIRecommendationInstanceType MlG72xlarge = new AIRecommendationInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for AIRecommendationInstanceType
+        /// </summary>
+        public static readonly AIRecommendationInstanceType MlG748xlarge = new AIRecommendationInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for AIRecommendationInstanceType
+        /// </summary>
+        public static readonly AIRecommendationInstanceType MlG74xlarge = new AIRecommendationInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for AIRecommendationInstanceType
+        /// </summary>
+        public static readonly AIRecommendationInstanceType MlG78xlarge = new AIRecommendationInstanceType("ml.g7.8xlarge");
+        /// <summary>
         /// Constant MlG7e12xlarge for AIRecommendationInstanceType
         /// </summary>
         public static readonly AIRecommendationInstanceType MlG7e12xlarge = new AIRecommendationInstanceType("ml.g7e.12xlarge");
@@ -1306,6 +1330,30 @@ namespace Amazon.SageMaker
         /// Constant MlG6Xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlG6Xlarge = new AppInstanceType("ml.g6.xlarge");
+        /// <summary>
+        /// Constant MlG712xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG712xlarge = new AppInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG724xlarge = new AppInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG72xlarge = new AppInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG748xlarge = new AppInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG74xlarge = new AppInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlG78xlarge = new AppInstanceType("ml.g7.8xlarge");
         /// <summary>
         /// Constant MlG7e12xlarge for AppInstanceType
         /// </summary>
@@ -5628,6 +5676,30 @@ namespace Amazon.SageMaker
         /// Constant MlG6Xlarge for ClusterInstanceType
         /// </summary>
         public static readonly ClusterInstanceType MlG6Xlarge = new ClusterInstanceType("ml.g6.xlarge");
+        /// <summary>
+        /// Constant MlG712xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG712xlarge = new ClusterInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG724xlarge = new ClusterInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG72xlarge = new ClusterInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG748xlarge = new ClusterInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG74xlarge = new ClusterInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for ClusterInstanceType
+        /// </summary>
+        public static readonly ClusterInstanceType MlG78xlarge = new ClusterInstanceType("ml.g7.8xlarge");
         /// <summary>
         /// Constant MlG7e12xlarge for ClusterInstanceType
         /// </summary>
@@ -15735,6 +15807,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly NotebookInstanceStatus Failed = new NotebookInstanceStatus("Failed");
         /// <summary>
+        /// Constant InMaintenance for NotebookInstanceStatus
+        /// </summary>
+        public static readonly NotebookInstanceStatus InMaintenance = new NotebookInstanceStatus("InMaintenance");
+        /// <summary>
         /// Constant InService for NotebookInstanceStatus
         /// </summary>
         public static readonly NotebookInstanceStatus InService = new NotebookInstanceStatus("InService");
@@ -15742,6 +15818,10 @@ namespace Amazon.SageMaker
         /// Constant Pending for NotebookInstanceStatus
         /// </summary>
         public static readonly NotebookInstanceStatus Pending = new NotebookInstanceStatus("Pending");
+        /// <summary>
+        /// Constant PendingMaintenance for NotebookInstanceStatus
+        /// </summary>
+        public static readonly NotebookInstanceStatus PendingMaintenance = new NotebookInstanceStatus("PendingMaintenance");
         /// <summary>
         /// Constant Stopped for NotebookInstanceStatus
         /// </summary>
@@ -17158,6 +17238,30 @@ namespace Amazon.SageMaker
         /// Constant MlG6Xlarge for ProcessingInstanceType
         /// </summary>
         public static readonly ProcessingInstanceType MlG6Xlarge = new ProcessingInstanceType("ml.g6.xlarge");
+        /// <summary>
+        /// Constant MlG712xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG712xlarge = new ProcessingInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG724xlarge = new ProcessingInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG72xlarge = new ProcessingInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG748xlarge = new ProcessingInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG74xlarge = new ProcessingInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for ProcessingInstanceType
+        /// </summary>
+        public static readonly ProcessingInstanceType MlG78xlarge = new ProcessingInstanceType("ml.g7.8xlarge");
         /// <summary>
         /// Constant MlG7e12xlarge for ProcessingInstanceType
         /// </summary>
@@ -20466,6 +20570,10 @@ namespace Amazon.SageMaker
         /// Constant LEAST_OUTSTANDING_REQUESTS for RoutingStrategy
         /// </summary>
         public static readonly RoutingStrategy LEAST_OUTSTANDING_REQUESTS = new RoutingStrategy("LEAST_OUTSTANDING_REQUESTS");
+        /// <summary>
+        /// Constant PREFIX_AWARE for RoutingStrategy
+        /// </summary>
+        public static readonly RoutingStrategy PREFIX_AWARE = new RoutingStrategy("PREFIX_AWARE");
         /// <summary>
         /// Constant RANDOM for RoutingStrategy
         /// </summary>
@@ -24180,6 +24288,30 @@ namespace Amazon.SageMaker
         /// Constant MlG6Xlarge for TrainingInstanceType
         /// </summary>
         public static readonly TrainingInstanceType MlG6Xlarge = new TrainingInstanceType("ml.g6.xlarge");
+        /// <summary>
+        /// Constant MlG712xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG712xlarge = new TrainingInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG724xlarge = new TrainingInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG72xlarge = new TrainingInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG748xlarge = new TrainingInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG74xlarge = new TrainingInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for TrainingInstanceType
+        /// </summary>
+        public static readonly TrainingInstanceType MlG78xlarge = new TrainingInstanceType("ml.g7.8xlarge");
         /// <summary>
         /// Constant MlG7e12xlarge for TrainingInstanceType
         /// </summary>

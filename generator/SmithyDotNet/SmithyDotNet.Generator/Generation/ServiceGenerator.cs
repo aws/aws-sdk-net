@@ -4,6 +4,7 @@ using SmithyDotNet.Generator.Writers;
 using SmithyDotNet.Generator.Writers.CodeAnalysis;
 using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.NuGet;
+using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
 using System.Collections.Concurrent;
 
@@ -84,7 +85,10 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         Emit(Path.Combine(generated, $"{clientName}Client.g.cs"), clientWriter.Write(cancellationToken));
 
         var configWriter = new ConfigWriter(context, modelFileName, serviceFileVersion);
-        Emit(Path.Combine(generated, $"{clientName}Config.g.cs"), configWriter.Write(cancellationToken));
+        // Plain .cs (not .g.cs): the SDK release automation stages Amazon*Config.cs after the
+        // post-version generator run rewrites the embedded file version; the same name keeps the
+        // Smithy config on the existing staging path.
+        Emit(Path.Combine(generated, $"{clientName}Config.cs"), configWriter.Write(cancellationToken));
 
         var defaultConfigurationWriter = new DefaultConfigurationWriter(context, modelFileName, defaultConfigurationModes);
         Emit(Path.Combine(generated, $"{clientName}DefaultConfiguration.g.cs"), defaultConfigurationWriter.Write(cancellationToken));
@@ -198,7 +202,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             Emit(Path.Combine(marshalling, $"{operation.Name}RequestMarshaller.g.cs"), requestMarshaller.Write(operation, cancellationToken));
             Emit(Path.Combine(marshalling, $"{operation.Name}ResponseUnmarshaller.g.cs"), responseUnmarshaller.Write(operation, cancellationToken));
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Input))
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Input, operation.Input))
             {
                 if (marshalledStructures.Add(shapeId))
                 {
@@ -206,7 +210,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 }
             }
 
-            foreach (var (shapeId, structure) in ReferencedStructures(operation.Output))
+            foreach (var (shapeId, structure) in ReferencedStructures(operation.Shape.Output, operation.Output))
             {
                 if (unmarshalledStructures.Add(shapeId))
                 {
@@ -220,6 +224,19 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 {
                     var name = ExceptionWriter.ToExceptionName(error.Id.Name);
                     Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(error.Shape, error.Id, cancellationToken));
+
+                    // An exception's rich members can target structures (directly, or as list/map
+                    // elements); the exception unmarshaller deserializes them, so those nested
+                    // structures need unmarshallers too. Exceptions are response-only, so only the
+                    // unmarshaller side is walked (never a marshaller), deduped against the shared set
+                    // so a structure also reachable from an output isn't emitted twice.
+                    foreach (var (shapeId, structure) in ReferencedStructures(error.Id, error.Shape))
+                    {
+                        if (unmarshalledStructures.Add(shapeId))
+                        {
+                            Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
+                        }
+                    }
                 }
             }
         }
@@ -228,6 +245,24 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         // this is emitted unconditionally (unlike the endpoint files, which are gated on a rule set).
         var authResolverWriter = new AuthResolverWriter(context, modelFileName);
         Emit(Path.Combine(@internal, $"{clientName}AuthResolver.g.cs"), authResolverWriter.Write(cancellationToken));
+
+        if (context.HasPaginators)
+        {
+            var paginatorInterfaceWriter = new PaginatorInterfaceWriter(context, modelFileName);
+            var paginatorClassWriter = new PaginatorClassWriter(context, modelFileName);
+
+            foreach (var paginatedOp in context.PaginatedOperations)
+            {
+                Emit(Path.Combine(model, $"I{paginatedOp.Operation.Name}Paginator.g.cs"), paginatorInterfaceWriter.Write(paginatedOp, cancellationToken));
+                Emit(Path.Combine(model, $"{paginatedOp.Operation.Name}Paginator.g.cs"), paginatorClassWriter.Write(paginatedOp, cancellationToken));
+            }
+
+            var factoryInterfaceWriter = new PaginatorFactoryInterfaceWriter(context, modelFileName);
+            Emit(Path.Combine(model, $"I{context.ServiceName}PaginatorFactory.g.cs"), factoryInterfaceWriter.Write(cancellationToken));
+
+            var factoryClassWriter = new PaginatorFactoryClassWriter(context, modelFileName);
+            Emit(Path.Combine(model, $"{context.ServiceName}PaginatorFactory.g.cs"), factoryClassWriter.Write(cancellationToken));
+        }
 
         var structureWriter = new StructureWriter(context, modelFileName);
         foreach (var (shapeId, structure) in context.Structures)
@@ -256,10 +291,16 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         return written.Keys.ToList();
     }
 
-    // Finds the nested structures inside a request or response so each gets its own (un)marshaller.
-    // A member is either a structure itself or a list/map of structures.
-    // TODO: only scans one level deep; make this recursive once the writers need (un)marshallers for deeper nesting.
-    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(StructureShape parent)
+    // Finds all structures transitively referenced from a request or response so each gets its own
+    // (un)marshaller. A member targets a structure directly, or indirectly via a list/map element.
+    // The visited set prevents infinite recursion on circular references.
+    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructures(ShapeId parentId, StructureShape parent)
+    {
+        var visited = new HashSet<ShapeId> { parentId };
+        return ReferencedStructuresRecursive(parent, visited);
+    }
+
+    private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
     {
         foreach (var member in parent.Members.Values)
         {
@@ -272,9 +313,18 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                 _ => member.Target,
             };
 
+            if (!visited.Add(structureId))
+            {
+                continue;
+            }
+
             if (context.Resolve(structureId) is StructureShape structure)
             {
                 yield return (structureId, structure);
+                foreach (var nested in ReferencedStructuresRecursive(structure, visited))
+                {
+                    yield return nested;
+                }
             }
         }
     }

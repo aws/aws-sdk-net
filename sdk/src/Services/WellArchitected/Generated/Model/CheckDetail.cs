@@ -259,7 +259,10 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The date and time when the check was last updated.
+        /// </para>
         /// </summary>
         public DateTime? UpdatedAt
         {

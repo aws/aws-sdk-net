@@ -28,16 +28,13 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// BatchUpdateWorkloadEstimateUsageEntry Marshaller
     /// </summary>
-    public class BatchUpdateWorkloadEstimateUsageEntryMarshaller : IRequestMarshaller<BatchUpdateWorkloadEstimateUsageEntry, CborMarshallerContext> 
+    public class BatchUpdateWorkloadEstimateUsageEntryMarshaller : IRequestMarshaller<BatchUpdateWorkloadEstimateUsageEntry, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,26 +42,35 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(BatchUpdateWorkloadEstimateUsageEntry requestObject, CborMarshallerContext context)
+        public void Marshall(BatchUpdateWorkloadEstimateUsageEntry requestObject, JsonMarshallerContext context)
         {
-            if (requestObject == null)
+            if(requestObject == null)
                 return;
+            if(requestObject.IsSetAmount())
+            {
+                context.Writer.WritePropertyName("amount");
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Amount.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Amount.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(requestObject.Amount.Value);
+                }
+            }
 
-            if (requestObject.IsSetAmount())
+            if(requestObject.IsSetGroup())
             {
-                context.Writer.WriteTextString("amount");
-                context.Writer.WriteOptimizedNumber(requestObject.Amount.Value);
+                context.Writer.WritePropertyName("group");
+                context.Writer.WriteStringValue(requestObject.Group);
             }
-            if (requestObject.IsSetGroup())
+
+            if(requestObject.IsSetId())
             {
-                context.Writer.WriteTextString("group");
-                context.Writer.WriteTextString(requestObject.Group);
+                context.Writer.WritePropertyName("id");
+                context.Writer.WriteStringValue(requestObject.Id);
             }
-            if (requestObject.IsSetId())
-            {
-                context.Writer.WriteTextString("id");
-                context.Writer.WriteTextString(requestObject.Id);
-            }
+
         }
 
         /// <summary>

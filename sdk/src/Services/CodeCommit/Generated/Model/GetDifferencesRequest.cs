@@ -34,6 +34,12 @@ namespace Amazon.CodeCommit.Model
     /// Returns information about the differences in a valid commit specifier (such as a branch,
     /// tag, HEAD, commit ID, or other fully qualified reference). Results can be limited
     /// to a specified path.
+    /// 
+    ///  
+    /// <para>
+    /// For line-level diff details, pass the <c>beforeBlob.blobId</c> and <c>afterBlob.blobId</c>
+    /// values from a <c>Difference</c> object to <a>GetBlobDifferences</a>.
+    /// </para>
     /// </summary>
     public partial class GetDifferencesRequest : AmazonCodeCommitRequest
     {

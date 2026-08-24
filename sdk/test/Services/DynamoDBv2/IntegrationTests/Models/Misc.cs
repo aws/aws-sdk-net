@@ -1,4 +1,5 @@
 using Amazon.DynamoDBv2.DataModel;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
@@ -151,5 +152,18 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         [DynamoDBRangeKey]
         public new int Age { get; set; }
+    }
+
+    [DynamoDBTable("SearchVectorsTable")]
+    public class SearchVectorsEntity
+    {
+        [DynamoDBHashKey]
+        public string Id { get; set; }
+        public string VectorHash { get; set; }
+        public string VectorInlineFilter1 { get; set; }
+        public int VectorInlineFilter2 { get; set; }
+        public List<float> VectorEmbedding { get; set; }
+        public string NonIndexedData { get; set; }
+
     }
 }

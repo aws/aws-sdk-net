@@ -74,6 +74,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetNielsenNwOnlySettings())
+            {
+                context.Writer.WritePropertyName("nielsenNwOnlySettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NielsenNwOnlyMarshaller.Instance;
+                marshaller.Marshall(requestObject.NielsenNwOnlySettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

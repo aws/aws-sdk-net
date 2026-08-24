@@ -94,7 +94,10 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c> property.
     /// Transaction cancellation reasons are ordered in the order of requested items, if an
-    /// item has no error it will have <c>None</c> code and <c>Null</c> message.
+    /// item has no error it will have <c>None</c> code and <c>Null</c> message. The <c>None</c>
+    /// code is returned as the literal string <c>"None"</c>, not a null or absent value;
+    /// the message field is omitted entirely for an item that has no error. This is important
+    /// to note when using an SDK that surfaces the code as an optional or nullable type.
     /// </para>
     ///  </note> 
     /// <para>

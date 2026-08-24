@@ -35,10 +35,28 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class Container
     {
+        private long? _bitRate;
         private double? _duration;
         private Format _format;
         private string _startTimecode;
         private List<Track> _tracks = AWSConfigs.InitializeCollections ? new List<Track>() : null;
+
+        /// <summary>
+        /// Gets and sets the property BitRate. The overall bit rate of your media file, in bits
+        /// per second. This is derived from the file size and duration as (file size in bytes
+        /// * 8) / duration in seconds.
+        /// </summary>
+        public long? BitRate
+        {
+            get { return this._bitRate; }
+            set { this._bitRate = value; }
+        }
+
+        // Check to see if BitRate property is set
+        internal bool IsSetBitRate()
+        {
+            return this._bitRate.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Duration. The total duration of your media file, in seconds.

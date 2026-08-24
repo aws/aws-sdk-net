@@ -31,10 +31,10 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCertificateOptions operation.
-    /// Updates a certificate. You can use this function to specify whether to export your
-    /// certificate. Certificate transparency logging opt-out is no longer available. For
-    /// more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
-    /// Transparency Logging</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
+    /// Updates certificate options. You can use this operation to change the domain validation
+    /// method or specify whether to export your certificate. For more information, see <a
+    /// href="https://docs.aws.amazon.com/acm/latest/userguide/email-to-dns-migration.html">Migrate
+    /// from email to DNS validation</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
     /// Manager Exportable Managed Certificates</a>.
     /// </summary>
     public partial class UpdateCertificateOptionsRequest : AmazonCertificateManagerRequest
@@ -69,11 +69,10 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Use to update the options for your certificate. Currently, you can specify whether
-        /// to export your certificate. Certificate transparency logging opt-out is no longer
-        /// available. All public certificates are recorded in a certificate transparency log.
-        /// For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
-        /// Transparency Logging</a>.
+        /// Use to update the options for your certificate. Currently, you can change the domain
+        /// validation method or specify whether to export your certificate. For more information
+        /// about migrating from email to DNS validation, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/email-to-dns-migration.html">Migrate
+        /// from email to DNS validation</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

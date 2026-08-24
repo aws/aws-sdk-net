@@ -675,8 +675,8 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property ScanDnsName. 
         /// <para>
-        /// The FQDN of the DNS record for the Single Client Access Name (SCAN) IP addresses that
-        /// are associated with the VM cluster.
+        /// The fully qualified domain name (FQDN) of the DNS record for the Single Client Access
+        /// Name (SCAN) IP addresses that are associated with the VM cluster.
         /// </para>
         /// </summary>
         public string ScanDnsName

@@ -163,6 +163,25 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.RelatedContactId);
             }
 
+            if(publicRequest.IsSetSegmentAttributes())
+            {
+                context.Writer.WritePropertyName("SegmentAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestSegmentAttributesKvp in publicRequest.SegmentAttributes)
+                {
+                    context.Writer.WritePropertyName(publicRequestSegmentAttributesKvp.Key);
+                    var publicRequestSegmentAttributesValue = publicRequestSegmentAttributesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SegmentAttributeValueMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSegmentAttributesValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

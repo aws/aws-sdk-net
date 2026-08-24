@@ -1,6 +1,6 @@
 ---
 name: sdk-conventions
-description: Exact patterns generated code must follow to match the AWS SDK for .NET public API surface
+description: The public-API contract SmithyDotNet-generated code must match against the shipping AWS SDK for .NET - what must match vs. what can differ. Use before writing or changing any SmithyDotNet writer.
 ---
 # Skill: .NET SDK Conventions
 
@@ -100,7 +100,7 @@ Generated files go under `Generated/`. Prefer `.g.cs` suffix:
 Generated/
   IAmazon{ServiceName}.g.cs
   Amazon{ServiceName}Client.g.cs
-  Amazon{ServiceName}Config.g.cs          # placeholder for now
+  Amazon{ServiceName}Config.cs            # plain .cs so CI's Amazon*Config.cs glob stages it
   Amazon{ServiceName}Exception.g.cs
   Model/
     Amazon{ServiceName}Request.g.cs       # empty service request base
@@ -266,7 +266,7 @@ Must expose these public constructors:
 
 Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `[Serializable]` attribute on the class
-- `protected` serialization constructor `(SerializationInfo, StreamingContext)` — deserializes any additional exception members via `info.GetValue` for each property, then calls `base(info, context)`
+- `protected` serialization constructor `(SerializationInfo, StreamingContext)` — deserializes each serialized exception member (every modeled member except `message`) via `info.GetValue`, then calls `base(info, context)`
 - `public override void GetObjectData(SerializationInfo, StreamingContext)` with all three attributes (always emitted together as a unit from `ExceptionSerialization.t4`):
   ```csharp
   [System.Security.SecurityCritical]
@@ -278,9 +278,27 @@ Operation exceptions also include a `#if !NETSTANDARD` block containing:
       // info.AddValue(...) for each additional exception member
   }
   ```
-  The serialization constructor and `GetObjectData` are symmetric: both loop over the exception's members (from `ExceptionSerialization.t4`). For exceptions with additional properties, the constructor calls `info.GetValue` for each and `GetObjectData` calls `info.AddValue` for each. For exceptions with no extra members (e.g. all CloudTrail Data exceptions after filtering `message`), both bodies contain only the `base` call.
+  The serialization constructor and `GetObjectData` are symmetric: both loop over the same member set — every modeled member except `message` (from `ExceptionSerialization.t4`), so base-owned `RequestId`/`ErrorCode` are serialized here even though they get no property (see "Exception Member Property Names"). The constructor calls `info.GetValue` for each and `GetObjectData` calls `info.AddValue` for each, both keyed on the .NET property name. For exceptions whose only member is `message` (e.g. all CloudTrail Data exceptions), both bodies contain only the `base` call.
 
 The service-level exception base (`Amazon{ServiceName}Exception`) inherits from `AmazonServiceException` and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
+
+### Exception Member Property Names
+
+Exception members are named like any structure member, with two base-class adjustments:
+- A member named `errorType` becomes the property `RequestErrorType` (wire name unchanged) so it doesn't hide `AmazonServiceException.ErrorType`.
+- A member named `Retryable` is emitted with `new` to hide `AmazonServiceException.Retryable`.
+
+The `Equals`-gets-`new` rule is structure-wide (it hides `object.Equals(object)`), not exception-specific — applied by `TypeMapper.ResolveMembers` on every structure.
+
+`RequestId` and `ErrorCode` get **no property** — `AmazonServiceException` already declares them, so one would shadow the base (matching C2J's `StructureGenerator.tt`). They are still serialized and read from the error body into the inherited property, though: C2J's `ExceptionSerialization.t4` and `JsonRPCExceptionUnmarshaller.tt` loop the member set that filters only `message`, so `ExceptionWriter.ResolveSerializedMembers` (serialization block + unmarshaller) keeps them, while `WriteException` filters them out of the property set inline. Every other member is emitted as-is, even when it shadows an inherited property (`StatusCode`, `InnerException`, …) — matching C2J. See type-mapping's "Error Shape Members".
+
+### Retryable Errors
+
+An error shape carrying the `@retryable` trait emits a public override that marks it retryable:
+```csharp
+public override RetryableDetails Retryable { get; } = new RetryableDetails(<throttling>);
+```
+`<throttling>` is the trait's `throttling` value (`true`/`false`); an empty `@retryable` (`{}`) is retryable but not throttling (`false`). The base `AmazonServiceException.Retryable` returns `null`, so emitting a non-null `RetryableDetails` is what marks the exception retryable — errors without the trait emit no override. `RetryableDetails` resolves via `Amazon.Runtime` (already in the model file's usings).
 
 ## Client Interface
 

@@ -971,6 +971,10 @@ namespace Amazon.ACMPCA
         /// </summary>
         public static readonly SigningAlgorithm SHA256WITHRSA = new SigningAlgorithm("SHA256WITHRSA");
         /// <summary>
+        /// Constant SHA256WITHRSA_PSS for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm SHA256WITHRSA_PSS = new SigningAlgorithm("SHA256WITHRSA_PSS");
+        /// <summary>
         /// Constant SHA384WITHECDSA for SigningAlgorithm
         /// </summary>
         public static readonly SigningAlgorithm SHA384WITHECDSA = new SigningAlgorithm("SHA384WITHECDSA");
@@ -979,6 +983,10 @@ namespace Amazon.ACMPCA
         /// </summary>
         public static readonly SigningAlgorithm SHA384WITHRSA = new SigningAlgorithm("SHA384WITHRSA");
         /// <summary>
+        /// Constant SHA384WITHRSA_PSS for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm SHA384WITHRSA_PSS = new SigningAlgorithm("SHA384WITHRSA_PSS");
+        /// <summary>
         /// Constant SHA512WITHECDSA for SigningAlgorithm
         /// </summary>
         public static readonly SigningAlgorithm SHA512WITHECDSA = new SigningAlgorithm("SHA512WITHECDSA");
@@ -986,6 +994,10 @@ namespace Amazon.ACMPCA
         /// Constant SHA512WITHRSA for SigningAlgorithm
         /// </summary>
         public static readonly SigningAlgorithm SHA512WITHRSA = new SigningAlgorithm("SHA512WITHRSA");
+        /// <summary>
+        /// Constant SHA512WITHRSA_PSS for SigningAlgorithm
+        /// </summary>
+        public static readonly SigningAlgorithm SHA512WITHRSA_PSS = new SigningAlgorithm("SHA512WITHRSA_PSS");
         /// <summary>
         /// Constant SM3WITHSM2 for SigningAlgorithm
         /// </summary>

@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// value for the constant.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string SingularConstant
         {
             get { return this._singularConstant; }

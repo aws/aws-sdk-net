@@ -40,6 +40,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private PaymentsAuthorizerType _authorizerType;
         private string _clientToken;
         private string _description;
+        private string _kmsKeyArn;
         private string _paymentManagerId;
         private string _roleArn;
 
@@ -119,6 +120,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The updated Amazon Resource Name (ARN) of the customer managed KMS key used to encrypt
+        /// sensitive payment manager data at rest.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
         }
 
         /// <summary>

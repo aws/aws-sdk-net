@@ -35,7 +35,27 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DestinationConfiguration
     {
+        private LookupTableConfiguration _lookupTableConfiguration;
         private S3Configuration _s3Configuration;
+
+        /// <summary>
+        /// Gets and sets the property LookupTableConfiguration. 
+        /// <para>
+        /// Configuration for delivering query results to a lookup table. The query results automatically
+        /// populate or refresh the specified lookup table on each scheduled execution.
+        /// </para>
+        /// </summary>
+        public LookupTableConfiguration LookupTableConfiguration
+        {
+            get { return this._lookupTableConfiguration; }
+            set { this._lookupTableConfiguration = value; }
+        }
+
+        // Check to see if LookupTableConfiguration property is set
+        internal bool IsSetLookupTableConfiguration()
+        {
+            return this._lookupTableConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3Configuration. 
@@ -43,7 +63,6 @@ namespace Amazon.CloudWatchLogs.Model
         /// Configuration for delivering query results to Amazon S3.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public S3Configuration S3Configuration
         {
             get { return this._s3Configuration; }

@@ -55,7 +55,7 @@ namespace Amazon.AutoScaling.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>reservations-then-balanced</c> - Auto Scaling will first attempt to launch into
-        /// your Capacity Reservations, and then balance any remaining capacity across the healthy
+        /// your Capacity Reservations, and then balance any remaining capacity across healthy
         /// Availability Zones.
         /// </para>
         ///  </li> </ul>

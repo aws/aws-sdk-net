@@ -24,6 +24,23 @@ public record OperationError(StructureShape Shape, ShapeId Id);
 public record Operation(string Name, OperationShape Shape, StructureShape Input, StructureShape Output, IReadOnlyList<OperationError> Errors);
 
 /// <summary>
+/// A paginated operation with its trait resolved and token/items members mapped to .NET property names.
+/// <see cref="ItemsProperty"/> is the leaf member name (the generated enumerable's name), while
+/// <see cref="ItemsPath"/> and <see cref="OutputTokenProperty"/> are full accessor paths off the
+/// response — they contain dots when the trait uses a dotted path (e.g. "DistributionList.NextMarker").
+/// </summary>
+public record PaginatedOperation(
+    Operation Operation,
+    PaginatedTrait Trait,
+    string InputTokenProperty,
+    string OutputTokenProperty,
+    string? PageSizeProperty,
+    string? ItemsProperty,
+    string? ItemsPath,
+    string? ItemsElementType
+);
+
+/// <summary>
 /// Aggregates everything code writers need about a single service: derived names,
 /// detected protocol, resolved operations, and partitioned reachable shapes.
 /// Built from a validated <see cref="ServiceIndex"/>.
@@ -50,9 +67,9 @@ public class GenerationContext
 
     /// <summary>
     /// The signing name used as the service config's <c>AuthenticationServiceName</c> (e.g.
-    /// "cloudtrail-data"). This is the <c>aws.auth#sigv4</c> trait's <c>name</c> when present,
-    /// falling back to <see cref="EndpointPrefix"/>, matching the legacy generator's precedence
-    /// (<c>SigningName ?? EndpointPrefix</c>).
+    /// "cloudtrail-data"): the <c>aws.auth#sigv4</c> trait's <c>name</c>, falling back to the
+    /// <c>aws.api#service</c> trait's <c>arnNamespace</c>, then the lowercase service shape name
+    /// (with <c>execute-api</c> taking precedence to preserve API Gateway signing).
     /// </summary>
     public string AuthenticationServiceName { get; }
 
@@ -121,11 +138,25 @@ public class GenerationContext
     /// <summary>All operations with their input/output/error shapes resolved.</summary>
     public IReadOnlyList<Operation> Operations { get; }
 
+    /// <summary>Operations carrying <c>@paginated</c>, with token/items members resolved to .NET property names. Sorted by operation name.</summary>
+    public IReadOnlyList<PaginatedOperation> PaginatedOperations { get; }
+
+    /// <summary>Whether the service has any paginated operations.</summary>
+    public bool HasPaginators => PaginatedOperations.Count > 0;
+
     /// <summary>Reachable structures excluding input, output, and error shapes, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
     public IReadOnlyDictionary<ShapeId, StructureShape> Structures { get; }
 
     /// <summary>Reachable structures that carry the <c>@error</c> trait, keyed by shape ID. Sorted by shape ID for deterministic output.</summary>
     public IReadOnlyDictionary<ShapeId, StructureShape> Errors { get; }
+
+    /// <summary>
+    /// Every <c>enum</c> shape in the model paired with its <see cref="ShapeId"/>, ordered by name for
+    /// stable output (the API does not depend on declaration order). <c>intEnum</c> shapes are excluded:
+    /// C2J emits a <c>ConstantClass</c> only for string enums, so an <c>intEnum</c>-typed member maps to
+    /// a plain integer with no enumeration entry.
+    /// </summary>
+    public IReadOnlyList<(ShapeId Id, EnumShape Shape)> Enums { get; }
 
     /// <summary>
     /// The service's <c>metadata.json</c>, or <c>null</c> when no metadata file was supplied.
@@ -162,15 +193,15 @@ public class GenerationContext
         ClientName = $"Amazon{ServiceName}";
         ApiVersion = index.Service.ApiVersion;
         AssemblyName = $"AWSSDK.{ServiceName}";
-        // TODO: EndpointPrefix and ApiVersion together form the generated <seealso> doc URL
-        // ("{EndpointPrefix}-{ApiVersion}"). EndpointPrefix is null-guarded below, but an empty or
-        // whitespace value in either would silently produce a malformed URL. Validate both once more
-        // services are onboarded.
-        EndpointPrefix = serviceTrait.EndpointPrefix ?? throw new GeneratorException("aws.api#service trait is missing endpointPrefix.");
 
-        // AuthenticationServiceName follows the legacy generator's precedence: the sigv4 signing name
-        // when the trait is present, otherwise the endpoint prefix.
-        AuthenticationServiceName = index.Service.GetSigV4()?.SigningName ?? EndpointPrefix;
+        var signingName = SdkNaming.ResolveSigningName(index.ServiceId.Name, serviceTrait.ArnNamespace, index.Service.GetSigV4()?.SigningName);
+
+        // Use the aws.api#service trait's endpointPrefix when modeled, otherwise the resolved signing
+        // name (some services, e.g. inspector-scan, omit endpointPrefix and rely on it).
+        EndpointPrefix = (serviceTrait.EndpointPrefix ?? signingName).ToLowerInvariant();
+
+        // AuthenticationServiceName is the resolved signing name.
+        AuthenticationServiceName = signingName;
 
         EndpointRuleSet = index.Service.GetEndpointRuleSet();
         HasEndpointRuleSet = EndpointRuleSet is not null;
@@ -185,11 +216,12 @@ public class GenerationContext
 
         ServiceDocumentation = index.Service.GetDocumentation();
         ServiceTitle = index.Service.GetTitle();
-        Protocol = DetectProtocol(index.Service);
+        Protocol = DetectProtocol(index.Service, SdkId);
         Operations = ResolveOperations(index);
         ServiceAuthSchemes = ModeledAuth.ServiceSchemes(index.Service);
         SupportsSigV4 = AuthSchemeMapping.ContainsSigV4(ServiceAuthSchemes);
         OperationsWithModeledAuth = ModeledAuth.OperationOverrides(Operations);
+        PaginatedOperations = PaginationResolver.Resolve(Operations, index);
 
         var structures = new Dictionary<ShapeId, StructureShape>();
         var errors = new Dictionary<ShapeId, StructureShape>();
@@ -213,10 +245,17 @@ public class GenerationContext
 
         Structures = structures;
         Errors = errors;
+
+        // Every model enum shape emits a ConstantClass, ordered by shape name for stable output.
+        // Scanning all shapes (not just the reachable set) matches C2J: some models carry orphan
+        // *ExceptionReason enums that no operation references.
+        Enums = index.AllEnums
+            .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
+            .ToList();
     }
 
     /// <summary>
-    /// Looks up a shape by its <see cref="ShapeId"/>. 
+    /// Looks up a shape by its <see cref="ShapeId"/>.
     /// <para />
     /// Prelude shapes (e.g. <c>smithy.api#String</c>)
     /// are not in the index but resolve via <see cref="PreludeShapes"/>, so callers never need to
@@ -264,14 +303,48 @@ public class GenerationContext
             .Any(member => member.HasEndpointContextParams());
     }
 
-    private static AWSProtocol DetectProtocol(ServiceShape service)
+    // AWS protocol trait IDs in the legacy generator's resolution priority
+    // (smithy-rpc-v2-cbor > json > rest-json > rest-xml > query > ec2). A service that models several
+    // resolves to the highest-priority one; awsJson1_0/1_1 share C2J's single "json" slot.
+    private static readonly string[] ProtocolPriority =
+    [
+        "smithy.protocols#rpcv2Cbor",
+        "aws.protocols#awsJson1_0",
+        "aws.protocols#awsJson1_1",
+        "aws.protocols#restJson1",
+        "aws.protocols#restXml",
+        "aws.protocols#awsQuery",
+        "aws.protocols#ec2Query",
+    ];
+
+    // Per-service protocol skips, mirroring the legacy generator: ARC Region switch models CBOR but
+    // must resolve to its awsJson protocol. Keyed by sdkId (the raw aws.api#service value).
+    private static readonly Dictionary<string, string> SkipProtocolForService = new()
     {
-        if (service.IsRestJson1())
+        ["ARC Region switch"] = "smithy.protocols#rpcv2Cbor",
+    };
+
+    // Resolves the service's protocol the way the legacy generator does — highest-priority trait,
+    // less any per-service skip — then fails loudly unless it is restJson1, the only one implemented.
+    // TODO: return the resolved protocol (extend AWSProtocol) once a second protocol is implemented.
+    private static AWSProtocol DetectProtocol(ServiceShape service, string sdkId)
+    {
+        var resolved = ResolveProtocol(service.Traits.Keys, sdkId) ?? throw new GeneratorException("Service shape has no recognized AWS protocol trait.");
+
+        if (resolved == "aws.protocols#restJson1")
         {
             return AWSProtocol.RestJson1;
         }
 
-        throw new GeneratorException("Service shape has no recognized AWS protocol trait.");
+        throw new GeneratorException($"Resolved protocol '{resolved}' is not supported yet; only aws.protocols#restJson1 is implemented.");
+    }
+
+    // The highest-priority protocol trait the service carries, less any per-service skip, or null when
+    // it models none.
+    public static string? ResolveProtocol(IReadOnlyCollection<string> traitIds, string sdkId)
+    {
+        var skip = SkipProtocolForService.GetValueOrDefault(sdkId);
+        return ProtocolPriority.FirstOrDefault(id => id != skip && traitIds.Contains(id));
     }
 
     private static List<Operation> ResolveOperations(ServiceIndex index)
@@ -311,4 +384,5 @@ public class GenerationContext
 
         throw new GeneratorException($"Could not resolve {property} shape '{shapeId}' for operation '{operationId}'.");
     }
+
 }

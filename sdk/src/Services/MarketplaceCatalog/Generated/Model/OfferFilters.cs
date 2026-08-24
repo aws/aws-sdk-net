@@ -37,6 +37,7 @@ namespace Amazon.MarketplaceCatalog.Model
     {
         private OfferAvailabilityEndDateFilter _availabilityEndDate;
         private OfferBuyerAccountsFilter _buyerAccounts;
+        private OfferCreatedBySourceFilter _createdBySource;
         private OfferEntityIdFilter _entityId;
         private OfferLastModifiedDateFilter _lastModifiedDate;
         private OfferNameFilter _name;
@@ -45,6 +46,8 @@ namespace Amazon.MarketplaceCatalog.Model
         private OfferReleaseDateFilter _releaseDate;
         private OfferResaleAuthorizationIdFilter _resaleAuthorizationId;
         private OfferStateFilter _state;
+        private OfferTargetAgreementIdFilter _targetAgreementId;
+        private OfferTargetAgreementIntentFilter _targetAgreementIntent;
         private OfferTargetingFilter _targeting;
 
         /// <summary>
@@ -81,6 +84,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetBuyerAccounts()
         {
             return this._buyerAccounts != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBySource. 
+        /// <para>
+        /// Allows filtering on the <c>CreatedBySource</c> of an offer.
+        /// </para>
+        /// </summary>
+        public OfferCreatedBySourceFilter CreatedBySource
+        {
+            get { return this._createdBySource; }
+            set { this._createdBySource = value; }
+        }
+
+        // Check to see if CreatedBySource property is set
+        internal bool IsSetCreatedBySource()
+        {
+            return this._createdBySource != null;
         }
 
         /// <summary>
@@ -231,6 +252,42 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAgreementId. 
+        /// <para>
+        /// Allows filtering on the <c>TargetAgreementId</c> of an offer.
+        /// </para>
+        /// </summary>
+        public OfferTargetAgreementIdFilter TargetAgreementId
+        {
+            get { return this._targetAgreementId; }
+            set { this._targetAgreementId = value; }
+        }
+
+        // Check to see if TargetAgreementId property is set
+        internal bool IsSetTargetAgreementId()
+        {
+            return this._targetAgreementId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAgreementIntent. 
+        /// <para>
+        /// Allows filtering on the <c>TargetAgreementIntent</c> of an offer.
+        /// </para>
+        /// </summary>
+        public OfferTargetAgreementIntentFilter TargetAgreementIntent
+        {
+            get { return this._targetAgreementIntent; }
+            set { this._targetAgreementIntent = value; }
+        }
+
+        // Check to see if TargetAgreementIntent property is set
+        internal bool IsSetTargetAgreementIntent()
+        {
+            return this._targetAgreementIntent != null;
         }
 
         /// <summary>

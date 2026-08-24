@@ -72,6 +72,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             {
                 while (context.ReadAtDepth(targetDepth, ref reader))
                 {
+                    if (context.TestExpression("ValidationExceptionFieldList", targetDepth, ref reader))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<ValidationExceptionField, ValidationExceptionFieldUnmarshaller>(ValidationExceptionFieldUnmarshaller.Instance);
+                        unmarshalledObject.ValidationExceptionFieldList = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

@@ -78,6 +78,11 @@ namespace Amazon.DynamoDBv2.Model
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/read-write-operations.html#write-operation-consumption">Capacity
         /// unity consumption for write operations</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the table has vector indexes, the response includes a <c>VectorIndexes</c> field
+        /// with <c>VectorWriteRequestBytes</c> consumed for each affected vector index.
+        /// </para>
         /// </summary>
         public ConsumedCapacity ConsumedCapacity
         {

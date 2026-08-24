@@ -43,18 +43,25 @@ public static class MemberWriter
 
         writer.WriteLine("/// </summary>");
 
+        if (member.Obsolete is string obsolete)
+        {
+            writer.WriteLine(obsolete);
+        }
+
         if (member.AwsProperty is string awsProperty)
         {
             writer.WriteLine(awsProperty);
         }
 
+        // `new` when the member shadows a base-class member (e.g., Equals or Retryable); empty otherwise.
+        var modifier = member.HidesBaseMember ? "new " : string.Empty;
         if (member.IsCollection)
         {
-            writer.WriteLine($"public {member.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.DotNetType}() : null;");
+            writer.WriteLine($"public {modifier}{member.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.DotNetType}() : null;");
         }
         else
         {
-            writer.WriteLine($"public {member.DotNetType} {member.PropertyName} {{ get; set; }}");
+            writer.WriteLine($"public {modifier}{member.DotNetType} {member.PropertyName} {{ get; set; }}");
         }
 
         writer.WriteLine();

@@ -29,53 +29,40 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using System.Formats.Cbor;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NegateReservedInstanceAction Object
     /// </summary>  
-    public class NegateReservedInstanceActionUnmarshaller : ICborUnmarshaller<NegateReservedInstanceAction, CborUnmarshallerContext>
+    public class NegateReservedInstanceActionUnmarshaller : IJsonUnmarshaller<NegateReservedInstanceAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NegateReservedInstanceAction Unmarshall(CborUnmarshallerContext context)
+        public NegateReservedInstanceAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NegateReservedInstanceAction unmarshalledObject = new NegateReservedInstanceAction();
             if (context.IsEmptyResponse)
                 return null;
-            var reader = context.Reader;
-            if (reader.PeekState() == CborReaderState.Null)
-            {
-                reader.ReadNull();
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
-            }
 
-            reader.ReadStartMap();
-            while (reader.PeekState() != CborReaderState.EndMap)
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                string propertyName = reader.ReadTextString();
-                switch (propertyName)
+                if (context.TestExpression("reservedInstancesId", targetDepth, ref reader))
                 {
-                    case "reservedInstancesId":
-                        {
-                            context.AddPathSegment("ReservedInstancesId");
-                            var unmarshaller = CborStringUnmarshaller.Instance;
-                            unmarshalledObject.ReservedInstancesId = unmarshaller.Unmarshall(context);
-                            context.PopPathSegment();
-                            break;
-                        }
-                    default:
-                        reader.SkipValue();
-                        break;
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ReservedInstancesId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
                 }
             }
-            reader.ReadEndMap();
             return unmarshalledObject;
         }
 

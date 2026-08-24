@@ -907,6 +907,64 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type IndexCategory.
+    /// </summary>
+    public class IndexCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for IndexCategory
+        /// </summary>
+        public static readonly IndexCategory AUTO = new IndexCategory("AUTO");
+        /// <summary>
+        /// Constant CUSTOM for IndexCategory
+        /// </summary>
+        public static readonly IndexCategory CUSTOM = new IndexCategory("CUSTOM");
+        /// <summary>
+        /// Constant DEFAULT for IndexCategory
+        /// </summary>
+        public static readonly IndexCategory DEFAULT = new IndexCategory("DEFAULT");
+        /// <summary>
+        /// Constant INACTIVE for IndexCategory
+        /// </summary>
+        public static readonly IndexCategory INACTIVE = new IndexCategory("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IndexCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IndexCategory FindValue(string value)
+        {
+            return FindValue<IndexCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IndexCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IndexSource.
     /// </summary>
     public class IndexSource : ConstantClass
@@ -1772,6 +1830,10 @@ namespace Amazon.CloudWatchLogs
     public class ScheduledQueryDestinationType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant LOOKUP_TABLE for ScheduledQueryDestinationType
+        /// </summary>
+        public static readonly ScheduledQueryDestinationType LOOKUP_TABLE = new ScheduledQueryDestinationType("LOOKUP_TABLE");
         /// <summary>
         /// Constant S3 for ScheduledQueryDestinationType
         /// </summary>

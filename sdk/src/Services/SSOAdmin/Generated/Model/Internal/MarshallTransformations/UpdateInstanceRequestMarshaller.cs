@@ -98,6 +98,12 @@ namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPermissionSetsEnabled())
+            {
+                context.Writer.WritePropertyName("PermissionSetsEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.PermissionSetsEnabled.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

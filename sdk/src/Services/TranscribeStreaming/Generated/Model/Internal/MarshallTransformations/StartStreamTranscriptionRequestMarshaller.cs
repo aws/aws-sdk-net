@@ -160,6 +160,11 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 request.Headers["x-amzn-transcribe-show-speaker-label"] = StringUtils.FromBool(publicRequest.ShowSpeakerLabel);
             }
         
+            if (publicRequest.IsSetTranscriptFormat()) 
+            {
+                request.Headers["x-amzn-transcribe-transcript-format"] = publicRequest.TranscriptFormat;
+            }
+        
             if (publicRequest.IsSetVocabularyFilterMethod()) 
             {
                 request.Headers["x-amzn-transcribe-vocabulary-filter-method"] = publicRequest.VocabularyFilterMethod;

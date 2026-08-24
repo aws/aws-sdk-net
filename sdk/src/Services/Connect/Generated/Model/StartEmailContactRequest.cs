@@ -80,7 +80,7 @@ namespace Amazon.Connect.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=10)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public List<EmailAttachment> Attachments
         {
             get { return this._attachments; }

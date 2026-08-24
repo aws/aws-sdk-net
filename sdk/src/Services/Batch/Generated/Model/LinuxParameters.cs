@@ -46,8 +46,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Devices. 
         /// <para>
         /// Any of the host devices to expose to the container. This parameter maps to <c>Devices</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--device</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>

@@ -233,7 +233,11 @@ namespace AWSSDK_DotNet.UnitTests
 
         private Mock<AmazonDynamoDBClient> CreateMockedClient(BasicAWSCredentials credentials)
         {
-            var client = new Mock<AmazonDynamoDBClient>(credentials);
+            var client = new Mock<AmazonDynamoDBClient>(credentials,
+                new AmazonDynamoDBConfig()
+                {
+                    ServiceURL = "http://localhost:8000"
+                });
 
             client.Setup(x => x.DescribeTable(It.IsAny<DescribeTableRequest>())).Returns(
                 new DescribeTableResponse()

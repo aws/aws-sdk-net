@@ -1683,6 +1683,106 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type FreeTrialStatusValue.
+    /// </summary>
+    public class FreeTrialStatusValue : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FreeTrialStatusValue
+        /// </summary>
+        public static readonly FreeTrialStatusValue ACTIVE = new FreeTrialStatusValue("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for FreeTrialStatusValue
+        /// </summary>
+        public static readonly FreeTrialStatusValue INACTIVE = new FreeTrialStatusValue("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FreeTrialStatusValue(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FreeTrialStatusValue FindValue(string value)
+        {
+            return FindValue<FreeTrialStatusValue>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FreeTrialStatusValue(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FreeTrialType.
+    /// </summary>
+    public class FreeTrialType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SECURITY_HUB_V2 for FreeTrialType
+        /// </summary>
+        public static readonly FreeTrialType SECURITY_HUB_V2 = new FreeTrialType("SECURITY_HUB_V2");
+        /// <summary>
+        /// Constant SECURITY_HUB_V2_MULTI_CLOUD_AZURE for FreeTrialType
+        /// </summary>
+        public static readonly FreeTrialType SECURITY_HUB_V2_MULTI_CLOUD_AZURE = new FreeTrialType("SECURITY_HUB_V2_MULTI_CLOUD_AZURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FreeTrialType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FreeTrialType FindValue(string value)
+        {
+            return FindValue<FreeTrialType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FreeTrialType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type GranularityField.
     /// </summary>
     public class GranularityField : ConstantClass

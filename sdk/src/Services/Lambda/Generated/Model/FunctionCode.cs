@@ -105,10 +105,18 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property S3ObjectStorageMode. 
         /// <para>
-        /// Specifies how the deployment package is stored. Use <c>COPY</c> (default) to upload
-        /// a copy of your deployment package to Lambda. Use <c>REFERENCE</c> to have Lambda reference
-        /// the deployment package from the specified Amazon S3 bucket.
+        /// Specifies how the deployment package is stored. Valid values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>COPY</c> (default) – Uploads a copy of your deployment package to Lambda.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REFERENCE</c> – Lambda references the deployment package from the specified Amazon
+        /// S3 bucket.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public S3ObjectStorageMode S3ObjectStorageMode
         {

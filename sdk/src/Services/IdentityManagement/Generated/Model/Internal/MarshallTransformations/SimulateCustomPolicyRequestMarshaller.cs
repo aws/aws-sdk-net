@@ -120,6 +120,33 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("MaxItems", StringUtils.FromInt(publicRequest.MaxItems));
                 }
+                if(publicRequest.IsSetOrderedOrganizationPolicyInputList())
+                {
+                    if (publicRequest.OrderedOrganizationPolicyInputList.Count == 0)
+                        request.Parameters.Add("OrderedOrganizationPolicyInputList", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.OrderedOrganizationPolicyInputList)
+                         {
+                            if(publicRequestlistValue.IsSetServiceControlPolicyInputList())
+                            {
+                                if (publicRequestlistValue.ServiceControlPolicyInputList.Count == 0)
+                                    request.Parameters.Add("OrderedOrganizationPolicyInputList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ServiceControlPolicyInputList", "");
+                                else
+                                {
+                                     int publicRequestlistValuelistValueIndex = 1;
+                                     foreach(var publicRequestlistValuelistValue in publicRequestlistValue.ServiceControlPolicyInputList)
+                                     {
+                                         request.Parameters.Add("OrderedOrganizationPolicyInputList" + "." + "member" + "." + publicRequestlistValueIndex + "." + "ServiceControlPolicyInputList" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                         publicRequestlistValuelistValueIndex++;
+                                     }
+                                }
+                            }
+                             publicRequestlistValueIndex++;
+                         }
+                    }
+                }
                 if(publicRequest.IsSetPermissionsBoundaryPolicyInputList())
                 {
                     if (publicRequest.PermissionsBoundaryPolicyInputList.Count == 0)

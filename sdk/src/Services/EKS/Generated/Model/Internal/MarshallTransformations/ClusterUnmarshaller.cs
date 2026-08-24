@@ -140,10 +140,28 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Identity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("kubeApiServerConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = KubeApiServerConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.KubeApiServerConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("kubeControllerManagerConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = KubeControllerManagerConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.KubeControllerManagerConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("kubernetesNetworkConfig", targetDepth, ref reader))
                 {
                     var unmarshaller = KubernetesNetworkConfigResponseUnmarshaller.Instance;
                     unmarshalledObject.KubernetesNetworkConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("kubeSchedulerConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = KubeSchedulerConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.KubeSchedulerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logging", targetDepth, ref reader))

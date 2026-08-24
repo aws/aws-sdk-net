@@ -288,6 +288,16 @@ namespace Amazon.Connect.Model
         IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListExtractionDefinitions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListExtractionDefinitionsPaginator ListExtractionDefinitions(ListExtractionDefinitionsRequest request);
+
+        /// <summary>
         /// Paginator for ListFlowAssociations operation
         ///</summary>
         [AWSPaginator(
@@ -376,6 +386,16 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListLexBotsPaginator ListLexBots(ListLexBotsRequest request);
+
+        /// <summary>
+        /// Paginator for ListMetrics operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListMetricsPaginator ListMetrics(ListMetricsRequest request);
 
         /// <summary>
         /// Paginator for ListPhoneNumbers operation
@@ -746,6 +766,16 @@ namespace Amazon.Connect.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchMetrics operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchMetricsPaginator SearchMetrics(SearchMetricsRequest request);
 
         /// <summary>
         /// Paginator for SearchPredefinedAttributes operation

@@ -126,6 +126,8 @@ namespace Amazon.RDS.Model
         private List<DBInstanceStatusInfo> _statusInfos = AWSConfigs.InitializeCollections ? new List<DBInstanceStatusInfo>() : null;
         private bool? _storageEncrypted;
         private StorageEncryptionType _storageEncryptionType;
+        private int? _storageOperationPercentProgress;
+        private string _storageOperationStatus;
         private int? _storageThroughput;
         private string _storageType;
         private string _storageVolumeStatus;
@@ -1923,6 +1925,58 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncryptionType()
         {
             return this._storageEncryptionType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageOperationPercentProgress. 
+        /// <para>
+        /// The percentage of the in-progress storage operation on the DB instance that has completed,
+        /// from <c>0</c> to <c>100</c>. This field appears only while a storage operation is
+        /// in progress. It isn't present when no storage operation is active.
+        /// </para>
+        /// </summary>
+        public int? StorageOperationPercentProgress
+        {
+            get { return this._storageOperationPercentProgress; }
+            set { this._storageOperationPercentProgress = value; }
+        }
+
+        // Check to see if StorageOperationPercentProgress property is set
+        internal bool IsSetStorageOperationPercentProgress()
+        {
+            return this._storageOperationPercentProgress.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageOperationStatus. 
+        /// <para>
+        /// The status of an in-progress storage operation on the DB instance. This field appears
+        /// only while a storage operation is in progress. It isn't present when no storage operation
+        /// is active. Possible values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Initializing</c> - The volume is initializing from a snapshot, such as during
+        /// a snapshot restore, point-in-time restore, read replica creation, or blue/green deployment.
+        /// Performance can be lower than provisioned until initialization completes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Optimizing</c> - The volume is optimizing following a storage scaling or modification
+        /// operation.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string StorageOperationStatus
+        {
+            get { return this._storageOperationStatus; }
+            set { this._storageOperationStatus = value; }
+        }
+
+        // Check to see if StorageOperationStatus property is set
+        internal bool IsSetStorageOperationStatus()
+        {
+            return this._storageOperationStatus != null;
         }
 
         /// <summary>

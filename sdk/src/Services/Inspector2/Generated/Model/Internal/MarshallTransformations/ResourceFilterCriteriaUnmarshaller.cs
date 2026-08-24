@@ -62,6 +62,72 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("cloudContainerImageTags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudContainerImageTags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudContainerRegistryName", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudContainerRegistryName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudContainerRepositoryName", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudContainerRepositoryName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudProvider", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudProvider = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudProviderAccountId", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudProviderAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudProviderOrgId", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudProviderOrgId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudProviderRegion", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudProviderRegion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudServerlessFunctionName", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudServerlessFunctionName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudServerlessFunctionRuntime", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceStringFilter, ResourceStringFilterUnmarshaller>(ResourceStringFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudServerlessFunctionRuntime = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudServerlessFunctionTags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceMapFilter, ResourceMapFilterUnmarshaller>(ResourceMapFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudServerlessFunctionTags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("cloudVmInstanceTags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ResourceMapFilter, ResourceMapFilterUnmarshaller>(ResourceMapFilterUnmarshaller.Instance);
+                    unmarshalledObject.CloudVmInstanceTags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ec2InstanceTags", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ResourceMapFilter, ResourceMapFilterUnmarshaller>(ResourceMapFilterUnmarshaller.Instance);

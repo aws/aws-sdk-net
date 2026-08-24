@@ -84,7 +84,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property RotationAngle. 
         /// <para>
-        /// Provides a numerical value corresponding to the rotation of the text.
+        /// Provides a numerical value corresponding to the rotation of the WORD block. Possible
+        /// values are 0, 90, 180, and 270.
         /// </para>
         /// </summary>
         public float? RotationAngle

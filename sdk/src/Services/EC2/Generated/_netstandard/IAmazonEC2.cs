@@ -670,6 +670,55 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  AssociateApplicationStatusCheck
+
+
+
+        /// <summary>
+        /// Associates an application status check with instances or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+        /// Once you create an association, health monitoring automatically begins for the specified
+        /// instances or for instances that match the specified tags. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify either <c>TargetTagAssociations</c> or <c>InstanceIds</c>, but not
+        /// both. Specifying both results in an <c>InvalidParameterCombination</c> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application status check must already exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys must not be blank.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Maximum 50 tag associations per application status check.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DisassociateApplicationStatusCheck</c> to remove associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// When you associate <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>,
+        /// the application status check automatically monitors all current and future instances
+        /// that have the specified tags.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateApplicationStatusCheck">REST API Reference for AssociateApplicationStatusCheck Operation</seealso>
+        Task<AssociateApplicationStatusCheckResponse> AssociateApplicationStatusCheckAsync(AssociateApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  AssociateCapacityReservationBillingOwner
 
 
@@ -1493,6 +1542,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  BatchModifyIpamRoutingPolicyRegistrations
+
+
+
+        /// <summary>
+        /// Modifies multiple routing policy registrations in a single operation. You can create,
+        /// update, or delete Route Origin Authorizations (ROAs) in batch.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchModifyIpamRoutingPolicyRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchModifyIpamRoutingPolicyRegistrations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/BatchModifyIpamRoutingPolicyRegistrations">REST API Reference for BatchModifyIpamRoutingPolicyRegistrations Operation</seealso>
+        Task<BatchModifyIpamRoutingPolicyRegistrationsResponse> BatchModifyIpamRoutingPolicyRegistrationsAsync(BatchModifyIpamRoutingPolicyRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  BundleInstance
 
 
@@ -1507,8 +1575,8 @@ namespace Amazon.EC2
         /// </para>
         ///  <note> 
         /// <para>
-        /// This action is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
+        /// BundleInstance is no longer supported. To create an AMI, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateImage.html">CreateImage</a>
+        /// instead. For more information about creating an Amazon EBS-backed AMI, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">
         /// Create an Amazon EBS-backed AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  </note>
@@ -1530,6 +1598,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Cancels a bundling operation for an instance store-backed Windows instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// CancelBundleTask is no longer supported because <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_BundleInstance.html">BundleInstance</a>,
+        /// the operation it cancels, is no longer supported.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelBundleTask service method.</param>
         /// <param name="cancellationToken">
@@ -2107,6 +2182,62 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateApplicationStatusCheck
+
+
+
+        /// <summary>
+        /// Creates an application status check for monitoring the health of applications running
+        /// on your instances. You can configure the protocol, port, path, and thresholds for
+        /// the health check. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You can create a maximum of 50 application status checks per account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Health checks do not start until you associate the check with instances or tags using
+        /// <c>AssociateApplicationStatusCheck</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Timeout</c> value must be less than the <c>Interval</c> value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>Path</c> must start with a forward slash (<c>/</c>). Default: <c>/</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you do not specify <c>Aggregation</c>, it defaults to <c>included</c>, which means
+        /// the check contributes to the instance-level application status.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
+        /// is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
+        /// is 300 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can tag the application status check during creation. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
+        /// your Amazon EC2 resources</a>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateApplicationStatusCheck">REST API Reference for CreateApplicationStatusCheck Operation</seealso>
+        Task<CreateApplicationStatusCheckResponse> CreateApplicationStatusCheckAsync(CreateApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateCapacityManagerDataExport
 
 
@@ -2669,6 +2800,13 @@ namespace Amazon.EC2
         /// If the source instance is in a Local Zone, you can create the snapshots in the same
         /// Local Zone or in its parent Region.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source instance is on an Outpost that supports local snapshots, you can create
+        /// the snapshots on the same Outpost or in the parent Region of that Outpost. In this
+        /// case, you must use the <c>SnapshotLocation</c> parameter to specify where to create
+        /// the snapshots.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Create
@@ -2942,6 +3080,27 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  CreateIpamInternetRegistryAssociation
+
+
+
+        /// <summary>
+        /// Creates an association between an IPAM and a Regional Internet Registry (RIR) for
+        /// Resource Public Key Infrastructure (RPKI) management. You can use this association
+        /// to create Route Origin Authorizations (ROAs) for IP address prefixes registered with
+        /// the internet registry. Your IPAM must be in the Advanced tier to use this feature.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamInternetRegistryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamInternetRegistryAssociation">REST API Reference for CreateIpamInternetRegistryAssociation Operation</seealso>
+        Task<CreateIpamInternetRegistryAssociationResponse> CreateIpamInternetRegistryAssociationAsync(CreateIpamInternetRegistryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateIpamPolicy
 
 
@@ -3084,6 +3243,25 @@ namespace Amazon.EC2
         /// <returns>The response from the CreateIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamResourceDiscovery">REST API Reference for CreateIpamResourceDiscovery Operation</seealso>
         Task<CreateIpamResourceDiscoveryResponse> CreateIpamResourceDiscoveryAsync(CreateIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateIpamRoutingPolicyRegistration
+
+
+
+        /// <summary>
+        /// Creates a routing policy registration and publishes Route Origin Authorizations (ROAs)
+        /// to the RPKI for the specified CIDR prefix and ASNs.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpamRoutingPolicyRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateIpamRoutingPolicyRegistration">REST API Reference for CreateIpamRoutingPolicyRegistration Operation</seealso>
+        Task<CreateIpamRoutingPolicyRegistrationResponse> CreateIpamRoutingPolicyRegistrationAsync(CreateIpamRoutingPolicyRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -5316,6 +5494,34 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteApplicationStatusCheck
+
+
+
+        /// <summary>
+        /// Deletes an application status check. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Deleting a check automatically removes all of its associations.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatusChecks</c> to view existing checks before deleting.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteApplicationStatusCheck">REST API Reference for DeleteApplicationStatusCheck Operation</seealso>
+        Task<DeleteApplicationStatusCheckResponse> DeleteApplicationStatusCheckAsync(DeleteApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteCapacityManagerDataExport
 
 
@@ -5749,6 +5955,25 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DeleteIpamInternetRegistryAssociation
+
+
+
+        /// <summary>
+        /// Deletes an IPAM internet registry association. Before deleting, you must remove all
+        /// routing policy registrations associated with the internet registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamInternetRegistryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamInternetRegistryAssociation">REST API Reference for DeleteIpamInternetRegistryAssociation Operation</seealso>
+        Task<DeleteIpamInternetRegistryAssociationResponse> DeleteIpamInternetRegistryAssociationAsync(DeleteIpamInternetRegistryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteIpamPolicy
 
 
@@ -5868,6 +6093,24 @@ namespace Amazon.EC2
         /// <returns>The response from the DeleteIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamResourceDiscovery">REST API Reference for DeleteIpamResourceDiscovery Operation</seealso>
         Task<DeleteIpamResourceDiscoveryResponse> DeleteIpamResourceDiscoveryAsync(DeleteIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteIpamRoutingPolicyRegistration
+
+
+
+        /// <summary>
+        /// Deletes a routing policy registration for a specified CIDR prefix.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpamRoutingPolicyRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DeleteIpamRoutingPolicyRegistration">REST API Reference for DeleteIpamRoutingPolicyRegistration Operation</seealso>
+        Task<DeleteIpamRoutingPolicyRegistrationResponse> DeleteIpamRoutingPolicyRegistrationAsync(DeleteIpamRoutingPolicyRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -7844,6 +8087,101 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DescribeApplicationStatus
+
+
+
+        /// <summary>
+        /// Describes the application status for the specified instances. Returns the aggregated
+        /// application health status for each instance. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The instance-level status is derived from all application status checks with the aggregation
+        /// setting set to <c>included</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatusChecks</c> to view the configuration of individual
+        /// checks.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>EnableApplicationStatusCheckSuppression</c> to temporarily suppress health
+        /// check results from affecting the instance-level status.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatus">REST API Reference for DescribeApplicationStatus Operation</seealso>
+        Task<DescribeApplicationStatusResponse> DescribeApplicationStatusAsync(DescribeApplicationStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeApplicationStatusCheckAssociations
+
+
+
+        /// <summary>
+        /// Describes the associations for one or more application status checks. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-application-status-checks.html">Application
+        /// status checks</a>. To avoid timeouts and retrieve complete results, use the pagination
+        /// parameters.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The order of the elements in the response, including those within nested structures,
+        /// might vary.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatusCheckAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatusCheckAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusCheckAssociations">REST API Reference for DescribeApplicationStatusCheckAssociations Operation</seealso>
+        Task<DescribeApplicationStatusCheckAssociationsResponse> DescribeApplicationStatusCheckAssociationsAsync(DescribeApplicationStatusCheckAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeApplicationStatusChecks
+
+
+
+        /// <summary>
+        /// Describes one or more application status checks. Returns configuration details for
+        /// your application status checks, including protocol, port, path, thresholds, and associations.
+        /// The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If you do not specify any application status check IDs, all checks in your account
+        /// are returned.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DescribeApplicationStatus</c> to see the actual health status of instances.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApplicationStatusChecks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApplicationStatusChecks service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeApplicationStatusChecks">REST API Reference for DescribeApplicationStatusChecks Operation</seealso>
+        Task<DescribeApplicationStatusChecksResponse> DescribeApplicationStatusChecksAsync(DescribeApplicationStatusChecksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribeAvailabilityZones
 
 
@@ -9657,6 +9995,12 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <b>Application status checks</b> - Amazon EC2 reports application-level health status
+        /// for instances, indicating whether applications running on the instance are functioning
+        /// properly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <b>Scheduled events</b> - Amazon EC2 can schedule events (such as reboot, stop, or
         /// terminate) for your instances related to hardware issues, software updates, or system
         /// maintenance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-instances-status-check_sched.html">Scheduled
@@ -9708,6 +10052,12 @@ namespace Amazon.EC2
         /// to identify hardware and software issues. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-system-instance-status-check.html">Status
         /// checks for your instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstances.html">Troubleshoot
         /// instances with failed status checks</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Application status checks</b> - Amazon EC2 reports application-level health status
+        /// for instances, indicating whether applications running on the instance are functioning
+        /// properly.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9908,6 +10258,25 @@ namespace Amazon.EC2
         /// <returns>The response from the DescribeIpamExternalResourceVerificationTokens service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamExternalResourceVerificationTokens">REST API Reference for DescribeIpamExternalResourceVerificationTokens Operation</seealso>
         Task<DescribeIpamExternalResourceVerificationTokensResponse> DescribeIpamExternalResourceVerificationTokensAsync(DescribeIpamExternalResourceVerificationTokensRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeIpamInternetRegistryAssociations
+
+
+
+        /// <summary>
+        /// Describes one or more IPAM internet registry associations. We recommend using pagination
+        /// to ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeIpamInternetRegistryAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeIpamInternetRegistryAssociations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeIpamInternetRegistryAssociations">REST API Reference for DescribeIpamInternetRegistryAssociations Operation</seealso>
+        Task<DescribeIpamInternetRegistryAssociationsResponse> DescribeIpamInternetRegistryAssociationsAsync(DescribeIpamInternetRegistryAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -13518,6 +13887,26 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisableApplicationStatusCheckSuppression
+
+
+
+        /// <summary>
+        /// Disables suppression of application status checks for the specified instances. After
+        /// suppression is disabled, health check results resume affecting the instance-level
+        /// application status. You can specify a maximum of 100 instance IDs per request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableApplicationStatusCheckSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableApplicationStatusCheckSuppression service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisableApplicationStatusCheckSuppression">REST API Reference for DisableApplicationStatusCheckSuppression Operation</seealso>
+        Task<DisableApplicationStatusCheckSuppressionResponse> DisableApplicationStatusCheckSuppressionAsync(DisableApplicationStatusCheckSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisableAwsNetworkPerformanceMetricSubscription
 
 
@@ -14089,6 +14478,41 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  DisassociateApplicationStatusCheck
+
+
+
+        /// <summary>
+        /// Disassociates an application status check from instances or <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>.
+        /// After disassociation, health monitoring stops for the affected instances. The following
+        /// rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify either <c>TargetTagAssociations</c> or <c>InstanceIds</c>, but not
+        /// both. Specifying both results in an <c>InvalidParameterCombination</c> error.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The application status check must already exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tag keys must not be blank.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateApplicationStatusCheck">REST API Reference for DisassociateApplicationStatusCheck Operation</seealso>
+        Task<DisassociateApplicationStatusCheckResponse> DisassociateApplicationStatusCheckAsync(DisassociateApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DisassociateCapacityReservationBillingOwner
 
 
@@ -14557,6 +14981,42 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  EnableApplicationStatusCheckSuppression
+
+
+
+        /// <summary>
+        /// Suppresses application status checks for the specified instances. While suppressed,
+        /// health checks continue to run but do not affect the instance-level application status.
+        /// The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum 100 instance IDs per request.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>DisableApplicationStatusCheckSuppression</c> to resume normal health check
+        /// reporting.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you do not specify <c>DurationSeconds</c>, suppression continues indefinitely until
+        /// you call <c>DisableApplicationStatusCheckSuppression</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableApplicationStatusCheckSuppression service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableApplicationStatusCheckSuppression service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableApplicationStatusCheckSuppression">REST API Reference for EnableApplicationStatusCheckSuppression Operation</seealso>
+        Task<EnableApplicationStatusCheckSuppressionResponse> EnableApplicationStatusCheckSuppressionAsync(EnableApplicationStatusCheckSuppressionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  EnableAwsNetworkPerformanceMetricSubscription
 
 
@@ -14839,6 +15299,27 @@ namespace Amazon.EC2
         /// <returns>The response from the EnableInstanceSqlHaStandbyDetections service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableInstanceSqlHaStandbyDetections">REST API Reference for EnableInstanceSqlHaStandbyDetections Operation</seealso>
         Task<EnableInstanceSqlHaStandbyDetectionsResponse> EnableInstanceSqlHaStandbyDetectionsAsync(EnableInstanceSqlHaStandbyDetectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  EnableIpamInternetRegistryAssociation
+
+
+
+        /// <summary>
+        /// Enables Resource Public Key Infrastructure (RPKI) on an existing IPAM internet registry
+        /// association by providing BGP Public Key Infrastructure (BPKI) certificate details.
+        /// After enabling, you can create Route Origin Authorizations (ROAs) for prefixes registered
+        /// with the internet registry.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableIpamInternetRegistryAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableIpamInternetRegistryAssociation service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/EnableIpamInternetRegistryAssociation">REST API Reference for EnableIpamInternetRegistryAssociation Operation</seealso>
+        Task<EnableIpamInternetRegistryAssociationResponse> EnableIpamInternetRegistryAssociationAsync(EnableIpamInternetRegistryAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -15987,6 +16468,67 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  GetIpamDiscoveredRoutes
+
+
+
+        /// <summary>
+        /// Retrieves Border Gateway Protocol (BGP) routes discovered by IPAM resource discovery
+        /// for a specified Region. Use this operation to view the Bring Your Own IP (BYOIP) address
+        /// ranges that are currently advertised through BGP. We recommend using pagination to
+        /// ensure that the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamDiscoveredRoutes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamDiscoveredRoutes service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamDiscoveredRoutes">REST API Reference for GetIpamDiscoveredRoutes Operation</seealso>
+        Task<GetIpamDiscoveredRoutesResponse> GetIpamDiscoveredRoutesAsync(GetIpamDiscoveredRoutesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamInternetRegistryAssociationAsns
+
+
+
+        /// <summary>
+        /// Retrieves Autonomous System Numbers (ASNs) registered with an internet registry for
+        /// an IPAM internet registry association. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamInternetRegistryAssociationAsns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamInternetRegistryAssociationAsns service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationAsns">REST API Reference for GetIpamInternetRegistryAssociationAsns Operation</seealso>
+        Task<GetIpamInternetRegistryAssociationAsnsResponse> GetIpamInternetRegistryAssociationAsnsAsync(GetIpamInternetRegistryAssociationAsnsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamInternetRegistryAssociationCidrs
+
+
+
+        /// <summary>
+        /// Retrieves IP address CIDRs registered with an internet registry for an IPAM internet
+        /// registry association. We recommend using pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamInternetRegistryAssociationCidrs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamInternetRegistryAssociationCidrs service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamInternetRegistryAssociationCidrs">REST API Reference for GetIpamInternetRegistryAssociationCidrs Operation</seealso>
+        Task<GetIpamInternetRegistryAssociationCidrsResponse> GetIpamInternetRegistryAssociationCidrsAsync(GetIpamInternetRegistryAssociationCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetIpamPolicyAllocationRules
 
 
@@ -16234,6 +16776,89 @@ namespace Amazon.EC2
         /// <returns>The response from the GetIpamResourceCidrs service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamResourceCidrs">REST API Reference for GetIpamResourceCidrs Operation</seealso>
         Task<GetIpamResourceCidrsResponse> GetIpamResourceCidrsAsync(GetIpamResourceCidrsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamRouteOriginAuthorizations
+
+
+
+        /// <summary>
+        /// Retrieves the current Route Origin Authorizations (ROAs) published to the RPKI for
+        /// an IPAM internet registry association. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRouteOriginAuthorizations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRouteOriginAuthorizations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteOriginAuthorizations">REST API Reference for GetIpamRouteOriginAuthorizations Operation</seealso>
+        Task<GetIpamRouteOriginAuthorizationsResponse> GetIpamRouteOriginAuthorizationsAsync(GetIpamRouteOriginAuthorizationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamRouteProtectionFindings
+
+
+
+        /// <summary>
+        /// Retrieves route protection findings for an IPAM. Route protection findings show the
+        /// Resource Public Key Infrastructure (RPKI) validation status of your Bring Your Own
+        /// IP (BYOIP) routes. Findings identify routes that have valid, invalid, or unknown validation
+        /// states. We recommend using pagination to ensure that the operation returns quickly
+        /// and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRouteProtectionFindings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRouteProtectionFindings service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRouteProtectionFindings">REST API Reference for GetIpamRouteProtectionFindings Operation</seealso>
+        Task<GetIpamRouteProtectionFindingsResponse> GetIpamRouteProtectionFindingsAsync(GetIpamRouteProtectionFindingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamRoutingPolicyRegistrationDeltas
+
+
+
+        /// <summary>
+        /// Retrieves the history of routing policy registration changes for an IPAM internet
+        /// registry association. We recommend using pagination to ensure that the operation returns
+        /// quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRoutingPolicyRegistrationDeltas service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRoutingPolicyRegistrationDeltas service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrationDeltas">REST API Reference for GetIpamRoutingPolicyRegistrationDeltas Operation</seealso>
+        Task<GetIpamRoutingPolicyRegistrationDeltasResponse> GetIpamRoutingPolicyRegistrationDeltasAsync(GetIpamRoutingPolicyRegistrationDeltasRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetIpamRoutingPolicyRegistrations
+
+
+
+        /// <summary>
+        /// Retrieves routing policy registrations for an IPAM internet registry association.
+        /// Each registration represents a Route Origin Authorization (ROA) that has been created
+        /// or is pending publication to the RPKI. We recommend using pagination to ensure that
+        /// the operation returns quickly and successfully.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpamRoutingPolicyRegistrations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIpamRoutingPolicyRegistrations service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetIpamRoutingPolicyRegistrations">REST API Reference for GetIpamRoutingPolicyRegistrations Operation</seealso>
+        Task<GetIpamRoutingPolicyRegistrationsResponse> GetIpamRoutingPolicyRegistrationsAsync(GetIpamRoutingPolicyRegistrationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -17295,6 +17920,35 @@ namespace Amazon.EC2
 
         #endregion
                 
+        #region  ModifyApplicationStatusCheck
+
+
+
+        /// <summary>
+        /// Modifies an existing application status check. You can update the protocol, port,
+        /// path, thresholds, and other configuration settings. The following rules apply:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// The application status check must exist and belong to your account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Changes take effect on the next health check interval.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyApplicationStatusCheck service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyApplicationStatusCheck service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyApplicationStatusCheck">REST API Reference for ModifyApplicationStatusCheck Operation</seealso>
+        Task<ModifyApplicationStatusCheckResponse> ModifyApplicationStatusCheckAsync(ModifyApplicationStatusCheckRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ModifyAvailabilityZoneGroup
 
 
@@ -18248,6 +18902,25 @@ namespace Amazon.EC2
         /// <returns>The response from the ModifyIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamResourceDiscovery">REST API Reference for ModifyIpamResourceDiscovery Operation</seealso>
         Task<ModifyIpamResourceDiscoveryResponse> ModifyIpamResourceDiscoveryAsync(ModifyIpamResourceDiscoveryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ModifyIpamRoutingPolicyRegistration
+
+
+
+        /// <summary>
+        /// Modifies an existing routing policy registration. You can update the authorized ASNs,
+        /// maximum prefix length, and other properties of a Route Origin Authorization (ROA).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyIpamRoutingPolicyRegistration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyIpamRoutingPolicyRegistration service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyIpamRoutingPolicyRegistration">REST API Reference for ModifyIpamRoutingPolicyRegistration Operation</seealso>
+        Task<ModifyIpamRoutingPolicyRegistrationResponse> ModifyIpamRoutingPolicyRegistrationAsync(ModifyIpamRoutingPolicyRegistrationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -19616,7 +20289,9 @@ namespace Amazon.EC2
         /// Amazon Web Services verifies that you own the address range and are authorized to
         /// advertise it. You must ensure that the address range is registered to you and that
         /// you created an RPKI ROA to authorize Amazon ASNs 16509 and 14618 to advertise the
-        /// address range. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
+        /// address range. For the Amazon Web Services GovCloud (US) Regions, authorize only ASN
+        /// 8987. For the Amazon Web Services European Sovereign Cloud, authorize ASNs 16509 and
+        /// 214101. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring
         /// your own IP addresses (BYOIP)</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  

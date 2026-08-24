@@ -50,9 +50,11 @@ namespace Amazon.SecurityAgent.Model
         private string _findingId;
         private string _lastUpdatedBy;
         private string _name;
+        private string _originalFindingId;
         private string _pentestId;
         private string _pentestJobId;
         private string _reasoning;
+        private List<string> _revalidationJobIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RiskLevel _riskLevel;
         private string _riskScore;
         private string _riskType;
@@ -324,6 +326,25 @@ namespace Amazon.SecurityAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OriginalFindingId. 
+        /// <para>
+        /// The identifier of the original finding that this revalidation finding was produced
+        /// from.
+        /// </para>
+        /// </summary>
+        public string OriginalFindingId
+        {
+            get { return this._originalFindingId; }
+            set { this._originalFindingId = value; }
+        }
+
+        // Check to see if OriginalFindingId property is set
+        internal bool IsSetOriginalFindingId()
+        {
+            return this._originalFindingId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PentestId. 
         /// <para>
         /// The unique identifier of the pentest associated with the finding.
@@ -375,6 +396,29 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetReasoning()
         {
             return this._reasoning != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RevalidationJobIds. 
+        /// <para>
+        /// The list of pentest job identifiers for revalidation jobs that retested this finding.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<string> RevalidationJobIds
+        {
+            get { return this._revalidationJobIds; }
+            set { this._revalidationJobIds = value; }
+        }
+
+        // Check to see if RevalidationJobIds property is set
+        internal bool IsSetRevalidationJobIds()
+        {
+            return this._revalidationJobIds != null && (this._revalidationJobIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

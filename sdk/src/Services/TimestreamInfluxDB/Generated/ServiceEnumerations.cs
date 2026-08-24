@@ -25,6 +25,72 @@ namespace Amazon.TimestreamInfluxDB
 {
 
     /// <summary>
+    /// Constants used for properties of type AutomatedDbBackupType.
+    /// </summary>
+    public class AutomatedDbBackupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUOUS for AutomatedDbBackupType
+        /// </summary>
+        public static readonly AutomatedDbBackupType CONTINUOUS = new AutomatedDbBackupType("CONTINUOUS");
+        /// <summary>
+        /// Constant CUSTOM_SCHEDULE for AutomatedDbBackupType
+        /// </summary>
+        public static readonly AutomatedDbBackupType CUSTOM_SCHEDULE = new AutomatedDbBackupType("CUSTOM_SCHEDULE");
+        /// <summary>
+        /// Constant DAILY for AutomatedDbBackupType
+        /// </summary>
+        public static readonly AutomatedDbBackupType DAILY = new AutomatedDbBackupType("DAILY");
+        /// <summary>
+        /// Constant HOURLY for AutomatedDbBackupType
+        /// </summary>
+        public static readonly AutomatedDbBackupType HOURLY = new AutomatedDbBackupType("HOURLY");
+        /// <summary>
+        /// Constant MONTHLY for AutomatedDbBackupType
+        /// </summary>
+        public static readonly AutomatedDbBackupType MONTHLY = new AutomatedDbBackupType("MONTHLY");
+        /// <summary>
+        /// Constant WEEKLY for AutomatedDbBackupType
+        /// </summary>
+        public static readonly AutomatedDbBackupType WEEKLY = new AutomatedDbBackupType("WEEKLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomatedDbBackupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomatedDbBackupType FindValue(string value)
+        {
+            return FindValue<AutomatedDbBackupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomatedDbBackupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClusterDeploymentType.
     /// </summary>
     public class ClusterDeploymentType : ConstantClass
@@ -113,6 +179,14 @@ namespace Amazon.TimestreamInfluxDB
         /// </summary>
         public static readonly ClusterStatus REBOOTING = new ClusterStatus("REBOOTING");
         /// <summary>
+        /// Constant RESTORE_FAILED for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus RESTORE_FAILED = new ClusterStatus("RESTORE_FAILED");
+        /// <summary>
+        /// Constant RESTORING for ClusterStatus
+        /// </summary>
+        public static readonly ClusterStatus RESTORING = new ClusterStatus("RESTORING");
+        /// <summary>
         /// Constant UPDATING for ClusterStatus
         /// </summary>
         public static readonly ClusterStatus UPDATING = new ClusterStatus("UPDATING");
@@ -200,6 +274,138 @@ namespace Amazon.TimestreamInfluxDB
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DataFusionRuntimeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DbBackupStatus.
+    /// </summary>
+    public class DbBackupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for DbBackupStatus
+        /// </summary>
+        public static readonly DbBackupStatus COMPLETED = new DbBackupStatus("COMPLETED");
+        /// <summary>
+        /// Constant DELETED for DbBackupStatus
+        /// </summary>
+        public static readonly DbBackupStatus DELETED = new DbBackupStatus("DELETED");
+        /// <summary>
+        /// Constant DELETING for DbBackupStatus
+        /// </summary>
+        public static readonly DbBackupStatus DELETING = new DbBackupStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for DbBackupStatus
+        /// </summary>
+        public static readonly DbBackupStatus FAILED = new DbBackupStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for DbBackupStatus
+        /// </summary>
+        public static readonly DbBackupStatus IN_PROGRESS = new DbBackupStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DbBackupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DbBackupStatus FindValue(string value)
+        {
+            return FindValue<DbBackupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DbBackupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DbBackupType.
+    /// </summary>
+    public class DbBackupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUOUS for DbBackupType
+        /// </summary>
+        public static readonly DbBackupType CONTINUOUS = new DbBackupType("CONTINUOUS");
+        /// <summary>
+        /// Constant CUSTOM_SCHEDULE for DbBackupType
+        /// </summary>
+        public static readonly DbBackupType CUSTOM_SCHEDULE = new DbBackupType("CUSTOM_SCHEDULE");
+        /// <summary>
+        /// Constant DAILY for DbBackupType
+        /// </summary>
+        public static readonly DbBackupType DAILY = new DbBackupType("DAILY");
+        /// <summary>
+        /// Constant HOURLY for DbBackupType
+        /// </summary>
+        public static readonly DbBackupType HOURLY = new DbBackupType("HOURLY");
+        /// <summary>
+        /// Constant MONTHLY for DbBackupType
+        /// </summary>
+        public static readonly DbBackupType MONTHLY = new DbBackupType("MONTHLY");
+        /// <summary>
+        /// Constant ON_DEMAND for DbBackupType
+        /// </summary>
+        public static readonly DbBackupType ON_DEMAND = new DbBackupType("ON_DEMAND");
+        /// <summary>
+        /// Constant WEEKLY for DbBackupType
+        /// </summary>
+        public static readonly DbBackupType WEEKLY = new DbBackupType("WEEKLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DbBackupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DbBackupType FindValue(string value)
+        {
+            return FindValue<DbBackupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DbBackupType(string value)
         {
             return FindValue(value);
         }
@@ -775,6 +981,206 @@ namespace Amazon.TimestreamInfluxDB
 
 
     /// <summary>
+    /// Constants used for properties of type ResourceDeploymentType.
+    /// </summary>
+    public class ResourceDeploymentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MULTI_NODE_READ_REPLICAS for ResourceDeploymentType
+        /// </summary>
+        public static readonly ResourceDeploymentType MULTI_NODE_READ_REPLICAS = new ResourceDeploymentType("MULTI_NODE_READ_REPLICAS");
+        /// <summary>
+        /// Constant SINGLE_AZ for ResourceDeploymentType
+        /// </summary>
+        public static readonly ResourceDeploymentType SINGLE_AZ = new ResourceDeploymentType("SINGLE_AZ");
+        /// <summary>
+        /// Constant WITH_MULTIAZ_STANDBY for ResourceDeploymentType
+        /// </summary>
+        public static readonly ResourceDeploymentType WITH_MULTIAZ_STANDBY = new ResourceDeploymentType("WITH_MULTIAZ_STANDBY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceDeploymentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceDeploymentType FindValue(string value)
+        {
+            return FindValue<ResourceDeploymentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceDeploymentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DB_CLUSTER for ResourceType
+        /// </summary>
+        public static readonly ResourceType DB_CLUSTER = new ResourceType("DB_CLUSTER");
+        /// <summary>
+        /// Constant DB_INSTANCE for ResourceType
+        /// </summary>
+        public static readonly ResourceType DB_INSTANCE = new ResourceType("DB_INSTANCE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RestoreMode.
+    /// </summary>
+    public class RestoreMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEW_RESOURCE for RestoreMode
+        /// </summary>
+        public static readonly RestoreMode NEW_RESOURCE = new RestoreMode("NEW_RESOURCE");
+        /// <summary>
+        /// Constant REPLACE_EXISTING for RestoreMode
+        /// </summary>
+        public static readonly RestoreMode REPLACE_EXISTING = new RestoreMode("REPLACE_EXISTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RestoreMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreMode FindValue(string value)
+        {
+            return FindValue<RestoreMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RestoreStatus.
+    /// </summary>
+    public class RestoreStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RESTORING for RestoreStatus
+        /// </summary>
+        public static readonly RestoreStatus RESTORING = new RestoreStatus("RESTORING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RestoreStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RestoreStatus FindValue(string value)
+        {
+            return FindValue<RestoreStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RestoreStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Status.
     /// </summary>
     public class Status : ConstantClass
@@ -816,6 +1222,14 @@ namespace Amazon.TimestreamInfluxDB
         /// Constant REBOOTING for Status
         /// </summary>
         public static readonly Status REBOOTING = new Status("REBOOTING");
+        /// <summary>
+        /// Constant RESTORE_FAILED for Status
+        /// </summary>
+        public static readonly Status RESTORE_FAILED = new Status("RESTORE_FAILED");
+        /// <summary>
+        /// Constant RESTORING for Status
+        /// </summary>
+        public static readonly Status RESTORING = new Status("RESTORING");
         /// <summary>
         /// Constant UPDATING for Status
         /// </summary>

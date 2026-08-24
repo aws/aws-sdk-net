@@ -46,6 +46,12 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEffort())
+            {
+                context.Writer.WritePropertyName("effort");
+                context.Writer.WriteStringValue(requestObject.Effort);
+            }
+
             if(requestObject.IsSetTextFormat())
             {
                 context.Writer.WritePropertyName("textFormat");

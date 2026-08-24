@@ -31,8 +31,18 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the StopWorkspacesPool operation.
+    /// <note> 
+    /// <para>
+    /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+    /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+    /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+    /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+    /// WorkSpaces Pools end of support</a>. 
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Stops the specified pool.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// You cannot stop a WorkSpace pool unless it has a running mode of <c>AutoStop</c> and

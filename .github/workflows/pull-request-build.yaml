@@ -3,11 +3,12 @@ name: Build SDK V4
 # Deny all permissions by default; the build job opts into exactly what it needs.
 permissions: {}
 
+# Comment-triggered build. Listens ONLY on issue_comment, so it is never
+# evaluated on pull_request events and never adds a check-run row to a PR. The
+# build result is surfaced via the build-sdk-v4 commit status (see Post step).
 on:
-  pull_request:
-    types: [opened, synchronize, reopened, ready_for_review]
-    branches:
-      - development
+  issue_comment:
+    types: [created]
 
 concurrency:
   group: build-sdk-v4
@@ -19,21 +20,69 @@ env:
   SCRIPT_LOCATION: 'workflows/start-pull-request-build/pull-request-build-v1.sh'
 
 jobs:
-  build-sdk-v4:
-    name: build-sdk-v4
-    # Skip draft PRs and PRs from forked repos (they don't have access)
-    if: github.event.pull_request.draft == false && github.event.pull_request.head.repo.full_name == github.repository
+  # Job name is intentionally NOT "build-sdk-v4" (the required status context).
+  # Keeps the check-run namespace clear of the required status.
+  run-build:
+    name: run-build
+    # Trigger: a "/run-build" comment on a PR (not a plain issue) from an org
+    # member/owner. Cheap gate so external contributors can't even start the
+    # job; the commenter's actual push access is verified in the first step.
+    if: >-
+      github.event.issue.pull_request &&
+      github.event.comment.body == '/run-build' &&
+      contains(fromJSON('["OWNER", "MEMBER"]'), github.event.comment.author_association)
     runs-on: ubuntu-latest
     permissions:
       id-token: write        # request the OIDC token used to assume the AWS IAM role
       issues: write          # allow the build script to comment on the associated issue
       pull-requests: write   # allow the build script to post build status/comments on the PR
+      statuses: write        # post the build-sdk-v4 commit status shown as a PR check
       contents: read         # check out the repository contents
     steps:
+      - name: Verify requester permission
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          COMMENT_AUTHOR: ${{ github.event.comment.user.login }}
+        run: |
+          push=$(gh api "repos/$REPO/collaborators/$COMMENT_AUTHOR/permission" --jq .user.permissions.push)
+          [ "$push" = "true" ] || { echo "::error::$COMMENT_AUTHOR lacks push access; refusing build"; exit 1; }
+      - name: Resolve PR and reject forks
+        id: pr
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          pr=$(gh api "repos/$REPO/pulls/$PR_NUMBER")
+          head_repo=$(echo "$pr" | jq -r .head.repo.full_name)
+          head_ref=$(echo "$pr" | jq -r .head.ref)
+          head_sha=$(echo "$pr" | jq -r .head.sha)
+          base_ref=$(echo "$pr" | jq -r .base.ref)
+          [ "$head_repo" = "$REPO" ] || { echo "::error::Refusing fork PR"; exit 1; }
+          [ "$base_ref" = "development" ] || { echo "::error::PR targets $base_ref, not development"; exit 1; }
+          echo "head_ref=$head_ref" >> "$GITHUB_OUTPUT"
+          echo "head_sha=$head_sha" >> "$GITHUB_OUTPUT"
+      - name: Mark check pending
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          gh api -X POST "repos/$REPO/statuses/$HEAD_SHA" \
+            -f state=pending -f context="build-sdk-v4" -f description="Build running" \
+            -f target_url="https://github.com/$REPO/actions/runs/$RUN_ID"
+      - name: Acknowledge
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          COMMENT_ID: ${{ github.event.comment.id }}
+        run: gh api -X POST "repos/$REPO/issues/comments/$COMMENT_ID/reactions" -f content=eyes
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@517a711dbcd0e402f90c77e7e2f81e849156e31d # v6.2.2
         with:
-          role-to-assume: 'arn:aws:iam::767397770662:role/AwsSdkNetGitHubRole'
+          role-to-assume: ${{ vars.BUILD_SYSTEM_ROLE_ARN }}
           role-session-name: PullRequestBuildGitHubAction
           role-duration-seconds: 7200
           aws-region: us-west-2
@@ -45,8 +94,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
-          HEAD_REF: ${{ github.event.pull_request.head.ref }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_REF: ${{ steps.pr.outputs.head_ref }}
+          PR_NUMBER: ${{ github.event.issue.number }}
           RUN_ID: ${{ github.run_id }}
         run: |
           ./$DOWNLOAD_FOLDER/$SCRIPT_LOCATION \
@@ -55,3 +104,16 @@ jobs:
             --pr-number "$PR_NUMBER" \
             --run-id "$RUN_ID"
         timeout-minutes: 150
+      - name: Post commit status
+        if: always() && steps.pr.outputs.head_sha != ''
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ steps.pr.outputs.head_sha }}
+          RUN_ID: ${{ github.run_id }}
+          RESULT: ${{ job.status }}
+        run: |
+          state=success; [ "$RESULT" = "success" ] || state=failure
+          gh api -X POST "repos/$REPO/statuses/$HEAD_SHA" \
+            -f state="$state" -f context="build-sdk-v4" -f description="PR build $state" \
+            -f target_url="https://github.com/$REPO/actions/runs/$RUN_ID"

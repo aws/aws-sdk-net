@@ -79,15 +79,15 @@ namespace Amazon.Batch.Model
         /// The memory hard limit (in MiB) present to the container. This parameter is supported
         /// for jobs that are running on Amazon EC2 resources. If your container attempts to exceed
         /// the memory specified, the container is terminated. This parameter maps to <c>Memory</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--memory</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. You must specify at least 4 MiB of memory for a job. This is required but
         /// can be specified in several places for multi-node parallel (MNP) jobs. It must be
         /// specified for each node at least once. This parameter maps to <c>Memory</c> in the
-        /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
-        /// section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a>
-        /// and the <c>--memory</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
+        /// Remote API</a> and the <c>--memory</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
         ///  <note> 
@@ -147,24 +147,36 @@ namespace Amazon.Batch.Model
         /// <para>
         ///  <c>VCPU</c> = 4 or 8
         /// </para>
-        ///  </dd> <dt>value = 36864, 45056, 53248, or 61440</dt> <dd> 
+        ///  </dd> <dt>value = 36864, 45056, or 53248</dt> <dd> 
         /// <para>
         ///  <c>VCPU</c> = 8
+        /// </para>
+        ///  </dd> <dt>value = 61440</dt> <dd> 
+        /// <para>
+        ///  <c>VCPU</c> = 8 or 32
         /// </para>
         ///  </dd> <dt>value = 32768, 40960, 49152, or 57344</dt> <dd> 
         /// <para>
         ///  <c>VCPU</c> = 8 or 16
         /// </para>
-        ///  </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, 114688, or 122880</dt>
-        /// <dd> 
+        ///  </dd> <dt>value = 65536, 73728, 81920, 90112, 98304, 106496, or 114688</dt> <dd>
+        /// 
         /// <para>
         ///  <c>VCPU</c> = 16
+        /// </para>
+        ///  </dd> <dt>value = 122880</dt> <dd> 
+        /// <para>
+        ///  <c>VCPU</c> = 16 or 32
+        /// </para>
+        ///  </dd> <dt>value = 249856</dt> <dd> 
+        /// <para>
+        ///  <c>VCPU</c> = 32
         /// </para>
         ///  </dd> </dl> </dd> <dt>type="VCPU"</dt> <dd> 
         /// <para>
         /// The number of vCPUs reserved for the container. This parameter maps to <c>CpuShares</c>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
+        /// in the <a href="https://docs.docker.com/engine/api/latest/#tag/Container/operation/ContainerCreate">Create
+        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/latest/">Docker
         /// Remote API</a> and the <c>--cpu-shares</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you
         /// must specify at least one vCPU. This is required but can be specified in several places;
@@ -180,7 +192,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// For jobs that are running on Fargate resources, then <c>value</c> must match one of
         /// the supported values and the <c>MEMORY</c> values must be one of the values supported
-        /// for that <c>VCPU</c> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, and 16
+        /// for that <c>VCPU</c> value. The supported values are 0.25, 0.5, 1, 2, 4, 8, 16, and
+        /// 32.
         /// </para>
         ///  <dl> <dt>value = 0.25</dt> <dd> 
         /// <para>
@@ -214,6 +227,10 @@ namespace Amazon.Batch.Model
         /// <para>
         ///  <c>MEMORY</c> = 32768, 40960, 49152, 57344, 65536, 73728, 81920, 90112, 98304, 106496,
         /// 114688, or 122880 
+        /// </para>
+        ///  </dd> <dt>value = 32</dt> <dd> 
+        /// <para>
+        ///  <c>MEMORY</c> = 61440, 122880, or 249856
         /// </para>
         ///  </dd> </dl> </dd> </dl>
         /// </summary>

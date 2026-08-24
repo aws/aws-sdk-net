@@ -272,11 +272,19 @@ namespace Amazon.Organizations
         /// When a handshake is accepted, Organizations logs membership events in CloudTrail,
         /// available only in the management account's event history. If the account was standalone
         /// and joined a new organization, an <c>AccountJoinedOrganization</c> event is logged
-        /// with <c>joinedMethod:Invited</c> and <c>joinedTime</c> fields. If the account departed
+        /// with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> fields. If the account departed
         /// one organization and joined another, both an <c>AccountDepartedOrganization</c> event
-        /// with <c>departedMethod:Left</c> and <c>departedTime</c> and an <c>AccountJoinedOrganization</c>
-        /// event with <c>joinedMethod:Invited</c> and <c>joinedTime</c> are logged in their respective
+        /// with <c>departureMethod:LEFT</c> and <c>departureTime</c> and an <c>AccountJoinedOrganization</c>
+        /// event with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> are logged in their respective
         /// management accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a billing transfer (<c>TRANSFER_RESPONSIBILITY</c>) handshake is accepted, Organizations
+        /// publishes a <c>ResponsibilityTransferAccepted</c> service event to CloudTrail. Each
+        /// affected account receives this event, including upstream participants such as distributors
+        /// in a chained transfer. For an example log entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-accept-responsibility-transfer">Example
+        /// log entries: AcceptResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptHandshake service method.</param>
@@ -336,6 +344,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -583,7 +596,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -646,8 +671,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -658,6 +683,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -673,6 +702,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -736,9 +770,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -939,11 +973,19 @@ namespace Amazon.Organizations
         /// When a handshake is accepted, Organizations logs membership events in CloudTrail,
         /// available only in the management account's event history. If the account was standalone
         /// and joined a new organization, an <c>AccountJoinedOrganization</c> event is logged
-        /// with <c>joinedMethod:Invited</c> and <c>joinedTime</c> fields. If the account departed
+        /// with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> fields. If the account departed
         /// one organization and joined another, both an <c>AccountDepartedOrganization</c> event
-        /// with <c>departedMethod:Left</c> and <c>departedTime</c> and an <c>AccountJoinedOrganization</c>
-        /// event with <c>joinedMethod:Invited</c> and <c>joinedTime</c> are logged in their respective
+        /// with <c>departureMethod:LEFT</c> and <c>departureTime</c> and an <c>AccountJoinedOrganization</c>
+        /// event with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> are logged in their respective
         /// management accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// When a billing transfer (<c>TRANSFER_RESPONSIBILITY</c>) handshake is accepted, Organizations
+        /// publishes a <c>ResponsibilityTransferAccepted</c> service event to CloudTrail. Each
+        /// affected account receives this event, including upstream participants such as distributors
+        /// in a chained transfer. For an example log entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-accept-responsibility-transfer">Example
+        /// log entries: AcceptResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptHandshake service method.</param>
@@ -1006,6 +1048,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1253,7 +1300,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1316,8 +1375,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1328,6 +1387,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1343,6 +1406,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1406,9 +1474,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1698,6 +1766,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -1942,7 +2015,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2003,9 +2088,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2309,6 +2394,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -2553,7 +2643,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2614,9 +2716,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2876,9 +2978,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3119,9 +3221,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3336,8 +3438,8 @@ namespace Amazon.Organizations
         /// <para>
         /// After the permanent termination of the account after the 90-day waiting period, Organizations
         /// logs a membership event in CloudTrail. The event is an <c>AccountDepartedOrganization</c>
-        /// event with <c>departedMethod:Cleaned</c> and <c>departedTime</c>. This event is available
-        /// only in the management account's event history.
+        /// event with <c>departureMethod:CLEANED</c> and <c>departureTime</c>. This event is
+        /// available only in the management account's event history.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseAccount service method.</param>
@@ -3403,6 +3505,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3650,7 +3757,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3708,9 +3827,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3925,8 +4044,8 @@ namespace Amazon.Organizations
         /// <para>
         /// After the permanent termination of the account after the 90-day waiting period, Organizations
         /// logs a membership event in CloudTrail. The event is an <c>AccountDepartedOrganization</c>
-        /// event with <c>departedMethod:Cleaned</c> and <c>departedTime</c>. This event is available
-        /// only in the management account's event history.
+        /// event with <c>departureMethod:CLEANED</c> and <c>departureTime</c>. This event is
+        /// available only in the management account's event history.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CloseAccount service method.</param>
@@ -3995,6 +4114,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4242,7 +4366,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4300,9 +4436,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4611,6 +4747,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -4855,7 +4996,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4919,9 +5072,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5230,6 +5383,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -5474,7 +5632,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5538,9 +5708,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5772,8 +5942,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <c>OperationId</c> response element from this operation to provide as a parameter
-        /// to the <a>DescribeCreateAccountStatus</a> operation.
+        /// Use the <c>Id</c> response element from this operation to provide as a parameter to
+        /// the <a>DescribeCreateAccountStatus</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5906,6 +6076,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6153,7 +6328,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6217,9 +6404,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6448,8 +6635,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <c>OperationId</c> response element from this operation to provide as a parameter
-        /// to the <a>DescribeCreateAccountStatus</a> operation.
+        /// Use the <c>Id</c> response element from this operation to provide as a parameter to
+        /// the <a>DescribeCreateAccountStatus</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6585,6 +6772,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6832,7 +7024,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6896,9 +7100,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7077,7 +7281,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// The <c>AccountJoinedOrganization</c> event is logged in CloudTrail and is available
-        /// only in the management account's event history. This event includes <c>joinedMethod:Invited</c>
+        /// only in the management account's event history. This event includes <c>joinedMethod:INVITED</c>
         /// and <c>joinedTime</c> fields to provide context on how and when the account joined
         /// the organization.
         /// </para>
@@ -7139,6 +7343,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7386,7 +7595,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7444,9 +7665,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7619,7 +7840,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// The <c>AccountJoinedOrganization</c> event is logged in CloudTrail and is available
-        /// only in the management account's event history. This event includes <c>joinedMethod:Invited</c>
+        /// only in the management account's event history. This event includes <c>joinedMethod:INVITED</c>
         /// and <c>joinedTime</c> fields to provide context on how and when the account joined
         /// the organization.
         /// </para>
@@ -7684,6 +7905,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7931,7 +8157,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7989,9 +8227,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8222,6 +8460,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -8466,7 +8709,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8527,9 +8782,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8763,6 +9018,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -9007,7 +9267,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9068,9 +9340,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9302,6 +9574,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -9546,7 +9823,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9607,9 +9896,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9853,6 +10142,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -10097,7 +10391,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10158,9 +10464,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10416,9 +10722,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10659,9 +10965,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10822,8 +11128,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an organization is deleted, Organizations logs a membership event in CloudTrail.
-        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:LEFT</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         /// </summary>
@@ -10879,6 +11185,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11126,7 +11437,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11184,9 +11507,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11348,8 +11671,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an organization is deleted, Organizations logs a membership event in CloudTrail.
-        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:LEFT</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         /// </summary>
@@ -11408,6 +11731,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11655,7 +11983,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11713,9 +12053,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11947,9 +12287,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12184,9 +12524,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12422,9 +12762,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12663,9 +13003,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12892,6 +13232,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -13136,7 +13481,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13237,6 +13594,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -13481,7 +13843,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13607,6 +13981,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -13851,7 +14230,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13909,9 +14300,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14156,6 +14547,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -14400,7 +14796,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14458,9 +14866,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14692,9 +15100,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14923,9 +15331,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15153,9 +15561,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15386,9 +15794,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15614,6 +16022,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15861,7 +16274,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15925,9 +16350,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16159,6 +16584,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -16403,7 +16833,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16467,9 +16909,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16707,9 +17149,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16941,9 +17383,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17275,9 +17717,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17504,9 +17946,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17733,9 +18175,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17965,9 +18407,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18187,6 +18629,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -18431,7 +18878,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18529,6 +18988,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -18773,7 +19237,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18877,9 +19353,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19105,9 +19581,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19349,6 +19825,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -19593,7 +20074,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19651,9 +20144,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19905,6 +20398,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -20149,7 +20647,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20207,9 +20717,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20509,6 +21019,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -20753,7 +21268,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20811,9 +21338,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21100,6 +21627,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -21344,7 +21876,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21402,9 +21946,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21642,6 +22186,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -21886,7 +22435,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21944,9 +22505,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22197,6 +22758,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -22441,7 +23007,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22499,9 +23077,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22767,6 +23345,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -23011,7 +23594,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23070,8 +23665,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23082,6 +23677,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23097,6 +23696,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23152,9 +23756,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23404,6 +24008,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -23648,7 +24257,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23707,8 +24328,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23719,6 +24340,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23734,6 +24359,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23789,9 +24419,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24029,6 +24659,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -24273,7 +24908,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24331,9 +24978,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24574,6 +25221,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -24818,7 +25470,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24876,9 +25540,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25113,6 +25777,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -25357,7 +26026,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25415,9 +26096,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25668,6 +26349,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -25912,7 +26598,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25970,9 +26668,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26229,6 +26927,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -26473,7 +27176,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26545,8 +27260,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26557,6 +27272,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26572,6 +27291,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26627,9 +27351,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26867,6 +27591,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -27111,7 +27840,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27183,8 +27924,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27195,6 +27936,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27210,6 +27955,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27265,9 +28015,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27486,6 +28236,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -27730,7 +28485,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27796,8 +28563,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27808,6 +28575,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27823,6 +28594,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27878,9 +28654,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28102,6 +28878,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -28346,7 +29127,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28412,8 +29205,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account
-        /// is from a different marketplace than the accounts in the organization.
+        /// ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: You can only join an organization that
+        /// operates in the same Amazon Web Services partition as your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28424,6 +29217,10 @@ namespace Amazon.Organizations
         /// <para>
         /// ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED: You attempted to change the membership
         /// of an account too quickly after its previous change.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// PAST_DUE_INVOICE: Your organization has an invoice that is past due.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28439,6 +29236,11 @@ namespace Amazon.Organizations
         /// <para>
         /// SOURCE_AND_TARGET_CANNOT_MATCH: An account can't accept a transfer invitation if it
         /// is both the sender and recipient of the invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// TARGET_ACCOUNT_VALIDATION_FAILURE: Billing transfer is not available for your account.
+        /// Contact your billing administrator or Amazon Web Services Support for assistance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28494,9 +29296,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28665,8 +29467,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an account leaves an organization, Organizations logs a membership event in CloudTrail.
-        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:LEFT</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         ///  <important> <ul> <li> 
@@ -28788,6 +29590,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29035,7 +29842,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29093,9 +29912,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29263,8 +30082,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an account leaves an organization, Organizations logs a membership event in CloudTrail.
-        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Left</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:LEFT</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         ///  <important> <ul> <li> 
@@ -29389,6 +30208,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29636,7 +30460,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29694,9 +30530,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29934,9 +30770,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30169,9 +31005,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30407,9 +31243,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30648,9 +31484,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30870,6 +31706,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -31114,7 +31955,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31178,9 +32031,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31400,6 +32253,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -31644,7 +32502,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31708,9 +32578,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31936,6 +32806,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -32180,7 +33055,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32238,9 +33125,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32466,6 +33353,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -32710,7 +33602,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32768,9 +33672,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33007,9 +33911,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33246,9 +34150,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33484,9 +34388,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33722,9 +34626,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33942,6 +34846,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -34186,7 +35095,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -34244,9 +35165,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -34464,6 +35385,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -34708,7 +35634,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -34766,9 +35704,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -34995,6 +35933,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -35239,7 +36182,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -35297,9 +36252,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -35526,6 +36481,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -35770,7 +36730,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -35828,9 +36800,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -36053,6 +37025,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -36297,7 +37274,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -36361,9 +37350,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -36586,6 +37575,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -36830,7 +37824,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -36894,9 +37900,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -37136,9 +38142,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -37375,9 +38381,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -37619,9 +38625,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -37863,9 +38869,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -38081,6 +39087,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -38328,7 +39339,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -38386,9 +39409,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -38613,6 +39636,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -38857,7 +39885,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -38915,9 +39955,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -39155,9 +40195,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -39392,9 +40432,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -39617,6 +40657,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -39861,7 +40906,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -39919,9 +40976,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -40144,6 +41201,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -40388,7 +41450,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -40446,9 +41520,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -40694,9 +41768,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -40939,9 +42013,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -41173,9 +42247,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -41410,9 +42484,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -41649,9 +42723,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -41891,9 +42965,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -42140,9 +43214,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -42383,9 +43457,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -42629,9 +43703,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -42878,9 +43952,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -43116,9 +44190,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -43357,9 +44431,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -43605,9 +44679,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -43850,9 +44924,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -44072,6 +45146,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -44316,7 +45395,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -44374,9 +45465,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -44596,6 +45687,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -44840,7 +45936,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -44898,9 +46006,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -45140,6 +46248,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -45384,7 +46497,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -45442,9 +46567,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -45684,6 +46809,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -45928,7 +47058,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -45986,9 +47128,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -46163,8 +47305,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an account is removed from an organization, Organizations logs a membership event
-        /// in CloudTrail. The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Removed</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// in CloudTrail. The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:REMOVED</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         ///  <important> <ul> <li> 
@@ -46248,6 +47390,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -46495,7 +47642,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -46553,9 +47712,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -46729,8 +47888,8 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// When an account is removed from an organization, Organizations logs a membership event
-        /// in CloudTrail. The event is an <c>AccountDepartedOrganization</c> event with <c>departedMethod:Removed</c>
-        /// and <c>departedTime</c>. This event is available only in the management account's
+        /// in CloudTrail. The event is an <c>AccountDepartedOrganization</c> event with <c>departureMethod:REMOVED</c>
+        /// and <c>departureTime</c>. This event is available only in the management account's
         /// event history.
         /// </para>
         ///  <important> <ul> <li> 
@@ -46817,6 +47976,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -47064,7 +48228,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -47122,9 +48298,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -47367,6 +48543,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -47611,7 +48792,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -47669,9 +48862,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -47912,6 +49105,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -48156,7 +49354,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -48214,9 +49424,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -48376,6 +49586,15 @@ namespace Amazon.Organizations
         /// <summary>
         /// Ends a transfer. A <i>transfer</i> is an arrangement between two management accounts
         /// where one account designates the other with specified responsibilities for their organization.
+        /// 
+        ///  
+        /// <para>
+        /// When a transfer ends, Organizations publishes a <c>ResponsibilityTransferTerminated</c>
+        /// service event to CloudTrail. Each affected account receives this event, including
+        /// upstream participants such as distributors in a chained transfer. For an example log
+        /// entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-terminate-responsibility-transfer">Example
+        /// log entries: TerminateResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateResponsibilityTransfer service method.</param>
         /// 
@@ -48429,6 +49648,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -48676,7 +49900,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -48734,9 +49970,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -48903,6 +50139,15 @@ namespace Amazon.Organizations
         /// <summary>
         /// Ends a transfer. A <i>transfer</i> is an arrangement between two management accounts
         /// where one account designates the other with specified responsibilities for their organization.
+        /// 
+        ///  
+        /// <para>
+        /// When a transfer ends, Organizations publishes a <c>ResponsibilityTransferTerminated</c>
+        /// service event to CloudTrail. Each affected account receives this event, including
+        /// upstream participants such as distributors in a chained transfer. For an example log
+        /// entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-terminate-responsibility-transfer">Example
+        /// log entries: TerminateResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateResponsibilityTransfer service method.</param>
         /// <param name="cancellationToken">
@@ -48959,6 +50204,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -49206,7 +50456,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -49264,9 +50526,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -49517,6 +50779,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -49761,7 +51028,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -49819,9 +51098,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -50062,6 +51341,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -50306,7 +51590,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -50364,9 +51660,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -50600,9 +51896,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -50836,9 +52132,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -51057,6 +52353,11 @@ namespace Amazon.Organizations
         /// <para>
         /// ACCOUNT_CREATION_NOT_COMPLETE: Your account setup isn't complete or your account isn't
         /// fully active. You must complete the account setup before you create an organization.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -51304,7 +52605,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -51365,9 +52678,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -51602,6 +52915,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -51846,7 +53164,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -51907,9 +53237,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -52139,6 +53469,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -52383,7 +53718,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -52441,9 +53788,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -52663,6 +54010,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+        /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
         /// responsibility transfer process. For example, a pending invitation or an in-progress
         /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -52907,7 +54259,19 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+        /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+        /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+        /// cancelled cannot be modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+        /// Amazon Web Services Support for assistance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+        /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -52965,9 +54329,9 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the terms of your partner
-        /// agreement. Visit Amazon Web Services Partner Central to view your partner agreements
-        /// or contact your Amazon Web Services Partner for help.
+        /// INVALID_END_DATE: The selected withdrawal date doesn't meet the minimum notice period
+        /// required by your partner agreement. Visit Amazon Web Services Partner Central or contact
+        /// your Amazon Web Services Channel Partner for help.
         /// </para>
         ///  </li> <li> 
         /// <para>

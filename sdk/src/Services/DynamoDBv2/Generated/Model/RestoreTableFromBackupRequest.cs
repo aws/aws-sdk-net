@@ -78,6 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         private ProvisionedThroughput _provisionedThroughputOverride;
         private SSESpecification _sseSpecificationOverride;
         private string _targetTableName;
+        private List<VectorIndex> _vectorIndexOverride = AWSConfigs.InitializeCollections ? new List<VectorIndex>() : null;
 
         /// <summary>
         /// Gets and sets the property BackupArn. 
@@ -234,6 +235,32 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTargetTableName()
         {
             return this._targetTableName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIndexOverride. 
+        /// <para>
+        /// The vector indexes for the restored table. If not specified, all vector indexes from
+        /// the backup are restored. The indexes provided must match existing vector indexes from
+        /// the backup. You can choose to exclude some or all of the vector indexes at the time
+        /// of restore.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VectorIndex> VectorIndexOverride
+        {
+            get { return this._vectorIndexOverride; }
+            set { this._vectorIndexOverride = value; }
+        }
+
+        // Check to see if VectorIndexOverride property is set
+        internal bool IsSetVectorIndexOverride()
+        {
+            return this._vectorIndexOverride != null && (this._vectorIndexOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

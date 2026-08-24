@@ -31,7 +31,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the StopMaterializedViewRefreshTaskRun operation.
-    /// Stops a materialized view refresh task run, for a specified table and columns.
+    /// Stops a materialized view refresh task run for a specified materialized view.
     /// </summary>
     public partial class StopMaterializedViewRefreshTaskRunRequest : AmazonGlueRequest
     {
@@ -81,7 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table to generate statistics.
+        /// The name of the materialized view.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -175,7 +175,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property DbNodeStorageSizeInGBs. 
         /// <para>
-        /// The amount of local node storage, in gigabytes (GBs), to allocate for the VM cluster.
+        /// The amount of local node storage, in gigabytes (GB), to allocate for the VM cluster.
         /// </para>
         /// </summary>
         public int? DbNodeStorageSizeInGBs
@@ -359,7 +359,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property MemorySizeInGBs. 
         /// <para>
-        /// The amount of memory, in gigabytes (GBs), to allocate for the VM cluster.
+        /// The amount of memory, in gigabytes (GB), to allocate for the VM cluster.
         /// </para>
         /// </summary>
         public int? MemorySizeInGBs

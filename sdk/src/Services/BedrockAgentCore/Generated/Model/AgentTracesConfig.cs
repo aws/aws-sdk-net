@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private BatchEvaluationTraceConfig _batchEvaluation;
         private CloudWatchLogsTraceConfig _cloudwatchLogs;
+        private OnlineEvaluationTraceConfig _onlineEvaluation;
         private List<Amazon.Runtime.Documents.Document> _sessionSpans = AWSConfigs.InitializeCollections ? new List<Amazon.Runtime.Documents.Document>() : null;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetCloudwatchLogs()
         {
             return this._cloudwatchLogs != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnlineEvaluation. 
+        /// <para>
+        /// Agent traces from an online evaluation configuration over a specified time range.
+        /// </para>
+        /// </summary>
+        public OnlineEvaluationTraceConfig OnlineEvaluation
+        {
+            get { return this._onlineEvaluation; }
+            set { this._onlineEvaluation = value; }
+        }
+
+        // Check to see if OnlineEvaluation property is set
+        internal bool IsSetOnlineEvaluation()
+        {
+            return this._onlineEvaluation != null;
         }
 
         /// <summary>

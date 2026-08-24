@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class CryptoX402PaymentInput
     {
         private Amazon.Runtime.Documents.Document _payload;
+        private string _permit2AllowanceLimit;
         private string _version;
 
         /// <summary>
@@ -54,6 +55,35 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetPayload()
         {
             return !this._payload.IsNull();
+        }
+
+        /// <summary>
+        /// Gets and sets the property Permit2AllowanceLimit. 
+        /// <para>
+        /// The maximum on-chain Permit2 allowance to grant before signing the payment authorization,
+        /// in the asset's smallest denomination. This field is valid only for the <c>upto</c>
+        /// (metered) scheme; supplying it for the <c>exact</c> scheme returns a validation error.
+        /// </para>
+        ///  
+        /// <para>
+        /// When set, the service approves an ERC-20 allowance for this amount before processing
+        /// the payment. The approval sets, rather than adds to, the wallet's allowance. Set this
+        /// field only when the wallet needs approving, for example on its first <c>upto</c> payment,
+        /// to avoid a redundant on-chain transaction. Omit the field to skip allowance handling.
+        /// This is the default, and the only behavior for the <c>exact</c> scheme.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=78)]
+        public string Permit2AllowanceLimit
+        {
+            get { return this._permit2AllowanceLimit; }
+            set { this._permit2AllowanceLimit = value; }
+        }
+
+        // Check to see if Permit2AllowanceLimit property is set
+        internal bool IsSetPermit2AllowanceLimit()
+        {
+            return this._permit2AllowanceLimit != null;
         }
 
         /// <summary>

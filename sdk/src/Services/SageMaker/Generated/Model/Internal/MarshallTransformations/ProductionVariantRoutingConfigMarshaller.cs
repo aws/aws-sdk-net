@@ -46,6 +46,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetPrefixAwareRoutingConfig())
+            {
+                context.Writer.WritePropertyName("PrefixAwareRoutingConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PrefixAwareRoutingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.PrefixAwareRoutingConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRoutingStrategy())
             {
                 context.Writer.WritePropertyName("RoutingStrategy");

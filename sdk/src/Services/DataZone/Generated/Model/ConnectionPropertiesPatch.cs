@@ -36,6 +36,7 @@ namespace Amazon.DataZone.Model
     {
         private AmazonQPropertiesPatch _amazonqProperties;
         private AthenaPropertiesPatch _athenaProperties;
+        private GitPropertiesPatch _gitProperties;
         private GluePropertiesPatch _glueProperties;
         private IamPropertiesPatch _iamProperties;
         private LakehousePropertiesPatch _lakehouseProperties;
@@ -80,6 +81,24 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAthenaProperties()
         {
             return this._athenaProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GitProperties. 
+        /// <para>
+        /// The Git properties of a connection properties patch.
+        /// </para>
+        /// </summary>
+        public GitPropertiesPatch GitProperties
+        {
+            get { return this._gitProperties; }
+            set { this._gitProperties = value; }
+        }
+
+        // Check to see if GitProperties property is set
+        internal bool IsSetGitProperties()
+        {
+            return this._gitProperties != null;
         }
 
         /// <summary>

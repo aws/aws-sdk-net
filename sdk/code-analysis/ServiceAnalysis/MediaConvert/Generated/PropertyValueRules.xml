@@ -1447,7 +1447,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.KantarServerUrl</property>
-    <pattern>^https:\/\/.*.kantarmedia.*$</pattern>
+    <pattern>^https:\/\/.*.(kantarmedia|55-prod).*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConvert.Model.KantarWatermarkSettings.LogDestination</property>

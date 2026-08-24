@@ -128,6 +128,46 @@ namespace Amazon.Drs.Model
         IListLaunchActionsPaginator ListLaunchActions(ListLaunchActionsRequest request);
 
         /// <summary>
+        /// Paginator for ListRecoveryPlanExecutions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecoveryPlanExecutionsPaginator ListRecoveryPlanExecutions(ListRecoveryPlanExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecoveryPlanExecutionSteps operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecoveryPlanExecutionStepsPaginator ListRecoveryPlanExecutionSteps(ListRecoveryPlanExecutionStepsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecoveryPlans operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecoveryPlansPaginator ListRecoveryPlans(ListRecoveryPlansRequest request);
+
+        /// <summary>
+        /// Paginator for ListRecoveryPlanSteps operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListRecoveryPlanStepsPaginator ListRecoveryPlanSteps(ListRecoveryPlanStepsRequest request);
+
+        /// <summary>
         /// Paginator for ListStagingAccounts operation
         ///</summary>
         [AWSPaginator(

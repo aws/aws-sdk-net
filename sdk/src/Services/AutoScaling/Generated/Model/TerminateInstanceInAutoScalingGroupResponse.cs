@@ -34,7 +34,32 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class TerminateInstanceInAutoScalingGroupResponse : AmazonWebServiceResponse
     {
+        private List<Activity> _activities = AWSConfigs.InitializeCollections ? new List<Activity>() : null;
         private Activity _activity;
+
+        /// <summary>
+        /// Gets and sets the property Activities. 
+        /// <para>
+        /// The scaling activities related to terminating the instances from the Auto Scaling
+        /// group.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<Activity> Activities
+        {
+            get { return this._activities; }
+            set { this._activities = value; }
+        }
+
+        // Check to see if Activities property is set
+        internal bool IsSetActivities()
+        {
+            return this._activities != null && (this._activities.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Activity. 

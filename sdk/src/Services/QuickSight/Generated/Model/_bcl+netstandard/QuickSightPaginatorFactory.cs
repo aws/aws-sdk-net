@@ -69,6 +69,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListApprovalPolicies operation
+        ///</summary>
+        public IListApprovalPoliciesPaginator ListApprovalPolicies(ListApprovalPoliciesRequest request) 
+        {
+            return new ListApprovalPoliciesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetBundleExportJobs operation
         ///</summary>
         public IListAssetBundleExportJobsPaginator ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request) 
@@ -130,6 +138,14 @@ namespace Amazon.QuickSight.Model
         public IListDataSourcesPaginator ListDataSources(ListDataSourcesRequest request) 
         {
             return new ListDataSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListDlpSettings operation
+        ///</summary>
+        public IListDlpSettingsPaginator ListDlpSettings(ListDlpSettingsRequest request) 
+        {
+            return new ListDlpSettingsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -213,6 +229,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListLimitsProfiles operation
+        ///</summary>
+        public IListLimitsProfilesPaginator ListLimitsProfiles(ListLimitsProfilesRequest request) 
+        {
+            return new ListLimitsProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNamespaces operation
         ///</summary>
         public IListNamespacesPaginator ListNamespaces(ListNamespacesRequest request) 
@@ -282,6 +306,14 @@ namespace Amazon.QuickSight.Model
         public IListTopicsPaginator ListTopics(ListTopicsRequest request) 
         {
             return new ListTopicsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTopicsV2 operation
+        ///</summary>
+        public IListTopicsV2Paginator ListTopicsV2(ListTopicsV2Request request) 
+        {
+            return new ListTopicsV2Paginator(this.client, request);
         }
 
         /// <summary>
@@ -386,6 +418,14 @@ namespace Amazon.QuickSight.Model
         public ISearchTopicsPaginator SearchTopics(SearchTopicsRequest request) 
         {
             return new SearchTopicsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchTopicsV2 operation
+        ///</summary>
+        public ISearchTopicsV2Paginator SearchTopicsV2(SearchTopicsV2Request request) 
+        {
+            return new SearchTopicsV2Paginator(this.client, request);
         }
     }
 }

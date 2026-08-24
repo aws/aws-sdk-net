@@ -64,7 +64,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// <summary>
         /// Gets and sets the property InvokerRoleName.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=576)]
         public string InvokerRoleName
         {
             get { return this._invokerRoleName; }

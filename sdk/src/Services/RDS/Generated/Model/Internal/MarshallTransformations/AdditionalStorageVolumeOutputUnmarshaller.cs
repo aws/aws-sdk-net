@@ -73,6 +73,18 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.MaxAllocatedStorage = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("StorageOperationPercentProgress", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.StorageOperationPercentProgress = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageOperationStatus", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.StorageOperationStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("StorageThroughput", targetDepth))
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;

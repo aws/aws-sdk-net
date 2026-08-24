@@ -398,9 +398,8 @@ namespace Amazon.TimestreamInfluxDB.Model
         /// <summary>
         /// Gets and sets the property QueryMaxMemoryBytes. 
         /// <para>
-        /// Maximum number of queries allowed in execution queue. When queue limit is reached,
-        /// new queries are rejected. Setting to 0 allows an unlimited number of queries in the
-        /// queue.
+        /// Maximum total bytes of memory allowed for all running queries. When this limit is
+        /// reached, new queries are rejected. Setting to 0 allows unlimited memory usage.
         /// </para>
         ///  
         /// <para>

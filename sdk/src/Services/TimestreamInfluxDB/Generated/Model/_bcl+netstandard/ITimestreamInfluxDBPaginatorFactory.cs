@@ -28,6 +28,16 @@ namespace Amazon.TimestreamInfluxDB.Model
     {
 
         /// <summary>
+        /// Paginator for ListDbBackups operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListDbBackupsPaginator ListDbBackups(ListDbBackupsRequest request);
+
+        /// <summary>
         /// Paginator for ListDbClusters operation
         ///</summary>
         [AWSPaginator(

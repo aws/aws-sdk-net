@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Details about an error related to retrieving a function's deployment package.
+    /// Contains details about an error that occurred when Lambda attempted to retrieve a
+    /// function's deployment package.
     /// </summary>
     public partial class FunctionCodeLocationError
     {
@@ -40,7 +41,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code for the failed retrieval.
+        /// The error code that identifies why Lambda failed to retrieve the deployment package.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -58,7 +59,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A description of the error.
+        /// The human-readable message that describes why Lambda failed to retrieve the deployment
+        /// package.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

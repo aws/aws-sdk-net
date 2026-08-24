@@ -41,8 +41,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property AnalysisId. 
         /// <para>
-        /// The identifier for the protected query execution. Use this value with <c>GetProtectedQuery</c>
-        /// to track the population progress.
+        /// The identifier for the protected query execution that populated the intermediate table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

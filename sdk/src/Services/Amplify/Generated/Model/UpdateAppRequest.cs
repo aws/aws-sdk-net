@@ -480,7 +480,7 @@ namespace Amazon.Amplify.Model
         /// .
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Max=1000)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public string OauthToken
         {
             get { return this._oauthToken; }

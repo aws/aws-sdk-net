@@ -58,17 +58,22 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// Reason why drift was ignored for the attribute, can have 2 possible values:
+        /// Reason why drift was ignored for the attribute, can have 3 possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>WRITE_ONLY_PROPERTY</c> - Property is not included in read response for the resource’s
+        ///  <c>WRITE_ONLY_PROPERTY</c> – Property is not included in read response for the resource’s
         /// live state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>MANAGED_BY_AWS</c> - Property is managed by an Amazon Web Services service and
+        ///  <c>MANAGED_BY_AWS</c> – Property is managed by an Amazon Web Services service and
         /// is expected to be dynamically modified.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SENSITIVE_PROPERTY</c> – Property has a sensitive value, such as an Amazon Web
+        /// Services Secrets Manager value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

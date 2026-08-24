@@ -57,6 +57,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetVastResponse())
+            {
+                context.Writer.WritePropertyName("VastResponse");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VastResponseMarshaller.Instance;
+                marshaller.Marshall(requestObject.VastResponse, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

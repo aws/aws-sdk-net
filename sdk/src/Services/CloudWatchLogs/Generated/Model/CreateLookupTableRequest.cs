@@ -31,14 +31,16 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLookupTable operation.
-    /// Creates a lookup table by uploading CSV data. You can use lookup tables to enrich
-    /// log data in CloudWatch Logs Insights queries with reference data such as user details,
-    /// application names, or error descriptions.
+    /// Creates a lookup table by uploading CSV data or from CloudWatch Logs query results.
+    /// You can use lookup tables to enrich log data in CloudWatch Logs queries with reference
+    /// data such as user details, application names, or error descriptions.
     /// 
     ///  
     /// <para>
-    /// The table name must be unique within your account and Region. The CSV content must
-    /// include a header row with column names, use UTF-8 encoding, and not exceed 10 MB.
+    /// The table name must be unique within your account and Region. You must specify either
+    /// <c>tableBody</c> or <c>queryId</c>, but not both. If you use <c>tableBody</c>, the
+    /// CSV content must include a header row with column names, use UTF-8 encoding, and not
+    /// exceed 10 MB.
     /// </para>
     /// </summary>
     public partial class CreateLookupTableRequest : AmazonCloudWatchLogsRequest
@@ -46,6 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _description;
         private string _kmsKeyId;
         private string _lookupTableName;
+        private string _queryId;
         private string _tableBody;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -110,13 +113,42 @@ namespace Amazon.CloudWatchLogs.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryId. 
+        /// <para>
+        /// The ID of a completed or cancelled CloudWatch Logs query whose results populate the
+        /// lookup table. A cancelled query populates the table with the partial results that
+        /// were available when the query was stopped.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>tableBody</c> or <c>queryId</c>, but not both.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string QueryId
+        {
+            get { return this._queryId; }
+            set { this._queryId = value; }
+        }
+
+        // Check to see if QueryId property is set
+        internal bool IsSetQueryId()
+        {
+            return this._queryId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TableBody. 
         /// <para>
         /// The CSV content of the lookup table. The first row must be a header row with column
         /// names. The content must use UTF-8 encoding and not exceed 10 MB.
         /// </para>
+        ///  
+        /// <para>
+        /// You must specify either <c>tableBody</c> or <c>queryId</c>, but not both.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10485760)]
+        [AWSProperty(Min=1, Max=10485760)]
         public string TableBody
         {
             get { return this._tableBody; }

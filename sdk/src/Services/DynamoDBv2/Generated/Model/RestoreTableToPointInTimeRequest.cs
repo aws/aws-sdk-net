@@ -116,6 +116,7 @@ namespace Amazon.DynamoDBv2.Model
         private SSESpecification _sseSpecificationOverride;
         private string _targetTableName;
         private bool? _useLatestRestorableTime;
+        private List<VectorIndex> _vectorIndexOverride = AWSConfigs.InitializeCollections ? new List<VectorIndex>() : null;
 
         /// <summary>
         /// Gets and sets the property BillingModeOverride. 
@@ -141,6 +142,13 @@ namespace Amazon.DynamoDBv2.Model
         /// List of global secondary indexes for the restored table. The indexes provided should
         /// match existing secondary indexes. You can choose to exclude some or all of the indexes
         /// at the time of restore.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>WarmThroughput</c> setting is not supported on global secondary indexes when
+        /// you use <c>RestoreTableToPointInTime</c>. Although <c>WarmThroughput</c> appears in
+        /// the shared index definition, including it in a <c>GlobalSecondaryIndexOverride</c>
+        /// entry causes the request to fail with a validation error.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -328,6 +336,32 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetUseLatestRestorableTime()
         {
             return this._useLatestRestorableTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIndexOverride. 
+        /// <para>
+        /// The vector indexes for the restored table. If not specified, all vector indexes from
+        /// the source table are restored. The indexes provided must match existing vector indexes
+        /// from the source table. You can choose to exclude some or all of the vector indexes
+        /// at the time of restore.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VectorIndex> VectorIndexOverride
+        {
+            get { return this._vectorIndexOverride; }
+            set { this._vectorIndexOverride = value; }
+        }
+
+        // Check to see if VectorIndexOverride property is set
+        internal bool IsSetVectorIndexOverride()
+        {
+            return this._vectorIndexOverride != null && (this._vectorIndexOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

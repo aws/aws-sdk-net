@@ -43,6 +43,7 @@ namespace Amazon.Outposts.Model
         ///  Information about an address. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Address Address
         {
             get { return this._address; }

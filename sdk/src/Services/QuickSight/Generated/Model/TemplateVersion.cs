@@ -42,6 +42,7 @@ namespace Amazon.QuickSight.Model
         private string _sourceEntityArn;
         private ResourceStatus _status;
         private string _themeArn;
+        private List<TopicConfiguration> _topicConfigurations = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
         private long? _versionNumber;
 
         /// <summary>
@@ -237,6 +238,32 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetThemeArn()
         {
             return this._themeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicConfigurations. 
+        /// <para>
+        /// Schema of the topic identified by the placeholder. Any dashboard created from this
+        /// template should be bound to new topics matching the same schema described through
+        /// this API operation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=30)]
+        public List<TopicConfiguration> TopicConfigurations
+        {
+            get { return this._topicConfigurations; }
+            set { this._topicConfigurations = value; }
+        }
+
+        // Check to see if TopicConfigurations property is set
+        internal bool IsSetTopicConfigurations()
+        {
+            return this._topicConfigurations != null && (this._topicConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

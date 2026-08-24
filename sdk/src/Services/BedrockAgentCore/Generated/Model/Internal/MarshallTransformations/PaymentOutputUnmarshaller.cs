@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.CryptoX402 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("mpp", targetDepth, ref reader))
+                {
+                    var unmarshaller = MppPaymentOutputUnmarshaller.Instance;
+                    unmarshalledObject.Mpp = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

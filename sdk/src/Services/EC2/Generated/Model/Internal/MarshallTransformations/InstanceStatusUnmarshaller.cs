@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("applicationStatus", targetDepth))
+                    {
+                        var unmarshaller = ApplicationStatusSummaryUnmarshaller.Instance;
+                        unmarshalledObject.ApplicationStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("attachedEbsStatus", targetDepth))
                     {
                         var unmarshaller = EbsStatusSummaryUnmarshaller.Instance;

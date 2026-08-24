@@ -28,16 +28,13 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// AddReservedInstanceAction Marshaller
     /// </summary>
-    public class AddReservedInstanceActionMarshaller : IRequestMarshaller<AddReservedInstanceAction, CborMarshallerContext> 
+    public class AddReservedInstanceActionMarshaller : IRequestMarshaller<AddReservedInstanceAction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,21 +42,22 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AddReservedInstanceAction requestObject, CborMarshallerContext context)
+        public void Marshall(AddReservedInstanceAction requestObject, JsonMarshallerContext context)
         {
-            if (requestObject == null)
+            if(requestObject == null)
                 return;
+            if(requestObject.IsSetInstanceCount())
+            {
+                context.Writer.WritePropertyName("instanceCount");
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
+            }
 
-            if (requestObject.IsSetInstanceCount())
+            if(requestObject.IsSetReservedInstancesOfferingId())
             {
-                context.Writer.WriteTextString("instanceCount");
-                context.Writer.WriteInt32(requestObject.InstanceCount.Value);
+                context.Writer.WritePropertyName("reservedInstancesOfferingId");
+                context.Writer.WriteStringValue(requestObject.ReservedInstancesOfferingId);
             }
-            if (requestObject.IsSetReservedInstancesOfferingId())
-            {
-                context.Writer.WriteTextString("reservedInstancesOfferingId");
-                context.Writer.WriteTextString(requestObject.ReservedInstancesOfferingId);
-            }
+
         }
 
         /// <summary>

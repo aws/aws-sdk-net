@@ -169,6 +169,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTopicsV2())
+            {
+                context.Writer.WritePropertyName("TopicsV2");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTopicsV2ListValue in requestObject.TopicsV2)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AssetBundleImportJobTopicV2OverrideParametersMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTopicsV2ListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetVPCConnections())
             {
                 context.Writer.WritePropertyName("VPCConnections");

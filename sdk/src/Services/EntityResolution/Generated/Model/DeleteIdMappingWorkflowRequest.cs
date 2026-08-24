@@ -31,8 +31,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIdMappingWorkflow operation.
-    /// Deletes the <c>IdMappingWorkflow</c> with a given name. This operation will succeed
-    /// even if a workflow with the given name does not exist.
+    /// Deletes the <c>IdMappingWorkflow</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+    /// if a workflow with the given name does not exist.
     /// </summary>
     public partial class DeleteIdMappingWorkflowRequest : AmazonEntityResolutionRequest
     {

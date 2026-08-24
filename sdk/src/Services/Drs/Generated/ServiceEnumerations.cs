@@ -2015,6 +2015,292 @@ namespace Amazon.Drs
 
 
     /// <summary>
+    /// Constants used for properties of type RecoveryPlanExecutionMode.
+    /// </summary>
+    public class RecoveryPlanExecutionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRILL for RecoveryPlanExecutionMode
+        /// </summary>
+        public static readonly RecoveryPlanExecutionMode DRILL = new RecoveryPlanExecutionMode("DRILL");
+        /// <summary>
+        /// Constant RECOVERY for RecoveryPlanExecutionMode
+        /// </summary>
+        public static readonly RecoveryPlanExecutionMode RECOVERY = new RecoveryPlanExecutionMode("RECOVERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecoveryPlanExecutionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecoveryPlanExecutionMode FindValue(string value)
+        {
+            return FindValue<RecoveryPlanExecutionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecoveryPlanExecutionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecoveryPlanExecutionStatus.
+    /// </summary>
+    public class RecoveryPlanExecutionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for RecoveryPlanExecutionStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStatus CANCELLED = new RecoveryPlanExecutionStatus("CANCELLED");
+        /// <summary>
+        /// Constant CANCELLING for RecoveryPlanExecutionStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStatus CANCELLING = new RecoveryPlanExecutionStatus("CANCELLING");
+        /// <summary>
+        /// Constant COMPLETED for RecoveryPlanExecutionStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStatus COMPLETED = new RecoveryPlanExecutionStatus("COMPLETED");
+        /// <summary>
+        /// Constant CREATED for RecoveryPlanExecutionStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStatus CREATED = new RecoveryPlanExecutionStatus("CREATED");
+        /// <summary>
+        /// Constant FAILED for RecoveryPlanExecutionStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStatus FAILED = new RecoveryPlanExecutionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecoveryPlanExecutionStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStatus IN_PROGRESS = new RecoveryPlanExecutionStatus("IN_PROGRESS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecoveryPlanExecutionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecoveryPlanExecutionStatus FindValue(string value)
+        {
+            return FindValue<RecoveryPlanExecutionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecoveryPlanExecutionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecoveryPlanExecutionStepStatus.
+    /// </summary>
+    public class RecoveryPlanExecutionStepStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for RecoveryPlanExecutionStepStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStepStatus COMPLETED = new RecoveryPlanExecutionStepStatus("COMPLETED");
+        /// <summary>
+        /// Constant EXECUTING for RecoveryPlanExecutionStepStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStepStatus EXECUTING = new RecoveryPlanExecutionStepStatus("EXECUTING");
+        /// <summary>
+        /// Constant FAILED for RecoveryPlanExecutionStepStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStepStatus FAILED = new RecoveryPlanExecutionStepStatus("FAILED");
+        /// <summary>
+        /// Constant NOT_STARTED for RecoveryPlanExecutionStepStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStepStatus NOT_STARTED = new RecoveryPlanExecutionStepStatus("NOT_STARTED");
+        /// <summary>
+        /// Constant SKIPPED for RecoveryPlanExecutionStepStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStepStatus SKIPPED = new RecoveryPlanExecutionStepStatus("SKIPPED");
+        /// <summary>
+        /// Constant TIMED_OUT for RecoveryPlanExecutionStepStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStepStatus TIMED_OUT = new RecoveryPlanExecutionStepStatus("TIMED_OUT");
+        /// <summary>
+        /// Constant WAITING for RecoveryPlanExecutionStepStatus
+        /// </summary>
+        public static readonly RecoveryPlanExecutionStepStatus WAITING = new RecoveryPlanExecutionStepStatus("WAITING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecoveryPlanExecutionStepStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecoveryPlanExecutionStepStatus FindValue(string value)
+        {
+            return FindValue<RecoveryPlanExecutionStepStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecoveryPlanExecutionStepStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecoveryPlanServerImpactLevel.
+    /// </summary>
+    public class RecoveryPlanServerImpactLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRITICAL for RecoveryPlanServerImpactLevel
+        /// </summary>
+        public static readonly RecoveryPlanServerImpactLevel CRITICAL = new RecoveryPlanServerImpactLevel("CRITICAL");
+        /// <summary>
+        /// Constant OPTIONAL for RecoveryPlanServerImpactLevel
+        /// </summary>
+        public static readonly RecoveryPlanServerImpactLevel OPTIONAL = new RecoveryPlanServerImpactLevel("OPTIONAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecoveryPlanServerImpactLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecoveryPlanServerImpactLevel FindValue(string value)
+        {
+            return FindValue<RecoveryPlanServerImpactLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecoveryPlanServerImpactLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecoveryPlanStatus.
+    /// </summary>
+    public class RecoveryPlanStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for RecoveryPlanStatus
+        /// </summary>
+        public static readonly RecoveryPlanStatus ACTIVE = new RecoveryPlanStatus("ACTIVE");
+        /// <summary>
+        /// Constant INVALID for RecoveryPlanStatus
+        /// </summary>
+        public static readonly RecoveryPlanStatus INVALID = new RecoveryPlanStatus("INVALID");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecoveryPlanStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecoveryPlanStatus FindValue(string value)
+        {
+            return FindValue<RecoveryPlanStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecoveryPlanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecoveryResult.
     /// </summary>
     public class RecoveryResult : ConstantClass

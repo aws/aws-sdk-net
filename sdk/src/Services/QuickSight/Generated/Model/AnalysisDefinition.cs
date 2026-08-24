@@ -45,6 +45,7 @@ namespace Amazon.QuickSight.Model
         private List<SheetDefinition> _sheets = AWSConfigs.InitializeCollections ? new List<SheetDefinition>() : null;
         private List<StaticFile> _staticFiles = AWSConfigs.InitializeCollections ? new List<StaticFile>() : null;
         private List<TooltipSheetDefinition> _tooltipSheets = AWSConfigs.InitializeCollections ? new List<TooltipSheetDefinition>() : null;
+        private List<TopicIdentifierDeclaration> _topicIdentifierDeclarations = AWSConfigs.InitializeCollections ? new List<TopicIdentifierDeclaration>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisDefaults.
@@ -122,7 +123,7 @@ namespace Amazon.QuickSight.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=50)]
         public List<DataSetIdentifierDeclaration> DataSetIdentifierDeclarations
         {
             get { return this._dataSetIdentifierDeclarations; }
@@ -303,6 +304,31 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTooltipSheets()
         {
             return this._tooltipSheets != null && (this._tooltipSheets.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicIdentifierDeclarations. 
+        /// <para>
+        /// An array of topic identifier declarations. This mapping allows the usage of topic
+        /// identifiers instead of topic ARNs throughout analysis sub-structures.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=50)]
+        public List<TopicIdentifierDeclaration> TopicIdentifierDeclarations
+        {
+            get { return this._topicIdentifierDeclarations; }
+            set { this._topicIdentifierDeclarations = value; }
+        }
+
+        // Check to see if TopicIdentifierDeclarations property is set
+        internal bool IsSetTopicIdentifierDeclarations()
+        {
+            return this._topicIdentifierDeclarations != null && (this._topicIdentifierDeclarations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

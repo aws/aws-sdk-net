@@ -158,6 +158,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.TargetTableName);
             }
 
+            if(publicRequest.IsSetVectorIndexOverride())
+            {
+                context.Writer.WritePropertyName("VectorIndexOverride");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVectorIndexOverrideListValue in publicRequest.VectorIndexOverride)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VectorIndexMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVectorIndexOverrideListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

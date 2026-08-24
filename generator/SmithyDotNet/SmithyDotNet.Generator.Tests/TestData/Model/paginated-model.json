@@ -1,0 +1,337 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.testpaginated#TestPaginatedService": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        { "target": "com.amazonaws.testpaginated#GetUsage" },
+        { "target": "com.amazonaws.testpaginated#ListFunctions" },
+        { "target": "com.amazonaws.testpaginated#ListSummaries" },
+        { "target": "com.amazonaws.testpaginated#ListThings" },
+        { "target": "com.amazonaws.testpaginated#ListWidgets" }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Test Paginated",
+          "arnNamespace": "testpaginated"
+        },
+        "aws.auth#sigv4": { "name": "testpaginated" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Test Paginated Service",
+        "smithy.api#paginated": {
+          "inputToken": "marker",
+          "outputToken": "nextMarker",
+          "pageSize": "maxItems"
+        }
+      }
+    },
+    "com.amazonaws.testpaginated#GetUsage": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testpaginated#GetUsageRequest" },
+      "output": { "target": "com.amazonaws.testpaginated#GetUsageResponse" },
+      "traits": {
+        "smithy.api#paginated": {
+          "inputToken": "position",
+          "outputToken": "position",
+          "items": "items"
+        },
+        "smithy.api#http": { "method": "GET", "uri": "/usage" },
+        "smithy.api#readonly": {}
+      }
+    },
+    "com.amazonaws.testpaginated#GetUsageRequest": {
+      "type": "structure",
+      "members": {
+        "position": {
+          "target": "smithy.api#String"
+        },
+        "maxItems": {
+          "target": "smithy.api#Integer"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListFunctions": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testpaginated#ListFunctionsRequest" },
+      "output": { "target": "com.amazonaws.testpaginated#ListFunctionsResponse" },
+      "traits": {
+        "smithy.api#paginated": {
+          "items": "functions"
+        },
+        "smithy.api#http": { "method": "GET", "uri": "/functions" },
+        "smithy.api#readonly": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListFunctionsRequest": {
+      "type": "structure",
+      "members": {
+        "marker": {
+          "target": "smithy.api#String"
+        },
+        "maxItems": {
+          "target": "smithy.api#Integer"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListFunctionsResponse": {
+      "type": "structure",
+      "members": {
+        "nextMarker": {
+          "target": "smithy.api#String"
+        },
+        "functions": {
+          "target": "com.amazonaws.testpaginated#FunctionList"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.testpaginated#FunctionList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testpaginated#Function"
+      }
+    },
+    "com.amazonaws.testpaginated#Function": {
+      "type": "structure",
+      "members": {
+        "name": {
+          "target": "smithy.api#String"
+        }
+      }
+    },
+    "com.amazonaws.testpaginated#GetUsageResponse": {
+      "type": "structure",
+      "members": {
+        "position": {
+          "target": "smithy.api#String"
+        },
+        "items": {
+          "target": "com.amazonaws.testpaginated#UsageMap"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.testpaginated#UsageMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#String"
+      }
+    },
+    "com.amazonaws.testpaginated#ListSummaries": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testpaginated#ListSummariesRequest" },
+      "output": { "target": "com.amazonaws.testpaginated#ListSummariesResponse" },
+      "traits": {
+        "smithy.api#paginated": {
+          "inputToken": "marker",
+          "outputToken": "summaryList.nextMarker",
+          "items": "summaryList.items"
+        },
+        "smithy.api#http": { "method": "GET", "uri": "/summaries" },
+        "smithy.api#readonly": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListSummariesRequest": {
+      "type": "structure",
+      "members": {
+        "marker": {
+          "target": "smithy.api#String"
+        },
+        "maxItems": {
+          "target": "smithy.api#Integer"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListSummariesResponse": {
+      "type": "structure",
+      "members": {
+        "summaryList": {
+          "target": "com.amazonaws.testpaginated#SummaryList"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.testpaginated#SummaryList": {
+      "type": "structure",
+      "members": {
+        "nextMarker": {
+          "target": "smithy.api#String"
+        },
+        "items": {
+          "target": "com.amazonaws.testpaginated#SummaryItems"
+        }
+      }
+    },
+    "com.amazonaws.testpaginated#SummaryItems": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testpaginated#Summary"
+      }
+    },
+    "com.amazonaws.testpaginated#Summary": {
+      "type": "structure",
+      "members": {
+        "name": {
+          "target": "smithy.api#String"
+        }
+      }
+    },
+    "com.amazonaws.testpaginated#ListThings": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testpaginated#ListThingsRequest" },
+      "output": { "target": "com.amazonaws.testpaginated#ListThingsResponse" },
+      "traits": {
+        "smithy.api#paginated": {
+          "inputToken": "nextToken",
+          "outputToken": "nextToken",
+          "items": "things",
+          "pageSize": "maxResults"
+        },
+        "smithy.api#http": { "method": "GET", "uri": "/things" },
+        "smithy.api#readonly": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListThingsRequest": {
+      "type": "structure",
+      "members": {
+        "nextToken": {
+          "target": "smithy.api#String"
+        },
+        "maxResults": {
+          "target": "smithy.api#Integer"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListThingsResponse": {
+      "type": "structure",
+      "members": {
+        "nextToken": {
+          "target": "smithy.api#String"
+        },
+        "things": {
+          "target": "com.amazonaws.testpaginated#ThingList"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ThingList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testpaginated#Thing"
+      }
+    },
+    "com.amazonaws.testpaginated#Thing": {
+      "type": "structure",
+      "members": {
+        "name": {
+          "target": "smithy.api#String"
+        }
+      }
+    },
+    "com.amazonaws.testpaginated#ListWidgets": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testpaginated#ListWidgetsRequest" },
+      "output": { "target": "com.amazonaws.testpaginated#ListWidgetsResponse" },
+      "traits": {
+        "smithy.api#paginated": {
+          "inputToken": "nextToken",
+          "outputToken": "nextToken"
+        },
+        "smithy.api#http": { "method": "GET", "uri": "/widgets" },
+        "smithy.api#readonly": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListWidgetsRequest": {
+      "type": "structure",
+      "members": {
+        "nextToken": {
+          "target": "smithy.api#String"
+        },
+        "maxItems": {
+          "target": "smithy.api#Integer"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ListWidgetsResponse": {
+      "type": "structure",
+      "members": {
+        "nextToken": {
+          "target": "smithy.api#String"
+        },
+        "widgets": {
+          "target": "com.amazonaws.testpaginated#WidgetList"
+        },
+        "choices": {
+          "target": "com.amazonaws.testpaginated#ChoiceList"
+        },
+        "matrix": {
+          "target": "com.amazonaws.testpaginated#ThingMatrix"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.testpaginated#ChoiceList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testpaginated#TestUnion"
+      }
+    },
+    "com.amazonaws.testpaginated#TestUnion": {
+      "type": "union",
+      "members": {
+        "text": {
+          "target": "smithy.api#String"
+        }
+      }
+    },
+    "com.amazonaws.testpaginated#ThingMatrix": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testpaginated#ThingList"
+      }
+    },
+    "com.amazonaws.testpaginated#WidgetList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testpaginated#Widget"
+      }
+    },
+    "com.amazonaws.testpaginated#Widget": {
+      "type": "structure",
+      "members": {
+        "id": {
+          "target": "smithy.api#String"
+        }
+      }
+    }
+  }
+}

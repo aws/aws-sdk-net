@@ -72,7 +72,10 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordedAt.
+        /// Gets and sets the property RecordedAt. 
+        /// <para>
+        /// The date and time when the milestone was recorded.
+        /// </para>
         /// </summary>
         public DateTime? RecordedAt
         {

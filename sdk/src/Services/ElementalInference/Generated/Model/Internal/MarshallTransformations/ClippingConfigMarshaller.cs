@@ -52,6 +52,17 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.CallbackMetadata);
             }
 
+            if(requestObject.IsSetDataSourceConfiguration())
+            {
+                context.Writer.WritePropertyName("dataSourceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataSourceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

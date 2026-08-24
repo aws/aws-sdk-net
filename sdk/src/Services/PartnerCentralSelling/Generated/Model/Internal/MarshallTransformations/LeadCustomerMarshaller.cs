@@ -51,7 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Address");
                 context.Writer.WriteStartObject();
 
-                var marshaller = AddressSummaryMarshaller.Instance;
+                var marshaller = LeadAddressMarshaller.Instance;
                 marshaller.Marshall(requestObject.Address, context);
 
                 context.Writer.WriteEndObject();

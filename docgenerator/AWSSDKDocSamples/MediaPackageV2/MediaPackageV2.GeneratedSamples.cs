@@ -246,6 +246,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
                     TsUseAudioRenditionGroup = true
                 },
                 StartoverWindowSeconds = 300,
+                StreamNameOutputMode = "INDEX",
                 Tags = new Dictionary<string, string> {
                     { "key1", "value1" },
                     { "key2", "value2" }
@@ -267,6 +268,7 @@ namespace AWSSDKDocSamples.Amazon.MediaPackageV2.Generated
             string originEndpointName = response.OriginEndpointName;
             Segment segment = response.Segment;
             int startoverWindowSeconds = response.StartoverWindowSeconds;
+            string streamNameOutputMode = response.StreamNameOutputMode;
             Dictionary<string, string> tags = response.Tags;
             string uriSeparator = response.UriSeparator;
 

@@ -86,6 +86,8 @@ namespace Amazon.TranscribeStreaming.Model.Internal.MarshallTransformations
                 response.SessionResumeWindow = int.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-session-resume-window"), CultureInfo.InvariantCulture);
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-show-speaker-label"))
                 response.ShowSpeakerLabel = bool.Parse(context.ResponseData.GetHeaderValue("x-amzn-transcribe-show-speaker-label"));
+            if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-transcript-format"))
+                response.TranscriptFormat = context.ResponseData.GetHeaderValue("x-amzn-transcribe-transcript-format");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-method"))
                 response.VocabularyFilterMethod = context.ResponseData.GetHeaderValue("x-amzn-transcribe-vocabulary-filter-method");
             if (context.ResponseData.IsHeaderPresent("x-amzn-transcribe-vocabulary-filter-name"))

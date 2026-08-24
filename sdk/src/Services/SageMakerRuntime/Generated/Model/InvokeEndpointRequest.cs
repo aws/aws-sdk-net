@@ -77,6 +77,7 @@ namespace Amazon.SageMakerRuntime.Model
         private string _endpointName;
         private string _inferenceComponentName;
         private string _inferenceId;
+        private string _prefixAwareId;
         private string _sessionId;
         private string _targetContainerHostname;
         private string _targetModel;
@@ -264,6 +265,32 @@ namespace Amazon.SageMakerRuntime.Model
         internal bool IsSetInferenceId()
         {
             return this._inferenceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixAwareId. 
+        /// <para>
+        /// An optional, stable identifier that serves as a routing hint for prefix-aware routing.
+        /// The service routes requests with the same prefix and the same identifier to the same
+        /// instance. If requests from different applications might have the same prompt prefix,
+        /// set a different identifier for each application to differentiate their routing decisions.
+        /// </para>
+        ///  
+        /// <para>
+        /// Applies only to endpoints configured with a <c>RoutingStrategy</c> of <c>PREFIX_AWARE</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string PrefixAwareId
+        {
+            get { return this._prefixAwareId; }
+            set { this._prefixAwareId = value; }
+        }
+
+        // Check to see if PrefixAwareId property is set
+        internal bool IsSetPrefixAwareId()
+        {
+            return this._prefixAwareId != null;
         }
 
         /// <summary>

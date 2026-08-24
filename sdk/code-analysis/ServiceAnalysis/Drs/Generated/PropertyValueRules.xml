@@ -13,6 +13,12 @@
     <pattern>sn-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.CancelRecoveryPlanExecutionRequest.RecoveryPlanExecutionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.CreateExtendedSourceServerRequest.SourceServerArn</property>
     <min>20</min>
     <max>2048</max>
@@ -23,6 +29,44 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:.{16,2044}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.CreateRecoveryPlanRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.CreateRecoveryPlanRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.CreateRecoveryPlanRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.CreateRecoveryPlanStepRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.CreateRecoveryPlanStepRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.CreateRecoveryPlanStepRequest.StepName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.CreateRecoveryPlanStepRequest.StepOrder</property>
+    <min>1</min>
+    <max>20</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.CreateReplicationConfigurationTemplateRequest.BandwidthThrottling</property>
@@ -129,6 +173,42 @@
     <min>10</min>
     <max>19</max>
     <pattern>i-[0-9a-fA-F]{8,}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteRecoveryPlanRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteRecoveryPlanResponse.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteRecoveryPlanExecutionRequest.RecoveryPlanExecutionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteRecoveryPlanExecutionResponse.RecoveryPlanExecutionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteRecoveryPlanStepRequest.RecoveryPlanStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.DeleteRecoveryPlanStepResponse.RecoveryPlanStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.DeleteReplicationConfigurationTemplateRequest.ReplicationConfigurationTemplateID</property>
@@ -374,6 +454,30 @@
     <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.GetRecoveryPlanRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.GetRecoveryPlanExecutionRequest.RecoveryPlanExecutionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.GetRecoveryPlanExecutionStepRequest.RecoveryPlanExecutionStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.GetRecoveryPlanStepRequest.RecoveryPlanStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.GetReplicationConfigurationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
@@ -448,6 +552,84 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.ListLaunchActionsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionsRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionStepsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionStepsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionStepsRequest.RecoveryPlanExecutionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanExecutionStepsResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlansRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlansRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlansResponse.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanStepsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanStepsRequest.NextToken</property>
+    <min>0</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanStepsRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.ListRecoveryPlanStepsResponse.NextToken</property>
     <min>0</min>
     <max>2048</max>
   </property-value-rule>
@@ -551,6 +733,12 @@
     <pattern>(s-[0-9a-zA-Z]{17}$|lct-[0-9a-zA-Z]{17})</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.ReorderRecoveryPlanStepsRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.RetryDataReplicationRequest.SourceServerID</property>
     <min>19</min>
     <max>19</max>
@@ -591,6 +779,12 @@
     <pattern>s-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.RetryRecoveryPlanExecutionStepRequest.RecoveryPlanExecutionStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.ReverseReplicationRequest.RecoveryInstanceID</property>
     <min>10</min>
     <max>19</max>
@@ -601,6 +795,17 @@
     <min>20</min>
     <max>2048</max>
     <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.StartRecoveryPlanExecutionRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.StartRecoveryPlanExecutionRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.StartReplicationRequest.SourceServerID</property>
@@ -697,6 +902,46 @@
     <min>21</min>
     <max>21</max>
     <pattern>lct-[0-9a-zA-Z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateRecoveryPlanRequest.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateRecoveryPlanRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateRecoveryPlanRequest.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateRecoveryPlanExecutionStepRequest.RecoveryPlanExecutionStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateRecoveryPlanExecutionStepRequest.WaitDurationMinutes</property>
+    <min>1</min>
+    <max>120</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateRecoveryPlanStepRequest.RecoveryPlanStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.UpdateRecoveryPlanStepRequest.StepName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.UpdateReplicationConfigurationRequest.BandwidthThrottling</property>
@@ -1417,6 +1662,210 @@
     <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlan.CreatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlan.Description</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlan.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlan.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlan.UpdatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecution.CompletedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecution.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecution.RecoveryPlanExecutionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecution.StartedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionServer.JobID</property>
+    <min>24</min>
+    <max>24</max>
+    <pattern>drsjob-[0-9a-zA-Z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionServer.ServerArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionSourceServer.RecoverySnapshotID</property>
+    <min>21</min>
+    <max>21</max>
+    <pattern>pit-[0-9a-zA-Z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionSourceServer.SourceServerID</property>
+    <min>19</min>
+    <max>19</max>
+    <pattern>s-[0-9a-zA-Z]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStep.Attempt</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStep.CreatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStep.RecoveryPlanExecutionStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStep.StepIndex</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStep.StepName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStep.UpdatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStepSummary.RecoveryPlanExecutionStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStepSummary.StepIndex</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionStepSummary.StepName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionSummary.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionSummary.RecoveryPlanExecutionArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanExecutionSummary.StartedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanServer.ServerArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:(?:[0-9a-zA-Z_-]+:){3}([0-9]{12,}):source-server/(s-[0-9a-zA-Z]{17})</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanStep.CreatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanStep.RecoveryPlanStepArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanStep.StepName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanStep.StepOrder</property>
+    <min>1</min>
+    <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanStep.UpdatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanSummary.CreatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>[a-zA-Z0-9][a-zA-Z0-9 _-]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanSummary.RecoveryPlanArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[a-z0-9]+)*:drs:[a-z0-9-]+:[0-9]{12}:[a-zA-Z0-9_/.-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryPlanSummary.UpdatedAt</property>
+    <min>19</min>
+    <max>32</max>
+    <pattern>[1-9][0-9]*-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([0-1][0-9]|2[0-3]):[0-5][0-9]:[0-5][0-9](\.[0-9]+)?Z</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.RecoverySnapshot.ExpectedTimestamp</property>
     <min>19</min>
     <max>32</max>
@@ -1688,5 +2137,10 @@
     <property>Amazon.Drs.Model.ValidationExceptionField.Name</property>
     <min>0</min>
     <max>65536</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.WaitStepConfiguration.WaitDurationMinutes</property>
+    <min>1</min>
+    <max>120</max>
   </property-value-rule>
 </property-value-rules>

@@ -64,23 +64,24 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
     {
         for (int i = 0; i < members.Count; i++)
         {
-            if (members[i].DotNetType == "string")
+            var member = members[i];
+            if (member.IsScalar)
             {
-                writer.OpenBlock($"if (requestObject.IsSet{members[i].PropertyName}())", () =>
+                writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>
                 {
-                    writer.WriteLine($"context.Writer.WritePropertyName(\"{members[i].JsonName ?? members[i].ModeledName}\");");
-                    writer.WriteLine($"context.Writer.WriteStringValue(requestObject.{members[i].PropertyName});");
+                    writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
+                    JsonScalarMarshaller.WriteScalar(writer, member, $"requestObject.{member.PropertyName}");
                 });
             }
             else
             {
-                throw new GeneratorException("Only string members are handled currently");
+                throw new GeneratorException($"Unsupported structure member type '{member.DotNetType}' (member: {member.PropertyName}).");
             }
+
             if (i < members.Count - 1)
             {
                 writer.WriteLine("");
             }
-
         }
     }
 

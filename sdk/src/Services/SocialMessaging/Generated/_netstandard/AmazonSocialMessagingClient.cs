@@ -367,6 +367,63 @@ namespace Amazon.SocialMessaging
         }
         #endregion
         
+        #region  CreateWhatsAppDataset
+
+        internal virtual CreateWhatsAppDatasetResponse CreateWhatsAppDataset(CreateWhatsAppDatasetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWhatsAppDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWhatsAppDatasetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateWhatsAppDatasetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a Meta Conversions API dataset for a WhatsApp Business Account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateWhatsAppDataset service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateWhatsAppDataset service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/CreateWhatsAppDataset">REST API Reference for CreateWhatsAppDataset Operation</seealso>
+        public virtual Task<CreateWhatsAppDatasetResponse> CreateWhatsAppDatasetAsync(CreateWhatsAppDatasetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateWhatsAppDatasetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateWhatsAppDatasetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateWhatsAppDatasetResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateWhatsAppFlow
 
         internal virtual CreateWhatsAppFlowResponse CreateWhatsAppFlow(CreateWhatsAppFlowRequest request)
@@ -1724,6 +1781,64 @@ namespace Amazon.SocialMessaging
             options.ResponseUnmarshaller = PutWhatsAppBusinessAccountEventDestinationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<PutWhatsAppBusinessAccountEventDestinationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  SendWhatsAppConversionEvent
+
+        internal virtual SendWhatsAppConversionEventResponse SendWhatsAppConversionEvent(SendWhatsAppConversionEventRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendWhatsAppConversionEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendWhatsAppConversionEventResponseUnmarshaller.Instance;
+
+            return Invoke<SendWhatsAppConversionEventResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Sends a conversion event to Meta's Conversions API for the specified WhatsApp Business
+        /// Account dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SendWhatsAppConversionEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SendWhatsAppConversionEvent service method, as returned by SocialMessaging.</returns>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedByMetaException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.DependencyException">
+        /// Thrown when performing an action because a dependency would be broken.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InternalServiceException">
+        /// The request processing has failed because of an unknown error, exception, or failure.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.InvalidParametersException">
+        /// One or more parameters provided to the action are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ThrottledRequestException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SocialMessaging.Model.ValidationException">
+        /// The request contains an invalid parameter value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/socialmessaging-2024-01-01/SendWhatsAppConversionEvent">REST API Reference for SendWhatsAppConversionEvent Operation</seealso>
+        public virtual Task<SendWhatsAppConversionEventResponse> SendWhatsAppConversionEventAsync(SendWhatsAppConversionEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SendWhatsAppConversionEventRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SendWhatsAppConversionEventResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SendWhatsAppConversionEventResponse>(request, options, cancellationToken);
         }
         #endregion
         

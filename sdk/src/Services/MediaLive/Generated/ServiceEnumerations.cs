@@ -13384,6 +13384,10 @@ namespace Amazon.MediaLive
         /// Constant PASSTHROUGH for M2tsScte35Control
         /// </summary>
         public static readonly M2tsScte35Control PASSTHROUGH = new M2tsScte35Control("PASSTHROUGH");
+        /// <summary>
+        /// Constant SCTE_35_WITHOUT_IDR for M2tsScte35Control
+        /// </summary>
+        public static readonly M2tsScte35Control SCTE_35_WITHOUT_IDR = new M2tsScte35Control("SCTE_35_WITHOUT_IDR");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -16994,6 +16998,10 @@ namespace Amazon.MediaLive
         /// Constant NONE for Scte35Type
         /// </summary>
         public static readonly Scte35Type NONE = new Scte35Type("NONE");
+        /// <summary>
+        /// Constant SCTE_35_WITHOUT_IDR for Scte35Type
+        /// </summary>
+        public static readonly Scte35Type SCTE_35_WITHOUT_IDR = new Scte35Type("SCTE_35_WITHOUT_IDR");
         /// <summary>
         /// Constant SCTE_35_WITHOUT_SEGMENTATION for Scte35Type
         /// </summary>

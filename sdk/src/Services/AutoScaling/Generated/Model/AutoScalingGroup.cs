@@ -63,6 +63,7 @@ namespace Amazon.AutoScaling.Model
         private int? _minSize;
         private MixedInstancesPolicy _mixedInstancesPolicy;
         private bool? _newInstancesProtectedFromScaleIn;
+        private Operator _operator;
         private string _placementGroup;
         private int? _predictedCapacity;
         private string _serviceLinkedRoleARN;
@@ -645,6 +646,25 @@ namespace Amazon.AutoScaling.Model
         internal bool IsSetNewInstancesProtectedFromScaleIn()
         {
             return this._newInstancesProtectedFromScaleIn.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Operator. 
+        /// <para>
+        /// The entity that manages the Auto Scaling group, if applicable. When set, only the
+        /// designated operator can make changes to the group configuration.
+        /// </para>
+        /// </summary>
+        public Operator Operator
+        {
+            get { return this._operator; }
+            set { this._operator = value; }
+        }
+
+        // Check to see if Operator property is set
+        internal bool IsSetOperator()
+        {
+            return this._operator != null;
         }
 
         /// <summary>

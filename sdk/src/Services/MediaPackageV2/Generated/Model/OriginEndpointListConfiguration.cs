@@ -47,6 +47,7 @@ namespace Amazon.MediaPackageV2.Model
         private DateTime? _modifiedAt;
         private List<ListMssManifestConfiguration> _mssManifests = AWSConfigs.InitializeCollections ? new List<ListMssManifestConfiguration>() : null;
         private string _originEndpointName;
+        private StreamNameOutputMode _streamNameOutputMode;
         private UriSeparator _uriSeparator;
 
         /// <summary>
@@ -316,6 +317,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetOriginEndpointName()
         {
             return this._originEndpointName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamNameOutputMode. 
+        /// <para>
+        /// The output mode for stream names in egress manifests for this origin endpoint.
+        /// </para>
+        /// </summary>
+        public StreamNameOutputMode StreamNameOutputMode
+        {
+            get { return this._streamNameOutputMode; }
+            set { this._streamNameOutputMode = value; }
+        }
+
+        // Check to see if StreamNameOutputMode property is set
+        internal bool IsSetStreamNameOutputMode()
+        {
+            return this._streamNameOutputMode != null;
         }
 
         /// <summary>

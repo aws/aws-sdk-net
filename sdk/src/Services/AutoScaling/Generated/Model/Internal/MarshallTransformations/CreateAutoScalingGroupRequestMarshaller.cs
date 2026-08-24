@@ -651,6 +651,13 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("NewInstancesProtectedFromScaleIn", StringUtils.FromBool(publicRequest.NewInstancesProtectedFromScaleIn));
                 }
+                if(publicRequest.IsSetOperator())
+                {
+                    if(publicRequest.Operator.IsSetPrincipal())
+                    {
+                        request.Parameters.Add("Operator" + "." + "Principal", StringUtils.FromString(publicRequest.Operator.Principal));
+                    }
+                }
                 if(publicRequest.IsSetPlacementGroup())
                 {
                     request.Parameters.Add("PlacementGroup", StringUtils.FromString(publicRequest.PlacementGroup));

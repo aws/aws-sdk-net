@@ -241,6 +241,22 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetVectorIndexes())
+            {
+                context.Writer.WritePropertyName("VectorIndexes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestVectorIndexesListValue in publicRequest.VectorIndexes)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VectorIndexMarshaller.Instance;
+                    marshaller.Marshall(publicRequestVectorIndexesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetWarmThroughput())
             {
                 context.Writer.WritePropertyName("WarmThroughput");

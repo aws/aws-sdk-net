@@ -9,11 +9,10 @@ namespace SmithyDotNet.Generator.Model.Traits;
 // a {"ref": ...}, or a nested {"fn": ...}), so they stay as raw JsonElement and are interpreted by
 // the compiler rather than modeled as a type hierarchy.
 //
-// Only what CloudTrailData needs is modeled. Constructs no onboarded service uses yet fail loud at
-// generation rather than silently emitting a wrong resolver: deprecated parameters throw in
-// EndpointParametersWriter, endpoint context parameters throw in EndpointResolverWriter (see
-// GenerationContext.HasEndpointContextParams), and unhandled rule functions/types throw in
-// EndpointRulesCompiler. Model each here when a service needs it.
+// Constructs not yet handled fail loud at generation rather than silently emitting a wrong resolver:
+// deprecated parameters throw in EndpointParametersWriter, endpoint context parameters throw in
+// EndpointResolverWriter (see GenerationContext.HasEndpointContextParams), and unhandled rule
+// functions/types throw in EndpointRulesCompiler. Model each here when a service needs it.
 //
 /// <remarks><see href="https://smithy.io/2.0/additional-specs/rules-engine/specification.html#smithy-rules-endpointruleset-trait" /></remarks>
 public record EndpointRuleSet : TraitRecord
@@ -32,7 +31,7 @@ public record EndpointRuleSet : TraitRecord
 /// source; <see cref="Default"/> supplies the parameters-class constructor default when present.</summary>
 public record EndpointParameter
 {
-    /// <summary>The Smithy parameter type: <c>string</c> or <c>boolean</c>.</summary>
+    /// <summary>The Smithy parameter type: <c>string</c>, <c>boolean</c>, or <c>stringArray</c>.</summary>
     [JsonPropertyName("type")]
     public required string Type { get; init; }
 

@@ -1,6 +1,6 @@
 ---
 name: smithy-ast-model
-description: How to deserialize a Smithy model.json into typed C# records and navigate the shape graph
+description: How the SmithyDotNet generator deserializes Smithy JSON AST into typed C# records and navigates the shape graph. Use when touching Model/ (ShapeConverter, ServiceIndex, shapes, traits).
 ---
 # Skill: Smithy AST Model
 

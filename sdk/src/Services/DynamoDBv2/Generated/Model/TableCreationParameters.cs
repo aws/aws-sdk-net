@@ -42,6 +42,7 @@ namespace Amazon.DynamoDBv2.Model
         private ProvisionedThroughput _provisionedThroughput;
         private SSESpecification _sseSpecification;
         private string _tableName;
+        private List<VectorIndex> _vectorIndexes = AWSConfigs.InitializeCollections ? new List<VectorIndex>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeDefinitions. 
@@ -197,6 +198,29 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTableName()
         {
             return this._tableName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIndexes. 
+        /// <para>
+        /// The vector indexes of the table to be created as part of the import operation.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VectorIndex> VectorIndexes
+        {
+            get { return this._vectorIndexes; }
+            set { this._vectorIndexes = value; }
+        }
+
+        // Check to see if VectorIndexes property is set
+        internal bool IsSetVectorIndexes()
+        {
+            return this._vectorIndexes != null && (this._vectorIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

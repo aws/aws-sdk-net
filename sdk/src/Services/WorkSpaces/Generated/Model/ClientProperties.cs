@@ -34,8 +34,30 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class ClientProperties
     {
+        private string _clientExperiencePolicy;
         private LogUploadEnum _logUploadEnabled;
         private ReconnectEnum _reconnectEnabled;
+
+        /// <summary>
+        /// Gets and sets the property ClientExperiencePolicy. 
+        /// <para>
+        /// The client experience policy that determines which client experience the user sees.
+        /// Administrators can set this policy to control the client experience for users in a
+        /// directory. Valid values include <c>FORCE_CLASSIC</c>, <c>FORCE_UI_2026</c>, and <c>USER_CHOICE</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string ClientExperiencePolicy
+        {
+            get { return this._clientExperiencePolicy; }
+            set { this._clientExperiencePolicy = value; }
+        }
+
+        // Check to see if ClientExperiencePolicy property is set
+        internal bool IsSetClientExperiencePolicy()
+        {
+            return this._clientExperiencePolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LogUploadEnabled. 

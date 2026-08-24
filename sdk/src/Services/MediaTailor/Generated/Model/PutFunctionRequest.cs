@@ -38,6 +38,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class PutFunctionRequest : AmazonMediaTailorRequest
     {
+        private ConcurrentExecutorConfiguration _concurrentExecutorConfiguration;
         private CustomOutputConfiguration _customOutputConfiguration;
         private string _description;
         private string _functionId;
@@ -45,6 +46,26 @@ namespace Amazon.MediaTailor.Model
         private HttpRequestConfiguration _httpRequestConfiguration;
         private SequentialExecutorConfiguration _sequentialExecutorConfiguration;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ConcurrentExecutorConfiguration. 
+        /// <para>
+        /// The configuration for a <c>CONCURRENT_EXECUTOR</c> function. Specifies the list of
+        /// child functions to run in parallel, the maximum concurrency, an optional output block,
+        /// and a timeout. Required when <c>FunctionType</c> is <c>CONCURRENT_EXECUTOR</c>.
+        /// </para>
+        /// </summary>
+        public ConcurrentExecutorConfiguration ConcurrentExecutorConfiguration
+        {
+            get { return this._concurrentExecutorConfiguration; }
+            set { this._concurrentExecutorConfiguration = value; }
+        }
+
+        // Check to see if ConcurrentExecutorConfiguration property is set
+        internal bool IsSetConcurrentExecutorConfiguration()
+        {
+            return this._concurrentExecutorConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CustomOutputConfiguration. 

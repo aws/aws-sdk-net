@@ -31,8 +31,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMatchingWorkflow operation.
-    /// Deletes the <c>MatchingWorkflow</c> with a given name. This operation will succeed
-    /// even if a workflow with the given name does not exist.
+    /// Deletes the <c>MatchingWorkflow</c> with a given name. This operation returns a <c>ResourceNotFoundException</c>
+    /// if a workflow with the given name does not exist.
     /// </summary>
     public partial class DeleteMatchingWorkflowRequest : AmazonEntityResolutionRequest
     {

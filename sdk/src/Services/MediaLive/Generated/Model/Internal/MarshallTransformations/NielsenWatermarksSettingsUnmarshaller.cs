@@ -74,6 +74,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.NielsenNaesIiNwSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("nielsenNwOnlySettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = NielsenNwOnlyUnmarshaller.Instance;
+                    unmarshalledObject.NielsenNwOnlySettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

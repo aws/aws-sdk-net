@@ -65,13 +65,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine("/// </summary>");
         writer.OpenBlock($"public IRequest Marshall({className} publicRequest)", () =>
         {
-            writer.WriteLine($"IRequest request = new DefaultRequest(publicRequest, \"{context.Namespace}\");");
+            writer.WriteLine($"""IRequest request = new DefaultRequest(publicRequest, "{context.Namespace}");""");
             // TODO: Content-type must be smarter and it can be overridden in customizations or for non restJSON
-            // it can be application/x-amz-json, and for string payloads it can be "text/plain". For now we just put 
+            // it can be application/x-amz-json, and for string payloads it can be "text/plain". For now we just put
             // "application/json" here since this is just a start.
-            writer.WriteLine("request.Headers[\"Content-Type\"] = \"application/json\";");
-            writer.WriteLine($"request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = \"{context.ApiVersion}\";");
-            writer.WriteLine($"request.HttpMethod = \"{httpTrait.Method}\";");
+            writer.WriteLine("""request.Headers["Content-Type"] = "application/json";""");
+            writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{context.ApiVersion}";""");
+            writer.WriteLine($"""request.HttpMethod = "{httpTrait.Method}";""");
             writer.WriteLine("");
 
             WriteQueryStringMembers(writer, partitioned.QueryMembers);
@@ -95,29 +95,73 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         });
     }
 
+    // restJson1 @timestampFormat defaults for HTTP bindings when unset: http-date on a header,
+    // date-time on a query/label. https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html
+    // (Body members default to epoch-seconds; see JsonScalarMarshaller.)
+    private const string HeaderTimestampDefault = "http-date";
+    private const string QueryLabelTimestampDefault = "date-time";
+
+    /// <summary>
+    /// The <c>StringUtils</c> conversion for a scalar member in a query/header/label position, or
+    /// null when the type has no string form (structures, collections). Nullable value types are
+    /// unwrapped with <c>.Value</c> (timestamps keep the nullable overload); the caller guards each
+    /// with an <c>IsSet</c> check first. <paramref name="timestampDefault"/> is the binding's
+    /// <c>@timestampFormat</c> default, used when the member carries no explicit format.
+    /// Dispatch is on <see cref="Member.MarshalType"/> so an enum rides the <c>string</c> path.
+    /// </summary>
+    internal static string? StringConversion(Member member, string expression, string timestampDefault) => member.MarshalType switch
+    {
+        "string" => $"StringUtils.FromString({expression})",
+        "bool?" => $"StringUtils.FromBool({expression}.Value)",
+        "int?" => $"StringUtils.FromInt({expression}.Value)",
+        "long?" => $"StringUtils.FromLong({expression}.Value)",
+        "float?" => $"StringUtils.FromFloat({expression}.Value)",
+        "double?" => $"StringUtils.FromDouble({expression}.Value)",
+        "DateTime?" => TimestampStringConversion(member.TimestampFormat ?? timestampDefault, expression),
+        _ => null,
+    };
+
+    // The StringUtils call that renders a timestamp as a string for a header/query/label position.
+    private static string TimestampStringConversion(string format, string expression) => format switch
+    {
+        "date-time" => $"StringUtils.FromDateTimeToISO8601WithOptionalMs({expression})",
+        "http-date" => $"StringUtils.FromDateTimeToRFC822({expression})",
+        "epoch-seconds" => $"StringUtils.FromDateTimeToUnixTimestamp({expression})",
+        _ => throw new GeneratorException($"Unsupported @timestampFormat '{format}'."),
+    };
+
     //https://smithy.io/2.0/spec/http-bindings.html#httpquery-trait
     private void WriteQueryStringMembers(CodeWriter writer, List<(Member Member, string QueryName)> queryMembers)
     {
         foreach (var (member, queryName) in queryMembers)
         {
-            if (member.DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string query members are handled currently (member: {member.PropertyName}).");
-            }
+            var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
+                ?? throw new GeneratorException($"Unsupported query member type '{member.DotNetType}' (member: {member.PropertyName}).");
 
-            if (member.IsRequired)
+            // An idempotency token is auto-populated, so it is never "required from the customer".
+            if (member.IsRequired && !member.IsIdempotencyToken)
             {
-                writer.OpenBlock($"if (string.IsNullOrEmpty(publicRequest.{member.PropertyName}))", () =>
+                var guard = member.DotNetType == "string"
+                    ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
+                    : $"publicRequest.{member.PropertyName} == null";
+                writer.OpenBlock($"if ({guard})", () =>
                 {
-                    writer.WriteLine($"throw new Amazon{context.ServiceName}Exception(\"Request object does not have required field {member.PropertyName} set\");");
+                    writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
                 });
                 writer.WriteLine("");
             }
 
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"request.Parameters.Add(\"{queryName}\", StringUtils.FromString(publicRequest.{member.PropertyName}));");
+                writer.WriteLine($"""request.Parameters.Add("{queryName}", {conversion});""");
             });
+            if (member.IsIdempotencyToken)
+            {
+                writer.OpenBlock("else", () =>
+                {
+                    writer.WriteLine($"""request.Parameters.Add("{queryName}", Guid.NewGuid().ToString());""");
+                });
+            }
             writer.WriteLine("");
         }
     }
@@ -127,13 +171,15 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         foreach (var (member, headerName) in headerMembers)
         {
-            if (member.DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string header members are handled currently (member: {member.PropertyName}).");
-            }
+            var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", HeaderTimestampDefault)
+                ?? throw new GeneratorException($"Unsupported header member type '{member.DotNetType}' (member: {member.PropertyName}).");
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"request.Headers[\"{headerName}\"] = publicRequest.{member.PropertyName};");
+                // A string header is assigned directly; scalars go through StringUtils. An enum rides the
+                // string path (implicit ConstantClass->string), so it is assigned directly too.
+                writer.WriteLine(member.MarshalType == "string"
+                    ? $"""request.Headers["{headerName}"] = publicRequest.{member.PropertyName};"""
+                    : $"""request.Headers["{headerName}"] = {conversion};""");
             });
             writer.WriteLine("");
         }
@@ -144,18 +190,17 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         foreach (var member in labelMembers)
         {
-            if (member.DotNetType != "string")
-            {
-                throw new GeneratorException($"Only string label members are handled currently (member: {member.PropertyName}).");
-            }
+            var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
+                ?? throw new GeneratorException($"Unsupported label member type '{member.DotNetType}' (member: {member.PropertyName}).");
             writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"throw new Amazon{context.ServiceName}Exception(\"Request object does not have required field {member.PropertyName} set\");");
+                writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
             });
-            writer.WriteLine($"request.AddPathResource(\"{{{member.ModeledName}}}\", StringUtils.FromString(publicRequest.{member.PropertyName}));");
+            var pathTemplate = "{" + member.ModeledName + "}";
+            writer.WriteLine($"""request.AddPathResource("{pathTemplate}", {conversion});""");
             writer.WriteLine("");
         }
-        writer.WriteLine($"request.ResourcePath = \"{httpTrait.Uri}\";");
+        writer.WriteLine($"""request.ResourcePath = "{httpTrait.Uri}";""");
     }
 
     private void WriteBodySerialization(CodeWriter writer, List<Member> bodyMembers)
@@ -185,13 +230,21 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     private void WriteBodyMember(CodeWriter writer, Member member)
     {
-        if (member.DotNetType == "string")
+        if (member.IsScalar)
         {
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"context.Writer.WritePropertyName(\"{member.JsonName ?? member.ModeledName}\");");
-                writer.WriteLine($"context.Writer.WriteStringValue(publicRequest.{member.PropertyName});");
+                writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
+                JsonScalarMarshaller.WriteScalar(writer, member, $"publicRequest.{member.PropertyName}");
             });
+            if (member.IsIdempotencyToken)
+            {
+                writer.OpenBlock("else", () =>
+                {
+                    writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
+                    writer.WriteLine("context.Writer.WriteStringValue(Guid.NewGuid().ToString());");
+                });
+            }
         }
         else if (member.DotNetType.StartsWith("List<", StringComparison.Ordinal))
         {
@@ -201,7 +254,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             }
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"context.Writer.WritePropertyName(\"{member.JsonName ?? member.ModeledName}\");");
+                writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
                 writer.WriteLine("context.Writer.WriteStartArray();");
                 writer.OpenBlock($"foreach (var publicRequest{member.PropertyName}ListValue in publicRequest.{member.PropertyName})", () =>
                 {
@@ -212,7 +265,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         }
         else
         {
-            throw new GeneratorException($"Only string and List<T> body members are handled currently (member: {member.PropertyName}, type: {member.DotNetType}).");
+            throw new GeneratorException($"Unsupported body member type '{member.DotNetType}' (member: {member.PropertyName}).");
         }
     }
 

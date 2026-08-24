@@ -52,6 +52,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.Payload);
             }
 
+            if(requestObject.IsSetPermit2AllowanceLimit())
+            {
+                context.Writer.WritePropertyName("permit2AllowanceLimit");
+                context.Writer.WriteStringValue(requestObject.Permit2AllowanceLimit);
+            }
+
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");

@@ -31,15 +31,18 @@ namespace Amazon.CleanRooms.Model
 {
     /// <summary>
     /// A type of analysis rule that enables the table owner to approve custom SQL queries
-    /// on their configured tables. It supports differential privacy.
+    /// on their configured tables. It supports differential privacy, minimum aggregation
+    /// thresholds, and comparison controls.
     /// </summary>
     public partial class AnalysisRuleCustom
     {
         private AdditionalAnalyses _additionalAnalyses;
+        private List<AggregationThreshold> _aggregationThresholds = AWSConfigs.InitializeCollections ? new List<AggregationThreshold>() : null;
         private List<string> _allowedAdditionalAnalyses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedAnalyses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedAnalysisProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _allowedResultReceivers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private ComparisonControls _comparisonControls;
         private DifferentialPrivacyConfiguration _differentialPrivacy;
         private List<string> _disallowedOutputColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
@@ -60,6 +63,33 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAdditionalAnalyses()
         {
             return this._additionalAnalyses != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AggregationThresholds. 
+        /// <para>
+        /// The aggregation thresholds that each query output group must satisfy. Clean Rooms
+        /// filters out any group that represents fewer than the specified number of distinct
+        /// identities. You can specify at most one threshold. You can't use aggregation thresholds
+        /// with differential privacy, or when <c>allowedAnalyses</c> allows only jobs.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<AggregationThreshold> AggregationThresholds
+        {
+            get { return this._aggregationThresholds; }
+            set { this._aggregationThresholds = value; }
+        }
+
+        // Check to see if AggregationThresholds property is set
+        internal bool IsSetAggregationThresholds()
+        {
+            return this._aggregationThresholds != null && (this._aggregationThresholds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,6 +187,26 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetAllowedResultReceivers()
         {
             return this._allowedResultReceivers != null && (this._allowedResultReceivers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComparisonControls. 
+        /// <para>
+        /// The controls that restrict how a query can compare the columns in the configured table.
+        /// You can't use comparison controls with differential privacy, or when <c>allowedAnalyses</c>
+        /// allows only jobs.
+        /// </para>
+        /// </summary>
+        public ComparisonControls ComparisonControls
+        {
+            get { return this._comparisonControls; }
+            set { this._comparisonControls = value; }
+        }
+
+        // Check to see if ComparisonControls property is set
+        internal bool IsSetComparisonControls()
+        {
+            return this._comparisonControls != null;
         }
 
         /// <summary>

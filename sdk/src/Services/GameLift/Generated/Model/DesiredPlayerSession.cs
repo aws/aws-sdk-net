@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// use this data, so it can be formatted as needed for use in the game.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string PlayerData
         {
             get { return this._playerData; }

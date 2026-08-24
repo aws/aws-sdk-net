@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// A unique name that identifies a dataset within the analysis or dashboard.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string DataSetIdentifier
         {
             get { return this._dataSetIdentifier; }

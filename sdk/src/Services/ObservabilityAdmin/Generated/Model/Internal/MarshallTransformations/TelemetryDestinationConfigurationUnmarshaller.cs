@@ -80,6 +80,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.ELBLoadBalancerLoggingParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("KmsKeyArn", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("LogDeliveryParameters", targetDepth, ref reader))
                 {
                     var unmarshaller = LogDeliveryParametersUnmarshaller.Instance;

@@ -103,7 +103,7 @@ namespace Amazon.QuickSight.Model
         /// The calculated field description.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string CalculatedFieldDescription
         {
             get { return this._calculatedFieldDescription; }
@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// The calculated field name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string CalculatedFieldName
         {
             get { return this._calculatedFieldName; }

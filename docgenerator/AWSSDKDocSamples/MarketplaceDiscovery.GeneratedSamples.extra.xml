@@ -325,6 +325,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for net payment term"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-10" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
             <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetProduct(Amazon.MarketplaceDiscovery.Model.GetProductRequest)" />
             <member name="T:Amazon.MarketplaceDiscovery.Model.GetProductRequest" />

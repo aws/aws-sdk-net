@@ -32,18 +32,14 @@ namespace Amazon.PartnerCentralSelling
     /// <summary>
     /// <para>Interface for accessing PartnerCentralSelling</para>
     ///
-    /// AWS Partner Central API for Selling 
-    /// <para>
-    ///  <b>AWS Partner Central API for Selling Reference Guide</b> 
-    /// 
-    ///  
+    /// Partner Central 
     /// <para>
     /// This Amazon Web Services (AWS) Partner Central API reference is designed to help <a
     /// href="http://aws.amazon.com/partners/programs/">AWS Partners</a> integrate Customer
     /// Relationship Management (CRM) systems with AWS Partner Central. Partners can automate
     /// interactions with AWS Partner Central, which helps to ensure effective engagements
     /// in joint business activities.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The API provides standard AWS API functionality. Access it by either using API <a

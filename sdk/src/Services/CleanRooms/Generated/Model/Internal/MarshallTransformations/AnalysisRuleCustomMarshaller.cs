@@ -52,6 +52,22 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AdditionalAnalyses);
             }
 
+            if(requestObject.IsSetAggregationThresholds())
+            {
+                context.Writer.WritePropertyName("aggregationThresholds");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectAggregationThresholdsListValue in requestObject.AggregationThresholds)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AggregationThresholdMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAggregationThresholdsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetAllowedAdditionalAnalyses())
             {
                 context.Writer.WritePropertyName("allowedAdditionalAnalyses");
@@ -94,6 +110,17 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                         context.Writer.WriteStringValue(requestObjectAllowedResultReceiversListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetComparisonControls())
+            {
+                context.Writer.WritePropertyName("comparisonControls");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ComparisonControlsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ComparisonControls, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDifferentialPrivacy())

@@ -2209,6 +2209,10 @@ namespace Amazon.WorkSpaces
         /// </summary>
         public static readonly ModificationResourceEnum COMPUTE_TYPE = new ModificationResourceEnum("COMPUTE_TYPE");
         /// <summary>
+        /// Constant NESTED_VIRTUALIZATION for ModificationResourceEnum
+        /// </summary>
+        public static readonly ModificationResourceEnum NESTED_VIRTUALIZATION = new ModificationResourceEnum("NESTED_VIRTUALIZATION");
+        /// <summary>
         /// Constant PROTOCOL for ModificationResourceEnum
         /// </summary>
         public static readonly ModificationResourceEnum PROTOCOL = new ModificationResourceEnum("PROTOCOL");

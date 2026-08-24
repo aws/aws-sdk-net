@@ -40,6 +40,8 @@ namespace Amazon.Resiliencehubv2.Model
         private ReportType _reportType;
         private string _serviceArn;
         private ReportGenerationStatus _status;
+        private string _testRunId;
+        private string _testTemplateArn;
 
         /// <summary>
         /// Gets and sets the property AssessmentId. 
@@ -151,6 +153,37 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestRunId.
+        /// </summary>
+        public string TestRunId
+        {
+            get { return this._testRunId; }
+            set { this._testRunId = value; }
+        }
+
+        // Check to see if TestRunId property is set
+        internal bool IsSetTestRunId()
+        {
+            return this._testRunId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestTemplateArn.
+        /// </summary>
+        [AWSProperty(Min=31)]
+        public string TestTemplateArn
+        {
+            get { return this._testTemplateArn; }
+            set { this._testTemplateArn = value; }
+        }
+
+        // Check to see if TestTemplateArn property is set
+        internal bool IsSetTestTemplateArn()
+        {
+            return this._testTemplateArn != null;
         }
 
     }

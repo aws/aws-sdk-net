@@ -85,6 +85,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetTopicIdentifier())
+            {
+                context.Writer.WritePropertyName("TopicIdentifier");
+                context.Writer.WriteStringValue(requestObject.TopicIdentifier);
+            }
+
             if(requestObject.IsSetVisualContentAltText())
             {
                 context.Writer.WritePropertyName("VisualContentAltText");

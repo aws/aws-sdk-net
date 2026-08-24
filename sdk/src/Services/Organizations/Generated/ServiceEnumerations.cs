@@ -375,6 +375,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY = new ConstraintViolationExceptionReason("ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY");
+        /// <summary>
         /// Constant ACCOUNT_NUMBER_LIMIT_EXCEEDED for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason ACCOUNT_NUMBER_LIMIT_EXCEEDED = new ConstraintViolationExceptionReason("ACCOUNT_NUMBER_LIMIT_EXCEEDED");
@@ -526,6 +530,14 @@ namespace Amazon.Organizations
         /// Constant TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS for ConstraintViolationExceptionReason
         /// </summary>
         public static readonly ConstraintViolationExceptionReason TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS = new ConstraintViolationExceptionReason("TRANSFER_RESPONSIBILITY_TARGET_DELETION_IN_PROGRESS");
+        /// <summary>
+        /// Constant TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED = new ConstraintViolationExceptionReason("TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED");
+        /// <summary>
+        /// Constant UNMET_BILLING_PREREQUISITE for ConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly ConstraintViolationExceptionReason UNMET_BILLING_PREREQUISITE = new ConstraintViolationExceptionReason("UNMET_BILLING_PREREQUISITE");
         /// <summary>
         /// Constant UNSUPPORTED_PRICING for ConstraintViolationExceptionReason
         /// </summary>
@@ -859,6 +871,10 @@ namespace Amazon.Organizations
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED = new HandshakeConstraintViolationExceptionReason("ORGANIZATION_MEMBERSHIP_CHANGE_RATE_LIMIT_EXCEEDED");
         /// <summary>
+        /// Constant PAST_DUE_INVOICE for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason PAST_DUE_INVOICE = new HandshakeConstraintViolationExceptionReason("PAST_DUE_INVOICE");
+        /// <summary>
         /// Constant PAYMENT_INSTRUMENT_REQUIRED for HandshakeConstraintViolationExceptionReason
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason PAYMENT_INSTRUMENT_REQUIRED = new HandshakeConstraintViolationExceptionReason("PAYMENT_INSTRUMENT_REQUIRED");
@@ -870,6 +886,10 @@ namespace Amazon.Organizations
         /// Constant SOURCE_AND_TARGET_CANNOT_MATCH for HandshakeConstraintViolationExceptionReason
         /// </summary>
         public static readonly HandshakeConstraintViolationExceptionReason SOURCE_AND_TARGET_CANNOT_MATCH = new HandshakeConstraintViolationExceptionReason("SOURCE_AND_TARGET_CANNOT_MATCH");
+        /// <summary>
+        /// Constant TARGET_ACCOUNT_VALIDATION_FAILURE for HandshakeConstraintViolationExceptionReason
+        /// </summary>
+        public static readonly HandshakeConstraintViolationExceptionReason TARGET_ACCOUNT_VALIDATION_FAILURE = new HandshakeConstraintViolationExceptionReason("TARGET_ACCOUNT_VALIDATION_FAILURE");
         /// <summary>
         /// Constant UNUSED_PREPAYMENT_BALANCE for HandshakeConstraintViolationExceptionReason
         /// </summary>
@@ -1200,6 +1220,10 @@ namespace Amazon.Organizations
         /// Constant END_DATE_TOO_EARLY for InvalidInputExceptionReason
         /// </summary>
         public static readonly InvalidInputExceptionReason END_DATE_TOO_EARLY = new InvalidInputExceptionReason("END_DATE_TOO_EARLY");
+        /// <summary>
+        /// Constant END_DATE_TOO_LATE for InvalidInputExceptionReason
+        /// </summary>
+        public static readonly InvalidInputExceptionReason END_DATE_TOO_LATE = new InvalidInputExceptionReason("END_DATE_TOO_LATE");
         /// <summary>
         /// Constant IMMUTABLE_POLICY for InvalidInputExceptionReason
         /// </summary>

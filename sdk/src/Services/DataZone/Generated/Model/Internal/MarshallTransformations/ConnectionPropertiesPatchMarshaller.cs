@@ -68,6 +68,17 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetGitProperties())
+            {
+                context.Writer.WritePropertyName("gitProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GitPropertiesPatchMarshaller.Instance;
+                marshaller.Marshall(requestObject.GitProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetGlueProperties())
             {
                 context.Writer.WritePropertyName("glueProperties");

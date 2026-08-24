@@ -68,6 +68,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     unmarshalledObject.AthenaProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("gitProperties", targetDepth, ref reader))
+                {
+                    var unmarshaller = GitPropertiesOutputUnmarshaller.Instance;
+                    unmarshalledObject.GitProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("glueProperties", targetDepth, ref reader))
                 {
                     var unmarshaller = GluePropertiesOutputUnmarshaller.Instance;

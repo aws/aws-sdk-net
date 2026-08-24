@@ -66,8 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  The time at which this import task ended. (Does this include the successful complete
-        /// creation of the table it was imported to?) 
+        ///  The time at which this import task ended. 
         /// </para>
         /// </summary>
         public DateTime? EndTime

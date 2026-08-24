@@ -35,11 +35,12 @@ namespace Amazon.ConnectCampaignsV2.Model
     public partial class PredictiveConfig
     {
         private double? _bandwidthAllocation;
+        private List<PacingStrategy> _pacingStrategies = AWSConfigs.InitializeCollections ? new List<PacingStrategy>() : null;
 
         /// <summary>
         /// Gets and sets the property BandwidthAllocation.
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=2)]
         public double? BandwidthAllocation
         {
             get { return this._bandwidthAllocation; }
@@ -50,6 +51,30 @@ namespace Amazon.ConnectCampaignsV2.Model
         internal bool IsSetBandwidthAllocation()
         {
             return this._bandwidthAllocation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PacingStrategies. 
+        /// <para>
+        /// Pacing strategies the dialer enforces simultaneously.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<PacingStrategy> PacingStrategies
+        {
+            get { return this._pacingStrategies; }
+            set { this._pacingStrategies = value; }
+        }
+
+        // Check to see if PacingStrategies property is set
+        internal bool IsSetPacingStrategies()
+        {
+            return this._pacingStrategies != null && (this._pacingStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -149,6 +149,39 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(publicRequest.FirewallPolicyChangeProtection.Value);
             }
 
+            if(publicRequest.IsSetNatGatewayMappings())
+            {
+                context.Writer.WritePropertyName("NatGatewayMappings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNatGatewayMappingsListValue in publicRequest.NatGatewayMappings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NatGatewayMappingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestNatGatewayMappingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetNoSourcePreservation())
+            {
+                context.Writer.WritePropertyName("NoSourcePreservation");
+                context.Writer.WriteBooleanValue(publicRequest.NoSourcePreservation.Value);
+            }
+
+            if(publicRequest.IsSetProxySettings())
+            {
+                context.Writer.WritePropertyName("ProxySettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ProxySettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ProxySettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetSubnetChangeProtection())
             {
                 context.Writer.WritePropertyName("SubnetChangeProtection");
@@ -191,6 +224,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("TransitGatewayId");
                 context.Writer.WriteStringValue(publicRequest.TransitGatewayId);
+            }
+
+            if(publicRequest.IsSetVpcEndpoint())
+            {
+                context.Writer.WritePropertyName("VpcEndpoint");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcEndpointMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcEndpoint, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetVpcId())

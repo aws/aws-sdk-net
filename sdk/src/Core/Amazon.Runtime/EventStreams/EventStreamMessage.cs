@@ -24,7 +24,6 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Net;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Ionic.Zlib;
 
 namespace Amazon.Runtime.EventStreams
 {
@@ -185,7 +184,7 @@ namespace Amazon.Runtime.EventStreams
             message.Headers = new Dictionary<string, IEventStreamHeader>(StringComparer.Ordinal);
 
             using (var nullStream = new NullStream())
-            using (var runningChecksum = new CrcCalculatorStream(nullStream))
+            using (var runningChecksum = new Crc32Stream(nullStream))
             {
                 //write up to the prelude crc to the checksum stream
                 runningChecksum.Write(buffer, offset, currentOffset - offset);
@@ -276,7 +275,7 @@ namespace Amazon.Runtime.EventStreams
             offset += SizeOfInt32;
 
             using (var nullStream = new NullStream())
-            using (var runningChecksum = new CrcCalculatorStream(nullStream))
+            using (var runningChecksum = new Crc32Stream(nullStream))
             {
                 //write the total length and headers length to the checksum stream.
                 runningChecksum.Write(messageBuffer, 0, offset);

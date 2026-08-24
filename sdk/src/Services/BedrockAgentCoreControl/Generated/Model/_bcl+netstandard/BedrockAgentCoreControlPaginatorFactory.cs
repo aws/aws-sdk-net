@@ -61,6 +61,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
+        /// Paginator for ListAgentRuntimeVersionsByCapacityProvider operation
+        ///</summary>
+        public IListAgentRuntimeVersionsByCapacityProviderPaginator ListAgentRuntimeVersionsByCapacityProvider(ListAgentRuntimeVersionsByCapacityProviderRequest request) 
+        {
+            return new ListAgentRuntimeVersionsByCapacityProviderPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListApiKeyCredentialProviders operation
         ///</summary>
         public IListApiKeyCredentialProvidersPaginator ListApiKeyCredentialProviders(ListApiKeyCredentialProvidersRequest request) 
@@ -82,6 +90,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListBrowsersPaginator ListBrowsers(ListBrowsersRequest request) 
         {
             return new ListBrowsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCapacityProviders operation
+        ///</summary>
+        public IListCapacityProvidersPaginator ListCapacityProviders(ListCapacityProvidersRequest request) 
+        {
+            return new ListCapacityProvidersPaginator(this.client, request);
         }
 
         /// <summary>
@@ -138,6 +154,14 @@ namespace Amazon.BedrockAgentCoreControl.Model
         public IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request) 
         {
             return new ListEvaluatorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayRateLimits operation
+        ///</summary>
+        public IListGatewayRateLimitsPaginator ListGatewayRateLimits(ListGatewayRateLimitsRequest request) 
+        {
+            return new ListGatewayRateLimitsPaginator(this.client, request);
         }
 
         /// <summary>

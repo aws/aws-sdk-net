@@ -56,6 +56,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("AdDecisionServerConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = PreRollAdDecisionServerConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.AdDecisionServerConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("AdDecisionServerUrl", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

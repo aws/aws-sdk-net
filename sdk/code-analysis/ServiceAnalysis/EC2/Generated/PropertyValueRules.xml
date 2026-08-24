@@ -37,6 +37,16 @@
     <max>2880</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.CreateApplicationStatusCheckRequest.InitializationGracePeriodSeconds</property>
+    <min>-1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateApplicationStatusCheckRequest.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.CreateCapacityReservationRequest.CommitmentDuration</property>
     <min>1</min>
     <max>200000000</max>
@@ -78,6 +88,11 @@
     <property>Amazon.EC2.Model.CreateIpamPoolRequest.AllocationMinNetmaskLength</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.CreateIpamRoutingPolicyRegistrationRequest.MaxLength</property>
+    <min>0</min>
+    <max>48</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateLaunchTemplateRequest.VersionDescription</property>
@@ -143,6 +158,21 @@
     <property>Amazon.EC2.Model.DescribeAddressTransfersRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeApplicationStatusRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeApplicationStatusCheckAssociationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeApplicationStatusChecksRequest.MaxResults</property>
+    <min>5</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeAwsNetworkPerformanceMetricSubscriptionsRequest.MaxResults</property>
@@ -368,6 +398,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.DescribeIpamExternalResourceVerificationTokensRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeIpamInternetRegistryAssociationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -852,6 +887,21 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamDiscoveredRoutesRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamInternetRegistryAssociationAsnsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamInternetRegistryAssociationCidrsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamPolicyAllocationRulesRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -888,6 +938,26 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.GetIpamResourceCidrsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamRouteOriginAuthorizationsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamRouteProtectionFindingsRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamRoutingPolicyRegistrationDeltasRequest.MaxResults</property>
+    <min>5</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.GetIpamRoutingPolicyRegistrationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
   </property-value-rule>
@@ -1007,6 +1077,16 @@
     <max>36500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyApplicationStatusCheckRequest.InitializationGracePeriodSeconds</property>
+    <min>-1</min>
+    <max>600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyApplicationStatusCheckRequest.Port</property>
+    <min>1</min>
+    <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.ModifyIpamPoolRequest.AllocationDefaultNetmaskLength</property>
     <min>0</min>
     <max>128</max>
@@ -1020,6 +1100,11 @@
     <property>Amazon.EC2.Model.ModifyIpamPoolRequest.AllocationMinNetmaskLength</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ModifyIpamRoutingPolicyRegistrationRequest.MaxLength</property>
+    <min>0</min>
+    <max>48</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.ModifyLaunchTemplateRequest.LaunchTemplateName</property>
@@ -1082,6 +1167,11 @@
     <property>Amazon.EC2.Model.AnalysisRouteTableRoute.CoreNetworkArn</property>
     <min>1</min>
     <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.ApplicationStatusCheckResponseObject.InitializationGracePeriodSeconds</property>
+    <min>-1</min>
+    <max>600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.AssociatedRole.AssociatedRoleArn</property>
@@ -1283,6 +1373,11 @@
     <max>1283</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.IpamInternetRegistryAssociation.IpamInternetRegistryAssociationArn</property>
+    <min>1</min>
+    <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.IpamPolicy.IpamPolicyArn</property>
     <min>1</min>
     <max>1283</max>
@@ -1336,6 +1431,11 @@
     <property>Amazon.EC2.Model.IpamResourceDiscoveryAssociation.IpamArn</property>
     <min>1</min>
     <max>1283</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.IpamRoutingPolicyRegistration.MaxLength</property>
+    <min>0</min>
+    <max>48</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.IpamScope.IpamArn</property>

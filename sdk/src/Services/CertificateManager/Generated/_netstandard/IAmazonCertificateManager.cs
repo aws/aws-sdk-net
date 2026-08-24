@@ -1132,6 +1132,41 @@ namespace Amazon.CertificateManager
 
         #endregion
                 
+        #region  ListCertificateDomainValidations
+
+
+
+        /// <summary>
+        /// Returns per-domain validation summaries for an ACM certificate. Each summary includes
+        /// the domain name, the active validation configuration, and the requested validation
+        /// configuration when a validation method migration is in progress. You can use the results
+        /// to monitor the progress of an email-to-DNS validation migration and to retrieve the
+        /// CNAME records required for DNS validation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateDomainValidations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCertificateDomainValidations service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.AccessDeniedException">
+        /// You do not have access required to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.InvalidArgsException">
+        /// One or more of request parameters specified is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ResourceNotFoundException">
+        /// The specified certificate cannot be found in the caller's account or the caller's
+        /// account cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.CertificateManager.Model.ThrottlingException">
+        /// The request was denied because it exceeded a quota.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/ListCertificateDomainValidations">REST API Reference for ListCertificateDomainValidations Operation</seealso>
+        Task<ListCertificateDomainValidationsResponse> ListCertificateDomainValidationsAsync(ListCertificateDomainValidationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListCertificates
 
 
@@ -1882,10 +1917,10 @@ namespace Amazon.CertificateManager
 
 
         /// <summary>
-        /// Updates a certificate. You can use this function to specify whether to export your
-        /// certificate. Certificate transparency logging opt-out is no longer available. For
-        /// more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
-        /// Transparency Logging</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
+        /// Updates certificate options. You can use this operation to change the domain validation
+        /// method or specify whether to export your certificate. For more information, see <a
+        /// href="https://docs.aws.amazon.com/acm/latest/userguide/email-to-dns-migration.html">Migrate
+        /// from email to DNS validation</a> and <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-exportable-certificates.html">Certificate
         /// Manager Exportable Managed Certificates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCertificateOptions service method.</param>
@@ -1894,6 +1929,10 @@ namespace Amazon.CertificateManager
         /// </param>
         /// 
         /// <returns>The response from the UpdateCertificateOptions service method, as returned by CertificateManager.</returns>
+        /// <exception cref="Amazon.CertificateManager.Model.ConflictException">
+        /// You are trying to update a resource or configuration that is already being created
+        /// or updated. Wait for the previous operation to finish and try again.
+        /// </exception>
         /// <exception cref="Amazon.CertificateManager.Model.InvalidArnException">
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>

@@ -51,6 +51,7 @@ namespace Amazon.MediaPackageV2.Model
         private DateTime? _resetAt;
         private Segment _segment;
         private int? _startoverWindowSeconds;
+        private StreamNameOutputMode _streamNameOutputMode;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UriSeparator _uriSeparator;
 
@@ -393,6 +394,24 @@ namespace Amazon.MediaPackageV2.Model
         internal bool IsSetStartoverWindowSeconds()
         {
             return this._startoverWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamNameOutputMode. 
+        /// <para>
+        /// The output mode for stream names in egress manifests for this origin endpoint.
+        /// </para>
+        /// </summary>
+        public StreamNameOutputMode StreamNameOutputMode
+        {
+            get { return this._streamNameOutputMode; }
+            set { this._streamNameOutputMode = value; }
+        }
+
+        // Check to see if StreamNameOutputMode property is set
+        internal bool IsSetStreamNameOutputMode()
+        {
+            return this._streamNameOutputMode != null;
         }
 
         /// <summary>

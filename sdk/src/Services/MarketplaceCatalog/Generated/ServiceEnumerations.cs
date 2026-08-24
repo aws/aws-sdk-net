@@ -141,6 +141,56 @@ namespace Amazon.MarketplaceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type AssessmentResult.
+    /// </summary>
+    public class AssessmentResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAIL for AssessmentResult
+        /// </summary>
+        public static readonly AssessmentResult FAIL = new AssessmentResult("FAIL");
+        /// <summary>
+        /// Constant PASS for AssessmentResult
+        /// </summary>
+        public static readonly AssessmentResult PASS = new AssessmentResult("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssessmentResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssessmentResult FindValue(string value)
+        {
+            return FindValue<AssessmentResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssessmentResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ChangeStatus.
     /// </summary>
     public class ChangeStatus : ConstantClass
@@ -316,6 +366,64 @@ namespace Amazon.MarketplaceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContainerProductVisibilityString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ControlAssessmentResult.
+    /// </summary>
+    public class ControlAssessmentResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXEMPTION_PASS for ControlAssessmentResult
+        /// </summary>
+        public static readonly ControlAssessmentResult EXEMPTION_PASS = new ControlAssessmentResult("EXEMPTION_PASS");
+        /// <summary>
+        /// Constant FAIL for ControlAssessmentResult
+        /// </summary>
+        public static readonly ControlAssessmentResult FAIL = new ControlAssessmentResult("FAIL");
+        /// <summary>
+        /// Constant NOT_EXECUTED for ControlAssessmentResult
+        /// </summary>
+        public static readonly ControlAssessmentResult NOT_EXECUTED = new ControlAssessmentResult("NOT_EXECUTED");
+        /// <summary>
+        /// Constant PASS for ControlAssessmentResult
+        /// </summary>
+        public static readonly ControlAssessmentResult PASS = new ControlAssessmentResult("PASS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ControlAssessmentResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ControlAssessmentResult FindValue(string value)
+        {
+            return FindValue<ControlAssessmentResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ControlAssessmentResult(string value)
         {
             return FindValue(value);
         }
@@ -659,6 +767,56 @@ namespace Amazon.MarketplaceCatalog
 
 
     /// <summary>
+    /// Constants used for properties of type OfferCreatedBySourceString.
+    /// </summary>
+    public class OfferCreatedBySourceString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AwsMarketplace for OfferCreatedBySourceString
+        /// </summary>
+        public static readonly OfferCreatedBySourceString AwsMarketplace = new OfferCreatedBySourceString("AwsMarketplace");
+        /// <summary>
+        /// Constant Seller for OfferCreatedBySourceString
+        /// </summary>
+        public static readonly OfferCreatedBySourceString Seller = new OfferCreatedBySourceString("Seller");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferCreatedBySourceString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferCreatedBySourceString FindValue(string value)
+        {
+            return FindValue<OfferCreatedBySourceString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferCreatedBySourceString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OfferSetSortBy.
     /// </summary>
     public class OfferSetSortBy : ConstantClass
@@ -789,6 +947,10 @@ namespace Amazon.MarketplaceCatalog
         /// </summary>
         public static readonly OfferSortBy BuyerAccounts = new OfferSortBy("BuyerAccounts");
         /// <summary>
+        /// Constant CreatedBySource for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy CreatedBySource = new OfferSortBy("CreatedBySource");
+        /// <summary>
         /// Constant EntityId for OfferSortBy
         /// </summary>
         public static readonly OfferSortBy EntityId = new OfferSortBy("EntityId");
@@ -820,6 +982,14 @@ namespace Amazon.MarketplaceCatalog
         /// Constant State for OfferSortBy
         /// </summary>
         public static readonly OfferSortBy State = new OfferSortBy("State");
+        /// <summary>
+        /// Constant TargetAgreementId for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy TargetAgreementId = new OfferSortBy("TargetAgreementId");
+        /// <summary>
+        /// Constant TargetAgreementIntent for OfferSortBy
+        /// </summary>
+        public static readonly OfferSortBy TargetAgreementIntent = new OfferSortBy("TargetAgreementIntent");
         /// <summary>
         /// Constant Targeting for OfferSortBy
         /// </summary>
@@ -904,6 +1074,52 @@ namespace Amazon.MarketplaceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OfferStateString(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OfferTargetAgreementIntentString.
+    /// </summary>
+    public class OfferTargetAgreementIntentString : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Renew for OfferTargetAgreementIntentString
+        /// </summary>
+        public static readonly OfferTargetAgreementIntentString Renew = new OfferTargetAgreementIntentString("Renew");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OfferTargetAgreementIntentString(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OfferTargetAgreementIntentString FindValue(string value)
+        {
+            return FindValue<OfferTargetAgreementIntentString>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OfferTargetAgreementIntentString(string value)
         {
             return FindValue(value);
         }
@@ -1380,6 +1596,64 @@ namespace Amazon.MarketplaceCatalog
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValidationExceptionReason.
+    /// </summary>
+    public class ValidationExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CannotParse for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason CannotParse = new ValidationExceptionReason("CannotParse");
+        /// <summary>
+        /// Constant FieldValidationFailed for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason FieldValidationFailed = new ValidationExceptionReason("FieldValidationFailed");
+        /// <summary>
+        /// Constant Other for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason Other = new ValidationExceptionReason("Other");
+        /// <summary>
+        /// Constant UnknownOperation for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason UnknownOperation = new ValidationExceptionReason("UnknownOperation");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValidationExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValidationExceptionReason FindValue(string value)
+        {
+            return FindValue<ValidationExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValidationExceptionReason(string value)
         {
             return FindValue(value);
         }

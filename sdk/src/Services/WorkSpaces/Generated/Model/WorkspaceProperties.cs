@@ -36,6 +36,7 @@ namespace Amazon.WorkSpaces.Model
     {
         private Compute _computeTypeName;
         private GlobalAcceleratorForWorkSpace _globalAccelerator;
+        private bool? _nestedVirtualizationEnabled;
         private OperatingSystemName _operatingSystemName;
         private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _rootVolumeSizeGib;
@@ -78,6 +79,29 @@ namespace Amazon.WorkSpaces.Model
         internal bool IsSetGlobalAccelerator()
         {
             return this._globalAccelerator != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NestedVirtualizationEnabled. 
+        /// <para>
+        /// Specifies whether nested virtualization is enabled for the WorkSpace.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/nested-virtualization.html">Nested
+        /// virtualization for Amazon WorkSpaces</a>.
+        /// </para>
+        /// </summary>
+        public bool? NestedVirtualizationEnabled
+        {
+            get { return this._nestedVirtualizationEnabled; }
+            set { this._nestedVirtualizationEnabled = value; }
+        }
+
+        // Check to see if NestedVirtualizationEnabled property is set
+        internal bool IsSetNestedVirtualizationEnabled()
+        {
+            return this._nestedVirtualizationEnabled.HasValue; 
         }
 
         /// <summary>

@@ -39,6 +39,7 @@ namespace Amazon.Odb.Model
         private string _availabilityZoneId;
         private int? _maxResults;
         private string _nextToken;
+        private string _shapeFamily;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -121,6 +122,25 @@ namespace Amazon.Odb.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ShapeFamily. 
+        /// <para>
+        /// The shape family to filter results by.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ShapeFamily
+        {
+            get { return this._shapeFamily; }
+            set { this._shapeFamily = value; }
+        }
+
+        // Check to see if ShapeFamily property is set
+        internal bool IsSetShapeFamily()
+        {
+            return this._shapeFamily != null;
         }
 
     }

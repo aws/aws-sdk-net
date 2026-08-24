@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetResponsesEvaluatorModelConfig())
+            {
+                context.Writer.WritePropertyName("responsesEvaluatorModelConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpenResponsesEvaluatorModelConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResponsesEvaluatorModelConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

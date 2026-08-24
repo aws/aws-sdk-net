@@ -54,10 +54,31 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class Attachment
     {
+        private string _dnsName;
         private string _endpointId;
         private AttachmentStatus _status;
         private string _statusMessage;
         private string _subnetId;
+
+        /// <summary>
+        /// Gets and sets the property DnsName. 
+        /// <para>
+        /// The DNS name that resolves to the firewall endpoint in the subnet. This is populated
+        /// for proxy mode firewalls, where clients direct traffic to the firewall's proxy using
+        /// this name. 
+        /// </para>
+        /// </summary>
+        public string DnsName
+        {
+            get { return this._dnsName; }
+            set { this._dnsName = value; }
+        }
+
+        // Check to see if DnsName property is set
+        internal bool IsSetDnsName()
+        {
+            return this._dnsName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property EndpointId. 

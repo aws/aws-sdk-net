@@ -79,6 +79,17 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetTagPropagationConfiguration())
+            {
+                context.Writer.WritePropertyName("TagPropagationConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TagPropagationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TagPropagationConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

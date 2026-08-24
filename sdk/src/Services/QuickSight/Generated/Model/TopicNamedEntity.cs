@@ -38,7 +38,10 @@ namespace Amazon.QuickSight.Model
         private string _entityDescription;
         private string _entityName;
         private List<string> _entitySynonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private int? _presentationOrder;
+        private int? _rankOrder;
         private SemanticEntityType _semanticEntityType;
+        private List<NamedEntitySort> _sort = AWSConfigs.InitializeCollections ? new List<NamedEntitySort>() : null;
 
         /// <summary>
         /// Gets and sets the property Definition. 
@@ -69,7 +72,7 @@ namespace Amazon.QuickSight.Model
         /// The description of the named entity.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string EntityDescription
         {
             get { return this._entityDescription; }
@@ -125,6 +128,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PresentationOrder. 
+        /// <para>
+        /// The presentation order of the named entity.
+        /// </para>
+        /// </summary>
+        public int? PresentationOrder
+        {
+            get { return this._presentationOrder; }
+            set { this._presentationOrder = value; }
+        }
+
+        // Check to see if PresentationOrder property is set
+        internal bool IsSetPresentationOrder()
+        {
+            return this._presentationOrder.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RankOrder. 
+        /// <para>
+        /// The rank order of the named entity.
+        /// </para>
+        /// </summary>
+        public int? RankOrder
+        {
+            get { return this._rankOrder; }
+            set { this._rankOrder = value; }
+        }
+
+        // Check to see if RankOrder property is set
+        internal bool IsSetRankOrder()
+        {
+            return this._rankOrder.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SemanticEntityType. 
         /// <para>
         /// The type of named entity that a topic represents.
@@ -140,6 +179,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSemanticEntityType()
         {
             return this._semanticEntityType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sort. 
+        /// <para>
+        /// The sort configuration of the named entity.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<NamedEntitySort> Sort
+        {
+            get { return this._sort; }
+            set { this._sort = value; }
+        }
+
+        // Check to see if Sort property is set
+        internal bool IsSetSort()
+        {
+            return this._sort != null && (this._sort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -74,6 +74,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogsEncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TagPropagationConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = TagPropagationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.TagPropagationConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

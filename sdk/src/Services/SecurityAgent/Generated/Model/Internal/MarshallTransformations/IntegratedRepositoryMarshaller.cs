@@ -46,6 +46,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBranch())
+            {
+                context.Writer.WritePropertyName("branch");
+                context.Writer.WriteStringValue(requestObject.Branch);
+            }
+
             if(requestObject.IsSetIntegrationId())
             {
                 context.Writer.WritePropertyName("integrationId");

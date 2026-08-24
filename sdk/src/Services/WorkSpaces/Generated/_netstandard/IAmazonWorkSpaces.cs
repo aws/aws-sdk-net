@@ -752,7 +752,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates a pool of WorkSpaces.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspacesPool service method.</param>
         /// <param name="cancellationToken">
@@ -1794,7 +1805,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Describes the specified WorkSpaces Pools.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPools service method.</param>
         /// <param name="cancellationToken">
@@ -1821,7 +1843,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Retrieves a list that describes the streaming sessions for a specified pool.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeWorkspacesPoolSessions service method.</param>
         /// <param name="cancellationToken">
@@ -2214,6 +2247,12 @@ namespace Amazon.WorkSpaces
         /// best practices, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/migrate-workspaces.html">Migrate
         /// a WorkSpace</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If the source WorkSpace has nested virtualization enabled and the target bundle does
+        /// not support nested virtualization, the migration fails.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MigrateWorkspace service method.</param>
         /// <param name="cancellationToken">
@@ -2878,8 +2917,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Starts the specified pool.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You cannot start a pool unless it has a running mode of <c>AutoStop</c> and a state
@@ -2947,8 +2996,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Stops the specified pool.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// You cannot stop a WorkSpace pool unless it has a running mode of <c>AutoStop</c> and
@@ -3041,7 +3100,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Terminates the specified pool.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPool service method.</param>
         /// <param name="cancellationToken">
@@ -3074,7 +3144,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Terminates the pool session.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateWorkspacesPoolSession service method.</param>
         /// <param name="cancellationToken">
@@ -3341,7 +3422,18 @@ namespace Amazon.WorkSpaces
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// End of support notice: On December 31, 2027, Amazon Web Services will end support
+        /// for Amazon WorkSpaces Pools. After December 31, 2027, you will no longer be able to
+        /// access the Amazon WorkSpaces Pools console or Amazon WorkSpaces Pools resources. For
+        /// more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/wsp-pools-end-of-support.html">Amazon
+        /// WorkSpaces Pools end of support</a>. 
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Updates the specified pool.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspacesPool service method.</param>
         /// <param name="cancellationToken">

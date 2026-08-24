@@ -118,6 +118,80 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  BatchPutGatewayRateLimits
+
+
+        /// <summary>
+        /// Atomically creates or updates multiple rate limits for a gateway. The operation updates
+        /// existing limits with matching keys and creates new limits for new keys. If the operation
+        /// fails, the service applies no changes. Retry the request after resolving the issue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutGatewayRateLimits service method.</param>
+        /// 
+        /// <returns>The response from the BatchPutGatewayRateLimits service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/BatchPutGatewayRateLimits">REST API Reference for BatchPutGatewayRateLimits Operation</seealso>
+        BatchPutGatewayRateLimitsResponse BatchPutGatewayRateLimits(BatchPutGatewayRateLimitsRequest request);
+
+
+
+        /// <summary>
+        /// Atomically creates or updates multiple rate limits for a gateway. The operation updates
+        /// existing limits with matching keys and creates new limits for new keys. If the operation
+        /// fails, the service applies no changes. Retry the request after resolving the issue.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchPutGatewayRateLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchPutGatewayRateLimits service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/BatchPutGatewayRateLimits">REST API Reference for BatchPutGatewayRateLimits Operation</seealso>
+        Task<BatchPutGatewayRateLimitsResponse> BatchPutGatewayRateLimitsAsync(BatchPutGatewayRateLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateAgentRuntime
 
 
@@ -477,6 +551,102 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateBrowserProfile">REST API Reference for CreateBrowserProfile Operation</seealso>
         Task<CreateBrowserProfileResponse> CreateBrowserProfileAsync(CreateBrowserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateCapacityProvider
+
+
+        /// <summary>
+        /// Creates a capacity provider. A capacity provider defines the Amazon EC2 infrastructure
+        /// for AgentCore Runtime, including the operating system, allowed instance types, networking,
+        /// and storage. It also specifies the IAM permissions that AgentCore uses to manage those
+        /// instances.
+        /// 
+        ///  
+        /// <para>
+        /// The capacity provider name must be unique within your account. After you create the
+        /// capacity provider, it enters a <c>CREATING</c> state and transitions to <c>READY</c>
+        /// when it is available for use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the CreateCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.RetryableConflictException">
+        /// The operation failed because of a conflicting request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Creates a capacity provider. A capacity provider defines the Amazon EC2 infrastructure
+        /// for AgentCore Runtime, including the operating system, allowed instance types, networking,
+        /// and storage. It also specifies the IAM permissions that AgentCore uses to manage those
+        /// instances.
+        /// 
+        ///  
+        /// <para>
+        /// The capacity provider name must be unique within your account. After you create the
+        /// capacity provider, it enters a <c>CREATING</c> state and transitions to <c>READY</c>
+        /// when it is available for use.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.RetryableConflictException">
+        /// The operation failed because of a conflicting request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
+        Task<CreateCapacityProviderResponse> CreateCapacityProviderAsync(CreateCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -895,6 +1065,80 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGateway">REST API Reference for CreateGateway Operation</seealso>
         Task<CreateGatewayResponse> CreateGatewayAsync(CreateGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateGatewayRateLimit
+
+
+        /// <summary>
+        /// Creates a rate limit for a gateway. Rate limits define throttling rules for each dimension
+        /// that control request rates, token consumption rates, and concurrent connections through
+        /// the gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayRateLimit service method.</param>
+        /// 
+        /// <returns>The response from the CreateGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGatewayRateLimit">REST API Reference for CreateGatewayRateLimit Operation</seealso>
+        CreateGatewayRateLimitResponse CreateGatewayRateLimit(CreateGatewayRateLimitRequest request);
+
+
+
+        /// <summary>
+        /// Creates a rate limit for a gateway. Rate limits define throttling rules for each dimension
+        /// that control request rates, token consumption rates, and concurrent connections through
+        /// the gateway.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateGatewayRateLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGatewayRateLimit">REST API Reference for CreateGatewayRateLimit Operation</seealso>
+        Task<CreateGatewayRateLimitResponse> CreateGatewayRateLimitAsync(CreateGatewayRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1437,6 +1681,11 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
         /// This exception is thrown when a request is made beyond the service quota
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.SubscriptionRequiredException">
+        /// The request failed because it requires an active Amazon Web Services Marketplace subscription
+        /// that is not present. Subscribe to the required product in Amazon Web Services Marketplace
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
         /// This exception is thrown when the number of requests exceeds the limit
         /// </exception>
@@ -1472,6 +1721,11 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
         /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.SubscriptionRequiredException">
+        /// The request failed because it requires an active Amazon Web Services Marketplace subscription
+        /// that is not present. Subscribe to the required product in Amazon Web Services Marketplace
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
         /// This exception is thrown when the number of requests exceeds the limit
@@ -1675,6 +1929,16 @@ namespace Amazon.BedrockAgentCoreControl
         /// defines the available tools, their parameters, and expected data types. This is an
         /// asynchronous operation. Use the <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
         /// operation to poll the <c>status</c> field to track completion.
+        /// 
+        ///  
+        /// <para>
+        /// If the new policy is a temporal policy, creating it invalidates the policy engine's
+        /// active temporal sessions. For more information about temporal policy sessions, see
+        /// <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html">session-based
+        /// temporal policies</a>. The policy engine returns an HTTP 409 <c>ConflictException</c>
+        /// to in-flight sessions. To resume, you must start a new session with a new session
+        /// ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
         /// 
@@ -1715,6 +1979,16 @@ namespace Amazon.BedrockAgentCoreControl
         /// defines the available tools, their parameters, and expected data types. This is an
         /// asynchronous operation. Use the <a href="https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html">GetPolicy</a>
         /// operation to poll the <c>status</c> field to track completion.
+        /// 
+        ///  
+        /// <para>
+        /// If the new policy is a temporal policy, creating it invalidates the policy engine's
+        /// active temporal sessions. For more information about temporal policy sessions, see
+        /// <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html">session-based
+        /// temporal policies</a>. The policy engine returns an HTTP 409 <c>ConflictException</c>
+        /// to in-flight sessions. To resume, you must start a new session with a new session
+        /// ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2060,7 +2334,8 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes an Amazon Bedrock AgentCore Runtime.
+        /// Deletes an Amazon Bedrock AgentCore Runtime, or a single version of an AgentCore Runtime
+        /// when you provide the version qualifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRuntime service method.</param>
         /// 
@@ -2086,7 +2361,8 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes an Amazon Bedrock AgentCore Runtime.
+        /// Deletes an Amazon Bedrock AgentCore Runtime, or a single version of an AgentCore Runtime
+        /// when you provide the version qualifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRuntime service method.</param>
         /// <param name="cancellationToken">
@@ -2118,7 +2394,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes an AAgentCore Runtime endpoint.
+        /// Deletes an AgentCore Runtime endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRuntimeEndpoint service method.</param>
         /// 
@@ -2144,7 +2420,7 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes an AAgentCore Runtime endpoint.
+        /// Deletes an AgentCore Runtime endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAgentRuntimeEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -2369,6 +2645,80 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteBrowserProfile">REST API Reference for DeleteBrowserProfile Operation</seealso>
         Task<DeleteBrowserProfileResponse> DeleteBrowserProfileAsync(DeleteBrowserProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCapacityProvider
+
+
+        /// <summary>
+        /// Deletes a capacity provider. Before you delete a capacity provider, disassociate all
+        /// agent runtimes and runtime versions that reference it. If any references remain, the
+        /// operation fails.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.RetryableConflictException">
+        /// The operation failed because of a conflicting request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
+        DeleteCapacityProviderResponse DeleteCapacityProvider(DeleteCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a capacity provider. Before you delete a capacity provider, disassociate all
+        /// agent runtimes and runtime versions that reference it. If any references remain, the
+        /// operation fails.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.RetryableConflictException">
+        /// The operation failed because of a conflicting request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteCapacityProvider">REST API Reference for DeleteCapacityProvider Operation</seealso>
+        Task<DeleteCapacityProviderResponse> DeleteCapacityProviderAsync(DeleteCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2769,6 +3119,70 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGateway">REST API Reference for DeleteGateway Operation</seealso>
         Task<DeleteGatewayResponse> DeleteGatewayAsync(DeleteGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteGatewayRateLimit
+
+
+        /// <summary>
+        /// Deletes a gateway rate limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayRateLimit service method.</param>
+        /// 
+        /// <returns>The response from the DeleteGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayRateLimit">REST API Reference for DeleteGatewayRateLimit Operation</seealso>
+        DeleteGatewayRateLimitResponse DeleteGatewayRateLimit(DeleteGatewayRateLimitRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a gateway rate limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteGatewayRateLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayRateLimit">REST API Reference for DeleteGatewayRateLimit Operation</seealso>
+        Task<DeleteGatewayRateLimitResponse> DeleteGatewayRateLimitAsync(DeleteGatewayRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4144,6 +4558,66 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  GetCapacityProvider
+
+
+        /// <summary>
+        /// Retrieves information about a capacity provider, including its status, permissions
+        /// configuration, and compute configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the GetCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetCapacityProvider">REST API Reference for GetCapacityProvider Operation</seealso>
+        GetCapacityProviderResponse GetCapacityProvider(GetCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a capacity provider, including its status, permissions
+        /// configuration, and compute configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetCapacityProvider">REST API Reference for GetCapacityProvider Operation</seealso>
+        Task<GetCapacityProviderResponse> GetCapacityProviderAsync(GetCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetCodeInterpreter
 
 
@@ -4505,6 +4979,64 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGateway">REST API Reference for GetGateway Operation</seealso>
         Task<GetGatewayResponse> GetGatewayAsync(GetGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetGatewayRateLimit
+
+
+        /// <summary>
+        /// Retrieves information about a gateway rate limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayRateLimit service method.</param>
+        /// 
+        /// <returns>The response from the GetGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGatewayRateLimit">REST API Reference for GetGatewayRateLimit Operation</seealso>
+        GetGatewayRateLimitResponse GetGatewayRateLimit(GetGatewayRateLimitRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a gateway rate limit.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetGatewayRateLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGatewayRateLimit">REST API Reference for GetGatewayRateLimit Operation</seealso>
+        Task<GetGatewayRateLimitResponse> GetGatewayRateLimitAsync(GetGatewayRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5992,6 +6524,64 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  ListAgentRuntimeVersionsByCapacityProvider
+
+
+        /// <summary>
+        /// Lists the agent runtime versions that are associated with a capacity provider. Use
+        /// this operation to identify the runtimes you must disassociate before you can delete
+        /// the capacity provider. Results are paginated; use the <c>nextToken</c> parameter to
+        /// retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRuntimeVersionsByCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentRuntimeVersionsByCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentRuntimeVersionsByCapacityProvider">REST API Reference for ListAgentRuntimeVersionsByCapacityProvider Operation</seealso>
+        ListAgentRuntimeVersionsByCapacityProviderResponse ListAgentRuntimeVersionsByCapacityProvider(ListAgentRuntimeVersionsByCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Lists the agent runtime versions that are associated with a capacity provider. Use
+        /// this operation to identify the runtimes you must disassociate before you can delete
+        /// the capacity provider. Results are paginated; use the <c>nextToken</c> parameter to
+        /// retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRuntimeVersionsByCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentRuntimeVersionsByCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListAgentRuntimeVersionsByCapacityProvider">REST API Reference for ListAgentRuntimeVersionsByCapacityProvider Operation</seealso>
+        Task<ListAgentRuntimeVersionsByCapacityProviderResponse> ListAgentRuntimeVersionsByCapacityProviderAsync(ListAgentRuntimeVersionsByCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListApiKeyCredentialProviders
 
 
@@ -6159,6 +6749,62 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListBrowsers">REST API Reference for ListBrowsers Operation</seealso>
         Task<ListBrowsersResponse> ListBrowsersAsync(ListBrowsersRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCapacityProviders
+
+
+        /// <summary>
+        /// Lists the capacity providers in your account and returns summary information for each
+        /// one. To retrieve the full configuration for a specific capacity provider, use <c>GetCapacityProvider</c>.
+        /// Results are paginated; use the <c>nextToken</c> parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityProviders service method.</param>
+        /// 
+        /// <returns>The response from the ListCapacityProviders service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListCapacityProviders">REST API Reference for ListCapacityProviders Operation</seealso>
+        ListCapacityProvidersResponse ListCapacityProviders(ListCapacityProvidersRequest request);
+
+
+
+        /// <summary>
+        /// Lists the capacity providers in your account and returns summary information for each
+        /// one. To retrieve the full configuration for a specific capacity provider, use <c>GetCapacityProvider</c>.
+        /// Results are paginated; use the <c>nextToken</c> parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCapacityProviders service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCapacityProviders service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListCapacityProviders">REST API Reference for ListCapacityProviders Operation</seealso>
+        Task<ListCapacityProvidersResponse> ListCapacityProvidersAsync(ListCapacityProvidersRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -6557,6 +7203,66 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListEvaluators">REST API Reference for ListEvaluators Operation</seealso>
         Task<ListEvaluatorsResponse> ListEvaluatorsAsync(ListEvaluatorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListGatewayRateLimits
+
+
+        /// <summary>
+        /// Lists all rate limits for a gateway. Results are paginated. Use the <c>nextToken</c>
+        /// parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRateLimits service method.</param>
+        /// 
+        /// <returns>The response from the ListGatewayRateLimits service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGatewayRateLimits">REST API Reference for ListGatewayRateLimits Operation</seealso>
+        ListGatewayRateLimitsResponse ListGatewayRateLimits(ListGatewayRateLimitsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all rate limits for a gateway. Results are paginated. Use the <c>nextToken</c>
+        /// parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListGatewayRateLimits service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListGatewayRateLimits service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGatewayRateLimits">REST API Reference for ListGatewayRateLimits Operation</seealso>
+        Task<ListGatewayRateLimitsResponse> ListGatewayRateLimitsAsync(ListGatewayRateLimitsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -8734,6 +9440,80 @@ namespace Amazon.BedrockAgentCoreControl
 
         #endregion
         
+        #region  UpdateCapacityProvider
+
+
+        /// <summary>
+        /// Updates a capacity provider. Only the description can be changed. To change other
+        /// configuration, such as instance types, networking, or storage, create a new capacity
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.RetryableConflictException">
+        /// The operation failed because of a conflicting request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
+        UpdateCapacityProviderResponse UpdateCapacityProvider(UpdateCapacityProviderRequest request);
+
+
+
+        /// <summary>
+        /// Updates a capacity provider. Only the description can be changed. To change other
+        /// configuration, such as instance types, networking, or storage, create a new capacity
+        /// provider.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCapacityProvider service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCapacityProvider service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.RetryableConflictException">
+        /// The operation failed because of a conflicting request. Retry the request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateCapacityProvider">REST API Reference for UpdateCapacityProvider Operation</seealso>
+        Task<UpdateCapacityProviderResponse> UpdateCapacityProviderAsync(UpdateCapacityProviderRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateConfigurationBundle
 
 
@@ -9081,6 +9861,72 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
         Task<UpdateGatewayResponse> UpdateGatewayAsync(UpdateGatewayRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateGatewayRateLimit
+
+
+        /// <summary>
+        /// Updates the entries of a gateway rate limit. The dimension keys are immutable after
+        /// creation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayRateLimit service method.</param>
+        /// 
+        /// <returns>The response from the UpdateGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayRateLimit">REST API Reference for UpdateGatewayRateLimit Operation</seealso>
+        UpdateGatewayRateLimitResponse UpdateGatewayRateLimit(UpdateGatewayRateLimitRequest request);
+
+
+
+        /// <summary>
+        /// Updates the entries of a gateway rate limit. The dimension keys are immutable after
+        /// creation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateGatewayRateLimit service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateGatewayRateLimit service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayRateLimit">REST API Reference for UpdateGatewayRateLimit Operation</seealso>
+        Task<UpdateGatewayRateLimitResponse> UpdateGatewayRateLimitAsync(UpdateGatewayRateLimitRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -9623,6 +10469,11 @@ namespace Amazon.BedrockAgentCoreControl
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
         /// This exception is thrown when a request is made beyond the service quota
         /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.SubscriptionRequiredException">
+        /// The request failed because it requires an active Amazon Web Services Marketplace subscription
+        /// that is not present. Subscribe to the required product in Amazon Web Services Marketplace
+        /// and try again.
+        /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
         /// This exception is thrown when the number of requests exceeds the limit
         /// </exception>
@@ -9658,6 +10509,11 @@ namespace Amazon.BedrockAgentCoreControl
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
         /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.SubscriptionRequiredException">
+        /// The request failed because it requires an active Amazon Web Services Marketplace subscription
+        /// that is not present. Subscribe to the required product in Amazon Web Services Marketplace
+        /// and try again.
         /// </exception>
         /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
         /// This exception is thrown when the number of requests exceeds the limit
@@ -9841,6 +10697,17 @@ namespace Amazon.BedrockAgentCoreControl
         /// identity. The updated policy is validated against the Cedar schema before being applied.
         /// This is an asynchronous operation. Use the <c>GetPolicy</c> operation to poll the
         /// <c>status</c> field to track completion.
+        /// 
+        ///  
+        /// <para>
+        /// If the updated policy is a temporal policy, the policy engine invalidates all active
+        /// temporal sessions. If the update adds or removes temporal operators, the policy engine
+        /// also invalidates active temporal sessions. For more information about temporal policy
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html">session-based
+        /// temporal policies</a>. The policy engine returns an HTTP 409 <c>ConflictException</c>
+        /// to in-flight sessions. To resume, you must start a new session with a new session
+        /// ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy service method.</param>
         /// 
@@ -9877,6 +10744,17 @@ namespace Amazon.BedrockAgentCoreControl
         /// identity. The updated policy is validated against the Cedar schema before being applied.
         /// This is an asynchronous operation. Use the <c>GetPolicy</c> operation to poll the
         /// <c>status</c> field to track completion.
+        /// 
+        ///  
+        /// <para>
+        /// If the updated policy is a temporal policy, the policy engine invalidates all active
+        /// temporal sessions. If the update adds or removes temporal operators, the policy engine
+        /// also invalidates active temporal sessions. For more information about temporal policy
+        /// sessions, see <a href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html">session-based
+        /// temporal policies</a>. The policy engine returns an HTTP 409 <c>ConflictException</c>
+        /// to in-flight sessions. To resume, you must start a new session with a new session
+        /// ID.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePolicy service method.</param>
         /// <param name="cancellationToken">

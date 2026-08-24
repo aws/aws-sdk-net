@@ -58,6 +58,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
         IListAgentRuntimeVersionsPaginator ListAgentRuntimeVersions(ListAgentRuntimeVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListAgentRuntimeVersionsByCapacityProvider operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgentRuntimeVersionsByCapacityProviderPaginator ListAgentRuntimeVersionsByCapacityProvider(ListAgentRuntimeVersionsByCapacityProviderRequest request);
+
+        /// <summary>
         /// Paginator for ListApiKeyCredentialProviders operation
         ///</summary>
         [AWSPaginator(
@@ -86,6 +96,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListBrowsersPaginator ListBrowsers(ListBrowsersRequest request);
+
+        /// <summary>
+        /// Paginator for ListCapacityProviders operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCapacityProvidersPaginator ListCapacityProviders(ListCapacityProvidersRequest request);
 
         /// <summary>
         /// Paginator for ListCodeInterpreters operation
@@ -156,6 +176,16 @@ namespace Amazon.BedrockAgentCoreControl.Model
             OutputToken = new[] { "NextToken" }
         )]
         IListEvaluatorsPaginator ListEvaluators(ListEvaluatorsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGatewayRateLimits operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListGatewayRateLimitsPaginator ListGatewayRateLimits(ListGatewayRateLimitsRequest request);
 
         /// <summary>
         /// Paginator for ListGatewayRules operation

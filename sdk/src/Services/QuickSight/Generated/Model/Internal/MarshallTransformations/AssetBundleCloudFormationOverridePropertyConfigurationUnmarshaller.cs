@@ -104,6 +104,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Themes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("TopicsV2", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AssetBundleExportJobTopicV2OverrideProperties, AssetBundleExportJobTopicV2OverridePropertiesUnmarshaller>(AssetBundleExportJobTopicV2OverridePropertiesUnmarshaller.Instance);
+                    unmarshalledObject.TopicsV2 = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("VPCConnections", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AssetBundleExportJobVPCConnectionOverrideProperties, AssetBundleExportJobVPCConnectionOverridePropertiesUnmarshaller>(AssetBundleExportJobVPCConnectionOverridePropertiesUnmarshaller.Instance);

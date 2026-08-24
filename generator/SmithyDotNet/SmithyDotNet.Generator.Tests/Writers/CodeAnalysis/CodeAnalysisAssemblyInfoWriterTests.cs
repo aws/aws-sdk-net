@@ -16,17 +16,17 @@ public class CodeAnalysisAssemblyInfoWriterTests
     [Fact]
     public void CodeAnalysisAssemblyInfoIsCorrect()
     {
-        AssertHelper("[assembly: AssemblyTitle(\"AWSSDK.CloudTrailData\")]");
-        AssertHelper($"[assembly: AssemblyDescription(\"Code analysis project file for AWSSDK.CloudTrailData\")]");
-        AssertHelper("[assembly: AssemblyConfiguration(\"\")]");
-        AssertHelper("[assembly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]");
-        AssertHelper("[assembly: AssemblyCompany(\"Amazon.com, Inc\")]");
-        AssertHelper("[assembly: AssemblyCopyright(\"Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\")]");
-        AssertHelper("[assembly: AssemblyTrademark(\"\")]");
-        AssertHelper("[assembly: AssemblyCulture(\"\")]");
+        AssertHelper("""[assembly: AssemblyTitle("AWSSDK.CloudTrailData")]""");
+        AssertHelper($"""[assembly: AssemblyDescription("Code analysis project file for AWSSDK.CloudTrailData")]""");
+        AssertHelper("""[assembly: AssemblyConfiguration("")]""");
+        AssertHelper("""[assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]""");
+        AssertHelper("""[assembly: AssemblyCompany("Amazon.com, Inc")]""");
+        AssertHelper("""[assembly: AssemblyCopyright("Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")]""");
+        AssertHelper("""[assembly: AssemblyTrademark("")]""");
+        AssertHelper("""[assembly: AssemblyCulture("")]""");
         AssertHelper("[assembly: ComVisible(false)]");
-        AssertHelper("[assembly: AssemblyVersion(\"4.0\")]");
-        AssertHelper("[assembly: AssemblyFileVersion(\"4.0.100.3\")]");
+        AssertHelper("""[assembly: AssemblyVersion("4.0")]""");
+        AssertHelper("""[assembly: AssemblyFileVersion("4.0.100.3")]""");
     }
 
     private void AssertHelper(string expected)

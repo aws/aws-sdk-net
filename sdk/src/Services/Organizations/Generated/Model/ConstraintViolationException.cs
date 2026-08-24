@@ -67,6 +67,11 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// ACCOUNT_NOT_ACTIVE_FOR_TRANSFER_RESPONSIBILITY: Your account setup isn't complete
+    /// or your account isn't fully active to invite or accept a Billing Transfer invitation.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// ACTIVE_RESPONSIBILITY_TRANSFER_PROCESS: You cannot delete organization due to an ongoing
     /// responsibility transfer process. For example, a pending invitation or an in-progress
     /// transfer. To delete the organization, you must resolve the current transfer process.
@@ -311,7 +316,19 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// UNSUPPORTED_PRICING: Your organization has a pricing contract that is unsupported.
+    /// TRANSFER_RESPONSIBILITY_UPDATE_NOT_ALLOWED: You cannot update this transfer because
+    /// it is no longer active. Transfers that have been withdrawn, declined, expired, or
+    /// cancelled cannot be modified.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// UNMET_BILLING_PREREQUISITE: Your current billing configuration is unsupported. Contact
+    /// Amazon Web Services Support for assistance.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// UNSUPPORTED_PRICING: Ineligible for Billing Transfer. Your organization is subject
+    /// to a pricing agreement with Amazon Web Services that Billing Transfer does not support.
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -245,6 +245,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for ListExtractionDefinitions operation
+        ///</summary>
+        public IListExtractionDefinitionsPaginator ListExtractionDefinitions(ListExtractionDefinitionsRequest request) 
+        {
+            return new ListExtractionDefinitionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListFlowAssociations operation
         ///</summary>
         public IListFlowAssociationsPaginator ListFlowAssociations(ListFlowAssociationsRequest request) 
@@ -314,6 +322,14 @@ namespace Amazon.Connect.Model
         public IListLexBotsPaginator ListLexBots(ListLexBotsRequest request) 
         {
             return new ListLexBotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListMetrics operation
+        ///</summary>
+        public IListMetricsPaginator ListMetrics(ListMetricsRequest request) 
+        {
+            return new ListMetricsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -610,6 +626,14 @@ namespace Amazon.Connect.Model
         public ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request) 
         {
             return new SearchHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchMetrics operation
+        ///</summary>
+        public ISearchMetricsPaginator SearchMetrics(SearchMetricsRequest request) 
+        {
+            return new SearchMetricsPaginator(this.client, request);
         }
 
         /// <summary>

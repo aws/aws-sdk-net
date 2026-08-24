@@ -46,6 +46,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAuthorizerLogs())
+            {
+                context.Writer.WritePropertyName("authorizerLogs");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AuthorizerLogsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AuthorizerLogs, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetBrokerLogs())
             {
                 context.Writer.WritePropertyName("brokerLogs");

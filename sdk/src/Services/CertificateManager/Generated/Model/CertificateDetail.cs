@@ -65,6 +65,7 @@ namespace Amazon.CertificateManager.Model
         private string _subject;
         private List<string> _subjectAlternativeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CertificateType _type;
+        private UpdateSummary _updateSummary;
 
         /// <summary>
         /// Gets and sets the property AcmeAccountId. 
@@ -682,6 +683,26 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetType()
         {
             return this._type != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateSummary. 
+        /// <para>
+        /// Contains information about the most recent update to the certificate. This field exists
+        /// only when the certificate type is <c>AMAZON_ISSUED</c> and a certificate update has
+        /// been requested.
+        /// </para>
+        /// </summary>
+        public UpdateSummary UpdateSummary
+        {
+            get { return this._updateSummary; }
+            set { this._updateSummary = value; }
+        }
+
+        // Check to see if UpdateSummary property is set
+        internal bool IsSetUpdateSummary()
+        {
+            return this._updateSummary != null;
         }
 
     }

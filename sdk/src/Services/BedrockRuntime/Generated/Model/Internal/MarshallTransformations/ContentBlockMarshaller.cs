@@ -140,6 +140,28 @@ namespace Amazon.BedrockRuntime.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Text);
             }
 
+            if(requestObject.IsSetToolAddition())
+            {
+                context.Writer.WritePropertyName("toolAddition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ToolAdditionBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.ToolAddition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetToolRemoval())
+            {
+                context.Writer.WritePropertyName("toolRemoval");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ToolRemovalBlockMarshaller.Instance;
+                marshaller.Marshall(requestObject.ToolRemoval, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetToolResult())
             {
                 context.Writer.WritePropertyName("toolResult");

@@ -66,6 +66,12 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// The type of ID for the participant.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// ORGANIZATION is valid only in the response context (identifying the inviting organization).
+        /// Valid input values for the Target parameter are ACCOUNT and EMAIL only.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public HandshakePartyType Type

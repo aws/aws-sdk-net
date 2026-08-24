@@ -46,6 +46,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAdDecisionServerConfiguration())
+            {
+                context.Writer.WritePropertyName("AdDecisionServerConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PreRollAdDecisionServerConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.AdDecisionServerConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetAdDecisionServerUrl())
             {
                 context.Writer.WritePropertyName("AdDecisionServerUrl");

@@ -49,6 +49,8 @@ namespace Amazon.DeviceFarm.Model
         private List<EnvironmentVariable> _environmentVariables = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private int? _eventCount;
         private string _executionRoleArn;
+        private RunInsights _insights;
+        private List<string> _insightsTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _jobTimeoutMinutes;
         private string _locale;
         private Location _location;
@@ -339,6 +341,50 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetExecutionRoleArn()
         {
             return this._executionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Insights. 
+        /// <para>
+        /// The insights for the run, including the report status and job-level metrics. This
+        /// field contains data only if you specified <c>insightsTypes</c> when you scheduled
+        /// the run.
+        /// </para>
+        /// </summary>
+        public RunInsights Insights
+        {
+            get { return this._insights; }
+            set { this._insights = value; }
+        }
+
+        // Check to see if Insights property is set
+        internal bool IsSetInsights()
+        {
+            return this._insights != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InsightsTypes. 
+        /// <para>
+        /// The types of insights requested for the run.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> InsightsTypes
+        {
+            get { return this._insightsTypes; }
+            set { this._insightsTypes = value; }
+        }
+
+        // Check to see if InsightsTypes property is set
+        internal bool IsSetInsightsTypes()
+        {
+            return this._insightsTypes != null && (this._insightsTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

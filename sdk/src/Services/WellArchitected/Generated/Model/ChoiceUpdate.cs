@@ -44,7 +44,7 @@ namespace Amazon.WellArchitected.Model
         /// The notes associated with a choice.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=250)]
+        [AWSProperty(Min=0, Max=250)]
         public string Notes
         {
             get { return this._notes; }

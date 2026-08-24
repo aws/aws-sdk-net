@@ -65,7 +65,7 @@ namespace Amazon.WAFV2.Model
         /// Pre-parse text transformations normalize the raw query string before WAF parses it
         /// into individual query arguments. They are applied before the standard text transformations.
         /// Pre-parse text transformations are only supported when <c>FieldToMatch</c> is <c>SingleQueryArgument</c>
-        /// or <c>AllQueryArguments</c>. You can specify up to 3 pre-parse text transformations
+        /// or <c>AllQueryArguments</c>. You can specify up to 10 pre-parse text transformations
         /// per rule statement.
         /// </para>
         /// <para />

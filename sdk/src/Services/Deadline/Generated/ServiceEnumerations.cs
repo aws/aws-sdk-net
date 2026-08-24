@@ -3790,6 +3790,10 @@ namespace Amazon.Deadline
         /// Constant LICENSE for UsageType
         /// </summary>
         public static readonly UsageType LICENSE = new UsageType("LICENSE");
+        /// <summary>
+        /// Constant PERSISTENT_VOLUME for UsageType
+        /// </summary>
+        public static readonly UsageType PERSISTENT_VOLUME = new UsageType("PERSISTENT_VOLUME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

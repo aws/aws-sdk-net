@@ -122,10 +122,28 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     unmarshalledObject.FirewallPolicyChangeProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("NatGatewayMappings", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NatGatewayMapping, NatGatewayMappingUnmarshaller>(NatGatewayMappingUnmarshaller.Instance);
+                    unmarshalledObject.NatGatewayMappings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("NoSourcePreservation", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.NoSourcePreservation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("NumberOfAssociations", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.NumberOfAssociations = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("ProxySettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = ProxySettingsUnmarshaller.Instance;
+                    unmarshalledObject.ProxySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubnetChangeProtection", targetDepth, ref reader))
@@ -156,6 +174,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.TransitGatewayOwnerAccountId = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("VpcEndpoint", targetDepth, ref reader))
+                {
+                    var unmarshaller = VpcEndpointUnmarshaller.Instance;
+                    unmarshalledObject.VpcEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcId", targetDepth, ref reader))

@@ -40,9 +40,11 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private EvaluatorConfig _evaluatorConfig;
         private string _evaluatorId;
         private string _evaluatorName;
+        private EvaluatorType _evaluatorType;
         private string _kmsKeyArn;
         private EvaluatorLevel _level;
         private bool? _lockedForModification;
+        private Provider _provider;
         private EvaluatorStatus _status;
         private DateTime? _updatedAt;
 
@@ -129,7 +131,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The unique identifier of the evaluator. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }
@@ -148,7 +150,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         ///  The name of the evaluator. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=48)]
         public string EvaluatorName
         {
             get { return this._evaluatorName; }
@@ -159,6 +161,47 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetEvaluatorName()
         {
             return this._evaluatorName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluatorType. 
+        /// <para>
+        ///  The kind of evaluator resource. Valid values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Builtin</c> – An Amazon Web Services-managed global evaluator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ThirdParty</c> – An Amazon Web Services-managed global evaluator from a third-party
+        /// provider.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Custom</c> – A customer-created evaluator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CustomCode</c> – A customer-created code-based evaluator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CustomDerived</c> – A customer-created evaluator derived from an existing base
+        /// evaluator.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public EvaluatorType EvaluatorType
+        {
+            get { return this._evaluatorType; }
+            set { this._evaluatorType = value; }
+        }
+
+        // Check to see if EvaluatorType property is set
+        internal bool IsSetEvaluatorType()
+        {
+            return this._evaluatorType != null;
         }
 
         /// <summary>
@@ -219,6 +262,25 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLockedForModification()
         {
             return this._lockedForModification.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Provider. 
+        /// <para>
+        ///  The source of the evaluator's logic: Amazon Web Services, a third-party library,
+        /// or you. 
+        /// </para>
+        /// </summary>
+        public Provider Provider
+        {
+            get { return this._provider; }
+            set { this._provider = value; }
+        }
+
+        // Check to see if Provider property is set
+        internal bool IsSetProvider()
+        {
+            return this._provider != null;
         }
 
         /// <summary>

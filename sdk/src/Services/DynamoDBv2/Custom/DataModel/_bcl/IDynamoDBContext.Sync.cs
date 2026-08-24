@@ -623,6 +623,31 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #endregion
 
+        #region SearchVectors
+
+        /// <summary>
+        /// Executes a vector search operation against DynamoDB, finding items
+        /// that match the specified vector conditions.
+        /// </summary>
+        /// <typeparam name="T">The type of the item.</typeparam>
+        /// <param name="vector">The vector to search for.</param>
+        /// <param name="topK">The number of top results to return.</param>
+        /// <param name="vectorsSearchConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Lazy-loaded collection of results.</returns>
+        IEnumerable<SearchVectorsItem<T>> SearchVectors<T>(List<float> vector, int topK, SearchVectorsConfig vectorsSearchConfig);
+
+        /// <summary>
+        /// Executes a vector search operation against DynamoDB, finding items
+        /// that match the specified vector conditions.
+        /// </summary>
+        /// <typeparam name="T">The type of the item.</typeparam>
+        /// <param name="searchVectorsOperationRequest">Mid-level, document model search vectors request object.</param>
+        /// <param name="fromSearchVectorsConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>Lazy-loaded collection of results.</returns>
+        IEnumerable<SearchVectorsItem<T>> FromSearchVectors<T>(SearchVectorsOperationRequest searchVectorsOperationRequest, FromSearchVectorsConfig fromSearchVectorsConfig);
+
+        #endregion
+
         #region Table methods
 
         /// <summary>

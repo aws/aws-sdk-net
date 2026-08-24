@@ -108,7 +108,7 @@ namespace Amazon.QuickSight.Model
         /// A description of the filter used to select items for a topic.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string FilterDescription
         {
             get { return this._filterDescription; }

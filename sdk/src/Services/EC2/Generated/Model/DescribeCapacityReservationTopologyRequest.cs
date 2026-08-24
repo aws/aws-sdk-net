@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Maximum 100 explicitly specified Capacity Reservation IDs.
+        /// Constraints: Maximum 10 explicitly specified Capacity Reservation IDs.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

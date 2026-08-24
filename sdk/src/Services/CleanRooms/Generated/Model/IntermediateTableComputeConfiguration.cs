@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
-    /// The compute configuration for an intermediate table population operation.
+    /// Contains the compute configuration for an intermediate table population operation.
     /// </summary>
     public partial class IntermediateTableComputeConfiguration
     {

@@ -33,6 +33,19 @@ public static class FileHeader
     ];
 
     /// <summary>
+    /// Usings for paginator files (class, interface, and factory).
+    /// </summary>
+    public static IReadOnlyList<string> PaginatorUsings { get; } =
+    [
+        "System",
+        "System.Collections.Generic",
+        "System.Threading",
+        "System.Threading.Tasks",
+        "Amazon.Runtime",
+        "Amazon.Runtime.Internal",
+    ];
+
+    /// <summary>
     /// Usings for marshaller files. These usings should be combined with the base-level ModelUsings
     /// </summary>
     public static IReadOnlyList<string> MarshallerUsings { get; } =

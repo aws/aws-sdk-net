@@ -56,8 +56,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AdapterSource. 
         /// <para>
-        /// The LoRA adapter source that was specified when the recommendation job was created.
-        /// This field is absent when the job was created without LoRA adapters.
+        /// The LoRA adapter source that you specified when you created the recommendation job.
+        /// This field is absent when you created the job without LoRA adapters.
         /// </para>
         /// </summary>
         public AIAdapterSource AdapterSource

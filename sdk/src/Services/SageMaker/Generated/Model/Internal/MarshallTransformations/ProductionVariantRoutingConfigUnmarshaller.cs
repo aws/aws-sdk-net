@@ -56,6 +56,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("PrefixAwareRoutingConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = PrefixAwareRoutingConfigUnmarshaller.Instance;
+                    unmarshalledObject.PrefixAwareRoutingConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("RoutingStrategy", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

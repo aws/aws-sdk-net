@@ -1307,6 +1307,10 @@ namespace Amazon.MarketplaceDiscovery
         /// </summary>
         public static readonly TermType LegalTerm = new TermType("LegalTerm");
         /// <summary>
+        /// Constant NetPaymentTerm for TermType
+        /// </summary>
+        public static readonly TermType NetPaymentTerm = new TermType("NetPaymentTerm");
+        /// <summary>
         /// Constant PaymentScheduleTerm for TermType
         /// </summary>
         public static readonly TermType PaymentScheduleTerm = new TermType("PaymentScheduleTerm");

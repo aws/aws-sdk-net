@@ -53,6 +53,7 @@ namespace Amazon.TranscribeStreaming.Model
         private string _sessionId;
         private int? _sessionResumeWindow;
         private bool? _showSpeakerLabel;
+        private TranscriptFormat _transcriptFormat;
         private TranscriptResultStream _transcriptResultStream;
         private VocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
@@ -407,6 +408,24 @@ namespace Amazon.TranscribeStreaming.Model
         internal bool IsSetShowSpeakerLabel()
         {
             return this._showSpeakerLabel.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TranscriptFormat. 
+        /// <para>
+        /// Provides the transcript format that you specified in your request.
+        /// </para>
+        /// </summary>
+        public TranscriptFormat TranscriptFormat
+        {
+            get { return this._transcriptFormat; }
+            set { this._transcriptFormat = value; }
+        }
+
+        // Check to see if TranscriptFormat property is set
+        internal bool IsSetTranscriptFormat()
+        {
+            return this._transcriptFormat != null;
         }
 
         /// <summary>

@@ -60,7 +60,8 @@ namespace Amazon.Backup.Model
         ///  
         /// <para>
         /// If this is set to <c>FALSE</c>, the response will contain all recovery points associated
-        /// with the selected resource.
+        /// with the selected resource, except for EBS snapshots copied within the same Region
+        /// and account.
         /// </para>
         ///  
         /// <para>

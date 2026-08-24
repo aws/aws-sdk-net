@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCore.Model
     public partial class PaymentOutput
     {
         private CryptoX402PaymentOutput _cryptox402;
+        private MppPaymentOutput _mpp;
 
         /// <summary>
         /// Gets and sets the property CryptoX402. 
@@ -52,6 +53,21 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetCryptoX402()
         {
             return this._cryptox402 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mpp.
+        /// </summary>
+        public MppPaymentOutput Mpp
+        {
+            get { return this._mpp; }
+            set { this._mpp = value; }
+        }
+
+        // Check to see if Mpp property is set
+        internal bool IsSetMpp()
+        {
+            return this._mpp != null;
         }
 
     }

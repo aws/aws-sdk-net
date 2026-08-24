@@ -117,6 +117,38 @@ namespace Amazon.Drs.Model
         }
 
         /// <summary>
+        /// Paginator for ListRecoveryPlanExecutions operation
+        ///</summary>
+        public IListRecoveryPlanExecutionsPaginator ListRecoveryPlanExecutions(ListRecoveryPlanExecutionsRequest request) 
+        {
+            return new ListRecoveryPlanExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecoveryPlanExecutionSteps operation
+        ///</summary>
+        public IListRecoveryPlanExecutionStepsPaginator ListRecoveryPlanExecutionSteps(ListRecoveryPlanExecutionStepsRequest request) 
+        {
+            return new ListRecoveryPlanExecutionStepsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecoveryPlans operation
+        ///</summary>
+        public IListRecoveryPlansPaginator ListRecoveryPlans(ListRecoveryPlansRequest request) 
+        {
+            return new ListRecoveryPlansPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListRecoveryPlanSteps operation
+        ///</summary>
+        public IListRecoveryPlanStepsPaginator ListRecoveryPlanSteps(ListRecoveryPlanStepsRequest request) 
+        {
+            return new ListRecoveryPlanStepsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStagingAccounts operation
         ///</summary>
         public IListStagingAccountsPaginator ListStagingAccounts(ListStagingAccountsRequest request) 

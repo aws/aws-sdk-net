@@ -45,9 +45,32 @@ namespace Amazon.ElementalInference.Model
     /// </summary>
     public partial class CreateFeedRequest : AmazonElementalInferenceRequest
     {
+        private string _accessRoleArn;
         private string _name;
         private List<CreateOutput> _outputs = AWSConfigs.InitializeCollections ? new List<CreateOutput>() : null;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AccessRoleArn. 
+        /// <para>
+        /// The ARN of an IAM role that Elemental Inference assumes to access resources in your
+        /// account on your behalf. For example, the smart crop feature uses this role to read
+        /// graphics-compositing templates from your Amazon S3 bucket. You specify one access
+        /// role for each feed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=255)]
+        public string AccessRoleArn
+        {
+            get { return this._accessRoleArn; }
+            set { this._accessRoleArn = value; }
+        }
+
+        // Check to see if AccessRoleArn property is set
+        internal bool IsSetAccessRoleArn()
+        {
+            return this._accessRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 

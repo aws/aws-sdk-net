@@ -87,7 +87,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo-fips.us-east-1.api.aws/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo-fips.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -102,7 +102,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo-fips.us-east-1.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -117,7 +117,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo.us-east-1.api.aws/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo.us-east-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -132,7 +132,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo.us-east-1.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo.us-east-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -357,7 +357,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo-fips.us-gov-west-1.api.aws/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo-fips.us-gov-west-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -372,7 +372,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = true;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo-fips.us-gov-west-1.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -387,7 +387,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = true;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo.us-gov-west-1.api.aws/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo.us-gov-west-1.api.aws", endpoint.URL);
         }
 
         [TestMethod]
@@ -402,7 +402,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["UseFIPS"] = false;
             parameters["UseDualStack"] = false;
             var endpoint = new AmazonGeoMapsEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://maps.geo.us-gov-west-1.amazonaws.com/v2", endpoint.URL);
+            Assert.AreEqual("https://maps.geo.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]

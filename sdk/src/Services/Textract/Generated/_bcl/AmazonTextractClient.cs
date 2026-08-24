@@ -344,7 +344,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -471,7 +472,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -552,7 +554,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -628,7 +631,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -691,7 +695,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -753,7 +758,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -1316,7 +1322,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -1396,7 +1403,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -2823,7 +2831,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -2919,7 +2928,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -3016,7 +3026,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -3112,7 +3123,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -3211,7 +3223,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -3309,7 +3322,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -3422,7 +3436,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size
@@ -3534,7 +3549,8 @@ namespace Amazon.Textract
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.BadDocumentException">
         /// Amazon Textract isn't able to read the document. For more information on the document
-        /// limits in Amazon Textract, see <a>limits</a>.
+        /// limits in Amazon Textract, see <a href="https://docs.aws.amazon.com/textract/latest/dg/limits.html">Hard
+        /// limits</a>.
         /// </exception>
         /// <exception cref="Amazon.Textract.Model.DocumentTooLargeException">
         /// The document can't be processed because it's too large. The maximum document size

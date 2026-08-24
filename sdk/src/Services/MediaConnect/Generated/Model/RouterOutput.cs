@@ -39,6 +39,7 @@ namespace Amazon.MediaConnect.Model
         private string _availabilityZone;
         private RouterOutputConfiguration _configuration;
         private DateTime? _createdAt;
+        private FabricConfiguration _fabricConfiguration;
         private string _id;
         private string _ipAddress;
         private MaintenanceConfiguration _maintenanceConfiguration;
@@ -130,6 +131,25 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FabricConfiguration. 
+        /// <para>
+        /// The fabric configuration settings for the router output.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public FabricConfiguration FabricConfiguration
+        {
+            get { return this._fabricConfiguration; }
+            set { this._fabricConfiguration = value; }
+        }
+
+        // Check to see if FabricConfiguration property is set
+        internal bool IsSetFabricConfiguration()
+        {
+            return this._fabricConfiguration != null;
         }
 
         /// <summary>

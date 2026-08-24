@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// The identifier of the data set, typically the data set's name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string Identifier
         {
             get { return this._identifier; }

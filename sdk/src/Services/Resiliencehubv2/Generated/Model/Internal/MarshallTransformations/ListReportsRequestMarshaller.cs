@@ -74,6 +74,9 @@ namespace Amazon.Resiliencehubv2.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetServiceArn())
                 request.Parameters.Add("serviceArn", StringUtils.FromString(publicRequest.ServiceArn));
+            
+            if (publicRequest.IsSetTestRunId())
+                request.Parameters.Add("testRunId", StringUtils.FromString(publicRequest.TestRunId));
             request.ResourcePath = "/v2/list-reports";
             request.UseQueryString = true;
 

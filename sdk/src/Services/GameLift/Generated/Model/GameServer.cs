@@ -103,7 +103,7 @@ namespace Amazon.GameLift.Model
         /// is passed to a game client or service when it requests information on game servers.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string GameServerData
         {
             get { return this._gameServerData; }

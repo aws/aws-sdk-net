@@ -26,4 +26,10 @@ public static class AnnotationTraits
 
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httppayload-trait" /></remarks>
     public static bool IsHttpPayload(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpPayload");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#sensitive-trait" /></remarks>
+    public static bool IsSensitive(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sensitive");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#idempotencytoken-trait" /></remarks>
+    public static bool IsIdempotencyToken(this Shape shape) => shape.Traits.ContainsKey("smithy.api#idempotencyToken");
 }

@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentcoreRuntime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("connector", targetDepth, ref reader))
+                {
+                    var unmarshaller = HttpConnectorTargetConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Connector = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("passthrough", targetDepth, ref reader))
                 {
                     var unmarshaller = PassthroughTargetConfigurationUnmarshaller.Instance;

@@ -121,6 +121,11 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        /// For Application Load Balancer, the valid values are <c>ALB_ACCESS_LOGS</c>, <c>ALB_CONNECTION_LOGS</c>,
+        /// and <c>ALB_HEALTH_CHECK_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// For Amazon Bedrock Agents, the valid values are <c>APPLICATION_LOGS</c> and <c>EVENT_LOGS</c>.
         /// </para>
         ///  </li> <li> 

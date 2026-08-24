@@ -58,7 +58,7 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             {
                 if (context.TestExpression("Address", targetDepth, ref reader))
                 {
-                    var unmarshaller = AddressSummaryUnmarshaller.Instance;
+                    var unmarshaller = LeadAddressUnmarshaller.Instance;
                     unmarshalledObject.Address = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }

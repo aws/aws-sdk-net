@@ -21,7 +21,7 @@ public class AssemblyInfoWriterTests
     [Fact]
     public void EmitsAssemblyTitle()
     {
-        Assert.Contains("[assembly: AssemblyTitle(\"AWSSDK.CloudTrailData\")]", _output);
+        Assert.Contains("""[assembly: AssemblyTitle("AWSSDK.CloudTrailData")]""", _output);
     }
 
     [Fact]
@@ -51,13 +51,13 @@ public class AssemblyInfoWriterTests
     [Fact]
     public void EmitsAssemblyVersionFromManifestOverride()
     {
-        Assert.Contains("[assembly: AssemblyVersion(\"4.0\")]", _output);
+        Assert.Contains("""[assembly: AssemblyVersion("4.0")]""", _output);
     }
 
     [Fact]
     public void EmitsAssemblyFileVersion()
     {
-        Assert.Contains($"[assembly: AssemblyFileVersion(\"{ServiceFileVersion}\")]", _output);
+        Assert.Contains($"""[assembly: AssemblyFileVersion("{ServiceFileVersion}")]""", _output);
     }
 
     [Fact]
@@ -69,14 +69,14 @@ public class AssemblyInfoWriterTests
     [Fact]
     public void EmitsCompanyAndCopyright()
     {
-        Assert.Contains("[assembly: AssemblyCompany(\"Amazon.com, Inc\")]", _output);
-        Assert.Contains("[assembly: AssemblyCopyright(\"Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.\")]", _output);
+        Assert.Contains("""[assembly: AssemblyCompany("Amazon.com, Inc")]""", _output);
+        Assert.Contains("""[assembly: AssemblyCopyright("Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.")]""", _output);
     }
 
     [Fact]
     public void EmitsProduct()
     {
-        Assert.Contains("[assembly: AssemblyProduct(\"Amazon Web Services SDK for .NET\")]", _output);
+        Assert.Contains("""[assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]""", _output);
     }
 
     [Fact]

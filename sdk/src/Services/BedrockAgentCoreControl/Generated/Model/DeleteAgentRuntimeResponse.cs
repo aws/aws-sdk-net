@@ -35,6 +35,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class DeleteAgentRuntimeResponse : AmazonWebServiceResponse
     {
         private string _agentRuntimeId;
+        private string _agentRuntimeVersion;
         private AgentRuntimeStatus _status;
 
         /// <summary>
@@ -53,6 +54,26 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetAgentRuntimeId()
         {
             return this._agentRuntimeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentRuntimeVersion. 
+        /// <para>
+        /// The version of the AgentCore Runtime that was deleted. This value is present only
+        /// when you delete a single version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public string AgentRuntimeVersion
+        {
+            get { return this._agentRuntimeVersion; }
+            set { this._agentRuntimeVersion = value; }
+        }
+
+        // Check to see if AgentRuntimeVersion property is set
+        internal bool IsSetAgentRuntimeVersion()
+        {
+            return this._agentRuntimeVersion != null;
         }
 
         /// <summary>

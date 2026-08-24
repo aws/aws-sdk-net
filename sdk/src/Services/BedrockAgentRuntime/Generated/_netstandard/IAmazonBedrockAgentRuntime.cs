@@ -32,7 +32,20 @@ namespace Amazon.BedrockAgentRuntime
     /// <summary>
     /// <para>Interface for accessing BedrockAgentRuntime</para>
     ///
+    /// <note> 
+    /// <para>
+    /// Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no longer open to new
+    /// customers. For capabilities similar to Bedrock Agents Classic, explore Amazon Bedrock
+    /// AgentCore. Existing customers can continue to use the service as normal. For more
+    /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+    /// Bedrock Agents Classic availability change</a>.
+    /// 
+    ///  </note> 
+    /// <para>
     /// Contains APIs related to model invocation and querying of knowledge bases.
+    /// </para>
+    /// 
+    /// </para>
     /// </summary>
     public partial interface IAmazonBedrockAgentRuntime : IAmazonService, IDisposable
     {
@@ -100,6 +113,44 @@ namespace Amazon.BedrockAgentRuntime
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/AgenticRetrieveStream">REST API Reference for AgenticRetrieveStream Operation</seealso>
         Task<AgenticRetrieveStreamResponse> AgenticRetrieveStreamAsync(AgenticRetrieveStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CheckIngestedDocumentAcl
+
+
+
+        /// <summary>
+        /// Checks whether a user has access to a specific document by verifying against the ingested
+        /// access control list (ACL) in a knowledge base. Use this operation to validate that
+        /// document-level access control is working as expected after ingestion. To use this
+        /// operation, you must have the <c>bedrock:CheckIngestedDocumentAcl</c> permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CheckIngestedDocumentAcl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CheckIngestedDocumentAcl service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/CheckIngestedDocumentAcl">REST API Reference for CheckIngestedDocumentAcl Operation</seealso>
+        Task<CheckIngestedDocumentAclResponse> CheckIngestedDocumentAclAsync(CheckIngestedDocumentAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -601,6 +652,44 @@ namespace Amazon.BedrockAgentRuntime
 
         #endregion
                 
+        #region  GetIngestedDocumentAcl
+
+
+
+        /// <summary>
+        /// Retrieves the ingested access control list (ACL) for a specific document in a knowledge
+        /// base. Use this operation to inspect the allow and deny lists that were ingested for
+        /// a document to troubleshoot access control issues. To use this operation, you must
+        /// have the <c>bedrock:GetIngestedDocumentAcl</c> permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIngestedDocumentAcl service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetIngestedDocumentAcl service method, as returned by BedrockAgentRuntime.</returns>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.AccessDeniedException">
+        /// The request is denied because of missing access permissions. Check your permissions
+        /// and retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ResourceNotFoundException">
+        /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+        /// Resource Name (ARN) and try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ThrottlingException">
+        /// The number of requests exceeds the limit. Resubmit your request later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentRuntime.Model.ValidationException">
+        /// Input validation failed. Check your request parameters and retry the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agent-runtime-2023-07-26/GetIngestedDocumentAcl">REST API Reference for GetIngestedDocumentAcl Operation</seealso>
+        Task<GetIngestedDocumentAclResponse> GetIngestedDocumentAclAsync(GetIngestedDocumentAclRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetInvocationStep
 
 
@@ -680,11 +769,19 @@ namespace Amazon.BedrockAgentRuntime
 
 
         /// <summary>
-        /// <note> </note> 
+        /// <note> 
+        /// <para>
+        /// Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no longer open to new
+        /// customers. For capabilities similar to Bedrock Agents Classic, explore Amazon Bedrock
+        /// AgentCore. Existing customers can continue to use the service as normal. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+        /// Bedrock Agents Classic availability change</a>.
+        /// 
+        ///  </note> <note> </note> 
         /// <para>
         /// Sends a prompt for the agent to process and respond to. Note the following fields
         /// for the request:
-        /// 
+        /// </para>
         ///  <ul> <li> 
         /// <para>
         /// To continue the same conversation with an agent, use the same <c>sessionId</c> value

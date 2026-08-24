@@ -291,6 +291,56 @@ namespace Amazon.ObservabilityAdmin
 
 
     /// <summary>
+    /// Constants used for properties of type EncryptionScope.
+    /// </summary>
+    public class EncryptionScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ENCRYPTED_SOURCE_ONLY for EncryptionScope
+        /// </summary>
+        public static readonly EncryptionScope ENCRYPTED_SOURCE_ONLY = new EncryptionScope("ENCRYPTED_SOURCE_ONLY");
+        /// <summary>
+        /// Constant NEW_DESTINATION_LOG_GROUPS for EncryptionScope
+        /// </summary>
+        public static readonly EncryptionScope NEW_DESTINATION_LOG_GROUPS = new EncryptionScope("NEW_DESTINATION_LOG_GROUPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EncryptionScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EncryptionScope FindValue(string value)
+        {
+            return FindValue<EncryptionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EncryptionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionStrategy.
     /// </summary>
     public class EncryptionStrategy : ConstantClass
@@ -1070,6 +1120,160 @@ namespace Amazon.ObservabilityAdmin
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator Status(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TagConflictResolutionStrategy.
+    /// </summary>
+    public class TagConflictResolutionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ADD_ONLY for TagConflictResolutionStrategy
+        /// </summary>
+        public static readonly TagConflictResolutionStrategy ADD_ONLY = new TagConflictResolutionStrategy("ADD_ONLY");
+        /// <summary>
+        /// Constant IN_SYNC for TagConflictResolutionStrategy
+        /// </summary>
+        public static readonly TagConflictResolutionStrategy IN_SYNC = new TagConflictResolutionStrategy("IN_SYNC");
+        /// <summary>
+        /// Constant UPDATE_SYNC for TagConflictResolutionStrategy
+        /// </summary>
+        public static readonly TagConflictResolutionStrategy UPDATE_SYNC = new TagConflictResolutionStrategy("UPDATE_SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TagConflictResolutionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagConflictResolutionStrategy FindValue(string value)
+        {
+            return FindValue<TagConflictResolutionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagConflictResolutionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TagPropagationFailureReason.
+    /// </summary>
+    public class TagPropagationFailureReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RoleLacksPermissions for TagPropagationFailureReason
+        /// </summary>
+        public static readonly TagPropagationFailureReason RoleLacksPermissions = new TagPropagationFailureReason("RoleLacksPermissions");
+        /// <summary>
+        /// Constant RoleNotAssumable for TagPropagationFailureReason
+        /// </summary>
+        public static readonly TagPropagationFailureReason RoleNotAssumable = new TagPropagationFailureReason("RoleNotAssumable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TagPropagationFailureReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagPropagationFailureReason FindValue(string value)
+        {
+            return FindValue<TagPropagationFailureReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagPropagationFailureReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TagPropagationStatus.
+    /// </summary>
+    public class TagPropagationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Healthy for TagPropagationStatus
+        /// </summary>
+        public static readonly TagPropagationStatus Healthy = new TagPropagationStatus("Healthy");
+        /// <summary>
+        /// Constant Unhealthy for TagPropagationStatus
+        /// </summary>
+        public static readonly TagPropagationStatus Unhealthy = new TagPropagationStatus("Unhealthy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TagPropagationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TagPropagationStatus FindValue(string value)
+        {
+            return FindValue<TagPropagationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TagPropagationStatus(string value)
         {
             return FindValue(value);
         }

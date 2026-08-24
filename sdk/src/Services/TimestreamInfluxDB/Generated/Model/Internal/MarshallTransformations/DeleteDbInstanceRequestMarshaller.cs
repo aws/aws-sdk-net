@@ -81,6 +81,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Identifier);
             }
 
+            if(publicRequest.IsSetRetainAutomatedBackups())
+            {
+                context.Writer.WritePropertyName("retainAutomatedBackups");
+                context.Writer.WriteBooleanValue(publicRequest.RetainAutomatedBackups.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

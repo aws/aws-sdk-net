@@ -38,6 +38,66 @@ namespace Amazon.WellArchitected.Model
         IGetConsolidatedReportPaginator GetConsolidatedReport(GetConsolidatedReportRequest request);
 
         /// <summary>
+        /// Paginator for ListAgentContexts operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgentContextsPaginator ListAgentContexts(ListAgentContextsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgentGoals operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgentGoalsPaginator ListAgentGoals(ListAgentGoalsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgentProfiles operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgentProfilesPaginator ListAgentProfiles(ListAgentProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgentRecommendationGenerations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgentRecommendationGenerationsPaginator ListAgentRecommendationGenerations(ListAgentRecommendationGenerationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgentRecommendationItems operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgentRecommendationItemsPaginator ListAgentRecommendationItems(ListAgentRecommendationItemsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAgentRecommendations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAgentRecommendationsPaginator ListAgentRecommendations(ListAgentRecommendationsRequest request);
+
+        /// <summary>
         /// Paginator for ListAnswers operation
         ///</summary>
         [AWSPaginator(

@@ -97,6 +97,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ActionType END_ASSOCIATED_TASKS = new ActionType("END_ASSOCIATED_TASKS");
         /// <summary>
+        /// Constant EXTRACT_INFORMATION for ActionType
+        /// </summary>
+        public static readonly ActionType EXTRACT_INFORMATION = new ActionType("EXTRACT_INFORMATION");
+        /// <summary>
         /// Constant GENERATE_EVENTBRIDGE_EVENT for ActionType
         /// </summary>
         public static readonly ActionType GENERATE_EVENTBRIDGE_EVENT = new ActionType("GENERATE_EVENTBRIDGE_EVENT");
@@ -918,6 +922,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutoEvaluationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AvailableFilterType.
+    /// </summary>
+    public class AvailableFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METRIC_LEVEL for AvailableFilterType
+        /// </summary>
+        public static readonly AvailableFilterType METRIC_LEVEL = new AvailableFilterType("METRIC_LEVEL");
+        /// <summary>
+        /// Constant RESOURCE_LEVEL for AvailableFilterType
+        /// </summary>
+        public static readonly AvailableFilterType RESOURCE_LEVEL = new AvailableFilterType("RESOURCE_LEVEL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AvailableFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AvailableFilterType FindValue(string value)
+        {
+            return FindValue<AvailableFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AvailableFilterType(string value)
         {
             return FindValue(value);
         }
@@ -3269,6 +3323,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly EvaluationFormLanguageCode KoKR = new EvaluationFormLanguageCode("ko-KR");
         /// <summary>
+        /// Constant MsMY for EvaluationFormLanguageCode
+        /// </summary>
+        public static readonly EvaluationFormLanguageCode MsMY = new EvaluationFormLanguageCode("ms-MY");
+        /// <summary>
         /// Constant PtBR for EvaluationFormLanguageCode
         /// </summary>
         public static readonly EvaluationFormLanguageCode PtBR = new EvaluationFormLanguageCode("pt-BR");
@@ -4096,6 +4154,14 @@ namespace Amazon.Connect
     public class EventSourceName : ConstantClass
     {
 
+        /// <summary>
+        /// Constant OnAfterCallWorkAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAfterCallWorkAvailable = new EventSourceName("OnAfterCallWorkAvailable");
+        /// <summary>
+        /// Constant OnAfterChatWorkAvailable for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnAfterChatWorkAvailable = new EventSourceName("OnAfterChatWorkAvailable");
         /// <summary>
         /// Constant OnAlertUpdate for EventSourceName
         /// </summary>
@@ -5983,6 +6049,372 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type MetricCreationMethod.
+    /// </summary>
+    public class MetricCreationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant METRIC_BUILDER for MetricCreationMethod
+        /// </summary>
+        public static readonly MetricCreationMethod METRIC_BUILDER = new MetricCreationMethod("METRIC_BUILDER");
+        /// <summary>
+        /// Constant SERVICE_LEVEL_BUILDER for MetricCreationMethod
+        /// </summary>
+        public static readonly MetricCreationMethod SERVICE_LEVEL_BUILDER = new MetricCreationMethod("SERVICE_LEVEL_BUILDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricCreationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricCreationMethod FindValue(string value)
+        {
+            return FindValue<MetricCreationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricCreationMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricFilterBooleanConditionComparison.
+    /// </summary>
+    public class MetricFilterBooleanConditionComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IS_FALSE for MetricFilterBooleanConditionComparison
+        /// </summary>
+        public static readonly MetricFilterBooleanConditionComparison IS_FALSE = new MetricFilterBooleanConditionComparison("IS_FALSE");
+        /// <summary>
+        /// Constant IS_TRUE for MetricFilterBooleanConditionComparison
+        /// </summary>
+        public static readonly MetricFilterBooleanConditionComparison IS_TRUE = new MetricFilterBooleanConditionComparison("IS_TRUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricFilterBooleanConditionComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricFilterBooleanConditionComparison FindValue(string value)
+        {
+            return FindValue<MetricFilterBooleanConditionComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricFilterBooleanConditionComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricFilterNumberConditionComparison.
+    /// </summary>
+    public class MetricFilterNumberConditionComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GREATER for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison GREATER = new MetricFilterNumberConditionComparison("GREATER");
+        /// <summary>
+        /// Constant GREATER_OR_EQUAL for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison GREATER_OR_EQUAL = new MetricFilterNumberConditionComparison("GREATER_OR_EQUAL");
+        /// <summary>
+        /// Constant LESSER for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison LESSER = new MetricFilterNumberConditionComparison("LESSER");
+        /// <summary>
+        /// Constant LESSER_OR_EQUAL for MetricFilterNumberConditionComparison
+        /// </summary>
+        public static readonly MetricFilterNumberConditionComparison LESSER_OR_EQUAL = new MetricFilterNumberConditionComparison("LESSER_OR_EQUAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricFilterNumberConditionComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricFilterNumberConditionComparison FindValue(string value)
+        {
+            return FindValue<MetricFilterNumberConditionComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricFilterNumberConditionComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricFilterStringConditionComparison.
+    /// </summary>
+    public class MetricFilterStringConditionComparison : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MATCHES_ANY for MetricFilterStringConditionComparison
+        /// </summary>
+        public static readonly MetricFilterStringConditionComparison MATCHES_ANY = new MetricFilterStringConditionComparison("MATCHES_ANY");
+        /// <summary>
+        /// Constant MATCHES_NONE for MetricFilterStringConditionComparison
+        /// </summary>
+        public static readonly MetricFilterStringConditionComparison MATCHES_NONE = new MetricFilterStringConditionComparison("MATCHES_NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricFilterStringConditionComparison(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricFilterStringConditionComparison FindValue(string value)
+        {
+            return FindValue<MetricFilterStringConditionComparison>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricFilterStringConditionComparison(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricStatus.
+    /// </summary>
+    public class MetricStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PUBLISHED for MetricStatus
+        /// </summary>
+        public static readonly MetricStatus PUBLISHED = new MetricStatus("PUBLISHED");
+        /// <summary>
+        /// Constant SAVED for MetricStatus
+        /// </summary>
+        public static readonly MetricStatus SAVED = new MetricStatus("SAVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricStatus FindValue(string value)
+        {
+            return FindValue<MetricStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricType.
+    /// </summary>
+    public class MetricType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_MANAGED for MetricType
+        /// </summary>
+        public static readonly MetricType AWS_MANAGED = new MetricType("AWS_MANAGED");
+        /// <summary>
+        /// Constant CUSTOMER_MANAGED for MetricType
+        /// </summary>
+        public static readonly MetricType CUSTOMER_MANAGED = new MetricType("CUSTOMER_MANAGED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricType FindValue(string value)
+        {
+            return FindValue<MetricType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MetricUnit.
+    /// </summary>
+    public class MetricUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOUBLE for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit DOUBLE = new MetricUnit("DOUBLE");
+        /// <summary>
+        /// Constant INTEGER for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit INTEGER = new MetricUnit("INTEGER");
+        /// <summary>
+        /// Constant PERCENT for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit PERCENT = new MetricUnit("PERCENT");
+        /// <summary>
+        /// Constant SECONDS for MetricUnit
+        /// </summary>
+        public static readonly MetricUnit SECONDS = new MetricUnit("SECONDS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetricUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetricUnit FindValue(string value)
+        {
+            return FindValue<MetricUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetricUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MonitorCapability.
     /// </summary>
     public class MonitorCapability : ConstantClass
@@ -6122,6 +6554,56 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator NextContactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NotFoundBehaviorType.
+    /// </summary>
+    public class NotFoundBehaviorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OMIT for NotFoundBehaviorType
+        /// </summary>
+        public static readonly NotFoundBehaviorType OMIT = new NotFoundBehaviorType("OMIT");
+        /// <summary>
+        /// Constant USE_DEFAULT_VALUE for NotFoundBehaviorType
+        /// </summary>
+        public static readonly NotFoundBehaviorType USE_DEFAULT_VALUE = new NotFoundBehaviorType("USE_DEFAULT_VALUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NotFoundBehaviorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NotFoundBehaviorType FindValue(string value)
+        {
+            return FindValue<NotFoundBehaviorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NotFoundBehaviorType(string value)
         {
             return FindValue(value);
         }
@@ -8438,6 +8920,10 @@ namespace Amazon.Connect
         /// Constant RESOURCE_NAME_ALREADY_EXISTS for PropertyValidationExceptionReason
         /// </summary>
         public static readonly PropertyValidationExceptionReason RESOURCE_NAME_ALREADY_EXISTS = new PropertyValidationExceptionReason("RESOURCE_NAME_ALREADY_EXISTS");
+        /// <summary>
+        /// Constant TYPE_MISMATCH for PropertyValidationExceptionReason
+        /// </summary>
+        public static readonly PropertyValidationExceptionReason TYPE_MISMATCH = new PropertyValidationExceptionReason("TYPE_MISMATCH");
         /// <summary>
         /// Constant UNIQUE_CONSTRAINT_VIOLATED for PropertyValidationExceptionReason
         /// </summary>
@@ -11020,6 +11506,60 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TrafficType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TrendIndicator.
+    /// </summary>
+    public class TrendIndicator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEGATIVE for TrendIndicator
+        /// </summary>
+        public static readonly TrendIndicator NEGATIVE = new TrendIndicator("NEGATIVE");
+        /// <summary>
+        /// Constant NEUTRAL for TrendIndicator
+        /// </summary>
+        public static readonly TrendIndicator NEUTRAL = new TrendIndicator("NEUTRAL");
+        /// <summary>
+        /// Constant POSITIVE for TrendIndicator
+        /// </summary>
+        public static readonly TrendIndicator POSITIVE = new TrendIndicator("POSITIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TrendIndicator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TrendIndicator FindValue(string value)
+        {
+            return FindValue<TrendIndicator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TrendIndicator(string value)
         {
             return FindValue(value);
         }

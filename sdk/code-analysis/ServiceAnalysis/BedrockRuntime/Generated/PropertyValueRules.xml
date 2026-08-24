@@ -432,6 +432,11 @@
     <max>599</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.OutputConfig.Effort</property>
+    <min>0</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.PayloadPart.Bytes</property>
     <min>0</min>
     <max>1000000</max>
@@ -509,6 +514,21 @@
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.TokenUsage.TotalTokens</property>
     <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.ToolReference.Name</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.ToolReference.ServerName</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BedrockRuntime.Model.ToolReference.Type</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BedrockRuntime.Model.ToolResultBlock.ToolUseId</property>

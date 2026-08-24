@@ -151,6 +151,10 @@ namespace Amazon.Connect.Model
         /// <para>
         /// transfer-destination (also known as quick connect)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// metric
+        /// </para>
         ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -39,7 +39,9 @@ namespace Amazon.EC2.Model
         private List<AsnAssociation> _asnAssociations = AWSConfigs.InitializeCollections ? new List<AsnAssociation>() : null;
         private string _cidr;
         private string _description;
+        private string _ipamPoolId;
         private string _networkBorderGroup;
+        private string _poolId;
         private ByoipCidrState _state;
         private string _statusMessage;
 
@@ -135,6 +137,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IpamPoolId. 
+        /// <para>
+        /// The ID of the IPAM pool associated with the CIDR.
+        /// </para>
+        /// </summary>
+        public string IpamPoolId
+        {
+            get { return this._ipamPoolId; }
+            set { this._ipamPoolId = value; }
+        }
+
+        // Check to see if IpamPoolId property is set
+        internal bool IsSetIpamPoolId()
+        {
+            return this._ipamPoolId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NetworkBorderGroup. 
         /// <para>
         /// If you have <a href="https://docs.aws.amazon.com/local-zones/latest/ug/how-local-zones-work.html">Local
@@ -176,6 +196,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkBorderGroup()
         {
             return this._networkBorderGroup != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoolId. 
+        /// <para>
+        /// The ID of the address pool associated with the CIDR.
+        /// </para>
+        /// </summary>
+        public string PoolId
+        {
+            get { return this._poolId; }
+            set { this._poolId = value; }
+        }
+
+        // Check to see if PoolId property is set
+        internal bool IsSetPoolId()
+        {
+            return this._poolId != null;
         }
 
         /// <summary>

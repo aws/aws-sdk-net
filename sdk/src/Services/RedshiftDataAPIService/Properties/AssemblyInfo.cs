@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Redshift Data API Service. The Amazon Redshift Data API is generally available. This release enables querying Amazon Redshift data and listing various database objects.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
@@ -49,4 +52,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.102.1")]
+[assembly: AssemblyFileVersion("4.0.102.3")]

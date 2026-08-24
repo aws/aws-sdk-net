@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.BedrockEvaluatorModelConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("responsesEvaluatorModelConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = OpenResponsesEvaluatorModelConfigUnmarshaller.Instance;
+                    unmarshalledObject.ResponsesEvaluatorModelConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

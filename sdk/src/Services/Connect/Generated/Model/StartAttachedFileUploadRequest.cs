@@ -35,9 +35,10 @@ namespace Amazon.Connect.Model
     /// 
     ///  <important> 
     /// <para>
-    /// You may only use this API to upload attachments to an <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
-    /// Customer Case</a> or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
-    /// Customer Email</a>. 
+    /// You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+    /// Customer Case</a>, <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Connect
+    /// Customer Email</a>, or <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Connect
+    /// Customer Task</a>. 
     /// </para>
     ///  </important>
     /// </summary>
@@ -57,8 +58,9 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property AssociatedResourceArn. 
         /// <para>
         /// The resource to which the attached file is (being) uploaded to. The supported resources
-        /// are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>
-        /// and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>.
+        /// are <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cases.html">Cases</a>,
+        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-email-channel.html">Email</a>,
+        /// and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-getting-started-tasks.html">Task</a>.
         /// </para>
         ///  <note> 
         /// <para>

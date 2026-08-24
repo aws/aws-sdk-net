@@ -1343,6 +1343,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly DriftIgnoredReason MANAGED_BY_AWS = new DriftIgnoredReason("MANAGED_BY_AWS");
         /// <summary>
+        /// Constant SENSITIVE_PROPERTY for DriftIgnoredReason
+        /// </summary>
+        public static readonly DriftIgnoredReason SENSITIVE_PROPERTY = new DriftIgnoredReason("SENSITIVE_PROPERTY");
+        /// <summary>
         /// Constant WRITE_ONLY_PROPERTY for DriftIgnoredReason
         /// </summary>
         public static readonly DriftIgnoredReason WRITE_ONLY_PROPERTY = new DriftIgnoredReason("WRITE_ONLY_PROPERTY");

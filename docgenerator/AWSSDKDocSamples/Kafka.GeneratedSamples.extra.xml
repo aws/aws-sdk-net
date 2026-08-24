@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Kafka.IAmazonKafka.CreateChannel(Amazon.Kafka.Model.CreateChannelRequest)" />
+            <member name="M:Amazon.Kafka.AmazonKafkaClient.CreateChannel(Amazon.Kafka.Model.CreateChannelRequest)" />
+            <member name="T:Amazon.Kafka.Model.CreateChannelRequest" />
+            <member name="T:Amazon.Kafka.Model.CreateChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a data channel that delivers records from a Kafka topic to an Amazon S3 destination.
+                </para>
+                <code
+                    title="To create a data channel with an Amazon S3 destination"
+                    source=".\AWSSDKDocSamples\Kafka\Kafka.GeneratedSamples.cs"
+                    region="to-create-an-s3-data-channel-1700000000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Kafka.IAmazonKafka.CreateChannel(Amazon.Kafka.Model.CreateChannelRequest)" />
+            <member name="M:Amazon.Kafka.AmazonKafkaClient.CreateChannel(Amazon.Kafka.Model.CreateChannelRequest)" />
+            <member name="T:Amazon.Kafka.Model.CreateChannelRequest" />
+            <member name="T:Amazon.Kafka.Model.CreateChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates a data channel that delivers records from a Kafka topic to an Apache Iceberg destination.
+                </para>
+                <code
+                    title="To create a data channel with an Apache Iceberg destination"
+                    source=".\AWSSDKDocSamples\Kafka\Kafka.GeneratedSamples.cs"
+                    region="to-create-an-iceberg-data-channel-1700000000001" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Kafka.IAmazonKafka.DeleteChannel(Amazon.Kafka.Model.DeleteChannelRequest)" />
+            <member name="M:Amazon.Kafka.AmazonKafkaClient.DeleteChannel(Amazon.Kafka.Model.DeleteChannelRequest)" />
+            <member name="T:Amazon.Kafka.Model.DeleteChannelRequest" />
+            <member name="T:Amazon.Kafka.Model.DeleteChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes a data channel from a cluster.
+                </para>
+                <code
+                    title="To delete a data channel"
+                    source=".\AWSSDKDocSamples\Kafka\Kafka.GeneratedSamples.cs"
+                    region="to-delete-a-data-channel-1700000000005" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Kafka.IAmazonKafka.DescribeChannel(Amazon.Kafka.Model.DescribeChannelRequest)" />
+            <member name="M:Amazon.Kafka.AmazonKafkaClient.DescribeChannel(Amazon.Kafka.Model.DescribeChannelRequest)" />
+            <member name="T:Amazon.Kafka.Model.DescribeChannelRequest" />
+            <member name="T:Amazon.Kafka.Model.DescribeChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example returns the configuration and current state of a data channel.
+                </para>
+                <code
+                    title="To describe a data channel"
+                    source=".\AWSSDKDocSamples\Kafka\Kafka.GeneratedSamples.cs"
+                    region="to-describe-a-data-channel-1700000000002" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Kafka.IAmazonKafka.ListChannels(Amazon.Kafka.Model.ListChannelsRequest)" />
+            <member name="M:Amazon.Kafka.AmazonKafkaClient.ListChannels(Amazon.Kafka.Model.ListChannelsRequest)" />
+            <member name="T:Amazon.Kafka.Model.ListChannelsRequest" />
+            <member name="T:Amazon.Kafka.Model.ListChannelsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists the data channels in a cluster.
+                </para>
+                <code
+                    title="To list the data channels in a cluster"
+                    source=".\AWSSDKDocSamples\Kafka\Kafka.GeneratedSamples.cs"
+                    region="to-list-data-channels-1700000000003" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Kafka.IAmazonKafka.UpdateChannel(Amazon.Kafka.Model.UpdateChannelRequest)" />
+            <member name="M:Amazon.Kafka.AmazonKafkaClient.UpdateChannel(Amazon.Kafka.Model.UpdateChannelRequest)" />
+            <member name="T:Amazon.Kafka.Model.UpdateChannelRequest" />
+            <member name="T:Amazon.Kafka.Model.UpdateChannelResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the destination configuration of an existing data channel with an Amazon S3 destination.
+                </para>
+                <code
+                    title="To update a data channel"
+                    source=".\AWSSDKDocSamples\Kafka\Kafka.GeneratedSamples.cs"
+                    region="to-update-a-data-channel-1700000000004" />
+            </example>
+        </value>
+    </doc>
+</docs>

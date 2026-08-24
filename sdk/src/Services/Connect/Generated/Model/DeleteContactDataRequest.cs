@@ -32,18 +32,18 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the DeleteContactData operation.
     /// Deletes the specified fields containing personally identifiable information (PII)
-    /// from a contact in the specified Connect Customer instance. This operation redacts
-    /// PII (such as customer endpoints, additional email recipients, and the email subject)
-    /// from the contact and its associated contact trace record (CTR). The contact must be
-    /// in a terminated state.
+    /// from a contact in the specified Connect Customer instance. We redact PII (such as
+    /// customer endpoints, additional email recipients, and the email subject) from the contact
+    /// and its associated contact trace record (CTR). The contact must be in a terminated
+    /// state.
     /// 
     ///  <important> 
     /// <para>
-    /// This operation performs a hard deletion of the specified PII and cannot be undone.
-    /// There is no retention period; after the data is deleted, it cannot be recovered. Only
-    /// fields that Connect Customer identifies and stores as PII are removed. Any PII that
-    /// you place in fields outside the scope of this operation remains your responsibility
-    /// to remove.
+    ///  <b>This deletion is permanent and cannot be undone.</b> Performing this operation
+    /// permanently deletes the specified PII. There is no retention period; you cannot recover
+    /// the data after deletion. We remove only the fields that Connect Customer identifies
+    /// and stores as PII. Any PII that you place in fields outside the scope of this operation
+    /// remains your responsibility to remove.
     /// </para>
     ///  </important>
     /// </summary>
@@ -56,10 +56,23 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactFields. 
         /// <para>
-        /// The categories of PII to redact from the contact. Valid values are <c>CUSTOMER_ENDPOINT</c>,
-        /// <c>ADDITIONAL_EMAIL_RECIPIENTS</c>, and <c>EMAIL_SUBJECT</c>. <c>ADDITIONAL_EMAIL_RECIPIENTS</c>
-        /// and <c>EMAIL_SUBJECT</c> are supported only for contacts in the email channel.
+        /// The categories of PII to redact from the contact. Specify one or more of the following
+        /// values:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CUSTOMER_ENDPOINT</c> – The customer's contact endpoint.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ADDITIONAL_EMAIL_RECIPIENTS</c> – Additional recipients on an email contact (email
+        /// channel only).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EMAIL_SUBJECT</c> – The subject line of an email contact (email channel only).
+        /// </para>
+        ///  </li> </ul>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -82,7 +95,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The identifier of the contact. PII can be deleted only from a contact that has been
+        /// The identifier of the contact. You can delete PII only from a contact that has been
         /// disconnected (is in a terminated state).
         /// </para>
         /// </summary>

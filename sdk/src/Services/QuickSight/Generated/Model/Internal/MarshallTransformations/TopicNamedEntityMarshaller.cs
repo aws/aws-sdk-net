@@ -85,6 +85,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetPresentationOrder())
+            {
+                context.Writer.WritePropertyName("PresentationOrder");
+                context.Writer.WriteNumberValue(requestObject.PresentationOrder.Value);
+            }
+
+            if(requestObject.IsSetRankOrder())
+            {
+                context.Writer.WritePropertyName("RankOrder");
+                context.Writer.WriteNumberValue(requestObject.RankOrder.Value);
+            }
+
             if(requestObject.IsSetSemanticEntityType())
             {
                 context.Writer.WritePropertyName("SemanticEntityType");
@@ -94,6 +106,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.SemanticEntityType, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetSort())
+            {
+                context.Writer.WritePropertyName("Sort");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectSortListValue in requestObject.Sort)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = NamedEntitySortMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSortListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
             }
 
         }

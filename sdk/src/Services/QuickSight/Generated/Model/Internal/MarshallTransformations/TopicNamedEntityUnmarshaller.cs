@@ -80,10 +80,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntitySynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PresentationOrder", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.PresentationOrder = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("RankOrder", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.RankOrder = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("SemanticEntityType", targetDepth, ref reader))
                 {
                     var unmarshaller = SemanticEntityTypeUnmarshaller.Instance;
                     unmarshalledObject.SemanticEntityType = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("Sort", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<NamedEntitySort, NamedEntitySortUnmarshaller>(NamedEntitySortUnmarshaller.Instance);
+                    unmarshalledObject.Sort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

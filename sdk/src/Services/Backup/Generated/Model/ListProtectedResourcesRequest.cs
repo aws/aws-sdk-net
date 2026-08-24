@@ -31,9 +31,10 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProtectedResources operation.
-    /// Returns an array of resources successfully backed up by Backup, including the time
-    /// the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource
-    /// type.
+    /// Returns an array of resources with recovery points created by Backup (regardless of
+    /// the recovery point's <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_DescribeRecoveryPoint.html#Backup-DescribeRecoveryPoint-response-Status">status</a>),
+    /// including the time the resource was saved, an Amazon Resource Name (ARN) of the resource,
+    /// and a resource type.
     /// </summary>
     public partial class ListProtectedResourcesRequest : AmazonBackupRequest
     {

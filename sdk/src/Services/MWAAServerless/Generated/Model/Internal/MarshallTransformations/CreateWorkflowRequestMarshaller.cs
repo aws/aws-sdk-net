@@ -86,6 +86,17 @@ namespace Amazon.MWAAServerless.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("ClientToken");
                 context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
+            if(publicRequest.IsSetCode())
+            {
+                context.Writer.WritePropertyName("Code");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CodeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Code, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDefinitionS3Location())
             {
                 context.Writer.WritePropertyName("DefinitionS3Location");

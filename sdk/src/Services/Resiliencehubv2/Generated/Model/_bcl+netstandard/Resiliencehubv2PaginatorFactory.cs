@@ -93,6 +93,14 @@ namespace Amazon.Resiliencehubv2.Model
         }
 
         /// <summary>
+        /// Paginator for ListResolvedTestRunTargetResources operation
+        ///</summary>
+        public IListResolvedTestRunTargetResourcesPaginator ListResolvedTestRunTargetResources(ListResolvedTestRunTargetResourcesRequest request) 
+        {
+            return new ListResolvedTestRunTargetResourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListResources operation
         ///</summary>
         public IListResourcesPaginator ListResources(ListResourcesRequest request) 
@@ -146,6 +154,46 @@ namespace Amazon.Resiliencehubv2.Model
         public IListSystemsPaginator ListSystems(ListSystemsRequest request) 
         {
             return new ListSystemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestRunEvents operation
+        ///</summary>
+        public IListTestRunEventsPaginator ListTestRunEvents(ListTestRunEventsRequest request) 
+        {
+            return new ListTestRunEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestRuns operation
+        ///</summary>
+        public IListTestRunsPaginator ListTestRuns(ListTestRunsRequest request) 
+        {
+            return new ListTestRunsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestRunSources operation
+        ///</summary>
+        public IListTestRunSourcesPaginator ListTestRunSources(ListTestRunSourcesRequest request) 
+        {
+            return new ListTestRunSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTests operation
+        ///</summary>
+        public IListTestsPaginator ListTests(ListTestsRequest request) 
+        {
+            return new ListTestsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestSources operation
+        ///</summary>
+        public IListTestSourcesPaginator ListTestSources(ListTestSourcesRequest request) 
+        {
+            return new ListTestSourcesPaginator(this.client, request);
         }
 
         /// <summary>

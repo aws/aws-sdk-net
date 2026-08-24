@@ -661,6 +661,12 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// You can't use <c>MasterUserPassword</c> if <c>ManageMasterPassword</c> is <c>true</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// If your admin user account is locked, this operation also unlocks your account and
+        /// resets the failed-login counter. This option is available only when account lockout
+        /// security is enabled for the cluster.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Operations never return the password, so this operation provides a way to regain access

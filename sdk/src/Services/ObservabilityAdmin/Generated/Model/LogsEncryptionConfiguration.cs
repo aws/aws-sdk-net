@@ -30,13 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ObservabilityAdmin.Model
 {
     /// <summary>
-    /// Configuration for encrypting centralized log groups. This configuration is only applied
-    /// to destination log groups for which the corresponding source log groups are encrypted
-    /// using Customer Managed KMS Keys.
+    /// Configuration for encrypting centralized destination log groups. By default, this
+    /// configuration applies only to destination log groups whose corresponding source log
+    /// groups are encrypted using customer managed KMS keys. To encrypt all destination log
+    /// groups created by the rule, set <c>EncryptionScope</c> to <c>NEW_DESTINATION_LOG_GROUPS</c>.
     /// </summary>
     public partial class LogsEncryptionConfiguration
     {
         private EncryptionConflictResolutionStrategy _encryptionConflictResolutionStrategy;
+        private EncryptionScope _encryptionScope;
         private EncryptionStrategy _encryptionStrategy;
         private string _kmsKeyArn;
 
@@ -59,6 +61,42 @@ namespace Amazon.ObservabilityAdmin.Model
         internal bool IsSetEncryptionConflictResolutionStrategy()
         {
             return this._encryptionConflictResolutionStrategy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionScope. 
+        /// <para>
+        /// Determines which newly created destination log groups are encrypted with the configured
+        /// <c>KmsKeyArn</c> when <c>EncryptionStrategy</c> is <c>CUSTOMER_MANAGED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this to <c>ENCRYPTED_SOURCE_ONLY</c> (the default), only destination log
+        /// groups whose source log group is encrypted with a customer managed KMS key use the
+        /// configured <c>KmsKeyArn</c>. Destination log groups derived from Amazon Web Services
+        /// owned encrypted source log groups remain Amazon Web Services owned encrypted.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set this to <c>NEW_DESTINATION_LOG_GROUPS</c>, every new destination log group
+        /// created by this rule uses the configured <c>KmsKeyArn</c>, regardless of the source
+        /// log group's encryption posture.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is not valid when <c>EncryptionStrategy</c> is <c>AWS_OWNED</c>.
+        /// </para>
+        /// </summary>
+        public EncryptionScope EncryptionScope
+        {
+            get { return this._encryptionScope; }
+            set { this._encryptionScope = value; }
+        }
+
+        // Check to see if EncryptionScope property is set
+        internal bool IsSetEncryptionScope()
+        {
+            return this._encryptionScope != null;
         }
 
         /// <summary>

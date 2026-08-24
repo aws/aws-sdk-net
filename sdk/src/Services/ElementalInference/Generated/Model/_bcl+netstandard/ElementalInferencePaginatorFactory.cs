@@ -51,5 +51,13 @@ namespace Amazon.ElementalInference.Model
         {
             return new ListFeedsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchFixtures operation
+        ///</summary>
+        public ISearchFixturesPaginator SearchFixtures(SearchFixturesRequest request) 
+        {
+            return new SearchFixturesPaginator(this.client, request);
+        }
     }
 }

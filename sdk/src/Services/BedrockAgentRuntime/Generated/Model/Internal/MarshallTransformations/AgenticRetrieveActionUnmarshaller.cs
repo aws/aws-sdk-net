@@ -62,6 +62,12 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.FullDocumentExpansion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("memoryRetrieve", targetDepth, ref reader))
+                {
+                    var unmarshaller = AgenticRetrieveMemoryRetrieveDetailsUnmarshaller.Instance;
+                    unmarshalledObject.MemoryRetrieve = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("retrieve", targetDepth, ref reader))
                 {
                     var unmarshaller = AgenticRetrieveActionDetailsUnmarshaller.Instance;

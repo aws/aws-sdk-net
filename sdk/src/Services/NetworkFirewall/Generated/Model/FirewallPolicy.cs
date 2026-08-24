@@ -119,6 +119,22 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// aws:alert_established
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:drop_established_app_layer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:alert_established_app_layer
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:drop_established_app_layer_to_server
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// aws:alert_established_app_layer_to_server
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html#suricata-strict-rule-evaluation-order.html">Strict

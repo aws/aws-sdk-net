@@ -88,6 +88,12 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                     response.LogConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("maxTaskHours", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableDoubleUnmarshaller.Instance;
+                    response.MaxTaskHours = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("serviceRole", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

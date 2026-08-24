@@ -268,6 +268,89 @@ namespace Amazon.TimestreamInfluxDB
         #endregion
 
 
+        #region  CreateDbBackup
+
+
+        /// <summary>
+        /// Creates a new on-demand backup of a Timestream for InfluxDB resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDbBackup service method.</param>
+        /// 
+        /// <returns>The response from the CreateDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbBackup">REST API Reference for CreateDbBackup Operation</seealso>
+        public virtual CreateDbBackupResponse CreateDbBackup(CreateDbBackupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDbBackupResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDbBackupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a new on-demand backup of a Timestream for InfluxDB resource.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDbBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/CreateDbBackup">REST API Reference for CreateDbBackup Operation</seealso>
+        public virtual Task<CreateDbBackupResponse> CreateDbBackupAsync(CreateDbBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDbBackupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateDbBackupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDbCluster
 
 
@@ -517,6 +600,83 @@ namespace Amazon.TimestreamInfluxDB
 
         #endregion
         
+        #region  DeleteDbBackup
+
+
+        /// <summary>
+        /// Deletes a Timestream for InfluxDB backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDbBackup service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbBackup">REST API Reference for DeleteDbBackup Operation</seealso>
+        public virtual DeleteDbBackupResponse DeleteDbBackup(DeleteDbBackupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDbBackupResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDbBackupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a Timestream for InfluxDB backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDbBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/DeleteDbBackup">REST API Reference for DeleteDbBackup Operation</seealso>
+        public virtual Task<DeleteDbBackupResponse> DeleteDbBackupAsync(DeleteDbBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDbBackupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDbBackupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDbCluster
 
 
@@ -667,6 +827,77 @@ namespace Amazon.TimestreamInfluxDB
             options.ResponseUnmarshaller = DeleteDbInstanceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteDbInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDbBackup
+
+
+        /// <summary>
+        /// Returns information about a specific Timestream for InfluxDB backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDbBackup service method.</param>
+        /// 
+        /// <returns>The response from the GetDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbBackup">REST API Reference for GetDbBackup Operation</seealso>
+        public virtual GetDbBackupResponse GetDbBackup(GetDbBackupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDbBackupResponseUnmarshaller.Instance;
+
+            return Invoke<GetDbBackupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about a specific Timestream for InfluxDB backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDbBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/GetDbBackup">REST API Reference for GetDbBackup Operation</seealso>
+        public virtual Task<GetDbBackupResponse> GetDbBackupAsync(GetDbBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDbBackupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDbBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -880,6 +1111,77 @@ namespace Amazon.TimestreamInfluxDB
             options.ResponseUnmarshaller = GetDbParameterGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetDbParameterGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDbBackups
+
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB backups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbBackups service method.</param>
+        /// 
+        /// <returns>The response from the ListDbBackups service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbBackups">REST API Reference for ListDbBackups Operation</seealso>
+        public virtual ListDbBackupsResponse ListDbBackups(ListDbBackupsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDbBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbBackupsResponseUnmarshaller.Instance;
+
+            return Invoke<ListDbBackupsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns a list of Timestream for InfluxDB backups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDbBackups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDbBackups service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/ListDbBackups">REST API Reference for ListDbBackups Operation</seealso>
+        public virtual Task<ListDbBackupsResponse> ListDbBackupsAsync(ListDbBackupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListDbBackupsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDbBackupsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListDbBackupsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1365,6 +1667,93 @@ namespace Amazon.TimestreamInfluxDB
             options.ResponseUnmarshaller = RebootDbInstanceResponseUnmarshaller.Instance;
             
             return InvokeAsync<RebootDbInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RestoreFromDbBackup
+
+
+        /// <summary>
+        /// Restores a Timestream for InfluxDB resource from a backup. By default, a new resource
+        /// is created. You can optionally restore to the same resource using the REPLACE_EXISTING
+        /// restore mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreFromDbBackup service method.</param>
+        /// 
+        /// <returns>The response from the RestoreFromDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RestoreFromDbBackup">REST API Reference for RestoreFromDbBackup Operation</seealso>
+        public virtual RestoreFromDbBackupResponse RestoreFromDbBackup(RestoreFromDbBackupRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreFromDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFromDbBackupResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreFromDbBackupResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Restores a Timestream for InfluxDB resource from a backup. By default, a new resource
+        /// is created. You can optionally restore to the same resource using the REPLACE_EXISTING
+        /// restore mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreFromDbBackup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreFromDbBackup service method, as returned by TimestreamInfluxDB.</returns>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ConflictException">
+        /// The request conflicts with an existing resource in Timestream for InfluxDB.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.InternalServerException">
+        /// The request processing has failed because of an unknown error, exception or failure.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ResourceNotFoundException">
+        /// The requested resource was not found or does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ServiceQuotaExceededException">
+        /// The request exceeds the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.TimestreamInfluxDB.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by Timestream for InfluxDB.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/timestream-influxdb-2023-01-27/RestoreFromDbBackup">REST API Reference for RestoreFromDbBackup Operation</seealso>
+        public virtual Task<RestoreFromDbBackupResponse> RestoreFromDbBackupAsync(RestoreFromDbBackupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreFromDbBackupRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFromDbBackupResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<RestoreFromDbBackupResponse>(request, options, cancellationToken);
         }
 
         #endregion

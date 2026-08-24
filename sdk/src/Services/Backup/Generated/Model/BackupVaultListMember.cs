@@ -289,7 +289,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property NumberOfRecoveryPoints. 
         /// <para>
-        /// The number of recovery points that are stored in a backup vault.
+        /// The number of recovery points that are stored in a backup vault. Recovery point count
+        /// value displayed in the console can be an approximation.
         /// </para>
         /// </summary>
         public long? NumberOfRecoveryPoints

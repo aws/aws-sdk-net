@@ -336,7 +336,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Maximum of 25 for transit gateway resource types. Maximum of 1000 for
+        /// Constraints: Maximum of 25 for transit gateway resource types. Maximum of 300 for
         /// the other resource types.
         /// </para>
         /// <para />

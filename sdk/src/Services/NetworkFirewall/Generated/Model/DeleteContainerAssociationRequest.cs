@@ -31,9 +31,10 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteContainerAssociation operation.
-    /// Deletes the specified container association. When you delete a container association,
-    /// Network Firewall stops monitoring the associated container clusters and removes the
-    /// resolved IP addresses from firewall rules.
+    /// Deletes a container association. The resource transitions to a <c>DELETING</c> state.
+    /// Deletion is asynchronous - Network Firewall returns immediately while cleanup proceeds
+    /// in the background. You can't delete a container association while a rule group references
+    /// it.
     /// </summary>
     public partial class DeleteContainerAssociationRequest : AmazonNetworkFirewallRequest
     {
@@ -43,8 +44,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerAssociationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the container association. You must specify the
-        /// ARN or the name, and you can specify both.
+        /// The Amazon Resource Name (ARN) of the container association.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the ARN or the name, and you can specify both. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -63,8 +67,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ContainerAssociationName. 
         /// <para>
-        /// The descriptive name of the container association. You must specify the ARN or the
-        /// name, and you can specify both.
+        /// The descriptive name of the container association.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must specify the ARN or the name, and you can specify both. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

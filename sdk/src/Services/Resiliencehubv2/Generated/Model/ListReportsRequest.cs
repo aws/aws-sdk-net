@@ -40,6 +40,7 @@ namespace Amazon.Resiliencehubv2.Model
         private string _nextToken;
         private ReportType _reportType;
         private string _serviceArn;
+        private string _testRunId;
 
         /// <summary>
         /// Gets and sets the property MaxResults.
@@ -108,6 +109,21 @@ namespace Amazon.Resiliencehubv2.Model
         internal bool IsSetServiceArn()
         {
             return this._serviceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestRunId.
+        /// </summary>
+        public string TestRunId
+        {
+            get { return this._testRunId; }
+            set { this._testRunId = value; }
+        }
+
+        // Check to see if TestRunId property is set
+        internal bool IsSetTestRunId()
+        {
+            return this._testRunId != null;
         }
 
     }

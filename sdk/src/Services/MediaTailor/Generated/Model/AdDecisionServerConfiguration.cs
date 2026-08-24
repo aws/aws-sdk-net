@@ -37,6 +37,7 @@ namespace Amazon.MediaTailor.Model
     public partial class AdDecisionServerConfiguration
     {
         private HttpRequest _httpRequest;
+        private VastResponse _vastResponse;
 
         /// <summary>
         /// Gets and sets the property HttpRequest. 
@@ -54,6 +55,25 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetHttpRequest()
         {
             return this._httpRequest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VastResponse. 
+        /// <para>
+        /// The settings that control how MediaTailor processes VAST responses from the ad decision
+        /// server.
+        /// </para>
+        /// </summary>
+        public VastResponse VastResponse
+        {
+            get { return this._vastResponse; }
+            set { this._vastResponse = value; }
+        }
+
+        // Check to see if VastResponse property is set
+        internal bool IsSetVastResponse()
+        {
+            return this._vastResponse != null;
         }
 
     }

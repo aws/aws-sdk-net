@@ -273,6 +273,12 @@ namespace Amazon.DynamoDBv2.Internal
                 result.ResourceArn = request.TableName;
                 return result;
             }
+            if (requestContext.RequestName == "SearchVectorsRequest") {
+                result.IsSearchOperation = true;
+                var request = (SearchVectorsRequest)requestContext.OriginalRequest;
+                result.ResourceArn = request.TableName;
+                return result;
+            }
             if (requestContext.RequestName == "TagResourceRequest") {
                 var request = (TagResourceRequest)requestContext.OriginalRequest;
                 result.ResourceArn = request.ResourceArn;

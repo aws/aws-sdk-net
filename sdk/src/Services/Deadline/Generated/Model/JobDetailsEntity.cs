@@ -34,7 +34,7 @@ namespace Amazon.Deadline.Model
     /// </summary>
     public partial class JobDetailsEntity
     {
-        private JobAttachmentSettings _jobAttachmentSettings;
+        private JobDetailsJobAttachmentSettings _jobAttachmentSettings;
         private string _jobId;
         private JobRunAsUser _jobRunAsUser;
         private string _logGroupName;
@@ -49,7 +49,7 @@ namespace Amazon.Deadline.Model
         /// The job attachment settings.
         /// </para>
         /// </summary>
-        public JobAttachmentSettings JobAttachmentSettings
+        public JobDetailsJobAttachmentSettings JobAttachmentSettings
         {
             get { return this._jobAttachmentSettings; }
             set { this._jobAttachmentSettings = value; }

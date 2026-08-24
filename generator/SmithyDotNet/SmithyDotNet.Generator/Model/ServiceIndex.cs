@@ -18,6 +18,9 @@ public class ServiceIndex
     /// <summary>The single service shape in the model.</summary>
     public ServiceShape Service { get; }
 
+    /// <summary>The service shape's ID. Its <see cref="ShapeId.Name"/> is the last-resort signing-name fallback.</summary>
+    public ShapeId ServiceId { get; }
+
     /// <summary>
     /// All operations reachable from the service, resource-attached ones included, each paired
     /// with its shape id. Ordered alphabetically by operation name (ordinal), matching the order
@@ -33,11 +36,41 @@ public class ServiceIndex
     /// </summary>
     public IReadOnlyDictionary<ShapeId, Shape> Shapes { get; }
 
+    /// <summary>
+    /// Every <c>enum</c> shape in the model, reachable from an operation or not, paired with its
+    /// <see cref="ShapeId"/>. C2J emits a <c>ConstantClass</c> for every string-enum shape regardless of
+    /// reachability, and some models carry orphan <c>*ExceptionReason</c> enums that no operation
+    /// references, so enum collection cannot use the reachable <see cref="Shapes"/> set.
+    /// </summary>
+    public IReadOnlyList<(ShapeId Id, EnumShape Shape)> AllEnums { get; }
+
     public ServiceIndex(SmithyModel model)
     {
-        Service = model.Shapes.Values.OfType<ServiceShape>().Single();
+        var serviceEntry = model.Shapes.Single(kvp => kvp.Value is ServiceShape);
+        if (serviceEntry.Value is not ServiceShape service)
+        {
+            throw new GeneratorException("Model has no service shape.");
+        }
+
+        Service = service;
+        ServiceId = ShapeId.Parse(serviceEntry.Key);
         Operations = CollectOperations(model, Service);
         Shapes = CollectReachableShapes(model, Service, Operations);
+        AllEnums = CollectAllEnums(model);
+    }
+
+    private static List<(ShapeId Id, EnumShape Shape)> CollectAllEnums(SmithyModel model)
+    {
+        var enums = new List<(ShapeId Id, EnumShape Shape)>();
+        foreach (var (name, shape) in model.Shapes)
+        {
+            if (shape is EnumShape enumShape)
+            {
+                enums.Add((ShapeId.Parse(name), enumShape));
+            }
+        }
+
+        return enums;
     }
 
     private static List<(ShapeId Id, OperationShape Shape)> CollectOperations(SmithyModel model, ServiceShape service)

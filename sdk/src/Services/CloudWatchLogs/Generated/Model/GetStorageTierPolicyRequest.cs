@@ -31,7 +31,7 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStorageTierPolicy operation.
-    /// Returns the storage tier policy for your account.
+    /// Returns the storage tier policy for the account.
     /// </summary>
     public partial class GetStorageTierPolicyRequest : AmazonCloudWatchLogsRequest
     {

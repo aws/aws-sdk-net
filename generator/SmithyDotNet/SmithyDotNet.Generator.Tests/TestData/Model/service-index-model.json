@@ -1,0 +1,52 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#MyService": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DirectOp" },
+        { "target": "com.example#SharedOp" }
+      ],
+      "resources": [{ "target": "com.example#Thing" }],
+      "errors": [{ "target": "com.example#ServiceError" }]
+    },
+    "com.example#ServiceError": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" }
+      },
+      "traits": {
+        "smithy.api#error": "server"
+      }
+    },
+    "com.example#Thing": {
+      "type": "resource",
+      "create": { "target": "com.example#CreateThing" },
+      "put": { "target": "com.example#PutThing" },
+      "read": { "target": "com.example#ReadThing" },
+      "update": { "target": "com.example#UpdateThing" },
+      "delete": { "target": "com.example#DeleteThing" },
+      "operations": [
+        { "target": "com.example#TagThing" },
+        { "target": "com.example#SharedOp" }
+      ],
+      "collectionOperations": [{ "target": "com.example#SearchThings" }],
+      "resources": [{ "target": "com.example#NestedThing" }]
+    },
+    "com.example#NestedThing": {
+      "type": "resource",
+      "list": { "target": "com.example#ListNestedThings" }
+    },
+    "com.example#DirectOp": { "type": "operation" },
+    "com.example#SharedOp": { "type": "operation" },
+    "com.example#CreateThing": { "type": "operation" },
+    "com.example#PutThing": { "type": "operation" },
+    "com.example#ReadThing": { "type": "operation" },
+    "com.example#UpdateThing": { "type": "operation" },
+    "com.example#DeleteThing": { "type": "operation" },
+    "com.example#TagThing": { "type": "operation" },
+    "com.example#SearchThings": { "type": "operation" },
+    "com.example#ListNestedThings": { "type": "operation" }
+  }
+}

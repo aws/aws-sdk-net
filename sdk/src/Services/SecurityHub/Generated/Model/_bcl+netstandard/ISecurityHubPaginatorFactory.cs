@@ -218,6 +218,16 @@ namespace Amazon.SecurityHub.Model
         IListFindingAggregatorsPaginator ListFindingAggregators(ListFindingAggregatorsRequest request);
 
         /// <summary>
+        /// Paginator for ListFreeTrialStatusesV2 operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFreeTrialStatusesV2Paginator ListFreeTrialStatusesV2(ListFreeTrialStatusesV2Request request);
+
+        /// <summary>
         /// Paginator for ListInvitations operation
         ///</summary>
         [AWSPaginator(

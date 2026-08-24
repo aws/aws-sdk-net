@@ -31,12 +31,12 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// Structure that contains options for your certificate. You can use this structure to
-    /// specify whether to export your certificate.
+    /// change the domain validation method or specify whether to export your certificate.
     /// 
     ///  
     /// <para>
-    /// Certificate transparency logging opt-out is no longer available. All public certificates
-    /// are recorded in a certificate transparency log. For general information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
+    /// All public certificates are recorded in a certificate transparency log. For general
+    /// information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-concepts.html#concept-transparency">Certificate
     /// Transparency Logging</a>.
     /// </para>
     ///  
@@ -50,6 +50,7 @@ namespace Amazon.CertificateManager.Model
     {
         private CertificateTransparencyLoggingPreference _certificateTransparencyLoggingPreference;
         private CertificateExport _export;
+        private ValidationMethod _validationMethod;
 
         /// <summary>
         /// Gets and sets the property CertificateTransparencyLoggingPreference. 
@@ -89,6 +90,25 @@ namespace Amazon.CertificateManager.Model
         internal bool IsSetExport()
         {
             return this._export != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ValidationMethod. 
+        /// <para>
+        /// The domain validation method for the certificate. To migrate from email to DNS validation,
+        /// specify <c>DNS</c>.
+        /// </para>
+        /// </summary>
+        public ValidationMethod ValidationMethod
+        {
+            get { return this._validationMethod; }
+            set { this._validationMethod = value; }
+        }
+
+        // Check to see if ValidationMethod property is set
+        internal bool IsSetValidationMethod()
+        {
+            return this._validationMethod != null;
         }
 
     }

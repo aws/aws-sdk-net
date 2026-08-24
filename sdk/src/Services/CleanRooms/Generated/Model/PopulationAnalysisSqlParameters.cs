@@ -60,8 +60,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// The SQL query string used to populate the intermediate table. Maximum length of 500,000
-        /// characters.
+        /// The SQL query string used to populate the intermediate table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500000)]

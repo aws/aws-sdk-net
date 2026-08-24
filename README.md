@@ -48,7 +48,17 @@ The AWS SDK for .NET uses a 4 part versioning scheme following the pattern of `w
 
 The SDK assemblies are strongly named which requires consumers of the SDK to recompile every time the `AssemblyVersion` attribute is incremented. To avoid forced recompilations the `AssemblyVersion` only contains the `w.x` portion of the version. The full `w.x.y.z` version number is set in the `AssemblyFileVersion` attribute which is not part of the strong name.
 
-### Internal Namespace
+## Annual .NET target updates
+
+Beginning in 2026, the AWS SDK for .NET moves to a predictable annual cadence for updating its .NET build targets, staying in step with Microsoft's yearly .NET release cycle. Each year's update ships as a new minor version (for example V4.1 in 2026, V4.2 in 2027) that adds a build target for the current year's .NET release. Because the assembly version remains `4.0.0`, third-party libraries built against V4.0 continue to work without recompilation.
+
+The SDK keeps at most two LTS versions in its target list. When adding the newest .NET version would push the total to three LTS versions, the oldest LTS target is removed along with any STS versions that precede the new oldest LTS. This keeps the set of supported targets current while giving customers roughly an additional year of AWS support beyond Microsoft's end-of-life for a given .NET version.
+
+Importantly, the `.NET Standard 2.0` and `.NET Framework 4.7.2` targets are **not** part of this annual removal cycle and will not be removed for the foreseeable future. .NET Framework 4.7.2 has no end-of-life schedule from Microsoft, and .NET Standard 2.0 is currently required by AWS Tools for PowerShell. 
+
+For more information, see the [Annual .NET target updates for the AWS SDK for .NET](https://aws.amazon.com/blogs/developer/annual-net-target-updates-for-the-aws-sdk-for-net/) blog post.
+
+## Internal Namespace
 
 Classes and interfaces with `Internal` in the namespace name are logically internal to the SDK but are often marked with a `public` access modifier, generally to allow the service-specific packages to use shared functionality in the Core package. The [InternalsVisibleToAttribute](https://learn.microsoft.com/en-us/dotnet/api/system.runtime.compilerservices.internalsvisibletoattribute) attribute is not used for this use case because that requires Core to know all possible services it will be used for at compile time. New service packages will be released needing access to the internal logic of core after a Core version has been released. 
 

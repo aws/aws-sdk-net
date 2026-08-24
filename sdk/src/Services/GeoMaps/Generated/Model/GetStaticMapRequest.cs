@@ -31,18 +31,12 @@ namespace Amazon.GeoMaps.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStaticMap operation.
-    /// <note> 
-    /// <para>
-    /// This operation is not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
-    /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
-    /// customers. 
-    /// 
-    ///  </note> 
-    /// <para>
-    ///  <c>GetStaticMap</c> provides high-quality static map images with customizable options.
+    /// <c>GetStaticMap</c> provides high-quality static map images with customizable options.
     /// You can modify the map's appearance and overlay additional information. It's an ideal
-    /// solution for applications requiring tailored static map snapshots.
-    /// </para>
+    /// solution for applications requiring tailored static map snapshots. Not supported in
+    /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+    /// customers.
+    /// 
     ///  
     /// <para>
     /// For more information, see the following topics in the <i>Amazon Location Service Developer
@@ -64,7 +58,6 @@ namespace Amazon.GeoMaps.Model
     /// on the static map</a> 
     /// </para>
     ///  </li> </ul>
-    /// </para>
     /// </summary>
     public partial class GetStaticMapRequest : AmazonGeoMapsRequest
     {

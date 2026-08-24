@@ -211,7 +211,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SourceEntity. 
         /// <para>
         /// A source entity to use for the analysis that you're creating. This metadata structure
-        /// contains details that describe a source template and one or more datasets.
+        /// contains details that describe a source template and one or more datasets or topics.
         /// </para>
         ///  
         /// <para>

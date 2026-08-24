@@ -181,7 +181,7 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Specifies whether to create a complete or partitioned CRL. This setting determines
         /// the maximum number of certificates that the certificate authority can issue and revoke.
-        /// For more information, see <a href="privateca/latest/userguide/pca.html#limits_pca">Amazon
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/pca.html#limits_pca">Amazon
         /// Web Services Private CA quotas</a>.
         /// </para>
         ///  <ul> <li> 
@@ -315,7 +315,7 @@ namespace Amazon.ACMPCA.Model
         /// <b>CustomCname</b> argument, the name of your S3 bucket is placed into the <b>CRL
         /// Distribution Points</b> extension of the issued certificate. You can change the name
         /// of your bucket by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-policies">bucket
+        /// operation. You must specify a <a href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-policies">bucket
         /// policy</a> that allows Amazon Web Services Private CA to write the CRL to your bucket.
         /// </para>
         ///  <note> 
@@ -361,7 +361,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCreateCa.html#s3-bpa">Blocking
+        /// For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/crl-planning.html#s3-bpa">Blocking
         /// public access to the S3 bucket</a>.
         /// </para>
         /// </summary>

@@ -256,7 +256,7 @@ namespace Amazon.Resiliencehubv2.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// The AWS Regions where the service operates.
+        /// The Regions where the service operates.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

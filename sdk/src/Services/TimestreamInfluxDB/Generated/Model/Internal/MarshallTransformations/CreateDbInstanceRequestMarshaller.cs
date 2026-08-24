@@ -87,6 +87,22 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Bucket);
             }
 
+            if(publicRequest.IsSetDbBackupConfigurations())
+            {
+                context.Writer.WritePropertyName("dbBackupConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDbBackupConfigurationsListValue in publicRequest.DbBackupConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DbBackupConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDbBackupConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDbInstanceType())
             {
                 context.Writer.WritePropertyName("dbInstanceType");
@@ -109,6 +125,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("deploymentType");
                 context.Writer.WriteStringValue(publicRequest.DeploymentType);
+            }
+
+            if(publicRequest.IsSetKmsKeyId())
+            {
+                context.Writer.WritePropertyName("kmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyId);
             }
 
             if(publicRequest.IsSetLogDeliveryConfiguration())

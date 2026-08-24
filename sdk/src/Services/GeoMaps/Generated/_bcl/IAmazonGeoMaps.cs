@@ -38,17 +38,18 @@ namespace Amazon.GeoMaps
     ///  <ul> <li> 
     /// <para>
     /// Access to comprehensive base map data, allowing you to tailor the map display to your
-    /// specific needs.
+    /// specific needs. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetTile.html">GetTile</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Multiple pre-designed map styles suited for various application types, such as navigation,
-    /// logistics, or data visualization.
+    /// logistics, or data visualization. See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStyleDescriptor.html">GetStyleDescriptor</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Generation of static map images for scenarios where interactive maps aren't suitable,
-    /// such as:
+    /// Generation of static map images for scenarios where interactive maps aren't suitable.
+    /// See <a href="https://docs.aws.amazon.com/location/latest/APIReference/API_geomaps_GetStaticMap.html">GetStaticMap</a>.
+    /// Use cases include:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -157,18 +158,12 @@ namespace Amazon.GeoMaps
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
-        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
-        /// customers. 
-        /// 
-        ///  </note> 
-        /// <para>
-        ///  <c>GetStaticMap</c> provides high-quality static map images with customizable options.
+        /// <c>GetStaticMap</c> provides high-quality static map images with customizable options.
         /// You can modify the map's appearance and overlay additional information. It's an ideal
-        /// solution for applications requiring tailored static map snapshots.
-        /// </para>
+        /// solution for applications requiring tailored static map snapshots. Not supported in
+        /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// 
         ///  
         /// <para>
         /// For more information, see the following topics in the <i>Amazon Location Service Developer
@@ -190,7 +185,6 @@ namespace Amazon.GeoMaps
         /// on the static map</a> 
         /// </para>
         ///  </li> </ul>
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStaticMap service method.</param>
         /// 
@@ -214,18 +208,12 @@ namespace Amazon.GeoMaps
 
 
         /// <summary>
-        /// <note> 
-        /// <para>
-        /// This operation is not supported in <c>ap-southeast-1</c> and <c>ap-southeast-5</c>
-        /// regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
-        /// customers. 
-        /// 
-        ///  </note> 
-        /// <para>
-        ///  <c>GetStaticMap</c> provides high-quality static map images with customizable options.
+        /// <c>GetStaticMap</c> provides high-quality static map images with customizable options.
         /// You can modify the map's appearance and overlay additional information. It's an ideal
-        /// solution for applications requiring tailored static map snapshots.
-        /// </para>
+        /// solution for applications requiring tailored static map snapshots. Not supported in
+        /// <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers.
+        /// 
         ///  
         /// <para>
         /// For more information, see the following topics in the <i>Amazon Location Service Developer
@@ -247,7 +235,6 @@ namespace Amazon.GeoMaps
         /// on the static map</a> 
         /// </para>
         ///  </li> </ul>
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStaticMap service method.</param>
         /// <param name="cancellationToken">

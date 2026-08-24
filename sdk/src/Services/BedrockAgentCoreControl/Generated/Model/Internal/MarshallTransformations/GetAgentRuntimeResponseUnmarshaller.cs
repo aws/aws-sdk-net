@@ -88,6 +88,12 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                     response.AuthorizerConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("capacityProviderConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = CapacityProviderConfigurationUnmarshaller.Instance;
+                    response.CapacityProviderConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

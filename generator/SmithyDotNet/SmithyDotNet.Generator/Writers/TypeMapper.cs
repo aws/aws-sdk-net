@@ -14,11 +14,17 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsStructure">True if the member is a structure. IsElementStructure should be used for members that are structure and the target of a list.</param>
 /// <param name="IsRequired">True if the member is required.</param>
 /// <param name="IsElementStructure">True if the member is a structure and the target of a list. i.e. List of structure.</param>
+/// <param name="IsNullableValueType">True if the member maps to a nullable .NET value type (e.g. <c>int?</c>, <c>DateTime?</c>); drives <c>.HasValue</c> vs <c>!= null</c> in <see cref="Member.IsSetExpression"/>.</param>
+/// <param name="IsIdempotencyToken">True if the member carries <c>@idempotencyToken</c>; the marshaller auto-fills with a GUID when unset.</param>
 /// <param name="AwsProperty">The attributes that are part of [AwsProperty(...)]</param>
+/// <param name="Obsolete">The <c>[Obsolete(...)]</c> attribute for a @deprecated member, or null.</param>
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
+/// <param name="IsEnum">True if the member targets an enum shape. Its <see cref="DotNetType"/> is the enum's ConstantClass, but it marshals and unmarshals as a string (ConstantClass has implicit string conversions both ways), so the (un)marshaller writers route it through the string path.</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
 /// <param name="ElementType">The type of the list element.</param>
+/// <param name="TimestampFormat">The explicit <c>@timestampFormat</c> (<c>date-time</c>/<c>http-date</c>/<c>epoch-seconds</c>) from the member or its target, or null when unset (the binding's protocol default applies).</param>
+/// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
 public sealed record Member(
     string PropertyName,
     string DotNetType,
@@ -26,23 +32,46 @@ public sealed record Member(
     bool IsStructure,
     bool IsRequired,
     bool IsElementStructure,
+    bool IsNullableValueType,
+    bool IsIdempotencyToken,
     string? AwsProperty,
+    string? Obsolete,
     string Documentation,
     string ModeledName,
+    bool IsEnum = false,
     string? JsonName = null,
-    string? ElementType = null
+    string? ElementType = null,
+    string? TimestampFormat = null,
+    bool HidesBaseMember = false
 )
 {
     /// <summary>
     /// Body expression for the internal <c>IsSet{Property}()</c> method. Collections honor
-    /// <c>AWSConfigs.InitializeCollections</c>: an empty list is "set" only when the
-    /// V4-default null mode is active.
+    /// <c>AWSConfigs.InitializeCollections</c>: an empty list is "set" only when the V4-default null
+    /// mode is active. Nullable value types (<c>int?</c>, <c>bool?</c>, <c>DateTime?</c>, …) use
+    /// <c>.HasValue</c>; reference types (<c>string</c>, generated classes) use <c>!= null</c>.
     /// </summary>
-    // TODO: when nullable value types land (int?, bool?, DateTime?) IsSet should use .HasValue;
-    // Document has its own .IsSet().
     public string IsSetExpression => IsCollection
         ? $"this.{PropertyName} != null && (this.{PropertyName}.Count > 0 || !AWSConfigs.InitializeCollections)"
-        : $"this.{PropertyName} != null";
+        : IsNullableValueType
+            ? $"this.{PropertyName}.HasValue"
+            : $"this.{PropertyName} != null";
+
+    /// <summary>
+    /// True for a scalar member — <c>string</c> or a nullable value type. Aggregates (list, map,
+    /// structure) are excluded; unsupported shapes never reach here (they throw in
+    /// <see cref="TypeMapper.MapType"/>).
+    /// </summary>
+    public bool IsScalar => !IsCollection && !IsStructure;
+
+    /// <summary>
+    /// The type the (un)marshaller writers dispatch on. An enum member rides the string path — its
+    /// <see cref="DotNetType"/> is the ConstantClass, but <c>ConstantClass</c> converts implicitly to and
+    /// from <c>string</c>, so the generated JSON/query/header/label code treats it exactly like a string
+    /// (matching C2J, which wraps an enum member with <c>StringUnmarshaller</c>/writes its string value).
+    /// Property declarations keep <see cref="DotNetType"/>.
+    /// </summary>
+    public string MarshalType => IsEnum ? "string" : DotNetType;
 }
 
 /// <summary>
@@ -71,18 +100,30 @@ public static class TypeMapper
                 isElementStructure = elementTarget is StructureShape;
             }
 
+            // MapScalar returns the .NET type for value-type scalars (and null otherwise), so it
+            // doubles as both the type and the IsNullableValueType signal without a second MapType walk.
+            var scalarType = MapScalar(target);
+            var propertyName = SdkNaming.ToUpperFirstCharacter(memberName);
+
             resolved.Add(new Member(
-                PropertyName: SdkNaming.ToUpperFirstCharacter(memberName),
-                DotNetType: MapType(member.Target, target, context),
+                PropertyName: propertyName,
+                DotNetType: scalarType ?? MapType(member.Target, target, context),
                 IsCollection: IsCollection(target),
                 IsStructure: isStructure,
                 IsRequired: member.IsRequired(),
                 IsElementStructure: isElementStructure,
+                IsNullableValueType: scalarType is not null,
+                IsIdempotencyToken: member.IsIdempotencyToken(),
                 AwsProperty: BuildAwsProperty(member, target),
+                Obsolete: BuildObsolete(memberName, member, target),
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
+                IsEnum: target is EnumShape,
                 JsonName: member.GetJsonName(),
-                ElementType: elementType)
+                ElementType: elementType,
+                TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
+                // Any structure can model a member named "Equals" — it hides object.Equals(object).
+                HidesBaseMember: propertyName == "Equals")
             );
         }
 
@@ -94,14 +135,10 @@ public static class TypeMapper
     /// </summary>
     public static string MapType(ShapeId targetId, Shape target, GenerationContext context)
     {
-        if (target is StringShape)
-        {
-            return "string";
-        }
-
         if (target is ListShape list)
         {
             var elementTarget = context.Resolve(list.Member.Target);
+            RejectUnsupportedCollectionElement(elementTarget, "list");
             return $"List<{MapType(list.Member.Target, elementTarget, context)}>";
         }
 
@@ -109,6 +146,7 @@ public static class TypeMapper
         {
             var keyTarget = context.Resolve(map.Key.Target);
             var valueTarget = context.Resolve(map.Value.Target);
+            RejectUnsupportedCollectionElement(valueTarget, "map");
             return $"Dictionary<{MapType(map.Key.Target, keyTarget, context)}, {MapType(map.Value.Target, valueTarget, context)}>";
         }
 
@@ -117,7 +155,73 @@ public static class TypeMapper
             return context.ToDotNetName(targetId);
         }
 
-        throw new GeneratorException($"Unsupported member type '{target.Type}'.");
+        if (target is EnumShape)
+        {
+            // An enum-typed member's .NET type is the ConstantClass the ServiceEnumerationsWriter emits,
+            // matching C2J. The name derivation (ToUpperFirstCharacter over the shape name) is shared with
+            // that writer so the member type and the class declaration always agree.
+            return EnumTypeName(targetId, context);
+        }
+
+        if (target is IntEnumShape)
+        {
+            // C2J has no intEnum: an integer-valued enum maps to a plain integer with no ConstantClass.
+            // The V4 Smithy convention makes value types nullable, exactly as IntegerShape is mapped above.
+            return "int?";
+        }
+
+        // Scalars are checked last so the aggregate branches above return without a MapScalar call.
+        // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
+        // bigDecimal/blob/document/union) have no settled mapping yet and fall through to the
+        // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
+        return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
+    }
+
+    /// <summary>
+    /// The emitted <c>ConstantClass</c> name for an <c>enum</c> shape. Shared by <see cref="MapType"/>
+    /// (the member's .NET type) and <see cref="ServiceEnumerationsWriter"/> (the class declaration), so a
+    /// member typed as an enum always names the class that gets emitted. C2J upper-cases the first
+    /// character of the shape name; a no-op for the PascalCase shape names AWS models use.
+    /// </summary>
+    public static string EnumTypeName(ShapeId shapeId, GenerationContext context) =>
+        SdkNaming.ToUpperFirstCharacter(context.ToDotNetName(shapeId));
+
+    /// <summary>
+    /// The .NET type for a string or value-type scalar, or null when the shape is not a primitive.
+    /// Unlike <see cref="MapScalar"/>, includes <c>string</c>.
+    /// </summary>
+    public static string? MapPrimitive(Shape target) => target switch
+    {
+        StringShape => "string",
+        _ => MapScalar(target),
+    };
+
+    /// <summary>
+    /// The nullable .NET type for a primitive scalar or timestamp shape, or null when the shape is
+    /// not one of the supported scalars.
+    /// </summary>
+    public static string? MapScalar(Shape target) => target switch
+    {
+        BooleanShape => "bool?",
+        IntegerShape => "int?",
+        LongShape => "long?",
+        FloatShape => "float?",
+        DoubleShape => "double?",
+        TimestampShape => "DateTime?",
+        _ => null,
+    };
+
+    // The writers only handle string and structure collection elements. A value-type scalar needs a
+    // first-class Member with its own @timestampFormat; an enum element would map to its ConstantClass,
+    // which WriteListElement does not route through the string path. Fail here so a model like
+    // list<Integer> or list<SomeEnum> doesn't silently map the type then blow up in the writer with a
+    // confusing error.
+    private static void RejectUnsupportedCollectionElement(Shape elementTarget, string collectionKind)
+    {
+        if (MapScalar(elementTarget) is not null || elementTarget is EnumShape or IntEnumShape)
+        {
+            throw new GeneratorException($"Elements of type '{elementTarget.Type}' in a {collectionKind} are not supported yet.");
+        }
     }
 
     /// <summary>
@@ -140,20 +244,28 @@ public static class TypeMapper
     public static string? BuildAwsProperty(MemberShape member, Shape target)
     {
         var parts = new List<string>();
-        if (member.IsRequired())
+
+        // An idempotency-token member is auto-populated by the SDK, so it is never surfaced as
+        // Required even when the model marks it @required.
+        if (member.IsRequired() && !member.IsIdempotencyToken())
         {
             parts.Add("Required=true");
         }
 
-        var length = member.GetLength() ?? target.GetLength();
-        if (length?.Min is not null)
+        if (target.IsSensitive())
         {
-            parts.Add($"Min={length.Min}");
+            parts.Add("Sensitive=true");
         }
 
-        if (length?.Max is not null)
+        var (min, max) = ResolveBounds(member, target);
+        if (min is not null)
         {
-            parts.Add($"Max={length.Max}");
+            parts.Add($"Min={min}");
+        }
+
+        if (max is not null)
+        {
+            parts.Add($"Max={max}");
         }
 
         if (parts.Count == 0)
@@ -162,5 +274,49 @@ public static class TypeMapper
         }
 
         return $"[AWSProperty({string.Join(", ", parts)})]";
+    }
+
+    /// <summary>
+    /// Builds the <c>[Obsolete(...)]</c> attribute string for a @deprecated member, or null when the
+    /// member is not deprecated.
+    /// </summary>
+    /// <remarks>
+    /// A message is mandatory: <c>[Obsolete]</c> without one trips analyzer CA1041, so we throw rather
+    /// than emit a message-less attribute.
+    /// </remarks>
+    public static string? BuildObsolete(string memberName, MemberShape member, Shape target)
+    {
+        var deprecated = member.GetDeprecated() ?? target.GetDeprecated();
+        if (deprecated is null)
+        {
+            return null;
+        }
+
+        // TODO: fall back to the customization file's deprecation message (c2j's PropertyModifier.DeprecationMessage)
+        // once the customization layer is implemented.
+        var message = deprecated.Message
+            ?? throw new GeneratorException(
+                $"The 'message' property of the @deprecated trait is missing for member '{memberName}'. " +
+                "[Obsolete] requires a message (CA1041); provide one in the model or via a customization.");
+
+        return $"[Obsolete({CodeWriter.Literal(message)})]";
+    }
+
+    // Min/Max flatten two distinct Smithy traits: @length (string/collection size) and @range
+    // (numeric bounds). A shape carries at most one of them; the member reference can also carry
+    // its own, which takes precedence over the target shape's.
+    private static (long? Min, long? Max) ResolveBounds(MemberShape member, Shape target)
+    {
+        if ((member.GetLength() ?? target.GetLength()) is { } length)
+        {
+            return (length.Min, length.Max);
+        }
+
+        if ((member.GetRange() ?? target.GetRange()) is { } range)
+        {
+            return (range.Min, range.Max);
+        }
+
+        return (null, null);
     }
 }

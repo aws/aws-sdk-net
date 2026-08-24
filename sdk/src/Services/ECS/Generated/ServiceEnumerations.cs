@@ -3115,6 +3115,10 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly InstanceHealthCheckType ACCELERATED_COMPUTE = new InstanceHealthCheckType("ACCELERATED_COMPUTE");
         /// <summary>
+        /// Constant AGENT_CONNECTIVITY for InstanceHealthCheckType
+        /// </summary>
+        public static readonly InstanceHealthCheckType AGENT_CONNECTIVITY = new InstanceHealthCheckType("AGENT_CONNECTIVITY");
+        /// <summary>
         /// Constant CONTAINER_RUNTIME for InstanceHealthCheckType
         /// </summary>
         public static readonly InstanceHealthCheckType CONTAINER_RUNTIME = new InstanceHealthCheckType("CONTAINER_RUNTIME");
@@ -5556,6 +5560,10 @@ namespace Amazon.ECS
         /// Constant EssentialContainerExited for TaskStopCode
         /// </summary>
         public static readonly TaskStopCode EssentialContainerExited = new TaskStopCode("EssentialContainerExited");
+        /// <summary>
+        /// Constant InfrastructureHealth for TaskStopCode
+        /// </summary>
+        public static readonly TaskStopCode InfrastructureHealth = new TaskStopCode("InfrastructureHealth");
         /// <summary>
         /// Constant ServiceSchedulerInitiated for TaskStopCode
         /// </summary>

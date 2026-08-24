@@ -120,7 +120,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table for which statistics is generated.
+        /// The name of the materialized view.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

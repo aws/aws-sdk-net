@@ -41,7 +41,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         private RerankingModelType _rerankingModelType;
 
         /// <summary>
-        /// Gets and sets the property Filter.
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Filters the metadata of the retrieved results so that Amazon Bedrock returns only
+        /// results that match the filter.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public RetrievalFilter Filter

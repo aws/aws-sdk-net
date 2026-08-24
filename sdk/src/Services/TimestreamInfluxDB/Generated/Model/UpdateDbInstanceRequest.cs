@@ -36,6 +36,7 @@ namespace Amazon.TimestreamInfluxDB.Model
     public partial class UpdateDbInstanceRequest : AmazonTimestreamInfluxDBRequest
     {
         private int? _allocatedStorage;
+        private List<DbBackupConfiguration> _dbBackupConfigurations = AWSConfigs.InitializeCollections ? new List<DbBackupConfiguration>() : null;
         private DbInstanceType _dbInstanceType;
         private string _dbParameterGroupIdentifier;
         private DbStorageType _dbStorageType;
@@ -62,6 +63,30 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetAllocatedStorage()
         {
             return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DbBackupConfigurations. 
+        /// <para>
+        /// A list of backup configurations to update for the DB instance.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<DbBackupConfiguration> DbBackupConfigurations
+        {
+            get { return this._dbBackupConfigurations; }
+            set { this._dbBackupConfigurations = value; }
+        }
+
+        // Check to see if DbBackupConfigurations property is set
+        internal bool IsSetDbBackupConfigurations()
+        {
+            return this._dbBackupConfigurations != null && (this._dbBackupConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

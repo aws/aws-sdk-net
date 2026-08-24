@@ -32,14 +32,29 @@ namespace Amazon.WellArchitected
     /// <summary>
     /// <para>Interface for accessing WellArchitected</para>
     ///
-    /// Well-Architected Tool 
+    /// Amazon Web Services Well-Architected 
     /// <para>
-    /// This is the <i>Well-Architected Tool API Reference</i>. The WA Tool API provides programmatic
-    /// access to the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected
-    /// Tool</a> in the <a href="https://console.aws.amazon.com/wellarchitected">Amazon Web
-    /// Services Management Console</a>. For information about the Well-Architected Tool,
-    /// see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Well-Architected
-    /// Tool User Guide</a>.
+    /// Amazon Web Services Well-Architected helps you evaluate your architectures against
+    /// Amazon Web Services best practices across operational excellence, security, reliability,
+    /// performance efficiency, cost optimization, and sustainability. The service includes
+    /// the Amazon Web Services Well-Architected Agent for AI-powered recommendations tailored
+    /// to your specific environment, and the <a href="http://aws.amazon.com/well-architected-tool">Well-Architected
+    /// Tool</a> for conducting reviews and tracking improvements.
+    /// 
+    ///  
+    /// <para>
+    /// This is the <i>Amazon Web Services Well-Architected API Reference</i>. Through this
+    /// API, you can programmatically access personalized recommendations and automation scripts
+    /// from the Amazon Web Services Well-Architected Agent, and create and manage workloads,
+    /// conduct lens reviews, track milestones, manage custom lenses, share workloads across
+    /// accounts, and manage profiles with the Well-Architected Tool.
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about the service, see the <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/intro.html">Amazon
+    /// Web Services Well-Architected User Guide</a>.
+    /// </para>
+    /// 
     /// </para>
     /// </summary>
     public partial interface IAmazonWellArchitected : IAmazonService, IDisposable
@@ -212,6 +227,218 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateProfiles">REST API Reference for AssociateProfiles Operation</seealso>
         Task<AssociateProfilesResponse> AssociateProfilesAsync(AssociateProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAgentContext
+
+
+        /// <summary>
+        /// Creates a context associated with an optimization profile. Contexts provide application
+        /// and environment information used during recommendation generation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentContext service method.</param>
+        /// 
+        /// <returns>The response from the CreateAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentContext">REST API Reference for CreateAgentContext Operation</seealso>
+        CreateAgentContextResponse CreateAgentContext(CreateAgentContextRequest request);
+
+
+
+        /// <summary>
+        /// Creates a context associated with an optimization profile. Contexts provide application
+        /// and environment information used during recommendation generation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentContext">REST API Reference for CreateAgentContext Operation</seealso>
+        Task<CreateAgentContextResponse> CreateAgentContextAsync(CreateAgentContextRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAgentGoal
+
+
+        /// <summary>
+        /// Creates an optimization goal associated with a profile. Goals define specific targets
+        /// and objectives for the optimization process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentGoal service method.</param>
+        /// 
+        /// <returns>The response from the CreateAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentGoal">REST API Reference for CreateAgentGoal Operation</seealso>
+        CreateAgentGoalResponse CreateAgentGoal(CreateAgentGoalRequest request);
+
+
+
+        /// <summary>
+        /// Creates an optimization goal associated with a profile. Goals define specific targets
+        /// and objectives for the optimization process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentGoal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentGoal">REST API Reference for CreateAgentGoal Operation</seealso>
+        Task<CreateAgentGoalResponse> CreateAgentGoalAsync(CreateAgentGoalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAgentProfile
+
+
+        /// <summary>
+        /// Creates an optimization profile that defines the scope and configuration for generating
+        /// recommendations. A profile specifies the execution role, target pillars, and aggregation
+        /// settings for analyzing your Amazon Web Services resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentProfile">REST API Reference for CreateAgentProfile Operation</seealso>
+        CreateAgentProfileResponse CreateAgentProfile(CreateAgentProfileRequest request);
+
+
+
+        /// <summary>
+        /// Creates an optimization profile that defines the scope and configuration for generating
+        /// recommendations. A profile specifies the execution role, target pillars, and aggregation
+        /// settings for analyzing your Amazon Web Services resources.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAgentProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateAgentProfile">REST API Reference for CreateAgentProfile Operation</seealso>
+        Task<CreateAgentProfileResponse> CreateAgentProfileAsync(CreateAgentProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1139,6 +1366,188 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  DeleteAgentContext
+
+
+        /// <summary>
+        /// Deletes a context associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentContext service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentContext">REST API Reference for DeleteAgentContext Operation</seealso>
+        DeleteAgentContextResponse DeleteAgentContext(DeleteAgentContextRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a context associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentContext">REST API Reference for DeleteAgentContext Operation</seealso>
+        Task<DeleteAgentContextResponse> DeleteAgentContextAsync(DeleteAgentContextRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAgentGoal
+
+
+        /// <summary>
+        /// Deletes an optimization goal from a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentGoal service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentGoal">REST API Reference for DeleteAgentGoal Operation</seealso>
+        DeleteAgentGoalResponse DeleteAgentGoal(DeleteAgentGoalRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an optimization goal from a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentGoal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentGoal">REST API Reference for DeleteAgentGoal Operation</seealso>
+        Task<DeleteAgentGoalResponse> DeleteAgentGoalAsync(DeleteAgentGoalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAgentProfile
+
+
+        /// <summary>
+        /// Deletes an optimization profile and its associated configuration. This action cannot
+        /// be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentProfile">REST API Reference for DeleteAgentProfile Operation</seealso>
+        DeleteAgentProfileResponse DeleteAgentProfile(DeleteAgentProfileRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an optimization profile and its associated configuration. This action cannot
+        /// be undone.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAgentProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteAgentProfile">REST API Reference for DeleteAgentProfile Operation</seealso>
+        Task<DeleteAgentProfileResponse> DeleteAgentProfileAsync(DeleteAgentProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteLens
 
 
@@ -2050,6 +2459,306 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">REST API Reference for ExportLens Operation</seealso>
         Task<ExportLensResponse> ExportLensAsync(ExportLensRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAgentContext
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific context associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentContext service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentContext">REST API Reference for GetAgentContext Operation</seealso>
+        GetAgentContextResponse GetAgentContext(GetAgentContextRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific context associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentContext">REST API Reference for GetAgentContext Operation</seealso>
+        Task<GetAgentContextResponse> GetAgentContextAsync(GetAgentContextRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAgentGoal
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific optimization goal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentGoal service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentGoal">REST API Reference for GetAgentGoal Operation</seealso>
+        GetAgentGoalResponse GetAgentGoal(GetAgentGoalRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific optimization goal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentGoal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentGoal">REST API Reference for GetAgentGoal Operation</seealso>
+        Task<GetAgentGoalResponse> GetAgentGoalAsync(GetAgentGoalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAgentProfile
+
+
+        /// <summary>
+        /// Retrieves detailed information about an optimization profile, including its configuration
+        /// and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentProfile">REST API Reference for GetAgentProfile Operation</seealso>
+        GetAgentProfileResponse GetAgentProfile(GetAgentProfileRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about an optimization profile, including its configuration
+        /// and metadata.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentProfile">REST API Reference for GetAgentProfile Operation</seealso>
+        Task<GetAgentProfileResponse> GetAgentProfileAsync(GetAgentProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAgentRecommendation
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific optimization recommendation, including
+        /// its impact analysis, content, and implementation guidance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendation service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentRecommendation service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendation">REST API Reference for GetAgentRecommendation Operation</seealso>
+        GetAgentRecommendationResponse GetAgentRecommendation(GetAgentRecommendationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves detailed information about a specific optimization recommendation, including
+        /// its impact analysis, content, and implementation guidance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentRecommendation service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendation">REST API Reference for GetAgentRecommendation Operation</seealso>
+        Task<GetAgentRecommendationResponse> GetAgentRecommendationAsync(GetAgentRecommendationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetAgentRecommendationGeneration
+
+
+        /// <summary>
+        /// Retrieves information about a recommendation generation process, including its status,
+        /// progress, and results. Recommendation generation is asynchronous: poll this operation
+        /// until status reaches a terminal value of COMPLETED (results are ready) or ERROR (see
+        /// errorDetails). Intermediate values are QUEUED and IN_PROGRESS.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendationGeneration service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentRecommendationGeneration service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendationGeneration">REST API Reference for GetAgentRecommendationGeneration Operation</seealso>
+        GetAgentRecommendationGenerationResponse GetAgentRecommendationGeneration(GetAgentRecommendationGenerationRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves information about a recommendation generation process, including its status,
+        /// progress, and results. Recommendation generation is asynchronous: poll this operation
+        /// until status reaches a terminal value of COMPLETED (results are ready) or ERROR (see
+        /// errorDetails). Intermediate values are QUEUED and IN_PROGRESS.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentRecommendationGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentRecommendationGeneration service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetAgentRecommendationGeneration">REST API Reference for GetAgentRecommendationGeneration Operation</seealso>
+        Task<GetAgentRecommendationGenerationResponse> GetAgentRecommendationGenerationAsync(GetAgentRecommendationGenerationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3006,6 +3715,344 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ImportLens">REST API Reference for ImportLens Operation</seealso>
         Task<ImportLensResponse> ImportLensAsync(ImportLensRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAgentContexts
+
+
+        /// <summary>
+        /// Lists contexts associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentContexts service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentContexts service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentContexts">REST API Reference for ListAgentContexts Operation</seealso>
+        ListAgentContextsResponse ListAgentContexts(ListAgentContextsRequest request);
+
+
+
+        /// <summary>
+        /// Lists contexts associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentContexts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentContexts service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentContexts">REST API Reference for ListAgentContexts Operation</seealso>
+        Task<ListAgentContextsResponse> ListAgentContextsAsync(ListAgentContextsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAgentGoals
+
+
+        /// <summary>
+        /// Lists optimization goals associated with a specified profile. Goals define specific
+        /// targets and objectives for the optimization process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentGoals service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentGoals service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentGoals">REST API Reference for ListAgentGoals Operation</seealso>
+        ListAgentGoalsResponse ListAgentGoals(ListAgentGoalsRequest request);
+
+
+
+        /// <summary>
+        /// Lists optimization goals associated with a specified profile. Goals define specific
+        /// targets and objectives for the optimization process.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentGoals service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentGoals service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentGoals">REST API Reference for ListAgentGoals Operation</seealso>
+        Task<ListAgentGoalsResponse> ListAgentGoalsAsync(ListAgentGoalsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAgentProfiles
+
+
+        /// <summary>
+        /// Lists optimization profiles in your account. Profiles define the scope and configuration
+        /// for generating optimization recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentProfiles service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentProfiles">REST API Reference for ListAgentProfiles Operation</seealso>
+        ListAgentProfilesResponse ListAgentProfiles(ListAgentProfilesRequest request);
+
+
+
+        /// <summary>
+        /// Lists optimization profiles in your account. Profiles define the scope and configuration
+        /// for generating optimization recommendations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentProfiles service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentProfiles service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentProfiles">REST API Reference for ListAgentProfiles Operation</seealso>
+        Task<ListAgentProfilesResponse> ListAgentProfilesAsync(ListAgentProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAgentRecommendationGenerations
+
+
+        /// <summary>
+        /// Lists recommendation generation processes for a specified profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationGenerations service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentRecommendationGenerations service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendationGenerations">REST API Reference for ListAgentRecommendationGenerations Operation</seealso>
+        ListAgentRecommendationGenerationsResponse ListAgentRecommendationGenerations(ListAgentRecommendationGenerationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists recommendation generation processes for a specified profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationGenerations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentRecommendationGenerations service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendationGenerations">REST API Reference for ListAgentRecommendationGenerations Operation</seealso>
+        Task<ListAgentRecommendationGenerationsResponse> ListAgentRecommendationGenerationsAsync(ListAgentRecommendationGenerationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAgentRecommendationItems
+
+
+        /// <summary>
+        /// Lists recommendation items for a specific recommendation. Recommendation items provide
+        /// detailed information about individual optimization opportunities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationItems service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentRecommendationItems service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendationItems">REST API Reference for ListAgentRecommendationItems Operation</seealso>
+        ListAgentRecommendationItemsResponse ListAgentRecommendationItems(ListAgentRecommendationItemsRequest request);
+
+
+
+        /// <summary>
+        /// Lists recommendation items for a specific recommendation. Recommendation items provide
+        /// detailed information about individual optimization opportunities.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendationItems service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentRecommendationItems service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendationItems">REST API Reference for ListAgentRecommendationItems Operation</seealso>
+        Task<ListAgentRecommendationItemsResponse> ListAgentRecommendationItemsAsync(ListAgentRecommendationItemsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAgentRecommendations
+
+
+        /// <summary>
+        /// Lists active optimization recommendations for a specified profile with optional filtering
+        /// by state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendations service method.</param>
+        /// 
+        /// <returns>The response from the ListAgentRecommendations service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendations">REST API Reference for ListAgentRecommendations Operation</seealso>
+        ListAgentRecommendationsResponse ListAgentRecommendations(ListAgentRecommendationsRequest request);
+
+
+
+        /// <summary>
+        /// Lists active optimization recommendations for a specified profile with optional filtering
+        /// by state.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAgentRecommendations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAgentRecommendations service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAgentRecommendations">REST API Reference for ListAgentRecommendations Operation</seealso>
+        Task<ListAgentRecommendationsResponse> ListAgentRecommendationsAsync(ListAgentRecommendationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4077,6 +5124,136 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  PutAgentRecommendationFeedback
+
+
+        /// <summary>
+        /// Submits user feedback on a recommendation to help improve future optimization suggestions
+        /// and track implementation outcomes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentRecommendationFeedback service method.</param>
+        /// 
+        /// <returns>The response from the PutAgentRecommendationFeedback service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentRecommendationFeedback">REST API Reference for PutAgentRecommendationFeedback Operation</seealso>
+        PutAgentRecommendationFeedbackResponse PutAgentRecommendationFeedback(PutAgentRecommendationFeedbackRequest request);
+
+
+
+        /// <summary>
+        /// Submits user feedback on a recommendation to help improve future optimization suggestions
+        /// and track implementation outcomes.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAgentRecommendationFeedback service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAgentRecommendationFeedback service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/PutAgentRecommendationFeedback">REST API Reference for PutAgentRecommendationFeedback Operation</seealso>
+        Task<PutAgentRecommendationFeedbackResponse> PutAgentRecommendationFeedbackAsync(PutAgentRecommendationFeedbackRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  StartAgentRecommendationGeneration
+
+
+        /// <summary>
+        /// Initiates a new recommendation generation process for the specified optimization profile.
+        /// This asynchronous operation analyzes your Amazon Web Services resources and generates
+        /// optimization recommendations based on the configured pillars and scope. Use GetAgentRecommendationGeneration
+        /// to check status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAgentRecommendationGeneration service method.</param>
+        /// 
+        /// <returns>The response from the StartAgentRecommendationGeneration service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/StartAgentRecommendationGeneration">REST API Reference for StartAgentRecommendationGeneration Operation</seealso>
+        StartAgentRecommendationGenerationResponse StartAgentRecommendationGeneration(StartAgentRecommendationGenerationRequest request);
+
+
+
+        /// <summary>
+        /// Initiates a new recommendation generation process for the specified optimization profile.
+        /// This asynchronous operation analyzes your Amazon Web Services resources and generates
+        /// optimization recommendations based on the configured pillars and scope. Use GetAgentRecommendationGeneration
+        /// to check status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAgentRecommendationGeneration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAgentRecommendationGeneration service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/StartAgentRecommendationGeneration">REST API Reference for StartAgentRecommendationGeneration Operation</seealso>
+        Task<StartAgentRecommendationGenerationResponse> StartAgentRecommendationGenerationAsync(StartAgentRecommendationGenerationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -4196,6 +5373,242 @@ namespace Amazon.WellArchitected
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAgentContext
+
+
+        /// <summary>
+        /// Updates an existing context associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentContext service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentContext">REST API Reference for UpdateAgentContext Operation</seealso>
+        UpdateAgentContextResponse UpdateAgentContext(UpdateAgentContextRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing context associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentContext service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentContext service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentContext">REST API Reference for UpdateAgentContext Operation</seealso>
+        Task<UpdateAgentContextResponse> UpdateAgentContextAsync(UpdateAgentContextRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAgentGoal
+
+
+        /// <summary>
+        /// Updates the pillars and title of an existing goal associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentGoal service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentGoal">REST API Reference for UpdateAgentGoal Operation</seealso>
+        UpdateAgentGoalResponse UpdateAgentGoal(UpdateAgentGoalRequest request);
+
+
+
+        /// <summary>
+        /// Updates the pillars and title of an existing goal associated with a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentGoal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentGoal service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentGoal">REST API Reference for UpdateAgentGoal Operation</seealso>
+        Task<UpdateAgentGoalResponse> UpdateAgentGoalAsync(UpdateAgentGoalRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAgentProfile
+
+
+        /// <summary>
+        /// Updates an existing optimization profile's configuration, including its pillars, execution
+        /// role, and aggregation settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentProfile">REST API Reference for UpdateAgentProfile Operation</seealso>
+        UpdateAgentProfileResponse UpdateAgentProfile(UpdateAgentProfileRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing optimization profile's configuration, including its pillars, execution
+        /// role, and aggregation settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentProfile">REST API Reference for UpdateAgentProfile Operation</seealso>
+        Task<UpdateAgentProfileResponse> UpdateAgentProfileAsync(UpdateAgentProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAgentRecommendationStatus
+
+
+        /// <summary>
+        /// Updates the status of a recommendation to track its progress through the implementation
+        /// lifecycle.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentRecommendationStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentRecommendationStatus service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentRecommendationStatus">REST API Reference for UpdateAgentRecommendationStatus Operation</seealso>
+        UpdateAgentRecommendationStatusResponse UpdateAgentRecommendationStatus(UpdateAgentRecommendationStatusRequest request);
+
+
+
+        /// <summary>
+        /// Updates the status of a recommendation to track its progress through the implementation
+        /// lifecycle.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentRecommendationStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentRecommendationStatus service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateAgentRecommendationStatus">REST API Reference for UpdateAgentRecommendationStatus Operation</seealso>
+        Task<UpdateAgentRecommendationStatusResponse> UpdateAgentRecommendationStatusAsync(UpdateAgentRecommendationStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

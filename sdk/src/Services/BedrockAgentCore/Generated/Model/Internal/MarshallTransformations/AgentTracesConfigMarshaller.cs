@@ -68,6 +68,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetOnlineEvaluation())
+            {
+                context.Writer.WritePropertyName("onlineEvaluation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnlineEvaluationTraceConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnlineEvaluation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSessionSpans())
             {
                 context.Writer.WritePropertyName("sessionSpans");

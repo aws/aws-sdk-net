@@ -51,8 +51,10 @@ public class MetadataWriterTests
         // The metadata ServiceId is the verbatim sdkId ("CloudTrail Data"), NOT the normalized
         // class-name component ("CloudTrailData"). Emitted as an expression-bodied member with the
         // value escaped through Roslyn.
-        Assert.Contains("public string ServiceId => \"CloudTrail Data\";", _output);
-        Assert.DoesNotContain("\"CloudTrailData\"", _output);
+        Assert.Contains("""public string ServiceId => "CloudTrail Data";""", _output);
+        Assert.DoesNotContain("""
+            "CloudTrailData"
+            """, _output);
     }
 
     [Fact]

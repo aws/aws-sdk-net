@@ -68,6 +68,17 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetCreatedBySource())
+            {
+                context.Writer.WritePropertyName("CreatedBySource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OfferCreatedBySourceFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.CreatedBySource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("EntityId");
@@ -152,6 +163,28 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 
                 var marshaller = OfferStateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.State, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTargetAgreementId())
+            {
+                context.Writer.WritePropertyName("TargetAgreementId");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OfferTargetAgreementIdFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetAgreementId, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTargetAgreementIntent())
+            {
+                context.Writer.WritePropertyName("TargetAgreementIntent");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OfferTargetAgreementIntentFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetAgreementIntent, context);
 
                 context.Writer.WriteEndObject();
             }

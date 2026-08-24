@@ -30,8 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// Defines a container cluster to monitor, along with optional attribute filters that
-    /// narrow the scope of monitored containers within the cluster.
+    /// Contains the monitoring configuration for a single cluster in a container association.
+    /// Specifies the cluster ARN and optional attribute filters to narrow which containers
+    /// are tracked.
     /// </summary>
     public partial class ContainerMonitoringConfiguration
     {
@@ -41,8 +42,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property AttributeFilters. 
         /// <para>
-        /// A list of key-value pairs that filter which containers within the cluster are monitored.
-        /// Only containers that match the specified attributes are included.
+        /// Key-value pairs that filter which containers are tracked. For Amazon EKS, you can
+        /// filter by namespace and Kubernetes labels. For Amazon ECS, you can filter by container
+        /// instance attributes (EC2 launch type only).
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -65,7 +67,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the container cluster to monitor.
+        /// The ARN of the Amazon ECS or Amazon EKS cluster to monitor. The cluster must be in
+        /// the same Region and account as the container association.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

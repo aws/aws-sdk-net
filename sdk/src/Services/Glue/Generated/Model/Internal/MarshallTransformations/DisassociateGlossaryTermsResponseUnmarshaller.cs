@@ -64,6 +64,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     response.GlossaryTerms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ItemIdentifier", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ItemIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("IterableFormName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IterableFormName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
 
             return response;

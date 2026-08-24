@@ -28,16 +28,13 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using Amazon.Extensions.CborProtocol;
-using Amazon.Extensions.CborProtocol.Internal.Transform;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// ExpressionFilter Marshaller
     /// </summary>
-    public class ExpressionFilterMarshaller : IRequestMarshaller<ExpressionFilter, CborMarshallerContext> 
+    public class ExpressionFilterMarshaller : IRequestMarshaller<ExpressionFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,36 +42,38 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExpressionFilter requestObject, CborMarshallerContext context)
+        public void Marshall(ExpressionFilter requestObject, JsonMarshallerContext context)
         {
-            if (requestObject == null)
+            if(requestObject == null)
                 return;
-
-            if (requestObject.IsSetKey())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WriteTextString("key");
-                context.Writer.WriteTextString(requestObject.Key);
+                context.Writer.WritePropertyName("key");
+                context.Writer.WriteStringValue(requestObject.Key);
             }
-            if (requestObject.IsSetMatchOptions())
+
+            if(requestObject.IsSetMatchOptions())
             {
-                context.Writer.WriteTextString("matchOptions");
-                context.Writer.WriteStartArray(requestObject.MatchOptions.Count);
+                context.Writer.WritePropertyName("matchOptions");
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMatchOptionsListValue in requestObject.MatchOptions)
                 {
-                        context.Writer.WriteTextString(requestObjectMatchOptionsListValue);
+                        context.Writer.WriteStringValue(requestObjectMatchOptionsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
-            if (requestObject.IsSetValues())
+
+            if(requestObject.IsSetValues())
             {
-                context.Writer.WriteTextString("values");
-                context.Writer.WriteStartArray(requestObject.Values.Count);
+                context.Writer.WritePropertyName("values");
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.WriteTextString(requestObjectValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectValuesListValue);
                 }
                 context.Writer.WriteEndArray();
             }
+
         }
 
         /// <summary>

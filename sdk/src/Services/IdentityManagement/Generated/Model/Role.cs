@@ -45,6 +45,7 @@ namespace Amazon.IdentityManagement.Model
         private string _roleId;
         private RoleLastUsed _roleLastUsed;
         private string _roleName;
+        private SourceRoleTemplate _sourceRoleTemplate;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -251,6 +252,25 @@ namespace Amazon.IdentityManagement.Model
         internal bool IsSetRoleName()
         {
             return this._roleName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceRoleTemplate. 
+        /// <para>
+        /// Contains information about the role template that this role was created from. This
+        /// member is present only for roles created with <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AcquireRole.html">AcquireRole</a>.
+        /// </para>
+        /// </summary>
+        public SourceRoleTemplate SourceRoleTemplate
+        {
+            get { return this._sourceRoleTemplate; }
+            set { this._sourceRoleTemplate = value; }
+        }
+
+        // Check to see if SourceRoleTemplate property is set
+        internal bool IsSetSourceRoleTemplate()
+        {
+            return this._sourceRoleTemplate != null;
         }
 
         /// <summary>

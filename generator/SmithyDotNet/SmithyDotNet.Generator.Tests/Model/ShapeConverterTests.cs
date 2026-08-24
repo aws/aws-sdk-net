@@ -1,5 +1,4 @@
 using System.Text.Json;
-using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
 using Xunit;
 
@@ -21,7 +20,7 @@ public class ShapeConverterTests(CloudTrailModelFixture fixture)
     [InlineData("""{"type": "union", "members": {}}""", typeof(UnionShape), "union")]
     public void Deserialize_ScalarShapes(string json, Type expectedType, string expectedTypeField)
     {
-        var shape = JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options);
+        var shape = JsonSerializer.Deserialize<Shape>(json, TestModels.Options);
         Assert.NotNull(shape);
         Assert.IsType(expectedType, shape);
         Assert.Equal(expectedTypeField, shape.Type);
@@ -31,7 +30,7 @@ public class ShapeConverterTests(CloudTrailModelFixture fixture)
     public void Deserialize_MapShape()
     {
         var json = """{ "type": "map", "key": { "target": "smithy.api#String" }, "value": { "target": "smithy.api#Integer" } }""";
-        var map = Assert.IsType<MapShape>(JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options));
+        var map = Assert.IsType<MapShape>(JsonSerializer.Deserialize<Shape>(json, TestModels.Options));
         Assert.Equal("String", map.Key.Target.Name);
         Assert.Equal("Integer", map.Value.Target.Name);
     }
@@ -40,7 +39,7 @@ public class ShapeConverterTests(CloudTrailModelFixture fixture)
     public void Deserialize_UnknownType_ReturnsNull()
     {
         var json = """{"type": "someFutureType"}""";
-        var shape = JsonSerializer.Deserialize<Shape>(json, CloudTrailModelFixture.Options);
+        var shape = JsonSerializer.Deserialize<Shape>(json, TestModels.Options);
         Assert.Null(shape);
     }
 
@@ -105,7 +104,7 @@ public class ShapeConverterTests(CloudTrailModelFixture fixture)
     [Fact]
     public void Deserialize_FullCloudTrailDataModel()
     {
-        var model = JsonSerializer.Deserialize<SmithyModel>(File.ReadAllBytes("TestData/cloudtrail-data-model.json"), CloudTrailModelFixture.Options);
+        var model = TestModels.Load("cloudtrail-data-model.json");
 
         Assert.NotNull(model);
         Assert.Equal("2.0", model.Version);

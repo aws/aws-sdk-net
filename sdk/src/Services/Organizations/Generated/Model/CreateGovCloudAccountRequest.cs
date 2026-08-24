@@ -105,8 +105,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use the <c>OperationId</c> response element from this operation to provide as a parameter
-    /// to the <a>DescribeCreateAccountStatus</a> operation.
+    /// Use the <c>Id</c> response element from this operation to provide as a parameter to
+    /// the <a>DescribeCreateAccountStatus</a> operation.
     /// </para>
     ///  </li> <li> 
     /// <para>

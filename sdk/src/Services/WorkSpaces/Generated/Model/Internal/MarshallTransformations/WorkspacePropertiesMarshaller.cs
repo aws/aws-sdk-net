@@ -63,6 +63,12 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetNestedVirtualizationEnabled())
+            {
+                context.Writer.WritePropertyName("NestedVirtualizationEnabled");
+                context.Writer.WriteBooleanValue(requestObject.NestedVirtualizationEnabled.Value);
+            }
+
             if(requestObject.IsSetOperatingSystemName())
             {
                 context.Writer.WritePropertyName("OperatingSystemName");

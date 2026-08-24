@@ -50,7 +50,7 @@ public class ClientInterfaceWriterTests
     public void EmitsOperationDocumentationAndRequestParam()
     {
         Assert.Contains("Ingests your application events into CloudTrail Lake.", _output);
-        Assert.Contains("<param name=\"request\">Container for the necessary parameters to execute the PutAuditEvents service method.</param>", _output);
+        Assert.Contains("""<param name="request">Container for the necessary parameters to execute the PutAuditEvents service method.</param>""", _output);
         Assert.Contains("<returns>The response from the PutAuditEvents service method, as returned by CloudTrailData.</returns>", _output);
     }
 
@@ -58,8 +58,8 @@ public class ClientInterfaceWriterTests
     public void EmitsAnExceptionTagPerOperationError()
     {
         // PutAuditEvents declares six errors; each must surface as an <exception cref> on both overloads.
-        Assert.Contains("<exception cref=\"Amazon.CloudTrailData.Model.ChannelNotFoundException\">", _output);
-        Assert.Contains("<exception cref=\"Amazon.CloudTrailData.Model.UnsupportedOperationException\">", _output);
+        Assert.Contains("""<exception cref="Amazon.CloudTrailData.Model.ChannelNotFoundException">""", _output);
+        Assert.Contains("""<exception cref="Amazon.CloudTrailData.Model.UnsupportedOperationException">""", _output);
         // Six distinct error types × two overloads (sync + async) = 12 exception tags.
         Assert.Equal(12, System.Text.RegularExpressions.Regex.Count(_output, "<exception cref="));
     }
@@ -67,8 +67,8 @@ public class ClientInterfaceWriterTests
     [Fact]
     public void EmitsAsyncParamDocAndSeeAlso()
     {
-        Assert.Contains("<param name=\"cancellationToken\">", _output);
-        Assert.Contains("<seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-data-2021-08-11/PutAuditEvents\">REST API Reference for PutAuditEvents Operation</seealso>", _output);
+        Assert.Contains("""<param name="cancellationToken">""", _output);
+        Assert.Contains("""<seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-data-2021-08-11/PutAuditEvents">REST API Reference for PutAuditEvents Operation</seealso>""", _output);
     }
 
     [Fact]

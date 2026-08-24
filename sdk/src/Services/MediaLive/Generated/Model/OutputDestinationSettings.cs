@@ -38,6 +38,7 @@ namespace Amazon.MediaLive.Model
         private string _streamName;
         private string _url;
         private string _username;
+        private string _virtualSourceAddress;
 
         /// <summary>
         /// Gets and sets the property PasswordParam. key used to extract the password from EC2
@@ -99,6 +100,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetUsername()
         {
             return this._username != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VirtualSourceAddress. Specifies the source IP address for
+        /// outbound multicast packets.
+        /// </summary>
+        public string VirtualSourceAddress
+        {
+            get { return this._virtualSourceAddress; }
+            set { this._virtualSourceAddress = value; }
+        }
+
+        // Check to see if VirtualSourceAddress property is set
+        internal bool IsSetVirtualSourceAddress()
+        {
+            return this._virtualSourceAddress != null;
         }
 
     }

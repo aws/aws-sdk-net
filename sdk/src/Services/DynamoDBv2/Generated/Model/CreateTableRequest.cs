@@ -72,6 +72,7 @@ namespace Amazon.DynamoDBv2.Model
         private TableClass _tableClass;
         private string _tableName;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<VectorIndex> _vectorIndexes = AWSConfigs.InitializeCollections ? new List<VectorIndex>() : null;
         private WarmThroughput _warmThroughput;
 
         /// <summary>
@@ -657,6 +658,62 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VectorIndexes. 
+        /// <para>
+        /// One or more vector indexes to be created on the table. Each vector index enables similarity
+        /// search on a vector attribute. Each element in the list consists of:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>IndexName</c> - The name of the vector index. Must be unique within the table.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>VectorAttribute</c> - The attribute that contains vector embeddings. If multiple
+        /// vector indexes reference the same attribute, they must all use the same number of
+        /// dimensions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Dimensions</c> - The number of dimensions in each vector.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DistanceFunction</c> - The distance function used to calculate similarity. Valid
+        /// values: <c>COSINE</c>, <c>EUCLIDEAN</c>, <c>DOT_PRODUCT</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Projection</c> - Specifies attributes that are copied (projected) from the table
+        /// into the vector index. The total number of projected non-key attributes is shared
+        /// across the vector attribute (counts as 1) and <c>INLINE_FILTER</c> search schema elements
+        /// (each counts as 1). <c>HASH</c> search schema elements do not count toward this limit.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SearchSchema</c> - (Optional) Defines the partition key (<c>HASH</c>) and inline
+        /// filter (<c>INLINE_FILTER</c>) attributes for the vector index.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<VectorIndex> VectorIndexes
+        {
+            get { return this._vectorIndexes; }
+            set { this._vectorIndexes = value; }
+        }
+
+        // Check to see if VectorIndexes property is set
+        internal bool IsSetVectorIndexes()
+        {
+            return this._vectorIndexes != null && (this._vectorIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

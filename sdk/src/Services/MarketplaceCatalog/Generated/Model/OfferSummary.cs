@@ -36,12 +36,15 @@ namespace Amazon.MarketplaceCatalog.Model
     {
         private string _availabilityEndDate;
         private List<string> _buyerAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private OfferCreatedBySourceString _createdBySource;
         private string _name;
         private string _offerSetId;
         private string _productId;
         private string _releaseDate;
         private string _resaleAuthorizationId;
         private OfferStateString _state;
+        private string _targetAgreementId;
+        private OfferTargetAgreementIntentString _targetAgreementIntent;
         private List<string> _targeting = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -85,6 +88,24 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetBuyerAccounts()
         {
             return this._buyerAccounts != null && (this._buyerAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBySource. 
+        /// <para>
+        /// The creation source of the offer.
+        /// </para>
+        /// </summary>
+        public OfferCreatedBySourceString CreatedBySource
+        {
+            get { return this._createdBySource; }
+            set { this._createdBySource = value; }
+        }
+
+        // Check to see if CreatedBySource property is set
+        internal bool IsSetCreatedBySource()
+        {
+            return this._createdBySource != null;
         }
 
         /// <summary>
@@ -198,6 +219,43 @@ namespace Amazon.MarketplaceCatalog.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAgreementId. 
+        /// <para>
+        /// The target agreement ID of the offer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string TargetAgreementId
+        {
+            get { return this._targetAgreementId; }
+            set { this._targetAgreementId = value; }
+        }
+
+        // Check to see if TargetAgreementId property is set
+        internal bool IsSetTargetAgreementId()
+        {
+            return this._targetAgreementId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetAgreementIntent. 
+        /// <para>
+        /// The target agreement intent of the offer.
+        /// </para>
+        /// </summary>
+        public OfferTargetAgreementIntentString TargetAgreementIntent
+        {
+            get { return this._targetAgreementIntent; }
+            set { this._targetAgreementIntent = value; }
+        }
+
+        // Check to see if TargetAgreementIntent property is set
+        internal bool IsSetTargetAgreementIntent()
+        {
+            return this._targetAgreementIntent != null;
         }
 
         /// <summary>

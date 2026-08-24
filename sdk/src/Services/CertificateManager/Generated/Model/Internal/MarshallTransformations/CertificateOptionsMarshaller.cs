@@ -58,6 +58,12 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Export);
             }
 
+            if(requestObject.IsSetValidationMethod())
+            {
+                context.Writer.WritePropertyName("ValidationMethod");
+                context.Writer.WriteStringValue(requestObject.ValidationMethod);
+            }
+
         }
 
         /// <summary>

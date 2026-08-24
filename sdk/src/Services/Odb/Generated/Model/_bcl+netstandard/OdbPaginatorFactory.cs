@@ -141,6 +141,30 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Paginator for ListExadbVmClusters operation
+        ///</summary>
+        public IListExadbVmClustersPaginator ListExadbVmClusters(ListExadbVmClustersRequest request) 
+        {
+            return new ListExadbVmClustersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExascaleDbStorageVaults operation
+        ///</summary>
+        public IListExascaleDbStorageVaultsPaginator ListExascaleDbStorageVaults(ListExascaleDbStorageVaultsRequest request) 
+        {
+            return new ListExascaleDbStorageVaultsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGiMinorVersions operation
+        ///</summary>
+        public IListGiMinorVersionsPaginator ListGiMinorVersions(ListGiMinorVersionsRequest request) 
+        {
+            return new ListGiMinorVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGiVersions operation
         ///</summary>
         public IListGiVersionsPaginator ListGiVersions(ListGiVersionsRequest request) 

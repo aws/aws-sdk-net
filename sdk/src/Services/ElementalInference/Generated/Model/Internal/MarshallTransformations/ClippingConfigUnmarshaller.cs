@@ -62,6 +62,12 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                     unmarshalledObject.CallbackMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("dataSourceConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = DataSourceConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.DataSourceConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

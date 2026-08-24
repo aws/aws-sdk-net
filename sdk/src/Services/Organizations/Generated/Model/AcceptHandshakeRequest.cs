@@ -75,11 +75,19 @@ namespace Amazon.Organizations.Model
     /// When a handshake is accepted, Organizations logs membership events in CloudTrail,
     /// available only in the management account's event history. If the account was standalone
     /// and joined a new organization, an <c>AccountJoinedOrganization</c> event is logged
-    /// with <c>joinedMethod:Invited</c> and <c>joinedTime</c> fields. If the account departed
+    /// with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> fields. If the account departed
     /// one organization and joined another, both an <c>AccountDepartedOrganization</c> event
-    /// with <c>departedMethod:Left</c> and <c>departedTime</c> and an <c>AccountJoinedOrganization</c>
-    /// event with <c>joinedMethod:Invited</c> and <c>joinedTime</c> are logged in their respective
+    /// with <c>departureMethod:LEFT</c> and <c>departureTime</c> and an <c>AccountJoinedOrganization</c>
+    /// event with <c>joinedMethod:INVITED</c> and <c>joinedTime</c> are logged in their respective
     /// management accounts.
+    /// </para>
+    ///  
+    /// <para>
+    /// When a billing transfer (<c>TRANSFER_RESPONSIBILITY</c>) handshake is accepted, Organizations
+    /// publishes a <c>ResponsibilityTransferAccepted</c> service event to CloudTrail. Each
+    /// affected account receives this event, including upstream participants such as distributors
+    /// in a chained transfer. For an example log entry, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_cloudtrail-integration.html#Log-entries-accept-responsibility-transfer">Example
+    /// log entries: AcceptResponsibilityTransfer</a> in the <i>Organizations User Guide</i>.
     /// </para>
     /// </summary>
     public partial class AcceptHandshakeRequest : AmazonOrganizationsRequest

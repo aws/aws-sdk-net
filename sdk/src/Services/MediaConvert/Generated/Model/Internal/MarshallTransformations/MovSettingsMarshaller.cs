@@ -46,6 +46,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetAudioDuration())
+            {
+                context.Writer.WritePropertyName("audioDuration");
+                context.Writer.WriteStringValue(requestObject.AudioDuration);
+            }
+
             if(requestObject.IsSetClapAtom())
             {
                 context.Writer.WritePropertyName("clapAtom");

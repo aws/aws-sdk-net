@@ -34,6 +34,33 @@ namespace Amazon.ElementalInference.Model
     /// </summary>
     public partial class CroppingConfig
     {
+        private List<TemplateGroup> _templateGroups = AWSConfigs.InitializeCollections ? new List<TemplateGroup>() : null;
+
+        /// <summary>
+        /// Gets and sets the property TemplateGroups. 
+        /// <para>
+        /// An array of template groups for the crop output. Each template group provides the
+        /// graphics-compositing templates that Elemental Inference applies to the cropped video.
+        /// You can specify from 1 to 4 template groups. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=4)]
+        public List<TemplateGroup> TemplateGroups
+        {
+            get { return this._templateGroups; }
+            set { this._templateGroups = value; }
+        }
+
+        // Check to see if TemplateGroups property is set
+        internal bool IsSetTemplateGroups()
+        {
+            return this._templateGroups != null && (this._templateGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

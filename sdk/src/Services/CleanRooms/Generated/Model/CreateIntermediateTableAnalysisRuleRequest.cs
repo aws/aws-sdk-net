@@ -32,9 +32,7 @@ namespace Amazon.CleanRooms.Model
     /// <summary>
     /// Container for the parameters to the CreateIntermediateTableAnalysisRule operation.
     /// Creates an analysis rule for an intermediate table. Only the CUSTOM analysis rule
-    /// type is supported. The service automatically determines whether the rule is first-party
-    /// or multi-party restricted based on the intermediate table's inherited constraints.
-    /// Only the intermediate table owner can call this operation.
+    /// type is supported. Only the intermediate table owner can call this operation.
     /// </summary>
     public partial class CreateIntermediateTableAnalysisRuleRequest : AmazonCleanRoomsRequest
     {

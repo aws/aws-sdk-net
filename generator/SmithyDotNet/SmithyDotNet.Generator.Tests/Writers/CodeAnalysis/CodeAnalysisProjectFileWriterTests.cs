@@ -18,7 +18,7 @@ public class CodeAnalysisProjectFileWriterTests
     [Fact]
     public void ProjectElementCorrect()
     {
-        AssertHelper("<Project Sdk=\"Microsoft.NET.Sdk\">");
+        AssertHelper("""<Project Sdk="Microsoft.NET.Sdk">""");
         AssertHelper("</Project>");
     }
 
@@ -55,14 +55,14 @@ public class CodeAnalysisProjectFileWriterTests
     [Fact]
     public void PackageReferencesCorrect()
     {
-        AssertHelper("<PackageReference Include=\"Microsoft.CodeAnalysis.Analyzers\" Version=\"2.9.8\" />");
-        AssertHelper("<PackageReference Include=\"Microsoft.CodeAnalysis.CSharp\" Version=\"3.3.1\" />");
+        AssertHelper("""<PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="2.9.8" />""");
+        AssertHelper("""<PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="3.3.1" />""");
     }
 
     [Fact]
     public void EmbeddedResourceCorrect()
     {
-        AssertHelper("<EmbeddedResource Include=\"Generated/PropertyValueRules.xml\">");
+        AssertHelper("""<EmbeddedResource Include="Generated/PropertyValueRules.xml">""");
         AssertHelper("<CopyToOutputDirectory>Always</CopyToOutputDirectory>");
         AssertHelper("</EmbeddedResource>");
     }
@@ -70,7 +70,7 @@ public class CodeAnalysisProjectFileWriterTests
     [Fact]
     public void ProjectReferenceCorrect()
     {
-        AssertHelper("<ProjectReference Include=\"../../SharedAnalysisCode/SharedAnalysisCode.csproj\" />");
+        AssertHelper("""<ProjectReference Include="../../SharedAnalysisCode/SharedAnalysisCode.csproj" />""");
     }
 
     private void AssertHelper(string expected)

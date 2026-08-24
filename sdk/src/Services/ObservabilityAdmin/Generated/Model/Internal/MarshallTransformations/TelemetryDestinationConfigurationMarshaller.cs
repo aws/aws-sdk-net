@@ -80,6 +80,12 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
+            }
+
             if(requestObject.IsSetLogDeliveryParameters())
             {
                 context.Writer.WritePropertyName("LogDeliveryParameters");

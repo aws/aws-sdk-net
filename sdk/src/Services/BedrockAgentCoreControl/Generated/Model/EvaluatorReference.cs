@@ -44,6 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// or custom evaluators. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }

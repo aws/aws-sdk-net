@@ -41,6 +41,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _description;
         private string _name;
         private string _paymentManagerId;
+        private PaymentConnectorProvisionMode _provisionMode;
         private PaymentConnectorType _type;
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=0, Max=1)]
         public List<CredentialsProviderConfiguration> CredentialProviderConfigurations
         {
             get { return this._credentialProviderConfigurations; }
@@ -146,6 +147,35 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetPaymentManagerId()
         {
             return this._paymentManagerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisionMode. 
+        /// <para>
+        /// The provision mode for creating the payment connector. If you don't specify a value,
+        /// the default is <c>MANUAL</c>.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>MANUAL</c> - You provide the credential provider configurations directly.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>QUICK_CREATE</c> - The service orchestrates OAuth consent and provisions the credential
+        /// provider for you.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PaymentConnectorProvisionMode ProvisionMode
+        {
+            get { return this._provisionMode; }
+            set { this._provisionMode = value; }
+        }
+
+        // Check to see if ProvisionMode property is set
+        internal bool IsSetProvisionMode()
+        {
+            return this._provisionMode != null;
         }
 
         /// <summary>

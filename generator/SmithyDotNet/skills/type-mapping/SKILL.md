@@ -1,6 +1,6 @@
 ---
 name: type-mapping
-description: Rules for converting Smithy shape types to .NET types, including nullability and collection defaults
+description: Smithy shape to .NET type mapping, nullability, and collection defaults. Use when changing TypeMapper or member resolution in the SmithyDotNet generator.
 ---
 # Skill: Smithy to .NET Type Mapping
 
@@ -12,21 +12,21 @@ Definitive mapping from Smithy shape types to .NET types, plus nullability and c
 
 | Smithy shape | .NET type | Notes |
 |---|---|---|
-| `blob` | `MemoryStream` | Streaming blob shapes map to `Stream`; non-streaming blobs map to `MemoryStream` |
 | `boolean` | `bool?` | Nullable |
 | `string` | `string` | Reference type, nullable by nature |
-| `byte` | `int?` | Widened to int, nullable |
-| `short` | `int?` | Widened to int, nullable |
 | `integer` | `int?` | Nullable |
 | `long` | `long?` | Nullable |
 | `float` | `float?` | Nullable |
 | `double` | `double?` | Nullable |
-| `bigInteger` | `long?` | Narrowed to long, nullable |
-| `bigDecimal` | `decimal?` | Nullable |
 | `timestamp` | `DateTime?` | Nullable |
-| `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type |
-| `enum` | `string` (Phase 1) / `ConstantClass` (Phase 2) | Phase 2 uses the `ConstantClass` pattern |
-| `intEnum` | `int?` | Nullable |
+| `byte` | — | Not supported yet — throws. No settled .NET mapping (the current SDK never emitted `byte`/`short`) |
+| `short` | — | Not supported yet — throws |
+| `bigInteger` | — | Not supported yet — throws. Wider-numeric types are earmarked for a dedicated numerics extension |
+| `bigDecimal` | — | Not supported yet — throws |
+| `blob` | `MemoryStream` | Not supported yet — throws. Target: streaming blobs → `Stream`, non-streaming → `MemoryStream` |
+| `document` | `Amazon.Runtime.Documents.Document` | Not supported yet — throws. SDK runtime type |
+| `enum` | `string` (Phase 1) / `ConstantClass` (Phase 2) | Not supported yet — throws. Phase 2 uses the `ConstantClass` pattern |
+| `intEnum` | `int?` | Not supported yet — throws |
 | `list` | `List<T>` | V4 default: `null`; see Collection Defaults |
 | `map` | `Dictionary<TKey, TValue>` | V4 default: `null`; see Collection Defaults |
 | `structure` | Generated class | See structure rules below |
@@ -87,7 +87,15 @@ Smithy error shapes often omit the `Exception` suffix. The naming rules (matchin
 
 ## Error Shape Members
 
-Error shapes have a `message` member in the Smithy model, but the generated exception class does **not** expose it as a property. The `message` is passed to `System.Exception` via the constructor and inherited as `Exception.Message`. The generator must filter out the `message` member when generating exception properties.
+Error shapes have a `message` member in the Smithy model, but the generated exception class does **not** expose it as a property. The `message` is passed to `System.Exception` via the constructor and inherited as `Exception.Message`. The generator filters `message` out **everywhere** — the property set, the serialization block, and the unmarshaller alike — since `Exception.Message` already covers it.
+
+Two base-class adjustments follow (matching `ExceptionShape.Members`, `Member.cs`, and `StructureGenerator.tt`):
+- A member named `errorType` is renamed to the property `RequestErrorType` — **property name only; the wire name stays `errorType`** — so it doesn't hide `AmazonServiceException.ErrorType`, whose type is the `ErrorType` enum rather than the member's own type.
+- A member named `Retryable` (on an exception) is emitted with the `new` modifier, hiding `AmazonServiceException.Retryable` — CloudHSM's exception models it with a different return type.
+
+Independently of the exception-only rules, a member named `Equals` on **any** structure is emitted with `new` to hide `object.Equals(object)` (matches `StructureGenerator.tt`'s unconditional Equals check). This is set in `TypeMapper.ResolveMembers` and flows through every writer.
+
+`RequestId` and `ErrorCode` get a narrower treatment than `message`. `AmazonServiceException` already declares them, so the generator emits **no property** (one would shadow the base; C2J's `StructureGenerator.tt` skips them in its property loop). But unlike `message` they are **not** filtered from serialization or unmarshalling — C2J's `ExceptionSerialization.t4` and `JsonRPCExceptionUnmarshaller.tt` loop `ExceptionShape.Members`, which drops only `message` — so the inherited property is still serialized and read from the error body. Hence `ExceptionWriter.ResolveSerializedMembers` (serialization block + unmarshaller) keeps them, while the property set is that same set with `RequestId`/`ErrorCode` filtered out inline in `WriteException`. Every other member — **including one whose name collides with a non-omitted inherited property** (e.g. `StatusCode`, `InnerException`) — is emitted as-is as a plain shadowing property and also read from the error body, exactly as C2J does.
 
 ## Resolving Member Types
 
@@ -107,7 +115,9 @@ To get the .NET type for a structure member:
 
 ## Prelude Shape Mapping
 
-These shapes are implicit (not in the model JSON) and map directly:
+These shapes are implicit (not in the model JSON) and map directly. The .NET types below are the
+target mapping; see the Type Mapping Table above for which are supported today vs. still throw
+(`Blob`/`Document` are not supported yet):
 
 | Prelude shape ID | .NET type |
 |---|---|

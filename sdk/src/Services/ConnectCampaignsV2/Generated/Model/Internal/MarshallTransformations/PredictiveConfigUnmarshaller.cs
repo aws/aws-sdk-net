@@ -62,6 +62,12 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.BandwidthAllocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("pacingStrategies", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<PacingStrategy, PacingStrategyUnmarshaller>(PacingStrategyUnmarshaller.Instance);
+                    unmarshalledObject.PacingStrategies = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

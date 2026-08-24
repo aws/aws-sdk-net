@@ -45,6 +45,8 @@ namespace Amazon.GeoMaps.Model
         private ColorScheme _colorScheme;
         private ContourDensity _contourDensity;
         private string _key;
+        private List<string> _poiCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private PoiDensity _poiDensity;
         private string _politicalView;
         private MapStyle _style;
         private Terrain _terrain;
@@ -157,6 +159,125 @@ namespace Amazon.GeoMaps.Model
         internal bool IsSetKey()
         {
             return this._key != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoiCategories. 
+        /// <para>
+        /// Renders only the specified categories of points of interest. When you omit this parameter,
+        /// the map renders all categories.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following categories are currently supported:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>FoodAndDrink</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Entertainment</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SightsAndMuseums</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Transportation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Accommodations</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LeisureAndOutdoor</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Shopping</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BusinessAndServices</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FacilitiesAndBuildings</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Specify each category as a separate <c>poi-categories</c> query parameter. Duplicate
+        /// values are rejected.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter has no effect when <c>poi-density</c> is set to <c>Off</c>, which hides
+        /// all points of interest regardless of category.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This parameter is valid only for the <c>Standard</c> and <c>Hybrid</c> map styles.
+        /// In <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, this parameter is valid only for the <c>Standard</c> map style.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=9)]
+        public List<string> PoiCategories
+        {
+            get { return this._poiCategories; }
+            set { this._poiCategories = value; }
+        }
+
+        // Check to see if PoiCategories property is set
+        internal bool IsSetPoiCategories()
+        {
+            return this._poiCategories != null && (this._poiCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PoiDensity. 
+        /// <para>
+        /// Controls how densely points of interest are rendered on the map. The density value
+        /// controls the zoom level at which each category of points of interest appears, and
+        /// how quickly less prominent points of interest are revealed as you zoom in. Denser
+        /// values display more points of interest at lower zoom levels.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use <c>Off</c> to hide all points of interest. When you omit this parameter, the map
+        /// renders at <c>Default</c> density.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The difference between density values is most noticeable at mid-range zoom levels.
+        /// At high zoom levels, all density values converge on displaying every available point
+        /// of interest.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// This parameter is valid only for the <c>Standard</c> and <c>Hybrid</c> map styles.
+        /// In <c>ap-southeast-1</c> and <c>ap-southeast-5</c> regions for <a href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+        /// customers, this parameter is valid only for the <c>Standard</c> map style.
+        /// </para>
+        /// </summary>
+        public PoiDensity PoiDensity
+        {
+            get { return this._poiDensity; }
+            set { this._poiDensity = value; }
+        }
+
+        // Check to see if PoiDensity property is set
+        internal bool IsSetPoiDensity()
+        {
+            return this._poiDensity != null;
         }
 
         /// <summary>

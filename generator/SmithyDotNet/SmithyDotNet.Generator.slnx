@@ -1,4 +1,0 @@
-<Solution>
-  <Project Path="SmithyDotNet.Generator.Tests/SmithyDotNet.Generator.Tests.csproj" />
-  <Project Path="SmithyDotNet.Generator/SmithyDotNet.Generator.csproj" />
-</Solution>

@@ -115,6 +115,12 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                         unmarshalledObject.RoleName = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("SourceRoleTemplate", targetDepth))
+                    {
+                        var unmarshaller = SourceRoleTemplateUnmarshaller.Instance;
+                        unmarshalledObject.SourceRoleTemplate = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;

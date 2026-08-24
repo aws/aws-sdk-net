@@ -29,7 +29,7 @@ public class CodeWriterTests
         {
             writer.OpenBlock("handler.OnComplete(() =>", "});", () =>
             {
-                writer.WriteLine("Console.WriteLine(\"done\");");
+                writer.WriteLine("""Console.WriteLine("done");""");
             });
         });
 
@@ -73,8 +73,8 @@ public class CodeWriterTests
     [Fact]
     public void NativeValue_RendersStringArrayAsListInitializer()
     {
-        var value = JsonDocument.Parse("[\"a\", \"b\"]").RootElement;
-        Assert.Equal("new List<string> { \"a\", \"b\" }", CodeWriter.NativeValue(value));
+        var value = JsonDocument.Parse("""["a", "b"]""").RootElement;
+        Assert.Equal("""new List<string> { "a", "b" }""", CodeWriter.NativeValue(value));
     }
 
     [Fact]

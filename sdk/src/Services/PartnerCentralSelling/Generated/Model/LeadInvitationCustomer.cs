@@ -38,9 +38,9 @@ namespace Amazon.PartnerCentralSelling.Model
     {
         private string _awsMaturity;
         private string _companyName;
-        private CountryCode _countryCode;
-        private Industry _industry;
-        private MarketSegment _marketSegment;
+        private string _countryCode;
+        private string _industry;
+        private string _marketSegment;
         private string _websiteUrl;
 
         /// <summary>
@@ -51,6 +51,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// engagement approach accordingly.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string AwsMaturity
         {
             get { return this._awsMaturity; }
@@ -91,8 +92,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// to serve the customer effectively.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
-        public CountryCode CountryCode
+        [AWSProperty(Sensitive=true, Min=0, Max=10)]
+        public string CountryCode
         {
             get { return this._countryCode; }
             set { this._countryCode = value; }
@@ -112,7 +113,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// assess solution fit.
         /// </para>
         /// </summary>
-        public Industry Industry
+        [AWSProperty(Min=0, Max=255)]
+        public string Industry
         {
             get { return this._industry; }
             set { this._industry = value; }
@@ -132,7 +134,8 @@ namespace Amazon.PartnerCentralSelling.Model
         /// complexity and engagement strategy.
         /// </para>
         /// </summary>
-        public MarketSegment MarketSegment
+        [AWSProperty(Min=0, Max=255)]
+        public string MarketSegment
         {
             get { return this._marketSegment; }
             set { this._marketSegment = value; }
@@ -152,7 +155,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// size and legitimacy.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string WebsiteUrl
         {
             get { return this._websiteUrl; }

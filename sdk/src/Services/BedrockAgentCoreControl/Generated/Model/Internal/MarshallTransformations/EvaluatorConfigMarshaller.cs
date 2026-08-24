@@ -57,6 +57,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetDerived())
+            {
+                context.Writer.WritePropertyName("derived");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DerivedEvaluatorConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.Derived, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLlmAsAJudge())
             {
                 context.Writer.WritePropertyName("llmAsAJudge");

@@ -183,6 +183,16 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public long CounterStartValue { get; set; }
 
+        /// <summary>
+        /// Whether this property is a search vector associated with one or more vector indexes.
+        /// </summary>
+        public bool IsSearchVector { get; set; }
+
+        /// <summary>
+        /// Names of the vector indexes this search vector belongs to.
+        /// </summary>
+        public List<string> SearchVectorIndexNames { get; set; }
+
         public void AddIndex(DynamoDBGlobalSecondaryIndexHashKeyAttribute gsiHashKey)
         {
             AddIndex(new GSI(true, gsiHashKey.AttributeName, gsiHashKey.Order, gsiHashKey.IndexNames));
@@ -251,6 +261,15 @@ namespace Amazon.DynamoDBv2.DataModel
             if (IsCounter)
                 Utils.ValidateNumericType(MemberType);    // no conversion is possible, so type must be a nullable primitive
 
+            if (IsSearchVector)
+            {
+                Utils.ValidateSearchVectorType(MemberType);
+
+                if (context?.Config?.Conversion == DynamoDBEntryConversion.V1)
+                    throw new InvalidOperationException(
+                        "Property " + PropertyName + " is a search vector, which is not supported with DynamoDBEntryConversion.V1. Use DynamoDBEntryConversion.V2 instead.");
+            }
+
             if (IsHashKey && IsRangeKey)
                 throw new InvalidOperationException("Property " + PropertyName + " cannot be both hash and range key");
 
@@ -306,6 +325,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexNames = new List<string>();
             Indexes = new List<Index>();
             FlattenProperties = new List<PropertyStorage>();
+            SearchVectorIndexNames = new List<string>();
             UpdateBehaviorMode = UpdateBehavior.Always;
         }
 
@@ -523,6 +543,9 @@ namespace Amazon.DynamoDBv2.DataModel
         // indexName to GSIConfig mapping
         public Dictionary<string, GSIConfig> IndexNameToGSIMapping { get; set; }
 
+        // search vector indexName to property name mapping (declared via DynamoDBSearchVectorAttribute)
+        public Dictionary<string, string> IndexNameToSearchVectorPropertiesMapping { get; set; }
+
         // entity conversion
         public DynamoDBEntryConversion Conversion { get; set; }
 
@@ -672,6 +695,9 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (lsi != null)
                         AddLSIConfigs(lsi.IndexNames, propertyName);
                 }
+
+                if (property.IsSearchVector)
+                    AddSearchVectorConfigs(property.SearchVectorIndexNames, propertyName);
             }
         }
 
@@ -764,6 +790,27 @@ namespace Amazon.DynamoDBv2.DataModel
             }
         }
 
+        private void AddSearchVectorConfigs(List<string> searchVectorIndexNames, string propertyName)
+        {
+            if (searchVectorIndexNames == null)
+                return;
+
+            foreach (var index in searchVectorIndexNames)
+            {
+                if (string.IsNullOrEmpty(index))
+                    continue;
+
+                if (this.IndexNameToSearchVectorPropertiesMapping.TryGetValue(index, out var existingPropertyName) &&
+                    !string.Equals(existingPropertyName, propertyName, StringComparison.Ordinal))
+                {
+                    throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
+                        "Search vector index {0} is declared on multiple properties: {1} and {2}.", index, existingPropertyName, propertyName));
+                }
+
+                this.IndexNameToSearchVectorPropertiesMapping[index] = propertyName;
+            }
+        }
+
         private void AddGSIConfigs(List<string> gsiIndexNames, string propertyName, bool isHashKey, int order)
         {
             foreach (var index in gsiIndexNames)
@@ -802,6 +849,7 @@ namespace Amazon.DynamoDBv2.DataModel
             AttributeToIndexesNameMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             IndexNameToLSIRangePropertiesMapping = new Dictionary<string, List<string>>(StringComparer.Ordinal);
             IndexNameToGSIMapping = new Dictionary<string, GSIConfig>(StringComparer.Ordinal);
+            IndexNameToSearchVectorPropertiesMapping = new Dictionary<string, string>(StringComparer.Ordinal);
             AttributesToGet = new List<string>();
             ProjectionExpression = new Expression();
             HashKeyPropertyNames = new List<string>();
@@ -864,9 +912,15 @@ namespace Amazon.DynamoDBv2.DataModel
                 Cache.TryGetValue(type, out tableCache);
                 if(tableCache != null)
                 {
-                    // If this type is only used for conversion, do not attempt to populate the config from the table
+                    // If this type is only used for conversion, do not attempt to populate the config from the table.
+                    // Only propagate the nested type's conversion when it declares its own schema (via DynamoDBTable);
+                    // a table-less nested type has a null Conversion and must not override the enclosing item's conversion.
                     if (conversionOnly)
+                    {
+                        if (flatConfig != null && tableCache.BaseTypeConfig.Conversion != null)
+                            flatConfig.ItemConversion = tableCache.BaseTypeConfig.Conversion;
                         return tableCache.BaseTypeConfig;
+                    }
 
                     actualTableName = DynamoDBContext.GetTableName(tableCache.BaseTableName, flatConfig);
 
@@ -907,9 +961,15 @@ namespace Amazon.DynamoDBv2.DataModel
                     }
                 }
 
-                // If this type is only used for conversion, do not attempt to populate the config from the table
+                // If this type is only used for conversion, do not attempt to populate the config from the table.
+                // Only propagate the nested type's conversion when it declares its own schema (via DynamoDBTable);
+                // a table-less nested type has a null Conversion and must not override the enclosing item's conversion.
                 if (conversionOnly)
+                {
+                    if (flatConfig != null && tableCache.BaseTypeConfig.Conversion != null)
+                        flatConfig.ItemConversion = tableCache.BaseTypeConfig.Conversion;
                     return tableCache.BaseTypeConfig;
+                }
 
                 if (actualTableName == null)
                 {
@@ -1120,6 +1180,14 @@ namespace Amazon.DynamoDBv2.DataModel
                     propertyStorage.IsCounter = true;
                     propertyStorage.CounterDelta = counterAttribute.Delta;
                     propertyStorage.CounterStartValue = counterAttribute.StartValue;
+                }
+
+                DynamoDBSearchVectorAttribute searchVectorAttribute = attribute as DynamoDBSearchVectorAttribute;
+                if (searchVectorAttribute != null)
+                {
+                    propertyStorage.IsSearchVector = true;
+                    if (!string.IsNullOrEmpty(searchVectorAttribute.IndexName))
+                        propertyStorage.SearchVectorIndexNames.Add(searchVectorAttribute.IndexName);
                 }
 
                 DynamoDBRenamableAttribute renamableAttribute = attribute as DynamoDBRenamableAttribute;

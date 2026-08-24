@@ -49,6 +49,7 @@ namespace Amazon.EC2.Model
     public partial class GetSpotPlacementScoresRequest : AmazonEC2Request
     {
         private bool? _dryRun;
+        private bool? _includeLocalZones;
         private InstanceRequirementsWithMetadataRequest _instanceRequirementsWithMetadata;
         private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
@@ -76,6 +77,29 @@ namespace Amazon.EC2.Model
         internal bool IsSetDryRun()
         {
             return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeLocalZones. 
+        /// <para>
+        /// Specify <c>true</c> so that the response returns scores that include Local Zones.
+        /// Otherwise, the response ignores Local Zones.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you request regional scores, Local Zone capacity counts toward its parent Region.
+        /// </para>
+        /// </summary>
+        public bool? IncludeLocalZones
+        {
+            get { return this._includeLocalZones; }
+            set { this._includeLocalZones = value; }
+        }
+
+        // Check to see if IncludeLocalZones property is set
+        internal bool IsSetIncludeLocalZones()
+        {
+            return this._includeLocalZones.HasValue; 
         }
 
         /// <summary>

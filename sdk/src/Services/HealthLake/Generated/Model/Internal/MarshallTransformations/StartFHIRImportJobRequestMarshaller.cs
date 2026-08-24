@@ -144,6 +144,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ProfileId);
             }
 
+            if(publicRequest.IsSetProvenanceEnabled())
+            {
+                context.Writer.WritePropertyName("ProvenanceEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.ProvenanceEnabled.Value);
+            }
+
             if(publicRequest.IsSetValidationLevel())
             {
                 context.Writer.WritePropertyName("ValidationLevel");

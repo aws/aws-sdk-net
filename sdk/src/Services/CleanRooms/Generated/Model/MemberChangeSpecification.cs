@@ -102,6 +102,13 @@ namespace Amazon.CleanRooms.Model
         /// Set the value of <c>memberAbilities</c> to <c>[CAN_RECEIVE_RESULTS]</c> to allow a
         /// member to contribute data and receive results.
         /// </para>
+        ///  
+        /// <para>
+        /// Set the value of <c>memberAbilities</c> to <c>[CAN_EXPORT_QUERY_ANALYSIS_LOG]</c>
+        /// so that the member can export the analysis logs for a protected query. Having this
+        /// ability isn't sufficient on its own: You can export logs only for queries that you
+        /// ran or paid for.
+        /// </para>
         ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

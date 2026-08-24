@@ -126,7 +126,7 @@ namespace Amazon.GeoMaps.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetZoom())
                 request.Parameters.Add("zoom", StringUtils.FromFloat(publicRequest.Zoom));
-            request.ResourcePath = "/static/{FileName}";
+            request.ResourcePath = "/v2/static/{FileName}";
             request.UseQueryString = true;
 
             return request;

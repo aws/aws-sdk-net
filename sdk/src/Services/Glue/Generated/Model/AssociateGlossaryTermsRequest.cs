@@ -38,6 +38,8 @@ namespace Amazon.Glue.Model
         private string _assetIdentifier;
         private string _clientToken;
         private List<string> _glossaryTermIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _itemIdentifier;
+        private string _iterableFormName;
 
         /// <summary>
         /// Gets and sets the property AssetIdentifier. 
@@ -100,6 +102,47 @@ namespace Amazon.Glue.Model
         internal bool IsSetGlossaryTermIdentifiers()
         {
             return this._glossaryTermIdentifiers != null && (this._glossaryTermIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ItemIdentifier. 
+        /// <para>
+        /// The identifier of the item within the iterable form. Required when <c>iterableFormName</c>
+        /// is specified.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1087)]
+        public string ItemIdentifier
+        {
+            get { return this._itemIdentifier; }
+            set { this._itemIdentifier = value; }
+        }
+
+        // Check to see if ItemIdentifier property is set
+        internal bool IsSetItemIdentifier()
+        {
+            return this._itemIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IterableFormName. 
+        /// <para>
+        /// The name of the iterable form. When specified along with <c>itemIdentifier</c>, the
+        /// glossary terms are associated with an item within the iterable form rather than the
+        /// asset itself.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string IterableFormName
+        {
+            get { return this._iterableFormName; }
+            set { this._iterableFormName = value; }
+        }
+
+        // Check to see if IterableFormName property is set
+        internal bool IsSetIterableFormName()
+        {
+            return this._iterableFormName != null;
         }
 
     }

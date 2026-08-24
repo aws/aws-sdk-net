@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFleetLocations operation.
-    /// <b>This API works with the following fleet types:</b> EC2, Container
+    /// <b>This API works with the following fleet types:</b> EC2, Anywhere, Container
     /// 
     ///  
     /// <para>

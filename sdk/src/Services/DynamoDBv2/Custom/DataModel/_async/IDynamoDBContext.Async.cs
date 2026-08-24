@@ -714,5 +714,30 @@ namespace Amazon.DynamoDBv2.DataModel
         IAsyncSearch<T> FromQueryAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(QueryDocumentOperationRequest queryOperationRequest, FromQueryConfig fromQueryConfig);
 
         #endregion
+
+        #region Search Vectors async
+
+        /// <summary>
+        /// Configures an async SearchVectors operation against DynamoDB, finding items
+        /// that match the specified vector search conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="searchVector">Vector to be used for the search.</param>
+        /// <param name="topK">Number of top results to return.</param>
+        /// <param name="searchConfig">Configuration object for the vector search operation.</param>
+        /// <returns>AsyncSearchVectors which can be used to retrieve DynamoDB data.</returns>
+        IAsyncSearchVectors<T> SearchVectorsAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(List<float> searchVector, int topK, SearchVectorsConfig searchConfig);
+
+        /// <summary>
+        /// Configures an async SearchVectors operation against DynamoDB, finding items
+        /// that match the specified vector search conditions.
+        /// </summary>
+        /// <typeparam name="T">Type of object.</typeparam>
+        /// <param name="searchVectorsOperationRequest">Mid-level, document model search vectors request object.</param>
+        /// <param name="fromSearchVectorsConfig">Config object that can be used to override properties on the table's context for this request.</param>
+        /// <returns>AsyncSearchVectors which can be used to retrieve DynamoDB data.</returns>
+        IAsyncSearchVectors<T> FromSearchVectorsAsync<[DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] T>(SearchVectorsOperationRequest searchVectorsOperationRequest, FromSearchVectorsConfig fromSearchVectorsConfig);
+        
+        #endregion
     }
 }

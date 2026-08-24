@@ -55,6 +55,14 @@ namespace Amazon.CloudDirectory
     /// Directory Service</a> and the <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/what_is_cloud_directory.html">Amazon
     /// Cloud Directory Developer Guide</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// Amazon Cloud Directory is no longer open to new customers and will reach end of support
+    /// on July 24, 2027. For alternatives to Amazon Cloud Directory, explore <a href="https://aws.amazon.com/dynamodb/">Amazon
+    /// DynamoDB</a> and <a href="https://aws.amazon.com/neptune/">Amazon Neptune</a>. If
+    /// you need help choosing the right alternative for your use case, or for any other questions,
+    /// contact <a href="https://aws.amazon.com/support/">AWS Support</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonCloudDirectoryClient : AmazonServiceClient, IAmazonCloudDirectory
     {

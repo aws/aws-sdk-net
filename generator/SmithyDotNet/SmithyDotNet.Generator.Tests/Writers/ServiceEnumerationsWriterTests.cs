@@ -33,7 +33,9 @@ public class ServiceEnumerationsWriterTests
     [Fact]
     public void EmitsEmptyServiceNamespace()
     {
-        // Enum generation is not implemented yet, so the namespace body must stay empty.
+        // CloudTrailData carries no enum shapes, so the namespace body stays empty — the file is still
+        // emitted to match the shipping SDK's generated file set. Enum emission is covered by
+        // EnumCodegenTests and the enum-parity-check acceptance loop.
         Assert.EndsWith("namespace Amazon.CloudTrailData\n{\n}\n", _output.Replace("\r\n", "\n"));
     }
 }

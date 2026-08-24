@@ -40,6 +40,7 @@ namespace Amazon.MWAAServerless.Model
     /// </summary>
     public partial class UpdateWorkflowRequest : AmazonMWAAServerlessRequest
     {
+        private Code _code;
         private DefinitionS3Location _definitionS3Location;
         private string _description;
         private int? _engineVersion;
@@ -48,6 +49,25 @@ namespace Amazon.MWAAServerless.Model
         private string _roleArn;
         private string _triggerMode;
         private string _workflowArn;
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        /// The location of code artifacts in Amazon S3 for the updated workflow. The service
+        /// copies the code from this location at the time of the request.
+        /// </para>
+        /// </summary>
+        public Code Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefinitionS3Location. 

@@ -71,7 +71,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// and follow-up purposes.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceId
         {
             get { return this._sourceId; }
@@ -92,7 +91,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// that created the opportunity.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceName
         {
             get { return this._sourceName; }
@@ -113,7 +111,6 @@ namespace Amazon.PartnerCentralSelling.Model
         /// and assess lead quality based on the source type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string SourceType
         {
             get { return this._sourceType; }
@@ -134,6 +131,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// solution requirements.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=255)]
         public string Usecase
         {
             get { return this._usecase; }

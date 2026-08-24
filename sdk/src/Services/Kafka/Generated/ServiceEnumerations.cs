@@ -71,6 +71,126 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type ChannelDestinationType.
+    /// </summary>
+    public class ChannelDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ICEBERG for ChannelDestinationType
+        /// </summary>
+        public static readonly ChannelDestinationType ICEBERG = new ChannelDestinationType("ICEBERG");
+        /// <summary>
+        /// Constant S3 for ChannelDestinationType
+        /// </summary>
+        public static readonly ChannelDestinationType S3 = new ChannelDestinationType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelDestinationType FindValue(string value)
+        {
+            return FindValue<ChannelDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelStatus.
+    /// </summary>
+    public class ChannelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus ACTIVE = new ChannelStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus CREATING = new ChannelStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus DELETING = new ChannelStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus FAILED = new ChannelStatus("FAILED");
+        /// <summary>
+        /// Constant SUSPENDED for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus SUSPENDED = new ChannelStatus("SUSPENDED");
+        /// <summary>
+        /// Constant SUSPENDING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus SUSPENDING = new ChannelStatus("SUSPENDING");
+        /// <summary>
+        /// Constant UPDATING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus UPDATING = new ChannelStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelStatus FindValue(string value)
+        {
+            return FindValue<ChannelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ClientBroker.
     /// </summary>
     public class ClientBroker : ConstantClass
@@ -465,6 +585,56 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type IcebergCompressionType.
+    /// </summary>
+    public class IcebergCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SNAPPY for IcebergCompressionType
+        /// </summary>
+        public static readonly IcebergCompressionType SNAPPY = new IcebergCompressionType("SNAPPY");
+        /// <summary>
+        /// Constant ZSTD for IcebergCompressionType
+        /// </summary>
+        public static readonly IcebergCompressionType ZSTD = new IcebergCompressionType("ZSTD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IcebergCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IcebergCompressionType FindValue(string value)
+        {
+            return FindValue<IcebergCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IcebergCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KafkaClusterEncryptionInTransitType.
     /// </summary>
     public class KafkaClusterEncryptionInTransitType : ConstantClass
@@ -707,6 +877,52 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type PartitionStrategy.
+    /// </summary>
+    public class PartitionStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TIME_HOUR for PartitionStrategy
+        /// </summary>
+        public static readonly PartitionStrategy TIME_HOUR = new PartitionStrategy("TIME_HOUR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartitionStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartitionStrategy FindValue(string value)
+        {
+            return FindValue<PartitionStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartitionStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RebalancingStatus.
     /// </summary>
     public class RebalancingStatus : ConstantClass
@@ -912,6 +1128,114 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReplicatorState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3CompressionType.
+    /// </summary>
+    public class S3CompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for S3CompressionType
+        /// </summary>
+        public static readonly S3CompressionType GZIP = new S3CompressionType("GZIP");
+        /// <summary>
+        /// Constant NONE for S3CompressionType
+        /// </summary>
+        public static readonly S3CompressionType NONE = new S3CompressionType("NONE");
+        /// <summary>
+        /// Constant ZSTD for S3CompressionType
+        /// </summary>
+        public static readonly S3CompressionType ZSTD = new S3CompressionType("ZSTD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3CompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3CompressionType FindValue(string value)
+        {
+            return FindValue<S3CompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3CompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3StorageClass.
+    /// </summary>
+    public class S3StorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLACIER_IR for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER_IR = new S3StorageClass("GLACIER_IR");
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass INTELLIGENT_TIERING = new S3StorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant STANDARD for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD = new S3StorageClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3StorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3StorageClass FindValue(string value)
+        {
+            return FindValue<S3StorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3StorageClass(string value)
         {
             return FindValue(value);
         }
@@ -1132,6 +1456,64 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator UserIdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ValueConverter.
+    /// </summary>
+    public class ValueConverter : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTE_ARRAY for ValueConverter
+        /// </summary>
+        public static readonly ValueConverter BYTE_ARRAY = new ValueConverter("BYTE_ARRAY");
+        /// <summary>
+        /// Constant JSON for ValueConverter
+        /// </summary>
+        public static readonly ValueConverter JSON = new ValueConverter("JSON");
+        /// <summary>
+        /// Constant JSON_SCHEMA_GSR for ValueConverter
+        /// </summary>
+        public static readonly ValueConverter JSON_SCHEMA_GSR = new ValueConverter("JSON_SCHEMA_GSR");
+        /// <summary>
+        /// Constant STRING for ValueConverter
+        /// </summary>
+        public static readonly ValueConverter STRING = new ValueConverter("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ValueConverter(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ValueConverter FindValue(string value)
+        {
+            return FindValue<ValueConverter>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ValueConverter(string value)
         {
             return FindValue(value);
         }

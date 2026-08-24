@@ -46,6 +46,22 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetTemplateGroups())
+            {
+                context.Writer.WritePropertyName("templateGroups");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTemplateGroupsListValue in requestObject.TemplateGroups)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TemplateGroupMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTemplateGroupsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

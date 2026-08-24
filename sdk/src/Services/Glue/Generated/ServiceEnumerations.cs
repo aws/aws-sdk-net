@@ -3059,6 +3059,118 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type ExportSetting.
+    /// </summary>
+    public class ExportSetting : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ExportSetting
+        /// </summary>
+        public static readonly ExportSetting DISABLED = new ExportSetting("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ExportSetting
+        /// </summary>
+        public static readonly ExportSetting ENABLED = new ExportSetting("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportSetting(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportSetting FindValue(string value)
+        {
+            return FindValue<ExportSetting>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportSetting(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExportStatus.
+    /// </summary>
+    public class ExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus DISABLED = new ExportStatus("DISABLED");
+        /// <summary>
+        /// Constant DISABLING for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus DISABLING = new ExportStatus("DISABLING");
+        /// <summary>
+        /// Constant ENABLED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus ENABLED = new ExportStatus("ENABLED");
+        /// <summary>
+        /// Constant ENABLING for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus ENABLING = new ExportStatus("ENABLING");
+        /// <summary>
+        /// Constant FAILED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus FAILED = new ExportStatus("FAILED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportStatus FindValue(string value)
+        {
+            return FindValue<ExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FederationSourceErrorCode.
     /// </summary>
     public class FederationSourceErrorCode : ConstantClass

@@ -59,7 +59,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensNotes.
         /// </summary>
-        [AWSProperty(Max=2084)]
+        [AWSProperty(Min=0, Max=2084)]
         public string LensNotes
         {
             get { return this._lensNotes; }

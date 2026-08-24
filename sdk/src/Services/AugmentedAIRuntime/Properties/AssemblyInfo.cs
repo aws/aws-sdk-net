@@ -14,11 +14,14 @@ using System.Runtime.CompilerServices;
 #elif NETSTANDARD2_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
 
-#elif NETCOREAPP3_1
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Core 3.1) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
-
 #elif NET8_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
+
+#elif NET10_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
+
+#elif NET11_0
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 11.0) - Amazon Augmented AI Runtime. This release adds support for Amazon Augmented AI, which makes it easy to build workflows for human review of machine learning predictions.")]
 
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
@@ -49,4 +52,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.100.7")]
+[assembly: AssemblyFileVersion("4.0.100.9")]

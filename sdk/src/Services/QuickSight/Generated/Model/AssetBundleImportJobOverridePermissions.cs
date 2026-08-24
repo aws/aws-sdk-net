@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private List<AssetBundleImportJobDataSourceOverridePermissions> _dataSources = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSourceOverridePermissions>() : null;
         private List<AssetBundleImportJobFolderOverridePermissions> _folders = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobFolderOverridePermissions>() : null;
         private List<AssetBundleImportJobThemeOverridePermissions> _themes = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobThemeOverridePermissions>() : null;
+        private List<AssetBundleImportJobTopicV2OverridePermissions> _topicsV2 = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobTopicV2OverridePermissions>() : null;
 
         /// <summary>
         /// Gets and sets the property Analyses. 
@@ -189,6 +190,30 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetThemes()
         {
             return this._themes != null && (this._themes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TopicsV2. 
+        /// <para>
+        /// A list of permissions for the topics that you want to apply overrides to.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<AssetBundleImportJobTopicV2OverridePermissions> TopicsV2
+        {
+            get { return this._topicsV2; }
+            set { this._topicsV2 = value; }
+        }
+
+        // Check to see if TopicsV2 property is set
+        internal bool IsSetTopicsV2()
+        {
+            return this._topicsV2 != null && (this._topicsV2.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

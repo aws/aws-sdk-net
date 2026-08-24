@@ -31,11 +31,19 @@ namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the InvokeAgent operation.
-    /// <note> </note> 
+    /// <note> 
+    /// <para>
+    /// Amazon Bedrock Agents (now Amazon Bedrock Agents Classic) is no longer open to new
+    /// customers. For capabilities similar to Bedrock Agents Classic, explore Amazon Bedrock
+    /// AgentCore. Existing customers can continue to use the service as normal. For more
+    /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-classic-maintenance-mode.html">Amazon
+    /// Bedrock Agents Classic availability change</a>.
+    /// 
+    ///  </note> <note> </note> 
     /// <para>
     /// Sends a prompt for the agent to process and respond to. Note the following fields
     /// for the request:
-    /// 
+    /// </para>
     ///  <ul> <li> 
     /// <para>
     /// To continue the same conversation with an agent, use the same <c>sessionId</c> value

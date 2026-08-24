@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The customer's details.
+    /// The details of the participant, including their display name.
     /// </summary>
     public partial class ParticipantDetails
     {

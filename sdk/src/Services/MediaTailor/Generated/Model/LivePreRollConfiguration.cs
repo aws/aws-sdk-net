@@ -34,8 +34,29 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class LivePreRollConfiguration
     {
+        private PreRollAdDecisionServerConfiguration _adDecisionServerConfiguration;
         private string _adDecisionServerUrl;
         private int? _maxDurationSeconds;
+
+        /// <summary>
+        /// Gets and sets the property AdDecisionServerConfiguration. 
+        /// <para>
+        /// The configuration for the ad decision server (ADS) for live pre-roll ads. The configuration
+        /// contains settings that control how MediaTailor processes VAST responses for pre-roll
+        /// ad breaks.
+        /// </para>
+        /// </summary>
+        public PreRollAdDecisionServerConfiguration AdDecisionServerConfiguration
+        {
+            get { return this._adDecisionServerConfiguration; }
+            set { this._adDecisionServerConfiguration = value; }
+        }
+
+        // Check to see if AdDecisionServerConfiguration property is set
+        internal bool IsSetAdDecisionServerConfiguration()
+        {
+            return this._adDecisionServerConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AdDecisionServerUrl. 

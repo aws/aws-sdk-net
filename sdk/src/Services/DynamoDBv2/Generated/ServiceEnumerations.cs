@@ -2003,6 +2003,56 @@ namespace Amazon.DynamoDBv2
 
 
     /// <summary>
+    /// Constants used for properties of type SearchSchemaElementType.
+    /// </summary>
+    public class SearchSchemaElementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HASH for SearchSchemaElementType
+        /// </summary>
+        public static readonly SearchSchemaElementType HASH = new SearchSchemaElementType("HASH");
+        /// <summary>
+        /// Constant INLINE_FILTER for SearchSchemaElementType
+        /// </summary>
+        public static readonly SearchSchemaElementType INLINE_FILTER = new SearchSchemaElementType("INLINE_FILTER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchSchemaElementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchSchemaElementType FindValue(string value)
+        {
+            return FindValue<SearchSchemaElementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchSchemaElementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Select.
     /// </summary>
     public class Select : ConstantClass
@@ -2406,6 +2456,60 @@ namespace Amazon.DynamoDBv2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TimeToLiveStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VectorDistanceFunction.
+    /// </summary>
+    public class VectorDistanceFunction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COSINE for VectorDistanceFunction
+        /// </summary>
+        public static readonly VectorDistanceFunction COSINE = new VectorDistanceFunction("COSINE");
+        /// <summary>
+        /// Constant DOT_PRODUCT for VectorDistanceFunction
+        /// </summary>
+        public static readonly VectorDistanceFunction DOT_PRODUCT = new VectorDistanceFunction("DOT_PRODUCT");
+        /// <summary>
+        /// Constant EUCLIDEAN for VectorDistanceFunction
+        /// </summary>
+        public static readonly VectorDistanceFunction EUCLIDEAN = new VectorDistanceFunction("EUCLIDEAN");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VectorDistanceFunction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VectorDistanceFunction FindValue(string value)
+        {
+            return FindValue<VectorDistanceFunction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VectorDistanceFunction(string value)
         {
             return FindValue(value);
         }

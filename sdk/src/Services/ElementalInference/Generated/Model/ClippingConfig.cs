@@ -35,6 +35,7 @@ namespace Amazon.ElementalInference.Model
     public partial class ClippingConfig
     {
         private string _callbackMetadata;
+        private DataSourceConfiguration _dataSourceConfiguration;
 
         /// <summary>
         /// Gets and sets the property CallbackMetadata. 
@@ -55,6 +56,32 @@ namespace Amazon.ElementalInference.Model
         internal bool IsSetCallbackMetadata()
         {
             return this._callbackMetadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceConfiguration. 
+        /// <para>
+        /// The data source to map onto this clipping output. This parameter is optional. When
+        /// you include this parameter, Elemental Inference reads the event data for the fixture
+        /// that you specify, and includes that data in the event clipping metadata for this output.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, Elemental Inference doesn't map a data source onto this
+        /// output. 
+        /// </para>
+        /// </summary>
+        public DataSourceConfiguration DataSourceConfiguration
+        {
+            get { return this._dataSourceConfiguration; }
+            set { this._dataSourceConfiguration = value; }
+        }
+
+        // Check to see if DataSourceConfiguration property is set
+        internal bool IsSetDataSourceConfiguration()
+        {
+            return this._dataSourceConfiguration != null;
         }
 
     }

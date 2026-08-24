@@ -38,6 +38,7 @@ namespace Amazon.QuickSight.Model
         private List<string> _excludedDataSetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QBusinessInsightsStatus _qBusinessInsightsStatus;
         private string _timezone;
+        private VisualMessages _visualMessages;
         private DayOfTheWeek _weekStart;
 
         /// <summary>
@@ -117,6 +118,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetTimezone()
         {
             return this._timezone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VisualMessages. 
+        /// <para>
+        /// The configuration options for the messages that are displayed on visuals in the analysis.
+        /// </para>
+        /// </summary>
+        public VisualMessages VisualMessages
+        {
+            get { return this._visualMessages; }
+            set { this._visualMessages = value; }
+        }
+
+        // Check to see if VisualMessages property is set
+        internal bool IsSetVisualMessages()
+        {
+            return this._visualMessages != null;
         }
 
         /// <summary>

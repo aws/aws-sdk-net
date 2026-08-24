@@ -56,6 +56,12 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("templateGroups", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TemplateGroup, TemplateGroupUnmarshaller>(TemplateGroupUnmarshaller.Instance);
+                    unmarshalledObject.TemplateGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

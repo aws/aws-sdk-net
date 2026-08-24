@@ -2118,6 +2118,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public const string Contains = "contains (#c, #c)";
         public const string Not = "NOT (#c)";
         public const string Value = "#v";
+        public const string Name = "#n";
         public const string Plus = "#c + #c";
         public const string Minus = "#c - #c";
         public const string ListAppend = "list_append(#c, #c)";

@@ -135,8 +135,9 @@ namespace Amazon.ObservabilityAdmin.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        ///  The type of Amazon Web Services resource to configure telemetry for (e.g., "AWS::EC2::VPC",
-        /// "AWS::EKS::Cluster", "AWS::WAFv2::WebACL"). 
+        ///  The type of Amazon Web Services resource to configure telemetry for (for example,
+        /// <c>AWS::EC2::VPC</c>, <c>AWS::EKS::Cluster</c>, <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>,
+        /// or <c>AWS::Bedrock::KnowledgeBase</c>). 
         /// </para>
         /// </summary>
         public ResourceType ResourceType

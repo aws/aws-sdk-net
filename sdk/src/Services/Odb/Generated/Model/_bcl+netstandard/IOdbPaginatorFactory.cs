@@ -158,6 +158,36 @@ namespace Amazon.Odb.Model
         IListDbSystemShapesPaginator ListDbSystemShapes(ListDbSystemShapesRequest request);
 
         /// <summary>
+        /// Paginator for ListExadbVmClusters operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListExadbVmClustersPaginator ListExadbVmClusters(ListExadbVmClustersRequest request);
+
+        /// <summary>
+        /// Paginator for ListExascaleDbStorageVaults operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListExascaleDbStorageVaultsPaginator ListExascaleDbStorageVaults(ListExascaleDbStorageVaultsRequest request);
+
+        /// <summary>
+        /// Paginator for ListGiMinorVersions operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListGiMinorVersionsPaginator ListGiMinorVersions(ListGiMinorVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListGiVersions operation
         ///</summary>
         [AWSPaginator(

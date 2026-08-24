@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.Peft);
             }
 
+            if(requestObject.IsSetSequenceLength())
+            {
+                context.Writer.WritePropertyName("SequenceLength");
+                context.Writer.WriteStringValue(requestObject.SequenceLength);
+            }
+
         }
 
         /// <summary>

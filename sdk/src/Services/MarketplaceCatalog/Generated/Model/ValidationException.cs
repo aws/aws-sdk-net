@@ -42,6 +42,7 @@ namespace Amazon.MarketplaceCatalog.Model
     #endif
     public partial class ValidationException : AmazonMarketplaceCatalogException
     {
+        private List<ValidationExceptionField> _validationExceptionFieldList = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
 
         /// <summary>
         /// Default constructor for ValidationException
@@ -110,6 +111,7 @@ namespace Amazon.MarketplaceCatalog.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ValidationExceptionFieldList = (List<ValidationExceptionField>)info.GetValue("ValidationExceptionFieldList", typeof(List<ValidationExceptionField>));
         }
 
         /// <summary>
@@ -125,8 +127,33 @@ namespace Amazon.MarketplaceCatalog.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ValidationExceptionFieldList", this.ValidationExceptionFieldList);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ValidationExceptionFieldList. 
+        /// <para>
+        /// A list of detailed entries describing the request fields that failed validation. Present
+        /// when the failure can be attributed to one or more specific fields.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<ValidationExceptionField> ValidationExceptionFieldList
+        {
+            get { return this._validationExceptionFieldList; }
+            set { this._validationExceptionFieldList = value; }
+        }
+
+        // Check to see if ValidationExceptionFieldList property is set
+        internal bool IsSetValidationExceptionFieldList()
+        {
+            return this._validationExceptionFieldList != null && (this._validationExceptionFieldList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
     }
 }

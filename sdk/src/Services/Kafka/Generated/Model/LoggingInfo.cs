@@ -34,7 +34,27 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class LoggingInfo
     {
+        private AuthorizerLogs _authorizerLogs;
         private BrokerLogs _brokerLogs;
+
+        /// <summary>
+        /// Gets and sets the property AuthorizerLogs. 
+        /// <para>
+        /// You can configure your MSK cluster to send authorizer logs to different destination
+        /// types.
+        /// </para>
+        /// </summary>
+        public AuthorizerLogs AuthorizerLogs
+        {
+            get { return this._authorizerLogs; }
+            set { this._authorizerLogs = value; }
+        }
+
+        // Check to see if AuthorizerLogs property is set
+        internal bool IsSetAuthorizerLogs()
+        {
+            return this._authorizerLogs != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BrokerLogs.

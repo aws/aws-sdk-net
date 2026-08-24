@@ -39,6 +39,7 @@ namespace Amazon.ObservabilityAdmin.Model
         private string _destinationPattern;
         private DestinationType _destinationType;
         private ELBLoadBalancerLoggingParameters _elbLoadBalancerLoggingParameters;
+        private string _kmsKeyArn;
         private LogDeliveryParameters _logDeliveryParameters;
         private MskMonitoringParameters _mskMonitoringParameters;
         private int? _retentionInDays;
@@ -122,10 +123,31 @@ namespace Amazon.ObservabilityAdmin.Model
         }
 
         /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the customer-managed Amazon Web Services KMS key
+        /// used to encrypt the log groups created during telemetry rule remediation. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LogDeliveryParameters. 
         /// <para>
-        /// Configuration parameters specific to Amazon Bedrock AgentCore logging when Amazon
-        /// Bedrock AgentCore is the resource type.
+        /// The configuration parameters for log delivery when the resource type supports configurable
+        /// log types, such as Amazon Bedrock Knowledge Bases or Elastic Load Balancing Application
+        /// Load Balancers.
         /// </para>
         /// </summary>
         public LogDeliveryParameters LogDeliveryParameters

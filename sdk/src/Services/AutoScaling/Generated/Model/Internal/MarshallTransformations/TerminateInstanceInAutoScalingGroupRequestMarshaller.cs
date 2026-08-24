@@ -59,9 +59,27 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             if(publicRequest != null)
             {
+                if(publicRequest.IsSetAutoScalingGroupName())
+                {
+                    request.Parameters.Add("AutoScalingGroupName", StringUtils.FromString(publicRequest.AutoScalingGroupName));
+                }
                 if(publicRequest.IsSetInstanceId())
                 {
                     request.Parameters.Add("InstanceId", StringUtils.FromString(publicRequest.InstanceId));
+                }
+                if(publicRequest.IsSetInstanceIds())
+                {
+                    if (publicRequest.InstanceIds.Count == 0)
+                        request.Parameters.Add("InstanceIds", "");
+                    else
+                    {
+                         int publicRequestlistValueIndex = 1;
+                         foreach(var publicRequestlistValue in publicRequest.InstanceIds)
+                         {
+                             request.Parameters.Add("InstanceIds" + "." + "member" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                             publicRequestlistValueIndex++;
+                         }
+                    }
                 }
                 if(publicRequest.IsSetShouldDecrementDesiredCapacity())
                 {
