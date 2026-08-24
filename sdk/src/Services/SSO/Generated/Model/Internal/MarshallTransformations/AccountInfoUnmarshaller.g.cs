@@ -44,7 +44,7 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public AccountInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AccountInfo unmarshalledObject = new AccountInfo();
+            var unmarshalledObject = new AccountInfo();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

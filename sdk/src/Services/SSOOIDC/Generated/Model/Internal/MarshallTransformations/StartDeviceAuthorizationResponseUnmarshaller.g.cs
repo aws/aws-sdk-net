@@ -45,8 +45,8 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartDeviceAuthorizationResponse response = new StartDeviceAuthorizationResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var unmarshalledObject = new StartDeviceAuthorizationResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -55,47 +55,47 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                 if (context.TestExpression("deviceCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DeviceCode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DeviceCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("expiresIn", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.ExpiresIn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExpiresIn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("interval", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Interval = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Interval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("userCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.UserCode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.UserCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("verificationUri", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VerificationUri = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.VerificationUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("verificationUriComplete", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VerificationUriComplete = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.VerificationUriComplete = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
 
             errorResponse.InnerException = innerException;
@@ -115,7 +115,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
             {
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                     {
                         return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

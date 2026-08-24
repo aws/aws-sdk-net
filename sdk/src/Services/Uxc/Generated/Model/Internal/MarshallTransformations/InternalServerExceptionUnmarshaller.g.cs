@@ -53,7 +53,7 @@ namespace Amazon.Uxc.Model.Internal.MarshallTransformations
         /// </summary>
         public InternalServerException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            InternalServerException unmarshalledObject = new InternalServerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new InternalServerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             return unmarshalledObject;
         }

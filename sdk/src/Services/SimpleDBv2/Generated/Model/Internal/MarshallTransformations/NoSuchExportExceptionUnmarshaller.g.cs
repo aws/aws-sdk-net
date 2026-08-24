@@ -53,7 +53,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public NoSuchExportException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            NoSuchExportException unmarshalledObject = new NoSuchExportException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new NoSuchExportException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             return unmarshalledObject;
         }

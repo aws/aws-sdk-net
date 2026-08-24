@@ -27,6 +27,7 @@ using System.Text.Json;
 using System.Buffers;
 
 using Amazon.SimpleDBv2.Model;
+using System.Globalization;
 #if !NETFRAMEWORK
 using ThirdParty.RuntimeBackports;
 #endif
@@ -60,10 +61,10 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
             request.ResourcePath = "/v2/ListExports";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+            using var writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);

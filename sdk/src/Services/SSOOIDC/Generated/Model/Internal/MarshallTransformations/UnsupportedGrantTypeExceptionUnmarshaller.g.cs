@@ -53,7 +53,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
         /// </summary>
         public UnsupportedGrantTypeException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            UnsupportedGrantTypeException unmarshalledObject = new UnsupportedGrantTypeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new UnsupportedGrantTypeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             if (context.Stream.Length > 0)
             {
@@ -67,6 +67,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                         unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
+
                     if (context.TestExpression("error_description", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

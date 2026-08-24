@@ -53,7 +53,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public InvalidNextTokenException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            InvalidNextTokenException unmarshalledObject = new InvalidNextTokenException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new InvalidNextTokenException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             return unmarshalledObject;
         }

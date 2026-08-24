@@ -44,7 +44,7 @@ namespace Amazon.SupportApp.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public SlackWorkspaceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SlackWorkspaceConfiguration unmarshalledObject = new SlackWorkspaceConfiguration();
+            var unmarshalledObject = new SlackWorkspaceConfiguration();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

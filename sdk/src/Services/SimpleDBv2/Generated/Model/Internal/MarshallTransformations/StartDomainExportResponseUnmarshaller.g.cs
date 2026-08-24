@@ -45,8 +45,8 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            StartDomainExportResponse response = new StartDomainExportResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var unmarshalledObject = new StartDomainExportResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -55,26 +55,26 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("clientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("exportArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExportArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExportArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("requestedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.RequestedAt = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RequestedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
 
             errorResponse.InnerException = innerException;
@@ -94,7 +94,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
             {
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                     {
                         return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

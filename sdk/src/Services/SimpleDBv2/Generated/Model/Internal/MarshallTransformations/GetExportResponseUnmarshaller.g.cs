@@ -45,8 +45,8 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetExportResponse response = new GetExportResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var unmarshalledObject = new GetExportResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -55,110 +55,110 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("clientToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ClientToken = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ClientToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("domainName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DomainName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DomainName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("exportArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExportArn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExportArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("exportDataCutoffTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.ExportDataCutoffTime = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExportDataCutoffTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("exportManifest", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExportManifest = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExportManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("exportStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ExportStatus = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExportStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("failureCode", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureCode = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("failureMessage", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("itemsCount", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.ItemsCount = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ItemsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("requestedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.RequestedAt = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RequestedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("s3Bucket", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.S3Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("s3BucketOwner", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.S3BucketOwner = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.S3BucketOwner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("s3KeyPrefix", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.S3KeyPrefix = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("s3SseAlgorithm", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.S3SseAlgorithm = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.S3SseAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("s3SseKmsKeyId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.S3SseKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.S3SseKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
 
             errorResponse.InnerException = innerException;
@@ -178,7 +178,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
             {
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidParameterValueException"))
                     {
                         return InvalidParameterValueExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

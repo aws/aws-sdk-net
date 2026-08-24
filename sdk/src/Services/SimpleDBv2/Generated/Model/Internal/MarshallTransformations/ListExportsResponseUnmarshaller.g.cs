@@ -45,8 +45,8 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListExportsResponse response = new ListExportsResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var unmarshalledObject = new ListExportsResponse();
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
 
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
@@ -55,19 +55,19 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
                 if (context.TestExpression("exportSummaries", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<ExportSummary, ExportSummaryUnmarshaller>(ExportSummaryUnmarshaller.Instance);
-                    response.ExportSummaries = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.ExportSummaries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
 
                 if (context.TestExpression("nextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
 
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// </summary>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
 
             errorResponse.InnerException = innerException;
@@ -87,7 +87,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
             {
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidNextTokenException"))
                     {
                         return InvalidNextTokenExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

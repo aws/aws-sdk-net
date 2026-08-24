@@ -53,7 +53,7 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         /// </summary>
         public ServiceUnavailableException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            ServiceUnavailableException unmarshalledObject = new ServiceUnavailableException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new ServiceUnavailableException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             return unmarshalledObject;
         }

@@ -44,7 +44,7 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public ResultErrorEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ResultErrorEntry unmarshalledObject = new ResultErrorEntry();
+            var unmarshalledObject = new ResultErrorEntry();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

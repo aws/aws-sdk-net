@@ -44,7 +44,7 @@ namespace Amazon.Uxc.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public ValidationExceptionField Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ValidationExceptionField unmarshalledObject = new ValidationExceptionField();
+            var unmarshalledObject = new ValidationExceptionField();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

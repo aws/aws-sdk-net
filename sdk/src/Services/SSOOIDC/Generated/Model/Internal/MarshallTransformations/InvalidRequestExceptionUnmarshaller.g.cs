@@ -53,7 +53,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
         /// </summary>
         public InvalidRequestException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            InvalidRequestException unmarshalledObject = new InvalidRequestException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new InvalidRequestException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             if (context.Stream.Length > 0)
             {
@@ -67,12 +67,14 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
                         unmarshalledObject.Error = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
+
                     if (context.TestExpression("error_description", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Error_description = unmarshaller.Unmarshall(context, ref reader);
                         continue;
                     }
+
                     if (context.TestExpression("reason", targetDepth, ref reader))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

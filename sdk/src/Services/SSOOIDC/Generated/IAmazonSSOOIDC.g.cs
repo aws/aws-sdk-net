@@ -137,7 +137,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
         CreateTokenResponse CreateToken(CreateTokenRequest request);
 #endif
 
@@ -191,7 +191,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
         Task<CreateTokenResponse> CreateTokenAsync(CreateTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -258,7 +258,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
         CreateTokenWithIAMResponse CreateTokenWithIAM(CreateTokenWithIAMRequest request);
 #endif
 
@@ -328,7 +328,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
         Task<CreateTokenWithIAMResponse> CreateTokenWithIAMAsync(CreateTokenWithIAMRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -362,7 +362,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
         RegisterClientResponse RegisterClient(RegisterClientRequest request);
 #endif
 
@@ -399,7 +399,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
         Task<RegisterClientResponse> RegisterClientAsync(RegisterClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -429,7 +429,7 @@ namespace Amazon.SSOOIDC
         /// Indicates that the client is not currently authorized to make the request. This can
         /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         StartDeviceAuthorizationResponse StartDeviceAuthorization(StartDeviceAuthorizationRequest request);
 #endif
 
@@ -462,7 +462,7 @@ namespace Amazon.SSOOIDC
         /// Indicates that the client is not currently authorized to make the request. This can
         /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         Task<StartDeviceAuthorizationResponse> StartDeviceAuthorizationAsync(StartDeviceAuthorizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>

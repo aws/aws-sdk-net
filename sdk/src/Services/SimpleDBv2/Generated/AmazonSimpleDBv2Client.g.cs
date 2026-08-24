@@ -268,7 +268,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchExportException">
         /// Export with specified ARN does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual GetExportResponse GetExport(GetExportRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -302,7 +302,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchExportException">
         /// Export with specified ARN does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
         public virtual Task<GetExportResponse> GetExportAsync(GetExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -328,7 +328,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual ListExportsResponse ListExports(ListExportsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -366,7 +366,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
         public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -397,7 +397,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NumberExportsLimitExceededException">
         /// Cannot start export as export quota limit was exceeded
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
         public virtual StartDomainExportResponse StartDomainExport(StartDomainExportRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -440,7 +440,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NumberExportsLimitExceededException">
         /// Cannot start export as export quota limit was exceeded
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
         public virtual Task<StartDomainExportResponse> StartDomainExportAsync(StartDomainExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();

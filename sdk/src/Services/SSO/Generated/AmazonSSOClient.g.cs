@@ -293,7 +293,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/GetRoleCredentials">REST API Reference for GetRoleCredentials Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/GetRoleCredentials">REST API Reference for GetRoleCredentials Operation</seealso>
         public virtual GetRoleCredentialsResponse GetRoleCredentials(GetRoleCredentialsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -337,7 +337,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/GetRoleCredentials">REST API Reference for GetRoleCredentials Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/GetRoleCredentials">REST API Reference for GetRoleCredentials Operation</seealso>
         public virtual Task<GetRoleCredentialsResponse> GetRoleCredentialsAsync(GetRoleCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -368,7 +368,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/ListAccountRoles">REST API Reference for ListAccountRoles Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccountRoles">REST API Reference for ListAccountRoles Operation</seealso>
         public virtual ListAccountRolesResponse ListAccountRoles(ListAccountRolesRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -411,7 +411,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/ListAccountRoles">REST API Reference for ListAccountRoles Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccountRoles">REST API Reference for ListAccountRoles Operation</seealso>
         public virtual Task<ListAccountRolesResponse> ListAccountRolesAsync(ListAccountRolesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -445,7 +445,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         public virtual ListAccountsResponse ListAccounts(ListAccountsRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -491,7 +491,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/ListAccounts">REST API Reference for ListAccounts Operation</seealso>
         public virtual Task<ListAccountsResponse> ListAccountsAsync(ListAccountsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -538,7 +538,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/Logout">REST API Reference for Logout Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/Logout">REST API Reference for Logout Operation</seealso>
         public virtual LogoutResponse Logout(LogoutRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -597,7 +597,7 @@ namespace Amazon.SSO
         /// Indicates that the request is not authorized. This can happen due to an invalid access
         /// token in the request.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/portal.sso-2019-06-10/Logout">REST API Reference for Logout Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-2019-06-10/Logout">REST API Reference for Logout Operation</seealso>
         public virtual Task<LogoutResponse> LogoutAsync(LogoutRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();

@@ -27,6 +27,7 @@ using System.Text.Json;
 using System.Buffers;
 
 using Amazon.Uxc.Model;
+using System.Globalization;
 #if !NETFRAMEWORK
 using ThirdParty.RuntimeBackports;
 #endif

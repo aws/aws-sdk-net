@@ -44,7 +44,7 @@ namespace Amazon.SSO.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public RoleCredentials Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RoleCredentials unmarshalledObject = new RoleCredentials();
+            var unmarshalledObject = new RoleCredentials();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

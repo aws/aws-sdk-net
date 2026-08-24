@@ -53,7 +53,7 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         /// </summary>
         public DuplicatedAuditEventIdException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            DuplicatedAuditEventIdException unmarshalledObject = new DuplicatedAuditEventIdException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new DuplicatedAuditEventIdException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             return unmarshalledObject;
         }

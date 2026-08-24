@@ -185,7 +185,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
         CreateSlackChannelConfigurationResponse CreateSlackChannelConfiguration(CreateSlackChannelConfigurationRequest request);
 #endif
 
@@ -273,7 +273,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/CreateSlackChannelConfiguration">REST API Reference for CreateSlackChannelConfiguration Operation</seealso>
         Task<CreateSlackChannelConfigurationResponse> CreateSlackChannelConfigurationAsync(CreateSlackChannelConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -294,7 +294,7 @@ namespace Amazon.SupportApp
         /// The specified resource is missing or doesn't exist, such as an account alias, Slack
         /// channel configuration, or Slack workspace configuration.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         DeleteAccountAliasResponse DeleteAccountAlias(DeleteAccountAliasRequest request);
 #endif
 
@@ -318,7 +318,7 @@ namespace Amazon.SupportApp
         /// The specified resource is missing or doesn't exist, such as an account alias, Slack
         /// channel configuration, or Slack workspace configuration.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteAccountAlias">REST API Reference for DeleteAccountAlias Operation</seealso>
         Task<DeleteAccountAliasResponse> DeleteAccountAliasAsync(DeleteAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -377,7 +377,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
         DeleteSlackChannelConfigurationResponse DeleteSlackChannelConfiguration(DeleteSlackChannelConfigurationRequest request);
 #endif
 
@@ -439,7 +439,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackChannelConfiguration">REST API Reference for DeleteSlackChannelConfiguration Operation</seealso>
         Task<DeleteSlackChannelConfigurationResponse> DeleteSlackChannelConfigurationAsync(DeleteSlackChannelConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -498,7 +498,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/DeleteSlackWorkspaceConfiguration">REST API Reference for DeleteSlackWorkspaceConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackWorkspaceConfiguration">REST API Reference for DeleteSlackWorkspaceConfiguration Operation</seealso>
         DeleteSlackWorkspaceConfigurationResponse DeleteSlackWorkspaceConfiguration(DeleteSlackWorkspaceConfigurationRequest request);
 #endif
 
@@ -560,7 +560,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/DeleteSlackWorkspaceConfiguration">REST API Reference for DeleteSlackWorkspaceConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/DeleteSlackWorkspaceConfiguration">REST API Reference for DeleteSlackWorkspaceConfiguration Operation</seealso>
         Task<DeleteSlackWorkspaceConfigurationResponse> DeleteSlackWorkspaceConfigurationAsync(DeleteSlackWorkspaceConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -574,7 +574,7 @@ namespace Amazon.SupportApp
         /// <exception cref="Amazon.SupportApp.Model.InternalServerException">
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/GetAccountAlias">REST API Reference for GetAccountAlias Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/GetAccountAlias">REST API Reference for GetAccountAlias Operation</seealso>
         GetAccountAliasResponse GetAccountAlias(GetAccountAliasRequest request);
 #endif
 
@@ -591,7 +591,7 @@ namespace Amazon.SupportApp
         /// <exception cref="Amazon.SupportApp.Model.InternalServerException">
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/GetAccountAlias">REST API Reference for GetAccountAlias Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/GetAccountAlias">REST API Reference for GetAccountAlias Operation</seealso>
         Task<GetAccountAliasResponse> GetAccountAliasAsync(GetAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -606,7 +606,7 @@ namespace Amazon.SupportApp
         /// <exception cref="Amazon.SupportApp.Model.InternalServerException">
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/ListSlackChannelConfigurations">REST API Reference for ListSlackChannelConfigurations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackChannelConfigurations">REST API Reference for ListSlackChannelConfigurations Operation</seealso>
         ListSlackChannelConfigurationsResponse ListSlackChannelConfigurations(ListSlackChannelConfigurationsRequest request);
 #endif
 
@@ -624,7 +624,7 @@ namespace Amazon.SupportApp
         /// <exception cref="Amazon.SupportApp.Model.InternalServerException">
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/ListSlackChannelConfigurations">REST API Reference for ListSlackChannelConfigurations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackChannelConfigurations">REST API Reference for ListSlackChannelConfigurations Operation</seealso>
         Task<ListSlackChannelConfigurationsResponse> ListSlackChannelConfigurationsAsync(ListSlackChannelConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -639,7 +639,7 @@ namespace Amazon.SupportApp
         /// <exception cref="Amazon.SupportApp.Model.InternalServerException">
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/ListSlackWorkspaceConfigurations">REST API Reference for ListSlackWorkspaceConfigurations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackWorkspaceConfigurations">REST API Reference for ListSlackWorkspaceConfigurations Operation</seealso>
         ListSlackWorkspaceConfigurationsResponse ListSlackWorkspaceConfigurations(ListSlackWorkspaceConfigurationsRequest request);
 #endif
 
@@ -657,7 +657,7 @@ namespace Amazon.SupportApp
         /// <exception cref="Amazon.SupportApp.Model.InternalServerException">
         /// We can’t process your request right now because of a server issue. Try again later.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/ListSlackWorkspaceConfigurations">REST API Reference for ListSlackWorkspaceConfigurations Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/ListSlackWorkspaceConfigurations">REST API Reference for ListSlackWorkspaceConfigurations Operation</seealso>
         Task<ListSlackWorkspaceConfigurationsResponse> ListSlackWorkspaceConfigurationsAsync(ListSlackWorkspaceConfigurationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -679,7 +679,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/PutAccountAlias">REST API Reference for PutAccountAlias Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/PutAccountAlias">REST API Reference for PutAccountAlias Operation</seealso>
         PutAccountAliasResponse PutAccountAlias(PutAccountAliasRequest request);
 #endif
 
@@ -704,7 +704,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/PutAccountAlias">REST API Reference for PutAccountAlias Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/PutAccountAlias">REST API Reference for PutAccountAlias Operation</seealso>
         Task<PutAccountAliasResponse> PutAccountAliasAsync(PutAccountAliasRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -806,7 +806,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/RegisterSlackWorkspaceForOrganization">REST API Reference for RegisterSlackWorkspaceForOrganization Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/RegisterSlackWorkspaceForOrganization">REST API Reference for RegisterSlackWorkspaceForOrganization Operation</seealso>
         RegisterSlackWorkspaceForOrganizationResponse RegisterSlackWorkspaceForOrganization(RegisterSlackWorkspaceForOrganizationRequest request);
 #endif
 
@@ -911,7 +911,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/RegisterSlackWorkspaceForOrganization">REST API Reference for RegisterSlackWorkspaceForOrganization Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/RegisterSlackWorkspaceForOrganization">REST API Reference for RegisterSlackWorkspaceForOrganization Operation</seealso>
         Task<RegisterSlackWorkspaceForOrganizationResponse> RegisterSlackWorkspaceForOrganizationAsync(RegisterSlackWorkspaceForOrganizationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -969,7 +969,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
         UpdateSlackChannelConfigurationResponse UpdateSlackChannelConfiguration(UpdateSlackChannelConfigurationRequest request);
 #endif
 
@@ -1030,7 +1030,7 @@ namespace Amazon.SupportApp
         /// Your request input doesn't meet the constraints that the Amazon Web Services Support
         /// App specifies.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/supportapp-2021-08-20/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-app-2021-08-20/UpdateSlackChannelConfiguration">REST API Reference for UpdateSlackChannelConfiguration Operation</seealso>
         Task<UpdateSlackChannelConfigurationResponse> UpdateSlackChannelConfigurationAsync(UpdateSlackChannelConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>

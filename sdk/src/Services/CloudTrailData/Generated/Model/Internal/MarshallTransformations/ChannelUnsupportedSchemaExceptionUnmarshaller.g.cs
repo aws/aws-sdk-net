@@ -53,7 +53,7 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         /// </summary>
         public ChannelUnsupportedSchemaException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            ChannelUnsupportedSchemaException unmarshalledObject = new ChannelUnsupportedSchemaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            var unmarshalledObject = new ChannelUnsupportedSchemaException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             return unmarshalledObject;
         }

@@ -44,7 +44,7 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public Credentials Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Credentials unmarshalledObject = new Credentials();
+            var unmarshalledObject = new Credentials();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

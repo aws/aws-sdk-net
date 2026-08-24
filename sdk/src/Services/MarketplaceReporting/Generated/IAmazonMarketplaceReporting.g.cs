@@ -139,7 +139,7 @@ namespace Amazon.MarketplaceReporting
         /// <exception cref="Amazon.MarketplaceReporting.Model.UnauthorizedException">
         /// You do not have permission to perform this action.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/reporting-marketplace-2018-05-10/GetBuyerDashboard">REST API Reference for GetBuyerDashboard Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-reporting-2018-05-10/GetBuyerDashboard">REST API Reference for GetBuyerDashboard Operation</seealso>
         GetBuyerDashboardResponse GetBuyerDashboard(GetBuyerDashboardRequest request);
 #endif
 
@@ -186,7 +186,7 @@ namespace Amazon.MarketplaceReporting
         /// <exception cref="Amazon.MarketplaceReporting.Model.UnauthorizedException">
         /// You do not have permission to perform this action.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/reporting-marketplace-2018-05-10/GetBuyerDashboard">REST API Reference for GetBuyerDashboard Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-reporting-2018-05-10/GetBuyerDashboard">REST API Reference for GetBuyerDashboard Operation</seealso>
         Task<GetBuyerDashboardResponse> GetBuyerDashboardAsync(GetBuyerDashboardRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>

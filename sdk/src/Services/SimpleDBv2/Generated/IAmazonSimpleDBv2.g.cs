@@ -61,7 +61,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchExportException">
         /// Export with specified ARN does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
         GetExportResponse GetExport(GetExportRequest request);
 #endif
 
@@ -79,7 +79,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchExportException">
         /// Export with specified ARN does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/GetExport">REST API Reference for GetExport Operation</seealso>
         Task<GetExportResponse> GetExportAsync(GetExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -98,7 +98,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
         ListExportsResponse ListExports(ListExportsRequest request);
 #endif
 
@@ -120,7 +120,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NoSuchDomainException">
         /// The specified domain does not exist.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/ListExports">REST API Reference for ListExports Operation</seealso>
         Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -144,7 +144,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NumberExportsLimitExceededException">
         /// Cannot start export as export quota limit was exceeded
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
         StartDomainExportResponse StartDomainExport(StartDomainExportRequest request);
 #endif
 
@@ -171,7 +171,7 @@ namespace Amazon.SimpleDBv2
         /// <exception cref="Amazon.SimpleDBv2.Model.NumberExportsLimitExceededException">
         /// Cannot start export as export quota limit was exceeded
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sdb-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simpledbv2-2025-09-26/StartDomainExport">REST API Reference for StartDomainExport Operation</seealso>
         Task<StartDomainExportResponse> StartDomainExportAsync(StartDomainExportRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>

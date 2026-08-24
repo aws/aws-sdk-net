@@ -44,7 +44,7 @@ namespace Amazon.SimpleDBv2.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public ExportSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ExportSummary unmarshalledObject = new ExportSummary();
+            var unmarshalledObject = new ExportSummary();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

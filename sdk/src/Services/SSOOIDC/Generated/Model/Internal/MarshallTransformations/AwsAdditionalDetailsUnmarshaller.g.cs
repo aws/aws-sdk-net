@@ -44,7 +44,7 @@ namespace Amazon.SSOOIDC.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public AwsAdditionalDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            AwsAdditionalDetails unmarshalledObject = new AwsAdditionalDetails();
+            var unmarshalledObject = new AwsAdditionalDetails();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

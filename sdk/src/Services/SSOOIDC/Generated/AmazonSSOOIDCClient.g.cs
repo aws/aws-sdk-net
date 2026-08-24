@@ -333,7 +333,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual CreateTokenResponse CreateToken(CreateTokenRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -403,7 +403,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateToken">REST API Reference for CreateToken Operation</seealso>
         public virtual Task<CreateTokenResponse> CreateTokenAsync(CreateTokenRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -477,7 +477,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
         public virtual CreateTokenWithIAMResponse CreateTokenWithIAM(CreateTokenWithIAMRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -563,7 +563,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/CreateTokenWithIAM">REST API Reference for CreateTokenWithIAM Operation</seealso>
         public virtual Task<CreateTokenWithIAMResponse> CreateTokenWithIAMAsync(CreateTokenWithIAMRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -604,7 +604,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
         public virtual RegisterClientResponse RegisterClient(RegisterClientRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -657,7 +657,7 @@ namespace Amazon.SSOOIDC
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/RegisterClient">REST API Reference for RegisterClient Operation</seealso>
         public virtual Task<RegisterClientResponse> RegisterClientAsync(RegisterClientRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -694,7 +694,7 @@ namespace Amazon.SSOOIDC
         /// Indicates that the client is not currently authorized to make the request. This can
         /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         public virtual StartDeviceAuthorizationResponse StartDeviceAuthorization(StartDeviceAuthorizationRequest request)
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
@@ -743,7 +743,7 @@ namespace Amazon.SSOOIDC
         /// Indicates that the client is not currently authorized to make the request. This can
         /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         public virtual Task<StartDeviceAuthorizationResponse> StartDeviceAuthorizationAsync(StartDeviceAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
             var options = new Amazon.Runtime.Internal.InvokeOptions();
