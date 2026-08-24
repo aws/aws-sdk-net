@@ -203,7 +203,9 @@ public class GenerationContext
         // name (some services, e.g. inspector-scan, omit endpointPrefix and rely on it).
         EndpointPrefix = (serviceTrait.EndpointPrefix ?? signingName).ToLowerInvariant();
 
-        ServiceUid = $"{SdkId.Replace(' ', '-').ToLowerInvariant()}-{ApiVersion}";
+        // Use docId when modeled (some services override the default, e.g. CloudWatch → monitoring-...);
+        // otherwise derive from the sdkId slug + apiVersion.
+        ServiceUid = serviceTrait.DocId ?? $"{SdkId.Replace(' ', '-').ToLowerInvariant()}-{ApiVersion}";
 
         // AuthenticationServiceName is the resolved signing name.
         AuthenticationServiceName = signingName;

@@ -21,6 +21,9 @@ public record AWSServiceTrait : TraitRecord
 
     [JsonPropertyName("abbreviatedName")]
     public string? AbbreviatedName { get; init; }
+
+    [JsonPropertyName("docId")]
+    public string? DocId { get; init; }
 }
 
 /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-sigv4-trait" /></remarks>

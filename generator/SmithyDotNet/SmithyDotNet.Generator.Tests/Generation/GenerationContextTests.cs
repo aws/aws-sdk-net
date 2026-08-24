@@ -79,6 +79,13 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void ServiceUid_UsesDocIdWhenPresent()
+    {
+        var context = TestModels.Context("Codegen/service-with-docid-model.json");
+        Assert.Equal("monitoring-2010-08-01", context.ServiceUid);
+    }
+
+    [Fact]
     public void HasEndpointContextParams_IsFalseForCloudTrailData()
     {
         // CloudTrailData uses no context params. If detection over-fires, the resolver writer throws
