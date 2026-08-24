@@ -25,6 +25,68 @@ namespace Amazon.ConnectContactLens
 {
 
     /// <summary>
+    /// Constants used for properties of type ExtractedInformationFailureCode.
+    /// </summary>
+    public class ExtractedInformationFailureCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_SAFETY_GUIDELINES for ExtractedInformationFailureCode
+        /// </summary>
+        public static readonly ExtractedInformationFailureCode FAILED_SAFETY_GUIDELINES = new ExtractedInformationFailureCode("FAILED_SAFETY_GUIDELINES");
+        /// <summary>
+        /// Constant INSUFFICIENT_CONVERSATION_CONTENT for ExtractedInformationFailureCode
+        /// </summary>
+        public static readonly ExtractedInformationFailureCode INSUFFICIENT_CONVERSATION_CONTENT = new ExtractedInformationFailureCode("INSUFFICIENT_CONVERSATION_CONTENT");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for ExtractedInformationFailureCode
+        /// </summary>
+        public static readonly ExtractedInformationFailureCode INTERNAL_ERROR = new ExtractedInformationFailureCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant MAX_PACKAGE_FEATURE_ONLY for ExtractedInformationFailureCode
+        /// </summary>
+        public static readonly ExtractedInformationFailureCode MAX_PACKAGE_FEATURE_ONLY = new ExtractedInformationFailureCode("MAX_PACKAGE_FEATURE_ONLY");
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for ExtractedInformationFailureCode
+        /// </summary>
+        public static readonly ExtractedInformationFailureCode QUOTA_EXCEEDED = new ExtractedInformationFailureCode("QUOTA_EXCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExtractedInformationFailureCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExtractedInformationFailureCode FindValue(string value)
+        {
+            return FindValue<ExtractedInformationFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExtractedInformationFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PostContactSummaryFailureCode.
     /// </summary>
     public class PostContactSummaryFailureCode : ConstantClass

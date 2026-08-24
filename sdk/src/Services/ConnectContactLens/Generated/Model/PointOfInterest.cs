@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectContactLens.Model
 {
     /// <summary>
-    /// The section of the contact audio where that category rule was detected.
+    /// The section of the contact audio where a match was detected.
     /// </summary>
     public partial class PointOfInterest
     {
@@ -40,7 +40,7 @@ namespace Amazon.ConnectContactLens.Model
         /// <summary>
         /// Gets and sets the property BeginOffsetMillis. 
         /// <para>
-        /// The beginning offset in milliseconds where the category rule was detected.
+        /// The beginning offset (in milliseconds) where the match was detected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -59,7 +59,7 @@ namespace Amazon.ConnectContactLens.Model
         /// <summary>
         /// Gets and sets the property EndOffsetMillis. 
         /// <para>
-        /// The ending offset in milliseconds where the category rule was detected.
+        /// The ending offset (in milliseconds) where the match was detected.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

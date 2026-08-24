@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RealtimeContactAnalysisSegment Object
+    /// Response Unmarshaller for ExtractedInformation Object
     /// </summary>  
-    public class RealtimeContactAnalysisSegmentUnmarshaller : IJsonUnmarshaller<RealtimeContactAnalysisSegment, JsonUnmarshallerContext>
+    public class ExtractedInformationUnmarshaller : IJsonUnmarshaller<ExtractedInformation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RealtimeContactAnalysisSegment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public ExtractedInformation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RealtimeContactAnalysisSegment unmarshalledObject = new RealtimeContactAnalysisSegment();
+            ExtractedInformation unmarshalledObject = new ExtractedInformation();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,34 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Categories", targetDepth, ref reader))
+                if (context.TestExpression("ExtractedValues", targetDepth, ref reader))
                 {
-                    var unmarshaller = CategoriesUnmarshaller.Instance;
-                    unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<ExtractedInformationValue, ExtractedInformationValueUnmarshaller>(ExtractedInformationValueUnmarshaller.Instance);
+                    unmarshalledObject.ExtractedValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ExtractedInformation", targetDepth, ref reader))
+                if (context.TestExpression("ExtractionDefinitionDisplayLabel", targetDepth, ref reader))
                 {
-                    var unmarshaller = ExtractedInformationUnmarshaller.Instance;
-                    unmarshalledObject.ExtractedInformation = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExtractionDefinitionDisplayLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("PostContactSummary", targetDepth, ref reader))
+                if (context.TestExpression("ExtractionDefinitionId", targetDepth, ref reader))
                 {
-                    var unmarshaller = PostContactSummaryUnmarshaller.Instance;
-                    unmarshalledObject.PostContactSummary = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExtractionDefinitionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("Transcript", targetDepth, ref reader))
+                if (context.TestExpression("ExtractionDefinitionName", targetDepth, ref reader))
                 {
-                    var unmarshaller = TranscriptUnmarshaller.Instance;
-                    unmarshalledObject.Transcript = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExtractionDefinitionName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("FailureCode", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FailureCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +91,12 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
         }
 
 
-        private static RealtimeContactAnalysisSegmentUnmarshaller _instance = new RealtimeContactAnalysisSegmentUnmarshaller();        
+        private static ExtractedInformationUnmarshaller _instance = new ExtractedInformationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RealtimeContactAnalysisSegmentUnmarshaller Instance
+        public static ExtractedInformationUnmarshaller Instance
         {
             get
             {

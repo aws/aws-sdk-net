@@ -38,6 +38,28 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.ExtractedInformation.ExtractionDefinitionDisplayLabel</property>
+    <min>0</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.ExtractedInformation.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.ExtractedInformation.ExtractionDefinitionName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ConnectContactLens.Model.ExtractedInformationValue.Content</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectContactLens.Model.PointOfInterest.BeginOffsetMillis</property>
     <min>0</min>
   </property-value-rule>
