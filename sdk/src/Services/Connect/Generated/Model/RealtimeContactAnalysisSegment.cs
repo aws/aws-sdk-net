@@ -37,6 +37,7 @@ namespace Amazon.Connect.Model
         private RealTimeContactAnalysisSegmentAttachments _attachments;
         private RealTimeContactAnalysisSegmentCategories _categories;
         private RealTimeContactAnalysisSegmentEvent _event;
+        private RealTimeContactAnalysisSegmentExtractedInformation _extractedInformation;
         private RealTimeContactAnalysisSegmentIssues _issues;
         private RealTimeContactAnalysisSegmentPostContactSummary _postContactSummary;
         private RealTimeContactAnalysisSegmentTranscript _transcript;
@@ -87,6 +88,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetEvent()
         {
             return this._event != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtractedInformation. 
+        /// <para>
+        /// The extracted information from the conversation.
+        /// </para>
+        /// </summary>
+        public RealTimeContactAnalysisSegmentExtractedInformation ExtractedInformation
+        {
+            get { return this._extractedInformation; }
+            set { this._extractedInformation = value; }
+        }
+
+        // Check to see if ExtractedInformation property is set
+        internal bool IsSetExtractedInformation()
+        {
+            return this._extractedInformation != null;
         }
 
         /// <summary>

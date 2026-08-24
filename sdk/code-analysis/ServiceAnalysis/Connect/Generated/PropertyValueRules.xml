@@ -7542,6 +7542,11 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisExtractedInformationValue.Content</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentAttachments.DisplayName</property>
     <min>1</min>
     <max>256</max>
@@ -7575,6 +7580,20 @@
     <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentEvent.ParticipantId</property>
     <min>1</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentExtractedInformation.ExtractionDefinitionDisplayLabel</property>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentExtractedInformation.ExtractionDefinitionId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentExtractedInformation.ExtractionDefinitionName</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.RealTimeContactAnalysisSegmentPostContactSummary.Content</property>
