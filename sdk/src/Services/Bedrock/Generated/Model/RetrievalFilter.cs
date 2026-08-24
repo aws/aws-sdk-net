@@ -232,7 +232,7 @@ namespace Amazon.Bedrock.Model
         ///  
         /// <para>
         /// The following example would return data sources with an animals attribute that is
-        /// a list containing a cat member (for example, <c>["dog", "cat"]</c>): <c>"listContains":
+        /// a list containing a cat member (for example, <c>["dog", "cat"] </c>): <c>"listContains":
         /// { "key": "animals", "value": "cat" }</c> 
         /// </para>
         /// </summary>
