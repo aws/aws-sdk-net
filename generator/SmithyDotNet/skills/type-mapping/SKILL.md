@@ -25,8 +25,8 @@ Definitive mapping from Smithy shape types to .NET types, plus nullability and c
 | `bigDecimal` | — | Not supported yet — throws |
 | `blob` | `MemoryStream` | Not supported yet — throws. Target: streaming blobs → `Stream`, non-streaming → `MemoryStream` |
 | `document` | `Amazon.Runtime.Documents.Document` | Not supported yet — throws. SDK runtime type |
-| `enum` | `string` (Phase 1) / `ConstantClass` (Phase 2) | Not supported yet — throws. Phase 2 uses the `ConstantClass` pattern |
-| `intEnum` | `int?` | Not supported yet — throws |
+| `enum` | `ConstantClass` | The class the `ServiceEnumerationsWriter` emits (see `TypeMapper.EnumTypeName`); marshals as a string via implicit conversion, matching C2J |
+| `intEnum` | `int?` | No `ConstantClass` — C2J has no `intEnum`, so it maps to a plain nullable int like `IntegerShape` |
 | `list` | `List<T>` | V4 default: `null`; see Collection Defaults |
 | `map` | `Dictionary<TKey, TValue>` | V4 default: `null`; see Collection Defaults |
 | `structure` | Generated class | See structure rules below |

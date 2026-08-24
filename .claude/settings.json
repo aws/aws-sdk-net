@@ -1,0 +1,19 @@
+{
+  "outputStyle": "Concise",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Edit(generator/ServiceModels/_smithy-migrated-services.json)",
+            "command": "pwsh",
+            "args": ["-NoProfile", "-File", ".claude/hooks/require-parity-sop.ps1"],
+            "statusMessage": "Flagging migration parity requirement..."
+          }
+        ]
+      }
+    ]
+  }
+}
