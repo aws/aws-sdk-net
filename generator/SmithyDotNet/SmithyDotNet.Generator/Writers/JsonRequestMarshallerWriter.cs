@@ -155,14 +155,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         foreach (var (member, queryName) in queryMembers)
         {
-            var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
-                ?? throw new GeneratorException($"Unsupported query member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
-
             // An idempotency token is auto-populated, so it is never "required from the customer".
             if (member.IsRequired && !member.IsIdempotencyToken)
             {
-                // A real string is checked for empty; anything else (including an enum's
-                // ConstantClass, a reference type) is checked for null.
+                // A real string is checked for empty; anything else (an enum's ConstantClass, a list,
+                // a reference type) is checked for null.
                 var guard = member.Type.IsString
                     ? $"string.IsNullOrEmpty(publicRequest.{member.PropertyName})"
                     : $"publicRequest.{member.PropertyName} == null";
@@ -175,7 +172,20 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"""request.Parameters.Add("{queryName}", {conversion});""");
+                // A list<string> adds repeated params via the typed ParameterCollection overload;
+                // request.Parameters is a string-only IDictionary facade over the same collection and
+                // cannot take a List<string>. Scalars stay on StringConversion, which still throws for
+                // any unsupported type.
+                if (member.Type.Element is { IsString: true })
+                {
+                    writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName});""");
+                }
+                else
+                {
+                    var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
+                        ?? throw new GeneratorException($"Unsupported query member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
+                    writer.WriteLine($"""request.Parameters.Add("{queryName}", {conversion});""");
+                }
             });
             if (member.IsIdempotencyToken)
             {
@@ -193,15 +203,26 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         foreach (var (member, headerName) in headerMembers)
         {
-            var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", HeaderTimestampDefault)
-                ?? throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
             writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                // A string header is assigned directly; scalars go through StringUtils. An enum marshals
-                // as a string too (implicit ConstantClass->string), so it is assigned directly as well.
-                writer.WriteLine(member.Type.MarshalsAsString
-                    ? $"""request.Headers["{headerName}"] = publicRequest.{member.PropertyName};"""
-                    : $"""request.Headers["{headerName}"] = {conversion};""");
+                // A list<string> header joins to one comma-separated value via StringUtils.FromList
+                // (RFC-7230 quoting). A string/enum header is assigned directly (an enum's ConstantClass
+                // converts implicitly to string). Other scalars go through StringUtils; an unsupported
+                // type throws.
+                if (member.Type.Element is { IsString: true })
+                {
+                    writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromList(publicRequest.{member.PropertyName});""");
+                }
+                else if (member.Type.MarshalsAsString)
+                {
+                    writer.WriteLine($"""request.Headers["{headerName}"] = publicRequest.{member.PropertyName};""");
+                }
+                else
+                {
+                    var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", HeaderTimestampDefault)
+                        ?? throw new GeneratorException($"Unsupported header member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
+                    writer.WriteLine($"""request.Headers["{headerName}"] = {conversion};""");
+                }
             });
             writer.WriteLine("");
         }

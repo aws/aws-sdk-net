@@ -215,11 +215,13 @@ public class TypeMapperTests
     [Theory]
     [InlineData("com.example#Status")]   // string enum element
     [InlineData("com.example#Priority")] // intEnum element
-    public void EnumCollectionElement_Throws(string elementTarget)
+    [InlineData("smithy.api#Integer")]   // value-type element
+    public void UnsupportedCollectionElement_Throws(string elementTarget)
     {
         // The marshaller writers only route string and structure list elements; an enum element would
-        // map to its ConstantClass, which WriteListElement can't emit. MapType must fail loud here
-        // rather than mapping the type and blowing up deep in the writer.
+        // map to its ConstantClass and a value-type element to a primitive, neither of which
+        // WriteListElement can emit. MapType must fail loud here rather than mapping the type and
+        // blowing up deep in the writer.
         var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
         var id = ShapeId.Parse("com.example#EnumList");
         Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));

@@ -9,6 +9,7 @@
         { "target": "com.example#DoConflict" },
         { "target": "com.example#DoEnums" },
         { "target": "com.example#DoHeaderOnly" },
+        { "target": "com.example#DoLists" },
         { "target": "com.example#DoScalars" },
         { "target": "com.example#DoShadow" }
       ],
@@ -220,6 +221,24 @@
         "seq":      { "target": "smithy.api#Integer" },
         "when":     { "target": "smithy.api#Timestamp" }
       }
+    },
+    "com.example#DoLists": {
+      "type": "operation",
+      "input": { "target": "com.example#DoListsRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/lists", "method": "POST" } }
+    },
+    "com.example#DoListsRequest": {
+      "type": "structure",
+      "members": {
+        "tagKeys":      { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "tagKeys" } },
+        "requiredKeys": { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "requiredKeys", "smithy.api#required": {} } },
+        "tokens":       { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-tokens" } }
+      }
+    },
+    "com.example#StringList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
     },
     "com.example#DoShadow": {
       "type": "operation",

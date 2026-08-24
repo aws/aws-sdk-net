@@ -41,13 +41,23 @@ Then serializes members based on placement rules, then returns `request`.
 
 | Smithy trait | Where | SDK pattern |
 |---|---|---|
-| `@httpQuery("name")` | Query string | `request.Parameters.Add("name", StringUtils.FromString(...))` |
+| `@httpQuery("name")` scalar | Query string | `request.Parameters.Add("name", StringUtils.FromString(...))` |
+| `@httpQuery("name")` `list<string>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop)` (repeated params, ordinal-sorted at runtime) |
 | `@httpLabel` | URI segment | Replace `{member}` in `request.ResourcePath` |
-| `@httpHeader("name")` | Header | `request.Headers["name"] = ...` |
+| `@httpHeader("name")` scalar | Header | `request.Headers["name"] = ...` |
+| `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
 | `@httpPrefixHeaders("prefix")` | Multiple headers | Loop dict, prefix each key |
 | `@httpPayload` | Entire body | Direct stream/string (skips body serialization) |
 | `@httpResponseCode` | (response only) | `response.HttpStatusCode` |
 | No HTTP trait | Body | Protocol-specific serialization |
+
+List query/header bindings are `list<string>` only. `request.ParameterCollection`
+(not the string-only `request.Parameters` facade) carries the `List<string>` query
+overload. A list of any non-string element (enum, int, long, bool, double, timestamp)
+fails loud during member resolution (`TypeMapper.RejectUnsupportedCollectionElement`);
+no restJson1 service emits one today. Enum lists are excluded on purpose: C2J
+surfaces them as `List<string>`, but this generator would type them as
+`List<ConstantClass>`. That public API decision is tracked in a follow-up task.
 
 For `awsJson1.x` and `query`/`ec2Query`: all members go in the body (no HTTP binding traits).
 
