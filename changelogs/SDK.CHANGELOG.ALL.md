@@ -1,3 +1,55 @@
+### 4.0.318.0 (2026-08-24 18:25 UTC)
+* Batch (4.0.102.1)
+	* Doc Update, Add note that UpdatePolicy applies only to EC2 managed compute environments
+* Bedrock (4.0.101.0)
+	* Adds support for specifying an inference profile ID or ARN, or an application inference profile ARN as the target model in CreateAdvancedPromptOptimizationJob.
+* CloudTrailData (4.0.100.13)
+	* Minor update to the generated code. There are no changes to the public API.
+* Connect (4.0.112.0)
+	* This release adds the ExtractedInformation segment to the ListRealtimeContactAnalysisSegmentsV2 API, enabling customers to retrieve information extracted from real-time contact analysis.
+* ConnectContactLens (4.0.101.0)
+	* This release adds the ExtractedInformation segment to the ListRealtimeContactAnalysisSegments API, enabling customers to retrieve information extracted from real-time contact analysis.
+* DSQL (4.0.103.0)
+	* Corrected the validation pattern on the ServiceName response field in the GetVpcEndpointServiceName API to match the values Amazon Aurora DSQL actually returns.
+	* Internal refactor of the DSQL auth token generator to build its presigned token via the public `Amazon.Runtime.Signing.AWSSigV4Signer` facade. Token output is unchanged. The .NET Framework target now references `System.Net.Http`.
+* EKSAuth (4.0.101.5)
+	* Minor update to the generated code. There are no changes to the public API.
+* ElementalInference (4.0.104.0)
+	* Added support for the GetFixture API, enabling customers to retrieve the details of a fixture from its fixture ID, and added the access role ARN to the CreateFeed, GetFeed, and UpdateFeed responses.
+* Kafka (4.0.103.0)
+	* Amazon MSK Replicator now supports OAuth authentication when connecting to external Apache Kafka clusters, enabling customers to replicate data from clusters that require OAuth for client authentication. This new capability is supported in all AWS Regions where MSK Express brokers are available.
+* KinesisVideoWebRTCStorage (4.0.100.12)
+	* Minor update to the generated code. There are no changes to the public API.
+	* Fix `seealso` links to API reference docs in generated service client
+* LaunchWizard (4.0.101.0)
+	* Added accountConstraints and patternType to GetWorkload, ListWorkloads, GetWorkloadDeploymentPattern and ListWorkloadDeploymentPatterns for Launch Wizard
+* MarketplaceReporting (4.0.100.12)
+	* Minor update to the generated code. There are no changes to the public API.
+	* Fix `seealso` links to API reference docs in generated service client
+* RDS (4.0.104.4)
+	* Internal refactor of the RDS IAM auth token generator to build its presigned token via the public `Amazon.Runtime.Signing.AWSSigV4Signer` facade. Token output is unchanged. The .NET Framework target now references `System.Net.Http`.
+* SecurityAgent (4.0.105.0)
+	* Adding private and self-signed certificate configuration support for penetration tests
+* SimpleDBv2 (4.0.100.12)
+	* Minor update to the generated code. There are no changes to the public API.
+	* Fix `seealso` links to API reference docs in generated service client
+* SSO (4.0.100.13)
+	* Minor update to the generated code. There are no changes to the public API.
+	* Fix `seealso` links to API reference docs in generated service client
+* SSOOIDC (4.0.100.12)
+	* Minor update to the generated code. There are no changes to the public API.
+	* Fix `seealso` links to API reference docs in generated service client
+* SupportApp (4.0.100.13)
+	* Minor update to the generated code. There are no changes to the public API.
+	* Fix `seealso` links to API reference docs in generated service client
+* TimestreamInfluxDB (4.0.103.0)
+	* Service-managed parameter groups now only apply optimized defaults to DB Clusters automatically. New field effectiveDbParameterGroupIdentifier surfaces the parameter group actually applied.
+* Uxc (4.0.100.12)
+	* Minor update to the generated code. There are no changes to the public API.
+* Core 4.0.102.1
+	* Centralize `AwsQueryCompatible` error-header parsing into a shared helper (`AwsQueryCompatibleErrorHandler`) used by generated service unmarshallers
+	* All service and extension packages updated to require new Core
+
 ### 4.0.317.0 (2026-08-21 18:32 UTC)
 * Backup (4.0.101.4)
 	* Updating CLI Docs for Backup Audit Manager List Job Summaries APIs.
