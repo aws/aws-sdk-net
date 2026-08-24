@@ -635,6 +635,56 @@ namespace Amazon.Kafka
 
 
     /// <summary>
+    /// Constants used for properties of type JwtSigningAlgorithm.
+    /// </summary>
+    public class JwtSigningAlgorithm : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ES384 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm ES384 = new JwtSigningAlgorithm("ES384");
+        /// <summary>
+        /// Constant RS256 for JwtSigningAlgorithm
+        /// </summary>
+        public static readonly JwtSigningAlgorithm RS256 = new JwtSigningAlgorithm("RS256");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JwtSigningAlgorithm(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JwtSigningAlgorithm FindValue(string value)
+        {
+            return FindValue<JwtSigningAlgorithm>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JwtSigningAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type KafkaClusterEncryptionInTransitType.
     /// </summary>
     public class KafkaClusterEncryptionInTransitType : ConstantClass
@@ -1348,6 +1398,60 @@ namespace Amazon.Kafka
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TokenEndpointAuthenticationMethod.
+    /// </summary>
+    public class TokenEndpointAuthenticationMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BASIC for TokenEndpointAuthenticationMethod
+        /// </summary>
+        public static readonly TokenEndpointAuthenticationMethod BASIC = new TokenEndpointAuthenticationMethod("BASIC");
+        /// <summary>
+        /// Constant NONE for TokenEndpointAuthenticationMethod
+        /// </summary>
+        public static readonly TokenEndpointAuthenticationMethod NONE = new TokenEndpointAuthenticationMethod("NONE");
+        /// <summary>
+        /// Constant POST for TokenEndpointAuthenticationMethod
+        /// </summary>
+        public static readonly TokenEndpointAuthenticationMethod POST = new TokenEndpointAuthenticationMethod("POST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TokenEndpointAuthenticationMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TokenEndpointAuthenticationMethod FindValue(string value)
+        {
+            return FindValue<TokenEndpointAuthenticationMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TokenEndpointAuthenticationMethod(string value)
         {
             return FindValue(value);
         }

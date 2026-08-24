@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// KafkaClusterClientAuthentication Marshaller
+    /// KafkaClusterOAuthIamJwtBearer Marshaller
     /// </summary>
-    public class KafkaClusterClientAuthenticationMarshaller : IRequestMarshaller<KafkaClusterClientAuthentication, JsonMarshallerContext> 
+    public class KafkaClusterOAuthIamJwtBearerMarshaller : IRequestMarshaller<KafkaClusterOAuthIamJwtBearer, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,26 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KafkaClusterClientAuthentication requestObject, JsonMarshallerContext context)
+        public void Marshall(KafkaClusterOAuthIamJwtBearer requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetMTLS())
+            if(requestObject.IsSetAudience())
             {
-                context.Writer.WritePropertyName("mTLS");
-                context.Writer.WriteStartObject();
-
-                var marshaller = KafkaClusterMTLSAuthenticationMarshaller.Instance;
-                marshaller.Marshall(requestObject.MTLS, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("audience");
+                context.Writer.WriteStringValue(requestObject.Audience);
             }
 
-            if(requestObject.IsSetSaslOAuthBearer())
+            if(requestObject.IsSetSigningAlgorithm())
             {
-                context.Writer.WritePropertyName("saslOAuthBearer");
-                context.Writer.WriteStartObject();
-
-                var marshaller = KafkaClusterSaslOAuthBearerAuthenticationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SaslOAuthBearer, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("signingAlgorithm");
+                context.Writer.WriteStringValue(requestObject.SigningAlgorithm);
             }
 
-            if(requestObject.IsSetSaslScram())
+            if(requestObject.IsSetTokenRequestSecretArn())
             {
-                context.Writer.WritePropertyName("saslScram");
-                context.Writer.WriteStartObject();
-
-                var marshaller = KafkaClusterSaslScramAuthenticationMarshaller.Instance;
-                marshaller.Marshall(requestObject.SaslScram, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("tokenRequestSecretArn");
+                context.Writer.WriteStringValue(requestObject.TokenRequestSecretArn);
             }
 
         }
@@ -84,7 +69,7 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static KafkaClusterClientAuthenticationMarshaller Instance = new KafkaClusterClientAuthenticationMarshaller();
+        public readonly static KafkaClusterOAuthIamJwtBearerMarshaller Instance = new KafkaClusterOAuthIamJwtBearerMarshaller();
 
     }
 }
