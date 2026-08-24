@@ -30,9 +30,10 @@ namespace Amazon.Runtime.Internal.Auth
     /// <summary>
     /// Asymmetric SigV4 signer using a the AWS Common Runtime implementation of SigV4a via AWSSDK.Extensions.CrtIntegration 
     /// </summary>
-    [Obsolete("Use AWS4aSigner instead."), EditorBrowsable(EditorBrowsableState.Never)]
+    [Obsolete(OBSOLETE_MESSAGE), EditorBrowsable(EditorBrowsableState.Never)]
     public class AWS4aSignerCRTWrapper : AbstractAWSSigner
     {
+        internal const string OBSOLETE_MESSAGE = "Starting with version 4.1 this no longer has any effect because the SDK no longer uses the native Amazon Common Runtime for SigV4a signing. Instead the SDK uses built-in cryptography APIs.";
         internal const string CRT_WRAPPER_ASSEMBLY_NAME = "AWSSDK.Extensions.CrtIntegration";
         internal const string CRT_WRAPPER_NUGET_PACKGE_NAME = "AWSSDK.Extensions.CrtIntegration";
         internal const string CRT_WRAPPER_CLASS_NAME = "Amazon.Extensions.CrtIntegration.CrtAWS4aSigner";
