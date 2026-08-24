@@ -34,6 +34,7 @@ namespace Amazon.ElementalInference.Model
     /// </summary>
     public partial class GetFeedResponse : AmazonWebServiceResponse
     {
+        private string _accessRoleArn;
         private string _arn;
         private FeedAssociation _association;
         private List<string> _dataEndpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
@@ -42,6 +43,28 @@ namespace Amazon.ElementalInference.Model
         private List<GetOutput> _outputs = AWSConfigs.InitializeCollections ? new List<GetOutput>() : null;
         private FeedStatus _status;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
+        /// that Elemental Inference assumes. Elemental Inference uses this role to access resources
+        /// in your account on your behalf. This property is absent if the feed doesn't have an
+        /// IAM role. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=255)]
+        public string AccessRoleArn
+        {
+            get { return this._accessRoleArn; }
+            set { this._accessRoleArn = value; }
+        }
+
+        // Check to see if AccessRoleArn property is set
+        internal bool IsSetAccessRoleArn()
+        {
+            return this._accessRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 

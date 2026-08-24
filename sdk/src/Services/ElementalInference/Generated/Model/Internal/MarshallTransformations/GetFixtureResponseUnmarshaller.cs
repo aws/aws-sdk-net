@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CreateFeed operation
+    /// Response Unmarshaller for GetFixture operation
     /// </summary>  
-    public class CreateFeedResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetFixtureResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,40 +46,28 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            CreateFeedResponse response = new CreateFeedResponse();
+            GetFixtureResponse response = new GetFixtureResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("accessRoleArn", targetDepth, ref reader))
+                if (context.TestExpression("competitors", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Competitor, CompetitorUnmarshaller>(CompetitorUnmarshaller.Instance);
+                    response.Competitors = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("fixtureGroup", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.AccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    response.FixtureGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("arn", targetDepth, ref reader))
+                if (context.TestExpression("fixtureId", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("association", targetDepth, ref reader))
-                {
-                    var unmarshaller = FeedAssociationUnmarshaller.Instance;
-                    response.Association = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("dataEndpoints", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    response.DataEndpoints = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("id", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.Id = unmarshaller.Unmarshall(context, ref reader);
+                    response.FixtureId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth, ref reader))
@@ -88,22 +76,16 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                     response.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("outputs", targetDepth, ref reader))
+                if (context.TestExpression("scheduledStart", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<GetOutput, GetOutputUnmarshaller>(GetOutputUnmarshaller.Instance);
-                    response.Outputs = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    response.ScheduledStart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Status = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -135,17 +117,21 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("GatewayTimedOutException"))
                 {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return GatewayTimedOutExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerErrorException"))
                 {
                     return InternalServerErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceUnavailableException"))
+                {
+                    return ServiceUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TooManyRequestException"))
                 {
@@ -159,9 +145,9 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
             return new AmazonElementalInferenceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static CreateFeedResponseUnmarshaller _instance = new CreateFeedResponseUnmarshaller();        
+        private static GetFixtureResponseUnmarshaller _instance = new GetFixtureResponseUnmarshaller();        
 
-        internal static CreateFeedResponseUnmarshaller GetInstance()
+        internal static GetFixtureResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -169,7 +155,7 @@ namespace Amazon.ElementalInference.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateFeedResponseUnmarshaller Instance
+        public static GetFixtureResponseUnmarshaller Instance
         {
             get
             {

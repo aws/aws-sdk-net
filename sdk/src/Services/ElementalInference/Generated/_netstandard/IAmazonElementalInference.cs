@@ -469,6 +469,54 @@ namespace Amazon.ElementalInference
 
         #endregion
                 
+        #region  GetFixture
+
+
+
+        /// <summary>
+        /// Retrieves information about the specified fixture (a sports event, such as a specific
+        /// basketball game). You obtain a fixtureId from SearchFixtures, or from the clipping
+        /// output of a feed.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFixture service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetFixture service method, as returned by ElementalInference.</returns>
+        /// <exception cref="Amazon.ElementalInference.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.GatewayTimedOutException">
+        /// The request timed out before the service returned a response. This is a temporary
+        /// condition. Retry the request. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.InternalServerErrorException">
+        /// An internal server error occurred. This is a temporary condition and the request can
+        /// be retried. If the problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ResourceNotFoundException">
+        /// The resource specified in the action doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ServiceUnavailableException">
+        /// The service is temporarily unable to handle the request. Retry the request. If the
+        /// problem persists, contact AWS Support.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.TooManyRequestException">
+        /// The request was denied due to request throttling. Too many requests have been made
+        /// within a given time period. Reduce the frequency of requests and use exponential backoff
+        /// when retrying.
+        /// </exception>
+        /// <exception cref="Amazon.ElementalInference.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service. Check the error
+        /// message for details about which parameter or field is invalid and correct the request
+        /// before retrying.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elementalinference-2018-11-14/GetFixture">REST API Reference for GetFixture Operation</seealso>
+        Task<GetFixtureResponse> GetFixtureAsync(GetFixtureRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDictionaries
 
 
