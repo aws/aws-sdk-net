@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private string _arn;
         private DateTime? _createdAt;
         private HttpUrlDestinationSummary _httpUrlSummary;
+        private InfluxDBDestinationSummary _influxdbSummary;
         private DateTime? _lastUpdatedAt;
         private TopicRuleDestinationStatus _status;
         private string _statusReason;
@@ -94,6 +95,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetHttpUrlSummary()
         {
             return this._httpUrlSummary != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfluxDBSummary. 
+        /// <para>
+        /// A summary of an InfluxDB topic rule destination, as returned by <c>ListTopicRuleDestinations</c>.
+        /// </para>
+        /// </summary>
+        public InfluxDBDestinationSummary InfluxDBSummary
+        {
+            get { return this._influxdbSummary; }
+            set { this._influxdbSummary = value; }
+        }
+
+        // Check to see if InfluxDBSummary property is set
+        internal bool IsSetInfluxDBSummary()
+        {
+            return this._influxdbSummary != null;
         }
 
         /// <summary>

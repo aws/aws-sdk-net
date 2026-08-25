@@ -134,6 +134,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInfluxDB())
+            {
+                context.Writer.WritePropertyName("influxDB");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InfluxDBActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.InfluxDB, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetIotAnalytics())
             {
                 context.Writer.WritePropertyName("iotAnalytics");

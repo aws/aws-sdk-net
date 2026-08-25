@@ -3143,6 +3143,164 @@ namespace Amazon.IoT
 
 
     /// <summary>
+    /// Constants used for properties of type InfluxDBSecretType.
+    /// </summary>
+    public class InfluxDBSecretType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SecretBinary for InfluxDBSecretType
+        /// </summary>
+        public static readonly InfluxDBSecretType SecretBinary = new InfluxDBSecretType("SecretBinary");
+        /// <summary>
+        /// Constant SecretString for InfluxDBSecretType
+        /// </summary>
+        public static readonly InfluxDBSecretType SecretString = new InfluxDBSecretType("SecretString");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InfluxDBSecretType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InfluxDBSecretType FindValue(string value)
+        {
+            return FindValue<InfluxDBSecretType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InfluxDBSecretType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InfluxDBTimestampUnit.
+    /// </summary>
+    public class InfluxDBTimestampUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Ms for InfluxDBTimestampUnit
+        /// </summary>
+        public static readonly InfluxDBTimestampUnit Ms = new InfluxDBTimestampUnit("ms");
+        /// <summary>
+        /// Constant Ns for InfluxDBTimestampUnit
+        /// </summary>
+        public static readonly InfluxDBTimestampUnit Ns = new InfluxDBTimestampUnit("ns");
+        /// <summary>
+        /// Constant S for InfluxDBTimestampUnit
+        /// </summary>
+        public static readonly InfluxDBTimestampUnit S = new InfluxDBTimestampUnit("s");
+        /// <summary>
+        /// Constant Us for InfluxDBTimestampUnit
+        /// </summary>
+        public static readonly InfluxDBTimestampUnit Us = new InfluxDBTimestampUnit("us");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InfluxDBTimestampUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InfluxDBTimestampUnit FindValue(string value)
+        {
+            return FindValue<InfluxDBTimestampUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InfluxDBTimestampUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InfluxDBVersion.
+    /// </summary>
+    public class InfluxDBVersion : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant V2 for InfluxDBVersion
+        /// </summary>
+        public static readonly InfluxDBVersion V2 = new InfluxDBVersion("V2");
+        /// <summary>
+        /// Constant V3 for InfluxDBVersion
+        /// </summary>
+        public static readonly InfluxDBVersion V3 = new InfluxDBVersion("V3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InfluxDBVersion(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InfluxDBVersion FindValue(string value)
+        {
+            return FindValue<InfluxDBVersion>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InfluxDBVersion(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type JobEndBehavior.
     /// </summary>
     public class JobEndBehavior : ConstantClass

@@ -37,6 +37,7 @@ namespace Amazon.IoT.Model
         private string _arn;
         private DateTime? _createdAt;
         private HttpUrlDestinationProperties _httpUrlProperties;
+        private InfluxDBDestinationProperties _influxdbProperties;
         private DateTime? _lastUpdatedAt;
         private TopicRuleDestinationStatus _status;
         private string _statusReason;
@@ -94,6 +95,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetHttpUrlProperties()
         {
             return this._httpUrlProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfluxDBProperties. 
+        /// <para>
+        /// The properties of an InfluxDB topic rule destination, as returned by <c>CreateTopicRuleDestination</c>
+        /// and <c>GetTopicRuleDestination</c>.
+        /// </para>
+        /// </summary>
+        public InfluxDBDestinationProperties InfluxDBProperties
+        {
+            get { return this._influxdbProperties; }
+            set { this._influxdbProperties = value; }
+        }
+
+        // Check to see if InfluxDBProperties property is set
+        internal bool IsSetInfluxDBProperties()
+        {
+            return this._influxdbProperties != null;
         }
 
         /// <summary>

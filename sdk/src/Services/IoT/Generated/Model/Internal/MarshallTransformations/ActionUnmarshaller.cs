@@ -104,6 +104,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.Http = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("influxDB", targetDepth, ref reader))
+                {
+                    var unmarshaller = InfluxDBActionUnmarshaller.Instance;
+                    unmarshalledObject.InfluxDB = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("iotAnalytics", targetDepth, ref reader))
                 {
                     var unmarshaller = IotAnalyticsActionUnmarshaller.Instance;

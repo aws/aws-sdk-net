@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
         private ElasticsearchAction _elasticsearch;
         private FirehoseAction _firehose;
         private HttpAction _http;
+        private InfluxDBAction _influxdb;
         private IotAnalyticsAction _iotAnalytics;
         private IotEventsAction _iotEvents;
         private IotSiteWiseAction _iotSiteWise;
@@ -208,6 +209,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetHttp()
         {
             return this._http != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfluxDB. 
+        /// <para>
+        /// Write data to an InfluxDB database.
+        /// </para>
+        /// </summary>
+        public InfluxDBAction InfluxDB
+        {
+            get { return this._influxdb; }
+            set { this._influxdb = value; }
+        }
+
+        // Check to see if InfluxDB property is set
+        internal bool IsSetInfluxDB()
+        {
+            return this._influxdb != null;
         }
 
         /// <summary>

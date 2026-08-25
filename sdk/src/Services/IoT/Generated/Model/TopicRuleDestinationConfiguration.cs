@@ -35,6 +35,7 @@ namespace Amazon.IoT.Model
     public partial class TopicRuleDestinationConfiguration
     {
         private HttpUrlDestinationConfiguration _httpUrlConfiguration;
+        private InfluxDBDestinationConfiguration _influxdbConfiguration;
         private VpcDestinationConfiguration _vpcConfiguration;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.IoT.Model
         internal bool IsSetHttpUrlConfiguration()
         {
             return this._httpUrlConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InfluxDBConfiguration. 
+        /// <para>
+        /// The configuration of an InfluxDB topic rule destination, which you specify when you
+        /// call <c>CreateTopicRuleDestination</c>.
+        /// </para>
+        /// </summary>
+        public InfluxDBDestinationConfiguration InfluxDBConfiguration
+        {
+            get { return this._influxdbConfiguration; }
+            set { this._influxdbConfiguration = value; }
+        }
+
+        // Check to see if InfluxDBConfiguration property is set
+        internal bool IsSetInfluxDBConfiguration()
+        {
+            return this._influxdbConfiguration != null;
         }
 
         /// <summary>

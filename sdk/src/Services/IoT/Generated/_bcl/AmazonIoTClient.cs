@@ -1061,10 +1061,20 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Associates a Device Defender security profile with a thing group or this account.
         /// Each thing group or account can have up to five security profiles associated with
         /// it.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a>
@@ -1105,10 +1115,20 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Associates a Device Defender security profile with a thing group or this account.
         /// Each thing group or account can have up to five security profiles associated with
         /// it.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a>
@@ -1722,8 +1742,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Cancels a Device Defender ML Detect mitigation action. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Cancels a Device Defender ML Detect mitigation action. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
@@ -1757,8 +1787,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Cancels a Device Defender ML Detect mitigation action. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Cancels a Device Defender ML Detect mitigation action. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a>
@@ -3233,9 +3273,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Use this API to define a Custom Metric published by your devices to Device Defender.
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Use this API to define a Custom Metric published by your devices to Device Defender.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
@@ -3272,9 +3322,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Use this API to define a Custom Metric published by your devices to Device Defender.
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Use this API to define a Custom Metric published by your devices to Device Defender.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a>
@@ -3318,11 +3378,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Create a dimension that you can use to limit the scope of a metric used in a security
         /// profile for IoT Device Defender. For example, using a <c>TOPIC_FILTER</c> dimension,
         /// you can narrow down the scope of the metric only to MQTT topics whose name match the
         /// pattern specified in the dimension.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
@@ -3359,11 +3429,21 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Create a dimension that you can use to limit the scope of a metric used in a security
         /// profile for IoT Device Defender. For example, using a <c>TOPIC_FILTER</c> dimension,
         /// you can narrow down the scope of the metric only to MQTT topics whose name match the
         /// pattern specified in the dimension.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a>
@@ -5577,8 +5657,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a>
@@ -5612,8 +5702,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Creates a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a>
@@ -7146,8 +7246,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a Device Defender detect custom metric. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Deletes a Device Defender detect custom metric. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a>
@@ -7186,8 +7296,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Deletes a Device Defender detect custom metric. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Deletes a Device Defender detect custom metric. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a>
@@ -7233,8 +7353,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Removes the specified dimension from your Amazon Web Services accounts.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
@@ -7265,8 +7395,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Removes the specified dimension from your Amazon Web Services accounts.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a>
@@ -9061,8 +9201,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a>
@@ -9097,8 +9247,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Deletes a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a>
@@ -10879,8 +11039,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender detect custom metric. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Gets information about a Device Defender detect custom metric. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a>
@@ -10914,8 +11084,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender detect custom metric. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Gets information about a Device Defender detect custom metric. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a>
@@ -11045,8 +11225,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender ML Detect mitigation action. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Gets information about a Device Defender ML Detect mitigation action. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
@@ -11080,8 +11270,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Gets information about a Device Defender ML Detect mitigation action. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Gets information about a Device Defender ML Detect mitigation action. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a>
@@ -11122,8 +11322,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Provides details about a dimension that is defined in your Amazon Web Services accounts.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
@@ -11157,8 +11367,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Provides details about a dimension that is defined in your Amazon Web Services accounts.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a>
@@ -12467,8 +12687,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets information about a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a>
@@ -12502,8 +12732,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Gets information about a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a>
@@ -13349,8 +13589,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Disassociates a Device Defender security profile from a thing group or from this account.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
@@ -13384,8 +13634,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Disassociates a Device Defender security profile from a thing group or from this account.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a>
@@ -13881,8 +14141,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a Device Defender's ML Detect Security Profile training model's status. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Returns a Device Defender's ML Detect Security Profile training model's status. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
@@ -13916,8 +14186,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Returns a Device Defender's ML Detect Security Profile training model's status. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Returns a Device Defender's ML Detect Security Profile training model's status. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a>
@@ -16016,8 +16296,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the active violations for a given Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a>
@@ -16051,8 +16341,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the active violations for a given Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a>
@@ -17306,8 +17606,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your Device Defender detect custom metrics. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Lists your Device Defender detect custom metrics. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCustomMetrics</a>
@@ -17338,8 +17648,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists your Device Defender detect custom metrics. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Lists your Device Defender detect custom metrics. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCustomMetrics</a>
@@ -17377,9 +17697,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a>
@@ -17410,9 +17740,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
         /// 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a>
@@ -17450,8 +17790,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// List of Device Defender ML Detect mitigation actions tasks. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  List of Device Defender ML Detect mitigation actions tasks. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a>
@@ -17482,8 +17832,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// List of Device Defender ML Detect mitigation actions tasks. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  List of Device Defender ML Detect mitigation actions tasks. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a>
@@ -17521,8 +17881,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// List the set of dimensions that are defined for your Amazon Web Services accounts.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
@@ -17553,8 +17923,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// List the set of dimensions that are defined for your Amazon Web Services accounts.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDimensions</a>
@@ -20112,9 +20492,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the Device Defender security profiles you've created. You can filter security
         /// profiles by dimension or custom metric.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
@@ -20153,9 +20543,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the Device Defender security profiles you've created. You can filter security
         /// profiles by dimension or custom metric.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfiles</a>
@@ -20201,8 +20601,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the Device Defender security profiles attached to a target (thing group).
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfilesForTarget</a>
@@ -20236,8 +20646,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the Device Defender security profiles attached to a target (thing group).
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListSecurityProfilesForTarget</a>
@@ -20533,9 +20953,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the targets (thing groups) associated with a given Device Defender security
         /// profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
@@ -20569,9 +20999,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the targets (thing groups) associated with a given Device Defender security
         /// profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a>
@@ -21912,10 +22352,20 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the Device Defender security profile violations discovered during the given
         /// time period. You can use filters to limit the results to those alerts issued for a
         /// particular security profile, behavior, or thing (device).
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
@@ -21946,10 +22396,20 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Lists the Device Defender security profile violations discovered during the given
         /// time period. You can use filters to limit the results to those alerts issued for a
         /// particular security profile, behavior, or thing (device).
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListViolationEvents</a>
@@ -21987,8 +22447,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Set a verification state and provide a description of that verification state on a
         /// violation (detect alarm).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutVerificationStateOnViolation service method.</param>
         /// 
@@ -22014,8 +22485,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Set a verification state and provide a description of that verification state on a
         /// violation (detect alarm).
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutVerificationStateOnViolation service method.</param>
         /// <param name="cancellationToken">
@@ -23693,8 +24175,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Starts a Device Defender ML Detect mitigation actions task. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Starts a Device Defender ML Detect mitigation actions task. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
@@ -23732,8 +24224,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
-        /// Starts a Device Defender ML Detect mitigation actions task. 
-        /// 
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Starts a Device Defender ML Detect mitigation actions task. 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a>
@@ -25576,8 +26078,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Updates a Device Defender detect custom metric. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
@@ -25611,8 +26123,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Updates a Device Defender detect custom metric. 
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a>
@@ -25653,9 +26175,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Updates the definition for a dimension. You cannot change the type of a dimension
         /// after it is created (you can delete it and recreate it).
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
@@ -25689,9 +26221,19 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Updates the definition for a dimension. You cannot change the type of a dimension
         /// after it is created (you can delete it and recreate it).
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a>
@@ -26964,8 +27506,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Updates a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a>
@@ -27003,8 +27555,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Updates a Device Defender security profile.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a>
@@ -27567,8 +28129,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Validates a Device Defender security profile behaviors specification.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>
@@ -27599,8 +28171,18 @@ namespace Amazon.IoT
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// The IoT Device Defender detect feature will no longer be available to new customers
+        /// starting August 31, 2026. If you would like to use the detect feature, sign up prior
+        /// to August 31, 2026. To learn about alternatives to IoT Device Defender detect, see
+        /// IoT Device Defender detect feature availability change in the IoT Device Defender
+        /// Developer Guide. There is no change to IoT Device Defender audit availability.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Validates a Device Defender security profile behaviors specification.
-        /// 
+        /// </para>
         ///  
         /// <para>
         /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ValidateSecurityProfileBehaviors</a>

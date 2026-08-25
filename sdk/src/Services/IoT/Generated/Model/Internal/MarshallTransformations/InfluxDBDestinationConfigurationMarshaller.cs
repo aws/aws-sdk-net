@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// TopicRuleDestinationConfiguration Marshaller
+    /// InfluxDBDestinationConfiguration Marshaller
     /// </summary>
-    public class TopicRuleDestinationConfigurationMarshaller : IRequestMarshaller<TopicRuleDestinationConfiguration, JsonMarshallerContext> 
+    public class InfluxDBDestinationConfigurationMarshaller : IRequestMarshaller<InfluxDBDestinationConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,41 +42,38 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(TopicRuleDestinationConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(InfluxDBDestinationConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetHttpUrlConfiguration())
+            if(requestObject.IsSetEndpoint())
             {
-                context.Writer.WritePropertyName("httpUrlConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HttpUrlDestinationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.HttpUrlConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("endpoint");
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
-            if(requestObject.IsSetInfluxDBConfiguration())
+            if(requestObject.IsSetInfluxDBVersion())
             {
-                context.Writer.WritePropertyName("influxDBConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = InfluxDBDestinationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.InfluxDBConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("influxDBVersion");
+                context.Writer.WriteStringValue(requestObject.InfluxDBVersion);
             }
 
-            if(requestObject.IsSetVpcConfiguration())
+            if(requestObject.IsSetSecretId())
             {
-                context.Writer.WritePropertyName("vpcConfiguration");
-                context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("secretId");
+                context.Writer.WriteStringValue(requestObject.SecretId);
+            }
 
-                var marshaller = VpcDestinationConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.VpcConfiguration, context);
+            if(requestObject.IsSetSecretKey())
+            {
+                context.Writer.WritePropertyName("secretKey");
+                context.Writer.WriteStringValue(requestObject.SecretKey);
+            }
 
-                context.Writer.WriteEndObject();
+            if(requestObject.IsSetSecretType())
+            {
+                context.Writer.WritePropertyName("secretType");
+                context.Writer.WriteStringValue(requestObject.SecretType);
             }
 
         }
@@ -84,7 +81,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static TopicRuleDestinationConfigurationMarshaller Instance = new TopicRuleDestinationConfigurationMarshaller();
+        public readonly static InfluxDBDestinationConfigurationMarshaller Instance = new InfluxDBDestinationConfigurationMarshaller();
 
     }
 }

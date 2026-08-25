@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for TopicRuleDestination Object
+    /// Response Unmarshaller for InfluxDBAction Object
     /// </summary>  
-    public class TopicRuleDestinationUnmarshaller : IJsonUnmarshaller<TopicRuleDestination, JsonUnmarshallerContext>
+    public class InfluxDBActionUnmarshaller : IJsonUnmarshaller<InfluxDBAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicRuleDestination Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public InfluxDBAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            TopicRuleDestination unmarshalledObject = new TopicRuleDestination();
+            InfluxDBAction unmarshalledObject = new InfluxDBAction();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,52 +56,52 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("arn", targetDepth, ref reader))
+                if (context.TestExpression("batchConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = InfluxDBBatchConfigUnmarshaller.Instance;
+                    unmarshalledObject.BatchConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("databaseName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("createdAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("httpUrlProperties", targetDepth, ref reader))
-                {
-                    var unmarshaller = HttpUrlDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.HttpUrlProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("influxDBProperties", targetDepth, ref reader))
-                {
-                    var unmarshaller = InfluxDBDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.InfluxDBProperties = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("status", targetDepth, ref reader))
+                if (context.TestExpression("destinationArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DestinationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("statusReason", targetDepth, ref reader))
+                if (context.TestExpression("organization", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusReason = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.Organization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("vpcProperties", targetDepth, ref reader))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
-                    var unmarshaller = VpcDestinationPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.VpcProperties = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tableName", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TableName = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("timestampUnit", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TimestampUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -109,12 +109,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         }
 
 
-        private static TopicRuleDestinationUnmarshaller _instance = new TopicRuleDestinationUnmarshaller();        
+        private static InfluxDBActionUnmarshaller _instance = new InfluxDBActionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static TopicRuleDestinationUnmarshaller Instance
+        public static InfluxDBActionUnmarshaller Instance
         {
             get
             {

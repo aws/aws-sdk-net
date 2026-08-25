@@ -1,0 +1,139 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the iot-2015-05-28.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+namespace Amazon.IoT.Model
+{
+    /// <summary>
+    /// The batching configuration of an InfluxDB rule action. IoT closes a batch and writes
+    /// it to InfluxDB when the first of the configured limits is reached.
+    /// </summary>
+    public partial class InfluxDBBatchConfig
+    {
+        private bool? _batchAcrossTopics;
+        private int? _maxBatchOpenMs;
+        private int? _maxBatchSize;
+        private int? _maxBatchSizeBytes;
+
+        /// <summary>
+        /// Gets and sets the property BatchAcrossTopics. 
+        /// <para>
+        /// Specifies whether to collect data points from different topics into the same batch.
+        /// </para>
+        ///  
+        /// <para>
+        /// If omitted or <c>false</c>, IoT batches data points for each topic separately.
+        /// </para>
+        /// </summary>
+        public bool? BatchAcrossTopics
+        {
+            get { return this._batchAcrossTopics; }
+            set { this._batchAcrossTopics = value; }
+        }
+
+        // Check to see if BatchAcrossTopics property is set
+        internal bool IsSetBatchAcrossTopics()
+        {
+            return this._batchAcrossTopics.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBatchOpenMs. 
+        /// <para>
+        /// The maximum length of time, in milliseconds, to keep a batch open before writing it
+        /// to InfluxDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, this limit doesn't apply. IoT then closes each batch
+        /// when another configured limit is reached.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=5, Max=1000)]
+        public int? MaxBatchOpenMs
+        {
+            get { return this._maxBatchOpenMs; }
+            set { this._maxBatchOpenMs = value; }
+        }
+
+        // Check to see if MaxBatchOpenMs property is set
+        internal bool IsSetMaxBatchOpenMs()
+        {
+            return this._maxBatchOpenMs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBatchSize. 
+        /// <para>
+        /// The maximum number of data points to collect in a batch.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, this limit doesn't apply. IoT then closes each batch
+        /// when another configured limit is reached.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500)]
+        public int? MaxBatchSize
+        {
+            get { return this._maxBatchSize; }
+            set { this._maxBatchSize = value; }
+        }
+
+        // Check to see if MaxBatchSize property is set
+        internal bool IsSetMaxBatchSize()
+        {
+            return this._maxBatchSize.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxBatchSizeBytes. 
+        /// <para>
+        /// The maximum size of a batch, in bytes, before IoT writes it to InfluxDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you don't specify a value, this limit doesn't apply. IoT then closes each batch
+        /// when another configured limit is reached.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=100, Max=131072)]
+        public int? MaxBatchSizeBytes
+        {
+            get { return this._maxBatchSizeBytes; }
+            set { this._maxBatchSizeBytes = value; }
+        }
+
+        // Check to see if MaxBatchSizeBytes property is set
+        internal bool IsSetMaxBatchSizeBytes()
+        {
+            return this._maxBatchSizeBytes.HasValue; 
+        }
+
+    }
+}
