@@ -1,3 +1,21 @@
+### 4.0.319.0 (2026-08-25 19:29 UTC)
+* AutoScaling (4.0.104.0)
+	* Adds support for Distribution Segments in mixed instances policies, providing ordered prioritization across On-Demand Capacity Reservations, Capacity Blocks, interruptible Capacity Reservations, and On-Demand capacity.
+* AWSMarketplaceMetering (4.0.100.14)
+	* Updated documentation to clarify duplicate-billing prevention and BatchMeterUsage retry guidance
+* DevOpsAgent (4.0.101.0)
+	* Adds the UpdateApprovalAction API for resolving agent action approvals in AWS DevOps Agent agent spaces.
+* EC2 (4.0.112.0)
+	* Fleet feature to support Capacity Reservation Resource Groups with Amazon EC2 Capacity Blocks and interruptible Capacity Reservations
+* EKS (4.0.104.0)
+	* This feature would give customers the ability to tune TerminatedPodGcThreshold configuration in an Amazon EKS cluster.
+* Evs (4.0.101.0)
+	* EVS now supports i7i.metal-48xl EC2 bare metal instance type, delivering high random IOPS performance with real-time latency, ideal for IO intensive and latency-sensitive workloads such as transactional databases, real-time analytics, and AI ML pre-processing.
+* IAMToolbox (4.0.100.0)
+	* AWS Identity and Access Management (IAM) announces access troubleshooter, helping you debug access denied errors faster. Supported error messages now include an identifier you can use to retrieve detailed evaluations of the policies considered and their results. Preview in US East (N. Virginia).
+* IoT (4.0.101.0)
+	* As part of this release, we are extending capability of AWS IoT Rules Engine to support IoT InfluxDB Action. The IoT InfluxDB action lets customers send messages from IoT sensors and applications to InfluxDB.
+
 ### 4.0.318.0 (2026-08-24 18:25 UTC)
 * Batch (4.0.102.1)
 	* Doc Update, Add note that UpdatePolicy applies only to EC2 managed compute environments
