@@ -1,0 +1,75 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.testdocument#TestDocumentService": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        { "target": "com.amazonaws.testdocument#PutDocs" }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Test Document",
+          "arnNamespace": "testdocument"
+        },
+        "aws.auth#sigv4": { "name": "testdocument" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Test Document Service"
+      }
+    },
+    "com.amazonaws.testdocument#PutDocs": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testdocument#PutDocsRequest" },
+      "output": { "target": "com.amazonaws.testdocument#PutDocsResponse" },
+      "traits": {
+        "smithy.api#http": { "method": "POST", "uri": "/docs" }
+      }
+    },
+    "com.amazonaws.testdocument#PutDocsRequest": {
+      "type": "structure",
+      "members": {
+        "config": {
+          "target": "com.amazonaws.testdocument#Doc"
+        },
+        "attachments": {
+          "target": "com.amazonaws.testdocument#DocList"
+        },
+        "metadata": {
+          "target": "com.amazonaws.testdocument#DocMap"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.amazonaws.testdocument#PutDocsResponse": {
+      "type": "structure",
+      "members": {
+        "config": {
+          "target": "com.amazonaws.testdocument#Doc"
+        },
+        "attachments": {
+          "target": "com.amazonaws.testdocument#DocList"
+        },
+        "metadata": {
+          "target": "com.amazonaws.testdocument#DocMap"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.amazonaws.testdocument#Doc": {
+      "type": "document"
+    },
+    "com.amazonaws.testdocument#DocList": {
+      "type": "list",
+      "member": { "target": "com.amazonaws.testdocument#Doc" }
+    },
+    "com.amazonaws.testdocument#DocMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "com.amazonaws.testdocument#Doc" }
+    }
+  }
+}

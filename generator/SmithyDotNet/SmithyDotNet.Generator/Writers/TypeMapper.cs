@@ -16,6 +16,8 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsCollection">True if this is itself a list or map.</param>
 /// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalType"/>).</param>
 /// <param name="IsBlob">True if this targets a blob shape (maps to <c>MemoryStream</c>). Only supported as an <c>@httpPayload</c> body.</param>
+/// <param name="IsDocument">True if this targets a document shape (maps to <c>Amazon.Runtime.Documents.Document</c>);
+/// (un)marshals wholesale through the runtime document transforms.</param>
 /// <param name="ListElement">The list element's type; set only for a list, null otherwise.</param>
 /// <param name="MapValue">The map value's type; set only for a map, null otherwise. A map's key always
 /// targets a string shape (Smithy requires it), so no key descriptor is carried.</param>
@@ -26,6 +28,7 @@ public sealed record TypeDescriptor(
     bool IsCollection,
     bool IsEnum = false,
     bool IsBlob = false,
+    bool IsDocument = false,
     TypeDescriptor? ListElement = null,
     TypeDescriptor? MapValue = null)
 {
@@ -34,7 +37,7 @@ public sealed record TypeDescriptor(
     /// nullable value type. Aggregates (list, map, structure) and blobs are excluded; unsupported
     /// shapes never reach here (they throw in <see cref="TypeMapper.MapType"/>).
     /// </summary>
-    public bool IsScalar => !IsCollection && !IsStructure && !IsBlob;
+    public bool IsScalar => !IsCollection && !IsStructure && !IsBlob && !IsDocument;
 
     /// <summary>
     /// The type (un)marshaller writers dispatch on. An enum marshals as a string (ConstantClass
@@ -85,13 +88,17 @@ public sealed record Member(
     /// Body expression for the internal <c>IsSet{Property}()</c> method. Collections honor
     /// <c>AWSConfigs.InitializeCollections</c>: an empty list is "set" only when the V4-default null
     /// mode is active. Nullable value types (<c>int?</c>, <c>bool?</c>, <c>DateTime?</c>, …) use
-    /// <c>.HasValue</c>; reference types (<c>string</c>, generated classes) use <c>!= null</c>.
+    /// <c>.HasValue</c>; a document (the runtime <c>Document</c> struct — never null, so neither
+    /// reference-null nor <c>.HasValue</c> compiles) uses <c>!….IsNull()</c>, matching C2J;
+    /// reference types (<c>string</c>, generated classes) use <c>!= null</c>.
     /// </summary>
     public string IsSetExpression => Type.IsCollection
         ? $"this.{PropertyName} != null && (this.{PropertyName}.Count > 0 || !AWSConfigs.InitializeCollections)"
-        : IsNullableValueType
-            ? $"this.{PropertyName}.HasValue"
-            : $"this.{PropertyName} != null";
+        : Type.IsDocument
+            ? $"!this.{PropertyName}.IsNull()"
+            : IsNullableValueType
+                ? $"this.{PropertyName}.HasValue"
+                : $"this.{PropertyName} != null";
 }
 
 /// <summary>
@@ -150,6 +157,7 @@ public static class TypeMapper
             IsCollection: IsCollection(target),
             IsEnum: target is EnumShape,
             IsBlob: target is BlobShape,
+            IsDocument: target is DocumentShape,
             ListElement: target is ListShape list ? ResolveType(list.Member.Target, context) : null,
             MapValue: target is MapShape map ? ResolveType(map.Value.Target, context) : null);
     }
@@ -205,9 +213,17 @@ public static class TypeMapper
             return "MemoryStream";
         }
 
+        if (target is DocumentShape)
+        {
+            // A document maps to the runtime's protocol-agnostic document type, matching C2J.
+            // (Un)marshalling delegates wholesale to the runtime document transforms, so no
+            // per-position handling is needed in the writers.
+            return "Amazon.Runtime.Documents.Document";
+        }
+
         // Scalars are checked last so the aggregate branches above return without a MapScalar call.
         // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
-        // bigDecimal/document) have no settled mapping yet and fall through to the
+        // bigDecimal) have no settled mapping yet and fall through to the
         // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
         return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }
@@ -246,12 +262,12 @@ public static class TypeMapper
         _ => null,
     };
 
-    // The writers handle string, structure, and nested-collection (list/map) collection elements. A
-    // value-type scalar needs a first-class Member with its own @timestampFormat; an enum element would
-    // map to its ConstantClass, which the collection writers don't route through the string path. Fail
-    // here so a model like list<Integer> or list<SomeEnum> doesn't silently map the type then blow up in
-    // the writer with a confusing error. (A list/map element that is itself a list/map is fine - it
-    // recurses; only value-type/enum *leaves* are rejected.)
+    // The writers handle string, structure, document, and nested-collection (list/map) collection
+    // elements. A value-type scalar needs a first-class Member with its own @timestampFormat; an enum
+    // element would map to its ConstantClass, which the collection writers don't route through the
+    // string path. Fail here so a model like list<Integer> or list<SomeEnum> doesn't silently map the
+    // type then blow up in the writer with a confusing error. (A list/map element that is itself a
+    // list/map is fine - it recurses; only value-type/enum *leaves* are rejected.)
     private static void RejectUnsupportedCollectionElement(Shape elementTarget, string collectionKind)
     {
         if (MapScalar(elementTarget) is not null || elementTarget is EnumShape or IntEnumShape)

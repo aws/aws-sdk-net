@@ -53,8 +53,9 @@ public static class JsonBodyMemberUnmarshaller
         _ => null,
     };
 
-    // A scalar member uses a runtime scalar unmarshaller; string/structure/list/map members (nested to
-    // any depth) resolve recursively via CollectionUnmarshaller. Writes into the `unmarshalledObject` local.
+    // A scalar member uses a runtime scalar unmarshaller; string/structure/document/list/map members
+    // (nested to any depth) resolve recursively via CollectionUnmarshaller. Writes into the
+    // `unmarshalledObject` local.
     internal static void WriteMemberUnmarshall(CodeWriter writer, Member member)
     {
         var instance = ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller
@@ -73,6 +74,13 @@ public static class JsonBodyMemberUnmarshaller
         if (type.IsString)
         {
             return ("StringUnmarshaller", "StringUnmarshaller.Instance");
+        }
+        if (type.IsDocument)
+        {
+            // Fully qualified to match C2J's emitted code; one branch covers a document member, a
+            // list-of-documents element, and a map-of-documents value.
+            const string unmarshaller = "Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller";
+            return (unmarshaller, $"{unmarshaller}.Instance");
         }
         if (type.IsStructure)
         {

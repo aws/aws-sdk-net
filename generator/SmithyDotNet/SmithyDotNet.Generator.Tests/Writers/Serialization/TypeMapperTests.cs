@@ -252,4 +252,27 @@ public class TypeMapperTests
         Assert.True(members.Single(m => m.PropertyName == "Equals").HidesBaseMember);
         Assert.False(members.Single(m => m.PropertyName == "Name").HidesBaseMember);
     }
+
+    [Fact]
+    public void DocumentMember_MapsToRuntimeDocument_AtEveryNestingLevel()
+    {
+        var context = TestModels.Context("Codegen/document-model.json");
+        var request = context.Operations.Single(o => o.Name == "PutDocs").Input;
+        var members = TypeMapper.ResolveMembers(request, context);
+
+        var config = members.Single(m => m.ModeledName == "config");
+        Assert.Equal("Amazon.Runtime.Documents.Document", config.Type.DotNetType);
+        Assert.True(config.Type.IsDocument);
+        Assert.False(config.Type.IsScalar);
+        // Document is a struct: IsSet must use IsNull() (matching C2J), never a reference-null check.
+        Assert.Equal("!this.Config.IsNull()", config.IsSetExpression);
+
+        var attachments = members.Single(m => m.ModeledName == "attachments");
+        Assert.Equal("List<Amazon.Runtime.Documents.Document>", attachments.Type.DotNetType);
+        Assert.True(attachments.Type.ListElement!.IsDocument);
+
+        var metadata = members.Single(m => m.ModeledName == "metadata");
+        Assert.Equal("Dictionary<string, Amazon.Runtime.Documents.Document>", metadata.Type.DotNetType);
+        Assert.True(metadata.Type.MapValue!.IsDocument);
+    }
 }

@@ -6,8 +6,8 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// (<see cref="JsonRequestMarshallerWriter"/>) and a nested structure's own marshaller
 /// (<see cref="JsonStructureMarshallerWriter"/>) both call in here; the object variable name is the
 /// only thing that differs between them ("publicRequest" vs. "requestObject"). Handles scalars,
-/// nested structures, and collections (lists/maps of strings, structures, or nested collections),
-/// so a structure recurses through those member kinds at any depth.
+/// nested structures, documents, and collections (lists/maps of strings, structures, documents, or
+/// nested collections), so a structure recurses through those member kinds at any depth.
 /// </summary>
 public static class JsonBodyMemberMarshaller
 {
@@ -43,6 +43,14 @@ public static class JsonBodyMemberMarshaller
                 writer.WriteLine("context.Writer.WriteEndObject();");
             });
         }
+        else if (member.Type.IsDocument)
+        {
+            writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
+            {
+                writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
+                writer.WriteLine($"Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, {objectVar}.{member.PropertyName});");
+            });
+        }
         else if (member.Type.IsCollection)
         {
             writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
@@ -76,6 +84,12 @@ public static class JsonBodyMemberMarshaller
             writer.WriteLine($"marshaller.Marshall({valueExpr}, context);");
             writer.WriteLine("");
             writer.WriteLine("context.Writer.WriteEndObject();");
+        }
+        else if (type.IsDocument)
+        {
+            // A document value delegates wholesale to the runtime document transform — bare write, no
+            // object wrapping (unlike a structure value), matching C2J's emitted collection elements.
+            writer.WriteLine($"Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, {valueExpr});");
         }
         else if (type.ListElement is { } element)
         {
