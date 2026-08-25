@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MCPServerDatadogConfiguration Object
+    /// Response Unmarshaller for MCPToolDetail Object
     /// </summary>  
-    public class MCPServerDatadogConfigurationUnmarshaller : IJsonUnmarshaller<MCPServerDatadogConfiguration, JsonUnmarshallerContext>
+    public class MCPToolDetailUnmarshaller : IJsonUnmarshaller<MCPToolDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MCPServerDatadogConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MCPToolDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            MCPServerDatadogConfiguration unmarshalledObject = new MCPServerDatadogConfiguration();
+            MCPToolDetail unmarshalledObject = new MCPToolDetail();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,10 +56,16 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("enabledElevatedTools", targetDepth, ref reader))
+                if (context.TestExpression("name", targetDepth, ref reader))
                 {
-                    var unmarshaller = new JsonListUnmarshaller<MCPToolDetail, MCPToolDetailUnmarshaller>(MCPToolDetailUnmarshaller.Instance);
-                    unmarshalledObject.EnabledElevatedTools = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("toolClassification", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ToolClassification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -67,12 +73,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static MCPServerDatadogConfigurationUnmarshaller _instance = new MCPServerDatadogConfigurationUnmarshaller();        
+        private static MCPToolDetailUnmarshaller _instance = new MCPToolDetailUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MCPServerDatadogConfigurationUnmarshaller Instance
+        public static MCPToolDetailUnmarshaller Instance
         {
             get
             {

@@ -30,13 +30,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Configuration for AWS source account integration. Note: passRole check on 'assumableRoleArn'
-    /// is not supported.
+    /// Configuration for AWS source account integration. Setting the role ARNs on this configuration
+    /// requires the caller to have at least the iam:PassRole permission (see assumableRoleArn).
     /// </summary>
     public partial class SourceAwsConfiguration
     {
         private string _accountId;
         private SourceAccountType _accountType;
+        private string _agentElevatedRoleArn;
+        private ValidationStatus _agentElevatedRoleArnStatus;
         private string _assumableRoleArn;
         private string _externalId;
 
@@ -79,9 +81,56 @@ namespace Amazon.DevOpsAgent.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AgentElevatedRoleArn. 
+        /// <para>
+        /// Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions on behalf
+        /// of the customer. Used for mutating operations gated by elevatedActionsEnabled on the
+        /// AgentSpace. When not provided, only non-elevated directed actions are available for
+        /// this AWS account. Setting this role is subject to the same minimum iam:PassRole requirement
+        /// described on assumableRoleArn.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AgentElevatedRoleArn
+        {
+            get { return this._agentElevatedRoleArn; }
+            set { this._agentElevatedRoleArn = value; }
+        }
+
+        // Check to see if AgentElevatedRoleArn property is set
+        internal bool IsSetAgentElevatedRoleArn()
+        {
+            return this._agentElevatedRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentElevatedRoleArnStatus. 
+        /// <para>
+        /// Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer
+        /// registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress),
+        /// VALID (role validated), INVALID (validation failed).
+        /// </para>
+        /// </summary>
+        public ValidationStatus AgentElevatedRoleArnStatus
+        {
+            get { return this._agentElevatedRoleArnStatus; }
+            set { this._agentElevatedRoleArnStatus = value; }
+        }
+
+        // Check to see if AgentElevatedRoleArnStatus property is set
+        internal bool IsSetAgentElevatedRoleArnStatus()
+        {
+            return this._agentElevatedRoleArnStatus != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AssumableRoleArn. 
         /// <para>
-        /// Role ARN to be assumed by AIDevOps to operate on behalf of customer.
+        /// Role ARN to be assumed by AIDevOps to operate on behalf of customer. To set this role
+        /// ARN on AssociateService or UpdateAssociation, the caller must have at least the iam:PassRole
+        /// permission on arn:aws:iam::&lt;account-id&gt;:role/* in the caller's own account,
+        /// with the condition iam:PassedToService set to aidevops.amazonaws.com. A broader iam:PassRole
+        /// grant also satisfies this requirement.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

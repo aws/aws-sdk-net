@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MCPServerDatadogConfiguration Marshaller
+    /// ApprovalAction Marshaller
     /// </summary>
-    public class MCPServerDatadogConfigurationMarshaller : IRequestMarshaller<MCPServerDatadogConfiguration, JsonMarshallerContext> 
+    public class ApprovalActionMarshaller : IRequestMarshaller<ApprovalAction, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,24 +42,38 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MCPServerDatadogConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ApprovalAction requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabledElevatedTools())
+            if(requestObject.IsSetAction())
             {
-                context.Writer.WritePropertyName("enabledElevatedTools");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectEnabledElevatedToolsListValue in requestObject.EnabledElevatedTools)
-                {
-                    context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("action");
+                context.Writer.WriteStringValue(requestObject.Action);
+            }
 
-                    var marshaller = MCPToolDetailMarshaller.Instance;
-                    marshaller.Marshall(requestObjectEnabledElevatedToolsListValue, context);
+            if(requestObject.IsSetApprovalId())
+            {
+                context.Writer.WritePropertyName("approvalId");
+                context.Writer.WriteStringValue(requestObject.ApprovalId);
+            }
 
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+            if(requestObject.IsSetButtonText())
+            {
+                context.Writer.WritePropertyName("buttonText");
+                context.Writer.WriteStringValue(requestObject.ButtonText);
+            }
+
+            if(requestObject.IsSetInterruptId())
+            {
+                context.Writer.WritePropertyName("interruptId");
+                context.Writer.WriteStringValue(requestObject.InterruptId);
+            }
+
+            if(requestObject.IsSetToolUseId())
+            {
+                context.Writer.WritePropertyName("toolUseId");
+                context.Writer.WriteStringValue(requestObject.ToolUseId);
             }
 
         }
@@ -67,7 +81,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MCPServerDatadogConfigurationMarshaller Instance = new MCPServerDatadogConfigurationMarshaller();
+        public readonly static ApprovalActionMarshaller Instance = new ApprovalActionMarshaller();
 
     }
 }

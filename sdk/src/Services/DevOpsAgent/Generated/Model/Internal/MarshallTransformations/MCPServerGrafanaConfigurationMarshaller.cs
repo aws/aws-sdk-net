@@ -46,6 +46,22 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEnabledElevatedTools())
+            {
+                context.Writer.WritePropertyName("enabledElevatedTools");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectEnabledElevatedToolsListValue in requestObject.EnabledElevatedTools)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MCPToolDetailMarshaller.Instance;
+                    marshaller.Marshall(requestObjectEnabledElevatedToolsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");

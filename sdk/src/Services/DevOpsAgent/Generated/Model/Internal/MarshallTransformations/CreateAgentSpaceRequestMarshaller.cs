@@ -108,6 +108,20 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPreferences())
+            {
+                context.Writer.WritePropertyName("preferences");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPreferencesKvp in publicRequest.Preferences)
+                {
+                    context.Writer.WritePropertyName(publicRequestPreferencesKvp.Key);
+                    var publicRequestPreferencesValue = publicRequestPreferencesKvp.Value;
+
+                        context.Writer.WriteBooleanValue(publicRequestPreferencesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");

@@ -30,50 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteTrigger operation.
-    /// Deletes a Trigger from the specified agent space
+    /// An MCP tool together with its access categorization.
     /// </summary>
-    public partial class DeleteTriggerRequest : AmazonDevOpsAgentRequest
+    public partial class MCPToolDetail
     {
-        private string _agentSpaceId;
-        private string _triggerId;
+        private string _name;
+        private ToolClassification _toolClassification;
 
         /// <summary>
-        /// Gets and sets the property AgentSpaceId. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The unique identifier for the agent space containing the Trigger
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string AgentSpaceId
-        {
-            get { return this._agentSpaceId; }
-            set { this._agentSpaceId = value; }
-        }
-
-        // Check to see if AgentSpaceId property is set
-        internal bool IsSetAgentSpaceId()
-        {
-            return this._agentSpaceId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property TriggerId. 
-        /// <para>
-        /// The unique identifier of the Trigger to delete
+        /// The name of the MCP tool.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
-        public string TriggerId
+        public string Name
         {
-            get { return this._triggerId; }
-            set { this._triggerId = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if TriggerId property is set
-        internal bool IsSetTriggerId()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._triggerId != null;
+            return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ToolClassification. 
+        /// <para>
+        /// The access categorization of the MCP tool.
+        /// </para>
+        /// </summary>
+        public ToolClassification ToolClassification
+        {
+            get { return this._toolClassification; }
+            set { this._toolClassification = value; }
+        }
+
+        // Check to see if ToolClassification property is set
+        internal bool IsSetToolClassification()
+        {
+            return this._toolClassification != null;
         }
 
     }

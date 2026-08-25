@@ -56,7 +56,7 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property Text.
         /// </summary>
-        [AWSProperty(Min=0, Max=1572864)]
+        [AWSProperty(Min=0, Max=6291456)]
         public string Text
         {
             get { return this._text; }

@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MCPServerDatadogConfiguration Marshaller
+    /// ApprovalPattern Marshaller
     /// </summary>
-    public class MCPServerDatadogConfigurationMarshaller : IRequestMarshaller<MCPServerDatadogConfiguration, JsonMarshallerContext> 
+    public class ApprovalPatternMarshaller : IRequestMarshaller<ApprovalPattern, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,24 +42,28 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MCPServerDatadogConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(ApprovalPattern requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabledElevatedTools())
+            if(requestObject.IsSetArgumentPins())
             {
-                context.Writer.WritePropertyName("enabledElevatedTools");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectEnabledElevatedToolsListValue in requestObject.EnabledElevatedTools)
+                context.Writer.WritePropertyName("argumentPins");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectArgumentPinsKvp in requestObject.ArgumentPins)
                 {
-                    context.Writer.WriteStartObject();
+                    context.Writer.WritePropertyName(requestObjectArgumentPinsKvp.Key);
+                    var requestObjectArgumentPinsValue = requestObjectArgumentPinsKvp.Value;
 
-                    var marshaller = MCPToolDetailMarshaller.Instance;
-                    marshaller.Marshall(requestObjectEnabledElevatedToolsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteStringValue(requestObjectArgumentPinsValue);
                 }
-                context.Writer.WriteEndArray();
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetTool())
+            {
+                context.Writer.WritePropertyName("tool");
+                context.Writer.WriteStringValue(requestObject.Tool);
             }
 
         }
@@ -67,7 +71,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MCPServerDatadogConfigurationMarshaller Instance = new MCPServerDatadogConfigurationMarshaller();
+        public readonly static ApprovalPatternMarshaller Instance = new ApprovalPatternMarshaller();
 
     }
 }

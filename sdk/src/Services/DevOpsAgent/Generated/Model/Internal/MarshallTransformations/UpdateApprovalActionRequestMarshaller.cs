@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SendMessage Request Marshaller
+    /// UpdateApprovalAction Request Marshaller
     /// </summary>       
-    public class SendMessageRequestMarshaller : IMarshaller<IRequest, SendMessageRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateApprovalActionRequestMarshaller : IMarshaller<IRequest, UpdateApprovalActionRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((SendMessageRequest)input);
+            return this.Marshall((UpdateApprovalActionRequest)input);
         }
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(SendMessageRequest publicRequest)
+        public IRequest Marshall(UpdateApprovalActionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.DevOpsAgent");
             request.Headers["Content-Type"] = "application/json";
@@ -66,7 +66,10 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetAgentSpaceId())
                 throw new AmazonDevOpsAgentException("Request object does not have required field AgentSpaceId set");
             request.AddPathResource("{agentSpaceId}", StringUtils.FromString(publicRequest.AgentSpaceId));
-            request.ResourcePath = "/agents/agent-space/{agentSpaceId}/chat/sendMessage";
+            if (!publicRequest.IsSetApprovalId())
+                throw new AmazonDevOpsAgentException("Request object does not have required field ApprovalId set");
+            request.AddPathResource("{approvalId}", StringUtils.FromString(publicRequest.ApprovalId));
+            request.ResourcePath = "/agents/agent-space/{agentSpaceId}/approvals/{approvalId}/update-action";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -76,50 +79,39 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetAssetIds())
+            if(publicRequest.IsSetAction())
             {
-                context.Writer.WritePropertyName("assetIds");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestAssetIdsListValue in publicRequest.AssetIds)
-                {
-                        context.Writer.WriteStringValue(publicRequestAssetIdsListValue);
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("action");
+                context.Writer.WriteStringValue(publicRequest.Action);
             }
 
-            if(publicRequest.IsSetContent())
+            if(publicRequest.IsSetFinalPattern())
             {
-                context.Writer.WritePropertyName("content");
-                context.Writer.WriteStringValue(publicRequest.Content);
-            }
-
-            if(publicRequest.IsSetContext())
-            {
-                context.Writer.WritePropertyName("context");
+                context.Writer.WritePropertyName("finalPattern");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SendMessageContextMarshaller.Instance;
-                marshaller.Marshall(publicRequest.Context, context);
+                var marshaller = ApprovalPatternMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FinalPattern, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetExecutionId())
+            if(publicRequest.IsSetReason())
             {
-                context.Writer.WritePropertyName("executionId");
-                context.Writer.WriteStringValue(publicRequest.ExecutionId);
+                context.Writer.WritePropertyName("reason");
+                context.Writer.WriteStringValue(publicRequest.Reason);
             }
 
-            if(publicRequest.IsSetModelTier())
+            if(publicRequest.IsSetSingleUse())
             {
-                context.Writer.WritePropertyName("modelTier");
-                context.Writer.WriteStringValue(publicRequest.ModelTier);
+                context.Writer.WritePropertyName("singleUse");
+                context.Writer.WriteBooleanValue(publicRequest.SingleUse.Value);
             }
 
-            if(publicRequest.IsSetUserId())
+            if(publicRequest.IsSetTtlSeconds())
             {
-                context.Writer.WritePropertyName("userId");
-                context.Writer.WriteStringValue(publicRequest.UserId);
+                context.Writer.WritePropertyName("ttlSeconds");
+                context.Writer.WriteNumberValue(publicRequest.TtlSeconds.Value);
             }
 
             writer.WriteEndObject();
@@ -134,9 +126,9 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static SendMessageRequestMarshaller _instance = new SendMessageRequestMarshaller();        
+        private static UpdateApprovalActionRequestMarshaller _instance = new UpdateApprovalActionRequestMarshaller();        
 
-        internal static SendMessageRequestMarshaller GetInstance()
+        internal static UpdateApprovalActionRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -144,7 +136,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SendMessageRequestMarshaller Instance
+        public static UpdateApprovalActionRequestMarshaller Instance
         {
             get
             {

@@ -34,9 +34,33 @@ namespace Amazon.DevOpsAgent.Model
     /// </summary>
     public partial class SendMessageContext
     {
+        private ApprovalAction _approvalAction;
         private string _currentPage;
         private string _lastMessage;
         private string _userActionResponse;
+
+        /// <summary>
+        /// Gets and sets the property ApprovalAction. 
+        /// <para>
+        /// An approval decision supplied when resuming a paused agent execution. When an agent
+        /// execution pauses to request approval for an elevated action, SendMessage streams an
+        /// approval request carrying interrupt identifiers. To resume the paused execution, call
+        /// SendMessage again with `userActionResponse` set to `"APPROVAL_ACTION"` and this member
+        /// populated with those identifiers and the decision (APPROVED or REJECTED). Optional;
+        /// omit it for messages that are not resuming an approval.
+        /// </para>
+        /// </summary>
+        public ApprovalAction ApprovalAction
+        {
+            get { return this._approvalAction; }
+            set { this._approvalAction = value; }
+        }
+
+        // Check to see if ApprovalAction property is set
+        internal bool IsSetApprovalAction()
+        {
+            return this._approvalAction != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CurrentPage. 
@@ -77,13 +101,12 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property UserActionResponse. 
         /// <para>
-        /// Response to a UI prompt (not a text conversation message). Operator App SDK clients
-        /// set this to the control-string sentinel `"APPROVAL_ACTION"` when the request is resuming
-        /// a paused tool call after an operator approval decision; in that case the structured
-        /// decision context lives on the sibling `approvalAction` member and the chat agent reads
-        /// from there. Preserved as a String for back-compat: pre-typed-approval clients still
-        /// encode arbitrary UI-prompt responses as JSON in this field, and the chat agent parses
-        /// them out during the transition.
+        /// Response to a UI prompt (not a text conversation message). Set this to the sentinel
+        /// value `"APPROVAL_ACTION"` when the request is resuming a paused execution after an
+        /// approval decision; in that case the structured decision is provided on the sibling
+        /// `approvalAction` member. Preserved as a String for backward compatibility: clients
+        /// that predate the typed approval field may still encode UI-prompt responses as JSON
+        /// in this field.
         /// </para>
         /// </summary>
         public string UserActionResponse

@@ -139,6 +139,7 @@ namespace Amazon.DevOpsAgent.Model
         /// and VPC connectivity on this association.
         /// </para>
         /// </summary>
+        [Obsolete("Superseded by the ReleaseManagement association. Configure the runtime role on the ReleaseManagement association and reference it via releaseManagementAssociationId.")]
         [AWSProperty(Min=1, Max=255)]
         public string RuntimeRoleArn
         {

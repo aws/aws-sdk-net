@@ -25,6 +25,164 @@ namespace Amazon.DevOpsAgent
 {
 
     /// <summary>
+    /// Constants used for properties of type AgentSpacePreferenceKey.
+    /// </summary>
+    public class AgentSpacePreferenceKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ElevatedActionsEnabled for AgentSpacePreferenceKey
+        /// </summary>
+        public static readonly AgentSpacePreferenceKey ElevatedActionsEnabled = new AgentSpacePreferenceKey("elevatedActionsEnabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentSpacePreferenceKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentSpacePreferenceKey FindValue(string value)
+        {
+            return FindValue<AgentSpacePreferenceKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentSpacePreferenceKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApprovalActionType.
+    /// </summary>
+    public class ApprovalActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for ApprovalActionType
+        /// </summary>
+        public static readonly ApprovalActionType APPROVED = new ApprovalActionType("APPROVED");
+        /// <summary>
+        /// Constant REJECTED for ApprovalActionType
+        /// </summary>
+        public static readonly ApprovalActionType REJECTED = new ApprovalActionType("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApprovalActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApprovalActionType FindValue(string value)
+        {
+            return FindValue<ApprovalActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApprovalActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ApprovalStatus.
+    /// </summary>
+    public class ApprovalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus APPROVED = new ApprovalStatus("APPROVED");
+        /// <summary>
+        /// Constant PENDING for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus PENDING = new ApprovalStatus("PENDING");
+        /// <summary>
+        /// Constant REDEEMED for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus REDEEMED = new ApprovalStatus("REDEEMED");
+        /// <summary>
+        /// Constant REJECTED for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus REJECTED = new ApprovalStatus("REJECTED");
+        /// <summary>
+        /// Constant REVOKED for ApprovalStatus
+        /// </summary>
+        public static readonly ApprovalStatus REVOKED = new ApprovalStatus("REVOKED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ApprovalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ApprovalStatus FindValue(string value)
+        {
+            return FindValue<ApprovalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ApprovalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AuthFlow.
     /// </summary>
     public class AuthFlow : ConstantClass
@@ -200,6 +358,10 @@ namespace Amazon.DevOpsAgent
         /// Constant TIMED_OUT for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus TIMED_OUT = new ExecutionStatus("TIMED_OUT");
+        /// <summary>
+        /// Constant WAITING for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus WAITING = new ExecutionStatus("WAITING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -608,6 +770,10 @@ namespace Amazon.DevOpsAgent
         /// Constant EU for NewRelicRegion
         /// </summary>
         public static readonly NewRelicRegion EU = new NewRelicRegion("EU");
+        /// <summary>
+        /// Constant JP for NewRelicRegion
+        /// </summary>
+        public static readonly NewRelicRegion JP = new NewRelicRegion("JP");
         /// <summary>
         /// Constant US for NewRelicRegion
         /// </summary>
@@ -1550,6 +1716,10 @@ namespace Amazon.DevOpsAgent
         /// Constant TIMED_OUT for TaskStatus
         /// </summary>
         public static readonly TaskStatus TIMED_OUT = new TaskStatus("TIMED_OUT");
+        /// <summary>
+        /// Constant WAITING for TaskStatus
+        /// </summary>
+        public static readonly TaskStatus WAITING = new TaskStatus("WAITING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1638,6 +1808,60 @@ namespace Amazon.DevOpsAgent
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TaskType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ToolClassification.
+    /// </summary>
+    public class ToolClassification : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DESTRUCTIVE for ToolClassification
+        /// </summary>
+        public static readonly ToolClassification DESTRUCTIVE = new ToolClassification("DESTRUCTIVE");
+        /// <summary>
+        /// Constant MUTATIVE for ToolClassification
+        /// </summary>
+        public static readonly ToolClassification MUTATIVE = new ToolClassification("MUTATIVE");
+        /// <summary>
+        /// Constant READ_ONLY for ToolClassification
+        /// </summary>
+        public static readonly ToolClassification READ_ONLY = new ToolClassification("READ_ONLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ToolClassification(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ToolClassification FindValue(string value)
+        {
+            return FindValue<ToolClassification>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ToolClassification(string value)
         {
             return FindValue(value);
         }

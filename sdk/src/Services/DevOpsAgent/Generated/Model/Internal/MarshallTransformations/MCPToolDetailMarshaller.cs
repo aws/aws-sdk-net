@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MCPServerDatadogConfiguration Marshaller
+    /// MCPToolDetail Marshaller
     /// </summary>
-    public class MCPServerDatadogConfigurationMarshaller : IRequestMarshaller<MCPServerDatadogConfiguration, JsonMarshallerContext> 
+    public class MCPToolDetailMarshaller : IRequestMarshaller<MCPToolDetail, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,24 +42,20 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MCPServerDatadogConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(MCPToolDetail requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabledElevatedTools())
+            if(requestObject.IsSetName())
             {
-                context.Writer.WritePropertyName("enabledElevatedTools");
-                context.Writer.WriteStartArray();
-                foreach(var requestObjectEnabledElevatedToolsListValue in requestObject.EnabledElevatedTools)
-                {
-                    context.Writer.WriteStartObject();
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(requestObject.Name);
+            }
 
-                    var marshaller = MCPToolDetailMarshaller.Instance;
-                    marshaller.Marshall(requestObjectEnabledElevatedToolsListValue, context);
-
-                    context.Writer.WriteEndObject();
-                }
-                context.Writer.WriteEndArray();
+            if(requestObject.IsSetToolClassification())
+            {
+                context.Writer.WritePropertyName("toolClassification");
+                context.Writer.WriteStringValue(requestObject.ToolClassification);
             }
 
         }
@@ -67,7 +63,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MCPServerDatadogConfigurationMarshaller Instance = new MCPServerDatadogConfigurationMarshaller();
+        public readonly static MCPToolDetailMarshaller Instance = new MCPToolDetailMarshaller();
 
     }
 }

@@ -89,7 +89,7 @@ namespace Amazon.DevOpsAgent.Model
         /// New Relic User API Key
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string ApiKey
         {
             get { return this._apiKey; }

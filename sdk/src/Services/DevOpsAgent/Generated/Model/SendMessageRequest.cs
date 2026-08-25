@@ -40,6 +40,7 @@ namespace Amazon.DevOpsAgent.Model
         private string _content;
         private SendMessageContext _context;
         private string _executionId;
+        private string _modelTier;
         private string _userId;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.DevOpsAgent.Model
         /// The agent space identifier
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AgentSpaceId
         {
             get { return this._agentSpaceId; }
@@ -139,6 +140,25 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetExecutionId()
         {
             return this._executionId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelTier. 
+        /// <para>
+        /// Optional model tier selection. Valid values: smart, balanced, fast. Absent or unrecognized
+        /// values default to balanced.
+        /// </para>
+        /// </summary>
+        public string ModelTier
+        {
+            get { return this._modelTier; }
+            set { this._modelTier = value; }
+        }
+
+        // Check to see if ModelTier property is set
+        internal bool IsSetModelTier()
+        {
+            return this._modelTier != null;
         }
 
         /// <summary>

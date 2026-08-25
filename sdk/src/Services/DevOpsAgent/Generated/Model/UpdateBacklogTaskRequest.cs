@@ -46,7 +46,7 @@ namespace Amazon.DevOpsAgent.Model
         /// The unique identifier for the agent space containing the task
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AgentSpaceId
         {
             get { return this._agentSpaceId; }
@@ -65,6 +65,7 @@ namespace Amazon.DevOpsAgent.Model
         /// Client-provided token for idempotent operations
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
