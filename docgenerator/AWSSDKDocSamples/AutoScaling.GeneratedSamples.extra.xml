@@ -192,6 +192,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateAutoScalingGroup(Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest)" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupRequest" />
+            <member name="T:Amazon.AutoScaling.Model.CreateAutoScalingGroupResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an Auto Scaling group that uses Distribution Segments to prioritize On-Demand Capacity Reservations, Capacity Blocks, interruptible Capacity Reservations, and then On-Demand capacity.
+                </para>
+                <code
+                    title="To create an Auto Scaling group using Distribution Segments"
+                    source=".\AWSSDKDocSamples\AutoScaling\AutoScaling.GeneratedSamples.cs"
+                    region="autoscaling-create-auto-scaling-group-5" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.AutoScaling.IAmazonAutoScaling.CreateLaunchConfiguration(Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest)" />
             <member name="M:Amazon.AutoScaling.AmazonAutoScalingClient.CreateLaunchConfiguration(Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest)" />
             <member name="T:Amazon.AutoScaling.Model.CreateLaunchConfigurationRequest" />
