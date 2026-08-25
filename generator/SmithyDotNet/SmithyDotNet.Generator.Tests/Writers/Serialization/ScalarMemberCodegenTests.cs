@@ -151,6 +151,20 @@ public class ScalarMemberCodegenTests
     }
 
     [Fact]
+    public void RequestMarshaller_GreedyLabel_KeepsPlusAndTrimsLeadingSlash()
+    {
+        var operation = _context.Operations.Single(o => o.Name == "DoGreedy");
+        var marshaller = new JsonRequestMarshallerWriter(_context, ModelFileName).Write(operation, TestContext.Current.CancellationToken);
+
+        // A greedy label ({path+}) keeps the '+' in the AddPathResource key so it matches the '{path+}'
+        // left in ResourcePath, and strips a leading '/' from the value - matching C2J. A normal label
+        // ({thingId}) is emitted unchanged.
+        Assert.Contains("""request.AddPathResource("{thingId}", StringUtils.FromString(publicRequest.ThingId));""", marshaller);
+        Assert.Contains("""request.AddPathResource("{path+}", StringUtils.FromString(publicRequest.Path.TrimStart('/')));""", marshaller);
+        Assert.Contains("""request.ResourcePath = "/things/{thingId}/{path+}";""", marshaller);
+    }
+
+    [Fact]
     public void ResponseUnmarshaller_HeaderOnly_EmitsNoBodyReader()
     {
         var operation = _context.Operations.Single(o => o.Name == "DoHeaderOnly");

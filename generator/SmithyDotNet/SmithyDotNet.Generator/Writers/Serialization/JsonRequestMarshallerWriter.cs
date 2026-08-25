@@ -213,7 +213,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 // request.Parameters is a string-only IDictionary facade over the same collection and
                 // cannot take a List<string>. Scalars stay on StringConversion, which still throws for
                 // any unsupported type.
-                if (member.Type.Element is { IsString: true })
+                if (member.Type.ListElement is { IsString: true })
                 {
                     writer.WriteLine($"""request.ParameterCollection.Add("{queryName}", publicRequest.{member.PropertyName});""");
                 }
@@ -246,7 +246,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 // (RFC-7230 quoting). A string/enum header is assigned directly (an enum's ConstantClass
                 // converts implicitly to string). Other scalars go through StringUtils; an unsupported
                 // type throws.
-                if (member.Type.Element is { IsString: true })
+                if (member.Type.ListElement is { IsString: true })
                 {
                     writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromList(publicRequest.{member.PropertyName});""");
                 }
@@ -276,13 +276,19 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
         foreach (var member in labelMembers)
         {
-            var conversion = StringConversion(member, $"publicRequest.{member.PropertyName}", QueryLabelTimestampDefault)
-                ?? throw new GeneratorException($"Unsupported label member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
+            // A greedy label ({name+}) spans multiple path segments; C2J strips a leading '/' from the
+            // value and keeps the '+' in both the AddPathResource key and ResourcePath so the runtime
+            // substitution matches. https://smithy.io/2.0/spec/http-bindings.html#greedy-labels
+            var greedy = httpTrait.Uri.Contains("{" + member.ModeledName + "+}");
+            var valueExpr = greedy ? $"publicRequest.{member.PropertyName}.TrimStart('/')" : $"publicRequest.{member.PropertyName}";
+            var conversion = StringConversion(member, valueExpr, QueryLabelTimestampDefault) ?? throw new GeneratorException($"Unsupported label member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
+
             writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
             });
-            var pathTemplate = "{" + member.ModeledName + "}";
+
+            var pathTemplate = greedy ? "{" + member.ModeledName + "+}" : "{" + member.ModeledName + "}";
             writer.WriteLine($"""request.AddPathResource("{pathTemplate}", {conversion});""");
             writer.WriteLine("");
         }
@@ -291,7 +297,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         {
             foreach (var pair in uriParts[1].Split('&'))
             {
-                var nameValue = pair.Split('=');
+                // Split on the first '=' only, so a value containing '=' is preserved intact.
+                var nameValue = pair.Split('=', 2);
                 if (nameValue.Length == 1)
                 {
                     writer.WriteLine($"""request.AddSubResource("{nameValue[0]}");""");

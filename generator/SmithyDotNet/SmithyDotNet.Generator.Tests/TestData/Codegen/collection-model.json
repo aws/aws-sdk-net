@@ -30,6 +30,18 @@
       "members": {
         "tags": {
           "target": "com.amazonaws.testcollection#TagList"
+        },
+        "labels": {
+          "target": "com.amazonaws.testcollection#StringMap"
+        },
+        "widgetsById": {
+          "target": "com.amazonaws.testcollection#WidgetMap"
+        },
+        "tagsByGroup": {
+          "target": "com.amazonaws.testcollection#TagListMap"
+        },
+        "groupedTags": {
+          "target": "com.amazonaws.testcollection#TagListList"
         }
       },
       "traits": {
@@ -44,6 +56,18 @@
         },
         "widgets": {
           "target": "com.amazonaws.testcollection#WidgetList"
+        },
+        "labels": {
+          "target": "com.amazonaws.testcollection#StringMap"
+        },
+        "widgetsById": {
+          "target": "com.amazonaws.testcollection#WidgetMap"
+        },
+        "tagsByGroup": {
+          "target": "com.amazonaws.testcollection#TagListMap"
+        },
+        "groupedTags": {
+          "target": "com.amazonaws.testcollection#TagListList"
         }
       },
       "traits": {
@@ -60,6 +84,39 @@
       "type": "list",
       "member": {
         "target": "com.amazonaws.testcollection#Widget"
+      }
+    },
+    "com.amazonaws.testcollection#StringMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#String"
+      }
+    },
+    "com.amazonaws.testcollection#WidgetMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "com.amazonaws.testcollection#Widget"
+      }
+    },
+    "com.amazonaws.testcollection#TagListMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "com.amazonaws.testcollection#TagList"
+      }
+    },
+    "com.amazonaws.testcollection#TagListList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testcollection#TagList"
       }
     },
     "com.amazonaws.testcollection#Widget": {

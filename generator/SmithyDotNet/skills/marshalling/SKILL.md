@@ -95,8 +95,12 @@ if (publicRequest.IsSetFoo())
 
 - Structures: `WriteStartObject` → `{Shape}Marshaller.Instance.Marshall(item, context)` → `WriteEndObject`
 - Lists: `WriteStartArray` → loop items → `WriteEndArray`
-- Maps: not implemented yet — throws in the writer at any nesting depth. Intended pattern:
-  `WriteStartObject` → loop `WritePropertyName(key)` + write value → `WriteEndObject`
+- Maps: `WriteStartObject` → `foreach` the dictionary → `WritePropertyName(kvp.Key)` + write `kvp.Value`
+  → `WriteEndObject`. Keys are always strings (Smithy requires the key member target a string shape).
+- Lists and maps nest to any depth — a list/map element or map value that is itself a list/map recurses
+  (`JsonBodyMemberMarshaller.WriteCollectionValue`). Leaf values must be string or structure; value-type/enum
+  leaves (and enum keys → `ConstantClass`) fail loud in `TypeMapper.RejectUnsupportedCollectionElement`,
+  deferred to the value-type/ConstantClass work.
 - Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization
 
 
@@ -188,8 +192,11 @@ while (context.ReadAtDepth(targetDepth, ref reader))
 ```
 
 - Lists: `new JsonListUnmarshaller<T, TUnmarshaller>(TUnmarshaller.Instance)`
-- Maps: not implemented yet — throws at any nesting depth. Intended pattern:
-  `new JsonDictionaryUnmarshaller<K, V, KU, VU>(...)`
+- Maps: `new JsonDictionaryUnmarshaller<string, V, StringUnmarshaller, VU>(StringUnmarshaller.Instance, VU.Instance)`
+  (key is always `string`/`StringUnmarshaller`).
+- Nested collections compose recursively (`JsonBodyMemberUnmarshaller.CollectionUnmarshaller`): a map-of-list
+  is `JsonDictionaryUnmarshaller<string, List<T>, StringUnmarshaller, JsonListUnmarshaller<T, TU>>(...)`. Value-type/enum
+  leaves (and enum keys) fail loud in `TypeMapper`.
 
 ### `@httpPayload` (response)
 
@@ -264,7 +271,7 @@ code — only `epoch-seconds` differs. The `CultureInfo`/`DateTimeStyles` these 
 | `DateTime?` | Format-dependent (see below) | `DateTimeUnmarshaller` |
 | `MemoryStream` | `WriteStringValue(Convert.ToBase64String(...))` | `MemoryStreamUnmarshaller` |
 | `List<T>` | Array loop | `JsonListUnmarshaller<ElementType, ElementUnmarshaller>` |
-| `Dictionary<K,V>` (not implemented) | Object loop | `JsonDictionaryUnmarshaller<K, V, KeyUnmarshaller, ValueUnmarshaller>` |
+| `Dictionary<string,V>` (V = string/structure/nested list/map) | Object loop | `JsonDictionaryUnmarshaller<string, V, StringUnmarshaller, ValueUnmarshaller>` |
 | Structure | `{Shape}Marshaller.Instance` | `{Shape}Unmarshaller.Instance` |
 
 ### Timestamp Formats

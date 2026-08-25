@@ -6,8 +6,9 @@ using SmithyDotNet.Generator.Model.Traits;
 namespace SmithyDotNet.Generator.Writers;
 
 /// <summary>
-/// A member's resolved type, or (recursively via <see cref="Element"/>) a list element's type.
-/// One definition shared by both instead of two independent copies of the same flags.
+/// A member's resolved type, or (recursively via <see cref="ListElement"/> / <see cref="MapValue"/>)
+/// the type nested inside a collection. One definition shared by all of them instead of independent
+/// copies of the same flags.
 /// </summary>
 /// <param name="DotNetType">The .NET type name.</param>
 /// <param name="IsStructure">True if this targets a structure shape.</param>
@@ -15,7 +16,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsCollection">True if this is itself a list or map.</param>
 /// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalType"/>).</param>
 /// <param name="IsBlob">True if this targets a blob shape (maps to <c>MemoryStream</c>). Only supported as an <c>@httpPayload</c> body.</param>
-/// <param name="Element">The list element's type; set only for a list (a map does not populate it), null otherwise.</param>
+/// <param name="ListElement">The list element's type; set only for a list, null otherwise.</param>
+/// <param name="MapValue">The map value's type; set only for a map, null otherwise. A map's key always
+/// targets a string shape (Smithy requires it), so no key descriptor is carried.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
     bool IsStructure,
@@ -23,7 +26,8 @@ public sealed record TypeDescriptor(
     bool IsCollection,
     bool IsEnum = false,
     bool IsBlob = false,
-    TypeDescriptor? Element = null)
+    TypeDescriptor? ListElement = null,
+    TypeDescriptor? MapValue = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -133,8 +137,8 @@ public static class TypeMapper
     }
 
     /// <summary>
-    /// Resolves the shape at <paramref name="id"/> into a <see cref="TypeDescriptor"/>, recursing for
-    /// a list element. Used for both a member's own type and its element.
+    /// Resolves the shape at <paramref name="id"/> into a <see cref="TypeDescriptor"/>, recursing for a
+    /// list element or map value. Used for a member's own type and for its nested collection type.
     /// </summary>
     private static TypeDescriptor ResolveType(ShapeId id, GenerationContext context)
     {
@@ -146,7 +150,8 @@ public static class TypeMapper
             IsCollection: IsCollection(target),
             IsEnum: target is EnumShape,
             IsBlob: target is BlobShape,
-            Element: target is ListShape list ? ResolveType(list.Member.Target, context) : null);
+            ListElement: target is ListShape list ? ResolveType(list.Member.Target, context) : null,
+            MapValue: target is MapShape map ? ResolveType(map.Value.Target, context) : null);
     }
 
     /// <summary>
@@ -163,10 +168,12 @@ public static class TypeMapper
 
         if (target is MapShape map)
         {
-            var keyTarget = context.Resolve(map.Key.Target);
             var valueTarget = context.Resolve(map.Value.Target);
             RejectUnsupportedCollectionElement(valueTarget, "map");
-            return $"Dictionary<{MapType(map.Key.Target, keyTarget, context)}, {MapType(map.Value.Target, valueTarget, context)}>";
+
+            // Smithy guarantees the key targets a string shape; C2J emits `string` even for an enum key,
+            // so the .NET key type is always string (never the enum's ConstantClass).
+            return $"Dictionary<string, {MapType(map.Value.Target, valueTarget, context)}>";
         }
 
         if (target is StructureShape)
@@ -238,11 +245,12 @@ public static class TypeMapper
         _ => null,
     };
 
-    // The writers only handle string and structure collection elements. A value-type scalar needs a
-    // first-class Member with its own @timestampFormat; an enum element would map to its ConstantClass,
-    // which WriteListElement does not route through the string path. Fail here so a model like
-    // list<Integer> or list<SomeEnum> doesn't silently map the type then blow up in the writer with a
-    // confusing error.
+    // The writers handle string, structure, and nested-collection (list/map) collection elements. A
+    // value-type scalar needs a first-class Member with its own @timestampFormat; an enum element would
+    // map to its ConstantClass, which the collection writers don't route through the string path. Fail
+    // here so a model like list<Integer> or list<SomeEnum> doesn't silently map the type then blow up in
+    // the writer with a confusing error. (A list/map element that is itself a list/map is fine - it
+    // recurses; only value-type/enum *leaves* are rejected.)
     private static void RejectUnsupportedCollectionElement(Shape elementTarget, string collectionKind)
     {
         if (MapScalar(elementTarget) is not null || elementTarget is EnumShape or IntEnumShape)

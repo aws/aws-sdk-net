@@ -53,35 +53,44 @@ public static class JsonBodyMemberUnmarshaller
         _ => null,
     };
 
-    // Scalar / list-of-structure / list-of-string / structure dispatch, writing into the
-    // `unmarshalledObject` local.
+    // A scalar member uses a runtime scalar unmarshaller; string/structure/list/map members (nested to
+    // any depth) resolve recursively via CollectionUnmarshaller. Writes into the `unmarshalledObject` local.
     internal static void WriteMemberUnmarshall(CodeWriter writer, Member member)
     {
-        if (ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller)
+        var instance = ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller
+            ? $"{scalarUnmarshaller}.Instance"
+            : CollectionUnmarshaller(member.Type).Instance;
+        writer.WriteLine($"var unmarshaller = {instance};");
+        writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+    }
+
+    // The runtime unmarshaller type name and an instance expression for a string, structure, list, or map
+    // type - recursing for nested collections. Map keys are always strings (see TypeMapper.MapType), so the
+    // key unmarshaller is StringUnmarshaller. Value-type/enum leaf values are rejected in TypeMapper
+    // (deferred to the value-type (un)marshaller work).
+    private static (string Type, string Instance) CollectionUnmarshaller(TypeDescriptor type)
+    {
+        if (type.IsString)
         {
-            writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            return ("StringUnmarshaller", "StringUnmarshaller.Instance");
         }
-        else if (member.Type.Element is { IsStructure: true } element)
+        if (type.IsStructure)
         {
-            var unmarshallerType = $"{element.DotNetType}Unmarshaller";
-            writer.WriteLine($"var unmarshaller = new JsonListUnmarshaller<{element.DotNetType}, {unmarshallerType}>({unmarshallerType}.Instance);");
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            var unmarshaller = $"{type.DotNetType}Unmarshaller";
+            return (unmarshaller, $"{unmarshaller}.Instance");
         }
-        else if (member.Type.Element is { IsString: true })
+        if (type.ListElement is { } element)
         {
-            writer.WriteLine("var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);");
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            var inner = CollectionUnmarshaller(element);
+            var unmarshaller = $"JsonListUnmarshaller<{element.DotNetType}, {inner.Type}>";
+            return (unmarshaller, $"new {unmarshaller}({inner.Instance})");
         }
-        else if (member.Type.IsStructure)
+        if (type.MapValue is { } mapValue)
         {
-            var unmarshallerType = $"{member.Type.DotNetType}Unmarshaller";
-            writer.WriteLine($"var unmarshaller = {unmarshallerType}.Instance;");
-            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            var inner = CollectionUnmarshaller(mapValue);
+            var unmarshaller = $"JsonDictionaryUnmarshaller<string, {mapValue.DotNetType}, StringUnmarshaller, {inner.Type}>";
+            return (unmarshaller, $"new {unmarshaller}(StringUnmarshaller.Instance, {inner.Instance})");
         }
-        else
-        {
-            throw new GeneratorException($"Unsupported member type '{member.Type.DotNetType}' for member '{member.PropertyName}'.");
-        }
+        throw new GeneratorException($"Unsupported collection value type '{type.DotNetType}'.");
     }
 }

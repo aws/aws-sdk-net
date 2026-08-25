@@ -8,6 +8,7 @@
       "operations": [
         { "target": "com.example#DoConflict" },
         { "target": "com.example#DoEnums" },
+        { "target": "com.example#DoGreedy" },
         { "target": "com.example#DoHeaderOnly" },
         { "target": "com.example#DoLists" },
         { "target": "com.example#DoScalars" },
@@ -139,6 +140,19 @@
       "type": "enum",
       "members": {
         "UNKNOWN": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "UNKNOWN" } }
+      }
+    },
+    "com.example#DoGreedy": {
+      "type": "operation",
+      "input": { "target": "com.example#DoGreedyRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/things/{thingId}/{path+}", "method": "GET" } }
+    },
+    "com.example#DoGreedyRequest": {
+      "type": "structure",
+      "members": {
+        "thingId": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
+        "path":    { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
       }
     },
     "com.example#DoHeaderOnly": {

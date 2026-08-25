@@ -218,13 +218,24 @@ public class TypeMapperTests
     [InlineData("smithy.api#Integer")]   // value-type element
     public void UnsupportedCollectionElement_Throws(string elementTarget)
     {
-        // The marshaller writers only route string and structure list elements; an enum element would
-        // map to its ConstantClass and a value-type element to a primitive, neither of which
-        // WriteListElement can emit. MapType must fail loud here rather than mapping the type and
-        // blowing up deep in the writer.
+        // The collection writers route string, structure, and nested-collection elements; an enum element
+        // would map to its ConstantClass and a value-type element to a primitive, neither of which the
+        // string/structure leaf paths can emit. MapType must fail loud on such a leaf rather than mapping
+        // the type and blowing up deep in the writer. (Nested list/map elements are fine - they recurse.)
         var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
         var id = ShapeId.Parse("com.example#EnumList");
         Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
+    }
+
+    [Fact]
+    public void EnumKeyedMap_UsesStringKey()
+    {
+        // Smithy guarantees a map key targets a string shape, and C2J emits `string` even for an enum key,
+        // so the .NET key type is always string - never the enum's ConstantClass. Resolving the key
+        // generically (the pre-fix behavior) would wrongly type this Dictionary<Status, string>.
+        var map = TestModels.DeserializeShape("""{ "type": "map", "key": { "target": "com.example#Status" }, "value": { "target": "smithy.api#String" } }""");
+        var id = ShapeId.Parse("com.example#StatusMap");
+        Assert.Equal("Dictionary<string, string>", TypeMapper.MapType(id, map, _context));
     }
 
     [Fact]

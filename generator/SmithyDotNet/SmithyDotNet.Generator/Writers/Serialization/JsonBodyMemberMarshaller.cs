@@ -6,8 +6,8 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// (<see cref="JsonRequestMarshallerWriter"/>) and a nested structure's own marshaller
 /// (<see cref="JsonStructureMarshallerWriter"/>) both call in here; the object variable name is the
 /// only thing that differs between them ("publicRequest" vs. "requestObject"). Handles scalars,
-/// nested structures, and lists of strings or structures, so a structure recurses through those
-/// member kinds at any depth. A map member throws.
+/// nested structures, and collections (lists/maps of strings, structures, or nested collections),
+/// so a structure recurses through those member kinds at any depth.
 /// </summary>
 public static class JsonBodyMemberMarshaller
 {
@@ -43,19 +43,12 @@ public static class JsonBodyMemberMarshaller
                 writer.WriteLine("context.Writer.WriteEndObject();");
             });
         }
-        // Only a list has Element set (ResolveType), so this is the list case; a map falls through.
-        else if (member.Type.Element is { } element)
+        else if (member.Type.IsCollection)
         {
             writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
-                writer.WriteLine("context.Writer.WriteStartArray();");
-                var loopVar = $"{objectVar}{member.PropertyName}ListValue";
-                writer.OpenBlock($"foreach (var {loopVar} in {objectVar}.{member.PropertyName})", () =>
-                {
-                    WriteListElement(writer, element, loopVar);
-                });
-                writer.WriteLine("context.Writer.WriteEndArray();");
+                WriteCollectionValue(writer, member.Type, $"{objectVar}.{member.PropertyName}", $"{objectVar}{member.PropertyName}");
             });
         }
         else
@@ -64,24 +57,52 @@ public static class JsonBodyMemberMarshaller
         }
     }
 
-    private static void WriteListElement(CodeWriter writer, TypeDescriptor element, string loopVar)
+    // Writes one JSON value: a list element, a map value, or a collection member's own value - recursing
+    // for nested lists/maps. A list becomes a JSON array, a map a JSON object keyed by kvp.Key (map keys
+    // are always strings - see TypeMapper.MapType). baseName seeds the loop-variable names so nested loops
+    // don't collide. Value-type/enum leaf values are rejected in TypeMapper (deferred to the value-type
+    // (un)marshaller work).
+    private static void WriteCollectionValue(CodeWriter writer, TypeDescriptor type, string valueExpr, string baseName)
     {
-        if (element.IsString)
+        if (type.IsString)
         {
-            writer.WriteLine($"context.Writer.WriteStringValue({loopVar});");
+            writer.WriteLine($"context.Writer.WriteStringValue({valueExpr});");
         }
-        else if (element.IsStructure)
+        else if (type.IsStructure)
         {
             writer.WriteLine("context.Writer.WriteStartObject();");
             writer.WriteLine("");
-            writer.WriteLine($"var marshaller = {element.DotNetType}Marshaller.Instance;");
-            writer.WriteLine($"marshaller.Marshall({loopVar}, context);");
+            writer.WriteLine($"var marshaller = {type.DotNetType}Marshaller.Instance;");
+            writer.WriteLine($"marshaller.Marshall({valueExpr}, context);");
             writer.WriteLine("");
+            writer.WriteLine("context.Writer.WriteEndObject();");
+        }
+        else if (type.ListElement is { } element)
+        {
+            writer.WriteLine("context.Writer.WriteStartArray();");
+            var loopVar = $"{baseName}ListValue";
+            writer.OpenBlock($"foreach (var {loopVar} in {valueExpr})", () =>
+            {
+                WriteCollectionValue(writer, element, loopVar, loopVar);
+            });
+            writer.WriteLine("context.Writer.WriteEndArray();");
+        }
+        else if (type.MapValue is { } mapValue)
+        {
+            writer.WriteLine("context.Writer.WriteStartObject();");
+            var kvpVar = $"{baseName}Kvp";
+            writer.OpenBlock($"foreach (var {kvpVar} in {valueExpr})", () =>
+            {
+                writer.WriteLine($"context.Writer.WritePropertyName({kvpVar}.Key);");
+                var valueVar = $"{baseName}Value";
+                writer.WriteLine($"var {valueVar} = {kvpVar}.Value;");
+                WriteCollectionValue(writer, mapValue, valueVar, valueVar);
+            });
             writer.WriteLine("context.Writer.WriteEndObject();");
         }
         else
         {
-            throw new GeneratorException("Only strings and structure list element types are handled right now!");
+            throw new GeneratorException($"Unsupported collection value type '{type.DotNetType}'.");
         }
     }
 }
