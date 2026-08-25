@@ -30,18 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Use this structure to specify the distribution of On-Demand Instances and Spot Instances
-    /// and the allocation strategies used to fulfill On-Demand and Spot capacities for a
-    /// mixed instances policy.
+    /// Use this structure to specify how a mixed instances policy distributes capacity across
+    /// On-Demand, Spot, and supported Capacity Reservation types, and to specify the allocation
+    /// strategies that are used to fulfill the capacity.
     /// </summary>
     public partial class InstancesDistribution
     {
+        private List<DistributionSegment> _distributionSegments = AWSConfigs.InitializeCollections ? new List<DistributionSegment>() : null;
         private string _onDemandAllocationStrategy;
         private int? _onDemandBaseCapacity;
         private int? _onDemandPercentageAboveBaseCapacity;
         private string _spotAllocationStrategy;
         private int? _spotInstancePools;
         private string _spotMaxPrice;
+
+        /// <summary>
+        /// Gets and sets the property DistributionSegments. 
+        /// <para>
+        /// The Distribution Segments configuration. Each segment contains an ordered list of
+        /// capacity types to prioritize.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/use-distribution-segments.html">Use
+        /// Distribution Segments to target multiple capacity types</a> in the <i>Amazon EC2 Auto
+        /// Scaling User Guide</i>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<DistributionSegment> DistributionSegments
+        {
+            get { return this._distributionSegments; }
+            set { this._distributionSegments = value; }
+        }
+
+        // Check to see if DistributionSegments property is set
+        internal bool IsSetDistributionSegments()
+        {
+            return this._distributionSegments != null && (this._distributionSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property OnDemandAllocationStrategy. 
