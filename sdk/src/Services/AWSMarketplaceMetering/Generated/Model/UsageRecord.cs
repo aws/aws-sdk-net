@@ -54,13 +54,15 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <para>
         /// The <c>CustomerAWSAccountId</c> parameter specifies the AWS account ID of the buyer.
         /// </para>
-        ///  <note> 
+        ///  <important> 
         /// <para>
-        /// For existing integrations, to access your <c>CustomerIdentifier</c> to <c>CustomerAWSAccountId</c>
-        /// mapping, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account
-        /// Feeds</a>.
+        /// If you have an existing integration and need the <c>CustomerAWSAccountId</c> that
+        /// corresponds to a <c>CustomerIdentifier</c>, contact <a href="https://aws.amazon.com/marketplace/management/contact-us/">AWS
+        /// Marketplace Seller Operations</a> to obtain the mapping. Do not request the <c>CustomerAWSAccountId</c>
+        /// directly from buyers. We cannot verify that a buyer-provided account ID is authentic,
+        /// which can result in incorrect metering or billing.
         /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string CustomerAWSAccountId

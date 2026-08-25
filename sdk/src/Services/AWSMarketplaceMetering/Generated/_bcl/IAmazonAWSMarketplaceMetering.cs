@@ -82,9 +82,9 @@ namespace Amazon.AWSMarketplaceMetering
     /// <para>
     /// Submits the metering record for a set of customers. <c>BatchMeterUsage</c> API calls
     /// are captured by CloudTrail. You can use CloudTrail to verify that the software as
-    /// a subscription (SaaS) metering records that you sent are accurate by searching for
-    /// records with the <c>eventName</c> of <c>BatchMeterUsage</c>. You can also use CloudTrail
-    /// to audit records over time. For more information, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">CloudTrail
+    /// a service (SaaS) metering records that you sent are accurate by searching for records
+    /// with the <c>eventName</c> of <c>BatchMeterUsage</c>. You can also use CloudTrail to
+    /// audit records over time. For more information, see the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html">CloudTrail
     /// User Guide</a>.
     /// </para>
     ///  </li> <li> 
@@ -131,7 +131,7 @@ namespace Amazon.AWSMarketplaceMetering
     /// </para>
     ///  
     /// <para>
-    ///  <i>RegisteredUsage</i> 
+    ///  <i>RegisterUsage</i> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -213,6 +213,9 @@ namespace Amazon.AWSMarketplaceMetering
         /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. <c>BatchMeterUsage</c>
         /// does not support <c>CustomerIdentifier</c> for new integrations. Existing integrations
         /// continue to work. Review the new integration for Concurrent Agreements <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
+        /// For additional implementation details, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-licensearn-example">BatchMeterUsage
+        /// code example with LicenseArn</a> in the <i>Amazon Web Services Marketplace Seller
+        /// Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -228,8 +231,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// Usage records aren't accepted 24 hours or more after an event. At the end of each
         /// billing cycle, a 6-hour grace period applies. We accept usage records for the previous
         /// billing month until 06:00 UTC on the first day of the next month. For example, you
-        /// must submit March usage records before 06:00 UTC on April 1. After this grace period,
-        /// we return a <c>TimestampOutOfBoundsException</c> error.
+        /// must submit March usage records before 06:00 UTC on April 1. On April 1 at 05:00 UTC,
+        /// you can still submit records for March 31 (within the 6-hour grace period). After
+        /// 06:00 UTC on April 1, March records are rejected regardless of the normal 24-hour
+        /// submission window. After this grace period, we return a <c>TimestampOutOfBoundsException</c>
+        /// error.
         /// </para>
         ///  
         /// <para>
@@ -312,6 +318,9 @@ namespace Amazon.AWSMarketplaceMetering
         /// <c>LicenseArn</c> (instead of <c>ProductCode</c>) to support this feature. <c>BatchMeterUsage</c>
         /// does not support <c>CustomerIdentifier</c> for new integrations. Existing integrations
         /// continue to work. Review the new integration for Concurrent Agreements <a href="https://catalog.workshops.aws/mpseller/en-US/saas/integration-for-concurrent-agreements">here</a>.
+        /// For additional implementation details, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-batchmeterusage-licensearn-example">BatchMeterUsage
+        /// code example with LicenseArn</a> in the <i>Amazon Web Services Marketplace Seller
+        /// Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -327,8 +336,11 @@ namespace Amazon.AWSMarketplaceMetering
         /// Usage records aren't accepted 24 hours or more after an event. At the end of each
         /// billing cycle, a 6-hour grace period applies. We accept usage records for the previous
         /// billing month until 06:00 UTC on the first day of the next month. For example, you
-        /// must submit March usage records before 06:00 UTC on April 1. After this grace period,
-        /// we return a <c>TimestampOutOfBoundsException</c> error.
+        /// must submit March usage records before 06:00 UTC on April 1. On April 1 at 05:00 UTC,
+        /// you can still submit records for March 31 (within the 6-hour grace period). After
+        /// 06:00 UTC on April 1, March records are rejected regardless of the normal 24-hour
+        /// submission window. After this grace period, we return a <c>TimestampOutOfBoundsException</c>
+        /// error.
         /// </para>
         ///  
         /// <para>
