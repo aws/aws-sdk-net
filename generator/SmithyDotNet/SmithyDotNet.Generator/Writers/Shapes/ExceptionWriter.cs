@@ -66,7 +66,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         FileHeader.WritePragma(writer, FileHeader.ModelWarnings);
         writer.OpenNamespace($"{context.Namespace}.Model", () =>
         {
-            WriteClassDocumentation(writer, errorShape);
+            DocumentationFormatter.WriteClassSummary(writer, DocumentationFormatter.Cleanup(errorShape.GetDocumentation()));
             WriteSerializableAttribute(writer);
             writer.OpenBlock($"public partial class {className} : {baseClassName}", () =>
             {
@@ -130,19 +130,6 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         // The errorType→RequestErrorType rename above changes a member's sort key, so re-sort to
         // keep emitted order aligned with TypeMapper's property-name ordering.
         return [.. members.OrderBy(m => m.PropertyName, StringComparer.Ordinal)];
-    }
-
-    private static void WriteClassDocumentation(CodeWriter writer, StructureShape errorShape)
-    {
-        var cleaned = DocumentationFormatter.Cleanup(errorShape.GetDocumentation());
-        if (cleaned.Length == 0)
-        {
-            return;
-        }
-
-        writer.WriteLine("/// <summary>");
-        DocumentationFormatter.WriteCommentBlock(writer, cleaned);
-        writer.WriteLine("/// </summary>");
     }
 
     private static void WriteSerializableAttribute(CodeWriter writer)

@@ -31,23 +31,10 @@ public sealed class StructureWriter(GenerationContext context, string modelFileN
         FileHeader.WritePragma(writer, FileHeader.ModelWarnings);
         writer.OpenNamespace($"{context.Namespace}.Model", () =>
         {
-            WriteClassDocumentation(writer, structure);
+            DocumentationFormatter.WriteClassSummary(writer, DocumentationFormatter.Cleanup(structure.GetDocumentation()));
             writer.OpenBlock($"public partial class {className}", () => MemberWriter.WriteMembers(writer, members));
         });
 
         return writer.ToFormattedString(cancellationToken);
-    }
-
-    private static void WriteClassDocumentation(CodeWriter writer, StructureShape structure)
-    {
-        var cleaned = DocumentationFormatter.Cleanup(structure.GetDocumentation());
-        if (cleaned.Length == 0)
-        {
-            return;
-        }
-
-        writer.WriteLine("/// <summary>");
-        DocumentationFormatter.WriteCommentBlock(writer, cleaned);
-        writer.WriteLine("/// </summary>");
     }
 }

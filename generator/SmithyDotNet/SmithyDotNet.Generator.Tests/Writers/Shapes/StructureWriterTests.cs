@@ -102,4 +102,17 @@ public class StructureWriterTests
         Assert.Contains("internal bool IsSetEventDataChecksum() => this.EventDataChecksum != null;", _auditEvent);
         Assert.Contains("internal bool IsSetId() => this.Id != null;", _auditEvent);
     }
+
+    [Fact]
+    public void StructureWithoutDocumentation_StillEmitsSummary()
+    {
+        // Widget has no @documentation; without a class <summary> it would trip CS1591 (build error).
+        var context = TestModels.Context("Codegen/nested-structure-model.json");
+        var shapeId = ShapeId.Parse("com.amazonaws.testnested#Widget");
+        var widget = new StructureWriter(context, ModelFileName)
+            .Write(context.Structures[shapeId], shapeId, TestContext.Current.CancellationToken);
+
+        var beforeClass = widget[..widget.IndexOf("public partial class Widget", StringComparison.Ordinal)];
+        Assert.Contains("/// <summary>", beforeClass);
+    }
 }
