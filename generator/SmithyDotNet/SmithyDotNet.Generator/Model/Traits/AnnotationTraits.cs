@@ -24,6 +24,9 @@ public static class AnnotationTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httplabel-trait" /></remarks>
     public static bool IsHttpLabel(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpLabel");
 
+    /// <remarks><see href="https://smithy.io/2.0/spec/endpoint-traits.html#hostlabel-trait" /></remarks>
+    public static bool IsHostLabel(this Shape shape) => shape.Traits.ContainsKey("smithy.api#hostLabel");
+
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httppayload-trait" /></remarks>
     public static bool IsHttpPayload(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpPayload");
 

@@ -48,6 +48,7 @@ Then serializes members based on placement rules, then returns `request`.
 | `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
 | `@httpPrefixHeaders("prefix")` | Multiple headers | Loop dict, prefix each key |
 | `@httpPayload` | Entire body | Direct stream/string (skips body serialization) |
+| `@hostLabel` | Endpoint host prefix | Additive: `request.HostPrefix` label + its normal binding (see below) |
 | `@httpResponseCode` | (response only) | `response.HttpStatusCode` |
 | No HTTP trait | Body | Protocol-specific serialization |
 
@@ -128,6 +129,26 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
   ```
 
 list/map payloads fail loud in the writer; document/union throw in `TypeMapper`.
+
+### `@endpoint` host prefix (request)
+
+An operation's `@endpoint` trait sets `request.HostPrefix` (the resolver's `InjectHostPrefix` prepends it to the endpoint host). Emitted last, after `UseQueryString`, before `return`.
+
+- **Static** (no labels) → `request.HostPrefix = $"data.";`
+- **Labeled** → each `@hostLabel` member is captured, validated, and interpolated (`{name}` → `{hostPrefixLabels.name}`):
+  ```csharp
+  var hostPrefixLabels = new
+  {
+      name = StringUtils.FromString(publicRequest.Name),   // field = modeled name, value = property name
+  };
+  if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.name))
+  {
+      throw new Amazon{Service}Exception("name can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");
+  }
+  request.HostPrefix = $"foo.{hostPrefixLabels.name}.";
+  ```
+
+`@hostLabel` is **additive** — the member is still marshalled in its normal binding (body/`@httpLabel`/`@httpQuery`/`@httpHeader`) as well.
 
 ### XML (restXml)
 

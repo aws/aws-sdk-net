@@ -9,8 +9,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// of the existing AWS SDK for .NET.
 /// <para />
 /// restJson1 only. Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
-/// bool, numeric, timestamp), body lists of strings or structures, and an @httpPayload
-/// string/structure/blob body. Unsupported member shapes throw a <see cref="GeneratorException"/>.
+/// bool, numeric, timestamp), body lists of strings or structures, an @httpPayload
+/// string/structure/blob body, and the operation's @endpoint host prefix with its @hostLabel members.
+/// Unsupported member shapes throw a <see cref="GeneratorException"/>.
 /// </summary>
 public sealed class JsonRequestMarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -18,6 +19,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     {
         var className = $"{operation.Name}Request";
         var httpTrait = operation.Shape.GetHttp() ?? throw new GeneratorException($"Operation '{operation.Name}' is missing the @http trait.");
+        var hostPrefix = operation.Shape.GetEndpoint()?.HostPrefix;
         var members = TypeMapper.ResolveMembers(operation.Input, context);
 
         var partitioned = PartitionMembers(operation.Input, members);
@@ -35,7 +37,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 WriteBaseMarshallMethod(writer, className);
                 writer.WriteLine("");
-                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned);
+                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix);
                 writer.WriteLine("");
                 WriteSingleton(writer, className);
             });
@@ -58,7 +60,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         CodeWriter writer,
         string className,
         HttpTrait httpTrait,
-        PartitionedMembers partitioned)
+        PartitionedMembers partitioned,
+        string? hostPrefix)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
@@ -94,8 +97,42 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 writer.WriteLine("");
             }
 
+            if (!string.IsNullOrEmpty(hostPrefix))
+            {
+                WriteHostPrefix(writer, hostPrefix, partitioned.HostLabelMembers);
+                writer.WriteLine("");
+            }
+
             writer.WriteLine("return request;");
         });
+    }
+
+    private void WriteHostPrefix(CodeWriter writer, string hostPrefix, List<Member> hostLabelMembers)
+    {
+        if (hostLabelMembers.Count > 0)
+        {
+            writer.OpenBlock("var hostPrefixLabels = new", "};", () =>
+            {
+                foreach (var member in hostLabelMembers)
+                {
+                    writer.WriteLine($"{member.ModeledName} = StringUtils.FromString(publicRequest.{member.PropertyName}),");
+                }
+            });
+            writer.WriteLine("");
+
+            foreach (var member in hostLabelMembers)
+            {
+                writer.OpenBlock($"if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.{member.ModeledName}))", () =>
+                {
+                    writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("{member.ModeledName} can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");""");
+                });
+            }
+            writer.WriteLine("");
+        }
+
+        // {label} -> {hostPrefixLabels.label}; a prefix with no labels stays literal.
+        var interpolated = hostPrefix.Replace("{", "{hostPrefixLabels.");
+        writer.WriteLine($"""request.HostPrefix = $"{interpolated}";""");
     }
 
     // Content-Type mirrors C2J: omitted for GET/DELETE and for body-less operations. Otherwise a
@@ -417,6 +454,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         var headerMembers = new List<(Member Member, string HeaderName)>();
         var labelMembers = new List<Member>();
         var bodyMembers = new List<Member>();
+        var hostLabelMembers = new List<Member>();
         Member? payloadMember = null;
 
         foreach (var member in members)
@@ -450,6 +488,13 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 bodyMembers.Add(member);
             }
+
+            // @hostLabel is additive: a member can be bound to a bucket above AND contribute to the
+            // endpoint host prefix, so it is collected independently rather than in the else-if chain.
+            if (memberShape.IsHostLabel())
+            {
+                hostLabelMembers.Add(member);
+            }
         }
 
         // Per the Smithy spec, when a member is bound with @httpPayload every other member must be
@@ -460,7 +505,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with unbound body members ({names}); every other member must be bound to a header, query, or label.");
         }
 
-        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers, payloadMember);
+        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers, hostLabelMembers, payloadMember);
     }
 
     private record PartitionedMembers(
@@ -468,6 +513,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         List<(Member Member, string HeaderName)> HeaderMembers,
         List<Member> LabelMembers,
         List<Member> BodyMembers,
+        List<Member> HostLabelMembers,
         Member? PayloadMember);
 
     private static void WriteMarshallerDocumentation(CodeWriter writer, string operationName)

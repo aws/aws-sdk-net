@@ -116,6 +116,32 @@ public class TraitAccessorTests(CloudTrailModelFixture fixture)
     }
 
     [Fact]
+    public void GetEndpoint_ReturnsHostPrefix()
+    {
+        var json = """
+        {
+            "type": "operation",
+            "input": { "target": "smithy.api#Unit" },
+            "output": { "target": "smithy.api#Unit" },
+            "traits": { "smithy.api#endpoint": { "hostPrefix": "foo.{name}." } }
+        }
+        """;
+        var shape = JsonSerializer.Deserialize<Shape>(json, TestModels.Options);
+        Assert.NotNull(shape);
+
+        var endpoint = shape.GetEndpoint();
+        Assert.NotNull(endpoint);
+        Assert.Equal("foo.{name}.", endpoint.HostPrefix);
+    }
+
+    [Fact]
+    public void GetEndpoint_ReturnsNullWhenAbsent()
+    {
+        var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#PutAuditEvents");
+        Assert.Null(shape.GetEndpoint());
+    }
+
+    [Fact]
     public void GetLength_ReturnsMinAndMax()
     {
         var shape = fixture.DeserializeShape("com.amazonaws.cloudtraildata#Uuid");
