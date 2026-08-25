@@ -33,18 +33,18 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReservedCapacityOptions Object
+    /// Response Unmarshaller for ReservedCapacityFallbackOptions Object
     /// </summary>  
-    public class ReservedCapacityOptionsUnmarshaller : IXmlUnmarshaller<ReservedCapacityOptions, XmlUnmarshallerContext>
+    public class ReservedCapacityFallbackOptionsUnmarshaller : IXmlUnmarshaller<ReservedCapacityFallbackOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReservedCapacityOptions Unmarshall(XmlUnmarshallerContext context)
+        public ReservedCapacityFallbackOptions Unmarshall(XmlUnmarshallerContext context)
         {
-            ReservedCapacityOptions unmarshalledObject = new ReservedCapacityOptions();
+            ReservedCapacityFallbackOptions unmarshalledObject = new ReservedCapacityFallbackOptions();
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
             
@@ -55,27 +55,15 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("allocationStrategy", targetDepth))
+                    if (context.TestExpression("marketTypeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("reservationTypeSet/item", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        if (unmarshalledObject.ReservationTypes == null)
+                        if (unmarshalledObject.MarketTypes == null)
                         {
-                            unmarshalledObject.ReservationTypes = new List<string>();
+                            unmarshalledObject.MarketTypes = new List<string>();
                         }
                         var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.ReservationTypes.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("reservedCapacityFallbackOptions", targetDepth))
-                    {
-                        var unmarshaller = ReservedCapacityFallbackOptionsUnmarshaller.Instance;
-                        unmarshalledObject.ReservedCapacityFallbackOptions = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MarketTypes.Add(item);
                         continue;
                     }
                 }
@@ -88,12 +76,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             return unmarshalledObject;
         }
 
-        private static ReservedCapacityOptionsUnmarshaller _instance = new ReservedCapacityOptionsUnmarshaller();        
+        private static ReservedCapacityFallbackOptionsUnmarshaller _instance = new ReservedCapacityFallbackOptionsUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ReservedCapacityOptionsUnmarshaller Instance
+        public static ReservedCapacityFallbackOptionsUnmarshaller Instance
         {
             get
             {

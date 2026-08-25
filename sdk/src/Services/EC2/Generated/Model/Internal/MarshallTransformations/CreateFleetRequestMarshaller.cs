@@ -594,6 +594,41 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetReservedCapacityOptions())
                 {
+                    if(publicRequest.ReservedCapacityOptions.IsSetAllocationStrategy())
+                    {
+                        request.Parameters.Add("ReservedCapacityOptions" + "." + "AllocationStrategy", StringUtils.FromString(publicRequest.ReservedCapacityOptions.AllocationStrategy));
+                    }
+                    if(publicRequest.ReservedCapacityOptions.IsSetCapacityReservationTarget())
+                    {
+                        if(publicRequest.ReservedCapacityOptions.CapacityReservationTarget.IsSetCapacityReservationIds())
+                        {
+                            if (publicRequest.ReservedCapacityOptions.CapacityReservationTarget.CapacityReservationIds.Count == 0)
+                                request.Parameters.Add("ReservedCapacityOptions" + "." + "CapacityReservationTarget" + "." + "CapacityReservationId", "");
+                            else
+                            {
+                                 int publicRequestReservedCapacityOptionsCapacityReservationTargetlistValueIndex = 1;
+                                 foreach(var publicRequestReservedCapacityOptionsCapacityReservationTargetlistValue in publicRequest.ReservedCapacityOptions.CapacityReservationTarget.CapacityReservationIds)
+                                 {
+                                     request.Parameters.Add("ReservedCapacityOptions" + "." + "CapacityReservationTarget" + "." + "CapacityReservationId" + "." + publicRequestReservedCapacityOptionsCapacityReservationTargetlistValueIndex, StringUtils.FromString(publicRequestReservedCapacityOptionsCapacityReservationTargetlistValue));
+                                     publicRequestReservedCapacityOptionsCapacityReservationTargetlistValueIndex++;
+                                 }
+                            }
+                        }
+                        if(publicRequest.ReservedCapacityOptions.CapacityReservationTarget.IsSetCapacityReservationResourceGroupArns())
+                        {
+                            if (publicRequest.ReservedCapacityOptions.CapacityReservationTarget.CapacityReservationResourceGroupArns.Count == 0)
+                                request.Parameters.Add("ReservedCapacityOptions" + "." + "CapacityReservationTarget" + "." + "CapacityReservationResourceGroupArn", "");
+                            else
+                            {
+                                 int publicRequestReservedCapacityOptionsCapacityReservationTargetlistValueIndex = 1;
+                                 foreach(var publicRequestReservedCapacityOptionsCapacityReservationTargetlistValue in publicRequest.ReservedCapacityOptions.CapacityReservationTarget.CapacityReservationResourceGroupArns)
+                                 {
+                                     request.Parameters.Add("ReservedCapacityOptions" + "." + "CapacityReservationTarget" + "." + "CapacityReservationResourceGroupArn" + "." + publicRequestReservedCapacityOptionsCapacityReservationTargetlistValueIndex, StringUtils.FromString(publicRequestReservedCapacityOptionsCapacityReservationTargetlistValue));
+                                     publicRequestReservedCapacityOptionsCapacityReservationTargetlistValueIndex++;
+                                 }
+                            }
+                        }
+                    }
                     if(publicRequest.ReservedCapacityOptions.IsSetReservationTypes())
                     {
                         if (publicRequest.ReservedCapacityOptions.ReservationTypes.Count == 0)
@@ -606,6 +641,23 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                                  request.Parameters.Add("ReservedCapacityOptions" + "." + "ReservationType" + "." + publicRequestReservedCapacityOptionslistValueIndex, StringUtils.FromString(publicRequestReservedCapacityOptionslistValue));
                                  publicRequestReservedCapacityOptionslistValueIndex++;
                              }
+                        }
+                    }
+                    if(publicRequest.ReservedCapacityOptions.IsSetReservedCapacityFallbackOptions())
+                    {
+                        if(publicRequest.ReservedCapacityOptions.ReservedCapacityFallbackOptions.IsSetMarketTypes())
+                        {
+                            if (publicRequest.ReservedCapacityOptions.ReservedCapacityFallbackOptions.MarketTypes.Count == 0)
+                                request.Parameters.Add("ReservedCapacityOptions" + "." + "ReservedCapacityFallbackOptions" + "." + "MarketType", "");
+                            else
+                            {
+                                 int publicRequestReservedCapacityOptionsReservedCapacityFallbackOptionslistValueIndex = 1;
+                                 foreach(var publicRequestReservedCapacityOptionsReservedCapacityFallbackOptionslistValue in publicRequest.ReservedCapacityOptions.ReservedCapacityFallbackOptions.MarketTypes)
+                                 {
+                                     request.Parameters.Add("ReservedCapacityOptions" + "." + "ReservedCapacityFallbackOptions" + "." + "MarketType" + "." + publicRequestReservedCapacityOptionsReservedCapacityFallbackOptionslistValueIndex, StringUtils.FromString(publicRequestReservedCapacityOptionsReservedCapacityFallbackOptionslistValue));
+                                     publicRequestReservedCapacityOptionsReservedCapacityFallbackOptionslistValueIndex++;
+                                 }
+                            }
                         }
                     }
                 }
