@@ -6,6 +6,9 @@ using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.NuGet;
 using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
+using SmithyDotNet.Generator.Writers.Serialization;
+using SmithyDotNet.Generator.Writers.Service;
+using SmithyDotNet.Generator.Writers.Shapes;
 using System.Collections.Concurrent;
 
 namespace SmithyDotNet.Generator.Generation;

@@ -206,7 +206,7 @@ public static class TypeMapper
 
     /// <summary>
     /// The emitted <c>ConstantClass</c> name for an <c>enum</c> shape. Shared by <see cref="MapType"/>
-    /// (the member's .NET type) and <see cref="ServiceEnumerationsWriter"/> (the class declaration), so a
+    /// (the member's .NET type) and <see cref="Shapes.ServiceEnumerationsWriter"/> (the class declaration), so a
     /// member typed as an enum always names the class that gets emitted. C2J upper-cases the first
     /// character of the shape name; a no-op for the PascalCase shape names AWS models use.
     /// </summary>
