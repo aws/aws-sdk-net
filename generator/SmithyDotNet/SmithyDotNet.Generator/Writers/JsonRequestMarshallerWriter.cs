@@ -9,9 +9,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// of the existing AWS SDK for .NET.
 /// <para />
 /// restJson1 only. Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
-/// bool, numeric, timestamp), body lists of strings or structures, an @httpPayload
-/// string/structure/blob body, and the operation's @endpoint host prefix with its @hostLabel members.
-/// Unsupported member shapes throw a <see cref="GeneratorException"/>.
+/// bool, numeric, timestamp), list&lt;string&gt; @httpQuery/@httpHeader, body lists of strings or
+/// structures, an @httpPayload string/structure/blob body, and the operation's @endpoint host
+/// prefix with its @hostLabel members. Unsupported member shapes throw a <see cref="GeneratorException"/>.
 /// </summary>
 public sealed class JsonRequestMarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -314,7 +314,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             foreach (var member in bodyMembers)
             {
-                WriteBodyMember(writer, member);
+                JsonBodyMemberMarshaller.WriteBodyMember(writer, member, "publicRequest");
             }
 
             writer.WriteLine("");
@@ -387,65 +387,6 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine("#if NETFRAMEWORK");
         writer.WriteLine("request.Content = memoryStream.ToArray();");
         writer.WriteLine("#endif");
-    }
-
-    private void WriteBodyMember(CodeWriter writer, Member member)
-    {
-        if (member.Type.IsScalar)
-        {
-            writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
-            {
-                writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
-                JsonScalarMarshaller.WriteScalar(writer, member, $"publicRequest.{member.PropertyName}");
-            });
-            if (member.IsIdempotencyToken)
-            {
-                writer.OpenBlock("else", () =>
-                {
-                    writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
-                    writer.WriteLine("context.Writer.WriteStringValue(Guid.NewGuid().ToString());");
-                });
-            }
-        }
-        // Only a list has Element set (ResolveType), so this is the list case; a map falls through.
-        else if (member.Type.Element is { } element)
-        {
-            writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
-            {
-                writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
-                writer.WriteLine("context.Writer.WriteStartArray();");
-                writer.OpenBlock($"foreach (var publicRequest{member.PropertyName}ListValue in publicRequest.{member.PropertyName})", () =>
-                {
-                    WriteListElement(writer, member, element);
-                });
-                writer.WriteLine("context.Writer.WriteEndArray();");
-            });
-        }
-        else
-        {
-            throw new GeneratorException($"Unsupported body member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
-        }
-    }
-
-    private void WriteListElement(CodeWriter writer, Member member, TypeDescriptor element)
-    {
-        if (element.IsString)
-        {
-            writer.WriteLine($"context.Writer.WriteStringValue(publicRequest{member.PropertyName}ListValue);");
-        }
-        else if (element.IsStructure)
-        {
-            writer.WriteLine("context.Writer.WriteStartObject();");
-            writer.WriteLine("");
-            writer.WriteLine($"var marshaller = {element.DotNetType}Marshaller.Instance;");
-            writer.WriteLine($"marshaller.Marshall(publicRequest{member.PropertyName}ListValue, context);");
-            writer.WriteLine("");
-            writer.WriteLine("context.Writer.WriteEndObject();");
-        }
-        else
-        {
-            throw new GeneratorException("Only strings and structure list element types are handled right now!");
-        }
     }
 
     private static PartitionedMembers PartitionMembers(StructureShape input, List<Member> members)

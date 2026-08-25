@@ -95,7 +95,8 @@ if (publicRequest.IsSetFoo())
 
 - Structures: `WriteStartObject` → `{Shape}Marshaller.Instance.Marshall(item, context)` → `WriteEndObject`
 - Lists: `WriteStartArray` → loop items → `WriteEndArray`
-- Maps: `WriteStartObject` → loop `WritePropertyName(key)` + write value → `WriteEndObject`
+- Maps: not implemented yet — throws in the writer at any nesting depth. Intended pattern:
+  `WriteStartObject` → loop `WritePropertyName(key)` + write value → `WriteEndObject`
 - Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization
 
 
@@ -187,7 +188,8 @@ while (context.ReadAtDepth(targetDepth, ref reader))
 ```
 
 - Lists: `new JsonListUnmarshaller<T, TUnmarshaller>(TUnmarshaller.Instance)`
-- Maps: `new JsonDictionaryUnmarshaller<K, V, KU, VU>(...)`
+- Maps: not implemented yet — throws at any nesting depth. Intended pattern:
+  `new JsonDictionaryUnmarshaller<K, V, KU, VU>(...)`
 
 ### `@httpPayload` (response)
 
@@ -262,7 +264,7 @@ code — only `epoch-seconds` differs. The `CultureInfo`/`DateTimeStyles` these 
 | `DateTime?` | Format-dependent (see below) | `DateTimeUnmarshaller` |
 | `MemoryStream` | `WriteStringValue(Convert.ToBase64String(...))` | `MemoryStreamUnmarshaller` |
 | `List<T>` | Array loop | `JsonListUnmarshaller<ElementType, ElementUnmarshaller>` |
-| `Dictionary<K,V>` | Object loop | `JsonDictionaryUnmarshaller<K, V, KeyUnmarshaller, ValueUnmarshaller>` |
+| `Dictionary<K,V>` (not implemented) | Object loop | `JsonDictionaryUnmarshaller<K, V, KeyUnmarshaller, ValueUnmarshaller>` |
 | Structure | `{Shape}Marshaller.Instance` | `{Shape}Unmarshaller.Instance` |
 
 ### Timestamp Formats

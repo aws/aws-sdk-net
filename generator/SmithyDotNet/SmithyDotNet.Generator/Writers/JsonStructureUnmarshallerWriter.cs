@@ -8,8 +8,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// Emits the C# source for a JSON structure unmarshaller matching the public API surface
 /// of the existing AWS SDK for .NET.
 /// <para />
-/// Phase 1 scope: Structures whose members all resolve to <c>string</c>. Any other member type
-/// throws a <see cref="GeneratorException"/>.
+/// Member codegen is shared with the operation response body via
+/// <see cref="JsonBodyMemberUnmarshaller.WriteMemberUnmarshallers"/>: scalars, nested structures,
+/// and lists of strings or structures. A map member throws a <see cref="GeneratorException"/>.
 /// </summary>
 public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, string modelFileName)
 {
@@ -68,33 +69,10 @@ public sealed class JsonStructureUnmarshallerWriter(GenerationContext context, s
             writer.WriteLine("int targetDepth = context.CurrentDepth;");
             writer.OpenBlock("while (context.ReadAtDepth(targetDepth, ref reader))", () =>
             {
-                WriteMemberUnmarshallers(writer, members);
+                JsonBodyMemberUnmarshaller.WriteMemberUnmarshallers(writer, members);
             });
             writer.WriteLine("return unmarshalledObject;");
         });
-    }
-
-    private static void WriteMemberUnmarshallers(CodeWriter writer, List<Member> members)
-    {
-        for (int i = 0; i < members.Count; i++)
-        {
-            var member = members[i];
-            var scalarUnmarshaller = JsonResponseUnmarshallerWriter.ScalarUnmarshaller(member.Type.MarshalType)
-                ?? throw new GeneratorException($"Only scalar members are handled currently. Member '{member.ModeledName}' resolved to '{member.Type.DotNetType}'.");
-
-            var wireName = member.JsonName ?? member.ModeledName;
-            writer.OpenBlock($"""if (context.TestExpression("{wireName}", targetDepth, ref reader))""", () =>
-            {
-                writer.WriteLine($"var unmarshaller = {scalarUnmarshaller}.Instance;");
-                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
-                writer.WriteLine("continue;");
-            });
-
-            if (i < members.Count - 1)
-            {
-                writer.WriteLine();
-            }
-        }
     }
 
     private static void WriteSingleton(CodeWriter writer, string className)

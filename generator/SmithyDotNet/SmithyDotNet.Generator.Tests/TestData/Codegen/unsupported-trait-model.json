@@ -1,0 +1,33 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.testunsupported#TestUnsupportedService": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        { "target": "com.amazonaws.testunsupported#DoThing" }
+      ]
+    },
+    "com.amazonaws.testunsupported#DoThing": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testunsupported#DoThingRequest" }
+    },
+    "com.amazonaws.testunsupported#DoThingRequest": {
+      "type": "structure",
+      "members": {
+        "config": { "target": "com.amazonaws.testunsupported#Config" }
+      }
+    },
+    "com.amazonaws.testunsupported#Config": {
+      "type": "structure",
+      "members": {
+        "tags": { "target": "com.amazonaws.testunsupported#SparseTagList" }
+      }
+    },
+    "com.amazonaws.testunsupported#SparseTagList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" },
+      "traits": { "smithy.api#sparse": {} }
+    }
+  }
+}

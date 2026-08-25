@@ -20,8 +20,7 @@ public static class UnsupportedTraitValidator
         ["aws.protocols#httpChecksum"] = "httpChecksum",
     };
 
-    // These live on a member's resolved *target* shape (the list/blob/union/string declaration), not
-    // on the member reference, so they need CollectDeniedOnMemberTargets instead of CollectDenied.
+    // Live on a member's resolved *target* shape, not the member reference.
     // @mediaType marks a base64-encoded (C2J jsonvalue) string that nothing decodes yet, so a model
     // carrying it must fail loud rather than emit the raw header/body value.
     private static readonly Dictionary<string, string> DeniedTargetTraits = new()
@@ -32,10 +31,9 @@ public static class UnsupportedTraitValidator
     };
 
     /// <summary>
-    /// Checks service, operation, and top-level input/output/error member traits and throws a
-    /// single aggregated <see cref="GeneratorException"/> listing every denied trait found.
-    /// Nested members are not scanned because all denied traits are only spec-valid at the
-    /// top level or above. Call before generation begins.
+    /// Checks service, operation, top-level input/output/error member, and reachable-shape traits
+    /// and throws a single aggregated <see cref="GeneratorException"/> listing every denied trait
+    /// found. Call before generation begins.
     /// </summary>
     public static void Validate(ServiceIndex index)
     {
@@ -49,13 +47,11 @@ public static class UnsupportedTraitValidator
             if (index.Shapes.TryGetValue(op.Input, out var inputShape) && inputShape is StructureShape input)
             {
                 CollectDeniedOnMembers(input, found);
-                CollectDeniedOnMemberTargets(input, index.Shapes, found);
             }
 
             if (index.Shapes.TryGetValue(op.Output, out var outputShape) && outputShape is StructureShape output)
             {
                 CollectDeniedOnMembers(output, found);
-                CollectDeniedOnMemberTargets(output, index.Shapes, found);
             }
 
             foreach (var errorId in op.Errors)
@@ -63,9 +59,15 @@ public static class UnsupportedTraitValidator
                 if (index.Shapes.TryGetValue(errorId, out var errorShape) && errorShape is StructureShape error)
                 {
                     CollectDeniedOnMembers(error, found);
-                    CollectDeniedOnMemberTargets(error, index.Shapes, found);
                 }
             }
+        }
+
+        // index.Shapes is every shape reachable from an operation/error at any depth, so this one
+        // pass covers DeniedTargetTraits regardless of nesting.
+        foreach (var shape in index.Shapes.Values)
+        {
+            CollectDenied(shape.Traits, DeniedTargetTraits, found);
         }
 
         if (found.Count > 0)
@@ -90,17 +92,6 @@ public static class UnsupportedTraitValidator
         foreach (var (_, member) in structure.Members)
         {
             CollectDenied(member.Traits, DeniedTraits, found);
-        }
-    }
-
-    private static void CollectDeniedOnMemberTargets(StructureShape structure, IReadOnlyDictionary<ShapeId, Shape> shapes, HashSet<string> found)
-    {
-        foreach (var (_, member) in structure.Members)
-        {
-            if (shapes.TryGetValue(member.Target, out var target))
-            {
-                CollectDenied(target.Traits, DeniedTargetTraits, found);
-            }
         }
     }
 }

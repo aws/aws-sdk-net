@@ -8,8 +8,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// Emits the C# source for a JSON structure marshaller matching the public API surface
 /// of the existing AWS SDK for .Net.
 /// <para />
-/// Phase 1 scope: Structures whose members all resolve to <c>string</c>. Any other member type
-/// throws a <see cref="GeneratorException"/>. 
+/// Member codegen is shared with the top-level operation body via
+/// <see cref="JsonBodyMemberMarshaller.WriteBodyMember"/>: scalars, nested structures, and lists
+/// of strings or structures. A map member throws a <see cref="GeneratorException"/>.
 /// </summary>
 /// <param name="context"></param>
 /// <param name="modelFileName"></param>
@@ -59,24 +60,11 @@ public sealed class JsonStructureMarshallerWriter(GenerationContext context, str
         });
     }
 
-    // The marshalName can be overridden via https://smithy.io/2.0/spec/protocol-traits.html#jsonname-trait
     private void WriteMemberMarshallers(CodeWriter writer, List<Member> members)
     {
         for (int i = 0; i < members.Count; i++)
         {
-            var member = members[i];
-            if (member.Type.IsScalar)
-            {
-                writer.OpenBlock($"if (requestObject.IsSet{member.PropertyName}())", () =>
-                {
-                    writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
-                    JsonScalarMarshaller.WriteScalar(writer, member, $"requestObject.{member.PropertyName}");
-                });
-            }
-            else
-            {
-                throw new GeneratorException($"Unsupported structure member type '{member.Type.DotNetType}' (member: {member.PropertyName}).");
-            }
+            JsonBodyMemberMarshaller.WriteBodyMember(writer, members[i], "requestObject");
 
             if (i < members.Count - 1)
             {
