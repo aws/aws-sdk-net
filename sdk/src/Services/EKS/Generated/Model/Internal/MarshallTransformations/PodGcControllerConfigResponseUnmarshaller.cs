@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for KubeControllerManagerVersionConfig Object
+    /// Response Unmarshaller for PodGcControllerConfigResponse Object
     /// </summary>  
-    public class KubeControllerManagerVersionConfigUnmarshaller : IJsonUnmarshaller<KubeControllerManagerVersionConfig, JsonUnmarshallerContext>
+    public class PodGcControllerConfigResponseUnmarshaller : IJsonUnmarshaller<PodGcControllerConfigResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KubeControllerManagerVersionConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PodGcControllerConfigResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            KubeControllerManagerVersionConfig unmarshalledObject = new KubeControllerManagerVersionConfig();
+            PodGcControllerConfigResponse unmarshalledObject = new PodGcControllerConfigResponse();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("horizontalPodAutoscalerControllerConfig", targetDepth, ref reader))
+                if (context.TestExpression("terminatedPodGcThreshold", targetDepth, ref reader))
                 {
-                    var unmarshaller = HorizontalPodAutoscalerControllerVersionConfigUnmarshaller.Instance;
-                    unmarshalledObject.HorizontalPodAutoscalerControllerConfig = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("podGcControllerConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = PodGcControllerVersionConfigUnmarshaller.Instance;
-                    unmarshalledObject.PodGcControllerConfig = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.TerminatedPodGcThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         }
 
 
-        private static KubeControllerManagerVersionConfigUnmarshaller _instance = new KubeControllerManagerVersionConfigUnmarshaller();        
+        private static PodGcControllerConfigResponseUnmarshaller _instance = new PodGcControllerConfigResponseUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static KubeControllerManagerVersionConfigUnmarshaller Instance
+        public static PodGcControllerConfigResponseUnmarshaller Instance
         {
             get
             {

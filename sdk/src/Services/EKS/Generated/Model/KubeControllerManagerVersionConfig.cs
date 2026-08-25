@@ -35,6 +35,7 @@ namespace Amazon.EKS.Model
     public partial class KubeControllerManagerVersionConfig
     {
         private HorizontalPodAutoscalerControllerVersionConfig _horizontalPodAutoscalerControllerConfig;
+        private PodGcControllerVersionConfig _podGcControllerConfig;
 
         /// <summary>
         /// Gets and sets the property HorizontalPodAutoscalerControllerConfig. 
@@ -52,6 +53,24 @@ namespace Amazon.EKS.Model
         internal bool IsSetHorizontalPodAutoscalerControllerConfig()
         {
             return this._horizontalPodAutoscalerControllerConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PodGcControllerConfig. 
+        /// <para>
+        /// The pod garbage collection controller configuration with default value and constraints.
+        /// </para>
+        /// </summary>
+        public PodGcControllerVersionConfig PodGcControllerConfig
+        {
+            get { return this._podGcControllerConfig; }
+            set { this._podGcControllerConfig = value; }
+        }
+
+        // Check to see if PodGcControllerConfig property is set
+        internal bool IsSetPodGcControllerConfig()
+        {
+            return this._podGcControllerConfig != null;
         }
 
     }

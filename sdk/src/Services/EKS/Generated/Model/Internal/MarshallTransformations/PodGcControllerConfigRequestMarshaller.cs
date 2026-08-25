@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// KubeControllerManagerConfigRequest Marshaller
+    /// PodGcControllerConfigRequest Marshaller
     /// </summary>
-    public class KubeControllerManagerConfigRequestMarshaller : IRequestMarshaller<KubeControllerManagerConfigRequest, JsonMarshallerContext> 
+    public class PodGcControllerConfigRequestMarshaller : IRequestMarshaller<PodGcControllerConfigRequest, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,14 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(KubeControllerManagerConfigRequest requestObject, JsonMarshallerContext context)
+        public void Marshall(PodGcControllerConfigRequest requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetHorizontalPodAutoscalerControllerConfig())
+            if(requestObject.IsSetTerminatedPodGcThreshold())
             {
-                context.Writer.WritePropertyName("horizontalPodAutoscalerControllerConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = HorizontalPodAutoscalerControllerConfigRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.HorizontalPodAutoscalerControllerConfig, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetPodGcControllerConfig())
-            {
-                context.Writer.WritePropertyName("podGcControllerConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = PodGcControllerConfigRequestMarshaller.Instance;
-                marshaller.Marshall(requestObject.PodGcControllerConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("terminatedPodGcThreshold");
+                context.Writer.WriteNumberValue(requestObject.TerminatedPodGcThreshold.Value);
             }
 
         }
@@ -73,7 +57,7 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static KubeControllerManagerConfigRequestMarshaller Instance = new KubeControllerManagerConfigRequestMarshaller();
+        public readonly static PodGcControllerConfigRequestMarshaller Instance = new PodGcControllerConfigRequestMarshaller();
 
     }
 }
