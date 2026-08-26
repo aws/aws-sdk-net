@@ -16237,6 +16237,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlG6Xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG712xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG712xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG724xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG72xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG748xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG74xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG78xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.8xlarge");
+        /// <summary>
         /// Constant MlG7e12xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlG7e12xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.12xlarge");
