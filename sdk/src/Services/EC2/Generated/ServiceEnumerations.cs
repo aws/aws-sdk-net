@@ -10187,6 +10187,10 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant CapacityBlock for InstanceLifecycle
+        /// </summary>
+        public static readonly InstanceLifecycle CapacityBlock = new InstanceLifecycle("capacity-block");
+        /// <summary>
         /// Constant InterruptibleCapacityReservation for InstanceLifecycle
         /// </summary>
         public static readonly InstanceLifecycle InterruptibleCapacityReservation = new InstanceLifecycle("interruptible-capacity-reservation");
@@ -32678,6 +32682,10 @@ namespace Amazon.EC2
         /// Constant Available for VpcState
         /// </summary>
         public static readonly VpcState Available = new VpcState("available");
+        /// <summary>
+        /// Constant Deleting for VpcState
+        /// </summary>
+        public static readonly VpcState Deleting = new VpcState("deleting");
         /// <summary>
         /// Constant Pending for VpcState
         /// </summary>
