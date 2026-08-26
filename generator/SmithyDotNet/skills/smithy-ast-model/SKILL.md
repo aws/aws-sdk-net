@@ -95,7 +95,7 @@ Use `[JsonPropertyName]` on properties where the C# name differs in casing from 
 | `list` | `ListShape` — has `Member` (single `MemberShape`) |
 | `map` | `MapShape` — has `Key` and `Value` (both `MemberShape`) |
 | `structure` | `StructureShape` — has `Members` dictionary |
-| `union` | `UnionShape` — has `Members` dictionary |
+| `union` | `UnionShape` — derives from `StructureShape` (inherits `Members`); generated as a plain structure |
 | `enum` | `EnumShape` — has `Members` (member traits carry `@enumValue`) |
 | `intEnum` | `IntEnumShape` — has `Members` |
 | `service` | `ServiceShape` — has `Operations`, `Resources`, `Errors`, `Rename`, `ApiVersion` |

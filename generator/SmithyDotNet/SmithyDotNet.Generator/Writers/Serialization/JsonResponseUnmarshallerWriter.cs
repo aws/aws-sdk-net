@@ -93,8 +93,9 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     // Unmarshalls a @httpPayload response member — the ENTIRE body: a string/enum via StreamReader (an
     // enum is a string shape in C2J and its ConstantClass converts implicitly from string), a structure
     // via its unmarshaller over a fresh reader (empty-body early-return), a blob copied into a buffered
-    // MemoryStream. Matches C2J output. document/union throw earlier in TypeMapper; list/map fail loud
-    // here. Response-only: JsonExceptionUnmarshallerWriter fails loud on an @httpPayload error member.
+    // MemoryStream. Matches C2J output. A union is a structure (structure path); document throws
+    // earlier in TypeMapper; list/map fail loud here. Response-only: JsonExceptionUnmarshallerWriter
+    // fails loud on an @httpPayload error member.
     private static void WritePayloadUnmarshall(CodeWriter writer, Member payload)
     {
         if (payload.Type.MarshalsAsString)

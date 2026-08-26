@@ -176,6 +176,7 @@ public static class TypeMapper
             return $"Dictionary<string, {MapType(map.Value.Target, valueTarget, context)}>";
         }
 
+        // A union derives from StructureShape and is generated as a plain structure class.
         if (target is StructureShape)
         {
             return context.ToDotNetName(targetId);
@@ -206,7 +207,7 @@ public static class TypeMapper
 
         // Scalars are checked last so the aggregate branches above return without a MapScalar call.
         // Value-type scalars follow the V4 nullable convention; the rest (byte/short/bigInteger/
-        // bigDecimal/document/union) have no settled mapping yet and fall through to the
+        // bigDecimal/document) have no settled mapping yet and fall through to the
         // throw — the wider-numeric types are earmarked for a dedicated numerics extension.
         return MapPrimitive(target) ?? throw new GeneratorException($"Unsupported member type '{target.Type}'.");
     }

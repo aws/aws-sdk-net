@@ -235,8 +235,8 @@ public class PayloadMemberCodegenTests
 
     // Each case is one inline model fragment (request members + optional extra shapes) that MarshallOp
     // rejects: more than one @httpPayload and a payload alongside an unbound body member are caught in
-    // PartitionMembers; a list payload resolves to a type but isn't a handled payload target (blob/
-    // document/union throw even earlier, in TypeMapper).
+    // PartitionMembers; a list payload resolves to a type but isn't a handled payload target (a union
+    // is a structure and handled; document throws even earlier, in TypeMapper).
     [Theory]
     [InlineData(
         """

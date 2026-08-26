@@ -52,7 +52,7 @@ public static class PaginationResolver
                     // mapping (documents, maps, nested lists) get no enumerable — C2J filters
                     // those result keys the same way (e.g. DynamoDB Query's Items).
                     var elementTarget = ResolveShape(index, list.Member.Target);
-                    var elementType = elementTarget is StructureShape or UnionShape
+                    var elementType = elementTarget is StructureShape // includes UnionShape
                         ? list.Member.Target.Name
                         : TypeMapper.MapPrimitive(elementTarget);
                     if (elementType is not null)

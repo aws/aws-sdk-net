@@ -1,0 +1,39 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [ { "target": "com.example#Op" } ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Example",
+          "endpointPrefix": "example"
+        },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#Op": {
+      "type": "operation",
+      "input": { "target": "com.example#OpRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/op",
+          "method": "POST"
+        }
+      }
+    },
+    "com.example#OpRequest": {
+      "type": "structure",
+      "members": { "choice": { "target": "com.example#MyUnion" } }
+    },
+    "com.example#MyUnion": {
+      "type": "union",
+      "members": {
+        "stringValue": { "target": "smithy.api#String" },
+        "intValue": { "target": "smithy.api#Integer" }
+      }
+    }
+  }
+}

@@ -333,7 +333,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     // property name. A structure payload writes its own object braces around the target's marshaller;
     // a string/enum payload is the raw UTF-8 body (text/plain; an enum is a string shape in C2J and its
     // ConstantClass converts implicitly to string); a blob payload is the raw octet-stream body. Matches
-    // C2J output. document/union throw earlier in TypeMapper; a list/map payload fails loud below.
+    // C2J output. A union is a structure (structure path); document throws earlier in TypeMapper; a
+    // list/map payload fails loud below.
     private void WritePayloadSerialization(CodeWriter writer, Member payload)
     {
         if (payload.Type.MarshalsAsString)

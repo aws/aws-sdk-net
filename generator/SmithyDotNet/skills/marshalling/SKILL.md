@@ -133,7 +133,8 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
   request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
   ```
 
-list/map payloads fail loud in the writer; document/union throw in `TypeMapper`.
+list/map payloads fail loud in the writer; document throws in `TypeMapper`. A union derives from
+`StructureShape`, so a union payload takes the structure path.
 
 ### `@endpoint` host prefix (request)
 
