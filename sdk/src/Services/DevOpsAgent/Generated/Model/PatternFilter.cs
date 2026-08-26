@@ -30,36 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsAgent.Model
 {
     /// <summary>
-    /// Capability configuration for the AWS DevOps Agent.
+    /// A regex-based match condition. Passes when the value matches any pattern.
     /// </summary>
-    public partial class CapabilityConfiguration
+    public partial class PatternFilter
     {
-        private bool? _enabled;
-        private List<TriggerFilterGroup> _triggerFilterGroups = AWSConfigs.InitializeCollections ? new List<TriggerFilterGroup>() : null;
+        private List<string> _patterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property Enabled. 
+        /// Gets and sets the property Patterns. 
         /// <para>
-        /// Whether the capability is enabled.
-        /// </para>
-        /// </summary>
-        public bool? Enabled
-        {
-            get { return this._enabled; }
-            set { this._enabled = value; }
-        }
-
-        // Check to see if Enabled property is set
-        internal bool IsSetEnabled()
-        {
-            return this._enabled.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property TriggerFilterGroups. 
-        /// <para>
-        /// Optional trigger filter groups. Evaluated only when enabled=true; retained while the
-        /// capability is disabled, so re-enabling restores the prior trigger behavior.
+        /// Anchored full-match regex patterns. The condition passes when the value matches at
+        /// least one pattern.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -67,17 +48,17 @@ namespace Amazon.DevOpsAgent.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
-        public List<TriggerFilterGroup> TriggerFilterGroups
+        [AWSProperty(Required=true, Min=1, Max=20)]
+        public List<string> Patterns
         {
-            get { return this._triggerFilterGroups; }
-            set { this._triggerFilterGroups = value; }
+            get { return this._patterns; }
+            set { this._patterns = value; }
         }
 
-        // Check to see if TriggerFilterGroups property is set
-        internal bool IsSetTriggerFilterGroups()
+        // Check to see if Patterns property is set
+        internal bool IsSetPatterns()
         {
-            return this._triggerFilterGroups != null && (this._triggerFilterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
+            return this._patterns != null && (this._patterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

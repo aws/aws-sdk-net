@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CapabilityConfiguration Marshaller
+    /// TriggerFilterGroup Marshaller
     /// </summary>
-    public class CapabilityConfigurationMarshaller : IRequestMarshaller<CapabilityConfiguration, JsonMarshallerContext> 
+    public class TriggerFilterGroupMarshaller : IRequestMarshaller<TriggerFilterGroup, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,30 +42,30 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CapabilityConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(TriggerFilterGroup requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabled())
+            if(requestObject.IsSetEvents())
             {
-                context.Writer.WritePropertyName("enabled");
-                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
-            }
-
-            if(requestObject.IsSetTriggerFilterGroups())
-            {
-                context.Writer.WritePropertyName("triggerFilterGroups");
+                context.Writer.WritePropertyName("events");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectTriggerFilterGroupsListValue in requestObject.TriggerFilterGroups)
+                foreach(var requestObjectEventsListValue in requestObject.Events)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TriggerFilterGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTriggerFilterGroupsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteStringValue(requestObjectEventsListValue);
                 }
                 context.Writer.WriteEndArray();
+            }
+
+            if(requestObject.IsSetTargetBranches())
+            {
+                context.Writer.WritePropertyName("targetBranches");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PatternFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.TargetBranches, context);
+
+                context.Writer.WriteEndObject();
             }
 
         }
@@ -73,7 +73,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CapabilityConfigurationMarshaller Instance = new CapabilityConfigurationMarshaller();
+        public readonly static TriggerFilterGroupMarshaller Instance = new TriggerFilterGroupMarshaller();
 
     }
 }

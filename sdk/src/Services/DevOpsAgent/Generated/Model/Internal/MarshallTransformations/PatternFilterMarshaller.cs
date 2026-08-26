@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CapabilityConfiguration Marshaller
+    /// PatternFilter Marshaller
     /// </summary>
-    public class CapabilityConfigurationMarshaller : IRequestMarshaller<CapabilityConfiguration, JsonMarshallerContext> 
+    public class PatternFilterMarshaller : IRequestMarshaller<PatternFilter, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,28 +42,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(CapabilityConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(PatternFilter requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEnabled())
+            if(requestObject.IsSetPatterns())
             {
-                context.Writer.WritePropertyName("enabled");
-                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
-            }
-
-            if(requestObject.IsSetTriggerFilterGroups())
-            {
-                context.Writer.WritePropertyName("triggerFilterGroups");
+                context.Writer.WritePropertyName("patterns");
                 context.Writer.WriteStartArray();
-                foreach(var requestObjectTriggerFilterGroupsListValue in requestObject.TriggerFilterGroups)
+                foreach(var requestObjectPatternsListValue in requestObject.Patterns)
                 {
-                    context.Writer.WriteStartObject();
-
-                    var marshaller = TriggerFilterGroupMarshaller.Instance;
-                    marshaller.Marshall(requestObjectTriggerFilterGroupsListValue, context);
-
-                    context.Writer.WriteEndObject();
+                        context.Writer.WriteStringValue(requestObjectPatternsListValue);
                 }
                 context.Writer.WriteEndArray();
             }
@@ -73,7 +62,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static CapabilityConfigurationMarshaller Instance = new CapabilityConfigurationMarshaller();
+        public readonly static PatternFilterMarshaller Instance = new PatternFilterMarshaller();
 
     }
 }

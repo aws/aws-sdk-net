@@ -129,7 +129,7 @@ namespace Amazon.DevOpsAgent.Model
         /// The execution identifier for the chat session
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=50)]
         public string ExecutionId
         {
             get { return this._executionId; }

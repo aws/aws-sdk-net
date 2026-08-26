@@ -800,7 +800,9 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SendMessageRequest.ExecutionId</property>
-    <pattern>[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
+    <min>32</min>
+    <max>50</max>
+    <pattern>[A-Za-z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SendMessageRequest.UserId</property>
