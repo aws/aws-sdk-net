@@ -15,7 +15,9 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsString">True if this targets a string shape.</param>
 /// <param name="IsCollection">True if this is itself a list or map.</param>
 /// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalType"/>).</param>
-/// <param name="IsBlob">True if this targets a blob shape (maps to <c>MemoryStream</c>). Only supported as an <c>@httpPayload</c> body.</param>
+/// <param name="IsBlob">True if this targets a blob shape (maps to <c>MemoryStream</c>). Supported as an
+/// <c>@httpPayload</c> body or a JSON body member (base64 string on the wire); not as a header, query,
+/// or collection element.</param>
 /// <param name="IsDocument">True if this targets a document shape (maps to <c>Amazon.Runtime.Documents.Document</c>);
 /// (un)marshals wholesale through the runtime document transforms.</param>
 /// <param name="ListElement">The list element's type; set only for a list, null otherwise.</param>
@@ -207,9 +209,10 @@ public static class TypeMapper
 
         if (target is BlobShape)
         {
-            // A blob maps to MemoryStream, matching C2J. Only supported as an @httpPayload body (the
-            // marshaller/unmarshaller payload paths); a blob in any other position (JSON body member,
-            // header, ...) maps here but then fails loud in the writer (it is not a JSON scalar).
+            // A blob maps to MemoryStream, matching C2J. Supported as an @httpPayload body (the
+            // marshaller/unmarshaller payload paths) or a JSON body member (base64 string on the
+            // wire). A blob in a header/query position or as a collection element maps here but
+            // fails loud in the writer (no staged model has one).
             return "MemoryStream";
         }
 

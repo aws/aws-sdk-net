@@ -6,8 +6,9 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// (<see cref="JsonRequestMarshallerWriter"/>) and a nested structure's own marshaller
 /// (<see cref="JsonStructureMarshallerWriter"/>) both call in here; the object variable name is the
 /// only thing that differs between them ("publicRequest" vs. "requestObject"). Handles scalars,
-/// nested structures, documents, and collections (lists/maps of strings, structures, documents, or
-/// nested collections), so a structure recurses through those member kinds at any depth.
+/// nested structures, documents, blobs (base64 string on the wire), and collections (lists/maps of
+/// strings, structures, documents, or nested collections), so a structure recurses through those
+/// member kinds at any depth.
 /// </summary>
 public static class JsonBodyMemberMarshaller
 {
@@ -49,6 +50,17 @@ public static class JsonBodyMemberMarshaller
             {
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
                 writer.WriteLine($"Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, {objectVar}.{member.PropertyName});");
+            });
+        }
+        else if (member.Type.IsBlob)
+        {
+            // A blob body member base64-encodes into the JSON string, matching C2J (see Textract's
+            // DocumentMarshaller). Blobs never appear as list elements or map values in any staged
+            // model; if one ever does, WriteCollectionValue fails loud below.
+            writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
+            {
+                writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
+                writer.WriteLine($"StringUtils.WriteBase64StringValue(context.Writer, {objectVar}.{member.PropertyName});");
             });
         }
         else if (member.Type.IsCollection)

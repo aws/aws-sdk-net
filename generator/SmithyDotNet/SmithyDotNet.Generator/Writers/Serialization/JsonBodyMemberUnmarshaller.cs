@@ -53,14 +53,17 @@ public static class JsonBodyMemberUnmarshaller
         _ => null,
     };
 
-    // A scalar member uses a runtime scalar unmarshaller; string/structure/document/list/map members
-    // (nested to any depth) resolve recursively via CollectionUnmarshaller. Writes into the
-    // `unmarshalledObject` local.
+    // A scalar member uses a runtime scalar unmarshaller; a blob member uses MemoryStreamUnmarshaller
+    // (base64 JSON string -> MemoryStream, matching C2J - see Kinesis's RecordUnmarshaller);
+    // string/structure/document/list/map members (nested to any depth) resolve recursively via
+    // CollectionUnmarshaller. Writes into the `unmarshalledObject` local.
     internal static void WriteMemberUnmarshall(CodeWriter writer, Member member)
     {
-        var instance = ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller
-            ? $"{scalarUnmarshaller}.Instance"
-            : CollectionUnmarshaller(member.Type).Instance;
+        var instance = member.Type.IsBlob
+            ? "MemoryStreamUnmarshaller.Instance"
+            : ScalarUnmarshaller(member.Type.MarshalType) is string scalarUnmarshaller
+                ? $"{scalarUnmarshaller}.Instance"
+                : CollectionUnmarshaller(member.Type).Instance;
         writer.WriteLine($"var unmarshaller = {instance};");
         writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
     }
