@@ -1,3 +1,15 @@
+### 4.0.320.0 (2026-08-26 18:37 UTC)
+* DevOpsAgent (4.0.102.0)
+	* AWS DevOps Agent now supports trigger filter groups for Release Readiness Review, letting you control when the capability auto-triggers based on webhook events and target branches.
+* EC2 (4.0.113.0)
+	* Adds deleting state to possible VPC States.
+* LicenseManagerUserSubscriptions (4.0.101.0)
+	* Released support for License Expiry field in ListProductSubscriptions API
+* NetworkFirewall (4.0.105.0)
+	* Adding new status enum for Firewalls.
+* SageMaker (4.0.111.0)
+	* Amazon SageMaker AI now supports ml.g7 instances for model optimization. You can now run model optimization jobs on ml.g7 instances, in supported AWS Regions.
+
 ### 4.0.319.0 (2026-08-25 19:29 UTC)
 * AutoScaling (4.0.104.0)
 	* Adds support for Distribution Segments in mixed instances policies, providing ordered prioritization across On-Demand Capacity Reservations, Capacity Blocks, interruptible Capacity Reservations, and On-Demand capacity.
