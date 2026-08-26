@@ -36,6 +36,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     {
         private string _domain;
         private IdentityProvider _identityProvider;
+        private string _licenseExpirationDate;
         private string _product;
         private string _productUserArn;
         private string _status;
@@ -80,6 +81,31 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         internal bool IsSetIdentityProvider()
         {
             return this._identityProvider != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LicenseExpirationDate. 
+        /// <para>
+        /// The expiration date of the license associated with this subscription, in ISO 8601
+        /// UTC format (for example, <c>2025-03-15T00:00:00Z</c>).
+        /// </para>
+        ///  
+        /// <para>
+        /// This field applies only to subscriptions that use license server endpoints, such as
+        /// Remote Desktop Services (RDS) Subscriber Access License (SAL). It returns <c>null</c>
+        /// for products that don't use license-based subscriptions.
+        /// </para>
+        /// </summary>
+        public string LicenseExpirationDate
+        {
+            get { return this._licenseExpirationDate; }
+            set { this._licenseExpirationDate = value; }
+        }
+
+        // Check to see if LicenseExpirationDate property is set
+        internal bool IsSetLicenseExpirationDate()
+        {
+            return this._licenseExpirationDate != null;
         }
 
         /// <summary>
