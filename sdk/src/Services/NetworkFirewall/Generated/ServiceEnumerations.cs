@@ -363,6 +363,10 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         public static readonly FirewallStatusValue DELETING = new FirewallStatusValue("DELETING");
         /// <summary>
+        /// Constant FAILED for FirewallStatusValue
+        /// </summary>
+        public static readonly FirewallStatusValue FAILED = new FirewallStatusValue("FAILED");
+        /// <summary>
         /// Constant PROVISIONING for FirewallStatusValue
         /// </summary>
         public static readonly FirewallStatusValue PROVISIONING = new FirewallStatusValue("PROVISIONING");
