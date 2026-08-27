@@ -55,8 +55,9 @@ Then serializes members based on placement rules, then returns `request`.
 List query/header bindings are `list<string>` only — which covers `list<enum>` too, because an enum
 collection element resolves to plain `string` (see the type-mapping skill). `request.ParameterCollection` (not the string-only `request.Parameters` facade) carries the
 `List<string>` query overload. A list of a value-type element (int, long, bool, double, timestamp,
-intEnum) fails loud during member resolution (`TypeMapper.RejectUnsupportedCollectionElement`); no
-restJson1 service emits one today.
+intEnum) *is* now allowed as a **body** member, but in a query/header binding position it falls through to
+`StringConversion`, which returns null for a collection type and so fails loud (`?? throw` in
+`WriteQueryStringMembers`/`WriteHeaderMembers`); no restJson1 service binds one to query/header today.
 
 For `awsJson1.x` and `query`/`ec2Query`: all members go in the body (no HTTP binding traits).
 
@@ -96,10 +97,15 @@ if (publicRequest.IsSetFoo())
 - Maps: `WriteStartObject` → `foreach` the dictionary → `WritePropertyName(kvp.Key)` + write `kvp.Value`
   → `WriteEndObject`. Keys are always strings (Smithy requires the key member target a string shape).
 - Lists and maps nest to any depth — a list/map element or map value that is itself a list/map recurses
-  (`JsonBodyMemberMarshaller.WriteCollectionValue`). Leaf values must be string, structure, or document; an
-  enum leaf (element, map key, or map value) *is* a string here and marshals as one. Value-type and blob
-  leaves fail loud in `TypeMapper.RejectUnsupportedCollectionElement`, deferred to the value-type
-  (un)marshaller work.
+  (`JsonBodyMemberMarshaller.WriteCollectionValue`). Leaf values may be string, scalar (bool/int/long/float/
+  double/timestamp), structure, or document. An enum leaf (element, map key, or map value) collapses to a
+  string here and marshals as one; an intEnum leaf is a plain `int`. Scalar leaves route through
+  `JsonScalarMarshaller.WriteScalar`. A non-sparse collection element is **non-nullable** (`List<int>`, not
+  `List<int?>` — the all-value-types-nullable rule is members-only), so the leaf writes the bare value: no
+  `.Value` unwrap, and **no** float/double NaN/Infinity guard (that guard is member-only). A collection
+  member's `@timestampFormat` is honored (threaded via `TypeDescriptor.TimestampFormat`); `@sparse` (which
+  would make elements nullable) is rejected upfront by `UnsupportedTraitValidator`. Only blob leaves fail
+  loud in `TypeMapper.RejectUnsupportedCollectionElement` (a blob is body/`@httpPayload`-only).
 - Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization
 
 
@@ -195,10 +201,15 @@ while (context.ReadAtDepth(targetDepth, ref reader))
 - Lists: `new JsonListUnmarshaller<T, TUnmarshaller>(TUnmarshaller.Instance)`
 - Maps: `new JsonDictionaryUnmarshaller<string, V, StringUnmarshaller, VU>(StringUnmarshaller.Instance, VU.Instance)`
   (key is always `string`/`StringUnmarshaller`).
+- Scalar unmarshallers come from `ScalarUnmarshaller`, one map keyed on the .NET type string (nullability
+  and all). A standalone member is nullable (`int?`→`NullableIntUnmarshaller`); a non-sparse collection
+  element is non-nullable (`int`→`IntUnmarshaller`). Timestamps use the non-nullable `DateTimeUnmarshaller`
+  for elements, which auto-detects the wire format — no `@timestampFormat` is threaded on the read side, so
+  epoch and date-time collections unmarshal identically.
 - Nested collections compose recursively (`JsonBodyMemberUnmarshaller.CollectionUnmarshaller`): a map-of-list
   is `JsonDictionaryUnmarshaller<string, List<T>, StringUnmarshaller, JsonListUnmarshaller<T, TU>>(...)`. An
-  enum leaf is `string`/`StringUnmarshaller` — never a ConstantClass generic arg. Value-type leaves fail loud
-  in `TypeMapper`.
+  enum leaf (and an enum key) is `string`/`StringUnmarshaller` — never a ConstantClass generic arg; an intEnum
+  leaf is a plain `int`/`IntUnmarshaller`. Only blob leaves fail loud in `TypeMapper`.
 
 ### `@httpPayload` (response)
 
@@ -272,8 +283,8 @@ code — only `epoch-seconds` differs. The `CultureInfo`/`DateTimeStyles` these 
 | `double?` | `WriteNumberValue` | `DoubleUnmarshaller` |
 | `DateTime?` | Format-dependent (see below) | `DateTimeUnmarshaller` |
 | `MemoryStream` | `WriteStringValue(Convert.ToBase64String(...))` | `MemoryStreamUnmarshaller` |
-| `List<T>` | Array loop | `JsonListUnmarshaller<ElementType, ElementUnmarshaller>` |
-| `Dictionary<string,V>` (V = string/structure/nested list/map) | Object loop | `JsonDictionaryUnmarshaller<string, V, StringUnmarshaller, ValueUnmarshaller>` |
+| `List<T>` (T = scalar/structure/nested list/map) | Array loop | `JsonListUnmarshaller<ElementType, ElementUnmarshaller>` |
+| `Dictionary<string,V>` (V = scalar/structure/nested list/map) | Object loop | `JsonDictionaryUnmarshaller<string, V, StringUnmarshaller, ValueUnmarshaller>` |
 | Structure | `{Shape}Marshaller.Instance` | `{Shape}Unmarshaller.Instance` |
 
 ### Timestamp Formats

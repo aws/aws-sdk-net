@@ -59,6 +59,21 @@
         "statusTags": {
           "target": "com.amazonaws.testcollection#StatusList",
           "traits": { "smithy.api#httpHeader": "x-status" }
+        },
+        "counts": {
+          "target": "com.amazonaws.testcollection#IntList"
+        },
+        "amounts": {
+          "target": "com.amazonaws.testcollection#LongMap"
+        },
+        "ratios": {
+          "target": "com.amazonaws.testcollection#DoubleList"
+        },
+        "epochTimes": {
+          "target": "com.amazonaws.testcollection#TimestampList"
+        },
+        "isoTimes": {
+          "target": "com.amazonaws.testcollection#IsoTimestampList"
         }
       },
       "traits": {
@@ -94,6 +109,21 @@
         },
         "groupedStatuses": {
           "target": "com.amazonaws.testcollection#StatusListList"
+        },
+        "counts": {
+          "target": "com.amazonaws.testcollection#IntList"
+        },
+        "amounts": {
+          "target": "com.amazonaws.testcollection#LongMap"
+        },
+        "ratios": {
+          "target": "com.amazonaws.testcollection#DoubleList"
+        },
+        "epochTimes": {
+          "target": "com.amazonaws.testcollection#TimestampList"
+        },
+        "isoTimes": {
+          "target": "com.amazonaws.testcollection#IsoTimestampList"
         }
       },
       "traits": {
@@ -171,6 +201,42 @@
       "type": "list",
       "member": {
         "target": "com.amazonaws.testcollection#StatusList"
+      }
+    },
+    "com.amazonaws.testcollection#IntList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Integer"
+      }
+    },
+    "com.amazonaws.testcollection#LongMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#Long"
+      }
+    },
+    "com.amazonaws.testcollection#DoubleList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Double"
+      }
+    },
+    "com.amazonaws.testcollection#TimestampList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Timestamp"
+      }
+    },
+    "com.amazonaws.testcollection#IsoTimestampList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Timestamp",
+        "traits": {
+          "smithy.api#timestampFormat": "date-time"
+        }
       }
     },
     "com.amazonaws.testcollection#Widget": {

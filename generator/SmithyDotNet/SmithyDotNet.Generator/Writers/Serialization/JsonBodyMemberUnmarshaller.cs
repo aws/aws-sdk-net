@@ -35,11 +35,12 @@ public static class JsonBodyMemberUnmarshaller
     }
 
     /// <summary>
-    /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a member's
-    /// <see cref="TypeDescriptor.MarshalType"/> (the .NET type for plain scalars; <c>string</c> for enums, so an
-    /// enum member unmarshals via <c>StringUnmarshaller</c> and the implicit string-to-ConstantClass
-    /// conversion), or null when the type is not a supported scalar. Timestamps follow the JSON-protocol
-    /// default (epoch seconds via the nullable <c>DateTime</c> unmarshaller).
+    /// The runtime <c>Amazon.Runtime.Internal.Transform</c> unmarshaller type for a scalar's
+    /// <see cref="TypeDescriptor.MarshalType"/>, or null when the type is not a supported scalar. The type
+    /// string itself encodes nullability, so this one map serves both a standalone member (nullable, e.g.
+    /// <c>int?</c> → <c>NullableIntUnmarshaller</c>) and a non-sparse collection element (non-nullable,
+    /// e.g. <c>int</c> → <c>IntUnmarshaller</c>); <c>string</c> is shared. Enums ride the <c>string</c>
+    /// path (implicit string-to-ConstantClass conversion); timestamps auto-detect the wire format.
     /// </summary>
     internal static string? ScalarUnmarshaller(string marshalType) => marshalType switch
     {
@@ -50,6 +51,12 @@ public static class JsonBodyMemberUnmarshaller
         "float?" => "NullableFloatUnmarshaller",
         "double?" => "NullableDoubleUnmarshaller",
         "DateTime?" => "NullableDateTimeUnmarshaller",
+        "bool" => "BoolUnmarshaller",
+        "int" => "IntUnmarshaller",
+        "long" => "LongUnmarshaller",
+        "float" => "FloatUnmarshaller",
+        "double" => "DoubleUnmarshaller",
+        "DateTime" => "DateTimeUnmarshaller",
         _ => null,
     };
 
@@ -68,16 +75,17 @@ public static class JsonBodyMemberUnmarshaller
         writer.WriteLine($"unmarshalledObject.{member.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
     }
 
-    // The runtime unmarshaller type name and an instance expression for a string, structure, list, or map
-    // type - recursing for nested collections. Map keys are always strings (see TypeMapper.MapType), so the
-    // key unmarshaller is StringUnmarshaller. An enum leaf is already a string here (see TypeMapper),
-    // so it uses StringUnmarshaller too; value-type leaves are rejected in TypeMapper (deferred to the
-    // value-type (un)marshaller work).
+    // The runtime unmarshaller type name and an instance expression for a scalar, structure, document,
+    // list, or map type - recursing for nested collections. Scalar leaves resolve via ScalarUnmarshaller on
+    // the element's non-nullable MarshalType (e.g. "int" → IntUnmarshaller), matching the non-sparse element
+    // type; an enum leaf is already a string here (see TypeMapper) so it uses StringUnmarshaller. Map keys
+    // are always strings (see TypeMapper.MapType), so the key unmarshaller is StringUnmarshaller. Only blob
+    // leaves are rejected in TypeMapper (a blob is body/@httpPayload-only).
     private static (string Type, string Instance) CollectionUnmarshaller(TypeDescriptor type)
     {
-        if (type.IsString)
+        if (ScalarUnmarshaller(type.MarshalType) is string scalar)
         {
-            return ("StringUnmarshaller", "StringUnmarshaller.Instance");
+            return (scalar, $"{scalar}.Instance");
         }
         if (type.IsDocument)
         {

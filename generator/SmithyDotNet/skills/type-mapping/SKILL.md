@@ -26,9 +26,9 @@ Definitive mapping from Smithy shape types to .NET types, plus nullability and c
 | `blob` | `MemoryStream` | Supported as an `@httpPayload` body or a JSON body member (base64 string on the wire). A header, query, or collection-element blob still throws. Target: streaming blobs → `Stream` |
 | `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type; (un)marshals wholesale through the runtime document transforms. Supported as a body member, list element, or map value; an `@httpPayload` document throws |
 | `enum` | `ConstantClass` | The class the `ServiceEnumerationsWriter` emits (see `TypeMapper.EnumTypeName`); marshals as a string via implicit conversion, matching C2J. **Only as a member's own type** — inside a collection it is plain `string`; see Enums in Collections |
-| `intEnum` | `int?` | No `ConstantClass` — C2J has no `intEnum`, so it maps to a plain nullable int like `IntegerShape` |
-| `list` | `List<T>` | V4 default: `null`; see Collection Defaults |
-| `map` | `Dictionary<TKey, TValue>` | V4 default: `null`; see Collection Defaults |
+| `intEnum` | `int?` | No `ConstantClass` — C2J has no `intEnum`, so it maps to a plain nullable int like `IntegerShape` (non-nullable `int` as a collection element) |
+| `list` | `List<T>` | V4 default: `null`; see Collection Defaults. Elements: string/value-type/timestamp/enum/intEnum/structure/document or a nested list/map; value-type/timestamp elements are **non-nullable** (`List<int>`, via `MapNonNullableScalar` — the all-value-types-nullable rule is members-only). An enum element collapses to `string` and an intEnum to plain `int`. Only blob elements throw via `RejectUnsupportedCollectionElement`; `@sparse` (nullable elements) is rejected by `UnsupportedTraitValidator` |
+| `map` | `Dictionary<string, TValue>` | V4 default: `null`; see Collection Defaults. Key is always `string` (Smithy requires it; C2J flattens enum keys too). Values follow the same rules as list elements |
 | `structure` | Generated class | See structure rules below |
 | `union` | Generated class | Generated as regular structure (matches current SDK) |
 
@@ -82,17 +82,21 @@ ConstantClass would be a public-API divergence (`Amazon.Lambda.Model.CreateFunct
 and friends are `List<string>` in the shipped SDK).
 
 `TypeMapper.CollectionElementTarget` is the single place the collapse happens. It feeds the .NET type name
-(`MapType`), the element `TypeDescriptor` (`ResolveElementType`), and `PaginationResolver`'s `items` element
-type — so the descriptor's `IsEnum` is never set on an element, the writers see a plain string leaf, and a
-paginator's flattened enumerable agrees with the `List<string>` property it reads from. It takes an
-already-resolved `Shape` rather than a `ShapeId` precisely so `PaginationResolver` can call it: that runs off
-a `ServiceIndex` and has no `GenerationContext`. `Resolves_EnumItemsElement_AsString` pins the paginator's
-side.
+(`MapType` via `ElementTarget`), the element `TypeDescriptor` (`ResolveType` with `isCollectionValue: true`),
+and `PaginationResolver`'s `items` element type — so the descriptor's `IsEnum` is never set on an element, the
+writers see a plain string leaf, and a paginator's flattened enumerable agrees with the `List<string>`
+property it reads from. It takes an already-resolved `Shape` rather than a `ShapeId` precisely so
+`PaginationResolver` can call it: that runs off a `ServiceIndex` and has no `GenerationContext`.
+`Resolves_EnumItemsElement_AsString` pins the paginator's side.
 
-An `intEnum` gets no such treatment: it maps to `int?`, so a `list<intEnum>` still fails loud in
-`RejectUnsupportedCollectionElement` along with the other unsupported leaves — value-type scalars and `blob`,
-which is supported as an `@httpPayload` body and a JSON body member but has no collection-element form. A
-`document` element is supported and passes the check.
+A paginator's `items` element type is a collection element, so it follows the non-nullable rule too
+(`List<int>`, never `List<int?>`) — `PaginationResolver` derives it via `MapNonNullableScalar`, not the
+standalone `MapScalar`/`MapPrimitive` mapping.
+
+An `intEnum` element maps to a plain non-nullable `int` (like `IntegerShape`), so `list<intEnum>` is
+`List<int>` — it does *not* fail loud. The only leaf `RejectUnsupportedCollectionElement` still rejects is
+`blob`, which is supported as an `@httpPayload` body and a JSON body member but has no collection-element
+form. A `document` element is supported and passes the check.
 
 C2J's `Customizations.OverrideTreatEnumsAsString` can flip this per shape. There is no customization layer
 here yet, so the default (`true`, i.e. `string`) is the only behavior.

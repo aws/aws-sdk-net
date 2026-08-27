@@ -12,6 +12,10 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// </summary>
 public static class JsonBodyMemberMarshaller
 {
+    // restJson1/awsJson body timestamps default to epoch seconds when @timestampFormat is unset (the
+    // header/query/label binding defaults live with JsonRequestMarshallerWriter, next to their bindings).
+    private const string BodyTimestampDefault = "epoch-seconds";
+
     // The marshalName can be overridden via https://smithy.io/2.0/spec/protocol-traits.html#jsonname-trait
     internal static void WriteBodyMember(CodeWriter writer, Member member, string objectVar)
     {
@@ -20,7 +24,7 @@ public static class JsonBodyMemberMarshaller
             writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
-                JsonScalarMarshaller.WriteScalar(writer, member, $"{objectVar}.{member.PropertyName}");
+                JsonScalarMarshaller.WriteScalar(writer, member.Type, $"{objectVar}.{member.PropertyName}", BodyTimestampDefault);
             });
             if (member.IsIdempotencyToken)
             {
@@ -80,13 +84,14 @@ public static class JsonBodyMemberMarshaller
     // Writes one JSON value: a list element, a map value, or a collection member's own value - recursing
     // for nested lists/maps. A list becomes a JSON array, a map a JSON object keyed by kvp.Key (map keys
     // are always strings - see TypeMapper.MapType). baseName seeds the loop-variable names so nested loops
-    // don't collide. An enum leaf is already a string here (see TypeMapper) and marshals as one;
-    // value-type leaves are rejected in TypeMapper (deferred to the value-type (un)marshaller work).
+    // don't collide. A scalar leaf is non-nullable (List<int>, not List<int?>); JsonScalarMarshaller keys
+    // on that to skip the .Value unwrap and NaN guard. An enum leaf is already a string here (see
+    // TypeMapper) and marshals as one; only blob leaves are rejected in TypeMapper.
     private static void WriteCollectionValue(CodeWriter writer, TypeDescriptor type, string valueExpr, string baseName)
     {
-        if (type.IsString)
+        if (type.IsScalar)
         {
-            writer.WriteLine($"context.Writer.WriteStringValue({valueExpr});");
+            JsonScalarMarshaller.WriteScalar(writer, type, valueExpr, BodyTimestampDefault);
         }
         else if (type.IsStructure)
         {

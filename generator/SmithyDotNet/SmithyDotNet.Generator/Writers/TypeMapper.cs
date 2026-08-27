@@ -25,6 +25,10 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="MapValue">The map value's type; set only for a map, null otherwise. A map's key always
 /// targets a string shape (Smithy requires it), so no key descriptor is carried. An enum value collapses to
 /// <c>string</c> like a list element does.</param>
+/// <param name="TimestampFormat">The explicit <c>@timestampFormat</c> (<c>date-time</c>/<c>http-date</c>/
+/// <c>epoch-seconds</c>) from the member reference or its target, or null when unset (the binding's
+/// protocol default applies). Carried here (not only on <see cref="Member"/>) so a timestamp nested in
+/// a collection keeps its format.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
     bool IsStructure,
@@ -34,7 +38,8 @@ public sealed record TypeDescriptor(
     bool IsBlob = false,
     bool IsDocument = false,
     TypeDescriptor? ListElement = null,
-    TypeDescriptor? MapValue = null)
+    TypeDescriptor? MapValue = null,
+    string? TimestampFormat = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -71,7 +76,6 @@ public sealed record TypeDescriptor(
 /// <param name="Documentation">The documentation for the member.</param>
 /// <param name="ModeledName">The name of the member as it appears in the model</param>
 /// <param name="JsonName">For JSON protocols, represents the value that should be used over the wire for the member (specified via JsonName trait). </param>
-/// <param name="TimestampFormat">The explicit <c>@timestampFormat</c> (<c>date-time</c>/<c>http-date</c>/<c>epoch-seconds</c>) from the member or its target, or null when unset (the binding's protocol default applies).</param>
 /// <param name="HidesBaseMember">True when the member shadows a base-class member and must be emitted with the <c>new</c> modifier. Set for any structure's <c>Equals</c> (hides <c>object.Equals</c>) and, on exceptions, for <c>Retryable</c> (hides <c>AmazonServiceException.Retryable</c>).</param>
 public sealed record Member(
     string PropertyName,
@@ -84,10 +88,16 @@ public sealed record Member(
     string Documentation,
     string ModeledName,
     string? JsonName = null,
-    string? TimestampFormat = null,
     bool HidesBaseMember = false
 )
 {
+    /// <summary>
+    /// The member's explicit <c>@timestampFormat</c>, or null when unset. Lives on <see cref="Type"/>
+    /// so it is resolved once and shared with nested collection elements; surfaced here for the common
+    /// top-level-member call sites.
+    /// </summary>
+    public string? TimestampFormat => Type.TimestampFormat;
+
     /// <summary>
     /// Body expression for the internal <c>IsSet{Property}()</c> method. Collections honor
     /// <c>AWSConfigs.InitializeCollections</c>: an empty list is "set" only when the V4-default null
@@ -129,7 +139,7 @@ public static class TypeMapper
 
             resolved.Add(new Member(
                 PropertyName: propertyName,
-                Type: ResolveType(member.Target, target, context),
+                Type: ResolveType(member, context),
                 IsRequired: member.IsRequired(),
                 IsNullableValueType: scalarType is not null,
                 IsIdempotencyToken: member.IsIdempotencyToken(),
@@ -138,7 +148,6 @@ public static class TypeMapper
                 Documentation: member.GetDocumentation() ?? string.Empty,
                 ModeledName: memberName,
                 JsonName: member.GetJsonName(),
-                TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
                 // Any structure can model a member named "Equals" — it hides object.Equals(object).
                 HidesBaseMember: propertyName == "Equals")
             );
@@ -148,25 +157,38 @@ public static class TypeMapper
     }
 
     /// <summary>
-    /// Describes <paramref name="target"/> — resolved from <paramref name="id"/> — as a
-    /// <see cref="TypeDescriptor"/>, recursing for a list element or map value. The caller passes the
-    /// resolved shape so an element can be described as something other than what its id resolves to
-    /// (see <see cref="ResolveElementType"/>).
+    /// Resolves <paramref name="member"/> into a <see cref="TypeDescriptor"/>, recursing for a list
+    /// element or map value. Takes the <see cref="MemberShape"/> (not just its target id) so a member's
+    /// own <c>@timestampFormat</c> is captured, including for a timestamp nested inside a collection —
+    /// <c>list.Member</c> and <c>map.Value</c> are themselves member references that can carry it. A
+    /// collection element (<paramref name="isCollectionValue"/>) collapses an enum to a plain string
+    /// (see <see cref="CollectionElementTarget"/>) and maps value-type scalars non-nullable.
     /// </summary>
-    private static TypeDescriptor ResolveType(ShapeId id, Shape target, GenerationContext context) =>
-        new(
-            DotNetType: MapType(id, target, context),
+    private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, bool isCollectionValue = false)
+    {
+        var target = context.Resolve(member.Target);
+        if (isCollectionValue)
+        {
+            // An enum element/value is surfaced as a string, so IsEnum/IsString below reflect the
+            // substituted shape and the descriptor never carries an enum in element position.
+            target = CollectionElementTarget(target);
+        }
+        return new TypeDescriptor(
+            // A collection element/value maps its scalars non-nullable (List<int>, not List<int?>); a
+            // standalone member maps them nullable (int?). See MapCollectionValueType.
+            DotNetType: isCollectionValue
+                ? MapCollectionValueType(member.Target, target, context)
+                : MapType(member.Target, target, context),
             IsStructure: target is StructureShape,
             IsString: target is StringShape,
             IsCollection: IsCollection(target),
             IsEnum: target is EnumShape,
             IsBlob: target is BlobShape,
             IsDocument: target is DocumentShape,
-            ListElement: target is ListShape list ? ResolveElementType(list.Member.Target, context) : null,
-            MapValue: target is MapShape map ? ResolveElementType(map.Value.Target, context) : null);
-
-    private static TypeDescriptor ResolveElementType(ShapeId id, GenerationContext context) =>
-        ResolveType(id, ElementTarget(id, context), context);
+            ListElement: target is ListShape list ? ResolveType(list.Member, context, isCollectionValue: true) : null,
+            MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true) : null,
+            TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat());
+    }
 
     /// <summary>
     /// Returns the .NET type name for a member whose target resolves to <paramref name="target"/>.
@@ -256,6 +278,35 @@ public static class TypeMapper
     };
 
     /// <summary>
+    /// The .NET type for a collection element or map value. Value-type scalars are <b>non-nullable</b>
+    /// here (<c>List&lt;int&gt;</c>, not <c>List&lt;int?&gt;</c>) — the V4 all-value-types-nullable rule
+    /// applies to standalone members only; the current SDK types non-sparse collection elements
+    /// non-nullable. (<c>@sparse</c>, which would flip these back to nullable, is rejected upfront by
+    /// <see cref="Generation.UnsupportedTraitValidator"/>, so it never reaches here.) Strings, structures,
+    /// and nested collections map exactly as in member position via <see cref="MapType"/>.
+    /// </summary>
+    private static string MapCollectionValueType(ShapeId id, Shape target, GenerationContext context) =>
+        MapNonNullableScalar(target) ?? MapType(id, target, context);
+
+    /// <summary>
+    /// The non-nullable .NET type for a primitive value-type or timestamp scalar, or null when the shape
+    /// is not one of those. The collection-element counterpart to <see cref="MapScalar"/>.
+    /// </summary>
+    public static string? MapNonNullableScalar(Shape target) => target switch
+    {
+        BooleanShape => "bool",
+        IntegerShape => "int",
+        // An intEnum is a plain integer (C2J has no intEnum concept), so in a non-sparse element it is a
+        // non-nullable int - the same as IntegerShape. Standalone it maps to int? via MapType.
+        IntEnumShape => "int",
+        LongShape => "long",
+        FloatShape => "float",
+        DoubleShape => "double",
+        TimestampShape => "DateTime",
+        _ => null,
+    };
+
+    /// <summary>
     /// The nullable .NET type for a primitive scalar or timestamp shape, or null when the shape is
     /// not one of the supported scalars.
     /// </summary>
@@ -285,19 +336,19 @@ public static class TypeMapper
     {
         var elementTarget = ElementTarget(id, context);
         RejectUnsupportedCollectionElement(elementTarget, collectionKind);
-        return MapType(id, elementTarget, context);
+        // Value-type scalars are non-nullable in element position (List<int>, not List<int?>).
+        return MapCollectionValueType(id, elementTarget, context);
     }
 
-    // The writers handle string, structure, document, and nested-collection (list/map) collection elements.
-    // A value-type scalar needs a first-class Member with its own @timestampFormat, an intEnum maps to int?,
-    // and a blob is only supported as a body member or an @httpPayload body, so none of them can ride the
-    // string/structure/document leaf paths. Fail here so a model like list<Integer> doesn't silently map the
-    // type then blow up in the writer with a confusing error. (A list/map element that is itself a list/map
-    // is fine - it recurses; only leaves are rejected. An enum element is already a string by the time it
-    // gets here - see ElementTarget.)
+    // The writers handle string, value-type scalar (bool/int/long/float/double/timestamp), intEnum (as a
+    // plain int), structure, document, and nested-collection (list/map) collection elements. A blob is only
+    // supported as a body member or an @httpPayload body, so it can't ride the leaf paths. Fail here so a
+    // model like list<Blob> doesn't silently map the type then blow up in the writer with a confusing error.
+    // (A list/map element that is itself a list/map is fine - it recurses; only blob leaves are rejected. An
+    // enum element is already a string by the time it gets here - see ElementTarget.)
     private static void RejectUnsupportedCollectionElement(Shape elementTarget, string collectionKind)
     {
-        if (MapScalar(elementTarget) is not null || elementTarget is IntEnumShape or BlobShape)
+        if (elementTarget is BlobShape)
         {
             throw new GeneratorException($"Elements of type '{elementTarget.Type}' in a {collectionKind} are not supported yet.");
         }

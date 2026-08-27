@@ -154,7 +154,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
     // restJson1 @timestampFormat defaults for HTTP bindings when unset: http-date on a header,
     // date-time on a query/label. https://smithy.io/2.0/aws/protocols/aws-restjson1-protocol.html
-    // (Body members default to epoch-seconds; see JsonScalarMarshaller.)
+    // (Body members default to epoch-seconds; see JsonBodyMemberMarshaller.)
     private const string HeaderTimestampDefault = "http-date";
     private const string QueryLabelTimestampDefault = "date-time";
 

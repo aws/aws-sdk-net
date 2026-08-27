@@ -57,7 +57,9 @@ public static class PaginationResolver
                     var elementTarget = TypeMapper.CollectionElementTarget(ResolveShape(index, list.Member.Target));
                     var elementType = elementTarget is StructureShape // includes UnionShape
                         ? list.Member.Target.Name
-                        : TypeMapper.MapPrimitive(elementTarget);
+                        // MapNonNullableScalar so the type matches the non-nullable List<T> property (List<int>,
+                        // not List<int?>); falls through to MapPrimitive for strings and unnameable elements.
+                        : TypeMapper.MapNonNullableScalar(elementTarget) ?? TypeMapper.MapPrimitive(elementTarget);
                     if (elementType is not null)
                     {
                         // The enumerable is named after the leaf member ("DistributionList.Items" -> "Items").

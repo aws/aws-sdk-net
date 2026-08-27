@@ -116,6 +116,20 @@ public class PaginationResolverTests
         Assert.Equal("string", result.ItemsElementType);
     }
 
+    [Fact]
+    public void Resolves_ScalarItemsElement_AsNonNullable()
+    {
+        // The items element type has to agree with the response property, which is List<int> (non-nullable)
+        // for a list<Integer>. Naming it int? (MapPrimitive's standalone mapping) would emit
+        // `?? new List<int?>()` and IPaginatedEnumerable<int?> over a List<int> property — a compile break.
+        var (index, _) = LoadPaginatedModel();
+        var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "counts" }""");
+
+        var result = PaginationResolver.Resolve([op], index).Single();
+        Assert.Equal("Counts", result.ItemsProperty);
+        Assert.Equal("int", result.ItemsElementType);
+    }
+
     [Theory]
     [InlineData("""{ "inputToken": "missing", "outputToken": "nextToken" }""", "inputToken member 'missing' not found")]
     [InlineData("""{ "inputToken": "nextToken", "outputToken": "missing" }""", "outputToken member 'missing' not found")]
@@ -217,6 +231,7 @@ public class PaginationResolverTests
             ["choices"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "ChoiceList") },
             ["matrix"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "ThingMatrix") },
             ["statuses"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "StatusList") },
+            ["counts"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "CountList") },
         };
         var structure = new StructureShape { Members = members };
 

@@ -213,18 +213,31 @@ public class TypeMapperTests
     }
 
     [Theory]
-    [InlineData("com.example#Priority")] // intEnum element -> int?
-    [InlineData("smithy.api#Integer")]   // value-type element
-    [InlineData("smithy.api#Blob")]      // blob element -> MemoryStream, only valid as an @httpPayload body
+    [InlineData("smithy.api#Blob")] // blob element -> MemoryStream, only valid as an @httpPayload body
     public void UnsupportedCollectionElement_Throws(string elementTarget)
     {
-        // The collection writers route string, structure, and nested-collection elements; a value-type
-        // element (an intEnum included - it maps to int?) and a blob can't ride the string/structure leaf
-        // paths. MapType must fail loud on such a leaf rather than mapping the type and blowing up deep in
-        // the writer. (Nested list/map elements are fine - they recurse.)
+        // The collection writers route string, value-type scalar (intEnum included, as a plain int), enum
+        // (collapsed to string), structure, document, and nested-collection elements. Only a blob can't
+        // ride those leaf paths - it's body/@httpPayload-only. MapType must fail loud on such a leaf rather
+        // than mapping the type and blowing up deep in the writer. (Nested list/map elements are fine -
+        // they recurse; enum/intEnum/value-type scalars are supported - see the resolves theories below.)
         var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
         var id = ShapeId.Parse("com.example#EnumList");
         Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
+    }
+
+    [Theory]
+    [InlineData("smithy.api#Integer", "List<int>")]
+    [InlineData("smithy.api#Long", "List<long>")]
+    [InlineData("smithy.api#Boolean", "List<bool>")]
+    [InlineData("smithy.api#Double", "List<double>")]
+    [InlineData("smithy.api#Timestamp", "List<DateTime>")]
+    [InlineData("com.example#Priority", "List<int>")] // intEnum collapses to a plain int, like Integer
+    public void ValueTypeCollectionElement_Resolves(string elementTarget, string expected)
+    {
+        var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
+        var id = ShapeId.Parse("com.example#ValueList");
+        Assert.Equal(expected, TypeMapper.MapType(id, list, _context));
     }
 
     [Fact]

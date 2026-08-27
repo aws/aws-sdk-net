@@ -1,44 +1,55 @@
 namespace SmithyDotNet.Generator.Writers.Serialization;
 
 /// <summary>
-/// Emits the <c>Utf8JsonWriter</c> calls that serialize a scalar <see cref="Member"/> into a JSON
-/// body. Shared by the request and structure marshaller writers (and reusable by a future awsJson
-/// writer). HTTP query/header/label conversions are a separate, request-only concern.
+/// Emits the <c>Utf8JsonWriter</c> calls that serialize a scalar into a JSON body — either a standalone
+/// <see cref="Member"/> (nullable value types) or a non-sparse collection element/value (non-nullable).
+/// Shared by the request/structure marshaller writers and the collection marshaller (and reusable by a
+/// future awsJson writer). HTTP query/header/label conversions are a separate, request-only concern.
 /// </summary>
 public static class JsonScalarMarshaller
 {
-    // restJson1/awsJson body timestamps default to epoch seconds when @timestampFormat is unset.
-    private const string BodyTimestampDefault = "epoch-seconds";
-
     /// <summary>
-    /// Emits the writer call(s) for <paramref name="expression"/> (a scalar value). Nullable value
-    /// types unwrap with <c>.Value</c>; the caller guards each with an <c>IsSet</c> check. Float and
-    /// double branch through <c>StringUtils.IsSpecial*Value</c> so NaN/±Infinity serialize as strings
-    /// (<c>WriteNumberValue</c> rejects them). Timestamps honor <c>@timestampFormat</c>. Dispatch is on
-    /// <see cref="TypeDescriptor.MarshalType"/> so an enum marshals as a <c>string</c> (implicit
-    /// ConstantClass to string), matching C2J which writes an enum member's string value.
+    /// Emits the writer call(s) for <paramref name="expression"/> (a scalar value of <paramref name="type"/>).
+    /// Dispatch is on <see cref="TypeDescriptor.MarshalType"/>, whose nullability selects the shape: a
+    /// nullable value type (a standalone member, guarded by the caller's <c>IsSet</c>) unwraps with
+    /// <c>.Value</c> and, for float/double, branches through <c>StringUtils.IsSpecial*Value</c> so
+    /// NaN/±Infinity serialize as strings; a non-nullable value type (a non-sparse collection leaf) writes
+    /// the bare value with no unwrap and no special guard, matching C2J's collection path. An enum
+    /// marshals as a <c>string</c> (implicit ConstantClass to string). A timestamp uses its explicit
+    /// <c>@timestampFormat</c>, else <paramref name="timestampDefault"/> (the caller's binding default);
+    /// this mirrors <see cref="JsonRequestMarshallerWriter.StringConversion"/>, keeping protocol/binding
+    /// defaults out of this writer.
     /// </summary>
-    public static void WriteScalar(CodeWriter writer, Member member, string expression)
+    public static void WriteScalar(CodeWriter writer, TypeDescriptor type, string expression, string timestampDefault)
     {
-        switch (member.Type.MarshalType)
+        switch (type.MarshalType)
         {
             case "string":
                 writer.WriteLine($"context.Writer.WriteStringValue({expression});");
                 break;
+            case "bool":
+                writer.WriteLine($"context.Writer.WriteBooleanValue({expression});");
+                break;
             case "bool?":
                 writer.WriteLine($"context.Writer.WriteBooleanValue({expression}.Value);");
+                break;
+            case "int" or "long" or "float" or "double":
+                writer.WriteLine($"context.Writer.WriteNumberValue({expression});");
                 break;
             case "int?" or "long?":
                 writer.WriteLine($"context.Writer.WriteNumberValue({expression}.Value);");
                 break;
             case "float?" or "double?":
-                WriteSpecialNumeric(writer, member.Type.DotNetType, expression);
+                WriteSpecialNumeric(writer, type.DotNetType, expression);
+                break;
+            case "DateTime":
+                WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: false);
                 break;
             case "DateTime?":
-                WriteTimestamp(writer, member.TimestampFormat ?? BodyTimestampDefault, expression);
+                WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: true);
                 break;
             default:
-                throw new GeneratorException($"'{member.Type.DotNetType}' is not a body scalar (member: {member.PropertyName}).");
+                throw new GeneratorException($"'{type.DotNetType}' is not a body scalar.");
         }
     }
 
@@ -55,13 +66,16 @@ public static class JsonScalarMarshaller
         });
     }
 
-    private static void WriteTimestamp(CodeWriter writer, string format, string expression)
+    // The string forms take a DateTime? (a non-nullable DateTime converts implicitly), so only the epoch
+    // form differs by nullability - a nullable member unwraps with .Value, a non-nullable leaf does not.
+    private static void WriteTimestamp(CodeWriter writer, string format, string expression, bool nullable)
     {
+        var epochValue = nullable ? $"{expression}.Value" : expression;
         writer.WriteLine(format switch
         {
             "date-time" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs({expression}));",
             "http-date" => $"context.Writer.WriteStringValue(StringUtils.FromDateTimeToRFC822({expression}));",
-            "epoch-seconds" => $"context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp({expression}.Value)));",
+            "epoch-seconds" => $"context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp({epochValue})));",
             _ => throw new GeneratorException($"Unsupported @timestampFormat '{format}'."),
         });
     }

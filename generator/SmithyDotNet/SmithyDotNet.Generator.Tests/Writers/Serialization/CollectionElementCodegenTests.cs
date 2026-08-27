@@ -169,4 +169,72 @@ public class CollectionElementCodegenTests
         Assert.DoesNotContain("StatusUnmarshaller", _responseUnmarshaller);
         Assert.DoesNotContain("Status>", _responseUnmarshaller);
     }
+
+    [Fact]
+    public void RequestMarshaller_WritesIntListElements()
+    {
+        // Non-sparse collection elements are non-nullable (List<int>), so no `.Value` unwrap - matches C2J.
+        Assert.Contains("foreach (var publicRequestCountsListValue in publicRequest.Counts)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequestCountsListValue);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_WritesLongMapEntries()
+    {
+        Assert.Contains("foreach (var publicRequestAmountsKvp in publicRequest.Amounts)", _requestMarshaller);
+        Assert.Contains("var publicRequestAmountsValue = publicRequestAmountsKvp.Value;", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequestAmountsValue);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_WritesDoubleListElements_WithoutSpecialValueGuard()
+    {
+        // C2J's non-sparse collection path writes doubles with a bare WriteNumberValue - the NaN/Infinity
+        // guard is scalar-member-only. Match that (don't reuse the nullable-member scalar writer).
+        Assert.Contains("foreach (var publicRequestRatiosListValue in publicRequest.Ratios)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequestRatiosListValue);", _requestMarshaller);
+        Assert.DoesNotContain("IsSpecialDoubleValue(publicRequestRatiosListValue", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_WritesTimestampListElements_DefaultsToEpochSeconds()
+    {
+        Assert.Contains("foreach (var publicRequestEpochTimesListValue in publicRequest.EpochTimes)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequestEpochTimesListValue)));", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_TimestampListElement_HonorsMemberTimestampFormat()
+    {
+        // @timestampFormat on the list's member reference must thread through to the collection element.
+        Assert.Contains("foreach (var publicRequestIsoTimesListValue in publicRequest.IsoTimes)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequestIsoTimesListValue));", _requestMarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_UnmarshallsIntList()
+    {
+        // Non-nullable element type + non-nullable IntUnmarshaller, matching the List<int> property type.
+        Assert.Contains("""if (context.TestExpression("counts", targetDepth, ref reader))""", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.Counts = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_UnmarshallsLongMap()
+    {
+        Assert.Contains("""if (context.TestExpression("amounts", targetDepth, ref reader))""", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = new JsonDictionaryUnmarshaller<string, long, StringUnmarshaller, LongUnmarshaller>(StringUnmarshaller.Instance, LongUnmarshaller.Instance);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.Amounts = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_UnmarshallsTimestampList_FormatAgnostic()
+    {
+        // The runtime DateTime unmarshaller auto-detects the wire format, so epoch and date-time lists
+        // unmarshal identically - no @timestampFormat is threaded on the read side.
+        Assert.Contains("""if (context.TestExpression("epochTimes", targetDepth, ref reader))""", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = new JsonListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.IsoTimes = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+    }
 }

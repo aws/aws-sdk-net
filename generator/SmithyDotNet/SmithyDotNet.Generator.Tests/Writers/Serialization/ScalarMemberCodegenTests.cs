@@ -208,12 +208,16 @@ public class ScalarMemberCodegenTests
     }
 
     [Fact]
-    public void ScalarList_Throws()
+    public void ScalarList_Resolves()
     {
+        // Value-type scalar elements are supported (they route through JsonScalarMarshaller); enum elements
+        // collapse to string and intEnum to a plain int, so only blob elements still throw (see
+        // TypeMapperTests.UnsupportedCollectionElement_Throws).
         var json = """{ "type": "list", "member": { "target": "smithy.api#Integer" } }""";
         var list = TestModels.DeserializeShape(json);
         var id = ShapeId.Parse($"{Namespace}#TestList");
 
-        Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
+        // Non-sparse elements are non-nullable (List<int>), unlike a standalone int? member.
+        Assert.Equal("List<int>", TypeMapper.MapType(id, list, _context));
     }
 }

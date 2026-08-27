@@ -305,16 +305,21 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
     private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
     {
+        // Descends to the leaf of an arbitrarily nested list/map so a structure buried under more than
+        // one collection level (e.g. map<string, list<Struct>>) is still found. A one-level unwrap
+        // would resolve to the inner collection shape, not the structure, and drop its (un)marshaller.
+        ShapeId CollectionLeaf(ShapeId id) => context.Resolve(id) switch
+        {
+            ListShape list => CollectionLeaf(list.Member.Target),
+            MapShape map => CollectionLeaf(map.Value.Target),
+            _ => id,
+        };
+
         foreach (var member in parent.Members.Values)
         {
-            // If the member is a list/map, the structure is its element/value; otherwise the member
-            // targets the structure directly.
-            var structureId = context.Resolve(member.Target) switch
-            {
-                ListShape list => list.Member.Target,
-                MapShape map => map.Value.Target,
-                _ => member.Target,
-            };
+            // If the member is a (possibly nested) list/map, the structure is its leaf element/value;
+            // otherwise the member targets the structure directly.
+            var structureId = CollectionLeaf(member.Target);
 
             if (!visited.Add(structureId))
             {
