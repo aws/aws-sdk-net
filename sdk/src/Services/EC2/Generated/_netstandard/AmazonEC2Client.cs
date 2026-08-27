@@ -32779,6 +32779,84 @@ namespace Amazon.EC2
         }
         #endregion
         
+        #region  ReplaceImageInstanceTypeSpecification
+
+        internal virtual ReplaceImageInstanceTypeSpecificationResponse ReplaceImageInstanceTypeSpecification(ReplaceImageInstanceTypeSpecificationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReplaceImageInstanceTypeSpecificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplaceImageInstanceTypeSpecificationResponseUnmarshaller.Instance;
+
+            return Invoke<ReplaceImageInstanceTypeSpecificationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Replaces or removes the instance type specification for an AMI. The instance type
+        /// specification defines which instance types are compatible with the AMI.
+        /// 
+        ///  
+        /// <para>
+        /// When you launch an instance using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+        /// Amazon EC2 validates the requested instance type against the AMI's instance type specification.
+        /// If the instance type is not compatible, the request fails with an <c>InvalidParameterCombination</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify supported instance types, unsupported instance types, or both. The
+        /// evaluation logic is as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No specification set – all instance types are allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only <c>UnsupportedInstanceTypes</c> set – All instance types are allowed except those
+        /// that match the unsupported list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SupportedInstanceTypes</c> set – The instance type must match the supported list
+        /// and must not match the unsupported list.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Instance type entries support wildcard patterns using <c>*</c> (for example, <c>t3.*</c>
+        /// matches all t3 sizes).
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove an existing instance type specification, omit the <c>InstanceTypeSpecification</c>
+        /// parameter or set it to <c>null</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To set the instance type specification, you must be the AMI owner. You cannot set
+        /// an instance type specification on an AMI that is listed in Amazon Web Services Marketplace,
+        /// and you cannot list an AMI in Amazon Web Services Marketplace if it has an instance
+        /// type specification set.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceImageInstanceTypeSpecification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReplaceImageInstanceTypeSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageInstanceTypeSpecification">REST API Reference for ReplaceImageInstanceTypeSpecification Operation</seealso>
+        public virtual Task<ReplaceImageInstanceTypeSpecificationResponse> ReplaceImageInstanceTypeSpecificationAsync(ReplaceImageInstanceTypeSpecificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ReplaceImageInstanceTypeSpecificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplaceImageInstanceTypeSpecificationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ReplaceImageInstanceTypeSpecificationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ReplaceNetworkAclAssociation
 
         internal virtual ReplaceNetworkAclAssociationResponse ReplaceNetworkAclAssociation(ReplaceNetworkAclAssociationRequest request)

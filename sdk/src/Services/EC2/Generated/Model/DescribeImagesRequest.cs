@@ -192,6 +192,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>boot-mode</c> – The boot mode of the image (<c>legacy-bios</c> | <c>uefi</c> |
+        /// <c>uefi-preferred</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>creation-date</c> - The time when the image was created, in the ISO 8601 format
         /// in the UTC time zone (YYYY-MM-DDThh:mm:ss.sssZ), for example, <c>2021-09-29T11:04:43.305Z</c>.
         /// You can use a wildcard (<c>*</c>), for example, <c>2021-09-29T*</c>, which matches
@@ -256,6 +261,20 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>image-type</c> - The image type (<c>machine</c> | <c>kernel</c> | <c>ramdisk</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>instance-type-specification.supported-instance-type</c> – The instance types that
+        /// are compatible with the AMI, as specified by the AMI owner. Values can be individual
+        /// instance types (for example, <c>t3.micro</c>) or wildcard patterns that match multiple
+        /// instance types (for example, <c>t3.*</c>).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>instance-type-specification.unsupported-instance-type</c> – The instance types
+        /// that are not compatible with the AMI, as specified by the AMI owner. Values can be
+        /// individual instance types (for example, <c>t3.micro</c>) or wildcard patterns that
+        /// match multiple instance types (for example, <c>t3.*</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

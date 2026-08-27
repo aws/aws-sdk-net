@@ -167,6 +167,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ImdsSupport = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("instanceTypeSpecification", targetDepth))
+                    {
+                        var unmarshaller = InstanceTypeSpecificationUnmarshaller.Instance;
+                        unmarshalledObject.InstanceTypeSpecification = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("kernelId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
