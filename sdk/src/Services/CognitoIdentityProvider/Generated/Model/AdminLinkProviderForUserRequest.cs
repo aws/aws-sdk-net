@@ -106,12 +106,6 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The <c>ProviderName</c> should be set to <c>Cognito</c> for users in Cognito user
         /// pools.
         /// </para>
-        ///  <important> 
-        /// <para>
-        /// All attributes in the DestinationUser profile must be mutable. If you have assigned
-        /// the user any immutable custom attributes, the operation won't succeed.
-        /// </para>
-        ///  </important>
         /// </summary>
         [AWSProperty(Required=true)]
         public ProviderUserIdentifierType DestinationUser
