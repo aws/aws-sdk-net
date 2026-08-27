@@ -138,6 +138,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.EngineVersion = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("FullSnapshotSizeInBytes", targetDepth))
+                    {
+                        var unmarshaller = NullableLongUnmarshaller.Instance;
+                        unmarshalledObject.FullSnapshotSizeInBytes = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("IAMDatabaseAuthenticationEnabled", targetDepth))
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;

@@ -52,6 +52,7 @@ namespace Amazon.RDS.Model
         private bool? _encrypted;
         private string _engine;
         private string _engineVersion;
+        private long? _fullSnapshotSizeInBytes;
         private bool? _iamDatabaseAuthenticationEnabled;
         private DateTime? _instanceCreateTime;
         private int? _iops;
@@ -323,6 +324,31 @@ namespace Amazon.RDS.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FullSnapshotSizeInBytes. 
+        /// <para>
+        /// The full size of the DB snapshot, in bytes.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This is not the incremental size of the snapshot. This is the full snapshot size and
+        /// represents the size of all the blocks that were written to the source volume at the
+        /// time the snapshot was created.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public long? FullSnapshotSizeInBytes
+        {
+            get { return this._fullSnapshotSizeInBytes; }
+            set { this._fullSnapshotSizeInBytes = value; }
+        }
+
+        // Check to see if FullSnapshotSizeInBytes property is set
+        internal bool IsSetFullSnapshotSizeInBytes()
+        {
+            return this._fullSnapshotSizeInBytes.HasValue; 
         }
 
         /// <summary>
