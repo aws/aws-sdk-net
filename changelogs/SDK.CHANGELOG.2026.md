@@ -1,3 +1,23 @@
+### 4.0.321.0 (2026-08-27 19:01 UTC)
+* ApiGatewayManagementApi (4.0.100.12)
+	* ApiGatewayManagementApi is now generated from its Smithy model. There are no changes to the public API.
+* CloudWatchLogs (4.0.104.0)
+	* Added resultCount to QueryStatistics in GetQueryResults. This field returns the total number of output rows in the final result set, helping customers programmatically determine whether a query produced results after all operations including post-aggregation filters.
+* CodeDeploy (4.0.101.0)
+	* Added a deploymentMode parameter to CreateDeployment. Set it to RESTART to restart an EC2 and on-premises fleet, using the last successful revision, honoring Deployment Configuration.
+* CognitoIdentityProvider (4.0.104.0)
+	* Adds the AdminDeleteSoftwareToken API operation, enabling administrators to remove a user's registered TOTP (software token) MFA configuration from a user pool.
+* DataZone (4.0.105.0)
+	* Add cascadeDelete to DeleteDomain. When specified, DataZone recursively deletes all projects, environments, subscriptions, and their underlying AWS resources before removing the domain. Deletion progress is reported via deleteProgress and resource failures via failureReasons on GetDomain.
+* EC2 (4.0.114.0)
+	* EC2 allows AMI owners to define compatible instance types on their AMIs, blocking RunInstances calls automatically for launches on non-permitted instance types.
+* LambdaMicrovms (4.0.101.0)
+	* Added InsufficientCapacityException to RunMicrovm for capacity-related failures. Added lifecycle status field (AVAILABLE, DEPRECATED) to ListManagedMicrovmImageVersions. Added ConflictException to CreateMicrovmAuthToken and CreateMicrovmShellAuthToken for unregistered MicroVMs.
+* OpenSearchService (4.0.102.10)
+	* Updating SDK and CLI documentation for AttachDataSource API.
+* RDS (4.0.105.0)
+	* Adding support for the full snapshot size, in bytes, of DB instance snapshots.
+
 ### 4.0.320.0 (2026-08-26 18:37 UTC)
 * DevOpsAgent (4.0.102.0)
 	* AWS DevOps Agent now supports trigger filter groups for Release Readiness Review, letting you control when the capability auto-triggers based on webhook events and target branches.
