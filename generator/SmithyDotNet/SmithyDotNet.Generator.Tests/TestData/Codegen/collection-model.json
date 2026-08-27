@@ -42,6 +42,23 @@
         },
         "groupedTags": {
           "target": "com.amazonaws.testcollection#TagListList"
+        },
+        "statuses": {
+          "target": "com.amazonaws.testcollection#StatusList"
+        },
+        "statusByName": {
+          "target": "com.amazonaws.testcollection#StatusMap"
+        },
+        "groupedStatuses": {
+          "target": "com.amazonaws.testcollection#StatusListList"
+        },
+        "statusFilter": {
+          "target": "com.amazonaws.testcollection#StatusList",
+          "traits": { "smithy.api#httpQuery": "status" }
+        },
+        "statusTags": {
+          "target": "com.amazonaws.testcollection#StatusList",
+          "traits": { "smithy.api#httpHeader": "x-status" }
         }
       },
       "traits": {
@@ -68,6 +85,15 @@
         },
         "groupedTags": {
           "target": "com.amazonaws.testcollection#TagListList"
+        },
+        "statuses": {
+          "target": "com.amazonaws.testcollection#StatusList"
+        },
+        "statusByName": {
+          "target": "com.amazonaws.testcollection#StatusMap"
+        },
+        "groupedStatuses": {
+          "target": "com.amazonaws.testcollection#StatusListList"
         }
       },
       "traits": {
@@ -117,6 +143,34 @@
       "type": "list",
       "member": {
         "target": "com.amazonaws.testcollection#TagList"
+      }
+    },
+    "com.amazonaws.testcollection#Status": {
+      "type": "enum",
+      "members": {
+        "ACTIVE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ACTIVE" } },
+        "INACTIVE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "INACTIVE" } }
+      }
+    },
+    "com.amazonaws.testcollection#StatusList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testcollection#Status"
+      }
+    },
+    "com.amazonaws.testcollection#StatusMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "com.amazonaws.testcollection#Status"
+      }
+    },
+    "com.amazonaws.testcollection#StatusListList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testcollection#StatusList"
       }
     },
     "com.amazonaws.testcollection#Widget": {

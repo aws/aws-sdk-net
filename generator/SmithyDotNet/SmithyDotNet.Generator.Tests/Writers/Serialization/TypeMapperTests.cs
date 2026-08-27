@@ -213,18 +213,49 @@ public class TypeMapperTests
     }
 
     [Theory]
-    [InlineData("com.example#Status")]   // string enum element
-    [InlineData("com.example#Priority")] // intEnum element
+    [InlineData("com.example#Priority")] // intEnum element -> int?
     [InlineData("smithy.api#Integer")]   // value-type element
+    [InlineData("smithy.api#Blob")]      // blob element -> MemoryStream, only valid as an @httpPayload body
     public void UnsupportedCollectionElement_Throws(string elementTarget)
     {
-        // The collection writers route string, structure, and nested-collection elements; an enum element
-        // would map to its ConstantClass and a value-type element to a primitive, neither of which the
-        // string/structure leaf paths can emit. MapType must fail loud on such a leaf rather than mapping
-        // the type and blowing up deep in the writer. (Nested list/map elements are fine - they recurse.)
+        // The collection writers route string, structure, and nested-collection elements; a value-type
+        // element (an intEnum included - it maps to int?) and a blob can't ride the string/structure leaf
+        // paths. MapType must fail loud on such a leaf rather than mapping the type and blowing up deep in
+        // the writer. (Nested list/map elements are fine - they recurse.)
         var list = TestModels.DeserializeShape($$"""{ "type": "list", "member": { "target": "{{elementTarget}}" } }""");
         var id = ShapeId.Parse("com.example#EnumList");
         Assert.Throws<GeneratorException>(() => TypeMapper.MapType(id, list, _context));
+    }
+
+    [Fact]
+    public void EnumCollectionElement_MapsToString()
+    {
+        // C2J's DetermineType passes treatEnumsAsString:true for a list member and a map value, so only a
+        // member's own enum type surfaces the ConstantClass - list<enum> is List<string> on the public API.
+        // Typing the element as its ConstantClass would be a public API divergence.
+        var list = TestModels.DeserializeShape("""{ "type": "list", "member": { "target": "com.example#Status" } }""");
+        Assert.Equal("List<string>", TypeMapper.MapType(ShapeId.Parse("com.example#StatusList"), list, _context));
+
+        var map = TestModels.DeserializeShape("""{ "type": "map", "key": { "target": "smithy.api#String" }, "value": { "target": "com.example#Status" } }""");
+        Assert.Equal("Dictionary<string, string>", TypeMapper.MapType(ShapeId.Parse("com.example#StatusMap"), map, _context));
+    }
+
+    [Fact]
+    public void EnumListMember_ElementDescriptorIsPlainString()
+    {
+        // The element descriptor has to agree with the List<string> type name: the (un)marshal writers
+        // dispatch on the element's IsString, and the unmarshaller spells its DotNetType into the
+        // JsonListUnmarshaller generic args. An IsEnum element would emit ConstantClass there.
+        var context = TestModels.Context("Codegen/collection-model.json");
+        var request = context.Operations.Single(o => o.Name == "PutThings").Input;
+        var statuses = TypeMapper.ResolveMembers(request, context).Single(m => m.ModeledName == "statuses");
+
+        Assert.Equal("List<string>", statuses.Type.DotNetType);
+        var element = statuses.Type.ListElement;
+        Assert.NotNull(element);
+        Assert.Equal("string", element.DotNetType);
+        Assert.True(element.IsString);
+        Assert.False(element.IsEnum);
     }
 
     [Fact]

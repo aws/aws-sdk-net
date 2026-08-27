@@ -52,13 +52,11 @@ Then serializes members based on placement rules, then returns `request`.
 | `@httpResponseCode` | (response only) | `response.HttpStatusCode` |
 | No HTTP trait | Body | Protocol-specific serialization |
 
-List query/header bindings are `list<string>` only. `request.ParameterCollection`
-(not the string-only `request.Parameters` facade) carries the `List<string>` query
-overload. A list of any non-string element (enum, int, long, bool, double, timestamp)
-fails loud during member resolution (`TypeMapper.RejectUnsupportedCollectionElement`);
-no restJson1 service emits one today. Enum lists are excluded on purpose: C2J
-surfaces them as `List<string>`, but this generator would type them as
-`List<ConstantClass>`. That public API decision is tracked in a follow-up task.
+List query/header bindings are `list<string>` only — which covers `list<enum>` too, because an enum
+collection element resolves to plain `string` (see the type-mapping skill). `request.ParameterCollection` (not the string-only `request.Parameters` facade) carries the
+`List<string>` query overload. A list of a value-type element (int, long, bool, double, timestamp,
+intEnum) fails loud during member resolution (`TypeMapper.RejectUnsupportedCollectionElement`); no
+restJson1 service emits one today.
 
 For `awsJson1.x` and `query`/`ec2Query`: all members go in the body (no HTTP binding traits).
 
@@ -98,9 +96,10 @@ if (publicRequest.IsSetFoo())
 - Maps: `WriteStartObject` → `foreach` the dictionary → `WritePropertyName(kvp.Key)` + write `kvp.Value`
   → `WriteEndObject`. Keys are always strings (Smithy requires the key member target a string shape).
 - Lists and maps nest to any depth — a list/map element or map value that is itself a list/map recurses
-  (`JsonBodyMemberMarshaller.WriteCollectionValue`). Leaf values must be string or structure; value-type/enum
-  leaves (and enum keys → `ConstantClass`) fail loud in `TypeMapper.RejectUnsupportedCollectionElement`,
-  deferred to the value-type/ConstantClass work.
+  (`JsonBodyMemberMarshaller.WriteCollectionValue`). Leaf values must be string, structure, or document; an
+  enum leaf (element, map key, or map value) *is* a string here and marshals as one. Value-type and blob
+  leaves fail loud in `TypeMapper.RejectUnsupportedCollectionElement`, deferred to the value-type
+  (un)marshaller work.
 - Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization
 
 
@@ -133,8 +132,9 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
   request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
   ```
 
-list/map payloads fail loud in the writer; document throws in `TypeMapper`. A union derives from
-`StructureShape`, so a union payload takes the structure path.
+List, map, and document payloads all fail loud in the writer — a document maps in `TypeMapper` (it is a
+supported body member) but has no `@httpPayload` form. A union derives from `StructureShape`, so a union
+payload takes the structure path.
 
 ### `@endpoint` host prefix (request)
 
@@ -196,8 +196,9 @@ while (context.ReadAtDepth(targetDepth, ref reader))
 - Maps: `new JsonDictionaryUnmarshaller<string, V, StringUnmarshaller, VU>(StringUnmarshaller.Instance, VU.Instance)`
   (key is always `string`/`StringUnmarshaller`).
 - Nested collections compose recursively (`JsonBodyMemberUnmarshaller.CollectionUnmarshaller`): a map-of-list
-  is `JsonDictionaryUnmarshaller<string, List<T>, StringUnmarshaller, JsonListUnmarshaller<T, TU>>(...)`. Value-type/enum
-  leaves (and enum keys) fail loud in `TypeMapper`.
+  is `JsonDictionaryUnmarshaller<string, List<T>, StringUnmarshaller, JsonListUnmarshaller<T, TU>>(...)`. An
+  enum leaf is `string`/`StringUnmarshaller` — never a ConstantClass generic arg. Value-type leaves fail loud
+  in `TypeMapper`.
 
 ### `@httpPayload` (response)
 

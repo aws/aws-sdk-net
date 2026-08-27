@@ -70,8 +70,9 @@ public static class JsonBodyMemberUnmarshaller
 
     // The runtime unmarshaller type name and an instance expression for a string, structure, list, or map
     // type - recursing for nested collections. Map keys are always strings (see TypeMapper.MapType), so the
-    // key unmarshaller is StringUnmarshaller. Value-type/enum leaf values are rejected in TypeMapper
-    // (deferred to the value-type (un)marshaller work).
+    // key unmarshaller is StringUnmarshaller. An enum leaf is already a string here (see TypeMapper),
+    // so it uses StringUnmarshaller too; value-type leaves are rejected in TypeMapper (deferred to the
+    // value-type (un)marshaller work).
     private static (string Type, string Instance) CollectionUnmarshaller(TypeDescriptor type)
     {
         if (type.IsString)

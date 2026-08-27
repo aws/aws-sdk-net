@@ -48,10 +48,13 @@ public static class PaginationResolver
                 var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, trait.Items, "items", index);
                 if (itemsTarget is ListShape list)
                 {
-                    // Unions get generated classes just like structures. Elements with no .NET
-                    // mapping (documents, maps, nested lists) get no enumerable — C2J filters
-                    // those result keys the same way (e.g. DynamoDB Query's Items).
-                    var elementTarget = ResolveShape(index, list.Member.Target);
+                    // CollectionElementTarget collapses an enum to a string, so the element type matches the
+                    // List<string> property TypeMapper emits (C2J's ListItemType strips the T out of the
+                    // member's own List<T>). Elements MapPrimitive can't name (maps, nested lists, documents)
+                    // get no enumerable — C2J filters those result keys too, since ListItemType only accepts
+                    // List<T> for an unqualified T (e.g. DynamoDB Query's Items, and
+                    // List<Amazon.Runtime.Documents.Document>).
+                    var elementTarget = TypeMapper.CollectionElementTarget(ResolveShape(index, list.Member.Target));
                     var elementType = elementTarget is StructureShape // includes UnionShape
                         ? list.Member.Target.Name
                         : TypeMapper.MapPrimitive(elementTarget);

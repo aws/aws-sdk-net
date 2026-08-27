@@ -293,6 +293,9 @@
         },
         "matrix": {
           "target": "com.amazonaws.testpaginated#ThingMatrix"
+        },
+        "statuses": {
+          "target": "com.amazonaws.testpaginated#StatusList"
         }
       },
       "traits": {
@@ -317,6 +320,18 @@
       "type": "list",
       "member": {
         "target": "com.amazonaws.testpaginated#ThingList"
+      }
+    },
+    "com.amazonaws.testpaginated#Status": {
+      "type": "enum",
+      "members": {
+        "ACTIVE": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "ACTIVE" } }
+      }
+    },
+    "com.amazonaws.testpaginated#StatusList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testpaginated#Status"
       }
     },
     "com.amazonaws.testpaginated#WidgetList": {

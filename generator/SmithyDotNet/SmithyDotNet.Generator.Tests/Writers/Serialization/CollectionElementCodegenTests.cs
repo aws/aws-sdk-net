@@ -1,16 +1,18 @@
 using SmithyDotNet.Generator.Writers.Serialization;
+using SmithyDotNet.Generator.Writers.Shapes;
 using Xunit;
 
 namespace SmithyDotNet.Generator.Tests.Writers.Serialization;
 
-// Covers list-of-string and list-of-structure body members for both writers off one small model:
-// TagList (string elements, request and response) and WidgetList (structure elements, response
-// only) - CloudTrail's PutAuditEvents model doesn't have a string list, so that gap had no coverage
-// before the TypeDescriptor introduction.
+// Covers list-of-string, list-of-structure, and list/map-of-enum body members for both writers off one
+// small model: TagList (string elements, request and response), WidgetList (structure elements, response
+// only), and StatusList/StatusMap (enum elements) - CloudTrail's PutAuditEvents model doesn't have a
+// string list, so that gap had no coverage before the TypeDescriptor introduction.
 public class CollectionElementCodegenTests
 {
     private readonly string _requestMarshaller;
     private readonly string _responseUnmarshaller;
+    private readonly string _requestStructure;
 
     public CollectionElementCodegenTests()
     {
@@ -19,6 +21,10 @@ public class CollectionElementCodegenTests
 
         _requestMarshaller = new JsonRequestMarshallerWriter(context, "collection-model.json").Write(operation, TestContext.Current.CancellationToken);
         _responseUnmarshaller = new JsonResponseUnmarshallerWriter(context, "collection-model.json").Write(operation, TestContext.Current.CancellationToken);
+
+        // context.Structures excludes @input/@output shapes, so the request structure comes off the operation.
+        _requestStructure = new StructureWriter(context, "collection-model.json")
+            .Write(operation.Input, operation.Shape.Input, TestContext.Current.CancellationToken);
     }
 
     [Fact]
@@ -116,5 +122,51 @@ public class CollectionElementCodegenTests
         Assert.Contains("""if (context.TestExpression("groupedTags", targetDepth, ref reader))""", _responseUnmarshaller);
         Assert.Contains("var unmarshaller = new JsonListUnmarshaller<List<string>, JsonListUnmarshaller<string, StringUnmarshaller>>(new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));", _responseUnmarshaller);
         Assert.Contains("unmarshalledObject.GroupedTags = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+    }
+
+    [Fact]
+    public void RequestStructure_EnumCollections_SurfaceAsStringCollections()
+    {
+        Assert.Contains("public List<string> Statuses", _requestStructure);
+        Assert.Contains("public Dictionary<string, string> StatusByName", _requestStructure);
+        Assert.Contains("public List<List<string>> GroupedStatuses", _requestStructure);
+        Assert.DoesNotContain("Status>", _requestStructure);
+    }
+
+    [Fact]
+    public void RequestMarshaller_WritesEnumListAndMapElementsAsStrings()
+    {
+        Assert.Contains("foreach (var publicRequestStatusesListValue in publicRequest.Statuses)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteStringValue(publicRequestStatusesListValue);", _requestMarshaller);
+
+        Assert.Contains("var publicRequestStatusByNameValue = publicRequestStatusByNameKvp.Value;", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteStringValue(publicRequestStatusByNameValue);", _requestMarshaller);
+
+        // list<list<enum>> recurses like list<list<string>> - the enum collapses at the leaf, not the member.
+        Assert.Contains("foreach (var publicRequestGroupedStatusesListValueListValue in publicRequestGroupedStatusesListValue)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteStringValue(publicRequestGroupedStatusesListValueListValue);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_EnumListQueryAndHeader_UseStringListBindings()
+    {
+        // A list<enum> binds exactly like a list<string>: the typed ParameterCollection overload for
+        // @httpQuery, StringUtils.FromList for @httpHeader.
+        Assert.Contains("""request.ParameterCollection.Add("status", publicRequest.StatusFilter);""", _requestMarshaller);
+        Assert.Contains("""request.Headers["x-status"] = StringUtils.FromList(publicRequest.StatusTags);""", _requestMarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_UnmarshallsEnumCollectionsAsStrings()
+    {
+        Assert.Contains("""if (context.TestExpression("statuses", targetDepth, ref reader))""", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.Statuses = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.StatusByName = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.GroupedStatuses = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+
+        // The enum element resolves to string, so no ConstantClass leaks into the generic args and no
+        // per-enum unmarshaller is referenced (none is generated).
+        Assert.DoesNotContain("StatusUnmarshaller", _responseUnmarshaller);
+        Assert.DoesNotContain("Status>", _responseUnmarshaller);
     }
 }

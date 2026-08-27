@@ -100,6 +100,22 @@ public class PaginationResolverTests
         Assert.Null(result.ItemsElementType);
     }
 
+    [Fact]
+    public void Resolves_EnumItemsElement_AsString()
+    {
+        // The items element type has to agree with the response property, which is List<string> for a
+        // list<enum>. Falling through to MapPrimitive for an enum would yield no .NET mapping at all,
+        // silently dropping the flattened enumerable that C2J emits
+        // (OperationPaginatorConfigOption.ListItemType strips the T out of the member's own List<string>).
+        var (index, _) = LoadPaginatedModel();
+        var op = MakeOperation("""{ "inputToken": "nextToken", "outputToken": "nextToken", "items": "statuses" }""");
+
+        var result = PaginationResolver.Resolve([op], index).Single();
+
+        Assert.Equal("Statuses", result.ItemsProperty);
+        Assert.Equal("string", result.ItemsElementType);
+    }
+
     [Theory]
     [InlineData("""{ "inputToken": "missing", "outputToken": "nextToken" }""", "inputToken member 'missing' not found")]
     [InlineData("""{ "inputToken": "nextToken", "outputToken": "missing" }""", "outputToken member 'missing' not found")]
@@ -200,6 +216,7 @@ public class PaginationResolverTests
             ["things"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "ThingList") },
             ["choices"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "ChoiceList") },
             ["matrix"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "ThingMatrix") },
+            ["statuses"] = new() { Target = new ShapeId("com.amazonaws.testpaginated", "StatusList") },
         };
         var structure = new StructureShape { Members = members };
 

@@ -23,9 +23,9 @@ Definitive mapping from Smithy shape types to .NET types, plus nullability and c
 | `short` | — | Not supported yet — throws |
 | `bigInteger` | — | Not supported yet — throws. Wider-numeric types are earmarked for a dedicated numerics extension |
 | `bigDecimal` | — | Not supported yet — throws |
-| `blob` | `MemoryStream` | Not supported yet — throws. Target: streaming blobs → `Stream`, non-streaming → `MemoryStream` |
-| `document` | `Amazon.Runtime.Documents.Document` | Not supported yet — throws. SDK runtime type |
-| `enum` | `ConstantClass` | The class the `ServiceEnumerationsWriter` emits (see `TypeMapper.EnumTypeName`); marshals as a string via implicit conversion, matching C2J |
+| `blob` | `MemoryStream` | Supported as an `@httpPayload` body or a JSON body member (base64 string on the wire). A header, query, or collection-element blob still throws. Target: streaming blobs → `Stream` |
+| `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type; (un)marshals wholesale through the runtime document transforms. Supported as a body member, list element, or map value; an `@httpPayload` document throws |
+| `enum` | `ConstantClass` | The class the `ServiceEnumerationsWriter` emits (see `TypeMapper.EnumTypeName`); marshals as a string via implicit conversion, matching C2J. **Only as a member's own type** — inside a collection it is plain `string`; see Enums in Collections |
 | `intEnum` | `int?` | No `ConstantClass` — C2J has no `intEnum`, so it maps to a plain nullable int like `IntegerShape` |
 | `list` | `List<T>` | V4 default: `null`; see Collection Defaults |
 | `map` | `Dictionary<TKey, TValue>` | V4 default: `null`; see Collection Defaults |
@@ -63,6 +63,39 @@ and an empty list still counts as "set" (the caller cleared the value). When `tr
 collections start empty and an empty list counts as "not set". The `IsSet` method encodes that
 rule so callers — including the public reflection API `AWSSDKUtils.IsPropertySet` — see the
 correct answer in both modes.
+
+## Enums in Collections
+
+An `enum` surfaces as its `ConstantClass` **only as a structure member's own type**. As a list element, a
+map key, or a map value it is plain `string`:
+
+| Smithy | .NET |
+|---|---|
+| member targeting `Status` | `Status` (the ConstantClass) |
+| `list<Status>` | `List<string>` |
+| `map<Status, Status>` | `Dictionary<string, string>` |
+| `list<list<Status>>` | `List<List<string>>` |
+
+This matches C2J: `Member.DetermineType` passes `treatEnumsAsString: true` when it recurses into a list
+`member` or a map `key`/`value`, and only the member's own call passes `false`. Typing an element as its
+ConstantClass would be a public-API divergence (`Amazon.Lambda.Model.CreateFunctionRequest.Architectures`
+and friends are `List<string>` in the shipped SDK).
+
+`TypeMapper.CollectionElementTarget` is the single place the collapse happens. It feeds the .NET type name
+(`MapType`), the element `TypeDescriptor` (`ResolveElementType`), and `PaginationResolver`'s `items` element
+type — so the descriptor's `IsEnum` is never set on an element, the writers see a plain string leaf, and a
+paginator's flattened enumerable agrees with the `List<string>` property it reads from. It takes an
+already-resolved `Shape` rather than a `ShapeId` precisely so `PaginationResolver` can call it: that runs off
+a `ServiceIndex` and has no `GenerationContext`. `Resolves_EnumItemsElement_AsString` pins the paginator's
+side.
+
+An `intEnum` gets no such treatment: it maps to `int?`, so a `list<intEnum>` still fails loud in
+`RejectUnsupportedCollectionElement` along with the other unsupported leaves — value-type scalars and `blob`,
+which is supported as an `@httpPayload` body and a JSON body member but has no collection-element form. A
+`document` element is supported and passes the check.
+
+C2J's `Customizations.OverrideTreatEnumsAsString` can flip this per shape. There is no customization layer
+here yet, so the default (`true`, i.e. `string`) is the only behavior.
 
 ## Constrained Shapes
 
@@ -109,15 +142,16 @@ To get the .NET type for a structure member:
    - Simple/scalar shape → map its `type` from the table
    - Structure/union → use the generated class name
    - List → `List<{resolve member.Target}>`
-   - Map → `Dictionary<{resolve key.Target}, {resolve value.Target}>`
-   - Enum → `string` (Phase 1), `ConstantClass` subclass (Phase 2)
+   - Map → `Dictionary<string, {resolve value.Target}>` (an enum key is `string`, never its ConstantClass)
+   - Enum → its `ConstantClass` subclass as a member's own type, `string` inside a collection (see Enums
+     in Collections)
    - Constrained string shapes (e.g. `Uuid`) resolve to a `StringShape` → `string` (no wrapper)
 
 ## Prelude Shape Mapping
 
-These shapes are implicit (not in the model JSON) and map directly. The .NET types below are the
-target mapping; see the Type Mapping Table above for which are supported today vs. still throw
-(`Blob`/`Document` are not supported yet):
+These shapes are implicit (not in the model JSON) and map directly. See the Type Mapping Table above
+for the positions each one is supported in — `Blob` and `Document` map here but are not accepted
+everywhere:
 
 | Prelude shape ID | .NET type |
 |---|---|

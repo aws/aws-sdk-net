@@ -55,8 +55,8 @@ public static class JsonBodyMemberMarshaller
         else if (member.Type.IsBlob)
         {
             // A blob body member base64-encodes into the JSON string, matching C2J (see Textract's
-            // DocumentMarshaller). Blobs never appear as list elements or map values in any staged
-            // model; if one ever does, WriteCollectionValue fails loud below.
+            // DocumentMarshaller). A blob list element or map value never reaches here - TypeMapper
+            // rejects it during member resolution.
             writer.OpenBlock($"if ({objectVar}.IsSet{member.PropertyName}())", () =>
             {
                 writer.WriteLine($"""context.Writer.WritePropertyName("{member.JsonName ?? member.ModeledName}");""");
@@ -80,8 +80,8 @@ public static class JsonBodyMemberMarshaller
     // Writes one JSON value: a list element, a map value, or a collection member's own value - recursing
     // for nested lists/maps. A list becomes a JSON array, a map a JSON object keyed by kvp.Key (map keys
     // are always strings - see TypeMapper.MapType). baseName seeds the loop-variable names so nested loops
-    // don't collide. Value-type/enum leaf values are rejected in TypeMapper (deferred to the value-type
-    // (un)marshaller work).
+    // don't collide. An enum leaf is already a string here (see TypeMapper) and marshals as one;
+    // value-type leaves are rejected in TypeMapper (deferred to the value-type (un)marshaller work).
     private static void WriteCollectionValue(CodeWriter writer, TypeDescriptor type, string valueExpr, string baseName)
     {
         if (type.IsString)
