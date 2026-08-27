@@ -36,9 +36,11 @@ namespace Amazon.DataZone.Model
     {
         private string _arn;
         private DateTime? _createdAt;
+        private DeleteProgress _deleteProgress;
         private string _description;
         private string _domainExecutionRole;
         private DomainVersion _domainVersion;
+        private List<FailureReason> _failureReasons = AWSConfigs.InitializeCollections ? new List<FailureReason>() : null;
         private string _id;
         private string _kmsKeyIdentifier;
         private DateTime? _lastUpdatedAt;
@@ -84,6 +86,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeleteProgress. 
+        /// <para>
+        /// The progress of the current domain deletion, including the number of projects that
+        /// Amazon DataZone successfully deleted.
+        /// </para>
+        /// </summary>
+        public DeleteProgress DeleteProgress
+        {
+            get { return this._deleteProgress; }
+            set { this._deleteProgress = value; }
+        }
+
+        // Check to see if DeleteProgress property is set
+        internal bool IsSetDeleteProgress()
+        {
+            return this._deleteProgress != null;
         }
 
         /// <summary>
@@ -139,6 +160,30 @@ namespace Amazon.DataZone.Model
         internal bool IsSetDomainVersion()
         {
             return this._domainVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailureReasons. 
+        /// <para>
+        /// The list of failure reasons for resources that Amazon DataZone could not delete during
+        /// a cascade deletion of the domain.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<FailureReason> FailureReasons
+        {
+            get { return this._failureReasons; }
+            set { this._failureReasons = value; }
+        }
+
+        // Check to see if FailureReasons property is set
+        internal bool IsSetFailureReasons()
+        {
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
