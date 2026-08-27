@@ -2,6 +2,7 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.ApiGatewayManagementApi.Model.PostToConnectionRequest.Data</property>
+    <min>0</min>
     <max>131072</max>
   </property-value-rule>
 </property-value-rules>
