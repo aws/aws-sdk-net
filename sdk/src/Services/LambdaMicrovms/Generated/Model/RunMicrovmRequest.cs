@@ -238,7 +238,7 @@ namespace Amazon.LambdaMicrovms.Model
         /// Maximum: 16,384 bytes.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string RunHookPayload
         {
             get { return this._runHookPayload; }

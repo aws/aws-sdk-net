@@ -147,6 +147,7 @@
     <property>Amazon.LambdaMicrovms.Model.GetMicrovmResponse.ImageArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:[a-z0-9-]+:lambda:[a-z0-9-]*:[a-z0-9]*:microvm-image:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.GetMicrovmResponse.ImageVersion</property>
@@ -402,6 +403,7 @@
     <property>Amazon.LambdaMicrovms.Model.RunMicrovmResponse.ImageArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:[a-z0-9-]+:lambda:[a-z0-9-]*:[a-z0-9]*:microvm-image:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.RunMicrovmResponse.ImageVersion</property>
@@ -720,6 +722,7 @@
     <property>Amazon.LambdaMicrovms.Model.MicrovmItem.ImageArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>arn:[a-z0-9-]+:lambda:[a-z0-9-]*:[a-z0-9]*:microvm-image:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LambdaMicrovms.Model.MicrovmItem.ImageVersion</property>

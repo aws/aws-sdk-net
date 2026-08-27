@@ -39,7 +39,7 @@ namespace Amazon.LambdaMicrovms.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// The URI of the code artifact, such as an Amazon S3 path or Amazon ECR image URI.
+        /// The URI of the code artifact in Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
