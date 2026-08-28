@@ -342,6 +342,40 @@
     <max>99</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.HealthLake.Model.RestoreFHIRDatastoreRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.RestoreFHIRDatastoreRequest.DatastoreName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.RestoreFHIRDatastoreRequest.SourceDatastoreId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.RestoreFHIRDatastoreResponse.DatastoreArn</property>
+    <pattern>arn:aws((-us-gov)|(-iso)|(-iso-b)|(-cn))?:healthlake:[a-zA-Z0-9-]+:[0-9]{12}:datastore/.+?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.RestoreFHIRDatastoreResponse.DatastoreEndpoint</property>
+    <min>1</min>
+    <max>5000</max>
+    <pattern>[\P{M}\p{M}]{1,5000}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.RestoreFHIRDatastoreResponse.DatastoreId</property>
+    <min>1</min>
+    <max>32</max>
+    <pattern>([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.HealthLake.Model.StartDataTransformationJobRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -526,6 +560,11 @@
     <property>Amazon.HealthLake.Model.AgentOutputMessage.Body</property>
     <min>1</min>
     <max>40960</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.HealthLake.Model.BackupConfiguration.RetentionPeriodInDays</property>
+    <min>1</min>
+    <max>30</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.HealthLake.Model.DatastoreFilter.DatastoreName</property>

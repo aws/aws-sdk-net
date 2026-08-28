@@ -60,8 +60,8 @@ namespace Amazon.HealthLake.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>AWS_AUTH</c> – The default HealthLake authorization strategy; not affiliated with
-        /// SMART on FHIR.
+        ///  <c>Amazon Web Services_AUTH</c> – The default HealthLake authorization strategy;
+        /// not affiliated with SMART on FHIR.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

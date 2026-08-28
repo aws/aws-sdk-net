@@ -30,30 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The import job input properties.
+    /// Configuration for continuous backup (point-in-time) restore.
     /// </summary>
-    public partial class InputDataConfig
+    public partial class ContinuousBackupRestoreConfiguration
     {
-        private string _s3Uri;
+        private DateTime? _restorePointTime;
 
         /// <summary>
-        /// Gets and sets the property S3Uri. 
+        /// Gets and sets the property RestorePointTime. 
         /// <para>
-        /// The <c>S3Uri</c> is the user-specified Amazon S3 location of the FHIR data to be imported
-        /// into HealthLake.
+        /// The point in time to restore the data store to, specified as a UTC timestamp.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string S3Uri
+        public DateTime? RestorePointTime
         {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
+            get { return this._restorePointTime; }
+            set { this._restorePointTime = value; }
         }
 
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
+        // Check to see if RestorePointTime property is set
+        internal bool IsSetRestorePointTime()
         {
-            return this._s3Uri != null;
+            return this._restorePointTime.HasValue; 
         }
 
     }

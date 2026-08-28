@@ -39,8 +39,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property S3Configuration. 
         /// <para>
-        /// The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption
-        /// configuration.
+        /// The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) encryption configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,9 +31,9 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDataTransformationJobs operation.
-    /// Lists data transformation jobs for your AWS account. Results can be filtered by status,
-    /// job name, and submit time window. Results are paginated. Use the <c>NextToken</c>
-    /// parameter to retrieve additional results.
+    /// Lists data transformation jobs for your Amazon Web Services account. Results can be
+    /// filtered by status, job name, and submit time window. Results are paginated. Use the
+    /// <c>NextToken</c> parameter to retrieve additional results.
     /// </summary>
     public partial class ListDataTransformationJobsRequest : AmazonHealthLakeRequest
     {

@@ -71,7 +71,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.
+        /// The Amazon Resource Name (ARN) that grants access permission to HealthLake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -107,7 +107,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DriftDetectionEnabled.
+        /// Gets and sets the property DriftDetectionEnabled. 
+        /// <para>
+        /// Specifies whether to enable drift detection for the import job.
+        /// </para>
         /// </summary>
         public bool? DriftDetectionEnabled
         {
@@ -141,7 +144,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InputFormat.
+        /// Gets and sets the property InputFormat. 
+        /// <para>
+        /// The input format of the data to be imported.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
         public string InputFormat
@@ -192,7 +198,10 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProfileId.
+        /// Gets and sets the property ProfileId. 
+        /// <para>
+        /// The data transformation profile identifier to use for the import job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5000)]
         public string ProfileId

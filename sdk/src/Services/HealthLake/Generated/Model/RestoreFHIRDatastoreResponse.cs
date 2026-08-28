@@ -30,9 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteFHIRDatastore operation.
+    /// This is the response object from the RestoreFHIRDatastore operation.
     /// </summary>
-    public partial class DeleteFHIRDatastoreResponse : AmazonWebServiceResponse
+    public partial class RestoreFHIRDatastoreResponse : AmazonWebServiceResponse
     {
         private string _datastoreArn;
         private string _datastoreEndpoint;
@@ -42,7 +42,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that grants access permission to HealthLake.
+        /// The Amazon Resource Name (ARN) for the restored data store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreEndpoint. 
         /// <para>
-        /// The Amazon Web Services endpoint of the data store to be deleted.
+        /// The AWS endpoint for the restored data store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5000)]
@@ -80,7 +80,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The Amazon Web Services-generated ID for the deleted data store.
+        /// The restored data store identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -99,7 +99,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreStatus. 
         /// <para>
-        /// The data store status.
+        /// The restored data store status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

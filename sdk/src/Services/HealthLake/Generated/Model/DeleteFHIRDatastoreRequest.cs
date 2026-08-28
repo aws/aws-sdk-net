@@ -40,7 +40,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        ///  The AWS-generated identifier for the data store to be deleted.
+        ///  The Amazon Web Services-generated identifier for the data store to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

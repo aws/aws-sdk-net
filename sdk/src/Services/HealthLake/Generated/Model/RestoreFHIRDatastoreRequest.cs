@@ -30,27 +30,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateFHIRDatastore operation.
-    /// Create a FHIR-enabled data store.
+    /// Container for the parameters to the RestoreFHIRDatastore operation.
+    /// Restore a backup-enabled data store to a point in time. Creates a new data store from
+    /// the backup.
     /// </summary>
-    public partial class CreateFHIRDatastoreRequest : AmazonHealthLakeRequest
+    public partial class RestoreFHIRDatastoreRequest : AmazonHealthLakeRequest
     {
         private AnalyticsConfiguration _analyticsConfiguration;
-        private BackupConfiguration _backupConfiguration;
         private string _clientToken;
         private string _datastoreName;
-        private FHIRVersion _datastoreTypeVersion;
         private IdentityProviderConfiguration _identityProviderConfiguration;
         private NlpConfiguration _nlpConfiguration;
-        private PreloadDataConfig _preloadDataConfig;
         private ProfileConfiguration _profileConfiguration;
+        private RestoreConfiguration _restoreConfiguration;
+        private string _sourceDatastoreId;
         private SseConfiguration _sseConfiguration;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalyticsConfiguration. 
         /// <para>
-        /// The analytics configuration for the data store.
+        /// The analytics configuration for the restored data store.
         /// </para>
         /// </summary>
         public AnalyticsConfiguration AnalyticsConfiguration
@@ -66,27 +66,9 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BackupConfiguration. 
-        /// <para>
-        /// The backup configuration for the data store.
-        /// </para>
-        /// </summary>
-        public BackupConfiguration BackupConfiguration
-        {
-            get { return this._backupConfiguration; }
-            set { this._backupConfiguration = value; }
-        }
-
-        // Check to see if BackupConfiguration property is set
-        internal bool IsSetBackupConfiguration()
-        {
-            return this._backupConfiguration != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// An optional user-provided token to ensure API idempotency.
+        /// An optional user-provided token to ensure API idempotency of the restore.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -105,7 +87,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreName. 
         /// <para>
-        /// The data store name (user-generated).
+        /// The name for the restored data store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -122,29 +104,9 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatastoreTypeVersion. 
-        /// <para>
-        /// The FHIR release version supported by the data store. Current support is for version
-        /// <c>R4</c>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public FHIRVersion DatastoreTypeVersion
-        {
-            get { return this._datastoreTypeVersion; }
-            set { this._datastoreTypeVersion = value; }
-        }
-
-        // Check to see if DatastoreTypeVersion property is set
-        internal bool IsSetDatastoreTypeVersion()
-        {
-            return this._datastoreTypeVersion != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property IdentityProviderConfiguration. 
         /// <para>
-        /// The identity provider configuration to use for the data store.
+        /// The identity provider configuration for the restored data store.
         /// </para>
         /// </summary>
         public IdentityProviderConfiguration IdentityProviderConfiguration
@@ -162,7 +124,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property NlpConfiguration. 
         /// <para>
-        /// The natural language processing (NLP) configuration for the data store.
+        /// The NLP configuration for the restored data store.
         /// </para>
         /// </summary>
         public NlpConfiguration NlpConfiguration
@@ -178,28 +140,9 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreloadDataConfig. 
-        /// <para>
-        /// An optional parameter to preload (import) open source Synthea FHIR data upon creation
-        /// of the data store.
-        /// </para>
-        /// </summary>
-        public PreloadDataConfig PreloadDataConfig
-        {
-            get { return this._preloadDataConfig; }
-            set { this._preloadDataConfig = value; }
-        }
-
-        // Check to see if PreloadDataConfig property is set
-        internal bool IsSetPreloadDataConfig()
-        {
-            return this._preloadDataConfig != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property ProfileConfiguration. 
         /// <para>
-        /// The profile configuration for the data store.
+        /// The profile configuration for the restored data store.
         /// </para>
         /// </summary>
         public ProfileConfiguration ProfileConfiguration
@@ -215,10 +158,47 @@ namespace Amazon.HealthLake.Model
         }
 
         /// <summary>
+        /// Gets and sets the property RestoreConfiguration. 
+        /// <para>
+        /// The restore configuration specifying the type and parameters for the restore.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public RestoreConfiguration RestoreConfiguration
+        {
+            get { return this._restoreConfiguration; }
+            set { this._restoreConfiguration = value; }
+        }
+
+        // Check to see if RestoreConfiguration property is set
+        internal bool IsSetRestoreConfiguration()
+        {
+            return this._restoreConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDatastoreId. 
+        /// <para>
+        /// The identifier of the source data store to restore from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=32)]
+        public string SourceDatastoreId
+        {
+            get { return this._sourceDatastoreId; }
+            set { this._sourceDatastoreId = value; }
+        }
+
+        // Check to see if SourceDatastoreId property is set
+        internal bool IsSetSourceDatastoreId()
+        {
+            return this._sourceDatastoreId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SseConfiguration. 
         /// <para>
-        /// The server-side encryption key configuration for a customer-provided encryption key
-        /// specified for creating a data store. 
+        /// The server-side encryption key configuration for the restored data store.
         /// </para>
         /// </summary>
         public SseConfiguration SseConfiguration
@@ -236,7 +216,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The resource tags applied to a data store when it is created.
+        /// The resource tags applied to the restored data store.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateFHIRDatastore Request Marshaller
+    /// RestoreFHIRDatastore Request Marshaller
     /// </summary>       
-    public class UpdateFHIRDatastoreRequestMarshaller : IMarshaller<IRequest, UpdateFHIRDatastoreRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class RestoreFHIRDatastoreRequestMarshaller : IMarshaller<IRequest, RestoreFHIRDatastoreRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateFHIRDatastoreRequest)input);
+            return this.Marshall((RestoreFHIRDatastoreRequest)input);
         }
 
         /// <summary>
@@ -56,10 +56,10 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateFHIRDatastoreRequest publicRequest)
+        public IRequest Marshall(RestoreFHIRDatastoreRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.HealthLake");
-            string target = "HealthLake.UpdateFHIRDatastore";
+            string target = "HealthLake.RestoreFHIRDatastore";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.0";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-01";
@@ -86,23 +86,17 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
-            if(publicRequest.IsSetBackupConfiguration())
+            if(publicRequest.IsSetClientToken())
             {
-                context.Writer.WritePropertyName("BackupConfiguration");
-                context.Writer.WriteStartObject();
-
-                var marshaller = BackupConfigurationMarshaller.Instance;
-                marshaller.Marshall(publicRequest.BackupConfiguration, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
 
-            if(publicRequest.IsSetDatastoreId())
+            else if(!(publicRequest.IsSetClientToken()))
             {
-                context.Writer.WritePropertyName("DatastoreId");
-                context.Writer.WriteStringValue(publicRequest.DatastoreId);
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
             }
-
             if(publicRequest.IsSetDatastoreName())
             {
                 context.Writer.WritePropertyName("DatastoreName");
@@ -142,6 +136,50 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetRestoreConfiguration())
+            {
+                context.Writer.WritePropertyName("RestoreConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RestoreConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RestoreConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceDatastoreId())
+            {
+                context.Writer.WritePropertyName("SourceDatastoreId");
+                context.Writer.WriteStringValue(publicRequest.SourceDatastoreId);
+            }
+
+            if(publicRequest.IsSetSseConfiguration())
+            {
+                context.Writer.WritePropertyName("SseConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SseConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SseConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK
@@ -152,9 +190,9 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateFHIRDatastoreRequestMarshaller _instance = new UpdateFHIRDatastoreRequestMarshaller();        
+        private static RestoreFHIRDatastoreRequestMarshaller _instance = new RestoreFHIRDatastoreRequestMarshaller();        
 
-        internal static UpdateFHIRDatastoreRequestMarshaller GetInstance()
+        internal static RestoreFHIRDatastoreRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -162,7 +200,7 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateFHIRDatastoreRequestMarshaller Instance
+        public static RestoreFHIRDatastoreRequestMarshaller Instance
         {
             get
             {

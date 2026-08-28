@@ -31,7 +31,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// The customer-managed-key (CMK) used when creating a data store. If a customer-owned
-    /// key is not specified, an AWS-owned key is used for encryption.
+    /// key is not specified, an Amazon Web Services-owned key is used for encryption.
     /// </summary>
     public partial class KmsEncryptionConfig
     {

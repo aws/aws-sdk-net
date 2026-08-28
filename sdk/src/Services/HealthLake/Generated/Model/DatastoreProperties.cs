@@ -35,6 +35,7 @@ namespace Amazon.HealthLake.Model
     public partial class DatastoreProperties
     {
         private AnalyticsConfiguration _analyticsConfiguration;
+        private DatastoreBackupStatus _backupStatusInfo;
         private DateTime? _createdAt;
         private string _datastoreArn;
         private string _datastoreEndpoint;
@@ -65,6 +66,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetAnalyticsConfiguration()
         {
             return this._analyticsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupStatusInfo. 
+        /// <para>
+        /// The backup status information for the data store.
+        /// </para>
+        /// </summary>
+        public DatastoreBackupStatus BackupStatusInfo
+        {
+            get { return this._backupStatusInfo; }
+            set { this._backupStatusInfo = value; }
+        }
+
+        // Check to see if BackupStatusInfo property is set
+        internal bool IsSetBackupStatusInfo()
+        {
+            return this._backupStatusInfo != null;
         }
 
         /// <summary>
@@ -107,7 +126,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreEndpoint. 
         /// <para>
-        /// The AWS endpoint for the data store.
+        /// The Amazon Web Services endpoint for the data store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]

@@ -30,30 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The import job input properties.
+    /// Specifies the type and parameters for the restore operation.
     /// </summary>
-    public partial class InputDataConfig
+    public partial class RestoreConfiguration
     {
-        private string _s3Uri;
+        private ContinuousBackupRestoreConfiguration _continuousBackupRestoreConfiguration;
 
         /// <summary>
-        /// Gets and sets the property S3Uri. 
+        /// Gets and sets the property ContinuousBackupRestoreConfiguration. 
         /// <para>
-        /// The <c>S3Uri</c> is the user-specified Amazon S3 location of the FHIR data to be imported
-        /// into HealthLake.
+        /// Configuration for restoring from continuous backup to a specific point in time.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
-        public string S3Uri
+        public ContinuousBackupRestoreConfiguration ContinuousBackupRestoreConfiguration
         {
-            get { return this._s3Uri; }
-            set { this._s3Uri = value; }
+            get { return this._continuousBackupRestoreConfiguration; }
+            set { this._continuousBackupRestoreConfiguration = value; }
         }
 
-        // Check to see if S3Uri property is set
-        internal bool IsSetS3Uri()
+        // Check to see if ContinuousBackupRestoreConfiguration property is set
+        internal bool IsSetContinuousBackupRestoreConfiguration()
         {
-            return this._s3Uri != null;
+            return this._continuousBackupRestoreConfiguration != null;
         }
 
     }
