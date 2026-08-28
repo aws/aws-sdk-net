@@ -1003,6 +1003,22 @@
     <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DescribeTermsByClientRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DescribeTermsByClientRequest.TermsName</property>
+    <pattern>^(terms-of-use|privacy-policy)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.DescribeTermsByClientRequest.UserPoolId</property>
+    <min>1</min>
+    <max>55</max>
+    <pattern>[\w-]+_[0-9a-zA-Z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.DescribeUserImportJobRequest.JobId</property>
     <min>1</min>
     <max>55</max>
@@ -1065,6 +1081,18 @@
     <min>1</min>
     <max>128</max>
     <pattern>[\p{L}\p{M}\p{S}\p{N}\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest.ClientId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[\w+]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest.Secret</property>
+    <min>24</min>
+    <max>64</max>
+    <pattern>[\w+]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.GetCSVHeaderRequest.UserPoolId</property>
@@ -2027,6 +2055,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CognitoIdentityProvider.Model.AuthEventType.EventId</property>
+    <min>0</min>
+    <max>131072</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ClientAuthenticationResultType.AccessToken</property>
+    <pattern>[A-Za-z0-9-_=.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CognitoIdentityProvider.Model.ClientAuthenticationResultType.TokenType</property>
     <min>0</min>
     <max>131072</max>
   </property-value-rule>
