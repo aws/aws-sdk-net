@@ -6,6 +6,7 @@
     "EKSAuth",
     "KinesisVideoWebRTCStorage",
     "MarketplaceReporting",
+    "MediaConnect",
     "SSO",
     "SSOOIDC",
     "SimpleDBv2",
