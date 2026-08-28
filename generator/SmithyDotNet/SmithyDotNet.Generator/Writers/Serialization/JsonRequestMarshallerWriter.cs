@@ -39,7 +39,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 WriteBaseMarshallMethod(writer, className);
                 writer.WriteLine("");
-                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix);
+                WriteTypedMarshallMethod(writer, className, httpTrait, partitioned, hostPrefix, operation.Shape.HasUnsignedPayload());
                 writer.WriteLine("");
                 WriteSingleton(writer, className);
             });
@@ -63,7 +63,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         string className,
         HttpTrait httpTrait,
         PartitionedMembers partitioned,
-        string? hostPrefix)
+        string? hostPrefix,
+        bool unsignedPayload)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Marshall the request object to the HTTP request.");
@@ -97,11 +98,17 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             // JSON body members.
             if (partitioned.PayloadMember is { } payload)
             {
-                WritePayloadSerialization(writer, payload);
+                WritePayloadSerialization(writer, payload, unsignedPayload);
             }
             else if (partitioned.BodyMembers.Count > 0)
             {
                 WriteBodySerialization(writer, partitioned.BodyMembers);
+            }
+
+            // @unsignedPayload disables SigV4 body signing regardless of body kind (matches C2J).
+            if (unsignedPayload)
+            {
+                writer.WriteLine("request.DisablePayloadSigning = true;");
             }
 
             writer.WriteLine("");
@@ -405,7 +412,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
     // ConstantClass converts implicitly to string); a blob payload is the raw octet-stream body. Matches
     // C2J output. A union is a structure (structure path); document throws earlier in TypeMapper; a
     // list/map payload fails loud below.
-    private void WritePayloadSerialization(CodeWriter writer, Member payload)
+    private void WritePayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
     {
         if (payload.Type.MarshalsAsString)
         {
@@ -430,20 +437,55 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
         if (payload.Type.IsBlob)
         {
-            // A blob payload is the raw body stream (Content-Type application/octet-stream overrides the
-            // application/json set above). @streaming is denied, so the stream is always seekable here and
-            // the content length is known; no chunked/unsigned-body handling is needed. Matches C2J.
-            writer.WriteLine($"request.ContentStream = publicRequest.{payload.PropertyName} ?? new MemoryStream();");
+            WriteBlobPayloadSerialization(writer, payload, unsignedPayload);
+            return;
+        }
+
+        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+    }
+
+    // A blob payload is the raw body stream (Content-Type application/octet-stream overrides the
+    // application/json set earlier). Content-Length handling mirrors C2J's JsonRPCRequestMarshaller:
+    //  - @streaming + @unsignedPayload, no @requiresLength: set Content-Length when the stream is
+    //    seekable, otherwise send it chunked (length unknown up front; body signing is disabled anyway).
+    //  - @streaming + @requiresLength: the stream MUST be seekable or Content-Length can't be set -> throw.
+    //  - otherwise (incl. every non-streaming blob): seek when seekable and always set Content-Length.
+    private static void WriteBlobPayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
+    {
+        var streaming = payload.Type.IsStreaming;
+        var requiresLength = payload.Type.RequiresLength;
+
+        writer.WriteLine($"request.ContentStream = publicRequest.{payload.PropertyName} ?? new MemoryStream();");
+
+        if (streaming && unsignedPayload && !requiresLength)
+        {
+            writer.OpenBlock("if (request.ContentStream.CanSeek)", () =>
+            {
+                writer.WriteLine("request.ContentStream.Seek(0, SeekOrigin.Begin);");
+                writer.WriteLine("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);");
+            });
+            writer.OpenBlock("else", () =>
+            {
+                writer.WriteLine("""request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";""");
+            });
+        }
+        else
+        {
+            if (streaming && requiresLength)
+            {
+                writer.OpenBlock("if (!request.ContentStream.CanSeek)", () =>
+                {
+                    writer.WriteLine("""throw new System.InvalidOperationException("Cannot determine stream length for the payload when content-length is required.");""");
+                });
+            }
             writer.OpenBlock("if (request.ContentStream.CanSeek)", () =>
             {
                 writer.WriteLine("request.ContentStream.Seek(0, SeekOrigin.Begin);");
             });
             writer.WriteLine("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);");
-            writer.WriteLine("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";""");
-            return;
         }
 
-        throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
+        writer.WriteLine("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";""");
     }
 
     // The Utf8JsonWriter + Content/ContentStream scaffold shared by the normal JSON body and the

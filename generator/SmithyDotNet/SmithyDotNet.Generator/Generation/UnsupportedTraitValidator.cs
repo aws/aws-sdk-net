@@ -1,6 +1,7 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
+using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -24,7 +25,6 @@ public static class UnsupportedTraitValidator
     private static readonly Dictionary<string, string> DeniedTargetTraits = new()
     {
         ["smithy.api#sparse"] = "@sparse",
-        ["smithy.api#streaming"] = "@streaming",
         ["smithy.api#mediaType"] = "@mediaType",
     };
 
@@ -66,6 +66,13 @@ public static class UnsupportedTraitValidator
         foreach (var shape in index.Shapes.Values)
         {
             CollectDenied(shape.Traits, DeniedTargetTraits, found);
+
+            // @streaming is supported only on a blob (an @httpPayload Stream); on a union it marks an
+            // event stream, which nothing handles yet, so fail loud there.
+            if (shape is not BlobShape && shape.IsStreaming())
+            {
+                found.Add("@streaming");
+            }
         }
 
         if (found.Count > 0)

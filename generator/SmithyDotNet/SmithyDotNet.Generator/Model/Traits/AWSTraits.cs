@@ -33,6 +33,14 @@ public static class AWSTraits
     public static bool HasHttpBearerAuth(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpBearerAuth");
 
     /// <summary>
+    /// Whether the operation carries the <c>aws.auth#unsignedPayload</c> trait. The marshaller then
+    /// disables payload signing, and for a <c>@streaming</c> blob body (without <c>@requiresLength</c>)
+    /// may send a chunked, length-unknown body.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/aws/aws-auth.html#aws-auth-unsignedpayload-trait" /></remarks>
+    public static bool HasUnsignedPayload(this Shape shape) => shape.Traits.ContainsKey("aws.auth#unsignedPayload");
+
+    /// <summary>
     /// Whether the service shape carries a Smithy endpoint rule set. The config writer emits the
     /// endpoint resolver field, <c>EndpointProvider</c> wiring, and <c>DetermineServiceOperationEndpoint</c>
     /// override only when this is true. Reports trait presence only, not rule-set evaluation.

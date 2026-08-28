@@ -66,6 +66,52 @@ public class PayloadMemberCodegenTests
             .Write(operation, TestContext.Current.CancellationToken);
     }
 
+    // Marshals a single "Op" whose @httpPayload body targets a @streaming blob, toggling the
+    // operation's @unsignedPayload and the blob's @requiresLength to drive the length-handling branches.
+    private static string MarshallStreamingBlob(bool unsignedPayload, bool requiresLength)
+    {
+        var opTraits = unsignedPayload
+            ? """{ "smithy.api#http": { "uri": "/op", "method": "POST" }, "aws.auth#unsignedPayload": {} }"""
+            : """{ "smithy.api#http": { "uri": "/op", "method": "POST" } }""";
+        var blobTraits = requiresLength
+            ? """{ "smithy.api#streaming": {}, "smithy.api#requiresLength": {} }"""
+            : """{ "smithy.api#streaming": {} }""";
+
+        var json = $$"""
+        {
+          "smithy": "2.0",
+          "shapes": {
+            "com.example#Example": {
+              "type": "service",
+              "version": "2023-01-01",
+              "operations": [{ "target": "com.example#Op" }],
+              "traits": {
+                "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+                "aws.protocols#restJson1": {}
+              }
+            },
+            "com.example#Op": {
+              "type": "operation",
+              "input": { "target": "com.example#OpRequest" },
+              "output": { "target": "smithy.api#Unit" },
+              "traits": {{opTraits}}
+            },
+            "com.example#OpRequest": {
+              "type": "structure",
+              "members": { "body": { "target": "com.example#StreamingBlob", "traits": { "smithy.api#httpPayload": {} } } }
+            },
+            "com.example#StreamingBlob": { "type": "blob", "traits": {{blobTraits}} }
+          }
+        }
+        """;
+        var model = JsonSerializer.Deserialize<SmithyModel>(json, TestModels.Options)
+            ?? throw new InvalidOperationException("Model deserialized to null.");
+        var context = TestModels.Context(model);
+        var operation = context.Operations.Single(o => o.Name == "Op");
+        return new JsonRequestMarshallerWriter(context, ModelFileName)
+            .Write(operation, TestContext.Current.CancellationToken);
+    }
+
     [Fact]
     public void StructurePayload_SerializesTargetAsEntireBody()
     {
@@ -188,6 +234,84 @@ public class PayloadMemberCodegenTests
         // Not the structure path, not the named-field body loop; the header sibling still reads.
         Assert.DoesNotContain("if (reader.Reader.IsFinalBlock)", m);
         Assert.DoesNotContain("context.TestExpression(", m);
+        Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-trace"))""", m);
+
+        // A non-streaming blob buffers the body; only a @streaming blob overrides HasStreamingProperty.
+        Assert.DoesNotContain("HasStreamingProperty", m);
+    }
+
+    [Fact]
+    public void StreamingBlobPayload_MarshalsIdenticallyToNonStreamingBlob()
+    {
+        // A @streaming blob payload marshals exactly like a non-streaming blob payload (matches C2J -
+        // see CloudSearchDomain UploadDocuments): assign ContentStream, seek if seekable, set
+        // Content-Length from .Length, override Content-Type to octet-stream.
+        var m = Marshaller("DoStreamingBlobPayload");
+
+        Assert.Contains("request.ContentStream = publicRequest.Body ?? new MemoryStream();", m);
+        Assert.Contains("if (request.ContentStream.CanSeek)", m);
+        Assert.Contains("request.ContentStream.Seek(0, SeekOrigin.Begin);", m);
+        Assert.Contains("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);", m);
+        Assert.Contains("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";""", m);
+        Assert.DoesNotContain("Utf8JsonWriter", m);
+    }
+
+    [Fact]
+    public void StreamingBlobPayload_UnsignedSendsChunkedWhenNotSeekable()
+    {
+        // @streaming + @unsignedPayload (no @requiresLength): set Content-Length when seekable, else
+        // fall back to chunked Transfer-Encoding, and disable payload signing (matches C2J).
+        var m = MarshallStreamingBlob(unsignedPayload: true, requiresLength: false);
+
+        Assert.Contains("request.ContentStream = publicRequest.Body ?? new MemoryStream();", m);
+        Assert.Contains("request.ContentStream.Seek(0, SeekOrigin.Begin);", m);
+        Assert.Contains("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);", m);
+        Assert.Contains("""request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked";""", m);
+        Assert.Contains("request.DisablePayloadSigning = true;", m);
+    }
+
+    [Fact]
+    public void StreamingBlobPayload_RequiresLengthThrowsWhenNotSeekable()
+    {
+        // @streaming + @requiresLength: Content-Length is mandatory, so a non-seekable stream throws
+        // rather than sending chunked; no Transfer-Encoding fallback (matches C2J).
+        var m = MarshallStreamingBlob(unsignedPayload: false, requiresLength: true);
+
+        Assert.Contains("if (!request.ContentStream.CanSeek)", m);
+        Assert.Contains("""throw new System.InvalidOperationException("Cannot determine stream length for the payload when content-length is required.");""", m);
+        Assert.Contains("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);", m);
+        Assert.DoesNotContain("TransferEncodingHeader", m);
+        Assert.DoesNotContain("request.DisablePayloadSigning = true;", m);
+    }
+
+    [Fact]
+    public void StreamingBlobPayload_UnsignedWithRequiresLengthTakesLengthPath()
+    {
+        // @requiresLength wins over the unsigned chunked path: the body must carry a Content-Length,
+        // so it takes the seek-and-length branch (with the not-seekable guard) and never goes chunked.
+        var m = MarshallStreamingBlob(unsignedPayload: true, requiresLength: true);
+
+        Assert.Contains("if (!request.ContentStream.CanSeek)", m);
+        Assert.Contains("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);", m);
+        Assert.DoesNotContain("TransferEncodingHeader", m);
+        // Signing is still disabled by @unsignedPayload regardless of the length path.
+        Assert.Contains("request.DisablePayloadSigning = true;", m);
+    }
+
+    [Fact]
+    public void StreamingBlobResponsePayload_AssignsRawStreamAndOverridesHasStreamingProperty()
+    {
+        // A @streaming blob output hands back the raw response stream unbuffered and the unmarshaller
+        // overrides HasStreamingProperty (matches C2J - see Polly SynthesizeSpeech). It must NOT buffer
+        // the body into a MemoryStream the way a non-streaming blob does.
+        var m = ResponseUnmarshaller("GetStreamingBlobPayload");
+
+        Assert.Contains("unmarshalledObject.Body = context.Stream;", m);
+        Assert.Contains("public override bool HasStreamingProperty => true;", m);
+
+        // Not the buffered non-streaming blob path; the header sibling still reads.
+        Assert.DoesNotContain("Amazon.Util.AWSSDKUtils.CopyStream", m);
+        Assert.DoesNotContain("var ms = new MemoryStream();", m);
         Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-trace"))""", m);
     }
 

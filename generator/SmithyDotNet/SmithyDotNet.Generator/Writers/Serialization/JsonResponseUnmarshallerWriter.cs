@@ -33,6 +33,11 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
+                if (members.PayloadMember is { Type.IsStreaming: true })
+                {
+                    WriteHasStreamingProperty(writer);
+                    writer.WriteLine("");
+                }
                 WriteSingleton(writer, unmarshallerClassName);
             });
         });
@@ -99,7 +104,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
     // Unmarshalls a @httpPayload response member — the ENTIRE body: a string/enum via StreamReader (an
     // enum is a string shape in C2J and its ConstantClass converts implicitly from string), a structure
-    // via its unmarshaller over a fresh reader (empty-body early-return), a blob copied into a buffered
+    // via its unmarshaller over a fresh reader (empty-body early-return), a @streaming blob as the raw
+    // response stream (unbuffered), a non-streaming blob copied into a buffered
     // MemoryStream. Matches C2J output. A union is a structure (structure path); document throws
     // earlier in TypeMapper; list/map fail loud here. Response-only: JsonExceptionUnmarshallerWriter
     // fails loud on an @httpPayload error member.
@@ -120,6 +126,14 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             writer.WriteLine("if (reader.Reader.IsFinalBlock) return unmarshalledObject;");
             writer.WriteLine($"var unmarshaller = {payload.Type.DotNetType}Unmarshaller.Instance;");
             writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = unmarshaller.Unmarshall(context, ref reader);");
+            return;
+        }
+
+        if (payload.Type.IsStreaming)
+        {
+            // A streaming blob hands back the raw response stream unbuffered (the caller reads it);
+            // the class also overrides HasStreamingProperty. Matches C2J (see Polly SynthesizeSpeech).
+            writer.WriteLine($"unmarshalledObject.{payload.PropertyName} = context.Stream;");
             return;
         }
 
@@ -363,6 +377,16 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
             writer.WriteLine($"return new Amazon{context.ServiceName}Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
         });
+    }
+
+    // Emitted only when the response's @httpPayload is a @streaming blob: the runtime checks this to
+    // hand the caller the live response stream rather than buffering the body. Matches C2J.
+    private static void WriteHasStreamingProperty(CodeWriter writer)
+    {
+        writer.WriteLine("/// <summary>");
+        writer.WriteLine("/// Overriden to return true indicating the response contains streaming data.");
+        writer.WriteLine("/// </summary>");
+        writer.WriteLine("public override bool HasStreamingProperty => true;");
     }
 
     private static void WriteSingleton(CodeWriter writer, string unmarshallerClassName)

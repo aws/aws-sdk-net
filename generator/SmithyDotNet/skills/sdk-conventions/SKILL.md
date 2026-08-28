@@ -127,7 +127,7 @@ Generated/
 | Service exception base | `AmazonServiceException` |
 | Service request base | `AmazonWebServiceRequest` |
 | Request classes | `Amazon{ServiceName}Request` (the service request base) |
-| Response classes | `AmazonWebServiceResponse` |
+| Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream) |
 | Structure classes | No base type (plain class) |
 | Exception classes | `Amazon{ServiceName}Exception` (the service exception base) |
 | Config class (`Amazon{ServiceName}Config`) | `ClientConfig` (overrides are placeholder for now) |

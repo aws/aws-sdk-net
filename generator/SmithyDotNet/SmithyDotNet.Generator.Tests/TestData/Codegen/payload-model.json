@@ -13,6 +13,8 @@
         { "target": "com.example#GetBlobPayload" },
         { "target": "com.example#DoEnumPayload" },
         { "target": "com.example#GetEnumPayload" },
+        { "target": "com.example#DoStreamingBlobPayload" },
+        { "target": "com.example#GetStreamingBlobPayload" },
         { "target": "com.example#DoNoBody" }
       ],
       "traits": {
@@ -134,6 +136,35 @@
       "type": "structure",
       "members": {
         "body": { "target": "com.example#PayloadEnum", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#StreamingBlob": {
+      "type": "blob",
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.example#DoStreamingBlobPayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoStreamingBlobPayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/streaming-blob", "method": "POST" } }
+    },
+    "com.example#DoStreamingBlobPayloadRequest": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "com.example#StreamingBlob", "traits": { "smithy.api#httpPayload": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#GetStreamingBlobPayload": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetStreamingBlobPayloadResponse" },
+      "traits": { "smithy.api#http": { "uri": "/get-streaming-blob", "method": "GET" } }
+    },
+    "com.example#GetStreamingBlobPayloadResponse": {
+      "type": "structure",
+      "members": {
+        "trace": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } },
+        "body":  { "target": "com.example#StreamingBlob", "traits": { "smithy.api#httpPayload": {}, "smithy.api#required": {} } }
       }
     },
     "com.example#DoNoBody": {

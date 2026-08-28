@@ -170,13 +170,22 @@ A `@httpPayload` member IS the entire body — no wrapping object/property name,
   marshaller.Marshall(publicRequest.{Prop}, context);
   context.Writer.WriteEndObject();
   ```
-- **Blob** (`MemoryStream`) → `application/octet-stream` (overrides the top `application/json`); adds `using System.Globalization;`:
+- **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (overrides the top `application/json`); adds `using System.Globalization;`. Always assigns the stream and ends with the Content-Type override; the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`):
   ```csharp
   request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();
-  if (request.ContentStream.CanSeek) { request.ContentStream.Seek(0, SeekOrigin.Begin); }
-  request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
+  // ... length branch (below) ...
   request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
   ```
+  Length branch:
+  - **`@streaming` + `@unsignedPayload`, no `@requiresLength`** → Content-Length only when seekable, else chunked (length unknown up front, and signing is off anyway):
+    ```csharp
+    if (request.ContentStream.CanSeek) { request.ContentStream.Seek(0, SeekOrigin.Begin); request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = ...; }
+    else { request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked"; }
+    ```
+  - **`@streaming` + `@requiresLength`** → stream MUST be seekable (throws `InvalidOperationException` otherwise), then always sets Content-Length. `@requiresLength` wins over the unsigned chunked path.
+  - **otherwise** (every non-streaming blob; a streaming blob on a signed op) → seek when seekable, always set Content-Length (no chunked).
+
+  Separately, `aws.auth#unsignedPayload` on the operation emits `request.DisablePayloadSigning = true;` after the body block, for **any** body kind (not just blobs).
 
 List, map, and document payloads all fail loud in the writer — a document maps in `TypeMapper` (it is a
 supported body member) but has no `@httpPayload` form. A union derives from `StructureShape`, so a union
@@ -257,7 +266,8 @@ A `@httpPayload` output member IS the whole body (replaces the named-field loop;
 
 - **String** → `using (var sr = new StreamReader(context.Stream)) { unmarshalledObject.Body = sr.ReadToEnd(); }`
 - **Structure** → reader + `if (reader.Reader.IsFinalBlock) return unmarshalledObject;` + `{Type}Unmarshaller.Instance.Unmarshall(context, ref reader)`.
-- **Blob** (`MemoryStream`) → `Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms)` into a new `MemoryStream`; assigned only when `ms.Length > 0`, so an empty body leaves the property null (matches C2J).
+- **Blob** (non-streaming, `MemoryStream`) → `Amazon.Util.AWSSDKUtils.CopyStream(context.Stream, ms)` into a new `MemoryStream`; assigned only when `ms.Length > 0`, so an empty body leaves the property null (matches C2J).
+- **Streaming blob** (`@streaming`, `Stream`) → assigns the raw `context.Stream` unbuffered (`unmarshalledObject.{Prop} = context.Stream;`) and the unmarshaller class overrides `public override bool HasStreamingProperty => true` (matches C2J — see Polly `SynthesizeSpeech`). Never copies into a `MemoryStream`.
 
 `@httpHeader` members read from `context.ResponseData` after. **Errors don't get a payload path** — C2J never bound an error body to a payload and no service does, so `JsonExceptionUnmarshallerWriter` throws a `GeneratorException` on an `@httpPayload` error member (Smithy permits it; we fail loud rather than emit a never-populated property). Request/response `@httpPayload` stay allowed.
 

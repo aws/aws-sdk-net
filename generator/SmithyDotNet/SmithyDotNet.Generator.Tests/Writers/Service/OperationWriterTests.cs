@@ -68,6 +68,45 @@ public class OperationWriterTests
     }
 
     [Fact]
+    public void Response_OmitsIDisposableWhenNoStreamingMember()
+    {
+        // PutAuditEvents has no @streaming output member, so the response is not IDisposable.
+        Assert.DoesNotContain("IDisposable", _response);
+    }
+
+    [Fact]
+    public void Response_ImplementsIDisposableWhenOutputHasStreamingMember()
+    {
+        // A @streaming output member hands back the raw response stream the caller must dispose,
+        // so the response class implements IDisposable.
+        var context = TestModels.Context("Codegen/payload-model.json");
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+        var operation = context.Operations.Single(o => o.Name == "GetStreamingBlobPayload");
+
+        var response = writer.WriteResponse(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("public partial class GetStreamingBlobPayloadResponse : AmazonWebServiceResponse, IDisposable", response);
+    }
+
+    [Fact]
+    public void Response_EmitsDisposePatternForStreamingMember()
+    {
+        // Implementing IDisposable is not enough; the response must actually dispose the stream it hands back.
+        var context = TestModels.Context("Codegen/payload-model.json");
+        var writer = new OperationWriter(context, "example-2023-01-01.normal.json");
+        var operation = context.Operations.Single(o => o.Name == "GetStreamingBlobPayload");
+
+        var response = writer.WriteResponse(operation, TestContext.Current.CancellationToken);
+
+        Assert.Contains("#region Dispose Pattern", response);
+        Assert.Contains("private bool _disposed;", response);
+        Assert.Contains("public void Dispose()", response);
+        Assert.Contains("protected virtual void Dispose(bool disposing)", response);
+        Assert.Contains("this.Body?.Dispose();", response);
+        Assert.Contains("this.Body = null;", response);
+    }
+
+    [Fact]
     public void Response_EmitsClassDocumentation()
     {
         Assert.Contains("This is the response object from the PutAuditEvents operation.", _response);

@@ -15,9 +15,15 @@ namespace SmithyDotNet.Generator.Writers;
 /// <param name="IsString">True if this targets a string shape.</param>
 /// <param name="IsCollection">True if this is itself a list or map.</param>
 /// <param name="IsEnum">True if this targets an enum shape; marshals as a string (see <see cref="MarshalType"/>).</param>
-/// <param name="IsBlob">True if this targets a blob shape (maps to <c>MemoryStream</c>). Supported as an
-/// <c>@httpPayload</c> body or a JSON body member (base64 string on the wire); not as a header, query,
-/// or collection element.</param>
+/// <param name="IsBlob">True if this targets a blob shape. A non-streaming blob maps to <c>MemoryStream</c>
+/// (supported as an <c>@httpPayload</c> body or a JSON body member — base64 string on the wire); a
+/// <c>@streaming</c> blob (<see cref="IsStreaming"/>) maps to <c>Stream</c> and is only an <c>@httpPayload</c>
+/// body. Not supported as a header, query, or collection element.</param>
+/// <param name="IsStreaming">True if this targets a <c>@streaming</c> blob (maps to <c>Stream</c>, not
+/// <c>MemoryStream</c>). The request marshals identically to a non-streaming blob payload, but the response
+/// assigns the raw response stream instead of buffering it into a <c>MemoryStream</c>.</param>
+/// <param name="RequiresLength">True if this targets a blob carrying <c>@requiresLength</c>. A streaming
+/// blob payload then requires a seekable stream so the marshaller can set Content-Length (no chunked body).</param>
 /// <param name="IsDocument">True if this targets a document shape (maps to <c>Amazon.Runtime.Documents.Document</c>);
 /// (un)marshals wholesale through the runtime document transforms.</param>
 /// <param name="ListElement">The list element's type; set only for a list, null otherwise. An enum element
@@ -36,6 +42,8 @@ public sealed record TypeDescriptor(
     bool IsCollection,
     bool IsEnum = false,
     bool IsBlob = false,
+    bool IsStreaming = false,
+    bool RequiresLength = false,
     bool IsDocument = false,
     TypeDescriptor? ListElement = null,
     TypeDescriptor? MapValue = null,
@@ -184,6 +192,8 @@ public static class TypeMapper
             IsCollection: IsCollection(target),
             IsEnum: target is EnumShape,
             IsBlob: target is BlobShape,
+            IsStreaming: target is BlobShape && target.IsStreaming(),
+            RequiresLength: target is BlobShape && target.RequiresLength(),
             IsDocument: target is DocumentShape,
             ListElement: target is ListShape list ? ResolveType(list.Member, context, isCollectionValue: true) : null,
             MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true) : null,
@@ -240,7 +250,9 @@ public static class TypeMapper
             // marshaller/unmarshaller payload paths) or a JSON body member (base64 string on the
             // wire). A blob in a header/query position maps here but fails loud in the writer; as a
             // collection element it never gets here (RejectUnsupportedCollectionElement throws first).
-            return "MemoryStream";
+            // A @streaming blob instead maps to Stream (the caller reads/writes it without buffering);
+            // Smithy requires it to be the @httpPayload, so it never reaches a body/header/collection path.
+            return target.IsStreaming() ? "Stream" : "MemoryStream";
         }
 
         if (target is DocumentShape)
