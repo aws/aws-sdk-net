@@ -381,6 +381,10 @@ namespace Amazon.PartnerCentralSelling
         /// </summary>
         public static readonly AwsMemberBusinessTitle PSM = new AwsMemberBusinessTitle("PSM");
         /// <summary>
+        /// Constant Signatory for AwsMemberBusinessTitle
+        /// </summary>
+        public static readonly AwsMemberBusinessTitle Signatory = new AwsMemberBusinessTitle("Signatory");
+        /// <summary>
         /// Constant WWPSPDM for AwsMemberBusinessTitle
         /// </summary>
         public static readonly AwsMemberBusinessTitle WWPSPDM = new AwsMemberBusinessTitle("WWPSPDM");

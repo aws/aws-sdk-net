@@ -124,6 +124,12 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
                     response.RelatedOpportunityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("SoftwareRevenue", targetDepth, ref reader))
+                {
+                    var unmarshaller = AwsSoftwareRevenueUnmarshaller.Instance;
+                    response.SoftwareRevenue = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Visibility", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

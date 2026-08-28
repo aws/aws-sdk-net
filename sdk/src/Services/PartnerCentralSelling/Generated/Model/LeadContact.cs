@@ -47,7 +47,7 @@ namespace Amazon.PartnerCentralSelling.Model
         /// The lead contact's business title or job role associated with the engagement.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string BusinessTitle
         {
             get { return this._businessTitle; }
