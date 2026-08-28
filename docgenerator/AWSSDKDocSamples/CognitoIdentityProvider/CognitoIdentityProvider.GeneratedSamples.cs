@@ -266,6 +266,25 @@ namespace AWSSDKDocSamples.Amazon.CognitoIdentityProvider.Generated
             #endregion
         }
 
+        public void CognitoIdentityProviderGetClientToken()
+        {
+            #region example-get-a-client-token-1782432000000
+
+            var client = new AmazonCognitoIdentityProviderClient();
+            var response = client.GetClientToken(new GetClientTokenRequest 
+            {
+                ClientId = "1example23456789",
+                Scopes = new List<string> {
+                    "solar-system-data/asteroids.add"
+                },
+                Secret = "exampleClientSecret123EXAMPLE"
+            });
+
+            ClientAuthenticationResultType clientAuthenticationResult = response.ClientAuthenticationResult;
+
+            #endregion
+        }
+
         public void CognitoIdentityProviderGetProvisionedLimit()
         {
             #region example-get-a-provisioned-limit-1782432000000

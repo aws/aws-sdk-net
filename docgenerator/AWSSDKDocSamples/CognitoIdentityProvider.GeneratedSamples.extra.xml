@@ -97,6 +97,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetClientToken(Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest)" />
+            <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetClientToken(Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest)" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.GetClientTokenRequest" />
+            <member name="T:Amazon.CognitoIdentityProvider.Model.GetClientTokenResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets an access token for the app client 1example23456789 with the custom scope solar-system-data/asteroids.add.
+                </para>
+                <code
+                    title="Example – Get an access token for machine-to-machine authorization"
+                    source=".\AWSSDKDocSamples\CognitoIdentityProvider\CognitoIdentityProvider.GeneratedSamples.cs"
+                    region="example-get-a-client-token-1782432000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.CognitoIdentityProvider.IAmazonCognitoIdentityProvider.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
             <member name="M:Amazon.CognitoIdentityProvider.AmazonCognitoIdentityProviderClient.GetProvisionedLimit(Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest)" />
             <member name="T:Amazon.CognitoIdentityProvider.Model.GetProvisionedLimitRequest" />
