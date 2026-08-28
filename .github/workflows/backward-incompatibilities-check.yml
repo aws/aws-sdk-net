@@ -7,8 +7,12 @@ on:
     types: [submitted]
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
-  cancel-in-progress: true
+  # Scope groups per event type and only cancel pull_request runs: a cancelled
+  # run renders as a red X on the PR, but a cancelled pull_request run's check
+  # sits on a superseded SHA so it isn't shown. Review runs queue instead of
+  # cancelling, since their checks all land on the same SHA.
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   check-backward-incompatibilities-reviewers:
