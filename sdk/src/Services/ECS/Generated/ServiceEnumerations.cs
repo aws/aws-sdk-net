@@ -4869,6 +4869,56 @@ namespace Amazon.ECS
 
 
     /// <summary>
+    /// Constants used for properties of type ServiceRevisionCleanup.
+    /// </summary>
+    public class ServiceRevisionCleanup : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BLOCKING for ServiceRevisionCleanup
+        /// </summary>
+        public static readonly ServiceRevisionCleanup BLOCKING = new ServiceRevisionCleanup("BLOCKING");
+        /// <summary>
+        /// Constant DEFERRED for ServiceRevisionCleanup
+        /// </summary>
+        public static readonly ServiceRevisionCleanup DEFERRED = new ServiceRevisionCleanup("DEFERRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ServiceRevisionCleanup(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ServiceRevisionCleanup FindValue(string value)
+        {
+            return FindValue<ServiceRevisionCleanup>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ServiceRevisionCleanup(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SettingName.
     /// </summary>
     public class SettingName : ConstantClass

@@ -332,9 +332,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol used for the port mapping. Valid values are <c>tcp</c> and <c>udp</c>.
-        /// The default is <c>tcp</c>. <c>protocol</c> is immutable in a Service Connect service.
-        /// Updating this field requires a service deletion and redeployment. 
+        /// The protocol that's used for the port mapping. Valid values are <c>tcp</c> and <c>udp</c>
+        /// (case-sensitive). The default is <c>tcp</c>. Amazon ECS treats any other specified
+        /// value as <c>tcp</c>. <c>protocol</c> is immutable in a Service Connect service. To
+        /// update this field, you must delete and redeploy the service. 
         /// </para>
         /// </summary>
         public TransportProtocol Protocol
