@@ -3913,6 +3913,113 @@ namespace Amazon.BedrockAgentCore
 
         #endregion
         
+        #region  IngestData
+
+
+        /// <summary>
+        /// Submits content directly for ingestion to generate long-term memory records in a AgentCore
+        /// Memory resource.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:IngestData</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IngestData service method.</param>
+        /// 
+        /// <returns>The response from the IngestData service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/IngestData">REST API Reference for IngestData Operation</seealso>
+        public virtual IngestDataResponse IngestData(IngestDataRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = IngestDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = IngestDataResponseUnmarshaller.Instance;
+
+            return Invoke<IngestDataResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Submits content directly for ingestion to generate long-term memory records in a AgentCore
+        /// Memory resource.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must have the <c>bedrock-agentcore:IngestData</c> permission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the IngestData service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the IngestData service method, as returned by BedrockAgentCore.</returns>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.AccessDeniedException">
+        /// The exception that occurs when you do not have sufficient permissions to perform an
+        /// action. Verify that your IAM policy includes the necessary permissions for the operation
+        /// you are trying to perform.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ResourceNotFoundException">
+        /// The exception that occurs when the specified resource does not exist. This can happen
+        /// when using an invalid identifier or when trying to access a resource that has been
+        /// deleted.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceException">
+        /// The service encountered an internal error. Try your request again later.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ServiceQuotaExceededException">
+        /// The exception that occurs when the request would cause a service quota to be exceeded.
+        /// Review your service quotas and either reduce your request rate or request a quota
+        /// increase.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ThrottledException">
+        /// The request was denied due to request throttling. Reduce the frequency of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCore.Model.ValidationException">
+        /// The exception that occurs when the input fails to satisfy the constraints specified
+        /// by the service. Check the error message for details about which input parameter is
+        /// invalid and correct your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/IngestData">REST API Reference for IngestData Operation</seealso>
+        public virtual Task<IngestDataResponse> IngestDataAsync(IngestDataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = IngestDataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = IngestDataResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<IngestDataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  InvokeAgentRuntime
 
 
