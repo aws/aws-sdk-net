@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManagedKnowledgeBaseConnectorConfiguration Marshaller
+    /// SyncSchedule Marshaller
     /// </summary>
-    public class ManagedKnowledgeBaseConnectorConfigurationMarshaller : IRequestMarshaller<ManagedKnowledgeBaseConnectorConfiguration, JsonMarshallerContext> 
+    public class SyncScheduleMarshaller : IRequestMarshaller<SyncSchedule, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,45 +42,39 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedKnowledgeBaseConnectorConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SyncSchedule requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetConnectorParameters())
+            if(requestObject.IsSetDaily())
             {
-                context.Writer.WritePropertyName("connectorParameters");
-                Amazon.Runtime.Documents.Internal.Transform.DocumentMarshaller.Instance.Write(context.Writer, requestObject.ConnectorParameters);
-            }
-
-            if(requestObject.IsSetDeletionProtectionConfiguration())
-            {
-                context.Writer.WritePropertyName("deletionProtectionConfiguration");
+                context.Writer.WritePropertyName("daily");
                 context.Writer.WriteStartObject();
 
-                var marshaller = DeletionProtectionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.DeletionProtectionConfiguration, context);
+                var marshaller = DailyScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Daily, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetMediaExtractionConfiguration())
+            if(requestObject.IsSetMonthly())
             {
-                context.Writer.WritePropertyName("mediaExtractionConfiguration");
+                context.Writer.WritePropertyName("monthly");
                 context.Writer.WriteStartObject();
 
-                var marshaller = MediaExtractionConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.MediaExtractionConfiguration, context);
+                var marshaller = MonthlyScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Monthly, context);
 
                 context.Writer.WriteEndObject();
             }
 
-            if(requestObject.IsSetSyncSchedule())
+            if(requestObject.IsSetWeekly())
             {
-                context.Writer.WritePropertyName("syncSchedule");
+                context.Writer.WritePropertyName("weekly");
                 context.Writer.WriteStartObject();
 
-                var marshaller = SyncScheduleMarshaller.Instance;
-                marshaller.Marshall(requestObject.SyncSchedule, context);
+                var marshaller = WeeklyScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.Weekly, context);
 
                 context.Writer.WriteEndObject();
             }
@@ -90,7 +84,7 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ManagedKnowledgeBaseConnectorConfigurationMarshaller Instance = new ManagedKnowledgeBaseConnectorConfigurationMarshaller();
+        public readonly static SyncScheduleMarshaller Instance = new SyncScheduleMarshaller();
 
     }
 }

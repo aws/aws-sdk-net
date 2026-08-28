@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedKnowledgeBaseConnectorConfiguration Object
+    /// Response Unmarshaller for SyncSchedule Object
     /// </summary>  
-    public class ManagedKnowledgeBaseConnectorConfigurationUnmarshaller : IJsonUnmarshaller<ManagedKnowledgeBaseConnectorConfiguration, JsonUnmarshallerContext>
+    public class SyncScheduleUnmarshaller : IJsonUnmarshaller<SyncSchedule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ManagedKnowledgeBaseConnectorConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SyncSchedule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            ManagedKnowledgeBaseConnectorConfiguration unmarshalledObject = new ManagedKnowledgeBaseConnectorConfiguration();
+            SyncSchedule unmarshalledObject = new SyncSchedule();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,22 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("connectorParameters", targetDepth, ref reader))
+                if (context.TestExpression("daily", targetDepth, ref reader))
                 {
-                    var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorParameters = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = DailyScheduleUnmarshaller.Instance;
+                    unmarshalledObject.Daily = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("deletionProtectionConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("monthly", targetDepth, ref reader))
                 {
-                    var unmarshaller = DeletionProtectionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DeletionProtectionConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = MonthlyScheduleUnmarshaller.Instance;
+                    unmarshalledObject.Monthly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("mediaExtractionConfiguration", targetDepth, ref reader))
+                if (context.TestExpression("weekly", targetDepth, ref reader))
                 {
-                    var unmarshaller = MediaExtractionConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.MediaExtractionConfiguration = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("syncSchedule", targetDepth, ref reader))
-                {
-                    var unmarshaller = SyncScheduleUnmarshaller.Instance;
-                    unmarshalledObject.SyncSchedule = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = WeeklyScheduleUnmarshaller.Instance;
+                    unmarshalledObject.Weekly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +79,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedKnowledgeBaseConnectorConfigurationUnmarshaller _instance = new ManagedKnowledgeBaseConnectorConfigurationUnmarshaller();        
+        private static SyncScheduleUnmarshaller _instance = new SyncScheduleUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedKnowledgeBaseConnectorConfigurationUnmarshaller Instance
+        public static SyncScheduleUnmarshaller Instance
         {
             get
             {
