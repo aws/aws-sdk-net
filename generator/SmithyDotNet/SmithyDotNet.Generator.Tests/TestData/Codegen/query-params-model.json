@@ -1,0 +1,59 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#ListScrapers" },
+        { "target": "com.example#Search" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#StringList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+    "com.example#FilterMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "com.example#StringList" }
+    },
+    "com.example#TagMap": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#String" }
+    },
+    "com.example#ListScrapers": {
+      "type": "operation",
+      "input": { "target": "com.example#ListScrapersRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/scrapers", "method": "GET" } }
+    },
+    "com.example#ListScrapersRequest": {
+      "type": "structure",
+      "members": {
+        "filters":    { "target": "com.example#FilterMap", "traits": { "smithy.api#httpQueryParams": {} } },
+        "nextToken":  { "target": "smithy.api#String", "traits": { "smithy.api#httpQuery": "nextToken" } },
+        "maxResults": { "target": "smithy.api#Integer", "traits": { "smithy.api#httpQuery": "maxResults" } }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#Search": {
+      "type": "operation",
+      "input": { "target": "com.example#SearchRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/search", "method": "GET" } }
+    },
+    "com.example#SearchRequest": {
+      "type": "structure",
+      "members": {
+        "tags": { "target": "com.example#TagMap", "traits": { "smithy.api#httpQueryParams": {} } }
+      },
+      "traits": { "smithy.api#input": {} }
+    }
+  }
+}

@@ -43,13 +43,14 @@ Then serializes members based on placement rules, then returns `request`.
 |---|---|---|
 | `@httpQuery("name")` scalar | Query string | `request.Parameters.Add("name", StringUtils.FromString(...))` |
 | `@httpQuery("name")` `list<string>` | Query string | `request.ParameterCollection.Add("name", publicRequest.Prop)` (repeated params, ordinal-sorted at runtime) |
+| `@httpQueryParams` map | Query string | Loop entries into query params (see below); `@httpQuery` wins on key collision |
 | `@httpLabel` | URI segment | Replace `{member}` in `request.ResourcePath` |
 | `@httpHeader("name")` scalar | Header | `request.Headers["name"] = ...` |
 | `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
-| `@httpPrefixHeaders("prefix")` | Multiple headers | Loop dict, prefix each key |
+| `@httpPrefixHeaders("prefix")` map | Multiple headers | Loop `map<string,string>`, emit `{prefix}{key}` headers (see below); request & response |
 | `@httpPayload` | Entire body | Direct stream/string (skips body serialization) |
 | `@hostLabel` | Endpoint host prefix | Additive: `request.HostPrefix` label + its normal binding (see below) |
-| `@httpResponseCode` | (response only) | `response.HttpStatusCode` |
+| `@httpResponseCode` | (response only) | `unmarshalledObject.{Prop} = (int)context.ResponseData.StatusCode;` (see below) |
 | No HTTP trait | Body | Protocol-specific serialization |
 
 List query/header bindings are `list<string>` only — which covers `list<enum>` too, because an enum
@@ -58,6 +59,45 @@ collection element resolves to plain `string` (see the type-mapping skill). `req
 intEnum) *is* now allowed as a **body** member, but in a query/header binding position it falls through to
 `StringConversion`, which returns null for a collection type and so fails loud (`?? throw` in
 `WriteQueryStringMembers`/`WriteHeaderMembers`); no restJson1 service binds one to query/header today.
+
+A single member may carry `@httpQueryParams` (structurally exclusive): a `map<string, string>` or
+`map<string, list<string>>` whose entries each become query params, reusing the `@httpQuery`
+serialization rules (a `list<string>` value repeats the key). It's emitted **after** the explicit
+`@httpQuery` members, each entry guarded by a `ContainsKey` check that skips keys already set — so an
+explicit `@httpQuery` (or query literal) wins the collision, per the Smithy precedence rule:
+
+```csharp
+if (publicRequest.IsSetFilters())
+{
+    foreach (var kvp in publicRequest.Filters)
+    {
+        if (!request.ParameterCollection.ContainsKey(kvp.Key))   // map<string,string> uses request.Parameters
+            request.ParameterCollection.Add(kvp.Key, kvp.Value);  // map<string,string> adds StringUtils.FromString(kvp.Value)
+    }
+}
+```
+
+The map is a query binding (request-only, `@input` structures), so it never enters the JSON body, and
+its presence sets `request.UseQueryString = true`. The trait is "simply ignored" outside operation input.
+
+A single member may carry `@httpPrefixHeaders` (structurally exclusive): a `map<string, string>` whose
+entries each become a header named `{prefix}{key}`. It's emitted **before** the explicit `@httpHeader`
+members, so a colliding header name (only possible with an empty prefix) is overwritten by the later
+`@httpHeader` assignment — `@httpHeader` wins per the Smithy precedence rule:
+
+```csharp
+if (publicRequest.IsSetRequestHeaders())
+{
+    foreach (var kvp in publicRequest.RequestHeaders)
+    {
+        request.Headers[$"x-amzn-dataexchange-header-{kvp.Key}"] = kvp.Value;
+    }
+}
+```
+
+Unlike the query traits, `@httpPrefixHeaders` is valid on request, response, **and error** structures
+(see Response Header Unmarshalling for the reverse). The map value must be a string (a non-string value
+fails loud).
 
 For `awsJson1.x` and `query`/`ec2Query`: all members go in the body (no HTTP binding traits).
 
@@ -221,6 +261,22 @@ A `@httpPayload` output member IS the whole body (replaces the named-field loop;
 
 `@httpHeader` members read from `context.ResponseData` after. **Errors don't get a payload path** — C2J never bound an error body to a payload and no service does, so `JsonExceptionUnmarshallerWriter` throws a `GeneratorException` on an `@httpPayload` error member (Smithy permits it; we fail loud rather than emit a never-populated property). Request/response `@httpPayload` stay allowed.
 
+### `@httpResponseCode` (response)
+
+An `@httpResponseCode` output member (an integer, so `int?` on the response class) is populated from
+the HTTP status code itself — **not** read from the body or a header:
+
+```csharp
+unmarshalledObject.StatusCode = (int)context.ResponseData.StatusCode;
+```
+
+The property name is whatever the model named the member (e.g. a member `httpCode` emits
+`unmarshalledObject.HttpCode = ...`) — `PartitionByBinding` pulls the member out via `IsHttpResponseCode()`
+so it never enters the body reader. Matches C2J's `ProcessStatusCode`. The trait is only meaningful on an
+operation's output; on an error it "is simply ignored" (Smithy spec), so `JsonExceptionUnmarshallerWriter`
+passes `bindStatusCode: false` and the member falls through to the body like any ordinary member — unlike
+`@httpPayload`, which fails loud on an error.
+
 ### XML
 
 ```csharp
@@ -270,6 +326,34 @@ Header timestamps default to `http-date` when `@timestampFormat` is unset (see t
 table below). On the unmarshal side `date-time` and `http-date` produce identical `DateTime.Parse`
 code — only `epoch-seconds` differs. The `CultureInfo`/`DateTimeStyles` these parses use come from
 `System.Globalization`, which the response and exception unmarshallers import unconditionally.
+
+### `@httpPrefixHeaders` (response / error)
+
+A `map<string, string>` member bound with `@httpPrefixHeaders` collects every response header whose
+name starts with the prefix into the map, stripping the prefix from each key. An empty prefix (the
+`.Length > 0` guard is false) collects all headers. Assigned only when non-empty (matches C2J). The same
+`WritePrefixHeadersUnmarshaller` helper serves the response and exception unmarshallers (both write to
+`unmarshalledObject`), since the trait is valid on output and error structures alike.
+
+```csharp
+var prefixHeadersResponseHeaders = new Dictionary<string, string>();
+foreach (var headerName in context.ResponseData.GetHeaderNames())
+{
+    var keyToUse = headerName;
+    if ("x-amzn-dataexchange-header-".Length > 0 && keyToUse.StartsWith("x-amzn-dataexchange-header-"))
+    {
+        keyToUse = keyToUse.Substring("x-amzn-dataexchange-header-".Length);
+    }
+    if (context.ResponseData.IsHeaderPresent($"x-amzn-dataexchange-header-{keyToUse}"))
+    {
+        prefixHeadersResponseHeaders.Add(keyToUse, context.ResponseData.GetHeaderValue($"x-amzn-dataexchange-header-{keyToUse}"));
+    }
+}
+if (prefixHeadersResponseHeaders.Count > 0)
+{
+    unmarshalledObject.ResponseHeaders = prefixHeadersResponseHeaders;
+}
+```
 
 ## Type → Marshal/Unmarshal
 

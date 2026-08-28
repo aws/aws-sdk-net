@@ -12,8 +12,6 @@ public static class UnsupportedTraitValidator
 {
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
-        ["smithy.api#httpPrefixHeaders"] = "@httpPrefixHeaders",
-        ["smithy.api#httpResponseCode"] = "@httpResponseCode",
         ["smithy.api#httpChecksumRequired"] = "@httpChecksumRequired",
         ["smithy.api#requestCompression"] = "@requestCompression",
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",

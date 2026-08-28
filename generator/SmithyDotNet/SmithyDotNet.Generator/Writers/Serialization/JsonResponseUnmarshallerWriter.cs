@@ -15,8 +15,8 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     {
         var className = $"{operation.Name}Response";
         var unmarshallerClassName = $"{className}Unmarshaller";
-        var members = TypeMapper.ResolveMembers(operation.Output, context);
-        var (headerMembers, bodyMembers, payloadMember) = PartitionByBinding(operation.Output, members);
+        var resolvedMembers = TypeMapper.ResolveMembers(operation.Output, context);
+        var members = PartitionByBinding(operation.Output, resolvedMembers);
 
         var writer = new CodeWriter();
 
@@ -29,7 +29,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             WriteClassDocumentation(writer, operation.Name);
             writer.OpenBlock($"public partial class {unmarshallerClassName} : JsonResponseUnmarshaller", () =>
             {
-                WriteUnmarshallMethod(writer, className, headerMembers, bodyMembers, payloadMember);
+                WriteUnmarshallMethod(writer, className, members);
                 writer.WriteLine("");
                 WriteUnmarshallExceptionMethod(writer, operation);
                 writer.WriteLine("");
@@ -56,12 +56,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
         writer.WriteLine("/// </summary>");
     }
 
-    private static void WriteUnmarshallMethod(
-        CodeWriter writer,
-        string className,
-        List<(Member Member, string HeaderName)> headerMembers,
-        List<Member> bodyMembers,
-        Member? payloadMember)
+    private static void WriteUnmarshallMethod(CodeWriter writer, string className, PartitionedMembers members)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshaller the response from the service to the response class.");
@@ -73,17 +68,29 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             // A @httpPayload member IS the whole body (it replaces normal body members); otherwise the
             // body members are read from the JSON payload. A response with only header (or no) members
             // emits no reader/loop.
-            if (payloadMember is { } payload)
+            if (members.PayloadMember is { } payload)
             {
                 WritePayloadUnmarshall(writer, payload);
             }
-            else if (bodyMembers.Count > 0)
+            else if (members.BodyMembers.Count > 0)
             {
                 writer.WriteLine("var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);");
                 writer.WriteLine();
-                WriteBodyReadLoop(writer, bodyMembers);
+                WriteBodyReadLoop(writer, members.BodyMembers);
             }
-            WriteHeaderUnmarshallers(writer, headerMembers);
+            WriteHeaderUnmarshallers(writer, members.HeaderMembers);
+
+            if (members.PrefixHeadersMember is { } prefixHeaders)
+            {
+                WritePrefixHeadersUnmarshaller(writer, prefixHeaders.Member, prefixHeaders.Prefix);
+            }
+
+            // A @httpResponseCode member is populated from the HTTP status code itself, not read from
+            // the body or a header. The member's property name is whatever the model named it.
+            if (members.StatusCodeMember is { } statusCode)
+            {
+                writer.WriteLine($"unmarshalledObject.{statusCode.PropertyName} = (int)context.ResponseData.StatusCode;");
+            }
 
             writer.WriteLine("");
             writer.WriteLine("return unmarshalledObject;");
@@ -146,22 +153,40 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
 
     /// <summary>
     /// Splits members into those bound to a response header (<c>@httpHeader</c>, paired with the header
-    /// name), the single <c>@httpPayload</c> member (if any), and those read from the JSON body. Header
-    /// members are populated from <c>context.ResponseData</c>; a payload member is the entire body.
-    /// Shared with the exception unmarshaller.
+    /// name), the single <c>@httpPayload</c> member (if any), the single <c>@httpResponseCode</c> member
+    /// (if any), the single <c>@httpPrefixHeaders</c> member (if any, paired with its prefix), and those
+    /// read from the JSON body. Header and prefix-header members are populated from
+    /// <c>context.ResponseData</c>; a payload member is the entire body; a response-code member is set
+    /// from the HTTP status code. Shared with the exception unmarshaller.
+    ///
+    /// <para><c>@httpResponseCode</c> is only meaningful on an operation's output; on an error it "is
+    /// simply ignored" per the Smithy spec, so the exception unmarshaller passes
+    /// <paramref name="bindStatusCode"/> <c>false</c> and the member falls through to the body.</para>
     /// </summary>
-    internal static (List<(Member Member, string HeaderName)> HeaderMembers, List<Member> BodyMembers, Member? PayloadMember) PartitionByBinding(
-        StructureShape structure, List<Member> members)
+    internal static PartitionedMembers PartitionByBinding(
+        StructureShape structure, List<Member> members, bool bindStatusCode = true)
     {
         var headerMembers = new List<(Member, string)>();
         var bodyMembers = new List<Member>();
         Member? payloadMember = null;
+        Member? statusCodeMember = null;
+        (Member Member, string Prefix)? prefixHeadersMember = null;
         foreach (var member in members)
         {
             var memberShape = structure.Members[member.ModeledName];
             if (memberShape.GetHttpHeader() is string headerName)
             {
                 headerMembers.Add((member, headerName));
+            }
+            else if (memberShape.GetHttpPrefixHeaders() is string prefix)
+            {
+                // @httpPrefixHeaders is structurally exclusive — at most one member per structure.
+                if (prefixHeadersMember is not null)
+                {
+                    throw new GeneratorException($"Structure has more than one @httpPrefixHeaders member ('{prefixHeadersMember.Value.Member.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                prefixHeadersMember = (member, prefix);
             }
             else if (memberShape.IsHttpPayload())
             {
@@ -171,6 +196,15 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 }
 
                 payloadMember = member;
+            }
+            else if (bindStatusCode && memberShape.IsHttpResponseCode())
+            {
+                if (statusCodeMember is not null)
+                {
+                    throw new GeneratorException($"Structure has more than one @httpResponseCode member ('{statusCodeMember.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                statusCodeMember = member;
             }
             else
             {
@@ -186,8 +220,21 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with body members ({names}); every other member must be bound to a header.");
         }
 
-        return (headerMembers, bodyMembers, payloadMember);
+        return new PartitionedMembers(headerMembers, bodyMembers, payloadMember, statusCodeMember, prefixHeadersMember);
     }
+
+    /// <summary>
+    /// An output or error structure's members grouped by HTTP binding: header members (with their
+    /// header names), unbound body members, the single <c>@httpPayload</c> member (if any), the single
+    /// <c>@httpResponseCode</c> member (if any), and the single <c>@httpPrefixHeaders</c> member (if any).
+    /// Mirrors the request side's partition record.
+    /// </summary>
+    internal sealed record PartitionedMembers(
+        List<(Member Member, string HeaderName)> HeaderMembers,
+        List<Member> BodyMembers,
+        Member? PayloadMember,
+        Member? StatusCodeMember,
+        (Member Member, string Prefix)? PrefixHeadersMember);
 
     // Emits `if (context.ResponseData.IsHeaderPresent("name")) unmarshalledObject.Property = <conversion>;`
     // per header member. Shared with the exception unmarshaller (both use the `unmarshalledObject` local).
@@ -201,6 +248,43 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {conversion};");
             });
         }
+    }
+
+    // https://smithy.io/2.0/spec/http-bindings.html#httpprefixheaders-trait
+    // Collects every response header whose name starts with the member's prefix into a
+    // map<string, string>, stripping the prefix from each key. An empty prefix (the ".Length > 0"
+    // guard is false) collects all headers. Shared with the exception unmarshaller (both use the
+    // `unmarshalledObject` local). Smithy restricts the map value to a string; a non-string value fails
+    // loud. Only assigned when non-empty, matching C2J.
+    internal static void WritePrefixHeadersUnmarshaller(CodeWriter writer, Member member, string prefix)
+    {
+        var value = member.Type.MapValue
+            ?? throw new GeneratorException($"@httpPrefixHeaders member '{member.PropertyName}' must target a map; got '{member.Type.DotNetType}'.");
+        if (!value.IsString)
+        {
+            throw new GeneratorException($"@httpPrefixHeaders member '{member.PropertyName}' must target a map of string; got a map value of '{value.DotNetType}'.");
+        }
+
+        // Local name matches C2J's `headersFor{Property}` so the generated marshaller lines up with the
+        // legacy output when cross-referencing.
+        var local = $"headersFor{member.PropertyName}";
+        writer.WriteLine($"var {local} = new Dictionary<string, string>();");
+        writer.OpenBlock("foreach (var headerName in context.ResponseData.GetHeaderNames())", () =>
+        {
+            writer.WriteLine("var keyToUse = headerName;");
+            writer.OpenBlock($$"""if ("{{prefix}}".Length > 0 && keyToUse.StartsWith("{{prefix}}"))""", () =>
+            {
+                writer.WriteLine($$"""keyToUse = keyToUse.Substring("{{prefix}}".Length);""");
+            });
+            writer.OpenBlock($$"""if (context.ResponseData.IsHeaderPresent($"{{prefix}}{keyToUse}"))""", () =>
+            {
+                writer.WriteLine($$"""{{local}}.Add(keyToUse, context.ResponseData.GetHeaderValue($"{{prefix}}{keyToUse}"));""");
+            });
+        });
+        writer.OpenBlock($"if ({local}.Count > 0)", () =>
+        {
+            writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {local};");
+        });
     }
 
     /// <summary>

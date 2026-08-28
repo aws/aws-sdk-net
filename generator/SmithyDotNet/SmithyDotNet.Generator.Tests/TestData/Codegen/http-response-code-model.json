@@ -1,0 +1,63 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#GetStatus" },
+        { "target": "com.example#GetStatusWithPayload" },
+        { "target": "com.example#Fail" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#HttpResponseCode": { "type": "integer" },
+    "com.example#GetStatus": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetStatusResponse" },
+      "traits": { "smithy.api#http": { "uri": "/status", "method": "GET" } }
+    },
+    "com.example#GetStatusResponse": {
+      "type": "structure",
+      "members": {
+        "sessionId":  { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-session-id" } },
+        "name":       { "target": "smithy.api#String" },
+        "statusCode": { "target": "com.example#HttpResponseCode", "traits": { "smithy.api#httpResponseCode": {} } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#GetStatusWithPayload": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#GetStatusWithPayloadResponse" },
+      "traits": { "smithy.api#http": { "uri": "/status-payload", "method": "GET" } }
+    },
+    "com.example#GetStatusWithPayloadResponse": {
+      "type": "structure",
+      "members": {
+        "body":     { "target": "smithy.api#String", "traits": { "smithy.api#httpPayload": {} } },
+        "httpCode": { "target": "com.example#HttpResponseCode", "traits": { "smithy.api#httpResponseCode": {} } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#Fail": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "errors": [ { "target": "com.example#ConflictError" } ],
+      "traits": { "smithy.api#http": { "uri": "/fail", "method": "POST" } }
+    },
+    "com.example#ConflictError": {
+      "type": "structure",
+      "members": {
+        "reason": { "target": "smithy.api#String" },
+        "code":   { "target": "com.example#HttpResponseCode", "traits": { "smithy.api#httpResponseCode": {} } }
+      },
+      "traits": { "smithy.api#error": "client" }
+    }
+  }
+}

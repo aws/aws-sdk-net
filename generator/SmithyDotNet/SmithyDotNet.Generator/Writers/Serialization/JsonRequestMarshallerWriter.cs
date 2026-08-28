@@ -9,7 +9,9 @@ namespace SmithyDotNet.Generator.Writers.Serialization;
 /// of the existing AWS SDK for .NET.
 /// <para />
 /// restJson1 only. Handles @httpQuery/@httpHeader/@httpLabel/body scalar members (string, enum,
-/// bool, numeric, timestamp), list&lt;string&gt; @httpQuery/@httpHeader, body lists of strings or
+/// bool, numeric, timestamp), list&lt;string&gt; @httpQuery/@httpHeader, an @httpQueryParams map
+/// (map&lt;string,string&gt; or map&lt;string,list&lt;string&gt;&gt;), an @httpPrefixHeaders
+/// map&lt;string,string&gt;, body lists of strings or
 /// structures, an @httpPayload string/structure/blob body, and the operation's @endpoint host
 /// prefix with its @hostLabel members. Unsupported member shapes throw a <see cref="GeneratorException"/>.
 /// </summary>
@@ -75,6 +77,19 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             writer.WriteLine("");
 
             WriteQueryStringMembers(writer, partitioned.QueryMembers);
+            // Emitted after the explicit @httpQuery members so those win on a key collision (Smithy
+            // precedence), which the map loop enforces by skipping keys already present.
+            if (partitioned.QueryParamsMember is { } queryParams)
+            {
+                WriteQueryParamsMember(writer, queryParams);
+            }
+            // Emitted before the explicit @httpHeader members so those win on a header-name collision
+            // (only possible with an empty prefix, which the Smithy spec resolves in @httpHeader's favor):
+            // a later `request.Headers[name] = ...` assignment overwrites the prefix-header value.
+            if (partitioned.PrefixHeadersMember is { } prefixHeaders)
+            {
+                WritePrefixHeadersMember(writer, prefixHeaders.Member, prefixHeaders.Prefix);
+            }
             WriteHeaderMembers(writer, partitioned.HeaderMembers);
             WriteResourcePath(writer, httpTrait, partitioned.LabelMembers);
 
@@ -91,7 +106,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             writer.WriteLine("");
 
-            if (partitioned.QueryMembers.Count > 0)
+            if (partitioned.QueryMembers.Count > 0 || partitioned.QueryParamsMember is not null)
             {
                 writer.WriteLine("request.UseQueryString = true;");
                 writer.WriteLine("");
@@ -233,6 +248,61 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             }
             writer.WriteLine("");
         }
+    }
+
+    // https://smithy.io/2.0/spec/http-bindings.html#httpqueryparams-trait
+    // A map bound to @httpQueryParams adds each entry to the query string: map<string, string> is one
+    // param per entry; map<string, list<string>> repeats the key per element (matching @httpQuery lists).
+    // The ContainsKey guard skips any key an explicit @httpQuery member already set, so @httpQuery wins.
+    private void WriteQueryParamsMember(CodeWriter writer, Member member)
+    {
+        var value = member.Type.MapValue
+            ?? throw new GeneratorException($"@httpQueryParams member '{member.PropertyName}' must target a map; got '{member.Type.DotNetType}'.");
+
+        // Smithy restricts the value to string or list<string>. A list<string> value uses the typed
+        // ParameterCollection (repeated params); a string value uses the string-only Parameters facade.
+        var isListValue = value.ListElement is { IsString: true };
+        if (!isListValue && !value.IsString)
+        {
+            throw new GeneratorException($"@httpQueryParams member '{member.PropertyName}' must target a map of string or map of list of string; got a map value of '{value.DotNetType}'.");
+        }
+
+        var collection = isListValue ? "request.ParameterCollection" : "request.Parameters";
+        var addValue = isListValue ? "kvp.Value" : "StringUtils.FromString(kvp.Value)";
+
+        writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
+        {
+            writer.OpenBlock($"foreach (var kvp in publicRequest.{member.PropertyName})", () =>
+            {
+                writer.OpenBlock($"if (!{collection}.ContainsKey(kvp.Key))", () =>
+                {
+                    writer.WriteLine($"{collection}.Add(kvp.Key, {addValue});");
+                });
+            });
+        });
+        writer.WriteLine("");
+    }
+
+    // https://smithy.io/2.0/spec/http-bindings.html#httpprefixheaders-trait
+    // A map<string, string> bound to @httpPrefixHeaders emits one header per entry, named
+    // {prefix}{key}. Smithy restricts the value to a string; a non-string value fails loud.
+    private void WritePrefixHeadersMember(CodeWriter writer, Member member, string prefix)
+    {
+        var value = member.Type.MapValue
+            ?? throw new GeneratorException($"@httpPrefixHeaders member '{member.PropertyName}' must target a map; got '{member.Type.DotNetType}'.");
+        if (!value.IsString)
+        {
+            throw new GeneratorException($"@httpPrefixHeaders member '{member.PropertyName}' must target a map of string; got a map value of '{value.DotNetType}'.");
+        }
+
+        writer.OpenBlock($"if (publicRequest.IsSet{member.PropertyName}())", () =>
+        {
+            writer.OpenBlock($"foreach (var kvp in publicRequest.{member.PropertyName})", () =>
+            {
+                writer.WriteLine($$"""request.Headers[$"{{prefix}}{kvp.Key}"] = kvp.Value;""");
+            });
+        });
+        writer.WriteLine("");
     }
 
     // https://smithy.io/2.0/spec/http-bindings.html#httpheader-trait
@@ -405,12 +475,15 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         var bodyMembers = new List<Member>();
         var hostLabelMembers = new List<Member>();
         Member? payloadMember = null;
+        Member? queryParamsMember = null;
+        (Member Member, string Prefix)? prefixHeadersMember = null;
 
         foreach (var member in members)
         {
             var memberShape = input.Members[member.ModeledName];
             var httpQuery = memberShape.GetHttpQuery();
             var httpHeader = memberShape.GetHttpHeader();
+            var httpPrefixHeaders = memberShape.GetHttpPrefixHeaders();
 
             if (httpQuery is not null)
             {
@@ -419,6 +492,16 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             else if (httpHeader is not null)
             {
                 headerMembers.Add((member, httpHeader));
+            }
+            else if (httpPrefixHeaders is not null)
+            {
+                // @httpPrefixHeaders is structurally exclusive — at most one member per structure.
+                if (prefixHeadersMember is not null)
+                {
+                    throw new GeneratorException($"Operation input has more than one @httpPrefixHeaders member ('{prefixHeadersMember.Value.Member.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                prefixHeadersMember = (member, httpPrefixHeaders);
             }
             else if (memberShape.IsHttpLabel())
             {
@@ -432,6 +515,16 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 }
 
                 payloadMember = member;
+            }
+            else if (memberShape.IsHttpQueryParams())
+            {
+                // @httpQueryParams is structurally exclusive — at most one member per structure.
+                if (queryParamsMember is not null)
+                {
+                    throw new GeneratorException($"Operation input has more than one @httpQueryParams member ('{queryParamsMember.PropertyName}' and '{member.PropertyName}'); the Smithy spec permits at most one.");
+                }
+
+                queryParamsMember = member;
             }
             else
             {
@@ -454,7 +547,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             throw new GeneratorException($"@httpPayload member '{payloadMember.PropertyName}' cannot coexist with unbound body members ({names}); every other member must be bound to a header, query, or label.");
         }
 
-        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers, hostLabelMembers, payloadMember);
+        return new PartitionedMembers(queryMembers, headerMembers, labelMembers, bodyMembers, hostLabelMembers, payloadMember, queryParamsMember, prefixHeadersMember);
     }
 
     private record PartitionedMembers(
@@ -463,7 +556,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         List<Member> LabelMembers,
         List<Member> BodyMembers,
         List<Member> HostLabelMembers,
-        Member? PayloadMember);
+        Member? PayloadMember,
+        Member? QueryParamsMember,
+        (Member Member, string Prefix)? PrefixHeadersMember);
 
     private static void WriteMarshallerDocumentation(CodeWriter writer, string operationName)
     {

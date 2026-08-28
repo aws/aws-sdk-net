@@ -30,6 +30,12 @@ public static class AnnotationTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httppayload-trait" /></remarks>
     public static bool IsHttpPayload(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpPayload");
 
+    /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httpresponsecode-trait" /></remarks>
+    public static bool IsHttpResponseCode(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpResponseCode");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httpqueryparams-trait" /></remarks>
+    public static bool IsHttpQueryParams(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpQueryParams");
+
     /// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#sensitive-trait" /></remarks>
     public static bool IsSensitive(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sensitive");
 

@@ -20,11 +20,13 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         // so it is excluded here; every other member — including base-owned RequestId/ErrorCode — is
         // unmarshalled from the error body, except @httpHeader members (read from the headers).
         var members = ExceptionWriter.ResolveSerializedMembers(structure, context);
-        var (headerMembers, bodyMembers, payloadMember) = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members);
+        // @httpResponseCode "is simply ignored" outside an operation's output (Smithy spec), so on an
+        // error the member is treated as an ordinary body member — bindStatusCode: false.
+        var bindings = JsonResponseUnmarshallerWriter.PartitionByBinding(structure, members, bindStatusCode: false);
 
-        if (payloadMember is not null)
+        if (bindings.PayloadMember is not null)
         {
-            throw new GeneratorException($"@httpPayload on error member '{payloadMember.PropertyName}' of '{exceptionName}' is not supported.");
+            throw new GeneratorException($"@httpPayload on error member '{bindings.PayloadMember.PropertyName}' of '{exceptionName}' is not supported.");
         }
 
         var writer = new CodeWriter();
@@ -40,7 +42,7 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
             {
                 WriteUnmarshallMethod(writer, exceptionName);
                 writer.WriteLine("");
-                WriteMainUnmarshallMethod(writer, exceptionName, headerMembers, bodyMembers);
+                WriteMainUnmarshallMethod(writer, exceptionName, bindings.HeaderMembers, bindings.BodyMembers, bindings.PrefixHeadersMember);
                 writer.WriteLine("");
                 WriteSingleton(writer, unmarshallerClassName);
             });
@@ -81,7 +83,8 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         CodeWriter writer,
         string exceptionName,
         List<(Member Member, string HeaderName)> headerMembers,
-        List<Member> bodyMembers)
+        List<Member> bodyMembers,
+        (Member Member, string Prefix)? prefixHeadersMember)
     {
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Unmarshall the exception from the service to the appropriate exception class");
@@ -103,6 +106,11 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
 
             // @httpHeader error members are read from the response headers, not the error body.
             JsonResponseUnmarshallerWriter.WriteHeaderUnmarshallers(writer, headerMembers);
+
+            if (prefixHeadersMember is { } prefixHeaders)
+            {
+                JsonResponseUnmarshallerWriter.WritePrefixHeadersUnmarshaller(writer, prefixHeaders.Member, prefixHeaders.Prefix);
+            }
 
             writer.WriteLine();
             writer.WriteLine("return unmarshalledObject;");
