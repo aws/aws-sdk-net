@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 
 namespace ThirdParty.RuntimeBackports
 {
-    [DebuggerDisplay("{DebuggerDisplay,nq}")]
+    [DebuggerDisplay("{GetDebuggerDisplay(),nq}")]
 #pragma warning disable CA1815
     internal ref struct ValueStringBuilder
 #pragma warning restore CA1815
@@ -47,7 +47,7 @@ namespace ThirdParty.RuntimeBackports
         }
 
         // ToString() has side effects, so we don't want to call it from the debugger display.
-        private string DebuggerDisplay => AsSpan().ToString();
+        private string GetDebuggerDisplay() => AsSpan().ToString();
 
         public int Capacity => _chars.Length;
 
