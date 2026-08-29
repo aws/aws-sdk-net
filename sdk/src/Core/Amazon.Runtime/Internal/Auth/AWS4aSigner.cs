@@ -344,12 +344,12 @@ namespace Amazon.Runtime.Internal.Auth
         /// Implementation adapted from <see href="https://github.com/awslabs/aws-c-auth/blob/e8360a65e0f3337d4ac827945e00c3b55a641a5f/source/key_derivation.c#L191-L215"/>.
         /// </remarks>
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private static int CompareConstantTime(byte[] lhs, byte[] rhs)
+        internal static int CompareConstantTime(byte[] lhs, byte[] rhs)
         {
             if (lhs.Length != rhs.Length)
                 throw new ArgumentException("Arrays must be of equal length for constant time comparison.");
 
-            byte gt = 0, eq = 0;
+            byte gt = 0, eq = 1;
 
             for (int i = 0; i < lhs.Length; i++)
             {

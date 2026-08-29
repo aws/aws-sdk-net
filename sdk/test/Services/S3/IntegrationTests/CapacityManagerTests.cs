@@ -2,6 +2,7 @@ using Amazon.S3;
 using AWSSDK_DotNet.CommonTest.Utils;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
@@ -43,7 +44,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         /// Phase 3. Phase 1 is repeated again with an assert to prove that Phase 2 added the said capacity.
         /// </summary>
         [Fact]
-        public void S3CapacityManagerIntegrationTest()
+        public async Task S3CapacityManagerIntegrationTest()
         {
             int TotalRequests = 500;
             int RetryRequests = 100;

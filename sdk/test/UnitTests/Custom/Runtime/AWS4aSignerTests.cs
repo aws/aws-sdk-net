@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Util;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace UnitTests.NetStandard.Core
 {
@@ -34,8 +35,19 @@ namespace UnitTests.NetStandard.Core
         {
             using var key = AWS4aSigner.ComputeSigningKey(SigningTestAccessKeyId, SigningTestSecretAccessKey);
             var parameters = key.ExportParameters(false);
-            Assert.AreEqual(AWSSDKUtils.HexStringToBytes(SigningTestEccPubX), parameters.Q.X);
-            Assert.AreEqual(AWSSDKUtils.HexStringToBytes(SigningTestEccPubY), parameters.Q.Y);
+            CollectionAssert.AreEqual(AWSSDKUtils.HexStringToBytes(SigningTestEccPubX), parameters.Q.X);
+            CollectionAssert.AreEqual(AWSSDKUtils.HexStringToBytes(SigningTestEccPubY), parameters.Q.Y);
+        }
+
+        [TestMethod]
+        // Test vectors ported from aws-c-auth tests/key_derivation_tests.c (be_sequence_compare).
+        [DataRow([new byte[] { 0x00, 0x00, 0x00 }, new byte[] { 0x00, 0x00, 0x01 }, -1], DisplayName = "less")]
+        [DataRow([new byte[] { 0xAB, 0xCD, 0x80, 0xFF, 0x01, 0x0A }, new byte[] { 0xAB, 0xCD, 0x80, 0xFF, 0x01, 0x0A }, 0], DisplayName = "equal")]
+        [DataRow([new byte[] { 0xFF, 0xCD, 0x80, 0xFF, 0x01, 0x0A }, new byte[] { 0xFE, 0xCD, 0x80, 0xFF, 0x01, 0x0A }, 1], DisplayName = "greater")]
+        public void CompareConstantTimeMatchesReference(byte[] lhs, byte[] rhs, int expectedResultSign)
+        {
+            Assert.AreEqual(expectedResultSign, Math.Sign(AWS4aSigner.CompareConstantTime(lhs, rhs)));
+            Assert.AreEqual(-expectedResultSign, Math.Sign(AWS4aSigner.CompareConstantTime(rhs, lhs)));
         }
     }
 }
