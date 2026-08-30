@@ -1,0 +1,29 @@
+{
+  "core": {
+    "type": "minor",
+    "updateMinimum": true,
+    "changeLogMessages": [
+      "Added the PooledConnectionLifetime client configuration option, applied to SocketsHttpHandler.PooledConnectionLifetime on the HttpClient used by service clients. It controls how long an established connection may be reused before it is replaced, allowing long-running processes to pick up DNS changes instead of pinning pooled connections for the lifetime of the process. A global default can be set with AWSConfigs.PooledConnectionLifetime, which seeds the per-client value. When left unset the SDK continues to use .NET's default of an infinite lifetime, so existing behavior is unchanged."
+    ]
+  },
+  "extensions": [
+    {
+      "extensionName": "Extensions.NETCore.Setup",
+      "type": "minor",
+      "changeLogMessages": [
+        "Added support for configuring PooledConnectionLifetime from an IConfiguration source such as appsettings.json. As with the other TimeSpan settings, the value is specified in milliseconds."
+      ]
+    }
+  ],
+  "services": [
+    {
+      "serviceName": "S3",
+      "type": "minor",
+      "changeLogMessages": [
+        "Added S3TransferHttpClientFactory, an opt-in HttpClientFactory tuned for high throughput transfers. It sizes the HttpClient connection pool from a TargetThroughputGbps setting instead of leaving MaxConnectionsPerServer unbounded, and exposes RecommendedConcurrentServiceRequests so TransferUtilityConfig.ConcurrentServiceRequests can be aligned with the pool rather than under-driving it.",
+        "S3TransferHttpClientFactory can optionally detect stalled connections and abort them so the affected part is retried, which .NET Core otherwise cannot do because ClientConfig.ReadWriteTimeout exists only on .NET Framework. Stall detection and the adaptive upload part timeout are both disabled by default and should be enabled only after measuring.",
+        "S3TransferHttpClientFactory logs when AmazonS3Config.BufferSize is left at the 8 KB default while a high throughput target is configured, since that buffer sets the copy granularity between the file and the socket."
+      ]
+    }
+  ]
+}

@@ -5,6 +5,7 @@
     "Timeout": 1000,
     "ConnectTimeout": 500,
     "MaxConnectionsPerServer": 5,
+    "PooledConnectionLifetime": 300000,
     "AuthenticationRegion": "us-east-1",
     "Region": "us-west-2",
     "DefaultsMode": "Standard",

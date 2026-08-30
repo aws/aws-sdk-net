@@ -379,6 +379,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.MaxConnectionsPerServer = defaultConfig.MaxConnectionsPerServer.Value;
             }
+            if (defaultConfig.PooledConnectionLifetime.HasValue)
+            {
+                config.PooledConnectionLifetime = defaultConfig.PooledConnectionLifetime.Value;
+            }
 #endif
             if (defaultConfig.UseAlternateUserAgentHeader.HasValue)
             {

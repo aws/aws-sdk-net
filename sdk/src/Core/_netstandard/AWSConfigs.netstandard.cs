@@ -47,6 +47,22 @@ namespace Amazon
 
         public static HttpClientFactory HttpClientFactory { get; set; }
 
+#if NET8_0_OR_GREATER
+        /// <summary>
+        /// Global default for <see cref="System.Net.Http.SocketsHttpHandler.PooledConnectionLifetime"/>
+        /// applied to HttpClients created by the SDK. This value seeds
+        /// <see cref="Amazon.Runtime.ClientConfig.PooledConnectionLifetime"/> for service clients
+        /// created after it is set; individual clients can override it.
+        /// <para>
+        /// When null (the default) the SDK leaves the property at .NET's default of an infinite
+        /// lifetime, meaning pooled connections are never recycled and never re-resolve DNS. Setting
+        /// a finite value causes connections to be periodically replaced, which lets the client pick
+        /// up DNS changes.
+        /// </para>
+        /// </summary>
+        public static TimeSpan? PooledConnectionLifetime { get; set; }
+#endif
+
 #region TraceListeners
         private static Dictionary<string, List<TraceListener>> _traceListeners
             = new Dictionary<string, List<TraceListener>>(StringComparer.OrdinalIgnoreCase);

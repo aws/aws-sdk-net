@@ -167,6 +167,9 @@ namespace Amazon.Runtime
 #if NET8_0_OR_GREATER
             if (clientConfig.ConnectTimeout.HasValue)
                 uniqueString = string.Concat(uniqueString, "ConnectTimeout:", clientConfig.ConnectTimeout.Value.ToString());
+
+            if (clientConfig.PooledConnectionLifetime.HasValue)
+                uniqueString = string.Concat(uniqueString, "PooledConnectionLifetime:", clientConfig.PooledConnectionLifetime.Value.ToString());
 #endif
 
             return uniqueString;

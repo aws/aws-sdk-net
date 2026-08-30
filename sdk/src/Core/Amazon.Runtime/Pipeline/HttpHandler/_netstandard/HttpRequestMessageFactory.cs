@@ -287,6 +287,11 @@ namespace Amazon.Runtime
             {
                 httpMessageHandler.ConnectTimeout = clientConfig.ConnectTimeout.Value;
             }
+
+            if (clientConfig.PooledConnectionLifetime.HasValue)
+            {
+                httpMessageHandler.PooledConnectionLifetime = clientConfig.PooledConnectionLifetime.Value;
+            }
 #else
             var httpMessageHandler = new HttpClientHandler();
 #endif

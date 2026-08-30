@@ -318,6 +318,14 @@ namespace Amazon.Runtime
         /// The connection timeout is used control the wait time for the connection to be established to the service.
         /// </summary>
         TimeSpan? ConnectTimeout { get; }
+
+        /// <summary>
+        /// Gets the pooled connection lifetime that will be set on the HttpClient used by the service
+        /// client to make requests. This controls how long an established connection may be reused
+        /// before it is replaced. If null, the property is left at .NET's default of an infinite
+        /// lifetime.
+        /// </summary>
+        TimeSpan? PooledConnectionLifetime { get; }
 #endif
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint

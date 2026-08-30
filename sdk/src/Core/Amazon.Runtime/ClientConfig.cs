@@ -906,6 +906,38 @@ namespace Amazon.Runtime
                 this._connectTimeout = value;
             }
         }
+
+        // Seeded from the global default at construction time. Assigned directly rather than through
+        // the property because ValidateTimeout throws on null, and null is the valid "unset" state.
+        TimeSpan? _pooledConnectionLifetime = AWSConfigs.PooledConnectionLifetime;
+
+        /// <summary>
+        /// Gets and sets the pooled connection lifetime that will be set on the HttpClient used by the
+        /// service client to make requests. This controls how long an established connection may be
+        /// reused before it is replaced.
+        /// <para>
+        /// When null (the default) the SDK leaves the property at .NET's default of an infinite
+        /// lifetime, meaning pooled connections are never recycled and never re-resolve DNS. Setting a
+        /// finite value causes connections to be periodically replaced, which lets the client pick up
+        /// DNS changes at the cost of new TCP and TLS handshakes.
+        /// </para>
+        /// <para>
+        /// Defaults to <see cref="AWSConfigs.PooledConnectionLifetime"/>, read when this config is
+        /// constructed.
+        /// </para>
+        /// </summary>
+        public TimeSpan? PooledConnectionLifetime
+        {
+            get
+            {
+                return this._pooledConnectionLifetime;
+            }
+            set
+            {
+                ValidateTimeout(value);
+                this._pooledConnectionLifetime = value;
+            }
+        }
 #endif
 
         /// <summary>

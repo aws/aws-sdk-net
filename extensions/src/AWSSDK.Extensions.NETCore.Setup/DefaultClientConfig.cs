@@ -261,6 +261,13 @@ namespace Amazon.Extensions.NETCore.Setup
         /// This property is used to set the MaxConnectionsPerServer on the matching property on the underlying HttpClient to make service calls.
         /// </summary>
         public int? MaxConnectionsPerServer { get; set; }
+
+        /// <summary>
+        /// This property is used to set the PooledConnectionLifetime on the underlying HttpClient used to make service calls.
+        /// It controls how long an established connection may be reused before it is replaced. When not set the .NET default
+        /// of an infinite lifetime is used, meaning pooled connections are never recycled and never re-resolve DNS.
+        /// </summary>
+        public TimeSpan? PooledConnectionLifetime { get; set; }
 #endif
 
         /// <summary>

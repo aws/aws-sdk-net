@@ -39,6 +39,7 @@ namespace AWSSDK.UnitTests
             "Timeout",
 #if NET8_0_OR_GREATER
             "ConnectTimeout",
+            "PooledConnectionLifetime",
 #endif
             "UseDualstackEndpoint",
             "UseFIPSEndpoint",

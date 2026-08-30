@@ -375,6 +375,15 @@ namespace Microsoft.Extensions.Configuration
 
                     options.DefaultClientConfig.MaxConnectionsPerServer = maxConnectionsPerServer;
                 }
+                else if (string.Equals(element.Key, nameof(DefaultClientConfig.PooledConnectionLifetime), StringComparison.OrdinalIgnoreCase))
+                {
+                    if (!int.TryParse(element.Value, out var pooledConnectionLifetime))
+                    {
+                        throw new ArgumentException($"Invalid integer value for {nameof(DefaultClientConfig.PooledConnectionLifetime)}.");
+                    }
+
+                    options.DefaultClientConfig.PooledConnectionLifetime = TimeSpan.FromMilliseconds(pooledConnectionLifetime);
+                }
 #endif
                 else if (string.Equals(element.Key, nameof(DefaultClientConfig.UseAlternateUserAgentHeader), StringComparison.OrdinalIgnoreCase))
                 {

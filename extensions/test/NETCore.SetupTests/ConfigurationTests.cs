@@ -141,6 +141,9 @@ namespace NETCore.SetupTests
 
             Assert.Equal(5, options.DefaultClientConfig.MaxConnectionsPerServer);
             Assert.Equal(5, clientConfig.MaxConnectionsPerServer);
+
+            Assert.Equal(TimeSpan.FromMinutes(5), options.DefaultClientConfig.PooledConnectionLifetime);
+            Assert.Equal(TimeSpan.FromMinutes(5), clientConfig.PooledConnectionLifetime);
 #endif
         }
 

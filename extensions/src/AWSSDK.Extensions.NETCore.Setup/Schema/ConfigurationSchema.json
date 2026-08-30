@@ -103,6 +103,10 @@
           "type": "integer",
           "description": "Maximum number of times the SDK will retry requests that fail due to stale pooled HTTP connections."
         },
+        "PooledConnectionLifetime": {
+          "type": "integer",
+          "description": "The PooledConnectionLifetime property controls how long an established connection may be reused before it is replaced. The units for the property is milliseconds"
+        },
         "Profile": {
           "type": "string",
           "description": "The AWS credential profiles the service client should be configured for."
