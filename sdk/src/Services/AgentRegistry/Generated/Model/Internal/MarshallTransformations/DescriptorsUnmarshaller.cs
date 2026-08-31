@@ -68,10 +68,22 @@ namespace Amazon.AgentRegistry.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentSkillsDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("agui", targetDepth, ref reader))
+                {
+                    var unmarshaller = AgUiDescriptorUnmarshaller.Instance;
+                    unmarshalledObject.Agui = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("custom", targetDepth, ref reader))
                 {
                     var unmarshaller = CustomDescriptorUnmarshaller.Instance;
                     unmarshalledObject.Custom = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("http", targetDepth, ref reader))
+                {
+                    var unmarshaller = HttpDescriptorUnmarshaller.Instance;
+                    unmarshalledObject.Http = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mcpServer", targetDepth, ref reader))
