@@ -1,0 +1,114 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+using Amazon.MediaConnect.Model;
+using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Internal.Util;
+
+#pragma warning disable CS0612,CS0618
+
+namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
+{
+    /// <summary>
+    /// AddMediaStreamRequest Marshaller
+    /// </summary>
+    public partial class AddMediaStreamRequestMarshaller : IRequestMarshaller<AddMediaStreamRequest, JsonMarshallerContext>
+    {
+        /// <summary>
+        /// Marshall the structure from the request object to the service
+        /// </summary>
+        public void Marshall(AddMediaStreamRequest requestObject, JsonMarshallerContext context)
+        {
+            if (requestObject == null) return;
+
+            if (requestObject.IsSetAttributes())
+            {
+                context.Writer.WritePropertyName("attributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MediaStreamAttributesRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.Attributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetClockRate())
+            {
+                context.Writer.WritePropertyName("clockRate");
+                context.Writer.WriteNumberValue(requestObject.ClockRate.Value);
+            }
+
+            if (requestObject.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(requestObject.Description);
+            }
+
+            if (requestObject.IsSetMediaStreamId())
+            {
+                context.Writer.WritePropertyName("mediaStreamId");
+                context.Writer.WriteNumberValue(requestObject.MediaStreamId.Value);
+            }
+
+            if (requestObject.IsSetMediaStreamName())
+            {
+                context.Writer.WritePropertyName("mediaStreamName");
+                context.Writer.WriteStringValue(requestObject.MediaStreamName);
+            }
+
+            if (requestObject.IsSetMediaStreamTags())
+            {
+                context.Writer.WritePropertyName("mediaStreamTags");
+                context.Writer.WriteStartObject();
+                foreach (var requestObjectMediaStreamTagsKvp in requestObject.MediaStreamTags)
+                {
+                    context.Writer.WritePropertyName(requestObjectMediaStreamTagsKvp.Key);
+                    var requestObjectMediaStreamTagsValue = requestObjectMediaStreamTagsKvp.Value;
+                    context.Writer.WriteStringValue(requestObjectMediaStreamTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if (requestObject.IsSetMediaStreamType())
+            {
+                context.Writer.WritePropertyName("mediaStreamType");
+                context.Writer.WriteStringValue(requestObject.MediaStreamType);
+            }
+
+            if (requestObject.IsSetVideoFormat())
+            {
+                context.Writer.WritePropertyName("videoFormat");
+                context.Writer.WriteStringValue(requestObject.VideoFormat);
+            }
+        }
+
+        /// <summary>
+        /// Singleton Marshaller
+        /// </summary>
+        public readonly static AddMediaStreamRequestMarshaller Instance = new AddMediaStreamRequestMarshaller();
+    }
+}

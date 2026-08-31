@@ -1,0 +1,294 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the smithy.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+#pragma warning disable CS0612,CS0618,CS1570
+
+namespace Amazon.Batch.Model
+{
+    /// <summary>
+    /// Container for the parameters to the CreateComputeEnvironment operation. Creates an
+    /// Batch compute environment. You can create <c>MANAGED</c> or <c>UNMANAGED</c> compute
+    /// environments. <c>MANAGED</c> compute environments can use Amazon EC2 or Fargate resources.
+    /// <c>UNMANAGED</c> compute environments can only use EC2 resources. <para> In a managed
+    /// compute environment, Batch manages the capacity and instance types of the compute
+    /// resources within the environment. This is based on the compute resource specification
+    /// that you define or the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">launch
+    /// template</a> that you specify when you create the compute environment. Either, you
+    /// can choose to use EC2 On-Demand Instances and EC2 Spot Instances. Or, you can use
+    /// Fargate and Fargate Spot capacity in your managed compute environment. You can optionally
+    /// set a maximum price so that Spot Instances only launch when the Spot Instance price
+    /// is less than a specified percentage of the On-Demand price. </para> <para> In an unmanaged
+    /// compute environment, you can manage your own EC2 compute resources and have flexibility
+    /// with how you configure your compute resources. For example, you can use custom AMIs.
+    /// However, you must verify that each of your AMIs meet the Amazon ECS container instance
+    /// AMI specification. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">container
+    /// instance AMIs</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// After you created your unmanaged compute environment, you can use the <a>DescribeComputeEnvironments</a>
+    /// operation to find the Amazon ECS cluster that's associated with it. Then, launch your
+    /// container instances into that Amazon ECS cluster. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching
+    /// an Amazon ECS container instance</a> in the <i>Amazon Elastic Container Service Developer
+    /// Guide</i>. </para> <note> <para> Batch doesn't automatically upgrade the AMIs in a
+    /// compute environment after it's created. For more information on how to update a compute
+    /// environment's AMI, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+    /// compute environments</a> in the <i>Batch User Guide</i>. </para> </note>
+    /// </summary>
+    public partial class CreateComputeEnvironmentRequest : AmazonBatchRequest
+    {
+        /// <summary>
+        /// Gets and sets the property ComputeEnvironmentName. 
+        /// <para>
+        /// The name for your compute environment. It can be up to 128 characters long. It can
+        /// contain uppercase and lowercase letters, numbers, hyphens (-), and underscores (_).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public string ComputeEnvironmentName { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComputeEnvironmentName property is set.
+        /// </summary>
+        internal bool IsSetComputeEnvironmentName() => this.ComputeEnvironmentName != null;
+
+        /// <summary>
+        /// Gets and sets the property ComputeResources. 
+        /// <para>
+        /// Details about the compute resources managed by the compute environment. This parameter
+        /// is required for managed compute environments. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public ComputeResource ComputeResources { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ComputeResources property is set.
+        /// </summary>
+        internal bool IsSetComputeResources() => this.ComputeResources != null;
+
+        /// <summary>
+        /// Gets and sets the property Context. 
+        /// <para>
+        /// Reserved.
+        /// </para>
+        /// </summary>
+        public string Context { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Context property is set.
+        /// </summary>
+        internal bool IsSetContext() => this.Context != null;
+
+        /// <summary>
+        /// Gets and sets the property EcsSettings. 
+        /// <para>
+        /// The Amazon ECS settings for the compute environment. These settings control CloudWatch
+        /// Container Insights collection for the compute environment.
+        /// </para>
+        /// </summary>
+        public EcsSettings EcsSettings { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EcsSettings property is set.
+        /// </summary>
+        internal bool IsSetEcsSettings() => this.EcsSettings != null;
+
+        /// <summary>
+        /// Gets and sets the property EksConfiguration. 
+        /// <para>
+        /// The details for the Amazon EKS cluster that supports the compute environment.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// To create a compute environment that uses EKS resources, the caller must have permissions
+        /// to call <c>eks:DescribeCluster</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public EksConfiguration EksConfiguration { get; set; }
+
+        /// <summary>
+        /// Checks to see if the EksConfiguration property is set.
+        /// </summary>
+        internal bool IsSetEksConfiguration() => this.EksConfiguration != null;
+
+        /// <summary>
+        /// Gets and sets the property ServiceRole. 
+        /// <para>
+        /// The full Amazon Resource Name (ARN) of the IAM role that allows Batch to make calls
+        /// to other Amazon Web Services services on your behalf. For more information, see <a
+        /// href="https://docs.aws.amazon.com/batch/latest/userguide/service_IAM_role.html">Batch
+        /// service IAM role</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// If your account already created the Batch service-linked role, that role is used by
+        /// default for your compute environment unless you specify a different role here. If
+        /// the Batch service-linked role doesn't exist in your account, and no role is specified
+        /// here, the service attempts to create the Batch service-linked role in your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// This automatic service-linked role creation only applies to <c>MANAGED</c> compute
+        /// environments. For <c>UNMANAGED</c> compute environments, you must explicitly specify
+        /// a <c>serviceRole</c>.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If your specified role has a path other than <c>/</c>, then you must specify either
+        /// the full role ARN (recommended) or prefix the role name with the path. For example,
+        /// if a role with the name <c>bar</c> has a path of <c>/foo/</c>, specify <c>/foo/bar</c>
+        /// as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// names and paths</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Depending on how you created your Batch service role, its ARN might contain the <c>service-role</c>
+        /// path prefix. When you only specify the name of the service role, Batch assumes that
+        /// your ARN doesn't use the <c>service-role</c> path prefix. Because of this, we recommend
+        /// that you specify the full ARN of your service role when you create compute environments.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string ServiceRole { get; set; }
+
+        /// <summary>
+        /// Checks to see if the ServiceRole property is set.
+        /// </summary>
+        internal bool IsSetServiceRole() => this.ServiceRole != null;
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the compute environment. A compute environment must be created in the
+        /// <c>ENABLED</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <c>ENABLED</c>, then the compute environment accepts jobs from a queue
+        /// and can scale out automatically based on queues.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <c>ENABLED</c>, then the Batch scheduler can attempt to place jobs
+        /// from an associated job queue on the compute resources within the environment. If the
+        /// compute environment is managed, then it can scale its instances out or in automatically,
+        /// based on the job queue demand.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the state is <c>DISABLED</c>, then the Batch scheduler doesn't attempt to place
+        /// jobs within the environment. Jobs in a <c>STARTING</c> or <c>RUNNING</c> state continue
+        /// to progress normally. Managed compute environments in the <c>DISABLED</c> state don't
+        /// scale out. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges,
+        /// for example, if they have running instances due to jobs that are still executing or
+        /// a non-zero <c>minvCpus</c> setting. To prevent additional charges, disable and delete
+        /// the compute environment.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// When an instance is idle, the instance scales down to the <c>minvCpus</c> value. However,
+        /// the instance size doesn't change. For example, consider a <c>c5.8xlarge</c> instance
+        /// with a <c>minvCpus</c> value of <c>4</c> and a <c>desiredvCpus</c> value of <c>36</c>.
+        /// This instance doesn't scale down to a <c>c5.large</c> instance.
+        /// </para>
+        /// </summary>
+        public CEState State { get; set; }
+
+        /// <summary>
+        /// Checks to see if the State property is set.
+        /// </summary>
+        internal bool IsSetState() => this.State != null;
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags that you apply to the compute environment to help you categorize and organize
+        /// your resources. Each tag consists of a key and an optional value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a> in <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// These tags can be updated or removed using the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// and <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_UntagResource.html">UntagResource</a>
+        /// API operations. These tags don't propagate to the underlying compute resources.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data
+        /// for this property is returned from the service the property will also be null. This
+        /// was changed to improve performance and allow the SDK and caller to distinguish between
+        /// a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min = 1, Max = 50)]
+        public Dictionary<string, string> Tags { get; set; } = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Checks to see if the Tags property is set.
+        /// </summary>
+        internal bool IsSetTags() => this.Tags != null && (this.Tags.Count > 0 || !AWSConfigs.InitializeCollections);
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of the compute environment: <c>MANAGED</c> or <c>UNMANAGED</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// Environments</a> in the <i>Batch User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required = true)]
+        public CEType Type { get; set; }
+
+        /// <summary>
+        /// Checks to see if the Type property is set.
+        /// </summary>
+        internal bool IsSetType() => this.Type != null;
+
+        /// <summary>
+        /// Gets and sets the property UnmanagedvCpus. 
+        /// <para>
+        /// The maximum number of vCPUs for an unmanaged compute environment. This parameter is
+        /// only used for fair-share scheduling to reserve vCPU capacity for new share identifiers.
+        /// If this parameter isn't provided for a fair-share job queue, no vCPU capacity is reserved.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is only supported when the <c>type</c> parameter is set to <c>UNMANAGED</c>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public int? UnmanagedvCpus { get; set; }
+
+        /// <summary>
+        /// Checks to see if the UnmanagedvCpus property is set.
+        /// </summary>
+        internal bool IsSetUnmanagedvCpus() => this.UnmanagedvCpus.HasValue;
+    }
+}

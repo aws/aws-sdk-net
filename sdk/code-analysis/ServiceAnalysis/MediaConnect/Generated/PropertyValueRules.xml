@@ -2,29 +2,28 @@
 <property-value-rules>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddBridgeOutputsRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddFlowMediaStreamsRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddFlowOutputsRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddFlowSourcesRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddFlowVpcInterfacesRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterInputRequest.ClientToken</property>
-    <min>0</min>
     <max>256</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterInputRequest.Name</property>
@@ -33,21 +32,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterNetworkInterfaceRequest.ClientToken</property>
-    <min>0</min>
     <max>256</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterNetworkInterfaceRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?</pattern>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterOutputRequest.ClientToken</property>
-    <min>0</min>
     <max>256</max>
-    <pattern>[!-~]+</pattern>
+    <pattern>^[!-~]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.CreateRouterOutputRequest.Name</property>
@@ -56,99 +53,99 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteBridgeRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteFlowRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteGatewayRequest.GatewayArn</property>
-    <pattern>arn:.+:mediaconnect.+:gateway:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:gateway:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteRouterInputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteRouterInputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteRouterNetworkInterfaceRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteRouterNetworkInterfaceResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteRouterOutputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeleteRouterOutputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DeregisterGatewayInstanceRequest.GatewayInstanceArn</property>
-    <pattern>arn:.+:mediaconnect.+:gateway:.+:instance:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:gateway:.+:instance:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeBridgeRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeFlowRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeFlowSourceMetadataRequest.FlowArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeFlowSourceThumbnailRequest.FlowArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeGatewayRequest.GatewayArn</property>
-    <pattern>arn:.+:mediaconnect.+:gateway:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:gateway:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.DescribeGatewayInstanceRequest.GatewayInstanceArn</property>
-    <pattern>arn:.+:mediaconnect.+:gateway:.+:instance:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:gateway:.+:instance:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterInputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterInputSourceMetadataRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterInputSourceMetadataResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterInputThumbnailRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterInputThumbnailResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterNetworkInterfaceRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GetRouterOutputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.GrantFlowEntitlementsRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListBridgesRequest.MaxResults</property>
@@ -202,175 +199,175 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveBridgeOutputRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveBridgeSourceRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveFlowMediaStreamRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveFlowOutputRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveFlowOutputRequest.OutputArn</property>
-    <pattern>arn:.+:mediaconnect.+:output:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:output:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveFlowSourceRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveFlowSourceRequest.SourceArn</property>
-    <pattern>arn:.+:mediaconnect.+:source:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:source:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RemoveFlowVpcInterfaceRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RestartRouterInputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RestartRouterInputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RestartRouterOutputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RestartRouterOutputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RevokeFlowEntitlementRequest.EntitlementArn</property>
-    <pattern>arn:.+:mediaconnect.+:entitlement:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:entitlement:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RevokeFlowEntitlementRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StartFlowRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StartRouterInputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StartRouterInputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StartRouterOutputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StartRouterOutputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StopFlowRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StopRouterInputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StopRouterInputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StopRouterOutputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StopRouterOutputResponse.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.TakeRouterInputRequest.RouterInputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.TakeRouterInputRequest.RouterOutputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.TakeRouterInputResponse.RouterInputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.TakeRouterInputResponse.RouterOutputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateBridgeRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateBridgeOutputRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateBridgeSourceRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateBridgeStateRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowEntitlementRequest.EntitlementArn</property>
-    <pattern>arn:.+:mediaconnect.+:entitlement:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:entitlement:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowEntitlementRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowMediaStreamRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowOutputRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowOutputRequest.OutputArn</property>
-    <pattern>arn:.+:mediaconnect.+:output:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:output:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowSourceRequest.EntitlementArn</property>
-    <pattern>arn:.+:mediaconnect.+:entitlement:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:entitlement:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowSourceRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateFlowSourceRequest.SourceArn</property>
-    <pattern>arn:.+:mediaconnect.+:source:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:source:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateGatewayInstanceRequest.GatewayInstanceArn</property>
-    <pattern>arn:.+:mediaconnect.+:gateway:.+:instance:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:gateway:.+:instance:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateRouterInputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateRouterInputRequest.Name</property>
@@ -379,17 +376,17 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateRouterNetworkInterfaceRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateRouterNetworkInterfaceRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?</pattern>
+    <pattern>^[a-zA-Z0-9]([a-zA-Z0-9\-_]*[a-zA-Z0-9])?$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateRouterOutputRequest.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateRouterOutputRequest.Name</property>
@@ -398,19 +395,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.AddBridgeFlowSourceRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.BatchGetRouterInputError.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.BatchGetRouterNetworkInterfaceError.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.BatchGetRouterOutputError.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.BlackFramesConfiguration.ThresholdSeconds</property>
@@ -419,7 +416,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.FailoverRouterInputConfiguration.NetworkInterfaceArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.FailoverRouterInputConfiguration.PrimarySourceIndex</property>
@@ -433,59 +430,59 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterInput.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterInput.NetworkInterfaceArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterNetworkInterface.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterOutput.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterOutput.NetworkInterfaceArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.ListedRouterOutput.RoutedInputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaConnectFlowRouterInputConfiguration.FlowArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaConnectFlowRouterInputConfiguration.FlowOutputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:output:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:output:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaConnectFlowRouterOutputConfiguration.FlowArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:flow:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaConnectFlowRouterOutputConfiguration.FlowSourceArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:source:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:source:[a-zA-Z0-9-]+:[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaLiveChannelRouterInputConfiguration.MediaLiveChannelArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):medialive:[a-z0-9-]+:[0-9]{12}:channel:[a-zA-Z0-9]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):medialive:[a-z0-9-]+:[0-9]{12}:channel:[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MediaLiveInputRouterOutputConfiguration.MediaLiveInputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):medialive:[a-z0-9-]+:[0-9]{12}:input:[a-zA-Z0-9]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):medialive:[a-z0-9-]+:[0-9]{12}:input:[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.MergeRouterInputConfiguration.NetworkInterfaceArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.PublicRouterNetworkInterfaceRule.Cidr</property>
-    <pattern>(?:[0-9]{1,3}\.){3}[0-9]{1,3}/([0-9]|[12][0-9]|3[0-2])</pattern>
+    <pattern>^(?:[0-9]{1,3}\.){3}[0-9]{1,3}/([0-9]|[12][0-9]|3[0-2])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RistRouterInputConfiguration.Port</property>
@@ -504,19 +501,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RouterInput.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RouterNetworkInterface.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RouterOutput.Arn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerOutput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RouterOutput.RoutedInputArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerInput:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.RtpRouterInputConfiguration.Port</property>
@@ -530,19 +527,19 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SecretsManagerEncryptionKeyConfiguration.RoleArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):iam::[0-9]{12}:role/[a-zA-Z0-9_+=,.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SecretsManagerEncryptionKeyConfiguration.SecretArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):secretsmanager:[a-z0-9-]+:[0-9]{12}:secret:[a-zA-Z0-9/_+=.@-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SetGatewayBridgeSourceRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SetSourceRequest.EntitlementArn</property>
-    <pattern>arn:.+:mediaconnect.+:entitlement:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:entitlement:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.SilentAudioConfiguration.ThresholdSeconds</property>
@@ -591,18 +588,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StandardRouterInputConfiguration.NetworkInterfaceArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.StandardRouterOutputConfiguration.NetworkInterfaceArn</property>
-    <pattern>arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}</pattern>
+    <pattern>^arn:(aws[a-zA-Z-]*):mediaconnect:[a-z0-9-]+:[0-9]{12}:routerNetworkInterface:[a-z0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateBridgeFlowSourceRequest.FlowArn</property>
-    <pattern>arn:.+:mediaconnect.+:flow:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:flow:.+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MediaConnect.Model.UpdateGatewayBridgeSourceRequest.BridgeArn</property>
-    <pattern>arn:.+:mediaconnect.+:bridge:.+</pattern>
+    <pattern>^arn:.+:mediaconnect.+:bridge:.+$</pattern>
   </property-value-rule>
 </property-value-rules>
