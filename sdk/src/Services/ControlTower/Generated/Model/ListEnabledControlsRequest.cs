@@ -65,8 +65,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property IncludeChildren. 
         /// <para>
-        /// A boolean value that determines whether to include enabled controls from child organizational
-        /// units in the response.
+        /// Specifies whether to include enabled controls from child organizational units and
+        /// child accounts in the response.
         /// </para>
         /// </summary>
         public bool? IncludeChildren
@@ -121,8 +121,19 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// The ARN of the organizational unit. For information on how to find the <c>targetIdentifier</c>,
-        /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// The ARN of the target. The value depends on the target type:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Organizational unit (OU) – Specify the ARN of the OU.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Account – Specify the ARN of the account.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For information on how to find the <c>targetIdentifier</c>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>
         /// </summary>
