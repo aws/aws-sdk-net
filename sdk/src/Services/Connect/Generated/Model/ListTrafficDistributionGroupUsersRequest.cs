@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=1000)]
         public int? MaxResults
         {
             get { return this._maxResults; }
