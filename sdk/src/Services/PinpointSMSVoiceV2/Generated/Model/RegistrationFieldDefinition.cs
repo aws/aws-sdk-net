@@ -34,6 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class RegistrationFieldDefinition
     {
+        private ConditionalBehavior _conditionalBehavior;
         private RegistrationFieldDisplayHints _displayHints;
         private string _fieldPath;
         private FieldRequirement _fieldRequirement;
@@ -41,6 +42,26 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _sectionPath;
         private SelectValidation _selectValidation;
         private TextValidation _textValidation;
+
+        /// <summary>
+        /// Gets and sets the property ConditionalBehavior. 
+        /// <para>
+        /// The conditional behavior rules for this field. Only present when <b>FieldRequirement</b>
+        /// is <b>CONDITIONAL</b>. Rules are evaluated in order and the first matching rule determines
+        /// the field's resolved requirement. If no rule matches, the <b>DefaultBehavior</b> applies.
+        /// </para>
+        /// </summary>
+        public ConditionalBehavior ConditionalBehavior
+        {
+            get { return this._conditionalBehavior; }
+            set { this._conditionalBehavior = value; }
+        }
+
+        // Check to see if ConditionalBehavior property is set
+        internal bool IsSetConditionalBehavior()
+        {
+            return this._conditionalBehavior != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DisplayHints. 

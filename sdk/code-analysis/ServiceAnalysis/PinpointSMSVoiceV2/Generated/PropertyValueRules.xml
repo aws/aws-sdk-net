@@ -362,7 +362,7 @@
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAttachmentRequest.AttachmentBody</property>
     <min>1</min>
-    <max>1572864</max>
+    <max>6990508</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.CreateRegistrationAttachmentRequest.AttachmentUrl</property>
@@ -2531,6 +2531,31 @@
     <pattern>arn:\S+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ConditionalBehavior.DefaultBehavior</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ConditionalRule.RuleBehavior</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ConditionalValidation.MaxLength</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ConditionalValidation.MinLength</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.ConditionalValidation.Pattern</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.ConfigurationSetInformation.ConfigurationSetName</property>
     <min>1</min>
     <max>64</max>
@@ -2559,6 +2584,18 @@
     <min>1</min>
     <max>64</max>
     <pattern>[A-Za-z0-9_-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.FieldCondition.DependsOnFieldPath</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[A-Za-z0-9_\.]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.PinpointSMSVoiceV2.Model.FieldCondition.Operator</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[A-Za-z0-9_]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.PinpointSMSVoiceV2.Model.KeywordInformation.Keyword</property>
