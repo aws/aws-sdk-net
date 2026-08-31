@@ -145,6 +145,172 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  CreateChannel
+
+
+        /// <summary>
+        /// Creates a channel that delivers records from a Kinesis data stream to a destination.
+        /// A channel reads records from the specified stream and writes them to streaming tables
+        /// on Apache Iceberg (Amazon S3 Tables) or to a general purpose Amazon S3 bucket.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either <c>S3DestinationConfiguration</c> or <c>S3TablesDestinationConfiguration</c>,
+        /// but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// Creating a channel is an asynchronous operation. Upon receiving the request, Amazon
+        /// Kinesis Data Streams returns immediately with the channel in the <c>CREATING</c> state.
+        /// After provisioning is complete, Amazon Kinesis Data Streams sets the state to <c>ACTIVE</c>.
+        /// You can use <a>DescribeChannel</a> to check the current state.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only supported for data streams with the on-demand capacity mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The Amazon Web Services access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        CreateChannelResponse CreateChannel(CreateChannelRequest request);
+
+
+
+        /// <summary>
+        /// Creates a channel that delivers records from a Kinesis data stream to a destination.
+        /// A channel reads records from the specified stream and writes them to streaming tables
+        /// on Apache Iceberg (Amazon S3 Tables) or to a general purpose Amazon S3 bucket.
+        /// 
+        ///  
+        /// <para>
+        /// You must specify either <c>S3DestinationConfiguration</c> or <c>S3TablesDestinationConfiguration</c>,
+        /// but not both.
+        /// </para>
+        ///  
+        /// <para>
+        /// Creating a channel is an asynchronous operation. Upon receiving the request, Amazon
+        /// Kinesis Data Streams returns immediately with the channel in the <c>CREATING</c> state.
+        /// After provisioning is complete, Amazon Kinesis Data Streams sets the state to <c>ACTIVE</c>.
+        /// You can use <a>DescribeChannel</a> to check the current state.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only supported for data streams with the on-demand capacity mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSAccessDeniedException">
+        /// The ciphertext references a key that doesn't exist or that you don't have access to.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSDisabledException">
+        /// The request was rejected because the specified customer master key (CMK) isn't enabled.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSInvalidStateException">
+        /// The request was rejected because the state of the specified resource isn't valid for
+        /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How
+        /// Key State Affects Use of a Customer Master Key</a> in the <i>Amazon Web Services Key
+        /// Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSNotFoundException">
+        /// The request was rejected because the specified entity or resource can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSOptInRequiredException">
+        /// The Amazon Web Services access key ID needs a subscription for the service.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.KMSThrottlingException">
+        /// The request was denied due to request throttling. For more information about throttling,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a>
+        /// in the <i>Amazon Web Services Key Management Service Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateChannel">REST API Reference for CreateChannel Operation</seealso>
+        Task<CreateChannelResponse> CreateChannelAsync(CreateChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateStream
 
 
@@ -552,6 +718,96 @@ namespace Amazon.Kinesis
 
         #endregion
         
+        #region  DeleteChannel
+
+
+        /// <summary>
+        /// Deletes the specified channel. Deleting a channel stops delivery from the source stream
+        /// to the destination. Data already delivered to the destination is not deleted.
+        /// 
+        ///  
+        /// <para>
+        /// A stream cannot be deleted while it has active channels. To delete the stream, first
+        /// delete all channels attached to it. To find them, use <a>ListChannels</a> with a stream
+        /// filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
+        /// 
+        /// <returns>The response from the DeleteChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        DeleteChannelResponse DeleteChannel(DeleteChannelRequest request);
+
+
+
+        /// <summary>
+        /// Deletes the specified channel. Deleting a channel stops delivery from the source stream
+        /// to the destination. Data already delivered to the destination is not deleted.
+        /// 
+        ///  
+        /// <para>
+        /// A stream cannot be deleted while it has active channels. To delete the stream, first
+        /// delete all channels attached to it. To find them, use <a>ListChannels</a> with a stream
+        /// filter.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DeleteChannel">REST API Reference for DeleteChannel Operation</seealso>
+        Task<DeleteChannelResponse> DeleteChannelAsync(DeleteChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteResourcePolicy
 
 
@@ -895,6 +1151,92 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeAccountSettings">REST API Reference for DescribeAccountSettings Operation</seealso>
         Task<DescribeAccountSettingsResponse> DescribeAccountSettingsAsync(DescribeAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeChannel
+
+
+        /// <summary>
+        /// Describes the specified channel, including its configuration and current status.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to verify that a channel reached the <c>ACTIVE</c> state after
+        /// creation, or to diagnose a channel in the <c>FAILED</c> state by reading the <c>ChannelStatusReason</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
+        /// 
+        /// <returns>The response from the DescribeChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        DescribeChannelResponse DescribeChannel(DescribeChannelRequest request);
+
+
+
+        /// <summary>
+        /// Describes the specified channel, including its configuration and current status.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to verify that a channel reached the <c>ACTIVE</c> state after
+        /// creation, or to diagnose a channel in the <c>FAILED</c> state by reading the <c>ChannelStatusReason</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/DescribeChannel">REST API Reference for DescribeChannel Operation</seealso>
+        Task<DescribeChannelResponse> DescribeChannelAsync(DescribeChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2162,6 +2504,96 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/IncreaseStreamRetentionPeriod">REST API Reference for IncreaseStreamRetentionPeriod Operation</seealso>
         Task<IncreaseStreamRetentionPeriodResponse> IncreaseStreamRetentionPeriodAsync(IncreaseStreamRetentionPeriodRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListChannels
+
+
+        /// <summary>
+        /// Lists the channels in your account. You can filter the results by source stream. The
+        /// results are paginated. Use the <c>NextToken</c> value returned in the response to
+        /// retrieve additional results.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to find channels before deleting a stream, or to audit the channels
+        /// configured in an Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        ListChannelsResponse ListChannels(ListChannelsRequest request);
+
+
+
+        /// <summary>
+        /// Lists the channels in your account. You can filter the results by source stream. The
+        /// results are paginated. Use the <c>NextToken</c> value returned in the response to
+        /// retrieve additional results.
+        /// 
+        ///  
+        /// <para>
+        /// Use this operation to find channels before deleting a stream, or to audit the channels
+        /// configured in an Amazon Web Services Region.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListChannels service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ExpiredNextTokenException">
+        /// The pagination token passed to the operation is expired.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/ListChannels">REST API Reference for ListChannels Operation</seealso>
+        Task<ListChannelsResponse> ListChannelsAsync(ListChannelsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -4495,6 +4927,110 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateAccountSettings">REST API Reference for UpdateAccountSettings Operation</seealso>
         Task<UpdateAccountSettingsResponse> UpdateAccountSettingsAsync(UpdateAccountSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateChannel
+
+
+        /// <summary>
+        /// Updates the data freshness interval or the Amazon CloudWatch Logs configuration of
+        /// an existing channel. You cannot change the destination, source stream, record format,
+        /// schema, encryption configuration, or service execution role of an existing channel.
+        /// To change any other setting, delete the channel and create a new one.
+        /// 
+        ///  
+        /// <para>
+        /// Updating a channel is an asynchronous operation. Upon receiving the request, Amazon
+        /// Kinesis Data Streams sets the channel to the <c>UPDATING</c> state and returns immediately.
+        /// After the change is applied, Amazon Kinesis Data Streams sets the channel back to
+        /// the <c>ACTIVE</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        UpdateChannelResponse UpdateChannel(UpdateChannelRequest request);
+
+
+
+        /// <summary>
+        /// Updates the data freshness interval or the Amazon CloudWatch Logs configuration of
+        /// an existing channel. You cannot change the destination, source stream, record format,
+        /// schema, encryption configuration, or service execution role of an existing channel.
+        /// To change any other setting, delete the channel and create a new one.
+        /// 
+        ///  
+        /// <para>
+        /// Updating a channel is an asynchronous operation. Upon receiving the request, Amazon
+        /// Kinesis Data Streams sets the channel to the <c>UPDATING</c> state and returns immediately.
+        /// After the change is applied, Amazon Kinesis Data Streams sets the channel back to
+        /// the <c>ACTIVE</c> state.
+        /// </para>
+        ///  
+        /// <para>
+        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
+        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateChannel service method, as returned by Kinesis.</returns>
+        /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
+        /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
+        /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
+        /// For more information, see the returned message.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.LimitExceededException">
+        /// The requested resource exceeds the maximum number allowed, or the number of concurrent
+        /// stream requests exceeds the maximum number allowed.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
+        /// The resource is not available for this operation. For successful operation, the resource
+        /// must be in the <c>ACTIVE</c> state.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
+        /// The requested resource could not be found. The stream might not be specified correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.ValidationException">
+        /// Specifies that you tried to invoke this API for a data stream with the on-demand capacity
+        /// mode. This API is only supported for data streams with the provisioned capacity mode.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/UpdateChannel">REST API Reference for UpdateChannel Operation</seealso>
+        Task<UpdateChannelResponse> UpdateChannelAsync(UpdateChannelRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

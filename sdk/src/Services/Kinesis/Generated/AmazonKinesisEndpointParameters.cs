@@ -122,6 +122,15 @@ namespace Amazon.Kinesis.Endpoints
         }
 
         /// <summary>
+        /// ChannelARN parameter
+        /// </summary>
+        public string ChannelARN 
+        { 
+            get { return (string)this["ChannelARN"]; }
+            set { this["ChannelARN"] = value; } 
+        }
+
+        /// <summary>
         /// AccountId parameter
         /// </summary>
         public string AccountId 

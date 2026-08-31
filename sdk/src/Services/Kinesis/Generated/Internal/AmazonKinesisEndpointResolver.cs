@@ -95,6 +95,10 @@ namespace Amazon.Kinesis.Internal
                 result.StreamId = request.StreamId;
                 return result;
             }
+            if (requestContext.RequestName == "CreateChannelRequest") {
+                result.OperationType = "control";
+                return result;
+            }
             if (requestContext.RequestName == "CreateStreamRequest") {
                 result.OperationType = "control";
                 return result;
@@ -104,6 +108,12 @@ namespace Amazon.Kinesis.Internal
                 var request = (DecreaseStreamRetentionPeriodRequest)requestContext.OriginalRequest;
                 result.StreamARN = request.StreamARN;
                 result.StreamId = request.StreamId;
+                return result;
+            }
+            if (requestContext.RequestName == "DeleteChannelRequest") {
+                result.OperationType = "control";
+                var request = (DeleteChannelRequest)requestContext.OriginalRequest;
+                result.ChannelARN = request.ChannelARN;
                 return result;
             }
             if (requestContext.RequestName == "DeleteResourcePolicyRequest") {
@@ -130,6 +140,12 @@ namespace Amazon.Kinesis.Internal
             }
             if (requestContext.RequestName == "DescribeAccountSettingsRequest") {
                 result.OperationType = "control";
+                return result;
+            }
+            if (requestContext.RequestName == "DescribeChannelRequest") {
+                result.OperationType = "control";
+                var request = (DescribeChannelRequest)requestContext.OriginalRequest;
+                result.ChannelARN = request.ChannelARN;
                 return result;
             }
             if (requestContext.RequestName == "DescribeLimitsRequest") {
@@ -198,6 +214,10 @@ namespace Amazon.Kinesis.Internal
                 var request = (IncreaseStreamRetentionPeriodRequest)requestContext.OriginalRequest;
                 result.StreamARN = request.StreamARN;
                 result.StreamId = request.StreamId;
+                return result;
+            }
+            if (requestContext.RequestName == "ListChannelsRequest") {
+                result.OperationType = "control";
                 return result;
             }
             if (requestContext.RequestName == "ListShardsRequest") {
@@ -318,6 +338,12 @@ namespace Amazon.Kinesis.Internal
             }
             if (requestContext.RequestName == "UpdateAccountSettingsRequest") {
                 result.OperationType = "control";
+                return result;
+            }
+            if (requestContext.RequestName == "UpdateChannelRequest") {
+                result.OperationType = "control";
+                var request = (UpdateChannelRequest)requestContext.OriginalRequest;
+                result.ChannelARN = request.ChannelARN;
                 return result;
             }
             if (requestContext.RequestName == "UpdateMaxRecordSizeRequest") {

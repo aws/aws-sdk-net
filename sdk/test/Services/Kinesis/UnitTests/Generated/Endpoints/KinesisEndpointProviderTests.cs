@@ -1875,7 +1875,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
                 new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             });
-            Assert.AreEqual(@"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.", exception.Message);
+            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel", exception.Message);
         }
 
         [TestMethod]
@@ -2312,7 +2312,7 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
                 new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             });
-            Assert.AreEqual(@"Invalid ARN: Kinesis ARNs don't support `accesspoint` arn types.", exception.Message);
+            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel", exception.Message);
         }
 
         [TestMethod]
@@ -2604,6 +2604,290 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceARN"] = "arn:aws-iso-b:kinesis:us-isob-east-1:123:stream/test-stream/consumer/test-consumer:1525898737";
             var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kinesis-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Invalid ARN: unsupported resource type")]
+        public void ResourceARN_as_ChannelARN_test_Invalid_ARN_unsupported_resource_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:accesspoint/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Unsupported resource type `accesspoint`. Expected: stream or channel", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Invalid ARN: Not Kinesis")]
+        public void ResourceARN_as_ChannelARN_test_Invalid_ARN_Not_Kinesis_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:s3:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: s3.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Invalid ARN: partitions mismatch")]
+        public void ResourceARN_as_ChannelARN_test_Invalid_ARN_partitions_mismatch_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-2:298091445058:channel/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws from ARN doesn't match with partition name: aws-us-gov.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: OperationType not set")]
+        public void ResourceARN_as_ChannelARN_test_OperationType_not_set_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Missing channel id")]
+        public void ResourceARN_as_ChannelARN_test_Missing_channel_id_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Missing channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Invalid channel id (subdomains not allowed)")]
+        public void ResourceARN_as_ChannelARN_test_Invalid_channel_id_subdomains_not_allowed_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8.ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Custom Endpoint is specified")]
+        public void ResourceARN_as_ChannelARN_test_Custom_Endpoint_is_specified_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: endpoint targeting control operation type")]
+        public void ResourceARN_as_ChannelARN_test_endpoint_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: endpoint with fips targeting control operation type")]
+        public void ResourceARN_as_ChannelARN_test_endpoint_with_fips_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: endpoint with Dual Stack enabled")]
+        public void ResourceARN_as_ChannelARN_test_endpoint_with_Dual_Stack_enabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: endpoint with Dual Stack and FIPS enabled")]
+        public void ResourceARN_as_ChannelARN_test_endpoint_with_Dual_Stack_and_FIPS_enabled_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: RegionMismatch: client region should be used for endpoint region")]
+        public void ResourceARN_as_ChannelARN_test_RegionMismatch_client_region_should_be_used_for_endpoint_region_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws:kinesis:us-west-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Account endpoint with FIPS enabled for cn regions")]
+        public void ResourceARN_as_ChannelARN_test_Account_endpoint_with_FIPS_enabled_for_cn_regions_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-cn:kinesis:cn-northwest-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis-fips.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Account endpoint with FIPS and DualStack enabled for cn regions")]
+        public void ResourceARN_as_ChannelARN_test_Account_endpoint_with_FIPS_and_DualStack_enabled_for_cn_regions_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-cn:kinesis:cn-northwest-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis-fips.cn-northwest-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Account endpoint targeting control operation type in ADC regions")]
+        public void ResourceARN_as_ChannelARN_test_Account_endpoint_targeting_control_operation_type_in_ADC_regions_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ResourceARN as ChannelARN test: Account endpoint with fips targeting control operation type in ADC regions")]
+        public void ResourceARN_as_ChannelARN_test_Account_endpoint_with_fips_targeting_control_operation_type_in_ADC_regions_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ResourceARN"] = "arn:aws-iso:kinesis:us-iso-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
 
         [TestMethod]
@@ -3234,6 +3518,263 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["ResourceARN"] = "arn:aws:kinesis:us-east-1:123:stream/test-stream";
             var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://123.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ChannelARN: endpoint targeting control operation type")]
+        public void ChannelARN_endpoint_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ChannelARN: endpoint with FIPS targeting control operation type")]
+        public void ChannelARN_endpoint_with_FIPS_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ChannelARN: endpoint with DualStack targeting control operation type")]
+        public void ChannelARN_endpoint_with_DualStack_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ChannelARN: endpoint with FIPS and DualStack targeting control operation type")]
+        public void ChannelARN_endpoint_with_FIPS_and_DualStack_targeting_control_operation_type_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://apu0zt8ge6utbndxe.control-kinesis-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: ChannelARN only supports channel arn types")]
+        public void Invalid_ChannelARN_ChannelARN_only_supports_channel_arn_types_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:stream/test-stream";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: ChannelARN only supports `channel` arn types, found: `stream`.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: ARN was not for the Kinesis service")]
+        public void Invalid_ChannelARN_ARN_was_not_for_the_Kinesis_service_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ChannelARN"] = "arn:aws:s3:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: The ARN was not for the Kinesis service, found: s3.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: OperationType not set")]
+        public void Invalid_ChannelARN_OperationType_not_set_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Operation Type is not set. Please contact service team for resolution.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: partitions mismatch")]
+        public void Invalid_ChannelARN_partitions_mismatch_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-gov-west-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-west-2:298091445058:channel/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Partition: aws from ARN doesn't match with partition name: aws-us-gov.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: missing channel id")]
+        public void Invalid_ChannelARN_missing_channel_id_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Missing channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: channel id contains a period (subdomains not allowed)")]
+        public void Invalid_ChannelARN_channel_id_contains_a_period_subdomains_not_allowed_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8.ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: channel id exceeds 63 character host label limit")]
+        public void Invalid_ChannelARN_channel_id_exceeds_63_character_host_label_limit_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: channel id starts with a hyphen")]
+        public void Invalid_ChannelARN_channel_id_starts_with_a_hyphen_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/-pu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: channel id contains an invalid character")]
+        public void Invalid_ChannelARN_channel_id_contains_an_invalid_character_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8_ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"Invalid ARN: Invalid channel id.", exception.Message);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("Invalid ChannelARN: data operation type is not supported for channel")]
+        public void Invalid_ChannelARN_data_operation_type_is_not_supported_for_channel_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "data";
+            parameters["ChannelARN"] = "arn:aws:kinesis:us-east-1:298091445058:channel/apu0zt8ge6utbndxe";
+            var exception = Assert.ThrowsExactly<AmazonClientException>(() => {
+                new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            });
+            Assert.AreEqual(@"ChannelARN does not support the `data` operation type.", exception.Message);
         }
 
         [TestMethod]
@@ -3984,6 +4525,204 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
             parameters["AccountIdEndpointMode"] = "disabled";
             var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kinesis-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: control operation type with AccountId")]
+        public void CreateChannel_control_operation_type_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: control operation type with FIPS and AccountId")]
+        public void CreateChannel_control_operation_type_with_FIPS_and_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: control operation type with DualStack and AccountId")]
+        public void CreateChannel_control_operation_type_with_DualStack_and_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: control operation type with FIPS and DualStack and AccountId")]
+        public void CreateChannel_control_operation_type_with_FIPS_and_DualStack_and_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: account id endpoint mode disabled falls back to regional endpoint")]
+        public void CreateChannel_account_id_endpoint_mode_disabled_falls_back_to_regional_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: account id endpoint mode disabled with FIPS falls back to regional FIPS endpoint")]
+        public void CreateChannel_account_id_endpoint_mode_disabled_with_FIPS_falls_back_to_regional_FIPS_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: account id endpoint mode disabled with DualStack falls back to regional DualStack endpoint")]
+        public void CreateChannel_account_id_endpoint_mode_disabled_with_DualStack_falls_back_to_regional_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("CreateChannel: account id endpoint mode disabled with FIPS and DualStack falls back to regional FIPS DualStack endpoint")]
+        public void CreateChannel_account_id_endpoint_mode_disabled_with_FIPS_and_DualStack_falls_back_to_regional_FIPS_DualStack_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis-fips.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ListChannels: control operation type with AccountId")]
+        public void ListChannels_control_operation_type_with_AccountId_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ListChannels: control operation type with FIPS and DualStack")]
+        public void ListChannels_control_operation_type_with_FIPS_and_DualStack_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "preferred";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://123456789012.control-kinesis-fips.us-west-2.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Kinesis")]
+        [Description("ListChannels: account id endpoint mode disabled falls back to regional endpoint")]
+        public void ListChannels_account_id_endpoint_mode_disabled_falls_back_to_regional_endpoint_Test()
+        {
+            var parameters = new KinesisEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["OperationType"] = "control";
+            parameters["AccountId"] = "123456789012";
+            parameters["AccountIdEndpointMode"] = "disabled";
+            var endpoint = new AmazonKinesisEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://kinesis.us-west-2.amazonaws.com", endpoint.URL);
         }
 
     }
