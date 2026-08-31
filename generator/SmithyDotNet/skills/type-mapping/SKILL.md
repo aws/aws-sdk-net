@@ -4,10 +4,6 @@ description: Smithy shape to .NET type mapping, nullability, and collection defa
 ---
 # Skill: Smithy to .NET Type Mapping
 
-## Purpose
-
-Definitive mapping from Smithy shape types to .NET types, plus nullability and collection default rules.
-
 ## Type Mapping Table
 
 | Smithy shape | .NET type | Notes |
@@ -49,14 +45,9 @@ The generator will support an opt-in mode that respects Smithy's nullability tra
 ## Collection Defaults
 
 Collections use `AWSConfigs.InitializeCollections` for SDK V4 backwards compatibility. The
-generator emits an auto-property with the initializer expression directly, plus an internal
-`IsSet{Property}()` method that the AWS SDK runtime (and marshallers) call:
-
-```csharp
-public List<AuditEvent> AuditEvents { get; set; } = AWSConfigs.InitializeCollections ? new List<AuditEvent>() : null;
-
-internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvents.Count > 0 || !AWSConfigs.InitializeCollections);
-```
+generator emits an auto-property initialized to `AWSConfigs.InitializeCollections ? new List<T>() : null`,
+plus an internal `IsSet{Property}()` method that the AWS SDK runtime (and marshallers) call — exact
+emitted shape in sdk-conventions "Collection Properties".
 
 When `AWSConfigs.InitializeCollections` is `false` (V4 default), collections start as `null`,
 and an empty list still counts as "set" (the caller cleared the value). When `true` (V3 compat),

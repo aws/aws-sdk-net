@@ -4,10 +4,6 @@ description: The public-API contract SmithyDotNet-generated code must match agai
 ---
 # Skill: .NET SDK Conventions
 
-## Purpose
-
-Patterns the generated code must follow so its **public API surface** matches the existing AWS SDK for .NET. The generated files do NOT need to be byte-for-byte identical — whitespace, file naming (e.g. `.g.cs` suffix), internal implementation details, and code organization can differ as long as the public types, members, signatures, and attributes are equivalent.
-
 ## Reviewing Generated Output
 
 When reviewing a service migration's generated output, open and diff **every single generated file** — every operation's request marshaller and response unmarshaller, every model, exception, and client file. No sampling. Reviewing one operation and generalizing "clean" to its neighbors is how regressions ship. Thousands of files is not a reason to skip any.
@@ -45,30 +41,10 @@ The SDK builds with warnings-as-errors. Generated files must include `#pragma wa
 
 ## License Header
 
-Every generated file starts with the full Apache 2.0 license block followed by a generation notice:
-
-```csharp
-/*
- * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
- * Licensed under the Apache License, Version 2.0 (the "License").
- * You may not use this file except in compliance with the License.
- * A copy of the License is located at
- * 
- *  http://aws.amazon.com/apache2.0
- * 
- * or in the "license" file accompanying this file. This file is distributed
- * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
- * express or implied. See the License for the specific language governing
- * permissions and limitations under the License.
- */
-
-/*
- * Do not modify this file. This file is generated from the {model-filename} service model.
- */
-```
-
-The `{model-filename}` is the Smithy model file name (e.g. `cloudtrail-data-2021-08-11.normal.json`).
+Every generated file starts with the full Apache 2.0 license block followed by the
+"Do not modify this file. This file is generated from the {model-filename} service model." notice,
+where `{model-filename}` is the Smithy model file name (e.g. `cloudtrail-data-2021-08-11.normal.json`).
+The exact text lives in `Writers/FileHeader.cs`.
 
 ## Naming Rules
 
@@ -131,12 +107,6 @@ Generated/
 | Structure classes | No base type (plain class) |
 | Exception classes | `Amazon{ServiceName}Exception` (the service exception base) |
 | Config class (`Amazon{ServiceName}Config`) | `ClientConfig` (overrides are placeholder for now) |
-
-### Generated Infrastructure Files
-
-- **`Amazon{ServiceName}Exception`** — service-level exception base. Same 6-constructor pattern as operation exceptions, plus `#if !NETSTANDARD` serialization constructor. Inherits from `AmazonServiceException`.
-- **`Amazon{ServiceName}Request`** — empty class extending `AmazonWebServiceRequest`. All operation request classes inherit from this, not directly from `AmazonWebServiceRequest`.
-- **`Amazon{ServiceName}Config`** — placeholder for now. Will extend `ClientConfig` with `ServiceId`, `ServiceVersion`, `AuthenticationServiceName`, etc.
 
 ## All Types Are `partial`
 
@@ -219,46 +189,16 @@ decode them, so neither do we.
 
 ### Type-Specific Summaries
 
-**Service interface/class:**
-```xml
-/// <summary>
-/// <para>Interface for accessing CloudTrailData</para>
-///
-/// {service @documentation}
-/// </summary>
-```
-
-**Request class:**
-```xml
-/// <summary>
-/// Container for the parameters to the {OperationName} operation.
-/// {operation @documentation}
-/// </summary>
-```
-
-**Response class:**
-```xml
-/// <summary>
-/// This is the response object from the {OperationName} operation.
-/// </summary>
-```
-
-**Structure class:**
-```xml
-/// <summary>
-/// {@documentation from the shape}
-/// </summary>
-```
+- **Service interface/class**: `<para>Interface for accessing {ServiceName}</para>`, a blank `///` line, then the service `@documentation`
+- **Request class**: `Container for the parameters to the {OperationName} operation.` then the operation `@documentation`
+- **Response class**: `This is the response object from the {OperationName} operation.`
+- **Structure class**: the shape's `@documentation`
 
 ### Operation Method Docs
 
-Include `<exception cref>` for each error and a `<seealso>` link:
-```xml
-/// <exception cref="Amazon.CloudTrailData.Model.ChannelNotFoundException">
-/// The channel could not be found.
-/// </exception>
-/// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/{serviceId}-{apiVersion}/{OperationName}">REST API Reference for {OperationName} Operation</seealso>
-```
+Each operation method includes an `<exception cref="{full exception type}">` (body = the error shape's
+`@documentation`) per error, plus
+`<seealso href="http://docs.aws.amazon.com/goto/WebAPI/{serviceId}-{apiVersion}/{OperationName}">REST API Reference for {OperationName} Operation</seealso>`.
 
 ## Exception Classes
 
@@ -275,30 +215,17 @@ Must expose these public constructors:
 Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `[Serializable]` attribute on the class
 - `protected` serialization constructor `(SerializationInfo, StreamingContext)` — deserializes each serialized exception member (every modeled member except `message`) via `info.GetValue`, then calls `base(info, context)`
-- `public override void GetObjectData(SerializationInfo, StreamingContext)` with all three attributes (always emitted together as a unit from `ExceptionSerialization.t4`):
-  ```csharp
-  [System.Security.SecurityCritical]
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2123:OverrideLinkDemandsShouldBeIdenticalToBase")]
-  [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2134:MethodsMustOverrideWithConsistentTransparencyFxCopRule")]
-  public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
-  {
-      base.GetObjectData(info, context);
-      // info.AddValue(...) for each additional exception member
-  }
-  ```
+- `public override void GetObjectData(SerializationInfo, StreamingContext)` carrying all three attributes as a unit (from `ExceptionSerialization.t4`): `[System.Security.SecurityCritical]` plus the CA2123 and CA2134 `SuppressMessage` attributes; body is `base.GetObjectData(info, context)` then `info.AddValue(...)` per additional member.
   The serialization constructor and `GetObjectData` are symmetric: both loop over the same member set — every modeled member except `message` (from `ExceptionSerialization.t4`), so base-owned `RequestId`/`ErrorCode` are serialized here even though they get no property (see "Exception Member Property Names"). The constructor calls `info.GetValue` for each and `GetObjectData` calls `info.AddValue` for each, both keyed on the .NET property name. For exceptions whose only member is `message` (e.g. all CloudTrail Data exceptions), both bodies contain only the `base` call.
 
-The service-level exception base (`Amazon{ServiceName}Exception`) inherits from `AmazonServiceException` and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
+The service-level exception base (`Amazon{ServiceName}Exception`) inherits from `AmazonServiceException`, exposes the same six public constructors as operation exceptions, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
 
 ### Exception Member Property Names
 
-Exception members are named like any structure member, with two base-class adjustments:
-- A member named `errorType` becomes the property `RequestErrorType` (wire name unchanged) so it doesn't hide `AmazonServiceException.ErrorType`.
-- A member named `Retryable` is emitted with `new` to hide `AmazonServiceException.Retryable`.
-
-The `Equals`-gets-`new` rule is structure-wide (it hides `object.Equals(object)`), not exception-specific — applied by `TypeMapper.ResolveMembers` on every structure.
-
-`RequestId` and `ErrorCode` get **no property** — `AmazonServiceException` already declares them, so one would shadow the base (matching C2J's `StructureGenerator.tt`). They are still serialized and read from the error body into the inherited property, though: C2J's `ExceptionSerialization.t4` and `JsonRPCExceptionUnmarshaller.tt` loop the member set that filters only `message`, so `ExceptionWriter.ResolveSerializedMembers` (serialization block + unmarshaller) keeps them, while `WriteException` filters them out of the property set inline. Every other member is emitted as-is, even when it shadows an inherited property (`StatusCode`, `InnerException`, …) — matching C2J. See type-mapping's "Error Shape Members".
+Canonical treatment lives in type-mapping's "Error Shape Members". Summary: `errorType` → property
+`RequestErrorType` (wire name unchanged); `Retryable` emitted with `new`; `Equals` gets `new` on any
+structure (not exception-specific); `RequestId`/`ErrorCode` get no property but stay in serialization
+and unmarshalling; every other member is emitted as-is even when it shadows an inherited property.
 
 ### Retryable Errors
 

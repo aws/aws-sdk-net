@@ -25,17 +25,11 @@ All marshallers and unmarshallers should be partial classes.
 
 ## Request Marshaller Scaffolding
 
-Every request marshaller sets up:
-
-```csharp
-IRequest request = new DefaultRequest(publicRequest, "Amazon.{ServiceName}");
-request.Headers["Content-Type"] = "{content-type}";                    // protocol-dependent
-request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "{version}";  // from ServiceShape.ApiVersion
-request.HttpMethod = "{method}";                                        // from @http trait
-request.ResourcePath = "{uri}";                                         // from @http trait, with labels interpolated
-```
-
-Then serializes members based on placement rules, then returns `request`.
+Every request marshaller creates `new DefaultRequest(publicRequest, "Amazon.{ServiceName}")`, then sets
+the `Content-Type` header (protocol-dependent), `HeaderKeys.XAmzApiVersion` (from
+`ServiceShape.ApiVersion`), and `HttpMethod`/`ResourcePath` (from the `@http` trait, labels
+interpolated); then serializes members per the placement rules below and returns `request`. Emitted
+code is pinned in `JsonRequestMarshallerWriterTests`.
 
 ## Member Placement
 
@@ -62,75 +56,44 @@ intEnum) *is* now allowed as a **body** member, but in a query/header binding po
 
 A single member may carry `@httpQueryParams` (structurally exclusive): a `map<string, string>` or
 `map<string, list<string>>` whose entries each become query params, reusing the `@httpQuery`
-serialization rules (a `list<string>` value repeats the key). It's emitted **after** the explicit
-`@httpQuery` members, each entry guarded by a `ContainsKey` check that skips keys already set — so an
-explicit `@httpQuery` (or query literal) wins the collision, per the Smithy precedence rule:
-
-```csharp
-if (publicRequest.IsSetFilters())
-{
-    foreach (var kvp in publicRequest.Filters)
-    {
-        if (!request.ParameterCollection.ContainsKey(kvp.Key))   // map<string,string> uses request.Parameters
-            request.ParameterCollection.Add(kvp.Key, kvp.Value);  // map<string,string> adds StringUtils.FromString(kvp.Value)
-    }
-}
-```
+serialization rules (a `list<string>` value repeats the key via `request.ParameterCollection`; a
+`map<string, string>` adds `StringUtils.FromString(kvp.Value)` via `request.Parameters`). It's emitted
+**after** the explicit `@httpQuery` members, each entry guarded by a `ContainsKey` check that skips
+keys already set — so an explicit `@httpQuery` wins the collision, per the Smithy precedence rule.
+The guard intentionally does NOT cover query literals in the `@http` uri (those live in
+`request.SubResources`, not the parameter collection): C2J has the same gap, and the only real case
+(apigateway `ImportRestApi`, `/restapis?mode=import` plus @httpQueryParams) keeps C2J parity — a
+colliding map key emits a duplicate param rather than silently changing wire behavior on migration.
+Emitted code is pinned in `QueryParamsCodegenTests`.
 
 The map is a query binding (request-only, `@input` structures), so it never enters the JSON body, and
 its presence sets `request.UseQueryString = true`. The trait is "simply ignored" outside operation input.
 
 A single member may carry `@httpPrefixHeaders` (structurally exclusive): a `map<string, string>` whose
-entries each become a header named `{prefix}{key}`. It's emitted **before** the explicit `@httpHeader`
+entries each become a header named `{prefix}{key}` (an `IsSet` guard, then a `foreach` assigning
+`request.Headers[$"{prefix}{kvp.Key}"] = kvp.Value;`). It's emitted **before** the explicit `@httpHeader`
 members, so a colliding header name (only possible with an empty prefix) is overwritten by the later
-`@httpHeader` assignment — `@httpHeader` wins per the Smithy precedence rule:
-
-```csharp
-if (publicRequest.IsSetRequestHeaders())
-{
-    foreach (var kvp in publicRequest.RequestHeaders)
-    {
-        request.Headers[$"x-amzn-dataexchange-header-{kvp.Key}"] = kvp.Value;
-    }
-}
-```
+`@httpHeader` assignment — `@httpHeader` wins per the Smithy precedence rule. Emitted code is pinned in
+`PrefixHeadersCodegenTests`.
 
 Unlike the query traits, `@httpPrefixHeaders` is valid on request, response, **and error** structures
 (see Response Header Unmarshalling for the reverse). The map value must be a string (a non-string value
 fails loud).
 
-For `awsJson1.x` and `query`/`ec2Query`: all members go in the body (no HTTP binding traits).
-
 ## Wire Name Resolution
 
-| Protocol | Rule |
-|---|---|
-| restJson1 / awsJson1.x | `@jsonName` if present, else Smithy member name (camelCase) |
-| restXml | `@xmlName` if present, else Smithy member name (camelCase) |
-| query / ec2Query | `@ec2QueryName` or PascalCase of member name |
+`@jsonName` if present, else the Smithy member name (camelCase). Other protocols differ — see Other Protocols.
 
 ## Request Body Serialization
 
 ### JSON (restJson1, awsJson1.x)
 
-For request marshallers if any of the members are marshalled in the body OR marked with @httpPayload you must setup the PooledContentStream like so:
-```csharp
-#if !NETFRAMEWORK
-            request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
-#else
-            using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
-#endif
-```
-
-```csharp
-if (publicRequest.IsSetFoo())
-{
-    context.Writer.WritePropertyName("foo");  // wire name
-    context.Writer.WriteStringValue(publicRequest.Foo);
-}
-```
+When any member is body-bound (or `@httpPayload`), the marshaller sets up the body writer: a
+`Utf8JsonWriter` over `request.ContentStream = new PooledContentStream()` (its `BufferWriter`), with a
+`#if NETFRAMEWORK` fallback to a `MemoryStream` plus `request.Content = memoryStream.ToArray()` after
+the final flush. Each body member is guarded by `IsSet{Prop}()`, then
+`context.Writer.WritePropertyName("{wireName}")` and the typed write (see Type → Marshal/Unmarshal).
+Pinned in `JsonRequestMarshallerWriterTests`.
 
 - Structures: `WriteStartObject` → `{Shape}Marshaller.Instance.Marshall(item, context)` → `WriteEndObject`
 - Lists: `WriteStartArray` → loop items → `WriteEndArray`
@@ -148,40 +111,16 @@ if (publicRequest.IsSetFoo())
   loud in `TypeMapper.RejectUnsupportedCollectionElement` (a blob is body/`@httpPayload`-only).
 - Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization
 
-
-At the end of the request marshaller after flushing the writer write:
-```csharp
-#if NETFRAMEWORK
-            request.Content = memoryStream.ToArray();
-#endif
-```
-
 For structure marshallers loop through the structures members and use the rules laid out in Type → Marshal/Unmarshal
 
 ### `@httpPayload` (request)
 
-A `@httpPayload` member IS the entire body — no wrapping object/property name, no other member in the body (Smithy: all others are header/query/label). No `IsSet` guard (matches C2J).
+A `@httpPayload` member IS the entire body — no wrapping object/property name, no other member in the body (Smithy: all others are header/query/label). No `IsSet` guard (matches C2J). Emitted code for every payload kind (request and response) is pinned in `PayloadMemberCodegenTests`.
 
 - **String** → `text/plain`, no scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
-- **Structure** → `application/json`; the scaffold above, then the target's marshaller as the body object:
-  ```csharp
-  context.Writer.WriteStartObject();
-  var marshaller = {Type}Marshaller.Instance;
-  marshaller.Marshall(publicRequest.{Prop}, context);
-  context.Writer.WriteEndObject();
-  ```
-- **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (overrides the top `application/json`); adds `using System.Globalization;`. Always assigns the stream and ends with the Content-Type override; the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`):
-  ```csharp
-  request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();
-  // ... length branch (below) ...
-  request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
-  ```
-  Length branch:
-  - **`@streaming` + `@unsignedPayload`, no `@requiresLength`** → Content-Length only when seekable, else chunked (length unknown up front, and signing is off anyway):
-    ```csharp
-    if (request.ContentStream.CanSeek) { request.ContentStream.Seek(0, SeekOrigin.Begin); request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = ...; }
-    else { request.Headers[Amazon.Util.HeaderKeys.TransferEncodingHeader] = "chunked"; }
-    ```
+- **Structure** → `application/json`; the scaffold above, then the target's marshaller as the body object (`WriteStartObject` → `{Type}Marshaller.Instance.Marshall(publicRequest.{Prop}, context)` → `WriteEndObject`).
+- **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (overrides the top `application/json`); adds `using System.Globalization;`. Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override; the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`; emitted code is pinned in `BlobCodegenTests`):
+  - **`@streaming` + `@unsignedPayload`, no `@requiresLength`** → seek to start and set Content-Length when the stream is seekable, else `Transfer-Encoding: chunked` (length unknown up front, and signing is off anyway).
   - **`@streaming` + `@requiresLength`** → stream MUST be seekable (throws `InvalidOperationException` otherwise), then always sets Content-Length. `@requiresLength` wins over the unsigned chunked path.
   - **otherwise** (every non-streaming blob; a streaming blob on a signed op) → seek when seekable, always set Content-Length (no chunked).
 
@@ -196,56 +135,16 @@ payload takes the structure path.
 An operation's `@endpoint` trait sets `request.HostPrefix` (the resolver's `InjectHostPrefix` prepends it to the endpoint host). Emitted last, after `UseQueryString`, before `return`.
 
 - **Static** (no labels) → `request.HostPrefix = $"data.";`
-- **Labeled** → each `@hostLabel` member is captured, validated, and interpolated (`{name}` → `{hostPrefixLabels.name}`):
-  ```csharp
-  var hostPrefixLabels = new
-  {
-      name = StringUtils.FromString(publicRequest.Name),   // field = modeled name, value = property name
-  };
-  if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.name))
-  {
-      throw new Amazon{Service}Exception("name can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");
-  }
-  request.HostPrefix = $"foo.{hostPrefixLabels.name}.";
-  ```
+- **Labeled** → each `@hostLabel` member is captured into an anonymous `hostPrefixLabels` object (field = modeled member name, value = `StringUtils.FromString(publicRequest.{Prop})`), validated with `HostPrefixUtils.IsValidLabelValue` (throws `Amazon{Service}Exception` naming the label and the 1–63 alphanumeric/dash rule), then interpolated into the prefix (`{name}` → `{hostPrefixLabels.name}`). Emitted code is pinned in `HostPrefixCodegenTests`.
 
 `@hostLabel` is **additive** — the member is still marshalled in its normal binding (body/`@httpLabel`/`@httpQuery`/`@httpHeader`) as well.
 
-### XML (restXml)
-
-```csharp
-xmlWriter.WriteStartElement("MemberName");  // or @xmlName
-xmlWriter.WriteValue(publicRequest.Foo);
-xmlWriter.WriteEndElement();
-```
-
-- `@xmlFlattened` lists omit the wrapper element
-- `@xmlAttribute` members become XML attributes on the parent element
-- `@xmlNamespace` adds `xmlns` attribute
-
-### Query (query, ec2Query)
-
-```csharp
-request.Parameters.Add("MemberName", StringUtils.FromString(publicRequest.Foo));
-```
-
-- Lists: `MemberName.member.{N}` (query) or `MemberName.{N}` (ec2Query)
-- Maps: `MemberName.entry.{N}.key` / `MemberName.entry.{N}.value`
-
 ## Response Unmarshaller Body
 
-### JSON
-
-```csharp
-while (context.ReadAtDepth(targetDepth, ref reader))
-{
-    if (context.TestExpression("foo", targetDepth, ref reader))
-    {
-        response.Foo = StringUnmarshaller.Instance.Unmarshall(context, ref reader);
-        continue;
-    }
-}
-```
+The body loop is `while (context.ReadAtDepth(targetDepth, ref reader))` with a
+`context.TestExpression("{wireName}", targetDepth, ref reader)` guard per member assigning
+`{Unmarshaller}.Instance.Unmarshall(context, ref reader)` then `continue`. Pinned in
+`JsonResponseUnmarshallerWriterTests`.
 
 - Lists: `new JsonListUnmarshaller<T, TUnmarshaller>(TUnmarshaller.Instance)`
 - Maps: `new JsonDictionaryUnmarshaller<string, V, StringUnmarshaller, VU>(StringUnmarshaller.Instance, VU.Instance)`
@@ -274,34 +173,14 @@ A `@httpPayload` output member IS the whole body (replaces the named-field loop;
 ### `@httpResponseCode` (response)
 
 An `@httpResponseCode` output member (an integer, so `int?` on the response class) is populated from
-the HTTP status code itself — **not** read from the body or a header:
-
-```csharp
-unmarshalledObject.StatusCode = (int)context.ResponseData.StatusCode;
-```
-
-The property name is whatever the model named the member (e.g. a member `httpCode` emits
-`unmarshalledObject.HttpCode = ...`) — `PartitionByBinding` pulls the member out via `IsHttpResponseCode()`
-so it never enters the body reader. Matches C2J's `ProcessStatusCode`. The trait is only meaningful on an
+the HTTP status code itself — `unmarshalledObject.{Prop} = (int)context.ResponseData.StatusCode;` —
+**not** read from the body or a header. The property name is whatever the model named the member
+(e.g. a member `httpCode` emits `unmarshalledObject.HttpCode = ...`) — `PartitionByBinding` pulls the
+member out via `IsHttpResponseCode()` so it never enters the body reader. Matches C2J's
+`ProcessStatusCode`; pinned in `HttpResponseCodeCodegenTests`. The trait is only meaningful on an
 operation's output; on an error it "is simply ignored" (Smithy spec), so `JsonExceptionUnmarshallerWriter`
 passes `bindStatusCode: false` and the member falls through to the body like any ordinary member — unlike
 `@httpPayload`, which fails loud on an error.
-
-### XML
-
-```csharp
-while (context.Read())
-{
-    if (context.TestExpression("MemberName", targetDepth))
-    {
-        response.Foo = StringUnmarshaller.Instance.Unmarshall(context);
-        continue;
-    }
-}
-```
-
-- Flattened lists: test on element name directly
-- Non-flattened lists: test on `ListName/member`
 
 ## Response Header Unmarshalling
 
@@ -312,14 +191,9 @@ reader/`while` loop at all — just the header `if`s. The error (exception) unma
 `unmarshalledObject` the same way; its dispatch passes `context.ResponseData` into `contextCopy`, so
 the header API is available there too.
 
-Each member is guarded and assigned:
-
-```csharp
-if (context.ResponseData.IsHeaderPresent("x-foo"))
-{
-    response.Foo = <conversion>;   // "unmarshalledObject.Foo" on the exception path
-}
-```
+Each member is guarded by `context.ResponseData.IsHeaderPresent("x-foo")` and assigned a
+`<conversion>` (the assignment target is `unmarshalledObject` on the exception path, `response` on
+the response path):
 
 | Member type | `<conversion>` (with `value` = `context.ResponseData.GetHeaderValue("x-foo")`) |
 |---|---|
@@ -340,30 +214,11 @@ code — only `epoch-seconds` differs. The `CultureInfo`/`DateTimeStyles` these 
 ### `@httpPrefixHeaders` (response / error)
 
 A `map<string, string>` member bound with `@httpPrefixHeaders` collects every response header whose
-name starts with the prefix into the map, stripping the prefix from each key. An empty prefix (the
-`.Length > 0` guard is false) collects all headers. Assigned only when non-empty (matches C2J). The same
-`WritePrefixHeadersUnmarshaller` helper serves the response and exception unmarshallers (both write to
-`unmarshalledObject`), since the trait is valid on output and error structures alike.
-
-```csharp
-var prefixHeadersResponseHeaders = new Dictionary<string, string>();
-foreach (var headerName in context.ResponseData.GetHeaderNames())
-{
-    var keyToUse = headerName;
-    if ("x-amzn-dataexchange-header-".Length > 0 && keyToUse.StartsWith("x-amzn-dataexchange-header-"))
-    {
-        keyToUse = keyToUse.Substring("x-amzn-dataexchange-header-".Length);
-    }
-    if (context.ResponseData.IsHeaderPresent($"x-amzn-dataexchange-header-{keyToUse}"))
-    {
-        prefixHeadersResponseHeaders.Add(keyToUse, context.ResponseData.GetHeaderValue($"x-amzn-dataexchange-header-{keyToUse}"));
-    }
-}
-if (prefixHeadersResponseHeaders.Count > 0)
-{
-    unmarshalledObject.ResponseHeaders = prefixHeadersResponseHeaders;
-}
-```
+name starts with the prefix into a local dictionary (named `headersFor{Property}`, matching C2J),
+stripping the prefix from each key. An empty prefix (the `.Length > 0` guard is false) collects all
+headers. Assigned only when non-empty (matches C2J). The same `WritePrefixHeadersUnmarshaller` helper
+serves the response and exception unmarshallers (both write to `unmarshalledObject`), since the trait
+is valid on output and error structures alike. Emitted code is pinned in `PrefixHeadersCodegenTests`.
 
 ## Type → Marshal/Unmarshal
 
@@ -405,54 +260,34 @@ unwraps with `.Value`.
 
 ## Error Dispatch
 
-In `{Operation}ResponseUnmarshaller.UnmarshallException`:
-
-```csharp
-if (errorResponse.Code != null && errorResponse.Code.Equals("{smithyShapeName}"))
-    return {Exception}Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
-```
+In `{Operation}ResponseUnmarshaller.UnmarshallException`, each error is matched with
+`errorResponse.Code != null && errorResponse.Code.Equals("{smithyShapeName}")` and dispatched to
+`{Exception}Unmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy)`.
 
 Error code = Smithy shape name (e.g. `"ChannelNotFound"`), not the .NET exception name.
 Fallback: `new Amazon{Service}Exception(errorResponse.Message, ...)`.
 
 ### Exception Unmarshaller
 
-```csharp
-public {Exception} Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
-{
-    if (context.Stream.Length > 0) context.Read(ref reader);
-    var unmarshalledObject = new {Exception}(errorResponse.Message, errorResponse.InnerException,
-        errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-    int targetDepth = context.CurrentDepth;
-    if (context.Stream.Length > 0)
-    {
-        while (context.ReadAtDepth(targetDepth, ref reader))
-        {
-            // Additional body-bound exception members deserialized here (if any beyond "message")
-        }
-    }
-    // @httpHeader members extracted from context.ResponseData here (see Response Header Unmarshalling)
-    return unmarshalledObject;
-}
-```
+`Unmarshall(JsonUnmarshallerContext context, ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)`
+reads the first token, constructs the exception from the six `errorResponse` fields (message, inner
+exception, type, code, request id, status code), runs the body loop for any body-bound members beyond
+`message`, then extracts `@httpHeader` members from `context.ResponseData` (see Response Header
+Unmarshalling). The read and the body loop are each guarded by `context.Stream.Length > 0` so an
+empty error body skips them. Pinned in `JsonExceptionUnmarshallerWriterTests`.
 
-## Protocol Differences
+## Other Protocols (not yet implemented)
 
-| Concern | restJson1 | awsJson1.x | restXml | query | ec2Query |
-|---|---|---|---|---|---|
-| Content-Type | `application/json` | `application/x-amz-json-1.{0,1}` | (none/xml) | `application/x-www-form-urlencoded` | `application/x-www-form-urlencoded` |
-| Routing | HTTP method + path | `X-Amz-Target: {ServiceName}.{Operation}` | HTTP method + path | `Action={Operation}` param | `Action={Operation}` param |
-| Member placement | HTTP traits | All body | HTTP traits | All body | All body |
-| Body format | JSON | JSON | XML | URL-encoded | URL-encoded |
-| Timestamp body default | `epoch-seconds` | `epoch-seconds` | `date-time` | `date-time` | `date-time` |
-| Error code source | JSON `code` or `__type` | JSON `code` or `__type` | XML `<Code>` | XML `<Code>` | XML `<Code>` |
-| Error wrapping | None | None | `<ErrorResponse><Error>` | `<ErrorResponse><Error>` | `<Response><Errors><Error>` |
-| Response unmarshaller base | `JsonResponseUnmarshaller` | `JsonResponseUnmarshaller` | `XmlResponseUnmarshaller` | `XmlResponseUnmarshaller` | `XmlResponseUnmarshaller` |
-| Request uses `UseQueryString` | Yes (for `@httpQuery`) | No | Yes (for `@httpQuery`) | No | No |
+Only restJson1 is implemented. For awsJson1.x, restXml, query, and ec2Query the target output is
+defined by the C2J templates (`generator/ServiceClientGeneratorLib/Generators/Marshallers/*.tt`).
+Contrasts to carry over when one lands: awsJson1.x routes via `X-Amz-Target: {ServiceName}.{Operation}`
+with all members in the body (Content-Type `application/x-amz-json-1.{0,1}`, no `UseQueryString`);
+query/ec2Query route via an `Action={Operation}` param with URL-encoded bodies; restXml keeps the HTTP
+binding traits with an XML body (`@xmlName`/`@xmlFlattened`/`@xmlAttribute`/`@xmlNamespace`). The
+XML-response family uses `XmlResponseUnmarshaller`, reads error codes from `<Code>` inside a wrapper
+(`<ErrorResponse><Error>`; ec2Query: `<Response><Errors><Error>`), and defaults body timestamps to
+`date-time` (vs epoch-seconds for the JSON family). Wire names: restXml `@xmlName`, query/ec2Query
+`@ec2QueryName` or PascalCase of the member name.
 
-## Adding a New Protocol
-
-When implementing the next protocol, update this skill with:
-1. Any new marshal/unmarshal patterns not covered above
-2. Protocol-specific base classes or interfaces
-3. Edge cases discovered during implementation
+When implementing one, replace this note with the real patterns — base classes, edge cases — and pin
+the emitted code in codegen tests.
