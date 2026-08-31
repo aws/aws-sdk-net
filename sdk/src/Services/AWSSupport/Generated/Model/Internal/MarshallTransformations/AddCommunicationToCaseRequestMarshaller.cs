@@ -104,6 +104,23 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CommunicationBody);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
+            if(publicRequest.IsSetUploadIds())
+            {
+                context.Writer.WritePropertyName("uploadIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUploadIdsListValue in publicRequest.UploadIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestUploadIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

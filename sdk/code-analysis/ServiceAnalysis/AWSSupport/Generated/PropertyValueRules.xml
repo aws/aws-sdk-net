@@ -6,9 +6,19 @@
     <max>8000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSSupport.Model.CompleteAttachmentUploadRequest.UploadId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSSupport.Model.CreateCaseRequest.CommunicationBody</property>
     <min>1</min>
     <max>8000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeAttachmentUploadStatusRequest.UploadId</property>
+    <min>1</min>
+    <max>2048</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSSupport.Model.DescribeCasesRequest.MaxResults</property>
@@ -41,9 +51,34 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSSupport.Model.GetAttachmentUploadLinksRequest.FileSizeBytes</property>
+    <min>1</min>
+    <max>157286400</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.GetAttachmentUploadLinksRequest.UploadId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.GetAttachmentUploadLinksResponse.PartSizeBytes</property>
+    <min>1</min>
+    <max>104857600</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.GetAttachmentUploadLinksResponse.UploadId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSSupport.Model.Communication.Body</property>
     <min>1</min>
     <max>8000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.CompletedUpload.ETag</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AWSSupport.Model.DateInterval.EndDateTime</property>
@@ -54,5 +89,33 @@
     <property>Amazon.AWSSupport.Model.DateInterval.StartDateTime</property>
     <min>8</min>
     <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DownloadUrl.ExpiryDate</property>
+    <min>8</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DownloadUrl.Url</property>
+    <min>8</min>
+    <pattern>^https://[a-zA-Z0-9][a-zA-Z0-9.-]*[a-zA-Z0-9]\.[a-zA-Z]{2,}(/.*)?$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.UploadRange.EndIndex</property>
+    <min>2</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.UploadRange.StartIndex</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.UploadUrl.ExpiryDate</property>
+    <min>8</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.UploadUrl.Url</property>
+    <min>8</min>
+    <pattern>^https://[a-zA-Z0-9][a-zA-Z0-9.-]*[a-zA-Z0-9]\.[a-zA-Z]{2,}(/.*)?$</pattern>
   </property-value-rule>
 </property-value-rules>

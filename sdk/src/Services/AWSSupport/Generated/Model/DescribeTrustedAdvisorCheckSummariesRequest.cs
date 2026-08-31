@@ -41,13 +41,18 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-    /// Amazon Web Services Support API. 
+    /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+    /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+    /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+    /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+    /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+    /// On-Ramp, or Enterprise Support plan.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+    /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+    /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -59,6 +64,23 @@ namespace Amazon.AWSSupport.Model
     /// see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
     /// the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User
     /// Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Understanding the Trusted Advisor Resources processed value</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The <b>Resources processed</b> value, <c>resourcesProcessed</c>, usually shows both
+    /// flagged resources (those with warnings or errors) and resources in good standing (ok
+    /// status resources). However, some checks report flagged resources only. To understand
+    /// what a specific check reports, review the detailed check information in the <a href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html">Trusted
+    /// Advisor check reference</a>. If you see a <b>Green</b> criterion listed in the <b>Alert
+    /// criteria</b>, then the check reports all resources. If there's no <b>Green</b> criterion
+    /// listed in the <b>Alert criteria</b>, then the check reports only flagged resources.
+    /// For example, the <a href="https://docs.aws.amazon.com/awssupport/latest/user/cost-optimization-checks.html#amazon-ec2-reserved-instances-optimization">Amazon
+    /// EC2 Reserved Instance optimization check (cX3c2R1chu)</a> doesn't list a <b>Green</b>
+    /// criterion in the <b>Alert criteria</b>. So, this check only reports flagged resources.
     /// </para>
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckSummariesRequest : AmazonAWSSupportRequest

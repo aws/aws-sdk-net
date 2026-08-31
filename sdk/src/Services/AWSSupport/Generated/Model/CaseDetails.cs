@@ -37,7 +37,7 @@ namespace Amazon.AWSSupport.Model
     ///  <ul> <li> 
     /// <para>
     ///  <b>caseId</b> - The support case ID requested or returned in the call. The case ID
-    /// is an alphanumeric string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>.
+    /// is an alphanumeric string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -53,7 +53,8 @@ namespace Amazon.AWSSupport.Model
     /// <para>
     ///  <b>language</b> - The language in which Amazon Web Services Support handles the case.
     /// Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-    /// ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <c>language</c>
+    /// ("ja") , Chinese ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean
+    /// (“ko”), and Turkish ("tr"). You must specify the ISO 639-1 code for the <c>language</c>
     /// parameter if you want support in that language.
     /// </para>
     ///  </li> <li> 
@@ -147,7 +148,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property CaseId. 
         /// <para>
         /// The support case ID requested or returned in the call. The case ID is an alphanumeric
-        /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i>
         /// 
         /// </para>
         /// </summary>
@@ -228,8 +229,9 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Language. 
         /// <para>
         /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
-        /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean
-        /// (“ko”). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
+        /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese
+        /// ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish
+        /// ("tr"). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
         /// want support in that language.
         /// </para>
         /// </summary>

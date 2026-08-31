@@ -39,27 +39,50 @@ namespace Amazon.AWSSupport.Model
     /// 
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-    /// Amazon Web Services Support API. 
+    /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+    /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+    /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+    /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+    /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+    /// On-Ramp, or Enterprise Support plan.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+    /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+    /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> <important> 
+    /// <para>
+    ///  <c>DescribeAttachment</c> can't return attachments larger than 5 MB. If the specified
+    /// <c>attachmentId</c> refers to an attachment larger than 5 MB, the request fails with
+    /// <c>InvalidParameterValueException</c>.
+    /// </para>
+    ///  
+    /// <para>
+    /// To download an attachment of any size, including attachments larger than 5 MB, use
+    /// <a>GetAttachmentDownloadLink</a>. <c>GetAttachmentDownloadLink</c> returns an Amazon
+    /// S3 presigned URL that you can use to download the attachment directly.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DescribeAttachmentRequest : AmazonAWSSupportRequest
     {
         private string _attachmentId;
+        private bool? _dryRun;
 
         /// <summary>
         /// Gets and sets the property AttachmentId. 
         /// <para>
         /// The ID of the attachment to return. Attachment IDs are returned by the <a>DescribeCommunications</a>
         /// operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the specified attachment is larger than 5 MB, this operation returns <c>InvalidParameterValueException</c>.
+        /// To download attachments larger than 5 MB, use <a>GetAttachmentDownloadLink</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -73,6 +96,27 @@ namespace Amazon.AWSSupport.Model
         internal bool IsSetAttachmentId()
         {
             return this._attachmentId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specifies whether to validate the request without actually retrieving the attachment.
+        /// When set to <c>true</c>, the request is validated but no attachment content is returned,
+        /// and the operation returns a <c>DryRunOperationException</c>. When omitted or set to
+        /// <c>false</c>, the request runs normally.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
     }
