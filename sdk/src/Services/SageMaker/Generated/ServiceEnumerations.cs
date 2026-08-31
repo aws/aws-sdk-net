@@ -25347,6 +25347,38 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TransformInstanceType MlG68xlarge = new TransformInstanceType("ml.g6.8xlarge");
         /// <summary>
+        /// Constant MlG6e12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e12xlarge = new TransformInstanceType("ml.g6e.12xlarge");
+        /// <summary>
+        /// Constant MlG6e16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e16xlarge = new TransformInstanceType("ml.g6e.16xlarge");
+        /// <summary>
+        /// Constant MlG6e24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e24xlarge = new TransformInstanceType("ml.g6e.24xlarge");
+        /// <summary>
+        /// Constant MlG6e2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e2xlarge = new TransformInstanceType("ml.g6e.2xlarge");
+        /// <summary>
+        /// Constant MlG6e48xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e48xlarge = new TransformInstanceType("ml.g6e.48xlarge");
+        /// <summary>
+        /// Constant MlG6e4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e4xlarge = new TransformInstanceType("ml.g6e.4xlarge");
+        /// <summary>
+        /// Constant MlG6e8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e8xlarge = new TransformInstanceType("ml.g6e.8xlarge");
+        /// <summary>
+        /// Constant MlG6eXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6eXlarge = new TransformInstanceType("ml.g6e.xlarge");
+        /// <summary>
         /// Constant MlG6Xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlG6Xlarge = new TransformInstanceType("ml.g6.xlarge");
