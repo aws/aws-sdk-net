@@ -37,7 +37,10 @@ namespace Amazon.AgentRegistry.Model
         private McpToolsDescriptor _tools;
 
         /// <summary>
-        /// Gets and sets the property Tools.
+        /// Gets and sets the property Tools. 
+        /// <para>
+        /// The MCP tools descriptor that defines the tools exposed by the MCP server.
+        /// </para>
         /// </summary>
         public McpToolsDescriptor Tools
         {

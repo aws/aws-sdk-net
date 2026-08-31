@@ -36,9 +36,12 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class RegistryRecordSummary
     {
         private DateTime? _createdAt;
+        private string _createdBy;
+        private bool? _createdByAutoDetection;
         private string _description;
         private string _displayName;
         private string _name;
+        private List<ProvenanceSummary> _provenanceSummaryList = AWSConfigs.InitializeCollections ? new List<ProvenanceSummary>() : null;
         private string _recordArn;
         private string _recordId;
         private RecordType _recordType;
@@ -64,6 +67,46 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The ID of the Amazon Web Services account that created the registry record.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedByAutoDetection. 
+        /// <para>
+        /// Specifies whether the registry record was created by auto-detection. <c>true</c> indicates
+        /// the record was automatically created by the service based on the registry's auto-detection
+        /// configuration; <c>false</c> indicates the record was created through a control-plane
+        /// API call.
+        /// </para>
+        /// </summary>
+        public bool? CreatedByAutoDetection
+        {
+            get { return this._createdByAutoDetection; }
+            set { this._createdByAutoDetection = value; }
+        }
+
+        // Check to see if CreatedByAutoDetection property is set
+        internal bool IsSetCreatedByAutoDetection()
+        {
+            return this._createdByAutoDetection.HasValue; 
         }
 
         /// <summary>
@@ -124,9 +167,30 @@ namespace Amazon.AgentRegistryControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ProvenanceSummaryList.
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<ProvenanceSummary> ProvenanceSummaryList
+        {
+            get { return this._provenanceSummaryList; }
+            set { this._provenanceSummaryList = value; }
+        }
+
+        // Check to see if ProvenanceSummaryList property is set
+        internal bool IsSetProvenanceSummaryList()
+        {
+            return this._provenanceSummaryList != null && (this._provenanceSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property RecordArn. 
         /// <para>
-        /// The &amp;ARN; of the registry record.
+        /// The Amazon Resource Name (ARN) of the registry record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -202,7 +266,7 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property RegistryArn. 
         /// <para>
-        /// The &amp;ARN; of the parent registry that owns the record.
+        /// The Amazon Resource Name (ARN) of the parent registry that owns the record.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=46, Max=2048)]

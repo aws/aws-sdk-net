@@ -56,6 +56,12 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("autoDetection", targetDepth, ref reader))
+                {
+                    var unmarshaller = AutoDetectionUnmarshaller.Instance;
+                    unmarshalledObject.AutoDetection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

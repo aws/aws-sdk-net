@@ -41,7 +41,10 @@ namespace Amazon.AgentRegistry.Model
         private McpServerDescriptor _mcpServer;
 
         /// <summary>
-        /// Gets and sets the property A2aAgentCard.
+        /// Gets and sets the property A2aAgentCard. 
+        /// <para>
+        ///  The A2A agent card descriptor, populated when the record type is AGENT.
+        /// </para>
         /// </summary>
         public A2aAgentCardDescriptor A2aAgentCard
         {
@@ -56,7 +59,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentSkillsDefinition.
+        /// Gets and sets the property AgentSkillsDefinition. 
+        /// <para>
+        ///  The agent skills definition descriptor, populated when the record type is SKILL.
+        /// </para>
         /// </summary>
         public AgentSkillsDefinitionDescriptor AgentSkillsDefinition
         {
@@ -71,7 +77,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Custom.
+        /// Gets and sets the property Custom. 
+        /// <para>
+        ///  The custom descriptor, populated when the record type is CUSTOM.
+        /// </para>
         /// </summary>
         public CustomDescriptor Custom
         {
@@ -86,7 +95,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property McpServer.
+        /// Gets and sets the property McpServer. 
+        /// <para>
+        ///  The MCP server descriptor, populated when the record type is MCP.
+        /// </para>
         /// </summary>
         public McpServerDescriptor McpServer
         {

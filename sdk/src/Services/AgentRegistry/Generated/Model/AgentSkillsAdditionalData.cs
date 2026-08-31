@@ -37,7 +37,10 @@ namespace Amazon.AgentRegistry.Model
         private AgentSkillsMdDescriptor _skillMd;
 
         /// <summary>
-        /// Gets and sets the property SkillMd.
+        /// Gets and sets the property SkillMd. 
+        /// <para>
+        ///  The agent skills markdown descriptor associated with the agent skills definition.
+        /// </para>
         /// </summary>
         public AgentSkillsMdDescriptor SkillMd
         {

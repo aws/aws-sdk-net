@@ -118,6 +118,22 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetProvenance())
+            {
+                context.Writer.WritePropertyName("provenance");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestProvenanceListValue in publicRequest.Provenance)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ProvenanceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestProvenanceListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetRecordType())
             {
                 context.Writer.WritePropertyName("recordType");

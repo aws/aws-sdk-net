@@ -31,7 +31,10 @@ namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Tag a resource with key-value pairs
+    /// Adds or overwrites one or more tags for the specified Amazon Web Services Agent Registry
+    /// resource. Tags are key-value pairs that you can use to categorize and manage Amazon
+    /// Web Services resources. If a tag with the same key already exists on the resource,
+    /// the service replaces its value with the value you specify.
     /// </summary>
     public partial class TagResourceRequest : AmazonAgentRegistryControlRequest
     {
@@ -39,7 +42,11 @@ namespace Amazon.AgentRegistryControl.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource to tag. Supported resources include
+        /// registries and registry records.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn
@@ -55,7 +62,11 @@ namespace Amazon.AgentRegistryControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags to apply to the resource, as a map of tag keys to tag values. Tag keys must
+        /// be unique within the request.
+        /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller

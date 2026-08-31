@@ -31,7 +31,7 @@ namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
     /// The configuration for an IAM role credential provider that signs requests to a registry
-    /// record's source with AWS Signature Version 4 (SigV4).
+    /// record's source with Amazon Web Services Signature Version 4 (SigV4).
     /// </summary>
     public partial class RegistryRecordIamCredentialProvider
     {
@@ -42,8 +42,8 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region to use for request signing. If not specified, the Region is derived
-        /// from the source URL hostname, falling back to the Region of the registry.
+        /// The Amazon Web Services Region to use for request signing. If not specified, the Region
+        /// is derived from the source URL hostname, falling back to the Region of the registry.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -62,7 +62,7 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The &amp;ARN; of the IAM role to assume for request signing.
+        /// The Amazon Resource Name (ARN) of the IAM role to assume for request signing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

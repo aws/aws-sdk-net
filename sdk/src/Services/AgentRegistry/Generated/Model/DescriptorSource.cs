@@ -37,7 +37,11 @@ namespace Amazon.AgentRegistry.Model
         private DescriptorSourceFromUrl _fromUrl;
 
         /// <summary>
-        /// Gets and sets the property FromUrl.
+        /// Gets and sets the property FromUrl. 
+        /// <para>
+        ///  The URL-based descriptor source, populated when descriptor content is synchronized
+        /// from a URL.
+        /// </para>
         /// </summary>
         public DescriptorSourceFromUrl FromUrl
         {

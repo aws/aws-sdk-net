@@ -84,8 +84,8 @@ namespace Amazon.AgentRegistryControl.Model
         /// <summary>
         /// Gets and sets the property ProviderArn. 
         /// <para>
-        /// The &amp;ARN; of the OAuth 2.0 credential provider resource in Amazon Bedrock AgentCore
-        /// Identity.
+        /// The Amazon Resource Name (ARN) of the OAuth 2.0 credential provider resource in Amazon
+        /// Bedrock AgentCore Identity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

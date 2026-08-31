@@ -31,14 +31,19 @@ namespace Amazon.AgentRegistryControl.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// List the tags on a resource
+    /// Lists the tags associated with the specified Amazon Web Services Agent Registry resource.
+    /// Returns the current tag key-value pairs on the resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAgentRegistryControlRequest
     {
         private string _resourceArn;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource to list tags for. Supported resources
+        /// include registries and registry records.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
         public string ResourceArn

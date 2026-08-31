@@ -25,6 +25,110 @@ namespace Amazon.AgentRegistryControl
 {
 
     /// <summary>
+    /// Constants used for properties of type AgentCoreGatewayProtocolType.
+    /// </summary>
+    public class AgentCoreGatewayProtocolType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MCP for AgentCoreGatewayProtocolType
+        /// </summary>
+        public static readonly AgentCoreGatewayProtocolType MCP = new AgentCoreGatewayProtocolType("MCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentCoreGatewayProtocolType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentCoreGatewayProtocolType FindValue(string value)
+        {
+            return FindValue<AgentCoreGatewayProtocolType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentCoreGatewayProtocolType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AgentCoreRuntimeServerProtocol.
+    /// </summary>
+    public class AgentCoreRuntimeServerProtocol : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant A2A for AgentCoreRuntimeServerProtocol
+        /// </summary>
+        public static readonly AgentCoreRuntimeServerProtocol A2A = new AgentCoreRuntimeServerProtocol("A2A");
+        /// <summary>
+        /// Constant AGUI for AgentCoreRuntimeServerProtocol
+        /// </summary>
+        public static readonly AgentCoreRuntimeServerProtocol AGUI = new AgentCoreRuntimeServerProtocol("AGUI");
+        /// <summary>
+        /// Constant HTTP for AgentCoreRuntimeServerProtocol
+        /// </summary>
+        public static readonly AgentCoreRuntimeServerProtocol HTTP = new AgentCoreRuntimeServerProtocol("HTTP");
+        /// <summary>
+        /// Constant MCP for AgentCoreRuntimeServerProtocol
+        /// </summary>
+        public static readonly AgentCoreRuntimeServerProtocol MCP = new AgentCoreRuntimeServerProtocol("MCP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AgentCoreRuntimeServerProtocol(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AgentCoreRuntimeServerProtocol FindValue(string value)
+        {
+            return FindValue<AgentCoreRuntimeServerProtocol>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AgentCoreRuntimeServerProtocol(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoApprovalRule.
     /// </summary>
     public class AutoApprovalRule : ConstantClass
@@ -64,6 +168,102 @@ namespace Amazon.AgentRegistryControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AutoApprovalRule(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoDetectionScope.
+    /// </summary>
+    public class AutoDetectionScope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ORGANIZATION for AutoDetectionScope
+        /// </summary>
+        public static readonly AutoDetectionScope ORGANIZATION = new AutoDetectionScope("ORGANIZATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoDetectionScope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoDetectionScope FindValue(string value)
+        {
+            return FindValue<AutoDetectionScope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoDetectionScope(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoDetectionStatus.
+    /// </summary>
+    public class AutoDetectionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AutoDetectionStatus
+        /// </summary>
+        public static readonly AutoDetectionStatus ACTIVE = new AutoDetectionStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for AutoDetectionStatus
+        /// </summary>
+        public static readonly AutoDetectionStatus INACTIVE = new AutoDetectionStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoDetectionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoDetectionStatus FindValue(string value)
+        {
+            return FindValue<AutoDetectionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoDetectionStatus(string value)
         {
             return FindValue(value);
         }
@@ -225,6 +425,52 @@ namespace Amazon.AgentRegistryControl
 
 
     /// <summary>
+    /// Constants used for properties of type ProvenanceRelation.
+    /// </summary>
+    public class ProvenanceRelation : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETECTED_FROM for ProvenanceRelation
+        /// </summary>
+        public static readonly ProvenanceRelation DETECTED_FROM = new ProvenanceRelation("DETECTED_FROM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProvenanceRelation(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProvenanceRelation FindValue(string value)
+        {
+            return FindValue<ProvenanceRelation>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProvenanceRelation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecordType.
     /// </summary>
     public class RecordType : ConstantClass
@@ -238,6 +484,10 @@ namespace Amazon.AgentRegistryControl
         /// Constant CUSTOM for RecordType
         /// </summary>
         public static readonly RecordType CUSTOM = new RecordType("CUSTOM");
+        /// <summary>
+        /// Constant GATEWAY for RecordType
+        /// </summary>
+        public static readonly RecordType GATEWAY = new RecordType("GATEWAY");
         /// <summary>
         /// Constant MCP for RecordType
         /// </summary>
@@ -674,6 +924,56 @@ namespace Amazon.AgentRegistryControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RegistryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SourceType.
+    /// </summary>
+    public class SourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSBedrockAgentCoreGateway for SourceType
+        /// </summary>
+        public static readonly SourceType AWSBedrockAgentCoreGateway = new SourceType("AWS::BedrockAgentCore::Gateway");
+        /// <summary>
+        /// Constant AWSBedrockAgentCoreRuntime for SourceType
+        /// </summary>
+        public static readonly SourceType AWSBedrockAgentCoreRuntime = new SourceType("AWS::BedrockAgentCore::Runtime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SourceType FindValue(string value)
+        {
+            return FindValue<SourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SourceType(string value)
         {
             return FindValue(value);
         }

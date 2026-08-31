@@ -37,7 +37,9 @@ namespace Amazon.AgentRegistryControl.Model
     {
         private A2aAgentCardDescriptor _a2aAgentCard;
         private AgentSkillsDefinitionDescriptor _agentSkillsDefinition;
+        private AgUiDescriptor _agui;
         private CustomDescriptor _custom;
+        private HttpDescriptor _http;
         private McpServerDescriptor _mcpServer;
 
         /// <summary>
@@ -77,6 +79,24 @@ namespace Amazon.AgentRegistryControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Agui. 
+        /// <para>
+        /// The AG-UI descriptor, populated for records detected from an AG-UI protocol source.
+        /// </para>
+        /// </summary>
+        public AgUiDescriptor Agui
+        {
+            get { return this._agui; }
+            set { this._agui = value; }
+        }
+
+        // Check to see if Agui property is set
+        internal bool IsSetAgui()
+        {
+            return this._agui != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Custom. 
         /// <para>
         /// The custom descriptor, populated when the record type is CUSTOM.
@@ -92,6 +112,24 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetCustom()
         {
             return this._custom != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Http. 
+        /// <para>
+        /// The HTTP descriptor, populated for records detected from an HTTP protocol source.
+        /// </para>
+        /// </summary>
+        public HttpDescriptor Http
+        {
+            get { return this._http; }
+            set { this._http = value; }
+        }
+
+        // Check to see if Http property is set
+        internal bool IsSetHttp()
+        {
+            return this._http != null;
         }
 
         /// <summary>

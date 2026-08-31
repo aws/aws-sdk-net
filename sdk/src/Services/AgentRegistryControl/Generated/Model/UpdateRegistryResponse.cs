@@ -35,9 +35,11 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class UpdateRegistryResponse : AmazonWebServiceResponse
     {
         private ApprovalConfiguration _approvalConfiguration;
+        private AutoDetection _autoDetection;
         private DateTime? _createdAt;
         private string _description;
         private DiscoveryConfiguration _discoveryConfiguration;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _name;
         private string _registryArn;
         private string _registryId;
@@ -61,6 +63,26 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetApprovalConfiguration()
         {
             return this._approvalConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDetection. 
+        /// <para>
+        /// The registry's auto-detection properties, including the requested configuration and
+        /// the current detection status. Present only when auto-detection was configured for
+        /// the registry.
+        /// </para>
+        /// </summary>
+        public AutoDetection AutoDetection
+        {
+            get { return this._autoDetection; }
+            set { this._autoDetection = value; }
+        }
+
+        // Check to see if AutoDetection property is set
+        internal bool IsSetAutoDetection()
+        {
+            return this._autoDetection != null;
         }
 
         /// <summary>
@@ -117,6 +139,25 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetDiscoveryConfiguration()
         {
             return this._discoveryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The server-side encryption configuration for the registry. Appears only when a customer-managed
+        /// Amazon Web Services KMS key encrypts the registry.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>
