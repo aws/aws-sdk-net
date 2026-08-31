@@ -60,6 +60,11 @@ namespace Amazon.WorkspacesInstances.Model.Internal.MarshallTransformations
                 context.Writer.WriteTextString("CoreCount");
                 context.Writer.WriteInt32(requestObject.CoreCount.Value);
             }
+            if (requestObject.IsSetNestedVirtualization())
+            {
+                context.Writer.WriteTextString("NestedVirtualization");
+                context.Writer.WriteTextString(requestObject.NestedVirtualization);
+            }
             if (requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WriteTextString("ThreadsPerCore");
