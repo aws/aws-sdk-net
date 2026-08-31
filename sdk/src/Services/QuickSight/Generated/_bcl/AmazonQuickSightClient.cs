@@ -1672,8 +1672,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dataset. This operation doesn't support datasets that include uploaded files
-        /// as a source.
+        /// Creates a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSet service method.</param>
         /// 
@@ -1726,8 +1725,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dataset. This operation doesn't support datasets that include uploaded files
-        /// as a source.
+        /// Creates a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -4977,6 +4975,83 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DeleteAnalysisResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteAnalysisResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteApp
+
+
+        /// <summary>
+        /// Deletes an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
+        /// 
+        /// <returns>The response from the DeleteApp service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
+        public virtual DeleteAppResponse DeleteApp(DeleteAppRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteApp service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
+        public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteAppResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -9244,6 +9319,160 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeApp
+
+
+        /// <summary>
+        /// Describes an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApp service method.</param>
+        /// 
+        /// <returns>The response from the DescribeApp service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
+        public virtual DescribeAppResponse DescribeApp(DescribeAppRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeApp service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeApp service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
+        public virtual Task<DescribeAppResponse> DescribeAppAsync(DescribeAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAppPermissions
+
+
+        /// <summary>
+        /// Describes the resource permissions for an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppPermissions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAppPermissions">REST API Reference for DescribeAppPermissions Operation</seealso>
+        public virtual DescribeAppPermissionsResponse DescribeAppPermissions(DescribeAppPermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppPermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the resource permissions for an app.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAppPermissions">REST API Reference for DescribeAppPermissions Operation</seealso>
+        public virtual Task<DescribeAppPermissionsResponse> DescribeAppPermissionsAsync(DescribeAppPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppPermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAppPermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeApprovalPolicy
 
 
@@ -10692,8 +10921,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes a dataset. This operation doesn't support datasets that include uploaded
-        /// files as a source.
+        /// Describes a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSet service method.</param>
         /// 
@@ -10728,8 +10956,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Describes a dataset. This operation doesn't support datasets that include uploaded
-        /// files as a source.
+        /// Describes a dataset.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSet service method.</param>
         /// <param name="cancellationToken">
@@ -16126,6 +16353,79 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListApps
+
+
+        /// <summary>
+        /// Lists the apps in an Amazon Web Services account. Results are paginated; use the <c>NextToken</c>
+        /// parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApps service method.</param>
+        /// 
+        /// <returns>The response from the ListApps service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListApps">REST API Reference for ListApps Operation</seealso>
+        public virtual ListAppsResponse ListApps(ListAppsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the apps in an Amazon Web Services account. Results are paginated; use the <c>NextToken</c>
+        /// parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListApps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListApps service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListApps">REST API Reference for ListApps Operation</seealso>
+        public virtual Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListAssetBundleExportJobs
 
 
@@ -20502,6 +20802,81 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  SearchApps
+
+
+        /// <summary>
+        /// Searches for apps in an Amazon Web Services account using the specified filters. This
+        /// operation is eventually consistent; the results might not reflect very recent updates.
+        /// Results are paginated; use the <c>NextToken</c> parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchApps service method.</param>
+        /// 
+        /// <returns>The response from the SearchApps service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchApps">REST API Reference for SearchApps Operation</seealso>
+        public virtual SearchAppsResponse SearchApps(SearchAppsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAppsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchAppsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches for apps in an Amazon Web Services account using the specified filters. This
+        /// operation is eventually consistent; the results might not reflect very recent updates.
+        /// Results are paginated; use the <c>NextToken</c> parameter to retrieve additional results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchApps service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchApps service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchApps">REST API Reference for SearchApps Operation</seealso>
+        public virtual Task<SearchAppsResponse> SearchAppsAsync(SearchAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = SearchAppsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchAppsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchAppsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchDashboards
 
 
@@ -23591,6 +23966,91 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  UpdateAppPermissions
+
+
+        /// <summary>
+        /// Updates the resource permissions for an app. You can grant or revoke permissions and,
+        /// optionally, change the app's visibility.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppPermissions service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAppPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAppPermissions">REST API Reference for UpdateAppPermissions Operation</seealso>
+        public virtual UpdateAppPermissionsResponse UpdateAppPermissions(UpdateAppPermissionsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppPermissionsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppPermissionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates the resource permissions for an app. You can grant or revoke permissions and,
+        /// optionally, change the app's visibility.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppPermissions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAppPermissions service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon Quick Sight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterException">
+        /// One or more parameter has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAppPermissions">REST API Reference for UpdateAppPermissions Operation</seealso>
+        public virtual Task<UpdateAppPermissionsResponse> UpdateAppPermissionsAsync(UpdateAppPermissionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateAppPermissionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppPermissionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateAppPermissionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateApprovalPolicy
 
 
@@ -24485,8 +24945,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates a dataset. This operation doesn't support datasets that include uploaded files
-        /// as a source. Partial updates are not supported by this operation.
+        /// Updates a dataset. Partial updates are not supported by this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSet service method.</param>
         /// 
@@ -24536,8 +24995,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Updates a dataset. This operation doesn't support datasets that include uploaded files
-        /// as a source. Partial updates are not supported by this operation.
+        /// Updates a dataset. Partial updates are not supported by this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSet service method.</param>
         /// <param name="cancellationToken">

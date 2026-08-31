@@ -31,8 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSet operation.
-    /// Creates a dataset. This operation doesn't support datasets that include uploaded files
-    /// as a source.
+    /// Creates a dataset.
     /// </summary>
     public partial class CreateDataSetRequest : AmazonQuickSightRequest
     {

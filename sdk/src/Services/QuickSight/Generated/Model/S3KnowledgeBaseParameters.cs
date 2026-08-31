@@ -30,7 +30,61 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The parameters that are required to connect to a S3 Knowledge Base data source.
+    /// The parameters that are required to connect to an S3 knowledge base data source.
+    /// 
+    ///  
+    /// <para>
+    ///  <b>Prerequisites: Amazon S3 bucket access</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// Before you call <c>CreateKnowledgeBase</c> for an Amazon S3 knowledge base, an administrator
+    /// must grant Amazon QuickSight access to the source S3 bucket. If access has not been
+    /// granted for the bucket, knowledge base creation fails.
+    /// </para>
+    ///  
+    /// <para>
+    /// To grant access, an administrator adds the bucket in the Amazon QuickSight admin console,
+    /// under Permissions, Amazon Web Services resources, Amazon S3, Select S3 buckets. This
+    /// authorizes the Amazon QuickSight service role to read the bucket. The bucket can be
+    /// in the same Amazon Web Services account or, when the bucket owner has authorized your
+    /// account, in a different account.
+    /// </para>
+    ///  
+    /// <para>
+    /// The service role requires at least the following permissions on the bucket:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>s3:GetObject</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>s3:ListBucket</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>s3:GetBucketLocation</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>s3:GetObjectVersion</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>s3:ListBucketVersions</c> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// For the full procedure, including cross-account buckets and KMS-encrypted buckets,
+    /// see the Amazon S3 knowledge base administrator setup guide.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// To grant access for a specific S3 knowledge base data source without granting account-wide
+    /// S3 access, provide a custom IAM role on the data source by using <c>RoleArn</c>.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class S3KnowledgeBaseParameters
     {
@@ -60,8 +114,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MetadataFilesLocation. 
         /// <para>
-        /// The location of metadata files within the S3 bucket that describe the structure and
-        /// content of the knowledge base.
+        /// The Amazon S3 location (prefix) of per-document metadata files. Each metadata file
+        /// describes a single source document and its indexable attributes, such as title, category,
+        /// and version. This is not the global ACL configuration file. To apply a single global
+        /// ACL file to the entire knowledge base, use the access control configuration instead.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

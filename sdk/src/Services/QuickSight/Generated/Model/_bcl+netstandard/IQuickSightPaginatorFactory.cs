@@ -78,6 +78,16 @@ namespace Amazon.QuickSight.Model
         IListApprovalPoliciesPaginator ListApprovalPolicies(ListApprovalPoliciesRequest request);
 
         /// <summary>
+        /// Paginator for ListApps operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListAppsPaginator ListApps(ListAppsRequest request);
+
+        /// <summary>
         /// Paginator for ListAssetBundleExportJobs operation
         ///</summary>
         [AWSPaginator(
@@ -426,6 +436,16 @@ namespace Amazon.QuickSight.Model
             OutputToken = new[] { "NextToken" }
         )]
         ISearchAnalysesPaginator SearchAnalyses(SearchAnalysesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchApps operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        ISearchAppsPaginator SearchApps(SearchAppsRequest request);
 
         /// <summary>
         /// Paginator for SearchDashboards operation

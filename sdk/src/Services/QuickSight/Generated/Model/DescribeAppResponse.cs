@@ -30,51 +30,48 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDataSet operation.
-    /// Describes a dataset.
+    /// This is the response object from the DescribeApp operation.
     /// </summary>
-    public partial class DescribeDataSetRequest : AmazonQuickSightRequest
+    public partial class DescribeAppResponse : AmazonWebServiceResponse
     {
-        private string _awsAccountId;
-        private string _dataSetId;
+        private AppSummary _app;
+        private string _requestId;
 
         /// <summary>
-        /// Gets and sets the property AwsAccountId. 
+        /// Gets and sets the property App. 
         /// <para>
-        /// The Amazon Web Services account ID.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=12)]
-        public string AwsAccountId
-        {
-            get { return this._awsAccountId; }
-            set { this._awsAccountId = value; }
-        }
-
-        // Check to see if AwsAccountId property is set
-        internal bool IsSetAwsAccountId()
-        {
-            return this._awsAccountId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property DataSetId. 
-        /// <para>
-        /// The ID for the dataset that you want to describe. This ID is unique per Amazon Web
-        /// Services Region for each Amazon Web Services account.
+        /// The information about the app.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string DataSetId
+        public AppSummary App
         {
-            get { return this._dataSetId; }
-            set { this._dataSetId = value; }
+            get { return this._app; }
+            set { this._app = value; }
         }
 
-        // Check to see if DataSetId property is set
-        internal bool IsSetDataSetId()
+        // Check to see if App property is set
+        internal bool IsSetApp()
         {
-            return this._dataSetId != null;
+            return this._app != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestId. 
+        /// <para>
+        /// The Amazon Web Services request ID for this operation.
+        /// </para>
+        /// </summary>
+        public string RequestId
+        {
+            get { return this._requestId; }
+            set { this._requestId = value; }
+        }
+
+        // Check to see if RequestId property is set
+        internal bool IsSetRequestId()
+        {
+            return this._requestId != null;
         }
 
     }

@@ -30,18 +30,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeDataSet operation.
-    /// Describes a dataset.
+    /// Container for the parameters to the ListApps operation.
+    /// Lists the apps in an Amazon Web Services account. Results are paginated; use the <c>NextToken</c>
+    /// parameter to retrieve additional results.
     /// </summary>
-    public partial class DescribeDataSetRequest : AmazonQuickSightRequest
+    public partial class ListAppsRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private string _dataSetId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
         /// <para>
-        /// The Amazon Web Services account ID.
+        /// The ID of the Amazon Web Services account that contains the apps.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -58,23 +60,42 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSetId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The ID for the dataset that you want to describe. This ID is unique per Amazon Web
-        /// Services Region for each Amazon Web Services account.
+        /// The maximum number of results to return in a single request. Valid range is 1 to 100.
+        /// If you don't specify a value, the default is 20.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string DataSetId
+        [AWSProperty(Min=1, Max=100)]
+        public int? MaxResults
         {
-            get { return this._dataSetId; }
-            set { this._dataSetId = value; }
+            get { return this._maxResults; }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if DataSetId property is set
-        internal bool IsSetDataSetId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._dataSetId != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token for the next set of results, or null if there are no more results.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=800)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }
