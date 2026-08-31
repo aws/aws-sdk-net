@@ -1,3 +1,7 @@
+### 4.0.324.0 (2026-08-31 22:16 UTC)
+* AgentRegistry (4.0.102.0)
+	* Release HTTP and AGUI descriptors to the dataplane model
+
 ### 4.0.323.0 (2026-08-31 18:20 UTC)
 * AgentRegistry (4.0.101.0)
 	* AWS Agent Registry becomes Generally Available
