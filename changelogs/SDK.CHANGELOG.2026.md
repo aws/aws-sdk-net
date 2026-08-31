@@ -1,3 +1,35 @@
+### 4.0.323.0 (2026-08-31 18:20 UTC)
+* AgentRegistry (4.0.101.0)
+	* AWS Agent Registry becomes Generally Available
+* AgentRegistryControl (4.0.101.0)
+	* AWS Agent Registry becomes Generally Available
+* AWSSupport (4.0.101.0)
+	* AWS Support now allows up to 10 attachments (150 MB each) per case correspondence, up from 3 at 5 MB. Customers can share large diagnostic logs, heap dumps, and packet captures directly in cases to reduce back-and-forth and speed up resolution. Available in US East, US West, and Europe (Ireland).
+* Batch (4.0.102.2)
+	* Batch is now generated from its Smithy model. There are no changes to the public API.
+* Connect (4.0.113.0)
+	* Added support for global routing on Amazon Connect Global Resiliency instances. New APIs GetCrossRegionRouting and UpdateCrossRegionRouting allow you to view and control cross-region contact routing between linked instances, so both Regions are active at all times.
+* ControlTower (4.0.100.12)
+	* Updated the descriptions for the AWS Control Tower ListEnabledControls API parameters to make them more accurate and intuitive.
+* CustomerProfiles (4.0.102.0)
+	* This release introduces new APIs for segment membership events allowing segment definition membership events to be exported to a kinesis stream for downstream processing. Additionally, includes new calculated attribute statistic and 2 new segment dimension types.
+* DevOpsAgent (4.0.103.0)
+	* Adds support for Slack bidirectional communication configuration in AWS DevOps Agent agent spaces.
+* KafkaConnect (4.0.101.0)
+	* Amazon MSK Connect now supports restarting newly created connectors via the asynchronous RestartConnector API. Restart all tasks or only failed tasks, while preserving configuration and committed offsets. This returns a connector operation ARN that you can track with DescribeConnectorOperation.
+* Kinesis (4.0.102.0)
+	* Adds support for data delivery to Amazon S3 Tables (Apache Iceberg) and general purpose Amazon S3 buckets with new CreateChannel, UpdateChannel, DeleteChannel, DescribeChannel, and ListChannels APIs for Amazon Kinesis Data Streams.
+* MediaConnect (4.0.101.4)
+	* MediaConnect is now generated from its Smithy model. There are no changes to the public API.
+* PinpointSMSVoiceV2 (4.0.101.0)
+	* AWS End User Messaging SMS now returns ConditionalBehavior on DescribeRegistrationFieldDefinitions, allowing you to programmatically discover which registration fields are required, optional, or disallowed based on the values of other fields in the same form.
+* QuickSight (4.0.108.0)
+	* This release adds support for managing apps in Amazon QuickSight with ListApps, SearchApps, DescribeApp, DescribeAppPermissions, UpdateAppPermissions, and DeleteApp
+* SageMaker (4.0.112.0)
+	* Amazon SageMaker Batch Transform now supports G6e instances, powered by NVIDIA L40S Tensor Core GPUs. G6e instances are the most cost-efficient GPU instances for deploying generative AI models and the highest-performance GPU instances for spatial computing workloads.
+* WorkspacesInstances (4.0.102.0)
+	* Amazon WorkSpaces Core managed instances now support nested virtualization. Customers can enable nested virtualization with supported instance types at launch via CpuOptions.NestedVirtualization in CreateWorkspaceInstance to run hypervisors and virtual machines inside their WorkSpaces Instance.
+
 ### 4.0.322.0 (2026-08-28 18:24 UTC)
 * BedrockAgent (4.0.101.0)
 	* Adds an optional syncSchedule field to CreateDataSource and UpdateDataSource for Managed Knowledge Bases data source connectors, so a data source can sync automatically on a daily, weekly, or monthly schedule.
