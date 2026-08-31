@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for SlackConfiguration Object
+    /// Response Unmarshaller for SlackBidirectionalConfiguration Object
     /// </summary>  
-    public class SlackConfigurationUnmarshaller : IJsonUnmarshaller<SlackConfiguration, JsonUnmarshallerContext>
+    public class SlackBidirectionalConfigurationUnmarshaller : IJsonUnmarshaller<SlackBidirectionalConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SlackConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public SlackBidirectionalConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            SlackConfiguration unmarshalledObject = new SlackConfiguration();
+            SlackBidirectionalConfiguration unmarshalledObject = new SlackBidirectionalConfiguration();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,28 +56,16 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("bidirectional", targetDepth, ref reader))
+                if (context.TestExpression("enabled", targetDepth, ref reader))
                 {
-                    var unmarshaller = SlackBidirectionalConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Bidirectional = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("transmissionTarget", targetDepth, ref reader))
-                {
-                    var unmarshaller = SlackTransmissionTargetUnmarshaller.Instance;
-                    unmarshalledObject.TransmissionTarget = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("workspaceId", targetDepth, ref reader))
+                if (context.TestExpression("roleArn", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkspaceId = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("workspaceName", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkspaceName = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -85,12 +73,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         }
 
 
-        private static SlackConfigurationUnmarshaller _instance = new SlackConfigurationUnmarshaller();        
+        private static SlackBidirectionalConfigurationUnmarshaller _instance = new SlackBidirectionalConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SlackConfigurationUnmarshaller Instance
+        public static SlackBidirectionalConfigurationUnmarshaller Instance
         {
             get
             {

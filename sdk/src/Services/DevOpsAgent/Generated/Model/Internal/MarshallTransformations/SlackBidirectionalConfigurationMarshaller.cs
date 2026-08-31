@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// SlackConfiguration Marshaller
+    /// SlackBidirectionalConfiguration Marshaller
     /// </summary>
-    public class SlackConfigurationMarshaller : IRequestMarshaller<SlackConfiguration, JsonMarshallerContext> 
+    public class SlackBidirectionalConfigurationMarshaller : IRequestMarshaller<SlackBidirectionalConfiguration, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,42 +42,20 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(SlackConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(SlackBidirectionalConfiguration requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetBidirectional())
+            if(requestObject.IsSetEnabled())
             {
-                context.Writer.WritePropertyName("bidirectional");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SlackBidirectionalConfigurationMarshaller.Instance;
-                marshaller.Marshall(requestObject.Bidirectional, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
-            if(requestObject.IsSetTransmissionTarget())
+            if(requestObject.IsSetRoleArn())
             {
-                context.Writer.WritePropertyName("transmissionTarget");
-                context.Writer.WriteStartObject();
-
-                var marshaller = SlackTransmissionTargetMarshaller.Instance;
-                marshaller.Marshall(requestObject.TransmissionTarget, context);
-
-                context.Writer.WriteEndObject();
-            }
-
-            if(requestObject.IsSetWorkspaceId())
-            {
-                context.Writer.WritePropertyName("workspaceId");
-                context.Writer.WriteStringValue(requestObject.WorkspaceId);
-            }
-
-            if(requestObject.IsSetWorkspaceName())
-            {
-                context.Writer.WritePropertyName("workspaceName");
-                context.Writer.WriteStringValue(requestObject.WorkspaceName);
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }
@@ -85,7 +63,7 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static SlackConfigurationMarshaller Instance = new SlackConfigurationMarshaller();
+        public readonly static SlackBidirectionalConfigurationMarshaller Instance = new SlackBidirectionalConfigurationMarshaller();
 
     }
 }

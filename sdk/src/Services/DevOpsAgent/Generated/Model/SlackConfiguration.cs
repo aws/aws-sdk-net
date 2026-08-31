@@ -34,9 +34,29 @@ namespace Amazon.DevOpsAgent.Model
     /// </summary>
     public partial class SlackConfiguration
     {
+        private SlackBidirectionalConfiguration _bidirectional;
         private SlackTransmissionTarget _transmissionTarget;
         private string _workspaceId;
         private string _workspaceName;
+
+        /// <summary>
+        /// Gets and sets the property Bidirectional. 
+        /// <para>
+        /// Optional bidirectional communication configuration. Supply this configuration and
+        /// set enabled to true so you can interact with the agent directly from Slack.
+        /// </para>
+        /// </summary>
+        public SlackBidirectionalConfiguration Bidirectional
+        {
+            get { return this._bidirectional; }
+            set { this._bidirectional = value; }
+        }
+
+        // Check to see if Bidirectional property is set
+        internal bool IsSetBidirectional()
+        {
+            return this._bidirectional != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TransmissionTarget. 

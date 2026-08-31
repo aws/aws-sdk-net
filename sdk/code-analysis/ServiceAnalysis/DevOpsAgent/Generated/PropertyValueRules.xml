@@ -1861,6 +1861,12 @@
     <pattern>https://[a-zA-Z0-9]([a-zA-Z0-9.-]*[a-zA-Z0-9])\.service-now\.com/?</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.DevOpsAgent.Model.SlackBidirectionalConfiguration.RoleArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>arn:aws:iam::\d{12}:role/[a-zA-Z0-9+=,.@_/-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.DevOpsAgent.Model.SlackChannel.ChannelId</property>
     <min>8</min>
     <max>16</max>
