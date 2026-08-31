@@ -133,6 +133,14 @@ namespace Amazon.CustomerProfiles.Model
         }
 
         /// <summary>
+        /// Paginator for ListSegmentSubscriptionEvents operation
+        ///</summary>
+        public IListSegmentSubscriptionEventsPaginator ListSegmentSubscriptionEvents(ListSegmentSubscriptionEventsRequest request) 
+        {
+            return new ListSegmentSubscriptionEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListUploadJobs operation
         ///</summary>
         public IListUploadJobsPaginator ListUploadJobs(ListUploadJobsRequest request) 

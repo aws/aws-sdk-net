@@ -148,6 +148,16 @@ namespace Amazon.CustomerProfiles.Model
         IListSegmentDefinitionsPaginator ListSegmentDefinitions(ListSegmentDefinitionsRequest request);
 
         /// <summary>
+        /// Paginator for ListSegmentSubscriptionEvents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListSegmentSubscriptionEventsPaginator ListSegmentSubscriptionEvents(ListSegmentSubscriptionEventsRequest request);
+
+        /// <summary>
         /// Paginator for ListUploadJobs operation
         ///</summary>
         [AWSPaginator(
