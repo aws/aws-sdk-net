@@ -30,31 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// Additional parameters specified by the acceptor while accepting the term.
+    /// A fixed price increase that is applied each time the agreement renews.
     /// </summary>
-    public partial class RenewalTermConfiguration
+    public partial class FixedPercentage
     {
-        private bool? _enableAutoRenew;
+        private string _value;
 
         /// <summary>
-        /// Gets and sets the property EnableAutoRenew. 
+        /// Gets and sets the property Value. 
         /// <para>
-        /// Defines whether the acceptor has chosen to auto-renew the agreement when it reaches
-        /// its end date. Can be set to <c>True</c> or <c>False</c>. The acceptor can change this
-        /// value within the limits set by <c>LockoutPeriod</c> and <c>MaxRenewals</c>.
+        /// The percentage by which the price increases at each renewal, from <c>0.00</c> to <c>100.00</c>
+        /// with up to two decimal places. A value of <c>0.00</c> means that the agreement renews
+        /// at the same price.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public bool? EnableAutoRenew
+        [AWSProperty(Min=1, Max=6)]
+        public string Value
         {
-            get { return this._enableAutoRenew; }
-            set { this._enableAutoRenew = value; }
+            get { return this._value; }
+            set { this._value = value; }
         }
 
-        // Check to see if EnableAutoRenew property is set
-        internal bool IsSetEnableAutoRenew()
+        // Check to see if Value property is set
+        internal bool IsSetValue()
         {
-            return this._enableAutoRenew.HasValue; 
+            return this._value != null;
         }
 
     }

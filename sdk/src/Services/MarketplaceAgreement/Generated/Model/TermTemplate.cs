@@ -30,31 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// Additional parameters specified by the acceptor while accepting the term.
+    /// Defines how a specific type of term changes each time the agreement renews. Exactly
+    /// one of the following fields is set.
     /// </summary>
-    public partial class RenewalTermConfiguration
+    public partial class TermTemplate
     {
-        private bool? _enableAutoRenew;
+        private PaymentScheduleTermTemplate _paymentScheduleTermTemplate;
 
         /// <summary>
-        /// Gets and sets the property EnableAutoRenew. 
+        /// Gets and sets the property PaymentScheduleTermTemplate. 
         /// <para>
-        /// Defines whether the acceptor has chosen to auto-renew the agreement when it reaches
-        /// its end date. Can be set to <c>True</c> or <c>False</c>. The acceptor can change this
-        /// value within the limits set by <c>LockoutPeriod</c> and <c>MaxRenewals</c>.
+        /// Defines the payment schedule that is applied to the renewed agreement.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public bool? EnableAutoRenew
+        public PaymentScheduleTermTemplate PaymentScheduleTermTemplate
         {
-            get { return this._enableAutoRenew; }
-            set { this._enableAutoRenew = value; }
+            get { return this._paymentScheduleTermTemplate; }
+            set { this._paymentScheduleTermTemplate = value; }
         }
 
-        // Check to see if EnableAutoRenew property is set
-        internal bool IsSetEnableAutoRenew()
+        // Check to see if PaymentScheduleTermTemplate property is set
+        internal bool IsSetPaymentScheduleTermTemplate()
         {
-            return this._enableAutoRenew.HasValue; 
+            return this._paymentScheduleTermTemplate != null;
         }
 
     }

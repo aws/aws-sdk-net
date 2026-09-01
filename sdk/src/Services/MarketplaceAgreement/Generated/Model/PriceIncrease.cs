@@ -30,51 +30,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// An object that contains the <c>SortBy</c> and <c>SortOrder</c> attributes.
+    /// The price increase that is applied each time the agreement renews. Exactly one of
+    /// the following fields is set.
     /// </summary>
-    public partial class Sort
+    public partial class PriceIncrease
     {
-        private string _sortBy;
-        private SortOrder _sortOrder;
+        private FixedPercentage _fixedPercentage;
+        private PercentageRange _percentageRange;
 
         /// <summary>
-        /// Gets and sets the property SortBy. 
+        /// Gets and sets the property FixedPercentage. 
         /// <para>
-        /// The attribute on which the data is grouped, which can be <c>EndTime</c>, <c>StartTime</c>,
-        /// or <c>LastUpdateTime</c>. <c>StartTime</c> and <c>LastUpdateTime</c> are supported
-        /// only when <c>PartyType</c> is <c>Proposer</c>. The default value is <c>EndTime</c>.
+        /// A fixed price increase percentage that is applied at each renewal.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string SortBy
+        public FixedPercentage FixedPercentage
         {
-            get { return this._sortBy; }
-            set { this._sortBy = value; }
+            get { return this._fixedPercentage; }
+            set { this._fixedPercentage = value; }
         }
 
-        // Check to see if SortBy property is set
-        internal bool IsSetSortBy()
+        // Check to see if FixedPercentage property is set
+        internal bool IsSetFixedPercentage()
         {
-            return this._sortBy != null;
+            return this._fixedPercentage != null;
         }
 
         /// <summary>
-        /// Gets and sets the property SortOrder. 
+        /// Gets and sets the property PercentageRange. 
         /// <para>
-        /// The sorting order, which can be <c>ASCENDING</c> or <c>DESCENDING</c>. The default
-        /// value is <c>ASCENDING</c>.
+        /// A range of price increase percentages that the proposer can choose from before the
+        /// adjustment deadline of the agreement.
         /// </para>
         /// </summary>
-        public SortOrder SortOrder
+        public PercentageRange PercentageRange
         {
-            get { return this._sortOrder; }
-            set { this._sortOrder = value; }
+            get { return this._percentageRange; }
+            set { this._percentageRange = value; }
         }
 
-        // Check to see if SortOrder property is set
-        internal bool IsSetSortOrder()
+        // Check to see if PercentageRange property is set
+        internal bool IsSetPercentageRange()
         {
-            return this._sortOrder != null;
+            return this._percentageRange != null;
         }
 
     }

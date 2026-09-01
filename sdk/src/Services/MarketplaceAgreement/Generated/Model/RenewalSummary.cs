@@ -30,31 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// Additional parameters specified by the acceptor while accepting the term.
+    /// The details of the renewal that applies at the end date of an agreement.
     /// </summary>
-    public partial class RenewalTermConfiguration
+    public partial class RenewalSummary
     {
-        private bool? _enableAutoRenew;
+        private string _offerId;
 
         /// <summary>
-        /// Gets and sets the property EnableAutoRenew. 
+        /// Gets and sets the property OfferId. 
         /// <para>
-        /// Defines whether the acceptor has chosen to auto-renew the agreement when it reaches
-        /// its end date. Can be set to <c>True</c> or <c>False</c>. The acceptor can change this
-        /// value within the limits set by <c>LockoutPeriod</c> and <c>MaxRenewals</c>.
+        /// The unique identifier of the offer that provides the terms for the next renewal cycle.
+        /// For most renewals, this is the same offer that the agreement was created from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public bool? EnableAutoRenew
+        [AWSProperty(Min=1, Max=64)]
+        public string OfferId
         {
-            get { return this._enableAutoRenew; }
-            set { this._enableAutoRenew = value; }
+            get { return this._offerId; }
+            set { this._offerId = value; }
         }
 
-        // Check to see if EnableAutoRenew property is set
-        internal bool IsSetEnableAutoRenew()
+        // Check to see if OfferId property is set
+        internal bool IsSetOfferId()
         {
-            return this._enableAutoRenew.HasValue; 
+            return this._offerId != null;
         }
 
     }
