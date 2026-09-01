@@ -314,6 +314,12 @@
     <pattern>https?://.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.FixedPercentage.PercentageValue</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.FixedUpfrontPricingTerm.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
@@ -472,6 +478,23 @@
     <pattern>[\w\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.PaymentScheduleEntry.ChargeDateOffset</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.PaymentScheduleEntry.ChargePercentage</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.PaymentScheduleEntry.DayOfMonth</property>
+    <min>1</min>
+    <max>31</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.PaymentScheduleTerm.CurrencyCode</property>
     <min>3</min>
     <max>3</max>
@@ -482,6 +505,24 @@
     <min>1</min>
     <max>256</max>
     <pattern>[A-Za-z0-9+=;,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.PercentageRange.DefaultValue</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.PercentageRange.MaximumValue</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.PercentageRange.MinimumValue</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.PricingModel.DisplayName</property>
@@ -626,10 +667,26 @@
     <pattern>(.)+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.RenewalTerm.AdjustmentDeadline</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.RenewalTerm.Id</property>
     <min>1</min>
     <max>256</max>
     <pattern>[A-Za-z0-9+=;,.@\-_]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.RenewalTerm.LockoutPeriod</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>(.)+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceDiscovery.Model.RenewalTerm.MaxRenewals</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceDiscovery.Model.Resource.DisplayName</property>

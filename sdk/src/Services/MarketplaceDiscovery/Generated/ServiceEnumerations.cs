@@ -523,6 +523,10 @@ namespace Amazon.MarketplaceDiscovery
     {
 
         /// <summary>
+        /// Constant AUTO_RENEW for PurchaseOptionBadgeType
+        /// </summary>
+        public static readonly PurchaseOptionBadgeType AUTO_RENEW = new PurchaseOptionBadgeType("AUTO_RENEW");
+        /// <summary>
         /// Constant FUTURE_DATED for PurchaseOptionBadgeType
         /// </summary>
         public static readonly PurchaseOptionBadgeType FUTURE_DATED = new PurchaseOptionBadgeType("FUTURE_DATED");

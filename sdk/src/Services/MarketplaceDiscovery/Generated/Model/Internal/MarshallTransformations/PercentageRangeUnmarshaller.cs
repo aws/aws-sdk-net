@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RenewalTerm Object
+    /// Response Unmarshaller for PercentageRange Object
     /// </summary>  
-    public class RenewalTermUnmarshaller : IJsonUnmarshaller<RenewalTerm, JsonUnmarshallerContext>
+    public class PercentageRangeUnmarshaller : IJsonUnmarshaller<PercentageRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RenewalTerm Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public PercentageRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            RenewalTerm unmarshalledObject = new RenewalTerm();
+            PercentageRange unmarshalledObject = new PercentageRange();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,46 +56,22 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("adjustmentDeadline", targetDepth, ref reader))
+                if (context.TestExpression("defaultValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdjustmentDeadline = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("id", targetDepth, ref reader))
+                if (context.TestExpression("maximumValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MaximumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("lockoutPeriod", targetDepth, ref reader))
+                if (context.TestExpression("minimumValue", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LockoutPeriod = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("maxRenewals", targetDepth, ref reader))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxRenewals = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("priceIncrease", targetDepth, ref reader))
-                {
-                    var unmarshaller = PriceIncreaseUnmarshaller.Instance;
-                    unmarshalledObject.PriceIncrease = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("termTemplates", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<TermTemplate, TermTemplateUnmarshaller>(TermTemplateUnmarshaller.Instance);
-                    unmarshalledObject.TermTemplates = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("type", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.MinimumValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -103,12 +79,12 @@ namespace Amazon.MarketplaceDiscovery.Model.Internal.MarshallTransformations
         }
 
 
-        private static RenewalTermUnmarshaller _instance = new RenewalTermUnmarshaller();        
+        private static PercentageRangeUnmarshaller _instance = new PercentageRangeUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RenewalTermUnmarshaller Instance
+        public static PercentageRangeUnmarshaller Instance
         {
             get
             {
