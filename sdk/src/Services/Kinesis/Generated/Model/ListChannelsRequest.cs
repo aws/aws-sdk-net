@@ -42,8 +42,8 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
-    /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+    /// This operation has a call limit of 5 transactions per second (TPS) for each Amazon
+    /// Web Services account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
     /// </para>
     /// </summary>
     public partial class ListChannelsRequest : AmazonKinesisRequest

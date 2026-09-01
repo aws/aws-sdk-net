@@ -130,19 +130,19 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>CREATING</c> 
+        ///  <c>CREATING</c> - The channel is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ACTIVE</c> 
+        ///  <c>ACTIVE</c> - The channel is ready to deliver records.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>UPDATING</c> 
+        ///  <c>UPDATING</c> - The channel configuration is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>DELETING</c> 
+        ///  <c>DELETING</c> - The channel is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>

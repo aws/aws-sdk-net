@@ -114,10 +114,29 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class GetRecordsRequest : AmazonKinesisRequest
     {
+        private bool? _dryRun;
         private int? _limit;
         private string _shardIterator;
         private string _streamARN;
         private string _streamId;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 

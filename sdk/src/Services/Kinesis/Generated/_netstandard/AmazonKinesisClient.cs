@@ -365,6 +365,12 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
+        /// To use this operation, you must have permission to pass the specified service execution
+        /// IAM role to Amazon Kinesis Data Streams (the <c>iam:PassRole</c> permission on that
+        /// role).
+        /// </para>
+        ///  
+        /// <para>
         /// Creating a channel is an asynchronous operation. Upon receiving the request, Amazon
         /// Kinesis Data Streams returns immediately with the channel in the <c>CREATING</c> state.
         /// After provisioning is complete, Amazon Kinesis Data Streams sets the state to <c>ACTIVE</c>.
@@ -376,8 +382,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
-        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// This operation has a call limit of 5 transactions per second (TPS) for each Amazon
+        /// Web Services account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChannel service method.</param>
@@ -717,8 +723,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
-        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// This operation has a call limit of 5 transactions per second (TPS) for each Amazon
+        /// Web Services account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChannel service method.</param>
@@ -1028,8 +1034,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
-        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// This operation has a call limit of 5 transactions per second (TPS) for each Amazon
+        /// Web Services account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeChannel service method.</param>
@@ -1547,6 +1553,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ExpiredIteratorException">
         /// The provided iterator exceeds the maximum age allowed.
         /// </exception>
@@ -1745,6 +1754,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
         /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
@@ -1924,8 +1936,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
-        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// This operation has a call limit of 5 transactions per second (TPS) for each Amazon
+        /// Web Services account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChannels service method.</param>
@@ -2534,6 +2546,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
         /// The processing of the request failed because of an unknown error, exception, or failure.
         /// </exception>
@@ -2703,6 +2718,9 @@ namespace Amazon.Kinesis
         /// <returns>The response from the PutRecords service method, as returned by Kinesis.</returns>
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InternalFailureException">
         /// The processing of the request failed because of an unknown error, exception, or failure.
@@ -3348,6 +3366,9 @@ namespace Amazon.Kinesis
         /// <exception cref="Amazon.Kinesis.Model.AccessDeniedException">
         /// Specifies that you do not have the permissions required to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.Kinesis.Model.DryRunOperationException">
+        /// The request was rejected because the DryRun parameter was specified.
+        /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.InvalidArgumentException">
         /// A specified parameter exceeds its restrictions, is not supported, or can't be used.
         /// For more information, see the returned message.
@@ -3575,8 +3596,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// This API has a call limit of 5 transactions per second (TPS) for each Amazon Web Services
-        /// account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
+        /// This operation has a call limit of 5 transactions per second (TPS) for each Amazon
+        /// Web Services account. Exceeding 5 TPS results in a <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>

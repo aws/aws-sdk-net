@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// The server-side encryption configuration for a channel.
+    /// Specifies the Amazon Web Services KMS key that Amazon Kinesis Data Streams uses to
+    /// encrypt data delivered to the channel's destination.
     /// </summary>
     public partial class ChannelEncryptionConfiguration
     {

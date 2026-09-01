@@ -138,15 +138,17 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>STANDARD</c> (default)
+        ///  <c>STANDARD</c> - Default storage class for frequently accessed data. (default)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>INTELLIGENT_TIERING</c> 
+        ///  <c>INTELLIGENT_TIERING</c> - Automatically moves objects to the most cost-effective
+        /// access tier based on usage patterns.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>GLACIER_IR</c> 
+        ///  <c>GLACIER_IR</c> - Low-cost storage for rarely accessed data that requires millisecond
+        /// retrieval.
         /// </para>
         ///  </li> </ul>
         /// </summary>
