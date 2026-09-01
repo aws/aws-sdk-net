@@ -53,6 +53,29 @@ public static class JsonScalarMarshaller
         }
     }
 
+    /// <summary>
+    /// Emits the write for a @sparse collection element/value; the emitted code assumes a non-null
+    /// value, so it must sit behind a null check. Unwraps the nullable value type with <c>.Value</c>
+    /// and writes bare — no float/double NaN guard (that guard is member-only), matching C2J.
+    /// </summary>
+    public static void WriteNonNullScalar(CodeWriter writer, TypeDescriptor type, string expression, string timestampDefault)
+    {
+        switch (type.MarshalType)
+        {
+            case "bool?":
+                writer.WriteLine($"context.Writer.WriteBooleanValue({expression}.Value);");
+                break;
+            case "int?" or "long?" or "float?" or "double?":
+                writer.WriteLine($"context.Writer.WriteNumberValue({expression}.Value);");
+                break;
+            case "DateTime?":
+                WriteTimestamp(writer, type.TimestampFormat ?? timestampDefault, expression, nullable: true);
+                break;
+            default:
+                throw new GeneratorException($"'{type.DotNetType}' is not a sparse value-type element.");
+        }
+    }
+
     private static void WriteSpecialNumeric(CodeWriter writer, string dotNetType, string expression)
     {
         var suffix = dotNetType == "float?" ? "Float" : "Double";

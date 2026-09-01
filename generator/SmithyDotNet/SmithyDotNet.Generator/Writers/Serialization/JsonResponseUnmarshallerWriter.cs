@@ -256,10 +256,19 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
     {
         foreach (var (member, headerName) in headerMembers)
         {
-            var conversion = HeaderValueConversion(member, $"""context.ResponseData.GetHeaderValue("{headerName}")""");
             writer.OpenBlock($"""if (context.ResponseData.IsHeaderPresent("{headerName}"))""", () =>
             {
-                writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {conversion};");
+                // A @mediaType string header is base64 on the wire.
+                if (member.Type is { IsString: true, MediaType: not null })
+                {
+                    writer.WriteLine($"""var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("{headerName}"));""");
+                    writer.WriteLine($"unmarshalledObject.{member.PropertyName} = System.Text.Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);");
+                }
+                else
+                {
+                    var conversion = HeaderValueConversion(member, $"""context.ResponseData.GetHeaderValue("{headerName}")""");
+                    writer.WriteLine($"unmarshalledObject.{member.PropertyName} = {conversion};");
+                }
             });
         }
     }

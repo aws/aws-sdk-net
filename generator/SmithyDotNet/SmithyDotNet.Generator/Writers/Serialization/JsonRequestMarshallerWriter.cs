@@ -157,11 +157,8 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         writer.WriteLine($"""request.HostPrefix = $"{interpolated}";""");
     }
 
-    // Content-Type mirrors C2J: omitted for GET/DELETE and for body-less operations. Otherwise a
-    // string/enum @httpPayload body is text/plain and everything else (structure/blob payload or a
-    // normal JSON body) is application/json — a blob payload later overrides it with
-    // application/octet-stream. TODO: customization OverrideContentType and non-restJson
-    // (application/x-amz-json) are not handled yet.
+    // Omitted for GET/DELETE and for body-less operations, matching C2J. TODO: customization
+    // OverrideContentType and non-restJson (application/x-amz-json) are not handled yet.
     private static void WriteContentType(CodeWriter writer, HttpTrait httpTrait, PartitionedMembers partitioned)
     {
         var hasBody = partitioned.PayloadMember is not null || partitioned.BodyMembers.Count > 0;
@@ -170,7 +167,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             return;
         }
 
-        var contentType = partitioned.PayloadMember is { Type.MarshalsAsString: true } ? "text/plain" : "application/json";
+        var contentType = "application/json";
+        if (partitioned.PayloadMember is { Type.MarshalsAsString: true } payload)
+        {
+            contentType = payload.Type.MediaType ?? "text/plain";
+        }
         writer.WriteLine($"""request.Headers["Content-Type"] = "{contentType}";""");
     }
 
@@ -327,6 +328,11 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                 {
                     writer.WriteLine($"""request.Headers["{headerName}"] = StringUtils.FromList(publicRequest.{member.PropertyName});""");
                 }
+                else if (member.Type is { IsString: true, MediaType: not null })
+                {
+                    // A @mediaType string bound to a header is base64 on the wire; body-bound ones are plain.
+                    writer.WriteLine($"""request.Headers["{headerName}"] = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(publicRequest.{member.PropertyName}));""");
+                }
                 else if (member.Type.MarshalsAsString)
                 {
                     writer.WriteLine($"""request.Headers["{headerName}"] = publicRequest.{member.PropertyName};""");
@@ -444,12 +450,9 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
         throw new GeneratorException($"Unsupported @httpPayload member type '{payload.Type.DotNetType}' (member: {payload.PropertyName}); only string, structure, and blob payloads are handled.");
     }
 
-    // A blob payload is the raw body stream (Content-Type application/octet-stream overrides the
-    // application/json set earlier). Content-Length handling mirrors C2J's JsonRPCRequestMarshaller:
-    //  - @streaming + @unsignedPayload, no @requiresLength: set Content-Length when the stream is
-    //    seekable, otherwise send it chunked (length unknown up front; body signing is disabled anyway).
-    //  - @streaming + @requiresLength: the stream MUST be seekable or Content-Length can't be set -> throw.
-    //  - otherwise (incl. every non-streaming blob): seek when seekable and always set Content-Length.
+    // A blob payload is the raw body stream; the final Content-Type overrides the one set earlier.
+    // A non-seekable stream can only fall back to chunked transfer when the body is unsigned and
+    // no length is required; @requiresLength makes Content-Length mandatory, so it throws instead.
     private static void WriteBlobPayloadSerialization(CodeWriter writer, Member payload, bool unsignedPayload)
     {
         var streaming = payload.Type.IsStreaming;
@@ -485,7 +488,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             writer.WriteLine("request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] = request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);");
         }
 
-        writer.WriteLine("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";""");
+        writer.WriteLine($"""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "{payload.Type.MediaType ?? "application/octet-stream"}";""");
     }
 
     // The Utf8JsonWriter + Content/ContentStream scaffold shared by the normal JSON body and the

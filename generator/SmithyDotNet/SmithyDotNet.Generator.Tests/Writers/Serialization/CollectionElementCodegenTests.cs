@@ -237,4 +237,55 @@ public class CollectionElementCodegenTests
         Assert.Contains("var unmarshaller = new JsonListUnmarshaller<DateTime, DateTimeUnmarshaller>(DateTimeUnmarshaller.Instance);", _responseUnmarshaller);
         Assert.Contains("unmarshalledObject.IsoTimes = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
     }
+
+    [Fact]
+    public void RequestStructure_SparseCollections_HaveNullableValueTypeElements()
+    {
+        // Non-sparse collection elements are non-nullable (List<int>); @sparse ones are nullable
+        // (List<int?>), matching the C2J-generated SDK. Reference-type elements are unchanged.
+        Assert.Contains("public List<int?> SparseCounts", _requestStructure);
+        Assert.Contains("public List<string> SparseTags", _requestStructure);
+        Assert.Contains("public Dictionary<string, string> SparseLabels", _requestStructure);
+        Assert.Contains("public Dictionary<string, long?> SparseAmounts", _requestStructure);
+    }
+
+    [Fact]
+    public void RequestMarshaller_SparseIntListElements_NullCheckOrWriteNull()
+    {
+        Assert.Contains("if (publicRequestSparseCountsListValue != null)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequestSparseCountsListValue.Value);", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNullValue();", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_SparseStringListElements_WriteBareValues()
+    {
+        // A null string element already writes JSON null via WriteStringValue, so the sparse list
+        // path only null-guards value types - matches C2J.
+        Assert.Contains("context.Writer.WriteStringValue(publicRequestSparseTagsListValue);", _requestMarshaller);
+        Assert.DoesNotContain("if (publicRequestSparseTagsListValue", _requestMarshaller);
+    }
+
+    [Fact]
+    public void RequestMarshaller_SparseMapValues_NullCheckEveryKind()
+    {
+        // A sparse map null-guards every value kind, strings included - matches C2J.
+        Assert.Contains("if (publicRequestSparseLabelsValue == null)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteStringValue(publicRequestSparseLabelsValue);", _requestMarshaller);
+        Assert.Contains("if (publicRequestSparseAmountsValue == null)", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteNumberValue(publicRequestSparseAmountsValue.Value);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_SparseCollections_UseNullableUnmarshallers()
+    {
+        // Nullable element type + Nullable* runtime unmarshaller, matching the List<int?> property;
+        // string and structure elements keep their usual unmarshallers (they return null on a JSON null).
+        Assert.Contains("var unmarshaller = new JsonListUnmarshaller<int?, NullableIntUnmarshaller>(NullableIntUnmarshaller.Instance);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.SparseCounts = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.SparseTags = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.SparseLabels = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+        Assert.Contains("var unmarshaller = new JsonListUnmarshaller<Widget, WidgetUnmarshaller>(WidgetUnmarshaller.Instance);", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.SparseWidgets = unmarshaller.Unmarshall(context, ref reader);", _responseUnmarshaller);
+    }
 }

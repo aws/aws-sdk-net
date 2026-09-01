@@ -48,18 +48,15 @@ public static class PaginationResolver
                 var (path, leaf, itemsTarget) = ResolveMemberPath(operation, operation.Output, trait.Items, "items", index);
                 if (itemsTarget is ListShape list)
                 {
-                    // CollectionElementTarget collapses an enum to a string, so the element type matches the
-                    // List<string> property TypeMapper emits (C2J's ListItemType strips the T out of the
-                    // member's own List<T>). Elements MapPrimitive can't name (maps, nested lists, documents)
-                    // get no enumerable — C2J filters those result keys too, since ListItemType only accepts
-                    // List<T> for an unqualified T (e.g. DynamoDB Query's Items, and
-                    // List<Amazon.Runtime.Documents.Document>).
+                    // Derive the element type exactly the way TypeMapper types the List<T> property
+                    // (CollectionElementTarget, then MapScalarElement), so the enumerable always agrees
+                    // with the property: enum collapses to string, scalars non-nullable unless @sparse.
+                    // When the element is a map, nested list, or document, elementType is null and the
+                    // paginator gets no flattened enumerable - same as C2J, which drops those result keys.
                     var elementTarget = TypeMapper.CollectionElementTarget(ResolveShape(index, list.Member.Target));
                     var elementType = elementTarget is StructureShape // includes UnionShape
                         ? list.Member.Target.Name
-                        // MapNonNullableScalar so the type matches the non-nullable List<T> property (List<int>,
-                        // not List<int?>); falls through to MapPrimitive for strings and unnameable elements.
-                        : TypeMapper.MapNonNullableScalar(elementTarget) ?? TypeMapper.MapPrimitive(elementTarget);
+                        : TypeMapper.MapScalarElement(elementTarget, list.IsSparse());
                     if (elementType is not null)
                     {
                         // The enumerable is named after the leaf member ("DistributionList.Items" -> "Items").

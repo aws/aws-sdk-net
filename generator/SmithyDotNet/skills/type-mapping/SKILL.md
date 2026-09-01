@@ -23,8 +23,8 @@ description: Smithy shape to .NET type mapping, nullability, and collection defa
 | `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type; (un)marshals wholesale through the runtime document transforms. Supported as a body member, list element, or map value; an `@httpPayload` document throws |
 | `enum` | `ConstantClass` | The class the `ServiceEnumerationsWriter` emits (see `TypeMapper.EnumTypeName`); marshals as a string via implicit conversion, matching C2J. **Only as a member's own type** — inside a collection it is plain `string`; see Enums in Collections |
 | `intEnum` | `int?` | No `ConstantClass` — C2J has no `intEnum`, so it maps to a plain nullable int like `IntegerShape` (non-nullable `int` as a collection element) |
-| `list` | `List<T>` | V4 default: `null`; see Collection Defaults. Elements: string/value-type/timestamp/enum/intEnum/structure/document or a nested list/map; value-type/timestamp elements are **non-nullable** (`List<int>`, via `MapNonNullableScalar` — the all-value-types-nullable rule is members-only). An enum element collapses to `string` and an intEnum to plain `int`. Only blob elements throw via `RejectUnsupportedCollectionElement`; `@sparse` (nullable elements) is rejected by `UnsupportedTraitValidator` |
-| `map` | `Dictionary<string, TValue>` | V4 default: `null`; see Collection Defaults. Key is always `string` (Smithy requires it; C2J flattens enum keys too). Values follow the same rules as list elements |
+| `list` | `List<T>` | V4 default: `null`; see Collection Defaults. Elements: string/value-type/timestamp/enum/intEnum/structure/document or a nested list/map; value-type/timestamp elements are **non-nullable** (`List<int>`, via `MapNonNullableScalar` — the all-value-types-nullable rule is members-only), flipped back to nullable when the list is `@sparse` (`List<int?>`, matching C2J). An enum element collapses to `string` and an intEnum to plain `int` (`int?` when sparse). Only blob elements throw via `RejectUnsupportedCollectionElement` |
+| `map` | `Dictionary<string, TValue>` | V4 default: `null`; see Collection Defaults. Key is always `string` (Smithy requires it; C2J flattens enum keys too). Values follow the same rules as list elements, including `@sparse` nullability |
 | `structure` | Generated class | See structure rules below |
 | `union` | Generated class | Generated as regular structure (matches current SDK) |
 
@@ -80,9 +80,9 @@ property it reads from. It takes an already-resolved `Shape` rather than a `Shap
 `PaginationResolver` can call it: that runs off a `ServiceIndex` and has no `GenerationContext`.
 `Resolves_EnumItemsElement_AsString` pins the paginator's side.
 
-A paginator's `items` element type is a collection element, so it follows the non-nullable rule too
-(`List<int>`, never `List<int?>`) — `PaginationResolver` derives it via `MapNonNullableScalar`, not the
-standalone `MapScalar`/`MapPrimitive` mapping.
+A paginator's `items` element type is a collection element, so it follows the same nullability rule —
+`PaginationResolver` derives it via `TypeMapper.MapScalarElement` (non-nullable, nullable when the list
+is `@sparse`), the same call the property type goes through.
 
 An `intEnum` element maps to a plain non-nullable `int` (like `IntegerShape`), so `list<intEnum>` is
 `List<int>` — it does *not* fail loud. The only leaf `RejectUnsupportedCollectionElement` still rejects is

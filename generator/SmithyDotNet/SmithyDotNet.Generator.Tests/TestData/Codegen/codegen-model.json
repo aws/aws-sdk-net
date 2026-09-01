@@ -192,12 +192,18 @@
         "created":    { "target": "smithy.api#Timestamp" },
         "expiry":     { "target": "smithy.api#Timestamp", "traits": { "smithy.api#timestampFormat": "date-time" } },
         "sealedAt":   { "target": "com.example#HttpDateTimestamp" },
-        "details":    { "target": "com.example#DetailList" }
+        "details":    { "target": "com.example#DetailList" },
+        "attributes": { "target": "com.example#JsonString", "traits": { "smithy.api#httpHeader": "x-attributes" } },
+        "policy":     { "target": "com.example#JsonString" }
       }
     },
     "com.example#HttpDateTimestamp": {
       "type": "timestamp",
       "traits": { "smithy.api#timestampFormat": "http-date" }
+    },
+    "com.example#JsonString": {
+      "type": "string",
+      "traits": { "smithy.api#mediaType": "application/json" }
     },
     "com.example#DetailList": {
       "type": "list",
@@ -226,7 +232,8 @@
         "headerDouble":   { "target": "smithy.api#Double", "traits": { "smithy.api#httpHeader": "x-double" } },
         "headerHttpDate": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-httpdate" } },
         "headerDateTime": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-datetime", "smithy.api#timestampFormat": "date-time" } },
-        "headerEpoch":    { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-epoch", "smithy.api#timestampFormat": "epoch-seconds" } }
+        "headerEpoch":    { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-epoch", "smithy.api#timestampFormat": "epoch-seconds" } },
+        "headerJson":     { "target": "com.example#JsonString", "traits": { "smithy.api#httpHeader": "x-json" } }
       }
     },
     "com.example#Nested": {

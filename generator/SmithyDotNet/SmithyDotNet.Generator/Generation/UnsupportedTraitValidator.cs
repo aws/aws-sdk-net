@@ -20,13 +20,8 @@ public static class UnsupportedTraitValidator
     };
 
     // Live on a member's resolved *target* shape, not the member reference.
-    // @mediaType marks a base64-encoded (C2J jsonvalue) string that nothing decodes yet, so a model
-    // carrying it must fail loud rather than emit the raw header/body value.
-    private static readonly Dictionary<string, string> DeniedTargetTraits = new()
-    {
-        ["smithy.api#sparse"] = "@sparse",
-        ["smithy.api#mediaType"] = "@mediaType",
-    };
+    // Kept empty because future protocols may deny target-level traits again.
+    private static readonly Dictionary<string, string> DeniedTargetTraits = new();
 
     /// <summary>
     /// Checks service, operation, top-level input/output/error member, and reachable-shape traits
@@ -72,6 +67,18 @@ public static class UnsupportedTraitValidator
             if (shape is not BlobShape && shape.IsStreaming())
             {
                 found.Add("@streaming");
+            }
+
+            // @sparse on a list of lists/maps would generate a foreach over a possibly-null element
+            // (the same latent NRE C2J emits); no AWS model has this shape today, so fail loud instead.
+            // A sparse *map* of collections is fine - its value null-guard covers every kind.
+            if (shape is ListShape list && list.IsSparse())
+            {
+                var element = index.Shapes.GetValueOrDefault(list.Member.Target);
+                if (element is ListShape or MapShape)
+                {
+                    found.Add("@sparse (list of collections)");
+                }
             }
         }
 

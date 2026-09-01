@@ -45,6 +45,9 @@ public static class AnnotationTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#streaming-trait" /></remarks>
     public static bool IsStreaming(this Shape shape) => shape.Traits.ContainsKey("smithy.api#streaming");
 
+    /// <remarks><see href="https://smithy.io/2.0/spec/type-refinement-traits.html#sparse-trait" /></remarks>
+    public static bool IsSparse(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sparse");
+
     /// <summary>
     /// Whether a blob (or a member targeting one) requires the body length to be known up front,
     /// forbidding chunked Transfer-Encoding. Drives the marshaller to require a seekable stream.

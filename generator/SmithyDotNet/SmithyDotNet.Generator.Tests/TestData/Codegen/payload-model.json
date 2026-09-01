@@ -15,6 +15,8 @@
         { "target": "com.example#GetEnumPayload" },
         { "target": "com.example#DoStreamingBlobPayload" },
         { "target": "com.example#GetStreamingBlobPayload" },
+        { "target": "com.example#DoMediaTypeStringPayload" },
+        { "target": "com.example#DoMediaTypeBlobPayload" },
         { "target": "com.example#DoNoBody" }
       ],
       "traits": {
@@ -165,6 +167,32 @@
       "members": {
         "trace": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } },
         "body":  { "target": "com.example#StreamingBlob", "traits": { "smithy.api#httpPayload": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#XmlString": { "type": "string", "traits": { "smithy.api#mediaType": "application/xml" } },
+    "com.example#DoMediaTypeStringPayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoMediaTypeStringPayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/media-string", "method": "POST" } }
+    },
+    "com.example#DoMediaTypeStringPayloadRequest": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "com.example#XmlString", "traits": { "smithy.api#httpPayload": {} } }
+      }
+    },
+    "com.example#PdfBlob": { "type": "blob", "traits": { "smithy.api#mediaType": "application/pdf" } },
+    "com.example#DoMediaTypeBlobPayload": {
+      "type": "operation",
+      "input": { "target": "com.example#DoMediaTypeBlobPayloadRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/media-blob", "method": "POST" } }
+    },
+    "com.example#DoMediaTypeBlobPayloadRequest": {
+      "type": "structure",
+      "members": {
+        "body": { "target": "com.example#PdfBlob", "traits": { "smithy.api#httpPayload": {} } }
       }
     },
     "com.example#DoNoBody": {

@@ -338,6 +338,27 @@ public class PayloadMemberCodegenTests
     }
 
     [Fact]
+    public void MediaTypeStringPayload_SendsMediaTypeAsContentType()
+    {
+        // A @mediaType on the payload's target is the Content-Type, not the text/plain string default.
+        var m = Marshaller("DoMediaTypeStringPayload");
+
+        Assert.Contains("""request.Headers["Content-Type"] = "application/xml";""", m);
+        Assert.Contains("request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.Body);", m);
+        Assert.DoesNotContain("text/plain", m);
+    }
+
+    [Fact]
+    public void MediaTypeBlobPayload_SendsMediaTypeAsContentType()
+    {
+        // The blob Content-Type override honors @mediaType over application/octet-stream.
+        var m = Marshaller("DoMediaTypeBlobPayload");
+
+        Assert.Contains("""request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/pdf";""", m);
+        Assert.DoesNotContain("application/octet-stream", m);
+    }
+
+    [Fact]
     public void GetOperation_OmitsContentType()
     {
         // C2J omits Content-Type for GET/DELETE. GetStructurePayload is a GET with no request body.

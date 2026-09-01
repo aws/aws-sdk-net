@@ -35,6 +35,11 @@ namespace SmithyDotNet.Generator.Writers;
 /// <c>epoch-seconds</c>) from the member reference or its target, or null when unset (the binding's
 /// protocol default applies). Carried here (not only on <see cref="Member"/>) so a timestamp nested in
 /// a collection keeps its format.</param>
+/// <param name="IsSparse">True on an element/value descriptor whose containing collection is
+/// <c>@sparse</c>: nullable .NET type, JSON nulls written rather than skipped. Never set on a
+/// standalone member's descriptor.</param>
+/// <param name="MediaType">The target shape's <c>@mediaType</c> value, or null. A header-bound
+/// string is base64 on the wire (C2J's "jsonvalue"); a payload sends it as Content-Type.</param>
 public sealed record TypeDescriptor(
     string DotNetType,
     bool IsStructure,
@@ -47,7 +52,9 @@ public sealed record TypeDescriptor(
     bool IsDocument = false,
     TypeDescriptor? ListElement = null,
     TypeDescriptor? MapValue = null,
-    string? TimestampFormat = null)
+    string? TimestampFormat = null,
+    bool IsSparse = false,
+    string? MediaType = null)
 {
     /// <summary>
     /// True for a scalar — <c>string</c>, an enum (its ConstantClass marshals as a string), or a
@@ -172,7 +179,7 @@ public static class TypeMapper
     /// collection element (<paramref name="isCollectionValue"/>) collapses an enum to a plain string
     /// (see <see cref="CollectionElementTarget"/>) and maps value-type scalars non-nullable.
     /// </summary>
-    private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, bool isCollectionValue = false)
+    private static TypeDescriptor ResolveType(MemberShape member, GenerationContext context, bool isCollectionValue = false, bool isSparse = false)
     {
         var target = context.Resolve(member.Target);
         if (isCollectionValue)
@@ -182,10 +189,10 @@ public static class TypeMapper
             target = CollectionElementTarget(target);
         }
         return new TypeDescriptor(
-            // A collection element/value maps its scalars non-nullable (List<int>, not List<int?>); a
-            // standalone member maps them nullable (int?). See MapCollectionValueType.
+            // A collection element/value maps its scalars non-nullable (List<int>, not List<int?>)
+            // unless the collection is @sparse; a standalone member maps them nullable (int?).
             DotNetType: isCollectionValue
-                ? MapCollectionValueType(member.Target, target, context)
+                ? MapCollectionValueType(member.Target, target, context, isSparse)
                 : MapType(member.Target, target, context),
             IsStructure: target is StructureShape,
             IsString: target is StringShape,
@@ -195,9 +202,11 @@ public static class TypeMapper
             IsStreaming: target is BlobShape && target.IsStreaming(),
             RequiresLength: target is BlobShape && target.RequiresLength(),
             IsDocument: target is DocumentShape,
-            ListElement: target is ListShape list ? ResolveType(list.Member, context, isCollectionValue: true) : null,
-            MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true) : null,
-            TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat());
+            ListElement: target is ListShape list ? ResolveType(list.Member, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
+            MapValue: target is MapShape map ? ResolveType(map.Value, context, isCollectionValue: true, isSparse: target.IsSparse()) : null,
+            TimestampFormat: member.GetTimestampFormat() ?? target.GetTimestampFormat(),
+            IsSparse: isSparse,
+            MediaType: target.GetMediaType());
     }
 
     /// <summary>
@@ -213,14 +222,14 @@ public static class TypeMapper
     {
         if (target is ListShape list)
         {
-            return $"List<{MapElementType(list.Member.Target, "list", context)}>";
+            return $"List<{MapElementType(list.Member.Target, list, context)}>";
         }
 
         if (target is MapShape map)
         {
             // Smithy guarantees the key targets a string shape; C2J emits `string` even for an enum key,
             // so the .NET key type is always string (never the enum's ConstantClass).
-            return $"Dictionary<string, {MapElementType(map.Value.Target, "map", context)}>";
+            return $"Dictionary<string, {MapElementType(map.Value.Target, map, context)}>";
         }
 
         // A union derives from StructureShape and is generated as a plain structure class.
@@ -291,14 +300,29 @@ public static class TypeMapper
 
     /// <summary>
     /// The .NET type for a collection element or map value. Value-type scalars are <b>non-nullable</b>
-    /// here (<c>List&lt;int&gt;</c>, not <c>List&lt;int?&gt;</c>) — the V4 all-value-types-nullable rule
-    /// applies to standalone members only; the current SDK types non-sparse collection elements
-    /// non-nullable. (<c>@sparse</c>, which would flip these back to nullable, is rejected upfront by
-    /// <see cref="Generation.UnsupportedTraitValidator"/>, so it never reaches here.) Strings, structures,
-    /// and nested collections map exactly as in member position via <see cref="MapType"/>.
+    /// here (<c>List&lt;int&gt;</c>, not <c>List&lt;int?&gt;</c>) — the V4 all-value-types-nullable
+    /// rule is members-only — unless the collection is <c>@sparse</c>, which flips them back to
+    /// nullable (<c>List&lt;bool?&gt;</c>, matching C2J). Everything else maps as in member position
+    /// via <see cref="MapType"/>.
     /// </summary>
-    private static string MapCollectionValueType(ShapeId id, Shape target, GenerationContext context) =>
-        MapNonNullableScalar(target) ?? MapType(id, target, context);
+    private static string MapCollectionValueType(ShapeId id, Shape target, GenerationContext context, bool isSparse) =>
+        MapScalarElement(target, isSparse) ?? MapType(id, target, context);
+
+    /// <summary>
+    /// The .NET type for a string or scalar in collection-element position, or null for anything else
+    /// (structures, nested collections, documents). Value types are non-nullable unless the collection
+    /// is <c>@sparse</c>. Context-free so <see cref="Generation.PaginationResolver"/> (which has no
+    /// <see cref="GenerationContext"/>) shares the property types' rule.
+    /// </summary>
+    public static string? MapScalarElement(Shape target, bool isSparse)
+    {
+        if (target is StringShape)
+        {
+            return "string";
+        }
+
+        return isSparse ? MapScalar(target) : MapNonNullableScalar(target);
+    }
 
     /// <summary>
     /// The non-nullable .NET type for a primitive value-type or timestamp scalar, or null when the shape
@@ -344,12 +368,13 @@ public static class TypeMapper
     private static Shape ElementTarget(ShapeId id, GenerationContext context) =>
         CollectionElementTarget(context.Resolve(id));
 
-    private static string MapElementType(ShapeId id, string collectionKind, GenerationContext context)
+    private static string MapElementType(ShapeId id, Shape collection, GenerationContext context)
     {
         var elementTarget = ElementTarget(id, context);
-        RejectUnsupportedCollectionElement(elementTarget, collectionKind);
-        // Value-type scalars are non-nullable in element position (List<int>, not List<int?>).
-        return MapCollectionValueType(id, elementTarget, context);
+        RejectUnsupportedCollectionElement(elementTarget, collection is MapShape ? "map" : "list");
+
+        // Value-type scalars are non-nullable in element position (List<int>, not List<int?>), nullable when the collection is @sparse.
+        return MapCollectionValueType(id, elementTarget, context, collection.IsSparse());
     }
 
     // The writers handle string, value-type scalar (bool/int/long/float/double/timestamp), intEnum (as a

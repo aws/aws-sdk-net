@@ -40,6 +40,7 @@ code is pinned in `JsonRequestMarshallerWriterTests`.
 | `@httpQueryParams` map | Query string | Loop entries into query params (see below); `@httpQuery` wins on key collision |
 | `@httpLabel` | URI segment | Replace `{member}` in `request.ResourcePath` |
 | `@httpHeader("name")` scalar | Header | `request.Headers["name"] = ...` |
+| `@httpHeader("name")` `@mediaType` string | Header | Base64: `Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(...))`; read side decodes (C2J "jsonvalue"). Body-bound `@mediaType` strings are plain. Pinned in `ScalarMemberCodegenTests` |
 | `@httpHeader("name")` `list<string>` | Header | `request.Headers["name"] = StringUtils.FromList(publicRequest.Prop)` (comma join, RFC-7230 quoting) |
 | `@httpPrefixHeaders("prefix")` map | Multiple headers | Loop `map<string,string>`, emit `{prefix}{key}` headers (see below); request & response |
 | `@httpPayload` | Entire body | Direct stream/string (skips body serialization) |
@@ -88,38 +89,32 @@ fails loud).
 
 ### JSON (restJson1, awsJson1.x)
 
-When any member is body-bound (or `@httpPayload`), the marshaller sets up the body writer: a
-`Utf8JsonWriter` over `request.ContentStream = new PooledContentStream()` (its `BufferWriter`), with a
-`#if NETFRAMEWORK` fallback to a `MemoryStream` plus `request.Content = memoryStream.ToArray()` after
-the final flush. Each body member is guarded by `IsSet{Prop}()`, then
-`context.Writer.WritePropertyName("{wireName}")` and the typed write (see Type → Marshal/Unmarshal).
-Pinned in `JsonRequestMarshallerWriterTests`.
+When any member is body-bound (or `@httpPayload`), the marshaller writes a `Utf8JsonWriter` body over
+a `PooledContentStream` (`#if NETFRAMEWORK`: a `MemoryStream` copied to `request.Content`). Each body
+member is `IsSet`-guarded, then written per Type → Marshal/Unmarshal under its wire name. Pinned in
+`JsonRequestMarshallerWriterTests`.
 
-- Structures: `WriteStartObject` → `{Shape}Marshaller.Instance.Marshall(item, context)` → `WriteEndObject`
-- Lists: `WriteStartArray` → loop items → `WriteEndArray`
-- Maps: `WriteStartObject` → `foreach` the dictionary → `WritePropertyName(kvp.Key)` + write `kvp.Value`
-  → `WriteEndObject`. Keys are always strings (Smithy requires the key member target a string shape).
-- Lists and maps nest to any depth — a list/map element or map value that is itself a list/map recurses
-  (`JsonBodyMemberMarshaller.WriteCollectionValue`). Leaf values may be string, scalar (bool/int/long/float/
-  double/timestamp), structure, or document. An enum leaf (element, map key, or map value) collapses to a
-  string here and marshals as one; an intEnum leaf is a plain `int`. Scalar leaves route through
-  `JsonScalarMarshaller.WriteScalar`. A non-sparse collection element is **non-nullable** (`List<int>`, not
-  `List<int?>` — the all-value-types-nullable rule is members-only), so the leaf writes the bare value: no
-  `.Value` unwrap, and **no** float/double NaN/Infinity guard (that guard is member-only). A collection
-  member's `@timestampFormat` is honored (threaded via `TypeDescriptor.TimestampFormat`); `@sparse` (which
-  would make elements nullable) is rejected upfront by `UnsupportedTraitValidator`. Only blob leaves fail
-  loud in `TypeMapper.RejectUnsupportedCollectionElement` (a blob is body/`@httpPayload`-only).
-- Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization
+- Structures dispatch to `{Shape}Marshaller.Instance`; lists/maps loop and recurse to any depth
+  (`JsonBodyMemberMarshaller.WriteCollectionValue`). Map keys are always strings.
+- Collection leaves: string, value-type scalar, structure, or document. An enum leaf collapses to a
+  string, an intEnum to a plain `int`; blob leaves fail loud in `TypeMapper`. Non-sparse value-type
+  leaves are non-nullable (`List<int>` — the all-value-types-nullable rule is members-only), so they
+  write bare: no `.Value` unwrap, no float/double NaN guard (both member-only). `@timestampFormat`
+  is honored on leaves.
+- `@sparse` leaves are nullable (`List<int?>`) and JSON nulls are written, matching C2J: a sparse
+  list null-guards only value-type elements (null strings/structures already serialize); a sparse
+  map null-guards every value kind. Pinned in `CollectionElementCodegenTests`.
+- Required strings: throw `Amazon{ServiceName}Exception` if null/empty before serialization.
 
-For structure marshallers loop through the structures members and use the rules laid out in Type → Marshal/Unmarshal
+Structure marshallers loop the structure's own members with the same rules.
 
 ### `@httpPayload` (request)
 
 A `@httpPayload` member IS the entire body — no wrapping object/property name, no other member in the body (Smithy: all others are header/query/label). No `IsSet` guard (matches C2J). Emitted code for every payload kind (request and response) is pinned in `PayloadMemberCodegenTests`.
 
-- **String** → `text/plain`, no scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
+- **String** → `text/plain` (or the target's `@mediaType` value when present), no scaffold: `request.Content = System.Text.Encoding.UTF8.GetBytes(publicRequest.{Prop});`
 - **Structure** → `application/json`; the scaffold above, then the target's marshaller as the body object (`WriteStartObject` → `{Type}Marshaller.Instance.Marshall(publicRequest.{Prop}, context)` → `WriteEndObject`).
-- **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (overrides the top `application/json`); adds `using System.Globalization;`. Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override; the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`; emitted code is pinned in `BlobCodegenTests`):
+- **Blob** (`MemoryStream`, or `Stream` when `@streaming`) → `application/octet-stream` (or the target's `@mediaType` value when present; overrides the top `application/json`); adds `using System.Globalization;`. Always assigns `request.ContentStream = publicRequest.{Prop} ?? new MemoryStream();` first and ends with the Content-Type override; the Content-Length handling in between branches on the operation's `aws.auth#unsignedPayload` and the target blob's `smithy.api#requiresLength` (mirrors C2J `JsonRPCRequestMarshaller`; emitted code is pinned in `BlobCodegenTests`):
   - **`@streaming` + `@unsignedPayload`, no `@requiresLength`** → seek to start and set Content-Length when the stream is seekable, else `Transfer-Encoding: chunked` (length unknown up front, and signing is off anyway).
   - **`@streaming` + `@requiresLength`** → stream MUST be seekable (throws `InvalidOperationException` otherwise), then always sets Content-Length. `@requiresLength` wins over the unsigned chunked path.
   - **otherwise** (every non-streaming blob; a streaming blob on a signed op) → seek when seekable, always set Content-Length (no chunked).
@@ -151,9 +146,11 @@ The body loop is `while (context.ReadAtDepth(targetDepth, ref reader))` with a
   (key is always `string`/`StringUnmarshaller`).
 - Scalar unmarshallers come from `ScalarUnmarshaller`, one map keyed on the .NET type string (nullability
   and all). A standalone member is nullable (`int?`→`NullableIntUnmarshaller`); a non-sparse collection
-  element is non-nullable (`int`→`IntUnmarshaller`). Timestamps use the non-nullable `DateTimeUnmarshaller`
-  for elements, which auto-detects the wire format — no `@timestampFormat` is threaded on the read side, so
-  epoch and date-time collections unmarshal identically.
+  element is non-nullable (`int`→`IntUnmarshaller`); a `@sparse` element is nullable again
+  (`int?`→`NullableIntUnmarshaller`, matching the `List<int?>` property — the read side needs nothing
+  else, since string/structure unmarshallers already return null on a JSON null). Timestamps use the
+  non-nullable `DateTimeUnmarshaller` for elements, which auto-detects the wire format — no
+  `@timestampFormat` is threaded on the read side, so epoch and date-time collections unmarshal identically.
 - Nested collections compose recursively (`JsonBodyMemberUnmarshaller.CollectionUnmarshaller`): a map-of-list
   is `JsonDictionaryUnmarshaller<string, List<T>, StringUnmarshaller, JsonListUnmarshaller<T, TU>>(...)`. An
   enum leaf (and an enum key) is `string`/`StringUnmarshaller` — never a ConstantClass generic arg; an intEnum

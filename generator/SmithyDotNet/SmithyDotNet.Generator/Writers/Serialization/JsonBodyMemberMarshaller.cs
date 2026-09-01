@@ -114,7 +114,23 @@ public static class JsonBodyMemberMarshaller
             var loopVar = $"{baseName}ListValue";
             writer.OpenBlock($"foreach (var {loopVar} in {valueExpr})", () =>
             {
-                WriteCollectionValue(writer, element, loopVar, loopVar);
+                // A @sparse list null-guards only value-type elements: a null string already writes
+                // JSON null and a null structure writes {} (C2J parity).
+                if (element.IsSparse && IsValueTypeScalar(element))
+                {
+                    writer.OpenBlock($"if ({loopVar} != null)", () =>
+                    {
+                        JsonScalarMarshaller.WriteNonNullScalar(writer, element, loopVar, BodyTimestampDefault);
+                    });
+                    writer.OpenBlock("else", () =>
+                    {
+                        writer.WriteLine("context.Writer.WriteNullValue();");
+                    });
+                }
+                else
+                {
+                    WriteCollectionValue(writer, element, loopVar, loopVar);
+                }
             });
             writer.WriteLine("context.Writer.WriteEndArray();");
         }
@@ -127,7 +143,30 @@ public static class JsonBodyMemberMarshaller
                 writer.WriteLine($"context.Writer.WritePropertyName({kvpVar}.Key);");
                 var valueVar = $"{baseName}Value";
                 writer.WriteLine($"var {valueVar} = {kvpVar}.Value;");
-                WriteCollectionValue(writer, mapValue, valueVar, valueVar);
+
+                // A @sparse map null-guards every value kind, unlike the list path (C2J parity).
+                if (mapValue.IsSparse)
+                {
+                    writer.OpenBlock($"if ({valueVar} == null)", () =>
+                    {
+                        writer.WriteLine("context.Writer.WriteNullValue();");
+                    });
+                    writer.OpenBlock("else", () =>
+                    {
+                        if (IsValueTypeScalar(mapValue))
+                        {
+                            JsonScalarMarshaller.WriteNonNullScalar(writer, mapValue, valueVar, BodyTimestampDefault);
+                        }
+                        else
+                        {
+                            WriteCollectionValue(writer, mapValue, valueVar, valueVar);
+                        }
+                    });
+                }
+                else
+                {
+                    WriteCollectionValue(writer, mapValue, valueVar, valueVar);
+                }
             });
             writer.WriteLine("context.Writer.WriteEndObject();");
         }
@@ -136,4 +175,7 @@ public static class JsonBodyMemberMarshaller
             throw new GeneratorException($"Unsupported collection value type '{type.DotNetType}'.");
         }
     }
+
+    // A non-string/enum scalar leaf is a value type - the only kind needing an explicit null guard.
+    private static bool IsValueTypeScalar(TypeDescriptor type) => type.IsScalar && !type.MarshalsAsString;
 }

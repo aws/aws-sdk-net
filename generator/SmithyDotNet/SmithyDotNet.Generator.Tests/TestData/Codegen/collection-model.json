@@ -74,6 +74,18 @@
         },
         "isoTimes": {
           "target": "com.amazonaws.testcollection#IsoTimestampList"
+        },
+        "sparseCounts": {
+          "target": "com.amazonaws.testcollection#SparseIntList"
+        },
+        "sparseTags": {
+          "target": "com.amazonaws.testcollection#SparseTagList"
+        },
+        "sparseLabels": {
+          "target": "com.amazonaws.testcollection#SparseStringMap"
+        },
+        "sparseAmounts": {
+          "target": "com.amazonaws.testcollection#SparseLongMap"
         }
       },
       "traits": {
@@ -124,6 +136,18 @@
         },
         "isoTimes": {
           "target": "com.amazonaws.testcollection#IsoTimestampList"
+        },
+        "sparseCounts": {
+          "target": "com.amazonaws.testcollection#SparseIntList"
+        },
+        "sparseTags": {
+          "target": "com.amazonaws.testcollection#SparseTagList"
+        },
+        "sparseLabels": {
+          "target": "com.amazonaws.testcollection#SparseStringMap"
+        },
+        "sparseWidgets": {
+          "target": "com.amazonaws.testcollection#SparseWidgetList"
         }
       },
       "traits": {
@@ -238,6 +262,47 @@
           "smithy.api#timestampFormat": "date-time"
         }
       }
+    },
+    "com.amazonaws.testcollection#SparseIntList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#Integer"
+      },
+      "traits": { "smithy.api#sparse": {} }
+    },
+    "com.amazonaws.testcollection#SparseTagList": {
+      "type": "list",
+      "member": {
+        "target": "smithy.api#String"
+      },
+      "traits": { "smithy.api#sparse": {} }
+    },
+    "com.amazonaws.testcollection#SparseStringMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#String"
+      },
+      "traits": { "smithy.api#sparse": {} }
+    },
+    "com.amazonaws.testcollection#SparseLongMap": {
+      "type": "map",
+      "key": {
+        "target": "smithy.api#String"
+      },
+      "value": {
+        "target": "smithy.api#Long"
+      },
+      "traits": { "smithy.api#sparse": {} }
+    },
+    "com.amazonaws.testcollection#SparseWidgetList": {
+      "type": "list",
+      "member": {
+        "target": "com.amazonaws.testcollection#Widget"
+      },
+      "traits": { "smithy.api#sparse": {} }
     },
     "com.amazonaws.testcollection#Widget": {
       "type": "structure",

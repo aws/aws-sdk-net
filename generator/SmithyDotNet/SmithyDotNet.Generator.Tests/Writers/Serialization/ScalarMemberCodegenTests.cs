@@ -127,6 +127,24 @@ public class ScalarMemberCodegenTests
     }
 
     [Fact]
+    public void RequestMarshaller_MediaTypeHeaderString_Base64Encodes()
+    {
+        // A @mediaType string bound to a header is base64 on the wire (C2J's "jsonvalue"); the same
+        // shape as a body member marshals as a plain JSON string.
+        Assert.Contains("""request.Headers["x-attributes"] = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(publicRequest.Attributes));""", _requestMarshaller);
+        Assert.Contains("""context.Writer.WritePropertyName("policy");""", _requestMarshaller);
+        Assert.Contains("context.Writer.WriteStringValue(publicRequest.Policy);", _requestMarshaller);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_MediaTypeHeaderString_Base64Decodes()
+    {
+        Assert.Contains("""if (context.ResponseData.IsHeaderPresent("x-json"))""", _responseUnmarshaller);
+        Assert.Contains("""var headerBytes = Convert.FromBase64String(context.ResponseData.GetHeaderValue("x-json"));""", _responseUnmarshaller);
+        Assert.Contains("unmarshalledObject.HeaderJson = System.Text.Encoding.UTF8.GetString(headerBytes, 0, headerBytes.Length);", _responseUnmarshaller);
+    }
+
+    [Fact]
     public void ResponseUnmarshaller_HeaderTimestamps_ResolvePerFormatWithHttpDateDefault()
     {
         // Header timestamps default to http-date when unset; date-time and http-date both parse via
