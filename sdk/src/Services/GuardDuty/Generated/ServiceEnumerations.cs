@@ -75,6 +75,56 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type AssociationMode.
+    /// </summary>
+    public class AssociationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DRY_RUN for AssociationMode
+        /// </summary>
+        public static readonly AssociationMode DRY_RUN = new AssociationMode("DRY_RUN");
+        /// <summary>
+        /// Constant LIVE for AssociationMode
+        /// </summary>
+        public static readonly AssociationMode LIVE = new AssociationMode("LIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociationMode FindValue(string value)
+        {
+            return FindValue<AssociationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoEnableMembers.
     /// </summary>
     public class AutoEnableMembers : ConstantClass
@@ -973,6 +1023,214 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type DetectionRuleConfigurationStatus.
+    /// </summary>
+    public class DetectionRuleConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for DetectionRuleConfigurationStatus
+        /// </summary>
+        public static readonly DetectionRuleConfigurationStatus ACTIVE = new DetectionRuleConfigurationStatus("ACTIVE");
+        /// <summary>
+        /// Constant FAILED for DetectionRuleConfigurationStatus
+        /// </summary>
+        public static readonly DetectionRuleConfigurationStatus FAILED = new DetectionRuleConfigurationStatus("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for DetectionRuleConfigurationStatus
+        /// </summary>
+        public static readonly DetectionRuleConfigurationStatus PROCESSING = new DetectionRuleConfigurationStatus("PROCESSING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectionRuleConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectionRuleConfigurationStatus FindValue(string value)
+        {
+            return FindValue<DetectionRuleConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectionRuleConfigurationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetectionRuleDataSource.
+    /// </summary>
+    public class DetectionRuleDataSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudTrailManagementEvent for DetectionRuleDataSource
+        /// </summary>
+        public static readonly DetectionRuleDataSource CloudTrailManagementEvent = new DetectionRuleDataSource("CloudTrailManagementEvent");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectionRuleDataSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectionRuleDataSource FindValue(string value)
+        {
+            return FindValue<DetectionRuleDataSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectionRuleDataSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetectionRuleFilterCondition.
+    /// </summary>
+    public class DetectionRuleFilterCondition : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS for DetectionRuleFilterCondition
+        /// </summary>
+        public static readonly DetectionRuleFilterCondition CONTAINS = new DetectionRuleFilterCondition("CONTAINS");
+        /// <summary>
+        /// Constant EQUALS for DetectionRuleFilterCondition
+        /// </summary>
+        public static readonly DetectionRuleFilterCondition EQUALS = new DetectionRuleFilterCondition("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectionRuleFilterCondition(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectionRuleFilterCondition FindValue(string value)
+        {
+            return FindValue<DetectionRuleFilterCondition>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectionRuleFilterCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetectionRuleSeverity.
+    /// </summary>
+    public class DetectionRuleSeverity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CRITICAL for DetectionRuleSeverity
+        /// </summary>
+        public static readonly DetectionRuleSeverity CRITICAL = new DetectionRuleSeverity("CRITICAL");
+        /// <summary>
+        /// Constant HIGH for DetectionRuleSeverity
+        /// </summary>
+        public static readonly DetectionRuleSeverity HIGH = new DetectionRuleSeverity("HIGH");
+        /// <summary>
+        /// Constant LOW for DetectionRuleSeverity
+        /// </summary>
+        public static readonly DetectionRuleSeverity LOW = new DetectionRuleSeverity("LOW");
+        /// <summary>
+        /// Constant MEDIUM for DetectionRuleSeverity
+        /// </summary>
+        public static readonly DetectionRuleSeverity MEDIUM = new DetectionRuleSeverity("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectionRuleSeverity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectionRuleSeverity FindValue(string value)
+        {
+            return FindValue<DetectionRuleSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectionRuleSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DetectionSource.
     /// </summary>
     public class DetectionSource : ConstantClass
@@ -1600,6 +1858,76 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FilterAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FilterFieldName.
+    /// </summary>
+    public class FilterFieldName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DataSource for FilterFieldName
+        /// </summary>
+        public static readonly FilterFieldName DataSource = new FilterFieldName("dataSource");
+        /// <summary>
+        /// Constant Description for FilterFieldName
+        /// </summary>
+        public static readonly FilterFieldName Description = new FilterFieldName("description");
+        /// <summary>
+        /// Constant Name for FilterFieldName
+        /// </summary>
+        public static readonly FilterFieldName Name = new FilterFieldName("name");
+        /// <summary>
+        /// Constant Service for FilterFieldName
+        /// </summary>
+        public static readonly FilterFieldName Service = new FilterFieldName("service");
+        /// <summary>
+        /// Constant Severity for FilterFieldName
+        /// </summary>
+        public static readonly FilterFieldName Severity = new FilterFieldName("severity");
+        /// <summary>
+        /// Constant Tactic for FilterFieldName
+        /// </summary>
+        public static readonly FilterFieldName Tactic = new FilterFieldName("tactic");
+        /// <summary>
+        /// Constant Technique for FilterFieldName
+        /// </summary>
+        public static readonly FilterFieldName Technique = new FilterFieldName("technique");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FilterFieldName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FilterFieldName FindValue(string value)
+        {
+            return FindValue<FilterFieldName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FilterFieldName(string value)
         {
             return FindValue(value);
         }
@@ -3712,6 +4040,98 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RiskLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleLanguage.
+    /// </summary>
+    public class RuleLanguage : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SQL for RuleLanguage
+        /// </summary>
+        public static readonly RuleLanguage SQL = new RuleLanguage("SQL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleLanguage(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleLanguage FindValue(string value)
+        {
+            return FindValue<RuleLanguage>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleLanguage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleSchema.
+    /// </summary>
+    public class RuleSchema : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CloudTrail for RuleSchema
+        /// </summary>
+        public static readonly RuleSchema CloudTrail = new RuleSchema("CloudTrail");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleSchema(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleSchema FindValue(string value)
+        {
+            return FindValue<RuleSchema>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleSchema(string value)
         {
             return FindValue(value);
         }

@@ -150,6 +150,75 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  CreateCustomDetectionRuleAssociation
+
+
+
+        /// <summary>
+        /// Enables a custom detection rule for your account by creating an association. You specify
+        /// the rule and the mode in which it operates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateCustomDetectionRuleAssociation">REST API Reference for CreateCustomDetectionRuleAssociation Operation</seealso>
+        Task<CreateCustomDetectionRuleAssociationResponse> CreateCustomDetectionRuleAssociationAsync(CreateCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateCustomDetectionRuleOrgConfiguration
+
+
+
+        /// <summary>
+        /// Creates an organization-level configuration that enables a custom detection rule across
+        /// your organization. This operation is available only to the delegated administrator
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateCustomDetectionRuleOrgConfiguration">REST API Reference for CreateCustomDetectionRuleOrgConfiguration Operation</seealso>
+        Task<CreateCustomDetectionRuleOrgConfigurationResponse> CreateCustomDetectionRuleOrgConfigurationAsync(CreateCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateDetector
 
 
@@ -579,6 +648,70 @@ namespace Amazon.GuardDuty
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeclineInvitations">REST API Reference for DeclineInvitations Operation</seealso>
         Task<DeclineInvitationsResponse> DeclineInvitationsAsync(DeclineInvitationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCustomDetectionRuleAssociation
+
+
+
+        /// <summary>
+        /// Disables a custom detection rule by deleting its association. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteCustomDetectionRuleAssociation">REST API Reference for DeleteCustomDetectionRuleAssociation Operation</seealso>
+        Task<DeleteCustomDetectionRuleAssociationResponse> DeleteCustomDetectionRuleAssociationAsync(DeleteCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteCustomDetectionRuleOrgConfiguration
+
+
+
+        /// <summary>
+        /// Deletes the organization-level configuration for a custom detection rule. This operation
+        /// is available only to the delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteCustomDetectionRuleOrgConfiguration">REST API Reference for DeleteCustomDetectionRuleOrgConfiguration Operation</seealso>
+        Task<DeleteCustomDetectionRuleOrgConfigurationResponse> DeleteCustomDetectionRuleOrgConfigurationAsync(DeleteCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1188,6 +1321,97 @@ namespace Amazon.GuardDuty
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">REST API Reference for GetCoverageStatistics Operation</seealso>
         Task<GetCoverageStatisticsResponse> GetCoverageStatisticsAsync(GetCoverageStatisticsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCustomDetectionRule
+
+
+
+        /// <summary>
+        /// Returns details for a custom detection rule in GuardDuty, including its detection
+        /// logic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDetectionRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomDetectionRule service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRule">REST API Reference for GetCustomDetectionRule Operation</seealso>
+        Task<GetCustomDetectionRuleResponse> GetCustomDetectionRuleAsync(GetCustomDetectionRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCustomDetectionRuleAssociation
+
+
+
+        /// <summary>
+        /// Returns details for a custom detection rule association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRuleAssociation">REST API Reference for GetCustomDetectionRuleAssociation Operation</seealso>
+        Task<GetCustomDetectionRuleAssociationResponse> GetCustomDetectionRuleAssociationAsync(GetCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetCustomDetectionRuleOrgConfiguration
+
+
+
+        /// <summary>
+        /// Returns the organization-level configuration for a custom detection rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRuleOrgConfiguration">REST API Reference for GetCustomDetectionRuleOrgConfiguration Operation</seealso>
+        Task<GetCustomDetectionRuleOrgConfigurationResponse> GetCustomDetectionRuleOrgConfigurationAsync(GetCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1837,6 +2061,90 @@ namespace Amazon.GuardDuty
 
         #endregion
                 
+        #region  ListCustomDetectionRuleAssociations
+
+
+
+        /// <summary>
+        /// Returns all custom detection rule associations for your account. You can filter by
+        /// rule ID and mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDetectionRuleAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomDetectionRuleAssociations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRuleAssociations">REST API Reference for ListCustomDetectionRuleAssociations Operation</seealso>
+        Task<ListCustomDetectionRuleAssociationsResponse> ListCustomDetectionRuleAssociationsAsync(ListCustomDetectionRuleAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCustomDetectionRuleOrgConfigurations
+
+
+
+        /// <summary>
+        /// Returns all organization-level configurations for custom detection rules. You can
+        /// filter the results by status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDetectionRuleOrgConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomDetectionRuleOrgConfigurations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRuleOrgConfigurations">REST API Reference for ListCustomDetectionRuleOrgConfigurations Operation</seealso>
+        Task<ListCustomDetectionRuleOrgConfigurationsResponse> ListCustomDetectionRuleOrgConfigurationsAsync(ListCustomDetectionRuleOrgConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListCustomDetectionRules
+
+
+
+        /// <summary>
+        /// Returns all available custom detection rules in GuardDuty. You can filter the results
+        /// by data source, severity, tactic, technique, and service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDetectionRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomDetectionRules service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRules">REST API Reference for ListCustomDetectionRules Operation</seealso>
+        Task<ListCustomDetectionRulesResponse> ListCustomDetectionRulesAsync(ListCustomDetectionRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDetectors
 
 
@@ -2451,6 +2759,73 @@ namespace Amazon.GuardDuty
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCustomDetectionRuleAssociation
+
+
+
+        /// <summary>
+        /// Updates the mode of an existing custom detection rule association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateCustomDetectionRuleAssociation">REST API Reference for UpdateCustomDetectionRuleAssociation Operation</seealso>
+        Task<UpdateCustomDetectionRuleAssociationResponse> UpdateCustomDetectionRuleAssociationAsync(UpdateCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCustomDetectionRuleOrgConfiguration
+
+
+
+        /// <summary>
+        /// Updates the organization-level configuration for a custom detection rule, including
+        /// the mode and include/exclude account lists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateCustomDetectionRuleOrgConfiguration">REST API Reference for UpdateCustomDetectionRuleOrgConfiguration Operation</seealso>
+        Task<UpdateCustomDetectionRuleOrgConfigurationResponse> UpdateCustomDetectionRuleOrgConfigurationAsync(UpdateCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -421,6 +421,105 @@ namespace Amazon.GuardDuty
         }
         #endregion
         
+        #region  CreateCustomDetectionRuleAssociation
+
+        internal virtual CreateCustomDetectionRuleAssociationResponse CreateCustomDetectionRuleAssociation(CreateCustomDetectionRuleAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomDetectionRuleAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Enables a custom detection rule for your account by creating an association. You specify
+        /// the rule and the mode in which it operates.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateCustomDetectionRuleAssociation">REST API Reference for CreateCustomDetectionRuleAssociation Operation</seealso>
+        public virtual Task<CreateCustomDetectionRuleAssociationResponse> CreateCustomDetectionRuleAssociationAsync(CreateCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomDetectionRuleAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CreateCustomDetectionRuleOrgConfiguration
+
+        internal virtual CreateCustomDetectionRuleOrgConfigurationResponse CreateCustomDetectionRuleOrgConfiguration(CreateCustomDetectionRuleOrgConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomDetectionRuleOrgConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an organization-level configuration that enables a custom detection rule across
+        /// your organization. This operation is available only to the delegated administrator
+        /// account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateCustomDetectionRuleOrgConfiguration">REST API Reference for CreateCustomDetectionRuleOrgConfiguration Operation</seealso>
+        public virtual Task<CreateCustomDetectionRuleOrgConfigurationResponse> CreateCustomDetectionRuleOrgConfigurationAsync(CreateCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomDetectionRuleOrgConfigurationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateDetector
 
         internal virtual CreateDetectorResponse CreateDetector(CreateDetectorRequest request)
@@ -1030,6 +1129,100 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = DeclineInvitationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeclineInvitationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteCustomDetectionRuleAssociation
+
+        internal virtual DeleteCustomDetectionRuleAssociationResponse DeleteCustomDetectionRuleAssociation(DeleteCustomDetectionRuleAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomDetectionRuleAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables a custom detection rule by deleting its association. This operation is idempotent.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteCustomDetectionRuleAssociation">REST API Reference for DeleteCustomDetectionRuleAssociation Operation</seealso>
+        public virtual Task<DeleteCustomDetectionRuleAssociationResponse> DeleteCustomDetectionRuleAssociationAsync(DeleteCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomDetectionRuleAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DeleteCustomDetectionRuleOrgConfiguration
+
+        internal virtual DeleteCustomDetectionRuleOrgConfigurationResponse DeleteCustomDetectionRuleOrgConfiguration(DeleteCustomDetectionRuleOrgConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomDetectionRuleOrgConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the organization-level configuration for a custom detection rule. This operation
+        /// is available only to the delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/DeleteCustomDetectionRuleOrgConfiguration">REST API Reference for DeleteCustomDetectionRuleOrgConfiguration Operation</seealso>
+        public virtual Task<DeleteCustomDetectionRuleOrgConfigurationResponse> DeleteCustomDetectionRuleOrgConfigurationAsync(DeleteCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomDetectionRuleOrgConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1940,6 +2133,142 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = GetCoverageStatisticsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCoverageStatisticsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetCustomDetectionRule
+
+        internal virtual GetCustomDetectionRuleResponse GetCustomDetectionRule(GetCustomDetectionRuleRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCustomDetectionRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDetectionRuleResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomDetectionRuleResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns details for a custom detection rule in GuardDuty, including its detection
+        /// logic.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDetectionRule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomDetectionRule service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRule">REST API Reference for GetCustomDetectionRule Operation</seealso>
+        public virtual Task<GetCustomDetectionRuleResponse> GetCustomDetectionRuleAsync(GetCustomDetectionRuleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCustomDetectionRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDetectionRuleResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomDetectionRuleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetCustomDetectionRuleAssociation
+
+        internal virtual GetCustomDetectionRuleAssociationResponse GetCustomDetectionRuleAssociation(GetCustomDetectionRuleAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomDetectionRuleAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns details for a custom detection rule association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRuleAssociation">REST API Reference for GetCustomDetectionRuleAssociation Operation</seealso>
+        public virtual Task<GetCustomDetectionRuleAssociationResponse> GetCustomDetectionRuleAssociationAsync(GetCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomDetectionRuleAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetCustomDetectionRuleOrgConfiguration
+
+        internal virtual GetCustomDetectionRuleOrgConfigurationResponse GetCustomDetectionRuleOrgConfiguration(GetCustomDetectionRuleOrgConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetCustomDetectionRuleOrgConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the organization-level configuration for a custom detection rule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCustomDetectionRuleOrgConfiguration">REST API Reference for GetCustomDetectionRuleOrgConfiguration Operation</seealso>
+        public virtual Task<GetCustomDetectionRuleOrgConfigurationResponse> GetCustomDetectionRuleOrgConfigurationAsync(GetCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCustomDetectionRuleOrgConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -2905,6 +3234,135 @@ namespace Amazon.GuardDuty
         }
         #endregion
         
+        #region  ListCustomDetectionRuleAssociations
+
+        internal virtual ListCustomDetectionRuleAssociationsResponse ListCustomDetectionRuleAssociations(ListCustomDetectionRuleAssociationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCustomDetectionRuleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDetectionRuleAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomDetectionRuleAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns all custom detection rule associations for your account. You can filter by
+        /// rule ID and mode.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDetectionRuleAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomDetectionRuleAssociations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRuleAssociations">REST API Reference for ListCustomDetectionRuleAssociations Operation</seealso>
+        public virtual Task<ListCustomDetectionRuleAssociationsResponse> ListCustomDetectionRuleAssociationsAsync(ListCustomDetectionRuleAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCustomDetectionRuleAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDetectionRuleAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomDetectionRuleAssociationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCustomDetectionRuleOrgConfigurations
+
+        internal virtual ListCustomDetectionRuleOrgConfigurationsResponse ListCustomDetectionRuleOrgConfigurations(ListCustomDetectionRuleOrgConfigurationsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCustomDetectionRuleOrgConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDetectionRuleOrgConfigurationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomDetectionRuleOrgConfigurationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns all organization-level configurations for custom detection rules. You can
+        /// filter the results by status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDetectionRuleOrgConfigurations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomDetectionRuleOrgConfigurations service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRuleOrgConfigurations">REST API Reference for ListCustomDetectionRuleOrgConfigurations Operation</seealso>
+        public virtual Task<ListCustomDetectionRuleOrgConfigurationsResponse> ListCustomDetectionRuleOrgConfigurationsAsync(ListCustomDetectionRuleOrgConfigurationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCustomDetectionRuleOrgConfigurationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDetectionRuleOrgConfigurationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomDetectionRuleOrgConfigurationsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListCustomDetectionRules
+
+        internal virtual ListCustomDetectionRulesResponse ListCustomDetectionRules(ListCustomDetectionRulesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCustomDetectionRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDetectionRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListCustomDetectionRulesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns all available custom detection rules in GuardDuty. You can filter the results
+        /// by data source, severity, tactic, technique, and service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCustomDetectionRules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCustomDetectionRules service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCustomDetectionRules">REST API Reference for ListCustomDetectionRules Operation</seealso>
+        public virtual Task<ListCustomDetectionRulesResponse> ListCustomDetectionRulesAsync(ListCustomDetectionRulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListCustomDetectionRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCustomDetectionRulesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCustomDetectionRulesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListDetectors
 
         internal virtual ListDetectorsResponse ListDetectors(ListDetectorsRequest request)
@@ -3849,6 +4307,103 @@ namespace Amazon.GuardDuty
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateCustomDetectionRuleAssociation
+
+        internal virtual UpdateCustomDetectionRuleAssociationResponse UpdateCustomDetectionRuleAssociation(UpdateCustomDetectionRuleAssociationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomDetectionRuleAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the mode of an existing custom detection rule association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomDetectionRuleAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomDetectionRuleAssociation service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateCustomDetectionRuleAssociation">REST API Reference for UpdateCustomDetectionRuleAssociation Operation</seealso>
+        public virtual Task<UpdateCustomDetectionRuleAssociationResponse> UpdateCustomDetectionRuleAssociationAsync(UpdateCustomDetectionRuleAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCustomDetectionRuleAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomDetectionRuleAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCustomDetectionRuleAssociationResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateCustomDetectionRuleOrgConfiguration
+
+        internal virtual UpdateCustomDetectionRuleOrgConfigurationResponse UpdateCustomDetectionRuleOrgConfiguration(UpdateCustomDetectionRuleOrgConfigurationRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCustomDetectionRuleOrgConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the organization-level configuration for a custom detection rule, including
+        /// the mode and include/exclude account lists.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCustomDetectionRuleOrgConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCustomDetectionRuleOrgConfiguration service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ResourceNotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/UpdateCustomDetectionRuleOrgConfiguration">REST API Reference for UpdateCustomDetectionRuleOrgConfiguration Operation</seealso>
+        public virtual Task<UpdateCustomDetectionRuleOrgConfigurationResponse> UpdateCustomDetectionRuleOrgConfigurationAsync(UpdateCustomDetectionRuleOrgConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateCustomDetectionRuleOrgConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCustomDetectionRuleOrgConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCustomDetectionRuleOrgConfigurationResponse>(request, options, cancellationToken);
         }
         #endregion
         
