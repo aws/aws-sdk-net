@@ -86,5 +86,32 @@ namespace Amazon.CodeAnalysis.Shared {
                 return ResourceManager.GetString("CollectionInitializerNullRule.Title", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Project targets a .NET target framework the AWS SDK for .NET no longer ships assemblies for.
+        /// </summary>
+        internal static string DeprecatedTargetFrameworkRule_Description {
+            get {
+                return ResourceManager.GetString("DeprecatedTargetFrameworkRule_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The target framework &apos;{0}&apos; is no longer supported by the AWS SDK for .NET. This project has fallen back to the {1} assemblies of the SDK, which do not include the features and optimizations available on supported targets. Retarget the project to .NET 8 or later, or suppress this warning with &lt;NoWarn&gt;{2}&lt;/NoWarn&gt;..
+        /// </summary>
+        internal static string DeprecatedTargetFrameworkRule_MessageFormat {
+            get {
+                return ResourceManager.GetString("DeprecatedTargetFrameworkRule_MessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to AWS SDK target framework is no longer supported.
+        /// </summary>
+        internal static string DeprecatedTargetFrameworkRule_Title {
+            get {
+                return ResourceManager.GetString("DeprecatedTargetFrameworkRule_Title", resourceCulture);
+            }
+        }
     }
 }

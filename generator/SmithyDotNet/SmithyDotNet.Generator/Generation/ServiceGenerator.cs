@@ -102,6 +102,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var nullCollectionInitializerAnalyzer = new NullCollectionInitializerAnalyzerWriter(context, modelFileName);
         EmitCodeAnalysis(Path.Combine(generated, "NullCollectionInitializerAnalyzer.g.cs"), nullCollectionInitializerAnalyzer.Write(cancellationToken));
 
+        var deprecatedTargetFrameworkAnalyzerWriter = new DeprecatedTargetFrameworkAnalyzerWriter(context, modelFileName);
+        EmitCodeAnalysis(Path.Combine(generated, "DeprecatedTargetFrameworkAnalyzer.g.cs"), deprecatedTargetFrameworkAnalyzerWriter.Write(cancellationToken));
+
         var propertyValueAssignmentAnalyzerWriter = new PropertyValueAssignmentAnalyzerWriter(context, modelFileName);
         EmitCodeAnalysis(Path.Combine(generated, "PropertyValueAssignmentAnalyzer.g.cs"), propertyValueAssignmentAnalyzerWriter.Write(cancellationToken));
 

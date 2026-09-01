@@ -35,6 +35,7 @@
   <files>
     <file src="..\..\nuget-content\AWSLogo.png" target="images\" />
     <file src="..\..\nuget-content\account-management.ps1" target="tools" />
+    <file src="..\..\code-analysis\CoreAnalysis\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
 
     <file src=".\bin\Release\net472\AWSSDK.Core.dll" target="lib\net472" />
     <file src=".\bin\Release\net472\AWSSDK.Core.xml" target="lib\net472" />

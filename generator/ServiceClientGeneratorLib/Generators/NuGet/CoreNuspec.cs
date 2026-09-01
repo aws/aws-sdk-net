@@ -54,7 +54,10 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "oup targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n      <group targetFramewo" +
                     "rk=\"net8.0\">\r\n      </group>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n" +
                     "    <file src=\"..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file s" +
-                    "rc=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n\r\n    <file s" +
+                    "rc=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n    <file src=\"..\\..\\code-analysis\\Cor" +
+                    "eAnalysis\\bin\\Release\\*.dll\" target=\"analyzers\\dotnet\\cs\" exclude=\"**\\Microsof" +
+                    "t.CodeAnalysis.*;**\\System.Collections.Immutable.*;**\\System.Reflection.Metadat" +
+                    "a.*;**\\System.Composition.*\" />\r\n\r\n    <file s" +
                     "rc=\".\\bin\\Release\\net472\\AWSSDK.Core.dll\" target=\"lib\\net472\" />\r\n    <file src=" +
                     "\".\\bin\\Release\\net472\\AWSSDK.Core.xml\" target=\"lib\\net472\" />\r\n    <file src=\".\\" +
                     "bin\\Release\\net472\\AWSSDK.Core.pdb\" target=\"lib\\net472\" />\r\n\r\n    <file src=\".\\b" +

@@ -178,6 +178,7 @@ public class ServiceGeneratorTests : IDisposable
             "AWSSDK.CloudTrailData.CodeAnalysis.csproj",
             Path.Combine("Properties", "AssemblyInfo.cs"),
             Path.Combine("Generated", "NullCollectionInitializerAnalyzer.g.cs"),
+            Path.Combine("Generated", "DeprecatedTargetFrameworkAnalyzer.g.cs"),
             Path.Combine("Generated", "PropertyValueAssignmentAnalyzer.g.cs"),
             Path.Combine("Generated", "PropertyValueRules.xml"),
         ];

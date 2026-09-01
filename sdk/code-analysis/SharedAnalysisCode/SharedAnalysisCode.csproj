@@ -15,4 +15,55 @@
 		<EmbeddedResource Update="Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
 	</ItemGroup>
 
+	<!--
+	  The set of target frameworks the SDK has dropped is declared once, as $(DeprecatedTargets) in
+	  sdk/Directory.Build.props. Project it into a source file so AbstractDeprecatedTargetFrameworkAnalyzer
+	  can compare against it without the list being restated here. Both forms are emitted: the short
+	  name the .NET SDK reports through build_property.TargetFramework, and the identifier/version
+	  pair that TargetFrameworkAttribute carries.
+	-->
+	<Target Name="GenerateDeprecatedTargetFrameworks" BeforeTargets="BeforeCompile;CoreCompile">
+		<PropertyGroup>
+			<_DeprecatedTargetFrameworksFile>$(IntermediateOutputPath)DeprecatedTargetFrameworks.g.cs</_DeprecatedTargetFrameworksFile>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<_DeprecatedTargetFramework Include="$(DeprecatedTargets)" />
+			<_DeprecatedTargetFramework>
+				<Identifier>$([MSBuild]::GetTargetFrameworkIdentifier('%(Identity)'))</Identifier>
+				<TfmVersion>$([MSBuild]::GetTargetFrameworkVersion('%(Identity)'))</TfmVersion>
+			</_DeprecatedTargetFramework>
+		</ItemGroup>
+
+		<PropertyGroup>
+			<_DeprecatedShortNames>@(_DeprecatedTargetFramework->'"%(Identity)"', ', ')</_DeprecatedShortNames>
+			<_DeprecatedIdentifiers>@(_DeprecatedTargetFramework->'"%(Identifier)"', ', ')</_DeprecatedIdentifiers>
+			<_DeprecatedVersions>@(_DeprecatedTargetFramework->'"%(TfmVersion)"', ', ')</_DeprecatedVersions>
+		</PropertyGroup>
+
+		<ItemGroup>
+			<_DeprecatedTargetFrameworksLine Include="// &lt;auto-generated /&gt;" />
+			<_DeprecatedTargetFrameworksLine Include="// Generated from the DeprecatedTargets property in sdk/Directory.Build.props." />
+			<_DeprecatedTargetFrameworksLine Include="namespace Amazon.CodeAnalysis.Shared" />
+			<_DeprecatedTargetFrameworksLine Include="{" />
+			<_DeprecatedTargetFrameworksLine Include="%20%20%20%20internal static class DeprecatedTargetFrameworks" />
+			<_DeprecatedTargetFrameworksLine Include="%20%20%20%20{" />
+			<_DeprecatedTargetFrameworksLine Include="%20%20%20%20%20%20%20%20internal static readonly string[] ShortNames = new string[] { $(_DeprecatedShortNames) }%3B" />
+			<_DeprecatedTargetFrameworksLine Include="%20%20%20%20%20%20%20%20internal static readonly string[] Identifiers = new string[] { $(_DeprecatedIdentifiers) }%3B" />
+			<_DeprecatedTargetFrameworksLine Include="%20%20%20%20%20%20%20%20internal static readonly string[] Versions = new string[] { $(_DeprecatedVersions) }%3B" />
+			<_DeprecatedTargetFrameworksLine Include="%20%20%20%20}" />
+			<_DeprecatedTargetFrameworksLine Include="}" />
+		</ItemGroup>
+
+		<WriteLinesToFile File="$(_DeprecatedTargetFrameworksFile)"
+		                  Lines="@(_DeprecatedTargetFrameworksLine)"
+		                  Overwrite="true"
+		                  WriteOnlyWhenDifferent="true" />
+
+		<ItemGroup>
+			<Compile Include="$(_DeprecatedTargetFrameworksFile)" />
+			<FileWrites Include="$(_DeprecatedTargetFrameworksFile)" />
+		</ItemGroup>
+	</Target>
+
 </Project>

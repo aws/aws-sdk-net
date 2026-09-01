@@ -118,6 +118,7 @@
             <SignableItems Include="../sdk/src/Services/**/bin/$(Configuration)/*/AWSSDK*.dll" Exclude="**/AWSSDK.Core.dll" />
             <SignableItems Include="../extensions/src/**/bin/$(Configuration)/*/AWSSDK.Extensions*.dll" />
             <SignableItems Include="../sdk/code-analysis/ServiceAnalysis/**/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
+            <SignableItems Include="../sdk/code-analysis/CoreAnalysis/bin/$(Configuration)/AWSSDK*.CodeAnalysis.dll" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/install.ps1" />
             <SignableItems Include="../sdk/code-analysis/NuGetInstallScripts/uninstall.ps1" />
             <SignableItems Include="../sdk/nuget-content/account-management.ps1" />
