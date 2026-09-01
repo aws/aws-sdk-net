@@ -45,6 +45,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _clientToken;
         private ExecutionEnvironmentVariables _executionEnvironmentVariableOverrides;
+        private MountOverrides _executionMountOverrides;
         private int? _executionPriority;
         private string _pipelineName;
         private string _workspaceName;
@@ -90,6 +91,27 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetExecutionEnvironmentVariableOverrides()
         {
             return this._executionEnvironmentVariableOverrides != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionMountOverrides. 
+        /// <para>
+        /// Runtime mount overrides for the execution. Overrides are merged by mount name into
+        /// each listed compute node's task-defined mounts: a matching name replaces the task-defined
+        /// mount, a new name adds a mount, and task-defined mounts not referenced remain unchanged.
+        /// Compute nodes not listed use their task-defined mounts as-is.
+        /// </para>
+        /// </summary>
+        public MountOverrides ExecutionMountOverrides
+        {
+            get { return this._executionMountOverrides; }
+            set { this._executionMountOverrides = value; }
+        }
+
+        // Check to see if ExecutionMountOverrides property is set
+        internal bool IsSetExecutionMountOverrides()
+        {
+            return this._executionMountOverrides != null;
         }
 
         /// <summary>

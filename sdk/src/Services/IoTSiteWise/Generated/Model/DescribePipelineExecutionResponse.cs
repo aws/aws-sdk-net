@@ -42,6 +42,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _pipelineName;
         private string _pipelineVersion;
         private ExecutionEnvironmentVariables _requestEnvironmentVariables;
+        private MountOverrides _requestMountOverrides;
         private DateTime? _startTime;
         private PipelineExecutionStatus _status;
         private string _workspaceName;
@@ -200,6 +201,25 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetRequestEnvironmentVariables()
         {
             return this._requestEnvironmentVariables != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestMountOverrides. 
+        /// <para>
+        /// The mount overrides provided as input for the pipeline execution. Present when mount
+        /// overrides were supplied at execution time.
+        /// </para>
+        /// </summary>
+        public MountOverrides RequestMountOverrides
+        {
+            get { return this._requestMountOverrides; }
+            set { this._requestMountOverrides = value; }
+        }
+
+        // Check to see if RequestMountOverrides property is set
+        internal bool IsSetRequestMountOverrides()
+        {
+            return this._requestMountOverrides != null;
         }
 
         /// <summary>

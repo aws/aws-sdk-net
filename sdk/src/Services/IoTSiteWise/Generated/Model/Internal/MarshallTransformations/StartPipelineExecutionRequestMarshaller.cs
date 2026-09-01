@@ -101,6 +101,17 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetExecutionMountOverrides())
+            {
+                context.Writer.WritePropertyName("executionMountOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MountOverridesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExecutionMountOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetExecutionPriority())
             {
                 context.Writer.WritePropertyName("executionPriority");

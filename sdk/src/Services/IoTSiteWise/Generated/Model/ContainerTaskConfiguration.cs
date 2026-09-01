@@ -38,6 +38,8 @@ namespace Amazon.IoTSiteWise.Model
         private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ecrUri;
         private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private EphemeralStorageConfiguration _ephemeralStorageConfiguration;
+        private List<Mount> _mounts = AWSConfigs.InitializeCollections ? new List<Mount>() : null;
         private ProcessingType _processingType;
         private ProcessingUnit _processingUnit;
         private string _taskExecutionRole;
@@ -108,6 +110,51 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetEnvironmentVariables()
         {
             return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorageConfiguration. 
+        /// <para>
+        /// Ephemeral storage configuration for the container task.
+        /// </para>
+        /// </summary>
+        public EphemeralStorageConfiguration EphemeralStorageConfiguration
+        {
+            get { return this._ephemeralStorageConfiguration; }
+            set { this._ephemeralStorageConfiguration = value; }
+        }
+
+        // Check to see if EphemeralStorageConfiguration property is set
+        internal bool IsSetEphemeralStorageConfiguration()
+        {
+            return this._ephemeralStorageConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Mounts. 
+        /// <para>
+        /// Mounts attached to the container filesystem. Each mount exposes an external data source
+        /// as a local directory inside the container. The service assigns each mount a container
+        /// path based on the mount name. The container reads files through that path as if the
+        /// data were on the local filesystem.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<Mount> Mounts
+        {
+            get { return this._mounts; }
+            set { this._mounts = value; }
+        }
+
+        // Check to see if Mounts property is set
+        internal bool IsSetMounts()
+        {
+            return this._mounts != null && (this._mounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
