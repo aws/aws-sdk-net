@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for XavcHdIntraCbgProfileSettings Object
+    /// Response Unmarshaller for AspectRatio Object
     /// </summary>  
-    public class XavcHdIntraCbgProfileSettingsUnmarshaller : IJsonUnmarshaller<XavcHdIntraCbgProfileSettings, JsonUnmarshallerContext>
+    public class AspectRatioUnmarshaller : IJsonUnmarshaller<AspectRatio, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public XavcHdIntraCbgProfileSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public AspectRatio Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            XavcHdIntraCbgProfileSettings unmarshalledObject = new XavcHdIntraCbgProfileSettings();
+            AspectRatio unmarshalledObject = new AspectRatio();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,16 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("interlaceMode", targetDepth, ref reader))
+                if (context.TestExpression("denominator", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InterlaceMode = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Denominator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("xavcClass", targetDepth, ref reader))
+                if (context.TestExpression("numerator", targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.XavcClass = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
+                    unmarshalledObject.Numerator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +73,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         }
 
 
-        private static XavcHdIntraCbgProfileSettingsUnmarshaller _instance = new XavcHdIntraCbgProfileSettingsUnmarshaller();        
+        private static AspectRatioUnmarshaller _instance = new AspectRatioUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static XavcHdIntraCbgProfileSettingsUnmarshaller Instance
+        public static AspectRatioUnmarshaller Instance
         {
             get
             {

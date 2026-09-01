@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private AacCodecProfile _codecProfile;
         private AacCodingMode _codingMode;
         private AacLoudnessMeasurementMode _loudnessMeasurementMode;
+        private AacPassthroughControl _passthroughControl;
         private int? _rapInterval;
         private AacRateControlMode _rateControlMode;
         private AacRawFormat _rawFormat;
@@ -158,6 +159,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetLoudnessMeasurementMode()
         {
             return this._loudnessMeasurementMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PassthroughControl. When set to WHEN_POSSIBLE, input AAC
+        /// audio will be passed through if it is present on the input. This detection is dynamic
+        /// over the life of the transcode. Inputs that alternate between AAC and non-AAC content
+        /// will have a consistent AAC output as the system alternates between passthrough and
+        /// encoding.
+        /// </summary>
+        public AacPassthroughControl PassthroughControl
+        {
+            get { return this._passthroughControl; }
+            set { this._passthroughControl = value; }
+        }
+
+        // Check to see if PassthroughControl property is set
+        internal bool IsSetPassthroughControl()
+        {
+            return this._passthroughControl != null;
         }
 
         /// <summary>

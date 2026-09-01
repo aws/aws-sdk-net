@@ -76,6 +76,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.LoudnessMeasurementMode);
             }
 
+            if(requestObject.IsSetPassthroughControl())
+            {
+                context.Writer.WritePropertyName("passthroughControl");
+                context.Writer.WriteStringValue(requestObject.PassthroughControl);
+            }
+
             if(requestObject.IsSetRapInterval())
             {
                 context.Writer.WritePropertyName("rapInterval");

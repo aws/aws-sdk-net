@@ -43,6 +43,7 @@ namespace Amazon.MediaConvert.Model
         private ColorPrimaries _colorPrimaries;
         private ContentLightLevel _contentLightLevel;
         private string _fieldOrder;
+        private Hdr10PlusPresence _hdr10PlusPresence;
         private int? _height;
         private string _level;
         private MatrixCoefficients _matrixCoefficients;
@@ -154,6 +155,22 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetFieldOrder()
         {
             return this._fieldOrder != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Hdr10PlusPresence. Indicates that HDR10+ (SMPTE ST 2094-40)
+        /// dynamic metadata was detected in the HEVC bitstream. Present only when detected.
+        /// </summary>
+        public Hdr10PlusPresence Hdr10PlusPresence
+        {
+            get { return this._hdr10PlusPresence; }
+            set { this._hdr10PlusPresence = value; }
+        }
+
+        // Check to see if Hdr10PlusPresence property is set
+        internal bool IsSetHdr10PlusPresence()
+        {
+            return this._hdr10PlusPresence != null;
         }
 
         /// <summary>

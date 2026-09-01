@@ -38,11 +38,13 @@ namespace Amazon.MediaConvert.Model
         private long? _bitRate;
         private CodecMetadata _codecMetadata;
         private ColorPrimaries _colorPrimaries;
+        private AspectRatio _displayAspectRatio;
         private FrameRate _frameRate;
         private HdrMetadata _hdrMetadata;
         private int? _height;
         private MatrixCoefficients _matrixCoefficients;
         private int? _rotation;
+        private AspectRatio _sampleAspectRatio;
         private TransferCharacteristics _transferCharacteristics;
         private int? _width;
 
@@ -112,6 +114,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetColorPrimaries()
         {
             return this._colorPrimaries != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayAspectRatio. An aspect ratio expressed as a fraction
+        /// with numerator and denominator values, reduced to lowest terms. Used for the sample
+        /// (pixel) aspect ratio and the display aspect ratio of a video track. For example, a
+        /// 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect
+        /// ratio of 16 / 9.
+        /// </summary>
+        public AspectRatio DisplayAspectRatio
+        {
+            get { return this._displayAspectRatio; }
+            set { this._displayAspectRatio = value; }
+        }
+
+        // Check to see if DisplayAspectRatio property is set
+        internal bool IsSetDisplayAspectRatio()
+        {
+            return this._displayAspectRatio != null;
         }
 
         /// <summary>
@@ -196,6 +217,25 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetRotation()
         {
             return this._rotation.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SampleAspectRatio. An aspect ratio expressed as a fraction
+        /// with numerator and denominator values, reduced to lowest terms. Used for the sample
+        /// (pixel) aspect ratio and the display aspect ratio of a video track. For example, a
+        /// 720x576 anamorphic track has a sample aspect ratio of 64 / 45 and a display aspect
+        /// ratio of 16 / 9.
+        /// </summary>
+        public AspectRatio SampleAspectRatio
+        {
+            get { return this._sampleAspectRatio; }
+            set { this._sampleAspectRatio = value; }
+        }
+
+        // Check to see if SampleAspectRatio property is set
+        internal bool IsSetSampleAspectRatio()
+        {
+            return this._sampleAspectRatio != null;
         }
 
         /// <summary>
