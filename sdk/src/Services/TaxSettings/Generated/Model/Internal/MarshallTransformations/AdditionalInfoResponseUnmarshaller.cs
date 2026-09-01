@@ -146,6 +146,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                     unmarshalledObject.MalaysiaAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("monacoAdditionalInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = MonacoAdditionalInfoUnmarshaller.Instance;
+                    unmarshalledObject.MonacoAdditionalInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("philippinesAdditionalInfo", targetDepth, ref reader))
                 {
                     var unmarshaller = PhilippinesAdditionalInfoUnmarshaller.Instance;

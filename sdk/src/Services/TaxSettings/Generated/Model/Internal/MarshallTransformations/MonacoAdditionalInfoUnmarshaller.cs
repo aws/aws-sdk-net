@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FranceAdditionalInfo Object
+    /// Response Unmarshaller for MonacoAdditionalInfo Object
     /// </summary>  
-    public class FranceAdditionalInfoUnmarshaller : IJsonUnmarshaller<FranceAdditionalInfo, JsonUnmarshallerContext>
+    public class MonacoAdditionalInfoUnmarshaller : IJsonUnmarshaller<MonacoAdditionalInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FranceAdditionalInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public MonacoAdditionalInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FranceAdditionalInfo unmarshalledObject = new FranceAdditionalInfo();
+            MonacoAdditionalInfo unmarshalledObject = new MonacoAdditionalInfo();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,16 +56,10 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("eInvoiceRoutingCode", targetDepth, ref reader))
+                if (context.TestExpression("businessNumber", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EInvoiceRoutingCode = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("sirenNumber", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SirenNumber = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.BusinessNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -73,12 +67,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         }
 
 
-        private static FranceAdditionalInfoUnmarshaller _instance = new FranceAdditionalInfoUnmarshaller();        
+        private static MonacoAdditionalInfoUnmarshaller _instance = new MonacoAdditionalInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FranceAdditionalInfoUnmarshaller Instance
+        public static MonacoAdditionalInfoUnmarshaller Instance
         {
             get
             {

@@ -454,6 +454,20 @@ namespace Amazon.TaxSettings
         /// You must specify the <c>sirenNumber</c> in the <c>franceAdditionalInfo</c> field of
         /// the <c>additionalTaxInformation</c> object.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>eInvoiceRoutingCode</c> in the <c>franceAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Monaco</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>businessNumber</c> in the <c>monacoAdditionalInfo</c> field
+        /// of the <c>additionalTaxInformation</c> object.
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  <b>Poland</b> 
@@ -1176,6 +1190,20 @@ namespace Amazon.TaxSettings
         /// <para>
         /// You must specify the <c>sirenNumber</c> in the <c>franceAdditionalInfo</c> field of
         /// the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can optionally specify the <c>eInvoiceRoutingCode</c> in the <c>franceAdditionalInfo</c>
+        /// field of the <c>additionalTaxInformation</c> object.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Monaco</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You must specify the <c>businessNumber</c> in the <c>monacoAdditionalInfo</c> field
+        /// of the <c>additionalTaxInformation</c> object.
         /// </para>
         ///  </li> </ul> 
         /// <para>

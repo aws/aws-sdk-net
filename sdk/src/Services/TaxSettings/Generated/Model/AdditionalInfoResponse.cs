@@ -51,6 +51,7 @@ namespace Amazon.TaxSettings.Model
         private ItalyAdditionalInfo _italyAdditionalInfo;
         private KenyaAdditionalInfo _kenyaAdditionalInfo;
         private MalaysiaAdditionalInfo _malaysiaAdditionalInfo;
+        private MonacoAdditionalInfo _monacoAdditionalInfo;
         private PhilippinesAdditionalInfo _philippinesAdditionalInfo;
         private PolandAdditionalInfo _polandAdditionalInfo;
         private RomaniaAdditionalInfo _romaniaAdditionalInfo;
@@ -332,6 +333,24 @@ namespace Amazon.TaxSettings.Model
         internal bool IsSetMalaysiaAdditionalInfo()
         {
             return this._malaysiaAdditionalInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MonacoAdditionalInfo. 
+        /// <para>
+        /// Additional tax information associated with your TRN in Monaco.
+        /// </para>
+        /// </summary>
+        public MonacoAdditionalInfo MonacoAdditionalInfo
+        {
+            get { return this._monacoAdditionalInfo; }
+            set { this._monacoAdditionalInfo = value; }
+        }
+
+        // Check to see if MonacoAdditionalInfo property is set
+        internal bool IsSetMonacoAdditionalInfo()
+        {
+            return this._monacoAdditionalInfo != null;
         }
 
         /// <summary>

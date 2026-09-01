@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FranceAdditionalInfo Marshaller
+    /// MonacoAdditionalInfo Marshaller
     /// </summary>
-    public class FranceAdditionalInfoMarshaller : IRequestMarshaller<FranceAdditionalInfo, JsonMarshallerContext> 
+    public class MonacoAdditionalInfoMarshaller : IRequestMarshaller<MonacoAdditionalInfo, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,20 +42,14 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FranceAdditionalInfo requestObject, JsonMarshallerContext context)
+        public void Marshall(MonacoAdditionalInfo requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetEInvoiceRoutingCode())
+            if(requestObject.IsSetBusinessNumber())
             {
-                context.Writer.WritePropertyName("eInvoiceRoutingCode");
-                context.Writer.WriteStringValue(requestObject.EInvoiceRoutingCode);
-            }
-
-            if(requestObject.IsSetSirenNumber())
-            {
-                context.Writer.WritePropertyName("sirenNumber");
-                context.Writer.WriteStringValue(requestObject.SirenNumber);
+                context.Writer.WritePropertyName("businessNumber");
+                context.Writer.WriteStringValue(requestObject.BusinessNumber);
             }
 
         }
@@ -63,7 +57,7 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FranceAdditionalInfoMarshaller Instance = new FranceAdditionalInfoMarshaller();
+        public readonly static MonacoAdditionalInfoMarshaller Instance = new MonacoAdditionalInfoMarshaller();
 
     }
 }
