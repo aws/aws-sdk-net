@@ -298,7 +298,7 @@
                     
                 </para>
                 <code
-                    title="GetOfferTerms for support term"
+                    title="GetOfferTerms for renewal term with fixed percentage"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-8" />
             </example>
@@ -317,7 +317,7 @@
                     
                 </para>
                 <code
-                    title="GetOfferTerms for validity term with dates"
+                    title="GetOfferTerms for renewal term with identical pricing (no price increase)"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-9" />
             </example>
@@ -336,9 +336,47 @@
                     
                 </para>
                 <code
-                    title="GetOfferTerms for net payment term"
+                    title="GetOfferTerms for support term"
                     source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
                     region="example-10" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for validity term with dates"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-11" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.MarketplaceDiscovery.IAmazonMarketplaceDiscovery.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="M:Amazon.MarketplaceDiscovery.AmazonMarketplaceDiscoveryClient.GetOfferTerms(Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest)" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsRequest" />
+            <member name="T:Amazon.MarketplaceDiscovery.Model.GetOfferTermsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="GetOfferTerms for net payment term"
+                    source=".\AWSSDKDocSamples\MarketplaceDiscovery\MarketplaceDiscovery.GeneratedSamples.cs"
+                    region="example-12" />
             </example>
         </value>
     </doc>

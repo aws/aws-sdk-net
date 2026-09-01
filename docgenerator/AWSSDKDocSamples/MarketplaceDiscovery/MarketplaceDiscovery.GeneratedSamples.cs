@@ -343,7 +343,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var client = new AmazonMarketplaceDiscoveryClient();
             var response = client.GetOfferTerms(new GetOfferTermsRequest 
             {
-                OfferId = "offer-sampleSupportId"
+                OfferId = "offer-sampleRenewalFixedId"
             });
 
             List<OfferTerm> offerTerms = response.OfferTerms;
@@ -358,7 +358,7 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
             var client = new AmazonMarketplaceDiscoveryClient();
             var response = client.GetOfferTerms(new GetOfferTermsRequest 
             {
-                OfferId = "offer-sampleValidityId"
+                OfferId = "offer-sampleRenewalNoPriceIncreaseId"
             });
 
             List<OfferTerm> offerTerms = response.OfferTerms;
@@ -369,6 +369,36 @@ namespace AWSSDKDocSamples.Amazon.MarketplaceDiscovery.Generated
         public void MarketplaceDiscoveryGetOfferTerms()
         {
             #region example-10
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            {
+                OfferId = "offer-sampleSupportId"
+            });
+
+            List<OfferTerm> offerTerms = response.OfferTerms;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryGetOfferTerms()
+        {
+            #region example-11
+
+            var client = new AmazonMarketplaceDiscoveryClient();
+            var response = client.GetOfferTerms(new GetOfferTermsRequest 
+            {
+                OfferId = "offer-sampleValidityId"
+            });
+
+            List<OfferTerm> offerTerms = response.OfferTerms;
+
+            #endregion
+        }
+
+        public void MarketplaceDiscoveryGetOfferTerms()
+        {
+            #region example-12
 
             var client = new AmazonMarketplaceDiscoveryClient();
             var response = client.GetOfferTerms(new GetOfferTermsRequest 
