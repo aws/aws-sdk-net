@@ -49,6 +49,12 @@ public static class EndpointRulesCompiler
         {
             WriteRule(writer, rule);
         }
+
+        // Only a conditional (or absent) last rule can fall through; everywhere else this throw is dead code.
+        if (ruleSet.Rules.Count == 0 || ruleSet.Rules[^1].Conditions.Count > 0)
+        {
+            writer.WriteLine("""throw new AmazonClientException("Cannot resolve endpoint");""");
+        }
     }
 
     private static void WriteRule(CodeWriter writer, EndpointRule rule)
@@ -94,7 +100,7 @@ public static class EndpointRulesCompiler
         // An assigning condition stores its result in refs and is truthy when non-null.
         if (condition.Assign is { } assign)
         {
-            return $"(refs[\"{assign}\"] = {call}) != null";
+            return $"""(refs["{assign}"] = {call}) != null""";
         }
 
         // A non-boolean call used as a condition is truthy when non-null.
@@ -145,7 +151,7 @@ public static class EndpointRulesCompiler
                 var cast = index < spec.ArgCasts.Length ? $"({spec.ArgCasts[index]})" : string.Empty;
                 if (arg.TryGetProperty("ref", out var reference))
                 {
-                    return $"{cast}refs[\"{reference.GetString()}\"]";
+                    return $"""{cast}refs["{reference.GetString()}"]""";
                 }
                 if (arg.TryGetProperty("fn", out var nestedFn))
                 {
@@ -168,7 +174,7 @@ public static class EndpointRulesCompiler
         {
             if (url.TryGetProperty("ref", out var reference))
             {
-                return $"(string)refs[\"{reference.GetString()}\"]";
+                return $"""(string)refs["{reference.GetString()}"]""";
             }
             if (url.TryGetProperty("fn", out var fn))
             {
@@ -184,10 +190,10 @@ public static class EndpointRulesCompiler
     {
         if (json is not { } value || IsEmptyObject(value))
         {
-            return "InterpolateJson(@\"\", refs)";
+            return """InterpolateJson(@"", refs)""";
         }
 
-        return $"InterpolateJson(@\"{value.GetRawText().Replace("\"", "\"\"")}\", refs)";
+        return $"""InterpolateJson(@"{DoubleQuotes(value.GetRawText())}", refs)""";
     }
 
     private static bool IsEmptyObject(JsonElement value) => value.ValueKind == JsonValueKind.Object && !value.EnumerateObject().Any();
@@ -203,9 +209,15 @@ public static class EndpointRulesCompiler
     {
         if (value.Contains('{'))
         {
-            return $"Interpolate(@\"{value.Replace("\"", "\"\"")}\", refs)";
+            return $"""Interpolate(@"{DoubleQuotes(value)}", refs)""";
         }
 
         return CodeWriter.Literal(value);
     }
+
+    // Verbatim @"..." literals escape a quote by doubling it.
+    private static readonly string Quote = char.ToString('"');
+    private static readonly string DoubledQuote = Quote + Quote;
+
+    private static string DoubleQuotes(string value) => value.Replace(Quote, DoubledQuote);
 }

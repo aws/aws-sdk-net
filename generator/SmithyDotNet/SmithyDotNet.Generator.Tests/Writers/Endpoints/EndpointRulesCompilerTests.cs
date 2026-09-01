@@ -8,99 +8,74 @@ namespace SmithyDotNet.Generator.Tests.Writers.Endpoints;
 
 public class EndpointRulesCompilerTests
 {
-    private static JsonElement Json(string raw) => JsonDocument.Parse(raw).RootElement.Clone();
+    // Deserializes the rule-set JSON the way trait deserialization does and compiles it.
+    private static string Compile(string ruleSetJson)
+    {
+        var ruleSet = JsonSerializer.Deserialize<EndpointRuleSet>(ruleSetJson) ?? throw new InvalidOperationException("Rule set JSON deserialized to null.");
+        var writer = new CodeWriter();
+        EndpointRulesCompiler.WriteRules(writer, ruleSet);
+        return writer.ToRawString();
+    }
+
+    // Compiles a single error rule guarded by one condition, so the assertions below can read the
+    // compiled condition expression back out of the output.
+    private static string CompileCondition(string fn, params string[] argvJson) =>
+        Compile($$"""
+            {
+                "rules": [
+                    {
+                        "type": "error",
+                        "conditions": [{"fn": "{{fn}}", "argv": [{{string.Join(", ", argvJson)}}]}],
+                        "error": "unused"
+                    }
+                ]
+            }
+            """);
 
     [Fact]
     public void ThrowsOnUnsupportedFunction()
     {
-        var bucketArg = Json("""
+        Assert.Throws<GeneratorException>(() => CompileCondition("aws.isVirtualHostableS3Bucket", """
             "x"
-            """);
-        var ruleSet = new EndpointRuleSet
-        {
-            Rules =
-            [
-                new EndpointRule
-                {
-                    Type = "error",
-                    Conditions = [new EndpointCondition { Fn = "aws.isVirtualHostableS3Bucket", Argv = [bucketArg] }],
-                    Error = "unused",
-                },
-            ],
-        };
+            """));
+    }
 
-        Assert.Throws<GeneratorException>(() => EndpointRulesCompiler.WriteRules(new CodeWriter(), ruleSet));
+    [Fact]
+    public void EmitsFallbackThrowWhenRuleListIsEmpty()
+    {
+        var output = Compile("""
+            {
+                "rules": []
+            }
+            """);
+
+        Assert.EndsWith("""throw new AmazonClientException("Cannot resolve endpoint");""", output.TrimEnd());
     }
 
     [Fact]
     public void ThrowsOnUnsupportedRuleType()
     {
-        var ruleSet = new EndpointRuleSet
-        {
-            Rules = [new EndpointRule { Type = "magic", Conditions = [] }],
-        };
-
-        Assert.Throws<GeneratorException>(() => EndpointRulesCompiler.WriteRules(new CodeWriter(), ruleSet));
+        Assert.Throws<GeneratorException>(() => Compile("""
+            {
+                "rules": [{"type": "magic", "conditions": []}]
+            }
+            """));
     }
 
     [Fact]
     public void ThrowsOnFunctionArgumentThatIsNeitherRefNorFn()
     {
-        var ruleSet = new EndpointRuleSet
-        {
-            Rules =
-            [
-                new EndpointRule
-                {
-                    Type = "error",
-                    Conditions = [new EndpointCondition { Fn = "isSet", Argv = [Json("{}")] }],
-                    Error = "unused",
-                },
-            ],
-        };
-
-        Assert.Throws<GeneratorException>(() => EndpointRulesCompiler.WriteRules(new CodeWriter(), ruleSet));
+        Assert.Throws<GeneratorException>(() => CompileCondition("isSet", "{}"));
     }
 
     [Fact]
     public void ThrowsOnEndpointUrlThatIsNeitherTemplateRefNorFn()
     {
-        var ruleSet = new EndpointRuleSet
-        {
-            Rules =
-            [
-                new EndpointRule
-                {
-                    Type = "endpoint",
-                    Conditions = [],
-                    Endpoint = new EndpointDefinition { Url = Json("{}") },
-                },
-            ],
-        };
-
-        Assert.Throws<GeneratorException>(() => EndpointRulesCompiler.WriteRules(new CodeWriter(), ruleSet));
-    }
-
-    // Emits the single error-rule body guarded by one condition, so the assertions below can read the
-    // compiled condition expression back out of the writer.
-    private static string CompileCondition(string fn, params string[] argvJson)
-    {
-        var ruleSet = new EndpointRuleSet
-        {
-            Rules =
-            [
-                new EndpointRule
-                {
-                    Type = "error",
-                    Conditions = [new EndpointCondition { Fn = fn, Argv = [.. argvJson.Select(Json)] }],
-                    Error = "unused",
-                },
-            ],
-        };
-
-        var writer = new CodeWriter();
-        EndpointRulesCompiler.WriteRules(writer, ruleSet);
-        return writer.ToRawString();
+        Assert.Throws<GeneratorException>(() => Compile("""
+            {
+                "rules": [{"type": "endpoint", "conditions": [], "endpoint": {"url": {}}}]
+            }
+            """));
     }
 
     [Fact]
@@ -156,5 +131,33 @@ public class EndpointRulesCompilerTests
     {
         var output = CompileCondition("uriEncode", """{"ref": "Region"}""");
         Assert.Contains("""if (UriEncode((string)refs["Region"]) != null)""", output);
+    }
+
+    [Fact]
+    public void EmitsFallbackThrowWhenLastRuleIsConditional()
+    {
+        var output = Compile("""
+            {
+                "rules": [
+                    {
+                        "type": "tree",
+                        "conditions": [{"fn": "isSet", "argv": [{"ref": "Endpoint"}]}],
+                        "rules": [{"type": "error", "conditions": [], "error": "custom endpoint unsupported"}]
+                    }
+                ]
+            }
+            """);
+        Assert.EndsWith("""throw new AmazonClientException("Cannot resolve endpoint");""", output.TrimEnd());
+    }
+
+    [Fact]
+    public void OmitsFallbackThrowWhenLastRuleIsUnconditional()
+    {
+        var output = Compile("""
+            {
+                "rules": [{"type": "error", "conditions": [], "error": "no endpoint"}]
+            }
+            """);
+        Assert.DoesNotContain("Cannot resolve endpoint", output);
     }
 }
