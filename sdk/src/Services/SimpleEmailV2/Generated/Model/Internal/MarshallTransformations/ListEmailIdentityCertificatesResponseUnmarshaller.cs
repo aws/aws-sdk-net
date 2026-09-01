@@ -35,9 +35,9 @@ using Amazon.Util;
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for GetConfigurationSet operation
+    /// Response Unmarshaller for ListEmailIdentityCertificates operation
     /// </summary>  
-    public class GetConfigurationSetResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListEmailIdentityCertificatesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -46,70 +46,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            GetConfigurationSetResponse response = new GetConfigurationSetResponse();
+            ListEmailIdentityCertificatesResponse response = new ListEmailIdentityCertificatesResponse();
             StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("ArchivingOptions", targetDepth, ref reader))
+                if (context.TestExpression("Certificates", targetDepth, ref reader))
                 {
-                    var unmarshaller = ArchivingOptionsUnmarshaller.Instance;
-                    response.ArchivingOptions = unmarshaller.Unmarshall(context, ref reader);
+                    var unmarshaller = new JsonListUnmarshaller<IdentityCertificate, IdentityCertificateUnmarshaller>(IdentityCertificateUnmarshaller.Instance);
+                    response.Certificates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
-                if (context.TestExpression("ConfigurationSetName", targetDepth, ref reader))
+                if (context.TestExpression("NextToken", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ConfigurationSetName = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("DeliveryOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = DeliveryOptionsUnmarshaller.Instance;
-                    response.DeliveryOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("MessageSecurityOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = MessageSecurityOptionsUnmarshaller.Instance;
-                    response.MessageSecurityOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("ReputationOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = ReputationOptionsUnmarshaller.Instance;
-                    response.ReputationOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SendingOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = SendingOptionsUnmarshaller.Instance;
-                    response.SendingOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("SuppressionOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = SuppressionOptionsUnmarshaller.Instance;
-                    response.SuppressionOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("Tags", targetDepth, ref reader))
-                {
-                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("TrackingOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = TrackingOptionsUnmarshaller.Instance;
-                    response.TrackingOptions = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("VdmOptions", targetDepth, ref reader))
-                {
-                    var unmarshaller = VdmOptionsUnmarshaller.Instance;
-                    response.VdmOptions = unmarshaller.Unmarshall(context, ref reader);
+                    response.NextToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -153,9 +105,9 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             return new AmazonSimpleEmailServiceV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static GetConfigurationSetResponseUnmarshaller _instance = new GetConfigurationSetResponseUnmarshaller();        
+        private static ListEmailIdentityCertificatesResponseUnmarshaller _instance = new ListEmailIdentityCertificatesResponseUnmarshaller();        
 
-        internal static GetConfigurationSetResponseUnmarshaller GetInstance()
+        internal static ListEmailIdentityCertificatesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -163,7 +115,7 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetConfigurationSetResponseUnmarshaller Instance
+        public static ListEmailIdentityCertificatesResponseUnmarshaller Instance
         {
             get
             {

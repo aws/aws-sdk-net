@@ -109,6 +109,14 @@ namespace Amazon.SimpleEmailV2.Model
         }
 
         /// <summary>
+        /// Paginator for ListEmailIdentityCertificates operation
+        ///</summary>
+        public IListEmailIdentityCertificatesPaginator ListEmailIdentityCertificates(ListEmailIdentityCertificatesRequest request) 
+        {
+            return new ListEmailIdentityCertificatesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEmailTemplates operation
         ///</summary>
         public IListEmailTemplatesPaginator ListEmailTemplates(ListEmailTemplatesRequest request) 

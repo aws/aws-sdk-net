@@ -1323,6 +1323,68 @@ namespace Amazon.SimpleEmailV2
 
 
     /// <summary>
+    /// Constants used for properties of type IdentityCertificateStatus.
+    /// </summary>
+    public class IdentityCertificateStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for IdentityCertificateStatus
+        /// </summary>
+        public static readonly IdentityCertificateStatus ACTIVE = new IdentityCertificateStatus("ACTIVE");
+        /// <summary>
+        /// Constant DEPROVISIONING for IdentityCertificateStatus
+        /// </summary>
+        public static readonly IdentityCertificateStatus DEPROVISIONING = new IdentityCertificateStatus("DEPROVISIONING");
+        /// <summary>
+        /// Constant FAILED for IdentityCertificateStatus
+        /// </summary>
+        public static readonly IdentityCertificateStatus FAILED = new IdentityCertificateStatus("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for IdentityCertificateStatus
+        /// </summary>
+        public static readonly IdentityCertificateStatus INACTIVE = new IdentityCertificateStatus("INACTIVE");
+        /// <summary>
+        /// Constant PROVISIONING for IdentityCertificateStatus
+        /// </summary>
+        public static readonly IdentityCertificateStatus PROVISIONING = new IdentityCertificateStatus("PROVISIONING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public IdentityCertificateStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static IdentityCertificateStatus FindValue(string value)
+        {
+            return FindValue<IdentityCertificateStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator IdentityCertificateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IdentityType.
     /// </summary>
     public class IdentityType : ConstantClass
@@ -2528,6 +2590,52 @@ namespace Amazon.SimpleEmailV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SendingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SignatureFormat.
+    /// </summary>
+    public class SignatureFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DETACHED for SignatureFormat
+        /// </summary>
+        public static readonly SignatureFormat DETACHED = new SignatureFormat("DETACHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SignatureFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SignatureFormat FindValue(string value)
+        {
+            return FindValue<SignatureFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SignatureFormat(string value)
         {
             return FindValue(value);
         }
