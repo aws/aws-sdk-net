@@ -1,4 +1,5 @@
 using System.Text.RegularExpressions;
+using SmithyDotNet.Generator.Writers.Serialization;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
 
@@ -130,6 +131,29 @@ public class OperationWriterTests
     public void Request_EmitsIsSetOnCollectionWithInitializeCollectionsRule()
     {
         Assert.Contains("internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvents.Count > 0 || !AWSConfigs.InitializeCollections);", _request);
+    }
+
+    [Fact]
+    public void Response_OmitsContentLengthMember()
+    {
+        // AmazonWebServiceResponse already declares ContentLength, so the member is skipped; other members are unaffected.
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        var operation = context.Operations.Single(o => o.Name == "DoShadow");
+
+        var response = new OperationWriter(context, "example-2023-01-01.normal.json").WriteResponse(operation, TestContext.Current.CancellationToken);
+        Assert.DoesNotContain("public long? ContentLength", response);
+        Assert.Contains("public string Name { get; set; }", response);
+    }
+
+    [Fact]
+    public void ResponseUnmarshaller_StillAssignsOmittedContentLength()
+    {
+        // The omission must stay writer-level: the unmarshaller keeps assigning the inherited property.
+        var context = TestModels.Context("Codegen/codegen-model.json");
+        var operation = context.Operations.Single(o => o.Name == "DoShadow");
+
+        var unmarshaller = new JsonResponseUnmarshallerWriter(context, "example-2023-01-01.normal.json").Write(operation, TestContext.Current.CancellationToken);
+        Assert.Contains("unmarshalledObject.ContentLength = long.Parse(", unmarshaller);
     }
 
     [Fact]

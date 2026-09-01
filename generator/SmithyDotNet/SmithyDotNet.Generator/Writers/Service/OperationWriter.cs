@@ -55,6 +55,10 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         var className = $"{operation.Name}Response";
         var members = TypeMapper.ResolveMembers(operation.Output, context);
 
+        // A response member named ContentLength is omitted rather than shadowed with `new`:
+        // AmazonWebServiceResponse already declares it, and the unmarshaller assigns the inherited property.
+        members.RemoveAll(m => m.PropertyName == "ContentLength");
+
         // A @streaming output member hands back the raw response stream the caller must dispose.
         // The trait lives on the target blob shape, so detect it via the resolved member type.
         var streamingMembers = members.Where(m => m.Type.IsStreaming).ToList();

@@ -123,6 +123,8 @@ Two base-class adjustments follow (matching `ExceptionShape.Members`, `Member.cs
 
 Independently of the exception-only rules, a member named `Equals` on **any** structure is emitted with `new` to hide `object.Equals(object)` (matches `StructureGenerator.tt`'s unconditional Equals check). This is set in `TypeMapper.ResolveMembers` and flows through every writer.
 
+A **response** member named `ContentLength` is not shadowed but omitted from the response class entirely — `AmazonWebServiceResponse` already declares it and the unmarshaller assigns the inherited property. That rule is writer-level (`OperationWriter.WriteResponse`, not `TypeMapper`); see sdk-conventions.
+
 `RequestId` and `ErrorCode` get a narrower treatment than `message`. `AmazonServiceException` already declares them, so the generator emits **no property** (one would shadow the base; C2J's `StructureGenerator.tt` skips them in its property loop). But unlike `message` they are **not** filtered from serialization or unmarshalling — C2J's `ExceptionSerialization.t4` and `JsonRPCExceptionUnmarshaller.tt` loop `ExceptionShape.Members`, which drops only `message` — so the inherited property is still serialized and read from the error body. Hence `ExceptionWriter.ResolveSerializedMembers` (serialization block + unmarshaller) keeps them, while the property set is that same set with `RequestId`/`ErrorCode` filtered out inline in `WriteException`. Every other member — **including one whose name collides with a non-omitted inherited property** (e.g. `StatusCode`, `InnerException`) — is emitted as-is as a plain shadowing property and also read from the error body, exactly as C2J does.
 
 ## Resolving Member Types

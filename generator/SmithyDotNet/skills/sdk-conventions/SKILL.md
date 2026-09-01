@@ -67,6 +67,10 @@ Model classes go in `Amazon.{ServiceName}.Model`.
 - **Member names** → PascalCase property names. Smithy uses camelCase (`eventData`), .NET uses PascalCase (`EventData`)
 - The conversion: capitalize the first letter of the Smithy member name
 - **Acronyms** are preserved as-is from the Smithy model. Example: `eventID` → `EventID` (not `EventId`)
+- A response member named `ContentLength` is **omitted** from the response class —
+  `AmazonWebServiceResponse` already declares it — but the response unmarshaller still assigns the
+  inherited property. Matches `StructureGenerator.tt`'s response-only skip (the MediaStoreData case);
+  lives in `OperationWriter.WriteResponse`.
 
 ### Client Names
 

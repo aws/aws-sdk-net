@@ -264,8 +264,15 @@
     "com.example#DoShadow": {
       "type": "operation",
       "input": { "target": "com.example#Thing" },
-      "output": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#DoShadowResponse" },
       "traits": { "smithy.api#http": { "uri": "/shadows", "method": "POST" } }
+    },
+    "com.example#DoShadowResponse": {
+      "type": "structure",
+      "members": {
+        "contentLength": { "target": "smithy.api#Long", "traits": { "smithy.api#httpHeader": "Content-Length" } },
+        "name":          { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-name" } }
+      }
     },
     "com.example#Thing": {
       "type": "structure",
