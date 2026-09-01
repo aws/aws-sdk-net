@@ -34,9 +34,9 @@ using System.Text.Json;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for FileSystemConfig Object
+    /// Response Unmarshaller for S3FilesConfig Object
     /// </summary>  
-    public class FileSystemConfigUnmarshaller : IJsonUnmarshaller<FileSystemConfig, JsonUnmarshallerContext>
+    public class S3FilesConfigUnmarshaller : IJsonUnmarshaller<S3FilesConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,9 +44,9 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <param name="context"></param>
         /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FileSystemConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
+        public S3FilesConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            FileSystemConfig unmarshalledObject = new FileSystemConfig();
+            S3FilesConfig unmarshalledObject = new S3FilesConfig();
             if (context.IsEmptyResponse)
                 return null;
             context.Read(ref reader);
@@ -56,22 +56,10 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
-                if (context.TestExpression("Arn", targetDepth, ref reader))
+                if (context.TestExpression("DirectS3Read", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("LocalMountPath", targetDepth, ref reader))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocalMountPath = unmarshaller.Unmarshall(context, ref reader);
-                    continue;
-                }
-                if (context.TestExpression("S3FilesConfig", targetDepth, ref reader))
-                {
-                    var unmarshaller = S3FilesConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3FilesConfig = unmarshaller.Unmarshall(context, ref reader);
+                    unmarshalledObject.DirectS3Read = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -79,12 +67,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         }
 
 
-        private static FileSystemConfigUnmarshaller _instance = new FileSystemConfigUnmarshaller();        
+        private static S3FilesConfigUnmarshaller _instance = new S3FilesConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static FileSystemConfigUnmarshaller Instance
+        public static S3FilesConfigUnmarshaller Instance
         {
             get
             {

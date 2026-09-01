@@ -32,9 +32,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// FileSystemConfig Marshaller
+    /// S3FilesConfig Marshaller
     /// </summary>
-    public class FileSystemConfigMarshaller : IRequestMarshaller<FileSystemConfig, JsonMarshallerContext> 
+    public class S3FilesConfigMarshaller : IRequestMarshaller<S3FilesConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -42,31 +42,14 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(FileSystemConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(S3FilesConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetArn())
+            if(requestObject.IsSetDirectS3Read())
             {
-                context.Writer.WritePropertyName("Arn");
-                context.Writer.WriteStringValue(requestObject.Arn);
-            }
-
-            if(requestObject.IsSetLocalMountPath())
-            {
-                context.Writer.WritePropertyName("LocalMountPath");
-                context.Writer.WriteStringValue(requestObject.LocalMountPath);
-            }
-
-            if(requestObject.IsSetS3FilesConfig())
-            {
-                context.Writer.WritePropertyName("S3FilesConfig");
-                context.Writer.WriteStartObject();
-
-                var marshaller = S3FilesConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.S3FilesConfig, context);
-
-                context.Writer.WriteEndObject();
+                context.Writer.WritePropertyName("DirectS3Read");
+                context.Writer.WriteStringValue(requestObject.DirectS3Read);
             }
 
         }
@@ -74,7 +57,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static FileSystemConfigMarshaller Instance = new FileSystemConfigMarshaller();
+        public readonly static S3FilesConfigMarshaller Instance = new S3FilesConfigMarshaller();
 
     }
 }

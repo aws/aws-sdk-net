@@ -32,12 +32,13 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Details about the connection between a Lambda function and an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
     /// EFS file system</a> or an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
-    /// S3 Files file system</a>.
+    /// S3 file system</a>.
     /// </summary>
     public partial class FileSystemConfig
     {
         private string _arn;
         private string _localMountPath;
+        private S3FilesConfig _s3FilesConfig;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -76,6 +77,27 @@ namespace Amazon.Lambda.Model
         internal bool IsSetLocalMountPath()
         {
             return this._localMountPath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3FilesConfig. 
+        /// <para>
+        /// The configuration for how your function accesses data on an Amazon S3 file system.
+        /// Valid only when the file system access point ARN is an Amazon S3 Files access point.
+        /// If you specify a different access point type (for example, Amazon Elastic File System),
+        /// the operation returns an <c>InvalidParameterException</c>.
+        /// </para>
+        /// </summary>
+        public S3FilesConfig S3FilesConfig
+        {
+            get { return this._s3FilesConfig; }
+            set { this._s3FilesConfig = value; }
+        }
+
+        // Check to see if S3FilesConfig property is set
+        internal bool IsSetS3FilesConfig()
+        {
+            return this._s3FilesConfig != null;
         }
 
     }
