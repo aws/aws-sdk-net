@@ -43,9 +43,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the policy engine. The policy engine contains Cedar policies that define
-        /// fine-grained authorization rules specifying who can perform what actions on which
-        /// resources as agents interact through the gateway.
+        /// The ARN of the policy engine. The policy engine contains Cedar or Dogwood policies
+        /// that define fine-grained authorization rules specifying who can perform what actions
+        /// on which resources as agents interact through the gateway.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=170)]

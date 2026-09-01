@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The updated Cedar policy statement.
+        /// The updated Cedar or Dogwood policy statement.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

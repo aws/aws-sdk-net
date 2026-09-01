@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Container for the parameters to the GetPolicyGeneration operation.
     /// Retrieves information about a policy generation request within the AgentCore Policy
-    /// system. Policy generation converts natural language descriptions into Cedar policy
+    /// system. Policy generation converts natural language descriptions into Dogwood policy
     /// statements using AI-powered translation, enabling non-technical users to create policies.
     /// </summary>
     public partial class GetPolicyGenerationRequest : AmazonBedrockAgentCoreControlRequest
