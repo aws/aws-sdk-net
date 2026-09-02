@@ -39,6 +39,7 @@ namespace Amazon.EC2.Model
         private string _capacityReservationId;
         private bool? _dryRun;
         private int? _targetInstanceCount;
+        private ZeroSizePreference _zeroSizePreference;
 
         /// <summary>
         /// Gets and sets the property CapacityReservationId. 
@@ -87,7 +88,6 @@ namespace Amazon.EC2.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int? TargetInstanceCount
         {
             get { return this._targetInstanceCount; }
@@ -98,6 +98,28 @@ namespace Amazon.EC2.Model
         internal bool IsSetTargetInstanceCount()
         {
             return this._targetInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZeroSizePreference. 
+        /// <para>
+        ///  Specifies the updated behavior for the interruptible Capacity Reservation when you
+        /// reduce its allocation to zero instances. Specify <c>retain</c> to keep the interruptible
+        /// Capacity Reservation active at zero capacity so that you can allocate instances to
+        /// it again later. Specify <c>default</c> to cancel the interruptible Capacity Reservation
+        /// and return the capacity to your source Capacity Reservation. 
+        /// </para>
+        /// </summary>
+        public ZeroSizePreference ZeroSizePreference
+        {
+            get { return this._zeroSizePreference; }
+            set { this._zeroSizePreference = value; }
+        }
+
+        // Check to see if ZeroSizePreference property is set
+        internal bool IsSetZeroSizePreference()
+        {
+            return this._zeroSizePreference != null;
         }
 
     }

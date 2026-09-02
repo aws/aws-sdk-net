@@ -50,8 +50,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ApplicationStatus. 
         /// <para>
-        /// Reports impaired functionality that stems from issues with applications running on
-        /// the instance.
+        /// Reports the application-level health status for the instance.
         /// </para>
         /// </summary>
         public ApplicationStatusSummary ApplicationStatus

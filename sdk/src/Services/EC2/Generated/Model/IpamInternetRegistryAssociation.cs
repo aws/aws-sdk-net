@@ -45,6 +45,7 @@ namespace Amazon.EC2.Model
         private string _ownerId;
         private Rir _rir;
         private IpamInternetRegistryAssociationState _state;
+        private string _stateMessage;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
@@ -247,6 +248,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StateMessage. 
+        /// <para>
+        /// A message describing the current state of the internet registry association, including
+        /// additional details such as the reason for a failure.
+        /// </para>
+        /// </summary>
+        public string StateMessage
+        {
+            get { return this._stateMessage; }
+            set { this._stateMessage = value; }
+        }
+
+        // Check to see if StateMessage property is set
+        internal bool IsSetStateMessage()
+        {
+            return this._stateMessage != null;
         }
 
         /// <summary>
