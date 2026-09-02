@@ -1,0 +1,145 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Svc": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        {
+          "target": "com.example#CreateItem"
+        },
+        {
+          "target": "com.example#ListItems"
+        },
+        {
+          "target": "com.example#GetItem"
+        },
+        {
+          "target": "com.example#PurgeItems"
+        }
+      ],
+      "traits": {
+        "aws.api#service": {
+          "sdkId": "Example"
+        },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Example Shared Op Structure Service"
+      }
+    },
+    "com.example#CreateItem": {
+      "type": "operation",
+      "input": {
+        "target": "com.example#CreateItemInput"
+      },
+      "output": {
+        "target": "com.example#Item"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/items",
+          "method": "POST"
+        }
+      }
+    },
+    "com.example#ListItems": {
+      "type": "operation",
+      "input": {
+        "target": "smithy.api#Unit"
+      },
+      "output": {
+        "target": "com.example#ListItemsOutput"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/items",
+          "method": "GET"
+        }
+      }
+    },
+    "com.example#GetItem": {
+      "type": "operation",
+      "input": {
+        "target": "smithy.api#Unit"
+      },
+      "output": {
+        "target": "com.example#GetItemOutput"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/item",
+          "method": "GET"
+        }
+      }
+    },
+    "com.example#PurgeItems": {
+      "type": "operation",
+      "input": {
+        "target": "smithy.api#Unit"
+      },
+      "output": {
+        "target": "com.example#PurgeSummary"
+      },
+      "traits": {
+        "smithy.api#http": {
+          "uri": "/purge",
+          "method": "POST"
+        }
+      }
+    },
+    "com.example#CreateItemInput": {
+      "type": "structure",
+      "members": {
+        "name": {
+          "target": "smithy.api#String"
+        }
+      },
+      "traits": {
+        "smithy.api#input": {}
+      }
+    },
+    "com.example#Item": {
+      "type": "structure",
+      "members": {
+        "name": {
+          "target": "smithy.api#String"
+        }
+      }
+    },
+    "com.example#ItemList": {
+      "type": "list",
+      "member": {
+        "target": "com.example#Item"
+      }
+    },
+    "com.example#ListItemsOutput": {
+      "type": "structure",
+      "members": {
+        "items": {
+          "target": "com.example#ItemList"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.example#GetItemOutput": {
+      "type": "structure",
+      "members": {
+        "item": {
+          "target": "com.example#Item"
+        }
+      },
+      "traits": {
+        "smithy.api#output": {}
+      }
+    },
+    "com.example#PurgeSummary": {
+      "type": "structure",
+      "members": {
+        "purgedCount": {
+          "target": "smithy.api#Integer"
+        }
+      }
+    }
+  }
+}

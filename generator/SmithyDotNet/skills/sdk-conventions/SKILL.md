@@ -98,6 +98,13 @@ Generated/
     {ExceptionName}.g.cs
 ```
 
+A structure that doubles as an operation input/output normally gets only its
+`{Op}Request`/`{Op}Response` wrappers — no `{ShapeName}.g.cs`. Exception: when other generated
+code references the shape through a member (directly or as a list/map element), the standalone
+class is emitted too, because member properties are typed with the plain class name (C2J parity:
+drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not). Lives in
+`ServiceGenerator`'s model-class loop.
+
 ## Base Types
 
 | Generated class | Inherits from |

@@ -277,9 +277,34 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var structureWriter = new StructureWriter(context, modelFileName);
+
+        // A structure that doubles as an operation input/output normally gets only its
+        // {Op}Request/{Op}Response wrappers. But when other generated code references the shape
+        // through a member (directly, or as a list/map element — e.g. drs SourceServer via
+        // SourceServersList, lambda FunctionConfiguration via FunctionList), those properties are
+        // typed with the plain class name, so C2J also ships the standalone class and we must too.
+        // Unreferenced ones stay wrapper-only, matching C2J (kinesis EnhancedMonitoringOutput has
+        // no standalone class), which also avoids colliding with {Op}Request/{Op}Response file
+        // names for shapes named like their wrapper.
+        var memberReferencedOperationShapes = new HashSet<ShapeId>();
+        var referenceSources = context.Operations.SelectMany(o => new[] { o.Input, o.Output })
+            .Concat(context.Structures.Values)
+            .Concat(context.Errors.Values);
+        foreach (var source in referenceSources)
+        {
+            foreach (var member in source.Members.Values)
+            {
+                var leaf = CollectionLeaf(member.Target);
+                if (operationShapes.Contains(leaf))
+                {
+                    memberReferencedOperationShapes.Add(leaf);
+                }
+            }
+        }
+
         foreach (var (shapeId, structure) in context.Structures)
         {
-            if (operationShapes.Contains(shapeId))
+            if (operationShapes.Contains(shapeId) && !memberReferencedOperationShapes.Contains(shapeId))
             {
                 continue;
             }
@@ -314,16 +339,6 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
     private IEnumerable<(ShapeId Id, StructureShape Shape)> ReferencedStructuresRecursive(StructureShape parent, HashSet<ShapeId> visited)
     {
-        // Descends to the leaf of an arbitrarily nested list/map so a structure buried under more than
-        // one collection level (e.g. map<string, list<Struct>>) is still found. A one-level unwrap
-        // would resolve to the inner collection shape, not the structure, and drop its (un)marshaller.
-        ShapeId CollectionLeaf(ShapeId id) => context.Resolve(id) switch
-        {
-            ListShape list => CollectionLeaf(list.Member.Target),
-            MapShape map => CollectionLeaf(map.Value.Target),
-            _ => id,
-        };
-
         foreach (var member in parent.Members.Values)
         {
             // If the member is a (possibly nested) list/map, the structure is its leaf element/value;
@@ -345,6 +360,16 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             }
         }
     }
+
+    // Descends to the leaf of an arbitrarily nested list/map so a structure buried under more than
+    // one collection level (e.g. map<string, list<Struct>>) is still found. A one-level unwrap
+    // would resolve to the inner collection shape, not the structure.
+    private ShapeId CollectionLeaf(ShapeId id) => context.Resolve(id) switch
+    {
+        ListShape list => CollectionLeaf(list.Member.Target),
+        MapShape map => CollectionLeaf(map.Value.Target),
+        _ => id,
+    };
 
     private static void WriteFile(string outputPath, string relativePath, string contents)
     {
