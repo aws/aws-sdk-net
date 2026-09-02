@@ -186,7 +186,7 @@ namespace Amazon.MWAA.Model
         /// or updating DAGs</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string DagS3Path
         {
             get { return this._dagS3Path; }
@@ -500,7 +500,7 @@ namespace Amazon.MWAA.Model
         /// custom plugins</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string PluginsS3ObjectVersion
         {
             get { return this._pluginsS3ObjectVersion; }
@@ -521,7 +521,7 @@ namespace Amazon.MWAA.Model
         /// custom plugins</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string PluginsS3Path
         {
             get { return this._pluginsS3Path; }
@@ -556,7 +556,7 @@ namespace Amazon.MWAA.Model
         /// Python dependencies</a>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string RequirementsS3ObjectVersion
         {
             get { return this._requirementsS3ObjectVersion; }
@@ -578,7 +578,7 @@ namespace Amazon.MWAA.Model
         /// Python dependencies</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Min=0, Max=1024)]
         public string RequirementsS3Path
         {
             get { return this._requirementsS3Path; }
