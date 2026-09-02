@@ -321,8 +321,13 @@ namespace Amazon.Runtime.Internal.Auth
         /// Implementation adapted from <see href="https://github.com/awslabs/aws-c-auth/blob/e8360a65e0f3337d4ac827945e00c3b55a641a5f/source/key_derivation.c#L106-L189"/>.
         /// </remarks>
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private static void AddOneConstantTime(byte[] data)
+        internal static void AddOneConstantTime(byte[] data)
         {
+            // NoOptimization because we want this method to be exactly as non-short-circuiting
+            // as written.
+            //
+            // NoInlining because the NoOptimization would get lost if the method got inlined.
+
             uint carry = 1;
 
             for (int i = 0; i < data.Length; i++)
@@ -346,6 +351,11 @@ namespace Amazon.Runtime.Internal.Auth
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         internal static int CompareConstantTime(byte[] lhs, byte[] rhs)
         {
+            // NoOptimization because we want this method to be exactly as non-short-circuiting
+            // as written.
+            //
+            // NoInlining because the NoOptimization would get lost if the method got inlined.
+
             if (lhs.Length != rhs.Length)
                 throw new ArgumentException("Arrays must be of equal length for constant time comparison.");
 
@@ -445,14 +455,14 @@ namespace Amazon.Runtime.Internal.Auth
         private static ECDsa GetCachedSigningKey(ImmutableCredentials credentials)
         {
             // First, check if the credentials already have a cached signing key.
-            if (credentials.AWS4aSigningKey is { } key)
+            if (credentials.CachedAWS4aSigningKey is { } key)
             {
                 return key;
             }
 
             // Otherwise, compute one and try setting it in a thread-safe manner.
             ECDsa newKey = ComputeSigningKey(credentials.AccessKey, credentials.SecretKey);
-            ECDsa existingKey = Interlocked.CompareExchange(ref credentials.AWS4aSigningKey, newKey, null);
+            ECDsa existingKey = Interlocked.CompareExchange(ref credentials.CachedAWS4aSigningKey, newKey, null);
             if (existingKey != null)
             {
                 // If another thread beat us to setting the key, use that, and dispose the one we generated, to save resources.

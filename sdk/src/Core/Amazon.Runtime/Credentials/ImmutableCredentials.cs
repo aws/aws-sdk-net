@@ -64,7 +64,7 @@ namespace Amazon.Runtime
         /// <remarks>
         /// The key must not be disposed, and must not be returned to the user.
         /// </remarks>
-        internal ECDsa AWS4aSigningKey;
+        internal ECDsa CachedAWS4aSigningKey;
         #endregion
 
 
