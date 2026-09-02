@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Added AWS4aSigner class that implements SigV4a signing in managed code. AWS CRT is no longer used by the SDK for this purpose, and the related APIs were deprecated."
+    ]
+  }
+}

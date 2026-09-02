@@ -55,7 +55,7 @@ namespace Amazon.Runtime.Internal.Auth
         {
             var signer = SelectSigner(this, true, request, clientConfig);
             var aws4Signer = signer as AWS4Signer;
-            var aws4aSigner = signer as AWS4aSignerCRTWrapper;
+            var aws4aSigner = signer as AWS4aSigner;
             var useV4 = aws4Signer != null;
             var useV4a = aws4aSigner != null;
 
@@ -73,6 +73,7 @@ namespace Amazon.Runtime.Internal.Auth
             if (useV4a)
             {
                 var signingResult = aws4aSigner.SignRequest(request, clientConfig, metrics, immutableCredentials);
+                request.Headers[HeaderKeys.AuthorizationHeader] = signingResult.ForAuthorizationHeader;
                 if (request.UseChunkEncoding)
                 {
                     request.AWS4aSignerResult = signingResult;

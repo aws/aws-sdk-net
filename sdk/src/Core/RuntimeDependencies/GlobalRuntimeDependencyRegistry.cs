@@ -1,4 +1,4 @@
-﻿/*
+/*
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -16,6 +16,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using AWSSDK.Runtime.Internal.Util;
 using System;
+using System.ComponentModel;
 
 namespace Amazon.RuntimeDependencies
 {
@@ -53,26 +54,20 @@ namespace Amazon.RuntimeDependencies
         {
             RegisterInstance(ChecksumCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, ChecksumCRTWrapper.CRT_WRAPPER_CLASS_NAME, instance);
         }
-#pragma warning restore CS0618
 
         /// <summary>
         /// Register the AWS SigV4a provider. This should be an instance of Amazon.Extensions.CrtIntegration.CrtAWS4aSigner from AWSSDK.Extensions.CrtIntegration package.
         /// 
-        /// The SigV4a provider is used for features like S3's multi-region access point and EventBridge global endpoints.
-        /// 
-        /// The context parameter for the factory has a Payload property that must be used when constructing the instance of CrtAWS4aSigner.
-        /// <code>
-        /// GlobalRuntimeDependencyRegistry.Instance.RegisterSigV4aProvider((context) =>
-        /// {
-        ///     return new Amazon.Extensions.CrtIntegration.CrtAWS4aSigner(context.SigV4aCrtSignerContextData.Payload);
-        /// }
-        /// </code>
+        /// This is obsolete and no longer has any effect. Starting with version 4.1 the SDK signs SigV4a requests using managed cryptography
+        /// APIs using System.IO.Hashing rather than the native Amazon Common Runtime, so a registered SigV4a provider is no longer used.
         /// </summary>
         /// <param name="factory"></param>
+        [Obsolete(AWS4aSignerCRTWrapper.OBSOLETE_MESSAGE), EditorBrowsable(EditorBrowsableState.Never)]
         public void RegisterSigV4aProvider(RuntimeDependencyFactory factory)
         {
             RegisterInstance(AWS4aSignerCRTWrapper.CRT_WRAPPER_ASSEMBLY_NAME, AWS4aSignerCRTWrapper.CRT_WRAPPER_CLASS_NAME, factory);
         }
+#pragma warning restore CS0618
 
         /// <summary>
         /// Register the Amazon.SecurityToken.AmazonSecurityTokenServiceClient instance from the AWSSDK.SecurityToken package.
