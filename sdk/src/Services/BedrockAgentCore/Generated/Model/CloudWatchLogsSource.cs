@@ -59,7 +59,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property LogGroupNames. 
         /// <para>
-        /// The list of CloudWatch log group names to read agent traces from. Maximum of 5 log
+        /// The list of CloudWatch log group names to read agent traces from. Maximum of 10 log
         /// groups.
         /// </para>
         /// <para />
@@ -68,7 +68,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true, Min=1, Max=10)]
         public List<string> LogGroupNames
         {
             get { return this._logGroupNames; }
