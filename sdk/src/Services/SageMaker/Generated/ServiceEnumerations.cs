@@ -22978,6 +22978,10 @@ namespace Amazon.SageMaker
         /// Constant Standard for StorageType
         /// </summary>
         public static readonly StorageType Standard = new StorageType("Standard");
+        /// <summary>
+        /// Constant Standard_V2 for StorageType
+        /// </summary>
+        public static readonly StorageType Standard_V2 = new StorageType("Standard_V2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
