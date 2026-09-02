@@ -31,12 +31,14 @@ namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplication operation.
-    /// Deletes the Application. Only Applications that don't have any Application Associations
-    /// can be deleted.
+    /// Deletes an application. If the application has associations, you must delete them
+    /// first. Alternatively, use the <c>force</c> option to delete the application and remove
+    /// its associations.
     /// </summary>
     public partial class DeleteApplicationRequest : AmazonAppIntegrationsServiceRequest
     {
         private string _arn;
+        private bool? _force;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -55,6 +57,33 @@ namespace Amazon.AppIntegrationsService.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Force. 
+        /// <para>
+        /// Specifies whether to delete the application even if it still has application associations.
+        /// If <c>true</c>, the operation removes the application and its associations. If <c>false</c>
+        /// or absent, the delete fails when associations exist.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Setting this parameter to <c>true</c> permanently removes all of the application's
+        /// associations. Doing so might impact other resources that rely on and reference the
+        /// application. This action can't be undone.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool? Force
+        {
+            get { return this._force; }
+            set { this._force = value; }
+        }
+
+        // Check to see if Force property is set
+        internal bool IsSetForce()
+        {
+            return this._force.HasValue; 
         }
 
     }

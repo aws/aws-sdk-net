@@ -65,7 +65,11 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetArn())
                 throw new AmazonAppIntegrationsServiceException("Request object does not have required field Arn set");
             request.AddPathResource("{ApplicationIdentifier}", StringUtils.FromString(publicRequest.Arn));
+            
+            if (publicRequest.IsSetForce())
+                request.Parameters.Add("force", StringUtils.FromBool(publicRequest.Force));
             request.ResourcePath = "/applications/{ApplicationIdentifier}";
+            request.UseQueryString = true;
 
             return request;
         }
