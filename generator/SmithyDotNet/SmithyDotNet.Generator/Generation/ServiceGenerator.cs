@@ -193,7 +193,6 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var operationShapes = new HashSet<ShapeId>();
         var marshalledStructures = new HashSet<ShapeId>();
         var unmarshalledStructures = new HashSet<ShapeId>();
-        var errorStructures = new HashSet<ShapeId>();
 
         foreach (var operation in context.Operations)
         {
@@ -229,26 +228,26 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                     Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
                 }
             }
+        }
 
-            foreach (var error in operation.Errors)
+        // Every error shape in the model gets an unmarshaller, not just those an operation lists:
+        // an error declared only on the service (or reachable only as a member of a response, as
+        // eventstream operations do) should still be returnable.
+        foreach (var (errorId, errorShape) in context.Errors)
+        {
+            var name = ExceptionWriter.ToExceptionName(errorId.Name);
+            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, errorId, cancellationToken));
+
+            // An exception's rich members can target structures (directly, or as list/map
+            // elements); the exception unmarshaller deserializes them, so those nested
+            // structures need unmarshallers too. Exceptions are response-only, so only the
+            // unmarshaller side is walked (never a marshaller), deduped against the shared set
+            // so a structure also reachable from an output isn't emitted twice.
+            foreach (var (shapeId, structure) in ReferencedStructures(errorId, errorShape))
             {
-                if (errorStructures.Add(error.Id))
+                if (unmarshalledStructures.Add(shapeId))
                 {
-                    var name = ExceptionWriter.ToExceptionName(error.Id.Name);
-                    Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(error.Shape, error.Id, cancellationToken));
-
-                    // An exception's rich members can target structures (directly, or as list/map
-                    // elements); the exception unmarshaller deserializes them, so those nested
-                    // structures need unmarshallers too. Exceptions are response-only, so only the
-                    // unmarshaller side is walked (never a marshaller), deduped against the shared set
-                    // so a structure also reachable from an output isn't emitted twice.
-                    foreach (var (shapeId, structure) in ReferencedStructures(error.Id, error.Shape))
-                    {
-                        if (unmarshalledStructures.Add(shapeId))
-                        {
-                            Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
-                        }
-                    }
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
                 }
             }
         }

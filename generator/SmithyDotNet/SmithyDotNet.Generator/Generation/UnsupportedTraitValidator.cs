@@ -56,6 +56,15 @@ public static class UnsupportedTraitValidator
             }
         }
 
+        //do one more sweep of errors that are potentially only listed on the service and not the operation
+        foreach (var errorId in index.Service.Errors)
+        {
+            if (index.Shapes.TryGetValue(errorId, out var errorShape) && errorShape is StructureShape error)
+            {
+                CollectDeniedOnMembers(error, found);
+            }
+        }
+
         // index.Shapes is every shape reachable from an operation/error at any depth, so this one
         // pass covers DeniedTargetTraits regardless of nesting.
         foreach (var shape in index.Shapes.Values)

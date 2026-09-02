@@ -92,9 +92,6 @@ public sealed class JsonExceptionUnmarshallerWriter(GenerationContext context, s
         writer.OpenBlock($"public {exceptionName} Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)", () =>
         {
             writer.WriteLine($"var unmarshalledObject = new {exceptionName}(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
-
-            // Body members are read from the error payload; an exception whose members are all headers
-            // (or has none beyond message) emits no reader/loop.
             if (bodyMembers.Count > 0)
             {
                 writer.WriteLine();

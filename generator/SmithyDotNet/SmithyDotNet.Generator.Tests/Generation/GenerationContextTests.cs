@@ -172,4 +172,17 @@ public class GenerationContextTests
         Assert.Empty(operation.Input.Members);
         Assert.Empty(operation.Output.Members);
     }
+
+    [Fact]
+    public void OperationErrors_MergeServiceErrors_DedupedAndSortedByName()
+    {
+        // The model's service declares Throttling/AccessDenied/Validation and GetThing declares
+        // ResourceNotFound/Validation: the resolved list is the union (Validation once), in name order.
+        var context = TestModels.Context("Codegen/service-errors-model.json");
+
+        var operation = context.Operations.Single(o => o.Name == "GetThing");
+        Assert.Equal(
+            ["AccessDeniedException", "ResourceNotFoundException", "ThrottlingException", "ValidationException"],
+            operation.Errors.Select(e => e.Id.Name));
+    }
 }

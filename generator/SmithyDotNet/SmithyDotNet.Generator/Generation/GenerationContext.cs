@@ -373,8 +373,17 @@ public class GenerationContext
             var input = ResolveStructure(index, operation.Input, "input", operationId);
             var output = ResolveStructure(index, operation.Output, "output", operationId);
 
-            var errors = new List<OperationError>(operation.Errors.Count);
-            foreach (var errorId in operation.Errors)
+            // A service's errors apply to every operation it contains, so they're folded into each
+            // operation's own list here. Deduped and sorted by name.
+            var errorIds = operation.Errors
+                .Concat(index.Service.Errors)
+                .Distinct()
+                .OrderBy(id => id.Name, StringComparer.Ordinal)
+                .ThenBy(id => id.Namespace, StringComparer.Ordinal)
+                .ThenBy(id => id.Member, StringComparer.Ordinal);
+
+            var errors = new List<OperationError>();
+            foreach (var errorId in errorIds)
             {
                 errors.Add(new OperationError(ResolveStructure(index, errorId, "error", operationId), errorId));
             }
