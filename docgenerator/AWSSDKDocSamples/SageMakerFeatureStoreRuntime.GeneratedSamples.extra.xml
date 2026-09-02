@@ -38,4 +38,42 @@
             </example>
         </value>
     </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.IAmazonSageMakerFeatureStoreRuntime.UpdateRecord(Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest)" />
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.AmazonSageMakerFeatureStoreRuntimeClient.UpdateRecord(Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest)" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update specific features in a record"
+                    source=".\AWSSDKDocSamples\SageMakerFeatureStoreRuntime\SageMakerFeatureStoreRuntime.GeneratedSamples.cs"
+                    region="update-record-example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.IAmazonSageMakerFeatureStoreRuntime.UpdateRecord(Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest)" />
+            <member name="M:Amazon.SageMakerFeatureStoreRuntime.AmazonSageMakerFeatureStoreRuntimeClient.UpdateRecord(Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest)" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordRequest" />
+            <member name="T:Amazon.SageMakerFeatureStoreRuntime.Model.UpdateRecordResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update features and set a time-to-live (TTL) duration"
+                    source=".\AWSSDKDocSamples\SageMakerFeatureStoreRuntime\SageMakerFeatureStoreRuntime.GeneratedSamples.cs"
+                    region="update-record-example-2" />
+            </example>
+        </value>
+    </doc>
 </docs>

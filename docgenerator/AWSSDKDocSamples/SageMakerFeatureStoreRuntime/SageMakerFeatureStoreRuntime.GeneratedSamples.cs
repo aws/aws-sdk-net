@@ -58,6 +58,64 @@ namespace AWSSDKDocSamples.Amazon.SageMakerFeatureStoreRuntime.Generated
             #endregion
         }
 
+        public void SageMakerFeatureStoreRuntimeUpdateRecord()
+        {
+            #region update-record-example-1
+
+            var client = new AmazonSageMakerFeatureStoreRuntimeClient();
+            var response = client.UpdateRecord(new UpdateRecordRequest 
+            {
+                FeatureGroupName = "my-feature-group",
+                Features = new List<FeatureValue> {
+                    new FeatureValue {
+                        FeatureName = "age",
+                        ValueAsString = "26"
+                    },
+                    new FeatureValue {
+                        FeatureName = "membership_tier",
+                        ValueAsString = "gold"
+                    },
+                    new FeatureValue {
+                        FeatureName = "event_time",
+                        ValueAsString = "2026-07-26T12:00:00Z"
+                    }
+                },
+                RecordIdentifierValueAsString = "cust-001"
+            });
+
+
+            #endregion
+        }
+
+        public void SageMakerFeatureStoreRuntimeUpdateRecord()
+        {
+            #region update-record-example-2
+
+            var client = new AmazonSageMakerFeatureStoreRuntimeClient();
+            var response = client.UpdateRecord(new UpdateRecordRequest 
+            {
+                FeatureGroupName = "my-feature-group",
+                Features = new List<FeatureValue> {
+                    new FeatureValue {
+                        FeatureName = "age",
+                        ValueAsString = "26"
+                    },
+                    new FeatureValue {
+                        FeatureName = "event_time",
+                        ValueAsString = "2026-07-26T12:00:00Z"
+                    }
+                },
+                RecordIdentifierValueAsString = "cust-001",
+                TtlDuration = new TtlDuration {
+                    Unit = "Weeks",
+                    Value = 4
+                }
+            });
+
+
+            #endregion
+        }
+
         
         # region ISample Members
         public virtual void Run()
