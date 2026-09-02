@@ -173,6 +173,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.TimedMetadataPassthrough);
             }
 
+            if(requestObject.IsSetWatermarkingSettings())
+            {
+                context.Writer.WritePropertyName("watermarkingSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CmafIngestWatermarkingSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.WatermarkingSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

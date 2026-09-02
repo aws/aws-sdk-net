@@ -399,6 +399,122 @@ namespace Amazon.MediaLive
 
 
     /// <summary>
+    /// Constants used for properties of type AbWatermarkerIdLength.
+    /// </summary>
+    public class AbWatermarkerIdLength : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ID_2048 for AbWatermarkerIdLength
+        /// </summary>
+        public static readonly AbWatermarkerIdLength ID_2048 = new AbWatermarkerIdLength("ID_2048");
+        /// <summary>
+        /// Constant ID_512 for AbWatermarkerIdLength
+        /// </summary>
+        public static readonly AbWatermarkerIdLength ID_512 = new AbWatermarkerIdLength("ID_512");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AbWatermarkerIdLength(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AbWatermarkerIdLength FindValue(string value)
+        {
+            return FindValue<AbWatermarkerIdLength>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AbWatermarkerIdLength(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AbWatermarkingProfile.
+    /// </summary>
+    public class AbWatermarkingProfile : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CAMCORDING for AbWatermarkingProfile
+        /// </summary>
+        public static readonly AbWatermarkingProfile CAMCORDING = new AbWatermarkingProfile("CAMCORDING");
+        /// <summary>
+        /// Constant CUSTOM for AbWatermarkingProfile
+        /// </summary>
+        public static readonly AbWatermarkingProfile CUSTOM = new AbWatermarkingProfile("CUSTOM");
+        /// <summary>
+        /// Constant DEFAULT for AbWatermarkingProfile
+        /// </summary>
+        public static readonly AbWatermarkingProfile DEFAULT = new AbWatermarkingProfile("DEFAULT");
+        /// <summary>
+        /// Constant HQ for AbWatermarkingProfile
+        /// </summary>
+        public static readonly AbWatermarkingProfile HQ = new AbWatermarkingProfile("HQ");
+        /// <summary>
+        /// Constant MEZZANINE for AbWatermarkingProfile
+        /// </summary>
+        public static readonly AbWatermarkingProfile MEZZANINE = new AbWatermarkingProfile("MEZZANINE");
+        /// <summary>
+        /// Constant ROBUST for AbWatermarkingProfile
+        /// </summary>
+        public static readonly AbWatermarkingProfile ROBUST = new AbWatermarkingProfile("ROBUST");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AbWatermarkingProfile(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AbWatermarkingProfile FindValue(string value)
+        {
+            return FindValue<AbWatermarkingProfile>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AbWatermarkingProfile(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Ac3AttenuationControl.
     /// </summary>
     public class Ac3AttenuationControl : ConstantClass
