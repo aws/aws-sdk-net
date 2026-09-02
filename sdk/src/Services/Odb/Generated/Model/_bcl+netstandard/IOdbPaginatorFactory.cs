@@ -178,6 +178,16 @@ namespace Amazon.Odb.Model
         IListExascaleDbStorageVaultsPaginator ListExascaleDbStorageVaults(ListExascaleDbStorageVaultsRequest request);
 
         /// <summary>
+        /// Paginator for ListFlexComponents operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListFlexComponentsPaginator ListFlexComponents(ListFlexComponentsRequest request);
+
+        /// <summary>
         /// Paginator for ListGiMinorVersions operation
         ///</summary>
         [AWSPaginator(

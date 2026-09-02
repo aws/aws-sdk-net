@@ -908,6 +908,21 @@
     <max>8192</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Odb.Model.ListFlexComponentsRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListFlexComponentsRequest.NextToken</property>
+    <min>1</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Odb.Model.ListFlexComponentsRequest.Shape</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Odb.Model.ListGiMinorVersionsRequest.AvailabilityZone</property>
     <min>1</min>
     <max>255</max>
