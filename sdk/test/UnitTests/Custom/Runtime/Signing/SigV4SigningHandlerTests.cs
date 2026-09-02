@@ -333,6 +333,82 @@ namespace AWSSDK.UnitTests.Signing
             StringAssert.Contains(auth, "x-custom");
         }
 
+        [TestMethod]
+        public async Task Send_MultiValueHeader_SignsWireFormWithCommaSpace()
+        {
+            // A single header name carrying multiple values is emitted by HttpClient on ONE wire line with the
+            // values joined by ", " (comma + space). The service canonicalizes that received line verbatim, so
+            // the signature must be computed over "bar, baz" — not "bar,baz". This is the regression from
+            // issue #4493: joining with "," alone produced an Authorization the service rejected.
+            //
+            // Cross-check strategy (no golden string, no network): sign the same request two ways with a fixed
+            // SignedAt so the results are deterministic and directly comparable.
+            //   1. The handler path: a request with foo = ["bar", "baz"], captured after signing.
+            //   2. The facade path (AWSSigV4Signer.Sign), whose Headers take one already-joined value per name
+            //      "in the same order and form they are sent on the wire". Both paths add host, x-amz-date, and
+            //      x-amz-content-sha256 identically, so the ONLY thing that can differ between them is the value
+            //      signed for foo. Therefore the handler's Authorization must equal the facade signing foo as
+            //      "bar, baz" and must NOT equal the facade signing foo as "bar,baz".
+            var signedAt = new DateTime(2024, 1, 15, 12, 0, 0, DateTimeKind.Utc);
+            var credentials = new BasicAWSCredentials(AccessKey, SecretKey);
+            const string uri = "https://example.execute-api.us-east-1.amazonaws.com/items";
+
+            var inner = new CapturingInnerHandler();
+            var handler = new SigV4SigningHandler(new AWSSigV4Parameters
+            {
+                Credentials = credentials,
+                Region = Region,
+                Service = Service,
+                SignedAt = signedAt,
+            })
+            {
+                InnerHandler = inner,
+            };
+            var invoker = new HttpMessageInvoker(handler);
+            var message = new HttpRequestMessage(HttpMethod.Get, uri);
+            message.Headers.TryAddWithoutValidation("foo", "bar");
+            message.Headers.TryAddWithoutValidation("foo", "baz");
+            await invoker.SendAsync(message, CancellationToken.None);
+
+            var handlerAuth = inner.LastRequest.Headers.GetValues(HeaderKeys.AuthorizationHeader).Single();
+
+            // foo must be part of the signed headers, or this comparison would prove nothing.
+            StringAssert.Contains(handlerAuth, "foo");
+
+            var wireFormAuth = SignFoo("bar, baz", credentials, signedAt, uri);
+            var noSpaceAuth = SignFoo("bar,baz", credentials, signedAt, uri);
+
+            // Sanity: the two facade signatures differ, so the assertion below can distinguish them.
+            Assert.AreNotEqual(wireFormAuth, noSpaceAuth);
+
+            Assert.AreEqual(wireFormAuth, handlerAuth,
+                "The handler must sign a multi-value header as its wire form \"bar, baz\" (comma + space).");
+            Assert.AreNotEqual(noSpaceAuth, handlerAuth,
+                "The handler must not sign a multi-value header as \"bar,baz\" (no space) — that is the #4493 bug.");
+        }
+
+        // Signs a GET to the given URI with a single foo header value via the neutral facade, returning the
+        // Authorization value. Uses the same credentials/region/service/SignedAt as the handler path so the
+        // only variable is the foo value.
+        private static string SignFoo(string fooValue, AWSCredentials credentials, DateTime signedAt, string uri)
+        {
+            var request = new AWSSigningRequest
+            {
+                HttpMethod = HttpMethod.Get,
+                RequestUri = new Uri(uri),
+            };
+            request.Headers["foo"] = fooValue;
+
+            var result = AWSSigV4Signer.Sign(request, new AWSSigV4Parameters
+            {
+                Credentials = credentials,
+                Region = Region,
+                Service = Service,
+                SignedAt = signedAt,
+            });
+            return result.Headers[HeaderKeys.AuthorizationHeader];
+        }
+
         // -----------------------------------------------------------------------
         // Per-request overrides via Options / Properties.
         // -----------------------------------------------------------------------

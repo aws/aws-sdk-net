@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": false,
+    "type": "patch",
+    "changeLogMessages": [
+      "Fixed `SigV4SigningHandler` producing an invalid signature for requests carrying a multi-value header. The values were joined with `,` when building the string-to-sign, but `HttpClient` sends them on the wire joined with `, ` (comma + space); they are now joined with `, ` to match, so the service-computed signature matches. Fixes #4493."
+    ]
+  }
+}
