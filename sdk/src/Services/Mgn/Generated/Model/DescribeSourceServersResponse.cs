@@ -40,7 +40,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Request to filter Source Servers list by item.
+        /// The list of returned Source Servers.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -63,7 +63,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Request to filter Source Servers next token.
+        /// The token of the next Source Server to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

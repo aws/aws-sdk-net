@@ -30,49 +30,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Import task summary waves.
+    /// Maps a source CIDR range to the corresponding target CIDR range to use in the target
+    /// network.
     /// </summary>
-    public partial class ImportTaskSummaryWaves
+    public partial class CidrMapping
     {
-        private long? _createdCount;
-        private long? _modifiedCount;
+        private string _originalCidr;
+        private string _updatedCidr;
 
         /// <summary>
-        /// Gets and sets the property CreatedCount. 
+        /// Gets and sets the property OriginalCidr. 
         /// <para>
-        /// Import task summary waves created count.
+        /// The original CIDR range in the source network.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
-        public long? CreatedCount
+        [AWSProperty(Required=true, Min=9, Max=18)]
+        public string OriginalCidr
         {
-            get { return this._createdCount; }
-            set { this._createdCount = value; }
+            get { return this._originalCidr; }
+            set { this._originalCidr = value; }
         }
 
-        // Check to see if CreatedCount property is set
-        internal bool IsSetCreatedCount()
+        // Check to see if OriginalCidr property is set
+        internal bool IsSetOriginalCidr()
         {
-            return this._createdCount.HasValue; 
+            return this._originalCidr != null;
         }
 
         /// <summary>
-        /// Gets and sets the property ModifiedCount. 
+        /// Gets and sets the property UpdatedCidr. 
         /// <para>
-        /// Import task summary waves modified count.
+        /// The updated CIDR range to use in the target network.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0)]
-        public long? ModifiedCount
+        [AWSProperty(Required=true, Min=9, Max=18)]
+        public string UpdatedCidr
         {
-            get { return this._modifiedCount; }
-            set { this._modifiedCount = value; }
+            get { return this._updatedCidr; }
+            set { this._updatedCidr = value; }
         }
 
-        // Check to see if ModifiedCount property is set
-        internal bool IsSetModifiedCount()
+        // Check to see if UpdatedCidr property is set
+        internal bool IsSetUpdatedCidr()
         {
-            return this._modifiedCount.HasValue; 
+            return this._updatedCidr != null;
         }
 
     }

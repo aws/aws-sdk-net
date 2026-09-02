@@ -35,7 +35,7 @@ namespace Amazon.Mgn.Model
     /// 
     ///  <note> 
     /// <para>
-    /// bootMode valid values are <c>LEGACY_BIOS | UEFI</c> 
+    /// bootMode valid values are <c>LEGACY_BIOS | UEFI | USE_SOURCE</c> 
     /// </para>
     ///  </note>
     /// </summary>

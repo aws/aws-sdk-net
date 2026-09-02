@@ -31,7 +31,7 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateReplicationConfigurationTemplate operation.
-    /// Updates multiple ReplicationConfigurationTemplates by ID.
+    /// Updates a ReplicationConfigurationTemplate by ID.
     /// </summary>
     public partial class UpdateReplicationConfigurationTemplateRequest : AmazonMgnRequest
     {

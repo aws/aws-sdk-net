@@ -39,7 +39,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ApiCallDateTime. 
         /// <para>
-        /// Lifecycle Test failed API call date and time.
+        /// Lifecycle Test finalized API call date and time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=32)]

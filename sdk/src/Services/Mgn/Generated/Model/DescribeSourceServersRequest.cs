@@ -43,7 +43,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property AccountID. 
         /// <para>
-        /// Request to filter Source Servers list by Accoun ID.
+        /// Request to filter Source Servers list by Account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

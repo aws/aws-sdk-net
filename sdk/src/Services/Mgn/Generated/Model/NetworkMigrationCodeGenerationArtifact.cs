@@ -83,7 +83,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ArtifactType. 
         /// <para>
-        /// The type of the artifact, such as CLOUDFORMATION_TEMPLATE or TERRAFORM_MODULE.
+        /// The type of the generated artifact.
         /// </para>
         /// </summary>
         public NetworkMigrationCodeGenerationArtifactType ArtifactType

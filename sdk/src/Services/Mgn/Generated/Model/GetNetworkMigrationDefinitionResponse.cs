@@ -35,6 +35,7 @@ namespace Amazon.Mgn.Model
     public partial class GetNetworkMigrationDefinitionResponse : AmazonWebServiceResponse
     {
         private string _arn;
+        private List<CidrMapping> _cidrMappings = AWSConfigs.InitializeCollections ? new List<CidrMapping>() : null;
         private DateTime? _createdAt;
         private string _description;
         private string _name;
@@ -46,6 +47,7 @@ namespace Amazon.Mgn.Model
         private TargetNetwork _targetNetwork;
         private TargetS3Configuration _targets3Configuration;
         private DateTime? _updatedAt;
+        private VpcProvisioningStrategy _vpcProvisioningStrategy;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -64,6 +66,31 @@ namespace Amazon.Mgn.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CidrMappings. 
+        /// <para>
+        /// A list of CIDR mappings that map original source CIDR ranges to updated target CIDR
+        /// ranges. CIDR mappings apply only when <c>vpcProvisioningStrategy</c> is set to <c>USE_EXISTING</c>.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<CidrMapping> CidrMappings
+        {
+            get { return this._cidrMappings; }
+            set { this._cidrMappings = value; }
+        }
+
+        // Check to see if CidrMappings property is set
+        internal bool IsSetCidrMappings()
+        {
+            return this._cidrMappings != null && (this._cidrMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -283,6 +310,26 @@ namespace Amazon.Mgn.Model
         internal bool IsSetUpdatedAt()
         {
             return this._updatedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcProvisioningStrategy. 
+        /// <para>
+        /// Indicates whether the migration creates new target VPCs or uses existing ones. <c>CREATE_NEW</c>
+        /// provisions new target VPCs; <c>USE_EXISTING</c> migrates into existing VPCs in the
+        /// target account.
+        /// </para>
+        /// </summary>
+        public VpcProvisioningStrategy VpcProvisioningStrategy
+        {
+            get { return this._vpcProvisioningStrategy; }
+            set { this._vpcProvisioningStrategy = value; }
+        }
+
+        // Check to see if VpcProvisioningStrategy property is set
+        internal bool IsSetVpcProvisioningStrategy()
+        {
+            return this._vpcProvisioningStrategy != null;
         }
 
     }

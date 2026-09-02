@@ -58,6 +58,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("cidrMappings", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<CidrMapping, CidrMappingUnmarshaller>(CidrMappingUnmarshaller.Instance);
+                    response.CidrMappings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -122,6 +128,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
                     response.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("vpcProvisioningStrategy", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.VpcProvisioningStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
