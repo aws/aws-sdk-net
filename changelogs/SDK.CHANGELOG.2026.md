@@ -1,3 +1,23 @@
+### 4.0.326.0 (2026-09-02 18:14 UTC)
+* AppIntegrationsService (4.0.101.0)
+	* This release adds a force parameter to DeleteApplication and a ConflictException to UpdateApplication, letting customers delete applications with existing associations in one call and get a clear error when an update conflicts with the application's current state.
+* BedrockAgentCore (4.0.109.0)
+	* Batch evaluation now supports up to 10 CloudWatch log groups per CloudWatchLogsSource
+* EC2 (4.0.116.0)
+	* This release adds support to retain interruptible Capacity Reservations in an active state when all capacity is reclaimed.
+* MediaLive (4.0.104.0)
+	* AWS Elemental MediaLive now supports AB forensic video watermarking
+* Mgn (4.0.101.0)
+	* AWS Transform for migrations adds a second network migration option - apply your source security posture to existing VPCs. Upload a source network file with firewall rules, tag the in-scope VPCs, and AWS Transform matches source subnets to them by CIDR and generates the security groups.
+* MWAA (4.0.101.0)
+	* Enabled customers to clear optional S3 paths (plugins, requirements, and startup script) for their Amazon MWAA environments by accepting empty strings for the associated fields in UpdateEnvironment requests.
+* Odb (4.0.103.0)
+	* Adds the ListFlexComponents API for listing the flex components available for a given DB system shape.
+* SageMaker (4.0.113.0)
+	* Amazon SageMaker Feature Store now supports the Standard V2 online store type, which enables feature-level writes to feature groups. You can select Standard V2 when creating a feature group, and update the storage type of an existing feature group via UpdateFeatureGroup.
+* SageMakerFeatureStoreRuntime (4.0.101.0)
+	* Amazon SageMaker Feature Store now supports the UpdateRecord API, enabling partial updates to individual feature values in an existing Online Store record without rewriting the entire record. This reduces write payloads and latency for high-frequency feature-level writes .
+
 ### 4.0.325.0 (2026-09-01 18:18 UTC)
 * BedrockAgentCoreControl (4.0.113.0)
 	* Online evaluation configurations now support up to 25 evaluators. CloudWatch Logs data sources for online evaluation now support up to 10 log groups.
