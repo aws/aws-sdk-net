@@ -250,6 +250,16 @@ public class GenerationContext
             }
         }
 
+        // smithy.api#Unit as a union-member target gets a per-service empty model class: C2J
+        // ships one, and the generated member properties reference it (e.g. lambda-microvms
+        // PortSpecification.AllPorts). Prelude shapes never appear in index.Shapes, so the loop
+        // above cannot collect it. Operation input/output references to Unit don't count — those
+        // emit empty Request/Response classes instead (see ResolveStructure).
+        if (index.Shapes.Values.OfType<StructureShape>().Any(s => s.Members.Values.Any(m => m.Target == ShapeId.Unit)))
+        {
+            structures[ShapeId.Unit] = new StructureShape();
+        }
+
         Structures = structures;
         Errors = errors;
 

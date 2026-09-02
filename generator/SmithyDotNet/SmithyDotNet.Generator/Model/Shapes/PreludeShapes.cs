@@ -25,6 +25,24 @@ public static class PreludeShapes
         ["BigDecimal"] = new BigDecimalShape(),
         ["Timestamp"] = new TimestampShape(),
         ["Document"] = new DocumentShape(),
+        // Smithy 1.0 primitive shapes. Removed from the 2.0 prelude spec, but models converted
+        // from 1.0 still reference them (bedrock-agent: PrimitiveLong; iotsitewise, omics:
+        // PrimitiveBoolean). They map to the same .NET types as their plain counterparts —
+        // the 1.0 "primitive" distinction was about default values, which don't affect our
+        // nullability handling.
+        ["PrimitiveBoolean"] = new BooleanShape(),
+        ["PrimitiveByte"] = new ByteShape(),
+        ["PrimitiveShort"] = new ShortShape(),
+        ["PrimitiveInteger"] = new IntegerShape(),
+        ["PrimitiveLong"] = new LongShape(),
+        ["PrimitiveFloat"] = new FloatShape(),
+        ["PrimitiveDouble"] = new DoubleShape(),
+        // Unit is the prelude's "no meaningful value" structure. As an operation input/output it
+        // is already special-cased in GenerationContext.ResolveStructure; resolving it here covers
+        // union members targeting it (lambda-microvms, bedrock-agentcore, supportauthz,
+        // workspaces-web), which flow through the plain structure codepath and emit the same
+        // per-service empty Unit class C2J ships.
+        ["Unit"] = new StructureShape(),
     };
 
     /// <summary>

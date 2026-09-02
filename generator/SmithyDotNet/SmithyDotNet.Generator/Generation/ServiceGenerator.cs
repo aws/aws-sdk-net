@@ -197,8 +197,17 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
 
         foreach (var operation in context.Operations)
         {
-            operationShapes.Add(operation.Shape.Input);
-            operationShapes.Add(operation.Shape.Output);
+            // smithy.api#Unit as an operation input/output means "no value" — it is not a model
+            // structure, and adding it here would suppress the plain Unit model class that union
+            // members reference (GenerationContext collects Unit into Structures in that case).
+            if (operation.Shape.Input != ShapeId.Unit)
+            {
+                operationShapes.Add(operation.Shape.Input);
+            }
+            if (operation.Shape.Output != ShapeId.Unit)
+            {
+                operationShapes.Add(operation.Shape.Output);
+            }
 
             Emit(Path.Combine(model, $"{operation.Name}Request.g.cs"), operationWriter.WriteRequest(operation, cancellationToken));
             Emit(Path.Combine(model, $"{operation.Name}Response.g.cs"), operationWriter.WriteResponse(operation, cancellationToken));

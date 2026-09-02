@@ -1,0 +1,46 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Svc": {
+      "type": "service", "version": "2024-01-01",
+      "operations": [{ "target": "com.example#DoThing" }, { "target": "com.example#Ping" }],
+      "traits": { "aws.api#service": { "sdkId": "UnitPrim" }, "aws.protocols#restJson1": {} }
+    },
+    "com.example#Ping": {
+      "type": "operation", "input": { "target": "smithy.api#Unit" }, "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/ping", "method": "POST" } }
+    },
+    "com.example#DoThing": {
+      "type": "operation", "input": { "target": "com.example#DoThingInput" }, "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/thing", "method": "POST" } }
+    },
+    "com.example#DoThingInput": {
+      "type": "structure",
+      "members": {
+        "choice": { "target": "com.example#Choice" },
+        "flags": { "target": "com.example#Flags" }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#Choice": {
+      "type": "union",
+      "members": {
+        "allPorts": { "target": "smithy.api#Unit" },
+        "single": { "target": "com.example#Single" }
+      }
+    },
+    "com.example#Single": {
+      "type": "structure",
+      "members": { "port": { "target": "smithy.api#Integer" } }
+    },
+    "com.example#Flags": {
+      "type": "structure",
+      "members": {
+        "legacyBool": { "target": "smithy.api#PrimitiveBoolean" },
+        "legacyLong": { "target": "smithy.api#PrimitiveLong" },
+        "modernBool": { "target": "smithy.api#Boolean" },
+        "modernLong": { "target": "smithy.api#Long" }
+      }
+    }
+  }
+}

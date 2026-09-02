@@ -65,6 +65,10 @@ their member and binding dictionaries — see `ShapeConverter.cs`). Non-obvious:
 
 Shapes in namespace `smithy.api` (e.g. `smithy.api#String`, `smithy.api#Boolean`, `smithy.api#Integer`) are prelude shapes. They are **not** present in the model JSON — they are implicit. `ServiceIndex` skips them during shape traversal (they aren't part of a service's own shape closure), but they are still *resolvable*: `GenerationContext.Resolve` falls back to the `PreludeShapes` table, so callers map a member's target without special-casing prelude references.
 
+The table also carries the Smithy 1.0 `Primitive*` shapes (`PrimitiveLong`, `PrimitiveBoolean`, etc.), which resolve to the same shape instances as their plain counterparts — 1.0-era models reference them, and the SDK types both identically (`long?`, `bool?`).
+
+`smithy.api#Unit` is the one prelude shape that can emit code: when a union member targets it, `GenerationContext` adds an empty `StructureShape` for Unit to `Structures`, producing a per-service empty model class (C2J ships one, and generated member properties reference it). Operation input/output references to Unit do **not** count — those emit empty `{Op}Request`/`{Op}Response` classes instead.
+
 ## Traits
 
 Traits are stored as `Dictionary<string, JsonElement>` on every shape. The key is the full trait ID (e.g. `smithy.api#required`, `aws.api#service`). The value is raw JSON.
