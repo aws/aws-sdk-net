@@ -36,6 +36,7 @@ namespace Amazon.Transfer.Model
     public partial class SftpConnectorConfig
     {
         private int? _maxConcurrentConnections;
+        private List<string> _orderedUserSecretVersionStages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private List<string> _trustedHostKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userSecretId;
 
@@ -68,6 +69,35 @@ namespace Amazon.Transfer.Model
         internal bool IsSetMaxConcurrentConnections()
         {
             return this._maxConcurrentConnections.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrderedUserSecretVersionStages. 
+        /// <para>
+        /// An ordered list of Amazon Web Services Secrets Manager version stages (staging labels,
+        /// such as <c>AWSCURRENT</c> and <c>AWSPREVIOUS</c>) for the secret identified by <c>UserSecretId</c>.
+        /// When establishing a connection, the connector attempts to retrieve the SFTP user's
+        /// credentials from each version stage in the order listed, and uses the first version
+        /// it can successfully retrieve. This lets you rotate the user secret without interrupting
+        /// connector operations.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=2)]
+        public List<string> OrderedUserSecretVersionStages
+        {
+            get { return this._orderedUserSecretVersionStages; }
+            set { this._orderedUserSecretVersionStages = value; }
+        }
+
+        // Check to see if OrderedUserSecretVersionStages property is set
+        internal bool IsSetOrderedUserSecretVersionStages()
+        {
+            return this._orderedUserSecretVersionStages != null && (this._orderedUserSecretVersionStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
