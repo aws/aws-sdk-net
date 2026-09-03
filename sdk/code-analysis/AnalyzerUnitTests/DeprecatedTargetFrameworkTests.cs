@@ -63,6 +63,36 @@ namespace AnalyzerUnitTests.Test
             await BuildTest(TargetFrameworkAttribute(".NETFramework,Version=v4.7.2,Profile=Client")).RunAsync();
         }
 
+        [TestMethod]
+        public async Task NetStandard20FromBuildPropertyIsNotReported()
+        {
+            await BuildTest(EmptyClass, targetFrameworkBuildProperty: "netstandard2.0").RunAsync();
+        }
+
+        [TestMethod]
+        public async Task NetStandard20FromAssemblyAttributeIsNotReported()
+        {
+            await BuildTest(TargetFrameworkAttribute(".NETStandard,Version=v2.0")).RunAsync();
+        }
+
+        [TestMethod]
+        public async Task NetFramework472FromBuildPropertyIsNotReported()
+        {
+            await BuildTest(EmptyClass, targetFrameworkBuildProperty: "net472").RunAsync();
+        }
+
+        [TestMethod]
+        public async Task NetFramework48FromBuildPropertyIsNotReported()
+        {
+            await BuildTest(EmptyClass, targetFrameworkBuildProperty: "net48").RunAsync();
+        }
+
+        [TestMethod]
+        public async Task NetFramework48FromAssemblyAttributeIsNotReported()
+        {
+            await BuildTest(TargetFrameworkAttribute(".NETFramework,Version=v4.8")).RunAsync();
+        }
+
         /// <summary>
         /// A build property naming a supported target wins over a stale assembly attribute, so the
         /// two sources are never combined into a false positive.
