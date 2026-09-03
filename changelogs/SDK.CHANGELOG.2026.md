@@ -1,3 +1,33 @@
+### 4.0.327.0 (2026-09-03 18:16 UTC)
+* BedrockAgentCore (4.0.110.0)
+	* Adds log group name prefix trace source selection, custom or source log group result destinations, and metrics namespace customization
+* BedrockAgentCoreControl (4.0.114.0)
+	* AgentCore Identity adds Consent Portal APIs to manage portals that let end users grant OAuth authorization for agents to access resources. AgentCore Evaluation adds trace source selection by log group prefix, custom or source log group result destinations, and metrics namespace customization.
+* Connect (4.0.114.0)
+	* This release enables TagOnCreate for Rule resource on CreateRule API. It also introduces a new field called PreEvaluationFilters to Rule resource, thereby impacting all Create, Update, Describe and Search APIs for Rules
+* Drs (4.0.103.0)
+	* AWS Elastic Disaster Recovery now includes source server architecture in SourceProperties to identify x86 and ARM64 systems.
+* ECS (4.0.104.0)
+	* Adds a critical parameter to the Amazon ECS managed daemon APIs that controls whether a daemon task failure drains the container instance. Non-critical daemon failures no longer drain the instance or block instance registration.
+* EKS (4.0.105.0)
+	* Deprecate EncryptionConfig resources field. Amazon EKS encrypts all Kubernetes API data with envelope encryption by default for clusters running Kubernetes version 1.28 or higher, so this field no longer affects which resources are encrypted.
+* ElasticLoadBalancingV2 (4.0.101.8)
+	* This release adds support for sending TCP resets for Gateway Load Balancer when a flow's idle timeout expires, or when a target becomes unhealthy or is deregistered. This adds updates the CLI documentation.
+* Evs (4.0.102.0)
+	* Amazon EVS now allows users to set, update, and retrieve values for parameters that apply across all EVS Environments in their account at a regional level, such as the VCF License portability core count.
+* GuardDuty (4.0.105.0)
+	* Adding support for Sequence Activities in GuardDuty Findings
+* SocialMessaging (4.0.102.0)
+	* Adding support for WhatsApp Flows with endpoints.
+* StepFunctions (4.0.100.12)
+	* Updates Step Functions API documentation around CloudTrail, Execution name reuse and sort order of ListExecutions API
+* TranscribeService (4.0.101.0)
+	* Amazon Transcribe now supports specifying up to 29 PII entity types in the ContentRedaction configuration of a StartTranscriptionJob request, allowing all supported entity types to be redacted in a single batch transcription job.
+* Transfer (4.0.101.0)
+	* AWS Transfer Family SFTP Connectors now support specifying an ordered list of AWS Secrets Manager version stages for secret retrieval. This enables seamless credential rotation workflows where external partners may take time to update their systems with new credentials.
+* Core 4.0.102.2
+	* Fixed `SigV4SigningHandler` producing an invalid signature for requests carrying a multi-value header. The values were joined with `,` when building the string-to-sign, but `HttpClient` sends them on the wire joined with `, ` (comma + space); they are now joined with `, ` to match, so the service-computed signature matches. Fixes #4493.
+
 ### 4.0.326.0 (2026-09-02 18:14 UTC)
 * AppIntegrationsService (4.0.101.0)
 	* This release adds a force parameter to DeleteApplication and a ConflictException to UpdateApplication, letting customers delete applications with existing associations in one call and get a clear error when an update conflicts with the application's current state.
