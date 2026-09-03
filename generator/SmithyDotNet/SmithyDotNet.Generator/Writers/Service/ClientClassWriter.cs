@@ -64,7 +64,15 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
                     WritePaginatorsProperty(writer);
                 }
 
-                WriteConstructors(writer);
+                // A service whose endpoint isn't region-derived hand-writes its own constructors
+                // under Custom\ and sets generate-client-constructors:false; the client is one
+                // partial class, so emitting ours as well is CS0111 (mediastore-data,
+                // iot-jobs-data, kinesis-video-archived-media, kinesis-video-media).
+                if (context.Metadata?.GenerateClientConstructors ?? true)
+                {
+                    WriteConstructors(writer);
+                }
+
                 WriteOverrides(writer);
                 WriteDispose(writer);
 

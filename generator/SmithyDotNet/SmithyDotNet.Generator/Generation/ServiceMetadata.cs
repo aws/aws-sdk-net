@@ -20,9 +20,13 @@ public record ServiceMetadata
     [JsonPropertyName("synopsis")]
     public string? Synopsis { get; init; }
 
-    /// <summary>Whether to emit public client constructors.</summary>
+    /// <summary>
+    /// Whether to emit public client constructors. An absent key means <c>true</c> (most metadata
+    /// files omit it), matching C2J's <c>GenerateConstructors</c>; only a service that hand-writes
+    /// its own constructors under <c>Custom\</c> sets it false.
+    /// </summary>
     [JsonPropertyName("generate-client-constructors")]
-    public bool GenerateClientConstructors { get; init; }
+    public bool GenerateClientConstructors { get; init; } = true;
 
     /// <summary>The legacy C2J service id, when the .NET name diverges from the Smithy <c>sdkId</c>.</summary>
     [JsonPropertyName("legacy-service-id")]

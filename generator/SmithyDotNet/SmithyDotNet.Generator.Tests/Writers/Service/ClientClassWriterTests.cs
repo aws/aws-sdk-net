@@ -1,3 +1,5 @@
+using System.Text.Json;
+using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Writers.Service;
 using Xunit;
 
@@ -8,10 +10,12 @@ public class ClientClassWriterTests
 {
     private const string ModelFileName = "cloudtrail-data-2021-08-11.normal.json";
 
+    private readonly CloudTrailModelFixture _fixture;
     private readonly string _output;
 
     public ClientClassWriterTests(CloudTrailModelFixture fixture)
     {
+        _fixture = fixture;
         var writer = new ClientClassWriter(fixture.Context, ModelFileName);
         _output = writer.Write(TestContext.Current.CancellationToken);
     }
@@ -95,7 +99,37 @@ public class ClientClassWriterTests
     public void EmitsAllTwelveConstructors()
     {
         // The existing C2J-generated client has exactly 12 constructors, all unconditional (identical across both TFMs).
-        Assert.Equal(12, System.Text.RegularExpressions.Regex.Count(_output, @"public AmazonCloudTrailDataClient\("));
+        Assert.Equal(12, CountConstructors(_output));
+    }
+
+    [Fact]
+    public void OmitsConstructorsWhenMetadataDisablesThem()
+    {
+        // A service whose endpoint isn't region-derived hand-writes its constructors under Custom\
+        // and sets generate-client-constructors:false. The client is one partial class, so emitting
+        // ours as well is CS0111 (mediastore-data, iot-jobs-data, kinesis-video-*-media).
+        var output = WriteWith(new ServiceMetadata { GenerateClientConstructors = false });
+
+        Assert.Equal(0, CountConstructors(output));
+
+        // Only the constructors go; everything else the client owns is still emitted.
+        Assert.Contains("public partial class AmazonCloudTrailDataClient : AmazonServiceClient, IAmazonCloudTrailData", output);
+        Assert.Contains("private static IServiceMetadata serviceMetadata = new AmazonCloudTrailDataMetadata();", output);
+        Assert.Contains("protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)", output);
+        Assert.Contains("public virtual Task<PutAuditEventsResponse> PutAuditEventsAsync(", output);
+    }
+
+    [Fact]
+    public void EmitsConstructorsWhenMetadataOmitsTheKeyOrIsAbsentEntirely()
+    {
+        // Most metadata.json files omit the key (Batch, already migrated, is one) and the sidecar
+        // itself is optional. Both must keep the constructors, matching C2J's absent-means-true
+        // default - anything else silently deletes 12 public constructors from a shipped client.
+        var keyOmitted = JsonSerializer.Deserialize<ServiceMetadata>("""{"active": true}""")
+            ?? throw new InvalidOperationException("Metadata deserialized to null.");
+
+        Assert.Equal(12, CountConstructors(WriteWith(keyOmitted)));
+        Assert.Equal(12, CountConstructors(WriteWith(metadata: null)));
     }
 
     [Fact]
@@ -245,4 +279,13 @@ public class ClientClassWriterTests
         Assert.DoesNotContain("#region", _output);
         Assert.DoesNotContain("#endregion", _output);
     }
+
+    private string WriteWith(ServiceMetadata? metadata)
+    {
+        var context = new GenerationContext(_fixture.Index, _fixture.Context.Manifest, metadata);
+        return new ClientClassWriter(context, ModelFileName).Write(TestContext.Current.CancellationToken);
+    }
+
+    private static int CountConstructors(string output) =>
+        System.Text.RegularExpressions.Regex.Count(output, @"public AmazonCloudTrailDataClient\(");
 }
