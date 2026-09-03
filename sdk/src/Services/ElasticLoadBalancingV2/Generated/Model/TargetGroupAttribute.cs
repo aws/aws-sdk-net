@@ -236,6 +236,25 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// and <c>target_failover.on_unhealthy</c>) can't be set independently. The value you
         /// set for both attributes must be the same. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>send_tcp_reset.on_unhealthy.enabled</c> – Specifies whether the Gateway Load Balancer
+        /// sends a TCP Reset to the sender of traffic when a target becomes unhealthy. After
+        /// sending the reset, the Gateway Load Balancer removes the flow entry from its flow
+        /// table. The value is <c>true</c> or <c>false</c>. The default is <c>false</c>. This
+        /// attribute does not apply when <c>target_failover.on_unhealthy</c> is set to <c>rebalance</c>.
+        /// This feature requires 5-tuple flow stickiness, which the target group uses by default
+        /// when <c>stickiness.enabled</c> is set to <c>false</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>send_tcp_reset.on_deregistration.enabled</c> – Specifies whether the Gateway Load
+        /// Balancer sends a TCP Reset to the sender of traffic when a target is deregistered.
+        /// The reset occurs after the connection drain time has elapsed. The value is <c>true</c>
+        /// or <c>false</c>. The default is <c>false</c>. This attribute does not apply when <c>target_failover.on_deregistration</c>
+        /// is set to <c>rebalance</c>. This feature requires 5-tuple flow stickiness, which the
+        /// target group uses by default when <c>stickiness.enabled</c> is set to <c>false</c>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]
