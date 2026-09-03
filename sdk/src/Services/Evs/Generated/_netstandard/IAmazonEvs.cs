@@ -446,6 +446,37 @@ namespace Amazon.Evs
 
         #endregion
                 
+        #region  GetAccountSettings
+
+
+
+        /// <summary>
+        /// Returns the configured EVS settings for your Amazon Web Services account in the specified
+        /// Amazon Web Services Region. If no settings have been set, an empty list is returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAccountSettings service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/GetAccountSettings">REST API Reference for GetAccountSettings Operation</seealso>
+        Task<GetAccountSettingsResponse> GetAccountSettingsAsync(GetAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetDepotUrl
 
 
@@ -693,6 +724,43 @@ namespace Amazon.Evs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/ListVmEntitlements">REST API Reference for ListVmEntitlements Operation</seealso>
         Task<ListVmEntitlementsResponse> ListVmEntitlementsAsync(ListVmEntitlementsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  PutAccountSettings
+
+
+
+        /// <summary>
+        /// Creates or updates account-level EVS settings for your Amazon Web Services account
+        /// in the specified Amazon Web Services Region.
+        /// 
+        ///  
+        /// <para>
+        /// EVS settings included in the request are created or overwritten. Settings omitted
+        /// from the request retain their current values.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountSettings service method, as returned by Evs.</returns>
+        /// <exception cref="Amazon.Evs.Model.InternalServerException">
+        /// An internal server error occurred. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ThrottlingException">
+        /// The operation could not be performed because the service is throttling requests. This
+        /// exception is thrown when the service endpoint receives too many concurrent requests.
+        /// </exception>
+        /// <exception cref="Amazon.Evs.Model.ValidationException">
+        /// The input fails to satisfy the specified constraints. You will see this exception
+        /// if invalid inputs are provided for any of the Amazon EVS environment operations, or
+        /// if a list operation is performed on an environment resource that is still initializing.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/evs-2023-07-27/PutAccountSettings">REST API Reference for PutAccountSettings Operation</seealso>
+        Task<PutAccountSettingsResponse> PutAccountSettingsAsync(PutAccountSettingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
