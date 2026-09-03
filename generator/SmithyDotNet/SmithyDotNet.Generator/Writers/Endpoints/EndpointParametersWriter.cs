@@ -17,7 +17,7 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
     public string Write(CancellationToken cancellationToken = default)
     {
         var ruleSet = context.EndpointRuleSet ?? throw new GeneratorException("EndpointParametersWriter requires an endpoint rule set.");
-        var className = $"{context.ServiceName}EndpointParameters";
+        var className = $"{context.BaseName}EndpointParameters";
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -26,7 +26,7 @@ public sealed class EndpointParametersWriter(GenerationContext context, string m
         writer.OpenNamespace($"{context.Namespace}.Endpoints", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Contains parameters used for resolving {context.ServiceName} endpoints.");
+            writer.WriteLine($"/// Contains parameters used for resolving {context.BaseName} endpoints.");
             writer.WriteLine("/// <para />");
             writer.WriteLine("/// Parameters can be sourced from client config and service operations used by the");
             writer.WriteLine($"/// internal <see cref=\"{context.ClientName}EndpointProvider\"/> and <see cref=\"{context.ClientName}EndpointResolver\"/>.");

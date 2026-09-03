@@ -14,7 +14,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     /// </summary>
     public string WriteServiceRequest(CancellationToken cancellationToken = default)
     {
-        var className = $"Amazon{context.ServiceName}Request";
+        var className = $"Amazon{context.BaseName}Request";
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -22,7 +22,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Base class for {context.ServiceName} operation requests.");
+            writer.WriteLine($"/// Base class for {context.BaseName} operation requests.");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {className} : AmazonWebServiceRequest", () => { });
         });
@@ -36,7 +36,7 @@ public sealed class OperationWriter(GenerationContext context, string modelFileN
     public string WriteRequest(Operation operation, CancellationToken cancellationToken = default)
     {
         var className = $"{operation.Name}Request";
-        var baseClass = $"Amazon{context.ServiceName}Request";
+        var baseClass = $"Amazon{context.BaseName}Request";
 
         // Cleanup the operation doc on its own first so its leading <p> wrapper is stripped,
         // then prepend the request preface so it reads as a single paragraph.

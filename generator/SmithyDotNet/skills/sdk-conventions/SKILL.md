@@ -20,7 +20,7 @@ A **removed** line in generated output is a red flag — investigate it, do not 
 - `[AWSProperty]` attributes on public members (Required, Min, Max)
 - XML doc comments on public types and members (content, not formatting)
 - `partial` modifier on all generated types
-- Namespace structure (`Amazon.{ServiceName}`, `Amazon.{ServiceName}.Model`)
+- Namespace structure (`{Namespace}`, `{Namespace}.Model`)
 - `internal bool IsSet{Property}()` per member — the public `AWSSDKUtils.IsPropertySet`
   reflection API and existing marshallers invoke these by name
 
@@ -48,18 +48,20 @@ The exact text lives in `Writers/FileHeader.cs`.
 
 ## Naming Rules
 
-### Namespace Derivation
+### Which Name Goes Where
 
-From the `aws.api#service` trait's `sdkId` value, using `SdkNaming.NormalizeSdkId()` in `SmithyDotNet.Generator.Generation`:
-1. Strip leading "AWS" or "Amazon" prefix (case-sensitive)
-2. Remove all non-alphanumeric characters
-3. Capitalize first character
+A service has two derived names (see `GenerationContext`), equal for most services:
 
-Examples: `"CloudTrail Data"` → `"CloudTrailData"`, `"AWS IoT 1-Click Projects"` → `"IoT1ClickProjects"`, `"Amazon Pinpoint"` → `"Pinpoint"`
+- `BaseName` (C2J `ClassName`, metadata.json's `base-name`) → the generated type names: client,
+  config, exception/request bases, endpoint types. Model classes go in `{Namespace}.Model`.
+- `ServiceName` (C2J `ServiceFolderName`, the namespace minus `Amazon.`) → everything else:
+  `AWSSDK.{X}` package names, `sdk/src|test/Services/{X}` trees, `_sdk-versions.json` keys,
+  `{X}.slnx`, the endpoint tests `[TestCategory]`, **and the paginator factory types**
+  (`I{X}PaginatorFactory` — C2J's templates use `ServiceNameRoot` there).
 
-Then prefix with `Amazon.` for namespace → `Amazon.CloudTrailData`
-
-Model classes go in `Amazon.{ServiceName}.Model`.
+They diverge when metadata.json overrides the namespace: sesv2 has class
+`AmazonSimpleEmailServiceV2Client` but package/folder/paginators `SimpleEmailV2`. When adding a
+name to a writer, check the shipping SDK for which of the two it follows.
 
 ### Class and Member Names
 
@@ -74,11 +76,11 @@ Model classes go in `Amazon.{ServiceName}.Model`.
 
 ### Client Names
 
-- Interface: `IAmazon{ServiceName}` (e.g. `IAmazonCloudTrailData`)
-- Class: `Amazon{ServiceName}Client` (e.g. `AmazonCloudTrailDataClient`)
-- Config: `Amazon{ServiceName}Config`
-- Service exception base: `Amazon{ServiceName}Exception`
-- Service request base: `Amazon{ServiceName}Request`
+- Interface: `IAmazon{BaseName}` (e.g. `IAmazonCloudTrailData`)
+- Class: `Amazon{BaseName}Client` (e.g. `AmazonCloudTrailDataClient`)
+- Config: `Amazon{BaseName}Config`
+- Service exception base: `Amazon{BaseName}Exception`
+- Service request base: `Amazon{BaseName}Request`
 
 ## File Layout
 
@@ -86,12 +88,12 @@ Generated files go under `Generated/`. Prefer `.g.cs` suffix:
 
 ```
 Generated/
-  IAmazon{ServiceName}.g.cs
-  Amazon{ServiceName}Client.g.cs
-  Amazon{ServiceName}Config.cs            # plain .cs so CI's Amazon*Config.cs glob stages it
-  Amazon{ServiceName}Exception.g.cs
+  IAmazon{BaseName}.g.cs
+  Amazon{BaseName}Client.g.cs
+  Amazon{BaseName}Config.cs            # plain .cs so CI's Amazon*Config.cs glob stages it
+  Amazon{BaseName}Exception.g.cs
   Model/
-    Amazon{ServiceName}Request.g.cs       # empty service request base
+    Amazon{BaseName}Request.g.cs       # empty service request base
     {OperationName}Request.g.cs
     {OperationName}Response.g.cs
     {ShapeName}.g.cs
@@ -110,14 +112,14 @@ drs `SourceServer` has one, kinesis `EnhancedMonitoringOutput` does not). Lives 
 | Generated class | Inherits from |
 |---|---|
 | Client interface | `IAmazonService, IDisposable` |
-| Client class | `AmazonServiceClient, IAmazon{ServiceName}` |
+| Client class | `AmazonServiceClient, IAmazon{BaseName}` |
 | Service exception base | `AmazonServiceException` |
 | Service request base | `AmazonWebServiceRequest` |
-| Request classes | `Amazon{ServiceName}Request` (the service request base) |
+| Request classes | `Amazon{BaseName}Request` (the service request base) |
 | Response classes | `AmazonWebServiceResponse`, plus `, IDisposable` when an output member is `@streaming` (emits a `#region Dispose Pattern` that disposes each streaming member's stream) |
 | Structure classes | No base type (plain class) |
-| Exception classes | `Amazon{ServiceName}Exception` (the service exception base) |
-| Config class (`Amazon{ServiceName}Config`) | `ClientConfig` (overrides are placeholder for now) |
+| Exception classes | `Amazon{BaseName}Exception` (the service exception base) |
+| Config class (`Amazon{BaseName}Config`) | `ClientConfig` (overrides are placeholder for now) |
 
 ## All Types Are `partial`
 
@@ -200,7 +202,7 @@ decode them, so neither do we.
 
 ### Type-Specific Summaries
 
-- **Service interface/class**: `<para>Interface for accessing {ServiceName}</para>`, a blank `///` line, then the service `@documentation`
+- **Service interface/class**: `<para>Interface for accessing {BaseName}</para>`, a blank `///` line, then the service `@documentation`
 - **Request class**: `Container for the parameters to the {OperationName} operation.` then the operation `@documentation`
 - **Response class**: `This is the response object from the {OperationName} operation.`
 - **Structure class**: the shape's `@documentation`
@@ -213,7 +215,7 @@ Each operation method includes an `<exception cref="{full exception type}">` (bo
 
 ## Exception Classes
 
-Operation exceptions inherit from `Amazon{ServiceName}Exception` (not directly from `AmazonServiceException`).
+Operation exceptions inherit from `Amazon{BaseName}Exception` (not directly from `AmazonServiceException`).
 
 Must expose these public constructors:
 1. Default (no args)
@@ -229,7 +231,7 @@ Operation exceptions also include a `#if !NETSTANDARD` block containing:
 - `public override void GetObjectData(SerializationInfo, StreamingContext)` carrying all three attributes as a unit (from `ExceptionSerialization.t4`): `[System.Security.SecurityCritical]` plus the CA2123 and CA2134 `SuppressMessage` attributes; body is `base.GetObjectData(info, context)` then `info.AddValue(...)` per additional member.
   The serialization constructor and `GetObjectData` are symmetric: both loop over the same member set — every modeled member except `message` (from `ExceptionSerialization.t4`), so base-owned `RequestId`/`ErrorCode` are serialized here even though they get no property (see "Exception Member Property Names"). The constructor calls `info.GetValue` for each and `GetObjectData` calls `info.AddValue` for each, both keyed on the .NET property name. For exceptions whose only member is `message` (e.g. all CloudTrail Data exceptions), both bodies contain only the `base` call.
 
-The service-level exception base (`Amazon{ServiceName}Exception`) inherits from `AmazonServiceException`, exposes the same six public constructors as operation exceptions, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
+The service-level exception base (`Amazon{BaseName}Exception`) inherits from `AmazonServiceException`, exposes the same six public constructors as operation exceptions, and includes `[Serializable]` plus the protected serialization constructor, but does not need its own `GetObjectData` override unless it adds serialized fields.
 
 ### Exception Member Property Names
 

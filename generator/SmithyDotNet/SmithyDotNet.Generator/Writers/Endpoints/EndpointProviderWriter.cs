@@ -19,7 +19,7 @@ public sealed class EndpointProviderWriter(GenerationContext context, string mod
     {
         var ruleSet = context.EndpointRuleSet ?? throw new GeneratorException("EndpointProviderWriter requires an endpoint rule set.");
         var className = $"{context.ClientName}EndpointProvider";
-        var parametersName = $"{context.ServiceName}EndpointParameters";
+        var parametersName = $"{context.BaseName}EndpointParameters";
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -28,7 +28,7 @@ public sealed class EndpointProviderWriter(GenerationContext context, string mod
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Amazon {context.ServiceName} endpoint provider.");
+            writer.WriteLine($"/// Amazon {context.BaseName} endpoint provider.");
             writer.WriteLine("/// <para />");
             writer.WriteLine($"/// Resolves endpoint for given set of <see cref=\"{parametersName}\"/>.");
             writer.WriteLine("/// Can throw <see cref=\"AmazonClientException\"/> if endpoint resolution is unsuccessful.");

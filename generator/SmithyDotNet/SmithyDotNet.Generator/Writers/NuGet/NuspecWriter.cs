@@ -20,8 +20,6 @@ public sealed class NuspecWriter(GenerationContext context)
     {
         writer.OpenXmlBlock("metadata", () =>
         {
-            // in current generator the AssemblyTitle comes from the Namespace + ClassName, which accounts for metadata.json and custom overrides
-            // let's keep it simple for now
             writer.WriteLine($"<id>{context.AssemblyName}</id>");
             writer.WriteLine($"<title>AWSSDK - {context.ServiceName}</title>");
             writer.WriteLine($"<version>{context.Manifest.GetServiceVersion(context.ServiceName)}</version>");
@@ -32,7 +30,7 @@ public sealed class NuspecWriter(GenerationContext context)
             writer.WriteLine("""<license type="expression">Apache-2.0</license>""");
             writer.WriteLine("<projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>");
             string tags = context.Metadata is { Tags.Count: > 0 } metadata ? " " + string.Join(" ", metadata.Tags) : string.Empty;
-            writer.WriteLine($"<tags>AWS Amazon cloud {context.ServiceName} aws-sdk-v4{System.Security.SecurityElement.Escape(tags)}</tags>");
+            writer.WriteLine($"<tags>AWS Amazon cloud {context.BaseName} aws-sdk-v4{System.Security.SecurityElement.Escape(tags)}</tags>");
             writer.WriteLine("""<icon>images\AWSLogo.png</icon>""");
 
             if (!string.IsNullOrEmpty(context.Metadata?.LicenseUrl))
@@ -59,9 +57,7 @@ public sealed class NuspecWriter(GenerationContext context)
             writer.WriteLine("""<file src="nuget-readme.md" target="" />""");
             writer.WriteLine("""<file src="..\..\..\nuget-content\AWSLogo.png" target="images\" />""");
 
-            // TODO: incorporate namespace (From metadata) overloads or customization overloads.
-            var codeAnalysisServiceFolder = context.ServiceName.Replace("Amazon.", "");
-            writer.WriteLine($"""<file src="..\..\..\code-analysis\ServiceAnalysis\{codeAnalysisServiceFolder}\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />""");
+            writer.WriteLine($"""<file src="..\..\..\code-analysis\ServiceAnalysis\{context.ServiceName}\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />""");
             writer.WriteLine("""<file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />""");
             writer.WriteLine();
 

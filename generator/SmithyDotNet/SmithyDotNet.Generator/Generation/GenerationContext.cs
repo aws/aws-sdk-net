@@ -50,10 +50,13 @@ public class GenerationContext
     /// <summary>The .NET namespace for generated code (e.g. "Amazon.CloudTrailData").</summary>
     public string Namespace { get; }
 
-    /// <summary>The service class name (e.g. "CloudTrailData"). Used to derive all other names.</summary>
+    /// <summary>The base name for generated type names (e.g. "CloudTrailData" in AmazonCloudTrailDataClient). Not the raw metadata.json <c>base-name</c> value: <see cref="ResolveBaseName"/> only uses that as an override. C2J: <c>ClassName</c>.</summary>
+    public string BaseName { get; }
+
+    /// <summary>The SDK-facing service name (e.g. "SimpleEmailV2"): the namespace minus its "Amazon." prefix. C2J: <c>ServiceFolderName</c>. Names the sdk src/test trees, the AWSSDK.{X} packages, the <c>_sdk-versions.json</c> keys, and the paginator factory types. Equals <see cref="BaseName"/> unless metadata.json overrides the namespace.</summary>
     public string ServiceName { get; }
 
-    /// <summary>The raw, unmodified <c>sdkId</c> from the <c>aws.api#service</c> trait (e.g. "CloudTrail Data"). Unlike <see cref="ServiceName"/>, this is not normalized; it is the verbatim ServiceId the SDK metadata exposes.</summary>
+    /// <summary>The raw, unmodified <c>sdkId</c> from the <c>aws.api#service</c> trait (e.g. "CloudTrail Data"). Unlike <see cref="BaseName"/>, this is not normalized; it is the verbatim ServiceId the SDK metadata exposes.</summary>
     public string SdkId { get; }
 
     /// <summary>The client class name without "Client" suffix (e.g. "AmazonCloudTrailData").</summary>
@@ -190,10 +193,10 @@ public class GenerationContext
         Manifest = manifest;
         var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException("Service shape is missing the aws.api#service trait.");
         SdkId = serviceTrait.SdkId;
-        //TODO: ServiceName should mirror ClassName in the generator, which takes into account metadata.json, customizations, and overrides
-        ServiceName = SdkNaming.NormalizeSdkId(SdkId);
-        Namespace = $"Amazon.{ServiceName}";
-        ClientName = $"Amazon{ServiceName}";
+        BaseName = ResolveBaseName(SdkId, metadata);
+        Namespace = metadata?.Namespace ?? $"Amazon.{BaseName}";
+        ClientName = $"Amazon{BaseName}";
+        ServiceName = ResolveServiceName(SdkId, metadata);
         ApiVersion = index.Service.ApiVersion;
         AssemblyName = $"AWSSDK.{ServiceName}";
 
@@ -269,6 +272,34 @@ public class GenerationContext
         Enums = index.AllEnums
             .OrderBy(e => e.Id.Name, StringComparer.Ordinal)
             .ToList();
+    }
+
+    /// <summary>
+    /// Resolves the base name: the <c>base-name</c> override, else the sanitized
+    /// <c>legacy-service-id</c> (services released before the sdkId existed keep their original id),
+    /// else the sanitized sdkId. C2J-only naming inputs (e.g. <c>serviceAbbreviation</c>) are
+    /// backfilled as explicit <c>base-name</c> values instead.
+    /// </summary>
+    public static string ResolveBaseName(string sdkId, ServiceMetadata? metadata)
+    {
+        if (metadata?.BaseName is { } baseName)
+        {
+            return baseName.Length > 0 ? baseName : throw new GeneratorException("metadata.json has an empty base-name.");
+        }
+
+        var id = metadata?.LegacyServiceId is { Length: > 0 } legacyId ? legacyId : sdkId;
+        return SdkNaming.SanitizeClassName(id);
+    }
+
+    /// <summary>
+    /// Resolves the SDK-facing service name (the namespace minus its "Amazon." prefix) without
+    /// building a full context — BatchGenerator needs it at discovery time, before the
+    /// version manifest is consulted.
+    /// </summary>
+    public static string ResolveServiceName(string sdkId, ServiceMetadata? metadata)
+    {
+        var ns = metadata?.Namespace ?? $"Amazon.{ResolveBaseName(sdkId, metadata)}";
+        return ns.StartsWith("Amazon.", StringComparison.Ordinal) ? ns["Amazon.".Length..] : ns;
     }
 
     /// <summary>

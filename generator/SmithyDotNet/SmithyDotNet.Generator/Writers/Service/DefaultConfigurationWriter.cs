@@ -23,7 +23,7 @@ public sealed class DefaultConfigurationWriter(GenerationContext context, string
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Configuration for accessing Amazon {context.ServiceName} service");
+            writer.WriteLine($"/// Configuration for accessing Amazon {context.BaseName} service");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public static class {context.ClientName}DefaultConfiguration", () =>
             {
@@ -42,7 +42,7 @@ public sealed class DefaultConfigurationWriter(GenerationContext context, string
     private void WriteGetAllConfigurations(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// Collection of all <see cref=\"DefaultConfiguration\"/>s supported by {context.ServiceName}");
+        writer.WriteLine($"""/// Collection of all <see cref="DefaultConfiguration"/>s supported by {context.BaseName}""");
         writer.WriteLine("/// </summary>");
         writer.OpenBlock("public static ReadOnlyCollection<IDefaultConfiguration> GetAllConfigurations()", () =>
         {

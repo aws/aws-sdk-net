@@ -25,7 +25,7 @@ public sealed class MetadataWriter(GenerationContext context, string modelFileNa
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Service metadata for Amazon {context.ServiceName} service");
+            writer.WriteLine($"/// Service metadata for Amazon {context.BaseName} service");
             writer.WriteLine("/// </summary>");
             writer.OpenBlock($"public partial class {className} : IServiceMetadata", () =>
             {
@@ -41,7 +41,7 @@ public sealed class MetadataWriter(GenerationContext context, string modelFileNa
     private void WriteServiceId(CodeWriter writer)
     {
         // The metadata ServiceId is the sdkId (e.g. "CloudTrail Data"), not the normalized
-        // class name (context.ServiceName), so it is sourced from context.SdkId.
+        // class name (context.BaseName), so it is sourced from context.SdkId.
         var serviceId = CodeWriter.Literal(context.SdkId);
         writer.WriteLine("/// <summary>");
         writer.WriteLine("/// Gets the value of the Service Id.");

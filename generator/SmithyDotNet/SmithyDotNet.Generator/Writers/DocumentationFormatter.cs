@@ -223,7 +223,7 @@ public static partial class DocumentationFormatter
             writer.WriteLine("/// </param>");
         }
 
-        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.ServiceName}.</returns>");
+        writer.WriteLine($"/// <returns>The response from the {operation.Name} service method, as returned by {context.BaseName}.</returns>");
 
         foreach (var error in operation.Errors)
         {

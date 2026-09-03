@@ -100,7 +100,7 @@ public sealed class BatchGenerator(string repoRoot)
         return file.Services;
     }
 
-    private sealed record DiscoveredModel(string Name, string ModelPath, ServiceIndex Index, string ModelDirectory);
+    private sealed record DiscoveredModel(string Name, string ModelPath, ServiceIndex Index, string ModelDirectory, ServiceMetadata? Metadata);
 
     // Scans generator/ServiceModels/*/ for the single all-inclusive Smithy model each migrated
     // service carries at a fixed name, smithy.json (unlike C2J's versioned api/docs/endpoints split).
@@ -153,9 +153,14 @@ public sealed class BatchGenerator(string repoRoot)
 
         var index = new ServiceIndex(model);
         var serviceTrait = index.Service.GetAWSService() ?? throw new GeneratorException($"'{modelPath}': service shape is missing the aws.api#service trait.");
-        var name = SdkNaming.NormalizeSdkId(serviceTrait.SdkId);
 
-        return new DiscoveredModel(name, modelPath, index, directory);
+        // Every service in ServiceModels has a metadata.json; its base-name/namespace overrides feed
+        // the service name below, so it loads at discovery rather than at generation.
+        var metadataPath = Path.Combine(directory, "metadata.json");
+        var metadata = File.Exists(metadataPath) ? ServiceMetadata.Load(metadataPath) : null;
+        var name = GenerationContext.ResolveServiceName(serviceTrait.SdkId, metadata);
+
+        return new DiscoveredModel(name, modelPath, index, directory, metadata);
     }
 
     // Every listed service must resolve to exactly one discovered model (mirroring the C2J
@@ -184,14 +189,9 @@ public sealed class BatchGenerator(string repoRoot)
         var codeAnalysisRoot = SdkTreeLayout.ServiceCodeAnalysisRoot(repoRoot, service.Name);
         var testsRoot = SdkTreeLayout.ServiceTestsRoot(repoRoot, service.Name);
 
-        // Everything that can fail without writing a file happens before the wipe, so a bad
-        // metadata.json or a missing version entry can't leave a service wiped-but-not-regenerated.
-        // metadata.json is an optional sidecar next to the model; ServiceMetadata.Load throws on a
-        // missing file, so the Exists guard is what makes it optional.
-        var metadataPath = Path.Combine(service.ModelDirectory, "metadata.json");
-        var metadata = File.Exists(metadataPath) ? ServiceMetadata.Load(metadataPath) : null;
-
-        var context = new GenerationContext(service.Index, versionManifest, metadata);
+        // Everything that can fail without writing a file happens before the wipe, so a missing
+        // version entry can't leave a service wiped-but-not-regenerated.
+        var context = new GenerationContext(service.Index, versionManifest, service.Metadata);
         UnsupportedTraitValidator.Validate(service.Index);
 
         var serviceFileVersion = versionManifest.GetServiceVersion(context.ServiceName);

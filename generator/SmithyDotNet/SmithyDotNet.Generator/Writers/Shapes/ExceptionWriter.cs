@@ -33,7 +33,7 @@ public sealed class ExceptionWriter(GenerationContext context, string modelFileN
         writer.OpenNamespace(context.Namespace, () =>
         {
             writer.WriteLine("///<summary>");
-            writer.WriteLine($"/// Common exception for the {context.ServiceName} service.");
+            writer.WriteLine($"/// Common exception for the {context.BaseName} service.");
             writer.WriteLine("/// </summary>");
             WriteSerializableAttribute(writer);
             writer.OpenBlock($"public partial class {className} : AmazonServiceException", () =>

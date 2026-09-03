@@ -146,7 +146,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
             {
                 writer.OpenBlock($"if (!HostPrefixUtils.IsValidLabelValue(hostPrefixLabels.{member.ModeledName}))", () =>
                 {
-                    writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("{member.ModeledName} can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");""");
+                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("{member.ModeledName} can only contain alphanumeric characters and dashes and must be between 1 and 63 characters long.");""");
                 });
             }
             writer.WriteLine("");
@@ -225,7 +225,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
                     : $"publicRequest.{member.PropertyName} == null";
                 writer.OpenBlock($"if ({guard})", () =>
                 {
-                    writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
+                    writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
                 });
                 writer.WriteLine("");
             }
@@ -368,7 +368,7 @@ public sealed class JsonRequestMarshallerWriter(GenerationContext context, strin
 
             writer.OpenBlock($"if (!publicRequest.IsSet{member.PropertyName}())", () =>
             {
-                writer.WriteLine($"""throw new Amazon{context.ServiceName}Exception("Request object does not have required field {member.PropertyName} set");""");
+                writer.WriteLine($"""throw new Amazon{context.BaseName}Exception("Request object does not have required field {member.PropertyName} set");""");
             });
 
             var pathTemplate = greedy ? "{" + member.ModeledName + "+}" : "{" + member.ModeledName + "}";

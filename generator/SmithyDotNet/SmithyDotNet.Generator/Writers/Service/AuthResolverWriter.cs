@@ -69,7 +69,7 @@ public sealed class AuthResolverWriter(GenerationContext context, string modelFi
         writer.OpenBlock($"public class {handlerName} : BaseAuthResolverHandler", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Modeled auth scheme resolver for {context.ServiceName}.");
+            writer.WriteLine($"/// Modeled auth scheme resolver for {context.BaseName}.");
             writer.WriteLine("/// </summary>");
             writer.WriteLine($"public {resolverName} AuthSchemeResolver {{ get; }} = new();");
             writer.WriteLine();

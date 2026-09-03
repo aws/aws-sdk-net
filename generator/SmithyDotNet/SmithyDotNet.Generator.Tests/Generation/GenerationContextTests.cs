@@ -28,6 +28,57 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void BaseNameAndServiceName_EqualWithoutOverrides()
+    {
+        Assert.Equal("CloudTrailData", _context.BaseName);
+        Assert.Equal("CloudTrailData", _context.ServiceName);
+        Assert.Equal("AWSSDK.CloudTrailData", _context.AssemblyName);
+    }
+
+    [Fact]
+    public void ResolveBaseName_WithoutMetadata_SanitizesSdkId()
+    {
+        Assert.Equal("CloudTrailData", GenerationContext.ResolveBaseName("CloudTrail Data", null));
+    }
+
+    [Fact]
+    public void ResolveBaseName_PrefersBaseNameOverride()
+    {
+        var metadata = new ServiceMetadata { BaseName = "Elasticsearch", LegacyServiceId = "Elasticsearch Service" };
+        Assert.Equal("Elasticsearch", GenerationContext.ResolveBaseName("Elasticsearch Service", metadata));
+    }
+
+    [Fact]
+    public void ResolveBaseName_ThrowsOnEmptyBaseNameOverride()
+    {
+        var metadata = new ServiceMetadata { BaseName = "" };
+        Assert.Throws<GeneratorException>(() => GenerationContext.ResolveBaseName("CloudTrail Data", metadata));
+    }
+
+    [Fact]
+    public void ResolveBaseName_UsesLegacyServiceIdOverSdkId()
+    {
+        var metadata = new ServiceMetadata { LegacyServiceId = "Old Service Name" };
+        Assert.Equal("OldServiceName", GenerationContext.ResolveBaseName("New Service Name", metadata));
+    }
+
+    [Fact]
+    public void ResolveServiceName_StripsAmazonPrefixFromNamespaceOverride()
+    {
+        // sesv2: type names use the base-name, but the folder/package name follows the namespace.
+        var metadata = new ServiceMetadata { BaseName = "SimpleEmailServiceV2", Namespace = "Amazon.SimpleEmailV2", LegacyServiceId = "SESv2" };
+        Assert.Equal("SimpleEmailServiceV2", GenerationContext.ResolveBaseName("SESv2", metadata));
+        Assert.Equal("SimpleEmailV2", GenerationContext.ResolveServiceName("SESv2", metadata));
+    }
+
+    [Fact]
+    public void ResolveServiceName_WithoutNamespaceOverride_EqualsBaseName()
+    {
+        var metadata = new ServiceMetadata { LegacyServiceId = "SSO" };
+        Assert.Equal("SSO", GenerationContext.ResolveServiceName("SSO", metadata));
+    }
+
+    [Fact]
     public void Protocol_IsRestJson1()
     {
         Assert.Equal(AWSProtocol.RestJson1, _context.Protocol);

@@ -116,7 +116,7 @@ public sealed class ClientInterfaceWriter(GenerationContext context, string mode
     private void WriteInterfaceDocumentation(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// <para>Interface for accessing {context.ServiceName}</para>");
+        writer.WriteLine($"/// <para>Interface for accessing {context.BaseName}</para>");
 
         var cleaned = DocumentationFormatter.Cleanup(context.ServiceDocumentation);
         if (cleaned.Length > 0)

@@ -384,7 +384,7 @@ public sealed class JsonResponseUnmarshallerWriter(GenerationContext context, st
                 });
             });
 
-            writer.WriteLine($"return new Amazon{context.ServiceName}Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
+            writer.WriteLine($"return new Amazon{context.BaseName}Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);");
         });
     }
 

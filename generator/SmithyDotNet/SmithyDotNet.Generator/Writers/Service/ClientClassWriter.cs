@@ -83,7 +83,7 @@ public sealed class ClientClassWriter(GenerationContext context, string modelFil
     private void WriteClassDocumentation(CodeWriter writer)
     {
         writer.WriteLine("/// <summary>");
-        writer.WriteLine($"/// <para>Implementation for accessing {context.ServiceName}</para>");
+        writer.WriteLine($"/// <para>Implementation for accessing {context.BaseName}</para>");
         writer.WriteLine("/// <para>");
         writer.WriteLine("/// Service client instances are thread-safe and can be shared across multiple threads.");
         writer.WriteLine("/// For a given service configuration, it is recommended to reuse a client instance");

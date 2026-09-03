@@ -82,7 +82,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         Emit(Path.Combine("Properties", "AssemblyInfo.cs"), assemblyInfoWriter.Write(cancellationToken));
 
         var interfaceWriter = new ClientInterfaceWriter(context, modelFileName);
-        Emit(Path.Combine(generated, $"IAmazon{context.ServiceName}.g.cs"), interfaceWriter.Write(cancellationToken));
+        Emit(Path.Combine(generated, $"IAmazon{context.BaseName}.g.cs"), interfaceWriter.Write(cancellationToken));
 
         var clientWriter = new ClientClassWriter(context, modelFileName);
         Emit(Path.Combine(generated, $"{clientName}Client.g.cs"), clientWriter.Write(cancellationToken));
@@ -142,7 +142,7 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         if (context.HasEndpointTests && testsOutputPath is not null)
         {
             var endpointProviderTestSuiteWriter = new EndpointProviderTestSuiteWriter(context, modelFileName);
-            var testsRelativePath = Path.Combine("UnitTests", "Generated", "Endpoints", $"{context.ServiceName}EndpointProviderTests.g.cs");
+            var testsRelativePath = Path.Combine("UnitTests", "Generated", "Endpoints", $"{context.BaseName}EndpointProviderTests.g.cs");
             EmitUnder(testsOutputPath, writtenTests, testsRelativePath, endpointProviderTestSuiteWriter.Write(cancellationToken));
         }
 

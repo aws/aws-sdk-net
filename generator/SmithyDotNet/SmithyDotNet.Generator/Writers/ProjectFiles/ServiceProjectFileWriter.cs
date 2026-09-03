@@ -114,7 +114,7 @@ public sealed class ServiceProjectFileWriter(GenerationContext context)
         }
 
         var extraTags = context.Metadata is { Tags.Count: > 0 } metadata ? " " + string.Join(" ", metadata.Tags) : string.Empty;
-        writer.WriteLine($"<PackageTags>AWS;Amazon;cloud;{context.ServiceName};aws-sdk-v4{System.Security.SecurityElement.Escape(extraTags.Replace(' ', ';'))}</PackageTags>");
+        writer.WriteLine($"<PackageTags>AWS;Amazon;cloud;{context.BaseName};aws-sdk-v4{System.Security.SecurityElement.Escape(extraTags.Replace(' ', ';'))}</PackageTags>");
         writer.WriteLine("<PackageProjectUrl>https://github.com/aws/aws-sdk-net/</PackageProjectUrl>");
         writer.WriteLine("<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>");
         writer.WriteLine("<PackageReadmeFile>nuget-readme.md</PackageReadmeFile>");

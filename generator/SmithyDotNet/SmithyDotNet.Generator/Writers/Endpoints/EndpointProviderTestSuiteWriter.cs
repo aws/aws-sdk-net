@@ -7,7 +7,7 @@ namespace SmithyDotNet.Generator.Writers.Endpoints;
 /// <summary>
 /// Emits the endpoint provider unit tests (e.g. <c>CloudTrailDataEndpointProviderTests.g.cs</c>):
 /// one <c>[TestMethod]</c> per <c>smithy.rules#endpointTests</c> case, each constructing
-/// <c>{ServiceName}EndpointParameters</c>, calling <c>Amazon{ServiceName}EndpointProvider.ResolveEndpoint</c>,
+/// <c>{BaseName}EndpointParameters</c>, calling <c>Amazon{BaseName}EndpointProvider.ResolveEndpoint</c>,
 /// and asserting either the resolved URL or the thrown <c>Amazon.Runtime.AmazonClientException</c>
 /// message. Matches the legacy generator's behavior of asserting only <c>endpoint.URL</c> — no pinned
 /// test file anywhere in the SDK asserts resolved endpoint properties or headers, so those aren't
@@ -22,7 +22,7 @@ public sealed partial class EndpointProviderTestSuiteWriter(GenerationContext co
     public string Write(CancellationToken cancellationToken = default)
     {
         var suite = context.EndpointTests ?? throw new GeneratorException("EndpointProviderTestSuiteWriter requires an endpoint test suite.");
-        var className = $"{context.ServiceName}EndpointsTests";
+        var className = $"{context.BaseName}EndpointsTests";
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -56,7 +56,7 @@ public sealed partial class EndpointProviderTestSuiteWriter(GenerationContext co
     private void WriteTestMethod(CodeWriter writer, EndpointTestCase testCase, Dictionary<string, int> usedNames)
     {
         var testName = ToTestName(testCase.Documentation, usedNames);
-        var parametersName = $"{context.ServiceName}EndpointParameters";
+        var parametersName = $"{context.BaseName}EndpointParameters";
         var providerName = $"{context.ClientName}EndpointProvider";
 
         writer.WriteLine("[TestMethod]");

@@ -50,7 +50,7 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
         }
 
         var className = $"{context.ClientName}EndpointResolver";
-        var parametersName = $"{context.ServiceName}EndpointParameters";
+        var parametersName = $"{context.BaseName}EndpointParameters";
 
         var writer = new CodeWriter();
         FileHeader.WriteLicense(writer, modelFileName);
@@ -59,9 +59,9 @@ public sealed class EndpointResolverWriter(GenerationContext context, string mod
         writer.OpenNamespace($"{context.Namespace}.Internal", () =>
         {
             writer.WriteLine("/// <summary>");
-            writer.WriteLine($"/// Amazon {context.ServiceName} endpoint resolver.");
+            writer.WriteLine($"/// Amazon {context.BaseName} endpoint resolver.");
             writer.WriteLine("/// <para />");
-            writer.WriteLine($"/// Custom <see cref=\"PipelineHandler\"/> responsible for resolving endpoint and setting authentication parameters for {context.ServiceName} service requests.");
+            writer.WriteLine($"""/// Custom <see cref="PipelineHandler"/> responsible for resolving endpoint and setting authentication parameters for {context.BaseName} service requests.""");
             writer.WriteLine("/// <para />");
             writer.WriteLine($"/// Collects values for <see cref=\"{parametersName}\"/> and then tries to resolve endpoint by calling");
             writer.WriteLine($"/// <c>ResolveEndpoint</c> method on <see cref=\"GlobalEndpoints.Provider\"/> if present, otherwise uses <see cref=\"{context.ClientName}EndpointProvider\"/>.");
