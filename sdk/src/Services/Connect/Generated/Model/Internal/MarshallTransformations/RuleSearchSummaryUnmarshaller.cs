@@ -86,6 +86,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("PreEvaluationFilters", targetDepth, ref reader))
+                {
+                    var unmarshaller = PreEvaluationFiltersUnmarshaller.Instance;
+                    unmarshalledObject.PreEvaluationFilters = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PublishStatus", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

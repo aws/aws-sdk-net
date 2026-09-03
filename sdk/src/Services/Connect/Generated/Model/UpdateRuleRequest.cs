@@ -45,6 +45,7 @@ namespace Amazon.Connect.Model
         private string _function;
         private string _instanceId;
         private string _name;
+        private PreEvaluationFilters _preEvaluationFilters;
         private RulePublishStatus _publishStatus;
         private string _ruleId;
 
@@ -130,6 +131,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreEvaluationFilters. 
+        /// <para>
+        /// The pre-evaluation filters for the rule, that restrict the rule to be applied to only
+        /// certain resources based on the resource's attributes, such as tags assigned to a contact.
+        /// The pre-evaluation filters are applied even before rule conditions are evaluated and
+        /// are used to enforce tag-based-access-control while applying rules.
+        /// </para>
+        /// </summary>
+        public PreEvaluationFilters PreEvaluationFilters
+        {
+            get { return this._preEvaluationFilters; }
+            set { this._preEvaluationFilters = value; }
+        }
+
+        // Check to see if PreEvaluationFilters property is set
+        internal bool IsSetPreEvaluationFilters()
+        {
+            return this._preEvaluationFilters != null;
         }
 
         /// <summary>

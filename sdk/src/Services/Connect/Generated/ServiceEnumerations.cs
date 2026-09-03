@@ -8895,6 +8895,144 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterOperator.
+    /// </summary>
+    public class PreEvaluationFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for PreEvaluationFilterOperator
+        /// </summary>
+        public static readonly PreEvaluationFilterOperator EQUALS = new PreEvaluationFilterOperator("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreEvaluationFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterOperator FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterResourceType.
+    /// </summary>
+    public class PreEvaluationFilterResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTACT for PreEvaluationFilterResourceType
+        /// </summary>
+        public static readonly PreEvaluationFilterResourceType CONTACT = new PreEvaluationFilterResourceType("CONTACT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreEvaluationFilterResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterResourceType FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterType.
+    /// </summary>
+    public class PreEvaluationFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TAG for PreEvaluationFilterType
+        /// </summary>
+        public static readonly PreEvaluationFilterType TAG = new PreEvaluationFilterType("TAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreEvaluationFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterType FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PropertyValidationExceptionReason.
     /// </summary>
     public class PropertyValidationExceptionReason : ConstantClass
