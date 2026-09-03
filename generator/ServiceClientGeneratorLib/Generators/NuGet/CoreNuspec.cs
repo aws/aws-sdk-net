@@ -15,7 +15,7 @@ namespace ServiceClientGenerator.Generators.NuGet
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\sdk-dev-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+    #line 1 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "18.0.0.0")]
     public partial class CoreNuspec : CoreNuspecBase
     {
@@ -28,13 +28,13 @@ namespace ServiceClientGenerator.Generators.NuGet
             this.Write("\r\n<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package> \r\n  <metadata> \r\n    <id>AWSS" +
                     "DK.Core</id>\r\n    <title>AWSSDK - Core Runtime</title>\r\n    <version>");
             
-            #line 9 "C:\Projects\sdk-dev-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["FileVersion"]));
             
             #line default
             #line hidden
             
-            #line 9 "C:\Projects\sdk-dev-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
+            #line 9 "C:\codebase\v4\aws-sdk-net-v4\generator\ServiceClientGeneratorLib\Generators\NuGet\CoreNuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["NuGetPreviewFlag"]));
             
             #line default
@@ -51,26 +51,28 @@ namespace ServiceClientGenerator.Generators.NuGet
                     "ncInterfaces\" version=\"8.0.0\" />\r\n        <dependency id=\"System.Buffers\" versio" +
                     "n=\"4.5.1\" />\r\n        <dependency id=\"System.Memory\" version=\"4.5.5\" />\r\n       " +
                     " <dependency id=\"System.Text.Json\" version=\"8.0.6\" />\r\n      </group>\r\n      <gr" +
-                    "oup targetFramework=\"netcoreapp3.1\">\r\n      </group>\r\n      <group targetFramewo" +
-                    "rk=\"net8.0\">\r\n      </group>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n" +
-                    "    <file src=\"..\\..\\nuget-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file s" +
-                    "rc=\"..\\..\\nuget-content\\account-management.ps1\" target=\"tools\" />\r\n    <file src=\"..\\..\\code-analysis\\Cor" +
-                    "eAnalysis\\bin\\Release\\*.dll\" target=\"analyzers\\dotnet\\cs\" exclude=\"**\\Microsof" +
-                    "t.CodeAnalysis.*;**\\System.Collections.Immutable.*;**\\System.Reflection.Metadat" +
-                    "a.*;**\\System.Composition.*\" />\r\n\r\n    <file s" +
-                    "rc=\".\\bin\\Release\\net472\\AWSSDK.Core.dll\" target=\"lib\\net472\" />\r\n    <file src=" +
-                    "\".\\bin\\Release\\net472\\AWSSDK.Core.xml\" target=\"lib\\net472\" />\r\n    <file src=\".\\" +
-                    "bin\\Release\\net472\\AWSSDK.Core.pdb\" target=\"lib\\net472\" />\r\n\r\n    <file src=\".\\b" +
-                    "in\\Release\\netstandard2.0\\AWSSDK.Core.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <f" +
-                    "ile src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2." +
-                    "0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\n" +
-                    "etstandard2.0\"/>\r\n\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK.Core.dll\" " +
-                    "target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3.1\\AWSSDK." +
-                    "Core.xml\" target=\"lib\\netcoreapp3.1\"/>\r\n    <file src=\".\\bin\\Release\\netcoreapp3" +
-                    ".1\\AWSSDK.Core.pdb\" target=\"lib\\netcoreapp3.1\"/>\r\n\r\n    <file src=\".\\bin\\Release" +
-                    "\\net8.0\\AWSSDK.Core.dll\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net" +
-                    "8.0\\AWSSDK.Core.xml\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Release\\net8.0\\" +
-                    "AWSSDK.Core.pdb\" target=\"lib\\net8.0\"/>\r\n  </files>\r\n</package>");
+                    "oup targetFramework=\"net8.0\">\r\n      </group>\t\t\r\n      <group targetFramework=\"n" +
+                    "et10.0\">\r\n      </group>\t\t\r\n      <group targetFramework=\"net11.0\">\r\n      </gro" +
+                    "up>\t\t\r\n    </dependencies>\r\n  </metadata> \r\n  <files>\r\n    <file src=\"..\\..\\nuge" +
+                    "t-content\\AWSLogo.png\" target=\"images\\\" />\r\n    <file src=\"..\\..\\code-analysis\\C" +
+                    "oreAnalysis\\bin\\Release\\*.dll\" target=\"analyzers\\dotnet\\cs\" exclude=\"**\\Microsof" +
+                    "t.CodeAnalysis.*;**\\System.Collections.Immutable.*;**\\System.Reflection.Metadata" +
+                    ".*;**\\System.Composition.*\" />\r\n\r\n    <file src=\".\\bin\\Release\\net472\\AWSSDK.Cor" +
+                    "e.dll\" target=\"lib\\net472\" />\r\n    <file src=\".\\bin\\Release\\net472\\AWSSDK.Core.x" +
+                    "ml\" target=\"lib\\net472\" />\r\n    <file src=\".\\bin\\Release\\net472\\AWSSDK.Core.pdb\"" +
+                    " target=\"lib\\net472\" />\r\n\r\n    <file src=\".\\bin\\Release\\netstandard2.0\\AWSSDK.Co" +
+                    "re.dll\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\bin\\Release\\netstandard2" +
+                    ".0\\AWSSDK.Core.xml\" target=\"lib\\netstandard2.0\"/>\r\n    <file src=\".\\bin\\Release\\" +
+                    "netstandard2.0\\AWSSDK.Core.pdb\" target=\"lib\\netstandard2.0\"/>\r\n\r\n    <file src=\"" +
+                    ".\\bin\\Release\\net8.0\\AWSSDK.Core.dll\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bi" +
+                    "n\\Release\\net8.0\\AWSSDK.Core.xml\" target=\"lib\\net8.0\"/>\r\n    <file src=\".\\bin\\Re" +
+                    "lease\\net8.0\\AWSSDK.Core.pdb\" target=\"lib\\net8.0\"/>\r\n\r\n    <file src=\".\\bin\\Rele" +
+                    "ase\\net10.0\\AWSSDK.Core.dll\" target=\"lib\\net10.0\"/>\r\n\t<file src=\".\\bin\\Release\\n" +
+                    "et10.0\\AWSSDK.Core.xml\" target=\"lib\\net10.0\"/>\r\n\t<file src=\".\\bin\\Release\\net10." +
+                    "0\\AWSSDK.Core.pdb\" target=\"lib\\net10.0\"/>\r\n\r\n\t<file src=\".\\bin\\Release\\net11.0\\A" +
+                    "WSSDK.Core.dll\" target=\"lib\\net11.0\"/>\r\n\t<file src=\".\\bin\\Release\\net11.0\\AWSSDK" +
+                    ".Core.xml\" target=\"lib\\net11.0\"/>\r\n\t<file src=\".\\bin\\Release\\net11.0\\AWSSDK.Core" +
+                    ".pdb\" target=\"lib\\net11.0\"/>\r\n\r\n  </files>\r\n</package>");
             return this.GenerationEnvironment.ToString();
         }
     }
