@@ -2,6 +2,8 @@
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using VerifyCS = AnalyzerUnitTests.Test.CSharpAnalyzerVerifier<Amazon.CodeAnalysis.DeprecatedTargetFrameworkAnalyzer>;
 
@@ -101,6 +103,37 @@ namespace AnalyzerUnitTests.Test
         public async Task NetFramework48FromAssemblyAttributeIsNotReported()
         {
             await BuildTest(TargetFrameworkAttribute(".NETFramework,Version=v4.8")).RunAsync();
+        }
+
+        /// <summary>
+        /// OS-specific TFMs (e.g. net6.0-browser) are the deprecated base target plus a platform suffix,
+        /// and the .NET SDK reports the full moniker through the build property. Each such variant of a
+        /// deprecated target must still be reported.
+        /// </summary>
+        [TestMethod]
+        public async Task OsSpecificVariantOfDeprecatedTargetIsReported()
+        {
+            // OS-specific TFMs only exist for net5.0 and later (net5.0-browser, net6.0-android, ...).
+            var osSpecificBases = DeprecatedTargetFrameworks.ShortNames
+                .Where(name => Regex.IsMatch(name, @"^net\d"))
+                .ToArray();
+            Assert.IsTrue(osSpecificBases.Length > 0, "No deprecated targets support OS-specific TFMs; the loop would pass vacuously.");
+
+            foreach (var baseTargetFramework in osSpecificBases)
+            {
+                var osSpecificTargetFramework = baseTargetFramework + "-browser";
+
+                var test = BuildTest(EmptyClass, targetFrameworkBuildProperty: osSpecificTargetFramework);
+                test.ExpectedDiagnostics.Add(ExpectedDiagnostic(osSpecificTargetFramework));
+
+                await test.RunAsync();
+            }
+        }
+
+        [TestMethod]
+        public async Task SupportedOsSpecificTargetIsNotReported()
+        {
+            await BuildTest(EmptyClass, targetFrameworkBuildProperty: "net8.0-browser").RunAsync();
         }
 
         /// <summary>

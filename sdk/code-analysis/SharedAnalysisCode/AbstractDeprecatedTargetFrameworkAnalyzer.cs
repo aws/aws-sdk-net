@@ -167,7 +167,21 @@ namespace Amazon.CodeAnalysis.Shared
         private static bool IsDeprecatedShortName(string targetFramework)
         {
             return DeprecatedTargetFrameworks.ShortNames
-                .Any(name => string.Equals(name, targetFramework, StringComparison.OrdinalIgnoreCase));
+                .Any(name => IsSameOrOsSpecificVariant(name, targetFramework));
+        }
+
+        /// <summary>
+        /// Matches the reported target framework against a deprecated base target, treating OS-specific
+        /// TFMs such as net6.0-browser or net6.0-windows10.0.19041 as the base target they extend. Those
+        /// monikers are always the base short name followed by "-{platform}", so a prefix comparison
+        /// covers the whole family without hard-coding the set of platforms.
+        /// </summary>
+        private static bool IsSameOrOsSpecificVariant(string deprecatedShortName, string targetFramework)
+        {
+            if (string.Equals(deprecatedShortName, targetFramework, StringComparison.OrdinalIgnoreCase))
+                return true;
+
+            return targetFramework.StartsWith(deprecatedShortName + "-", StringComparison.OrdinalIgnoreCase);
         }
 
         private const string ClaimSlotName = "AWSSDK.CodeAnalysis.DeprecatedTargetFrameworkAnalyzer.Claims";
