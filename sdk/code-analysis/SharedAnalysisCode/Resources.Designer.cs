@@ -19,7 +19,7 @@ namespace Amazon.CodeAnalysis.Shared {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -65,7 +65,7 @@ namespace Amazon.CodeAnalysis.Shared {
         /// </summary>
         internal static string CollectionInitializerNullRule_Description {
             get {
-                return ResourceManager.GetString("CollectionInitializerNullRule.Description", resourceCulture);
+                return ResourceManager.GetString("CollectionInitializerNullRule_Description", resourceCulture);
             }
         }
         
@@ -74,7 +74,7 @@ namespace Amazon.CodeAnalysis.Shared {
         /// </summary>
         internal static string CollectionInitializerNullRule_MessageFormat {
             get {
-                return ResourceManager.GetString("CollectionInitializerNullRule.MessageFormat", resourceCulture);
+                return ResourceManager.GetString("CollectionInitializerNullRule_MessageFormat", resourceCulture);
             }
         }
         
@@ -83,7 +83,7 @@ namespace Amazon.CodeAnalysis.Shared {
         /// </summary>
         internal static string CollectionInitializerNullRule_Title {
             get {
-                return ResourceManager.GetString("CollectionInitializerNullRule.Title", resourceCulture);
+                return ResourceManager.GetString("CollectionInitializerNullRule_Title", resourceCulture);
             }
         }
         
@@ -97,7 +97,7 @@ namespace Amazon.CodeAnalysis.Shared {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to The target framework &apos;{0}&apos; is no longer supported by the AWS SDK for .NET. This project has fallen back to the {1} assemblies of the SDK, which do not include the features and optimizations available on supported targets. Retarget the project to .NET 8 or later, or suppress this warning with &lt;NoWarn&gt;{2}&lt;/NoWarn&gt;..
+        ///   Looks up a localized string similar to The target framework &apos;{0}&apos; is no longer supported by the AWS SDK for .NET. This project has fallen back to the {1} assemblies of the SDK, which do not include the features and optimizations available on supported targets. Retarget the project to a supported .NET target, or suppress this warning with &lt;NoWarn&gt;{2}&lt;/NoWarn&gt;..
         /// </summary>
         internal static string DeprecatedTargetFrameworkRule_MessageFormat {
             get {
