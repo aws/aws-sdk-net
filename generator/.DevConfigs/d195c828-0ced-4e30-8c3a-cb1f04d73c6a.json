@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "All services will now send subsecond precise timestamps to services if specified."
+      "All JSON based services will send sub-second precise timestamps in the body if specified on the request."
     ]
   }
 }
