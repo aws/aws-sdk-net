@@ -1586,11 +1586,7 @@ namespace Amazon.StepFunctions
         /// service holds on to the request before responding is 60 seconds. If no task is available
         /// within 60 seconds, the poll returns a <c>taskToken</c> with a null string.
         /// 
-        ///  <note> 
-        /// <para>
-        /// This API action isn't logged in CloudTrail.
-        /// </para>
-        ///  </note> <important> 
+        ///  <important> 
         /// <para>
         /// Workers should set their client side socket timeout to at least 65 seconds (5 seconds
         /// higher than the maximum time the service may hold the poll request).
@@ -1638,11 +1634,7 @@ namespace Amazon.StepFunctions
         /// service holds on to the request before responding is 60 seconds. If no task is available
         /// within 60 seconds, the poll returns a <c>taskToken</c> with a null string.
         /// 
-        ///  <note> 
-        /// <para>
-        /// This API action isn't logged in CloudTrail.
-        /// </para>
-        ///  </note> <important> 
+        ///  <important> 
         /// <para>
         /// Workers should set their client side socket timeout to at least 65 seconds (5 seconds
         /// higher than the maximum time the service may hold the poll request).
@@ -1863,7 +1855,9 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  
         /// <para>
-        /// Results are sorted by time, with the most recent execution first.
+        /// Results are sorted by time, with the most recent execution first. Running executions
+        /// are sorted by their <c>startDate</c> or <c>redriveDate</c>, and other executions are
+        /// sorted by their <c>stopDate</c>.
         /// </para>
         ///  
         /// <para>
@@ -1880,7 +1874,8 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  </note> 
         /// <para>
-        /// This API action is not supported by <c>EXPRESS</c> state machines.
+        /// This API action is not supported by <c>EXPRESS</c> state machines. However, you may
+        /// list <c>EXPRESS</c> children started by a map run using the <c>mapRunArn</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
@@ -1924,7 +1919,9 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  
         /// <para>
-        /// Results are sorted by time, with the most recent execution first.
+        /// Results are sorted by time, with the most recent execution first. Running executions
+        /// are sorted by their <c>startDate</c> or <c>redriveDate</c>, and other executions are
+        /// sorted by their <c>stopDate</c>.
         /// </para>
         ///  
         /// <para>
@@ -1941,7 +1938,8 @@ namespace Amazon.StepFunctions
         /// </para>
         ///  </note> 
         /// <para>
-        /// This API action is not supported by <c>EXPRESS</c> state machines.
+        /// This API action is not supported by <c>EXPRESS</c> state machines. However, you may
+        /// list <c>EXPRESS</c> children started by a map run using the <c>mapRunArn</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
@@ -3041,7 +3039,7 @@ namespace Amazon.StepFunctions
         /// workflow, if you call <c>StartExecution</c> with the same name and input as a running
         /// execution, the call succeeds and return the same response as the original request.
         /// If the execution is closed or if the input is different, it returns a <c>400 ExecutionAlreadyExists</c>
-        /// error. You can reuse names after 90 days. 
+        /// error. You can reuse the name 90 days after it closes. 
         /// </para>
         ///  
         /// <para>
@@ -3165,7 +3163,7 @@ namespace Amazon.StepFunctions
         /// workflow, if you call <c>StartExecution</c> with the same name and input as a running
         /// execution, the call succeeds and return the same response as the original request.
         /// If the execution is closed or if the input is different, it returns a <c>400 ExecutionAlreadyExists</c>
-        /// error. You can reuse names after 90 days. 
+        /// error. You can reuse the name 90 days after it closes. 
         /// </para>
         ///  
         /// <para>
@@ -3240,10 +3238,6 @@ namespace Amazon.StepFunctions
         /// as permissions errors, limit errors, or issues with your state machine code and configuration.
         /// 
         /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// This API action isn't logged in CloudTrail.
-        /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSyncExecution service method.</param>
@@ -3293,10 +3287,6 @@ namespace Amazon.StepFunctions
         /// Error codes are reserved for errors that prevent your execution from running, such
         /// as permissions errors, limit errors, or issues with your state machine code and configuration.
         /// 
-        /// </para>
-        ///  </note> <note> 
-        /// <para>
-        /// This API action isn't logged in CloudTrail.
         /// </para>
         ///  </note>
         /// </summary>

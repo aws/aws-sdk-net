@@ -38,11 +38,7 @@ namespace Amazon.StepFunctions.Model
     /// service holds on to the request before responding is 60 seconds. If no task is available
     /// within 60 seconds, the poll returns a <c>taskToken</c> with a null string.
     /// 
-    ///  <note> 
-    /// <para>
-    /// This API action isn't logged in CloudTrail.
-    /// </para>
-    ///  </note> <important> 
+    ///  <important> 
     /// <para>
     /// Workers should set their client side socket timeout to at least 65 seconds (5 seconds
     /// higher than the maximum time the service may hold the poll request).

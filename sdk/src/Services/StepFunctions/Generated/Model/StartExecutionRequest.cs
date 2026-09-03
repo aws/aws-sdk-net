@@ -97,7 +97,7 @@ namespace Amazon.StepFunctions.Model
     /// workflow, if you call <c>StartExecution</c> with the same name and input as a running
     /// execution, the call succeeds and return the same response as the original request.
     /// If the execution is closed or if the input is different, it returns a <c>400 ExecutionAlreadyExists</c>
-    /// error. You can reuse names after 90 days. 
+    /// error. You can reuse the name 90 days after it closes. 
     /// </para>
     ///  
     /// <para>
@@ -148,8 +148,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Optional name of the execution. This name must be unique for your Amazon Web Services
-        /// account, Region, and state machine for 90 days. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+        /// Optional name of the execution. For STANDARD workflows, this name must be unique for
+        /// your Amazon Web Services account, region, and state machine. If a previous execution
+        /// with the same name exists, you can reuse the name 90 days after it closes. For EXPRESS
+        /// workflows, execution names can be reused immediately. For more information, see <a
+        /// href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
         /// Limits Related to State Machine Executions</a> in the <i>Step Functions Developer
         /// Guide</i>.
         /// </para>
