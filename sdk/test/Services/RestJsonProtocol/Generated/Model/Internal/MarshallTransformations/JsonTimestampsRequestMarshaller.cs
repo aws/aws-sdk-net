@@ -88,13 +88,13 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetEpochSeconds())
             {
                 context.Writer.WritePropertyName("epochSeconds");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSeconds.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EpochSeconds.Value));
             }
 
             if(publicRequest.IsSetEpochSecondsOnTarget())
             {
                 context.Writer.WritePropertyName("epochSecondsOnTarget");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EpochSecondsOnTarget.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.EpochSecondsOnTarget.Value));
             }
 
             if(publicRequest.IsSetHttpDate())
@@ -112,7 +112,7 @@ namespace Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations
             if(publicRequest.IsSetNormal())
             {
                 context.Writer.WritePropertyName("normal");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.Normal.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(publicRequest.Normal.Value));
             }
 
             writer.WriteEndObject();

@@ -1,0 +1,9 @@
+{
+  "core": {
+    "updateMinimum": true,
+    "type": "patch",
+    "changeLogMessages": [
+      "All services will now send subsecond precise timestamps to services if specified."
+    ]
+  }
+}

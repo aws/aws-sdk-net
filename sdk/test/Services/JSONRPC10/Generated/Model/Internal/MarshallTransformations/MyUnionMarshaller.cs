@@ -121,7 +121,7 @@ namespace Amazon.JSONRPC10.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimestampValue())
             {
                 context.Writer.WritePropertyName("timestampValue");
-                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.TimestampValue.Value)));
+                context.Writer.WriteNumberValue(Amazon.Util.AWSSDKUtils.ConvertToUnixEpochSecondsDecimal(requestObject.TimestampValue.Value));
             }
 
         }
