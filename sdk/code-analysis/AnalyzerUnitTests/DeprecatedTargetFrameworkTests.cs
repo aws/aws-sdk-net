@@ -17,7 +17,7 @@ namespace AnalyzerUnitTests.Test
             "The target framework 'netcoreapp3.1' is no longer supported by the AWS SDK for .NET. " +
             "This project has fallen back to the netstandard2.0 assemblies of the SDK, which do not " +
             "include the features and optimizations available on supported targets. Retarget the " +
-            "project to .NET 8 or later, or suppress this warning with <NoWarn>AWSSDK3000</NoWarn>.";
+            "project to a supported .NET target, or suppress this warning with <NoWarn>AWSSDK3000</NoWarn>.";
 
         private const string EmptyClass = "class Program { }";
 
