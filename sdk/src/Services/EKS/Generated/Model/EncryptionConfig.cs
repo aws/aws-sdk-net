@@ -56,7 +56,13 @@ namespace Amazon.EKS.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Resources. 
+        /// Gets and sets the property Resources. <important> 
+        /// <para>
+        /// Amazon EKS encrypts all Kubernetes API data with envelope encryption by default for
+        /// clusters running Kubernetes version 1.28 or higher, so this field no longer affects
+        /// which resources are encrypted.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Specifies the resources to be encrypted. The only supported value is <c>secrets</c>.
         /// </para>
@@ -66,6 +72,7 @@ namespace Amazon.EKS.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
+        [Obsolete("Deprecated. Amazon EKS encrypts all Kubernetes API data by default, so this value no longer determines which resources are encrypted.")]
         public List<string> Resources
         {
             get { return this._resources; }
