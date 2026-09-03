@@ -3,7 +3,7 @@
     "updateMinimum": true,
     "type": "patch",
     "changeLogMessages": [
-      "All JSON based services will send sub-second precise timestamps in the body if specified on the request."
+      "Timestamps serialized as numeric epoch-seconds in JSON request bodies now preserve millisecond precision (e.g. `1756149554.123` instead of `1756149554`) rather than truncating to whole seconds."
     ]
   }
 }
