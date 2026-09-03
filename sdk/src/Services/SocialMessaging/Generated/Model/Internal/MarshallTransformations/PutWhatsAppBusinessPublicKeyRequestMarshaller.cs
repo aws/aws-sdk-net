@@ -37,9 +37,9 @@ using ThirdParty.RuntimeBackports;
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateWhatsAppFlow Request Marshaller
+    /// PutWhatsAppBusinessPublicKey Request Marshaller
     /// </summary>       
-    public class UpdateWhatsAppFlowRequestMarshaller : IMarshaller<IRequest, UpdateWhatsAppFlowRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class PutWhatsAppBusinessPublicKeyRequestMarshaller : IMarshaller<IRequest, PutWhatsAppBusinessPublicKeyRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -48,7 +48,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateWhatsAppFlowRequest)input);
+            return this.Marshall((PutWhatsAppBusinessPublicKeyRequest)input);
         }
 
         /// <summary>
@@ -56,14 +56,14 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateWhatsAppFlowRequest publicRequest)
+        public IRequest Marshall(PutWhatsAppBusinessPublicKeyRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SocialMessaging");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2024-01-01";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PUT";
 
-            request.ResourcePath = "/v1/whatsapp/flow/update";
+            request.ResourcePath = "/v1/whatsapp/business-public-key";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
             using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
@@ -73,45 +73,22 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
-            if(publicRequest.IsSetCategories())
+            if(publicRequest.IsSetBusinessPublicKey())
             {
-                context.Writer.WritePropertyName("categories");
-                context.Writer.WriteStartArray();
-                foreach(var publicRequestCategoriesListValue in publicRequest.Categories)
-                {
-                        context.Writer.WriteStringValue(publicRequestCategoriesListValue);
-                }
-                context.Writer.WriteEndArray();
+                context.Writer.WritePropertyName("businessPublicKey");
+                context.Writer.WriteStringValue(publicRequest.BusinessPublicKey);
             }
 
-            if(publicRequest.IsSetEndpointUri())
+            if(publicRequest.IsSetKmsKeyArn())
             {
-                context.Writer.WritePropertyName("endpointUri");
-                context.Writer.WriteStringValue(publicRequest.EndpointUri);
+                context.Writer.WritePropertyName("kmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
             }
 
-            if(publicRequest.IsSetFlowId())
+            if(publicRequest.IsSetOriginationPhoneNumberId())
             {
-                context.Writer.WritePropertyName("flowId");
-                context.Writer.WriteStringValue(publicRequest.FlowId);
-            }
-
-            if(publicRequest.IsSetFlowName())
-            {
-                context.Writer.WritePropertyName("flowName");
-                context.Writer.WriteStringValue(publicRequest.FlowName);
-            }
-
-            if(publicRequest.IsSetId())
-            {
-                context.Writer.WritePropertyName("id");
-                context.Writer.WriteStringValue(publicRequest.Id);
-            }
-
-            if(publicRequest.IsSetMetaAppId())
-            {
-                context.Writer.WritePropertyName("metaAppId");
-                context.Writer.WriteStringValue(publicRequest.MetaAppId);
+                context.Writer.WritePropertyName("originationPhoneNumberId");
+                context.Writer.WriteStringValue(publicRequest.OriginationPhoneNumberId);
             }
 
             writer.WriteEndObject();
@@ -124,9 +101,9 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateWhatsAppFlowRequestMarshaller _instance = new UpdateWhatsAppFlowRequestMarshaller();        
+        private static PutWhatsAppBusinessPublicKeyRequestMarshaller _instance = new PutWhatsAppBusinessPublicKeyRequestMarshaller();        
 
-        internal static UpdateWhatsAppFlowRequestMarshaller GetInstance()
+        internal static PutWhatsAppBusinessPublicKeyRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -134,7 +111,7 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateWhatsAppFlowRequestMarshaller Instance
+        public static PutWhatsAppBusinessPublicKeyRequestMarshaller Instance
         {
             get
             {
