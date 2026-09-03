@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AWSSDK.Core.CodeAnalysis")]
+[assembly: AssemblyTitle("AWSSDK.Core")]
 [assembly: AssemblyDescription("Code analysis for the Amazon Web Services SDK for .NET - Core Runtime")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]

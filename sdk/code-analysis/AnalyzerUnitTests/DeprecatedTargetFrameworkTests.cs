@@ -1,4 +1,5 @@
-﻿using Microsoft.CodeAnalysis;
+﻿using Amazon.CodeAnalysis.Shared;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
@@ -8,41 +9,50 @@ namespace AnalyzerUnitTests.Test
 {
     /// <summary>
     /// The deprecated target frameworks the analyzer matches against are baked in from the
-    /// DeprecatedTargets property in sdk/Directory.Build.props, which is netcoreapp3.1 for V4.1.
+    /// DeprecatedTargets property in sdk/Directory.Build.props. These tests drive off the generated
+    /// DeprecatedTargetFrameworks arrays so they cover whatever set that property currently declares.
     /// </summary>
     [TestClass]
     public class DeprecatedTargetFrameworkTests
     {
-        private const string ExpectedMessage =
-            "The target framework 'netcoreapp3.1' is no longer supported by the AWS SDK for .NET. " +
-            "This project has fallen back to the netstandard2.0 assemblies of the SDK, which do not " +
-            "include the features and optimizations available on supported targets. Retarget the " +
-            "project to a supported .NET target, or suppress this warning with <NoWarn>AWSSDK3000</NoWarn>.";
-
         private const string EmptyClass = "class Program { }";
 
         /// <summary>
-        /// The path used when the .NET SDK publishes MSBuild properties to analyzers.
+        /// Every deprecated target reported through the build property (the path the .NET SDK uses)
+        /// must produce the AWSSDK3000 warning.
         /// </summary>
         [TestMethod]
-        public async Task DeprecatedTargetFrameworkFromBuildProperty()
+        public async Task EveryDeprecatedTargetFromBuildPropertyIsReported()
         {
-            var test = BuildTest(EmptyClass, targetFrameworkBuildProperty: "netcoreapp3.1");
-            test.ExpectedDiagnostics.Add(ExpectedDiagnostic());
+            Assert.IsTrue(DeprecatedTargetFrameworks.ShortNames.Length > 0, "No deprecated targets were baked in; the loop would pass vacuously.");
 
-            await test.RunAsync();
+            foreach (var targetFramework in DeprecatedTargetFrameworks.ShortNames)
+            {
+                var test = BuildTest(EmptyClass, targetFrameworkBuildProperty: targetFramework);
+                test.ExpectedDiagnostics.Add(ExpectedDiagnostic(targetFramework));
+
+                await test.RunAsync();
+            }
         }
 
         /// <summary>
-        /// The fallback path for builds that do not publish MSBuild properties to analyzers.
+        /// The fallback path for builds that do not publish MSBuild properties to analyzers: the same
+        /// deprecated targets must be recognized from the long-form TargetFrameworkAttribute value.
         /// </summary>
         [TestMethod]
-        public async Task DeprecatedTargetFrameworkFromAssemblyAttribute()
+        public async Task EveryDeprecatedTargetFromAssemblyAttributeIsReported()
         {
-            var test = BuildTest(TargetFrameworkAttribute(".NETCoreApp,Version=v3.1"));
-            test.ExpectedDiagnostics.Add(ExpectedDiagnostic());
+            Assert.IsTrue(DeprecatedTargetFrameworks.ShortNames.Length > 0, "No deprecated targets were baked in; the loop would pass vacuously.");
 
-            await test.RunAsync();
+            for (var i = 0; i < DeprecatedTargetFrameworks.ShortNames.Length; i++)
+            {
+                var frameworkName = $"{DeprecatedTargetFrameworks.Identifiers[i]},Version=v{DeprecatedTargetFrameworks.Versions[i]}";
+
+                var test = BuildTest(TargetFrameworkAttribute(frameworkName));
+                test.ExpectedDiagnostics.Add(ExpectedDiagnostic(DeprecatedTargetFrameworks.ShortNames[i]));
+
+                await test.RunAsync();
+            }
         }
 
         [TestMethod]
@@ -114,11 +124,19 @@ namespace AnalyzerUnitTests.Test
             return $"[assembly: System.Runtime.Versioning.TargetFramework(\"{frameworkName}\")]\n{EmptyClass}";
         }
 
-        private static DiagnosticResult ExpectedDiagnostic()
+        private static string BuildExpectedMessage(string framework)
+        {
+            return $"The target framework '{framework}' is no longer supported by the AWS SDK for .NET. " +
+                "This project has fallen back to the netstandard2.0 assemblies of the SDK, which do not " +
+                "include the features and optimizations available on supported targets. Retarget the " +
+                "project to a supported .NET target, or suppress this warning with <NoWarn>AWSSDK3000</NoWarn>.";
+        }
+
+        private static DiagnosticResult ExpectedDiagnostic(string framework)
         {
             return new DiagnosticResult("AWSSDK3000", DiagnosticSeverity.Warning)
-                .WithMessage(ExpectedMessage)
-                .WithArguments("netcoreapp3.1", "netstandard2.0", "AWSSDK3000");
+                .WithMessage(BuildExpectedMessage(framework))
+                .WithArguments(framework, "netstandard2.0", "AWSSDK3000");
         }
 
         private static VerifyCS.Test BuildTest(string source, string targetFrameworkBuildProperty = null)
