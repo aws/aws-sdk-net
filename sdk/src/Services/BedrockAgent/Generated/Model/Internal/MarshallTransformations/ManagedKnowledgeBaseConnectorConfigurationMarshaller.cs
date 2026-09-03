@@ -74,6 +74,17 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSyncSchedule())
+            {
+                context.Writer.WritePropertyName("syncSchedule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SyncScheduleMarshaller.Instance;
+                marshaller.Marshall(requestObject.SyncSchedule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -27,6 +27,7 @@ using System.Text.Json;
 using System.Buffers;
 
 using Amazon.KinesisVideoWebRTCStorage.Model;
+using System.Globalization;
 #if !NETFRAMEWORK
 using ThirdParty.RuntimeBackports;
 #endif
@@ -60,10 +61,10 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
             request.ResourcePath = "/joinStorageSession";
 #if !NETFRAMEWORK
             request.ContentStream = new PooledContentStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
+            using var writer = new Utf8JsonWriter(((PooledContentStream)request.ContentStream).BufferWriter);
 #else
             using var memoryStream = new MemoryStream();
-            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+            using var writer = new Utf8JsonWriter(memoryStream);
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);

@@ -32,9 +32,10 @@ namespace Amazon.Kinesis.Model
     /// <summary>
     /// Container for the parameters to the UpdateStreamWarmThroughput operation.
     /// Updates the warm throughput configuration for the specified Amazon Kinesis Data Streams
-    /// on-demand data stream. This operation allows you to proactively scale your on-demand
-    /// data stream to a specified throughput level, enabling better performance for sudden
-    /// traffic spikes. 
+    /// on-demand data stream. Updates the warm throughput configuration for the specified
+    /// on-demand data stream. Use this operation to scale your stream to a specified throughput
+    /// level before anticipated traffic spikes, or to release excess capacity after traffic
+    /// has decreased. 
     /// 
     ///  <note> 
     /// <para>
@@ -56,6 +57,11 @@ namespace Amazon.Kinesis.Model
     /// This operation is only supported for data streams with the on-demand capacity mode
     /// in accounts that have <c>MinimumThroughputBillingCommitment</c> enabled. Provisioned
     /// capacity mode streams do not support warm throughput configuration.
+    /// </para>
+    ///  
+    /// <para>
+    /// To release excess capacity, call the API again and set the warm throughput to the
+    /// same or a lower value.
     /// </para>
     ///  
     /// <para>

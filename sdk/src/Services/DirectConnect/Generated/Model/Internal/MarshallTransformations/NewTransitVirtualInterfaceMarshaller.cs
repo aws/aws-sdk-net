@@ -100,6 +100,18 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.Mtu.Value);
             }
 
+            if(requestObject.IsSetPrefixPoolAllocatedCountIpv4())
+            {
+                context.Writer.WritePropertyName("prefixPoolAllocatedCountIpv4");
+                context.Writer.WriteNumberValue(requestObject.PrefixPoolAllocatedCountIpv4.Value);
+            }
+
+            if(requestObject.IsSetPrefixPoolAllocatedCountIpv6())
+            {
+                context.Writer.WritePropertyName("prefixPoolAllocatedCountIpv6");
+                context.Writer.WriteNumberValue(requestObject.PrefixPoolAllocatedCountIpv6.Value);
+            }
+
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("rateLimit");

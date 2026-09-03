@@ -30,14 +30,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistry.Model
 {
     /// <summary>
-    /// Base mixin for descriptor source from URL
+    /// A URL-based descriptor source that identifies where descriptor content is retrieved
+    /// from.
     /// </summary>
     public partial class DescriptorSourceFromUrl
     {
         private string _url;
 
         /// <summary>
-        /// Gets and sets the property Url.
+        /// Gets and sets the property Url. 
+        /// <para>
+        ///  The URL from which the descriptor content is retrieved.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string Url

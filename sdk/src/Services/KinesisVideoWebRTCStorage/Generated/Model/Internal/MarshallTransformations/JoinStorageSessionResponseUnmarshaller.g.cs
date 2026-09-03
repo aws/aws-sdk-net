@@ -29,6 +29,7 @@ using Amazon.KinesisVideoWebRTCStorage.Model;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Text.Json;
+using System.Globalization;
 using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 
@@ -44,16 +45,9 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         /// </summary>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            JoinStorageSessionResponse response = new JoinStorageSessionResponse();
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var unmarshalledObject = new JoinStorageSessionResponse();
 
-            context.Read(ref reader);
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth, ref reader))
-            {
-            }
-
-            return response;
+            return unmarshalledObject;
         }
 
         /// <summary>
@@ -61,7 +55,7 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
         /// </summary>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+            var reader = new StreamingUtf8JsonReader(context.Stream, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
             var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
 
             errorResponse.InnerException = innerException;
@@ -73,7 +67,7 @@ namespace Amazon.KinesisVideoWebRTCStorage.Model.Internal.MarshallTransformation
             {
                 using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
                 {
-                    StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
+                    var readerCopy = new StreamingUtf8JsonReader(streamCopy, AWSConfigs.StreamingUtf8JsonReaderBufferSize ?? 4096, context.JsonMaxDepth);
                     if (errorResponse.Code != null && errorResponse.Code.Equals("AccessDeniedException"))
                     {
                         return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);

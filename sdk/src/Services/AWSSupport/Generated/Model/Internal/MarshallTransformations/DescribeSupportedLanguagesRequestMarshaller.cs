@@ -81,6 +81,12 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CategoryCode);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             if(publicRequest.IsSetIssueType())
             {
                 context.Writer.WritePropertyName("issueType");

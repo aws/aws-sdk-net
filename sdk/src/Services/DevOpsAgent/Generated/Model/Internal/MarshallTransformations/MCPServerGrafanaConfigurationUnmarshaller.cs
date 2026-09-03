@@ -56,6 +56,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("enabledElevatedTools", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<MCPToolDetail, MCPToolDetailUnmarshaller>(MCPToolDetailUnmarshaller.Instance);
+                    unmarshalledObject.EnabledElevatedTools = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -61,6 +61,7 @@ namespace Amazon.EC2.Model
         /// Base64 representation of the non-volatile UEFI variable store.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UefiData
         {
             get { return this._uefiData; }

@@ -3021,17 +3021,16 @@ namespace Amazon.DeviceFarm
 
         /// <summary>
         /// A session is an instance of a browser created through a <c>RemoteWebDriver</c> with
-        /// the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to look
-        /// up sessions:
+        /// the URL from <c> CreateTestGridUrlResult</c>. You can use the following to look up
+        /// sessions:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).
+        /// The session ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
-        /// <a>GetTestGridSessionRequest$sessionId</a>).
+        /// The project ARN and a session ID.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3061,17 +3060,16 @@ namespace Amazon.DeviceFarm
 
         /// <summary>
         /// A session is an instance of a browser created through a <c>RemoteWebDriver</c> with
-        /// the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to look
-        /// up sessions:
+        /// the URL from <c> CreateTestGridUrlResult</c>. You can use the following to look up
+        /// sessions:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The session ARN (<a>GetTestGridSessionRequest$sessionArn</a>).
+        /// The session ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The project ARN and a session ID (<a>GetTestGridSessionRequest$projectArn</a> and
-        /// <a>GetTestGridSessionRequest$sessionId</a>).
+        /// The project ARN and a session ID.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4245,6 +4243,12 @@ namespace Amazon.DeviceFarm
 
         /// <summary>
         /// Gets information about samples, given an AWS Device Farm job ARN.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Device Farm does not support performance data samples during test executions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSamples service method.</param>
         /// 
@@ -4274,6 +4278,12 @@ namespace Amazon.DeviceFarm
 
         /// <summary>
         /// Gets information about samples, given an AWS Device Farm job ARN.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Device Farm does not support performance data samples during test executions.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSamples service method.</param>
         /// <param name="cancellationToken">

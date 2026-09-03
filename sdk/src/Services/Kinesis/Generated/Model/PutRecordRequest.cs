@@ -103,6 +103,7 @@ namespace Amazon.Kinesis.Model
     public partial class PutRecordRequest : AmazonKinesisRequest
     {
         private MemoryStream _data;
+        private bool? _dryRun;
         private string _explicitHashKey;
         private string _partitionKey;
         private string _sequenceNumberForOrdering;
@@ -129,6 +130,24 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetData()
         {
             return this._data != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>

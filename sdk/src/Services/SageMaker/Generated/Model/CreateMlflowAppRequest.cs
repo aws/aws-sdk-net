@@ -39,6 +39,7 @@ namespace Amazon.SageMaker.Model
         private AccountDefaultStatus _accountDefaultStatus;
         private string _artifactStoreUri;
         private List<string> _defaultDomainIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _kmsKeyId;
         private ModelRegistrationMode _modelRegistrationMode;
         private string _name;
         private string _roleArn;
@@ -103,6 +104,27 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDefaultDomainIdList()
         {
             return this._defaultDomainIdList != null && (this._defaultDomainIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyId. 
+        /// <para>
+        /// The ID of the Amazon Web Services KMS key used to encrypt the data at rest associated
+        /// with the MLflow App. If you don't specify a value, the MLflow App is not encrypted
+        /// with a customer-managed key.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public string KmsKeyId
+        {
+            get { return this._kmsKeyId; }
+            set { this._kmsKeyId = value; }
+        }
+
+        // Check to see if KmsKeyId property is set
+        internal bool IsSetKmsKeyId()
+        {
+            return this._kmsKeyId != null;
         }
 
         /// <summary>

@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private GatewayRateLimitStatus _status;
 
         /// <summary>
-        /// Gets and sets the property RateLimitId.
+        /// Gets and sets the property RateLimitId. 
+        /// <para>
+        /// The unique identifier of the deleted rate limit.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=64)]
         public string RateLimitId
@@ -54,7 +57,10 @@ namespace Amazon.BedrockAgentCoreControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The current status of the rate limit deletion.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public GatewayRateLimitStatus Status

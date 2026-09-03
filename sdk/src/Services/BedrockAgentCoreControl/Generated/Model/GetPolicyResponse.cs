@@ -68,8 +68,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The Cedar policy statement that defines the access control rules. This contains the
-        /// actual policy logic used for agent behavior control and access decisions.
+        /// The Cedar or Dogwood policy statement that defines the access control rules. This
+        /// contains the actual policy logic used for agent behavior control and access decisions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

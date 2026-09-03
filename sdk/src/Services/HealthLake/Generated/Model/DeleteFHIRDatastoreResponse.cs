@@ -42,7 +42,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that grants access permission to AWS HealthLake.
+        /// The Amazon Resource Name (ARN) that grants access permission to HealthLake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreEndpoint. 
         /// <para>
-        /// The AWS endpoint of the data store to be deleted.
+        /// The Amazon Web Services endpoint of the data store to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5000)]
@@ -80,7 +80,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreId. 
         /// <para>
-        /// The AWS-generated ID for the deleted data store.
+        /// The Amazon Web Services-generated ID for the deleted data store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

@@ -100,6 +100,11 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// The maximum number of results.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't specify <c>MaxResults</c>, the export returns a maximum of 1,000 results.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
         public int? MaxResults

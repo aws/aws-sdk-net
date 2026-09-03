@@ -54,13 +54,18 @@ namespace Amazon.AWSSupport
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-    /// Amazon Web Services Support API. 
+    /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+    /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+    /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+    /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+    /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+    /// On-Ramp, or Enterprise Support plan.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+    /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+    /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -356,13 +361,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -388,6 +398,10 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.AttachmentSetSizeLimitExceededException">
         /// A limit for the size of an attachment set has been exceeded. The limits are three
         /// attachments and 5 MB per attachment.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
@@ -417,20 +431,54 @@ namespace Amazon.AWSSupport
 
 
         /// <summary>
-        /// Adds additional customer communication to an Amazon Web Services Support case. Use
-        /// the <c>caseId</c> parameter to identify the case to which to add communication. You
-        /// can list a set of email addresses to copy on the communication by using the <c>ccEmailAddresses</c>
+        /// Adds additional customer communication to a Amazon Web Services Support case. Use
+        /// the <c>caseId</c> parameter to identify the case to which to add communication. To
+        /// list a set of email addresses to copy on the communication, use the <c>ccEmailAddresses</c>
         /// parameter. The <c>communicationBody</c> value contains the text of the communication.
         /// 
-        ///  <note> <ul> <li> 
+        ///  
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// To attach files larger than 5 MB to the communication, use the <c>uploadIds</c> parameter.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Amazon Web Services Support automatically redacts sensitive information from support
+        /// cases to protect your data. The following information is replaced with <c>[REDACTED_BY_Amazon
+        /// Web Services]</c> and is not stored:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Web Services secret keys - The complete key is replaced. Example: <c>[REDACTED_BY_Amazon
+        /// Web Services]</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Private keys - The complete key is replaced. Example: <c>[REDACTED_BY_Amazon Web Services]</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Credit card numbers - The number is redacted, but the last 4 digits remain. Example:
+        /// <c>[REDACTED_BY_Amazon Web Services]-7016</c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// This sensitive information is never required by Amazon Web Services Support.
+        /// </para>
+        ///  </important> <note> <ul> <li> 
+        /// <para>
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -452,6 +500,10 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <c>caseId</c> couldn't be located.
         /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -463,6 +515,56 @@ namespace Amazon.AWSSupport
             options.ResponseUnmarshaller = AddCommunicationToCaseResponseUnmarshaller.Instance;
 
             return InvokeAsync<AddCommunicationToCaseResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  CompleteAttachmentUpload
+
+        internal virtual CompleteAttachmentUploadResponse CompleteAttachmentUpload(CompleteAttachmentUploadRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CompleteAttachmentUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachmentUploadResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteAttachmentUploadResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Completes an attachment upload that was started with <a>GetAttachmentUploadLinks</a>.
+        /// After you upload a part of the file to its presigned Amazon S3 URL, call <c>CompleteAttachmentUpload</c>
+        /// with the <c>partIndex</c> and <c>eTag</c> of that part. You can include one part per
+        /// call, or multiple parts in a single call. After <c>CompleteAttachmentUpload</c> has
+        /// been called for every part of the file, the service processes the upload asynchronously.
+        /// The <c>attachment-ready</c> status might not be reflected immediately. Use <a>DescribeAttachmentUploadStatus</a>
+        /// to poll for the <c>uploadStatus</c> to become <c>attachment-ready</c> before passing
+        /// the <c>uploadId</c> to <a>CreateCase</a> or <a>AddCommunicationToCase</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteAttachmentUpload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CompleteAttachmentUpload service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.UploadIdNotFoundException">
+        /// The specified <c>uploadId</c> couldn't be located.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/CompleteAttachmentUpload">REST API Reference for CompleteAttachmentUpload Operation</seealso>
+        public virtual Task<CompleteAttachmentUploadResponse> CompleteAttachmentUploadAsync(CompleteAttachmentUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CompleteAttachmentUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachmentUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CompleteAttachmentUploadResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -499,9 +601,34 @@ namespace Amazon.AWSSupport
         /// Use the Service Quotas <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a>
         /// operation.
         /// </para>
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Amazon Web Services Support automatically redacts sensitive information from support
+        /// cases to protect your data. The following information is replaced with <c>[REDACTED_BY_Amazon
+        /// Web Services]</c> and is not stored:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Amazon Web Services secret keys - The complete key is replaced. Example: <c>[REDACTED_BY_Amazon
+        /// Web Services]</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Private keys - The complete key is replaced. Example: <c>[REDACTED_BY_Amazon Web Services]</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Credit card numbers - The number is redacted, but the last 4 digits remain. Example:
+        /// <c>[REDACTED_BY_Amazon Web Services]-7016</c> 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A successful <c>CreateCase</c> request returns an Amazon Web Services Support case
+        /// This sensitive information is never required by Amazon Web Services Support.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// A successful <c>CreateCase</c> request returns a Amazon Web Services Support case
         /// number. You can use the <a>DescribeCases</a> operation and specify the case number
         /// to get existing Amazon Web Services Support cases. After you create a case, use the
         /// <a>AddCommunicationToCase</a> operation to add additional communication or attachments
@@ -515,13 +642,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -542,6 +674,10 @@ namespace Amazon.AWSSupport
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.CaseCreationLimitExceededException">
         /// The case creation limit for the account has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
@@ -579,17 +715,34 @@ namespace Amazon.AWSSupport
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <important> 
+        /// <para>
+        ///  <c>DescribeAttachment</c> can't return attachments larger than 5 MB. If the specified
+        /// <c>attachmentId</c> refers to an attachment larger than 5 MB, the request fails with
+        /// <c>InvalidParameterValueException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To download an attachment of any size, including attachments larger than 5 MB, use
+        /// <a>GetAttachmentDownloadLink</a>. <c>GetAttachmentDownloadLink</c> returns an Amazon
+        /// S3 presigned URL that you can use to download the attachment directly.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAttachment service method.</param>
         /// <param name="cancellationToken">
@@ -604,6 +757,10 @@ namespace Amazon.AWSSupport
         /// The limit for the number of <a>DescribeAttachment</a> requests in a short period of
         /// time has been exceeded.
         /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -615,6 +772,75 @@ namespace Amazon.AWSSupport
             options.ResponseUnmarshaller = DescribeAttachmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAttachmentResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  DescribeAttachmentUploadStatus
+
+        internal virtual DescribeAttachmentUploadStatusResponse DescribeAttachmentUploadStatus(DescribeAttachmentUploadStatusRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAttachmentUploadStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttachmentUploadStatusResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAttachmentUploadStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the current status, file name, and progress of a multipart attachment upload
+        /// that was started with <a>GetAttachmentUploadLinks</a>. Use this operation to track
+        /// where an upload is in the workflow. While parts are still being uploaded and reported
+        /// through <a>CompleteAttachmentUpload</a>, the <c>uploadStatus</c> is <c>attachment-not-ready</c>
+        /// and <c>uploadProgress</c> reports the total number of parts and how many have been
+        /// completed so far. After every part has been reported and the service finishes processing
+        /// the upload asynchronously, the <c>uploadStatus</c> becomes <c>attachment-ready</c>
+        /// and the <c>uploadId</c> can be attached to a case through <a>CreateCase</a> or <a>AddCommunicationToCase</a>.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you call the Amazon Web Services Support API from an account that doesn't have
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
+        /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+        /// Web Services Support</a>.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAttachmentUploadStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAttachmentUploadStatus service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.UploadIdNotFoundException">
+        /// The specified <c>uploadId</c> couldn't be located.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeAttachmentUploadStatus">REST API Reference for DescribeAttachmentUploadStatus Operation</seealso>
+        public virtual Task<DescribeAttachmentUploadStatusResponse> DescribeAttachmentUploadStatusAsync(DescribeAttachmentUploadStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DescribeAttachmentUploadStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAttachmentUploadStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAttachmentUploadStatusResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -653,22 +879,48 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Case data is available for 12 months after creation. If a case was created more than
-        /// 12 months ago, a request might return an error.
+        /// Case data is available for 24 months after creation. If a case was created more than
+        /// 24 months ago, a request might return an error.
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <important> 
+        /// <para>
+        /// Each <a>Communication</a> returned by this operation includes attachment information
+        /// in two fields:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>attachmentSet</c>: returns only attachments that are 5 MB or smaller. Attachments
+        /// larger than 5 MB are not included in this field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>attachments</c>: returns all attachments regardless of size.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon Web Services recommends that you use the <c>attachments</c> field and download
+        /// each attachment with <a>GetAttachmentDownloadLink</a>, which supports attachments
+        /// of any size. The <c>attachmentSet</c> field and <a>DescribeAttachment</a> return only
+        /// attachments that are 5 MB or smaller.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCases service method.</param>
         /// <param name="cancellationToken">
@@ -678,6 +930,10 @@ namespace Amazon.AWSSupport
         /// <returns>The response from the DescribeCases service method, as returned by AWSSupport.</returns>
         /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <c>caseId</c> couldn't be located.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
@@ -713,8 +969,8 @@ namespace Amazon.AWSSupport
         /// 
         ///  
         /// <para>
-        /// Case data is available for 12 months after creation. If a case was created more than
-        /// 12 months ago, a request for data might cause an error.
+        /// Case data is available for 24 months after creation. If a case was created more than
+        /// 24 months ago, a request for data might cause an error.
         /// </para>
         ///  
         /// <para>
@@ -724,17 +980,43 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
-        ///  </li> </ul> </note>
+        ///  </li> </ul> </note> <important> 
+        /// <para>
+        /// Each <a>Communication</a> returned by this operation includes attachment information
+        /// in two fields:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>attachmentSet</c>: returns only attachments that are 5 MB or smaller. Attachments
+        /// larger than 5 MB are not included in this field.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>attachments</c>: returns all attachments regardless of size.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Amazon Web Services recommends that you use the <c>attachments</c> field and download
+        /// each attachment with <a>GetAttachmentDownloadLink</a>, which supports attachments
+        /// of any size. The <c>attachmentSet</c> field and <a>DescribeAttachment</a> return only
+        /// attachments that are 5 MB or smaller.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCommunications service method.</param>
         /// <param name="cancellationToken">
@@ -744,6 +1026,10 @@ namespace Amazon.AWSSupport
         /// <returns>The response from the DescribeCommunications service method, as returned by AWSSupport.</returns>
         /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <c>caseId</c> couldn't be located.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
@@ -779,13 +1065,18 @@ namespace Amazon.AWSSupport
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -797,6 +1088,10 @@ namespace Amazon.AWSSupport
         /// </param>
         /// 
         /// <returns>The response from the DescribeCreateCaseOptions service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -846,13 +1141,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -863,6 +1163,10 @@ namespace Amazon.AWSSupport
         /// </param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -890,13 +1194,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -908,6 +1217,10 @@ namespace Amazon.AWSSupport
         /// </param>
         /// 
         /// <returns>The response from the DescribeServices service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -945,13 +1258,18 @@ namespace Amazon.AWSSupport
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -962,6 +1280,10 @@ namespace Amazon.AWSSupport
         /// </param>
         /// 
         /// <returns>The response from the DescribeSeverityLevels service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -980,13 +1302,18 @@ namespace Amazon.AWSSupport
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -998,6 +1325,10 @@ namespace Amazon.AWSSupport
         /// </param>
         /// 
         /// <returns>The response from the DescribeSeverityLevels service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -1032,13 +1363,18 @@ namespace Amazon.AWSSupport
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -1050,6 +1386,10 @@ namespace Amazon.AWSSupport
         /// </param>
         /// 
         /// <returns>The response from the DescribeSupportedLanguages service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
@@ -1093,13 +1433,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -1189,13 +1534,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -1256,13 +1606,15 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have a Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// a Amazon Web Services Business Support+, Amazon Web Services Enterprise Support, or
+        /// Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -1328,13 +1680,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -1346,6 +1703,23 @@ namespace Amazon.AWSSupport
         /// see <a href="https://docs.aws.amazon.com/awssupport/latest/user/about-support-api.html#endpoint">About
         /// the Amazon Web Services Support API</a> in the <i>Amazon Web Services Support User
         /// Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Understanding the Trusted Advisor Resources processed value</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <b>Resources processed</b> value, <c>resourcesProcessed</c>, usually shows both
+        /// flagged resources (those with warnings or errors) and resources in good standing (ok
+        /// status resources). However, some checks report flagged resources only. To understand
+        /// what a specific check reports, review the detailed check information in the <a href="https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor-check-reference.html">Trusted
+        /// Advisor check reference</a>. If you see a <b>Green</b> criterion listed in the <b>Alert
+        /// criteria</b>, then the check reports all resources. If there's no <b>Green</b> criterion
+        /// listed in the <b>Alert criteria</b>, then the check reports only flagged resources.
+        /// For example, the <a href="https://docs.aws.amazon.com/awssupport/latest/user/cost-optimization-checks.html#amazon-ec2-reserved-instances-optimization">Amazon
+        /// EC2 Reserved Instance optimization check (cX3c2R1chu)</a> doesn't list a <b>Green</b>
+        /// criterion in the <b>Alert criteria</b>. So, this check only reports flagged resources.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrustedAdvisorCheckSummaries service method.</param>
@@ -1368,6 +1742,152 @@ namespace Amazon.AWSSupport
             options.ResponseUnmarshaller = DescribeTrustedAdvisorCheckSummariesResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeTrustedAdvisorCheckSummariesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetAttachmentDownloadLink
+
+        internal virtual GetAttachmentDownloadLinkResponse GetAttachmentDownloadLink(GetAttachmentDownloadLinkRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAttachmentDownloadLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachmentDownloadLinkResponseUnmarshaller.Instance;
+
+            return Invoke<GetAttachmentDownloadLinkResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a presigned download URL for an attachment that is associated with a case
+        /// communication. The download link works for an attachment of any size, including attachments
+        /// added through <c>AddAttachmentsToSet</c> and attachments uploaded through <a>GetAttachmentUploadLinks</a>.
+        /// The download URL is time-limited and expires at the date and time indicated in the
+        /// <c>downloadUrl</c> response field. Download the attachment from the URL before it
+        /// expires.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you call the Amazon Web Services Support API from an account that doesn't have
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
+        /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+        /// Web Services Support</a>.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachmentDownloadLink service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAttachmentDownloadLink service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.AttachmentIdNotFoundException">
+        /// An attachment with the specified ID could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/GetAttachmentDownloadLink">REST API Reference for GetAttachmentDownloadLink Operation</seealso>
+        public virtual Task<GetAttachmentDownloadLinkResponse> GetAttachmentDownloadLinkAsync(GetAttachmentDownloadLinkRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAttachmentDownloadLinkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachmentDownloadLinkResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAttachmentDownloadLinkResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  GetAttachmentUploadLinks
+
+        internal virtual GetAttachmentUploadLinksResponse GetAttachmentUploadLinks(GetAttachmentUploadLinksRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAttachmentUploadLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachmentUploadLinksResponseUnmarshaller.Instance;
+
+            return Invoke<GetAttachmentUploadLinksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns one or more presigned upload URLs for uploading a large file attachment to
+        /// a support case by using a multipart upload workflow. The maximum file size that you
+        /// can upload with this workflow is 150 MB, and parts can be up to 100 MB each. Initiate
+        /// a new upload by providing <c>fileName</c> and <c>fileSizeBytes</c>; the response returns
+        /// a unique <c>uploadId</c>, the part size, the total number of parts, and a list of
+        /// presigned upload URLs for the requested range of parts. A maximum of 10 upload URLs
+        /// are returned per call. To retrieve more upload URLs for an upload that's already in
+        /// progress, call <c>GetAttachmentUploadLinks</c> again with the existing <c>uploadId</c>
+        /// and a new <c>uploadRange</c>.
+        /// 
+        ///  
+        /// <para>
+        /// Upload each part to its presigned URL by using HTTP <c>PUT</c> and capture the ETag
+        /// from the response. After you upload all parts, call <a>CompleteAttachmentUpload</a>
+        /// with the <c>uploadId</c> and the list of part indexes and ETags to finalize the upload.
+        /// You can then attach the upload to a case by passing the <c>uploadId</c> in the <c>uploadIds</c>
+        /// parameter of <a>CreateCase</a> or <a>AddCommunicationToCase</a>. To monitor progress
+        /// before completion, call <a>DescribeAttachmentUploadStatus</a>.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you call the Amazon Web Services Support API from an account that doesn't have
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
+        /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+        /// Web Services Support</a>.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachmentUploadLinks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAttachmentUploadLinks service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.UploadIdNotFoundException">
+        /// The specified <c>uploadId</c> couldn't be located.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/GetAttachmentUploadLinks">REST API Reference for GetAttachmentUploadLinks Operation</seealso>
+        public virtual Task<GetAttachmentUploadLinksResponse> GetAttachmentUploadLinksAsync(GetAttachmentUploadLinksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetAttachmentUploadLinksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachmentUploadLinksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAttachmentUploadLinksResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -1399,13 +1919,18 @@ namespace Amazon.AWSSupport
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -1458,13 +1983,18 @@ namespace Amazon.AWSSupport
         /// 
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-        /// Amazon Web Services Support API. 
+        /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+        /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+        /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+        /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+        /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+        /// On-Ramp, or Enterprise Support plan.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you call the Amazon Web Services Support API from an account that doesn't have
-        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+        /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+        /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
         /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
         /// Web Services Support</a>.
         /// </para>
@@ -1478,6 +2008,10 @@ namespace Amazon.AWSSupport
         /// <returns>The response from the ResolveCase service method, as returned by AWSSupport.</returns>
         /// <exception cref="Amazon.AWSSupport.Model.CaseIdNotFoundException">
         /// The requested <c>caseId</c> couldn't be located.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.DryRunOperationException">
+        /// The request was valid, but the operation wasn't performed because <c>dryRun</c> was
+        /// set to <c>true</c>.
         /// </exception>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.

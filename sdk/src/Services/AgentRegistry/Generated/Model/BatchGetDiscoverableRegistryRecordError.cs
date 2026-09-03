@@ -77,7 +77,11 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordId.
+        /// Gets and sets the property RecordId. 
+        /// <para>
+        ///  The identifier of the record that could not be retrieved, echoed from the request
+        /// in the same format that you supplied (ARN or record ID).
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RecordId
@@ -93,7 +97,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryId.
+        /// Gets and sets the property RegistryId. 
+        /// <para>
+        ///  The identifier of the registry the record was requested from, echoed from the request.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RegistryId

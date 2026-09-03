@@ -50,9 +50,34 @@ namespace Amazon.AWSSupport.Model
     /// Use the Service Quotas <a href="https://docs.aws.amazon.com/servicequotas/2019-06-24/apireference/API_RequestServiceQuotaIncrease.html">RequestServiceQuotaIncrease</a>
     /// operation.
     /// </para>
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// Amazon Web Services Support automatically redacts sensitive information from support
+    /// cases to protect your data. The following information is replaced with <c>[REDACTED_BY_Amazon
+    /// Web Services]</c> and is not stored:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Amazon Web Services secret keys - The complete key is replaced. Example: <c>[REDACTED_BY_Amazon
+    /// Web Services]</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Private keys - The complete key is replaced. Example: <c>[REDACTED_BY_Amazon Web Services]</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Credit card numbers - The number is redacted, but the last 4 digits remain. Example:
+    /// <c>[REDACTED_BY_Amazon Web Services]-7016</c> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// A successful <c>CreateCase</c> request returns an Amazon Web Services Support case
+    /// This sensitive information is never required by Amazon Web Services Support.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// A successful <c>CreateCase</c> request returns a Amazon Web Services Support case
     /// number. You can use the <a>DescribeCases</a> operation and specify the case number
     /// to get existing Amazon Web Services Support cases. After you create a case, use the
     /// <a>AddCommunicationToCase</a> operation to add additional communication or attachments
@@ -66,13 +91,18 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-    /// Amazon Web Services Support API. 
+    /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+    /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+    /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+    /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+    /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+    /// On-Ramp, or Enterprise Support plan.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+    /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+    /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -84,17 +114,20 @@ namespace Amazon.AWSSupport.Model
         private string _categoryCode;
         private List<string> _ccEmailAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _communicationBody;
+        private bool? _dryRun;
         private string _issueType;
         private string _language;
         private string _serviceCode;
         private string _severityCode;
         private string _subject;
+        private List<string> _uploadIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttachmentSetId. 
         /// <para>
         /// The ID of a set of one or more attachments for the case. Create the set by using the
-        /// <a>AddAttachmentsToSet</a> operation.
+        /// <a>AddAttachmentsToSet</a> operation. Each attachment in the set must be 5 MB or smaller.
+        /// To attach files larger than 5 MB, use <c>uploadIds</c>.
         /// </para>
         /// </summary>
         public string AttachmentSetId
@@ -178,6 +211,27 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specifies whether to validate the request without actually creating the case. When
+        /// set to <c>true</c>, the request is validated but no case is created, and the operation
+        /// returns a <c>DryRunOperationException</c>. When omitted or set to <c>false</c>, the
+        /// request runs normally.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IssueType. 
         /// <para>
         /// The type of issue for the case. You can specify <c>customer-service</c> or <c>technical</c>.
@@ -200,8 +254,9 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Language. 
         /// <para>
         /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
-        /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean
-        /// (“ko”). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
+        /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese
+        /// ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish
+        /// ("tr"). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
         /// want support in that language.
         /// </para>
         /// </summary>
@@ -287,6 +342,34 @@ namespace Amazon.AWSSupport.Model
         internal bool IsSetSubject()
         {
             return this._subject != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UploadIds. 
+        /// <para>
+        /// A list of upload IDs that identify attachments to add to the case. Each <c>uploadId</c>
+        /// is returned by the <a>GetAttachmentUploadLinks</a> operation. The upload must reach
+        /// the <c>attachment-ready</c> state by calling <a>CompleteAttachmentUpload</a> before
+        /// it can be passed here. Use <c>uploadIds</c> to attach files of any supported size,
+        /// including files larger than 5 MB.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> UploadIds
+        {
+            get { return this._uploadIds; }
+            set { this._uploadIds = value; }
+        }
+
+        // Check to see if UploadIds property is set
+        internal bool IsSetUploadIds()
+        {
+            return this._uploadIds != null && (this._uploadIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

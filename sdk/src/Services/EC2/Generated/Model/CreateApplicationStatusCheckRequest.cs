@@ -37,31 +37,32 @@ namespace Amazon.EC2.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You can create a maximum of 50 application status checks per account.
+    /// You can create a maximum of 50 application status checks for each account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Health checks do not start until you associate the check with instances or tags using
-    /// <c>AssociateApplicationStatusCheck</c>.
+    /// You must associate the check with instances or tags using <c>AssociateApplicationStatusCheck</c>
+    /// before health checks start.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <c>Timeout</c> value must be less than the <c>Interval</c> value.
+    /// You must set the <c>Timeout</c> value to less than the <c>Interval</c> value.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <c>Path</c> must start with a forward slash (<c>/</c>). Default: <c>/</c>.
+    /// You must start the <c>Path</c> with a forward slash (<c>/</c>). Default: <c>/</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you do not specify <c>Aggregation</c>, it defaults to <c>included</c>, which means
-    /// the check contributes to the instance-level application status.
+    /// You can specify <c>Aggregation</c> as <c>included</c> or <c>excluded</c>. If you do
+    /// not specify a value, it defaults to <c>included</c>, which means the check contributes
+    /// to the instance-level application status.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
-    /// is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
-    /// is 300 seconds.
+    /// You can use the following default values: <c>Interval</c> is 60 seconds, <c>Timeout</c>
+    /// is 6 seconds, <c>FailureThreshold</c> is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c>
+    /// is <c>200</c>, <c>InitializationGracePeriodSeconds</c> is 300 seconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -115,8 +116,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier that you provide to ensure that the operation
+        /// completes no more than one time. If you retry a request with the same token, the service
+        /// ignores the request but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a>.
         /// </para>
         /// </summary>

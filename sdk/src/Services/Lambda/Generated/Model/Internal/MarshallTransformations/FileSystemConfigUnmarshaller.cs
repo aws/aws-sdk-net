@@ -68,6 +68,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     unmarshalledObject.LocalMountPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("S3FilesConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = S3FilesConfigUnmarshaller.Instance;
+                    unmarshalledObject.S3FilesConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

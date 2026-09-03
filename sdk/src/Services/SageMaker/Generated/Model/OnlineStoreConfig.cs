@@ -99,8 +99,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>Standard_V2</c>: A managed low latency data store for feature groups that supports
+        /// partial updates to individual features using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a>
+        /// operation. Choose this storage type at feature group creation time if your use case
+        /// requires updating specific feature values without rewriting the entire record.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>InMemory</c>: A managed data store for feature groups that supports very low latency
-        /// retrieval. 
+        /// retrieval.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -46,6 +46,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetApprovalAction())
+            {
+                context.Writer.WritePropertyName("approvalAction");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ApprovalActionMarshaller.Instance;
+                marshaller.Marshall(requestObject.ApprovalAction, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCurrentPage())
             {
                 context.Writer.WritePropertyName("currentPage");

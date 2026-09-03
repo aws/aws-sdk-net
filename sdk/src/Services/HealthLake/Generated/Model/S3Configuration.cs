@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// The configuration of the S3 bucket for either an import or export job. This includes
-    /// assigning access permissions.
+    /// The configuration of the Amazon S3 bucket for either an import or export job. This
+    /// includes assigning access permissions.
     /// </summary>
     public partial class S3Configuration
     {
@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Key Management Service (KMS) key ID used to access the S3 bucket. 
+        /// The Key Management Service (KMS) key ID used to access the Amazon S3 bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=400)]
@@ -60,8 +60,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The <c>S3Uri</c> is the user-specified S3 location of the FHIR data to be imported
-        /// into AWS HealthLake.
+        /// The <c>S3Uri</c> is the user-specified Amazon S3 location of the FHIR data to be imported
+        /// into HealthLake.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

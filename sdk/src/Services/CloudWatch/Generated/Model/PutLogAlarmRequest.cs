@@ -85,6 +85,7 @@ namespace Amazon.CloudWatch.Model
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private double? _threshold;
         private string _treatMissingData;
+        private WarmUpConfiguration _warmUpConfiguration;
 
         /// <summary>
         /// Gets and sets the property ActionLogLineCount. 
@@ -507,6 +508,31 @@ namespace Amazon.CloudWatch.Model
         internal bool IsSetTreatMissingData()
         {
             return this._treatMissingData != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WarmUpConfiguration. 
+        /// <para>
+        /// The warm-up configuration for the alarm. A warm-up period delays alarm evaluation
+        /// after you create or update the alarm. The warm-up period reduces alarm noise from
+        /// missing data while a new resource or service starts publishing data.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/alarm-warm-up.html">Alarm
+        /// warm-up periods</a> in the <i>Amazon CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        public WarmUpConfiguration WarmUpConfiguration
+        {
+            get { return this._warmUpConfiguration; }
+            set { this._warmUpConfiguration = value; }
+        }
+
+        // Check to see if WarmUpConfiguration property is set
+        internal bool IsSetWarmUpConfiguration()
+        {
+            return this._warmUpConfiguration != null;
         }
 
     }

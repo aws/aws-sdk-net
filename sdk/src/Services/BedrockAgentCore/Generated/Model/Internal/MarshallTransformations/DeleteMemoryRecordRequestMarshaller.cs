@@ -68,7 +68,11 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetMemoryRecordId())
                 throw new AmazonBedrockAgentCoreException("Request object does not have required field MemoryRecordId set");
             request.AddPathResource("{memoryRecordId}", StringUtils.FromString(publicRequest.MemoryRecordId));
+            
+            if (publicRequest.IsSetNamespace())
+                request.Parameters.Add("namespace", StringUtils.FromString(publicRequest.Namespace));
             request.ResourcePath = "/memories/{memoryId}/memoryRecords/{memoryRecordId}";
+            request.UseQueryString = true;
 
             return request;
         }

@@ -44,7 +44,7 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public PodIdentityAssociation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            PodIdentityAssociation unmarshalledObject = new PodIdentityAssociation();
+            var unmarshalledObject = new PodIdentityAssociation();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

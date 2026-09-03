@@ -79,6 +79,10 @@
           "type": "integer",
           "description": "The maximum depth allowed when reading JSON responses. The default is 256. Increase this value if you encounter AmazonUnmarshallingException due to deeply nested response structures."
         },
+        "DisableClockSkewCorrection": {
+          "type": "boolean",
+          "description": "If set to true, clock skew correction is disabled for the client (no clock skew calculation is performed and no correction is applied to signing timestamps)."
+        },
         "LogMetrics": {
           "type": "boolean",
           "description": "Flag on whether to log metrics for service calls."

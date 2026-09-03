@@ -67,7 +67,7 @@ namespace Amazon.DevOpsAgent.Model
         /// The unique identifier for the agent space where the Trigger will be created
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AgentSpaceId
         {
             get { return this._agentSpaceId; }
@@ -86,7 +86,7 @@ namespace Amazon.DevOpsAgent.Model
         /// A unique, case-sensitive identifier used for idempotent Trigger creation
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }

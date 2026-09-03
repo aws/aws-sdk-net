@@ -40,7 +40,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Expires. 
         /// <para>
-        /// The number of seconds the URL from <a>CreateTestGridUrlResult$url</a> stays active.
+        /// The number of seconds the URL stays active from creation.
         /// </para>
         /// </summary>
         public DateTime? Expires
@@ -58,7 +58,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds,
+        /// A signed URL, expiring in the time specified by the <c>CreateTestGridUrlRequest</c>,
         /// to be passed to a <c>RemoteWebDriver</c>. 
         /// </para>
         /// </summary>

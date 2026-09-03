@@ -45,6 +45,7 @@ namespace Amazon.Util
         public const string UserAgentHeader = "User-Agent";
         public const string LocationHeader = "location";
         public const string DateHeader = "Date";
+        public const string AgeHeader = "Age";
         public const string RangeHeader = "Range";
         public const string ExpectHeader = "Expect";
         public const string AcceptHeader = "Accept";

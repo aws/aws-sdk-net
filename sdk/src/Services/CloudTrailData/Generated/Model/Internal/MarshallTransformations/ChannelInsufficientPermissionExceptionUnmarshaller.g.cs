@@ -53,20 +53,7 @@ namespace Amazon.CloudTrailData.Model.Internal.MarshallTransformations
         /// </summary>
         public ChannelInsufficientPermissionException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            if (context.Stream.Length > 0)
-            {
-                context.Read(ref reader);
-            }
-
-            ChannelInsufficientPermissionException unmarshalledObject = new ChannelInsufficientPermissionException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-
-            int targetDepth = context.CurrentDepth;
-            if (context.Stream.Length > 0)
-            {
-                while (context.ReadAtDepth(targetDepth, ref reader))
-                {
-                }
-            }
+            var unmarshalledObject = new ChannelInsufficientPermissionException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
 
             return unmarshalledObject;
         }

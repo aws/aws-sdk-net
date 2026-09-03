@@ -45,7 +45,7 @@ namespace Amazon.Lambda.Model
         /// The size of the function's <c>/tmp</c> directory.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=512, Max=10240)]
+        [AWSProperty(Required=true, Min=512, Max=32768)]
         public int? Size
         {
             get { return this._size; }

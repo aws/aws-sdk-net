@@ -30,14 +30,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// 
+    /// Describes a value for a resource attribute that is a Base64-encoded binary data object.
     /// </summary>
     public partial class SecureBlobAttributeValue
     {
         private MemoryStream _value;
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// The attribute value.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public MemoryStream Value

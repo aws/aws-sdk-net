@@ -42,6 +42,7 @@ namespace Amazon.TimestreamInfluxDB.Model
         private string _dbParameterGroupIdentifier;
         private DbStorageType _dbStorageType;
         private ClusterDeploymentType _deploymentType;
+        private string _effectiveDbParameterGroupIdentifier;
         private string _endpoint;
         private EngineType _engineType;
         private FailoverMode _failoverMode;
@@ -211,6 +212,29 @@ namespace Amazon.TimestreamInfluxDB.Model
         internal bool IsSetDeploymentType()
         {
             return this._deploymentType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EffectiveDbParameterGroupIdentifier. 
+        /// <para>
+        /// The ID of the DB parameter group actually applied to your DB cluster. When the service
+        /// applies optimized defaults, it creates a service-managed DB parameter group and this
+        /// field reflects that group, while dbParameterGroupIdentifier reflects the customer-provided
+        /// DB parameter group. When no service-managed DB parameter group is applied, this value
+        /// matches dbParameterGroupIdentifier.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=3, Max=64)]
+        public string EffectiveDbParameterGroupIdentifier
+        {
+            get { return this._effectiveDbParameterGroupIdentifier; }
+            set { this._effectiveDbParameterGroupIdentifier = value; }
+        }
+
+        // Check to see if EffectiveDbParameterGroupIdentifier property is set
+        internal bool IsSetEffectiveDbParameterGroupIdentifier()
+        {
+            return this._effectiveDbParameterGroupIdentifier != null;
         }
 
         /// <summary>

@@ -35,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class AgentInfo
     {
         private DateTime? _acceptedByAgentTimestamp;
+        private string _activeRegion;
         private int? _afterContactWorkDuration;
         private DateTime? _afterContactWorkEndTimestamp;
         private DateTime? _afterContactWorkStartTimestamp;
@@ -65,6 +66,27 @@ namespace Amazon.Connect.Model
         internal bool IsSetAcceptedByAgentTimestamp()
         {
             return this._acceptedByAgentTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActiveRegion. 
+        /// <para>
+        /// The Region where the agent was active when they handled the contact. For Amazon Connect
+        /// Global Resiliency instances enabled for global routing, this indicates the Region
+        /// in which the agent's session was established at the time of the contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string ActiveRegion
+        {
+            get { return this._activeRegion; }
+            set { this._activeRegion = value; }
+        }
+
+        // Check to see if ActiveRegion property is set
+        internal bool IsSetActiveRegion()
+        {
+            return this._activeRegion != null;
         }
 
         /// <summary>

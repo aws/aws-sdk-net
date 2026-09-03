@@ -59,11 +59,14 @@ public class GenerationContext
     /// <summary>The client class name without "Client" suffix (e.g. "AmazonCloudTrailData").</summary>
     public string ClientName { get; }
 
-    /// <summary>The service's API version from the service shape (e.g. "2021-08-11"). Used in generated doc links.</summary>
+    /// <summary>The service's API version from the service shape (e.g. "2021-08-11").</summary>
     public string ApiVersion { get; }
 
-    /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data"). Used in generated doc links.</summary>
+    /// <summary>The service's <c>endpointPrefix</c> from the <c>aws.api#service</c> trait (e.g. "cloudtrail-data").</summary>
     public string EndpointPrefix { get; }
+
+    /// <summary>The C2J <c>uid</c> slug (e.g. "sso-oidc-2019-06-10") used in generated doc links.</summary>
+    public string ServiceUid { get; }
 
     /// <summary>
     /// The signing name used as the service config's <c>AuthenticationServiceName</c> (e.g.
@@ -200,6 +203,10 @@ public class GenerationContext
         // name (some services, e.g. inspector-scan, omit endpointPrefix and rely on it).
         EndpointPrefix = (serviceTrait.EndpointPrefix ?? signingName).ToLowerInvariant();
 
+        // Use docId when modeled (some services override the default, e.g. CloudWatch → monitoring-...);
+        // otherwise derive from the sdkId slug + apiVersion.
+        ServiceUid = serviceTrait.DocId ?? $"{SdkId.Replace(' ', '-').ToLowerInvariant()}-{ApiVersion}";
+
         // AuthenticationServiceName is the resolved signing name.
         AuthenticationServiceName = signingName;
 
@@ -241,6 +248,16 @@ public class GenerationContext
             {
                 structures[shapeId] = structure;
             }
+        }
+
+        // smithy.api#Unit as a union-member target gets a per-service empty model class: C2J
+        // ships one, and the generated member properties reference it (e.g. lambda-microvms
+        // PortSpecification.AllPorts). Prelude shapes never appear in index.Shapes, so the loop
+        // above cannot collect it. Operation input/output references to Unit don't count — those
+        // emit empty Request/Response classes instead (see ResolveStructure).
+        if (index.Shapes.Values.OfType<StructureShape>().Any(s => s.Members.Values.Any(m => m.Target == ShapeId.Unit)))
+        {
+            structures[ShapeId.Unit] = new StructureShape();
         }
 
         Structures = structures;
@@ -356,8 +373,17 @@ public class GenerationContext
             var input = ResolveStructure(index, operation.Input, "input", operationId);
             var output = ResolveStructure(index, operation.Output, "output", operationId);
 
-            var errors = new List<OperationError>(operation.Errors.Count);
-            foreach (var errorId in operation.Errors)
+            // A service's errors apply to every operation it contains, so they're folded into each
+            // operation's own list here. Deduped and sorted by name.
+            var errorIds = operation.Errors
+                .Concat(index.Service.Errors)
+                .Distinct()
+                .OrderBy(id => id.Name, StringComparer.Ordinal)
+                .ThenBy(id => id.Namespace, StringComparer.Ordinal)
+                .ThenBy(id => id.Member, StringComparer.Ordinal);
+
+            var errors = new List<OperationError>();
+            foreach (var errorId in errorIds)
             {
                 errors.Add(new OperationError(ResolveStructure(index, errorId, "error", operationId), errorId));
             }

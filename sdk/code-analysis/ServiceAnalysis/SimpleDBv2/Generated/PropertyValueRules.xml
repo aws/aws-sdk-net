@@ -25,7 +25,7 @@
   <property-value-rule>
     <property>Amazon.SimpleDBv2.Model.GetExportResponse.FailureCode</property>
     <min>1</min>
-    <pattern>[a-zA-Z0-9]+</pattern>
+    <pattern>^[a-zA-Z0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleDBv2.Model.GetExportResponse.FailureMessage</property>
@@ -39,11 +39,11 @@
     <property>Amazon.SimpleDBv2.Model.GetExportResponse.S3Bucket</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+</pattern>
+    <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleDBv2.Model.GetExportResponse.S3BucketOwner</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleDBv2.Model.GetExportResponse.S3KeyPrefix</property>
@@ -85,11 +85,11 @@
     <property>Amazon.SimpleDBv2.Model.StartDomainExportRequest.S3Bucket</property>
     <min>3</min>
     <max>255</max>
-    <pattern>[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+</pattern>
+    <pattern>^[a-z0-9A-Z]+[\.\-\w]*[a-z0-9A-Z]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleDBv2.Model.StartDomainExportRequest.S3BucketOwner</property>
-    <pattern>[0-9]{12}</pattern>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleDBv2.Model.StartDomainExportRequest.S3KeyPrefix</property>

@@ -50,7 +50,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that grants AWS HealthLake access to the input data.
+        /// The Amazon Resource Name (ARN) that grants HealthLake access to the input data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

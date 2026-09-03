@@ -74,6 +74,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.HttpUrlProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("influxDBProperties", targetDepth, ref reader))
+                {
+                    var unmarshaller = InfluxDBDestinationPropertiesUnmarshaller.Instance;
+                    unmarshalledObject.InfluxDBProperties = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("lastUpdatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

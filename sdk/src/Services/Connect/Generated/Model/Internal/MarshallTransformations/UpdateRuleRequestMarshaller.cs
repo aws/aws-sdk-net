@@ -107,6 +107,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPreEvaluationFilters())
+            {
+                context.Writer.WritePropertyName("PreEvaluationFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PreEvaluationFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PreEvaluationFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPublishStatus())
             {
                 context.Writer.WritePropertyName("PublishStatus");

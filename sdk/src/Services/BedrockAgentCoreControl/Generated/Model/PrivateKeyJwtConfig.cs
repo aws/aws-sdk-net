@@ -30,9 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource
-    /// and signingAlgorithm are required (enforced server-side). On Update: all fields are
-    /// optional — only provided fields are updated.
+    /// The private key configuration for private_key_jwt client authentication.
     /// </summary>
     public partial class PrivateKeyJwtConfig
     {

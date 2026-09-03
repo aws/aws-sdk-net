@@ -31,7 +31,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Represents a policy generation request within the AgentCore Policy system. Tracks
-    /// the AI-powered conversion of natural language descriptions into Cedar policy statements,
+    /// the AI-powered conversion of natural language descriptions into Dogwood policy statements,
     /// enabling users to author policies by describing authorization requirements in plain
     /// English. The generation process analyzes the natural language input along with the
     /// Gateway's tool context and Cedar schema to produce one or more validated policy options.

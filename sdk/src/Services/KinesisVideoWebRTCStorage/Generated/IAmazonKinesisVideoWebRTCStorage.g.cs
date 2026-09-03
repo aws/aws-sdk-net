@@ -135,7 +135,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
         /// The specified resource is not found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2018-05-10/JoinStorageSession">REST API Reference for JoinStorageSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSession">REST API Reference for JoinStorageSession Operation</seealso>
         JoinStorageSessionResponse JoinStorageSession(JoinStorageSessionRequest request);
 #endif
 
@@ -239,7 +239,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
         /// The specified resource is not found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2018-05-10/JoinStorageSession">REST API Reference for JoinStorageSession Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSession">REST API Reference for JoinStorageSession Operation</seealso>
         Task<JoinStorageSessionResponse> JoinStorageSessionAsync(JoinStorageSessionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
 #if NETFRAMEWORK
@@ -281,7 +281,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
         /// The specified resource is not found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2018-05-10/JoinStorageSessionAsViewer">REST API Reference for JoinStorageSessionAsViewer Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSessionAsViewer">REST API Reference for JoinStorageSessionAsViewer Operation</seealso>
         JoinStorageSessionAsViewerResponse JoinStorageSessionAsViewer(JoinStorageSessionAsViewerRequest request);
 #endif
 
@@ -326,7 +326,7 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// <exception cref="Amazon.KinesisVideoWebRTCStorage.Model.ResourceNotFoundException">
         /// The specified resource is not found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesisvideo-2018-05-10/JoinStorageSessionAsViewer">REST API Reference for JoinStorageSessionAsViewer Operation</seealso>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-webrtc-storage-2018-05-10/JoinStorageSessionAsViewer">REST API Reference for JoinStorageSessionAsViewer Operation</seealso>
         Task<JoinStorageSessionAsViewerResponse> JoinStorageSessionAsViewerAsync(JoinStorageSessionAsViewerRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>

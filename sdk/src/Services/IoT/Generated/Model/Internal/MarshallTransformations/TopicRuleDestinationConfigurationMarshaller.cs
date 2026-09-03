@@ -57,6 +57,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetInfluxDBConfiguration())
+            {
+                context.Writer.WritePropertyName("influxDBConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InfluxDBDestinationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.InfluxDBConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("vpcConfiguration");

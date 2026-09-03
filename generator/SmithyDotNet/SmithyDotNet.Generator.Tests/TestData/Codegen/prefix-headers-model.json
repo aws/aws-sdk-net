@@ -1,0 +1,53 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#SendApiAsset" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#MapOfString": {
+      "type": "map",
+      "key": { "target": "smithy.api#String" },
+      "value": { "target": "smithy.api#String" }
+    },
+    "com.example#SendApiAsset": {
+      "type": "operation",
+      "input": { "target": "com.example#SendApiAssetRequest" },
+      "output": { "target": "com.example#SendApiAssetResponse" },
+      "errors": [ { "target": "com.example#ThrottlingError" } ],
+      "traits": { "smithy.api#http": { "uri": "/v1", "method": "POST" } }
+    },
+    "com.example#SendApiAssetRequest": {
+      "type": "structure",
+      "members": {
+        "body":           { "target": "smithy.api#String", "traits": { "smithy.api#httpPayload": {} } },
+        "assetId":        { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-amzn-dataexchange-asset-id", "smithy.api#required": {} } },
+        "requestHeaders": { "target": "com.example#MapOfString", "traits": { "smithy.api#httpPrefixHeaders": "x-amzn-dataexchange-header-" } }
+      },
+      "traits": { "smithy.api#input": {} }
+    },
+    "com.example#SendApiAssetResponse": {
+      "type": "structure",
+      "members": {
+        "body":            { "target": "smithy.api#String", "traits": { "smithy.api#httpPayload": {} } },
+        "responseHeaders": { "target": "com.example#MapOfString", "traits": { "smithy.api#httpPrefixHeaders": "x-amzn-dataexchange-header-" } }
+      },
+      "traits": { "smithy.api#output": {} }
+    },
+    "com.example#ThrottlingError": {
+      "type": "structure",
+      "members": {
+        "message":           { "target": "smithy.api#String" },
+        "retryAfterHeaders": { "target": "com.example#MapOfString", "traits": { "smithy.api#httpPrefixHeaders": "x-amzn-ratelimit-" } }
+      },
+      "traits": { "smithy.api#error": "client" }
+    }
+  }
+}

@@ -76,6 +76,23 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDnsOptions())
+            {
+                context.Writer.WritePropertyName("dnsOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DnsOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DnsOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPrivateDnsEnabled())
+            {
+                context.Writer.WritePropertyName("privateDnsEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.PrivateDnsEnabled.Value);
+            }
+
             if(publicRequest.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");

@@ -24,12 +24,34 @@ public static class AnnotationTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httplabel-trait" /></remarks>
     public static bool IsHttpLabel(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpLabel");
 
+    /// <remarks><see href="https://smithy.io/2.0/spec/endpoint-traits.html#hostlabel-trait" /></remarks>
+    public static bool IsHostLabel(this Shape shape) => shape.Traits.ContainsKey("smithy.api#hostLabel");
+
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httppayload-trait" /></remarks>
     public static bool IsHttpPayload(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpPayload");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httpresponsecode-trait" /></remarks>
+    public static bool IsHttpResponseCode(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpResponseCode");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#httpqueryparams-trait" /></remarks>
+    public static bool IsHttpQueryParams(this Shape shape) => shape.Traits.ContainsKey("smithy.api#httpQueryParams");
 
     /// <remarks><see href="https://smithy.io/2.0/spec/documentation-traits.html#sensitive-trait" /></remarks>
     public static bool IsSensitive(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sensitive");
 
     /// <remarks><see href="https://smithy.io/2.0/spec/behavior-traits.html#idempotencytoken-trait" /></remarks>
     public static bool IsIdempotencyToken(this Shape shape) => shape.Traits.ContainsKey("smithy.api#idempotencyToken");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#streaming-trait" /></remarks>
+    public static bool IsStreaming(this Shape shape) => shape.Traits.ContainsKey("smithy.api#streaming");
+
+    /// <remarks><see href="https://smithy.io/2.0/spec/type-refinement-traits.html#sparse-trait" /></remarks>
+    public static bool IsSparse(this Shape shape) => shape.Traits.ContainsKey("smithy.api#sparse");
+
+    /// <summary>
+    /// Whether a blob (or a member targeting one) requires the body length to be known up front,
+    /// forbidding chunked Transfer-Encoding. Drives the marshaller to require a seekable stream.
+    /// </summary>
+    /// <remarks><see href="https://smithy.io/2.0/spec/streaming.html#requireslength-trait" /></remarks>
+    public static bool RequiresLength(this Shape shape) => shape.Traits.ContainsKey("smithy.api#requiresLength");
 }

@@ -236,8 +236,9 @@ namespace Amazon.AppIntegrationsService
 
 
         /// <summary>
-        /// Deletes the Application. Only Applications that don't have any Application Associations
-        /// can be deleted.
+        /// Deletes an application. If the application has associations, you must delete them
+        /// first. Alternatively, use the <c>force</c> option to delete the application and remove
+        /// its associations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApplication service method.</param>
         /// <param name="cancellationToken">
@@ -763,6 +764,10 @@ namespace Amazon.AppIntegrationsService
         /// <returns>The response from the UpdateApplication service method, as returned by AppIntegrationsService.</returns>
         /// <exception cref="Amazon.AppIntegrationsService.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.AppIntegrationsService.Model.ConflictException">
+        /// The request conflicts with the current state of the resource. Verify the application's
+        /// current state and retry the request.
         /// </exception>
         /// <exception cref="Amazon.AppIntegrationsService.Model.InternalServiceErrorException">
         /// Request processing failed due to an error or failure with the service.

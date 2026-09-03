@@ -37,13 +37,18 @@ namespace Amazon.AWSSupport.Model
     /// 
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-    /// Amazon Web Services Support API. 
+    /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+    /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+    /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+    /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+    /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+    /// On-Ramp, or Enterprise Support plan.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+    /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+    /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -52,6 +57,7 @@ namespace Amazon.AWSSupport.Model
     public partial class DescribeSupportedLanguagesRequest : AmazonAWSSupportRequest
     {
         private string _categoryCode;
+        private bool? _dryRun;
         private string _issueType;
         private string _serviceCode;
 
@@ -74,6 +80,27 @@ namespace Amazon.AWSSupport.Model
         internal bool IsSetCategoryCode()
         {
             return this._categoryCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specifies whether to validate the request without actually returning supported languages.
+        /// When set to <c>true</c>, the request is validated but no languages are returned, and
+        /// the operation returns a <c>DryRunOperationException</c>. When omitted or set to <c>false</c>,
+        /// the request runs normally.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>

@@ -2913,6 +2913,52 @@ namespace Amazon.IoTSiteWise
 
 
     /// <summary>
+    /// Constants used for properties of type MountStorageType.
+    /// </summary>
+    public class MountStorageType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SHARED_STORAGE for MountStorageType
+        /// </summary>
+        public static readonly MountStorageType SHARED_STORAGE = new MountStorageType("SHARED_STORAGE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MountStorageType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MountStorageType FindValue(string value)
+        {
+            return FindValue<MountStorageType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MountStorageType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Permission.
     /// </summary>
     public class Permission : ConstantClass
@@ -4028,6 +4074,64 @@ namespace Amazon.IoTSiteWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SearchType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageClass.
+    /// </summary>
+    public class StorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant STANDARD_1 for StorageClass
+        /// </summary>
+        public static readonly StorageClass STANDARD_1 = new StorageClass("STANDARD_1");
+        /// <summary>
+        /// Constant STANDARD_2 for StorageClass
+        /// </summary>
+        public static readonly StorageClass STANDARD_2 = new StorageClass("STANDARD_2");
+        /// <summary>
+        /// Constant THROUGHPUT_1 for StorageClass
+        /// </summary>
+        public static readonly StorageClass THROUGHPUT_1 = new StorageClass("THROUGHPUT_1");
+        /// <summary>
+        /// Constant THROUGHPUT_2 for StorageClass
+        /// </summary>
+        public static readonly StorageClass THROUGHPUT_2 = new StorageClass("THROUGHPUT_2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageClass FindValue(string value)
+        {
+            return FindValue<StorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageClass(string value)
         {
             return FindValue(value);
         }

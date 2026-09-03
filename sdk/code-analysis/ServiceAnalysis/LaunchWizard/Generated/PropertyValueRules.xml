@@ -190,6 +190,12 @@
     <pattern>(([A-Za-z0-9][a-zA-Z0-9-]*)|(\d+\.\d+\.\d+))</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LaunchWizard.Model.DelegatedAdminConstraint.ServicePrincipal</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-z0-9.-]+\.amazonaws\.com(\.cn)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LaunchWizard.Model.DeploymentData.Id</property>
     <min>2</min>
     <max>128</max>

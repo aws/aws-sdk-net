@@ -16237,6 +16237,30 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlG6Xlarge = new OptimizationJobDeploymentInstanceType("ml.g6.xlarge");
         /// <summary>
+        /// Constant MlG712xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG712xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.12xlarge");
+        /// <summary>
+        /// Constant MlG724xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG724xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.24xlarge");
+        /// <summary>
+        /// Constant MlG72xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG72xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.2xlarge");
+        /// <summary>
+        /// Constant MlG748xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG748xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.48xlarge");
+        /// <summary>
+        /// Constant MlG74xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG74xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.4xlarge");
+        /// <summary>
+        /// Constant MlG78xlarge for OptimizationJobDeploymentInstanceType
+        /// </summary>
+        public static readonly OptimizationJobDeploymentInstanceType MlG78xlarge = new OptimizationJobDeploymentInstanceType("ml.g7.8xlarge");
+        /// <summary>
         /// Constant MlG7e12xlarge for OptimizationJobDeploymentInstanceType
         /// </summary>
         public static readonly OptimizationJobDeploymentInstanceType MlG7e12xlarge = new OptimizationJobDeploymentInstanceType("ml.g7e.12xlarge");
@@ -16582,6 +16606,10 @@ namespace Amazon.SageMaker
         /// Constant IAM for PartnerAppAuthType
         /// </summary>
         public static readonly PartnerAppAuthType IAM = new PartnerAppAuthType("IAM");
+        /// <summary>
+        /// Constant IDC for PartnerAppAuthType
+        /// </summary>
+        public static readonly PartnerAppAuthType IDC = new PartnerAppAuthType("IDC");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -22950,6 +22978,10 @@ namespace Amazon.SageMaker
         /// Constant Standard for StorageType
         /// </summary>
         public static readonly StorageType Standard = new StorageType("Standard");
+        /// <summary>
+        /// Constant Standard_V2 for StorageType
+        /// </summary>
+        public static readonly StorageType Standard_V2 = new StorageType("Standard_V2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -25318,6 +25350,38 @@ namespace Amazon.SageMaker
         /// Constant MlG68xlarge for TransformInstanceType
         /// </summary>
         public static readonly TransformInstanceType MlG68xlarge = new TransformInstanceType("ml.g6.8xlarge");
+        /// <summary>
+        /// Constant MlG6e12xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e12xlarge = new TransformInstanceType("ml.g6e.12xlarge");
+        /// <summary>
+        /// Constant MlG6e16xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e16xlarge = new TransformInstanceType("ml.g6e.16xlarge");
+        /// <summary>
+        /// Constant MlG6e24xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e24xlarge = new TransformInstanceType("ml.g6e.24xlarge");
+        /// <summary>
+        /// Constant MlG6e2xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e2xlarge = new TransformInstanceType("ml.g6e.2xlarge");
+        /// <summary>
+        /// Constant MlG6e48xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e48xlarge = new TransformInstanceType("ml.g6e.48xlarge");
+        /// <summary>
+        /// Constant MlG6e4xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e4xlarge = new TransformInstanceType("ml.g6e.4xlarge");
+        /// <summary>
+        /// Constant MlG6e8xlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6e8xlarge = new TransformInstanceType("ml.g6e.8xlarge");
+        /// <summary>
+        /// Constant MlG6eXlarge for TransformInstanceType
+        /// </summary>
+        public static readonly TransformInstanceType MlG6eXlarge = new TransformInstanceType("ml.g6e.xlarge");
         /// <summary>
         /// Constant MlG6Xlarge for TransformInstanceType
         /// </summary>

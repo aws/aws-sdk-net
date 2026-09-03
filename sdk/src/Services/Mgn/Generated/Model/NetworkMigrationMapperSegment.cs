@@ -287,7 +287,9 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SegmentType. 
         /// <para>
-        /// The type of the segment, such as VPC, subnet, or security group.
+        /// The category of the network migration segment. A segment groups the network constructs
+        /// (such as VPCs, subnets, and security groups) that are migrated together. Valid values:
+        /// <c>WORKLOAD</c>, <c>APPLIANCE</c>.
         /// </para>
         /// </summary>
         public NetworkMigrationMapperSegmentType SegmentType

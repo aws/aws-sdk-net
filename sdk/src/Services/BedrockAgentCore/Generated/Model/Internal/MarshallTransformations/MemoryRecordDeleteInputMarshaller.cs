@@ -52,6 +52,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.MemoryRecordId);
             }
 
+            if(requestObject.IsSetNamespace())
+            {
+                context.Writer.WritePropertyName("namespace");
+                context.Writer.WriteStringValue(requestObject.Namespace);
+            }
+
         }
 
         /// <summary>

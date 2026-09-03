@@ -58,6 +58,18 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.AccountType);
             }
 
+            if(requestObject.IsSetAgentElevatedRoleArn())
+            {
+                context.Writer.WritePropertyName("agentElevatedRoleArn");
+                context.Writer.WriteStringValue(requestObject.AgentElevatedRoleArn);
+            }
+
+            if(requestObject.IsSetAgentElevatedRoleArnStatus())
+            {
+                context.Writer.WritePropertyName("agentElevatedRoleArnStatus");
+                context.Writer.WriteStringValue(requestObject.AgentElevatedRoleArnStatus);
+            }
+
             if(requestObject.IsSetAssumableRoleArn())
             {
                 context.Writer.WritePropertyName("assumableRoleArn");

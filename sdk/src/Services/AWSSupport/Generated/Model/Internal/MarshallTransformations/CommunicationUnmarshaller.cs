@@ -56,6 +56,12 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("attachments", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AttachmentDetails, AttachmentDetailsUnmarshaller>(AttachmentDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Attachments = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("attachmentSet", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<AttachmentDetails, AttachmentDetailsUnmarshaller>(AttachmentDetailsUnmarshaller.Instance);

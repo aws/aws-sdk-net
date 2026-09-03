@@ -176,6 +176,16 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     context.Writer.WriteTextString("TreatMissingData");
                     context.Writer.WriteTextString(publicRequest.TreatMissingData);
                 }
+                if (publicRequest.IsSetWarmUpConfiguration())
+                {
+                    context.Writer.WriteTextString("WarmUpConfiguration");
+                    context.Writer.WriteStartMap(null);
+
+                    var marshaller = WarmUpConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.WarmUpConfiguration, context);
+
+                    context.Writer.WriteEndMap();
+                }
                 writer.WriteEndMap();
 #if !NETFRAMEWORK
                 // Encode directly into a pooled buffer instead of allocating a new byte[] per request.

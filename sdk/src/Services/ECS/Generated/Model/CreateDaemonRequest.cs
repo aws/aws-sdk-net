@@ -58,6 +58,7 @@ namespace Amazon.ECS.Model
         private List<string> _capacityProviderArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _clusterArn;
+        private bool? _critical;
         private string _daemonName;
         private string _daemonTaskDefinitionArn;
         private DaemonDeploymentConfiguration _deploymentConfiguration;
@@ -127,6 +128,44 @@ namespace Amazon.ECS.Model
         internal bool IsSetClusterArn()
         {
             return this._clusterArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Critical. 
+        /// <para>
+        /// If the <c>critical</c> parameter of a daemon is <c>true</c>, and the daemon task fails,
+        /// stops, or becomes unhealthy, Amazon ECS drains the container instance and stops the
+        /// other tasks running on it. If the <c>critical</c> parameter is <c>false</c>, the daemon
+        /// task failure doesn't affect the other tasks on the instance. The default value is
+        /// <c>true</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// A non-critical daemon doesn't block instance registration. The container instance
+        /// becomes active and continues to run your other tasks, whether the daemon task fails
+        /// during scale-out or during a deployment.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS emits an EventBridge event when a daemon task fails to start, for both
+        /// critical and non-critical daemons.
+        /// </para>
+        ///  
+        /// <para>
+        /// Daemon task launch failures during a deployment are still counted by the deployment
+        /// circuit breaker. The circuit breaker can roll back an unstable target revision.
+        /// </para>
+        /// </summary>
+        public bool? Critical
+        {
+            get { return this._critical; }
+            set { this._critical = value; }
+        }
+
+        // Check to see if Critical property is set
+        internal bool IsSetCritical()
+        {
+            return this._critical.HasValue; 
         }
 
         /// <summary>

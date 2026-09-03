@@ -38,9 +38,11 @@ namespace Amazon.SocialMessaging.Model
     public partial class UpdateWhatsAppFlowRequest : AmazonSocialMessagingRequest
     {
         private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _endpointUri;
         private string _flowId;
         private string _flowName;
         private string _id;
+        private string _metaAppId;
 
         /// <summary>
         /// Gets and sets the property Categories. 
@@ -64,6 +66,26 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetCategories()
         {
             return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointUri. 
+        /// <para>
+        /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri
+        /// and called by Meta directly. When omitted, the Flow's endpoint is unchanged.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string EndpointUri
+        {
+            get { return this._endpointUri; }
+            set { this._endpointUri = value; }
+        }
+
+        // Check to see if EndpointUri property is set
+        internal bool IsSetEndpointUri()
+        {
+            return this._endpointUri != null;
         }
 
         /// <summary>
@@ -121,6 +143,30 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetaAppId. 
+        /// <para>
+        /// Optional Meta app ID to attach to the Flow. Meta signs data-exchange requests with
+        /// the attached app's secret, so attaching your own app is what enables X-Hub-Signature-256
+        /// and flow_token_signature verification at your endpoint. Meta requires the app to be
+        /// owned by the same business that owns the WABA. Attaching your own app is one-way:
+        /// the service's app cannot be re-attached afterwards. When omitted, the attached app
+        /// is unchanged. (Set via update because Meta ignores application_id at creation time.)
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public string MetaAppId
+        {
+            get { return this._metaAppId; }
+            set { this._metaAppId = value; }
+        }
+
+        // Check to see if MetaAppId property is set
+        internal bool IsSetMetaAppId()
+        {
+            return this._metaAppId != null;
         }
 
     }

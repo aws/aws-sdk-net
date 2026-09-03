@@ -31,8 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountPricingAttributes operation.
-    /// Set the pricing plan for your Amazon SES account. Use this operation to choose a billing
-    /// plan that packages multiple Amazon SES features at a single rate.
+    /// Set the pricing plan for your Amazon SES account.
     /// </summary>
     public partial class PutAccountPricingAttributesRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -41,25 +40,25 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Plan. 
         /// <para>
-        /// The pricing plan to apply to your Amazon SES account. Can be one of the following:
+        /// The pricing plan to apply to your Amazon SES account. For details about each plan,
+        /// see <a href="http://aws.amazon.com/ses/pricing/">Amazon SES Pricing</a>. Can be one
+        /// of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>NONE</c> – No pricing plan is applied; billing follows per-feature pricing.
+        ///  <c>NONE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ESSENTIALS</c> – Baseline Amazon SES capabilities and select premium features.
+        ///  <c>ESSENTIALS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>PRO</c> – Includes everything in <c>ESSENTIALS</c>, plus additional premium features
-        /// for growing senders.
+        ///  <c>PRO</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ENTERPRISE</c> – Includes everything in <c>PRO</c>, plus features intended for
-        /// large-scale senders.
+        ///  <c>ENTERPRISE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

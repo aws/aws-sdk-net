@@ -69,6 +69,30 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for ListCustomDetectionRuleAssociations operation
+        ///</summary>
+        public IListCustomDetectionRuleAssociationsPaginator ListCustomDetectionRuleAssociations(ListCustomDetectionRuleAssociationsRequest request) 
+        {
+            return new ListCustomDetectionRuleAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomDetectionRuleOrgConfigurations operation
+        ///</summary>
+        public IListCustomDetectionRuleOrgConfigurationsPaginator ListCustomDetectionRuleOrgConfigurations(ListCustomDetectionRuleOrgConfigurationsRequest request) 
+        {
+            return new ListCustomDetectionRuleOrgConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCustomDetectionRules operation
+        ///</summary>
+        public IListCustomDetectionRulesPaginator ListCustomDetectionRules(ListCustomDetectionRulesRequest request) 
+        {
+            return new ListCustomDetectionRulesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDetectors operation
         ///</summary>
         public IListDetectorsPaginator ListDetectors(ListDetectorsRequest request) 

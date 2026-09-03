@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistry.Model
 {
     /// <summary>
-    /// Base mixin for MCP server descriptor content
+    /// Descriptor that defines the content of an MCP (Model Context Protocol) server registry
+    /// record, including the server definition and its tool definitions. The content is validated
+    /// against the MCP protocol schema.
     /// </summary>
     public partial class McpServerDescriptor
     {
@@ -40,7 +42,10 @@ namespace Amazon.AgentRegistry.Model
         private DescriptorSource _source;
 
         /// <summary>
-        /// Gets and sets the property AdditionalData.
+        /// Gets and sets the property AdditionalData. 
+        /// <para>
+        ///  Additional data associated with the MCP server descriptor, such as tool definitions.
+        /// </para>
         /// </summary>
         public McpServerAdditionalData AdditionalData
         {
@@ -55,7 +60,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Data.
+        /// Gets and sets the property Data. 
+        /// <para>
+        ///  The MCP server descriptor content, serialized as descriptor payload data.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string Data
@@ -71,7 +79,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSchemaVersion.
+        /// Gets and sets the property DataSchemaVersion. 
+        /// <para>
+        ///  The schema version of the descriptor payload.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string DataSchemaVersion

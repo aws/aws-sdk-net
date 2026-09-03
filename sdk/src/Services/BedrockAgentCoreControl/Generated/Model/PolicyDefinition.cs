@@ -68,8 +68,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// An AgentCore policy statement that defines the access control rules. The statement
-        /// can be a Cedar policy or a guardrails definition.
+        /// The Dogwood policy statement that defines the access control rules. This policy definition
+        /// can include Dogwood policies and supports temporal conditions and information providers
+        /// such as guardrails.
         /// </para>
         /// </summary>
         public PolicyStatement Policy
@@ -89,7 +90,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// The generated policy asset information within the policy definition structure. This
         /// contains information identifying a generated policy asset from the AI-powered policy
-        /// generation process within the AgentCore Policy system. Each asset contains a Cedar
+        /// generation process within the AgentCore Policy system. Each asset contains a Dogwood
         /// policy statement generated from natural language input, along with associated metadata
         /// and analysis findings to help users evaluate and select the most appropriate policy
         /// option.

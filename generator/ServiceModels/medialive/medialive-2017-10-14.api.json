@@ -16725,6 +16725,14 @@
         "Width": {
           "shape": "__integer",
           "locationName": "width"
+        },
+        "CropRectangle": {
+          "shape": "VideoPositionRectangle",
+          "locationName": "cropRectangle"
+        },
+        "OutputPositionRectangle": {
+          "shape": "VideoPositionRectangle",
+          "locationName": "outputPositionRectangle"
         }
       },
       "required": [
@@ -17811,6 +17819,10 @@
         "AdditionalDestinations": {
           "shape": "__listOfAdditionalDestinations",
           "locationName": "additionalDestinations"
+        },
+        "WatermarkingSettings": {
+          "shape": "CmafIngestWatermarkingSettings",
+          "locationName": "watermarkingSettings"
         }
       },
       "required": [
@@ -24975,6 +24987,10 @@
         "AdditionalDestinations": {
           "shape": "__listOfMediaPackageAdditionalDestinations",
           "locationName": "additionalDestinations"
+        },
+        "WatermarkingSettings": {
+          "shape": "MediaPackageV2WatermarkingSettings",
+          "locationName": "watermarkingSettings"
         }
       }
     },
@@ -25871,6 +25887,187 @@
         "CheckDigitString",
         "Sid"
       ]
+    },
+    "VideoPositionRectangle": {
+      "type": "structure",
+      "members": {
+        "Height": {
+          "shape": "__integerMin2Max8192",
+          "locationName": "height"
+        },
+        "Width": {
+          "shape": "__integerMin2Max8192",
+          "locationName": "width"
+        },
+        "X": {
+          "shape": "__integerMin0Max8190",
+          "locationName": "x"
+        },
+        "Y": {
+          "shape": "__integerMin0Max8190",
+          "locationName": "y"
+        }
+      },
+      "required": [
+        "X",
+        "Y",
+        "Height",
+        "Width"
+      ]
+    },
+    "__integerMin0Max8190": {
+      "type": "integer"
+    },
+    "__integerMin2Max8192": {
+      "type": "integer"
+    },
+    "AbWatermarkerIdLength": {
+      "type": "string",
+      "enum": [
+        "ID_2048",
+        "ID_512"
+      ]
+    },
+    "AbWatermarkingCustomProfile": {
+      "type": "structure",
+      "members": {
+        "EmbeddingFrequency": {
+          "shape": "__doubleMin250Max5000",
+          "locationName": "embeddingFrequency"
+        },
+        "SceneCut": {
+          "shape": "__doubleMinNegative1Max5",
+          "locationName": "sceneCut"
+        },
+        "TargetPsnr": {
+          "shape": "__doubleMin32Max46",
+          "locationName": "targetPsnr"
+        }
+      },
+      "required": [
+        "SceneCut",
+        "EmbeddingFrequency",
+        "TargetPsnr"
+      ]
+    },
+    "AbWatermarkingProfile": {
+      "type": "string",
+      "enum": [
+        "CAMCORDING",
+        "CUSTOM",
+        "DEFAULT",
+        "HQ",
+        "MEZZANINE",
+        "ROBUST"
+      ]
+    },
+    "CmafIngestAbWatermarkerIrdetoSettings": {
+      "type": "structure",
+      "members": {
+        "AdditionalDestinationsAlternateDestinations": {
+          "shape": "__listOfOutputLocationRef",
+          "locationName": "additionalDestinationsAlternateDestinations"
+        },
+        "AlternateDestination": {
+          "shape": "OutputLocationRef",
+          "locationName": "alternateDestination"
+        },
+        "CustomProfile": {
+          "shape": "AbWatermarkingCustomProfile",
+          "locationName": "customProfile"
+        },
+        "License": {
+          "shape": "__string",
+          "locationName": "license"
+        },
+        "OperatorId": {
+          "shape": "__integerMin1Max511",
+          "locationName": "operatorId"
+        },
+        "PolyPeriod": {
+          "shape": "__integerMin1Max1000",
+          "locationName": "polyPeriod"
+        },
+        "Profile": {
+          "shape": "AbWatermarkingProfile",
+          "locationName": "profile"
+        },
+        "WatermarkIdLength": {
+          "shape": "AbWatermarkerIdLength",
+          "locationName": "watermarkIdLength"
+        }
+      },
+      "required": [
+        "AlternateDestination",
+        "OperatorId",
+        "Profile"
+      ]
+    },
+    "CmafIngestWatermarkingSettings": {
+      "type": "structure",
+      "members": {
+        "CmafIngestAbWatermarkerIrdetoSettings": {
+          "shape": "CmafIngestAbWatermarkerIrdetoSettings",
+          "locationName": "cmafIngestAbWatermarkerIrdetoSettings"
+        }
+      }
+    },
+    "MediaPackageV2AbWatermarkerIrdetoSettings": {
+      "type": "structure",
+      "members": {
+        "AdditionalDestinationsAlternateDestinations": {
+          "shape": "__listOfOutputLocationRef",
+          "locationName": "additionalDestinationsAlternateDestinations"
+        },
+        "AlternateDestination": {
+          "shape": "OutputLocationRef",
+          "locationName": "alternateDestination"
+        },
+        "CustomProfile": {
+          "shape": "AbWatermarkingCustomProfile",
+          "locationName": "customProfile"
+        },
+        "License": {
+          "shape": "__string",
+          "locationName": "license"
+        },
+        "OperatorId": {
+          "shape": "__integerMin1Max511",
+          "locationName": "operatorId"
+        },
+        "PolyPeriod": {
+          "shape": "__integerMin1Max1000",
+          "locationName": "polyPeriod"
+        },
+        "Profile": {
+          "shape": "AbWatermarkingProfile",
+          "locationName": "profile"
+        },
+        "WatermarkIdLength": {
+          "shape": "AbWatermarkerIdLength",
+          "locationName": "watermarkIdLength"
+        }
+      },
+      "required": [
+        "AlternateDestination",
+        "OperatorId",
+        "Profile"
+      ]
+    },
+    "MediaPackageV2WatermarkingSettings": {
+      "type": "structure",
+      "members": {
+        "MediaPackageV2AbWatermarkerIrdetoSettings": {
+          "shape": "MediaPackageV2AbWatermarkerIrdetoSettings",
+          "locationName": "mediaPackageV2AbWatermarkerIrdetoSettings"
+        }
+      }
+    },
+    "__integerMin1Max1000": {
+      "type": "integer"
+    },
+    "__integerMin1Max511": {
+      "type": "integer"
     }
   }
 }

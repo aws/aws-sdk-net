@@ -35,6 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class KafkaClusterClientAuthentication
     {
         private KafkaClusterMTLSAuthentication _mtls;
+        private KafkaClusterSaslOAuthBearerAuthentication _saslOAuthBearer;
         private KafkaClusterSaslScramAuthentication _saslScram;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetMTLS()
         {
             return this._mtls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SaslOAuthBearer. 
+        /// <para>
+        /// Details for SASL/OAUTHBEARER client authentication.
+        /// </para>
+        /// </summary>
+        public KafkaClusterSaslOAuthBearerAuthentication SaslOAuthBearer
+        {
+            get { return this._saslOAuthBearer; }
+            set { this._saslOAuthBearer = value; }
+        }
+
+        // Check to see if SaslOAuthBearer property is set
+        internal bool IsSetSaslOAuthBearer()
+        {
+            return this._saslOAuthBearer != null;
         }
 
         /// <summary>

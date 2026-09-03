@@ -39,13 +39,14 @@ public record IntEnumShape : Shape
 }
 
 /// <summary>
-/// Tagged union of members, each referencing a distinct alternative shape.
+/// Tagged union of members, each referencing a distinct alternative shape. Derives from
+/// <see cref="StructureShape"/> so the whole structure codepath — reachability, context
+/// partitioning, type mapping, and (un)marshaller emission — treats a union as a plain structure
+/// (all members optional), matching the current SDK. The distinct <see cref="Type"/> is retained
+/// for any future protocol-specific handling.
 /// </summary>
 /// <remarks><see href="https://smithy.io/2.0/spec/aggregate-types.html#union" /></remarks>
-public record UnionShape : Shape
+public record UnionShape : StructureShape
 {
     public override string Type => "union";
-
-    [JsonPropertyName("members")]
-    public Dictionary<string, MemberShape> Members { get; init; } = [];
 }

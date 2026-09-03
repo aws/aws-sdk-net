@@ -32,6 +32,12 @@ namespace Amazon.DeviceFarm.Model
     /// <summary>
     /// Container for the parameters to the ListSamples operation.
     /// Gets information about samples, given an AWS Device Farm job ARN.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Device Farm does not support performance data samples during test executions.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ListSamplesRequest : AmazonDeviceFarmRequest
     {

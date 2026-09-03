@@ -75,6 +75,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("DryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             if(publicRequest.IsSetLimit())
             {
                 context.Writer.WritePropertyName("Limit");

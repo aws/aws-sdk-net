@@ -7987,9 +7987,17 @@ namespace Amazon.EC2
     {
 
         /// <summary>
+        /// Constant CapacityBlock for FleetReservationType
+        /// </summary>
+        public static readonly FleetReservationType CapacityBlock = new FleetReservationType("capacity-block");
+        /// <summary>
         /// Constant InterruptibleCapacityReservation for FleetReservationType
         /// </summary>
         public static readonly FleetReservationType InterruptibleCapacityReservation = new FleetReservationType("interruptible-capacity-reservation");
+        /// <summary>
+        /// Constant OnDemandCapacityReservation for FleetReservationType
+        /// </summary>
+        public static readonly FleetReservationType OnDemandCapacityReservation = new FleetReservationType("on-demand-capacity-reservation");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -10178,6 +10186,10 @@ namespace Amazon.EC2
     public class InstanceLifecycle : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CapacityBlock for InstanceLifecycle
+        /// </summary>
+        public static readonly InstanceLifecycle CapacityBlock = new InstanceLifecycle("capacity-block");
         /// <summary>
         /// Constant InterruptibleCapacityReservation for InstanceLifecycle
         /// </summary>
@@ -21235,6 +21247,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly MarketType InterruptibleCapacityReservation = new MarketType("interruptible-capacity-reservation");
         /// <summary>
+        /// Constant OnDemand for MarketType
+        /// </summary>
+        public static readonly MarketType OnDemand = new MarketType("on-demand");
+        /// <summary>
         /// Constant Spot for MarketType
         /// </summary>
         public static readonly MarketType Spot = new MarketType("spot");
@@ -24550,6 +24566,98 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReservationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservedCapacityAllocationStrategy.
+    /// </summary>
+    public class ReservedCapacityAllocationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Prioritized for ReservedCapacityAllocationStrategy
+        /// </summary>
+        public static readonly ReservedCapacityAllocationStrategy Prioritized = new ReservedCapacityAllocationStrategy("prioritized");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservedCapacityAllocationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservedCapacityAllocationStrategy FindValue(string value)
+        {
+            return FindValue<ReservedCapacityAllocationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservedCapacityAllocationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ReservedCapacityFallbackMarketType.
+    /// </summary>
+    public class ReservedCapacityFallbackMarketType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OnDemand for ReservedCapacityFallbackMarketType
+        /// </summary>
+        public static readonly ReservedCapacityFallbackMarketType OnDemand = new ReservedCapacityFallbackMarketType("on-demand");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReservedCapacityFallbackMarketType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReservedCapacityFallbackMarketType FindValue(string value)
+        {
+            return FindValue<ReservedCapacityFallbackMarketType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReservedCapacityFallbackMarketType(string value)
         {
             return FindValue(value);
         }
@@ -32575,6 +32683,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly VpcState Available = new VpcState("available");
         /// <summary>
+        /// Constant Deleting for VpcState
+        /// </summary>
+        public static readonly VpcState Deleting = new VpcState("deleting");
+        /// <summary>
         /// Constant Pending for VpcState
         /// </summary>
         public static readonly VpcState Pending = new VpcState("pending");
@@ -33074,6 +33186,56 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator WeekDay(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ZeroSizePreference.
+    /// </summary>
+    public class ZeroSizePreference : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for ZeroSizePreference
+        /// </summary>
+        public static readonly ZeroSizePreference Default = new ZeroSizePreference("default");
+        /// <summary>
+        /// Constant Retain for ZeroSizePreference
+        /// </summary>
+        public static readonly ZeroSizePreference Retain = new ZeroSizePreference("retain");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ZeroSizePreference(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ZeroSizePreference FindValue(string value)
+        {
+            return FindValue<ZeroSizePreference>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ZeroSizePreference(string value)
         {
             return FindValue(value);
         }

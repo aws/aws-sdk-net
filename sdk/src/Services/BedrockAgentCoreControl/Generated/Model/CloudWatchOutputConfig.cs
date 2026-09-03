@@ -36,15 +36,20 @@ namespace Amazon.BedrockAgentCoreControl.Model
     public partial class CloudWatchOutputConfig
     {
         private string _logGroupName;
+        private string _metricsNamespace;
+        private ResultDestination _resultDestination;
 
         /// <summary>
         /// Gets and sets the property LogGroupName. 
         /// <para>
-        ///  The name of the CloudWatch log group where evaluation results will be written. The
-        /// log group will be created if it doesn't exist. 
+        ///  The name of the CloudWatch log group where evaluation results will be written. An
+        /// existing log group is used as-is; otherwise the service creates it, which requires
+        /// the evaluation execution role to grant <c>logs:CreateLogGroup</c> on the log group.
+        /// Don't specify this value when <c>resultDestination</c> is <c>SOURCE_LOG_GROUP</c>.
+        /// The name can't be under the service-reserved <c>/aws/bedrock-agentcore/evaluations/</c>
+        /// namespace, apart from this configuration's own service-managed default group. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string LogGroupName
         {
             get { return this._logGroupName; }
@@ -55,6 +60,55 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetLogGroupName()
         {
             return this._logGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MetricsNamespace. 
+        /// <para>
+        ///  The CloudWatch metrics namespace where evaluation result metrics are published. If
+        /// you omit this value, the service publishes metrics to <c>Bedrock-AgentCore/Evaluations</c>.
+        /// This value can't begin with <c>AWS/</c>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string MetricsNamespace
+        {
+            get { return this._metricsNamespace; }
+            set { this._metricsNamespace = value; }
+        }
+
+        // Check to see if MetricsNamespace property is set
+        internal bool IsSetMetricsNamespace()
+        {
+            return this._metricsNamespace != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultDestination. 
+        /// <para>
+        ///  The destination where evaluation results are written. Valid values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>DEDICATED_LOG_GROUP</c> (default) – Writes results to a dedicated result log group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SOURCE_LOG_GROUP</c> – Writes results back to the log group that the agent traces
+        /// were read from. If you use this value, don't specify <c>logGroupName</c>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResultDestination ResultDestination
+        {
+            get { return this._resultDestination; }
+            set { this._resultDestination = value; }
+        }
+
+        // Check to see if ResultDestination property is set
+        internal bool IsSetResultDestination()
+        {
+            return this._resultDestination != null;
         }
 
     }

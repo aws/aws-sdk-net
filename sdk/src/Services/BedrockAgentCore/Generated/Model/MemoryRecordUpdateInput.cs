@@ -39,6 +39,7 @@ namespace Amazon.BedrockAgentCore.Model
         private string _memoryStrategyId;
         private Dictionary<string, MemoryRecordMetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MemoryRecordMetadataValue>() : null;
         private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sourceNamespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _timestamp;
 
         /// <summary>
@@ -143,6 +144,31 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetNamespaces()
         {
             return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceNamespaces. 
+        /// <para>
+        /// The namespaces of the source memory record being updated. This value is used for IAM
+        /// condition key authorization.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=1)]
+        public List<string> SourceNamespaces
+        {
+            get { return this._sourceNamespaces; }
+            set { this._sourceNamespaces = value; }
+        }
+
+        // Check to see if SourceNamespaces property is set
+        internal bool IsSetSourceNamespaces()
+        {
+            return this._sourceNamespaces != null && (this._sourceNamespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

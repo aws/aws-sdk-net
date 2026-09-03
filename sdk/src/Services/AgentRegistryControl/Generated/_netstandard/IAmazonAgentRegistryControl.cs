@@ -32,12 +32,12 @@ namespace Amazon.AgentRegistryControl
     /// <summary>
     /// <para>Interface for accessing AgentRegistryControl</para>
     ///
-    /// AWS Agent Registry is a managed catalog for publishing and discovering resources such
-    /// as MCP servers, agents, and agent skills. Agent Registry Control is its control-plane
-    /// API: use it to create and manage registries and the records they contain, configure
-    /// discovery and authorization, govern record approval and curation workflows, and manage
-    /// automatic detection of resources. Data-plane search and MCP invocation operations
-    /// are provided by the companion Agent Registry API.
+    /// Amazon Web Services Agent Registry is a managed catalog for publishing and discovering
+    /// resources such as MCP servers, agents, and agent skills. Agent Registry Control is
+    /// its control-plane API: use it to create and manage registries and the records they
+    /// contain, configure discovery and authorization, govern record approval and curation
+    /// workflows, and manage automatic detection of resources. Data-plane search and MCP
+    /// invocation operations are provided by the companion Agent Registry API.
     /// </summary>
     public partial interface IAmazonAgentRegistryControl : IAmazonService, IDisposable
     {
@@ -342,7 +342,8 @@ namespace Amazon.AgentRegistryControl
 
 
         /// <summary>
-        /// List the tags on a resource
+        /// Lists the tags associated with the specified Amazon Web Services Agent Registry resource.
+        /// Returns the current tag key-value pairs on the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -413,7 +414,10 @@ namespace Amazon.AgentRegistryControl
 
 
         /// <summary>
-        /// Tag a resource with key-value pairs
+        /// Adds or overwrites one or more tags for the specified Amazon Web Services Agent Registry
+        /// resource. Tags are key-value pairs that you can use to categorize and manage Amazon
+        /// Web Services resources. If a tag with the same key already exists on the resource,
+        /// the service replaces its value with the value you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// <param name="cancellationToken">
@@ -449,7 +453,9 @@ namespace Amazon.AgentRegistryControl
 
 
         /// <summary>
-        /// Remove tags from a resource by key
+        /// Removes one or more tags from the specified Amazon Web Services Agent Registry resource.
+        /// The operation removes only the tags whose keys you supply; other tags on the resource
+        /// remain unchanged.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

@@ -84,6 +84,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(publicRequest.IsSetEndpointUri())
+            {
+                context.Writer.WritePropertyName("endpointUri");
+                context.Writer.WriteStringValue(publicRequest.EndpointUri);
+            }
+
             if(publicRequest.IsSetFlowId())
             {
                 context.Writer.WritePropertyName("flowId");
@@ -100,6 +106,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("id");
                 context.Writer.WriteStringValue(publicRequest.Id);
+            }
+
+            if(publicRequest.IsSetMetaAppId())
+            {
+                context.Writer.WritePropertyName("metaAppId");
+                context.Writer.WriteStringValue(publicRequest.MetaAppId);
             }
 
             writer.WriteEndObject();

@@ -64,6 +64,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("deleteProgress", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeleteProgressUnmarshaller.Instance;
+                    response.DeleteProgress = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -80,6 +86,12 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.DomainVersion = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("failureReasons", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<FailureReason, FailureReasonUnmarshaller>(FailureReasonUnmarshaller.Instance);
+                    response.FailureReasons = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("id", targetDepth, ref reader))

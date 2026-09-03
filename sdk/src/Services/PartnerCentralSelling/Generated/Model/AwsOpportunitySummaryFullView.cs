@@ -45,6 +45,7 @@ namespace Amazon.PartnerCentralSelling.Model
         private AwsOpportunityProject _project;
         private AwsOpportunityRelatedEntities _relatedEntityIds;
         private string _relatedOpportunityId;
+        private AwsSoftwareRevenue _softwareRevenue;
         private Visibility _visibility;
 
         /// <summary>
@@ -234,6 +235,24 @@ namespace Amazon.PartnerCentralSelling.Model
         internal bool IsSetRelatedOpportunityId()
         {
             return this._relatedOpportunityId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareRevenue. 
+        /// <para>
+        /// Seller-provided PARC deal terms: commitment value, discount, and contract dates.
+        /// </para>
+        /// </summary>
+        public AwsSoftwareRevenue SoftwareRevenue
+        {
+            get { return this._softwareRevenue; }
+            set { this._softwareRevenue = value; }
+        }
+
+        // Check to see if SoftwareRevenue property is set
+        internal bool IsSetSoftwareRevenue()
+        {
+            return this._softwareRevenue != null;
         }
 
         /// <summary>

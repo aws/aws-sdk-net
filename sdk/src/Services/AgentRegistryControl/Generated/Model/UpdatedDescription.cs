@@ -37,7 +37,10 @@ namespace Amazon.AgentRegistryControl.Model
         private string _optionalValue;
 
         /// <summary>
-        /// Gets and sets the property OptionalValue.
+        /// Gets and sets the property OptionalValue. 
+        /// <para>
+        /// The value to set for this field. Omit the wrapper to leave the field unchanged.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string OptionalValue

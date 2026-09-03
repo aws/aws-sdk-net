@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreEndpoint. 
         /// <para>
-        /// The AWS endpoint created for the data store.
+        /// The Amazon Web Services endpoint created for the data store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5000)]

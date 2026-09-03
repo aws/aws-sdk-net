@@ -115,10 +115,35 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Name);
             }
 
+            if(publicRequest.IsSetPreEvaluationFilters())
+            {
+                context.Writer.WritePropertyName("PreEvaluationFilters");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PreEvaluationFiltersMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PreEvaluationFilters, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetPublishStatus())
             {
                 context.Writer.WritePropertyName("PublishStatus");
                 context.Writer.WriteStringValue(publicRequest.PublishStatus);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetTriggerEventSource())

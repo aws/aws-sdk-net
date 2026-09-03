@@ -1106,25 +1106,25 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The application status check must already exist and belong to your account.
+        /// You must own the application status check. The check must already exist in your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Tag keys must not be blank.
+        /// You must not leave tag keys blank.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Maximum 50 tag associations per application status check.
+        /// You can create a maximum of 50 tag associations for each application status check.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <c>DisassociateApplicationStatusCheck</c> to remove associations.
+        /// You can use <c>DisassociateApplicationStatusCheck</c> to remove associations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you associate <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>,
-        /// the application status check automatically monitors all current and future instances
-        /// that have the specified tags.
+        /// You can associate <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>
+        /// so that the application status check automatically monitors all current and future
+        /// instances that have the specified tags.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1148,25 +1148,25 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The application status check must already exist and belong to your account.
+        /// You must own the application status check. The check must already exist in your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Tag keys must not be blank.
+        /// You must not leave tag keys blank.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Maximum 50 tag associations per application status check.
+        /// You can create a maximum of 50 tag associations for each application status check.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <c>DisassociateApplicationStatusCheck</c> to remove associations.
+        /// You can use <c>DisassociateApplicationStatusCheck</c> to remove associations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you associate <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>,
-        /// the application status check automatically monitors all current and future instances
-        /// that have the specified tags.
+        /// You can associate <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">tags</a>
+        /// so that the application status check automatically monitors all current and future
+        /// instances that have the specified tags.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3749,31 +3749,32 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You can create a maximum of 50 application status checks per account.
+        /// You can create a maximum of 50 application status checks for each account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Health checks do not start until you associate the check with instances or tags using
-        /// <c>AssociateApplicationStatusCheck</c>.
+        /// You must associate the check with instances or tags using <c>AssociateApplicationStatusCheck</c>
+        /// before health checks start.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <c>Timeout</c> value must be less than the <c>Interval</c> value.
+        /// You must set the <c>Timeout</c> value to less than the <c>Interval</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <c>Path</c> must start with a forward slash (<c>/</c>). Default: <c>/</c>.
+        /// You must start the <c>Path</c> with a forward slash (<c>/</c>). Default: <c>/</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you do not specify <c>Aggregation</c>, it defaults to <c>included</c>, which means
-        /// the check contributes to the instance-level application status.
+        /// You can specify <c>Aggregation</c> as <c>included</c> or <c>excluded</c>. If you do
+        /// not specify a value, it defaults to <c>included</c>, which means the check contributes
+        /// to the instance-level application status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
-        /// is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
-        /// is 300 seconds.
+        /// You can use the following default values: <c>Interval</c> is 60 seconds, <c>Timeout</c>
+        /// is 6 seconds, <c>FailureThreshold</c> is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c>
+        /// is <c>200</c>, <c>InitializationGracePeriodSeconds</c> is 300 seconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3798,31 +3799,32 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// You can create a maximum of 50 application status checks per account.
+        /// You can create a maximum of 50 application status checks for each account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Health checks do not start until you associate the check with instances or tags using
-        /// <c>AssociateApplicationStatusCheck</c>.
+        /// You must associate the check with instances or tags using <c>AssociateApplicationStatusCheck</c>
+        /// before health checks start.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <c>Timeout</c> value must be less than the <c>Interval</c> value.
+        /// You must set the <c>Timeout</c> value to less than the <c>Interval</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <c>Path</c> must start with a forward slash (<c>/</c>). Default: <c>/</c>.
+        /// You must start the <c>Path</c> with a forward slash (<c>/</c>). Default: <c>/</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you do not specify <c>Aggregation</c>, it defaults to <c>included</c>, which means
-        /// the check contributes to the instance-level application status.
+        /// You can specify <c>Aggregation</c> as <c>included</c> or <c>excluded</c>. If you do
+        /// not specify a value, it defaults to <c>included</c>, which means the check contributes
+        /// to the instance-level application status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Default values: <c>Interval</c> is 60 seconds, <c>Timeout</c> is 6 seconds, <c>FailureThreshold</c>
-        /// is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c> is <c>200</c>, <c>InitializationGracePeriodSeconds</c>
-        /// is 300 seconds.
+        /// You can use the following default values: <c>Interval</c> is 60 seconds, <c>Timeout</c>
+        /// is 6 seconds, <c>FailureThreshold</c> is 2, <c>SuccessThreshold</c> is 2, <c>StatusCodeMatcher</c>
+        /// is <c>200</c>, <c>InitializationGracePeriodSeconds</c> is 300 seconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13781,8 +13783,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the application status for the specified instances. Returns the aggregated
-        /// application health status for each instance. The following rules apply:
+        /// Describes the aggregated application health status for the specified instances. The
+        /// following rules apply:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -13810,8 +13812,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the application status for the specified instances. Returns the aggregated
-        /// application health status for each instance. The following rules apply:
+        /// Describes the aggregated application health status for the specified instances. The
+        /// following rules apply:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -13893,9 +13895,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more application status checks. Returns configuration details for
-        /// your application status checks, including protocol, port, path, thresholds, and associations.
-        /// The following rules apply:
+        /// Describes application status checks, including configuration details such as protocol,
+        /// port, path, thresholds, and associations. Results are paginated. Use the <c>NextToken</c>
+        /// parameter to retrieve additional results. The following rules apply:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -13917,9 +13919,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes one or more application status checks. Returns configuration details for
-        /// your application status checks, including protocol, port, path, thresholds, and associations.
-        /// The following rules apply:
+        /// Describes application status checks, including configuration details such as protocol,
+        /// port, path, thresholds, and associations. Results are paginated. Use the <c>NextToken</c>
+        /// parameter to retrieve additional results. The following rules apply:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -23724,7 +23726,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables suppression of application status checks for the specified instances. After
         /// suppression is disabled, health check results resume affecting the instance-level
-        /// application status. You can specify a maximum of 100 instance IDs per request.
+        /// application status. You can specify a maximum of 100 instance IDs for each request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableApplicationStatusCheckSuppression service method.</param>
         /// 
@@ -23737,7 +23739,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Disables suppression of application status checks for the specified instances. After
         /// suppression is disabled, health check results resume affecting the instance-level
-        /// application status. You can specify a maximum of 100 instance IDs per request.
+        /// application status. You can specify a maximum of 100 instance IDs for each request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableApplicationStatusCheckSuppression service method.</param>
         /// <param name="cancellationToken">
@@ -25588,7 +25590,7 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Maximum 100 instance IDs per request.
+        /// You can specify a maximum of 100 instance IDs for each request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25617,7 +25619,7 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Maximum 100 instance IDs per request.
+        /// You can specify a maximum of 100 instance IDs for each request.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -35833,6 +35835,124 @@ namespace Amazon.EC2
         /// <returns>The response from the ReplaceImageCriteriaInAllowedImagesSettings service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageCriteriaInAllowedImagesSettings">REST API Reference for ReplaceImageCriteriaInAllowedImagesSettings Operation</seealso>
         Task<ReplaceImageCriteriaInAllowedImagesSettingsResponse> ReplaceImageCriteriaInAllowedImagesSettingsAsync(ReplaceImageCriteriaInAllowedImagesSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ReplaceImageInstanceTypeSpecification
+
+
+        /// <summary>
+        /// Replaces or removes the instance type specification for an AMI. The instance type
+        /// specification defines which instance types are compatible with the AMI.
+        /// 
+        ///  
+        /// <para>
+        /// When you launch an instance using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+        /// Amazon EC2 validates the requested instance type against the AMI's instance type specification.
+        /// If the instance type is not compatible, the request fails with an <c>InvalidParameterCombination</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify supported instance types, unsupported instance types, or both. The
+        /// evaluation logic is as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No specification set – all instance types are allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only <c>UnsupportedInstanceTypes</c> set – All instance types are allowed except those
+        /// that match the unsupported list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SupportedInstanceTypes</c> set – The instance type must match the supported list
+        /// and must not match the unsupported list.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Instance type entries support wildcard patterns using <c>*</c> (for example, <c>t3.*</c>
+        /// matches all t3 sizes).
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove an existing instance type specification, omit the <c>InstanceTypeSpecification</c>
+        /// parameter or set it to <c>null</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To set the instance type specification, you must be the AMI owner. You cannot set
+        /// an instance type specification on an AMI that is listed in Amazon Web Services Marketplace,
+        /// and you cannot list an AMI in Amazon Web Services Marketplace if it has an instance
+        /// type specification set.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceImageInstanceTypeSpecification service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceImageInstanceTypeSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageInstanceTypeSpecification">REST API Reference for ReplaceImageInstanceTypeSpecification Operation</seealso>
+        ReplaceImageInstanceTypeSpecificationResponse ReplaceImageInstanceTypeSpecification(ReplaceImageInstanceTypeSpecificationRequest request);
+
+
+
+        /// <summary>
+        /// Replaces or removes the instance type specification for an AMI. The instance type
+        /// specification defines which instance types are compatible with the AMI.
+        /// 
+        ///  
+        /// <para>
+        /// When you launch an instance using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+        /// Amazon EC2 validates the requested instance type against the AMI's instance type specification.
+        /// If the instance type is not compatible, the request fails with an <c>InvalidParameterCombination</c>
+        /// error.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify supported instance types, unsupported instance types, or both. The
+        /// evaluation logic is as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// No specification set – all instance types are allowed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Only <c>UnsupportedInstanceTypes</c> set – All instance types are allowed except those
+        /// that match the unsupported list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SupportedInstanceTypes</c> set – The instance type must match the supported list
+        /// and must not match the unsupported list.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Instance type entries support wildcard patterns using <c>*</c> (for example, <c>t3.*</c>
+        /// matches all t3 sizes).
+        /// </para>
+        ///  
+        /// <para>
+        /// To remove an existing instance type specification, omit the <c>InstanceTypeSpecification</c>
+        /// parameter or set it to <c>null</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To set the instance type specification, you must be the AMI owner. You cannot set
+        /// an instance type specification on an AMI that is listed in Amazon Web Services Marketplace,
+        /// and you cannot list an AMI in Amazon Web Services Marketplace if it has an instance
+        /// type specification set.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceImageInstanceTypeSpecification service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReplaceImageInstanceTypeSpecification service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceImageInstanceTypeSpecification">REST API Reference for ReplaceImageInstanceTypeSpecification Operation</seealso>
+        Task<ReplaceImageInstanceTypeSpecificationResponse> ReplaceImageInstanceTypeSpecificationAsync(ReplaceImageInstanceTypeSpecificationRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

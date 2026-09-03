@@ -46,6 +46,17 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBidirectional())
+            {
+                context.Writer.WritePropertyName("bidirectional");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SlackBidirectionalConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.Bidirectional, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetTransmissionTarget())
             {
                 context.Writer.WritePropertyName("transmissionTarget");

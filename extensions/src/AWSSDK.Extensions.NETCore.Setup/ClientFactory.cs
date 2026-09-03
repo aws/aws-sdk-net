@@ -322,6 +322,10 @@ namespace Amazon.Extensions.NETCore.Setup
             {
                 config.JsonMaxDepth = defaultConfig.JsonMaxDepth.Value;
             }
+            if (defaultConfig.DisableClockSkewCorrection.HasValue)
+            {
+                config.DisableClockSkewCorrection = defaultConfig.DisableClockSkewCorrection.Value;
+            }
             if (defaultConfig.LogMetrics.HasValue)
             {
                 config.LogMetrics = defaultConfig.LogMetrics.Value;

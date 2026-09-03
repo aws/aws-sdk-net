@@ -3269,6 +3269,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly MetricName DiskQueueDepth = new MetricName("DiskQueueDepth");
         /// <summary>
+        /// Constant FreeableMemory for MetricName
+        /// </summary>
+        public static readonly MetricName FreeableMemory = new MetricName("FreeableMemory");
+        /// <summary>
         /// Constant FreeStorageSpace for MetricName
         /// </summary>
         public static readonly MetricName FreeStorageSpace = new MetricName("FreeStorageSpace");
@@ -3340,6 +3344,10 @@ namespace Amazon.Lightsail
         /// Constant StatusCheckFailed_System for MetricName
         /// </summary>
         public static readonly MetricName StatusCheckFailed_System = new MetricName("StatusCheckFailed_System");
+        /// <summary>
+        /// Constant SwapUsage for MetricName
+        /// </summary>
+        public static readonly MetricName SwapUsage = new MetricName("SwapUsage");
         /// <summary>
         /// Constant UnhealthyHostCount for MetricName
         /// </summary>
@@ -3997,6 +4005,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType GetContactMethods = new OperationType("GetContactMethods");
         /// <summary>
+        /// Constant GetProfile for OperationType
+        /// </summary>
+        public static readonly OperationType GetProfile = new OperationType("GetProfile");
+        /// <summary>
         /// Constant OpenInstancePublicPorts for OperationType
         /// </summary>
         public static readonly OperationType OpenInstancePublicPorts = new OperationType("OpenInstancePublicPorts");
@@ -4253,6 +4265,56 @@ namespace Amazon.Lightsail
 
 
     /// <summary>
+    /// Constants used for properties of type PartnerStatus.
+    /// </summary>
+    public class PartnerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for PartnerStatus
+        /// </summary>
+        public static readonly PartnerStatus Active = new PartnerStatus("Active");
+        /// <summary>
+        /// Constant Suspended for PartnerStatus
+        /// </summary>
+        public static readonly PartnerStatus Suspended = new PartnerStatus("Suspended");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartnerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartnerStatus FindValue(string value)
+        {
+            return FindValue<PartnerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartnerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PortAccessType.
     /// </summary>
     public class PortAccessType : ConstantClass
@@ -4466,6 +4528,56 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PricingUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ProfileType.
+    /// </summary>
+    public class ProfileType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Lightsailor for ProfileType
+        /// </summary>
+        public static readonly ProfileType Lightsailor = new ProfileType("Lightsailor");
+        /// <summary>
+        /// Constant LightsailPartner for ProfileType
+        /// </summary>
+        public static readonly ProfileType LightsailPartner = new ProfileType("LightsailPartner");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProfileType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProfileType FindValue(string value)
+        {
+            return FindValue<ProfileType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProfileType(string value)
         {
             return FindValue(value);
         }
@@ -4771,6 +4883,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly RelationalDatabaseMetricName DiskQueueDepth = new RelationalDatabaseMetricName("DiskQueueDepth");
         /// <summary>
+        /// Constant FreeableMemory for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName FreeableMemory = new RelationalDatabaseMetricName("FreeableMemory");
+        /// <summary>
         /// Constant FreeStorageSpace for RelationalDatabaseMetricName
         /// </summary>
         public static readonly RelationalDatabaseMetricName FreeStorageSpace = new RelationalDatabaseMetricName("FreeStorageSpace");
@@ -4782,6 +4898,10 @@ namespace Amazon.Lightsail
         /// Constant NetworkTransmitThroughput for RelationalDatabaseMetricName
         /// </summary>
         public static readonly RelationalDatabaseMetricName NetworkTransmitThroughput = new RelationalDatabaseMetricName("NetworkTransmitThroughput");
+        /// <summary>
+        /// Constant SwapUsage for RelationalDatabaseMetricName
+        /// </summary>
+        public static readonly RelationalDatabaseMetricName SwapUsage = new RelationalDatabaseMetricName("SwapUsage");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5282,6 +5402,64 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TierName.
+    /// </summary>
+    public class TierName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Accelerate for TierName
+        /// </summary>
+        public static readonly TierName Accelerate = new TierName("Accelerate");
+        /// <summary>
+        /// Constant Essential for TierName
+        /// </summary>
+        public static readonly TierName Essential = new TierName("Essential");
+        /// <summary>
+        /// Constant Growth for TierName
+        /// </summary>
+        public static readonly TierName Growth = new TierName("Growth");
+        /// <summary>
+        /// Constant Premier for TierName
+        /// </summary>
+        public static readonly TierName Premier = new TierName("Premier");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TierName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TierName FindValue(string value)
+        {
+            return FindValue<TierName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TierName(string value)
         {
             return FindValue(value);
         }

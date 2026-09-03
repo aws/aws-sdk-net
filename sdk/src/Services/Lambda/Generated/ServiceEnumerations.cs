@@ -345,6 +345,60 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type DirectS3Read.
+    /// </summary>
+    public class DirectS3Read : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for DirectS3Read
+        /// </summary>
+        public static readonly DirectS3Read AUTO = new DirectS3Read("AUTO");
+        /// <summary>
+        /// Constant DISABLED for DirectS3Read
+        /// </summary>
+        public static readonly DirectS3Read DISABLED = new DirectS3Read("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for DirectS3Read
+        /// </summary>
+        public static readonly DirectS3Read ENABLED = new DirectS3Read("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DirectS3Read(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DirectS3Read FindValue(string value)
+        {
+            return FindValue<DirectS3Read>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DirectS3Read(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EndPointType.
     /// </summary>
     public class EndPointType : ConstantClass

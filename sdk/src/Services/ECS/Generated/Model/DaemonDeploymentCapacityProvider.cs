@@ -37,6 +37,7 @@ namespace Amazon.ECS.Model
         private string _arn;
         private int? _drainingInstanceCount;
         private int? _runningInstanceCount;
+        private int? _withoutDaemonInstanceCount;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -90,6 +91,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetRunningInstanceCount()
         {
             return this._runningInstanceCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WithoutDaemonInstanceCount. 
+        /// <para>
+        /// The number of instances on this capacity provider that are running without the daemon
+        /// task. This applies to daemons that aren't critical, where the instance remains available
+        /// for your other tasks even if the daemon task can't start or stops. These instances
+        /// aren't included in <c>runningInstanceCount</c>.
+        /// </para>
+        /// </summary>
+        public int? WithoutDaemonInstanceCount
+        {
+            get { return this._withoutDaemonInstanceCount; }
+            set { this._withoutDaemonInstanceCount = value; }
+        }
+
+        // Check to see if WithoutDaemonInstanceCount property is set
+        internal bool IsSetWithoutDaemonInstanceCount()
+        {
+            return this._withoutDaemonInstanceCount.HasValue; 
         }
 
     }

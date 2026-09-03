@@ -55,6 +55,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("allocationStrategy", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AllocationStrategy = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("reservationTypeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -64,6 +70,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ReservationTypes.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("reservedCapacityFallbackOptions", targetDepth))
+                    {
+                        var unmarshaller = ReservedCapacityFallbackOptionsUnmarshaller.Instance;
+                        unmarshalledObject.ReservedCapacityFallbackOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

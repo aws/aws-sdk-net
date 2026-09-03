@@ -68,8 +68,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key identifier used to encrypt the profile
-        /// content at rest.
+        /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier
+        /// used to encrypt the profile content at rest.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

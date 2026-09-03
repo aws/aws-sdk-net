@@ -94,7 +94,20 @@ namespace Amazon.Runtime.Internal
                         }
                     }
 
-                    executionContext.ResponseContext.HttpResponse = httpRequest.GetResponse();
+                    // Clock Skew Correction specification: capture the raw send time, then record
+                    // ClientSkew from the response (success or error). No-op when clock skew
+                    // correction is disabled.
+                    var skewSentAt = ClockSkewPipelineHelper.CaptureSendTime(executionContext.RequestContext.ClientConfig);
+                    try
+                    {
+                        executionContext.ResponseContext.HttpResponse = httpRequest.GetResponse();
+                    }
+                    catch (Exception ex)
+                    {
+                        ClockSkewPipelineHelper.RecordFromException(executionContext, skewSentAt, ex);
+                        throw;
+                    }
+                    ClockSkewPipelineHelper.RecordFromResponse(executionContext, skewSentAt, executionContext.ResponseContext.HttpResponse);
                     RecordHttpTelemetryData(executionContext, traceSpan, wrappedRequest);
                 }
             }
@@ -227,9 +240,23 @@ namespace Amazon.Runtime.Internal
                         }
                     }
                 
-                    var response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
-                        ConfigureAwait(false);
+                    // Clock Skew Correction specification: capture the raw send time, then record
+                    // ClientSkew from the response (success or error). No-op when clock skew
+                    // correction is disabled.
+                    var skewSentAt = ClockSkewPipelineHelper.CaptureSendTime(executionContext.RequestContext.ClientConfig);
+                    IWebResponseData response;
+                    try
+                    {
+                        response = await httpRequest.GetResponseAsync(executionContext.RequestContext.CancellationToken).
+                            ConfigureAwait(false);
+                    }
+                    catch (Exception ex)
+                    {
+                        ClockSkewPipelineHelper.RecordFromException(executionContext, skewSentAt, ex);
+                        throw;
+                    }
                     executionContext.ResponseContext.HttpResponse = response;
+                    ClockSkewPipelineHelper.RecordFromResponse(executionContext, skewSentAt, response);
                     RecordHttpTelemetryData(executionContext, traceSpan, wrappedRequest);
                 }
                 // The response is not unmarshalled yet.

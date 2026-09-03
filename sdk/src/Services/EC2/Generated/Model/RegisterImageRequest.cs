@@ -534,7 +534,7 @@ namespace Amazon.EC2.Model
         /// Secure Boot for Amazon EC2 instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64000)]
         public string UefiData
         {
             get { return this._uefiData; }

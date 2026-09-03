@@ -123,6 +123,12 @@
     <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.CreatedBy</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.GetRegistryRecordResponse.Description</property>
     <min>1</min>
     <max>4096</max>
@@ -307,6 +313,12 @@
     <pattern>(arn:aws(-[^:]+)?:agent-registry:[a-z0-9-]+:[0-9]{12}:registry/)?[a-zA-Z0-9]{12,16}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.CreatedBy</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.UpdateRegistryRecordResponse.Description</property>
     <min>1</min>
     <max>4096</max>
@@ -441,6 +453,12 @@
     <pattern>https://.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.EncryptionConfiguration.KmsKeyArn</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(|-cn|-us-gov):kms:[a-zA-Z0-9-]*:[0-9]{12}:key/[a-zA-Z0-9-]{36}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.ManagedVpcResource.RoutingDomain</property>
     <min>3</min>
     <max>255</max>
@@ -477,6 +495,18 @@
     <max>253</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.Provenance.SourceId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:[a-zA-Z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.ProvenanceSummary.SourceId</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>arn:aws(-[^:]+)?:[a-zA-Z0-9-]+:[a-z0-9-]*:[0-9]{12}:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordIamCredentialProvider.Region</property>
     <min>1</min>
     <max>64</max>
@@ -499,6 +529,12 @@
     <min>1</min>
     <max>2048</max>
     <pattern>arn:aws(-[^:]+)?:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.CreatedBy</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>[0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AgentRegistryControl.Model.RegistryRecordSummary.Description</property>
@@ -588,5 +624,10 @@
     <property>Amazon.AgentRegistryControl.Model.UpdatedDisplayName.OptionalValue</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AgentRegistryControl.Model.WorkloadIdentityDetails.WorkloadIdentityArn</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
 </property-value-rules>

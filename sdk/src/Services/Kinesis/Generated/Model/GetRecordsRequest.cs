@@ -65,11 +65,15 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB per
-    /// second. You can ensure that your calls don't exceed the maximum supported size or
-    /// throughput by using the <c>Limit</c> parameter to specify the maximum number of records
-    /// that <a>GetRecords</a> can return. Consider your average record size when determining
-    /// this limit. The maximum number of records that can be returned per call is 10,000.
+    /// Each data record can be up to 1 MiB in size by default. Amazon Kinesis Data Streams
+    /// supports large records up to 10 MiB in size, but the average throughput for your stream
+    /// cannot exceed 1 MiB per second. For more information about how large records are handled,
+    /// see <a href="https://docs.aws.amazon.com/streams/latest/dev/large-records.html">Large
+    /// records</a>. Each shard can read up to 2 MiB per second. You can ensure that your
+    /// calls don't exceed the maximum supported size or throughput by using the <c>Limit</c>
+    /// parameter to specify the maximum number of records that <a>GetRecords</a> can return.
+    /// Consider your average record size when determining this limit. The maximum number
+    /// of records that can be returned per call is 10,000.
     /// </para>
     ///  
     /// <para>
@@ -110,10 +114,29 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class GetRecordsRequest : AmazonKinesisRequest
     {
+        private bool? _dryRun;
         private int? _limit;
         private string _shardIterator;
         private string _streamARN;
         private string _streamId;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Limit. 

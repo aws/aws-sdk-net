@@ -34,7 +34,27 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class Certificate
     {
+        private ActiveCertificateAuthority _active;
         private string _data;
+
+        /// <summary>
+        /// Gets and sets the property Active. 
+        /// <para>
+        /// An object identifying the certificate authority that is currently signing certificates
+        /// for the cluster.
+        /// </para>
+        /// </summary>
+        public ActiveCertificateAuthority Active
+        {
+            get { return this._active; }
+            set { this._active = value; }
+        }
+
+        // Check to see if Active property is set
+        internal bool IsSetActive()
+        {
+            return this._active != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Data. 

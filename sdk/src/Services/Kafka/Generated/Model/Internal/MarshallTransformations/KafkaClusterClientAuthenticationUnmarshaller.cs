@@ -62,6 +62,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.MTLS = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("saslOAuthBearer", targetDepth, ref reader))
+                {
+                    var unmarshaller = KafkaClusterSaslOAuthBearerAuthenticationUnmarshaller.Instance;
+                    unmarshalledObject.SaslOAuthBearer = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("saslScram", targetDepth, ref reader))
                 {
                     var unmarshaller = KafkaClusterSaslScramAuthenticationUnmarshaller.Instance;

@@ -7544,6 +7544,48 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  GetCrossRegionRouting
+
+
+
+        /// <summary>
+        /// Retrieves the current cross-region routing configuration for an Amazon Connect Global
+        /// Resiliency instance enabled for global routing. This operation returns whether cross-region
+        /// routing is currently enabled or disabled (isolated) for the instance.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is available only for Amazon Connect Global Resiliency instances enabled
+        /// for global routing.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCrossRegionRouting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCrossRegionRouting service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetCrossRegionRouting">REST API Reference for GetCrossRegionRouting Operation</seealso>
+        Task<GetCrossRegionRoutingResponse> GetCrossRegionRoutingAsync(GetCrossRegionRoutingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  GetCurrentMetricData
 
 
@@ -14623,6 +14665,53 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactTaskTemplate">REST API Reference for UpdateContactTaskTemplate Operation</seealso>
         Task<UpdateContactTaskTemplateResponse> UpdateContactTaskTemplateAsync(UpdateContactTaskTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateCrossRegionRouting
+
+
+
+        /// <summary>
+        /// Updates the cross-region routing configuration for an Amazon Connect Global Resiliency
+        /// instance enabled for global routing. When invoked with <c>IsolatedAll</c> set to <c>true</c>,
+        /// this operation disables cross-region routing, meaning contacts originating in one
+        /// Region will no longer be routed to agents in another Region.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is available only for Amazon Connect Global Resiliency instances enabled
+        /// for global routing. Reporting and contact search continue to operate globally after
+        /// you use this operation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCrossRegionRouting service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCrossRegionRouting service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateCrossRegionRouting">REST API Reference for UpdateCrossRegionRouting Operation</seealso>
+        Task<UpdateCrossRegionRoutingResponse> UpdateCrossRegionRoutingAsync(UpdateCrossRegionRoutingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

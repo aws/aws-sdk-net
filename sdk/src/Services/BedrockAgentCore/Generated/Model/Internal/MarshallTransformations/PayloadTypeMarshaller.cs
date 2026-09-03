@@ -63,6 +63,17 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetJson())
+            {
+                context.Writer.WritePropertyName("json");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MemoryJsonDataMarshaller.Instance;
+                marshaller.Marshall(requestObject.Json, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -136,6 +136,68 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  AssociateStreamForSegments
+
+
+        /// <summary>
+        /// Associates an Amazon Kinesis data stream to receive segment membership events for
+        /// a given domain. This is a domain-level configuration that applies to all segment subscriptions
+        /// within the domain. A domain can have only one associated stream at a time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateStreamForSegments service method.</param>
+        /// 
+        /// <returns>The response from the AssociateStreamForSegments service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AssociateStreamForSegments">REST API Reference for AssociateStreamForSegments Operation</seealso>
+        AssociateStreamForSegmentsResponse AssociateStreamForSegments(AssociateStreamForSegmentsRequest request);
+
+
+
+        /// <summary>
+        /// Associates an Amazon Kinesis data stream to receive segment membership events for
+        /// a given domain. This is a domain-level configuration that applies to all segment subscriptions
+        /// within the domain. A domain can have only one associated stream at a time.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateStreamForSegments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateStreamForSegments service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/AssociateStreamForSegments">REST API Reference for AssociateStreamForSegments Operation</seealso>
+        Task<AssociateStreamForSegmentsResponse> AssociateStreamForSegmentsAsync(AssociateStreamForSegmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  BatchGetCalculatedAttributeForProfile
 
 
@@ -2184,6 +2246,66 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  DeleteSegmentSubscription
+
+
+        /// <summary>
+        /// Deletes a segment subscription for membership events. All active event notifications
+        /// for this segment are stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSegmentSubscription service method.</param>
+        /// 
+        /// <returns>The response from the DeleteSegmentSubscription service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentSubscription">REST API Reference for DeleteSegmentSubscription Operation</seealso>
+        DeleteSegmentSubscriptionResponse DeleteSegmentSubscription(DeleteSegmentSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a segment subscription for membership events. All active event notifications
+        /// for this segment are stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSegmentSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteSegmentSubscription service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteSegmentSubscription">REST API Reference for DeleteSegmentSubscription Operation</seealso>
+        Task<DeleteSegmentSubscriptionResponse> DeleteSegmentSubscriptionAsync(DeleteSegmentSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteWorkflow
 
 
@@ -2299,6 +2421,66 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DetectProfileObjectType">REST API Reference for DetectProfileObjectType Operation</seealso>
         Task<DetectProfileObjectTypeResponse> DetectProfileObjectTypeAsync(DetectProfileObjectTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateStreamForSegments
+
+
+        /// <summary>
+        /// Disassociates the Amazon Kinesis data stream configured for segment membership events.
+        /// All active segment subscriptions delivering events to this stream are eventually stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateStreamForSegments service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateStreamForSegments service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DisassociateStreamForSegments">REST API Reference for DisassociateStreamForSegments Operation</seealso>
+        DisassociateStreamForSegmentsResponse DisassociateStreamForSegments(DisassociateStreamForSegmentsRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates the Amazon Kinesis data stream configured for segment membership events.
+        /// All active segment subscriptions delivering events to this stream are eventually stopped.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateStreamForSegments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateStreamForSegments service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DisassociateStreamForSegments">REST API Reference for DisassociateStreamForSegments Operation</seealso>
+        Task<DisassociateStreamForSegmentsResponse> DisassociateStreamForSegmentsAsync(DisassociateStreamForSegmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3878,6 +4060,66 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  GetSegmentSubscription
+
+
+        /// <summary>
+        /// Returns the current subscription configuration, execution schedule, and status for
+        /// segment membership events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentSubscription service method.</param>
+        /// 
+        /// <returns>The response from the GetSegmentSubscription service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSubscription">REST API Reference for GetSegmentSubscription Operation</seealso>
+        GetSegmentSubscriptionResponse GetSegmentSubscription(GetSegmentSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Returns the current subscription configuration, execution schedule, and status for
+        /// segment membership events.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSegmentSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSegmentSubscription service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSegmentSubscription">REST API Reference for GetSegmentSubscription Operation</seealso>
+        Task<GetSegmentSubscriptionResponse> GetSegmentSubscriptionAsync(GetSegmentSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetSimilarProfiles
 
 
@@ -3937,6 +4179,66 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetSimilarProfiles">REST API Reference for GetSimilarProfiles Operation</seealso>
         Task<GetSimilarProfilesResponse> GetSimilarProfilesAsync(GetSimilarProfilesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetStreamForSegments
+
+
+        /// <summary>
+        /// Returns information about the segment membership event stream configured for a specific
+        /// domain, including the stream state and associated segments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamForSegments service method.</param>
+        /// 
+        /// <returns>The response from the GetStreamForSegments service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetStreamForSegments">REST API Reference for GetStreamForSegments Operation</seealso>
+        GetStreamForSegmentsResponse GetStreamForSegments(GetStreamForSegmentsRequest request);
+
+
+
+        /// <summary>
+        /// Returns information about the segment membership event stream configured for a specific
+        /// domain, including the stream state and associated segments.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStreamForSegments service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStreamForSegments service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetStreamForSegments">REST API Reference for GetStreamForSegments Operation</seealso>
+        Task<GetStreamForSegmentsResponse> GetStreamForSegmentsAsync(GetStreamForSegmentsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -5516,6 +5818,76 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  ListSegmentSubscriptionEvents
+
+
+        /// <summary>
+        /// Returns the most recent membership events for a segment. Each event represents a profile
+        /// that entered or exited the segment. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation is paginated. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSegmentSubscriptionEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListSegmentSubscriptionEvents service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentSubscriptionEvents">REST API Reference for ListSegmentSubscriptionEvents Operation</seealso>
+        ListSegmentSubscriptionEventsResponse ListSegmentSubscriptionEvents(ListSegmentSubscriptionEventsRequest request);
+
+
+
+        /// <summary>
+        /// Returns the most recent membership events for a segment. Each event represents a profile
+        /// that entered or exited the segment. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation is paginated. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSegmentSubscriptionEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSegmentSubscriptionEvents service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListSegmentSubscriptionEvents">REST API Reference for ListSegmentSubscriptionEvents Operation</seealso>
+        Task<ListSegmentSubscriptionEventsResponse> ListSegmentSubscriptionEventsAsync(ListSegmentSubscriptionEventsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -6127,6 +6499,100 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutProfileObjectType">REST API Reference for PutProfileObjectType Operation</seealso>
         Task<PutProfileObjectTypeResponse> PutProfileObjectTypeAsync(PutProfileObjectTypeRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutSegmentSubscription
+
+
+        /// <summary>
+        /// Creates or updates a segment subscription for membership events. When a subscription
+        /// is created, an initial snapshot is taken and the system begins monitoring for membership
+        /// changes. 
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally set a schedule configuration interval to control how often membership
+        /// snapshots are run. The interval can be from 1 to 24 hours. If not set, the interval
+        /// defaults to 24 hours. Scheduled snapshots run on a best-effort basis. If a scheduled
+        /// snapshot takes longer than the configured interval, the next scheduled run does not
+        /// start until the in-progress snapshot completes, so a run might be delayed or skipped
+        /// and is not guaranteed to occur at exactly the requested time. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For Classic segments, membership events are generated from these scheduled snapshots
+        /// and also in near real-time as profile attribute changes occur. For SQL segments, membership
+        /// events are generated only from the scheduled snapshots. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSegmentSubscription service method.</param>
+        /// 
+        /// <returns>The response from the PutSegmentSubscription service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutSegmentSubscription">REST API Reference for PutSegmentSubscription Operation</seealso>
+        PutSegmentSubscriptionResponse PutSegmentSubscription(PutSegmentSubscriptionRequest request);
+
+
+
+        /// <summary>
+        /// Creates or updates a segment subscription for membership events. When a subscription
+        /// is created, an initial snapshot is taken and the system begins monitoring for membership
+        /// changes. 
+        /// 
+        ///  
+        /// <para>
+        /// You can optionally set a schedule configuration interval to control how often membership
+        /// snapshots are run. The interval can be from 1 to 24 hours. If not set, the interval
+        /// defaults to 24 hours. Scheduled snapshots run on a best-effort basis. If a scheduled
+        /// snapshot takes longer than the configured interval, the next scheduled run does not
+        /// start until the in-progress snapshot completes, so a run might be delayed or skipped
+        /// and is not guaranteed to occur at exactly the requested time. 
+        /// </para>
+        ///  
+        /// <para>
+        /// For Classic segments, membership events are generated from these scheduled snapshots
+        /// and also in near real-time as profile attribute changes occur. For SQL segments, membership
+        /// events are generated only from the scheduled snapshots. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutSegmentSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutSegmentSubscription service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/PutSegmentSubscription">REST API Reference for PutSegmentSubscription Operation</seealso>
+        Task<PutSegmentSubscriptionResponse> PutSegmentSubscriptionAsync(PutSegmentSubscriptionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

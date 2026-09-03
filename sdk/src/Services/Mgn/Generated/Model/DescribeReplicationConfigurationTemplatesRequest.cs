@@ -31,7 +31,8 @@ namespace Amazon.Mgn.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReplicationConfigurationTemplates operation.
-    /// Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
+    /// Lists all ReplicationConfigurationTemplates, filtered by replication configuration
+    /// template IDs.
     /// </summary>
     public partial class DescribeReplicationConfigurationTemplatesRequest : AmazonMgnRequest
     {

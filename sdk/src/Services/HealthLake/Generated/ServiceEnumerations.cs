@@ -265,6 +265,102 @@ namespace Amazon.HealthLake
 
 
     /// <summary>
+    /// Constants used for properties of type BackupStatus.
+    /// </summary>
+    public class BackupStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for BackupStatus
+        /// </summary>
+        public static readonly BackupStatus DISABLED = new BackupStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for BackupStatus
+        /// </summary>
+        public static readonly BackupStatus ENABLED = new BackupStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BackupStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BackupStatus FindValue(string value)
+        {
+            return FindValue<BackupStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BackupStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BackupType.
+    /// </summary>
+    public class BackupType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTINUOUS for BackupType
+        /// </summary>
+        public static readonly BackupType CONTINUOUS = new BackupType("CONTINUOUS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BackupType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BackupType FindValue(string value)
+        {
+            return FindValue<BackupType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BackupType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmkType.
     /// </summary>
     public class CmkType : ConstantClass

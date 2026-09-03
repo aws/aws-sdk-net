@@ -827,6 +827,64 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  CreateConsentPortal
+
+        internal virtual CreateConsentPortalResponse CreateConsentPortal(CreateConsentPortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConsentPortalResponseUnmarshaller.Instance;
+
+            return Invoke<CreateConsentPortalResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new consent portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateConsentPortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateConsentPortal service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ServiceQuotaExceededException">
+        /// This exception is thrown when a request is made beyond the service quota
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateConsentPortal">REST API Reference for CreateConsentPortal Operation</seealso>
+        public virtual Task<CreateConsentPortalResponse> CreateConsentPortalAsync(CreateConsentPortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = CreateConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateConsentPortalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateConsentPortalResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  CreateDataset
 
         internal virtual CreateDatasetResponse CreateDataset(CreateDatasetRequest request)
@@ -1695,7 +1753,7 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic
-        /// control over agentic interactions with AgentCore Gateway. Using the Cedar policy language,
+        /// control over agentic interactions with AgentCore Gateway. Using Cedar or Dogwood,
         /// you can define fine-grained policies that specify which interactions with Gateway
         /// tools are permitted based on input parameters and OAuth claims, ensuring agents operate
         /// within defined boundaries and business rules. The policy is validated during creation
@@ -2397,6 +2455,61 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  DeleteConsentPortal
+
+        internal virtual DeleteConsentPortalResponse DeleteConsentPortal(DeleteConsentPortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConsentPortalResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteConsentPortalResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a consent portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteConsentPortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteConsentPortal service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteConsentPortal">REST API Reference for DeleteConsentPortal Operation</seealso>
+        public virtual Task<DeleteConsentPortalResponse> DeleteConsentPortalAsync(DeleteConsentPortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DeleteConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteConsentPortalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteConsentPortalResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  DeleteDataset
 
         internal virtual DeleteDatasetResponse DeleteDataset(DeleteDatasetRequest request)
@@ -2882,7 +2995,8 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Deletes an Amazon Bedrock AgentCore Memory resource.
+        /// Deletes an Amazon Bedrock AgentCore Memory resource. When you delete a memory resource,
+        /// it is permanently removed.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMemory service method.</param>
         /// <param name="cancellationToken">
@@ -3937,6 +4051,58 @@ namespace Amazon.BedrockAgentCoreControl
         }
         #endregion
         
+        #region  GetConsentPortal
+
+        internal virtual GetConsentPortalResponse GetConsentPortal(GetConsentPortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConsentPortalResponseUnmarshaller.Instance;
+
+            return Invoke<GetConsentPortalResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about a consent portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetConsentPortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetConsentPortal service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConsentPortal">REST API Reference for GetConsentPortal Operation</seealso>
+        public virtual Task<GetConsentPortalResponse> GetConsentPortalAsync(GetConsentPortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = GetConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetConsentPortalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetConsentPortalResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetDataset
 
         internal virtual GetDatasetResponse GetDataset(GetDatasetRequest request)
@@ -4798,7 +4964,7 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Retrieves information about a policy generation request within the AgentCore Policy
-        /// system. Policy generation converts natural language descriptions into Cedar policy
+        /// system. Policy generation converts natural language descriptions into Dogwood policy
         /// statements using AI-powered translation, enabling non-technical users to create policies.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicyGeneration service method.</param>
@@ -5706,6 +5872,55 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = ListConfigurationBundleVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListConfigurationBundleVersionsResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  ListConsentPortals
+
+        internal virtual ListConsentPortalsResponse ListConsentPortals(ListConsentPortalsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConsentPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConsentPortalsResponseUnmarshaller.Instance;
+
+            return Invoke<ListConsentPortalsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all of the consent portals in your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListConsentPortals service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListConsentPortals service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConsentPortals">REST API Reference for ListConsentPortals Operation</seealso>
+        public virtual Task<ListConsentPortalsResponse> ListConsentPortalsAsync(ListConsentPortalsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListConsentPortalsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListConsentPortalsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListConsentPortalsResponse>(request, options, cancellationToken);
         }
         #endregion
         
@@ -6684,7 +6899,7 @@ namespace Amazon.BedrockAgentCoreControl
 
         /// <summary>
         /// Retrieves a list of generated policy assets from a policy generation request within
-        /// the AgentCore Policy system. This operation returns the actual Cedar policies and
+        /// the AgentCore Policy system. This operation returns the actual Dogwood policies and
         /// related artifacts produced by the AI-powered policy generation process, allowing users
         /// to review and select from multiple generated policy options.
         /// </summary>
@@ -7206,18 +7421,18 @@ namespace Amazon.BedrockAgentCoreControl
 
 
         /// <summary>
-        /// Initiates the AI-powered generation of Cedar policies from natural language descriptions
+        /// Initiates the AI-powered generation of Dogwood policies from natural language descriptions
         /// within the AgentCore Policy system. This feature enables both technical and non-technical
         /// users to create policies by describing their authorization requirements in plain English,
-        /// which is then automatically translated into formal Cedar policy statements. The generation
-        /// process analyzes the natural language input along with the Gateway's tool context
-        /// to produce validated policy options. Generated policy assets are automatically deleted
-        /// after 7 days, so you should review and create policies from the generated assets within
-        /// this timeframe. Once created, policies are permanent and not subject to this expiration.
-        /// Generated policies should be reviewed and tested in log-only mode before deploying
-        /// to production. Use this when you want to describe policy intent naturally rather than
-        /// learning Cedar syntax, though generated policies may require refinement for complex
-        /// scenarios.
+        /// which is then automatically translated into formal Dogwood policy statements. The
+        /// generation process analyzes the natural language input along with the Gateway's tool
+        /// context to produce validated policy options. Generated policy assets are automatically
+        /// deleted after 7 days, so you should review and create policies from the generated
+        /// assets within this timeframe. Once created, policies are permanent and not subject
+        /// to this expiration. Generated policies should be reviewed and tested in log-only mode
+        /// before deploying to production. Use this when you want to describe policy intent naturally
+        /// rather than learning Dogwood syntax, though generated policies may require refinement
+        /// for complex scenarios.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartPolicyGeneration service method.</param>
         /// <param name="cancellationToken">
@@ -7770,6 +7985,61 @@ namespace Amazon.BedrockAgentCoreControl
             options.ResponseUnmarshaller = UpdateConfigurationBundleResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateConfigurationBundleResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateConsentPortal
+
+        internal virtual UpdateConsentPortalResponse UpdateConsentPortal(UpdateConsentPortalRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConsentPortalResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConsentPortalResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing consent portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConsentPortal service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConsentPortal service method, as returned by BedrockAgentCoreControl.</returns>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.AccessDeniedException">
+        /// This exception is thrown when a request is denied per access permissions
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ConflictException">
+        /// This exception is thrown when there is a conflict performing an operation
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.InternalServerException">
+        /// This exception is thrown if there was an unexpected error during processing of request
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource referenced by the operation does not exist
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ThrottlingException">
+        /// This exception is thrown when the number of requests exceeds the limit
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.UnauthorizedException">
+        /// This exception is thrown when the JWT bearer token is invalid or not found for OAuth
+        /// bearer token based access
+        /// </exception>
+        /// <exception cref="Amazon.BedrockAgentCoreControl.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateConsentPortal">REST API Reference for UpdateConsentPortal Operation</seealso>
+        public virtual Task<UpdateConsentPortalResponse> UpdateConsentPortalAsync(UpdateConsentPortalRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConsentPortalRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConsentPortalResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConsentPortalResponse>(request, options, cancellationToken);
         }
         #endregion
         

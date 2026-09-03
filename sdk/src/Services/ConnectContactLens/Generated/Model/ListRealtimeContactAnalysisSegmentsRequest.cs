@@ -31,7 +31,13 @@ namespace Amazon.ConnectContactLens.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRealtimeContactAnalysisSegments operation.
-    /// Provides a list of analysis segments for a real-time analysis session.
+    /// Provides a list of analysis segments for a real-time analysis session for voice.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Voice data is retained for 24 hours. You must invoke this API during that time.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListRealtimeContactAnalysisSegmentsRequest : AmazonConnectContactLensRequest
     {

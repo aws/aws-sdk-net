@@ -62,6 +62,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.Enabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("triggerFilterGroups", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<TriggerFilterGroup, TriggerFilterGroupUnmarshaller>(TriggerFilterGroupUnmarshaller.Instance);
+                    unmarshalledObject.TriggerFilterGroups = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

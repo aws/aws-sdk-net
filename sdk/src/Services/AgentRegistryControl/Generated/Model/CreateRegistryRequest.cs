@@ -38,9 +38,11 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class CreateRegistryRequest : AmazonAgentRegistryControlRequest
     {
         private ApprovalConfiguration _approvalConfiguration;
+        private AutoDetectionConfiguration _autoDetectionConfiguration;
         private string _clientToken;
         private string _description;
         private DiscoveryConfiguration _discoveryConfiguration;
+        private EncryptionConfiguration _encryptionConfiguration;
         private string _name;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -63,9 +65,32 @@ namespace Amazon.AgentRegistryControl.Model
         }
 
         /// <summary>
+        /// Gets and sets the property AutoDetectionConfiguration. 
+        /// <para>
+        /// The optional auto-detection configuration for the registry. When provided, the registry
+        /// is automatically populated with resources discovered according to the configuration.
+        /// Omit this field for registries whose records are managed exclusively through the Agent
+        /// Registry Control API.
+        /// </para>
+        /// </summary>
+        public AutoDetectionConfiguration AutoDetectionConfiguration
+        {
+            get { return this._autoDetectionConfiguration; }
+            set { this._autoDetectionConfiguration = value; }
+        }
+
+        // Check to see if AutoDetectionConfiguration property is set
+        internal bool IsSetAutoDetectionConfiguration()
+        {
+            return this._autoDetectionConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Client token for idempotency
+        /// A unique, case-sensitive identifier to ensure that the operation completes no more
+        /// than one time. If this token matches a previous request, the service ignores the request,
+        /// but does not return an error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
@@ -116,6 +141,27 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetDiscoveryConfiguration()
         {
             return this._discoveryConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EncryptionConfiguration. 
+        /// <para>
+        /// The optional server-side encryption configuration for the registry. When you provide
+        /// this field, the specified customer-managed Amazon Web Services KMS key encrypts the
+        /// registry's content. Omit this field to use an Amazon Web Services-owned encryption
+        /// key. You cannot change the encryption configuration after registry creation.
+        /// </para>
+        /// </summary>
+        public EncryptionConfiguration EncryptionConfiguration
+        {
+            get { return this._encryptionConfiguration; }
+            set { this._encryptionConfiguration = value; }
+        }
+
+        // Check to see if EncryptionConfiguration property is set
+        internal bool IsSetEncryptionConfiguration()
+        {
+            return this._encryptionConfiguration != null;
         }
 
         /// <summary>

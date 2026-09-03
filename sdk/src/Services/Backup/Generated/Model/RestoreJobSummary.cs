@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// This is a summary of restore jobs created or running within the most recent 30 days.
+    /// This is a summary of restore jobs created or running within the most recent 14 days.
     /// 
     ///  
     /// <para>

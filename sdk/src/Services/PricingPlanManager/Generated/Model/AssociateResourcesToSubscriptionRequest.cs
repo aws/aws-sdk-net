@@ -37,7 +37,7 @@ namespace Amazon.PricingPlanManager.Model
     ///  <note> 
     /// <para>
     /// For subscriptions in the CloudFront plan family, the associated resources must include
-    /// exactly one Amazon CloudFront distribution and one AWS WAF web ACL. You can also include
+    /// exactly one Amazon CloudFront distribution and one WAF web ACL. You can also include
     /// other supported resources, such as Amazon Route 53 hosted zones, and CloudFront KeyValueStores.
     /// </para>
     ///  </note>

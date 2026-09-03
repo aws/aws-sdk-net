@@ -3,6 +3,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using SmithyDotNet.Generator.Generation;
 using SmithyDotNet.Generator.Model.Traits;
+using SmithyDotNet.Generator.Writers.Shapes;
 
 namespace SmithyDotNet.Generator.Writers;
 
@@ -181,6 +182,23 @@ public static partial class DocumentationFormatter
     }
 
     /// <summary>
+    /// Writes a type-level XML doc summary. The <c>&lt;summary&gt;</c>/<c>&lt;/summary&gt;</c> tags are
+    /// always emitted — even when <paramref name="cleanedDocumentation"/> is empty — so a public type
+    /// whose shape carries no <c>@documentation</c> still satisfies CS1591, which is an error under
+    /// <c>GenerateDocumentationFile</c>. The body is written only when present.
+    /// </summary>
+    public static void WriteClassSummary(CodeWriter writer, string cleanedDocumentation)
+    {
+        writer.WriteLine("/// <summary>");
+        if (cleanedDocumentation.Length > 0)
+        {
+            WriteCommentBlock(writer, cleanedDocumentation);
+        }
+
+        writer.WriteLine("/// </summary>");
+    }
+
+    /// <summary>
     /// Writes the XML doc comment for an operation method — summary, the <c>request</c> (and, for the
     /// async overload, <c>cancellationToken</c>) <c>&lt;param&gt;</c> tags, the <c>&lt;returns&gt;</c>
     /// tag, an <c>&lt;exception&gt;</c> tag per modeled error, and the REST-API-reference
@@ -212,7 +230,7 @@ public static partial class DocumentationFormatter
             WriteExceptionTag(writer, context, error);
         }
 
-        writer.WriteLine($"/// <seealso href=\"http://docs.aws.amazon.com/goto/WebAPI/{context.EndpointPrefix}-{context.ApiVersion}/{operation.Name}\">REST API Reference for {operation.Name} Operation</seealso>");
+        writer.WriteLine($"""/// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/{context.ServiceUid}/{operation.Name}">REST API Reference for {operation.Name} Operation</seealso>""");
     }
 
     /// <summary>

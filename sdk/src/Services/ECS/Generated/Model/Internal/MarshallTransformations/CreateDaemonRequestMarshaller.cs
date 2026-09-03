@@ -98,6 +98,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ClusterArn);
             }
 
+            if(publicRequest.IsSetCritical())
+            {
+                context.Writer.WritePropertyName("critical");
+                context.Writer.WriteBooleanValue(publicRequest.Critical.Value);
+            }
+
             if(publicRequest.IsSetDaemonName())
             {
                 context.Writer.WritePropertyName("daemonName");

@@ -51,6 +51,7 @@ namespace Amazon.CloudWatchLogs.Model
         private double? _logGroupsScanned;
         private double? _recordsMatched;
         private double? _recordsScanned;
+        private double? _resultCount;
 
         /// <summary>
         /// Gets and sets the property BytesScanned. 
@@ -164,6 +165,28 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetRecordsScanned()
         {
             return this._recordsScanned.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResultCount. 
+        /// <para>
+        /// The number of rows in the final query result set. This value represents the total
+        /// number of output rows across all pages. For queries that include post-aggregation
+        /// filters (such as <c>stats count(*) by field | filter count &gt; threshold</c>), this
+        /// value might be less than <c>recordsMatched</c>. It reflects only the rows that survived
+        /// all operations in the query.
+        /// </para>
+        /// </summary>
+        public double? ResultCount
+        {
+            get { return this._resultCount; }
+            set { this._resultCount = value; }
+        }
+
+        // Check to see if ResultCount property is set
+        internal bool IsSetResultCount()
+        {
+            return this._resultCount.HasValue; 
         }
 
     }

@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the traffic distribution group.
+        /// The Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         public string InstanceArn

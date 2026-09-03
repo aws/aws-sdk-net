@@ -65,6 +65,7 @@ namespace Amazon.EC2.Model
         private CapacityReservationTenancy _tenancy;
         private int? _totalInstanceCount;
         private string _unusedReservationBillingOwnerId;
+        private ZeroSizePreference _zeroSizePreference;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -760,6 +761,27 @@ namespace Amazon.EC2.Model
         internal bool IsSetUnusedReservationBillingOwnerId()
         {
             return this._unusedReservationBillingOwnerId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZeroSizePreference. 
+        /// <para>
+        ///  The zero-size preference configured for the interruptible Capacity Reservation. A
+        /// value of <c>retain</c> keeps the interruptible Capacity Reservation active at zero
+        /// capacity when you reduce its allocation to zero. A value of <c>default</c> cancels
+        /// the interruptible Capacity Reservation when you reduce its allocation to zero. 
+        /// </para>
+        /// </summary>
+        public ZeroSizePreference ZeroSizePreference
+        {
+            get { return this._zeroSizePreference; }
+            set { this._zeroSizePreference = value; }
+        }
+
+        // Check to see if ZeroSizePreference property is set
+        internal bool IsSetZeroSizePreference()
+        {
+            return this._zeroSizePreference != null;
         }
 
     }

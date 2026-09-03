@@ -35,6 +35,7 @@ namespace Amazon.ConnectContactLens.Model
     public partial class RealtimeContactAnalysisSegment
     {
         private Categories _categories;
+        private ExtractedInformation _extractedInformation;
         private PostContactSummary _postContactSummary;
         private Transcript _transcript;
 
@@ -54,6 +55,24 @@ namespace Amazon.ConnectContactLens.Model
         internal bool IsSetCategories()
         {
             return this._categories != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExtractedInformation. 
+        /// <para>
+        /// The extracted information from the conversation.
+        /// </para>
+        /// </summary>
+        public ExtractedInformation ExtractedInformation
+        {
+            get { return this._extractedInformation; }
+            set { this._extractedInformation = value; }
+        }
+
+        // Check to see if ExtractedInformation property is set
+        internal bool IsSetExtractedInformation()
+        {
+            return this._extractedInformation != null;
         }
 
         /// <summary>

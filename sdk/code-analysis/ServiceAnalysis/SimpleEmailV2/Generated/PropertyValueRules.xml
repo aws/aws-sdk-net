@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.AssociateEmailIdentityCertificateRequest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:certificate/[\w+=,.@-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.AssociateEmailIdentityCertificateRequest.EmailIdentity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.CancelExportJobRequest.JobId</property>
     <min>1</min>
   </property-value-rule>
@@ -107,6 +117,10 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.DisassociateEmailIdentityCertificateRequest.EmailIdentity</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.GetCustomVerificationEmailTemplateRequest.TemplateName</property>
     <min>1</min>
   </property-value-rule>
@@ -182,6 +196,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.GetTenantRequest.TenantName</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.ListEmailIdentityCertificatesRequest.EmailIdentity</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
@@ -427,6 +445,12 @@
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.ExportJobSummary.JobId</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimpleEmailV2.Model.IdentityCertificate.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>arn:[\w+=/,.@-]+:[\w+=/,.@-]+:[\w+=/,.@-]*:[0-9]+:certificate/[\w+=,.@-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimpleEmailV2.Model.IdentityInfo.IdentityName</property>

@@ -74,6 +74,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.MediaExtractionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("syncSchedule", targetDepth, ref reader))
+                {
+                    var unmarshaller = SyncScheduleUnmarshaller.Instance;
+                    unmarshalledObject.SyncSchedule = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

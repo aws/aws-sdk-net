@@ -249,6 +249,56 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type AacPassthroughControl.
+    /// </summary>
+    public class AacPassthroughControl : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NO_PASSTHROUGH for AacPassthroughControl
+        /// </summary>
+        public static readonly AacPassthroughControl NO_PASSTHROUGH = new AacPassthroughControl("NO_PASSTHROUGH");
+        /// <summary>
+        /// Constant WHEN_POSSIBLE for AacPassthroughControl
+        /// </summary>
+        public static readonly AacPassthroughControl WHEN_POSSIBLE = new AacPassthroughControl("WHEN_POSSIBLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AacPassthroughControl(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AacPassthroughControl FindValue(string value)
+        {
+            return FindValue<AacPassthroughControl>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AacPassthroughControl(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AacRateControlMode.
     /// </summary>
     public class AacRateControlMode : ConstantClass
@@ -5693,6 +5743,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant MANIFEST_CUES for CmfcScte35Source
+        /// </summary>
+        public static readonly CmfcScte35Source MANIFEST_CUES = new CmfcScte35Source("MANIFEST_CUES");
+        /// <summary>
         /// Constant NONE for CmfcScte35Source
         /// </summary>
         public static readonly CmfcScte35Source NONE = new CmfcScte35Source("NONE");
@@ -5851,6 +5905,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec AC3 = new Codec("AC3");
         /// <summary>
+        /// Constant AMR for Codec
+        /// </summary>
+        public static readonly Codec AMR = new Codec("AMR");
+        /// <summary>
         /// Constant AV1 for Codec
         /// </summary>
         public static readonly Codec AV1 = new Codec("AV1");
@@ -5867,6 +5925,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec C708 = new Codec("C708");
         /// <summary>
+        /// Constant DV for Codec
+        /// </summary>
+        public static readonly Codec DV = new Codec("DV");
+        /// <summary>
         /// Constant EAC3 for Codec
         /// </summary>
         public static readonly Codec EAC3 = new Codec("EAC3");
@@ -5874,6 +5936,10 @@ namespace Amazon.MediaConvert
         /// Constant FLAC for Codec
         /// </summary>
         public static readonly Codec FLAC = new Codec("FLAC");
+        /// <summary>
+        /// Constant H263 for Codec
+        /// </summary>
+        public static readonly Codec H263 = new Codec("H263");
         /// <summary>
         /// Constant HEVC for Codec
         /// </summary>
@@ -5935,6 +6001,14 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly Codec UNKNOWN = new Codec("UNKNOWN");
         /// <summary>
+        /// Constant VC1 for Codec
+        /// </summary>
+        public static readonly Codec VC1 = new Codec("VC1");
+        /// <summary>
+        /// Constant VC3 for Codec
+        /// </summary>
+        public static readonly Codec VC3 = new Codec("VC3");
+        /// <summary>
         /// Constant VFW for Codec
         /// </summary>
         public static readonly Codec VFW = new Codec("VFW");
@@ -5954,6 +6028,18 @@ namespace Amazon.MediaConvert
         /// Constant WEBVTT for Codec
         /// </summary>
         public static readonly Codec WEBVTT = new Codec("WEBVTT");
+        /// <summary>
+        /// Constant WMA for Codec
+        /// </summary>
+        public static readonly Codec WMA = new Codec("WMA");
+        /// <summary>
+        /// Constant WMA2 for Codec
+        /// </summary>
+        public static readonly Codec WMA2 = new Codec("WMA2");
+        /// <summary>
+        /// Constant WMAPRO for Codec
+        /// </summary>
+        public static readonly Codec WMAPRO = new Codec("WMAPRO");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -6864,6 +6950,10 @@ namespace Amazon.MediaConvert
         /// Constant CENC_V1 for DashIsoPlaybackDeviceCompatibility
         /// </summary>
         public static readonly DashIsoPlaybackDeviceCompatibility CENC_V1 = new DashIsoPlaybackDeviceCompatibility("CENC_V1");
+        /// <summary>
+        /// Constant CENC_V1_UNENCRYPTED_HEADERS for DashIsoPlaybackDeviceCompatibility
+        /// </summary>
+        public static readonly DashIsoPlaybackDeviceCompatibility CENC_V1_UNENCRYPTED_HEADERS = new DashIsoPlaybackDeviceCompatibility("CENC_V1_UNENCRYPTED_HEADERS");
         /// <summary>
         /// Constant UNENCRYPTED_SEI for DashIsoPlaybackDeviceCompatibility
         /// </summary>
@@ -10221,9 +10311,17 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant Asf for Format
+        /// </summary>
+        public static readonly Format Asf = new Format("asf");
+        /// <summary>
         /// Constant Avi for Format
         /// </summary>
         public static readonly Format Avi = new Format("avi");
+        /// <summary>
+        /// Constant Flac for Format
+        /// </summary>
+        public static readonly Format Flac = new Format("flac");
         /// <summary>
         /// Constant Matroska for Format
         /// </summary>
@@ -10248,6 +10346,10 @@ namespace Amazon.MediaConvert
         /// Constant Mxf for Format
         /// </summary>
         public static readonly Format Mxf = new Format("mxf");
+        /// <summary>
+        /// Constant Ogg for Format
+        /// </summary>
+        public static readonly Format Ogg = new Format("ogg");
         /// <summary>
         /// Constant Quicktime for Format
         /// </summary>
@@ -13743,6 +13845,52 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type Hdr10PlusPresence.
+    /// </summary>
+    public class Hdr10PlusPresence : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRESENT for Hdr10PlusPresence
+        /// </summary>
+        public static readonly Hdr10PlusPresence PRESENT = new Hdr10PlusPresence("PRESENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Hdr10PlusPresence(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Hdr10PlusPresence FindValue(string value)
+        {
+            return FindValue<Hdr10PlusPresence>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Hdr10PlusPresence(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type HDRToSDRToneMapper.
     /// </summary>
     public class HDRToSDRToneMapper : ConstantClass
@@ -15821,6 +15969,10 @@ namespace Amazon.MediaConvert
         /// </summary>
         public static readonly JobsQueryFilterKey AudioCodec = new JobsQueryFilterKey("audioCodec");
         /// <summary>
+        /// Constant ErrorCode for JobsQueryFilterKey
+        /// </summary>
+        public static readonly JobsQueryFilterKey ErrorCode = new JobsQueryFilterKey("errorCode");
+        /// <summary>
         /// Constant FileInput for JobsQueryFilterKey
         /// </summary>
         public static readonly JobsQueryFilterKey FileInput = new JobsQueryFilterKey("fileInput");
@@ -17521,6 +17673,10 @@ namespace Amazon.MediaConvert
     {
 
         /// <summary>
+        /// Constant MANIFEST_CUES for M2tsScte35Source
+        /// </summary>
+        public static readonly M2tsScte35Source MANIFEST_CUES = new M2tsScte35Source("MANIFEST_CUES");
+        /// <summary>
         /// Constant NONE for M2tsScte35Source
         /// </summary>
         public static readonly M2tsScte35Source NONE = new M2tsScte35Source("NONE");
@@ -17886,6 +18042,10 @@ namespace Amazon.MediaConvert
     public class M3u8Scte35Source : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MANIFEST_CUES for M3u8Scte35Source
+        /// </summary>
+        public static readonly M3u8Scte35Source MANIFEST_CUES = new M3u8Scte35Source("MANIFEST_CUES");
         /// <summary>
         /// Constant NONE for M3u8Scte35Source
         /// </summary>
@@ -19050,6 +19210,10 @@ namespace Amazon.MediaConvert
     public class MpdScte35Source : ConstantClass
     {
 
+        /// <summary>
+        /// Constant MANIFEST_CUES for MpdScte35Source
+        /// </summary>
+        public static readonly MpdScte35Source MANIFEST_CUES = new MpdScte35Source("MANIFEST_CUES");
         /// <summary>
         /// Constant NONE for MpdScte35Source
         /// </summary>
@@ -23509,6 +23673,234 @@ namespace Amazon.MediaConvert
 
 
     /// <summary>
+    /// Constants used for properties of type TtmlBackgroundColor.
+    /// </summary>
+    public class TtmlBackgroundColor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for TtmlBackgroundColor
+        /// </summary>
+        public static readonly TtmlBackgroundColor AUTO = new TtmlBackgroundColor("AUTO");
+        /// <summary>
+        /// Constant BLACK for TtmlBackgroundColor
+        /// </summary>
+        public static readonly TtmlBackgroundColor BLACK = new TtmlBackgroundColor("BLACK");
+        /// <summary>
+        /// Constant NONE for TtmlBackgroundColor
+        /// </summary>
+        public static readonly TtmlBackgroundColor NONE = new TtmlBackgroundColor("NONE");
+        /// <summary>
+        /// Constant WHITE for TtmlBackgroundColor
+        /// </summary>
+        public static readonly TtmlBackgroundColor WHITE = new TtmlBackgroundColor("WHITE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TtmlBackgroundColor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TtmlBackgroundColor FindValue(string value)
+        {
+            return FindValue<TtmlBackgroundColor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TtmlBackgroundColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TtmlFontColor.
+    /// </summary>
+    public class TtmlFontColor : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for TtmlFontColor
+        /// </summary>
+        public static readonly TtmlFontColor AUTO = new TtmlFontColor("AUTO");
+        /// <summary>
+        /// Constant BLACK for TtmlFontColor
+        /// </summary>
+        public static readonly TtmlFontColor BLACK = new TtmlFontColor("BLACK");
+        /// <summary>
+        /// Constant BLUE for TtmlFontColor
+        /// </summary>
+        public static readonly TtmlFontColor BLUE = new TtmlFontColor("BLUE");
+        /// <summary>
+        /// Constant GREEN for TtmlFontColor
+        /// </summary>
+        public static readonly TtmlFontColor GREEN = new TtmlFontColor("GREEN");
+        /// <summary>
+        /// Constant RED for TtmlFontColor
+        /// </summary>
+        public static readonly TtmlFontColor RED = new TtmlFontColor("RED");
+        /// <summary>
+        /// Constant WHITE for TtmlFontColor
+        /// </summary>
+        public static readonly TtmlFontColor WHITE = new TtmlFontColor("WHITE");
+        /// <summary>
+        /// Constant YELLOW for TtmlFontColor
+        /// </summary>
+        public static readonly TtmlFontColor YELLOW = new TtmlFontColor("YELLOW");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TtmlFontColor(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TtmlFontColor FindValue(string value)
+        {
+            return FindValue<TtmlFontColor>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TtmlFontColor(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TtmlFontStyle.
+    /// </summary>
+    public class TtmlFontStyle : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ITALIC for TtmlFontStyle
+        /// </summary>
+        public static readonly TtmlFontStyle ITALIC = new TtmlFontStyle("ITALIC");
+        /// <summary>
+        /// Constant NORMAL for TtmlFontStyle
+        /// </summary>
+        public static readonly TtmlFontStyle NORMAL = new TtmlFontStyle("NORMAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TtmlFontStyle(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TtmlFontStyle FindValue(string value)
+        {
+            return FindValue<TtmlFontStyle>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TtmlFontStyle(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TtmlFontWeight.
+    /// </summary>
+    public class TtmlFontWeight : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BOLD for TtmlFontWeight
+        /// </summary>
+        public static readonly TtmlFontWeight BOLD = new TtmlFontWeight("BOLD");
+        /// <summary>
+        /// Constant NORMAL for TtmlFontWeight
+        /// </summary>
+        public static readonly TtmlFontWeight NORMAL = new TtmlFontWeight("NORMAL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TtmlFontWeight(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TtmlFontWeight FindValue(string value)
+        {
+            return FindValue<TtmlFontWeight>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TtmlFontWeight(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type TtmlStylePassthrough.
     /// </summary>
     public class TtmlStylePassthrough : ConstantClass
@@ -23552,6 +23944,56 @@ namespace Amazon.MediaConvert
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator TtmlStylePassthrough(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TtmlTextDecoration.
+    /// </summary>
+    public class TtmlTextDecoration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for TtmlTextDecoration
+        /// </summary>
+        public static readonly TtmlTextDecoration NONE = new TtmlTextDecoration("NONE");
+        /// <summary>
+        /// Constant UNDERLINE for TtmlTextDecoration
+        /// </summary>
+        public static readonly TtmlTextDecoration UNDERLINE = new TtmlTextDecoration("UNDERLINE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TtmlTextDecoration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TtmlTextDecoration FindValue(string value)
+        {
+            return FindValue<TtmlTextDecoration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TtmlTextDecoration(string value)
         {
             return FindValue(value);
         }

@@ -34,7 +34,26 @@ namespace Amazon.TaxSettings.Model
     /// </summary>
     public partial class FranceAdditionalInfo
     {
+        private string _eInvoiceRoutingCode;
         private string _sirenNumber;
+
+        /// <summary>
+        /// Gets and sets the property EInvoiceRoutingCode. 
+        /// <para>
+        /// The routing code used for electronic invoicing (e-invoicing) for the company in France.
+        /// </para>
+        /// </summary>
+        public string EInvoiceRoutingCode
+        {
+            get { return this._eInvoiceRoutingCode; }
+            set { this._eInvoiceRoutingCode = value; }
+        }
+
+        // Check to see if EInvoiceRoutingCode property is set
+        internal bool IsSetEInvoiceRoutingCode()
+        {
+            return this._eInvoiceRoutingCode != null;
+        }
 
         /// <summary>
         /// Gets and sets the property SirenNumber. 

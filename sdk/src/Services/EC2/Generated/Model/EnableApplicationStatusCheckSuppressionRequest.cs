@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Maximum 100 instance IDs per request.
+    /// You can specify a maximum of 100 instance IDs for each request.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -61,8 +61,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Unique, case-sensitive identifier that you provide to ensure the idempotency of the
-        /// request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// A unique, case-sensitive identifier that you provide to ensure that the operation
+        /// completes no more than one time. If you retry a request with the same token, the service
+        /// ignores the request but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
         /// idempotency</a>.
         /// </para>
         /// </summary>

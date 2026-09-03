@@ -40,9 +40,12 @@ namespace Amazon.DevOpsAgent.Model
         private UserType _userType;
 
         /// <summary>
-        /// Gets and sets the property AgentSpaceId.
+        /// Gets and sets the property AgentSpaceId. 
+        /// <para>
+        /// The unique identifier for the agent space where the chat will be created.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AgentSpaceId
         {
             get { return this._agentSpaceId; }

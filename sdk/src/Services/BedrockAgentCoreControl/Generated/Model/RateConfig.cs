@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// Rate configuration for a metric (requests or tokens)
+    /// Contains the rate configuration for a rate limit metric, specifying the allowed rate
+    /// and time period.
     /// </summary>
     public partial class RateConfig
     {
@@ -38,7 +39,19 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private double? _rate;
 
         /// <summary>
-        /// Gets and sets the property Period.
+        /// Gets and sets the property Period. 
+        /// <para>
+        /// The time period for the rate limit. Valid values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>second</c>—Measures the rate limit over a one-second window.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>minute</c>—Measures the rate limit over a one-minute window.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public Period Period

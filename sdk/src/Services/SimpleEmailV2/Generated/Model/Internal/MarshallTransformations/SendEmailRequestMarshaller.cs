@@ -73,6 +73,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfigurationOverrides())
+            {
+                context.Writer.WritePropertyName("ConfigurationOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConfigurationOverridesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetConfigurationSetName())
             {
                 context.Writer.WritePropertyName("ConfigurationSetName");

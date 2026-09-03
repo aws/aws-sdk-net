@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistry.Model
 {
     /// <summary>
-    /// Base mixin for agent skills definition descriptor content
+    /// Descriptor that defines an agent skills registry record and its associated content.
     /// </summary>
     public partial class AgentSkillsDefinitionDescriptor
     {
@@ -57,7 +57,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Data.
+        /// Gets and sets the property Data. 
+        /// <para>
+        ///  The agent skills definition content, serialized as descriptor payload data.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string Data
@@ -73,7 +76,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSchemaVersion.
+        /// Gets and sets the property DataSchemaVersion. 
+        /// <para>
+        ///  The schema version of the descriptor payload.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string DataSchemaVersion

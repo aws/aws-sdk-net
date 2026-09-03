@@ -335,6 +335,72 @@ namespace Amazon.SageMakerFeatureStoreRuntime
 
         #endregion
                 
+        #region  UpdateRecord
+
+
+
+        /// <summary>
+        /// Updates one or more feature values for an existing record in the specified feature
+        /// group. Features that you do not include in the request remain unchanged. You can update
+        /// up to 100 features per call.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This operation is available only for feature groups that use the <c>Standard_V2</c>
+        /// or <c>InMemory</c> online store type.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// The record must already exist. If the record does not exist or has been soft-deleted,
+        /// the operation returns a <c>ResourceNotFound</c> error. To create a record, use <c>PutRecord</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide an <c>EventTime</c> that is older than the record's current <c>EventTime</c>,
+        /// the service rejects the update with a <c>ConflictException</c>. If the <c>EventTime</c>
+        /// is equal to or newer than the current value, the service applies the update. If you
+        /// omit <c>EventTime</c>, the service keeps the record's existing <c>EventTime</c> and
+        /// applies the update.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify a <c>TtlDuration</c>, you must also provide an <c>EventTime</c> in
+        /// the request. Otherwise, the operation returns a <c>ValidationError</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRecord service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRecord service method, as returned by SageMakerFeatureStoreRuntime.</returns>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.AccessForbiddenException">
+        /// You do not have permission to perform an action.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ConflictException">
+        /// The service rejected the update because the provided <c>EventTime</c> is older than
+        /// the record's current <c>EventTime</c>. To persist the update, retrieve the record's
+        /// latest <c>EventTime</c> and resubmit the request with an <c>EventTime</c> that is
+        /// equal to or newer than the current value.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.InternalFailureException">
+        /// An internal failure occurred. Try your request again. If the problem persists, contact
+        /// Amazon Web Services customer support.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ResourceNotFoundException">
+        /// A resource that is required to perform an action was not found.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.SageMakerFeatureStoreRuntime.Model.ValidationErrorException">
+        /// There was an error validating your request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-featurestore-runtime-2020-07-01/UpdateRecord">REST API Reference for UpdateRecord Operation</seealso>
+        Task<UpdateRecordResponse> UpdateRecordAsync(UpdateRecordRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region DetermineServiceOperationEndpoint
 
         /// <summary>

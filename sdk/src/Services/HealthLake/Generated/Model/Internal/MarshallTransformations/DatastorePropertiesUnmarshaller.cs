@@ -62,6 +62,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.AnalyticsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("BackupStatusInfo", targetDepth, ref reader))
+                {
+                    var unmarshaller = DatastoreBackupStatusUnmarshaller.Instance;
+                    unmarshalledObject.BackupStatusInfo = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("CreatedAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

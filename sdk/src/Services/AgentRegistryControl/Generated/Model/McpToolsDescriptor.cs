@@ -38,7 +38,10 @@ namespace Amazon.AgentRegistryControl.Model
         private string _dataSchemaVersion;
 
         /// <summary>
-        /// Gets and sets the property Data.
+        /// Gets and sets the property Data. 
+        /// <para>
+        /// The MCP tools descriptor content, serialized as descriptor payload data.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string Data
@@ -54,7 +57,10 @@ namespace Amazon.AgentRegistryControl.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSchemaVersion.
+        /// Gets and sets the property DataSchemaVersion. 
+        /// <para>
+        /// The schema version of the descriptor payload.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string DataSchemaVersion

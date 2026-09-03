@@ -43,6 +43,15 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// Specifies whether ACLs are enabled for the knowledge base.
         /// </para>
+        ///  
+        /// <para>
+        /// This setting works together with the data source connector's ACL crawling. To enforce
+        /// document-level access control end to end, set <c>isACLEnabled</c> to <c>true</c> and
+        /// enable ACL crawling on the connector. For example, for an Amazon S3 data source, set
+        /// <c>accessControlConfiguration.crawlAcl</c> to <c>true</c> in the connector template.
+        /// For more information, see <c>KbTemplateConfiguration</c>. Enabling only one of the
+        /// two settings does not produce a fully ACL-enforced knowledge base.
+        /// </para>
         /// </summary>
         public bool? IsACLEnabled
         {

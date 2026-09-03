@@ -47,6 +47,8 @@ namespace Amazon.DirectConnect.Model
     {
         private bool? _enableSiteLink;
         private int? _mtu;
+        private int? _prefixPoolAllocatedCountIpv4;
+        private int? _prefixPoolAllocatedCountIpv6;
         private string _rateLimit;
         private string _virtualInterfaceId;
         private string _virtualInterfaceName;
@@ -86,6 +88,46 @@ namespace Amazon.DirectConnect.Model
         internal bool IsSetMtu()
         {
             return this._mtu.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixPoolAllocatedCountIpv4. 
+        /// <para>
+        /// The number of inbound IPv4 route prefixes to allocate to the virtual interface. Not
+        /// applicable to public virtual interfaces.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? PrefixPoolAllocatedCountIpv4
+        {
+            get { return this._prefixPoolAllocatedCountIpv4; }
+            set { this._prefixPoolAllocatedCountIpv4 = value; }
+        }
+
+        // Check to see if PrefixPoolAllocatedCountIpv4 property is set
+        internal bool IsSetPrefixPoolAllocatedCountIpv4()
+        {
+            return this._prefixPoolAllocatedCountIpv4.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrefixPoolAllocatedCountIpv6. 
+        /// <para>
+        /// The number of inbound IPv6 route prefixes to allocate to the virtual interface. Not
+        /// applicable to public virtual interfaces.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int? PrefixPoolAllocatedCountIpv6
+        {
+            get { return this._prefixPoolAllocatedCountIpv6; }
+            set { this._prefixPoolAllocatedCountIpv6 = value; }
+        }
+
+        // Check to see if PrefixPoolAllocatedCountIpv6 property is set
+        internal bool IsSetPrefixPoolAllocatedCountIpv6()
+        {
+            return this._prefixPoolAllocatedCountIpv6.HasValue; 
         }
 
         /// <summary>

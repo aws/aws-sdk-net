@@ -36,6 +36,7 @@ namespace Amazon.HealthLake.Model
     public partial class CreateFHIRDatastoreRequest : AmazonHealthLakeRequest
     {
         private AnalyticsConfiguration _analyticsConfiguration;
+        private BackupConfiguration _backupConfiguration;
         private string _clientToken;
         private string _datastoreName;
         private FHIRVersion _datastoreTypeVersion;
@@ -62,6 +63,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetAnalyticsConfiguration()
         {
             return this._analyticsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BackupConfiguration. 
+        /// <para>
+        /// The backup configuration for the data store.
+        /// </para>
+        /// </summary>
+        public BackupConfiguration BackupConfiguration
+        {
+            get { return this._backupConfiguration; }
+            set { this._backupConfiguration = value; }
+        }
+
+        // Check to see if BackupConfiguration property is set
+        internal bool IsSetBackupConfiguration()
+        {
+            return this._backupConfiguration != null;
         }
 
         /// <summary>

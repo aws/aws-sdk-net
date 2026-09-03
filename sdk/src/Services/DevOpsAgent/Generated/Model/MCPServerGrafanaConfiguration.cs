@@ -34,9 +34,34 @@ namespace Amazon.DevOpsAgent.Model
     /// </summary>
     public partial class MCPServerGrafanaConfiguration
     {
+        private List<MCPToolDetail> _enabledElevatedTools = AWSConfigs.InitializeCollections ? new List<MCPToolDetail>() : null;
         private string _endpoint;
         private string _organizationId;
         private List<string> _tools = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property EnabledElevatedTools. 
+        /// <para>
+        /// The subset of elevated-access tools enabled for this integration.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public List<MCPToolDetail> EnabledElevatedTools
+        {
+            get { return this._enabledElevatedTools; }
+            set { this._enabledElevatedTools = value; }
+        }
+
+        // Check to see if EnabledElevatedTools property is set
+        internal bool IsSetEnabledElevatedTools()
+        {
+            return this._enabledElevatedTools != null && (this._enabledElevatedTools.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Endpoint. 

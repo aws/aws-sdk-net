@@ -41,8 +41,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The AWS Key Management Service (AWS KMS) key identifier used to encrypt the transformation
-        /// job output written to Amazon S3.
+        /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key identifier
+        /// used to encrypt the transformation job output written to Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -61,7 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The Amazon S3 URI where AWS HealthLake writes the converted output files.
+        /// The Amazon S3 URI where HealthLake writes the converted output files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=2048)]

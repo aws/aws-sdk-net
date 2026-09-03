@@ -6,6 +6,9 @@ using SmithyDotNet.Generator.Writers.Endpoints;
 using SmithyDotNet.Generator.Writers.NuGet;
 using SmithyDotNet.Generator.Writers.Paginators;
 using SmithyDotNet.Generator.Writers.ProjectFiles;
+using SmithyDotNet.Generator.Writers.Serialization;
+using SmithyDotNet.Generator.Writers.Service;
+using SmithyDotNet.Generator.Writers.Shapes;
 using System.Collections.Concurrent;
 
 namespace SmithyDotNet.Generator.Generation;
@@ -193,12 +196,20 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         var operationShapes = new HashSet<ShapeId>();
         var marshalledStructures = new HashSet<ShapeId>();
         var unmarshalledStructures = new HashSet<ShapeId>();
-        var errorStructures = new HashSet<ShapeId>();
 
         foreach (var operation in context.Operations)
         {
-            operationShapes.Add(operation.Shape.Input);
-            operationShapes.Add(operation.Shape.Output);
+            // smithy.api#Unit as an operation input/output means "no value" — it is not a model
+            // structure, and adding it here would suppress the plain Unit model class that union
+            // members reference (GenerationContext collects Unit into Structures in that case).
+            if (operation.Shape.Input != ShapeId.Unit)
+            {
+                operationShapes.Add(operation.Shape.Input);
+            }
+            if (operation.Shape.Output != ShapeId.Unit)
+            {
+                operationShapes.Add(operation.Shape.Output);
+            }
 
             Emit(Path.Combine(model, $"{operation.Name}Request.g.cs"), operationWriter.WriteRequest(operation, cancellationToken));
             Emit(Path.Combine(model, $"{operation.Name}Response.g.cs"), operationWriter.WriteResponse(operation, cancellationToken));
@@ -220,26 +231,26 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
                     Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
                 }
             }
+        }
 
-            foreach (var error in operation.Errors)
+        // Every error shape in the model gets an unmarshaller, not just those an operation lists:
+        // an error declared only on the service (or reachable only as a member of a response, as
+        // eventstream operations do) should still be returnable.
+        foreach (var (errorId, errorShape) in context.Errors)
+        {
+            var name = ExceptionWriter.ToExceptionName(errorId.Name);
+            Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(errorShape, errorId, cancellationToken));
+
+            // An exception's rich members can target structures (directly, or as list/map
+            // elements); the exception unmarshaller deserializes them, so those nested
+            // structures need unmarshallers too. Exceptions are response-only, so only the
+            // unmarshaller side is walked (never a marshaller), deduped against the shared set
+            // so a structure also reachable from an output isn't emitted twice.
+            foreach (var (shapeId, structure) in ReferencedStructures(errorId, errorShape))
             {
-                if (errorStructures.Add(error.Id))
+                if (unmarshalledStructures.Add(shapeId))
                 {
-                    var name = ExceptionWriter.ToExceptionName(error.Id.Name);
-                    Emit(Path.Combine(marshalling, $"{name}Unmarshaller.g.cs"), exceptionUnmarshallerWriter.Write(error.Shape, error.Id, cancellationToken));
-
-                    // An exception's rich members can target structures (directly, or as list/map
-                    // elements); the exception unmarshaller deserializes them, so those nested
-                    // structures need unmarshallers too. Exceptions are response-only, so only the
-                    // unmarshaller side is walked (never a marshaller), deduped against the shared set
-                    // so a structure also reachable from an output isn't emitted twice.
-                    foreach (var (shapeId, structure) in ReferencedStructures(error.Id, error.Shape))
-                    {
-                        if (unmarshalledStructures.Add(shapeId))
-                        {
-                            Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
-                        }
-                    }
+                    Emit(Path.Combine(marshalling, $"{context.ToDotNetName(shapeId)}Unmarshaller.g.cs"), structureUnmarshaller.Write(structure, shapeId, cancellationToken));
                 }
             }
         }
@@ -268,9 +279,34 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
         }
 
         var structureWriter = new StructureWriter(context, modelFileName);
+
+        // A structure that doubles as an operation input/output normally gets only its
+        // {Op}Request/{Op}Response wrappers. But when other generated code references the shape
+        // through a member (directly, or as a list/map element — e.g. drs SourceServer via
+        // SourceServersList, lambda FunctionConfiguration via FunctionList), those properties are
+        // typed with the plain class name, so C2J also ships the standalone class and we must too.
+        // Unreferenced ones stay wrapper-only, matching C2J (kinesis EnhancedMonitoringOutput has
+        // no standalone class), which also avoids colliding with {Op}Request/{Op}Response file
+        // names for shapes named like their wrapper.
+        var memberReferencedOperationShapes = new HashSet<ShapeId>();
+        var referenceSources = context.Operations.SelectMany(o => new[] { o.Input, o.Output })
+            .Concat(context.Structures.Values)
+            .Concat(context.Errors.Values);
+        foreach (var source in referenceSources)
+        {
+            foreach (var member in source.Members.Values)
+            {
+                var leaf = CollectionLeaf(member.Target);
+                if (operationShapes.Contains(leaf))
+                {
+                    memberReferencedOperationShapes.Add(leaf);
+                }
+            }
+        }
+
         foreach (var (shapeId, structure) in context.Structures)
         {
-            if (operationShapes.Contains(shapeId))
+            if (operationShapes.Contains(shapeId) && !memberReferencedOperationShapes.Contains(shapeId))
             {
                 continue;
             }
@@ -307,14 +343,9 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
     {
         foreach (var member in parent.Members.Values)
         {
-            // If the member is a list/map, the structure is its element/value; otherwise the member
-            // targets the structure directly.
-            var structureId = context.Resolve(member.Target) switch
-            {
-                ListShape list => list.Member.Target,
-                MapShape map => map.Value.Target,
-                _ => member.Target,
-            };
+            // If the member is a (possibly nested) list/map, the structure is its leaf element/value;
+            // otherwise the member targets the structure directly.
+            var structureId = CollectionLeaf(member.Target);
 
             if (!visited.Add(structureId))
             {
@@ -331,6 +362,16 @@ public sealed class ServiceGenerator(GenerationContext context, string modelFile
             }
         }
     }
+
+    // Descends to the leaf of an arbitrarily nested list/map so a structure buried under more than
+    // one collection level (e.g. map<string, list<Struct>>) is still found. A one-level unwrap
+    // would resolve to the inner collection shape, not the structure.
+    private ShapeId CollectionLeaf(ShapeId id) => context.Resolve(id) switch
+    {
+        ListShape list => CollectionLeaf(list.Member.Target),
+        MapShape map => CollectionLeaf(map.Value.Target),
+        _ => id,
+    };
 
     private static void WriteFile(string outputPath, string relativePath, string contents)
     {

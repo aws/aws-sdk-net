@@ -45,7 +45,9 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  
     /// <para>
-    /// Results are sorted by time, with the most recent execution first.
+    /// Results are sorted by time, with the most recent execution first. Running executions
+    /// are sorted by their <c>startDate</c> or <c>redriveDate</c>, and other executions are
+    /// sorted by their <c>stopDate</c>.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +64,8 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This API action is not supported by <c>EXPRESS</c> state machines.
+    /// This API action is not supported by <c>EXPRESS</c> state machines. However, you may
+    /// list <c>EXPRESS</c> children started by a map run using the <c>mapRunArn</c> parameter.
     /// </para>
     /// </summary>
     public partial class ListExecutionsRequest : AmazonStepFunctionsRequest

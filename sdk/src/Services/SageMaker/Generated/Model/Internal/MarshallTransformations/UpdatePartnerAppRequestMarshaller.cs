@@ -98,6 +98,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.Arn);
             }
 
+            if(publicRequest.IsSetAuthType())
+            {
+                context.Writer.WritePropertyName("AuthType");
+                context.Writer.WriteStringValue(publicRequest.AuthType);
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");
@@ -119,6 +125,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("EnableIamSessionBasedIdentity");
                 context.Writer.WriteBooleanValue(publicRequest.EnableIamSessionBasedIdentity.Value);
+            }
+
+            if(publicRequest.IsSetIdcConfig())
+            {
+                context.Writer.WritePropertyName("IdcConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = IdcConfigInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IdcConfig, context);
+
+                context.Writer.WriteEndObject();
             }
 
             if(publicRequest.IsSetMaintenanceConfig())

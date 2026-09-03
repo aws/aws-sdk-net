@@ -69,6 +69,7 @@ namespace Amazon.Kinesis.Model
     public partial class SubscribeToShardRequest : AmazonKinesisRequest
     {
         private string _consumerARN;
+        private bool? _dryRun;
         private string _shardId;
         private StartingPosition _startingPosition;
         private string _streamId;
@@ -90,6 +91,24 @@ namespace Amazon.Kinesis.Model
         internal bool IsSetConsumerARN()
         {
             return this._consumerARN != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
         }
 
         /// <summary>

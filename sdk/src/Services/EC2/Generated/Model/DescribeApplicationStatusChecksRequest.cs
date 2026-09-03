@@ -31,9 +31,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeApplicationStatusChecks operation.
-    /// Describes one or more application status checks. Returns configuration details for
-    /// your application status checks, including protocol, port, path, thresholds, and associations.
-    /// The following rules apply:
+    /// Describes application status checks, including configuration details such as protocol,
+    /// port, path, thresholds, and associations. Results are paginated. Use the <c>NextToken</c>
+    /// parameter to retrieve additional results. The following rules apply:
     /// 
     ///  <ul> <li> 
     /// <para>

@@ -40,8 +40,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The attribute on which the data is grouped, which can be by <c>StartTime</c> and <c>EndTime</c>.
-        /// The default value is <c>EndTime</c>.
+        /// The attribute on which the data is grouped, which can be <c>EndTime</c>, <c>StartTime</c>,
+        /// or <c>LastUpdateTime</c>. <c>StartTime</c> and <c>LastUpdateTime</c> are supported
+        /// only when <c>PartyType</c> is <c>Proposer</c>. The default value is <c>EndTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -61,7 +62,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property SortOrder. 
         /// <para>
         /// The sorting order, which can be <c>ASCENDING</c> or <c>DESCENDING</c>. The default
-        /// value is <c>DESCENDING</c>.
+        /// value is <c>ASCENDING</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

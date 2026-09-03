@@ -88,6 +88,13 @@ namespace Amazon.Runtime.Internal
         public bool? DisableRequestCompression { get; set; }
 
         /// <summary>
+        /// Controls whether the SDK corrects request signing timestamps for clock skew
+        /// (Clock Skew Correction specification). The default value is "false". Set to "true" to
+        /// disable clock skew correction.
+        /// </summary>
+        public bool? DisableClockSkewCorrection { get; set; }
+
+        /// <summary>
         /// Minimum size in bytes that a request body should be to trigger compression.
         /// </summary>
         public long? RequestMinCompressionSizeBytes { get; set; }
@@ -145,6 +152,7 @@ namespace Amazon.Runtime.Internal
         public const string ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT = "AWS_USE_FIPS_ENDPOINT";
         public const string ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS = "AWS_IGNORE_CONFIGURED_ENDPOINT_URLS";
         public const string ENVIRONMENT_VARIABLE_AWS_DISABLE_REQUEST_COMPRESSION = "AWS_DISABLE_REQUEST_COMPRESSION";
+        public const string ENVIRONMENT_VARIABLE_AWS_DISABLE_CLOCK_SKEW_CORRECTION = "AWS_DISABLE_CLOCK_SKEW_CORRECTION";
         public const string ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES = "AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES";
         public const string ENVIRONMENT_VARIABLE_AWS_SDK_UA_APP_ID = "AWS_SDK_UA_APP_ID";
         public const string ENVIRONMENT_VARAIBLE_AWS_ACCOUNT_ID_ENDPOINT_MODE = "AWS_ACCOUNT_ID_ENDPOINT_MODE";
@@ -172,6 +180,7 @@ namespace Amazon.Runtime.Internal
             UseFIPSEndpoint = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_USE_FIPS_ENDPOINT);
             IgnoreConfiguredEndpointUrls = GetEnvironmentVariable(ENVIRONMENT_VARIABLE_AWS_IGNORE_CONFIGURED_ENDPOINT_URLS, false);
             DisableRequestCompression = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_DISABLE_REQUEST_COMPRESSION);
+            DisableClockSkewCorrection = GetEnvironmentVariable<bool>(ENVIRONMENT_VARIABLE_AWS_DISABLE_CLOCK_SKEW_CORRECTION);
             RequestMinCompressionSizeBytes = GetEnvironmentVariable<long>(ENVIRONMENT_VARIABLE_AWS_REQUEST_MIN_COMPRESSION_SIZE_BYTES);
             AccountIdEndpointMode = GetEnvironmentVariable<AccountIdEndpointMode>(ENVIRONMENT_VARAIBLE_AWS_ACCOUNT_ID_ENDPOINT_MODE);
             RequestChecksumCalculation = GetEnvironmentVariable<RequestChecksumCalculation>(ENVIRONMENT_VARIABLE_AWS_REQUEST_CHECKSUM_CALCULATION);
@@ -363,6 +372,7 @@ namespace Amazon.Runtime.Internal
                 UseFIPSEndpoint = profile.UseFIPSEndpoint;
                 IgnoreConfiguredEndpointUrls = profile.IgnoreConfiguredEndpointUrls;
                 DisableRequestCompression = profile.DisableRequestCompression;
+                DisableClockSkewCorrection = profile.DisableClockSkewCorrection;
                 RequestMinCompressionSizeBytes = profile.RequestMinCompressionSizeBytes;
                 ClientAppId = profile.ClientAppId;
                 AccountIdEndpointMode = profile.AccountIdEndpointMode;
@@ -390,6 +400,7 @@ namespace Amazon.Runtime.Internal
                 new KeyValuePair<string, object>("ignore_configured_endpoint_urls", profile.IgnoreConfiguredEndpointUrls),
                 new KeyValuePair<string, object>("endpoint_url", profile.EndpointUrl),
                 new KeyValuePair<string, object>("disable_request_compression", profile.DisableRequestCompression),
+                new KeyValuePair<string, object>("disable_clock_skew_correction", profile.DisableClockSkewCorrection),
                 new KeyValuePair<string, object>("request_min_compression_size_bytes", profile.RequestMinCompressionSizeBytes),
                 new KeyValuePair<string, object>("sdk_ua_app_id", profile.ClientAppId),
                 new KeyValuePair<string, object>("account_id_endpoint_mode", profile.AccountIdEndpointMode),
@@ -463,6 +474,7 @@ namespace Amazon.Runtime.Internal
             _cachedConfiguration.IgnoreConfiguredEndpointUrls = SeekValue(standardGenerators, (c) => c.IgnoreConfiguredEndpointUrls);
 
             _cachedConfiguration.DisableRequestCompression = SeekValue(standardGenerators, (c) => c.DisableRequestCompression);
+            _cachedConfiguration.DisableClockSkewCorrection = SeekValue(standardGenerators, (c) => c.DisableClockSkewCorrection);
             _cachedConfiguration.RequestMinCompressionSizeBytes = SeekValue(standardGenerators, (c) => c.RequestMinCompressionSizeBytes);
             _cachedConfiguration.ClientAppId = SeekString(standardGenerators, (c) => c.ClientAppId, defaultValue: null);
             _cachedConfiguration.AccountIdEndpointMode = SeekValue(standardGenerators, (c) => c.AccountIdEndpointMode);
@@ -632,6 +644,19 @@ namespace Amazon.Runtime.Internal
             get
             {
                 return _cachedConfiguration.DisableRequestCompression;
+            }
+        }
+
+        /// <summary>
+        /// Controls whether the SDK corrects request signing timestamps for clock skew
+        /// (Clock Skew Correction specification). Resolved from the AWS_DISABLE_CLOCK_SKEW_CORRECTION
+        /// environment variable, then the disable_clock_skew_correction shared-config setting.
+        /// </summary>
+        public static bool? DisableClockSkewCorrection
+        {
+            get
+            {
+                return _cachedConfiguration.DisableClockSkewCorrection;
             }
         }
 

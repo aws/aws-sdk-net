@@ -135,6 +135,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         response.S3KeyPrefix = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("S3Tables", targetDepth))
+                    {
+                        var unmarshaller = S3TablePublishStatusUnmarshaller.Instance;
+                        response.S3Tables = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 } 
            }
 

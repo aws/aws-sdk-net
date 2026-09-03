@@ -16,6 +16,28 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateCustomDetectionRuleAssociationRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateCustomDetectionRuleAssociationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateCustomDetectionRuleOrgConfigurationRequest.ClientToken</property>
+    <min>0</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CreateCustomDetectionRuleOrgConfigurationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.CreateDetectorRequest.ClientToken</property>
     <min>0</min>
     <max>64</max>
@@ -234,6 +256,24 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DeleteCustomDetectionRuleAssociationRequest.AssociationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DeleteCustomDetectionRuleAssociationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DeleteCustomDetectionRuleOrgConfigurationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.DeleteDetectorRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -332,6 +372,30 @@
     <property>Amazon.GuardDuty.Model.GetCoverageStatisticsRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetCustomDetectionRuleRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetCustomDetectionRuleAssociationRequest.AssociationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetCustomDetectionRuleAssociationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetCustomDetectionRuleOrgConfigurationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetDetectorRequest.DetectorId</property>
@@ -603,6 +667,27 @@
     <max>50</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListCustomDetectionRuleAssociationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListCustomDetectionRuleAssociationsRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListCustomDetectionRuleOrgConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListCustomDetectionRulesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.ListDetectorsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -764,6 +849,24 @@
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.UntagResourceRequest.ResourceArn</property>
     <pattern>arn:[A-Za-z_.-]{1,20}:guardduty:[A-Za-z0-9_/.-]{0,63}:\d+:detector/[A-Za-z0-9_/.-]{32,264}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateCustomDetectionRuleAssociationRequest.AssociationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateCustomDetectionRuleAssociationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.UpdateCustomDetectionRuleOrgConfigurationRequest.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.UpdateDetectorRequest.DetectorId</property>
@@ -948,6 +1051,67 @@
     <max>12</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ApiCall.Error</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ApiCall.Operation</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ApiCall.Service</property>
+    <min>0</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ApiCall.UserAgent</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AssociationDetail.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AssociationDetail.Arn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:([0-9]*|aws):.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AssociationDetail.AssociationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AssociationDetail.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AssociationSummary.Arn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:([0-9]*|aws):.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AssociationSummary.AssociationId</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[a-zA-Z0-9_-]{1,64}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.AssociationSummary.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.BedrockGuardrail.Arn</property>
     <min>0</min>
     <max>2048</max>
@@ -1005,6 +1169,18 @@
     <property>Amazon.GuardDuty.Model.Destination.Status</property>
     <min>1</min>
     <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DetectionRuleOrgConfiguration.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DetectionRuleOrgConfigurationSummary.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.DNSLogsConfigurationResult.Status</property>
@@ -1215,6 +1391,85 @@
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.ResourceDetails.InstanceArn</property>
     <pattern>arn:(aws|aws-cn|aws-us-gov):[a-z]+:[a-z]+(-[0-9]+|-[a-z]+)+:([0-9]{12}):[a-z\-]+\/[a-zA-Z0-9]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDefinition.Expression</property>
+    <min>1</min>
+    <max>4096</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDetail.Arn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:([0-9]*|aws):.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDetail.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDetail.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDetail.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDetail.Service</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDetail.Tactic</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleDetail.Technique</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleSummary.Arn</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>arn:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]+:[a-zA-Z0-9\-]*:([0-9]*|aws):.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleSummary.Description</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleSummary.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleSummary.RuleId</property>
+    <min>1</min>
+    <max>100</max>
+    <pattern>[a-z0-9]+(-[a-z0-9]+)*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleSummary.Service</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleSummary.Tactic</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.RuleSummary.Technique</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.S3LogsConfigurationResult.Status</property>

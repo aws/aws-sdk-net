@@ -137,11 +137,18 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// You can call <c>AssociateDatasetKmsKey</c> on a dataset that is already associated
-        /// with a KMS key to replace the existing key with a different one. To replace a key,
-        /// the caller must have <c>kms:Decrypt</c> permission on both the current key and the
-        /// new key.
+        /// with a KMS key to replace the existing key with a different one. The caller must have
+        /// <c>kms:Decrypt</c> permission on both the current key and the new key.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If the currently associated key has been deleted, is scheduled for deletion, is pending
+        /// import, is unavailable, or has been disabled, Amazon CloudWatch does not require <c>kms:Decrypt</c>
+        /// permission on the current key and the rotation proceeds. If the key was only disabled,
+        /// consider re-enabling it instead of rotating, because re-enabling allows Amazon CloudWatch
+        /// to resume decrypting your existing metric data encrypted with that key.
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The KMS key that you specify must meet all of the following requirements:
         /// </para>
@@ -182,16 +189,16 @@ namespace Amazon.CloudWatch
         /// the key policy grants the required access to Amazon CloudWatch. These checks include
         /// <c>kms:DescribeKey</c>, <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>, <c>kms:Decrypt</c>,
         /// and <c>kms:ReEncrypt*</c>. After those succeed, a <c>kms:Decrypt</c> dry-run is run
-        /// with the caller's credentials to verify that the calling principal can use the key.
-        /// When you are replacing an existing key, the caller's <c>kms:Decrypt</c> dry-run is
-        /// run on the current key first, and only then on the new key.
+        /// with the caller's credentials to verify that the calling principal can use the new
+        /// key. When you are replacing an existing key, the caller's <c>kms:Decrypt</c> dry-run
+        /// is also run on the current key.
         /// </para>
         ///  
         /// <para>
-        /// If any of these checks fails, the operation fails and the existing key association
-        /// (if any) remains unchanged. Common failure causes include the key being disabled,
-        /// the key policy not granting the required permissions to Amazon CloudWatch, or the
-        /// caller lacking <c>kms:Decrypt</c> permission on the key.
+        /// If any of these checks on the new key fails, the operation fails and the existing
+        /// key association (if any) remains unchanged. Common failure causes include the new
+        /// key being disabled, the key policy not granting the required permissions to Amazon
+        /// CloudWatch, or the caller lacking <c>kms:Decrypt</c> permission on the new key.
         /// </para>
         ///  
         /// <para>
@@ -748,19 +755,25 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// Amazon CloudWatch performs a dry-run <c>kms:Decrypt</c> call on the key as part of
-        /// this operation. This verifies that the caller is authorized to use the currently associated
-        /// key. The caller must have <c>kms:Decrypt</c> permission on the currently associated
-        /// key, and the key must be enabled and accessible. If the key has been disabled or scheduled
-        /// for deletion, you must first re-enable or restore it before you can disassociate it
-        /// from the dataset.
+        /// Amazon CloudWatch performs a dry-run <c>kms:Decrypt</c> call on the currently associated
+        /// key as part of this operation. The caller must have <c>kms:Decrypt</c> permission
+        /// on the currently associated key. If the key is accessible but the caller lacks <c>kms:Decrypt</c>
+        /// permission, the operation fails with <c>AccessDeniedException</c>.
         /// </para>
-        ///  <important> 
+        ///  <note> 
+        /// <para>
+        /// If the currently associated key has been deleted, is scheduled for deletion, is pending
+        /// import, is unavailable, or has been disabled, Amazon CloudWatch does not require <c>kms:Decrypt</c>
+        /// permission on that key and the disassociation proceeds. If the key was only disabled,
+        /// consider re-enabling it instead of disassociating, because re-enabling allows Amazon
+        /// CloudWatch to resume decrypting your existing metric data.
+        /// </para>
+        ///  </note> <important> 
         /// <para>
         /// Disassociating a KMS key from a dataset does not immediately remove the <c>kms:Decrypt</c>
         /// requirement on data plane operations. For up to three hours after disassociation,
         /// callers must continue to have <c>kms:Decrypt</c> permission on the previously associated
-        /// key. Some data may still be encrypted with that key during this window. After this
+        /// key. Some data might still be encrypted with that key during this window. After this
         /// enforcement window elapses, the <c>kms:Decrypt</c> requirement is lifted.
         /// </para>
         ///  </important> 

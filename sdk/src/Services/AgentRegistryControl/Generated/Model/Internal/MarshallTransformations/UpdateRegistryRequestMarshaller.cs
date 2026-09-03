@@ -87,6 +87,17 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAutoDetectionConfiguration())
+            {
+                context.Writer.WritePropertyName("autoDetectionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedAutoDetectionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoDetectionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

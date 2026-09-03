@@ -53,6 +53,18 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// The following attribute is only supported by Gateway Load Balancers:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>send_tcp_reset.on_idle_timeout.enabled</c> – Specifies whether the Gateway Load
+        /// Balancer sends a TCP Reset to the sender of traffic when a TCP flow's idle timeout
+        /// expires. This attribute also applies to non-SYN TCP packets received for flows that
+        /// are not in the flow table. The value is <c>true</c> or <c>false</c>. The default is
+        /// <c>false</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// The following attributes are only supported by Application Load Balancers.
         /// </para>
         ///  <ul> <li> 

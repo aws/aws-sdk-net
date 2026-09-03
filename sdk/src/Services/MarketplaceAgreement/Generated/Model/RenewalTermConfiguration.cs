@@ -39,8 +39,9 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property EnableAutoRenew. 
         /// <para>
-        /// Defines whether the acceptor has chosen to auto-renew the agreement at the end of
-        /// its lifecycle. Can be set to <c>True</c> or <c>False</c>.
+        /// Defines whether the acceptor has chosen to auto-renew the agreement when it reaches
+        /// its end date. Can be set to <c>True</c> or <c>False</c>. The acceptor can change this
+        /// value within the limits set by <c>LockoutPeriod</c> and <c>MaxRenewals</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -35,9 +35,34 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class DeleteDomainRequest : AmazonDataZoneRequest
     {
+        private bool? _cascadeDelete;
         private string _clientToken;
         private string _identifier;
         private bool? _skipDeletionCheck;
+
+        /// <summary>
+        /// Gets and sets the property CascadeDelete. 
+        /// <para>
+        /// Specifies whether to delete the domain along with all of its associated resources.
+        /// When you use this parameter, Amazon DataZone deletes the domain and cleanly removes
+        /// its associated resources without leaving orphaned resources behind. Amazon DataZone
+        /// reports deletion progress in the <c>deleteProgress</c> field. Amazon DataZone reports
+        /// any resources that it can't delete in the <c>failureReasons</c> field of the <c>GetDomain</c>
+        /// response. You can't use this parameter together with <c>skipDeletionCheck</c>. If
+        /// you don't specify a value, the default is <c>false</c>.
+        /// </para>
+        /// </summary>
+        public bool? CascadeDelete
+        {
+            get { return this._cascadeDelete; }
+            set { this._cascadeDelete = value; }
+        }
+
+        // Check to see if CascadeDelete property is set
+        internal bool IsSetCascadeDelete()
+        {
+            return this._cascadeDelete.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -80,7 +105,11 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property SkipDeletionCheck. 
         /// <para>
-        /// Specifies the optional flag to delete all child entities within the domain.
+        /// Specifies whether to skip the check that prevents deletion of a domain that still
+        /// contains resources. When you use this parameter, Amazon DataZone deletes the domain
+        /// but might not remove its associated resources, which can leave orphaned resources
+        /// behind. To delete a domain and fully clean up its associated resources, use <c>cascadeDelete</c>
+        /// instead. You can't use this parameter together with <c>cascadeDelete</c>.
         /// </para>
         /// </summary>
         public bool? SkipDeletionCheck

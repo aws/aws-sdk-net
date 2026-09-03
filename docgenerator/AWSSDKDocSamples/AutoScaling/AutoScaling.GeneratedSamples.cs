@@ -245,6 +245,50 @@ namespace AWSSDKDocSamples.Amazon.AutoScaling.Generated
             #endregion
         }
 
+        public void AutoScalingCreateAutoScalingGroup()
+        {
+            #region autoscaling-create-auto-scaling-group-5
+
+            var client = new AmazonAutoScalingClient();
+            var response = client.CreateAutoScalingGroup(new CreateAutoScalingGroupRequest 
+            {
+                AutoScalingGroupName = "my-asg",
+                CapacityReservationSpecification = new CapacityReservationSpecification { CapacityReservationTarget = new CapacityReservationTarget { CapacityReservationResourceGroupArns = new List<string> {
+                    "arn:aws:resource-groups:us-east-1:123456789012:group/my-capacity-reservation-group"
+                } } },
+                DesiredCapacity = 5,
+                MaxSize = 10,
+                MinSize = 0,
+                MixedInstancesPolicy = new MixedInstancesPolicy {
+                    InstancesDistribution = new InstancesDistribution {
+                        DistributionSegments = new List<DistributionSegment> {
+                            new DistributionSegment { TargetCapacityTypes = new List<string> {
+                                "on-demand-capacity-reservation",
+                                "capacity-block",
+                                "interruptible-capacity-reservation",
+                                "on-demand"
+                            } }
+                        },
+                        OnDemandAllocationStrategy = "prioritized"
+                    },
+                    LaunchTemplate = new LaunchTemplate {
+                        LaunchTemplateSpecification = new LaunchTemplateSpecification {
+                            LaunchTemplateName = "my-template-for-auto-scaling",
+                            Version = "$Default"
+                        },
+                        Overrides = new List<LaunchTemplateOverrides> {
+                            new LaunchTemplateOverrides { InstanceType = "m5.24xlarge" },
+                            new LaunchTemplateOverrides { InstanceType = "p5.48xlarge" }
+                        }
+                    }
+                },
+                VPCZoneIdentifier = "subnet-057fa0918fEXAMPLE"
+            });
+
+
+            #endregion
+        }
+
         public void AutoScalingCreateLaunchConfiguration()
         {
             #region autoscaling-create-launch-configuration-1

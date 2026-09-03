@@ -1,0 +1,51 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.amazonaws.testunsupported#TestUnsupportedService": {
+      "type": "service",
+      "version": "2024-01-01",
+      "operations": [
+        { "target": "com.amazonaws.testunsupported#DoThing" }
+      ]
+    },
+    "com.amazonaws.testunsupported#DoThing": {
+      "type": "operation",
+      "input": { "target": "com.amazonaws.testunsupported#DoThingRequest" }
+    },
+    "com.amazonaws.testunsupported#DoThingRequest": {
+      "type": "structure",
+      "members": {
+        "config": { "target": "com.amazonaws.testunsupported#Config" },
+        "matrix": { "target": "com.amazonaws.testunsupported#SparseMatrix" }
+      }
+    },
+    "com.amazonaws.testunsupported#SparseMatrix": {
+      "type": "list",
+      "member": { "target": "com.amazonaws.testunsupported#Row" },
+      "traits": { "smithy.api#sparse": {} }
+    },
+    "com.amazonaws.testunsupported#Row": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
+    "com.amazonaws.testunsupported#Config": {
+      "type": "structure",
+      "members": {
+        "events": { "target": "com.amazonaws.testunsupported#EventStream" }
+      }
+    },
+    "com.amazonaws.testunsupported#EventStream": {
+      "type": "union",
+      "members": {
+        "tick": { "target": "com.amazonaws.testunsupported#Tick" }
+      },
+      "traits": { "smithy.api#streaming": {} }
+    },
+    "com.amazonaws.testunsupported#Tick": {
+      "type": "structure",
+      "members": {
+        "at": { "target": "smithy.api#Timestamp" }
+      }
+    }
+  }
+}

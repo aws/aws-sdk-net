@@ -34,10 +34,50 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class DescribeLimitsResponse : AmazonWebServiceResponse
     {
+        private int? _channelCount;
+        private int? _channelCountLimit;
         private int? _onDemandStreamCount;
         private int? _onDemandStreamCountLimit;
         private int? _openShardCount;
         private int? _shardLimit;
+
+        /// <summary>
+        /// Gets and sets the property ChannelCount. 
+        /// <para>
+        /// The number of channels in the account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000000)]
+        public int? ChannelCount
+        {
+            get { return this._channelCount; }
+            set { this._channelCount = value; }
+        }
+
+        // Check to see if ChannelCount property is set
+        internal bool IsSetChannelCount()
+        {
+            return this._channelCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelCountLimit. 
+        /// <para>
+        /// The maximum number of channels allowed in the account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000000)]
+        public int? ChannelCountLimit
+        {
+            get { return this._channelCountLimit; }
+            set { this._channelCountLimit = value; }
+        }
+
+        // Check to see if ChannelCountLimit property is set
+        internal bool IsSetChannelCountLimit()
+        {
+            return this._channelCountLimit.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property OnDemandStreamCount. 

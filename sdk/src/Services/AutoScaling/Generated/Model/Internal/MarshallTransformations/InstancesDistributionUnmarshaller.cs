@@ -55,6 +55,17 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("DistributionSegments/member", targetDepth))
+                    {
+                        var unmarshaller = DistributionSegmentUnmarshaller.Instance;
+                        if (unmarshalledObject.DistributionSegments == null)
+                        {
+                            unmarshalledObject.DistributionSegments = new List<DistributionSegment>();
+                        }
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.DistributionSegments.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("OnDemandAllocationStrategy", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

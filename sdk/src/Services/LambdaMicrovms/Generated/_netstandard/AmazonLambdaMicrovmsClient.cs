@@ -295,6 +295,10 @@ namespace Amazon.LambdaMicrovms
         /// <exception cref="Amazon.LambdaMicrovms.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
         /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
+        /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.InternalServerException">
         /// An internal server error occurred. Retry the request later.
         /// </exception>
@@ -400,6 +404,10 @@ namespace Amazon.LambdaMicrovms
         /// <returns>The response from the CreateMicrovmShellAuthToken service method, as returned by LambdaMicrovms.</returns>
         /// <exception cref="Amazon.LambdaMicrovms.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// resource.
         /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.InternalServerException">
         /// An internal server error occurred. Retry the request later.
@@ -1037,6 +1045,12 @@ namespace Amazon.LambdaMicrovms
         /// </param>
         /// 
         /// <returns>The response from the ListTags service method, as returned by LambdaMicrovms.</returns>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.InternalServerException">
+        /// An internal server error occurred. Retry the request later.
+        /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
@@ -1046,8 +1060,14 @@ namespace Amazon.LambdaMicrovms
         /// <exception cref="Amazon.LambdaMicrovms.Model.ServiceException">
         /// The AWS Lambda MicroVMs service encountered an internal error.
         /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request later.
+        /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.TooManyRequestsException">
         /// The request throughput limit was exceeded. Retry the request later.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-microvms-2025-09-09/ListTags">REST API Reference for ListTags Operation</seealso>
         public virtual Task<ListTagsResponse> ListTagsAsync(ListTagsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1143,6 +1163,9 @@ namespace Amazon.LambdaMicrovms
         /// <exception cref="Amazon.LambdaMicrovms.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
         /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.InsufficientCapacityException">
+        /// There is insufficient capacity to fulfill the request. Retry the request later.
         /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.InternalServerException">
         /// An internal server error occurred. Retry the request later.
@@ -1246,6 +1269,12 @@ namespace Amazon.LambdaMicrovms
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by LambdaMicrovms.</returns>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.InternalServerException">
+        /// An internal server error occurred. Retry the request later.
+        /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
@@ -1258,8 +1287,14 @@ namespace Amazon.LambdaMicrovms
         /// <exception cref="Amazon.LambdaMicrovms.Model.ServiceException">
         /// The AWS Lambda MicroVMs service encountered an internal error.
         /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request later.
+        /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.TooManyRequestsException">
         /// The request throughput limit was exceeded. Retry the request later.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-microvms-2025-09-09/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1347,6 +1382,12 @@ namespace Amazon.LambdaMicrovms
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by LambdaMicrovms.</returns>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.InternalServerException">
+        /// An internal server error occurred. Retry the request later.
+        /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.InvalidParameterValueException">
         /// One of the parameters in the request is not valid.
         /// </exception>
@@ -1359,8 +1400,14 @@ namespace Amazon.LambdaMicrovms
         /// <exception cref="Amazon.LambdaMicrovms.Model.ServiceException">
         /// The AWS Lambda MicroVMs service encountered an internal error.
         /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Retry the request later.
+        /// </exception>
         /// <exception cref="Amazon.LambdaMicrovms.Model.TooManyRequestsException">
         /// The request throughput limit was exceeded. Retry the request later.
+        /// </exception>
+        /// <exception cref="Amazon.LambdaMicrovms.Model.ValidationException">
+        /// The input does not satisfy the constraints specified by the service.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-microvms-2025-09-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

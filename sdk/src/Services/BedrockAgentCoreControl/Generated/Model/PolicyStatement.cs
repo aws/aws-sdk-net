@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
-    /// An AgentCore policy statement, which supports plain Cedar policies as well as guardrails
-    /// definitions.
+    /// An AgentCore Cedar or Dogwood policy statement, which supports plain Cedar policies,
+    /// temporal policies, and guardrails definitions.
     /// </summary>
     public partial class PolicyStatement
     {
@@ -40,8 +40,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Statement. 
         /// <para>
-        /// The body of the AgentCore policy statement. Contains the policy logic, which can be
-        /// a Cedar policy or a guardrails definition.
+        /// The body of the AgentCore Cedar or Dogwood policy statement. Contains the policy logic,
+        /// which can be a Cedar policy, a temporal policy, or a guardrails definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=35, Max=10000)]

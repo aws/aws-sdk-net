@@ -36,6 +36,7 @@ namespace Amazon.BedrockAgentCore.Model
     {
         private Amazon.Runtime.Documents.Document _blob;
         private Conversational _conversational;
+        private MemoryJsonData _json;
 
         /// <summary>
         /// Gets and sets the property Blob. 
@@ -72,6 +73,26 @@ namespace Amazon.BedrockAgentCore.Model
         internal bool IsSetConversational()
         {
             return this._conversational != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Json. 
+        /// <para>
+        /// The JSON content of the payload. Use this type to store non-conversational, JSON-formatted
+        /// data, such as behavioral events, activity logs, or system events.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public MemoryJsonData Json
+        {
+            get { return this._json; }
+            set { this._json = value; }
+        }
+
+        // Check to see if Json property is set
+        internal bool IsSetJson()
+        {
+            return this._json != null;
         }
 
     }

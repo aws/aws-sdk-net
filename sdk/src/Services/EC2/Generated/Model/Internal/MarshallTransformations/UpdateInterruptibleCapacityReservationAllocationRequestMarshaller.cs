@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("TargetInstanceCount", StringUtils.FromInt(publicRequest.TargetInstanceCount));
                 }
+                if(publicRequest.IsSetZeroSizePreference())
+                {
+                    request.Parameters.Add("ZeroSizePreference", StringUtils.FromString(publicRequest.ZeroSizePreference));
+                }
             }
 
 #if !NETFRAMEWORK

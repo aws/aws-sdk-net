@@ -34,7 +34,33 @@ namespace Amazon.DevOpsAgent.Model
     /// </summary>
     public partial class MCPServerConfiguration
     {
+        private List<MCPToolDetail> _toolDetails = AWSConfigs.InitializeCollections ? new List<MCPToolDetail>() : null;
         private List<string> _tools = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ToolDetails. 
+        /// <para>
+        /// List of MCP tools with their access categorization. When provided, the tool names
+        /// must match those in the tools member.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public List<MCPToolDetail> ToolDetails
+        {
+            get { return this._toolDetails; }
+            set { this._toolDetails = value; }
+        }
+
+        // Check to see if ToolDetails property is set
+        internal bool IsSetToolDetails()
+        {
+            return this._toolDetails != null && (this._toolDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property Tools. 

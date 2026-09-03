@@ -34,6 +34,7 @@ namespace Amazon.AgentRegistryControl.Model
     /// </summary>
     public partial class RegistrySummary
     {
+        private AutoDetection _autoDetection;
         private DateTime? _createdAt;
         private string _description;
         private DiscoveryConfiguration _discoveryConfiguration;
@@ -43,6 +44,26 @@ namespace Amazon.AgentRegistryControl.Model
         private RegistryStatus _status;
         private string _statusReason;
         private DateTime? _updatedAt;
+
+        /// <summary>
+        /// Gets and sets the property AutoDetection. 
+        /// <para>
+        /// The registry's auto-detection properties, including the requested configuration and
+        /// the current detection status. Present only when auto-detection was configured for
+        /// the registry.
+        /// </para>
+        /// </summary>
+        public AutoDetection AutoDetection
+        {
+            get { return this._autoDetection; }
+            set { this._autoDetection = value; }
+        }
+
+        // Check to see if AutoDetection property is set
+        internal bool IsSetAutoDetection()
+        {
+            return this._autoDetection != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 

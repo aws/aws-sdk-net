@@ -32,7 +32,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the ListCopyJobSummaries operation.
     /// This request obtains a list of copy jobs created or running within the the most recent
-    /// 30 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
+    /// 14 days. You can include parameters AccountID, State, ResourceType, MessageCategory,
     /// AggregationPeriod, MaxResults, or NextToken to filter results.
     /// 
     ///  

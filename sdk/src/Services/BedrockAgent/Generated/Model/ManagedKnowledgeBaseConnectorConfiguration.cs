@@ -37,6 +37,7 @@ namespace Amazon.BedrockAgent.Model
         private Amazon.Runtime.Documents.Document _connectorParameters;
         private DeletionProtectionConfiguration _deletionProtectionConfiguration;
         private MediaExtractionConfiguration _mediaExtractionConfiguration;
+        private SyncSchedule _syncSchedule;
 
         /// <summary>
         /// Gets and sets the property ConnectorParameters. 
@@ -91,6 +92,26 @@ namespace Amazon.BedrockAgent.Model
         internal bool IsSetMediaExtractionConfiguration()
         {
             return this._mediaExtractionConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncSchedule. 
+        /// <para>
+        /// The recurring schedule on which the connector automatically syncs this data source.
+        /// If not specified, the data source is not synced automatically and you start each sync
+        /// yourself. Not supported for the Custom connector.
+        /// </para>
+        /// </summary>
+        public SyncSchedule SyncSchedule
+        {
+            get { return this._syncSchedule; }
+            set { this._syncSchedule = value; }
+        }
+
+        // Check to see if SyncSchedule property is set
+        internal bool IsSetSyncSchedule()
+        {
+            return this._syncSchedule != null;
         }
 
     }

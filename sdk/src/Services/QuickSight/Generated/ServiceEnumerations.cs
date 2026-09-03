@@ -961,6 +961,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AppVisibility.
+    /// </summary>
+    public class AppVisibility : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PRIVATE for AppVisibility
+        /// </summary>
+        public static readonly AppVisibility PRIVATE = new AppVisibility("PRIVATE");
+        /// <summary>
+        /// Constant PUBLIC for AppVisibility
+        /// </summary>
+        public static readonly AppVisibility PUBLIC = new AppVisibility("PUBLIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppVisibility(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppVisibility FindValue(string value)
+        {
+            return FindValue<AppVisibility>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppVisibility(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ArcThickness.
     /// </summary>
     public class ArcThickness : ConstantClass
@@ -13404,6 +13454,68 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RowLevelPermissionPolicy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchAppsFilterName.
+    /// </summary>
+    public class SearchAppsFilterName : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APP_ID for SearchAppsFilterName
+        /// </summary>
+        public static readonly SearchAppsFilterName APP_ID = new SearchAppsFilterName("APP_ID");
+        /// <summary>
+        /// Constant APP_NAME for SearchAppsFilterName
+        /// </summary>
+        public static readonly SearchAppsFilterName APP_NAME = new SearchAppsFilterName("APP_NAME");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_OWNER for SearchAppsFilterName
+        /// </summary>
+        public static readonly SearchAppsFilterName DIRECT_QUICKSIGHT_OWNER = new SearchAppsFilterName("DIRECT_QUICKSIGHT_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_SOLE_OWNER for SearchAppsFilterName
+        /// </summary>
+        public static readonly SearchAppsFilterName DIRECT_QUICKSIGHT_SOLE_OWNER = new SearchAppsFilterName("DIRECT_QUICKSIGHT_SOLE_OWNER");
+        /// <summary>
+        /// Constant DIRECT_QUICKSIGHT_VIEWER_OR_OWNER for SearchAppsFilterName
+        /// </summary>
+        public static readonly SearchAppsFilterName DIRECT_QUICKSIGHT_VIEWER_OR_OWNER = new SearchAppsFilterName("DIRECT_QUICKSIGHT_VIEWER_OR_OWNER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchAppsFilterName(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchAppsFilterName FindValue(string value)
+        {
+            return FindValue<SearchAppsFilterName>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchAppsFilterName(string value)
         {
             return FindValue(value);
         }

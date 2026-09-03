@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistry.Model
 {
     /// <summary>
-    /// Base mixin for agent skills markdown descriptor content
+    /// Markdown-format descriptor containing an agent skills document.
     /// </summary>
     public partial class AgentSkillsMdDescriptor
     {
@@ -39,7 +39,10 @@ namespace Amazon.AgentRegistry.Model
         private DescriptorSource _source;
 
         /// <summary>
-        /// Gets and sets the property Data.
+        /// Gets and sets the property Data. 
+        /// <para>
+        ///  The agent skills markdown content, serialized as descriptor payload data.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string Data
@@ -55,7 +58,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSchemaVersion.
+        /// Gets and sets the property DataSchemaVersion. 
+        /// <para>
+        ///  The schema version of the descriptor payload.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string DataSchemaVersion

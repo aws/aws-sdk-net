@@ -48,6 +48,7 @@ namespace Amazon.RedshiftServerless.Model
         private string _namespaceArn;
         private string _namespaceId;
         private string _namespaceName;
+        private S3TablePublishStatus _s3TablePublishStatus;
         private NamespaceStatus _status;
 
         /// <summary>
@@ -320,6 +321,25 @@ namespace Amazon.RedshiftServerless.Model
         internal bool IsSetNamespaceName()
         {
             return this._namespaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property S3TablePublishStatus. 
+        /// <para>
+        /// The current Amazon S3 Tables log-publishing status for the namespace. Not returned
+        /// when S3 Tables publishing has never been configured for the namespace.
+        /// </para>
+        /// </summary>
+        public S3TablePublishStatus S3TablePublishStatus
+        {
+            get { return this._s3TablePublishStatus; }
+            set { this._s3TablePublishStatus = value; }
+        }
+
+        // Check to see if S3TablePublishStatus property is set
+        internal bool IsSetS3TablePublishStatus()
+        {
+            return this._s3TablePublishStatus != null;
         }
 
         /// <summary>

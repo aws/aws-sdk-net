@@ -32,6 +32,9 @@ public static class ScalarTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#timestampformat-trait" /></remarks>
     public static string? GetTimestampFormat(this Shape shape) => GetStringTrait(shape, "smithy.api#timestampFormat");
 
+    /// <remarks><see href="https://smithy.io/2.0/spec/protocol-traits.html#mediatype-trait" /></remarks>
+    public static string? GetMediaType(this Shape shape) => GetStringTrait(shape, "smithy.api#mediaType");
+
     /// <summary>
     /// The <c>smithy.api#enumValue</c> string trait carried by an <c>enum</c> member — the wire value
     /// C2J stores verbatim as the <c>ConstantClass</c> constructor argument. Returns null when the trait

@@ -39,8 +39,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The <c>S3Uri</c> is the user-specified S3 location of the FHIR data to be imported
-        /// into AWS HealthLake.
+        /// The <c>S3Uri</c> is the user-specified Amazon S3 location of the FHIR data to be imported
+        /// into HealthLake.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

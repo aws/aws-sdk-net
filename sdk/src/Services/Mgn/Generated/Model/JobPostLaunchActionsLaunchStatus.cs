@@ -43,7 +43,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ExecutionID. 
         /// <para>
-        /// AWS Systems Manager Document's execution ID of the of the Job Post Launch Actions.
+        /// AWS Systems Manager Document's execution ID of the Job Post Launch Actions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -99,7 +99,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property SsmDocument. 
         /// <para>
-        /// AWS Systems Manager's Document of the of the Job Post Launch Actions.
+        /// AWS Systems Manager's Document of the Job Post Launch Actions.
         /// </para>
         /// </summary>
         public SsmDocument SsmDocument

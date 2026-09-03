@@ -35,7 +35,7 @@ public static class MemberWriter
         var cleanedDoc = DocumentationFormatter.Cleanup($"Gets and sets the property {member.PropertyName}. {member.Documentation}");
         DocumentationFormatter.WriteCommentBlock(writer, cleanedDoc);
 
-        if (member.IsCollection)
+        if (member.Type.IsCollection)
         {
             writer.WriteLine("/// <para />");
             DocumentationFormatter.WriteCommentBlock(writer, DocumentationFormatter.Cleanup(CollectionDocParagraph));
@@ -55,13 +55,13 @@ public static class MemberWriter
 
         // `new` when the member shadows a base-class member (e.g., Equals or Retryable); empty otherwise.
         var modifier = member.HidesBaseMember ? "new " : string.Empty;
-        if (member.IsCollection)
+        if (member.Type.IsCollection)
         {
-            writer.WriteLine($"public {modifier}{member.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.DotNetType}() : null;");
+            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }} = AWSConfigs.InitializeCollections ? new {member.Type.DotNetType}() : null;");
         }
         else
         {
-            writer.WriteLine($"public {modifier}{member.DotNetType} {member.PropertyName} {{ get; set; }}");
+            writer.WriteLine($"public {modifier}{member.Type.DotNetType} {member.PropertyName} {{ get; set; }}");
         }
 
         writer.WriteLine();

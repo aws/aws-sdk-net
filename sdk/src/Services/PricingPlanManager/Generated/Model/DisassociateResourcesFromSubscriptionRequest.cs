@@ -36,8 +36,8 @@ namespace Amazon.PricingPlanManager.Model
     ///  <note> 
     /// <para>
     /// For subscriptions in the CloudFront plan family, the associated resources must always
-    /// include exactly one Amazon CloudFront distribution and exactly one AWS WAF web ACL.
-    /// You cannot remove these required resources.
+    /// include exactly one Amazon CloudFront distribution and exactly one WAF web ACL. You
+    /// cannot remove these required resources.
     /// </para>
     ///  </note>
     /// </summary>

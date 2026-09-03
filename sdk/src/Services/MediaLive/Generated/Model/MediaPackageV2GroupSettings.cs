@@ -45,6 +45,7 @@ namespace Amazon.MediaLive.Model
         private CmafTimedMetadataId3Frame _timedMetadataId3Frame;
         private int? _timedMetadataId3Period;
         private CmafTimedMetadataPassthrough _timedMetadataPassthrough;
+        private MediaPackageV2WatermarkingSettings _watermarkingSettings;
 
         /// <summary>
         /// Gets and sets the property AdditionalDestinations. Optional an array of additional
@@ -241,6 +242,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetTimedMetadataPassthrough()
         {
             return this._timedMetadataPassthrough != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WatermarkingSettings. Specifies the type of watermarking
+        /// technology to use.
+        /// </summary>
+        public MediaPackageV2WatermarkingSettings WatermarkingSettings
+        {
+            get { return this._watermarkingSettings; }
+            set { this._watermarkingSettings = value; }
+        }
+
+        // Check to see if WatermarkingSettings property is set
+        internal bool IsSetWatermarkingSettings()
+        {
+            return this._watermarkingSettings != null;
         }
 
     }

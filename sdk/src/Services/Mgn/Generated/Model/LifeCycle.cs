@@ -45,7 +45,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property AddedToServiceDateTime. 
         /// <para>
-        /// Lifecycle added to service data and time.
+        /// Lifecycle added to service date and time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=32)]

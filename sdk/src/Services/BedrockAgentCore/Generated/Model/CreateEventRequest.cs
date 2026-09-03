@@ -49,6 +49,7 @@ namespace Amazon.BedrockAgentCore.Model
         private Branch _branch;
         private string _clientToken;
         private DateTime? _eventTimestamp;
+        private ExtractionConfig _extractionConfig;
         private ExtractionMode _extractionMode;
         private string _memoryId;
         private Dictionary<string, MetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
@@ -134,6 +135,25 @@ namespace Amazon.BedrockAgentCore.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExtractionConfig. 
+        /// <para>
+        /// The extraction configuration for long-term memory records. Use this parameter to specify
+        /// namespace variable keys and their values for namespace substitution during extraction.
+        /// </para>
+        /// </summary>
+        public ExtractionConfig ExtractionConfig
+        {
+            get { return this._extractionConfig; }
+            set { this._extractionConfig = value; }
+        }
+
+        // Check to see if ExtractionConfig property is set
+        internal bool IsSetExtractionConfig()
+        {
+            return this._extractionConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExtractionMode. 
         /// <para>
         /// Controls long-term memory extraction for this event. When set to <c>SKIP</c>, the
@@ -199,7 +219,8 @@ namespace Amazon.BedrockAgentCore.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// The content payload of the event. This can include conversational data or binary content.
+        /// The content payload of the event. This can include conversational data, JSON data,
+        /// or binary content.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

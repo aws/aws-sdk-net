@@ -31,8 +31,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataSet operation.
-    /// Describes a dataset. This operation doesn't support datasets that include uploaded
-    /// files as a source.
+    /// Describes a dataset.
     /// </summary>
     public partial class DescribeDataSetRequest : AmazonQuickSightRequest
     {

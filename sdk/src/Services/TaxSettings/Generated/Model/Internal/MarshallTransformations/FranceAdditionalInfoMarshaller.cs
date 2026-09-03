@@ -46,6 +46,12 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetEInvoiceRoutingCode())
+            {
+                context.Writer.WritePropertyName("eInvoiceRoutingCode");
+                context.Writer.WriteStringValue(requestObject.EInvoiceRoutingCode);
+            }
+
             if(requestObject.IsSetSirenNumber())
             {
                 context.Writer.WritePropertyName("sirenNumber");

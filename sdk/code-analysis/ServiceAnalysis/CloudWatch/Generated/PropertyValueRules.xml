@@ -947,4 +947,9 @@
     <min>1</min>
     <max>50</max>
   </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatch.Model.WarmUpConfiguration.WarmUpPeriodDurationInMinutes</property>
+    <min>1</min>
+    <max>2880</max>
+  </property-value-rule>
 </property-value-rules>

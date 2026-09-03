@@ -56,6 +56,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("bidirectional", targetDepth, ref reader))
+                {
+                    var unmarshaller = SlackBidirectionalConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Bidirectional = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("transmissionTarget", targetDepth, ref reader))
                 {
                     var unmarshaller = SlackTransmissionTargetUnmarshaller.Instance;

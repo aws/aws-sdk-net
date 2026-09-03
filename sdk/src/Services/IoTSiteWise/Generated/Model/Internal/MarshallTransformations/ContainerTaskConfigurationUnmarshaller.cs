@@ -74,6 +74,18 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ephemeralStorageConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = EphemeralStorageConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.EphemeralStorageConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("mounts", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Mount, MountUnmarshaller>(MountUnmarshaller.Instance);
+                    unmarshalledObject.Mounts = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("processingType", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

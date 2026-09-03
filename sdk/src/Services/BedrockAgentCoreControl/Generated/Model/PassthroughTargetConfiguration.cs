@@ -38,6 +38,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _endpoint;
         private PassthroughProtocolType _protocolType;
         private HttpApiSchemaConfiguration _schema;
+        private StaticQueryParameterConflictResolution _staticQueryParameterConflictResolution;
+        private Dictionary<string, string> _staticQueryParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private StickinessConfiguration _stickinessConfiguration;
 
         /// <summary>
@@ -114,6 +116,61 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetSchema()
         {
             return this._schema != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticQueryParameterConflictResolution. 
+        /// <para>
+        /// Controls precedence when a client request supplies a query parameter whose name matches
+        /// a configured static query parameter. If not set, defaults to <c>CLIENT_OVERRIDE</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CLIENT_OVERRIDE</c> - The client-supplied value overrides the configured static
+        /// value for that parameter name.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>STATIC_OVERRIDE</c> - The configured static value is retained, overriding the
+        /// client-supplied value for that parameter name.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public StaticQueryParameterConflictResolution StaticQueryParameterConflictResolution
+        {
+            get { return this._staticQueryParameterConflictResolution; }
+            set { this._staticQueryParameterConflictResolution = value; }
+        }
+
+        // Check to see if StaticQueryParameterConflictResolution property is set
+        internal bool IsSetStaticQueryParameterConflictResolution()
+        {
+            return this._staticQueryParameterConflictResolution != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StaticQueryParameters. 
+        /// <para>
+        /// A map of static query parameters that the gateway always appends to the outbound URL
+        /// when forwarding requests to the target. The total outbound URL length, which includes
+        /// the endpoint and the percent-encoded query parameters, is enforced by the service.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public Dictionary<string, string> StaticQueryParameters
+        {
+            get { return this._staticQueryParameters; }
+            set { this._staticQueryParameters = value; }
+        }
+
+        // Check to see if StaticQueryParameters property is set
+        internal bool IsSetStaticQueryParameters()
+        {
+            return this._staticQueryParameters != null && (this._staticQueryParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

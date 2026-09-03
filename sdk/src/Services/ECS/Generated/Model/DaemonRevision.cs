@@ -38,6 +38,7 @@ namespace Amazon.ECS.Model
         private string _clusterArn;
         private List<DaemonContainerImage> _containerImages = AWSConfigs.InitializeCollections ? new List<DaemonContainerImage>() : null;
         private DateTime? _createdAt;
+        private bool? _critical;
         private string _daemonArn;
         private string _daemonRevisionArn;
         private string _daemonTaskDefinitionArn;
@@ -102,6 +103,28 @@ namespace Amazon.ECS.Model
         internal bool IsSetCreatedAt()
         {
             return this._createdAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Critical. 
+        /// <para>
+        /// If the <c>critical</c> parameter of this daemon revision is <c>true</c>, and the daemon
+        /// task fails, stops, or becomes unhealthy, Amazon ECS drains the container instance
+        /// and stops the other tasks running on it. If the parameter is <c>false</c>, the daemon
+        /// task failure doesn't affect the other tasks on the instance, and doesn't block instance
+        /// registration. The default value is <c>true</c>.
+        /// </para>
+        /// </summary>
+        public bool? Critical
+        {
+            get { return this._critical; }
+            set { this._critical = value; }
+        }
+
+        // Check to see if Critical property is set
+        internal bool IsSetCritical()
+        {
+            return this._critical.HasValue; 
         }
 
         /// <summary>

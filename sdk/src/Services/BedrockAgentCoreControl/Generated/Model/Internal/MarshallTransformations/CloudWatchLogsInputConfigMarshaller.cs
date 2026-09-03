@@ -46,6 +46,17 @@ namespace Amazon.BedrockAgentCoreControl.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetLogGroupNamePrefixes())
+            {
+                context.Writer.WritePropertyName("logGroupNamePrefixes");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectLogGroupNamePrefixesListValue in requestObject.LogGroupNamePrefixes)
+                {
+                        context.Writer.WriteStringValue(requestObjectLogGroupNamePrefixesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetLogGroupNames())
             {
                 context.Writer.WritePropertyName("logGroupNames");

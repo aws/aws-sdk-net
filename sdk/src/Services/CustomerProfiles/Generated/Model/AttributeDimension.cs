@@ -59,7 +59,9 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values to apply the DimensionType on.
+        /// The values to apply the DimensionType on. To reference a calculated attribute or profile
+        /// attribute as a dynamic value, use handlebar notation: <c>{{_profile.ProfileAttributeName}}</c>
+        /// or <c>{{_calculated_attribute.CalculatedAttributeName}}</c>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

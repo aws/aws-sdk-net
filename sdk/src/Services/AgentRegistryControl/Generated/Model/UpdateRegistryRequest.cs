@@ -39,6 +39,7 @@ namespace Amazon.AgentRegistryControl.Model
     public partial class UpdateRegistryRequest : AmazonAgentRegistryControlRequest
     {
         private UpdatedApprovalConfiguration _approvalConfiguration;
+        private UpdatedAutoDetectionConfiguration _autoDetectionConfiguration;
         private UpdatedDescription _description;
         private UpdatedDiscoveryConfiguration _discoveryConfiguration;
         private string _name;
@@ -61,6 +62,26 @@ namespace Amazon.AgentRegistryControl.Model
         internal bool IsSetApprovalConfiguration()
         {
             return this._approvalConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoDetectionConfiguration. 
+        /// <para>
+        /// The updated auto-detection configuration for the registry, with PATCH semantics. Omit
+        /// this field to leave the current configuration unchanged. Supply an empty wrapper to
+        /// unset it. Supply <c>optionalValue</c> to replace it.
+        /// </para>
+        /// </summary>
+        public UpdatedAutoDetectionConfiguration AutoDetectionConfiguration
+        {
+            get { return this._autoDetectionConfiguration; }
+            set { this._autoDetectionConfiguration = value; }
+        }
+
+        // Check to see if AutoDetectionConfiguration property is set
+        internal bool IsSetAutoDetectionConfiguration()
+        {
+            return this._autoDetectionConfiguration != null;
         }
 
         /// <summary>

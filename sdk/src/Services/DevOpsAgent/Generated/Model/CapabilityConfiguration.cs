@@ -35,6 +35,7 @@ namespace Amazon.DevOpsAgent.Model
     public partial class CapabilityConfiguration
     {
         private bool? _enabled;
+        private List<TriggerFilterGroup> _triggerFilterGroups = AWSConfigs.InitializeCollections ? new List<TriggerFilterGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -52,6 +53,31 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetEnabled()
         {
             return this._enabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggerFilterGroups. 
+        /// <para>
+        /// Optional trigger filter groups. Evaluated only when enabled=true; retained while the
+        /// capability is disabled, so re-enabling restores the prior trigger behavior.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<TriggerFilterGroup> TriggerFilterGroups
+        {
+            get { return this._triggerFilterGroups; }
+            set { this._triggerFilterGroups = value; }
+        }
+
+        // Check to see if TriggerFilterGroups property is set
+        internal bool IsSetTriggerFilterGroups()
+        {
+            return this._triggerFilterGroups != null && (this._triggerFilterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

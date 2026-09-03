@@ -58,6 +58,12 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                     response.ApprovalConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("autoDetection", targetDepth, ref reader))
+                {
+                    var unmarshaller = AutoDetectionUnmarshaller.Instance;
+                    response.AutoDetection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("createdAt", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = DiscoveryConfigurationUnmarshaller.Instance;
                     response.DiscoveryConfiguration = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("encryptionConfiguration", targetDepth, ref reader))
+                {
+                    var unmarshaller = EncryptionConfigurationUnmarshaller.Instance;
+                    response.EncryptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth, ref reader))

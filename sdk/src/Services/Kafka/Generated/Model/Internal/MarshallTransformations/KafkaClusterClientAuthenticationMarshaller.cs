@@ -57,6 +57,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetSaslOAuthBearer())
+            {
+                context.Writer.WritePropertyName("saslOAuthBearer");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KafkaClusterSaslOAuthBearerAuthenticationMarshaller.Instance;
+                marshaller.Marshall(requestObject.SaslOAuthBearer, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetSaslScram())
             {
                 context.Writer.WritePropertyName("saslScram");

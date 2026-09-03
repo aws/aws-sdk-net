@@ -887,6 +887,140 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  AdminDeleteSoftwareToken
+
+
+        /// <summary>
+        /// Deletes a user's registered time-based one-time password (TOTP) multi-factor authentication
+        /// (MFA) factor, also known as a software token. After this operation, the user can no
+        /// longer sign in with TOTP MFA, and can register a new TOTP factor with <c>AssociateSoftwareToken</c>.
+        /// Use this operation when a user loses access to their TOTP-generating device, for example,
+        /// a lost or reset phone, and needs to register a new one.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminDeleteSoftwareToken service method.</param>
+        /// 
+        /// <returns>The response from the AdminDeleteSoftwareToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user isn't confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteSoftwareToken">REST API Reference for AdminDeleteSoftwareToken Operation</seealso>
+        AdminDeleteSoftwareTokenResponse AdminDeleteSoftwareToken(AdminDeleteSoftwareTokenRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a user's registered time-based one-time password (TOTP) multi-factor authentication
+        /// (MFA) factor, also known as a software token. After this operation, the user can no
+        /// longer sign in with TOTP MFA, and can register a new TOTP factor with <c>AssociateSoftwareToken</c>.
+        /// Use this operation when a user loses access to their TOTP-generating device, for example,
+        /// a lost or reset phone, and needs to register a new one.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AdminDeleteSoftwareToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AdminDeleteSoftwareToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotConfirmedException">
+        /// This exception is thrown when a user isn't confirmed successfully.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.UserNotFoundException">
+        /// This exception is thrown when a user isn't found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/AdminDeleteSoftwareToken">REST API Reference for AdminDeleteSoftwareToken Operation</seealso>
+        Task<AdminDeleteSoftwareTokenResponse> AdminDeleteSoftwareTokenAsync(AdminDeleteSoftwareTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AdminDeleteUser
 
 
@@ -9181,6 +9315,140 @@ namespace Amazon.CognitoIdentityProvider
 
         #endregion
         
+        #region  DescribeTermsByClient
+
+
+        /// <summary>
+        /// Returns details for the terms documents that are associated with an app client, identified
+        /// by the app client ID, user pool ID, and terms name. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To call <c>DescribeTermsByClient</c>, you must have the <c>cognito-idp:DescribeTermsByClient</c>
+        /// Identity and Access Management (IAM) permission. This operation additionally validates
+        /// your permission for <c>cognito-idp:DescribeTerms</c>, the action for . As a result,
+        /// an IAM policy that denies <c>cognito-idp:DescribeTerms</c> also denies requests to
+        /// <c>DescribeTermsByClient</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTermsByClient service method.</param>
+        /// 
+        /// <returns>The response from the DescribeTermsByClient service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeTermsByClient">REST API Reference for DescribeTermsByClient Operation</seealso>
+        DescribeTermsByClientResponse DescribeTermsByClient(DescribeTermsByClientRequest request);
+
+
+
+        /// <summary>
+        /// Returns details for the terms documents that are associated with an app client, identified
+        /// by the app client ID, user pool ID, and terms name. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managed-login.html#managed-login-terms-documents">Terms
+        /// documents</a>.
+        /// 
+        ///  
+        /// <para>
+        /// To call <c>DescribeTermsByClient</c>, you must have the <c>cognito-idp:DescribeTermsByClient</c>
+        /// Identity and Access Management (IAM) permission. This operation additionally validates
+        /// your permission for <c>cognito-idp:DescribeTerms</c>, the action for . As a result,
+        /// an IAM policy that denies <c>cognito-idp:DescribeTerms</c> also denies requests to
+        /// <c>DescribeTermsByClient</c>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you must use IAM credentials to authorize
+        /// requests, and you must grant yourself the corresponding IAM permission in a policy.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Learn more</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-signing.html">Signing
+        /// Amazon Web Services API Requests</a> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a> 
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeTermsByClient service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeTermsByClient service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeTermsByClient">REST API Reference for DescribeTermsByClient Operation</seealso>
+        Task<DescribeTermsByClientResponse> DescribeTermsByClientAsync(DescribeTermsByClientRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeUserImportJob
 
 
@@ -9507,6 +9775,13 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  <note> 
         /// <para>
+        /// This operation doesn't return results when you query a prefix domain in a secondary
+        /// Region. Prefix domains are Region-specific and can only be described in the Region
+        /// where they were created. To describe a prefix domain for a replica user pool, make
+        /// the request to the primary Region's endpoint.
+        /// </para>
+        ///  </note> <note> 
+        /// <para>
         /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you must use IAM credentials to authorize
         /// requests, and you must grant yourself the corresponding IAM permission in a policy.
@@ -9557,6 +9832,13 @@ namespace Amazon.CognitoIdentityProvider
         /// Given a user pool domain name, returns information about the domain configuration.
         /// 
         ///  <note> 
+        /// <para>
+        /// This operation doesn't return results when you query a prefix domain in a secondary
+        /// Region. Prefix domains are Region-specific and can only be described in the Region
+        /// where they were created. To describe a prefix domain for a replica user pool, make
+        /// the request to the primary Region's endpoint.
+        /// </para>
+        ///  </note> <note> 
         /// <para>
         /// Amazon Cognito evaluates Identity and Access Management (IAM) policies in requests
         /// for this API operation. For this operation, you must use IAM credentials to authorize
@@ -9976,6 +10258,126 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ForgotPassword">REST API Reference for ForgotPassword Operation</seealso>
         Task<ForgotPasswordResponse> ForgotPasswordAsync(ForgotPasswordRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetClientToken
+
+
+        /// <summary>
+        /// Issues an access token for machine-to-machine (M2M) authorization. Your app client
+        /// provides its client ID and secret, and receives an access token that authorizes requests
+        /// to your resource servers. <c>GetClientToken</c> provides the same functionality as
+        /// the OAuth2 client-credentials grant; both authorize an application rather than a user.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must configure the app client with a client secret and
+        /// enable the <c>ALLOW_CLIENT_TOKEN_AUTH</c> authentication flow. The <c>ALLOW_CLIENT_TOKEN_AUTH</c>
+        /// flow is mutually exclusive with user authentication flows. It must be the only authentication
+        /// flow that you configure for the app client. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Scopes,
+        /// M2M, and resource servers</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientToken service method.</param>
+        /// 
+        /// <returns>The response from the GetClientToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetClientToken">REST API Reference for GetClientToken Operation</seealso>
+        GetClientTokenResponse GetClientToken(GetClientTokenRequest request);
+
+
+
+        /// <summary>
+        /// Issues an access token for machine-to-machine (M2M) authorization. Your app client
+        /// provides its client ID and secret, and receives an access token that authorizes requests
+        /// to your resource servers. <c>GetClientToken</c> provides the same functionality as
+        /// the OAuth2 client-credentials grant; both authorize an application rather than a user.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must configure the app client with a client secret and
+        /// enable the <c>ALLOW_CLIENT_TOKEN_AUTH</c> authentication flow. The <c>ALLOW_CLIENT_TOKEN_AUTH</c>
+        /// flow is mutually exclusive with user authentication flows. It must be the only authentication
+        /// flow that you configure for the app client. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-define-resource-servers.html">Scopes,
+        /// M2M, and resource servers</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
+        /// for this API operation. For this operation, you can't use IAM credentials to authorize
+        /// requests, and you can't grant IAM permissions in policies. For more information about
+        /// authorization models in Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pools-API-operations.html">Using
+        /// the Amazon Cognito user pools API and user pool endpoints</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClientToken service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClientToken service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ForbiddenException">
+        /// This exception is thrown when WAF doesn't allow your request based on a web ACL that's
+        /// associated with your user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
+        /// This exception is thrown when Amazon Cognito encounters an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidParameterException">
+        /// This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
+        /// This exception is thrown when a user isn't authorized.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.OperationNotEnabledException">
+        /// This exception is thrown when an operation is not available in the current region
+        /// or for the current user pool configuration. This can occur when attempting to perform
+        /// operations that are not supported in secondary replica regions.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ResourceNotFoundException">
+        /// This exception is thrown when the Amazon Cognito service can't find the requested
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.TooManyRequestsException">
+        /// This exception is thrown when the user has made too many requests for a given operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/GetClientToken">REST API Reference for GetClientToken Operation</seealso>
+        Task<GetClientTokenResponse> GetClientTokenAsync(GetClientTokenRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

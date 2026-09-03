@@ -62,6 +62,18 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("createdBy", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("createdByAutoDetection", targetDepth, ref reader))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.CreatedByAutoDetection = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -78,6 +90,12 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("provenanceSummaryList", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<ProvenanceSummary, ProvenanceSummaryUnmarshaller>(ProvenanceSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ProvenanceSummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recordArn", targetDepth, ref reader))

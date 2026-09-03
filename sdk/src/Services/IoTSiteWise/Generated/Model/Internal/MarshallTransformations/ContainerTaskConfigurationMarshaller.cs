@@ -77,6 +77,33 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEphemeralStorageConfiguration())
+            {
+                context.Writer.WritePropertyName("ephemeralStorageConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EphemeralStorageConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.EphemeralStorageConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetMounts())
+            {
+                context.Writer.WritePropertyName("mounts");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectMountsListValue in requestObject.Mounts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MountMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMountsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetProcessingType())
             {
                 context.Writer.WritePropertyName("processingType");

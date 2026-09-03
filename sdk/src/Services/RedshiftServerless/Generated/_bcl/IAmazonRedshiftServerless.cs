@@ -3400,6 +3400,13 @@ namespace Amazon.RedshiftServerless
         /// multiple parameters in one request. For example, you must specify both <c>adminUsername</c>
         /// and <c>adminUserPassword</c> to update either field, but you can't update both <c>kmsKeyId</c>
         /// and <c>logExports</c> in a single request.
+        /// 
+        ///  
+        /// <para>
+        /// Similarly, an S3 Tables log-publishing update (a request where <c>logDestinationType</c>
+        /// is <c>s3table</c>) cannot be combined with any other namespace configuration change
+        /// and must be submitted as its own request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNamespace service method.</param>
         /// 
@@ -3426,6 +3433,13 @@ namespace Amazon.RedshiftServerless
         /// multiple parameters in one request. For example, you must specify both <c>adminUsername</c>
         /// and <c>adminUserPassword</c> to update either field, but you can't update both <c>kmsKeyId</c>
         /// and <c>logExports</c> in a single request.
+        /// 
+        ///  
+        /// <para>
+        /// Similarly, an S3 Tables log-publishing update (a request where <c>logDestinationType</c>
+        /// is <c>s3table</c>) cannot be combined with any other namespace configuration change
+        /// and must be submitted as its own request.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNamespace service method.</param>
         /// <param name="cancellationToken">

@@ -45,7 +45,7 @@ namespace Amazon.Mgn
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// The Application Migration Service service.
+    /// Application Migration Service.
     /// </summary>
     public partial class AmazonMgnClient : AmazonServiceClient, IAmazonMgn
     {
@@ -281,7 +281,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -314,7 +314,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -348,7 +348,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -381,7 +381,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -415,7 +415,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -448,7 +448,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -482,7 +482,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -515,7 +515,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -619,7 +619,7 @@ namespace Amazon.Mgn
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -649,7 +649,7 @@ namespace Amazon.Mgn
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -729,7 +729,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the CreateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -758,7 +758,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the CreateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -789,7 +789,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the CreateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -816,7 +816,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the CreateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -843,7 +843,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the CreateReplicationConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -872,7 +872,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the CreateReplicationConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -906,7 +906,7 @@ namespace Amazon.Mgn
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -936,7 +936,7 @@ namespace Amazon.Mgn
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -1206,7 +1206,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the DeleteNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -1237,7 +1237,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the DeleteNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -1557,8 +1557,8 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which
-        /// jobs are returned. The response is sorted by creationDataTime - latest date first.
+        /// Returns a list of Jobs. Use the jobIDs and fromDate and toDate filters to limit which
+        /// jobs are returned. The response is sorted by creationDateTime - latest date first.
         /// Jobs are normally created by the StartTest, StartCutover, and TerminateTargetInstances
         /// APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances,
         /// which are APIs available only to *Support* and only used in response to relevant support
@@ -1585,8 +1585,8 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Returns a list of Jobs. Use the JobsID and fromDate and toData filters to limit which
-        /// jobs are returned. The response is sorted by creationDataTime - latest date first.
+        /// Returns a list of Jobs. Use the jobIDs and fromDate and toDate filters to limit which
+        /// jobs are returned. The response is sorted by creationDateTime - latest date first.
         /// Jobs are normally created by the StartTest, StartCutover, and TerminateTargetInstances
         /// APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances,
         /// which are APIs available only to *Support* and only used in response to relevant support
@@ -1681,7 +1681,8 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
+        /// Lists all ReplicationConfigurationTemplates, filtered by replication configuration
+        /// template IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigurationTemplates service method.</param>
         /// 
@@ -1707,7 +1708,8 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Lists all ReplicationConfigurationTemplates, filtered by Source Server IDs.
+        /// Lists all ReplicationConfigurationTemplates, filtered by replication configuration
+        /// template IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReplicationConfigurationTemplates service method.</param>
         /// <param name="cancellationToken">
@@ -1978,13 +1980,12 @@ namespace Amazon.Mgn
         /// is stopped immediately. All AWS resources created by Application Migration Service
         /// for enabling the replication of these source servers will be terminated / deleted
         /// within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the
-        /// agent on the source server has not been prevented from communicating with the Application
-        /// Migration Service service, then it will receive a command to uninstall itself (within
-        /// approximately 10 minutes). The following properties of the SourceServer will be changed
-        /// immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED;
-        /// The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
-        /// be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration
-        /// will be nullified.
+        /// agent on the source server has not been prevented from communicating with Application
+        /// Migration Service, then it will receive a command to uninstall itself (within approximately
+        /// 10 minutes). The following properties of the SourceServer will be changed immediately:
+        /// dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes
+        /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+        /// and dataReplicationInfo.lagDuration will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectFromService service method.</param>
         /// 
@@ -2015,13 +2016,12 @@ namespace Amazon.Mgn
         /// is stopped immediately. All AWS resources created by Application Migration Service
         /// for enabling the replication of these source servers will be terminated / deleted
         /// within 90 minutes. Launched Test or Cutover instances will NOT be terminated. If the
-        /// agent on the source server has not been prevented from communicating with the Application
-        /// Migration Service service, then it will receive a command to uninstall itself (within
-        /// approximately 10 minutes). The following properties of the SourceServer will be changed
-        /// immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED;
-        /// The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will
-        /// be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration
-        /// will be nullified.
+        /// agent on the source server has not been prevented from communicating with Application
+        /// Migration Service, then it will receive a command to uninstall itself (within approximately
+        /// 10 minutes). The following properties of the SourceServer will be changed immediately:
+        /// dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes
+        /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+        /// and dataReplicationInfo.lagDuration will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisconnectFromService service method.</param>
         /// <param name="cancellationToken">
@@ -2062,7 +2062,7 @@ namespace Amazon.Mgn
         /// itself (within 10 minutes). The following properties of the SourceServer will be changed
         /// immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
         /// The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
-        /// property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+        /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
         /// and dataReplicationInfo.lagDuration will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FinalizeCutover service method.</param>
@@ -2100,7 +2100,7 @@ namespace Amazon.Mgn
         /// itself (within 10 minutes). The following properties of the SourceServer will be changed
         /// immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
         /// The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
-        /// property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+        /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
         /// and dataReplicationInfo.lagDuration will be nullified.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FinalizeCutover service method.</param>
@@ -2198,7 +2198,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the GetNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2225,7 +2225,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the GetNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2253,7 +2253,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the GetNetworkMigrationMapperSegmentConstruct service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2283,7 +2283,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the GetNetworkMigrationMapperSegmentConstruct service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2366,7 +2366,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the InitializeService service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -2392,7 +2392,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the InitializeService service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ValidationException">
         /// Validate exception.
@@ -2826,7 +2826,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationAnalyses service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2859,7 +2859,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationAnalyses service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2893,7 +2893,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationAnalysisResults service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2926,7 +2926,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationAnalysisResults service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2960,7 +2960,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationCodeGenerations service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -2993,7 +2993,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationCodeGenerations service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3027,7 +3027,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationCodeGenerationSegments service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3060,7 +3060,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationCodeGenerationSegments service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3093,7 +3093,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationDefinitions service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">REST API Reference for ListNetworkMigrationDefinitions Operation</seealso>
         public virtual ListNetworkMigrationDefinitionsResponse ListNetworkMigrationDefinitions(ListNetworkMigrationDefinitionsRequest request)
@@ -3116,7 +3116,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationDefinitions service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListNetworkMigrationDefinitions">REST API Reference for ListNetworkMigrationDefinitions Operation</seealso>
         public virtual Task<ListNetworkMigrationDefinitionsResponse> ListNetworkMigrationDefinitionsAsync(ListNetworkMigrationDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3140,7 +3140,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationDeployedStacks service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3172,7 +3172,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationDeployedStacks service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3205,7 +3205,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationDeployments service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3237,7 +3237,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationDeployments service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3271,7 +3271,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationExecutions service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3298,7 +3298,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationExecutions service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3326,7 +3326,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMapperSegmentConstructs service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3359,7 +3359,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMapperSegmentConstructs service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3393,7 +3393,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMapperSegments service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3426,7 +3426,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMapperSegments service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3460,7 +3460,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMappings service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3493,7 +3493,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMappings service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3527,7 +3527,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMappingUpdates service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3560,7 +3560,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListNetworkMigrationMappingUpdates service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -3646,7 +3646,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.InternalServerException">
         /// The server encountered an unexpected condition that prevented it from fulfilling the
@@ -3682,7 +3682,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.InternalServerException">
         /// The server encountered an unexpected condition that prevented it from fulfilling the
@@ -3815,7 +3815,7 @@ namespace Amazon.Mgn
         /// <summary>
         /// Archives specific Source Servers by setting the SourceServer.isArchived property to
         /// true for specified SourceServers by ID. This command only works for SourceServers
-        /// with a lifecycle. state which equals DISCONNECTED or CUTOVER.
+        /// with a lifecycle state that equals DISCONNECTED or CUTOVER.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MarkAsArchived service method.</param>
         /// 
@@ -3844,7 +3844,7 @@ namespace Amazon.Mgn
         /// <summary>
         /// Archives specific Source Servers by setting the SourceServer.isArchived property to
         /// true for specified SourceServers by ID. This command only works for SourceServers
-        /// with a lifecycle. state which equals DISCONNECTED or CUTOVER.
+        /// with a lifecycle state that equals DISCONNECTED or CUTOVER.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MarkAsArchived service method.</param>
         /// <param name="cancellationToken">
@@ -3891,7 +3891,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -3927,7 +3927,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -4216,7 +4216,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -4252,7 +4252,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -4412,7 +4412,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartExport service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -4441,7 +4441,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartExport service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -4478,7 +4478,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -4514,7 +4514,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -4545,14 +4545,14 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartImportFileEnrichment service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4582,14 +4582,14 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartImportFileEnrichment service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
         /// target resource.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4620,7 +4620,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationAnalysis service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4630,7 +4630,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4660,7 +4660,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationAnalysis service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4670,7 +4670,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4701,7 +4701,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationCodeGeneration service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4711,7 +4711,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4741,7 +4741,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationCodeGeneration service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4751,7 +4751,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4782,7 +4782,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationDeployment service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4792,7 +4792,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4822,7 +4822,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationDeployment service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4832,7 +4832,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4862,7 +4862,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationMapping service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4872,7 +4872,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4901,7 +4901,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationMapping service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4911,7 +4911,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4942,7 +4942,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationMappingUpdate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4952,7 +4952,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -4982,7 +4982,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the StartNetworkMigrationMappingUpdate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -4992,7 +4992,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ThrottlingException">
         /// Reached throttling quota exception.
@@ -5029,7 +5029,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5065,7 +5065,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5167,7 +5167,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5203,7 +5203,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5236,7 +5236,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the TagResource service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.InternalServerException">
         /// The server encountered an unexpected condition that prevented it from fulfilling the
@@ -5275,7 +5275,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the TagResource service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.InternalServerException">
         /// The server encountered an unexpected condition that prevented it from fulfilling the
@@ -5380,7 +5380,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5409,7 +5409,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5439,7 +5439,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5468,7 +5468,7 @@ namespace Amazon.Mgn
         /// Resource not found exception.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
-        /// The request could not be completed because its exceeded the service quota.
+        /// The request could not be completed because it exceeded the service quota.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
         /// Uninitialized account exception.
@@ -5496,7 +5496,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.InternalServerException">
         /// The server encountered an unexpected condition that prevented it from fulfilling the
@@ -5533,7 +5533,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UntagResource service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.InternalServerException">
         /// The server encountered an unexpected condition that prevented it from fulfilling the
@@ -5688,7 +5688,7 @@ namespace Amazon.Mgn
         /// 
         ///  <note> 
         /// <para>
-        /// bootMode valid values are <c>LEGACY_BIOS | UEFI</c> 
+        /// bootMode valid values are <c>LEGACY_BIOS | UEFI | USE_SOURCE</c> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5724,7 +5724,7 @@ namespace Amazon.Mgn
         /// 
         ///  <note> 
         /// <para>
-        /// bootMode valid values are <c>LEGACY_BIOS | UEFI</c> 
+        /// bootMode valid values are <c>LEGACY_BIOS | UEFI | USE_SOURCE</c> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5769,7 +5769,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -5801,7 +5801,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateLaunchConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -5834,7 +5834,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -5863,7 +5863,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateNetworkMigrationDefinition service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -5893,7 +5893,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateNetworkMigrationMapperSegment service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -5922,7 +5922,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateNetworkMigrationMapperSegment service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -5952,7 +5952,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateReplicationConfiguration service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -5988,7 +5988,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateReplicationConfiguration service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ConflictException">
         /// The request could not be completed due to a conflict with the current state of the
@@ -6019,13 +6019,13 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Updates multiple ReplicationConfigurationTemplates by ID.
+        /// Updates a ReplicationConfigurationTemplate by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateReplicationConfigurationTemplate service method.</param>
         /// 
         /// <returns>The response from the UpdateReplicationConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.
@@ -6048,7 +6048,7 @@ namespace Amazon.Mgn
 
 
         /// <summary>
-        /// Updates multiple ReplicationConfigurationTemplates by ID.
+        /// Updates a ReplicationConfigurationTemplate by ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateReplicationConfigurationTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -6057,7 +6057,7 @@ namespace Amazon.Mgn
         /// 
         /// <returns>The response from the UpdateReplicationConfigurationTemplate service method, as returned by Mgn.</returns>
         /// <exception cref="Amazon.Mgn.Model.AccessDeniedException">
-        /// Operating denied due to a file permission or access check error.
+        /// Operation denied due to a file permission or access check error.
         /// </exception>
         /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
         /// Resource not found exception.

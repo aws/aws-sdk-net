@@ -37,6 +37,7 @@ namespace Amazon.DeviceFarm.Model
         private List<string> _auxiliaryApps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BillingMethod _billingMethod;
         private DeviceProxy _deviceProxy;
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private List<string> _vpceConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
@@ -98,6 +99,38 @@ namespace Amazon.DeviceFarm.Model
         internal bool IsSetDeviceProxy()
         {
             return this._deviceProxy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Parameters. 
+        /// <para>
+        /// The name-value string pairs that specify additional settings for the remote access
+        /// session.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>appium:version</c>: The major version of the Appium server to use for the session
+        /// (for example, 2 or 3). The service may reject the selected version if it is not available
+        /// for the selected device.
+        /// </para>
+        ///  </li> </ul>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=3)]
+        public Dictionary<string, string> Parameters
+        {
+            get { return this._parameters; }
+            set { this._parameters = value; }
+        }
+
+        // Check to see if Parameters property is set
+        internal bool IsSetParameters()
+        {
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

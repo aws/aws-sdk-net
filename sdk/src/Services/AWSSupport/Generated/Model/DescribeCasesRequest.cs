@@ -52,22 +52,48 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Case data is available for 12 months after creation. If a case was created more than
-    /// 12 months ago, a request might return an error.
+    /// Case data is available for 24 months after creation. If a case was created more than
+    /// 24 months ago, a request might return an error.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-    /// Amazon Web Services Support API. 
+    /// You must have an Amazon Web Services Business Support+, Amazon Web Services Enterprise
+    /// Support, or Amazon Web Services Unified Operations plan to use the Amazon Web Services
+    /// Support API. If you're in an Amazon Web Services Region that doesn't offer one of
+    /// these Amazon Web Services Support plans, or if you haven't transitioned to one of
+    /// these plans, you can use the Amazon Web Services Support API with a Business, Enterprise
+    /// On-Ramp, or Enterprise Support plan.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
+    /// an Amazon Web Services Business Support+, Amazon Web Services Enterprise Support,
+    /// or Amazon Web Services Unified Operations plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
-    ///  </li> </ul> </note>
+    ///  </li> </ul> </note> <important> 
+    /// <para>
+    /// Each <a>Communication</a> returned by this operation includes attachment information
+    /// in two fields:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>attachmentSet</c>: returns only attachments that are 5 MB or smaller. Attachments
+    /// larger than 5 MB are not included in this field.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>attachments</c>: returns all attachments regardless of size.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Amazon Web Services recommends that you use the <c>attachments</c> field and download
+    /// each attachment with <a>GetAttachmentDownloadLink</a>, which supports attachments
+    /// of any size. The <c>attachmentSet</c> field and <a>DescribeAttachment</a> return only
+    /// attachments that are 5 MB or smaller.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DescribeCasesRequest : AmazonAWSSupportRequest
     {
@@ -75,6 +101,7 @@ namespace Amazon.AWSSupport.Model
         private string _beforeTime;
         private List<string> _caseIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _displayId;
+        private bool? _dryRun;
         private bool? _includeCommunications;
         private bool? _includeResolvedCases;
         private string _language;
@@ -85,7 +112,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property AfterTime. 
         /// <para>
         /// The start date for a filtered date search on support case communications. Case communications
-        /// are available for 12 months after creation.
+        /// are available for 24 months after creation.
         /// </para>
         /// </summary>
         public string AfterTime
@@ -104,7 +131,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property BeforeTime. 
         /// <para>
         /// The end date for a filtered date search on support case communications. Case communications
-        /// are available for 12 months after creation.
+        /// are available for 24 months after creation.
         /// </para>
         /// </summary>
         public string BeforeTime
@@ -163,6 +190,27 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Specifies whether to validate the request without actually returning case data. When
+        /// set to <c>true</c>, the request is validated but no cases are returned, and the operation
+        /// returns a <c>DryRunOperationException</c>. When omitted or set to <c>false</c>, the
+        /// request runs normally.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property IncludeCommunications. 
         /// <para>
         /// Specifies whether to include communications in the <c>DescribeCases</c> response.
@@ -204,8 +252,9 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Language. 
         /// <para>
         /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
-        /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean
-        /// (“ko”). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
+        /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") , Chinese
+        /// ("zh"), Spanish ("es"), Portuguese ("pt"), French ("fr"), Korean (“ko”), and Turkish
+        /// ("tr"). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
         /// want support in that language.
         /// </para>
         /// </summary>

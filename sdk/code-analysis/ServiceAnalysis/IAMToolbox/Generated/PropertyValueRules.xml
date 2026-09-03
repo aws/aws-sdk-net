@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.IAMToolbox.Model.GetRequestAuthorizationDetailsRequest.AuthorizationId</property>
+    <pattern>[0123456789abcdefghijklmnopqrstuvwxyz]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMToolbox.Model.AttachedTo.Arn</property>
+    <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
+  </property-value-rule>
+</property-value-rules>

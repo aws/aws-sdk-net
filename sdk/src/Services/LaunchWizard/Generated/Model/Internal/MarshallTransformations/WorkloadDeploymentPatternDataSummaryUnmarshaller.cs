@@ -56,6 +56,12 @@ namespace Amazon.LaunchWizard.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("accountConstraints", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<AccountConstraint, AccountConstraintUnmarshaller>(AccountConstraintUnmarshaller.Instance);
+                    unmarshalledObject.AccountConstraints = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("deploymentPatternName", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

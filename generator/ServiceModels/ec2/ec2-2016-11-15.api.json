@@ -6720,6 +6720,15 @@
       "input":{"shape":"ReplaceImageCriteriaInAllowedImagesSettingsRequest"},
       "output":{"shape":"ReplaceImageCriteriaInAllowedImagesSettingsResult"}
     },
+    "ReplaceImageInstanceTypeSpecification":{
+      "name":"ReplaceImageInstanceTypeSpecification",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ReplaceImageInstanceTypeSpecificationRequest"},
+      "output":{"shape":"ReplaceImageInstanceTypeSpecificationResult"}
+    },
     "ReplaceNetworkAclAssociation":{
       "name":"ReplaceNetworkAclAssociation",
       "http":{
@@ -11928,6 +11937,10 @@
         "InterruptionInfo":{
           "shape":"InterruptionInfo",
           "locationName":"interruptionInfo"
+        },
+        "ZeroSizePreference":{
+          "shape":"ZeroSizePreference",
+          "locationName":"zeroSizePreference"
         }
       }
     },
@@ -12280,6 +12293,13 @@
         "open",
         "none"
       ]
+    },
+    "CapacityReservationResourceGroupArnSet":{
+      "type":"list",
+      "member":{
+        "shape":"ResourceGroupName",
+        "locationName":"item"
+      }
     },
     "CapacityReservationSet":{
       "type":"list",
@@ -14738,7 +14758,8 @@
         "TagSpecifications":{
           "shape":"TagSpecificationList",
           "locationName":"TagSpecification"
-        }
+        },
+        "ZeroSizePreference":{"shape":"ZeroSizePreference"}
       }
     },
     "CreateInterruptibleCapacityReservationAllocationResult":{
@@ -29934,6 +29955,19 @@
         "locationName":"item"
       }
     },
+    "FleetCapacityReservationTargetRequest":{
+      "type":"structure",
+      "members":{
+        "CapacityReservationIds":{
+          "shape":"CapacityReservationIdSet",
+          "locationName":"CapacityReservationId"
+        },
+        "CapacityReservationResourceGroupArns":{
+          "shape":"CapacityReservationResourceGroupArnSet",
+          "locationName":"CapacityReservationResourceGroupArn"
+        }
+      }
+    },
     "FleetCapacityReservationTenancy":{
       "type":"string",
       "enum":["default"]
@@ -30264,7 +30298,11 @@
     },
     "FleetReservationType":{
       "type":"string",
-      "enum":["interruptible-capacity-reservation"]
+      "enum":[
+        "on-demand-capacity-reservation",
+        "capacity-block",
+        "interruptible-capacity-reservation"
+      ]
     },
     "FleetSet":{
       "type":"list",
@@ -33674,6 +33712,10 @@
           "shape":"ImageWatermarkList",
           "locationName":"imageWatermarkSet"
         },
+        "InstanceTypeSpecification":{
+          "shape":"InstanceTypeSpecification",
+          "locationName":"instanceTypeSpecification"
+        },
         "ImageId":{
           "shape":"String",
           "locationName":"imageId"
@@ -34137,7 +34179,8 @@
     "ImageUefiDataRequest":{
       "type":"string",
       "max":64000,
-      "min":0
+      "min":0,
+      "sensitive":true
     },
     "ImageUsageReport":{
       "type":"structure",
@@ -36036,7 +36079,8 @@
       "enum":[
         "spot",
         "on-demand",
-        "interruptible-capacity-reservation"
+        "interruptible-capacity-reservation",
+        "capacity-block"
       ]
     },
     "InstanceLifecycleType":{
@@ -38657,6 +38701,20 @@
         "locationName":"item"
       }
     },
+    "InstanceTypeItem":{
+      "type":"structure",
+      "members":{
+        "InstanceType":{
+          "shape":"String",
+          "locationName":"instanceType"
+        }
+      }
+    },
+    "InstanceTypeItemRequest":{
+      "type":"string",
+      "max":24,
+      "min":0
+    },
     "InstanceTypeList":{
       "type":"list",
       "member":{"shape":"InstanceType"}
@@ -38683,6 +38741,32 @@
       "member":{
         "shape":"InstanceTypeOffering",
         "locationName":"item"
+      }
+    },
+    "InstanceTypeSpecification":{
+      "type":"structure",
+      "members":{
+        "SupportedInstanceTypes":{
+          "shape":"SupportedInstanceTypeSet",
+          "locationName":"supportedInstanceTypeSet"
+        },
+        "UnsupportedInstanceTypes":{
+          "shape":"UnsupportedInstanceTypeSet",
+          "locationName":"unsupportedInstanceTypeSet"
+        }
+      }
+    },
+    "InstanceTypeSpecificationRequest":{
+      "type":"structure",
+      "members":{
+        "SupportedInstanceTypes":{
+          "shape":"SupportedInstanceTypeRequestSet",
+          "locationName":"SupportedInstanceType"
+        },
+        "UnsupportedInstanceTypes":{
+          "shape":"UnsupportedInstanceTypeRequestSet",
+          "locationName":"UnsupportedInstanceType"
+        }
       }
     },
     "InstanceTypes":{
@@ -38839,6 +38923,10 @@
         "InterruptionType":{
           "shape":"InterruptionType",
           "locationName":"interruptionType"
+        },
+        "ZeroSizePreference":{
+          "shape":"ZeroSizePreference",
+          "locationName":"zeroSizePreference"
         }
       }
     },
@@ -39560,6 +39648,10 @@
         "State":{
           "shape":"IpamInternetRegistryAssociationState",
           "locationName":"state"
+        },
+        "StateMessage":{
+          "shape":"String",
+          "locationName":"stateMessage"
         },
         "ChildRequestXml":{
           "shape":"String",
@@ -43715,7 +43807,8 @@
       "enum":[
         "spot",
         "capacity-block",
-        "interruptible-capacity-reservation"
+        "interruptible-capacity-reservation",
+        "on-demand"
       ]
     },
     "MarketplaceProductCode":{"type":"string"},
@@ -50497,6 +50590,24 @@
         }
       }
     },
+    "ReplaceImageInstanceTypeSpecificationRequest":{
+      "type":"structure",
+      "required":["ImageId"],
+      "members":{
+        "ImageId":{"shape":"ImageId"},
+        "InstanceTypeSpecification":{"shape":"InstanceTypeSpecificationRequest"},
+        "DryRun":{"shape":"Boolean"}
+      }
+    },
+    "ReplaceImageInstanceTypeSpecificationResult":{
+      "type":"structure",
+      "members":{
+        "ReturnValue":{
+          "shape":"Boolean",
+          "locationName":"returnValue"
+        }
+      }
+    },
     "ReplaceNetworkAclAssociationRequest":{
       "type":"structure",
       "required":[
@@ -51250,22 +51361,66 @@
         }
       }
     },
+    "ReservedCapacityAllocationStrategy":{
+      "type":"string",
+      "enum":["prioritized"]
+    },
+    "ReservedCapacityFallbackMarketType":{
+      "type":"string",
+      "enum":["on-demand"]
+    },
+    "ReservedCapacityFallbackMarketTypeList":{
+      "type":"list",
+      "member":{
+        "shape":"ReservedCapacityFallbackMarketType",
+        "locationName":"item"
+      }
+    },
+    "ReservedCapacityFallbackOptions":{
+      "type":"structure",
+      "members":{
+        "MarketTypes":{
+          "shape":"ReservedCapacityFallbackMarketTypeList",
+          "locationName":"marketTypeSet"
+        }
+      }
+    },
+    "ReservedCapacityFallbackOptionsRequest":{
+      "type":"structure",
+      "members":{
+        "MarketTypes":{
+          "shape":"ReservedCapacityFallbackMarketTypeList",
+          "locationName":"MarketType"
+        }
+      }
+    },
     "ReservedCapacityOptions":{
       "type":"structure",
       "members":{
+        "AllocationStrategy":{
+          "shape":"ReservedCapacityAllocationStrategy",
+          "locationName":"allocationStrategy"
+        },
         "ReservationTypes":{
           "shape":"ReservationTypeList",
           "locationName":"reservationTypeSet"
+        },
+        "ReservedCapacityFallbackOptions":{
+          "shape":"ReservedCapacityFallbackOptions",
+          "locationName":"reservedCapacityFallbackOptions"
         }
       }
     },
     "ReservedCapacityOptionsRequest":{
       "type":"structure",
       "members":{
+        "AllocationStrategy":{"shape":"ReservedCapacityAllocationStrategy"},
         "ReservationTypes":{
           "shape":"ReservationTypeListRequest",
           "locationName":"ReservationType"
-        }
+        },
+        "CapacityReservationTarget":{"shape":"FleetCapacityReservationTargetRequest"},
+        "ReservedCapacityFallbackOptions":{"shape":"ReservedCapacityFallbackOptionsRequest"}
       }
     },
     "ReservedInstanceIdSet":{
@@ -51813,6 +51968,7 @@
       "min":1
     },
     "ResourceConfigurationArn":{"type":"string"},
+    "ResourceGroupName":{"type":"string"},
     "ResourceIdList":{
       "type":"list",
       "member":{"shape":"TaggableResourceId"}
@@ -54663,7 +54819,10 @@
       "type":"string",
       "sensitive":true
     },
-    "SensitiveString":{"type":"string"},
+    "SensitiveString":{
+      "type":"string",
+      "sensitive":true
+    },
     "SensitiveUrl":{
       "type":"string",
       "sensitive":true
@@ -56850,6 +57009,22 @@
       }
     },
     "SupportedInRegion":{"type":"boolean"},
+    "SupportedInstanceTypeRequestSet":{
+      "type":"list",
+      "member":{
+        "shape":"InstanceTypeItemRequest",
+        "locationName":"Item"
+      },
+      "max":100,
+      "min":0
+    },
+    "SupportedInstanceTypeSet":{
+      "type":"list",
+      "member":{
+        "shape":"InstanceTypeItem",
+        "locationName":"item"
+      }
+    },
     "SupportedIpAddressTypes":{
       "type":"list",
       "member":{
@@ -59812,6 +59987,22 @@
         "locationName":"item"
       }
     },
+    "UnsupportedInstanceTypeRequestSet":{
+      "type":"list",
+      "member":{
+        "shape":"InstanceTypeItemRequest",
+        "locationName":"Item"
+      },
+      "max":100,
+      "min":0
+    },
+    "UnsupportedInstanceTypeSet":{
+      "type":"list",
+      "member":{
+        "shape":"InstanceTypeItem",
+        "locationName":"item"
+      }
+    },
     "UpdateCapacityManagerMonitoredTagKeysRequest":{
       "type":"structure",
       "members":{
@@ -59866,14 +60057,12 @@
     },
     "UpdateInterruptibleCapacityReservationAllocationRequest":{
       "type":"structure",
-      "required":[
-        "CapacityReservationId",
-        "TargetInstanceCount"
-      ],
+      "required":["CapacityReservationId"],
       "members":{
         "CapacityReservationId":{"shape":"CapacityReservationId"},
         "TargetInstanceCount":{"shape":"Integer"},
-        "DryRun":{"shape":"Boolean"}
+        "DryRun":{"shape":"Boolean"},
+        "ZeroSizePreference":{"shape":"ZeroSizePreference"}
       }
     },
     "UpdateInterruptibleCapacityReservationAllocationResult":{
@@ -62498,7 +62687,8 @@
       "type":"string",
       "enum":[
         "pending",
-        "available"
+        "available",
+        "deleting"
       ]
     },
     "VpcTenancy":{
@@ -62954,6 +63144,13 @@
         "shape":"Workload",
         "locationName":"item"
       }
+    },
+    "ZeroSizePreference":{
+      "type":"string",
+      "enum":[
+        "retain",
+        "default"
+      ]
     },
     "ZoneIdStringList":{
       "type":"list",

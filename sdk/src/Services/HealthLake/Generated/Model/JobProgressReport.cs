@@ -93,8 +93,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfFilesReadWithCustomerError. 
         /// <para>
-        /// The number of files that failed to be read from the S3 input bucket due to customer
-        /// error.
+        /// The number of files that failed to be read from the Amazon S3 input bucket due to
+        /// customer error.
         /// </para>
         /// </summary>
         public long? TotalNumberOfFilesReadWithCustomerError
@@ -148,8 +148,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfNonFhirFilesReadWithCustomerError. 
         /// <para>
-        /// The number of non-FHIR files that failed to be read from the S3 input bucket due to
-        /// customer error.
+        /// The number of non-FHIR files that failed to be read from the Amazon S3 input bucket
+        /// due to customer error.
         /// </para>
         /// </summary>
         public long? TotalNumberOfNonFhirFilesReadWithCustomerError
@@ -185,7 +185,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfNonFhirResourcesScanned. 
         /// <para>
-        /// The number of non-FHIR resources scanned from the S3 input bucket.
+        /// The number of non-FHIR resources scanned from the Amazon S3 input bucket.
         /// </para>
         /// </summary>
         public long? TotalNumberOfNonFhirResourcesScanned
@@ -239,7 +239,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfResourcesScanned. 
         /// <para>
-        /// The number of resources scanned from the S3 input bucket.
+        /// The number of resources scanned from the Amazon S3 input bucket.
         /// </para>
         /// </summary>
         public long? TotalNumberOfResourcesScanned
@@ -275,7 +275,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfScannedFiles. 
         /// <para>
-        /// The number of files scanned from the S3 input bucket.
+        /// The number of files scanned from the Amazon S3 input bucket.
         /// </para>
         /// </summary>
         public long? TotalNumberOfScannedFiles
@@ -293,7 +293,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalNumberOfScannedNonFhirFiles. 
         /// <para>
-        /// The number of non-FHIR files scanned from the S3 input bucket.
+        /// The number of non-FHIR files scanned from the Amazon S3 input bucket.
         /// </para>
         /// </summary>
         public long? TotalNumberOfScannedNonFhirFiles
@@ -331,7 +331,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalSizeOfScannedFilesInMB. 
         /// <para>
-        /// The size (in MB) of files scanned from the S3 input bucket.
+        /// The size (in MB) of files scanned from the Amazon S3 input bucket.
         /// </para>
         /// </summary>
         public double? TotalSizeOfScannedFilesInMB
@@ -349,7 +349,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property TotalSizeOfScannedNonFhirFilesInMB. 
         /// <para>
-        /// The size (in MB) of non-FHIR files scanned from the S3 input bucket.
+        /// The size (in MB) of non-FHIR files scanned from the Amazon S3 input bucket.
         /// </para>
         /// </summary>
         public double? TotalSizeOfScannedNonFhirFilesInMB

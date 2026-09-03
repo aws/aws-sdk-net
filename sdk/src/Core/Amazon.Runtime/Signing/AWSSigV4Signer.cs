@@ -116,7 +116,7 @@ namespace Amazon.Runtime.Signing
                 internalRequest.Headers[HeaderKeys.XAmzSecurityTokenHeader] = credentials.Token;
 
             var config = SharedConfig;
-            var signedAt = ResolveSignedAt(parameters, internalRequest);
+            var signedAt = ResolveSignedAt(parameters, internalRequest, config);
 
             // The service-specific path handling is done in BuildRequest (S3 gets the decoded path, non-S3 the
             // encoded path); both then take the same single-pass canonicalization here.
@@ -158,7 +158,7 @@ namespace Amazon.Runtime.Signing
             if (credentials.UseToken)
                 internalRequest.Parameters[XAmzSecurityTokenQueryParam] = credentials.Token;
 
-            var signedAt = ResolveSignedAt(parameters, internalRequest);
+            var signedAt = ResolveSignedAt(parameters, internalRequest, SharedConfig);
 
             // Pass the static overload with an explicit service and region. clientConfig is null because,
             // with overrideSigningRegion supplied, the signer never derives the region from it. That also
@@ -410,11 +410,11 @@ namespace Amazon.Runtime.Signing
                     $"expected {nameof(StringParameterValue)} or {nameof(StringListParameterValue)}.");
         }
 
-        private static DateTime ResolveSignedAt(AWSSigV4Parameters parameters, IRequest internalRequest)
+        private static DateTime ResolveSignedAt(AWSSigV4Parameters parameters, IRequest internalRequest, IClientConfig clientConfig)
         {
             return parameters.SignedAt.HasValue
                 ? parameters.SignedAt.Value.ToUniversalTime()
-                : CorrectClockSkew.GetCorrectedUtcNowForEndpoint(internalRequest.Endpoint.ToString());
+                : CorrectClockSkew.GetCorrectedUtcNowForEndpoint(internalRequest.Endpoint.ToString(), clientConfig);
         }
 
         /// <summary>

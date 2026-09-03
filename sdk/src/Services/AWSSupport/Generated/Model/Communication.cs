@@ -36,6 +36,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class Communication
     {
+        private List<AttachmentDetails> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentDetails>() : null;
         private List<AttachmentDetails> _attachmentSet = AWSConfigs.InitializeCollections ? new List<AttachmentDetails>() : null;
         private string _body;
         private string _caseId;
@@ -43,9 +44,42 @@ namespace Amazon.AWSSupport.Model
         private string _timeCreated;
 
         /// <summary>
+        /// Gets and sets the property Attachments. 
+        /// <para>
+        /// Information about all attachments on the case communication. This includes attachments
+        /// added through <c>AddAttachmentsToSet</c> and attachments uploaded through <c>GetAttachmentUploadLinks</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this field to enumerate every attachment on the communication. To download an
+        /// attachment listed in this field, use <a>GetAttachmentDownloadLink</a>. <c>GetAttachmentDownloadLink</c>
+        /// returns a presigned URL that works for attachments of any size. 
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<AttachmentDetails> Attachments
+        {
+            get { return this._attachments; }
+            set { this._attachments = value; }
+        }
+
+        // Check to see if Attachments property is set
+        internal bool IsSetAttachments()
+        {
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property AttachmentSet. 
         /// <para>
-        /// Information about the attachments to the case communication.
+        /// Information about the attachments to the case communication that are 5 MB or smaller.
+        /// This field doesn't include attachments larger than 5 MB. To enumerate every attachment
+        /// on the communication, including attachments larger than 5 MB, use the <c>attachments</c>
+        /// field instead.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
@@ -88,7 +122,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property CaseId. 
         /// <para>
         /// The support case ID requested or returned in the call. The case ID is an alphanumeric
-        /// string formatted as shown in this example: case-<i>12345678910-2013-c4c1d2bf33c5cf47</i>
+        /// string formatted as shown in this example: case-<i>12345678910-exen-2025-c4c1d2bf33c5cf47</i>
         /// 
         /// </para>
         /// </summary>

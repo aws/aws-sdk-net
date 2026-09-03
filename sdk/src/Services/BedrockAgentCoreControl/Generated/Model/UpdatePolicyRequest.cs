@@ -60,8 +60,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The new Cedar policy statement that defines the access control rules. This replaces
-        /// the existing policy definition with new logic while maintaining the policy's identity.
+        /// The new Cedar or Dogwood policy statement that defines the access control rules. This
+        /// replaces the existing policy definition with new logic while maintaining the policy's
+        /// identity.
         /// </para>
         /// </summary>
         public PolicyDefinition Definition

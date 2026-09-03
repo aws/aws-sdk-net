@@ -189,6 +189,17 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetMonacoAdditionalInfo())
+            {
+                context.Writer.WritePropertyName("monacoAdditionalInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonacoAdditionalInfoMarshaller.Instance;
+                marshaller.Marshall(requestObject.MonacoAdditionalInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetPhilippinesAdditionalInfo())
             {
                 context.Writer.WritePropertyName("philippinesAdditionalInfo");

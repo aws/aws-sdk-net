@@ -113,8 +113,9 @@ namespace Amazon.Extensions.CrtIntegration
                                               RequestMetrics metrics,
                                               ImmutableCredentials credentials)
         {
-            var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
-            request.SignedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
+            var signedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString(), clientConfig);
+            signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint, signedAt);
+            request.SignedAt = signedAt;
 
             var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) 
                 ? request.OverrideSigningServiceName 
@@ -201,8 +202,9 @@ namespace Amazon.Extensions.CrtIntegration
                 request.UseDoubleEncoding = false;
             }
 
-            var signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint);
-            request.SignedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString());
+            var signedAt = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(request.Endpoint.ToString(), clientConfig);
+            signedAt = AWS4Signer.InitializeHeaders(request.Headers, request.Endpoint, signedAt);
+            request.SignedAt = signedAt;
             var regionSet = overrideSigningRegion ?? AWS4Signer.DetermineSigningRegion(clientConfig, clientConfig.RegionEndpointServiceName, request.AlternateEndpoint, request);
 
             var signingConfig = PrepareCRTSigningConfig(

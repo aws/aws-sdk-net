@@ -86,6 +86,17 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetBackupConfiguration())
+            {
+                context.Writer.WritePropertyName("BackupConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BackupConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BackupConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("ClientToken");

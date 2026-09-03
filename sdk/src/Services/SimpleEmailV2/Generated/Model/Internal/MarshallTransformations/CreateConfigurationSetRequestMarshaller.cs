@@ -101,6 +101,17 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetMessageSecurityOptions())
+            {
+                context.Writer.WritePropertyName("MessageSecurityOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MessageSecurityOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MessageSecurityOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetReputationOptions())
             {
                 context.Writer.WritePropertyName("ReputationOptions");

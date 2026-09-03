@@ -33,7 +33,7 @@ namespace Amazon.SagemakerJobRuntime
     public partial class AmazonSagemakerJobRuntimeConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SagemakerJobRuntime", "4.0.100.9");
+            InternalSDKUtils.BuildUserAgentString("SagemakerJobRuntime", "4.0.100.11");
 
         private static readonly AmazonSagemakerJobRuntimeEndpointResolver EndpointResolver =
             new AmazonSagemakerJobRuntimeEndpointResolver();

@@ -130,6 +130,14 @@ namespace Amazon.Extensions.NETCore.Setup
         public bool? IgnoreConfiguredEndpointUrls { get; set; }
 
         /// <summary>
+        /// If set to true, clock skew correction is disabled for the client (no clock skew
+        /// calculation is performed and no correction is applied to signing timestamps).
+        /// When not set, falls back to the AWS_DISABLE_CLOCK_SKEW_CORRECTION environment variable
+        /// then the disable_clock_skew_correction shared-config profile setting.
+        /// </summary>
+        public bool? DisableClockSkewCorrection { get; set; }
+
+        /// <summary>
         /// Gets or sets the maximum depth allowed when reading JSON responses.
         /// The default is 256. Increase this value if you encounter
         /// AmazonUnmarshallingException due to deeply nested response structures.

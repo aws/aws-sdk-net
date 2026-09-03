@@ -85,6 +85,17 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetEarlySuccessCriteria())
+            {
+                context.Writer.WritePropertyName("earlySuccessCriteria");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentEarlySuccessCriteriaMarshaller.Instance;
+                marshaller.Marshall(requestObject.EarlySuccessCriteria, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetLifecycleHooks())
             {
                 context.Writer.WritePropertyName("lifecycleHooks");

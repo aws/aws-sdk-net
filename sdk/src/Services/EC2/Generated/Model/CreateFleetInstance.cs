@@ -151,8 +151,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block,
-        /// or Interruptible Capacity Reservation instance.
+        /// Indicates if the instance that was launched is a Spot, On-Demand, Capacity Block for
+        /// ML, or interruptible Capacity Reservation instance.
         /// </para>
         /// </summary>
         public InstanceLifecycle Lifecycle

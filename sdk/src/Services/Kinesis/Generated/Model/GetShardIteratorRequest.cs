@@ -90,6 +90,7 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class GetShardIteratorRequest : AmazonKinesisRequest
     {
+        private bool? _dryRun;
         private string _shardId;
         private ShardIteratorType _shardIteratorType;
         private string _startingSequenceNumber;
@@ -97,6 +98,24 @@ namespace Amazon.Kinesis.Model
         private string _streamId;
         private string _streamName;
         private DateTime? _timestamp;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ShardId. 

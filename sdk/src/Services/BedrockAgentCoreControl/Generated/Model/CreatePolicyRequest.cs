@@ -32,7 +32,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
     /// <summary>
     /// Container for the parameters to the CreatePolicy operation.
     /// Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic
-    /// control over agentic interactions with AgentCore Gateway. Using the Cedar policy language,
+    /// control over agentic interactions with AgentCore Gateway. Using Cedar or Dogwood,
     /// you can define fine-grained policies that specify which interactions with Gateway
     /// tools are permitted based on input parameters and OAuth claims, ensuring agents operate
     /// within defined boundaries and business rules. The policy is validated during creation
@@ -86,9 +86,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The Cedar policy statement that defines the access control rules. This contains the
-        /// actual policy logic written in Cedar policy language, specifying effect (permit or
-        /// forbid), principals, actions, resources, and conditions for agent behavior control.
+        /// The Cedar or Dogwood policy statement that defines the access control rules. This
+        /// contains the actual policy logic written in Cedar or Dogwood, specifying effect (permit
+        /// or forbid), principals, actions, resources, and conditions for agent behavior control.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

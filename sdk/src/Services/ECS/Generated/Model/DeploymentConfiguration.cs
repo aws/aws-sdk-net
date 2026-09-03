@@ -39,6 +39,7 @@ namespace Amazon.ECS.Model
         private int? _bakeTimeInMinutes;
         private CanaryConfiguration _canaryConfiguration;
         private DeploymentCircuitBreaker _deploymentCircuitBreaker;
+        private DeploymentEarlySuccessCriteria _earlySuccessCriteria;
         private List<DeploymentLifecycleHook> _lifecycleHooks = AWSConfigs.InitializeCollections ? new List<DeploymentLifecycleHook>() : null;
         private LinearConfiguration _linearConfiguration;
         private int? _maximumPercent;
@@ -137,6 +138,27 @@ namespace Amazon.ECS.Model
         internal bool IsSetDeploymentCircuitBreaker()
         {
             return this._deploymentCircuitBreaker != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EarlySuccessCriteria. 
+        /// <para>
+        /// The early success criteria configuration for a rolling deployment. With early success
+        /// criteria, you can configure an Amazon ECS deployment to complete faster. Amazon ECS
+        /// declares a deployment successful once a target percentage of tasks are healthy, instead
+        /// of waiting for the service to fully stabilize.
+        /// </para>
+        /// </summary>
+        public DeploymentEarlySuccessCriteria EarlySuccessCriteria
+        {
+            get { return this._earlySuccessCriteria; }
+            set { this._earlySuccessCriteria = value; }
+        }
+
+        // Check to see if EarlySuccessCriteria property is set
+        internal bool IsSetEarlySuccessCriteria()
+        {
+            return this._earlySuccessCriteria != null;
         }
 
         /// <summary>

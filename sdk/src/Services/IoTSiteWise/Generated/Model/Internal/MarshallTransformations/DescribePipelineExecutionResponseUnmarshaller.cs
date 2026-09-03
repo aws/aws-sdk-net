@@ -100,6 +100,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     response.RequestEnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("requestMountOverrides", targetDepth, ref reader))
+                {
+                    var unmarshaller = MountOverridesUnmarshaller.Instance;
+                    response.RequestMountOverrides = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

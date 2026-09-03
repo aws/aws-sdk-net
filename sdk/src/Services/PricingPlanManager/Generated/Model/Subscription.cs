@@ -126,7 +126,7 @@ namespace Amazon.PricingPlanManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The ARNs of the AWS resources covered by this subscription.
+        /// The ARNs of the resources covered by this subscription.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

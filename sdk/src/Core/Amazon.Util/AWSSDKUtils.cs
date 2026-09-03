@@ -1035,7 +1035,7 @@ namespace Amazon.Util
         internal static string GetFormattedTimestampISO8601(IClientConfig config, AmazonWebServiceRequest request)
         {
             var endpoint = config.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(request));
-            var correctedUtcNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL);
+            var correctedUtcNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL, config);
 
             return GetFormattedTimestampISO8601(correctedUtcNow);
         }

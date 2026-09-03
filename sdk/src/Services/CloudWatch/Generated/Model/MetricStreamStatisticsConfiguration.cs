@@ -33,7 +33,7 @@ namespace Amazon.CloudWatch.Model
     /// By default, a metric stream always sends the <c>MAX</c>, <c>MIN</c>, <c>SUM</c>, and
     /// <c>SAMPLECOUNT</c> statistics for each metric that is streamed. This structure contains
     /// information for one metric that includes additional statistics in the stream. For
-    /// more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+    /// more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">
     /// CloudWatch statistics definitions</a>.
     /// </summary>
     public partial class MetricStreamStatisticsConfiguration
@@ -57,7 +57,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// If the <c>OutputFormat</c> for the stream is <c>json</c>, the valid values include
-        /// the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+        /// the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html">
         /// CloudWatch statistics definitions</a>. For example, this includes <c>tm98, </c> <c>wm90</c>,
         /// <c>PR(:300)</c>, and so on.
         /// </para>

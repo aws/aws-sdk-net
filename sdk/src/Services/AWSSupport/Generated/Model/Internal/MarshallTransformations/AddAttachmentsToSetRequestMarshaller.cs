@@ -97,6 +97,12 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.AttachmentSetId);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             writer.WriteEndObject();
             writer.Flush();
 #if NETFRAMEWORK

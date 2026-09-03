@@ -46,10 +46,58 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetBackgroundColor())
+            {
+                context.Writer.WritePropertyName("backgroundColor");
+                context.Writer.WriteStringValue(requestObject.BackgroundColor);
+            }
+
+            if(requestObject.IsSetBackgroundOpacity())
+            {
+                context.Writer.WritePropertyName("backgroundOpacity");
+                context.Writer.WriteNumberValue(requestObject.BackgroundOpacity.Value);
+            }
+
+            if(requestObject.IsSetFontColor())
+            {
+                context.Writer.WritePropertyName("fontColor");
+                context.Writer.WriteStringValue(requestObject.FontColor);
+            }
+
+            if(requestObject.IsSetFontOpacity())
+            {
+                context.Writer.WritePropertyName("fontOpacity");
+                context.Writer.WriteNumberValue(requestObject.FontOpacity.Value);
+            }
+
+            if(requestObject.IsSetFontSize())
+            {
+                context.Writer.WritePropertyName("fontSize");
+                context.Writer.WriteNumberValue(requestObject.FontSize.Value);
+            }
+
+            if(requestObject.IsSetFontStyle())
+            {
+                context.Writer.WritePropertyName("fontStyle");
+                context.Writer.WriteStringValue(requestObject.FontStyle);
+            }
+
+            if(requestObject.IsSetFontWeight())
+            {
+                context.Writer.WritePropertyName("fontWeight");
+                context.Writer.WriteStringValue(requestObject.FontWeight);
+            }
+
             if(requestObject.IsSetStylePassthrough())
             {
                 context.Writer.WritePropertyName("stylePassthrough");
                 context.Writer.WriteStringValue(requestObject.StylePassthrough);
+            }
+
+            if(requestObject.IsSetTextDecoration())
+            {
+                context.Writer.WritePropertyName("textDecoration");
+                context.Writer.WriteStringValue(requestObject.TextDecoration);
             }
 
         }

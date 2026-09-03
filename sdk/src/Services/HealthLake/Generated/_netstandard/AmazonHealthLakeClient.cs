@@ -45,9 +45,9 @@ namespace Amazon.HealthLake
     /// for the lifetime of your application.
     /// </para>
     ///
-    /// This is the <i>AWS HealthLake API Reference</i>. For an introduction to the service,
-    /// see <a href="https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html">What
-    /// is AWS HealthLake?</a> in the <i>AWS HealthLake Developer Guide</i>.
+    /// This is the <i>HealthLake API Reference</i>. For an introduction to the service, see
+    /// <a href="https://docs.aws.amazon.com/healthlake/latest/devguide/what-is.html">What
+    /// is HealthLake?</a> in the <i>HealthLake Developer Guide</i>.
     /// </summary>
     public partial class AmazonHealthLakeClient : AmazonServiceClient, IAmazonHealthLake
     {
@@ -719,9 +719,9 @@ namespace Amazon.HealthLake
 
 
         /// <summary>
-        /// Lists data transformation jobs for your AWS account. Results can be filtered by status,
-        /// job name, and submit time window. Results are paginated. Use the <c>NextToken</c>
-        /// parameter to retrieve additional results.
+        /// Lists data transformation jobs for your Amazon Web Services account. Results can be
+        /// filtered by status, job name, and submit time window. Results are paginated. Use the
+        /// <c>NextToken</c> parameter to retrieve additional results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataTransformationJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1080,6 +1080,58 @@ namespace Amazon.HealthLake
         }
         #endregion
         
+        #region  RestoreFHIRDatastore
+
+        internal virtual RestoreFHIRDatastoreResponse RestoreFHIRDatastore(RestoreFHIRDatastoreRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreFHIRDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFHIRDatastoreResponseUnmarshaller.Instance;
+
+            return Invoke<RestoreFHIRDatastoreResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Restore a backup-enabled data store to a point in time. Creates a new data store from
+        /// the backup.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RestoreFHIRDatastore service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RestoreFHIRDatastore service method, as returned by HealthLake.</returns>
+        /// <exception cref="Amazon.HealthLake.Model.AccessDeniedException">
+        /// Access is denied. Your account is not authorized to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ConflictException">
+        /// The data store is in a transition state and the user requested action cannot be performed.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.InternalServerException">
+        /// An unknown internal error occurred in the service.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ResourceNotFoundException">
+        /// The requested data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ThrottlingException">
+        /// The user has exceeded their maximum number of allowed calls to the given API.
+        /// </exception>
+        /// <exception cref="Amazon.HealthLake.Model.ValidationException">
+        /// The user input parameter was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/RestoreFHIRDatastore">REST API Reference for RestoreFHIRDatastore Operation</seealso>
+        public virtual Task<RestoreFHIRDatastoreResponse> RestoreFHIRDatastoreAsync(RestoreFHIRDatastoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = RestoreFHIRDatastoreRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RestoreFHIRDatastoreResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RestoreFHIRDatastoreResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  StartDataTransformationJob
 
         internal virtual StartDataTransformationJobResponse StartDataTransformationJob(StartDataTransformationJobRequest request)
@@ -1095,7 +1147,7 @@ namespace Amazon.HealthLake
 
         /// <summary>
         /// Starts an asynchronous data transformation job that converts source files from Amazon
-        /// Simple Storage Service (Amazon S3) and writes the output to Amazon S3 or AWS HealthLake.
+        /// Simple Storage Service (Amazon S3) and writes the output to Amazon S3 or HealthLake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataTransformationJob service method.</param>
         /// <param name="cancellationToken">
@@ -1460,8 +1512,8 @@ namespace Amazon.HealthLake
         /// The user has exceeded their maximum number of allowed calls to the given API.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.UnauthorizedException">
-        /// You are not authorized to make this request. Verify that your AWS credentials are
-        /// valid and that you have the required permissions.
+        /// You are not authorized to make this request. Verify that your Amazon Web Services
+        /// credentials are valid and that you have the required permissions.
         /// </exception>
         /// <exception cref="Amazon.HealthLake.Model.UnsupportedMIMETypeException">
         /// The content type in your request is not supported. Use a supported content type for

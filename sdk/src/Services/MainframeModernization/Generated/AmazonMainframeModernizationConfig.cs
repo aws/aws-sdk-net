@@ -33,7 +33,7 @@ namespace Amazon.MainframeModernization
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("m2", "4.0.100.9");
+            InternalSDKUtils.BuildUserAgentString("m2", "4.0.100.11");
 
         private static readonly AmazonMainframeModernizationEndpointResolver EndpointResolver =
             new AmazonMainframeModernizationEndpointResolver();

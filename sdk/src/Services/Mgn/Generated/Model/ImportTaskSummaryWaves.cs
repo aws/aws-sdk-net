@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Import task summery waves.
+    /// Import task summary waves.
     /// </summary>
     public partial class ImportTaskSummaryWaves
     {
@@ -40,7 +40,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property CreatedCount. 
         /// <para>
-        /// Import task summery waves created count.
+        /// Import task summary waves created count.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -59,7 +59,7 @@ namespace Amazon.Mgn.Model
         /// <summary>
         /// Gets and sets the property ModifiedCount. 
         /// <para>
-        /// Import task summery waves modified count.
+        /// Import task summary waves modified count.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

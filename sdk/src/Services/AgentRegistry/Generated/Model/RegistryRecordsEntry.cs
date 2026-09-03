@@ -63,7 +63,11 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryId.
+        /// Gets and sets the property RegistryId. 
+        /// <para>
+        ///  The identifier of the registry to retrieve the records from. You can provide either
+        /// the full Amazon Resource Name (ARN) or the registry ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RegistryId

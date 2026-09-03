@@ -85,6 +85,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.TargetInstanceCount = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("zeroSizePreference", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ZeroSizePreference = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

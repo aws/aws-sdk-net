@@ -307,11 +307,19 @@ namespace Amazon.Runtime.Signing
 #endif
 
         // Flatten the request and content headers into the single-value-per-name shape AWSSigningRequest
-        // expects, adding them to its (case-insensitive, get-only) Headers collection. A multi-valued header
-        // is joined with commas, each value trimmed, per the SigV4 canonical form documented on
-        // AWSSigningRequest.Headers. When the same header name appears on both the request and the content,
-        // HttpClient sends both values (request first, then content) as one comma-joined line, so the
-        // signature must cover that same combined value rather than only the content value.
+        // expects, adding them to its (case-insensitive, get-only) Headers collection.
+        //
+        // Two distinct multi-value cases exist, and they are joined differently because the service
+        // canonicalizes what it receives on the wire and the signature must cover that same value:
+        //
+        //   * A header name carrying multiple values (e.g. { "foo", ["bar", "baz"] }) is emitted by
+        //     HttpClient as a SINGLE wire line with the values joined by ", " (comma + space). The service
+        //     canonicalizes that one line to "bar, baz" (the single space is preserved), so JoinValues must
+        //     join with ", " — joining with "," produces a signature the service rejects (see issue #4493).
+        //
+        //   * The same header name appearing on BOTH the request and the content is sent as TWO wire lines
+        //     (request value first, then content value). SigV4 canonicalizes repeated header lines by joining
+        //     them with "," (no space), so the two already-joined values are combined here with "," to match.
         private static void CollectHeaders(HttpRequestMessage request, IDictionary<string, string> headers)
         {
             foreach (var header in request.Headers)
@@ -329,9 +337,13 @@ namespace Amazon.Runtime.Signing
             }
         }
 
+        // Join the values of a single multi-valued header the way HttpClient serializes them on the wire:
+        // with ", " (comma + space), each value trimmed. This must match the wire form exactly because the
+        // service canonicalizes the header line it receives and validates the signature against it; joining
+        // with "," alone (while HttpClient sends ", ") is what caused invalid signatures in issue #4493.
         private static string JoinValues(IEnumerable<string> values)
         {
-            return string.Join(",", values.Select(v => v == null ? string.Empty : v.Trim()));
+            return string.Join(", ", values.Select(v => v == null ? string.Empty : v.Trim()));
         }
 
         private static bool HasContentSha256Header(HttpRequestMessage request)

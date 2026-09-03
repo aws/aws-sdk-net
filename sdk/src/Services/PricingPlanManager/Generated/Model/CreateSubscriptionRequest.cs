@@ -61,8 +61,9 @@ namespace Amazon.PricingPlanManager.Model
         /// <para>
         /// Determines whether the subscription requires explicit approval before billing starts.
         /// Set to <c>MANUAL</c> to require a separate <c>ApprovePaidSubscription</c> call, or
-        /// <c>IMMEDIATE</c> to activate the subscription right away. Defaults to <c>IMMEDIATE</c>
-        /// if not specified.
+        /// <c>IMMEDIATE</c> to activate the subscription right away. For paid tier plans, this
+        /// defaults to <c>MANUAL</c> if not specified. For the <c>FREE</c> plan tier, only <c>IMMEDIATE</c>
+        /// is supported, and it is the default.
         /// </para>
         /// </summary>
         public ApprovalMode ApprovalMode
@@ -140,13 +141,13 @@ namespace Amazon.PricingPlanManager.Model
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        /// The ARNs of the AWS resources to include in the subscription. Specify one or more
-        /// supported resources.
+        /// The ARNs of the resources to include in the subscription. Specify one or more supported
+        /// resources.
         /// </para>
         ///  <note> 
         /// <para>
         /// For subscriptions in the CloudFront plan family, the resources must include exactly
-        /// one Amazon CloudFront distribution and exactly one AWS WAF web ACL. You can also include
+        /// one Amazon CloudFront distribution and exactly one WAF web ACL. You can also include
         /// other supported resources, such as Amazon Route 53 hosted zones and CloudFront KeyValueStores.
         /// </para>
         ///  </note>

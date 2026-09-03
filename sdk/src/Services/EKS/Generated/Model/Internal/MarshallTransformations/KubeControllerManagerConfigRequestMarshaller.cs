@@ -57,6 +57,17 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetPodGcControllerConfig())
+            {
+                context.Writer.WritePropertyName("podGcControllerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PodGcControllerConfigRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.PodGcControllerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

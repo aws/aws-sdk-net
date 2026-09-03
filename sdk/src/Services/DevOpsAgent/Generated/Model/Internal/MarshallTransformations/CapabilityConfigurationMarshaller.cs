@@ -52,6 +52,22 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
+            if(requestObject.IsSetTriggerFilterGroups())
+            {
+                context.Writer.WritePropertyName("triggerFilterGroups");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTriggerFilterGroupsListValue in requestObject.TriggerFilterGroups)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TriggerFilterGroupMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTriggerFilterGroupsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

@@ -37,6 +37,8 @@ namespace Amazon.DevOpsAgent.Model
     {
         private string _accountId;
         private MonitorAccountType _accountType;
+        private string _agentElevatedRoleArn;
+        private ValidationStatus _agentElevatedRoleArnStatus;
         private string _assumableRoleArn;
 
         /// <summary>
@@ -75,6 +77,48 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetAccountType()
         {
             return this._accountType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentElevatedRoleArn. 
+        /// <para>
+        /// Optional IAM role ARN to be assumed by AIDevOps for elevated directed actions on behalf
+        /// of the customer. Used for mutating operations gated by elevatedActionsEnabled on the
+        /// AgentSpace. When not provided, only non-elevated directed actions are available for
+        /// this AWS account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AgentElevatedRoleArn
+        {
+            get { return this._agentElevatedRoleArn; }
+            set { this._agentElevatedRoleArn = value; }
+        }
+
+        // Check to see if AgentElevatedRoleArn property is set
+        internal bool IsSetAgentElevatedRoleArn()
+        {
+            return this._agentElevatedRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AgentElevatedRoleArnStatus. 
+        /// <para>
+        /// Validation status of the agentElevatedRoleArn. Updated asynchronously after the customer
+        /// registers an elevated role. Possible values: PENDING_CONFIRMATION (validation in progress),
+        /// VALID (role validated), INVALID (validation failed).
+        /// </para>
+        /// </summary>
+        public ValidationStatus AgentElevatedRoleArnStatus
+        {
+            get { return this._agentElevatedRoleArnStatus; }
+            set { this._agentElevatedRoleArnStatus = value; }
+        }
+
+        // Check to see if AgentElevatedRoleArnStatus property is set
+        internal bool IsSetAgentElevatedRoleArnStatus()
+        {
+            return this._agentElevatedRoleArnStatus != null;
         }
 
         /// <summary>

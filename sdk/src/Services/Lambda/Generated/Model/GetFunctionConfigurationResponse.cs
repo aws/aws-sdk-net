@@ -274,7 +274,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
         /// EFS file system</a> or an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon
-        /// S3 Files file system</a>.
+        /// S3 file system</a>.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

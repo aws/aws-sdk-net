@@ -42,7 +42,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property RawText. 
         /// <para>
         /// The raw text content containing natural language descriptions of desired policy behavior.
-        /// This text is processed by AI to generate corresponding Cedar policy statements that
+        /// This text is processed by AI to generate corresponding Dogwood policy statements that
         /// match the described intent.
         /// </para>
         /// </summary>

@@ -41,6 +41,7 @@ namespace Amazon.DevOpsAgent.Model
         private string _kmsKeyArn;
         private string _locale;
         private string _name;
+        private Dictionary<string, bool> _preferences = AWSConfigs.InitializeCollections ? new Dictionary<string, bool>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -156,6 +157,31 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preferences. 
+        /// <para>
+        /// The preferences configured on the agent space. Preferences that are not set take their
+        /// default values.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public Dictionary<string, bool> Preferences
+        {
+            get { return this._preferences; }
+            set { this._preferences = value; }
+        }
+
+        // Check to see if Preferences property is set
+        internal bool IsSetPreferences()
+        {
+            return this._preferences != null && (this._preferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -51,7 +51,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
         /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=20000)]
         public List<Amazon.Runtime.Documents.Document> SessionSpans
         {
             get { return this._sessionSpans; }

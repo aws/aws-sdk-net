@@ -126,6 +126,22 @@ namespace Amazon.SecurityAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndArray();
             }
 
+            if(requestObject.IsSetTrustedCaCertificates())
+            {
+                context.Writer.WritePropertyName("trustedCaCertificates");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectTrustedCaCertificatesListValue in requestObject.TrustedCaCertificates)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TrustedCaCertificateMarshaller.Instance;
+                    marshaller.Marshall(requestObjectTrustedCaCertificatesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
         }
 
         /// <summary>

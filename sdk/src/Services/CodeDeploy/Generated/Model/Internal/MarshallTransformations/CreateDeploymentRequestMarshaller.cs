@@ -104,6 +104,12 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.DeploymentGroupName);
             }
 
+            if(publicRequest.IsSetDeploymentMode())
+            {
+                context.Writer.WritePropertyName("deploymentMode");
+                context.Writer.WriteStringValue(publicRequest.DeploymentMode);
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

@@ -140,6 +140,12 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("s3TablePublishStatus", targetDepth, ref reader))
+                {
+                    var unmarshaller = S3TablePublishStatusUnmarshaller.Instance;
+                    unmarshalledObject.S3TablePublishStatus = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("status", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

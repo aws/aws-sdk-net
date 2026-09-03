@@ -74,24 +74,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             using (var contextCopy = new CborUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
                 var errorTypeName = errorResponse.Code;
-                var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-                if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
-                {
-                    var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                    if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
-                    {
-                        var queryErrorParts = queryError.Split(';');
-                        if (queryErrorParts.Length == 2)
-                        {
-                            errorResponse.Code = queryErrorParts[0];
-                            var errorTypeString = queryErrorParts[1];
-                            if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
-                            {
-                                errorResponse.Type = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
-                            }
-                        }
-                    }
-                }
+                Amazon.Runtime.Internal.Transform.AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, context.ResponseData);
                 if (errorTypeName != null && errorTypeName.Equals("ConflictException"))
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

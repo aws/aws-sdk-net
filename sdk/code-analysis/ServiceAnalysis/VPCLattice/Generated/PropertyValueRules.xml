@@ -492,7 +492,6 @@
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkVpcAssociationRequest.ServiceNetworkIdentifier</property>
     <min>3</min>
     <max>2048</max>
-    <pattern>((sn-[0-9a-z]{17})|(arn:[a-z0-9\-]+:vpc-lattice:[a-zA-Z0-9\-]+:\d{12}:servicenetwork/sn-[0-9a-z]{17}))</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VPCLattice.Model.CreateServiceNetworkVpcAssociationRequest.VpcIdentifier</property>

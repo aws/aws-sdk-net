@@ -52,6 +52,17 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.WriteNumberValue(requestObject.MaxConcurrentConnections.Value);
             }
 
+            if(requestObject.IsSetOrderedUserSecretVersionStages())
+            {
+                context.Writer.WritePropertyName("OrderedUserSecretVersionStages");
+                context.Writer.WriteStartArray();
+                foreach(var requestObjectOrderedUserSecretVersionStagesListValue in requestObject.OrderedUserSecretVersionStages)
+                {
+                        context.Writer.WriteStringValue(requestObjectOrderedUserSecretVersionStagesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(requestObject.IsSetTrustedHostKeys())
             {
                 context.Writer.WritePropertyName("TrustedHostKeys");

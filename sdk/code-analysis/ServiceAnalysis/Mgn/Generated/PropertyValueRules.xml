@@ -2759,6 +2759,18 @@
     <pattern>[A-Za-z0-9+/=]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Mgn.Model.CidrMapping.OriginalCidr</property>
+    <min>9</min>
+    <max>18</max>
+    <pattern>((25[0-4]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\/(1[6-9]|2[0-8])</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Mgn.Model.CidrMapping.UpdatedCidr</property>
+    <min>9</min>
+    <max>18</max>
+    <pattern>((25[0-4]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\/(1[6-9]|2[0-8])</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Mgn.Model.CodeGenerationOutputFormatStatusDetails.StatusDetailList</property>
     <min>0</min>
     <max>65536</max>

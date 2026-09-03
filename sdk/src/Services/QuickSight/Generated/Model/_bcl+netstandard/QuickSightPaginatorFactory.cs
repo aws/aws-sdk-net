@@ -77,6 +77,14 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListApps operation
+        ///</summary>
+        public IListAppsPaginator ListApps(ListAppsRequest request) 
+        {
+            return new ListAppsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAssetBundleExportJobs operation
         ///</summary>
         public IListAssetBundleExportJobsPaginator ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request) 
@@ -354,6 +362,14 @@ namespace Amazon.QuickSight.Model
         public ISearchAnalysesPaginator SearchAnalyses(SearchAnalysesRequest request) 
         {
             return new SearchAnalysesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchApps operation
+        ///</summary>
+        public ISearchAppsPaginator SearchApps(SearchAppsRequest request) 
+        {
+            return new SearchAppsPaginator(this.client, request);
         }
 
         /// <summary>

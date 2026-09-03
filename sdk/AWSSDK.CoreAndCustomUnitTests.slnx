@@ -23,8 +23,6 @@
     <Project Path="src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj" />
     <Project Path="src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj" />
     <Project Path="src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj" />
-    <Project Path="src/Services/SQS/AWSSDK.SQS.NetFramework.csproj" />
-    <Project Path="src/Services/SQS/AWSSDK.SQS.NetStandard.csproj" />
   </Folder>
   <Folder Name="/UnitTests/">
     <Project Path="../generator/ServiceClientGeneratorLib/ServiceClientGeneratorLib.csproj" />

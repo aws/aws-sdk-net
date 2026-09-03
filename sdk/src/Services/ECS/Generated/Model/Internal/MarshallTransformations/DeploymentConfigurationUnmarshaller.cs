@@ -80,6 +80,12 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeploymentCircuitBreaker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("earlySuccessCriteria", targetDepth, ref reader))
+                {
+                    var unmarshaller = DeploymentEarlySuccessCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.EarlySuccessCriteria = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("lifecycleHooks", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<DeploymentLifecycleHook, DeploymentLifecycleHookUnmarshaller>(DeploymentLifecycleHookUnmarshaller.Instance);

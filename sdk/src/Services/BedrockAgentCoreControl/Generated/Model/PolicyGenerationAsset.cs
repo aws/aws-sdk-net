@@ -31,9 +31,9 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Represents a generated policy asset from the AI-powered policy generation process
-    /// within the AgentCore Policy system. Each asset contains a Cedar policy statement generated
-    /// from natural language input, along with associated metadata and analysis findings
-    /// to help users evaluate and select the most appropriate policy option.
+    /// within the AgentCore Policy system. Each asset contains a Dogwood policy statement
+    /// generated from natural language input, along with associated metadata and analysis
+    /// findings to help users evaluate and select the most appropriate policy option.
     /// </summary>
     public partial class PolicyGenerationAsset
     {
@@ -110,12 +110,12 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <para>
         /// The portion of the original natural language input that this generated policy asset
         /// addresses. This helps users understand which part of their policy description was
-        /// translated into this specific Cedar policy statement, enabling better policy selection
+        /// translated into this specific Dogwood policy statement, enabling better policy selection
         /// and refinement. When a single natural language input describes multiple authorization
         /// requirements, the generation process creates separate policy assets for each requirement,
         /// with each asset's rawTextFragment showing which requirement it addresses. Use this
         /// mapping to verify that all parts of your natural language input were correctly translated
-        /// into Cedar policies.
+        /// into Dogwood policies.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000)]

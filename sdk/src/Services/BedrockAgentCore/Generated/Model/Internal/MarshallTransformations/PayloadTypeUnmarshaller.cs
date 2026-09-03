@@ -68,6 +68,12 @@ namespace Amazon.BedrockAgentCore.Model.Internal.MarshallTransformations
                     unmarshalledObject.Conversational = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("json", targetDepth, ref reader))
+                {
+                    var unmarshaller = MemoryJsonDataUnmarshaller.Instance;
+                    unmarshalledObject.Json = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

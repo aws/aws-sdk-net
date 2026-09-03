@@ -40,6 +40,7 @@ namespace Amazon.SocialMessaging.Model
     {
         private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cloneFlowId;
+        private string _endpointUri;
         private MemoryStream _flowJson;
         private string _flowName;
         private string _id;
@@ -87,6 +88,28 @@ namespace Amazon.SocialMessaging.Model
         internal bool IsSetCloneFlowId()
         {
             return this._cloneFlowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndpointUri. 
+        /// <para>
+        /// Optional HTTPS endpoint for a dynamic Flow, registered with Meta as the Flow's endpoint_uri
+        /// and called by Meta directly. When omitted, the Flow has no endpoint (static Flow).
+        /// Meta only calls the endpoint when the Flow JSON also declares data_api_version. To
+        /// verify that requests originate from Meta, attach your own Meta app via UpdateWhatsAppFlow.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string EndpointUri
+        {
+            get { return this._endpointUri; }
+            set { this._endpointUri = value; }
+        }
+
+        // Check to see if EndpointUri property is set
+        internal bool IsSetEndpointUri()
+        {
+            return this._endpointUri != null;
         }
 
         /// <summary>

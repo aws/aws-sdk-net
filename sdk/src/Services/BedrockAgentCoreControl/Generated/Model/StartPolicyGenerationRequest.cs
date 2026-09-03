@@ -31,18 +31,18 @@ namespace Amazon.BedrockAgentCoreControl.Model
 {
     /// <summary>
     /// Container for the parameters to the StartPolicyGeneration operation.
-    /// Initiates the AI-powered generation of Cedar policies from natural language descriptions
+    /// Initiates the AI-powered generation of Dogwood policies from natural language descriptions
     /// within the AgentCore Policy system. This feature enables both technical and non-technical
     /// users to create policies by describing their authorization requirements in plain English,
-    /// which is then automatically translated into formal Cedar policy statements. The generation
-    /// process analyzes the natural language input along with the Gateway's tool context
-    /// to produce validated policy options. Generated policy assets are automatically deleted
-    /// after 7 days, so you should review and create policies from the generated assets within
-    /// this timeframe. Once created, policies are permanent and not subject to this expiration.
-    /// Generated policies should be reviewed and tested in log-only mode before deploying
-    /// to production. Use this when you want to describe policy intent naturally rather than
-    /// learning Cedar syntax, though generated policies may require refinement for complex
-    /// scenarios.
+    /// which is then automatically translated into formal Dogwood policy statements. The
+    /// generation process analyzes the natural language input along with the Gateway's tool
+    /// context to produce validated policy options. Generated policy assets are automatically
+    /// deleted after 7 days, so you should review and create policies from the generated
+    /// assets within this timeframe. Once created, policies are permanent and not subject
+    /// to this expiration. Generated policies should be reviewed and tested in log-only mode
+    /// before deploying to production. Use this when you want to describe policy intent naturally
+    /// rather than learning Dogwood syntax, though generated policies may require refinement
+    /// for complex scenarios.
     /// </summary>
     public partial class StartPolicyGenerationRequest : AmazonBedrockAgentCoreControlRequest
     {
@@ -78,7 +78,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// The natural language description of the desired policy behavior. This content is processed
-        /// by AI to generate corresponding Cedar policy statements that match the described intent.
+        /// by AI to generate corresponding Dogwood policy statements that match the described
+        /// intent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

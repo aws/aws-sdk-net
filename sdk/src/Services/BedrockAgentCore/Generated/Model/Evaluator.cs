@@ -43,7 +43,7 @@ namespace Amazon.BedrockAgentCore.Model
         /// or custom evaluators.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=111)]
         public string EvaluatorId
         {
             get { return this._evaluatorId; }

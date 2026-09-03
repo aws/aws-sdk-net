@@ -221,6 +221,27 @@
       ],
       "documentation":"<p>Creates a new configuration bundle resource. A configuration bundle stores versioned component configurations for agent evaluation workflows.</p>"
     },
+    "CreateConsentPortal":{
+      "name":"CreateConsentPortal",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/CreateConsentPortal",
+        "responseCode":202
+      },
+      "input":{"shape":"CreateConsentPortalRequest"},
+      "output":{"shape":"CreateConsentPortalResponse"},
+      "errors":[
+        {"shape":"ServiceQuotaExceededException"},
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"ConflictException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Creates a new consent portal.</p>"
+    },
     "CreateDataset":{
       "name":"CreateDataset",
       "http":{
@@ -553,7 +574,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic control over agentic interactions with AgentCore Gateway. Using the Cedar policy language, you can define fine-grained policies that specify which interactions with Gateway tools are permitted based on input parameters and OAuth claims, ensuring agents operate within defined boundaries and business rules. The policy is validated during creation against the Cedar schema generated from the Gateway's tools' input schemas, which defines the available tools, their parameters, and expected data types. This is an asynchronous operation. Use the <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html\">GetPolicy</a> operation to poll the <code>status</code> field to track completion.</p> <p>If the new policy is a temporal policy, creating it invalidates the policy engine's active temporal sessions. For more information about temporal policy sessions, see <a href=\"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html\">session-based temporal policies</a>. The policy engine returns an HTTP 409 <code>ConflictException</code> to in-flight sessions. To resume, you must start a new session with a new session ID.</p>"
+      "documentation":"<p>Creates a policy within the AgentCore Policy system. Policies provide real-time, deterministic control over agentic interactions with AgentCore Gateway. Using Cedar or Dogwood, you can define fine-grained policies that specify which interactions with Gateway tools are permitted based on input parameters and OAuth claims, ensuring agents operate within defined boundaries and business rules. The policy is validated during creation against the Cedar schema generated from the Gateway's tools' input schemas, which defines the available tools, their parameters, and expected data types. This is an asynchronous operation. Use the <a href=\"https://docs.aws.amazon.com/bedrock-agentcore-control/latest/APIReference/API_GetPolicy.html\">GetPolicy</a> operation to poll the <code>status</code> field to track completion.</p> <p>If the new policy is a temporal policy, creating it invalidates the policy engine's active temporal sessions. For more information about temporal policy sessions, see <a href=\"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy-session-based-temporal.html\">session-based temporal policies</a>. The policy engine returns an HTTP 409 <code>ConflictException</code> to in-flight sessions. To resume, you must start a new session with a new session ID.</p>"
     },
     "CreatePolicyEngine":{
       "name":"CreatePolicyEngine",
@@ -796,6 +817,27 @@
       "documentation":"<p>Deletes a configuration bundle and all of its versions.</p>",
       "idempotent":true
     },
+    "DeleteConsentPortal":{
+      "name":"DeleteConsentPortal",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/DeleteConsentPortal",
+        "responseCode":204
+      },
+      "input":{"shape":"DeleteConsentPortalRequest"},
+      "output":{"shape":"DeleteConsentPortalResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Deletes a consent portal.</p>",
+      "idempotent":true
+    },
     "DeleteDataset":{
       "name":"DeleteDataset",
       "http":{
@@ -992,7 +1034,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"ThrottledException"}
       ],
-      "documentation":"<p>Deletes an Amazon Bedrock AgentCore Memory resource.</p>",
+      "documentation":"<p>Deletes an Amazon Bedrock AgentCore Memory resource. When you delete a memory resource, it is permanently removed.</p>",
       "idempotent":true
     },
     "DeleteOauth2CredentialProvider":{
@@ -1386,6 +1428,26 @@
       "documentation":"<p>Gets a specific version of a configuration bundle by its version identifier.</p>",
       "readonly":true
     },
+    "GetConsentPortal":{
+      "name":"GetConsentPortal",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/GetConsentPortal",
+        "responseCode":200
+      },
+      "input":{"shape":"GetConsentPortalRequest"},
+      "output":{"shape":"GetConsentPortalResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Retrieves information about a consent portal.</p>",
+      "readonly":true
+    },
     "GetDataset":{
       "name":"GetDataset",
       "http":{
@@ -1730,7 +1792,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Retrieves information about a policy generation request within the AgentCore Policy system. Policy generation converts natural language descriptions into Cedar policy statements using AI-powered translation, enabling non-technical users to create policies.</p>",
+      "documentation":"<p>Retrieves information about a policy generation request within the AgentCore Policy system. Policy generation converts natural language descriptions into Dogwood policy statements using AI-powered translation, enabling non-technical users to create policies.</p>",
       "readonly":true
     },
     "GetPolicyGenerationSummary":{
@@ -2069,6 +2131,25 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Lists all configuration bundles in the account.</p>",
+      "readonly":true
+    },
+    "ListConsentPortals":{
+      "name":"ListConsentPortals",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/ListConsentPortals",
+        "responseCode":200
+      },
+      "input":{"shape":"ListConsentPortalsRequest"},
+      "output":{"shape":"ListConsentPortalsResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Lists all of the consent portals in your account.</p>",
       "readonly":true
     },
     "ListDatasetExamples":{
@@ -2461,7 +2542,7 @@
         {"shape":"ResourceNotFoundException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Retrieves a list of generated policy assets from a policy generation request within the AgentCore Policy system. This operation returns the actual Cedar policies and related artifacts produced by the AI-powered policy generation process, allowing users to review and select from multiple generated policy options.</p>",
+      "documentation":"<p>Retrieves a list of generated policy assets from a policy generation request within the AgentCore Policy system. This operation returns the actual Dogwood policies and related artifacts produced by the AI-powered policy generation process, allowing users to review and select from multiple generated policy options.</p>",
       "readonly":true
     },
     "ListPolicyGenerationSummaries":{
@@ -2655,7 +2736,7 @@
         {"shape":"ThrottlingException"},
         {"shape":"InternalServerException"}
       ],
-      "documentation":"<p>Initiates the AI-powered generation of Cedar policies from natural language descriptions within the AgentCore Policy system. This feature enables both technical and non-technical users to create policies by describing their authorization requirements in plain English, which is then automatically translated into formal Cedar policy statements. The generation process analyzes the natural language input along with the Gateway's tool context to produce validated policy options. Generated policy assets are automatically deleted after 7 days, so you should review and create policies from the generated assets within this timeframe. Once created, policies are permanent and not subject to this expiration. Generated policies should be reviewed and tested in log-only mode before deploying to production. Use this when you want to describe policy intent naturally rather than learning Cedar syntax, though generated policies may require refinement for complex scenarios.</p>"
+      "documentation":"<p>Initiates the AI-powered generation of Dogwood policies from natural language descriptions within the AgentCore Policy system. This feature enables both technical and non-technical users to create policies by describing their authorization requirements in plain English, which is then automatically translated into formal Dogwood policy statements. The generation process analyzes the natural language input along with the Gateway's tool context to produce validated policy options. Generated policy assets are automatically deleted after 7 days, so you should review and create policies from the generated assets within this timeframe. Once created, policies are permanent and not subject to this expiration. Generated policies should be reviewed and tested in log-only mode before deploying to production. Use this when you want to describe policy intent naturally rather than learning Dogwood syntax, though generated policies may require refinement for complex scenarios.</p>"
     },
     "SubmitRegistryRecordForApproval":{
       "name":"SubmitRegistryRecordForApproval",
@@ -2840,6 +2921,27 @@
         {"shape":"InternalServerException"}
       ],
       "documentation":"<p>Updates a configuration bundle by creating a new version with the specified changes. Each update creates a new version in the version history.</p>"
+    },
+    "UpdateConsentPortal":{
+      "name":"UpdateConsentPortal",
+      "http":{
+        "method":"POST",
+        "requestUri":"/identities/UpdateConsentPortal",
+        "responseCode":202
+      },
+      "input":{"shape":"UpdateConsentPortalRequest"},
+      "output":{"shape":"UpdateConsentPortalResponse"},
+      "errors":[
+        {"shape":"UnauthorizedException"},
+        {"shape":"ValidationException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConflictException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ThrottlingException"},
+        {"shape":"InternalServerException"}
+      ],
+      "documentation":"<p>Updates an existing consent portal.</p>",
+      "idempotent":true
     },
     "UpdateDataset":{
       "name":"UpdateDataset",
@@ -3666,6 +3768,7 @@
       "member":{"shape":"AllowedAudience"},
       "min":1
     },
+    "AllowedAudienceType":{"type":"string"},
     "AllowedClient":{"type":"string"},
     "AllowedClientsList":{
       "type":"list",
@@ -4049,7 +4152,7 @@
         },
         "rateLimits":{
           "shape":"BatchPutLimitEntries",
-          "documentation":"<p>Complete set of rate limits for this gateway. Replaces all existing limits atomically.</p>"
+          "documentation":"<p>The complete set of rate limits for this gateway. This operation replaces all existing rate limits in a single request. If the operation fails, no rate limits are changed.</p>"
         }
       }
     },
@@ -4078,16 +4181,22 @@
       "members":{
         "rateLimitId":{
           "shape":"GatewayRateLimitId",
-          "documentation":"<p>Optional — if provided, used for upsert matching against existing limits.</p>"
+          "documentation":"<p>The unique identifier of the rate limit. If provided, the service uses it for upsert matching against existing rate limits.</p>"
         },
         "description":{
           "shape":"GatewayRateLimitDescription",
-          "documentation":"<p>Optional human-readable description for this limit.</p>"
+          "documentation":"<p>An optional human-readable description for this rate limit. If not provided, the rate limit is created without a description.</p>"
         },
-        "dimensionKeys":{"shape":"DimensionKeys"},
-        "entries":{"shape":"LimitEntries"}
+        "dimensionKeys":{
+          "shape":"DimensionKeys",
+          "documentation":"<p>The ordered list of dimension key names that define the scope of this rate limit.</p>"
+        },
+        "entries":{
+          "shape":"LimitEntries",
+          "documentation":"<p>The list of rule entries that map dimension values to rate configurations.</p>"
+        }
       },
-      "documentation":"<p>A limit definition within a BatchPut request (rateLimitId used for upsert matching)</p>"
+      "documentation":"<p>A rate limit definition within a batch put request. If you provide a <code>rateLimitId</code>, the service uses it for upsert matching against existing rate limits.</p>"
     },
     "BedrockAgentcoreResourceArn":{
       "type":"string",
@@ -4613,14 +4722,15 @@
     },
     "CloudWatchLogsInputConfig":{
       "type":"structure",
-      "required":[
-        "logGroupNames",
-        "serviceNames"
-      ],
+      "required":["serviceNames"],
       "members":{
         "logGroupNames":{
           "shape":"CloudWatchLogsInputConfigLogGroupNamesList",
           "documentation":"<p> The list of CloudWatch log group names to monitor for agent traces.</p>"
+        },
+        "logGroupNamePrefixes":{
+          "shape":"CloudWatchLogsInputConfigLogGroupNamePrefixesList",
+          "documentation":"<p> The list of CloudWatch log group name prefixes to monitor for agent traces. Specify this instead of <code>logGroupNames</code> to match log groups by prefix. Specify either <code>logGroupNames</code> or <code>logGroupNamePrefixes</code>, not both. One of the two is required. </p>"
         },
         "serviceNames":{
           "shape":"CloudWatchLogsInputConfigServiceNamesList",
@@ -4629,11 +4739,18 @@
       },
       "documentation":"<p> The configuration for reading agent traces from CloudWatch logs as input for online evaluation. </p>"
     },
+    "CloudWatchLogsInputConfigLogGroupNamePrefixesList":{
+      "type":"list",
+      "member":{"shape":"LogGroupNamePrefix"},
+      "documentation":"<p>List of CloudWatch Logs log group name prefixes to source trace data from.</p>",
+      "max":5,
+      "min":1
+    },
     "CloudWatchLogsInputConfigLogGroupNamesList":{
       "type":"list",
       "member":{"shape":"LogGroupName"},
-      "max":5,
-      "min":1
+      "max":10,
+      "min":0
     },
     "CloudWatchLogsInputConfigServiceNamesList":{
       "type":"list",
@@ -4643,11 +4760,18 @@
     },
     "CloudWatchOutputConfig":{
       "type":"structure",
-      "required":["logGroupName"],
       "members":{
         "logGroupName":{
-          "shape":"LogGroupName",
-          "documentation":"<p> The name of the CloudWatch log group where evaluation results will be written. The log group will be created if it doesn't exist. </p>"
+          "shape":"OptionalLogGroupName",
+          "documentation":"<p> The name of the CloudWatch log group where evaluation results will be written. An existing log group is used as-is; otherwise the service creates it, which requires the evaluation execution role to grant <code>logs:CreateLogGroup</code> on the log group. Don't specify this value when <code>resultDestination</code> is <code>SOURCE_LOG_GROUP</code>. The name can't be under the service-reserved <code>/aws/bedrock-agentcore/evaluations/</code> namespace, apart from this configuration's own service-managed default group. </p>"
+        },
+        "metricsNamespace":{
+          "shape":"MetricsNamespace",
+          "documentation":"<p> The CloudWatch metrics namespace where evaluation result metrics are published. If you omit this value, the service publishes metrics to <code>Bedrock-AgentCore/Evaluations</code>. This value can't begin with <code>AWS/</code>. </p>"
+        },
+        "resultDestination":{
+          "shape":"ResultDestination",
+          "documentation":"<p> The destination where evaluation results are written. Valid values: </p> <ul> <li> <p> <code>DEDICATED_LOG_GROUP</code> (default) – Writes results to a dedicated result log group.</p> </li> <li> <p> <code>SOURCE_LOG_GROUP</code> – Writes results back to the log group that the agent traces were read from. If you use this value, don't specify <code>logGroupName</code>.</p> </li> </ul>"
         }
       },
       "documentation":"<p> The configuration for writing evaluation results to CloudWatch logs with embedded metric format (EMF) for monitoring. </p>"
@@ -4910,6 +5034,17 @@
       "max":2048,
       "min":1,
       "pattern":"[a-zA-Z][a-zA-Z0-9_:/.\\-]{0,2047}"
+    },
+    "CompositeIdentifierEntry":{
+      "type":"string",
+      "max":256,
+      "min":1
+    },
+    "CompositeIdentifierList":{
+      "type":"list",
+      "member":{"shape":"CompositeIdentifierEntry"},
+      "max":5,
+      "min":1
     },
     "ComputeConfiguration":{
       "type":"structure",
@@ -5234,6 +5369,153 @@
       "min":5,
       "pattern":"(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)\\.(?:0|[1-9]\\d*)"
     },
+    "ConsentPortalArnType":{
+      "type":"string",
+      "pattern":"arn:aws[^:]*:bedrock-agentcore:[a-z0-9-]+:[0-9]{12}:consent-portal/[a-zA-Z0-9\\-_]{1,50}-[A-Za-z0-9]{10}"
+    },
+    "ConsentPortalDescriptionType":{
+      "type":"string",
+      "max":512,
+      "min":0
+    },
+    "ConsentPortalIdType":{
+      "type":"string",
+      "pattern":"[a-zA-Z0-9\\-_]{1,50}-[A-Za-z0-9]{10}"
+    },
+    "ConsentPortalIdentifier":{
+      "type":"string",
+      "pattern":"[a-zA-Z0-9\\-_]{1,50}-[A-Za-z0-9]{10}"
+    },
+    "ConsentPortalIdpConfig":{
+      "type":"structure",
+      "required":[
+        "credentialProviderArn",
+        "scopes"
+      ],
+      "members":{
+        "credentialProviderArn":{
+          "shape":"OAuth2CredentialProviderArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the OAuth2 credential provider used to authenticate end users to the consent portal.</p>"
+        },
+        "scopes":{
+          "shape":"AllowedScopesType",
+          "documentation":"<p>The OAuth2 scopes that the consent portal requests when authenticating end users.</p>"
+        },
+        "audience":{
+          "shape":"AllowedAudienceType",
+          "documentation":"<p>The audience value that the consent portal includes when requesting tokens from the identity provider.</p>"
+        }
+      },
+      "documentation":"<p>The identity provider configuration used to authenticate end users to the consent portal.</p>"
+    },
+    "ConsentPortalNameType":{
+      "type":"string",
+      "max":50,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_-]{1,50}"
+    },
+    "ConsentPortalSource":{
+      "type":"structure",
+      "required":[
+        "identifier",
+        "type"
+      ],
+      "members":{
+        "identifier":{
+          "shape":"ConsentPortalSourceIdentifierType",
+          "documentation":"<p>The identifier of the source resource. For an <code>agentcore-gateway</code> source, this is the gateway ID or its Amazon Resource Name (ARN).</p>"
+        },
+        "type":{
+          "shape":"ConsentPortalSourceType",
+          "documentation":"<p>The type of the source resource.</p>"
+        }
+      },
+      "documentation":"<p>A resource served by the consent portal.</p>"
+    },
+    "ConsentPortalSourceIdentifierType":{
+      "type":"string",
+      "pattern":"([0-9a-z][-]?){1,100}-[0-9a-z]{10}$|^arn:aws(-[a-z-]+)?:bedrock-agentcore:[a-z0-9-]{1,20}:[0-9]{12}:gateway/([0-9a-z][-]?){1,48}-[a-z0-9]{10}"
+    },
+    "ConsentPortalSourceType":{
+      "type":"string",
+      "documentation":"<p>The type of a consent portal source. Currently, we only support type <code>agentcore-gateway</code>.</p>",
+      "enum":["agentcore-gateway"]
+    },
+    "ConsentPortalSources":{
+      "type":"list",
+      "member":{"shape":"ConsentPortalSource"},
+      "documentation":"<p>The list of resources served by the consent portal.</p>",
+      "max":1,
+      "min":1
+    },
+    "ConsentPortalStatus":{
+      "type":"string",
+      "documentation":"<p>The lifecycle status of a consent portal.</p>",
+      "enum":[
+        "CREATING",
+        "ACTIVE",
+        "UPDATING",
+        "UPDATE_FAILED",
+        "DELETING",
+        "FAILED"
+      ]
+    },
+    "ConsentPortalSummaries":{
+      "type":"list",
+      "member":{"shape":"ConsentPortalSummary"},
+      "documentation":"<p>A list of consent portal summaries.</p>"
+    },
+    "ConsentPortalSummary":{
+      "type":"structure",
+      "required":[
+        "sources",
+        "consentPortalArn",
+        "consentPortalId",
+        "createdAt",
+        "name",
+        "status",
+        "updatedAt"
+      ],
+      "members":{
+        "sources":{
+          "shape":"ConsentPortalSources",
+          "documentation":"<p>The resources served by the consent portal.</p>"
+        },
+        "consentPortalArn":{
+          "shape":"ConsentPortalArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the consent portal.</p>"
+        },
+        "consentPortalId":{
+          "shape":"ConsentPortalIdType",
+          "documentation":"<p>The unique identifier of the consent portal.</p>"
+        },
+        "createdAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was created.</p>"
+        },
+        "description":{
+          "shape":"ConsentPortalDescriptionType",
+          "documentation":"<p>The description of the consent portal.</p>"
+        },
+        "name":{
+          "shape":"ConsentPortalNameType",
+          "documentation":"<p>The name of the consent portal.</p>"
+        },
+        "portalUrl":{
+          "shape":"PortalUrlType",
+          "documentation":"<p>The URL used to access the consent portal.</p>"
+        },
+        "status":{
+          "shape":"ConsentPortalStatus",
+          "documentation":"<p>The current status of the consent portal.</p>"
+        },
+        "updatedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was last updated.</p>"
+        }
+      },
+      "documentation":"<p>Summary information about a consent portal.</p>"
+    },
     "ConsolidationConfiguration":{
       "type":"structure",
       "members":{
@@ -5261,7 +5543,7 @@
       "members":{
         "rawText":{
           "shape":"NaturalLanguage",
-          "documentation":"<p>The raw text content containing natural language descriptions of desired policy behavior. This text is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>"
+          "documentation":"<p>The raw text content containing natural language descriptions of desired policy behavior. This text is processed by AI to generate corresponding Dogwood policy statements that match the described intent.</p>"
         }
       },
       "documentation":"<p>Represents content input for policy generation operations. This structure encapsulates the natural language descriptions or other content formats that are used as input for AI-powered policy generation.</p>",
@@ -5865,6 +6147,105 @@
         }
       }
     },
+    "CreateConsentPortalRequest":{
+      "type":"structure",
+      "required":[
+        "executionRoleArn",
+        "idpConfig",
+        "name",
+        "sources"
+      ],
+      "members":{
+        "executionRoleArn":{
+          "shape":"ExecutionRoleArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role that the consent portal assumes to access the resources defined in its sources.</p>"
+        },
+        "idpConfig":{
+          "shape":"ConsentPortalIdpConfig",
+          "documentation":"<p>The identity provider configuration that the consent portal uses to authenticate end users.</p>"
+        },
+        "name":{
+          "shape":"ConsentPortalNameType",
+          "documentation":"<p>The name of the consent portal. The name must be unique within your account.</p>"
+        },
+        "sources":{
+          "shape":"ConsentPortalSources",
+          "documentation":"<p>The resources served by the consent portal. Currently, we only support type <code>agentcore-gateway</code>.</p>"
+        },
+        "description":{
+          "shape":"ConsentPortalDescriptionType",
+          "documentation":"<p>The description of the consent portal.</p>"
+        },
+        "tags":{
+          "shape":"TagsMap",
+          "documentation":"<p>A map of tag keys and values to assign to the consent portal. Tags enable you to categorize your resources in different ways, for example, by purpose, owner, or environment.</p>"
+        }
+      }
+    },
+    "CreateConsentPortalResponse":{
+      "type":"structure",
+      "required":[
+        "sources",
+        "consentPortalArn",
+        "consentPortalId",
+        "createdAt",
+        "executionRoleArn",
+        "idpConfig",
+        "name",
+        "status",
+        "updatedAt"
+      ],
+      "members":{
+        "sources":{
+          "shape":"ConsentPortalSources",
+          "documentation":"<p>The resources served by the consent portal.</p>"
+        },
+        "consentPortalArn":{
+          "shape":"ConsentPortalArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the consent portal.</p>"
+        },
+        "consentPortalId":{
+          "shape":"ConsentPortalIdType",
+          "documentation":"<p>The unique identifier of the consent portal.</p>"
+        },
+        "createdAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was created.</p>"
+        },
+        "description":{
+          "shape":"ConsentPortalDescriptionType",
+          "documentation":"<p>The description of the consent portal.</p>"
+        },
+        "executionRoleArn":{
+          "shape":"ExecutionRoleArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role that the consent portal assumes to access the resources defined in its sources.</p>"
+        },
+        "idpConfig":{
+          "shape":"ConsentPortalIdpConfig",
+          "documentation":"<p>The identity provider configuration that the consent portal uses to authenticate end users.</p>"
+        },
+        "name":{
+          "shape":"ConsentPortalNameType",
+          "documentation":"<p>The name of the consent portal.</p>"
+        },
+        "portalUrl":{
+          "shape":"PortalUrlType",
+          "documentation":"<p>The URL used to access the consent portal.</p>"
+        },
+        "status":{
+          "shape":"ConsentPortalStatus",
+          "documentation":"<p>The current status of the consent portal.</p>"
+        },
+        "statusReason":{
+          "shape":"StatusReasonType",
+          "documentation":"<p>A message that provides additional information about the current status of the consent portal.</p>"
+        },
+        "updatedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was last updated.</p>"
+        }
+      }
+    },
     "CreateDatasetRequest":{
       "type":"structure",
       "required":[
@@ -6072,19 +6453,19 @@
         },
         "rateLimitId":{
           "shape":"GatewayRateLimitId",
-          "documentation":"<p>Optional customer-defined limit ID. If not provided, system generates one.</p>"
+          "documentation":"<p>An optional customer-defined identifier for the rate limit. If not provided, the system generates one.</p>"
         },
         "description":{
           "shape":"GatewayRateLimitDescription",
-          "documentation":"<p>Optional human-readable description for this limit.</p>"
+          "documentation":"<p>An optional human-readable description for this rate limit. If not provided, the rate limit is created without a description.</p>"
         },
         "dimensionKeys":{
           "shape":"DimensionKeys",
-          "documentation":"<p>Ordered list of dimension names defining the scope of this limit. Unique per gateway — no two limits can share the same dimensionKeys.</p>"
+          "documentation":"<p>The ordered list of dimension key names that define the scope of this rate limit. Must be unique per gateway—no two rate limits can share the same dimension keys.</p>"
         },
         "entries":{
           "shape":"LimitEntries",
-          "documentation":"<p>Rule entries mapping dimension values to rate configurations.</p>"
+          "documentation":"<p>The rule entries that map dimension values to rate configurations.</p>"
         }
       }
     },
@@ -6100,18 +6481,30 @@
         "updatedAt"
       ],
       "members":{
-        "rateLimitId":{"shape":"GatewayRateLimitId"},
+        "rateLimitId":{
+          "shape":"GatewayRateLimitId",
+          "documentation":"<p>The unique identifier of the created rate limit.</p>"
+        },
         "gatewayIdentifier":{
           "shape":"GatewayIdentifier",
           "documentation":"<p>The unique identifier of the gateway.</p>"
         },
         "description":{
           "shape":"GatewayRateLimitDescription",
-          "documentation":"<p>Optional human-readable description for this limit.</p>"
+          "documentation":"<p>The human-readable description of the rate limit.</p>"
         },
-        "dimensionKeys":{"shape":"DimensionKeys"},
-        "entries":{"shape":"LimitEntries"},
-        "status":{"shape":"GatewayRateLimitStatus"},
+        "dimensionKeys":{
+          "shape":"DimensionKeys",
+          "documentation":"<p>The ordered list of dimension key names that define the scope of this rate limit.</p>"
+        },
+        "entries":{
+          "shape":"LimitEntries",
+          "documentation":"<p>The list of rule entries that map dimension values to rate configurations.</p>"
+        },
+        "status":{
+          "shape":"GatewayRateLimitStatus",
+          "documentation":"<p>The current status of the rate limit.</p>"
+        },
         "createdAt":{
           "shape":"DateTimestamp",
           "documentation":"<p>The timestamp when the rate limit was created.</p>"
@@ -6121,7 +6514,7 @@
           "documentation":"<p>The timestamp when the rate limit was last updated.</p>"
         }
       },
-      "documentation":"<p>Shared fields for GatewayRateLimit responses</p>"
+      "documentation":"<p>Shared fields for <code>GatewayRateLimit</code> responses.</p>"
     },
     "CreateGatewayRequest":{
       "type":"structure",
@@ -6672,6 +7065,10 @@
           "shape":"IndexedKeysList",
           "documentation":"<p>Metadata keys to index for filtering. Once declared, indexed keys cannot be removed.</p>"
         },
+        "namespaceKeys":{
+          "shape":"NamespaceKeysList",
+          "documentation":"<p>The namespace variable key definitions with optional validation rules. Use these <code>namespaceKeys</code> in <code>namespaceTemplates</code> to control namespace hierarchy.</p>"
+        },
         "streamDeliveryResources":{
           "shape":"StreamDeliveryResources",
           "documentation":"<p>Configuration for streaming memory record data to external resources.</p>"
@@ -6810,6 +7207,7 @@
           "shape":"ClusteringConfig",
           "documentation":"<p>Configuration for periodic batch evaluation clustering of insight results.</p>"
         },
+        "outputConfig":{"shape":"OutputConfig"},
         "evaluationExecutionRoleArn":{
           "shape":"RoleArn",
           "documentation":"<p> The Amazon Resource Name (ARN) of the IAM role that grants permissions to read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock models for evaluation. If the configuration references evaluators encrypted with a customer managed KMS key, this role must also have <code>kms:Decrypt</code> permission on the KMS key. The service validates this permission at configuration creation time. For more information, see <a href=\"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html\">Encryption at rest for AgentCore Evaluations</a>. </p>"
@@ -7188,7 +7586,7 @@
         },
         "definition":{
           "shape":"PolicyDefinition",
-          "documentation":"<p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic written in Cedar policy language, specifying effect (permit or forbid), principals, actions, resources, and conditions for agent behavior control.</p>"
+          "documentation":"<p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic written in Cedar or Dogwood, specifying effect (permit or forbid), principals, actions, resources, and conditions for agent behavior control.</p>"
         },
         "description":{
           "shape":"Description",
@@ -7263,7 +7661,7 @@
         },
         "definition":{
           "shape":"PolicyDefinition",
-          "documentation":"<p>The Cedar policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>"
+          "documentation":"<p>The Cedar or Dogwood policy statement that was created. This is the validated policy definition that will be used for agent behavior control and access decisions.</p>"
         },
         "description":{
           "shape":"Description",
@@ -7801,7 +8199,10 @@
           "shape":"ClientAuthenticationMethodType",
           "documentation":"<p>The client authentication method to use when authenticating with the token endpoint.</p>"
         },
-        "privateKeyJwtConfig":{"shape":"PrivateKeyJwtConfig"},
+        "privateKeyJwtConfig":{
+          "shape":"PrivateKeyJwtConfig",
+          "documentation":"<p>The private_key_jwt client authentication configuration for this credential provider. When specified, the credential provider uses JWT client assertions to authenticate with the token endpoint.</p>"
+        },
         "privateEndpoint":{
           "shape":"PrivateEndpoint",
           "documentation":"<p>The default private endpoint for the custom OAuth2 provider, enabling secure connectivity through a VPC Lattice resource configuration.</p>"
@@ -7841,7 +8242,10 @@
           "shape":"PrivateEndpointOverrides",
           "documentation":"<p>The private endpoint overrides for the custom OAuth2 provider configuration.</p>"
         },
-        "privateKeyJwtConfig":{"shape":"PrivateKeyJwtConfig"}
+        "privateKeyJwtConfig":{
+          "shape":"PrivateKeyJwtConfig",
+          "documentation":"<p>The configuration for private_key_jwt client authentication used by this OAuth2 credential provider.</p>"
+        }
       },
       "documentation":"<p>Output configuration for a custom OAuth2 provider.</p>"
     },
@@ -7931,7 +8335,7 @@
       "enum":[
         "AGENTCORE_EVALUATION_PREDEFINED_V1",
         "AGENTCORE_EVALUATION_SIMULATED_V1",
-        "GENERIC_EVALUATION_PREDEFINED_V1"
+        "THIRD_PARTY_EVALUATION_V1"
       ]
     },
     "DatasetStatus":{
@@ -8407,6 +8811,20 @@
         }
       }
     },
+    "DeleteConsentPortalRequest":{
+      "type":"structure",
+      "required":["consentPortalIdentifier"],
+      "members":{
+        "consentPortalIdentifier":{
+          "shape":"ConsentPortalIdentifier",
+          "documentation":"<p>The identifier of the consent portal. You can specify either the consent portal ID or its Amazon Resource Name (ARN).</p>"
+        }
+      }
+    },
+    "DeleteConsentPortalResponse":{
+      "type":"structure",
+      "members":{}
+    },
     "DeleteDatasetExamplesRequest":{
       "type":"structure",
       "required":[
@@ -8581,8 +8999,14 @@
         "status"
       ],
       "members":{
-        "rateLimitId":{"shape":"GatewayRateLimitId"},
-        "status":{"shape":"GatewayRateLimitStatus"}
+        "rateLimitId":{
+          "shape":"GatewayRateLimitId",
+          "documentation":"<p>The unique identifier of the deleted rate limit.</p>"
+        },
+        "status":{
+          "shape":"GatewayRateLimitStatus",
+          "documentation":"<p>The current status of the rate limit deletion.</p>"
+        }
       }
     },
     "DeleteGatewayRequest":{
@@ -9245,7 +9669,7 @@
     },
     "DimensionKey":{
       "type":"string",
-      "documentation":"<p>A dimension key specifying the scope dimension for rate limiting. Allowed values: &quot;targetName&quot;, &quot;toolName&quot;, &quot;qualifiedModelId&quot;, or context-path expressions: &quot;$.context.iam.principal&quot;, &quot;$.context.iam.sourceIdentity&quot;, &quot;$.context.jwt.<claim>&quot; where <claim> is a JWT claim name (e.g., &quot;$.context.jwt.sub&quot;). Validated server-side to enforce allowed prefixes and patterns.</p>",
+      "documentation":"<p>A dimension key specifying the scope dimension for rate limiting.</p> <p>Allowed values: <code>targetName</code>, <code>toolName</code>, <code>qualifiedModelId</code>, or context-path expressions: <code>$.context.iam.principal</code>, <code>$.context.iam.sourceIdentity</code>, <code>$.context.jwt.&lt;claim&gt;</code> where <code>&lt;claim&gt;</code> is a JWT claim name (for example, <code>$.context.jwt.sub</code>). Validated server-side to enforce allowed prefixes and patterns.</p>",
       "max":80,
       "min":1,
       "pattern":"(targetName|toolName|qualifiedModelId|\\$\\.context\\.iam\\.principal|\\$\\.context\\.iam\\.sourceIdentity|\\$\\.context\\.jwt\\.[a-zA-Z_][a-zA-Z0-9_\\-\\.]{0,61}[a-zA-Z0-9_])"
@@ -9253,13 +9677,13 @@
     "DimensionKeys":{
       "type":"list",
       "member":{"shape":"DimensionKey"},
-      "documentation":"<p>Ordered list of dimension key names defining the scope of a limit</p>",
+      "documentation":"<p>An ordered list of dimension key names defining the scope of a limit.</p>",
       "max":10,
       "min":1
     },
     "DimensionValue":{
       "type":"string",
-      "documentation":"<p>A dimension value in a rule entry (exact value or &quot;*&quot; wildcard)</p>",
+      "documentation":"<p>A dimension value in a rule entry (exact value or <code>*</code> wildcard).</p>",
       "max":256,
       "min":1
     },
@@ -9873,7 +10297,7 @@
     "EvaluatorList":{
       "type":"list",
       "member":{"shape":"EvaluatorReference"},
-      "max":10,
+      "max":25,
       "min":0
     },
     "EvaluatorModelConfig":{
@@ -10009,6 +10433,10 @@
     "ExceptionLevel":{
       "type":"string",
       "enum":["DEBUG"]
+    },
+    "ExecutionRoleArnType":{
+      "type":"string",
+      "pattern":"arn:aws(-[a-z-]+)?:iam::[0-9]{12}:role/[a-zA-Z0-9+=,.@\\-_/]+"
     },
     "ExtractionConfig":{
       "type":"structure",
@@ -10284,7 +10712,7 @@
       "members":{
         "arn":{
           "shape":"GatewayPolicyEngineArn",
-          "documentation":"<p>The ARN of the policy engine. The policy engine contains Cedar policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.</p>"
+          "documentation":"<p>The ARN of the policy engine. The policy engine contains Cedar or Dogwood policies that define fine-grained authorization rules specifying who can perform what actions on which resources as agents interact through the gateway.</p>"
         },
         "mode":{
           "shape":"GatewayPolicyEngineMode",
@@ -10317,7 +10745,7 @@
     },
     "GatewayRateLimitDescription":{
       "type":"string",
-      "documentation":"<p>Optional human-readable description for a gateway limit.</p>",
+      "documentation":"<p>An optional human-readable description for a gateway limit.</p>",
       "max":512,
       "min":0
     },
@@ -10333,18 +10761,30 @@
         "updatedAt"
       ],
       "members":{
-        "rateLimitId":{"shape":"GatewayRateLimitId"},
+        "rateLimitId":{
+          "shape":"GatewayRateLimitId",
+          "documentation":"<p>The unique identifier of the rate limit.</p>"
+        },
         "gatewayIdentifier":{
           "shape":"GatewayIdentifier",
           "documentation":"<p>The unique identifier of the gateway.</p>"
         },
         "description":{
           "shape":"GatewayRateLimitDescription",
-          "documentation":"<p>Optional human-readable description for this limit.</p>"
+          "documentation":"<p>The human-readable description of the rate limit.</p>"
         },
-        "dimensionKeys":{"shape":"DimensionKeys"},
-        "entries":{"shape":"LimitEntries"},
-        "status":{"shape":"GatewayRateLimitStatus"},
+        "dimensionKeys":{
+          "shape":"DimensionKeys",
+          "documentation":"<p>The ordered list of dimension key names that define the scope of this rate limit.</p>"
+        },
+        "entries":{
+          "shape":"LimitEntries",
+          "documentation":"<p>The list of rule entries that map dimension values to rate configurations.</p>"
+        },
+        "status":{
+          "shape":"GatewayRateLimitStatus",
+          "documentation":"<p>The current status of the rate limit.</p>"
+        },
         "createdAt":{
           "shape":"DateTimestamp",
           "documentation":"<p>The timestamp when the rate limit was created.</p>"
@@ -10354,11 +10794,11 @@
           "documentation":"<p>The timestamp when the rate limit was last updated.</p>"
         }
       },
-      "documentation":"<p>Shared fields for GatewayRateLimit responses</p>"
+      "documentation":"<p>Contains detailed information about a gateway rate limit, including its configuration and current status.</p>"
     },
     "GatewayRateLimitId":{
       "type":"string",
-      "documentation":"<p>Limit identifier. Optional on Create (system-generates if not provided by customer). Always present in responses.</p>",
+      "documentation":"<p>The limit identifier. Optional on create (the system generates it if not provided by the customer). Always present in responses.</p>",
       "max":64,
       "min":2,
       "pattern":"[a-zA-Z0-9][a-zA-Z0-9\\-_\\.]{0,62}[a-zA-Z0-9]"
@@ -10377,7 +10817,7 @@
     },
     "GatewayRateLimitStatus":{
       "type":"string",
-      "documentation":"<p>Status of a gateway limit</p>",
+      "documentation":"<p>The status of a gateway limit.</p>",
       "enum":[
         "CREATING",
         "ACTIVE",
@@ -11307,6 +11747,80 @@
         }
       }
     },
+    "GetConsentPortalRequest":{
+      "type":"structure",
+      "required":["consentPortalIdentifier"],
+      "members":{
+        "consentPortalIdentifier":{
+          "shape":"ConsentPortalIdentifier",
+          "documentation":"<p>The identifier of the consent portal. You can specify either the consent portal ID or its Amazon Resource Name (ARN).</p>"
+        }
+      }
+    },
+    "GetConsentPortalResponse":{
+      "type":"structure",
+      "required":[
+        "sources",
+        "consentPortalArn",
+        "consentPortalId",
+        "createdAt",
+        "executionRoleArn",
+        "idpConfig",
+        "name",
+        "status",
+        "updatedAt"
+      ],
+      "members":{
+        "sources":{
+          "shape":"ConsentPortalSources",
+          "documentation":"<p>The resources served by the consent portal.</p>"
+        },
+        "consentPortalArn":{
+          "shape":"ConsentPortalArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the consent portal.</p>"
+        },
+        "consentPortalId":{
+          "shape":"ConsentPortalIdType",
+          "documentation":"<p>The unique identifier of the consent portal.</p>"
+        },
+        "createdAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was created.</p>"
+        },
+        "description":{
+          "shape":"ConsentPortalDescriptionType",
+          "documentation":"<p>The description of the consent portal.</p>"
+        },
+        "executionRoleArn":{
+          "shape":"ExecutionRoleArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role that the consent portal assumes to access the resources defined in its sources.</p>"
+        },
+        "idpConfig":{
+          "shape":"ConsentPortalIdpConfig",
+          "documentation":"<p>The identity provider configuration that the consent portal uses to authenticate end users.</p>"
+        },
+        "name":{
+          "shape":"ConsentPortalNameType",
+          "documentation":"<p>The name of the consent portal.</p>"
+        },
+        "portalUrl":{
+          "shape":"PortalUrlType",
+          "documentation":"<p>The URL used to access the consent portal.</p>"
+        },
+        "status":{
+          "shape":"ConsentPortalStatus",
+          "documentation":"<p>The current status of the consent portal.</p>"
+        },
+        "statusReason":{
+          "shape":"StatusReasonType",
+          "documentation":"<p>A message that provides additional information about the current status of the consent portal.</p>"
+        },
+        "updatedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was last updated.</p>"
+        }
+      }
+    },
     "GetDatasetRequest":{
       "type":"structure",
       "required":["datasetId"],
@@ -11523,18 +12037,30 @@
         "updatedAt"
       ],
       "members":{
-        "rateLimitId":{"shape":"GatewayRateLimitId"},
+        "rateLimitId":{
+          "shape":"GatewayRateLimitId",
+          "documentation":"<p>The unique identifier of the rate limit.</p>"
+        },
         "gatewayIdentifier":{
           "shape":"GatewayIdentifier",
           "documentation":"<p>The unique identifier of the gateway.</p>"
         },
         "description":{
           "shape":"GatewayRateLimitDescription",
-          "documentation":"<p>Optional human-readable description for this limit.</p>"
+          "documentation":"<p>The human-readable description of the rate limit.</p>"
         },
-        "dimensionKeys":{"shape":"DimensionKeys"},
-        "entries":{"shape":"LimitEntries"},
-        "status":{"shape":"GatewayRateLimitStatus"},
+        "dimensionKeys":{
+          "shape":"DimensionKeys",
+          "documentation":"<p>The ordered list of dimension key names that define the scope of this rate limit.</p>"
+        },
+        "entries":{
+          "shape":"LimitEntries",
+          "documentation":"<p>The list of rule entries that map dimension values to rate configurations.</p>"
+        },
+        "status":{
+          "shape":"GatewayRateLimitStatus",
+          "documentation":"<p>The current status of the rate limit.</p>"
+        },
         "createdAt":{
           "shape":"DateTimestamp",
           "documentation":"<p>The timestamp when the rate limit was created.</p>"
@@ -11544,7 +12070,7 @@
           "documentation":"<p>The timestamp when the rate limit was last updated.</p>"
         }
       },
-      "documentation":"<p>Shared fields for GatewayRateLimit responses</p>"
+      "documentation":"<p>Shared fields for <code>GatewayRateLimit</code> responses.</p>"
     },
     "GetGatewayRequest":{
       "type":"structure",
@@ -12608,7 +13134,7 @@
         },
         "definition":{
           "shape":"PolicyDefinition",
-          "documentation":"<p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>"
+          "documentation":"<p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>"
         },
         "description":{
           "shape":"Description",
@@ -14945,7 +15471,7 @@
     "LimitEntries":{
       "type":"list",
       "member":{"shape":"LimitEntry"},
-      "documentation":"<p>List of rule entries within a limit</p>",
+      "documentation":"<p>A list of rule entries within a limit.</p>",
       "max":1000,
       "min":1
     },
@@ -14955,28 +15481,28 @@
       "members":{
         "dimensions":{
           "shape":"LimitEntryDimensionsMap",
-          "documentation":"<p>Map of dimension name to dimension value, matching the parent limit's dimensionKeys. Keys must exactly match the dimensionKeys. Values may be &quot;<em>&quot; as a wildcard. &quot;</em>&quot; may only appear at trailing positions (based on dimensionKeys ordering).</p>"
+          "documentation":"<p>A map of dimension names to dimension values for this rule entry. Keys must match the parent rate limit's dimension keys. Values may use <code>*</code> as a wildcard, but only in trailing positions based on the dimension keys ordering.</p>"
         },
         "requests":{
           "shape":"RateConfigs",
-          "documentation":"<p>Request rate limits (RPS or RPM). Limited to 1 entry for now.</p>"
+          "documentation":"<p>The request rate limit configuration. Specifies the maximum number of requests allowed per time period.</p>"
         },
         "tokens":{
           "shape":"RateConfigs",
-          "documentation":"<p>Token rate limits (TPM). Limited to 1 entry for now. — P1</p>"
+          "documentation":"<p>The token rate limit configuration. Specifies the maximum number of tokens allowed per time period.</p>"
         },
         "connections":{
           "shape":"RateConfigs",
-          "documentation":"<p>Connection rate limits (per second only). Limited to 1 entry for now. — P2</p>"
+          "documentation":"<p>The connection rate limit configuration. Specifies the maximum number of concurrent connections allowed.</p>"
         }
       },
-      "documentation":"<p>A single rule entry within a limit, mapping dimension values to rate configurations</p>"
+      "documentation":"<p>A single rule entry within a rate limit that maps dimension values to rate configurations. Each entry defines the rate limits for a specific combination of dimension values.</p>"
     },
     "LimitEntryDimensionsMap":{
       "type":"map",
       "key":{"shape":"DimensionKey"},
       "value":{"shape":"DimensionValue"},
-      "documentation":"<p>Map of dimension name to dimension value for a rule entry</p>",
+      "documentation":"<p>A map of dimension name to dimension value for a rule entry.</p>",
       "max":10,
       "min":1
     },
@@ -15409,6 +15935,39 @@
         "nextToken":{
           "shape":"String",
           "documentation":"<p>If the total number of results is greater than the <code>maxResults</code> value provided in the request, use this token when making another request in the <code>nextToken</code> field to return the next batch of results.</p>"
+        }
+      }
+    },
+    "ListConsentPortalsRequest":{
+      "type":"structure",
+      "members":{
+        "maxResults":{
+          "shape":"ListConsentPortalsRequestMaxResultsInteger",
+          "documentation":"<p>The maximum number of consent portals to return in a single call.</p>"
+        },
+        "nextToken":{
+          "shape":"String",
+          "documentation":"<p>A token to retrieve the next page of results. Use the value returned in a previous response to request the next page.</p>"
+        }
+      }
+    },
+    "ListConsentPortalsRequestMaxResultsInteger":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
+    "ListConsentPortalsResponse":{
+      "type":"structure",
+      "required":["consentPortals"],
+      "members":{
+        "consentPortals":{
+          "shape":"ConsentPortalSummaries",
+          "documentation":"<p>The list of consent portals.</p>"
+        },
+        "nextToken":{
+          "shape":"String",
+          "documentation":"<p>The token to use in a subsequent request to retrieve the next page of results. This value is null when there are no more results to return.</p>"
         }
       }
     },
@@ -16208,7 +16767,7 @@
       "members":{
         "policyGenerationAssets":{
           "shape":"PolicyGenerationAssets",
-          "documentation":"<p>An array of generated policy assets including Cedar policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>"
+          "documentation":"<p>An array of generated policy assets including Dogwood policies and related artifacts from the AI-powered policy generation process. Each asset represents a different policy option or variation generated from the original natural language input.</p>"
         },
         "nextToken":{
           "shape":"NextToken",
@@ -16546,6 +17105,13 @@
     },
     "LogGroupName":{
       "type":"string",
+      "pattern":"[.\\-_/#A-Za-z0-9]+"
+    },
+    "LogGroupNamePrefix":{
+      "type":"string",
+      "documentation":"<p>Prefix of a CloudWatch Logs log group name.</p>",
+      "max":512,
+      "min":1,
       "pattern":"[.\\-_/#A-Za-z0-9]+"
     },
     "Long":{
@@ -16890,6 +17456,10 @@
           "shape":"IndexedKeysList",
           "documentation":"<p>The indexed metadata keys for this memory. Only indexed keys can be used in metadata filters.</p>"
         },
+        "namespaceKeys":{
+          "shape":"NamespaceKeysList",
+          "documentation":"<p>The namespace variable key definitions for this memory. Namespace keys define custom variables used in <code>namespaceTemplates</code> with optional validation rules.</p>"
+        },
         "streamDeliveryResources":{
           "shape":"StreamDeliveryResources",
           "documentation":"<p>Configuration for streaming memory record data to external resources.</p>"
@@ -17187,6 +17757,13 @@
         "NUMBER"
       ]
     },
+    "MetricsNamespace":{
+      "type":"string",
+      "documentation":"<p>CloudWatch metrics namespace for evaluation result metrics.</p>",
+      "max":255,
+      "min":1,
+      "pattern":"[a-zA-Z0-9._#/:-]+"
+    },
     "MicrosoftOauth2ProviderConfigInput":{
       "type":"structure",
       "required":["clientId"],
@@ -17441,7 +18018,65 @@
       "type":"string",
       "max":512,
       "min":1,
-      "pattern":"[a-zA-Z0-9\\-_\\/]*(\\{(actorId|sessionId|memoryStrategyId)\\}[a-zA-Z0-9\\-_\\/]*)*"
+      "pattern":"[a-zA-Z0-9\\-_\\/]*(\\{[a-zA-Z][a-zA-Z0-9]*\\}[a-zA-Z0-9\\-_\\/]*)*"
+    },
+    "NamespaceAllowedValue":{
+      "type":"string",
+      "max":64,
+      "min":1,
+      "pattern":"[a-z0-9][a-z0-9-_]*"
+    },
+    "NamespaceAllowedValuesList":{
+      "type":"list",
+      "member":{"shape":"NamespaceAllowedValue"},
+      "max":10,
+      "min":1
+    },
+    "NamespaceKeyEntry":{
+      "type":"structure",
+      "required":["key"],
+      "members":{
+        "key":{
+          "shape":"NamespaceVariableKey",
+          "documentation":"<p>The namespace variable key name.</p>"
+        },
+        "validation":{
+          "shape":"NamespaceKeyValidation",
+          "documentation":"<p>The validation rules that constrain values for this namespace variable at runtime (<code>CreateEvent</code> API).</p>"
+        }
+      },
+      "documentation":"<p>A namespace variable key definition with optional <code>NamespaceKeyValidation</code> rules.</p>"
+    },
+    "NamespaceKeyValidation":{
+      "type":"structure",
+      "members":{
+        "allowedValues":{
+          "shape":"NamespaceAllowedValuesList",
+          "documentation":"<p>The allowed values for this namespace variable key.</p>"
+        },
+        "regexPattern":{
+          "shape":"NamespaceRegexPattern",
+          "documentation":"<p>A regex pattern that the namespace variable key-value must match.</p>"
+        }
+      },
+      "documentation":"<p>The validation rules for namespace variable values. When you specify multiple rules, the service enforces a logical <code>AND</code> across all provided key-value pairs.</p>"
+    },
+    "NamespaceKeysList":{
+      "type":"list",
+      "member":{"shape":"NamespaceKeyEntry"},
+      "max":5,
+      "min":1
+    },
+    "NamespaceRegexPattern":{
+      "type":"string",
+      "max":64,
+      "min":1
+    },
+    "NamespaceVariableKey":{
+      "type":"string",
+      "max":32,
+      "min":1,
+      "pattern":"(?!memoryStrategyId$|actorId$|sessionId$)[a-z][a-z0-9]*"
     },
     "NamespacesList":{
       "type":"list",
@@ -17564,6 +18199,10 @@
       "type":"string",
       "max":128,
       "min":1
+    },
+    "OAuth2CredentialProviderArn":{
+      "type":"string",
+      "pattern":"arn:(aws|aws-cn|aws-us-gov|aws-iso|aws-iso-b|aws-iso-e|aws-iso-f|aws-eusc):bedrock-agentcore:[a-z0-9-]{1,32}:[0-9]{12}:token-vault/[a-zA-Z0-9_-]{1,64}/oauth2credentialprovider/[a-zA-Z0-9_-]{1,128}"
     },
     "OAuthCredentialProvider":{
       "type":"structure",
@@ -17975,6 +18614,11 @@
         "LINUX_ARM64"
       ]
     },
+    "OptionalLogGroupName":{
+      "type":"string",
+      "documentation":"<p>A log group name that may also be empty. The empty string is the @default of members that were relaxed from @required, and carries the meaning &quot;no log group&quot; for that member.</p>",
+      "pattern":"$|^[.\\-_/#A-Za-z0-9]+"
+    },
     "OutputConfig":{
       "type":"structure",
       "required":["cloudWatchConfig"],
@@ -18033,6 +18677,14 @@
         "stickinessConfiguration":{
           "shape":"StickinessConfiguration",
           "documentation":"<p>The session stickiness configuration for the passthrough target. This configuration routes requests within the same session to the same target.</p>"
+        },
+        "staticQueryParameters":{
+          "shape":"StaticQueryParameters",
+          "documentation":"<p>A map of static query parameters that the gateway always appends to the outbound URL when forwarding requests to the target. The total outbound URL length, which includes the endpoint and the percent-encoded query parameters, is enforced by the service.</p>"
+        },
+        "staticQueryParameterConflictResolution":{
+          "shape":"StaticQueryParameterConflictResolution",
+          "documentation":"<p>Controls precedence when a client request supplies a query parameter whose name matches a configured static query parameter. If not set, defaults to <code>CLIENT_OVERRIDE</code>:</p> <ul> <li> <p> <code>CLIENT_OVERRIDE</code> - The client-supplied value overrides the configured static value for that parameter name.</p> </li> <li> <p> <code>STATIC_OVERRIDE</code> - The configured static value is retained, overriding the client-supplied value for that parameter name.</p> </li> </ul>"
         }
       },
       "documentation":"<p>The configuration for an HTTP passthrough target. A passthrough target forwards requests directly to an external HTTP endpoint.</p>"
@@ -18323,7 +18975,7 @@
     },
     "Period":{
       "type":"string",
-      "documentation":"<p>Time period for rate limiting</p>",
+      "documentation":"<p>The time period for rate limiting.</p>",
       "enum":[
         "second",
         "minute"
@@ -18394,7 +19046,7 @@
         },
         "definition":{
           "shape":"PolicyDefinition",
-          "documentation":"<p>The Cedar policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>"
+          "documentation":"<p>The Cedar or Dogwood policy statement that defines the access control rules. This contains the actual policy logic used for agent behavior control and access decisions.</p>"
         },
         "description":{
           "shape":"Description",
@@ -18405,7 +19057,7 @@
           "documentation":"<p>Additional information about the policy status. This provides details about any failures or the current state of the policy lifecycle.</p>"
         }
       },
-      "documentation":"<p>Represents a complete policy resource within the AgentCore Policy system. Policies are ARN-able resources that contain Cedar policy statements and associated metadata for controlling agent behavior and access decisions. Each policy belongs to a policy engine and defines fine-grained authorization rules that are evaluated in real-time as agents interact with tools through Gateway. Policies use the Cedar policy language to specify who (principals based on OAuth claims like username, role, or scope) can perform what actions (tool calls) on which resources (Gateways), with optional conditions for attribute-based access control. Multiple policies can apply to a single request, with Cedar's forbid-wins semantics ensuring that security restrictions are never accidentally overridden.</p>"
+      "documentation":"<p>Represents a complete policy resource within the AgentCore Policy system. Policies are ARN-able resources that contain Cedar or Dogwood policy statements and associated metadata for controlling agent behavior and access decisions. Each policy belongs to a policy engine and defines fine-grained authorization rules that are evaluated in real-time as agents interact with tools through Gateway. Policies use Cedar or Dogwood to specify who (principals based on OAuth claims like username, role, or scope) can perform what actions (tool calls) on which resources (Gateways), with optional conditions for attribute-based access control. Multiple policies can apply to a single request, with forbid-wins semantics ensuring that security restrictions are never accidentally overridden.</p>"
     },
     "PolicyArn":{
       "type":"string",
@@ -18422,11 +19074,11 @@
         },
         "policyGeneration":{
           "shape":"PolicyGenerationDetails",
-          "documentation":"<p>The generated policy asset information within the policy definition structure. This contains information identifying a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Cedar policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>"
+          "documentation":"<p>The generated policy asset information within the policy definition structure. This contains information identifying a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Dogwood policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>"
         },
         "policy":{
           "shape":"PolicyStatement",
-          "documentation":"<p>An AgentCore policy statement that defines the access control rules. The statement can be a Cedar policy or a guardrails definition.</p>"
+          "documentation":"<p>The Dogwood policy statement that defines the access control rules. This policy definition can include Dogwood policies and supports temporal conditions and information providers such as guardrails.</p>"
         }
       },
       "documentation":"<p>Represents the definition structure for policies within the AgentCore Policy system. This structure encapsulates different policy formats and languages that can be used to define access control rules.</p>",
@@ -18616,7 +19268,7 @@
           "documentation":"<p>Additional information about the generation status.</p>"
         }
       },
-      "documentation":"<p>Represents a policy generation request within the AgentCore Policy system. Tracks the AI-powered conversion of natural language descriptions into Cedar policy statements, enabling users to author policies by describing authorization requirements in plain English. The generation process analyzes the natural language input along with the Gateway's tool context and Cedar schema to produce one or more validated policy options. Each generation request tracks the status of the conversion process and maintains findings about the generated policies, including validation results and potential issues. Generated policy assets remain available for one week after successful generation, allowing time to review and create policies from the generated options.</p>"
+      "documentation":"<p>Represents a policy generation request within the AgentCore Policy system. Tracks the AI-powered conversion of natural language descriptions into Dogwood policy statements, enabling users to author policies by describing authorization requirements in plain English. The generation process analyzes the natural language input along with the Gateway's tool context and Cedar schema to produce one or more validated policy options. Each generation request tracks the status of the conversion process and maintains findings about the generated policies, including validation results and potential issues. Generated policy assets remain available for one week after successful generation, allowing time to review and create policies from the generated options.</p>"
     },
     "PolicyGenerationArn":{
       "type":"string",
@@ -18639,14 +19291,14 @@
         "definition":{"shape":"PolicyDefinition"},
         "rawTextFragment":{
           "shape":"NaturalLanguage",
-          "documentation":"<p>The portion of the original natural language input that this generated policy asset addresses. This helps users understand which part of their policy description was translated into this specific Cedar policy statement, enabling better policy selection and refinement. When a single natural language input describes multiple authorization requirements, the generation process creates separate policy assets for each requirement, with each asset's rawTextFragment showing which requirement it addresses. Use this mapping to verify that all parts of your natural language input were correctly translated into Cedar policies.</p>"
+          "documentation":"<p>The portion of the original natural language input that this generated policy asset addresses. This helps users understand which part of their policy description was translated into this specific Dogwood policy statement, enabling better policy selection and refinement. When a single natural language input describes multiple authorization requirements, the generation process creates separate policy assets for each requirement, with each asset's rawTextFragment showing which requirement it addresses. Use this mapping to verify that all parts of your natural language input were correctly translated into Dogwood policies.</p>"
         },
         "findings":{
           "shape":"Findings",
           "documentation":"<p>Analysis findings and insights related to this specific generated policy asset. These findings may include validation results, potential issues, or recommendations for improvement to help users evaluate the quality and appropriateness of the generated policy.</p>"
         }
       },
-      "documentation":"<p>Represents a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Cedar policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>"
+      "documentation":"<p>Represents a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Dogwood policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>"
     },
     "PolicyGenerationAssets":{
       "type":"list",
@@ -18668,7 +19320,7 @@
           "documentation":"<p>The unique identifier for this generated policy asset within the policy generation request.</p>"
         }
       },
-      "documentation":"<p>Represents the information identifying a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Cedar policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>"
+      "documentation":"<p>Represents the information identifying a generated policy asset from the AI-powered policy generation process within the AgentCore Policy system. Each asset contains a Dogwood policy statement generated from natural language input, along with associated metadata and analysis findings to help users evaluate and select the most appropriate policy option.</p>"
     },
     "PolicyGenerationName":{
       "type":"string",
@@ -18761,10 +19413,10 @@
       "members":{
         "statement":{
           "shape":"Statement",
-          "documentation":"<p>The body of the AgentCore policy statement. Contains the policy logic, which can be a Cedar policy or a guardrails definition.</p>"
+          "documentation":"<p>The body of the AgentCore Cedar or Dogwood policy statement. Contains the policy logic, which can be a Cedar policy, a temporal policy, or a guardrails definition.</p>"
         }
       },
-      "documentation":"<p>An AgentCore policy statement, which supports plain Cedar policies as well as guardrails definitions.</p>"
+      "documentation":"<p>An AgentCore Cedar or Dogwood policy statement, which supports plain Cedar policies, temporal policies, and guardrails definitions.</p>"
     },
     "PolicyStatus":{
       "type":"string",
@@ -18842,6 +19494,11 @@
         "IGNORE_ALL_FINDINGS"
       ]
     },
+    "PortalUrlType":{
+      "type":"string",
+      "max":2000,
+      "min":1
+    },
     "PrincipalMatchOperator":{
       "type":"string",
       "enum":[
@@ -18918,7 +19575,7 @@
           "documentation":"<p>A map of additional claims to include in the JWT client assertion payload. Payload claims generated by the service, such as <code>iss</code>, <code>sub</code>, <code>jti</code>, and <code>exp</code>, cannot be added.</p>"
         }
       },
-      "documentation":"<p>Configuration for private_key_jwt client authentication (RFC 7523). On Create: privateKeySource and signingAlgorithm are required (enforced server-side). On Update: all fields are optional — only provided fields are updated.</p>"
+      "documentation":"<p>The private key configuration for private_key_jwt client authentication.</p>"
     },
     "PrivateKeySource":{
       "type":"structure",
@@ -19016,9 +19673,12 @@
           "shape":"RateConfigRateDouble",
           "documentation":"<p>The rate value for the limit. For request limits, this is the number of requests allowed per period. For token limits, this is the number of tokens allowed per period. For connection limits, this is the number of concurrent connections allowed.</p>"
         },
-        "period":{"shape":"Period"}
+        "period":{
+          "shape":"Period",
+          "documentation":"<p>The time period for the rate limit. Valid values:</p> <ul> <li> <p> <code>second</code>—Measures the rate limit over a one-second window.</p> </li> <li> <p> <code>minute</code>—Measures the rate limit over a one-minute window.</p> </li> </ul>"
+        }
       },
-      "documentation":"<p>Rate configuration for a metric (requests or tokens)</p>"
+      "documentation":"<p>Contains the rate configuration for a rate limit metric, specifying the allowed rate and time period.</p>"
     },
     "RateConfigRateDouble":{
       "type":"double",
@@ -19029,7 +19689,7 @@
     "RateConfigs":{
       "type":"list",
       "member":{"shape":"RateConfig"},
-      "documentation":"<p>List of rate configs (limited to 1 for now, array for future multi-period support)</p>",
+      "documentation":"<p>A list of rate configurations for the limit. Currently supports one entry per limit.</p>",
       "max":1,
       "min":1
     },
@@ -19510,6 +20170,14 @@
     "RestApiMethods":{
       "type":"list",
       "member":{"shape":"RestApiMethod"}
+    },
+    "ResultDestination":{
+      "type":"string",
+      "documentation":"<p>Where evaluation results are written: dedicated results log group (default) or the source log group.</p>",
+      "enum":[
+        "DEDICATED_LOG_GROUP",
+        "SOURCE_LOG_GROUP"
+      ]
     },
     "RetryableConflictException":{
       "type":"structure",
@@ -20397,7 +21065,7 @@
         },
         "content":{
           "shape":"Content",
-          "documentation":"<p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Cedar policy statements that match the described intent.</p>"
+          "documentation":"<p>The natural language description of the desired policy behavior. This content is processed by AI to generate corresponding Dogwood policy statements that match the described intent.</p>"
         },
         "name":{
           "shape":"PolicyGenerationName",
@@ -20493,6 +21161,33 @@
       "type":"string",
       "pattern":"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
     },
+    "StaticQueryParameterConflictResolution":{
+      "type":"string",
+      "documentation":"<p>The precedence used when a client-supplied query parameter has the same name as a configured static query parameter:</p> <ul> <li> <p> <code>CLIENT_OVERRIDE</code> - The client-supplied value overrides the configured static value for that parameter name. This is the default.</p> </li> <li> <p> <code>STATIC_OVERRIDE</code> - The configured static value is retained, overriding the client-supplied value for that parameter name.</p> </li> </ul>",
+      "enum":[
+        "CLIENT_OVERRIDE",
+        "STATIC_OVERRIDE"
+      ]
+    },
+    "StaticQueryParameterName":{
+      "type":"string",
+      "documentation":"<p>The name of a static query parameter. Allowed characters are letters, digits, <code>_</code>, <code>.</code>, and <code>-</code>.</p>",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9_.-]+"
+    },
+    "StaticQueryParameterValue":{
+      "type":"string",
+      "documentation":"<p>The value of a static query parameter. Control characters (ASCII <code>0x00</code>-<code>0x1F</code> and <code>0x7F</code>) are not permitted. URI-reserved characters are allowed and are percent-encoded by the gateway. Empty values are allowed.</p>",
+      "pattern":"[^\\x00-\\x1F\\x7F]*",
+      "sensitive":true
+    },
+    "StaticQueryParameters":{
+      "type":"map",
+      "key":{"shape":"StaticQueryParameterName"},
+      "value":{"shape":"StaticQueryParameterValue"},
+      "documentation":"<p>A map of static query parameter names to values that the gateway always appends to the outbound URL. The total outbound URL length, which includes the endpoint and the percent-encoded query parameters, is enforced by the service.</p>"
+    },
     "StaticRoute":{
       "type":"structure",
       "required":["targetName"],
@@ -20521,6 +21216,11 @@
       "max":2048,
       "min":0
     },
+    "StatusReasonType":{
+      "type":"string",
+      "max":1024,
+      "min":1
+    },
     "StatusReasons":{
       "type":"list",
       "member":{"shape":"StatusReason"},
@@ -20538,6 +21238,10 @@
         "timeout":{
           "shape":"StickinessTimeout",
           "documentation":"<p>The session stickiness timeout, in seconds. After this duration of inactivity, the session affinity expires. Valid values range from 1 to 86400.</p>"
+        },
+        "compositeIdentifier":{
+          "shape":"CompositeIdentifierList",
+          "documentation":"<p>Additional headers to include in session affinity routing. When set, requests are only considered part of the same session if both the <code>identifier</code> and all composite identifier values match.</p>"
         }
       },
       "documentation":"<p>The configuration for session-sticky routing to a target. Session stickiness routes requests that share a session identifier to the same target.</p>"
@@ -21903,7 +22607,10 @@
     },
     "UpdateConfigurationBundleRequest":{
       "type":"structure",
-      "required":["bundleId"],
+      "required":[
+        "bundleId",
+        "parentVersionIds"
+      ],
       "members":{
         "clientToken":{
           "shape":"ClientToken",
@@ -21979,6 +22686,92 @@
         "updatedAt":{
           "shape":"Timestamp",
           "documentation":"<p>The timestamp when the configuration bundle was updated.</p>"
+        }
+      }
+    },
+    "UpdateConsentPortalRequest":{
+      "type":"structure",
+      "required":["consentPortalIdentifier"],
+      "members":{
+        "consentPortalIdentifier":{
+          "shape":"ConsentPortalIdentifier",
+          "documentation":"<p>The identifier of the consent portal. You can specify either the consent portal ID or its Amazon Resource Name (ARN).</p>"
+        },
+        "executionRoleArn":{
+          "shape":"ExecutionRoleArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role that the consent portal assumes to access the resources defined in its sources.</p>"
+        },
+        "idpConfig":{
+          "shape":"ConsentPortalIdpConfig",
+          "documentation":"<p>The identity provider configuration that the consent portal uses to authenticate end users.</p>"
+        },
+        "description":{
+          "shape":"ConsentPortalDescriptionType",
+          "documentation":"<p>The description of the consent portal.</p>"
+        }
+      }
+    },
+    "UpdateConsentPortalResponse":{
+      "type":"structure",
+      "required":[
+        "sources",
+        "consentPortalArn",
+        "consentPortalId",
+        "createdAt",
+        "executionRoleArn",
+        "idpConfig",
+        "name",
+        "status",
+        "updatedAt"
+      ],
+      "members":{
+        "sources":{
+          "shape":"ConsentPortalSources",
+          "documentation":"<p>The resources served by the consent portal.</p>"
+        },
+        "consentPortalArn":{
+          "shape":"ConsentPortalArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the consent portal.</p>"
+        },
+        "consentPortalId":{
+          "shape":"ConsentPortalIdType",
+          "documentation":"<p>The unique identifier of the consent portal.</p>"
+        },
+        "createdAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was created.</p>"
+        },
+        "description":{
+          "shape":"ConsentPortalDescriptionType",
+          "documentation":"<p>The description of the consent portal.</p>"
+        },
+        "executionRoleArn":{
+          "shape":"ExecutionRoleArnType",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the IAM role that the consent portal assumes to access the resources defined in its sources.</p>"
+        },
+        "idpConfig":{
+          "shape":"ConsentPortalIdpConfig",
+          "documentation":"<p>The identity provider configuration that the consent portal uses to authenticate end users.</p>"
+        },
+        "name":{
+          "shape":"ConsentPortalNameType",
+          "documentation":"<p>The name of the consent portal.</p>"
+        },
+        "portalUrl":{
+          "shape":"PortalUrlType",
+          "documentation":"<p>The URL used to access the consent portal.</p>"
+        },
+        "status":{
+          "shape":"ConsentPortalStatus",
+          "documentation":"<p>The current status of the consent portal.</p>"
+        },
+        "statusReason":{
+          "shape":"StatusReasonType",
+          "documentation":"<p>A message that provides additional information about the current status of the consent portal.</p>"
+        },
+        "updatedAt":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp for when the consent portal was last updated.</p>"
         }
       }
     },
@@ -22175,11 +22968,11 @@
         },
         "description":{
           "shape":"GatewayRateLimitDescription",
-          "documentation":"<p>Optional human-readable description for this limit.</p>"
+          "documentation":"<p>The updated human-readable description for this rate limit.</p>"
         },
         "entries":{
           "shape":"LimitEntries",
-          "documentation":"<p>Updated rule entries. key and dimensionKeys are immutable and cannot be changed.</p>"
+          "documentation":"<p>The updated rule entries. The dimension keys are immutable after creation and cannot be changed.</p>"
         }
       }
     },
@@ -22195,18 +22988,30 @@
         "updatedAt"
       ],
       "members":{
-        "rateLimitId":{"shape":"GatewayRateLimitId"},
+        "rateLimitId":{
+          "shape":"GatewayRateLimitId",
+          "documentation":"<p>The unique identifier of the rate limit.</p>"
+        },
         "gatewayIdentifier":{
           "shape":"GatewayIdentifier",
           "documentation":"<p>The unique identifier of the gateway.</p>"
         },
         "description":{
           "shape":"GatewayRateLimitDescription",
-          "documentation":"<p>Optional human-readable description for this limit.</p>"
+          "documentation":"<p>The human-readable description of the rate limit.</p>"
         },
-        "dimensionKeys":{"shape":"DimensionKeys"},
-        "entries":{"shape":"LimitEntries"},
-        "status":{"shape":"GatewayRateLimitStatus"},
+        "dimensionKeys":{
+          "shape":"DimensionKeys",
+          "documentation":"<p>The ordered list of dimension key names that define the scope of this rate limit.</p>"
+        },
+        "entries":{
+          "shape":"LimitEntries",
+          "documentation":"<p>The list of rule entries that map dimension values to rate configurations.</p>"
+        },
+        "status":{
+          "shape":"GatewayRateLimitStatus",
+          "documentation":"<p>The current status of the rate limit.</p>"
+        },
         "createdAt":{
           "shape":"DateTimestamp",
           "documentation":"<p>The timestamp when the rate limit was created.</p>"
@@ -22216,7 +23021,7 @@
           "documentation":"<p>The timestamp when the rate limit was last updated.</p>"
         }
       },
-      "documentation":"<p>Shared fields for GatewayRateLimit responses</p>"
+      "documentation":"<p>Shared fields for <code>GatewayRateLimit</code> responses.</p>"
     },
     "UpdateGatewayRequest":{
       "type":"structure",
@@ -22756,6 +23561,10 @@
           "shape":"IndexedKeysList",
           "documentation":"<p>Additional metadata keys to index. Previously indexed keys cannot be removed.</p>"
         },
+        "namespaceKeys":{
+          "shape":"NamespaceKeysList",
+          "documentation":"<p>The namespace variable key definitions with validation rules for this memory. This value fully replaces the existing set — any key you omit is removed. Any referenced <code>namespaceKey</code> omission will throw ValidationException.</p>"
+        },
         "streamDeliveryResources":{
           "shape":"StreamDeliveryResources",
           "documentation":"<p>Configuration for streaming memory record data to external resources.</p>"
@@ -22901,6 +23710,7 @@
           "shape":"ClusteringConfig",
           "documentation":"<p>The updated clustering configuration for periodic batch evaluation.</p>"
         },
+        "outputConfig":{"shape":"OutputConfig"},
         "evaluationExecutionRoleArn":{
           "shape":"RoleArn",
           "documentation":"<p> The updated Amazon Resource Name (ARN) of the IAM role used for evaluation execution. </p>"
@@ -23265,7 +24075,7 @@
         },
         "definition":{
           "shape":"PolicyDefinition",
-          "documentation":"<p>The new Cedar policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>"
+          "documentation":"<p>The new Cedar or Dogwood policy statement that defines the access control rules. This replaces the existing policy definition with new logic while maintaining the policy's identity.</p>"
         },
         "validationMode":{
           "shape":"PolicyValidationMode",
@@ -23325,7 +24135,7 @@
         },
         "definition":{
           "shape":"PolicyDefinition",
-          "documentation":"<p>The updated Cedar policy statement.</p>"
+          "documentation":"<p>The updated Cedar or Dogwood policy statement.</p>"
         },
         "description":{
           "shape":"Description",

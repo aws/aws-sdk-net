@@ -37,6 +37,7 @@ namespace Amazon.AgentRegistry.Model
     {
         private DateTime? _createdAt;
         private string _description;
+        private List<string> _descriptorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _displayName;
         private string _name;
         private string _recordArn;
@@ -48,7 +49,10 @@ namespace Amazon.AgentRegistry.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        ///  The timestamp when the registry record was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? CreatedAt
@@ -64,7 +68,11 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A human-readable description of the registry record. Use this field to explain the
+        /// record's purpose or content to consumers discovering it in the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string Description
@@ -80,7 +88,35 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DescriptorTypes. 
+        /// <para>
+        ///  The descriptor types that are present on this registry record. Each value corresponds
+        /// to a descriptor entry key on the approved record.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> DescriptorTypes
+        {
+            get { return this._descriptorTypes; }
+            set { this._descriptorTypes = value; }
+        }
+
+        // Check to see if DescriptorTypes property is set
+        internal bool IsSetDescriptorTypes()
+        {
+            return this._descriptorTypes != null && (this._descriptorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        ///  The human-readable display name of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string DisplayName
@@ -96,7 +132,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the registry record. Names are unique within a registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
@@ -112,7 +151,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordArn.
+        /// Gets and sets the property RecordArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RecordArn
@@ -128,7 +170,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordId.
+        /// Gets and sets the property RecordId. 
+        /// <para>
+        ///  The unique identifier of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
         public string RecordId
@@ -144,7 +189,12 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordType.
+        /// Gets and sets the property RecordType. 
+        /// <para>
+        ///  The type of the registry record. <c>MCP</c> is a Model Context Protocol server record,
+        /// <c>AGENT</c> is an Agent-to-Agent (A2A) agent card record, <c>SKILL</c> is an agent
+        /// skills definition record, and <c>CUSTOM</c> is a record with a custom descriptor.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RecordType RecordType
@@ -160,7 +210,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordVersion.
+        /// Gets and sets the property RecordVersion. 
+        /// <para>
+        ///  The version identifier of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string RecordVersion
@@ -176,7 +229,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryArn.
+        /// Gets and sets the property RegistryArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the parent registry that owns the record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=46, Max=2048)]
         public string RegistryArn
@@ -192,7 +248,15 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The lifecycle status of the registry record. A record is <c>DRAFT</c> before it is
+        /// submitted, <c>PENDING_APPROVAL</c> while awaiting curator review, and <c>APPROVED</c>
+        /// once it is approved and discoverable. <c>REJECTED</c> and <c>DEPRECATED</c> records
+        /// are not discoverable. The <c>CREATING</c>, <c>UPDATING</c>, <c>CREATE_FAILED</c>,
+        /// and <c>UPDATE_FAILED</c> values reflect the state of an in-progress or failed asynchronous
+        /// change.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RegistryRecordStatus Status
@@ -208,7 +272,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        ///  The timestamp when the registry record was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? UpdatedAt

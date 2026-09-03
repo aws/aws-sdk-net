@@ -34,6 +34,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class SourceProperties
     {
+        private SourceServerArchitecture _architecture;
         private List<CPU> _cpus = AWSConfigs.InitializeCollections ? new List<CPU>() : null;
         private List<Disk> _disks = AWSConfigs.InitializeCollections ? new List<Disk>() : null;
         private IdentificationHints _identificationHints;
@@ -43,6 +44,24 @@ namespace Amazon.Drs.Model
         private long? _ramBytes;
         private string _recommendedInstanceType;
         private bool? _supportsNitroInstances;
+
+        /// <summary>
+        /// Gets and sets the property Architecture. 
+        /// <para>
+        /// The architecture of the Source Server.
+        /// </para>
+        /// </summary>
+        public SourceServerArchitecture Architecture
+        {
+            get { return this._architecture; }
+            set { this._architecture = value; }
+        }
+
+        // Check to see if Architecture property is set
+        internal bool IsSetArchitecture()
+        {
+            return this._architecture != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Cpus. 

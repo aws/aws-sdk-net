@@ -30,7 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AgentRegistry.Model
 {
     /// <summary>
-    /// Base mixin for A2A agent card descriptor content
+    /// Descriptor that defines the content of an A2A (Agent-to-Agent) agent card registry
+    /// record. The content is validated against the A2A protocol schema.
     /// </summary>
     public partial class A2aAgentCardDescriptor
     {
@@ -39,7 +40,10 @@ namespace Amazon.AgentRegistry.Model
         private DescriptorSource _source;
 
         /// <summary>
-        /// Gets and sets the property Data.
+        /// Gets and sets the property Data. 
+        /// <para>
+        ///  The A2A agent card content, serialized as descriptor payload data.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string Data
@@ -55,7 +59,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSchemaVersion.
+        /// Gets and sets the property DataSchemaVersion. 
+        /// <para>
+        ///  The schema version of the descriptor payload.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string DataSchemaVersion

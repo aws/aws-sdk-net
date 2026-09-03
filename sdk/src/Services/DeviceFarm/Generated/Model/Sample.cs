@@ -31,6 +31,12 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Represents a sample of performance data.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Device Farm does not support performance data samples during test executions.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class Sample
     {

@@ -1,140 +1,69 @@
-﻿using Amazon.Runtime;
+using Amazon.Runtime;
 using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
-using Amazon.SQS;
-using Amazon.SQS.Model;
-using Amazon.SQS.Model.Internal.MarshallTransformations;
 using Amazon.Util;
-using AWSSDK_DotNet.UnitTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Net;
+using Moq;
 
-#if NETFRAMEWORK
 namespace AWSSDK.UnitTests
 {
     /// <summary>
-    /// Tests for the AwsQueryCompatibleTrait for services that want to migrate to AWSJSON away from the query protocol
-    /// If the service sets the AwsQueryCompatible trait then they will send an addiaional Http header x-amzn-query-error
-    /// containing a semicolon delimited pair, Code and Type. For example: **x-amzn-query-error: AWS.SimpleQueueService.NonExistentQueue;Sender**
-    /// If AwsQueryCompatibleTrait is set then the SDK will also send an additional header x-amzn-query-mode: 'true' to the service.
+    /// Tests for <see cref="AwsQueryCompatibleErrorHandler"/>, the Core helper used by services that
+    /// opt into the AwsQueryCompatible trait when migrating to AWSJSON away from the query protocol.
+    /// Such services return an x-amzn-query-error header containing a semicolon delimited Code and Type
+    /// pair (for example: "AWS.SimpleQueueService.NonExistentQueue;Sender"). When present, that header
+    /// takes precedence over the code/type parsed from the response body.
+    ///
+    /// This exercises the shared Core logic directly (no service reference, no wire protocol) so it is
+    /// unaffected by any individual service's choice of protocol.
     /// </summary>
     [TestClass]
-    public class QueryCompatibleTests : RuntimePipelineTestBase<ErrorHandler>
+    public class QueryCompatibleTests
     {
-        [ClassInitialize]
-        public static void Initialize(TestContext t)
+        private static Mock<IWebResponseData> ResponseWithQueryError(string queryErrorHeader)
         {
-            var logger =
-                 Amazon.Runtime.Internal.Util.Logger.GetLogger(new object().GetType());
-            Handler = new ErrorHandler(logger);
-            RuntimePipeline.AddHandler(Handler);
+            var responseData = new Mock<IWebResponseData>();
+            responseData.Setup(r => r.IsHeaderPresent(HeaderKeys.XAmzQueryError)).Returns(queryErrorHeader != null);
+            responseData.Setup(r => r.GetHeaderValue(HeaderKeys.XAmzQueryError)).Returns(queryErrorHeader);
+            return responseData;
         }
 
         [TestMethod]
-        public void ValidateSdkCanParseCodeField()
+        public void QueryErrorHeader_WithCodeAndType_OverridesCodeAndType()
         {
-            Tester.Reset();
-            Tester.Action = (int callcount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC1.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
+            var errorResponse = new ErrorResponse { Code = "QueueDoesNotExist", Type = ErrorType.Unknown };
+            var responseData = ResponseWithQueryError("AWS.SimpleQueueService.NonExistentQueue;Sender");
 
-            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, null);
-            var exception = Utils.AssertExceptionExpected(() =>
-            {
-                RuntimePipeline.InvokeSync(context);
-            }, typeof(AmazonSQSException));
-            Assert.IsNotNull(((AmazonSQSException)exception).ErrorCode);
-            Assert.AreEqual("AWS.SimpleQueueService.NonExistentQueue", ((AmazonSQSException)exception).ErrorCode);
+            AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, responseData.Object);
+
+            Assert.AreEqual("AWS.SimpleQueueService.NonExistentQueue", errorResponse.Code);
+            Assert.AreEqual(ErrorType.Sender, errorResponse.Type);
         }
 
         [TestMethod]
-        public void ValidateSdkCanHandleMissingCodeField()
+        public void QueryErrorHeader_Absent_LeavesErrorResponseUnchanged()
         {
-            Tester.Reset();
-            Tester.Action = (int callcount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC2.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
+            var errorResponse = new ErrorResponse { Code = "QueueDoesNotExist", Type = ErrorType.Unknown };
+            var responseData = ResponseWithQueryError(null);
 
-            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, null);
-            var exception = Utils.AssertExceptionExpected(() =>
-            {
-                RuntimePipeline.InvokeSync(context);
-            }, typeof(AmazonSQSException));
-            Assert.IsNotNull(((AmazonSQSException)exception).ErrorCode);
-            Assert.AreEqual("QueueDoesNotExist", ((AmazonSQSException)exception).ErrorCode);
+            AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, responseData.Object);
+
+            // Without the header, the code/type parsed from the body are left untouched.
+            Assert.AreEqual("QueueDoesNotExist", errorResponse.Code);
+            Assert.AreEqual(ErrorType.Unknown, errorResponse.Type);
         }
 
         [TestMethod]
-        public void ValidateSdkCanParseTypeField()
+        public void QueryErrorHeader_Malformed_LeavesErrorResponseUnchanged()
         {
-            Tester.Reset();
-            Tester.Action = (int callcount) =>
-            {
-                var errorResponse = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC3.txt");
-                throw new HttpErrorResponseException(new HttpWebRequestResponseData(errorResponse));
-            };
+            var errorResponse = new ErrorResponse { Code = "QueueDoesNotExist", Type = ErrorType.Unknown };
+            // Missing the semicolon delimiter, so the header is ignored.
+            var responseData = ResponseWithQueryError("AWS.SimpleQueueService.NonExistentQueue");
 
-            var context = CreateTestContext(null, GetQueueUrlResponseUnmarshaller.Instance, null);
-            var exception = Utils.AssertExceptionExpected(() =>
-            {
-                RuntimePipeline.InvokeSync(context);
-            }, typeof(AmazonSQSException));
-            Assert.IsNotNull(((AmazonSQSException)exception).ErrorCode);
-            Assert.AreEqual(ErrorType.Sender, ((AmazonSQSException)exception)
-                .ErrorType);
-            Assert.AreEqual<string>("Sender", ((AmazonSQSException)exception)
-                .ErrorType.ToString());
+            AwsQueryCompatibleErrorHandler.ApplyQueryErrorHeader(errorResponse, responseData.Object);
+
+            Assert.AreEqual("QueueDoesNotExist", errorResponse.Code);
+            Assert.AreEqual(ErrorType.Unknown, errorResponse.Type);
         }
-
-        [TestMethod]
-        public void ValidateSdkSendsXAmzQueryModeWhenServiceHasAwsQueryCompatibleTrait()
-        {
-            // even though TC4 is for a request, since we only care about the headers we cast it to a HttpWebResponse to make use
-            // of the helper method
-            var expectedRequest = (HttpWebResponse)MockWebResponse.CreateFromResource("QueryCompatibleTC4.txt");
-            var getQueueUrlRequest = new GetQueueUrlRequest
-            {
-                QueueName = "test-queue"
-            };
-
-            var actualRequest = GetQueueUrlRequestMarshaller.Instance.Marshall(getQueueUrlRequest);
-            Assert.IsNotNull(actualRequest.Headers[HeaderKeys.XAmzQueryMode]);
-            Assert.AreEqual<string>(actualRequest.Headers[HeaderKeys.XAmzQueryMode], expectedRequest.Headers[HeaderKeys.XAmzQueryMode]);      
-        }
-
-        protected override IExecutionContext CreateTestContext(AbstractAWSSigner signer, ResponseUnmarshaller responseUnmarshaller, ClientConfig config)
-        {
-            if (config == null)
-            {
-                config = new AmazonSQSConfig
-                {
-                    RegionEndpoint = Amazon.RegionEndpoint.USEast1
-                };
-            }
-
-            var getQueueUrlRequest = new GetQueueUrlRequest
-            {
-                QueueName = "test-queue"
-            };
-            var requestContext = new RequestContext(true, new NullSigner())
-            {
-                OriginalRequest = getQueueUrlRequest,
-                Request = new GetQueueUrlRequestMarshaller().Marshall(getQueueUrlRequest),
-                Unmarshaller = responseUnmarshaller,
-                ClientConfig = config
-            };
-            return new Amazon.Runtime.Internal.ExecutionContext(requestContext,
-                new ResponseContext
-                {
-
-                });
-        }
-
     }
 }
-#endif

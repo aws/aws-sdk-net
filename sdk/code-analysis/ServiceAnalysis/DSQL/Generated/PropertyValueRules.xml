@@ -162,7 +162,7 @@
     <property>Amazon.DSQL.Model.GetVpcEndpointServiceNameResponse.ServiceName</property>
     <min>1</min>
     <max>128</max>
-    <pattern>com\.amazonaws\.[a-z0-9-]+\.dsql-[a-f0-9]{6}</pattern>
+    <pattern>com\.amazonaws\.[a-z0-9-]+\.dsql[a-z0-9-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.ListClustersRequest.MaxResults</property>
@@ -253,7 +253,7 @@
     <property>Amazon.DSQL.Model.KinesisTargetDefinition.StreamArn</property>
     <min>1</min>
     <max>2048</max>
-    <pattern>arn:aws[a-zA-Z\-]*:kinesis:[a-zA-Z0-9\-]*:\d{12}:stream/[a-zA-Z0-9+=,.@_/\-]+</pattern>
+    <pattern>arn:aws[a-zA-Z-]*:kinesis:[a-z0-9-]*:[0-9]{12}:stream/[a-zA-Z0-9+=,.@_/\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.DSQL.Model.MultiRegionProperties.WitnessRegion</property>

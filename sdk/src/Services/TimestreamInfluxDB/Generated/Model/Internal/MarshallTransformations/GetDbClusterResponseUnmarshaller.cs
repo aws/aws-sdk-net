@@ -100,6 +100,12 @@ namespace Amazon.TimestreamInfluxDB.Model.Internal.MarshallTransformations
                     response.DeploymentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("effectiveDbParameterGroupIdentifier", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EffectiveDbParameterGroupIdentifier = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("endpoint", targetDepth, ref reader))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

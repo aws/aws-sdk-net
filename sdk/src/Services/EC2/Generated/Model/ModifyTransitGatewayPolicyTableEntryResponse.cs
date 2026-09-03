@@ -37,7 +37,10 @@ namespace Amazon.EC2.Model
         private TransitGatewayPolicyTableEntry _transitGatewayPolicyTableEntry;
 
         /// <summary>
-        /// Gets and sets the property TransitGatewayPolicyTableEntry.
+        /// Gets and sets the property TransitGatewayPolicyTableEntry. 
+        /// <para>
+        /// Describes a transit gateway policy table entry
+        /// </para>
         /// </summary>
         public TransitGatewayPolicyTableEntry TransitGatewayPolicyTableEntry
         {

@@ -4,10 +4,6 @@ description: Smithy shape to .NET type mapping, nullability, and collection defa
 ---
 # Skill: Smithy to .NET Type Mapping
 
-## Purpose
-
-Definitive mapping from Smithy shape types to .NET types, plus nullability and collection default rules.
-
 ## Type Mapping Table
 
 | Smithy shape | .NET type | Notes |
@@ -23,12 +19,12 @@ Definitive mapping from Smithy shape types to .NET types, plus nullability and c
 | `short` | — | Not supported yet — throws |
 | `bigInteger` | — | Not supported yet — throws. Wider-numeric types are earmarked for a dedicated numerics extension |
 | `bigDecimal` | — | Not supported yet — throws |
-| `blob` | `MemoryStream` | Not supported yet — throws. Target: streaming blobs → `Stream`, non-streaming → `MemoryStream` |
-| `document` | `Amazon.Runtime.Documents.Document` | Not supported yet — throws. SDK runtime type |
-| `enum` | `string` (Phase 1) / `ConstantClass` (Phase 2) | Not supported yet — throws. Phase 2 uses the `ConstantClass` pattern |
-| `intEnum` | `int?` | Not supported yet — throws |
-| `list` | `List<T>` | V4 default: `null`; see Collection Defaults |
-| `map` | `Dictionary<TKey, TValue>` | V4 default: `null`; see Collection Defaults |
+| `blob` | `MemoryStream` | Supported as an `@httpPayload` body or a JSON body member (base64 string on the wire). A header, query, or collection-element blob still throws. Target: streaming blobs → `Stream` |
+| `document` | `Amazon.Runtime.Documents.Document` | SDK runtime type; (un)marshals wholesale through the runtime document transforms. Supported as a body member, list element, or map value; an `@httpPayload` document throws |
+| `enum` | `ConstantClass` | The class the `ServiceEnumerationsWriter` emits (see `TypeMapper.EnumTypeName`); marshals as a string via implicit conversion, matching C2J. **Only as a member's own type** — inside a collection it is plain `string`; see Enums in Collections |
+| `intEnum` | `int?` | No `ConstantClass` — C2J has no `intEnum`, so it maps to a plain nullable int like `IntegerShape` (non-nullable `int` as a collection element) |
+| `list` | `List<T>` | V4 default: `null`; see Collection Defaults. Elements: string/value-type/timestamp/enum/intEnum/structure/document or a nested list/map; value-type/timestamp elements are **non-nullable** (`List<int>`, via `MapNonNullableScalar` — the all-value-types-nullable rule is members-only), flipped back to nullable when the list is `@sparse` (`List<int?>`, matching C2J). An enum element collapses to `string` and an intEnum to plain `int` (`int?` when sparse). Only blob elements throw via `RejectUnsupportedCollectionElement` |
+| `map` | `Dictionary<string, TValue>` | V4 default: `null`; see Collection Defaults. Key is always `string` (Smithy requires it; C2J flattens enum keys too). Values follow the same rules as list elements, including `@sparse` nullability |
 | `structure` | Generated class | See structure rules below |
 | `union` | Generated class | Generated as regular structure (matches current SDK) |
 
@@ -49,20 +45,52 @@ The generator will support an opt-in mode that respects Smithy's nullability tra
 ## Collection Defaults
 
 Collections use `AWSConfigs.InitializeCollections` for SDK V4 backwards compatibility. The
-generator emits an auto-property with the initializer expression directly, plus an internal
-`IsSet{Property}()` method that the AWS SDK runtime (and marshallers) call:
-
-```csharp
-public List<AuditEvent> AuditEvents { get; set; } = AWSConfigs.InitializeCollections ? new List<AuditEvent>() : null;
-
-internal bool IsSetAuditEvents() => this.AuditEvents != null && (this.AuditEvents.Count > 0 || !AWSConfigs.InitializeCollections);
-```
+generator emits an auto-property initialized to `AWSConfigs.InitializeCollections ? new List<T>() : null`,
+plus an internal `IsSet{Property}()` method that the AWS SDK runtime (and marshallers) call — exact
+emitted shape in sdk-conventions "Collection Properties".
 
 When `AWSConfigs.InitializeCollections` is `false` (V4 default), collections start as `null`,
 and an empty list still counts as "set" (the caller cleared the value). When `true` (V3 compat),
 collections start empty and an empty list counts as "not set". The `IsSet` method encodes that
 rule so callers — including the public reflection API `AWSSDKUtils.IsPropertySet` — see the
 correct answer in both modes.
+
+## Enums in Collections
+
+An `enum` surfaces as its `ConstantClass` **only as a structure member's own type**. As a list element, a
+map key, or a map value it is plain `string`:
+
+| Smithy | .NET |
+|---|---|
+| member targeting `Status` | `Status` (the ConstantClass) |
+| `list<Status>` | `List<string>` |
+| `map<Status, Status>` | `Dictionary<string, string>` |
+| `list<list<Status>>` | `List<List<string>>` |
+
+This matches C2J: `Member.DetermineType` passes `treatEnumsAsString: true` when it recurses into a list
+`member` or a map `key`/`value`, and only the member's own call passes `false`. Typing an element as its
+ConstantClass would be a public-API divergence (`Amazon.Lambda.Model.CreateFunctionRequest.Architectures`
+and friends are `List<string>` in the shipped SDK).
+
+`TypeMapper.CollectionElementTarget` is the single place the collapse happens. It feeds the .NET type name
+(`MapType` via `ElementTarget`), the element `TypeDescriptor` (`ResolveType` with `isCollectionValue: true`),
+and `PaginationResolver`'s `items` element type — so the descriptor's `IsEnum` is never set on an element, the
+writers see a plain string leaf, and a paginator's flattened enumerable agrees with the `List<string>`
+property it reads from. It takes an already-resolved `Shape` rather than a `ShapeId` precisely so
+`PaginationResolver` can call it: that runs off a `ServiceIndex` and has no `GenerationContext`.
+`Resolves_EnumItemsElement_AsString` pins the paginator's side.
+
+A paginator's `items` element type is a collection element, so it follows the same nullability rule —
+`PaginationResolver` derives it via `TypeMapper.MapScalarElement` (non-nullable, nullable when the list
+is `@sparse`), the same call the property type goes through.
+
+An `intEnum` element maps to a plain non-nullable `int` (like `IntegerShape`), so `list<intEnum>` is
+`List<int>` — it does *not* fail loud. The only leaf `RejectUnsupportedCollectionElement` still rejects is
+`blob`, which is supported as an `@httpPayload` body and a JSON body member but has no collection-element
+form. A `document` element is supported and passes the check.
+
+C2J's `Customizations.OverrideTreatEnumsAsString` can flip this per shape. There is no customization layer
+here yet, so the default (`true`, i.e. `string`) is the only behavior.
 
 ## Constrained Shapes
 
@@ -95,6 +123,8 @@ Two base-class adjustments follow (matching `ExceptionShape.Members`, `Member.cs
 
 Independently of the exception-only rules, a member named `Equals` on **any** structure is emitted with `new` to hide `object.Equals(object)` (matches `StructureGenerator.tt`'s unconditional Equals check). This is set in `TypeMapper.ResolveMembers` and flows through every writer.
 
+A **response** member named `ContentLength` is not shadowed but omitted from the response class entirely — `AmazonWebServiceResponse` already declares it and the unmarshaller assigns the inherited property. That rule is writer-level (`OperationWriter.WriteResponse`, not `TypeMapper`); see sdk-conventions.
+
 `RequestId` and `ErrorCode` get a narrower treatment than `message`. `AmazonServiceException` already declares them, so the generator emits **no property** (one would shadow the base; C2J's `StructureGenerator.tt` skips them in its property loop). But unlike `message` they are **not** filtered from serialization or unmarshalling — C2J's `ExceptionSerialization.t4` and `JsonRPCExceptionUnmarshaller.tt` loop `ExceptionShape.Members`, which drops only `message` — so the inherited property is still serialized and read from the error body. Hence `ExceptionWriter.ResolveSerializedMembers` (serialization block + unmarshaller) keeps them, while the property set is that same set with `RequestId`/`ErrorCode` filtered out inline in `WriteException`. Every other member — **including one whose name collides with a non-omitted inherited property** (e.g. `StatusCode`, `InnerException`) — is emitted as-is as a plain shadowing property and also read from the error body, exactly as C2J does.
 
 ## Resolving Member Types
@@ -109,15 +139,16 @@ To get the .NET type for a structure member:
    - Simple/scalar shape → map its `type` from the table
    - Structure/union → use the generated class name
    - List → `List<{resolve member.Target}>`
-   - Map → `Dictionary<{resolve key.Target}, {resolve value.Target}>`
-   - Enum → `string` (Phase 1), `ConstantClass` subclass (Phase 2)
+   - Map → `Dictionary<string, {resolve value.Target}>` (an enum key is `string`, never its ConstantClass)
+   - Enum → its `ConstantClass` subclass as a member's own type, `string` inside a collection (see Enums
+     in Collections)
    - Constrained string shapes (e.g. `Uuid`) resolve to a `StringShape` → `string` (no wrapper)
 
 ## Prelude Shape Mapping
 
-These shapes are implicit (not in the model JSON) and map directly. The .NET types below are the
-target mapping; see the Type Mapping Table above for which are supported today vs. still throw
-(`Blob`/`Document` are not supported yet):
+These shapes are implicit (not in the model JSON) and map directly. See the Type Mapping Table above
+for the positions each one is supported in — `Blob` and `Document` map here but are not accepted
+everywhere:
 
 | Prelude shape ID | .NET type |
 |---|---|

@@ -84,6 +84,17 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(publicRequest.IsSetAutoDetectionConfiguration())
+            {
+                context.Writer.WritePropertyName("autoDetectionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoDetectionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoDetectionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(publicRequest.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
@@ -108,6 +119,17 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
 
                 var marshaller = DiscoveryConfigurationMarshaller.Instance;
                 marshaller.Marshall(publicRequest.DiscoveryConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("encryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
 
                 context.Writer.WriteEndObject();
             }

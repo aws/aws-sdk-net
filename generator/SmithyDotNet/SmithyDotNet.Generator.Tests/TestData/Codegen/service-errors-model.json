@@ -1,0 +1,52 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#GetThing" }
+      ],
+      "errors": [
+        { "target": "com.example#ThrottlingException" },
+        { "target": "com.example#AccessDeniedException" },
+        { "target": "com.example#ValidationException" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {},
+        "smithy.api#title": "Example Service"
+      }
+    },
+    "com.example#GetThing": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "errors": [
+        { "target": "com.example#ResourceNotFoundException" },
+        { "target": "com.example#ValidationException" }
+      ],
+      "traits": { "smithy.api#http": { "uri": "/thing", "method": "GET" } }
+    },
+    "com.example#AccessDeniedException": {
+      "type": "structure",
+      "members": { "message": { "target": "smithy.api#String" } },
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#ResourceNotFoundException": {
+      "type": "structure",
+      "members": { "message": { "target": "smithy.api#String" } },
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#ThrottlingException": {
+      "type": "structure",
+      "members": { "message": { "target": "smithy.api#String" } },
+      "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#ValidationException": {
+      "type": "structure",
+      "members": { "message": { "target": "smithy.api#String" } },
+      "traits": { "smithy.api#error": "client" }
+    }
+  }
+}

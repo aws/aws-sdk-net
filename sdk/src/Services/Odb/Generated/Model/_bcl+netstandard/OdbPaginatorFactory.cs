@@ -157,6 +157,14 @@ namespace Amazon.Odb.Model
         }
 
         /// <summary>
+        /// Paginator for ListFlexComponents operation
+        ///</summary>
+        public IListFlexComponentsPaginator ListFlexComponents(ListFlexComponentsRequest request) 
+        {
+            return new ListFlexComponentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListGiMinorVersions operation
         ///</summary>
         public IListGiMinorVersionsPaginator ListGiMinorVersions(ListGiMinorVersionsRequest request) 

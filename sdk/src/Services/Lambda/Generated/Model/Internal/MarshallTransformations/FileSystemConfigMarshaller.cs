@@ -58,6 +58,17 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(requestObject.LocalMountPath);
             }
 
+            if(requestObject.IsSetS3FilesConfig())
+            {
+                context.Writer.WritePropertyName("S3FilesConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3FilesConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3FilesConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
         }
 
         /// <summary>

@@ -158,6 +158,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                     unmarshalledObject.TimedMetadataPassthrough = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("watermarkingSettings", targetDepth, ref reader))
+                {
+                    var unmarshaller = CmafIngestWatermarkingSettingsUnmarshaller.Instance;
+                    unmarshalledObject.WatermarkingSettings = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

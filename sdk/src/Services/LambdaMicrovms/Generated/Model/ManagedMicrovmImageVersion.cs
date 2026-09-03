@@ -37,6 +37,7 @@ namespace Amazon.LambdaMicrovms.Model
         private DateTime? _createdAt;
         private string _imageArn;
         private string _imageVersion;
+        private ManagedMicrovmImageVersionStatus _status;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -94,6 +95,26 @@ namespace Amazon.LambdaMicrovms.Model
         internal bool IsSetImageVersion()
         {
             return this._imageVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The lifecycle status of the managed MicroVM image version. Valid values: AVAILABLE
+        /// (the version is available for use) or DEPRECATED (the version is deprecated; do not
+        /// use it for new MicroVM images).
+        /// </para>
+        /// </summary>
+        public ManagedMicrovmImageVersionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
         /// <summary>

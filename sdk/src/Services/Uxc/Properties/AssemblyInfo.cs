@@ -7,16 +7,12 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AWSSDK.Uxc")]
-
 #if NET472
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS User Experience Customization. GA release of AccountCustomizations, used to manage account color, visible services, and visible regions settings in the AWS Management Console.")]
-
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET Framework 4.7.2) - AWS User Experience Customization.")]
 #elif NETSTANDARD2_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS User Experience Customization. GA release of AccountCustomizations, used to manage account color, visible services, and visible regions settings in the AWS Management Console.")]
-
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (NetStandard 2.0) - AWS User Experience Customization.")]
 #elif NET8_0
-[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS User Experience Customization. GA release of AccountCustomizations, used to manage account color, visible services, and visible regions settings in the AWS Management Console.")]
-
+[assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 8.0) - AWS User Experience Customization.")]
 #elif NET10_0
 [assembly: AssemblyDescription("The Amazon Web Services SDK for .NET (.NET 10.0) - AWS User Experience Customization. GA release of AccountCustomizations, used to manage account color, visible services, and visible regions settings in the AWS Management Console.")]
 
@@ -26,9 +22,6 @@ using System.Runtime.CompilerServices;
 #else
 #error Unknown platform constant - unable to set correct AssemblyDescription
 #endif
-
-
-
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyProduct("Amazon Web Services SDK for .NET")]
 [assembly: AssemblyCompany("Amazon.com, Inc")]
@@ -52,4 +45,4 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("4.0")]
-[assembly: AssemblyFileVersion("4.0.100.9")]
+[assembly: AssemblyFileVersion("4.0.100.12")]

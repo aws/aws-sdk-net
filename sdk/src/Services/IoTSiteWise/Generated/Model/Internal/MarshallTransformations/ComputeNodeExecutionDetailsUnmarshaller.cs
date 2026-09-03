@@ -80,6 +80,12 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExecutionEnvironmentVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("executionMounts", targetDepth, ref reader))
+                {
+                    var unmarshaller = new JsonListUnmarshaller<Mount, MountUnmarshaller>(MountUnmarshaller.Instance);
+                    unmarshalledObject.ExecutionMounts = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth, ref reader))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;

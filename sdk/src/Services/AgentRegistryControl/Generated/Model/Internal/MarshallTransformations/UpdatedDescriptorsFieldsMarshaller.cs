@@ -68,6 +68,17 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetAgui())
+            {
+                context.Writer.WritePropertyName("agui");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedAgUiDescriptorMarshaller.Instance;
+                marshaller.Marshall(requestObject.Agui, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetCustom())
             {
                 context.Writer.WritePropertyName("custom");
@@ -75,6 +86,17 @@ namespace Amazon.AgentRegistryControl.Model.Internal.MarshallTransformations
 
                 var marshaller = UpdatedCustomDescriptorMarshaller.Instance;
                 marshaller.Marshall(requestObject.Custom, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(requestObject.IsSetHttp())
+            {
+                context.Writer.WritePropertyName("http");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdatedHttpDescriptorMarshaller.Instance;
+                marshaller.Marshall(requestObject.Http, context);
 
                 context.Writer.WriteEndObject();
             }

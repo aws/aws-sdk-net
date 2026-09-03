@@ -39,6 +39,7 @@ namespace Amazon.CodeDeploy.Model
         private AutoRollbackConfiguration _autoRollbackConfiguration;
         private string _deploymentConfigName;
         private string _deploymentGroupName;
+        private DeploymentMode _deploymentMode;
         private string _description;
         private FileExistsBehavior _fileExistsBehavior;
         private bool? _ignoreApplicationStopFailures;
@@ -129,6 +130,25 @@ namespace Amazon.CodeDeploy.Model
         internal bool IsSetDeploymentGroupName()
         {
             return this._deploymentGroupName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentMode. The deployment mode to use for the deployment.
+        /// When set to STANDARD (the default), the deployment runs the standard set of deployment
+        /// lifecycle events. When set to RESTART, an EC2/On-premises in-place deployment runs
+        /// a shortened set of lifecycle events to quickly restart the application on the target
+        /// instances.
+        /// </summary>
+        public DeploymentMode DeploymentMode
+        {
+            get { return this._deploymentMode; }
+            set { this._deploymentMode = value; }
+        }
+
+        // Check to see if DeploymentMode property is set
+        internal bool IsSetDeploymentMode()
+        {
+            return this._deploymentMode != null;
         }
 
         /// <summary>

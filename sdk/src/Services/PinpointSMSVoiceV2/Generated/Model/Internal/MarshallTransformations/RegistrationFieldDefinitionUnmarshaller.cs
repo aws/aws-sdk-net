@@ -56,6 +56,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("ConditionalBehavior", targetDepth, ref reader))
+                {
+                    var unmarshaller = ConditionalBehaviorUnmarshaller.Instance;
+                    unmarshalledObject.ConditionalBehavior = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("DisplayHints", targetDepth, ref reader))
                 {
                     var unmarshaller = RegistrationFieldDisplayHintsUnmarshaller.Instance;

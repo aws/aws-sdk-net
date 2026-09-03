@@ -44,7 +44,7 @@ namespace Amazon.EKSAuth.Model.Internal.MarshallTransformations
         /// <returns>The unmarshalled object</returns>
         public Subject Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            Subject unmarshalledObject = new Subject();
+            var unmarshalledObject = new Subject();
             if (context.IsEmptyResponse) return null;
 
             context.Read(ref reader);

@@ -352,20 +352,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             await TestClientsAsync(TestServiceCallForManualClockCorrectionAsync);
         }
 
-        // This test verifies that all service clients are able to
-        // correctly handle clock skew errors.
-        // By default it only tests a small subset of services.
-        [Fact(Skip = "Skipping flaky test while design for clock skew behavior is defined")]
-        public async Task TestClockSkewCorrection()
-        {
-            // VerifyClockSkewSetting reads from App.config via ConfigurationManager, which is
-            // only available on .NET Framework. .NET 8 does not support the aws config section.
-#if NETFRAMEWORK
-            VerifyClockSkewSetting();
-#endif
-            await TestClientsAsync(TestServiceCallForClockSkewAsync);
-        }
-
         private async Task TestClientsAsync(Func<ClockSkewTestContext, Task> serviceCall)
         {
             bool allPassed = true;
@@ -385,25 +371,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
 
             Assert.True(allPassed);
         }
-
-        // ConfigurationManager and App.config are only available on .NET Framework.
-        // .NET 8 does not support reading the aws config section from App.config.
-#if NETFRAMEWORK
-        private static void VerifyClockSkewSetting()
-        {
-            var clockSkewSetting = AWSConfigs.CorrectForClockSkew;
-            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
-            var doc = new System.Xml.XmlDocument();
-            doc.Load(config.FilePath);
-            var awsNode = doc.SelectSingleNode("//aws");
-            var attribute = awsNode.Attributes["correctForClockSkew"];
-            var attributeValueText = attribute.Value;
-            bool configClockSkewSetting;
-            Assert.True(bool.TryParse(attributeValueText, out configClockSkewSetting));
-            Assert.Equal(clockSkewSetting, configClockSkewSetting);
-        }
-#endif
 
         private class ClockSkewTestContext
         {
@@ -441,48 +408,6 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             finally
             {
                 AWSConfigs.ManualClockCorrection = oldManualClockCorrection;
-                AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetUtcNowSource(oldUtcNowSource);
-            }
-        }
-
-        private static async Task TestServiceCallForClockSkewAsync(ClockSkewTestContext context)
-        {
-            var oldCorrectClockSkew = AWSConfigs.CorrectForClockSkew;
-            var oldUtcNowSource = GetUtcNowSource();
-
-            try
-            {
-                AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                await context.TestAction();
-
-                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
-                await context.TestAction();
-
-                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
-                await context.TestAction();
-
-                Console.WriteLine("Simulating positive clock skew");
-                SetUtcNowSource(() => DateTime.UtcNow + IncorrectPositiveClockSkewOffset);
-                AWSConfigs.CorrectForClockSkew = false;
-                await Assert.ThrowsAnyAsync<Exception>(context.TestAction);
-
-                AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                await context.TestAction();
-
-                Console.WriteLine("Simulating negative clock skew");
-                SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
-                AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(TimeSpan.Zero);
-                await context.TestAction();
-
-                AWSConfigs.CorrectForClockSkew = false;
-                await Assert.ThrowsAnyAsync<Exception>(context.TestAction);
-            }
-            finally
-            {
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
                 SetUtcNowSource(oldUtcNowSource);
             }

@@ -32,6 +32,13 @@ public record HttpTrait : TraitRecord
     public int Code { get; init; } = 200;
 }
 
+/// <remarks><see href="https://smithy.io/2.0/spec/endpoint-traits.html#endpoint-trait" /></remarks>
+public record EndpointTrait : TraitRecord
+{
+    [JsonPropertyName("hostPrefix")]
+    public required string HostPrefix { get; init; }
+}
+
 /// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#length-trait" /></remarks>
 public record LengthTrait : TraitRecord
 {

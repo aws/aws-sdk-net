@@ -33,249 +33,6 @@ namespace Amazon.MarketplaceAgreement.Model
     /// Container for the parameters to the SearchAgreements operation.
     /// Searches across all agreements that a proposer or an acceptor has in AWS Marketplace.
     /// The search returns a list of agreements with basic agreement information.
-    /// 
-    ///  
-    /// <para>
-    /// The following filter combinations are supported when the <c>PartyType</c> is <c>Proposer</c>:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceType</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>Status</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> + <c>EndTime</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>Status</c> + <c>EndTime</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>Status</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>EndTime</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>OfferId</c> + <c>Status</c>
-    /// + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> + <c>Status</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> + <c>EndTime</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceIdentifier</c> + <c>Status</c>
-    /// + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>EndTime</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>Status</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>AcceptorAccountId</c> + <c>ResourceType</c> + <c>Status</c>
-    /// + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>Status</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    ///  To filter by <c>EndTime</c>, you can use <c>BeforeEndTime</c> and/or <c>AfterEndTime</c>.
-    /// Only <c>EndTime</c> is supported for sorting.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// The following filter combinations are supported when the <c>PartyType</c> is <c>Acceptor</c>:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>Status</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> + <c>EndTime</c>
-    /// 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceType</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> + <c>EndTime</c> 
-    /// </para>
-    ///  </li> </ul>
     /// </summary>
     public partial class SearchAgreementsRequest : AmazonMarketplaceAgreementRequest
     {
@@ -340,8 +97,7 @@ namespace Amazon.MarketplaceAgreement.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>Status</c> – The current status of the agreement. Values include <c>ACTIVE</c>,
-        /// <c>ARCHIVED</c>, <c>CANCELLED</c>, <c>EXPIRED</c>, <c>RENEWED</c>, <c>REPLACED</c>,
-        /// and <c>TERMINATED</c>.
+        /// <c>CANCELLED</c>, <c>EXPIRED</c>, <c>RENEWED</c>, <c>REPLACED</c>, and <c>TERMINATED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -355,6 +111,26 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>BeforeStartTime</c> – A date used to filter agreements with a date before the
+        /// <c>startTime</c> of an agreement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AfterStartTime</c> – A date used to filter agreements with a date after the <c>startTime</c>
+        /// of an agreement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>BeforeLastUpdateTime</c> – A date used to filter agreements with a date before
+        /// the <c>lastUpdateTime</c> of an agreement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AfterLastUpdateTime</c> – A date used to filter agreements with a date after the
+        /// <c>lastUpdateTime</c> of an agreement.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AgreementType</c> – The type of agreement. Supported value includes <c>PurchaseAgreement</c>.
         /// </para>
         ///  </li> <li> 
@@ -362,7 +138,116 @@ namespace Amazon.MarketplaceAgreement.Model
         ///  <c>OfferSetId</c> – A unique identifier for the offer set containing this offer.
         /// All agreements created from offers in this set include this identifier as context.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EndTimeBehaviorType</c> – What happens to the agreement when it reaches its end
+        /// date. Values include <c>RENEW</c>, <c>REPLACE</c>, and <c>EXPIRE</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EndTimeBehaviorReasonCode</c> – The reason why the agreement doesn't renew at
+        /// its end date. Values include <c>PROPOSER_RENEW_OPTED_OUT</c>, <c>ACCEPTOR_RENEW_OPTED_OUT</c>,
+        /// <c>NO_RENEWAL_TERM</c>, and <c>RENEWAL_LIMIT_EXHAUSTED</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>InitialAgreementId</c> – The unique identifier of the very first agreement in
+        /// a chain of related agreements. Use this filter to return every agreement in the same
+        /// chain.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>LicenseArn</c> – The Amazon Resource Name (ARN) of the AWS License Manager license
+        /// associated with an entitlement granted by the agreement.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// A proposer can use any combination of the preceding filters along with <c>AgreementType</c>,
+        /// which is required.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following filter combinations are supported when the <c>PartyType</c> is <c>Acceptor</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceIdentifier</c> + <c>Status</c> + <c>EndTime</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>ResourceType</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AgreementType</c> + <c>OfferSetId</c> + <c>Status</c> + <c>EndTime</c> 
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// To filter by <c>EndTime</c>, you can use <c>BeforeEndTime</c>, <c>AfterEndTime</c>,
+        /// or both.
+        /// </para>
+        ///  </note>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
         /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
@@ -423,8 +308,10 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// An object that contains the <c>SortBy</c> and <c>SortOrder</c> attributes. Only <c>EndTime</c>
-        /// is supported for <c>SearchAgreements</c>. The default sort is <c>EndTime</c> descending.
+        /// An object that contains the <c>SortBy</c> and <c>SortOrder</c> attributes. For <c>SearchAgreements</c>,
+        /// <c>SortBy</c> supports <c>EndTime</c> for both party types, and <c>StartTime</c> and
+        /// <c>LastUpdateTime</c> only when <c>PartyType</c> is <c>Proposer</c>. The default <c>SortBy</c>
+        /// value is <c>EndTime</c>.
         /// </para>
         /// </summary>
         public Sort Sort

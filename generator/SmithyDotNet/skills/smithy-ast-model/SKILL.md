@@ -4,61 +4,32 @@ description: How the SmithyDotNet generator deserializes Smithy JSON AST into ty
 ---
 # Skill: Smithy AST Model
 
-## Purpose
-
-How to read, deserialize, and navigate Smithy JSON AST (v2.0) in the SmithyDotNet generator. This is the foundation layer — all other components depend on it.
-
 ## Smithy JSON AST Structure
 
-A Smithy model JSON file has three top-level keys (see [Smithy JSON AST spec](https://smithy.io/2.0/spec/json-ast.html)):
-
-```json
-{
-  "smithy": "2.0",
-  "shapes": { "<shapeId>": { "type": "...", ... }, ... },
-  "metadata": { ... }
-}
-```
+A Smithy model JSON file has three top-level keys (see [Smithy JSON AST spec](https://smithy.io/2.0/spec/json-ast.html)): `smithy` (the version, `"2.0"`), `shapes` (a dictionary keyed by absolute shape ID), and `metadata`.
 
 ### Shape IDs
 
 Every shape has an absolute ID: `com.amazonaws.cloudtraildata#AuditEvent`. Members append `$member`: `com.amazonaws.cloudtraildata#AuditEvent$id`.
 
-```csharp
-public record ShapeId(string Namespace, string Name, string? Member = null)
-{
-    public static ShapeId Parse(string absoluteShapeId);  // splits on # and $
-    public string AbsoluteName => $"{Namespace}#{Name}";  // shape-only; omits $Member — for Shapes dictionary key lookups
-    public override string ToString() => Member is null ? AbsoluteName : $"{AbsoluteName}${Member}";  // full canonical ID
-    public static implicit operator string(ShapeId id) => id.ToString();  // returns full ID including member
-}
-```
+The `ShapeId` record (`Namespace`, `Name`, optional `Member`) parses these. The trap is the two string
+forms: `AbsoluteName` **omits** `$Member` (it's the `Shapes` dictionary key), while `ToString()` and the
+implicit string conversion return the full canonical ID including the member.
 
-Parsing rules (matching the [Smithy spec](https://smithy.io/2.0/spec/model.html#shape-id)):
-- `#` separates namespace from name — exactly one `#` required
-- `$` separates name from member (optional)
-- Namespace, name, and member must all be non-empty when present
-- Examples of invalid IDs: `Name$member` (no `#`), `ns#` (empty name), `ns#name$` (empty member), `ns#foo#bar` (multiple `#`)
-- Prelude shapes use namespace `smithy.api` (e.g. `smithy.api#String`)
+Parsing follows the [Smithy spec](https://smithy.io/2.0/spec/model.html#shape-id): exactly one `#`
+(namespace/name), an optional `$member`, every segment non-empty — invalid forms are pinned in
+`ShapeIdTests`. Prelude shapes use namespace `smithy.api` (e.g. `smithy.api#String`).
 
 ### Shape References — Two Distinct Formats
 
 The JSON AST has two ways a shape ID appears as a value:
 
-**1. Plain string** — inside a member object, `target` is a plain string:
-```json
-"id": {
-    "target": "com.amazonaws.cloudtraildata#Uuid",
-    "traits": { ... }
-}
-```
-The whole object is a `MemberShape`. The `target` field is just a string property on it.
+**1. Plain string** — inside a member object, `target` is a plain string property
+(`"id": { "target": "com.amazonaws...#Uuid", "traits": {...} }`); the whole containing object is a
+`MemberShape`.
 
-**2. Wrapper object** — for operation input/output, service operations lists, etc., the value is a wrapper:
-```json
-"input": { "target": "com.amazonaws.cloudtraildata#PutAuditEventsRequest" }
-```
-Here the entire `{"target": "..."}` is the value of the `input` property on `OperationShape`.
+**2. Wrapper object** — for operation input/output, service operation lists, etc., the entire
+`{"target": "..."}` object is the value (`"input": { "target": "com.amazonaws...#PutAuditEventsRequest" }`).
 
 Three custom `JsonConverter`s in `SmithyDotNet.Generator.Model.Converters` handle these:
 - `ShapeIdConverter` — plain string → `ShapeId` (for `MemberShape.Target`)
@@ -69,17 +40,8 @@ All converters are read-only (`Write` throws `NotSupportedException`). The gener
 
 ## Shape Type Hierarchy
 
-All shapes derive from an abstract `Shape` base:
-
-```csharp
-public abstract record Shape
-{
-    public abstract string Type { get; }
-
-    [JsonPropertyName("traits")]
-    public Dictionary<string, JsonElement> Traits { get; init; } = [];
-}
-```
+All shapes derive from the abstract `Shape` record: an abstract `Type` string plus a
+`Traits` dictionary (`Dictionary<string, JsonElement>`).
 
 **Important**: Do NOT put `[JsonConverter(typeof(ShapeConverter))]` on `Shape`. This causes infinite recursion because `ShapeConverter.Read` calls `root.Deserialize<BlobShape>(options)`, and `BlobShape` inherits `Shape`, which triggers the converter again. Instead, register `ShapeConverter` via `JsonSerializerOptions.Converters`.
 
@@ -87,40 +49,25 @@ Use `[JsonPropertyName]` on properties where the C# name differs in casing from 
 
 ### ShapeConverter Dispatch
 
-`ShapeConverter` peeks at the `"type"` field and dispatches:
+`ShapeConverter` peeks at the `"type"` field and dispatches to the matching shape record (scalar types
+share field-less records; `list` has `Member`, `map` has `Key`/`Value`, aggregate/service shapes carry
+their member and binding dictionaries — see `ShapeConverter.cs`). Non-obvious:
 
-| JSON `type` value | C# record |
-|---|---|
-| `blob`, `boolean`, `string`, `byte`, `short`, `integer`, `long`, `float`, `double`, `bigInteger`, `bigDecimal`, `timestamp`, `document` | Scalar shape records (no extra fields) |
-| `list` | `ListShape` — has `Member` (single `MemberShape`) |
-| `map` | `MapShape` — has `Key` and `Value` (both `MemberShape`) |
-| `structure` | `StructureShape` — has `Members` dictionary |
-| `union` | `UnionShape` — has `Members` dictionary |
-| `enum` | `EnumShape` — has `Members` (member traits carry `@enumValue`) |
-| `intEnum` | `IntEnumShape` — has `Members` |
-| `service` | `ServiceShape` — has `Operations`, `Resources`, `Errors`, `Rename`, `ApiVersion` |
-| `operation` | `OperationShape` — has `Input`, `Output`, `Errors` |
-| `resource` | `ResourceShape` — has lifecycle operations, `Identifiers`, `Properties` |
-| Unknown | Returns `null` with a stderr warning (forward compatibility) |
+- `union` → `UnionShape`, which derives from `StructureShape` (inherits `Members`) and is generated as a plain structure
+- `enum`/`intEnum` member traits carry `@enumValue`
+- An unknown `type` returns `null` with a stderr warning (forward compatibility)
 
 ### MemberShape
 
-`MemberShape` is **not** dispatched by `ShapeConverter`. It is deserialized inline by its parent shape (e.g. when STJ processes a `StructureShape.Members` dictionary). Its `Target` is a plain string in the JSON, so it uses `ShapeIdConverter`:
-
-```csharp
-public record MemberShape : Shape
-{
-    public override string Type => "member";
-
-    [JsonPropertyName("target")]
-    [JsonConverter(typeof(ShapeIdConverter))]
-    public required ShapeId Target { get; init; }
-}
-```
+`MemberShape` is **not** dispatched by `ShapeConverter`. It is deserialized inline by its parent shape (e.g. when STJ processes a `StructureShape.Members` dictionary). Its `Target` is a plain string in the JSON, so the property carries `[JsonConverter(typeof(ShapeIdConverter))]`.
 
 ### Prelude Shapes
 
 Shapes in namespace `smithy.api` (e.g. `smithy.api#String`, `smithy.api#Boolean`, `smithy.api#Integer`) are prelude shapes. They are **not** present in the model JSON — they are implicit. `ServiceIndex` skips them during shape traversal (they aren't part of a service's own shape closure), but they are still *resolvable*: `GenerationContext.Resolve` falls back to the `PreludeShapes` table, so callers map a member's target without special-casing prelude references.
+
+The table also carries the Smithy 1.0 `Primitive*` shapes (`PrimitiveLong`, `PrimitiveBoolean`, etc.), which resolve to the same shape instances as their plain counterparts — 1.0-era models reference them, and the SDK types both identically (`long?`, `bool?`).
+
+`smithy.api#Unit` is the one prelude shape that can emit code: when a union member targets it, `GenerationContext` adds an empty `StructureShape` for Unit to `Structures`, producing a per-service empty model class (C2J ships one, and generated member properties reference it). Operation input/output references to Unit do **not** count — those emit empty `{Op}Request`/`{Op}Response` classes instead.
 
 ## Traits
 
@@ -130,25 +77,13 @@ Trait values are **not** deserialized at the model layer. They stay as `JsonElem
 
 Structured trait records use STJ deserialization via `TraitHelpers.DeserializeTrait<T>()` and inherit from `TraitRecord`, which uses `[JsonExtensionData]` to capture unknown properties for forward compatibility. Use `[JsonPropertyName]` on record properties, matching the pattern used by shape types. `ErrorTrait` is the exception — it wraps a plain string value, not a JSON object.
 
-[Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait) have an empty object `{}` as their value:
-```json
-"traits": { "smithy.api#required": {} }
-```
+[Annotation traits](https://smithy.io/2.0/spec/model.html#annotation-trait) have an empty object as their value: `"traits": { "smithy.api#required": {} }`.
 
 ## Deserialization Setup
 
-Register `ShapeConverter` via options — not via `[JsonConverter]` attribute on `Shape` (see Shape Type Hierarchy above for why).
+Register `ShapeConverter` via `JsonSerializerOptions.Converters` — not via `[JsonConverter]` attribute on `Shape` (see Shape Type Hierarchy above for why) — with `PropertyNameCaseInsensitive = false` (Smithy JSON uses exact camelCase keys).
 
 `ShapeIdConverter`, `ShapeTargetConverter`, and `ShapeTargetListConverter` are registered via `[JsonConverter]` attributes on individual properties (e.g. `MemberShape.Target`, `OperationShape.Input`) — they do NOT need to go in the options.
-
-```csharp
-var options = new JsonSerializerOptions
-{
-    PropertyNameCaseInsensitive = false,  // Smithy JSON uses exact camelCase keys
-    Converters = { new ShapeConverter() }
-};
-var model = JsonSerializer.Deserialize<SmithyModel>(json, options);
-```
 
 `SmithyModel.Shapes` is a `Dictionary<string, Shape?>` keyed by the absolute shape ID string (e.g. `"com.amazonaws.cloudtraildata#AuditEvent"`). Unknown shape types deserialize to `null` values for forward compatibility.
 

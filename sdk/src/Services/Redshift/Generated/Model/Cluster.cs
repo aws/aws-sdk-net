@@ -73,6 +73,7 @@ namespace Amazon.Redshift.Model
         private string _ipAddressType;
         private string _kmsKeyId;
         private string _lakehouseRegistrationStatus;
+        private LoggingPublishStatus _loggingPublishStatus;
         private string _maintenanceTrackName;
         private int? _manualSnapshotRetentionPeriod;
         private string _masterPasswordSecretArn;
@@ -998,6 +999,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetLakehouseRegistrationStatus()
         {
             return this._lakehouseRegistrationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoggingPublishStatus. 
+        /// <para>
+        /// The status of system table publishing for the cluster. This field is present only
+        /// when system table publishing is configured.
+        /// </para>
+        /// </summary>
+        public LoggingPublishStatus LoggingPublishStatus
+        {
+            get { return this._loggingPublishStatus; }
+            set { this._loggingPublishStatus = value; }
+        }
+
+        // Check to see if LoggingPublishStatus property is set
+        internal bool IsSetLoggingPublishStatus()
+        {
+            return this._loggingPublishStatus != null;
         }
 
         /// <summary>

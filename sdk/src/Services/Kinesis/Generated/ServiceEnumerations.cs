@@ -25,6 +25,164 @@ namespace Amazon.Kinesis
 {
 
     /// <summary>
+    /// Constants used for properties of type ChannelDestinationType.
+    /// </summary>
+    public class ChannelDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3 for ChannelDestinationType
+        /// </summary>
+        public static readonly ChannelDestinationType S3 = new ChannelDestinationType("S3");
+        /// <summary>
+        /// Constant S3_TABLES for ChannelDestinationType
+        /// </summary>
+        public static readonly ChannelDestinationType S3_TABLES = new ChannelDestinationType("S3_TABLES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelDestinationType FindValue(string value)
+        {
+            return FindValue<ChannelDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelEncryptionType.
+    /// </summary>
+    public class ChannelEncryptionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KMS for ChannelEncryptionType
+        /// </summary>
+        public static readonly ChannelEncryptionType KMS = new ChannelEncryptionType("KMS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelEncryptionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelEncryptionType FindValue(string value)
+        {
+            return FindValue<ChannelEncryptionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelEncryptionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ChannelStatus.
+    /// </summary>
+    public class ChannelStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus ACTIVE = new ChannelStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus CREATING = new ChannelStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus DELETING = new ChannelStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus FAILED = new ChannelStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATING for ChannelStatus
+        /// </summary>
+        public static readonly ChannelStatus UPDATING = new ChannelStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ChannelStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ChannelStatus FindValue(string value)
+        {
+            return FindValue<ChannelStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ChannelStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConsumerStatus.
     /// </summary>
     public class ConsumerStatus : ConstantClass
@@ -300,6 +458,272 @@ namespace Amazon.Kinesis
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MinimumThroughputBillingCommitmentOutputStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PartitionTransform.
+    /// </summary>
+    public class PartitionTransform : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TIME_HOUR for PartitionTransform
+        /// </summary>
+        public static readonly PartitionTransform TIME_HOUR = new PartitionTransform("TIME_HOUR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartitionTransform(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartitionTransform FindValue(string value)
+        {
+            return FindValue<PartitionTransform>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartitionTransform(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecordFormatType.
+    /// </summary>
+    public class RecordFormatType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTE_ARRAY for RecordFormatType
+        /// </summary>
+        public static readonly RecordFormatType BYTE_ARRAY = new RecordFormatType("BYTE_ARRAY");
+        /// <summary>
+        /// Constant GSR_JSON for RecordFormatType
+        /// </summary>
+        public static readonly RecordFormatType GSR_JSON = new RecordFormatType("GSR_JSON");
+        /// <summary>
+        /// Constant JSON for RecordFormatType
+        /// </summary>
+        public static readonly RecordFormatType JSON = new RecordFormatType("JSON");
+        /// <summary>
+        /// Constant STRING for RecordFormatType
+        /// </summary>
+        public static readonly RecordFormatType STRING = new RecordFormatType("STRING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordFormatType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordFormatType FindValue(string value)
+        {
+            return FindValue<RecordFormatType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordFormatType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3CompressionType.
+    /// </summary>
+    public class S3CompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for S3CompressionType
+        /// </summary>
+        public static readonly S3CompressionType GZIP = new S3CompressionType("GZIP");
+        /// <summary>
+        /// Constant NONE for S3CompressionType
+        /// </summary>
+        public static readonly S3CompressionType NONE = new S3CompressionType("NONE");
+        /// <summary>
+        /// Constant ZSTD for S3CompressionType
+        /// </summary>
+        public static readonly S3CompressionType ZSTD = new S3CompressionType("ZSTD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3CompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3CompressionType FindValue(string value)
+        {
+            return FindValue<S3CompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3CompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3StorageClass.
+    /// </summary>
+    public class S3StorageClass : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GLACIER_IR for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass GLACIER_IR = new S3StorageClass("GLACIER_IR");
+        /// <summary>
+        /// Constant INTELLIGENT_TIERING for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass INTELLIGENT_TIERING = new S3StorageClass("INTELLIGENT_TIERING");
+        /// <summary>
+        /// Constant STANDARD for S3StorageClass
+        /// </summary>
+        public static readonly S3StorageClass STANDARD = new S3StorageClass("STANDARD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3StorageClass(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3StorageClass FindValue(string value)
+        {
+            return FindValue<S3StorageClass>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3StorageClass(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type S3TablesCompressionType.
+    /// </summary>
+    public class S3TablesCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for S3TablesCompressionType
+        /// </summary>
+        public static readonly S3TablesCompressionType NONE = new S3TablesCompressionType("NONE");
+        /// <summary>
+        /// Constant SNAPPY for S3TablesCompressionType
+        /// </summary>
+        public static readonly S3TablesCompressionType SNAPPY = new S3TablesCompressionType("SNAPPY");
+        /// <summary>
+        /// Constant ZSTD for S3TablesCompressionType
+        /// </summary>
+        public static readonly S3TablesCompressionType ZSTD = new S3TablesCompressionType("ZSTD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public S3TablesCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static S3TablesCompressionType FindValue(string value)
+        {
+            return FindValue<S3TablesCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator S3TablesCompressionType(string value)
         {
             return FindValue(value);
         }

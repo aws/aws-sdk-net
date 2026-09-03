@@ -9,14 +9,11 @@ Use this skill when working on the AWS SDK for .NET source code itself.
 
 ## Use this skill when
 
-- contributing to AWS SDK for .NET source code
-- understanding SDK internal architecture and patterns
-- making changes to core SDK functionality
+- changing Core runtime or service client implementations
+- working on the generator, templates, or service models
 - adding new AWS service support
-- modifying existing service implementations
-- working with the SDK build system and tooling
-- understanding SDK testing strategies
-- managing version bumping and changelog generation in the SDK (use the `aws-sdk-net-devconfig` skill for DevConfig creation)
+- using the SDK build/validation and testing flows
+- managing version bumping and changelog generation (use the `aws-sdk-net-devconfig` skill for DevConfig creation)
 
 ## Skip this skill when
 
@@ -28,10 +25,10 @@ Use this skill when working on the AWS SDK for .NET source code itself.
 ## References
 
 - `references/repo-overview.md`
-  SDK identity, target frameworks, version history, V3/V4 compatibility constraint, and key V4 behavioral changes.
+  SDK identity, target frameworks, version history, the V3/V4 compatibility constraint, and the key V4 behavioral change (full list in `technical-context.md`).
 
 - `references/code-structure.md`
-  Repository organization, generator structure, service structure, code generation, and generated vs custom code.
+  Repository map, service layout, and placement rules for where changes belong.
 
 - `references/build-and-validate.md`
   Build tools, packaging, code generation integration, testing framework, and CI/CD stages.
@@ -40,4 +37,4 @@ Use this skill when working on the AWS SDK for .NET source code itself.
   Technical context and system patterns related to generation, runtime architecture, and implementation paths.
 
 - `references/dual-support.md`
-  Dual-support branch structure, labels, pull request targeting, and branch renaming workflow.
+  Dual-support branch structure, labels, and pull request targeting.

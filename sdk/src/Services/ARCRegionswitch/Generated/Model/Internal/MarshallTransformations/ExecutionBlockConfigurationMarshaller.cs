@@ -211,6 +211,17 @@ namespace Amazon.ARCRegionswitch.Model.Internal.MarshallTransformations
                 context.Writer.WriteEndObject();
             }
 
+            if(requestObject.IsSetRdsSwitchoverReadReplicaConfig())
+            {
+                context.Writer.WritePropertyName("rdsSwitchoverReadReplicaConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RdsSwitchoverReadReplicaConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RdsSwitchoverReadReplicaConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
             if(requestObject.IsSetRegionSwitchPlanConfig())
             {
                 context.Writer.WritePropertyName("regionSwitchPlanConfig");

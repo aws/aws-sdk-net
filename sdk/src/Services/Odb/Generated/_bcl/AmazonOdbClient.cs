@@ -4818,6 +4818,77 @@ namespace Amazon.Odb
 
         #endregion
         
+        #region  ListFlexComponents
+
+
+        /// <summary>
+        /// Returns information about the flex components that are available for an Exadata infrastructure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlexComponents service method.</param>
+        /// 
+        /// <returns>The response from the ListFlexComponents service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListFlexComponents">REST API Reference for ListFlexComponents Operation</seealso>
+        public virtual ListFlexComponentsResponse ListFlexComponents(ListFlexComponentsRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFlexComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlexComponentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFlexComponentsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns information about the flex components that are available for an Exadata infrastructure.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFlexComponents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFlexComponents service method, as returned by Odb.</returns>
+        /// <exception cref="Amazon.Odb.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Make sure you have the required
+        /// permissions and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.InternalServerException">
+        /// Occurs when there is an internal failure in the Oracle Database@Amazon Web Services
+        /// service. Wait and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Odb.Model.ValidationException">
+        /// The request has failed validation because it is missing required fields or has invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/odb-2024-08-20/ListFlexComponents">REST API Reference for ListFlexComponents Operation</seealso>
+        public virtual Task<ListFlexComponentsResponse> ListFlexComponentsAsync(ListFlexComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListFlexComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFlexComponentsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListFlexComponentsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListGiMinorVersions
 
 

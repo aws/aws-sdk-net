@@ -34,6 +34,7 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class StreamDescriptionSummary
     {
+        private int? _channelCount;
         private int? _consumerCount;
         private EncryptionType _encryptionType;
         private List<EnhancedMetrics> _enhancedMonitoring = AWSConfigs.InitializeCollections ? new List<EnhancedMetrics>() : null;
@@ -48,6 +49,25 @@ namespace Amazon.Kinesis.Model
         private string _streamName;
         private StreamStatus _streamStatus;
         private WarmThroughputObject _warmThroughput;
+
+        /// <summary>
+        /// Gets and sets the property ChannelCount. 
+        /// <para>
+        /// The number of channels associated with the stream.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000000)]
+        public int? ChannelCount
+        {
+            get { return this._channelCount; }
+            set { this._channelCount = value; }
+        }
+
+        // Check to see if ChannelCount property is set
+        internal bool IsSetChannelCount()
+        {
+            return this._channelCount.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ConsumerCount. 

@@ -70,6 +70,12 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                     response.DeliveryOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("MessageSecurityOptions", targetDepth, ref reader))
+                {
+                    var unmarshaller = MessageSecurityOptionsUnmarshaller.Instance;
+                    response.MessageSecurityOptions = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("ReputationOptions", targetDepth, ref reader))
                 {
                     var unmarshaller = ReputationOptionsUnmarshaller.Instance;

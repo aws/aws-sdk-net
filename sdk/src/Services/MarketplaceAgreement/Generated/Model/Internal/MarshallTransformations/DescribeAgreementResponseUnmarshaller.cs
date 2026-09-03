@@ -82,10 +82,22 @@ namespace Amazon.MarketplaceAgreement.Model.Internal.MarshallTransformations
                     response.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("endTimeBehavior", targetDepth, ref reader))
+                {
+                    var unmarshaller = EndTimeBehaviorUnmarshaller.Instance;
+                    response.EndTimeBehavior = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("estimatedCharges", targetDepth, ref reader))
                 {
                     var unmarshaller = EstimatedChargesUnmarshaller.Instance;
                     response.EstimatedCharges = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
+                if (context.TestExpression("initialAgreementId", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InitialAgreementId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("proposalSummary", targetDepth, ref reader))

@@ -93,6 +93,10 @@ namespace Amazon.AgentRegistry
         /// </summary>
         public static readonly RecordType CUSTOM = new RecordType("CUSTOM");
         /// <summary>
+        /// Constant GATEWAY for RecordType
+        /// </summary>
+        public static readonly RecordType GATEWAY = new RecordType("GATEWAY");
+        /// <summary>
         /// Constant MCP for RecordType
         /// </summary>
         public static readonly RecordType MCP = new RecordType("MCP");

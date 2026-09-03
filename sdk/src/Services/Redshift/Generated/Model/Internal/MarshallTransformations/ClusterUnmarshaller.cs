@@ -314,6 +314,12 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                         unmarshalledObject.LakehouseRegistrationStatus = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("LoggingPublishStatus", targetDepth))
+                    {
+                        var unmarshaller = LoggingPublishStatusUnmarshaller.Instance;
+                        unmarshalledObject.LoggingPublishStatus = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("MaintenanceTrackName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

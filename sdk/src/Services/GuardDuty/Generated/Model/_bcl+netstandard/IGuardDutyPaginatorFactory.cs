@@ -68,6 +68,36 @@ namespace Amazon.GuardDuty.Model
         IListCoveragePaginator ListCoverage(ListCoverageRequest request);
 
         /// <summary>
+        /// Paginator for ListCustomDetectionRuleAssociations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCustomDetectionRuleAssociationsPaginator ListCustomDetectionRuleAssociations(ListCustomDetectionRuleAssociationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomDetectionRuleOrgConfigurations operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCustomDetectionRuleOrgConfigurationsPaginator ListCustomDetectionRuleOrgConfigurations(ListCustomDetectionRuleOrgConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListCustomDetectionRules operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "MaxResults",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListCustomDetectionRulesPaginator ListCustomDetectionRules(ListCustomDetectionRulesRequest request);
+
+        /// <summary>
         /// Paginator for ListDetectors operation
         ///</summary>
         [AWSPaginator(

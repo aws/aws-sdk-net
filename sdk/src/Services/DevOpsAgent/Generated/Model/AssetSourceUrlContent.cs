@@ -39,7 +39,7 @@ namespace Amazon.DevOpsAgent.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The source URL to import asset content from
+        /// The source URL to import asset content from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -1147,6 +1147,118 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type ConsentPortalSourceType.
+    /// </summary>
+    public class ConsentPortalSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AgentcoreGateway for ConsentPortalSourceType
+        /// </summary>
+        public static readonly ConsentPortalSourceType AgentcoreGateway = new ConsentPortalSourceType("agentcore-gateway");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConsentPortalSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConsentPortalSourceType FindValue(string value)
+        {
+            return FindValue<ConsentPortalSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConsentPortalSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ConsentPortalStatus.
+    /// </summary>
+    public class ConsentPortalStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ConsentPortalStatus
+        /// </summary>
+        public static readonly ConsentPortalStatus ACTIVE = new ConsentPortalStatus("ACTIVE");
+        /// <summary>
+        /// Constant CREATING for ConsentPortalStatus
+        /// </summary>
+        public static readonly ConsentPortalStatus CREATING = new ConsentPortalStatus("CREATING");
+        /// <summary>
+        /// Constant DELETING for ConsentPortalStatus
+        /// </summary>
+        public static readonly ConsentPortalStatus DELETING = new ConsentPortalStatus("DELETING");
+        /// <summary>
+        /// Constant FAILED for ConsentPortalStatus
+        /// </summary>
+        public static readonly ConsentPortalStatus FAILED = new ConsentPortalStatus("FAILED");
+        /// <summary>
+        /// Constant UPDATE_FAILED for ConsentPortalStatus
+        /// </summary>
+        public static readonly ConsentPortalStatus UPDATE_FAILED = new ConsentPortalStatus("UPDATE_FAILED");
+        /// <summary>
+        /// Constant UPDATING for ConsentPortalStatus
+        /// </summary>
+        public static readonly ConsentPortalStatus UPDATING = new ConsentPortalStatus("UPDATING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConsentPortalStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConsentPortalStatus FindValue(string value)
+        {
+            return FindValue<ConsentPortalStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConsentPortalStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentLevel.
     /// </summary>
     public class ContentLevel : ConstantClass
@@ -1461,9 +1573,9 @@ namespace Amazon.BedrockAgentCoreControl
         /// </summary>
         public static readonly DatasetSchemaType AGENTCORE_EVALUATION_SIMULATED_V1 = new DatasetSchemaType("AGENTCORE_EVALUATION_SIMULATED_V1");
         /// <summary>
-        /// Constant GENERIC_EVALUATION_PREDEFINED_V1 for DatasetSchemaType
+        /// Constant THIRD_PARTY_EVALUATION_V1 for DatasetSchemaType
         /// </summary>
-        public static readonly DatasetSchemaType GENERIC_EVALUATION_PREDEFINED_V1 = new DatasetSchemaType("GENERIC_EVALUATION_PREDEFINED_V1");
+        public static readonly DatasetSchemaType THIRD_PARTY_EVALUATION_V1 = new DatasetSchemaType("THIRD_PARTY_EVALUATION_V1");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -5223,6 +5335,56 @@ namespace Amazon.BedrockAgentCoreControl
 
 
     /// <summary>
+    /// Constants used for properties of type ResultDestination.
+    /// </summary>
+    public class ResultDestination : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEDICATED_LOG_GROUP for ResultDestination
+        /// </summary>
+        public static readonly ResultDestination DEDICATED_LOG_GROUP = new ResultDestination("DEDICATED_LOG_GROUP");
+        /// <summary>
+        /// Constant SOURCE_LOG_GROUP for ResultDestination
+        /// </summary>
+        public static readonly ResultDestination SOURCE_LOG_GROUP = new ResultDestination("SOURCE_LOG_GROUP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResultDestination(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResultDestination FindValue(string value)
+        {
+            return FindValue<ResultDestination>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResultDestination(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type SchemaType.
     /// </summary>
     public class SchemaType : ConstantClass
@@ -5490,6 +5652,56 @@ namespace Amazon.BedrockAgentCoreControl
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SigningAlgorithm(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StaticQueryParameterConflictResolution.
+    /// </summary>
+    public class StaticQueryParameterConflictResolution : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLIENT_OVERRIDE for StaticQueryParameterConflictResolution
+        /// </summary>
+        public static readonly StaticQueryParameterConflictResolution CLIENT_OVERRIDE = new StaticQueryParameterConflictResolution("CLIENT_OVERRIDE");
+        /// <summary>
+        /// Constant STATIC_OVERRIDE for StaticQueryParameterConflictResolution
+        /// </summary>
+        public static readonly StaticQueryParameterConflictResolution STATIC_OVERRIDE = new StaticQueryParameterConflictResolution("STATIC_OVERRIDE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StaticQueryParameterConflictResolution(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StaticQueryParameterConflictResolution FindValue(string value)
+        {
+            return FindValue<StaticQueryParameterConflictResolution>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StaticQueryParameterConflictResolution(string value)
         {
             return FindValue(value);
         }

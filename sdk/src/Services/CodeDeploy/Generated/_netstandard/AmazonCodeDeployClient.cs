@@ -919,6 +919,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidTagsToAddException">
         /// The specified tags are not valid.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.ThrottlingException">
+        /// An API function was called too frequently.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateApplication">REST API Reference for CreateApplication Operation</seealso>
         public virtual Task<CreateApplicationResponse> CreateApplicationAsync(CreateApplicationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1012,11 +1015,18 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidAutoScalingGroupException">
         /// The Auto Scaling group was specified in an invalid format or does not exist.
         /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidComputePlatformException">
+        /// The computePlatform is invalid. The computePlatform should be <c>Lambda</c>, <c>Server</c>,
+        /// or <c>ECS</c>.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentConfigNameException">
         /// The deployment configuration name was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidDeploymentGroupNameException">
         /// The deployment group name was specified in an invalid format.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidECSServiceException">
+        /// The Amazon ECS service identifier is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidFileExistsBehaviorException">
         /// An invalid fileExistsBehavior option was specified to determine how CodeDeploy handles
@@ -1030,6 +1040,9 @@ namespace Amazon.CodeDeploy
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidIgnoreApplicationStopFailuresValueException">
         /// The IgnoreApplicationStopFailures value is invalid. For Lambda deployments, <c>false</c>
         /// is expected. For EC2/On-premises deployments, <c>true</c> or <c>false</c> is expected.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.InvalidInputException">
+        /// The input was specified in an invalid format.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.InvalidLoadBalancerInfoException">
         /// An invalid load balancer name, or no load balancer name, was specified.
@@ -2248,8 +2261,14 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// 
         /// <returns>The response from the ListDeploymentInstances service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
+        /// The application does not exist with the user or Amazon Web Services account.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
         /// The deployment with the user or Amazon Web Services account does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
+        /// The named deployment group with the user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.
@@ -2382,8 +2401,14 @@ namespace Amazon.CodeDeploy
         /// </param>
         /// 
         /// <returns>The response from the ListDeploymentTargets service method, as returned by CodeDeploy.</returns>
+        /// <exception cref="Amazon.CodeDeploy.Model.ApplicationDoesNotExistException">
+        /// The application does not exist with the user or Amazon Web Services account.
+        /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentDoesNotExistException">
         /// The deployment with the user or Amazon Web Services account does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CodeDeploy.Model.DeploymentGroupDoesNotExistException">
+        /// The named deployment group with the user or Amazon Web Services account does not exist.
         /// </exception>
         /// <exception cref="Amazon.CodeDeploy.Model.DeploymentIdRequiredException">
         /// At least one deployment ID must be specified.

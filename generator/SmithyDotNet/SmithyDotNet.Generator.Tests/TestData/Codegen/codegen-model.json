@@ -8,6 +8,9 @@
       "operations": [
         { "target": "com.example#DoConflict" },
         { "target": "com.example#DoEnums" },
+        { "target": "com.example#DoGreedy" },
+        { "target": "com.example#DoHeaderOnly" },
+        { "target": "com.example#DoLists" },
         { "target": "com.example#DoScalars" },
         { "target": "com.example#DoShadow" }
       ],
@@ -23,16 +26,28 @@
       "output": { "target": "smithy.api#Unit" },
       "errors": [
         { "target": "com.example#ResourceConflict" },
-        { "target": "com.example#Boom" }
+        { "target": "com.example#Boom" },
+        { "target": "com.example#MixedError" }
       ],
       "traits": { "smithy.api#http": { "uri": "/conflicts", "method": "POST" } }
     },
     "com.example#Boom": {
       "type": "structure",
       "members": {
-        "message": { "target": "smithy.api#String" }
+        "message": { "target": "smithy.api#String" },
+        "token":   { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-boom-token" } },
+        "at":      { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-boom-at" } }
       },
       "traits": { "smithy.api#error": "client" }
+    },
+    "com.example#MixedError": {
+      "type": "structure",
+      "members": {
+        "message": { "target": "smithy.api#String" },
+        "detail":  { "target": "smithy.api#String" },
+        "trace":   { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-trace" } }
+      },
+      "traits": { "smithy.api#error": "server" }
     },
     "com.example#ResourceConflict": {
       "type": "structure",
@@ -127,6 +142,31 @@
         "UNKNOWN": { "target": "smithy.api#Unit", "traits": { "smithy.api#enumValue": "UNKNOWN" } }
       }
     },
+    "com.example#DoGreedy": {
+      "type": "operation",
+      "input": { "target": "com.example#DoGreedyRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/things/{thingId}/{path+}", "method": "GET" } }
+    },
+    "com.example#DoGreedyRequest": {
+      "type": "structure",
+      "members": {
+        "thingId": { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } },
+        "path":    { "target": "smithy.api#String", "traits": { "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#DoHeaderOnly": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#DoHeaderOnlyResponse" },
+      "traits": { "smithy.api#http": { "uri": "/header-only?aws_iam=t", "method": "POST" } }
+    },
+    "com.example#DoHeaderOnlyResponse": {
+      "type": "structure",
+      "members": {
+        "token": { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-token" } }
+      }
+    },
     "com.example#DoScalars": {
       "type": "operation",
       "input": { "target": "com.example#DoScalarsRequest" },
@@ -152,12 +192,18 @@
         "created":    { "target": "smithy.api#Timestamp" },
         "expiry":     { "target": "smithy.api#Timestamp", "traits": { "smithy.api#timestampFormat": "date-time" } },
         "sealedAt":   { "target": "com.example#HttpDateTimestamp" },
-        "details":    { "target": "com.example#DetailList" }
+        "details":    { "target": "com.example#DetailList" },
+        "attributes": { "target": "com.example#JsonString", "traits": { "smithy.api#httpHeader": "x-attributes" } },
+        "policy":     { "target": "com.example#JsonString" }
       }
     },
     "com.example#HttpDateTimestamp": {
       "type": "timestamp",
       "traits": { "smithy.api#timestampFormat": "http-date" }
+    },
+    "com.example#JsonString": {
+      "type": "string",
+      "traits": { "smithy.api#mediaType": "application/json" }
     },
     "com.example#DetailList": {
       "type": "list",
@@ -173,10 +219,21 @@
     "com.example#DoScalarsResponse": {
       "type": "structure",
       "members": {
-        "enabled":  { "target": "smithy.api#Boolean" },
-        "total":    { "target": "smithy.api#Long" },
-        "updated":  { "target": "smithy.api#Timestamp" },
-        "nested":   { "target": "com.example#Nested" }
+        "enabled":        { "target": "smithy.api#Boolean" },
+        "total":          { "target": "smithy.api#Long" },
+        "updated":        { "target": "smithy.api#Timestamp" },
+        "nested":         { "target": "com.example#Nested" },
+        "headerString":   { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-string" } },
+        "headerEnum":     { "target": "com.example#Status", "traits": { "smithy.api#httpHeader": "x-enum" } },
+        "headerBool":     { "target": "smithy.api#Boolean", "traits": { "smithy.api#httpHeader": "x-bool" } },
+        "headerInt":      { "target": "smithy.api#Integer", "traits": { "smithy.api#httpHeader": "x-int" } },
+        "headerLong":     { "target": "smithy.api#Long", "traits": { "smithy.api#httpHeader": "x-long" } },
+        "headerFloat":    { "target": "smithy.api#Float", "traits": { "smithy.api#httpHeader": "x-float" } },
+        "headerDouble":   { "target": "smithy.api#Double", "traits": { "smithy.api#httpHeader": "x-double" } },
+        "headerHttpDate": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-httpdate" } },
+        "headerDateTime": { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-datetime", "smithy.api#timestampFormat": "date-time" } },
+        "headerEpoch":    { "target": "smithy.api#Timestamp", "traits": { "smithy.api#httpHeader": "x-epoch", "smithy.api#timestampFormat": "epoch-seconds" } },
+        "headerJson":     { "target": "com.example#JsonString", "traits": { "smithy.api#httpHeader": "x-json" } }
       }
     },
     "com.example#Nested": {
@@ -186,11 +243,36 @@
         "when":     { "target": "smithy.api#Timestamp" }
       }
     },
+    "com.example#DoLists": {
+      "type": "operation",
+      "input": { "target": "com.example#DoListsRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/lists", "method": "POST" } }
+    },
+    "com.example#DoListsRequest": {
+      "type": "structure",
+      "members": {
+        "tagKeys":      { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "tagKeys" } },
+        "requiredKeys": { "target": "com.example#StringList", "traits": { "smithy.api#httpQuery": "requiredKeys", "smithy.api#required": {} } },
+        "tokens":       { "target": "com.example#StringList", "traits": { "smithy.api#httpHeader": "x-tokens" } }
+      }
+    },
+    "com.example#StringList": {
+      "type": "list",
+      "member": { "target": "smithy.api#String" }
+    },
     "com.example#DoShadow": {
       "type": "operation",
       "input": { "target": "com.example#Thing" },
-      "output": { "target": "smithy.api#Unit" },
+      "output": { "target": "com.example#DoShadowResponse" },
       "traits": { "smithy.api#http": { "uri": "/shadows", "method": "POST" } }
+    },
+    "com.example#DoShadowResponse": {
+      "type": "structure",
+      "members": {
+        "contentLength": { "target": "smithy.api#Long", "traits": { "smithy.api#httpHeader": "Content-Length" } },
+        "name":          { "target": "smithy.api#String", "traits": { "smithy.api#httpHeader": "x-name" } }
+      }
     },
     "com.example#Thing": {
       "type": "structure",

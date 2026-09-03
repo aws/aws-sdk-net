@@ -290,7 +290,20 @@ namespace ServiceClientGenerator
                 toExclude.Add("UnitTests");
             }
             projectProperties.FrameworkPathOverride = projectFileConfiguration.FrameworkPathOverride;
-            projectProperties.ReferenceDependencies = projectFileConfiguration.DllReferences;
+
+            // Framework references come from two sources:
+            //   1) project-type-wide (frameworkReferences in _manifest.json), applied to every service; and
+            //   2) per-service (reference-dependencies in the service's metadata.json), applied only to that
+            //      service. The per-service list is additive so a service can pull in a framework assembly it
+            //      needs without forcing every other service to reference it too (e.g. System.Net.Http for the
+            //      RDS/DSQL auth-token generators, which build AWSSigningRequest instances).
+            var referenceDependencies = projectFileConfiguration.DllReferences ?? Enumerable.Empty<Dependency>();
+            if (serviceConfiguration.ReferenceDependencies != null &&
+                serviceConfiguration.ReferenceDependencies.TryGetValue(projectFileConfiguration.Name, out var perServiceRefs))
+            {
+                referenceDependencies = referenceDependencies.Concat(perServiceRefs);
+            }
+            projectProperties.ReferenceDependencies = referenceDependencies;
             projectProperties.SupressWarnings       = "CA1822";
             projectProperties.SignBinaries          = true;
             projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;

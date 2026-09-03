@@ -3,7 +3,7 @@
   It contains Core runtime unit tests that are included in every service solution,
   so developers can run Core tests alongside service-specific tests.
   Only reference services that are acceptable as dependencies in all service solutions:
-  S3, SecurityToken, SimpleNotificationService, SQS, and DynamoDBv2.
+  S3, SecurityToken, SimpleNotificationService, and DynamoDBv2.
 -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
@@ -69,7 +69,6 @@
     <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetStandard.csproj"/>
     <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetStandard.csproj"/>
     <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetStandard.csproj"/>
-    <ProjectReference Include="../../src/Services/SQS/AWSSDK.SQS.NetStandard.csproj"/>
     <ProjectReference Include="../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetStandard.csproj"/>
     <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetStandard.csproj"/>
   </ItemGroup>
@@ -79,7 +78,6 @@
     <ProjectReference Include="../../src/Services/S3/AWSSDK.S3.NetFramework.csproj"/>
     <ProjectReference Include="../../src/Services/SecurityToken/AWSSDK.SecurityToken.NetFramework.csproj"/>
     <ProjectReference Include="../../src/Services/SimpleNotificationService/AWSSDK.SimpleNotificationService.NetFramework.csproj"/>
-    <ProjectReference Include="../../src/Services/SQS/AWSSDK.SQS.NetFramework.csproj"/>
     <ProjectReference Include="../../src/Services/DynamoDBv2/AWSSDK.DynamoDBv2.NetFramework.csproj"/>
     <ProjectReference Include="../../../extensions/src/AWSSDK.Extensions.CrtIntegration/AWSSDK.Extensions.CrtIntegration.NetFramework.csproj"/>
   </ItemGroup>

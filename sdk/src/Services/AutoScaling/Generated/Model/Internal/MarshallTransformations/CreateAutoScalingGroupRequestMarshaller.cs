@@ -298,6 +298,33 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                 {
                     if(publicRequest.MixedInstancesPolicy.IsSetInstancesDistribution())
                     {
+                        if(publicRequest.MixedInstancesPolicy.InstancesDistribution.IsSetDistributionSegments())
+                        {
+                            if (publicRequest.MixedInstancesPolicy.InstancesDistribution.DistributionSegments.Count == 0)
+                                request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "DistributionSegments", "");
+                            else
+                            {
+                                 int publicRequestMixedInstancesPolicyInstancesDistributionlistValueIndex = 1;
+                                 foreach(var publicRequestMixedInstancesPolicyInstancesDistributionlistValue in publicRequest.MixedInstancesPolicy.InstancesDistribution.DistributionSegments)
+                                 {
+                                    if(publicRequestMixedInstancesPolicyInstancesDistributionlistValue.IsSetTargetCapacityTypes())
+                                    {
+                                        if (publicRequestMixedInstancesPolicyInstancesDistributionlistValue.TargetCapacityTypes.Count == 0)
+                                            request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "DistributionSegments" + "." + "member" + "." + publicRequestMixedInstancesPolicyInstancesDistributionlistValueIndex + "." + "TargetCapacityTypes", "");
+                                        else
+                                        {
+                                             int publicRequestMixedInstancesPolicyInstancesDistributionlistValuelistValueIndex = 1;
+                                             foreach(var publicRequestMixedInstancesPolicyInstancesDistributionlistValuelistValue in publicRequestMixedInstancesPolicyInstancesDistributionlistValue.TargetCapacityTypes)
+                                             {
+                                                 request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "DistributionSegments" + "." + "member" + "." + publicRequestMixedInstancesPolicyInstancesDistributionlistValueIndex + "." + "TargetCapacityTypes" + "." + "member" + "." + publicRequestMixedInstancesPolicyInstancesDistributionlistValuelistValueIndex, StringUtils.FromString(publicRequestMixedInstancesPolicyInstancesDistributionlistValuelistValue));
+                                                 publicRequestMixedInstancesPolicyInstancesDistributionlistValuelistValueIndex++;
+                                             }
+                                        }
+                                    }
+                                     publicRequestMixedInstancesPolicyInstancesDistributionlistValueIndex++;
+                                 }
+                            }
+                        }
                         if(publicRequest.MixedInstancesPolicy.InstancesDistribution.IsSetOnDemandAllocationStrategy())
                         {
                             request.Parameters.Add("MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "OnDemandAllocationStrategy", StringUtils.FromString(publicRequest.MixedInstancesPolicy.InstancesDistribution.OnDemandAllocationStrategy));

@@ -56,6 +56,106 @@ namespace Amazon.EKS
         IEKSPaginatorFactory Paginators { get; }
 
         
+        #region  ActivateCertificateAuthority
+
+
+        /// <summary>
+        /// Activates a successor certificate authority (CA) as the signing certificate authority
+        /// for your cluster, completing a CA rotation.
+        /// 
+        ///  
+        /// <para>
+        /// When you activate a successor CA, Amazon EKS promotes it to be the cluster's signer
+        /// (its <c>signingStatus</c> becomes <c>IN_USE</c>) and the outgoing CA is retired (<c>NOT_USED</c>).
+        /// The outgoing CA remains in the cluster's trust bundle but no longer signs certificates.
+        /// The successor CA you activate must already be present on the cluster and fully distributed
+        /// (its <c>distributionStatus</c> must be <c>COMPLETE</c>). This is an asynchronous operation
+        /// that returns an <c>update</c> object you can track with <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you activate the successor CA, make sure the worker nodes you manage and your
+        /// external clients have been updated to trust it, so they maintain connectivity to the
+        /// API server after activation. For a limited period after activation, CA rollback is
+        /// available to revert to the outgoing CA if needed. If you don't activate the successor
+        /// CA yourself, Amazon EKS activates it automatically as the expiration deadline approaches.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/certificate-authority-rotation.html">Rotate
+        /// the Amazon EKS cluster certificate authority</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateCertificateAuthority service method.</param>
+        /// 
+        /// <returns>The response from the ActivateCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ActivateCertificateAuthority">REST API Reference for ActivateCertificateAuthority Operation</seealso>
+        ActivateCertificateAuthorityResponse ActivateCertificateAuthority(ActivateCertificateAuthorityRequest request);
+
+
+
+        /// <summary>
+        /// Activates a successor certificate authority (CA) as the signing certificate authority
+        /// for your cluster, completing a CA rotation.
+        /// 
+        ///  
+        /// <para>
+        /// When you activate a successor CA, Amazon EKS promotes it to be the cluster's signer
+        /// (its <c>signingStatus</c> becomes <c>IN_USE</c>) and the outgoing CA is retired (<c>NOT_USED</c>).
+        /// The outgoing CA remains in the cluster's trust bundle but no longer signs certificates.
+        /// The successor CA you activate must already be present on the cluster and fully distributed
+        /// (its <c>distributionStatus</c> must be <c>COMPLETE</c>). This is an asynchronous operation
+        /// that returns an <c>update</c> object you can track with <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeUpdate.html">
+        /// <c>DescribeUpdate</c> </a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before you activate the successor CA, make sure the worker nodes you manage and your
+        /// external clients have been updated to trust it, so they maintain connectivity to the
+        /// API server after activation. For a limited period after activation, CA rollback is
+        /// available to revert to the outgoing CA if needed. If you don't activate the successor
+        /// CA yourself, Amazon EKS activates it automatically as the expiration deadline approaches.
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/certificate-authority-rotation.html">Rotate
+        /// the Amazon EKS cluster certificate authority</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateCertificateAuthority service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ActivateCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ActivateCertificateAuthority">REST API Reference for ActivateCertificateAuthority Operation</seealso>
+        Task<ActivateCertificateAuthorityResponse> ActivateCertificateAuthorityAsync(ActivateCertificateAuthorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  AssociateAccessPolicy
 
 
@@ -745,6 +845,136 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCapability">REST API Reference for CreateCapability Operation</seealso>
         Task<CreateCapabilityResponse> CreateCapabilityAsync(CreateCapabilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateCertificateAuthority
+
+
+        /// <summary>
+        /// Appends a successor certificate authority (CA) to your cluster, beginning the CA rotation
+        /// process.
+        /// 
+        ///  
+        /// <para>
+        /// A cluster certificate authority is the root of trust for your cluster's control plane.
+        /// It signs the certificates that secure communication between the Kubernetes API server
+        /// and its clients, and its public certificate is distributed to your cluster's trust
+        /// bundle so that worker nodes and clients can verify the API server's identity. Each
+        /// cluster can have at most two certificate authorities at a time: the outgoing CA that's
+        /// currently signing (its <c>signingStatus</c> is <c>IN_USE</c>) and one successor CA
+        /// (<c>signingStatus</c> of <c>NOT_USED</c>) that you can later activate to complete
+        /// the rotation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Appending a successor CA adds its public certificate to the cluster's trust bundle
+        /// so that the cluster trusts both CAs simultaneously (the dual trust period), but it
+        /// doesn't begin signing certificates. Amazon EKS then distributes the successor CA to
+        /// the Amazon Web Services managed components in your cluster; you can track this through
+        /// the CA's <c>distributionStatus</c>. The successor CA can't be activated until its
+        /// <c>distributionStatus</c> is <c>COMPLETE</c>. To activate it as the cluster's signer,
+        /// use <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html">
+        /// <c>ActivateCertificateAuthority</c> </a>. This is an asynchronous operation that returns
+        /// an <c>update</c> object. If you don't append a successor CA yourself, Amazon EKS appends
+        /// one automatically before the outgoing CA approaches expiration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/certificate-authority-rotation.html">Rotate
+        /// the Amazon EKS cluster certificate authority</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCertificateAuthority service method.</param>
+        /// 
+        /// <returns>The response from the CreateCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCertificateAuthority">REST API Reference for CreateCertificateAuthority Operation</seealso>
+        CreateCertificateAuthorityResponse CreateCertificateAuthority(CreateCertificateAuthorityRequest request);
+
+
+
+        /// <summary>
+        /// Appends a successor certificate authority (CA) to your cluster, beginning the CA rotation
+        /// process.
+        /// 
+        ///  
+        /// <para>
+        /// A cluster certificate authority is the root of trust for your cluster's control plane.
+        /// It signs the certificates that secure communication between the Kubernetes API server
+        /// and its clients, and its public certificate is distributed to your cluster's trust
+        /// bundle so that worker nodes and clients can verify the API server's identity. Each
+        /// cluster can have at most two certificate authorities at a time: the outgoing CA that's
+        /// currently signing (its <c>signingStatus</c> is <c>IN_USE</c>) and one successor CA
+        /// (<c>signingStatus</c> of <c>NOT_USED</c>) that you can later activate to complete
+        /// the rotation.
+        /// </para>
+        ///  
+        /// <para>
+        /// Appending a successor CA adds its public certificate to the cluster's trust bundle
+        /// so that the cluster trusts both CAs simultaneously (the dual trust period), but it
+        /// doesn't begin signing certificates. Amazon EKS then distributes the successor CA to
+        /// the Amazon Web Services managed components in your cluster; you can track this through
+        /// the CA's <c>distributionStatus</c>. The successor CA can't be activated until its
+        /// <c>distributionStatus</c> is <c>COMPLETE</c>. To activate it as the cluster's signer,
+        /// use <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html">
+        /// <c>ActivateCertificateAuthority</c> </a>. This is an asynchronous operation that returns
+        /// an <c>update</c> object. If you don't append a successor CA yourself, Amazon EKS appends
+        /// one automatically before the outgoing CA approaches expiration.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/certificate-authority-rotation.html">Rotate
+        /// the Amazon EKS cluster certificate authority</a> in the <i>Amazon EKS User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCertificateAuthority service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceLimitExceededException">
+        /// You have encountered a service limit on the specified resource.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCertificateAuthority">REST API Reference for CreateCertificateAuthority Operation</seealso>
+        Task<CreateCertificateAuthorityResponse> CreateCertificateAuthorityAsync(CreateCertificateAuthorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1688,6 +1918,92 @@ namespace Amazon.EKS
 
         #endregion
         
+        #region  DeleteCertificateAuthority
+
+
+        /// <summary>
+        /// Deletes a certificate authority (CA) from your cluster.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a certificate authority removes its public certificate from the cluster's
+        /// trust bundle. You can't delete the certificate authority that's currently signing
+        /// certificates for the cluster (its <c>signingStatus</c> is <c>IN_USE</c>) — to remove
+        /// the outgoing CA, first activate the successor CA with <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html">
+        /// <c>ActivateCertificateAuthority</c> </a>. Amazon EKS also protects a successor CA
+        /// from deletion in certain cases to keep a valid rotation path — for example, a successor
+        /// that Amazon EKS appended can't be deleted while it's the only successor on the cluster.
+        /// This is an asynchronous operation that returns an <c>update</c> object.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateAuthority service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCertificateAuthority">REST API Reference for DeleteCertificateAuthority Operation</seealso>
+        DeleteCertificateAuthorityResponse DeleteCertificateAuthority(DeleteCertificateAuthorityRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a certificate authority (CA) from your cluster.
+        /// 
+        ///  
+        /// <para>
+        /// Deleting a certificate authority removes its public certificate from the cluster's
+        /// trust bundle. You can't delete the certificate authority that's currently signing
+        /// certificates for the cluster (its <c>signingStatus</c> is <c>IN_USE</c>) — to remove
+        /// the outgoing CA, first activate the successor CA with <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ActivateCertificateAuthority.html">
+        /// <c>ActivateCertificateAuthority</c> </a>. Amazon EKS also protects a successor CA
+        /// from deletion in certain cases to keep a valid rotation path — for example, a successor
+        /// that Amazon EKS appended can't be deleted while it's the only successor on the cluster.
+        /// This is an asynchronous operation that returns an <c>update</c> object.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCertificateAuthority service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceInUseException">
+        /// The specified resource is in use.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteCertificateAuthority">REST API Reference for DeleteCertificateAuthority Operation</seealso>
+        Task<DeleteCertificateAuthorityResponse> DeleteCertificateAuthorityAsync(DeleteCertificateAuthorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DeleteCluster
 
 
@@ -2491,6 +2807,60 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCapability">REST API Reference for DescribeCapability Operation</seealso>
         Task<DescribeCapabilityResponse> DescribeCapabilityAsync(DescribeCapabilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DescribeCertificateAuthority
+
+
+        /// <summary>
+        /// Returns detailed information about a certificate authority (CA) in your cluster, including
+        /// its validity period, signing and distribution status, provenance, scheduled auto-activation
+        /// events, and public certificate data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificateAuthority service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCertificateAuthority">REST API Reference for DescribeCertificateAuthority Operation</seealso>
+        DescribeCertificateAuthorityResponse DescribeCertificateAuthority(DescribeCertificateAuthorityRequest request);
+
+
+
+        /// <summary>
+        /// Returns detailed information about a certificate authority (CA) in your cluster, including
+        /// its validity period, signing and distribution status, provenance, scheduled auto-activation
+        /// events, and public certificate data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCertificateAuthority service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCertificateAuthority service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeCertificateAuthority">REST API Reference for DescribeCertificateAuthority Operation</seealso>
+        Task<DescribeCertificateAuthorityResponse> DescribeCertificateAuthorityAsync(DescribeCertificateAuthorityRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -3559,6 +3929,66 @@ namespace Amazon.EKS
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCapabilities">REST API Reference for ListCapabilities Operation</seealso>
         Task<ListCapabilitiesResponse> ListCapabilitiesAsync(ListCapabilitiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCertificateAuthorities
+
+
+        /// <summary>
+        /// Lists the certificate authorities (CAs) for your cluster. A cluster has at most two
+        /// certificate authorities: the outgoing CA that's currently signing and, during a rotation,
+        /// one successor CA.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateAuthorities service method.</param>
+        /// 
+        /// <returns>The response from the ListCertificateAuthorities service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCertificateAuthorities">REST API Reference for ListCertificateAuthorities Operation</seealso>
+        ListCertificateAuthoritiesResponse ListCertificateAuthorities(ListCertificateAuthoritiesRequest request);
+
+
+
+        /// <summary>
+        /// Lists the certificate authorities (CAs) for your cluster. A cluster has at most two
+        /// certificate authorities: the outgoing CA that's currently signing and, during a rotation,
+        /// one successor CA.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCertificateAuthorities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCertificateAuthorities service method, as returned by EKS.</returns>
+        /// <exception cref="Amazon.EKS.Model.InvalidParameterException">
+        /// The specified parameter is invalid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
+        /// The specified resource could not be found. You can view your available clusters with
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
+        /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServerException">
+        /// These errors are usually caused by a server-side issue.
+        /// </exception>
+        /// <exception cref="Amazon.EKS.Model.ServiceUnavailableException">
+        /// The service is unavailable. Back off and retry the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListCertificateAuthorities">REST API Reference for ListCertificateAuthorities Operation</seealso>
+        Task<ListCertificateAuthoritiesResponse> ListCertificateAuthoritiesAsync(ListCertificateAuthoritiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

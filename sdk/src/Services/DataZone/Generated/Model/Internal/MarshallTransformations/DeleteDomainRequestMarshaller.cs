@@ -66,6 +66,9 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
                 throw new AmazonDataZoneException("Request object does not have required field Identifier set");
             request.AddPathResource("{identifier}", StringUtils.FromString(publicRequest.Identifier));
             
+            if (publicRequest.IsSetCascadeDelete())
+                request.Parameters.Add("cascadeDelete", StringUtils.FromBool(publicRequest.CascadeDelete));
+            
             if (publicRequest.IsSetClientToken())
                 request.Parameters.Add("clientToken", StringUtils.FromString(publicRequest.ClientToken));
             else            

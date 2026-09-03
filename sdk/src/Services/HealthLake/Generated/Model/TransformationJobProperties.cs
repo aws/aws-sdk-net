@@ -54,8 +54,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants AWS HealthLake access to the specified Amazon S3 locations. AWS HealthLake
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
+        /// (IAM) role that grants HealthLake access to the specified Amazon S3 locations. HealthLake
         /// assumes this role to read input files and write output files.
         /// </para>
         /// </summary>
@@ -75,7 +75,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DriftDetectionEnabled. 
         /// <para>
-        /// Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake
+        /// Specifies whether drift detection is enabled for this job. When enabled, HealthLake
         /// writes a drift report to the output Amazon S3 location alongside the converted files.
         /// </para>
         /// </summary>

@@ -62,6 +62,12 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                     unmarshalledObject.HorizontalPodAutoscalerControllerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("podGcControllerConfig", targetDepth, ref reader))
+                {
+                    var unmarshaller = PodGcControllerConfigResponseUnmarshaller.Instance;
+                    unmarshalledObject.PodGcControllerConfig = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }

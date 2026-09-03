@@ -39,7 +39,9 @@ namespace Amazon.MarketplaceAgreement.Model
         private string _agreementId;
         private string _agreementType;
         private DateTime? _endTime;
+        private EndTimeBehavior _endTimeBehavior;
         private EstimatedCharges _estimatedCharges;
+        private string _initialAgreementId;
         private ProposalSummary _proposalSummary;
         private Proposer _proposer;
         private DateTime? _startTime;
@@ -146,6 +148,32 @@ namespace Amazon.MarketplaceAgreement.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndTimeBehavior. 
+        /// <para>
+        /// The behavior of the agreement when it reaches its end date. For example, whether the
+        /// agreement renews, and if it doesn't, the reason why.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is present for every active agreement that has an end date. It is not present
+        /// for an agreement that has no end date, because such an agreement never reaches an
+        /// end time. Pay-as-you-go agreements are the most common example. It is also not present
+        /// for an agreement that is no longer active.
+        /// </para>
+        /// </summary>
+        public EndTimeBehavior EndTimeBehavior
+        {
+            get { return this._endTimeBehavior; }
+            set { this._endTimeBehavior = value; }
+        }
+
+        // Check to see if EndTimeBehavior property is set
+        internal bool IsSetEndTimeBehavior()
+        {
+            return this._endTimeBehavior != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EstimatedCharges. 
         /// <para>
         /// The estimated cost of the agreement.
@@ -161,6 +189,28 @@ namespace Amazon.MarketplaceAgreement.Model
         internal bool IsSetEstimatedCharges()
         {
             return this._estimatedCharges != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InitialAgreementId. 
+        /// <para>
+        /// The unique identifier of the very first agreement in a chain of related agreements,
+        /// such as renewals or replacements. It stays the same across all agreements in that
+        /// chain, which lets you trace an agreement back to the original. When an agreement isn't
+        /// derived from another agreement, its <c>InitialAgreementId</c> is its own <c>AgreementId</c>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string InitialAgreementId
+        {
+            get { return this._initialAgreementId; }
+            set { this._initialAgreementId = value; }
+        }
+
+        // Check to see if InitialAgreementId property is set
+        internal bool IsSetInitialAgreementId()
+        {
+            return this._initialAgreementId != null;
         }
 
         /// <summary>
@@ -230,10 +280,6 @@ namespace Amazon.MarketplaceAgreement.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>ACTIVE</c> – The terms of the agreement are active.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>ARCHIVED</c> – The agreement ended without a specified reason.
         /// </para>
         ///  </li> <li> 
         /// <para>

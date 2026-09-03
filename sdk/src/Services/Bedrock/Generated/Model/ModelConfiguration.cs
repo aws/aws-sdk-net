@@ -85,10 +85,28 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ModelId. 
         /// <para>
-        /// The ID of the model to use for optimization.
+        /// The model to use for optimization. The value depends on the resource that you use:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you use a base model, specify the model ID or its ARN. For a list of model IDs,
+        /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-cards.html">Models
+        /// at a glance</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use a cross-Region (system-defined) inference profile, specify the inference
+        /// profile ID or its ARN. For a list of inference profile IDs, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference-support.html">Supported
+        /// Regions and models for inference profiles</a> in the Amazon Bedrock User Guide.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you use an application inference profile, specify its full ARN, including the account
+        /// ID and Region.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=140)]
+        [AWSProperty(Required=true, Min=0, Max=2048)]
         public string ModelId
         {
             get { return this._modelId; }

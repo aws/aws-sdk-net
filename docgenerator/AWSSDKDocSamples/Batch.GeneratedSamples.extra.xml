@@ -59,6 +59,63 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentRequest" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a managed compute environment that uses ECS Managed Instances.
+                </para>
+                <code
+                    title="To create an ECS Managed Instances compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-an-ecs-managed-instances-compute-environment-1722800000000" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentRequest" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a Spot-backed ECS Managed Instances compute environment constrained to specific instance types.
+                </para>
+                <code
+                    title="To create an ECS Managed Instances Spot compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-an-ecs-managed-instances-spot-compute-environment-1722800000001" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateComputeEnvironment(Amazon.Batch.Model.CreateComputeEnvironmentRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentRequest" />
+            <member name="T:Amazon.Batch.Model.CreateComputeEnvironmentResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates an ECS Managed Instances compute environment that targets On-Demand Capacity Reservations for predictable capacity.
+                </para>
+                <code
+                    title="To create an ECS Managed Instances compute environment with capacity reservations"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-an-ecs-managed-instances-ce-with-capacity-reservations-1722800000002" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.Batch.IAmazonBatch.CreateConsumableResource(Amazon.Batch.Model.CreateConsumableResourceRequest)" />
             <member name="M:Amazon.Batch.AmazonBatchClient.CreateConsumableResource(Amazon.Batch.Model.CreateConsumableResourceRequest)" />
             <member name="T:Amazon.Batch.Model.CreateConsumableResourceRequest" />
@@ -111,6 +168,44 @@
                     title="To create a job queue with multiple compute environments"
                     source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
                     region="to-create-a-job-queue-with-multiple-compute-environments-1481153027051" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueRequest" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a job queue called ManagedInstancesQueue that uses an ECS Managed Instances compute environment.
+                </para>
+                <code
+                    title="To create a job queue with an ECS Managed Instances compute environment"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-a-job-queue-with-ecs-managed-instances-1722800000003" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.CreateJobQueue(Amazon.Batch.Model.CreateJobQueueRequest)" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueRequest" />
+            <member name="T:Amazon.Batch.Model.CreateJobQueueResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example creates a job queue that uses both On-Demand and Spot ECS Managed Instances compute environments. On-Demand environments must be ordered before Spot environments.
+                </para>
+                <code
+                    title="To create a job queue with On-Demand and Spot ECS Managed Instances compute environments"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-create-a-job-queue-with-on-demand-and-spot-ecs-managed-instances-1722800000004" />
             </example>
         </value>
     </doc>
@@ -415,6 +510,63 @@
                     title="RegisterJobDefinition with tags"
                     source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
                     region="registerjobdefinition-with-tags-1591290509028" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionRequest" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a job definition that runs on ECS Managed Instances using ecsProperties with the MANAGED_INSTANCES platform capability.
+                </para>
+                <code
+                    title="To register a job definition on ECS Managed Instances"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-register-a-job-definition-on-ecs-managed-instances-1722800000005" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionRequest" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a job definition that requests GPU resources on ECS Managed Instances.
+                </para>
+                <code
+                    title="To register a GPU job definition on ECS Managed Instances"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-register-a-gpu-job-definition-on-ecs-managed-instances-1722800000006" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Batch.IAmazonBatch.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="M:Amazon.Batch.AmazonBatchClient.RegisterJobDefinition(Amazon.Batch.Model.RegisterJobDefinitionRequest)" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionRequest" />
+            <member name="T:Amazon.Batch.Model.RegisterJobDefinitionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    This example registers a job definition with a main container and a sidecar logging container on ECS Managed Instances.
+                </para>
+                <code
+                    title="To register a multi-container job definition on ECS Managed Instances"
+                    source=".\AWSSDKDocSamples\Batch\Batch.GeneratedSamples.cs"
+                    region="to-register-a-multi-container-job-definition-on-ecs-managed-instances-1722800000007" />
             </example>
         </value>
     </doc>

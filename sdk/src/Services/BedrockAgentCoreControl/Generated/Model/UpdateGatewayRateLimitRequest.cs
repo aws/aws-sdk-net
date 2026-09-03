@@ -44,7 +44,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Optional human-readable description for this limit.
+        /// The updated human-readable description for this rate limit.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -63,7 +63,8 @@ namespace Amazon.BedrockAgentCoreControl.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// Updated rule entries. key and dimensionKeys are immutable and cannot be changed.
+        /// The updated rule entries. The dimension keys are immutable after creation and cannot
+        /// be changed.
         /// </para>
         /// <para />
         /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned

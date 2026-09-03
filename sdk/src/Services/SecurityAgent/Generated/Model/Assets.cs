@@ -40,6 +40,7 @@ namespace Amazon.SecurityAgent.Model
         private List<Endpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<Endpoint>() : null;
         private List<IntegratedRepository> _integratedRepositories = AWSConfigs.InitializeCollections ? new List<IntegratedRepository>() : null;
         private List<SourceCodeRepository> _sourceCode = AWSConfigs.InitializeCollections ? new List<SourceCodeRepository>() : null;
+        private List<TrustedCaCertificate> _trustedCaCertificates = AWSConfigs.InitializeCollections ? new List<TrustedCaCertificate>() : null;
 
         /// <summary>
         /// Gets and sets the property Actors. 
@@ -154,6 +155,31 @@ namespace Amazon.SecurityAgent.Model
         internal bool IsSetSourceCode()
         {
             return this._sourceCode != null && (this._sourceCode.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrustedCaCertificates. 
+        /// <para>
+        /// The trust anchors used to validate target endpoint TLS certificates. Provide these
+        /// for endpoints served by a private or internal certificate authority (CA), an intermediate
+        /// CA, or a self-signed certificate.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        public List<TrustedCaCertificate> TrustedCaCertificates
+        {
+            get { return this._trustedCaCertificates; }
+            set { this._trustedCaCertificates = value; }
+        }
+
+        // Check to see if TrustedCaCertificates property is set
+        internal bool IsSetTrustedCaCertificates()
+        {
+            return this._trustedCaCertificates != null && (this._trustedCaCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

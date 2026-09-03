@@ -37,11 +37,16 @@ namespace Amazon.AgentRegistry.Model
     {
         private A2aAgentCardDescriptor _a2aAgentCard;
         private AgentSkillsDefinitionDescriptor _agentSkillsDefinition;
+        private AgUiDescriptor _agui;
         private CustomDescriptor _custom;
+        private HttpDescriptor _http;
         private McpServerDescriptor _mcpServer;
 
         /// <summary>
-        /// Gets and sets the property A2aAgentCard.
+        /// Gets and sets the property A2aAgentCard. 
+        /// <para>
+        ///  The A2A agent card descriptor, populated when the record type is AGENT.
+        /// </para>
         /// </summary>
         public A2aAgentCardDescriptor A2aAgentCard
         {
@@ -56,7 +61,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentSkillsDefinition.
+        /// Gets and sets the property AgentSkillsDefinition. 
+        /// <para>
+        ///  The agent skills definition descriptor, populated when the record type is SKILL.
+        /// </para>
         /// </summary>
         public AgentSkillsDefinitionDescriptor AgentSkillsDefinition
         {
@@ -71,7 +79,28 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Custom.
+        /// Gets and sets the property Agui. 
+        /// <para>
+        ///  The AG-UI descriptor, populated when the record exposes an AG-UI protocol endpoint.
+        /// </para>
+        /// </summary>
+        public AgUiDescriptor Agui
+        {
+            get { return this._agui; }
+            set { this._agui = value; }
+        }
+
+        // Check to see if Agui property is set
+        internal bool IsSetAgui()
+        {
+            return this._agui != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Custom. 
+        /// <para>
+        ///  The custom descriptor, populated when the record type is CUSTOM.
+        /// </para>
         /// </summary>
         public CustomDescriptor Custom
         {
@@ -86,7 +115,28 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property McpServer.
+        /// Gets and sets the property Http. 
+        /// <para>
+        ///  The HTTP descriptor, populated when the record exposes an HTTP endpoint.
+        /// </para>
+        /// </summary>
+        public HttpDescriptor Http
+        {
+            get { return this._http; }
+            set { this._http = value; }
+        }
+
+        // Check to see if Http property is set
+        internal bool IsSetHttp()
+        {
+            return this._http != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property McpServer. 
+        /// <para>
+        ///  The MCP server descriptor, populated when the record type is MCP.
+        /// </para>
         /// </summary>
         public McpServerDescriptor McpServer
         {

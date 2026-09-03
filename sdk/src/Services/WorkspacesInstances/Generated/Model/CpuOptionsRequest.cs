@@ -36,6 +36,7 @@ namespace Amazon.WorkspacesInstances.Model
     {
         private AmdSevSnpEnum _amdSevSnp;
         private int? _coreCount;
+        private NestedVirtualizationEnum _nestedVirtualization;
         private int? _threadsPerCore;
 
         /// <summary>
@@ -73,6 +74,24 @@ namespace Amazon.WorkspacesInstances.Model
         internal bool IsSetCoreCount()
         {
             return this._coreCount.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NestedVirtualization. 
+        /// <para>
+        /// Specifies whether to enable or disable nested virtualization.
+        /// </para>
+        /// </summary>
+        public NestedVirtualizationEnum NestedVirtualization
+        {
+            get { return this._nestedVirtualization; }
+            set { this._nestedVirtualization = value; }
+        }
+
+        // Check to see if NestedVirtualization property is set
+        internal bool IsSetNestedVirtualization()
+        {
+            return this._nestedVirtualization != null;
         }
 
         /// <summary>

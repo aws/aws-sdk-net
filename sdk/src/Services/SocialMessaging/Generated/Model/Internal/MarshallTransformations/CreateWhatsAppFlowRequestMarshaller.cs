@@ -90,6 +90,12 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CloneFlowId);
             }
 
+            if(publicRequest.IsSetEndpointUri())
+            {
+                context.Writer.WritePropertyName("endpointUri");
+                context.Writer.WriteStringValue(publicRequest.EndpointUri);
+            }
+
             if(publicRequest.IsSetFlowJson())
             {
                 context.Writer.WritePropertyName("flowJson");

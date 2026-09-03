@@ -110,6 +110,12 @@ namespace Amazon.DevOpsAgent.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.ExecutionId);
             }
 
+            if(publicRequest.IsSetModelTier())
+            {
+                context.Writer.WritePropertyName("modelTier");
+                context.Writer.WriteStringValue(publicRequest.ModelTier);
+            }
+
             if(publicRequest.IsSetUserId())
             {
                 context.Writer.WritePropertyName("userId");

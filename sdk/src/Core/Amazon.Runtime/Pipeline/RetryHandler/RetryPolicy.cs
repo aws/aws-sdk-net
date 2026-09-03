@@ -167,7 +167,10 @@ namespace Amazon.Runtime
                         executionContext.RequestContext.LastCapacityType = IsServiceTimeoutError(exception) ?
                             CapacityManager.CapacityType.Timeout : CapacityManager.CapacityType.Retry;
                     }
-                    return OnRetry(executionContext, isClockSkewError,  IsThrottlingError(exception));
+                    // Clock Skew Correction specification: skew retries consume retry quota
+                    // (RETRY_COST) and count toward MAX_ATTEMPTS. There is never a reason to set
+                    // bypassAcquireCapacity. 
+                    return OnRetry(executionContext, false, IsThrottlingError(exception));
                 }
             }
             return false;
@@ -487,157 +490,60 @@ namespace Amazon.Runtime
 
         #region Clock skew correction
 
-        private static HashSet<string> definiteClockSkewErrorCodes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}, service endpoint = {1}.";
+
+        /// <summary>
+        /// Canonical set of clock skew error codes. Each is retried only when the computed
+        /// skew exceeds the 4-minute detection threshold. RequestExpired / RequestInTheFuture
+        /// are retained for backward compatibility.
+        /// </summary>
+        private static HashSet<string> clockSkewErrorCodes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
+            "InvalidSignatureException",
+            "SignatureDoesNotMatch",
+            "AuthFailure",
             "RequestTimeTooSkewed",
+            "AccessDeniedException",
+            // Retained for backward compatibility (not in the specification list):
             "RequestExpired",
             "RequestInTheFuture",
         };
 
-        private static HashSet<string> possibleClockSkewErrorCodes = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
-        {
-            "InvalidSignatureException",
-            "AuthFailure",
-            "SignatureDoesNotMatch",
-        };
-
-        private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}, service endpoint = {4}.";
-        private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}, service endpoint = {1}.";
-        private const string clockSkewMessageParen = "(";
-        private const string clockSkewMessagePlusSeparator = " + ";
-        private const string clockSkewMessageMinusSeparator = " - ";
-        private static TimeSpan clockSkewMaxThreshold = TimeSpan.FromMinutes(5);
-
         private bool IsClockskew(IExecutionContext executionContext, Exception exception)
         {
-            var clientConfig = executionContext.RequestContext.ClientConfig;
+            // Recording of ClientSkew happens unconditionally in the HttpHandler; here we only
+            // decide whether to retry this error as a clock skew error: the error code must be a
+            // known clock skew code (or a HEAD request with no code) AND the skew computed from
+            // this response must exceed the 4-minute detection threshold. On a positive decision
+            // the request is marked unsigned so the retry re-signs with the corrected timestamp.
+            if (!ClockSkewPipelineHelper.IsCorrectionEnabled(executionContext.RequestContext.ClientConfig))
+                return false;
+
             var ase = exception as AmazonServiceException;
+            if (ase == null)
+                return false;
 
             var isHead =
                 executionContext.RequestContext.Request != null &&
                 string.Equals(executionContext.RequestContext.Request.HttpMethod, "HEAD", StringComparison.Ordinal);
-            // ase.ErrorCode == null represents the case where it is a head request and there is no error code on the exception
-            var isPossibleClockSkewErrorCode =
-                ase != null &&
-                (ase.ErrorCode == null || possibleClockSkewErrorCodes.Contains(ase.ErrorCode));
-            var isDefiniteClockSkewErrorCode = 
-                ase != null && definiteClockSkewErrorCodes.Contains(ase.ErrorCode);
-            
-            DateTime realNow = AWSConfigs.utcNowSource();
-            DateTime serverTime;
-            string endpoint = executionContext.RequestContext.Request.Endpoint.ToString();
-            var correctedNow = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint);
-            // Try getting server time from the headers
-            bool serverTimeDetermined = TryParseDateHeader(ase, out serverTime);
 
-            // If that fails, try to parse it from the exception message
-            if (!serverTimeDetermined)
-                serverTimeDetermined = TryParseExceptionMessage(ase, out serverTime);
-            serverTime = serverTime.ToUniversalTime();
-            // adjust the clock and always retry
-            var shouldRetry = AWSConfigs.CorrectForClockSkew && !AWSConfigs.ManualClockCorrection.HasValue;
-            if (isDefiniteClockSkewErrorCode && serverTimeDetermined)
-            {
-                Logger.InfoFormat(clockSkewMessageFormat,
-                    realNow, correctedNow, CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint), serverTime, endpoint);
-                var newCorrection = serverTime - realNow;
-                CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);
-                if (shouldRetry)
-                {
-                    Logger.InfoFormat(clockSkewUpdatedFormat, newCorrection, endpoint);
-                    executionContext.RequestContext.IsSigned = false;
-                    return true;
-                }
-            }
-            // Some services such as S3 will return a generic 403 error for clock skew errors on HEAD requests
-            // with no error code. In this case we will always retry the request if the clock skew is greater than
-            // the threshold.
-            if ((isPossibleClockSkewErrorCode || isHead) && serverTimeDetermined)
-            {
-                DateTime clientTime = executionContext.RequestContext.Request.SignedAt ?? correctedNow;
-                var diff = clientTime - serverTime;
-                var absDiff = diff.Ticks < 0 ? -diff : diff;
+            // ase.ErrorCode == null on a HEAD request models the S3 generic-403 case with
+            // no error code; otherwise the code must be in the canonical set.
+            bool isSkewErrorCode =
+                (ase.ErrorCode == null && isHead) ||
+                (ase.ErrorCode != null && clockSkewErrorCodes.Contains(ase.ErrorCode));
+            if (!isSkewErrorCode)
+                return false;
 
-                if (absDiff > clockSkewMaxThreshold)
-                {
-                    Logger.InfoFormat(clockSkewMessageFormat,
-                        realNow, correctedNow, CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint), serverTime, endpoint);
-                    var newCorrection = serverTime - realNow;
-                    CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);
+            // Retry only when the measured skew is large enough to plausibly be the cause.
+            if (!ClockSkewPipelineHelper.AttemptSkewExceedsThreshold(executionContext))
+                return false;
 
-                    if (shouldRetry)
-                    {
-                        Logger.InfoFormat(clockSkewUpdatedFormat, newCorrection, endpoint);
-                        executionContext.RequestContext.IsSigned = false;
-                        return true;
-                    }
-
-                }
-            }
-
-            return false;
-        }
-        private static bool TryParseDateHeader(AmazonServiceException ase, out DateTime serverTime)
-        {
-            var webData = GetWebData(ase);
-
-            if (webData != null)
-            {
-                // parse server time from "Date" header, if possible
-                var dateValue = webData.GetHeaderValue(HeaderKeys.DateHeader);
-                if (!string.IsNullOrEmpty(dateValue))
-                {
-                    if (DateTime.TryParseExact(
-                            dateValue,
-                            AWSSDKUtils.GMTDateFormat,
-                            CultureInfo.InvariantCulture,
-                            DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal,
-                            out serverTime))
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            serverTime = DateTime.MinValue;
-            return false;
-        }
-        private static bool TryParseExceptionMessage(AmazonServiceException ase, out DateTime serverTime)
-        {
-            if (ase != null && !string.IsNullOrEmpty(ase.Message))
-            {
-                var message = ase.Message;
-
-                // parse server time from exception message, if possible
-                var parenIndex = message.IndexOf(clockSkewMessageParen, StringComparison.Ordinal);
-                if (parenIndex >= 0)
-                {
-                    parenIndex++;
-
-                    // Locate " + " or " - " separator that follows the server time string
-                    var separatorIndex = message.IndexOf(clockSkewMessagePlusSeparator, parenIndex, StringComparison.Ordinal);
-                    if (separatorIndex < 0)
-                        separatorIndex = message.IndexOf(clockSkewMessageMinusSeparator, parenIndex, StringComparison.Ordinal);
-
-                    // Get the server time string and parse it
-                    if (separatorIndex > parenIndex)
-                    {
-                        var timestamp = message.Substring(parenIndex, separatorIndex - parenIndex);
-                        if (DateTime.TryParseExact(
-                                timestamp,
-                                AWSSDKUtils.ISO8601BasicDateTimeFormat,
-                                CultureInfo.InvariantCulture,
-                                DateTimeStyles.AssumeUniversal | DateTimeStyles.AdjustToUniversal,
-                                out serverTime))
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
-
-            serverTime = DateTime.MinValue;
-            return false;
+            Logger.InfoFormat(clockSkewUpdatedFormat,
+                CorrectClockSkew.GetClockCorrectionForEndpoint(executionContext.RequestContext.Request.Endpoint.ToString()),
+                executionContext.RequestContext.Request.Endpoint.ToString());
+            executionContext.RequestContext.IsSigned = false;
+            return true;
         }
 
         #endregion

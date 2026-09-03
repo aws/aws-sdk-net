@@ -20,7 +20,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.DagS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -65,23 +65,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.PluginsS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.PluginsS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.RequirementsS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.RequirementsS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -97,12 +97,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.StartupScriptS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.StartupScriptS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -205,7 +205,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.DagS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -244,23 +244,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.PluginsS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.PluginsS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.RequirementsS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.RequirementsS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -276,12 +276,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.StartupScriptS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.StartupScriptS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -317,7 +317,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.DagS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
@@ -368,23 +368,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.PluginsS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.PluginsS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.RequirementsS3ObjectVersion</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.Environment.RequirementsS3Path</property>
-    <min>1</min>
+    <min>0</min>
     <max>1024</max>
     <pattern>.*</pattern>
   </property-value-rule>

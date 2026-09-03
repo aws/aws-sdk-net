@@ -40,7 +40,10 @@ namespace Amazon.TaxSettings.Model
         /// <summary>
         /// Gets and sets the property BusinessActivity. 
         /// <para>
-        ///  The business activity of the taxpayer in Chile.
+        ///  The business activity code of the taxpayer in Chile. This must be the activity code
+        /// shown on your SII (Servicio de Impuestos Internos) tax profile. For the list of valid
+        /// activity codes, see <a href="https://www.sii.cl/ayudas/ayudas_por_servicios/1956-codigos-1959.html">SII
+        /// activity codes</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

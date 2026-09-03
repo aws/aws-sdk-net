@@ -623,6 +623,118 @@ namespace Amazon.MarketplaceAgreement
 
 
     /// <summary>
+    /// Constants used for properties of type EndTimeBehaviorReasonCode.
+    /// </summary>
+    public class EndTimeBehaviorReasonCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCEPTOR_RENEW_OPTED_OUT for EndTimeBehaviorReasonCode
+        /// </summary>
+        public static readonly EndTimeBehaviorReasonCode ACCEPTOR_RENEW_OPTED_OUT = new EndTimeBehaviorReasonCode("ACCEPTOR_RENEW_OPTED_OUT");
+        /// <summary>
+        /// Constant NO_RENEWAL_TERM for EndTimeBehaviorReasonCode
+        /// </summary>
+        public static readonly EndTimeBehaviorReasonCode NO_RENEWAL_TERM = new EndTimeBehaviorReasonCode("NO_RENEWAL_TERM");
+        /// <summary>
+        /// Constant PROPOSER_RENEW_OPTED_OUT for EndTimeBehaviorReasonCode
+        /// </summary>
+        public static readonly EndTimeBehaviorReasonCode PROPOSER_RENEW_OPTED_OUT = new EndTimeBehaviorReasonCode("PROPOSER_RENEW_OPTED_OUT");
+        /// <summary>
+        /// Constant RENEWAL_LIMIT_EXHAUSTED for EndTimeBehaviorReasonCode
+        /// </summary>
+        public static readonly EndTimeBehaviorReasonCode RENEWAL_LIMIT_EXHAUSTED = new EndTimeBehaviorReasonCode("RENEWAL_LIMIT_EXHAUSTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndTimeBehaviorReasonCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndTimeBehaviorReasonCode FindValue(string value)
+        {
+            return FindValue<EndTimeBehaviorReasonCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndTimeBehaviorReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EndTimeBehaviorType.
+    /// </summary>
+    public class EndTimeBehaviorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EXPIRE for EndTimeBehaviorType
+        /// </summary>
+        public static readonly EndTimeBehaviorType EXPIRE = new EndTimeBehaviorType("EXPIRE");
+        /// <summary>
+        /// Constant RENEW for EndTimeBehaviorType
+        /// </summary>
+        public static readonly EndTimeBehaviorType RENEW = new EndTimeBehaviorType("RENEW");
+        /// <summary>
+        /// Constant REPLACE for EndTimeBehaviorType
+        /// </summary>
+        public static readonly EndTimeBehaviorType REPLACE = new EndTimeBehaviorType("REPLACE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EndTimeBehaviorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EndTimeBehaviorType FindValue(string value)
+        {
+            return FindValue<EndTimeBehaviorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EndTimeBehaviorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Intent.
     /// </summary>
     public class Intent : ConstantClass

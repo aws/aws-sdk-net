@@ -378,7 +378,9 @@ namespace Amazon.MediaConvert.Model
         /// markers from an ESAM XML document-- Choose None if you don't want manifest conditioning.
         /// Choose Passthrough and choose Ad markers if you do want manifest conditioning. In
         /// both cases, also provide the ESAM XML as a string in the setting Signal processing
-        /// notification XML.
+        /// notification XML. For SCTE-35 markers from your input HLS manifest-- Choose Manifest
+        /// cues to pass through CUE markers in your HLS manifest as segment boundaries and SCTE-35
+        /// markers in this output at each EXT-X-CUE-OUT splice point in the input manifest.
         /// </summary>
         public M3u8Scte35Source Scte35Source
         {

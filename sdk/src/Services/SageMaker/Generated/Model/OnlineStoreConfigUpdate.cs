@@ -34,7 +34,29 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class OnlineStoreConfigUpdate
     {
+        private StorageType _storageType;
         private TtlDuration _ttlDuration;
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The online store storage type to migrate the feature group to. Use this parameter
+        /// to migrate an existing feature group from <c>Standard</c> to <c>Standard_V2</c> storage
+        /// format, enabling support for the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_UpdateRecord.html">UpdateRecord</a>
+        /// operation. Migration is a one-way operation and cannot be reversed.
+        /// </para>
+        /// </summary>
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TtlDuration. 

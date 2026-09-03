@@ -1367,9 +1367,21 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly PiiEntityType ADDRESS = new PiiEntityType("ADDRESS");
         /// <summary>
+        /// Constant AGE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType AGE = new PiiEntityType("AGE");
+        /// <summary>
         /// Constant ALL for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType ALL = new PiiEntityType("ALL");
+        /// <summary>
+        /// Constant AWS_ACCESS_KEY for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType AWS_ACCESS_KEY = new PiiEntityType("AWS_ACCESS_KEY");
+        /// <summary>
+        /// Constant AWS_SECRET_KEY for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType AWS_SECRET_KEY = new PiiEntityType("AWS_SECRET_KEY");
         /// <summary>
         /// Constant BANK_ACCOUNT_NUMBER for PiiEntityType
         /// </summary>
@@ -1378,6 +1390,14 @@ namespace Amazon.TranscribeService
         /// Constant BANK_ROUTING for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType BANK_ROUTING = new PiiEntityType("BANK_ROUTING");
+        /// <summary>
+        /// Constant CA_HEALTH_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CA_HEALTH_NUMBER = new PiiEntityType("CA_HEALTH_NUMBER");
+        /// <summary>
+        /// Constant CA_SOCIAL_INSURANCE_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType CA_SOCIAL_INSURANCE_NUMBER = new PiiEntityType("CA_SOCIAL_INSURANCE_NUMBER");
         /// <summary>
         /// Constant CREDIT_DEBIT_CVV for PiiEntityType
         /// </summary>
@@ -1391,13 +1411,45 @@ namespace Amazon.TranscribeService
         /// </summary>
         public static readonly PiiEntityType CREDIT_DEBIT_NUMBER = new PiiEntityType("CREDIT_DEBIT_NUMBER");
         /// <summary>
+        /// Constant DATE_TIME for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType DATE_TIME = new PiiEntityType("DATE_TIME");
+        /// <summary>
+        /// Constant DRIVER_ID for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType DRIVER_ID = new PiiEntityType("DRIVER_ID");
+        /// <summary>
         /// Constant EMAIL for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType EMAIL = new PiiEntityType("EMAIL");
         /// <summary>
+        /// Constant INTERNATIONAL_BANK_ACCOUNT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType INTERNATIONAL_BANK_ACCOUNT_NUMBER = new PiiEntityType("INTERNATIONAL_BANK_ACCOUNT_NUMBER");
+        /// <summary>
+        /// Constant IP_ADDRESS for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType IP_ADDRESS = new PiiEntityType("IP_ADDRESS");
+        /// <summary>
+        /// Constant LICENSE_PLATE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType LICENSE_PLATE = new PiiEntityType("LICENSE_PLATE");
+        /// <summary>
+        /// Constant MAC_ADDRESS for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType MAC_ADDRESS = new PiiEntityType("MAC_ADDRESS");
+        /// <summary>
         /// Constant NAME for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType NAME = new PiiEntityType("NAME");
+        /// <summary>
+        /// Constant PASSPORT_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PASSPORT_NUMBER = new PiiEntityType("PASSPORT_NUMBER");
+        /// <summary>
+        /// Constant PASSWORD for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType PASSWORD = new PiiEntityType("PASSWORD");
         /// <summary>
         /// Constant PHONE for PiiEntityType
         /// </summary>
@@ -1410,6 +1462,26 @@ namespace Amazon.TranscribeService
         /// Constant SSN for PiiEntityType
         /// </summary>
         public static readonly PiiEntityType SSN = new PiiEntityType("SSN");
+        /// <summary>
+        /// Constant SWIFT_CODE for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType SWIFT_CODE = new PiiEntityType("SWIFT_CODE");
+        /// <summary>
+        /// Constant URL for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType URL = new PiiEntityType("URL");
+        /// <summary>
+        /// Constant US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER = new PiiEntityType("US_INDIVIDUAL_TAX_IDENTIFICATION_NUMBER");
+        /// <summary>
+        /// Constant USERNAME for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType USERNAME = new PiiEntityType("USERNAME");
+        /// <summary>
+        /// Constant VEHICLE_IDENTIFICATION_NUMBER for PiiEntityType
+        /// </summary>
+        public static readonly PiiEntityType VEHICLE_IDENTIFICATION_NUMBER = new PiiEntityType("VEHICLE_IDENTIFICATION_NUMBER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -15,12 +15,10 @@
 
 using Amazon.Runtime;
 using Amazon.Runtime.Credentials.Internal;
-using Amazon.Runtime.Internal;
-using Amazon.Runtime.Internal.Auth;
-using Amazon.Runtime.Internal.Transform;
-using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Signing;
 using System;
 using System.Globalization;
+using System.Net.Http;
 
 namespace Amazon.DSQL.Util
 {
@@ -30,29 +28,13 @@ namespace Amazon.DSQL.Util
     public static class DSQLAuthTokenGenerator
     {
         private const string DSQLServiceName = "dsql";
-        private const string HTTPGet = "GET";
         private const string HTTPS = "https";
         private const string URISchemeDelimiter = "://";
         private const string ActionKey = "Action";
         private const string DBConnectActionValue = "DbConnect";
         private const string DBConnectAdminActionValue = "DbConnectAdmin";
-        private const string XAmzExpires = "X-Amz-Expires";
-        private const string XAmzSecurityToken = "X-Amz-Security-Token";
         private static readonly TimeSpan FifteenMinutes = TimeSpan.FromMinutes(15);
         private static readonly TimeSpan MaxExpiresIn = TimeSpan.FromDays(7);
-
-        /// <summary>
-        /// AWS4PreSignedUrlSigner is built around operation request objects.
-        /// This request type will only be used to generate the signed token.
-        /// It will never be used to make an actual request to DSQL.
-        /// </summary>
-        private class GenerateDSQLAuthTokenRequest : AmazonWebServiceRequest
-        {
-            public GenerateDSQLAuthTokenRequest()
-            {
-                ((IAmazonWebServiceRequest)this).SignatureVersion = SignatureVersion.SigV4;
-            }
-        }
 
         /// <summary>
         /// Generate a token for IAM authentication to a DSQL database cluster for the DbConnect action.
@@ -688,28 +670,38 @@ namespace Amazon.DSQL.Util
 
             ValidateExpiresIn(expiresIn);
 
-            GenerateDSQLAuthTokenRequest authTokenRequest = new GenerateDSQLAuthTokenRequest();
-            IRequest request = new DefaultRequest(authTokenRequest, DSQLServiceName);
-
-            request.UseQueryString = true;
-            request.HttpMethod = HTTPGet;
-            request.Parameters.Add(XAmzExpires, ((int)expiresIn.TotalSeconds).ToString(CultureInfo.InvariantCulture));
-            request.Parameters.Add(ActionKey, actionValue);
-            request.Endpoint = new UriBuilder(HTTPS, hostname).Uri;
-
-            if (immutableCredentials.UseToken)
+            // Build a neutral signing request against the public facade. Credentials have already been
+            // resolved (with the 15-min floor above), so wrap them in a non-refreshing AWSCredentials so the
+            // facade's own presign-window refresh is a no-op and doesn't re-resolve them.
+            var signingRequest = new AWSSigningRequest
             {
-                request.Parameters[XAmzSecurityToken] = immutableCredentials.Token;
-            }
+                HttpMethod = HttpMethod.Get,
+                RequestUri = new Uri(string.Format(CultureInfo.InvariantCulture,
+                    "{0}://{1}/?{2}={3}",
+                    HTTPS, hostname, ActionKey, actionValue)),
+            };
 
-            var signingResult = AWS4PreSignedUrlSigner.SignRequest(request, null, new RequestMetrics(), immutableCredentials.AccessKey,
-                immutableCredentials.SecretKey, DSQLServiceName, region.SystemName);
+            var parameters = new AWSSigV4Parameters
+            {
+                Credentials = WrapResolved(immutableCredentials),
+                Region = region,
+                Service = DSQLServiceName,
+            };
 
-            var authorization = "&" + signingResult.ForQueryParameters;
-            var url = AmazonServiceClient.ComposeUrl(request);
+            var presign = AWSSigV4Signer.Presign(signingRequest, parameters, expiresIn);
 
-            // remove the https:// and append the authorization
-            return url.AbsoluteUri.Substring(HTTPS.Length + URISchemeDelimiter.Length) + authorization;
+            // The token is the presigned URL with the scheme stripped: "hostname/?..."
+            return presign.Uri.AbsoluteUri.Substring(HTTPS.Length + URISchemeDelimiter.Length);
+        }
+
+        // Wraps already-resolved credentials as a non-refreshing AWSCredentials for the facade. Since neither
+        // BasicAWSCredentials nor SessionAWSCredentials is a RefreshingAWSCredentials, the facade's presign-window
+        // refresh degrades to a plain GetCredentials() and returns these same values back.
+        private static AWSCredentials WrapResolved(ImmutableCredentials creds)
+        {
+            return creds.UseToken
+                ? (AWSCredentials)new SessionAWSCredentials(creds.AccessKey, creds.SecretKey, creds.Token)
+                : new BasicAWSCredentials(creds.AccessKey, creds.SecretKey);
         }
     }
 }

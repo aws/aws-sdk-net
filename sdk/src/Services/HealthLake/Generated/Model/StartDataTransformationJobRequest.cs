@@ -32,7 +32,7 @@ namespace Amazon.HealthLake.Model
     /// <summary>
     /// Container for the parameters to the StartDataTransformationJob operation.
     /// Starts an asynchronous data transformation job that converts source files from Amazon
-    /// Simple Storage Service (Amazon S3) and writes the output to Amazon S3 or AWS HealthLake.
+    /// Simple Storage Service (Amazon S3) and writes the output to Amazon S3 or HealthLake.
     /// </summary>
     public partial class StartDataTransformationJobRequest : AmazonHealthLakeRequest
     {
@@ -69,8 +69,9 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that AWS HealthLake assumes to read from and write to the specified Amazon S3 locations.
+        /// The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management
+        /// (IAM) role that HealthLake assumes to read from and write to the specified Amazon
+        /// S3 locations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -89,7 +90,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DriftDetectionEnabled. 
         /// <para>
-        /// Specifies whether drift detection is enabled for this job. When enabled, AWS HealthLake
+        /// Specifies whether drift detection is enabled for this job. When enabled, HealthLake
         /// writes a drift report to the output Amazon S3 location alongside the converted files.
         /// </para>
         /// </summary>
@@ -146,8 +147,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
-        /// The Amazon S3 output location and AWS Key Management Service (AWS KMS) encryption
-        /// configuration.
+        /// The Amazon S3 output location and Amazon Web Services Key Management Service (Amazon
+        /// Web Services KMS) encryption configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

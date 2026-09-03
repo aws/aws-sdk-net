@@ -279,6 +279,79 @@ namespace Amazon.SimpleEmailV2
         #endregion
 
 
+        #region  AssociateEmailIdentityCertificate
+
+        internal virtual AssociateEmailIdentityCertificateResponse AssociateEmailIdentityCertificate(AssociateEmailIdentityCertificateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateEmailIdentityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEmailIdentityCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateEmailIdentityCertificateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Associates an S/MIME certificate with an email identity. After the certificate is
+        /// active, Amazon SES API v2 can add an S/MIME signature to messages that you send from
+        /// the associated address when signing is enabled on the configuration set used to send
+        /// the message.
+        /// 
+        ///  
+        /// <para>
+        /// The certificate is an X.509 certificate that you manage in Certificate Manager (ACM).
+        /// You identify it by its Amazon Resource Name (ARN).
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the email identity is a domain, you must specify a <c>FromAddress</c> that belongs
+        /// to that domain or one of its subdomains. The certificate applies to messages sent
+        /// from that address.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the email identity is an email address, <c>FromAddress</c> is optional. If you
+        /// specify it, it must exactly match the email identity.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When the association is created, the certificate begins provisioning and its status
+        /// is <c>PROVISIONING</c>. The status changes to <c>ACTIVE</c> when the certificate is
+        /// ready to use for signing. Each email address can have only one certificate association.
+        /// If an association already exists for the address, this operation returns an error,
+        /// unless the existing association is in the <c>DEPROVISIONING</c> state.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateEmailIdentityCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateEmailIdentityCertificate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.AlreadyExistsException">
+        /// The resource specified in your request already exists.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/AssociateEmailIdentityCertificate">REST API Reference for AssociateEmailIdentityCertificate Operation</seealso>
+        public virtual Task<AssociateEmailIdentityCertificateResponse> AssociateEmailIdentityCertificateAsync(AssociateEmailIdentityCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = AssociateEmailIdentityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateEmailIdentityCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<AssociateEmailIdentityCertificateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  BatchGetMetricData
 
         internal virtual BatchGetMetricDataResponse BatchGetMetricData(BatchGetMetricDataRequest request)
@@ -1861,6 +1934,63 @@ namespace Amazon.SimpleEmailV2
         }
         #endregion
         
+        #region  DisassociateEmailIdentityCertificate
+
+        internal virtual DisassociateEmailIdentityCertificateResponse DisassociateEmailIdentityCertificate(DisassociateEmailIdentityCertificateRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateEmailIdentityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEmailIdentityCertificateResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateEmailIdentityCertificateResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes the association between an S/MIME certificate and an email identity. After
+        /// the association is removed, Amazon SES API v2 stops adding an S/MIME signature to
+        /// messages sent from that address.
+        /// 
+        ///  
+        /// <para>
+        /// If the email identity is a domain, specify the <c>FromAddress</c> whose certificate
+        /// association you want to remove.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is idempotent. If the specified email identity exists but there's no
+        /// matching certificate association, the operation succeeds without making any changes.
+        /// Amazon SES API v2 returns a <c>NotFoundException</c> only when the specified email
+        /// identity doesn't exist.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateEmailIdentityCertificate service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateEmailIdentityCertificate service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/DisassociateEmailIdentityCertificate">REST API Reference for DisassociateEmailIdentityCertificate Operation</seealso>
+        public virtual Task<DisassociateEmailIdentityCertificateResponse> DisassociateEmailIdentityCertificateAsync(DisassociateEmailIdentityCertificateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = DisassociateEmailIdentityCertificateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateEmailIdentityCertificateResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DisassociateEmailIdentityCertificateResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  GetAccount
 
         internal virtual GetAccountResponse GetAccount(GetAccountRequest request)
@@ -3361,6 +3491,62 @@ namespace Amazon.SimpleEmailV2
         }
         #endregion
         
+        #region  ListEmailIdentityCertificates
+
+        internal virtual ListEmailIdentityCertificatesResponse ListEmailIdentityCertificates(ListEmailIdentityCertificatesRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEmailIdentityCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailIdentityCertificatesResponseUnmarshaller.Instance;
+
+            return Invoke<ListEmailIdentityCertificatesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists the S/MIME certificates that are associated with the specified email identity.
+        /// The results include certificates in all states, such as <c>PROVISIONING</c>, <c>ACTIVE</c>,
+        /// <c>INACTIVE</c>, <c>DEPROVISIONING</c>, and <c>FAILED</c>.
+        /// 
+        ///  
+        /// <para>
+        /// If a certificate has passed its expiration time, it's returned with a status of <c>FAILED</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// We recommend using pagination to ensure that the operation returns quickly and successfully.
+        /// When there are more results than fit in a single response, the response includes a
+        /// <c>NextToken</c> value that you use in a subsequent call to retrieve the next set
+        /// of results.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEmailIdentityCertificates service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEmailIdentityCertificates service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/ListEmailIdentityCertificates">REST API Reference for ListEmailIdentityCertificates Operation</seealso>
+        public virtual Task<ListEmailIdentityCertificatesResponse> ListEmailIdentityCertificatesAsync(ListEmailIdentityCertificatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = ListEmailIdentityCertificatesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEmailIdentityCertificatesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEmailIdentityCertificatesResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
         #region  ListEmailTemplates
 
         internal virtual ListEmailTemplatesResponse ListEmailTemplates(ListEmailTemplatesRequest request)
@@ -3957,8 +4143,7 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Set the pricing plan for your Amazon SES account. Use this operation to choose a billing
-        /// plan that packages multiple Amazon SES features at a single rate.
+        /// Set the pricing plan for your Amazon SES account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountPricingAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -5324,6 +5509,54 @@ namespace Amazon.SimpleEmailV2
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+        #endregion
+        
+        #region  UpdateConfigurationSet
+
+        internal virtual UpdateConfigurationSetResponse UpdateConfigurationSet(UpdateConfigurationSetRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateConfigurationSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing configuration set.
+        /// 
+        ///  
+        /// <para>
+        /// This operation performs a partial update. Only the attributes that you include in
+        /// the request are updated; any omitted attribute is left unchanged.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateConfigurationSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateConfigurationSet service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/UpdateConfigurationSet">REST API Reference for UpdateConfigurationSet Operation</seealso>
+        public virtual Task<UpdateConfigurationSetResponse> UpdateConfigurationSetAsync(UpdateConfigurationSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateConfigurationSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateConfigurationSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateConfigurationSetResponse>(request, options, cancellationToken);
         }
         #endregion
         

@@ -46,7 +46,9 @@ namespace Amazon.Connect.Model
         private string _function;
         private string _instanceId;
         private string _name;
+        private PreEvaluationFilters _preEvaluationFilters;
         private RulePublishStatus _publishStatus;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private RuleTriggerEventSource _triggerEventSource;
 
         /// <summary>
@@ -154,6 +156,27 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PreEvaluationFilters. 
+        /// <para>
+        /// The pre-evaluation filters for the rule, that restrict the rule to be applied to only
+        /// certain resources based on the resource's attributes, such as tags assigned to a contact.
+        /// The pre-evaluation filters are applied even before rule conditions are evaluated and
+        /// are used to enforce tag-based-access-control while applying rules.
+        /// </para>
+        /// </summary>
+        public PreEvaluationFilters PreEvaluationFilters
+        {
+            get { return this._preEvaluationFilters; }
+            set { this._preEvaluationFilters = value; }
+        }
+
+        // Check to see if PreEvaluationFilters property is set
+        internal bool IsSetPreEvaluationFilters()
+        {
+            return this._preEvaluationFilters != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PublishStatus. 
         /// <para>
         /// The publish status of the rule.
@@ -170,6 +193,31 @@ namespace Amazon.Connect.Model
         internal bool IsSetPublishStatus()
         {
             return this._publishStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "Tags": {"key1":"value1", "key2":"value2"} }.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

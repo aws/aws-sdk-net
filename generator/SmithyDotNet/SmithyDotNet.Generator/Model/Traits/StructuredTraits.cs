@@ -23,6 +23,9 @@ public static class StructuredTraits
     /// <remarks><see href="https://smithy.io/2.0/spec/http-bindings.html#http-trait" /></remarks>
     public static HttpTrait? GetHttp(this Shape shape) => DeserializeTrait<HttpTrait>(shape, "smithy.api#http");
 
+    /// <remarks><see href="https://smithy.io/2.0/spec/endpoint-traits.html#endpoint-trait" /></remarks>
+    public static EndpointTrait? GetEndpoint(this Shape shape) => DeserializeTrait<EndpointTrait>(shape, "smithy.api#endpoint");
+
     /// <remarks><see href="https://smithy.io/2.0/spec/constraint-traits.html#length-trait" /></remarks>
     public static LengthTrait? GetLength(this Shape shape) => DeserializeTrait<LengthTrait>(shape, "smithy.api#length");
 

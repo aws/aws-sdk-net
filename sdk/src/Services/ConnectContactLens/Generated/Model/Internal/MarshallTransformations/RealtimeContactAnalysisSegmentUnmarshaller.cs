@@ -62,6 +62,12 @@ namespace Amazon.ConnectContactLens.Model.Internal.MarshallTransformations
                     unmarshalledObject.Categories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ExtractedInformation", targetDepth, ref reader))
+                {
+                    var unmarshaller = ExtractedInformationUnmarshaller.Instance;
+                    unmarshalledObject.ExtractedInformation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("PostContactSummary", targetDepth, ref reader))
                 {
                     var unmarshaller = PostContactSummaryUnmarshaller.Instance;

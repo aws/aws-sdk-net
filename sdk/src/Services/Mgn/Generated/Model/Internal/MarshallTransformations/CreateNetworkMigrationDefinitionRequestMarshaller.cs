@@ -73,6 +73,22 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 #endif
             writer.WriteStartObject();
             var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCidrMappings())
+            {
+                context.Writer.WritePropertyName("cidrMappings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCidrMappingsListValue in publicRequest.CidrMappings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CidrMappingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestCidrMappingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
             if(publicRequest.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
@@ -155,6 +171,12 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
                 marshaller.Marshall(publicRequest.TargetS3Configuration, context);
 
                 context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVpcProvisioningStrategy())
+            {
+                context.Writer.WritePropertyName("vpcProvisioningStrategy");
+                context.Writer.WriteStringValue(publicRequest.VpcProvisioningStrategy);
             }
 
             writer.WriteEndObject();

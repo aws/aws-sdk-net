@@ -35,6 +35,18 @@ namespace Amazon.KafkaConnect
         /// </summary>
         public static readonly ConnectorOperationState PENDING = new ConnectorOperationState("PENDING");
         /// <summary>
+        /// Constant RESTART_COMPLETE for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState RESTART_COMPLETE = new ConnectorOperationState("RESTART_COMPLETE");
+        /// <summary>
+        /// Constant RESTART_FAILED for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState RESTART_FAILED = new ConnectorOperationState("RESTART_FAILED");
+        /// <summary>
+        /// Constant RESTART_IN_PROGRESS for ConnectorOperationState
+        /// </summary>
+        public static readonly ConnectorOperationState RESTART_IN_PROGRESS = new ConnectorOperationState("RESTART_IN_PROGRESS");
+        /// <summary>
         /// Constant ROLLBACK_COMPLETE for ConnectorOperationState
         /// </summary>
         public static readonly ConnectorOperationState ROLLBACK_COMPLETE = new ConnectorOperationState("ROLLBACK_COMPLETE");
@@ -229,6 +241,10 @@ namespace Amazon.KafkaConnect
         /// </summary>
         public static readonly ConnectorOperationType ISOLATE_CONNECTOR = new ConnectorOperationType("ISOLATE_CONNECTOR");
         /// <summary>
+        /// Constant RESTART_CONNECTOR for ConnectorOperationType
+        /// </summary>
+        public static readonly ConnectorOperationType RESTART_CONNECTOR = new ConnectorOperationType("RESTART_CONNECTOR");
+        /// <summary>
         /// Constant RESTORE_CONNECTOR for ConnectorOperationType
         /// </summary>
         public static readonly ConnectorOperationType RESTORE_CONNECTOR = new ConnectorOperationType("RESTORE_CONNECTOR");
@@ -294,6 +310,10 @@ namespace Amazon.KafkaConnect
         /// Constant FAILED for ConnectorState
         /// </summary>
         public static readonly ConnectorState FAILED = new ConnectorState("FAILED");
+        /// <summary>
+        /// Constant RESTARTING for ConnectorState
+        /// </summary>
+        public static readonly ConnectorState RESTARTING = new ConnectorState("RESTARTING");
         /// <summary>
         /// Constant RUNNING for ConnectorState
         /// </summary>

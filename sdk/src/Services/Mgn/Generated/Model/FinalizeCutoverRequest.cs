@@ -38,7 +38,7 @@ namespace Amazon.Mgn.Model
     /// itself (within 10 minutes). The following properties of the SourceServer will be changed
     /// immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED;
     /// The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes
-    /// property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
+    /// property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration
     /// and dataReplicationInfo.lagDuration will be nullified.
     /// </summary>
     public partial class FinalizeCutoverRequest : AmazonMgnRequest

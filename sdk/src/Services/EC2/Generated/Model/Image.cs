@@ -51,6 +51,7 @@ namespace Amazon.EC2.Model
         private ImageTypeValues _imageType;
         private List<ImageWatermark> _imageWatermarks = AWSConfigs.InitializeCollections ? new List<ImageWatermark>() : null;
         private ImdsSupportValues _imdsSupport;
+        private InstanceTypeSpecification _instanceTypeSpecification;
         private string _kernelId;
         private string _lastLaunchedTime;
         private string _name;
@@ -416,6 +417,25 @@ namespace Amazon.EC2.Model
         internal bool IsSetImdsSupport()
         {
             return this._imdsSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypeSpecification. 
+        /// <para>
+        /// The instance type specification for the AMI, which defines which instance types are
+        /// compatible with this image.
+        /// </para>
+        /// </summary>
+        public InstanceTypeSpecification InstanceTypeSpecification
+        {
+            get { return this._instanceTypeSpecification; }
+            set { this._instanceTypeSpecification = value; }
+        }
+
+        // Check to see if InstanceTypeSpecification property is set
+        internal bool IsSetInstanceTypeSpecification()
+        {
+            return this._instanceTypeSpecification != null;
         }
 
         /// <summary>

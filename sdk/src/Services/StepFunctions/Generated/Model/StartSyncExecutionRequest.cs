@@ -42,10 +42,6 @@ namespace Amazon.StepFunctions.Model
     /// as permissions errors, limit errors, or issues with your state machine code and configuration.
     /// 
     /// </para>
-    ///  </note> <note> 
-    /// <para>
-    /// This API action isn't logged in CloudTrail.
-    /// </para>
     ///  </note>
     /// </summary>
     public partial class StartSyncExecutionRequest : AmazonStepFunctionsRequest

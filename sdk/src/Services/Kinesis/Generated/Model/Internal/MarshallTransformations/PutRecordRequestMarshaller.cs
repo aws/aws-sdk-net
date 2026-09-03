@@ -81,6 +81,12 @@ namespace Amazon.Kinesis.Model.Internal.MarshallTransformations
                 StringUtils.WriteBase64StringValue(context.Writer, publicRequest.Data);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("DryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             if(publicRequest.IsSetExplicitHashKey())
             {
                 context.Writer.WritePropertyName("ExplicitHashKey");

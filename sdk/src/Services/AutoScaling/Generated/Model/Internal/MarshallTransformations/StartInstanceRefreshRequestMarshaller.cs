@@ -84,6 +84,33 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         if(publicRequest.DesiredConfiguration.MixedInstancesPolicy.IsSetInstancesDistribution())
                         {
+                            if(publicRequest.DesiredConfiguration.MixedInstancesPolicy.InstancesDistribution.IsSetDistributionSegments())
+                            {
+                                if (publicRequest.DesiredConfiguration.MixedInstancesPolicy.InstancesDistribution.DistributionSegments.Count == 0)
+                                    request.Parameters.Add("DesiredConfiguration" + "." + "MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "DistributionSegments", "");
+                                else
+                                {
+                                     int publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValueIndex = 1;
+                                     foreach(var publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValue in publicRequest.DesiredConfiguration.MixedInstancesPolicy.InstancesDistribution.DistributionSegments)
+                                     {
+                                        if(publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValue.IsSetTargetCapacityTypes())
+                                        {
+                                            if (publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValue.TargetCapacityTypes.Count == 0)
+                                                request.Parameters.Add("DesiredConfiguration" + "." + "MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "DistributionSegments" + "." + "member" + "." + publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValueIndex + "." + "TargetCapacityTypes", "");
+                                            else
+                                            {
+                                                 int publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValuelistValueIndex = 1;
+                                                 foreach(var publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValuelistValue in publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValue.TargetCapacityTypes)
+                                                 {
+                                                     request.Parameters.Add("DesiredConfiguration" + "." + "MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "DistributionSegments" + "." + "member" + "." + publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValueIndex + "." + "TargetCapacityTypes" + "." + "member" + "." + publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValuelistValueIndex, StringUtils.FromString(publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValuelistValue));
+                                                     publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValuelistValueIndex++;
+                                                 }
+                                            }
+                                        }
+                                         publicRequestDesiredConfigurationMixedInstancesPolicyInstancesDistributionlistValueIndex++;
+                                     }
+                                }
+                            }
                             if(publicRequest.DesiredConfiguration.MixedInstancesPolicy.InstancesDistribution.IsSetOnDemandAllocationStrategy())
                             {
                                 request.Parameters.Add("DesiredConfiguration" + "." + "MixedInstancesPolicy" + "." + "InstancesDistribution" + "." + "OnDemandAllocationStrategy", StringUtils.FromString(publicRequest.DesiredConfiguration.MixedInstancesPolicy.InstancesDistribution.OnDemandAllocationStrategy));

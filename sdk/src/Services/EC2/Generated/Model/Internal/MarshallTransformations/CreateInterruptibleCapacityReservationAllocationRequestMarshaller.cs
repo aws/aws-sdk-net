@@ -117,6 +117,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                          }
                     }
                 }
+                if(publicRequest.IsSetZeroSizePreference())
+                {
+                    request.Parameters.Add("ZeroSizePreference", StringUtils.FromString(publicRequest.ZeroSizePreference));
+                }
             }
 
 #if !NETFRAMEWORK

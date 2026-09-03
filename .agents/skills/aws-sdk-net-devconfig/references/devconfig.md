@@ -1,133 +1,52 @@
 # DevConfig
 
 DevConfig files control versioning and changelog metadata for AWS SDK for .NET branch changes.
+`CONTRIBUTING.md` ("DevConfig Files") is the authoritative reference for the format and when one is
+required; this file captures the local specifics and the traps not spelled out there.
 
-## Location
+## Location and when required
 
-- directory: `generator/.DevConfigs/`
-- file name: a unique JSON file, typically a GUID-based name
+- Directory: `generator/.DevConfigs/`; file name: a unique GUID-based `.json` file.
+- Required for code-changing PRs (see `CONTRIBUTING.md` for the exact exceptions). Include the
+  section(s) matching the affected code: `core`, `services`, and/or `extensions`.
+- `.sln` files for a service do NOT by themselves require a `services` entry.
+- At release, multiple DevConfigs are combined and the greatest `type` wins.
 
-## When a DevConfig is required
+## Creating a DevConfig
 
-A DevConfig is required for code-changing PRs, except for the limited exceptions documented in `CONTRIBUTING.md`.
+- Preferred: run the generator wizard — `buildtools/add-devconfig.bat` (or `.sh`) — which writes a
+  correctly-formatted file (ordered fields, right key names).
+- Authoring directly (e.g. a non-interactive agent): create `generator/.DevConfigs/` if missing
+  (`New-Item -ItemType Directory -Force generator/.DevConfigs` on Windows/PowerShell), then write a
+  `<guid>.json` with the sections below.
 
-Do not limit DevConfigs to only changes under `sdk/src/Core/*` or `sdk/src/Services/*`. Include the section or sections that match the affected code:
+## Sections
 
-- `core` for Core changes
-- `services` for service changes
-- `extensions` for extension changes, if supported by the DevConfigGenerator
+The Core/Services/overrideVersion field reference lives in `CONTRIBUTING.md` ("DevConfig File
+Structure"); the `extensions` section is documented only in the generator source
+(`buildtools/DevConfigGenerator`). Local essentials:
 
-Non-code-only changes may not require a DevConfig; follow `CONTRIBUTING.md` for the current exceptions and requirements.
-## Core section
+- **core** — for Core changes. Requires `changeLogMessages` (array), `type` (`patch` | `minor`),
+  and `updateMinimum`. Optional `backwardIncompatibilitiesToIgnore`.
+- **services** — array; each entry needs `serviceName` (without the `AWSSDK.` prefix),
+  `type` (`patch` | `minor`), and `changeLogMessages`.
+- **extensions** — array; each entry uses `extensionName` (not `serviceName`), `type`, and
+  `changeLogMessages`. Extensions are supported (`DevConfigWriter` emits an `extensions` array).
 
-Use a `core` section when the change affects Core.
-
-Example:
-
-```json
-{
-  "core": {
-    "changeLogMessages": [
-      "Describe the Core change here"
-    ],
-    "type": "patch",
-    "updateMinimum": true
-  }
-}
-```
-
-Fields:
-
-- `changeLogMessages`
-  required array of changelog lines
-- `type`
-  required, `patch` or `minor`
-- `updateMinimum`
-  required for Core
-- `backwardIncompatibilitiesToIgnore`
-  optional
-
-## Services section
-
-Use a `services` section when the change affects one or more services.
-
-Example:
+A single file may combine `core`, `services`, and `extensions`.
 
 ```json
 {
-  "services": [
-    {
-      "serviceName": "S3",
-      "type": "patch",
-      "changeLogMessages": [
-        "Fixed marshalling behavior for ..."
-      ]
-    }
-  ]
+  "core": { "changeLogMessages": ["Describe the Core change"], "type": "patch", "updateMinimum": true },
+  "services": [ { "serviceName": "S3", "type": "patch", "changeLogMessages": ["Fixed ..."] } ]
 }
 ```
 
-Fields:
+## overrideVersion
 
-- `serviceName`
-  required, without the `AWSSDK.` prefix
-- `type`
-  required, `patch` or `minor`
-- `changeLogMessages`
-  required
+`overrideVersion` sets a specific version for all services and is reserved for major cross-SDK
+milestones. See `CONTRIBUTING.md`'s overrideVersion guidance before using it.
 
-## Combined file
+## Third-party PRs
 
-A DevConfig can include both `core` and `services` when needed.
-
-## Key Concepts
-
-- Each developer's branch requires a DevConfig file
-- Files are automatically removed after release information extraction
-- Multiple DevConfig files are combined during release to determine version bumps
-- `.sln` files for a service do NOT count towards requiring a service entry in DevConfig
-
-## Special Sections
-
-- `overrideVersion`: Sets specific version for all services (use with caution)
-
-```json
-{
-  "services": [{...}],
-  "core": {...},
-  "overrideVersion": "3.7.300.0"
-}
-```
-
-## DevConfig Creation Process
-
-When creating a `DevConfig`, use this process:
-
-1. Ensure the `generator/.DevConfigs` directory exists. Create it with `mkdir -p generator/.DevConfigs` if needed.
-2. Determine file changes with `git status` and read the file changes.
-3. Apply the rules about devconfig files to generate the text for the file.
-4. Write the devconfig text to a file in the `generator/.DevConfigs` folder. Write the text directly to the GUID.json file, making sure to use a GUID for the filename.
-
-## Version Numbering
-
-- Format: w.x.y.z
-- x: major
-- y: minor
-- z: patch
-- System selects greatest type value for release
-
-## Third-Party PR Handling
-
-- Ask contributor to add the file
-- Add file to their PR as another commit
-- Copy branch to aws-sdk-net-staging and add commit with DevConfig
-- Create separate DevConfig PR to merge alongside third-party PR
-
-## Implementation Details
-
-The DevConfig tooling that exists in this repository is under `buildtools/DevConfigGenerator/`.
-
-If you are looking for parser or consumer code, do not expect to find the previously referenced
-`AwsSdkDotNetBuildUtilities`, `BaseDevConfig.cs`, `Core.cs`, `Service.cs`, or `DevConfig.cs`
-files in this repository. Use the in-repo `buildtools/DevConfigGenerator/` tooling as the
-repository-local reference point for DevConfig behavior.
+For contributor PRs that lack a DevConfig, follow `CONTRIBUTING.md` ("Third-Party Developer PRs").

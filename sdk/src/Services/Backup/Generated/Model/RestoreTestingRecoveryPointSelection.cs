@@ -176,7 +176,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property SelectionWindowDays. 
         /// <para>
-        /// Accepted values are integers from 1 to 365.
+        /// Accepted values are integers from 1 to 365. If not included, the value defaults to
+        /// 30. The selection window is calculated from the actual job execution time, not the
+        /// plan's scheduled start time.
         /// </para>
         /// </summary>
         public int? SelectionWindowDays

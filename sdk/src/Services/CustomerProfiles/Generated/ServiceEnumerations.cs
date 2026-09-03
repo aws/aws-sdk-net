@@ -161,6 +161,14 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         public static readonly AttributeDimensionType LESS_THAN_OR_EQUAL = new AttributeDimensionType("LESS_THAN_OR_EQUAL");
         /// <summary>
+        /// Constant LIST_CONTAINS for AttributeDimensionType
+        /// </summary>
+        public static readonly AttributeDimensionType LIST_CONTAINS = new AttributeDimensionType("LIST_CONTAINS");
+        /// <summary>
+        /// Constant LIST_CONTAINS_ALL for AttributeDimensionType
+        /// </summary>
+        public static readonly AttributeDimensionType LIST_CONTAINS_ALL = new AttributeDimensionType("LIST_CONTAINS_ALL");
+        /// <summary>
         /// Constant NOT_BETWEEN for AttributeDimensionType
         /// </summary>
         public static readonly AttributeDimensionType NOT_BETWEEN = new AttributeDimensionType("NOT_BETWEEN");
@@ -890,6 +898,118 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EventStreamState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventSubscriptionSegmentStatus.
+    /// </summary>
+    public class EventSubscriptionSegmentStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for EventSubscriptionSegmentStatus
+        /// </summary>
+        public static readonly EventSubscriptionSegmentStatus FAILED = new EventSubscriptionSegmentStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for EventSubscriptionSegmentStatus
+        /// </summary>
+        public static readonly EventSubscriptionSegmentStatus RUNNING = new EventSubscriptionSegmentStatus("RUNNING");
+        /// <summary>
+        /// Constant STARTING for EventSubscriptionSegmentStatus
+        /// </summary>
+        public static readonly EventSubscriptionSegmentStatus STARTING = new EventSubscriptionSegmentStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for EventSubscriptionSegmentStatus
+        /// </summary>
+        public static readonly EventSubscriptionSegmentStatus STOPPED = new EventSubscriptionSegmentStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSubscriptionSegmentStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSubscriptionSegmentStatus FindValue(string value)
+        {
+            return FindValue<EventSubscriptionSegmentStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSubscriptionSegmentStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventSubscriptionState.
+    /// </summary>
+    public class EventSubscriptionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RUNNING for EventSubscriptionState
+        /// </summary>
+        public static readonly EventSubscriptionState RUNNING = new EventSubscriptionState("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for EventSubscriptionState
+        /// </summary>
+        public static readonly EventSubscriptionState STOPPED = new EventSubscriptionState("STOPPED");
+        /// <summary>
+        /// Constant UNHEALTHY for EventSubscriptionState
+        /// </summary>
+        public static readonly EventSubscriptionState UNHEALTHY = new EventSubscriptionState("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventSubscriptionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventSubscriptionState FindValue(string value)
+        {
+            return FindValue<EventSubscriptionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventSubscriptionState(string value)
         {
             return FindValue(value);
         }
@@ -2799,6 +2919,52 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type ScheduleConfigurationUnit.
+    /// </summary>
+    public class ScheduleConfigurationUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HOURLY for ScheduleConfigurationUnit
+        /// </summary>
+        public static readonly ScheduleConfigurationUnit HOURLY = new ScheduleConfigurationUnit("HOURLY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduleConfigurationUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleConfigurationUnit FindValue(string value)
+        {
+            return FindValue<ScheduleConfigurationUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleConfigurationUnit(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Scope.
     /// </summary>
     public class Scope : ConstantClass
@@ -3000,6 +3166,64 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SegmentSortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SegmentSubscriptionStatus.
+    /// </summary>
+    public class SegmentSubscriptionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for SegmentSubscriptionStatus
+        /// </summary>
+        public static readonly SegmentSubscriptionStatus FAILED = new SegmentSubscriptionStatus("FAILED");
+        /// <summary>
+        /// Constant RUNNING for SegmentSubscriptionStatus
+        /// </summary>
+        public static readonly SegmentSubscriptionStatus RUNNING = new SegmentSubscriptionStatus("RUNNING");
+        /// <summary>
+        /// Constant STARTING for SegmentSubscriptionStatus
+        /// </summary>
+        public static readonly SegmentSubscriptionStatus STARTING = new SegmentSubscriptionStatus("STARTING");
+        /// <summary>
+        /// Constant STOPPED for SegmentSubscriptionStatus
+        /// </summary>
+        public static readonly SegmentSubscriptionStatus STOPPED = new SegmentSubscriptionStatus("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SegmentSubscriptionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SegmentSubscriptionStatus FindValue(string value)
+        {
+            return FindValue<SegmentSubscriptionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SegmentSubscriptionStatus(string value)
         {
             return FindValue(value);
         }
@@ -3451,6 +3675,10 @@ namespace Amazon.CustomerProfiles
         /// </summary>
         public static readonly Statistic MINIMUM = new Statistic("MINIMUM");
         /// <summary>
+        /// Constant RECENT_OCCURRENCES for Statistic
+        /// </summary>
+        public static readonly Statistic RECENT_OCCURRENCES = new Statistic("RECENT_OCCURRENCES");
+        /// <summary>
         /// Constant SUM for Statistic
         /// </summary>
         public static readonly Statistic SUM = new Statistic("SUM");
@@ -3666,6 +3894,106 @@ namespace Amazon.CustomerProfiles
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StringDimensionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionEvent.
+    /// </summary>
+    public class SubscriptionEvent : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JOINED for SubscriptionEvent
+        /// </summary>
+        public static readonly SubscriptionEvent JOINED = new SubscriptionEvent("JOINED");
+        /// <summary>
+        /// Constant LEFT for SubscriptionEvent
+        /// </summary>
+        public static readonly SubscriptionEvent LEFT = new SubscriptionEvent("LEFT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubscriptionEvent(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionEvent FindValue(string value)
+        {
+            return FindValue<SubscriptionEvent>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionEvent(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SubscriptionEventType.
+    /// </summary>
+    public class SubscriptionEventType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LIVE for SubscriptionEventType
+        /// </summary>
+        public static readonly SubscriptionEventType LIVE = new SubscriptionEventType("LIVE");
+        /// <summary>
+        /// Constant SCHEDULE for SubscriptionEventType
+        /// </summary>
+        public static readonly SubscriptionEventType SCHEDULE = new SubscriptionEventType("SCHEDULE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SubscriptionEventType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SubscriptionEventType FindValue(string value)
+        {
+            return FindValue<SubscriptionEventType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SubscriptionEventType(string value)
         {
             return FindValue(value);
         }

@@ -46,6 +46,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetInterlaceMode())
+            {
+                context.Writer.WritePropertyName("interlaceMode");
+                context.Writer.WriteStringValue(requestObject.InterlaceMode);
+            }
+
             if(requestObject.IsSetXavcClass())
             {
                 context.Writer.WritePropertyName("xavcClass");

@@ -1,6 +1,7 @@
 using System.Text.Json;
 using SmithyDotNet.Generator.Model;
 using SmithyDotNet.Generator.Model.Shapes;
+using SmithyDotNet.Generator.Model.Traits;
 
 namespace SmithyDotNet.Generator.Generation;
 
@@ -12,25 +13,20 @@ public static class UnsupportedTraitValidator
 {
     private static readonly Dictionary<string, string> DeniedTraits = new()
     {
-        ["smithy.api#endpoint"] = "@endpoint (host prefix)",
-        ["smithy.api#jsonValue"] = "@jsonValue",
-        ["smithy.api#httpPrefixHeaders"] = "@httpPrefixHeaders",
-        ["smithy.api#httpPayload"] = "@httpPayload",
-        ["smithy.api#httpResponseCode"] = "@httpResponseCode",
-        ["smithy.api#streaming"] = "@streaming",
+        ["smithy.api#httpChecksumRequired"] = "@httpChecksumRequired",
+        ["smithy.api#requestCompression"] = "@requestCompression",
         ["aws.protocols#awsQueryCompatible"] = "awsQueryCompatible",
+        ["aws.protocols#httpChecksum"] = "httpChecksum",
     };
 
-    private static readonly Dictionary<string, string> DeniedResponseMemberTraits = new()
-    {
-        ["smithy.api#httpHeader"] = "@httpHeader (response)",
-    };
+    // Live on a member's resolved *target* shape, not the member reference.
+    // Kept empty because future protocols may deny target-level traits again.
+    private static readonly Dictionary<string, string> DeniedTargetTraits = new();
 
     /// <summary>
-    /// Checks service, operation, and top-level input/output/error member traits and throws a
-    /// single aggregated <see cref="GeneratorException"/> listing every denied trait found.
-    /// Nested members are not scanned because all denied traits are only spec-valid at the
-    /// top level or above. Call before generation begins.
+    /// Checks service, operation, top-level input/output/error member, and reachable-shape traits
+    /// and throws a single aggregated <see cref="GeneratorException"/> listing every denied trait
+    /// found. Call before generation begins.
     /// </summary>
     public static void Validate(ServiceIndex index)
     {
@@ -43,19 +39,54 @@ public static class UnsupportedTraitValidator
 
             if (index.Shapes.TryGetValue(op.Input, out var inputShape) && inputShape is StructureShape input)
             {
-                CollectDeniedOnMembers(input, DeniedTraits, found);
+                CollectDeniedOnMembers(input, found);
             }
 
             if (index.Shapes.TryGetValue(op.Output, out var outputShape) && outputShape is StructureShape output)
             {
-                CollectDeniedOnResponseMembers(output, found);
+                CollectDeniedOnMembers(output, found);
             }
 
             foreach (var errorId in op.Errors)
             {
                 if (index.Shapes.TryGetValue(errorId, out var errorShape) && errorShape is StructureShape error)
                 {
-                    CollectDeniedOnResponseMembers(error, found);
+                    CollectDeniedOnMembers(error, found);
+                }
+            }
+        }
+
+        //do one more sweep of errors that are potentially only listed on the service and not the operation
+        foreach (var errorId in index.Service.Errors)
+        {
+            if (index.Shapes.TryGetValue(errorId, out var errorShape) && errorShape is StructureShape error)
+            {
+                CollectDeniedOnMembers(error, found);
+            }
+        }
+
+        // index.Shapes is every shape reachable from an operation/error at any depth, so this one
+        // pass covers DeniedTargetTraits regardless of nesting.
+        foreach (var shape in index.Shapes.Values)
+        {
+            CollectDenied(shape.Traits, DeniedTargetTraits, found);
+
+            // @streaming is supported only on a blob (an @httpPayload Stream); on a union it marks an
+            // event stream, which nothing handles yet, so fail loud there.
+            if (shape is not BlobShape && shape.IsStreaming())
+            {
+                found.Add("@streaming");
+            }
+
+            // @sparse on a list of lists/maps would generate a foreach over a possibly-null element
+            // (the same latent NRE C2J emits); no AWS model has this shape today, so fail loud instead.
+            // A sparse *map* of collections is fine - its value null-guard covers every kind.
+            if (shape is ListShape list && list.IsSparse())
+            {
+                var element = index.Shapes.GetValueOrDefault(list.Member.Target);
+                if (element is ListShape or MapShape)
+                {
+                    found.Add("@sparse (list of collections)");
                 }
             }
         }
@@ -77,18 +108,11 @@ public static class UnsupportedTraitValidator
         }
     }
 
-    private static void CollectDeniedOnMembers(StructureShape structure, Dictionary<string, string> denied, HashSet<string> found)
+    private static void CollectDeniedOnMembers(StructureShape structure, HashSet<string> found)
     {
         foreach (var (_, member) in structure.Members)
         {
-            CollectDenied(member.Traits, denied, found);
+            CollectDenied(member.Traits, DeniedTraits, found);
         }
-    }
-
-    // Output and error structures get the same member-level treatment: both are part of the response.
-    private static void CollectDeniedOnResponseMembers(StructureShape structure, HashSet<string> found)
-    {
-        CollectDeniedOnMembers(structure, DeniedTraits, found);
-        CollectDeniedOnMembers(structure, DeniedResponseMemberTraits, found);
     }
 }

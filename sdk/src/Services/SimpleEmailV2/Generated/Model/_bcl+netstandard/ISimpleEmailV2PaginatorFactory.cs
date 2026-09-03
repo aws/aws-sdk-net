@@ -118,6 +118,16 @@ namespace Amazon.SimpleEmailV2.Model
         IListEmailIdentitiesPaginator ListEmailIdentities(ListEmailIdentitiesRequest request);
 
         /// <summary>
+        /// Paginator for ListEmailIdentityCertificates operation
+        ///</summary>
+        [AWSPaginator(
+            InputToken = new[] { "NextToken" },
+            LimitKey = "PageSize",
+            OutputToken = new[] { "NextToken" }
+        )]
+        IListEmailIdentityCertificatesPaginator ListEmailIdentityCertificates(ListEmailIdentityCertificatesRequest request);
+
+        /// <summary>
         /// Paginator for ListEmailTemplates operation
         ///</summary>
         [AWSPaginator(

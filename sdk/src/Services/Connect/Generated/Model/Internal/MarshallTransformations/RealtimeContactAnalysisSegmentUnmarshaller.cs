@@ -74,6 +74,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Event = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
+                if (context.TestExpression("ExtractedInformation", targetDepth, ref reader))
+                {
+                    var unmarshaller = RealTimeContactAnalysisSegmentExtractedInformationUnmarshaller.Instance;
+                    unmarshalledObject.ExtractedInformation = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("Issues", targetDepth, ref reader))
                 {
                     var unmarshaller = RealTimeContactAnalysisSegmentIssuesUnmarshaller.Instance;

@@ -60,10 +60,11 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request. If you don't specify a client token, the Amazon Web Services SDK automatically
-        /// generates one and uses it for the request to ensure idempotency. The client token
-        /// is valid for up to 24 hours after it's first used.
+        /// A unique, case-sensitive identifier that you provide to ensure that the operation
+        /// completes no more than one time. If you submit the same request twice with the same
+        /// client token, the service ignores the second request and returns the result of the
+        /// first. If you don't specify a client token, the AWS SDK automatically generates one.
+        /// The client token is valid for up to 24 hours after it's first used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=64)]
@@ -271,7 +272,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property ScanListenerPortTcp. 
         /// <para>
-        /// The port number for TCP connections to the single client access name (SCAN) listener.
+        /// The port number for TCP connections to the Single Client Access Name (SCAN) listener.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1024, Max=8999)]
@@ -290,7 +291,7 @@ namespace Amazon.Odb.Model
         /// <summary>
         /// Gets and sets the property ScanListenerPortTcpSsl. 
         /// <para>
-        /// The port number for TCP connections with SSL to the single client access name (SCAN)
+        /// The port number for TCP connections with SSL to the Single Client Access Name (SCAN)
         /// listener.
         /// </para>
         /// </summary>

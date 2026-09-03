@@ -5232,6 +5232,103 @@ namespace Amazon.DevOpsAgent
 
         #endregion
         
+        #region  UpdateApprovalAction
+
+
+        /// <summary>
+        /// Updates an approval request with the terminal decision (APPROVED or REJECTED). A single
+        /// operation handles both verbs via the action enum.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalAction service method.</param>
+        /// 
+        /// <returns>The response from the UpdateApprovalAction service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateApprovalAction">REST API Reference for UpdateApprovalAction Operation</seealso>
+        public virtual UpdateApprovalActionResponse UpdateApprovalAction(UpdateApprovalActionRequest request)
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateApprovalActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApprovalActionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateApprovalActionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates an approval request with the terminal decision (APPROVED or REJECTED). A single
+        /// operation handles both verbs via the action enum.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateApprovalAction service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateApprovalAction service method, as returned by DevOpsAgent.</returns>
+        /// <exception cref="Amazon.DevOpsAgent.Model.AccessDeniedException">
+        /// Access to the requested resource is denied due to insufficient permissions.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ConflictException">
+        /// The request conflicts with the current state of the resource.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ContentSizeExceededException">
+        /// This exception is thrown when the content size exceeds the allowed limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InternalServerException">
+        /// This exception is thrown when an unexpected error occurs in the processing of a request.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.InvalidParameterException">
+        /// One or more parameters provided in the request are invalid.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ResourceNotFoundException">
+        /// The requested resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ServiceQuotaExceededException">
+        /// The request would exceed the service quota limit.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ThrottlingException">
+        /// The request was throttled due to too many requests. Please slow down and try again.
+        /// </exception>
+        /// <exception cref="Amazon.DevOpsAgent.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by the service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/devops-agent-2026-01-01/UpdateApprovalAction">REST API Reference for UpdateApprovalAction Operation</seealso>
+        public virtual Task<UpdateApprovalActionResponse> UpdateApprovalActionAsync(UpdateApprovalActionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new Amazon.Runtime.Internal.InvokeOptions();
+            options.RequestMarshaller = UpdateApprovalActionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateApprovalActionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateApprovalActionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateAsset
 
 

@@ -93,6 +93,12 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
                 context.Writer.WriteStringValue(publicRequest.CaseId);
             }
 
+            if(publicRequest.IsSetDryRun())
+            {
+                context.Writer.WritePropertyName("dryRun");
+                context.Writer.WriteBooleanValue(publicRequest.DryRun.Value);
+            }
+
             if(publicRequest.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("maxResults");

@@ -43,6 +43,7 @@ namespace Amazon.BedrockAgentCoreControl.Model
         private string _memoryExecutionRoleArn;
         private List<MemoryStrategyInput> _memoryStrategies = AWSConfigs.InitializeCollections ? new List<MemoryStrategyInput>() : null;
         private string _name;
+        private List<NamespaceKeyEntry> _namespaceKeys = AWSConfigs.InitializeCollections ? new List<NamespaceKeyEntry>() : null;
         private StreamDeliveryResources _streamDeliveryResources;
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
@@ -207,6 +208,31 @@ namespace Amazon.BedrockAgentCoreControl.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NamespaceKeys. 
+        /// <para>
+        /// The namespace variable key definitions with optional validation rules. Use these <c>namespaceKeys</c>
+        /// in <c>namespaceTemplates</c> to control namespace hierarchy.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<NamespaceKeyEntry> NamespaceKeys
+        {
+            get { return this._namespaceKeys; }
+            set { this._namespaceKeys = value; }
+        }
+
+        // Check to see if NamespaceKeys property is set
+        internal bool IsSetNamespaceKeys()
+        {
+            return this._namespaceKeys != null && (this._namespaceKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

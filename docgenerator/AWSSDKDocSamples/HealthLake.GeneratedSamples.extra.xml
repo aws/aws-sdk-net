@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.HealthLake.IAmazonHealthLake.RestoreFHIRDatastore(Amazon.HealthLake.Model.RestoreFHIRDatastoreRequest)" />
+            <member name="M:Amazon.HealthLake.AmazonHealthLakeClient.RestoreFHIRDatastore(Amazon.HealthLake.Model.RestoreFHIRDatastoreRequest)" />
+            <member name="T:Amazon.HealthLake.Model.RestoreFHIRDatastoreRequest" />
+            <member name="T:Amazon.HealthLake.Model.RestoreFHIRDatastoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Restore a data store to a point in time"
+                    source=".\AWSSDKDocSamples\HealthLake\HealthLake.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.HealthLake.IAmazonHealthLake.UpdateFHIRDatastore(Amazon.HealthLake.Model.UpdateFHIRDatastoreRequest)" />
+            <member name="M:Amazon.HealthLake.AmazonHealthLakeClient.UpdateFHIRDatastore(Amazon.HealthLake.Model.UpdateFHIRDatastoreRequest)" />
+            <member name="T:Amazon.HealthLake.Model.UpdateFHIRDatastoreRequest" />
+            <member name="T:Amazon.HealthLake.Model.UpdateFHIRDatastoreResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    
+                </para>
+                <code
+                    title="Update a data store's name and configuration"
+                    source=".\AWSSDKDocSamples\HealthLake\HealthLake.GeneratedSamples.cs"
+                    region="example-1" />
+            </example>
+        </value>
+    </doc>
+</docs>

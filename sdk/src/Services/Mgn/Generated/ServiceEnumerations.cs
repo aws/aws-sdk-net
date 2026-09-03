@@ -3419,6 +3419,56 @@ namespace Amazon.Mgn
 
 
     /// <summary>
+    /// Constants used for properties of type VpcProvisioningStrategy.
+    /// </summary>
+    public class VpcProvisioningStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATE_NEW for VpcProvisioningStrategy
+        /// </summary>
+        public static readonly VpcProvisioningStrategy CREATE_NEW = new VpcProvisioningStrategy("CREATE_NEW");
+        /// <summary>
+        /// Constant USE_EXISTING for VpcProvisioningStrategy
+        /// </summary>
+        public static readonly VpcProvisioningStrategy USE_EXISTING = new VpcProvisioningStrategy("USE_EXISTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcProvisioningStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcProvisioningStrategy FindValue(string value)
+        {
+            return FindValue<VpcProvisioningStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcProvisioningStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type WaveHealthStatus.
     /// </summary>
     public class WaveHealthStatus : ConstantClass

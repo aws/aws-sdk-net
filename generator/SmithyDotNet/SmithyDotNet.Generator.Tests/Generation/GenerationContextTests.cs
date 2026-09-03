@@ -70,6 +70,22 @@ public class GenerationContextTests
     }
 
     [Fact]
+    public void ServiceUid_DerivedFromSdkId_NotEndpointPrefix()
+    {
+        // sdkId "Example" (slug "example") vs endpointPrefix "svc" -- uid must follow sdkId.
+        var context = TestModels.Context("Codegen/enum-missing-value-model.json");
+        Assert.Equal("svc", context.EndpointPrefix);
+        Assert.Equal("example-2023-01-01", context.ServiceUid);
+    }
+
+    [Fact]
+    public void ServiceUid_UsesDocIdWhenPresent()
+    {
+        var context = TestModels.Context("Codegen/service-with-docid-model.json");
+        Assert.Equal("monitoring-2010-08-01", context.ServiceUid);
+    }
+
+    [Fact]
     public void HasEndpointContextParams_IsFalseForCloudTrailData()
     {
         // CloudTrailData uses no context params. If detection over-fires, the resolver writer throws
@@ -155,5 +171,18 @@ public class GenerationContextTests
         var operation = context.Operations.Single(o => o.Name == "DoConflict");
         Assert.Empty(operation.Input.Members);
         Assert.Empty(operation.Output.Members);
+    }
+
+    [Fact]
+    public void OperationErrors_MergeServiceErrors_DedupedAndSortedByName()
+    {
+        // The model's service declares Throttling/AccessDenied/Validation and GetThing declares
+        // ResourceNotFound/Validation: the resolved list is the union (Validation once), in name order.
+        var context = TestModels.Context("Codegen/service-errors-model.json");
+
+        var operation = context.Operations.Single(o => o.Name == "GetThing");
+        Assert.Equal(
+            ["AccessDeniedException", "ResourceNotFoundException", "ThrottlingException", "ValidationException"],
+            operation.Errors.Select(e => e.Id.Name));
     }
 }

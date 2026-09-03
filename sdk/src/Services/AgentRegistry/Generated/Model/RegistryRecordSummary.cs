@@ -48,7 +48,10 @@ namespace Amazon.AgentRegistry.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        ///  The timestamp when the registry record was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? CreatedAt
@@ -64,7 +67,11 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        ///  A human-readable description of the registry record. Use this field to explain the
+        /// record's purpose or content to consumers discovering it in the registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string Description
@@ -99,7 +106,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DisplayName.
+        /// Gets and sets the property DisplayName. 
+        /// <para>
+        ///  The human-readable display name of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string DisplayName
@@ -115,7 +125,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        ///  The name of the registry record. Names are unique within a registry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string Name
@@ -131,7 +144,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordArn.
+        /// Gets and sets the property RecordArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
         public string RecordArn
@@ -147,7 +163,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordId.
+        /// Gets and sets the property RecordId. 
+        /// <para>
+        ///  The unique identifier of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
         public string RecordId
@@ -163,7 +182,12 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordType.
+        /// Gets and sets the property RecordType. 
+        /// <para>
+        ///  The type of the registry record. <c>MCP</c> is a Model Context Protocol server record,
+        /// <c>AGENT</c> is an Agent-to-Agent (A2A) agent card record, <c>SKILL</c> is an agent
+        /// skills definition record, and <c>CUSTOM</c> is a record with a custom descriptor.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RecordType RecordType
@@ -179,7 +203,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RecordVersion.
+        /// Gets and sets the property RecordVersion. 
+        /// <para>
+        ///  The version identifier of the registry record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string RecordVersion
@@ -195,7 +222,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegistryArn.
+        /// Gets and sets the property RegistryArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the parent registry that owns the record.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=46, Max=2048)]
         public string RegistryArn
@@ -211,7 +241,15 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The lifecycle status of the registry record. A record is <c>DRAFT</c> before it is
+        /// submitted, <c>PENDING_APPROVAL</c> while awaiting curator review, and <c>APPROVED</c>
+        /// once it is approved and discoverable. <c>REJECTED</c> and <c>DEPRECATED</c> records
+        /// are not discoverable. The <c>CREATING</c>, <c>UPDATING</c>, <c>CREATE_FAILED</c>,
+        /// and <c>UPDATE_FAILED</c> values reflect the state of an in-progress or failed asynchronous
+        /// change.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RegistryRecordStatus Status
@@ -227,7 +265,10 @@ namespace Amazon.AgentRegistry.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        ///  The timestamp when the registry record was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? UpdatedAt

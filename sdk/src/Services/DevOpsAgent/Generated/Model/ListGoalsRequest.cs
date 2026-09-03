@@ -47,7 +47,7 @@ namespace Amazon.DevOpsAgent.Model
         /// The unique identifier for the agent space
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=2048)]
         public string AgentSpaceId
         {
             get { return this._agentSpaceId; }

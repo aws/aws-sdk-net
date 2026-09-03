@@ -56,6 +56,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth, ref reader))
             {
+                if (context.TestExpression("architecture", targetDepth, ref reader))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Architecture = unmarshaller.Unmarshall(context, ref reader);
+                    continue;
+                }
                 if (context.TestExpression("cpus", targetDepth, ref reader))
                 {
                     var unmarshaller = new JsonListUnmarshaller<CPU, CPUUnmarshaller>(CPUUnmarshaller.Instance);

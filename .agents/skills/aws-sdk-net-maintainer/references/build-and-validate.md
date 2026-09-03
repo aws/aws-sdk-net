@@ -1,104 +1,74 @@
 # SDK Build System
 
-## Build Tools and Processes
+## Validate a change
 
-### Primary Build Commands
-- `dotnet build` - Build the SDK or individual projects and solutions
-- `dotnet test` - Run tests, but note the build system usually drives test execution through specific targets
-- `NuGet.exe pack` - Create extension NuGet packages
+- Build the relevant **service** solution (e.g. `sdk/src/Services/ACMPCA/ACMPCA.sln`) or the
+  **uber** solution (`sdk/AWSSDK.NetFramework.sln`) — not a bare `dotnet build` of the repo root.
+- Run tests through the `run-tests-mstest` / `run-tests-xunit` targets in `buildtools/build.proj`.
+  Some SDK tests are not friendly to run directly outside these targets.
+- Core and Custom runtime tests compile into `AWSSDK.UnitTests.Core.dll` — run
+  `sdk/test/UnitTests/AWSSDK.UnitTests.Core.csproj`, **not** `AWSSDK.UnitTestUtilities.csproj`
+  (which produces no test output).
+- Packaging: SDK NuGet packages are created with `create-nuget-packages.ps1`; extension packages
+  with `NuGet.exe pack`. Do not assume `dotnet pack`.
 
-### Key Build Projects
-- `buildtools/build.proj` - Build project used for SDK build and test workflows
-- `buildtools/` - Custom MSBuild tasks and utilities
-- `generator/` - Code generation during build process
+## Key build projects
 
-### Build Notes
-- The SDK itself is built using the uber solutions, for example `sdk/AWSSDK.NetFramework.sln`.
-- Service-specific builds should use the service solution, for example `sdk/src/Services/ACMPCA/ACMPCA.sln`.
-- The build system usually runs tests through the `run-tests-mstest` and `run-tests-xunit` targets in `buildtools/build.proj`.
-- Some SDK tests are not friendly to run directly without using the intended targets.
-- Some targets in `buildtools/build.proj` are leftovers from the previous build system and are not used anymore.
-- Changing how the SDK is built may also require changes in the internal build system, for example when adding target frameworks or when the build project needs to use a new MSBuild task defined in the InternalBuildTools package.
+- `buildtools/build.proj` drives the SDK build, test, generation, and packaging targets.
+- The uber solutions build the whole SDK (e.g. `sdk/AWSSDK.NetFramework.sln`); a service solution
+  builds one service (e.g. `sdk/src/Services/ACMPCA/ACMPCA.sln`).
+- `build.proj` contains some dead targets left over from a previous build system — prefer the
+  targets referenced here and confirm a target is still wired before relying on it.
 
-### Generator Components
-- `generator/ServiceClientGenerator/` - Main SDK code generator executable
-- `generator/ServiceClientGeneratorLib/` - Generator library with T4 templates
-- `generator/ServiceClientGeneratorTests/` - Generator unit tests
-- `generator/ProtocolTestsGenerator/` - Protocol test generator (Gradle-based)
-- `generator/ServiceModels/` - Production service Coral-to-JSON (C2J) models
-- `generator/TestServiceModels/` - Test service models
+## Service client generation
 
-### Packaging Notes
-- SDK packages are created with `create-nuget-packages.ps1`.
-- Extension packages are created with `NuGet.exe pack`.
-- Do not assume `dotnet pack` is used for packaging.
+The SDK is mid-migration between two code generators. Both run under
+`dotnet msbuild buildtools/build.proj /t:run-generator` (Smithy first, then C2J):
 
-## Code Generation Integration
+- **Smithy generator** — `generator/SmithyDotNet/`, a Smithy-native C# generator for *migrated*
+  services; reads the Smithy AST directly. `generator/SmithyDotNet/CLAUDE.md` and its `skills/`
+  are the source of truth for Smithy generation work.
+- **Legacy C2J generator** — `generator/ServiceClientGenerator*`, for services not yet migrated.
+  Production C2J models live in `generator/ServiceModels/` (updated during daily releases; test
+  models in `generator/TestServiceModels/` are updated manually). It uses the `normal`-type
+  `<prefix>-YYYY-MM-DD.normal.json` files plus an optional `<prefix>.customizations.json`, applies
+  T4 templates in `generator/ServiceClientGeneratorLib/`, writes to
+  `sdk/src/Services/<name>/Generated/`, and merges handwritten `Custom/` code.
 
-### Service Client Generation Process
-1. Coral-to-JSON (C2J) models parsed from `generator/ServiceModels/`
-2. T4 templates (*.tt files) in `ServiceClientGeneratorLib/` applied
-3. Generated code placed in `sdk/src/Services/<serviceName>/Generated/`
-4. Custom code in `Custom/` folders merged
-5. Final compilation and packaging
+Do not assume a service is C2J-generated — check which generator owns it. C2J also serves as the
+*output* cross-check for the Smithy generator (naming, doc sanitization, `[AWSProperty]`), not just
+a template.
 
-### Protocol Test Generation Process
-1. Navigate to `generator/ProtocolTestsGenerator/`
-2. Run `./gradlew :smithy-dotnet-protocol-test:build`
-3. Tests generated to `sdk/test/ProtocolTests/Generated/<ProtocolName>/`
-4. Execute via `dotnet test AWSSDK.ProtocolTests.NetFramework.csproj`
+Generator constraints (learned from real failures):
 
-### C2J Model Structure
-- Format: `<servicePrefix>-YYYY-MM-DD.<type>.json`
-- Generator uses `normal` type files only
-- `metadata.json` contains service metadata
-- Optional `<servicePrefix>.customizations.json` for generator customizations
-- Production models updated during daily releases
-- Test models updated manually
+- **Don't run the generator unless asked.** Regenerating overwrites the `Generated/` output and
+  removes stale/orphaned generated files by default, so the diff is large and includes deletions
+  (stage them with `git add -A`).
+- **T4 (legacy path):** edit the `.tt` template, never the generated `.cs`. Each `.tt` has a
+  corresponding generated `.cs`. `.tt` → `.cs` is a **manual** step (Visual Studio "Run Custom
+  Tool", or a full generator rebuild for project/source files) — there is no CLI for plain
+  design-time regeneration. Output customization lives in `Customizations.cs` / `*.customizations.json`.
+- **Generated deprecations need a message:** a bare `[Obsolete]` fails the build — `CA1041` is
+  enforced as an error (`sdk/AWSDotNetSDKForBuild.ruleset`).
+- **Generated unit-test projects:** `AWSSDK.UnitTests.NetFramework.csproj` and
+  `AWSSDK.UnitTests.NetStandard.csproj` are generated (`UnitTestProjectFileCreator.cs`); hand-edits
+  to them are overwritten on regeneration. `AWSSDK.UnitTests.Core.csproj` is manually maintained.
+- **Validate a generator change** by regenerating an affected service and compiling it against Core
+  across target frameworks, then running its unit-test project — passing the generator's own unit
+  tests does not prove the emitted code compiles. (Confirm the exact repro before relying on it.)
 
-### T4 Template System
-- *.tt files define code generation patterns
-- Each *.tt has corresponding generated *.cs file
-- Extensive customization via `Customizations.cs`
-- Developers modify *.tt files for generator changes
+## Protocol tests
 
-### Generation Triggers
-- Service model updates (daily for production)
-- Template modifications (*.tt file changes)
-- Build system changes
-- Manual regeneration requests
-- Protocol test model updates (from internal repository)
+- Generated from Smithy models: from `generator/ProtocolTestsGenerator`, run
+  `./gradlew :smithy-dotnet-protocol-test:build`. Requires a JDK on `PATH` / `JAVA_HOME` — without
+  one the wrapper errors ("JAVA_HOME is not set and no 'java' command could be found in your PATH.")
+  and exits non-zero.
+- Output goes to `sdk/test/ProtocolTests/Generated/<Protocol>/`; execute with `dotnet test` on the
+  generated protocol-tests project (e.g. `AWSSDK.ProtocolTests.NetFramework.csproj`). To change a
+  protocol test, edit the generator, not the generated output.
 
-## Testing Framework
+## Testing categories
 
-### Test Categories
-- **Unit Tests** - Fast, isolated component tests
-- **Integration Tests** - Real AWS service interactions
-- **Protocol Tests** - Service protocol compliance (generated from Smithy models)
-- **Performance Tests** - Benchmarking and profiling
-- **Generator Tests** - Code generator validation
-
-### Test Organization
-```text
-sdk/test/
-├── UnitTests/           # AWSSDK.UnitTests
-├── IntegrationTests/    # AWSSDK.IntegrationTests
-├── ProtocolTests/       # Protocol compliance tests
-└── Services/           # Service-specific tests
-```
-
-### Test Execution
-- Requires AWS credentials for integration tests
-- Use test-specific AWS accounts (not production)
-- Automated via CI/CD pipelines
-- Manual execution for development
-
-## CI/CD Pipeline
-
-### Build Stages
-1. **Code Generation** - Update generated code
-2. **Compilation** - Build all assemblies
-3. **Unit Testing** - Fast test execution
-4. **Integration Testing** - AWS service validation
-5. **Package Creation** - NuGet package generation
-6. **Deployment** - Release to distribution channels
+- **Unit tests** — fast, isolated; run through the `run-tests-*` targets (see "Validate a change").
+- **Protocol tests** — generated (see above).
+- **Integration tests** — hit real AWS; require credentials and a dedicated test account, never production.

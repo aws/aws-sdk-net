@@ -37,6 +37,7 @@ namespace Amazon.SimpleEmailV2.Model
         private ArchivingOptions _archivingOptions;
         private string _configurationSetName;
         private DeliveryOptions _deliveryOptions;
+        private MessageSecurityOptions _messageSecurityOptions;
         private ReputationOptions _reputationOptions;
         private SendingOptions _sendingOptions;
         private SuppressionOptions _suppressionOptions;
@@ -98,6 +99,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetDeliveryOptions()
         {
             return this._deliveryOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MessageSecurityOptions. 
+        /// <para>
+        /// The message security options that are applied to the configuration set, such as the
+        /// signing scheme used for messages that you send with the configuration set.
+        /// </para>
+        /// </summary>
+        public MessageSecurityOptions MessageSecurityOptions
+        {
+            get { return this._messageSecurityOptions; }
+            set { this._messageSecurityOptions = value; }
+        }
+
+        // Check to see if MessageSecurityOptions property is set
+        internal bool IsSetMessageSecurityOptions()
+        {
+            return this._messageSecurityOptions != null;
         }
 
         /// <summary>

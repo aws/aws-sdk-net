@@ -8895,6 +8895,144 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterOperator.
+    /// </summary>
+    public class PreEvaluationFilterOperator : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EQUALS for PreEvaluationFilterOperator
+        /// </summary>
+        public static readonly PreEvaluationFilterOperator EQUALS = new PreEvaluationFilterOperator("EQUALS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreEvaluationFilterOperator(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterOperator FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterOperator>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterResourceType.
+    /// </summary>
+    public class PreEvaluationFilterResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTACT for PreEvaluationFilterResourceType
+        /// </summary>
+        public static readonly PreEvaluationFilterResourceType CONTACT = new PreEvaluationFilterResourceType("CONTACT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreEvaluationFilterResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterResourceType FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PreEvaluationFilterType.
+    /// </summary>
+    public class PreEvaluationFilterType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant TAG for PreEvaluationFilterType
+        /// </summary>
+        public static readonly PreEvaluationFilterType TAG = new PreEvaluationFilterType("TAG");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PreEvaluationFilterType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PreEvaluationFilterType FindValue(string value)
+        {
+            return FindValue<PreEvaluationFilterType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PreEvaluationFilterType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PropertyValidationExceptionReason.
     /// </summary>
     public class PropertyValidationExceptionReason : ConstantClass
@@ -9173,6 +9311,68 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type RealTimeContactAnalysisExtractedInformationFailureCode.
+    /// </summary>
+    public class RealTimeContactAnalysisExtractedInformationFailureCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED_SAFETY_GUIDELINES for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode FAILED_SAFETY_GUIDELINES = new RealTimeContactAnalysisExtractedInformationFailureCode("FAILED_SAFETY_GUIDELINES");
+        /// <summary>
+        /// Constant INSUFFICIENT_CONVERSATION_CONTENT for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode INSUFFICIENT_CONVERSATION_CONTENT = new RealTimeContactAnalysisExtractedInformationFailureCode("INSUFFICIENT_CONVERSATION_CONTENT");
+        /// <summary>
+        /// Constant INTERNAL_ERROR for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode INTERNAL_ERROR = new RealTimeContactAnalysisExtractedInformationFailureCode("INTERNAL_ERROR");
+        /// <summary>
+        /// Constant MAX_PACKAGE_FEATURE_ONLY for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode MAX_PACKAGE_FEATURE_ONLY = new RealTimeContactAnalysisExtractedInformationFailureCode("MAX_PACKAGE_FEATURE_ONLY");
+        /// <summary>
+        /// Constant QUOTA_EXCEEDED for RealTimeContactAnalysisExtractedInformationFailureCode
+        /// </summary>
+        public static readonly RealTimeContactAnalysisExtractedInformationFailureCode QUOTA_EXCEEDED = new RealTimeContactAnalysisExtractedInformationFailureCode("QUOTA_EXCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RealTimeContactAnalysisExtractedInformationFailureCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeContactAnalysisExtractedInformationFailureCode FindValue(string value)
+        {
+            return FindValue<RealTimeContactAnalysisExtractedInformationFailureCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeContactAnalysisExtractedInformationFailureCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RealTimeContactAnalysisOutputType.
     /// </summary>
     public class RealTimeContactAnalysisOutputType : ConstantClass
@@ -9352,6 +9552,10 @@ namespace Amazon.Connect
         /// Constant Event for RealTimeContactAnalysisSegmentType
         /// </summary>
         public static readonly RealTimeContactAnalysisSegmentType Event = new RealTimeContactAnalysisSegmentType("Event");
+        /// <summary>
+        /// Constant ExtractedInformation for RealTimeContactAnalysisSegmentType
+        /// </summary>
+        public static readonly RealTimeContactAnalysisSegmentType ExtractedInformation = new RealTimeContactAnalysisSegmentType("ExtractedInformation");
         /// <summary>
         /// Constant Issues for RealTimeContactAnalysisSegmentType
         /// </summary>

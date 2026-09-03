@@ -1,0 +1,104 @@
+{
+  "smithy": "2.0",
+  "shapes": {
+    "com.example#Example": {
+      "type": "service",
+      "version": "2023-01-01",
+      "operations": [
+        { "target": "com.example#DoHostPrefixNoLabel" },
+        { "target": "com.example#DoHostPrefixWithLabel" },
+        { "target": "com.example#DoHostPrefixMultiLabel" },
+        { "target": "com.example#DoHostPrefixHttpLabel" },
+        { "target": "com.example#DoHostPrefixHeaderLabel" },
+        { "target": "com.example#DoNoHostPrefix" }
+      ],
+      "traits": {
+        "aws.api#service": { "sdkId": "Example", "endpointPrefix": "example" },
+        "aws.protocols#restJson1": {}
+      }
+    },
+    "com.example#DoHostPrefixNoLabel": {
+      "type": "operation",
+      "input": { "target": "smithy.api#Unit" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/no-label", "method": "POST" },
+        "smithy.api#endpoint": { "hostPrefix": "data." }
+      }
+    },
+    "com.example#DoHostPrefixWithLabel": {
+      "type": "operation",
+      "input": { "target": "com.example#DoHostPrefixWithLabelRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/with-label", "method": "POST" },
+        "smithy.api#endpoint": { "hostPrefix": "foo.{name}." }
+      }
+    },
+    "com.example#DoHostPrefixWithLabelRequest": {
+      "type": "structure",
+      "members": {
+        "name": { "target": "smithy.api#String", "traits": { "smithy.api#hostLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#DoHostPrefixMultiLabel": {
+      "type": "operation",
+      "input": { "target": "com.example#DoHostPrefixMultiLabelRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/multi", "method": "POST" },
+        "smithy.api#endpoint": { "hostPrefix": "{a}-{b}." }
+      }
+    },
+    "com.example#DoHostPrefixMultiLabelRequest": {
+      "type": "structure",
+      "members": {
+        "a": { "target": "smithy.api#String", "traits": { "smithy.api#hostLabel": {}, "smithy.api#required": {} } },
+        "b": { "target": "smithy.api#String", "traits": { "smithy.api#hostLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#DoHostPrefixHttpLabel": {
+      "type": "operation",
+      "input": { "target": "com.example#DoHostPrefixHttpLabelRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/dual/{id}", "method": "POST" },
+        "smithy.api#endpoint": { "hostPrefix": "foo.{id}." }
+      }
+    },
+    "com.example#DoHostPrefixHttpLabelRequest": {
+      "type": "structure",
+      "members": {
+        "id": { "target": "smithy.api#String", "traits": { "smithy.api#hostLabel": {}, "smithy.api#httpLabel": {}, "smithy.api#required": {} } }
+      }
+    },
+    "com.example#DoHostPrefixHeaderLabel": {
+      "type": "operation",
+      "input": { "target": "com.example#DoHostPrefixHeaderLabelRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": {
+        "smithy.api#http": { "uri": "/header-label", "method": "POST" },
+        "smithy.api#endpoint": { "hostPrefix": "{account}." }
+      }
+    },
+    "com.example#DoHostPrefixHeaderLabelRequest": {
+      "type": "structure",
+      "members": {
+        "account": { "target": "smithy.api#String", "traits": { "smithy.api#hostLabel": {}, "smithy.api#httpHeader": "x-account", "smithy.api#required": {} } },
+        "filter": { "target": "smithy.api#String", "traits": { "smithy.api#httpQuery": "filter" } }
+      }
+    },
+    "com.example#DoNoHostPrefix": {
+      "type": "operation",
+      "input": { "target": "com.example#DoNoHostPrefixRequest" },
+      "output": { "target": "smithy.api#Unit" },
+      "traits": { "smithy.api#http": { "uri": "/plain", "method": "POST" } }
+    },
+    "com.example#DoNoHostPrefixRequest": {
+      "type": "structure",
+      "members": {
+        "data": { "target": "smithy.api#String" }
+      }
+    }
+  }
+}

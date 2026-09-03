@@ -36,6 +36,7 @@ namespace Amazon.MediaConvert.Model
     {
         private int? _bitDepth;
         private long? _bitRate;
+        private string _channelLayout;
         private int? _channels;
         private FrameRate _frameRate;
         private string _languageCode;
@@ -70,6 +71,23 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetBitRate()
         {
             return this._bitRate.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ChannelLayout. The audio channel layout of the track, such
+        /// as "mono", "stereo", "5.1", or "7.1". Object-based or immersive audio is reported
+        /// as "5.1.4" or "7.1.4".
+        /// </summary>
+        public string ChannelLayout
+        {
+            get { return this._channelLayout; }
+            set { this._channelLayout = value; }
+        }
+
+        // Check to see if ChannelLayout property is set
+        internal bool IsSetChannelLayout()
+        {
+            return this._channelLayout != null;
         }
 
         /// <summary>

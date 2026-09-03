@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Operating denied due to a file permission or access check error.
+    /// Operation denied due to a file permission or access check error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

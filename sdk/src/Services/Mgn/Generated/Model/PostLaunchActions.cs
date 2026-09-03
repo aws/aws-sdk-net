@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// Post Launch Actions to executed on the Test or Cutover instance.
+    /// Post Launch Actions to be executed on the Test or Cutover instance.
     /// </summary>
     public partial class PostLaunchActions
     {

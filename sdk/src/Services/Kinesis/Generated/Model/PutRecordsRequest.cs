@@ -128,10 +128,29 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class PutRecordsRequest : AmazonKinesisRequest
     {
+        private bool? _dryRun;
         private List<PutRecordsRequestEntry> _records = AWSConfigs.InitializeCollections ? new List<PutRecordsRequestEntry>() : null;
         private string _streamARN;
         private string _streamId;
         private string _streamName;
+
+        /// <summary>
+        /// Gets and sets the property DryRun. 
+        /// <para>
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter.
+        /// </para>
+        /// </summary>
+        public bool? DryRun
+        {
+            get { return this._dryRun; }
+            set { this._dryRun = value; }
+        }
+
+        // Check to see if DryRun property is set
+        internal bool IsSetDryRun()
+        {
+            return this._dryRun.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property Records. 

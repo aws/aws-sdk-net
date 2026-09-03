@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Mgn.Model
 {
     /// <summary>
-    /// The request could not be completed because its exceeded the service quota.
+    /// The request could not be completed because it exceeded the service quota.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

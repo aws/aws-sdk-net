@@ -57,6 +57,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class SendEmailRequest : AmazonSimpleEmailServiceV2Request
     {
+        private ConfigurationOverrides _configurationOverrides;
         private string _configurationSetName;
         private EmailContent _content;
         private Destination _destination;
@@ -69,6 +70,25 @@ namespace Amazon.SimpleEmailV2.Model
         private ListManagementOptions _listManagementOptions;
         private List<string> _replyToAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tenantName;
+
+        /// <summary>
+        /// Gets and sets the property ConfigurationOverrides. 
+        /// <para>
+        /// An object that overrides, for this message only, settings that would otherwise apply
+        /// to it. Each setting that you don't override keeps the value that already applies.
+        /// </para>
+        /// </summary>
+        public ConfigurationOverrides ConfigurationOverrides
+        {
+            get { return this._configurationOverrides; }
+            set { this._configurationOverrides = value; }
+        }
+
+        // Check to see if ConfigurationOverrides property is set
+        internal bool IsSetConfigurationOverrides()
+        {
+            return this._configurationOverrides != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 

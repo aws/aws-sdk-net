@@ -34,9 +34,38 @@ namespace Amazon.LaunchWizard.Model
     /// </summary>
     public partial class WorkloadDataSummary
     {
+        private List<AccountConstraint> _accountConstraints = AWSConfigs.InitializeCollections ? new List<AccountConstraint>() : null;
         private string _displayName;
         private WorkloadStatus _status;
         private string _workloadName;
+
+        /// <summary>
+        /// Gets and sets the property AccountConstraints. 
+        /// <para>
+        /// Optional list of constraints describing what kind of AWS account is allowed to deploy
+        /// this workload or deployment pattern. Within a single list the semantics are OR: an
+        /// account satisfies the list if it satisfies any entry. Workload-level and pattern-level
+        /// lists combine with AND at deployment time. An absent or empty list at this level means
+        /// no constraint at this level.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<AccountConstraint> AccountConstraints
+        {
+            get { return this._accountConstraints; }
+            set { this._accountConstraints = value; }
+        }
+
+        // Check to see if AccountConstraints property is set
+        internal bool IsSetAccountConstraints()
+        {
+            return this._accountConstraints != null && (this._accountConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property DisplayName. 

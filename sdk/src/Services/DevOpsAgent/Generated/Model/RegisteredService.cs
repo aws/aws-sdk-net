@@ -36,11 +36,13 @@ namespace Amazon.DevOpsAgent.Model
     {
         private List<Amazon.Runtime.Documents.Document> _accessibleResources = AWSConfigs.InitializeCollections ? new List<Amazon.Runtime.Documents.Document>() : null;
         private AdditionalServiceDetails _additionalServiceDetails;
+        private DateTime? _createdAt;
         private string _kmsKeyArn;
         private string _name;
         private string _privateConnectionName;
         private string _serviceId;
         private Service _serviceType;
+        private DateTime? _updatedAt;
 
         /// <summary>
         /// Gets and sets the property AccessibleResources. 
@@ -81,6 +83,25 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetAdditionalServiceDetails()
         {
             return this._additionalServiceDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The timestamp when the service was registered.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime? CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt.HasValue; 
         }
 
         /// <summary>
@@ -177,6 +198,25 @@ namespace Amazon.DevOpsAgent.Model
         internal bool IsSetServiceType()
         {
             return this._serviceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The timestamp when the service was last updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DateTime? UpdatedAt
+        {
+            get { return this._updatedAt; }
+            set { this._updatedAt = value; }
+        }
+
+        // Check to see if UpdatedAt property is set
+        internal bool IsSetUpdatedAt()
+        {
+            return this._updatedAt.HasValue; 
         }
 
     }

@@ -38,6 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         private List<string> _dependsOn = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _endTime;
         private Dictionary<string, string> _executionEnvironmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Mount> _executionMounts = AWSConfigs.InitializeCollections ? new List<Mount>() : null;
         private DateTime? _startTime;
         private ComputeNodeExecutionStatus _status;
         private string _taskArn;
@@ -127,6 +128,33 @@ namespace Amazon.IoTSiteWise.Model
         internal bool IsSetExecutionEnvironmentVariables()
         {
             return this._executionEnvironmentVariables != null && (this._executionEnvironmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionMounts. 
+        /// <para>
+        /// The fully resolved mounts used for this compute node execution, after merging task-defined
+        /// mounts with any execution-level mount overrides. Each mount attaches an external data
+        /// source to the container filesystem at a relative path under the service-owned mount
+        /// root.
+        /// </para>
+        /// <para />
+        /// Starting with version 4 of the SDK this property will default to null. If no data for this property is returned
+        /// from the service the property will also be null. This was changed to improve performance and allow the SDK and caller
+        /// to distinguish between a property not set or a property being empty to clear out a value. To retain the previous
+        /// SDK behavior set the AWSConfigs.InitializeCollections static property to true.
+        /// </summary>
+        [AWSProperty(Min=0, Max=5)]
+        public List<Mount> ExecutionMounts
+        {
+            get { return this._executionMounts; }
+            set { this._executionMounts = value; }
+        }
+
+        // Check to see if ExecutionMounts property is set
+        internal bool IsSetExecutionMounts()
+        {
+            return this._executionMounts != null && (this._executionMounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
